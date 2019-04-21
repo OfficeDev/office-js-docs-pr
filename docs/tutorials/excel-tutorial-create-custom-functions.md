@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial (preview)
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 03/19/2019
+ms.date: 04/23/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -23,18 +23,7 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-* [Node.js](https://nodejs.org/en/) (version 8.0.0 or later)
-
-* [Git Bash](https://git-scm.com/downloads) (or another Git client)
-
-* The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
-
-    ```
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Even if you have previously installed the Yeoman generator, we recommend updating your package to the latest version from npm.
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 * Excel for Windows (64-bit version 1810 or later) or Excel Online
 
@@ -54,7 +43,7 @@ In this tutorial, you will:
     * Choose a script type: `JavaScript`
     * What do you want to name your add-in? `stock-ticker`
     
-    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
+    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/yo-office-excel-cf.png)
     
     The Yeoman generator creates the project files and installs supporting Node.js components.
 

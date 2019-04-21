@@ -1,5 +1,5 @@
 ---
-ms.date: 03/06/2019
+ms.date: 04/23/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start (preview)
 ms.prod: excel
@@ -16,17 +16,7 @@ With custom functions, developers can now add new functions to Excel by defining
 
 You'll need the following tools and related resources to begin creating custom functions.
 
-- [Node.js](https://nodejs.org/en/) (version 8.0.0 or later)
-
-- [Git Bash](https://git-scm.com/downloads) (or another Git client)
-
-- The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
-
-    ```
-    npm install -g yo generator-office
-    ```
-
-    [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## Build your first custom functions project
 
