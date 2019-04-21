@@ -10,13 +10,15 @@ localization_priority: Normal
 
 With custom functions, developers can now add new functions to Excel by defining them in JavaScript or Typescript as part of an add-in. Excel users can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
-## Prerequisites
-
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-You'll need the following tools and related resources to begin creating custom functions.
+## Prerequisites
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+* Excel for Windows (64-bit version 1810 or later) or Excel Online
+
+* Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
 
 ## Build your first custom functions project
 
