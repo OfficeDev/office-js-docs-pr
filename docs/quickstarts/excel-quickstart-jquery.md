@@ -218,7 +218,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using jQuery! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
+Congratulations, you've successfully created an Excel task pane add-in! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
 > [Excel add-in tutorial](../tutorials/excel-tutorial.md)
