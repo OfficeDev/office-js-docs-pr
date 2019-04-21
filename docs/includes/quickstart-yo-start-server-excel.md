@@ -10,7 +10,7 @@ Start the local web server, which runs in Node.js.
     npm start
     ```
 
-    When you run this command, the local web server will start and Excel will start with your add-in loaded.
+    When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
 - To test your add-in in Excel Online, run the following command to start the local web server:
 
