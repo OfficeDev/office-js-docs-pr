@@ -14,9 +14,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-## Create the web app
-
-### Create the add-in project
+## Create the add-in project
 
 1. Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
@@ -40,12 +38,7 @@ In this article, you'll walk through the process of building an Excel task pane 
     ```
 ## Explore the project
 
-The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. If you'd like to explore the components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
-
-- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
-- The **src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
-- The **src/taskpane/taskpane.css** file contains the CSS styles that are used by **taskpane.html**.
-- The **src/taskpane/taskpane.ts** file contains the Excel JavaScript API code that facilitates interaction between the task pane and the Excel workbook.
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-ts.md)]
 
 ## Try it out
 
@@ -63,7 +56,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
+Congratulations, you've successfully created an Excel task pane add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
 > [Excel add-in tutorial](../tutorials/excel-tutorial.md)
