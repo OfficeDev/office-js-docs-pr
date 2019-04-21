@@ -278,7 +278,7 @@
         - name: Custom functions metadata
           href: excel/custom-functions-json.md
           displayName: Excel
-        - name: Create custom function metadata
+        - name: Autogeneration of metadata
           href: excel/custom-functions-json-autogeneration.md
           displayName: Excel
         - name: Custom functions best practices
