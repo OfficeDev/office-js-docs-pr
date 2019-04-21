@@ -88,6 +88,8 @@ JavaScript Syntax: @param {type} name _description_
 To denote a custom function parameter as optional:
 * Put square brackets around the parameter name. For example: `@param {string} [text] Optional text`.
 
+Note that if you are using optional parameters and the data is not provided by Excel, the parameter by default will be populated with a `null` value.
+
 #### TypeScript
 
 TypeScript Syntax: @param name _description_
@@ -102,6 +104,8 @@ To denote a custom function parameter as optional, do one of the following:
 * Give the parameter a default value. For example: `function f(text: string = "abc")`
 
 For detailed description of the @param see: [JSDoc](http://usejsdoc.org/tags-param.html)
+
+Note that if you are using optional parameters and the data is not provided by Excel, the parameter by default will be populated with a `null` value.
 
 ---
 ### @requiresAddress
