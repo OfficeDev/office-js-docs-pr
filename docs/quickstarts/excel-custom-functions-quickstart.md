@@ -50,26 +50,30 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 4. Start the local web server, which runs in Node.js.
 
-    - If you use Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
+    > [!NOTE]
+    > Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands to start the web server, accept the prompt to install the certificate that the Yeoman generator provides. 
+
+    - If you use Excel for Windows to test your custom functions, run the following command: 
 
         ```
-         npm run start
+         npm run-script start:desktop
         ```
-        After running this command, your command prompt will show details about starting the web server. Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.
+        
+        When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
-    - If you use Excel Online to test your custom functions, run the following command to start the local web server:
+    - If you use Excel Online to test your custom functions, run the following command:
 
         ```
         npm run-script start:web
         ```
 
-        After running this command, your command prompt will show details about starting the web server. To use your functions, open a new workbook in Excel Online. In this workbook, you'll need to load your add-in. 
+        When you run this command, the local web server will start. To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, you'll need to load your add-in. 
 
-        To do this, select the **Insert** tab on the ribbon and select **Get Add-ins**. In the resulting new window, ensure you are on the **My Add-ins** tab. Next, select **Manage My Add-ins > Upload My Add-in**. Browse for your manifest file and upload it. If your add-in does not load, check you've completed step 3 correctly.
+        To do this, select the **Insert** tab on the ribbon and select **Get Add-ins**. In the resulting new window, ensure you are on the **My Add-ins** tab. Next, select **Manage My Add-ins > Upload My Add-in**. Browse for your manifest file and upload it.
 
 ## Try out the prebuilt custom functions
 
-The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **src/functions/functions.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
+The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
 In your Excel workbook, try out the `ADD` custom function by completing the following steps:
 
