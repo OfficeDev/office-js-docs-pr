@@ -14,19 +14,19 @@
   items:
   - name: Create Excel add-in
     items:
-    - name: Task pane add-in
+    - name: Task pane
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
-    - name: Task pane add-in (Angular)
+    - name: Task pane (Angular)
       href: quickstarts/excel-quickstart-angular.md
       displayName: Excel
-    - name: Task pane add-in (React)
+    - name: Task pane (React)
       href: quickstarts/excel-quickstart-react.md
       displayName: Excel
-    - name: Task pane add-in (Vue)
+    - name: Task pane (Vue)
       href: quickstarts/excel-quickstart-vue.md
       displayName: Excel
-    - name: Custom functions add-in
+    - name: Custom functions
       href: quickstarts/excel-custom-functions-quickstart.md
       displayName: Excel
   - name: Create Word add-in
@@ -219,19 +219,19 @@
       href: excel/excel-add-ins-get-started-overview.md
       displayName: Excel
       items:
-      - name: Task pane add-in
+      - name: Task pane
         href: quickstarts/excel-quickstart-jquery.md
         displayName: Excel
-      - name: Task pane add-in (Angular)
+      - name: Task pane (Angular)
         href: quickstarts/excel-quickstart-angular.md
         displayName: Excel
-      - name: Task pane add-in (React)
+      - name: Task pane (React)
         href: quickstarts/excel-quickstart-react.md
         displayName: Excel
-      - name: Task pane add-in (Vue)
+      - name: Task pane (Vue)
         href: quickstarts/excel-quickstart-vue.md
         displayName: Excel
-      - name: Custom functions add-in
+      - name: Custom functions
         href: quickstarts/excel-custom-functions-quickstart.md
         displayName: Excel
     - name: Excel add-in tutorial
