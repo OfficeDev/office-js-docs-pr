@@ -197,12 +197,12 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 - The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
-- The **src/taskpane/taskpane.css** file contains the CSS styles that are used in rendering the task pane.
+- The **src/taskpane/taskpane.css** file contains the CSS styles that are used by **taskpane.html**.
 - The **src/taskpane/taskpane.js** file contains the Excel JavaScript API code that facilitates interaction between the task pane and the Excel workbook.
 
 ### Try it out
 
-1. [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -210,7 +210,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 3. Select any range of cells in the worksheet.
 
-4. In the task pane, choose the **Run** link to set the color of the selected range to yellow.
+4. Scroll to the bottom of the task pane and choose the **Run** link to set the color of the selected range to yellow.
 
     ![Excel add-in](../images/excel-quickstart-addin-3c.png)
 
