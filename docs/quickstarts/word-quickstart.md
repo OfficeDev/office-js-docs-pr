@@ -447,7 +447,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ### Start the dev server
 
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+[!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
 ### Try it out
 
