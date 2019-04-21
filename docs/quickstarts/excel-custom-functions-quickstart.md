@@ -50,30 +50,39 @@ To start, you'll use the Yeoman generator to create the custom functions project
     npm run build
     ```
 
-4. Start the local web server, which runs in Node.js.
+4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows or Excel Online.
 
-    > [!NOTE]
-    > Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands to start the web server, accept the prompt to install the certificate that the Yeoman generator provides. 
+# [Excel for Windows](#tab/excel-windows)
 
-    - If you use Excel for Windows to test your custom functions, run the following command: 
+Run the following command. 
 
-        ```
-         npm run-script start:desktop
-        ```
-        
-        When you run this command, the local web server will start and Excel will open with your add-in loaded.
+```
+    npm run-script start:desktop
+```
 
-    - If you use Excel Online to test your custom functions, run the following command:
+> [!NOTE]
+> Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
 
-        ```
-        npm run-script start:web
-        ```
+When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
-        When you run this command, the local web server will start. To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, you'll need to load your add-in. 
+# [Excel Online](#tab/excel-online)
 
-        To do this, select the **Insert** tab on the ribbon and select **Get Add-ins**. In the resulting new window, ensure you are on the **My Add-ins** tab. Next, select **Manage My Add-ins > Upload My Add-in**. Browse for your manifest file and upload it.
+Run the following command.
 
-## Try out the prebuilt custom functions
+```
+npm run-script start:web
+```
+
+> [!NOTE]
+> Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
+
+When you run this command, the local web server will start. To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, you'll need to sideload your add-in.
+
+To do this, select the **Insert** tab on the ribbon and select **Get Add-ins**. In the resulting new window, ensure you are on the **My Add-ins** tab. Next, select **Manage My Add-ins > Upload My Add-in**. Browse for your manifest file and upload it.
+
+---
+
+## Try out a prebuilt custom function
 
 The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
