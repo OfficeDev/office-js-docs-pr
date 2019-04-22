@@ -30,4 +30,4 @@ You must specify one of the following values for the `Type` element.
 
 ## See also
 
-- [Make your Excel add-in backwards compatible with an existing COM add-in or Excel XLL](/office/dev/add-ins/excel/make-your-excel-add-in-backwards-compatible-with-com-add-in-or-xll.md)
+- [Make your Excel add-in backwards compatible with an existing COM add-in or Excel XLL](/office/dev/add-ins/excel/make-your-excel-add-in-backwards-compatible-with-com-add-in-or-xll)
