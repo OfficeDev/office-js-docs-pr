@@ -1,14 +1,14 @@
 ---
-title: Build your first PowerPoint add-in
+title: Build your first PowerPoint task pane add-in
 description: 
 ms.date: 01/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
 ---
 
-# Build your first PowerPoint add-in
+# Build your first PowerPoint task pane add-in
 
-In this article, you'll walk through the process of building a PowerPoint add-in by using jQuery and the Office JavaScript API.
+In this article, you'll walk through the process of building a PowerPoint task pane add-in.
 
 ## Create the add-in 
 
@@ -213,7 +213,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     > [!NOTE]
     > Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. 
 
-    - To test your add-in in PowerPoint, run the following command to start the local web server, launch Word, and sideload the add-in:
+    - To test your add-in in PowerPoint, run the following command to start the local web server, launch PowerPoint, and sideload the add-in:
 
         ```
         npm start
@@ -237,9 +237,6 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
     ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3c.png)
 
-4. test image
-
-    ![test image](../images/zztest.png)
 ---
 
 ## Next steps
