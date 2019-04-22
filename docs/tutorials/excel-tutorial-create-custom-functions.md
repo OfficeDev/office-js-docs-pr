@@ -133,6 +133,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
         // Note: in case of an error, the returned rejected Promise
         //    will be bubbled up to Excel to indicate an error.
     }
+    ```
 
     > [!NOTE]
     > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
