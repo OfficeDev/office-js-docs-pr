@@ -76,9 +76,17 @@ npm run-script start:web
 > [!NOTE]
 > Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
 
-When you run this command, the local web server will start. To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, you'll need to sideload your add-in.
+When you run this command, the local web server will start. To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
 
-To do this, select the **Insert** tab on the ribbon and select **Get Add-ins**. In the resulting new window, ensure you are on the **My Add-ins** tab. Next, select **Manage My Add-ins > Upload My Add-in**. Browse for your manifest file and upload it.
+1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+
+   ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+   
+2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
+
+3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
+
+4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 ---
 
