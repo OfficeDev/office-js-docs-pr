@@ -1,24 +1,20 @@
 ---
-title: Build your first Project add-in
+title: Build your first Project task pane add-in
 description: 
-ms.date: 01/17/2019
+ms.date: 04/23/2019
 ms.prod: project
 localization_priority: Priority
 ---
 
-# Build your first Project add-in
+# Build your first Project task pane add-in
 
-In this article, you'll walk through the process of building a Project add-in by using jQuery and the Office JavaScript API.
+In this article, you'll walk through the process of building a Project task pane add-in.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
-
-    ```bash
-    npm install -g yo generator-office
-    ```
+- Project 2016 or later for Windows 
 
 ## Create the add-in
 
@@ -28,12 +24,12 @@ In this article, you'll walk through the process of building a Project add-in by
     yo office
     ```
 
-    - **Choose a project type:** `Office Add-in project using Jquery framework`
+    - **Choose a project type:** `Office Add-in Task Pane project`
     - **Choose a script type:** `Javascript`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Project`
 
-    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-project-jquery.png)
+    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-project.png)
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 	
@@ -43,168 +39,81 @@ In this article, you'll walk through the process of building a Project add-in by
     cd "My Office Add-in"
     ```
 
+## Explore the project
+
+The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. 
+
+- The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
+- The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
+- The **./src/taskpane/taskpane.css** file contains the CSS styles that are used by **taskpane.html**.
+- The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
+
 ## Update the code
 
-1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.
+In your code editor, open the **./src/taskpane/taskpane.js** file and add the following code to the **run** function. This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.
 
-2. Replace the `<body>` element with the following markup.
+```js
+var taskGuid;
 
-    ```html
-    <body class="ms-font-m ms-welcome">
-        <div id="content-header">
-            <div class="padding">
-                <h1>Welcome</h1>
-            </div>
-        </div>
-        <div id="content-main">
-            <div class="padding">
-                <p>Select a task and then choose the buttons below and observe the output in the <b>Results</b> textbox.</p>
-                <h3>Try it out</h3>
-                <button class="ms-Button" id="get-task-guid">Get Task GUID</button>
-                <br/><br/>
-                <button class="ms-Button" id="get-task">Get Task data</button>
-                <br/>
-                <h4>Results:</h4>
-                <textarea id="result" rows="6" cols="25"></textarea>
-            </div>
-        </div>
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
-    ```
+// Get the GUID of the selected task
+Office.context.document.getSelectedTaskAsync(
+    function (result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+            taskGuid = result.value;
 
-3. Open the file **src/index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+            // Set the specified fields for the selected task.
+            var targetFields = [Office.ProjectTaskFields.Name, Office.ProjectTaskFields.Notes];
+            var fieldValues = ['New task name', 'Notes for the task.'];
 
-    ```js
-    'use strict';
-
-    (function () {
-
-        var taskGuid;
-
-        Office.onReady(function() {
-            // Office is ready
-            $(document).ready(function () {
-                // The document is ready
-                $('#get-task-guid').click(getTaskGUID);
-                $('#get-task').click(getTask);
-            });
-        });
-
-        function getTaskGUID() {
-            Office.context.document.getSelectedTaskAsync(function (asyncResult) {
-                if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-                    result.value = "Task GUID: " + asyncResult.value;
-                    taskGuid = asyncResult.value;
-                }
-                else {
-                    console.log(asyncResult.error.message);
-                }
-            });
-        }
-
-        function getTask() {
-            if (taskGuid != undefined) {
-                Office.context.document.getTaskAsync(
+            // Set the field value. If the call is successful, set the next field.
+            for (var i = 0; i < targetFields.length; i++) {
+                Office.context.document.setTaskFieldAsync(
                     taskGuid,
-                    function (asyncResult) {
-                        if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
-                            var taskInfo = asyncResult.value;
-                            var taskOutput = "Task name: " + taskInfo.taskName +
-                                            "\nGUID: " + taskGuid +
-                                            "\nWSS Id: " + taskInfo.wssTaskId +
-                                            "\nResource names: " + taskInfo.resourceNames;
-                            result.value = taskOutput;
-                        } else {
-                            console.log(asyncResult.error.message);
+                    targetFields[i],
+                    fieldValues[i],
+                    function (result) {
+                        if (result.status === Office.AsyncResultStatus.Succeeded) {
+                            i++;
+                        }
+                        else {
+                            var err = result.error;
+                            console.log(err.name + ' ' + err.code + ' ' + err.message);
                         }
                     }
                 );
-            } else {
-                result.value = 'Task GUID not valid:\n' + taskGuid;
-            } 
+            }
+        } else {
+            var err = result.error;
+            console.log(err.name + ' ' + err.code + ' ' + err.message);
         }
-    })();
-    ```
-
-4. Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.
-
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px; 
-        overflow: hidden;
     }
-
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto; 
-    }
-
-    .padding {
-        padding: 15px;
-    }
-    ```
-
-## Update the manifest
-
-1. Open the file **manifest.xml** to define the add-in's settings and capabilities.
-
-2. The `ProviderName` element has a placeholder value. Replace it with your name.
-
-3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Project**.
-
-4. Save the file.
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Project"/>
-    ...
-    ```
-
-## Start the dev server
-
-[!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+);
+```
 
 ## Try it out
 
-1. In Project, create a simple project that has at least one task.
+1. Start the local web server by running the following command:
 
-2. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.
+    ```
+    npm start
+    ```
 
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    > [!NOTE]
+    > Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start`, accept the prompt to install the certificate that the Yeoman generator provides. 
 
-3. In Project, select a task.
+2. In Project, create a simple project plan.
 
-    ![A screenshot of a project plan in Project with one task selected](../images/project_quickstart_addin_1.png)
+3. Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
-4. In the task pane, choose the **Get Task GUID** button to write the task GUID to the **Results** textbox.
+4. Select a single task within the project.
 
-    ![A screenshot of a project plan in Project with one task selected and the task GUID written to the textbox in the task pane](../images/project_quickstart_addin_2.png)
+5. Scroll to the bottom of the task pane and choose the **Run** link to rename the selected task and add notes to the selected task.
 
-5. In the task pane, choose the **Get Task data** button to write several properties of the selected task to the **Results** textbox.
-
-    ![A screenshot of a project plan in Project with one task selected and several task properties written to the textbox in the task pane](../images/project_quickstart_addin_3.png)
+    ![Screenshot of the Project application with the task pane add-in loaded](../images/project-quickstart-addin-1.png)
 
 ## Next steps
 
-Congratulations, you've successfully created a Project add-in! Next, learn more about the capabilities of a Project add-in and explore common scenarios.
+Congratulations, you've successfully created a Project task pane add-in! Next, learn more about the capabilities of a Project add-in and explore common scenarios.
 
 > [!div class="nextstepaction"]
 > [Project add-ins](../project/project-add-ins.md)

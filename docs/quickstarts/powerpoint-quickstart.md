@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: 
-ms.date: 01/17/2019
+ms.date: 04/23/2019
 ms.prod: powerpoint
 localization_priority: Priority
 ---
