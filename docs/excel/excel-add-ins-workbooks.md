@@ -264,7 +264,7 @@ context.application.suspendApiCalculationUntilNextSync();
 
 All the [comments](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) added to a workbook are tracked by the `Workbook.comments` property. This is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object, which maintains a collection of [Comment](/javascript/api/excel/excel.comment) objects. This collection contains comments created by the user and comments created by your add-in.
 
-Comments are added to the workbook with the `CommentCollection.add` method. This method is passed the comment's text, as a string, and the cell where the comment will go, as a string or [Range](/javascript/api/excel/excel.range) object. The following code sample adds a comment to cell **A2**.
+Comments are added to the workbook with the `CommentCollection.add` method. This method takes in the comment's text, as a string, and the cell where the comment will go, as a string or [Range](/javascript/api/excel/excel.range) object. The following code sample adds a comment to cell **A2**.
 
 ```js
 Excel.run(function (context) {
@@ -276,10 +276,11 @@ Excel.run(function (context) {
 });
 ```
 
-Comments contain metadata about their authors and creation dates. Comments created by your add-in are considered to be authored by the current user. The following sample shows how to console log the author's email, author's name, and creation date of a comment at **A2**.
+Comments contain metadata about their creation, such as the author and creation date. Comments created by your add-in are considered to be authored by the current user. The following sample shows how to display the author's email, author's name, and creation date of a comment at **A2**.
 
 ```js
 Excel.run(function (context) {
+    // Get the comment at cell A2.
     var comment = context.workbook.comments.getItemByCell("Comments!A2");
     comment.load(["authorEmail", "authorName", "creationDate"]);
     return context.sync().then(function () {
@@ -288,10 +289,11 @@ Excel.run(function (context) {
 });
 ```
 
-Every comment forms the head of a thread. `Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply]/javascript/api/excel/excel.commentreply) objects. `CommentReplyCollection.add` creates a new reply using the provided content string. Replies are displayed in the order they are added. The following code sample adds a reply to the first comment in the workbook.
+Every comment forms the head of a thread containing zero or more replies. `Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply]/javascript/api/excel/excel.commentreply) objects. `CommentReplyCollection.add` creates a new reply using the provided content string. Replies are displayed in the order they are added. The following code sample adds a reply to the first comment in the workbook.
 
 ```js
 Excel.run(function (context) {
+    // Get the first comment added to the workbook.
     var comment = context.workbook.comments.getItemAt(0);
     comment.replies.add("Thanks for the reminder!");
     return context.sync();
