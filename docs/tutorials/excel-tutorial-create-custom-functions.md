@@ -87,13 +87,15 @@ npm run-script start:web
 
 When you run this command, the local web server will start. To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
 
-<ol type="a">
-   <li>In Excel Online, choose the <strong>Insert</strong> tab and then choose <strong>Add-ins</strong>.<br/>
-   <img src="../images/excel-cf-online-register-add-in-1.png" alt="Insert ribbon in Excel Online with the My Add-ins icon highlighted"></li>
-   <li>Choose <strong>Manage My Add-ins</strong> and select <strong>Upload My Add-in</strong>.</li> 
-   <li>Choose <strong>Browse...</strong> and navigate to the root directory of the project that the Yeoman generator created.</li> 
-   <li>Select the file <strong>manifest.xml</strong> and choose <strong>Open</strong>, then choose <strong>Upload</strong>.</li>
-</ol>
+1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+
+   ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+   
+2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
+
+3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
+
+4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 --- 
     
