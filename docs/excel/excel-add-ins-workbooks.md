@@ -298,7 +298,7 @@ Excel.run(function (context) {
 });
 ```
 
-Comments and comment replies can be edited by setting their `Comment.content` or `CommentReply.content` properties. They can be deleted using the `Comment.delete` or `CommentReply.delete` methods.
+Comments and comment replies can be edited by setting their `Comment.content` or `CommentReply.content` properties. They can be deleted using the `Comment.delete` or `CommentReply.delete` methods. Deleting a comment also deletes all the replies associated with that comment.
 
 > [!TIP]
 >Comments can also be managed at the [Worksheet](/javascript/api/excel/excel.worksheet) level using the same techniques.
