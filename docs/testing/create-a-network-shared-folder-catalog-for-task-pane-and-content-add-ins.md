@@ -10,7 +10,7 @@ localization_priority: Priority
 You can install an Office Add-in for testing in an Office client running on Windows by publishing the manifest to a network file share (instructions below).
 
 > [!NOTE]
-> If your add-in project was created with the [**yo office** tool](https://github.com/OfficeDev/generator-office), there is an alternative way of sideloading it that might work for you. For details, see [Sideload Office Add-ins using the sideload command](sideload-office-addin-using-sideload-command.md).
+> If your add-in project was created with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), there is an alternate way of sideloading the add-in that might work for you. For details, see [Sideload Office Add-ins using the sideload command](sideload-office-addin-using-sideload-command.md).
 
 This article applies only to testing Word, Excel, PowerPoint, and Project add-ins on Windows. If you want to test on another platform or want to test an Outlook add-in, see one of the following topics to sideload your add-in:
 
