@@ -37,7 +37,7 @@ In this article, you'll walk through the process of building a OneNote task pane
     cd "My Office Add-in"
     ```
 
-## Update the code
+## Explore the project
 
 The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. 
 
@@ -46,7 +46,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 - The **./src/taskpane/taskpane.css** file contains the CSS styles that are used by **taskpane.html**.
 - The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
 
-Add the following code to the **run** function within the **./src/taskpane/taskpane.js** file. This code uses the OneNote JavaScript API to set the title of the page and add text to the body of the page.
+## Update the code
+
+Add the following code to the **run** function within the **./src/taskpane/taskpane.js** file. This code uses the OneNote JavaScript API to set the page title and add an outline to the body of the page.
 
 ```js
 try {
@@ -69,7 +71,6 @@ try {
     console.log("Error: " + error);
 }
 ```
-
 
 ## Try it out
 
@@ -98,7 +99,7 @@ try {
 
 4. From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
 
-5. Scroll to the bottom of the task pane and choose the **Run** link to set the title of the page and add a list to the body of the page.
+5. Scroll to the bottom of the task pane and choose the **Run** link to set the page title and add an outline to the body of the page.
 
     ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in-4.png)
 
