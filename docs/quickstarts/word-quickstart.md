@@ -290,7 +290,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 3. Add some text to the document and then select the text that you've added.
 
-4. Scroll to the bottom of the task pane and choose the **Run** link to set the color of the selected range to red.
+4. Scroll to the bottom of the task pane and choose the **Run** link to set the color of the selected text to red.
 
     ![Screenshot of the Word application with the task pane add-in loaded](../images/word-quickstart-addin-1c.png)
 
