@@ -41,45 +41,45 @@ Complete the steps in one of the following sections to set up an add-in catalog 
 
 9. To add an add-in to the Office Add-ins add-in catalog, choose **Apps for Office**.
 
-### To set up an add-in catalog on Office 365
+### To set up an app catalog on Office 365
 
-1. On the Office 365 admin center page, choose  **Admin**, and then choose  **SharePoint**.
+Even though SharePoint names the catalog an "app" catalog, you can register Office Add-ins in the app catalog.
 
-2. In the left task pane, choose  **add-ins**.
+1. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
 
-3. On the  **add-ins** page, choose **Add-in Catalog**.
+    > [!NOTE]
+    > You need to use the Classic SharePoint admin center to set up the catalog. If you are in the new SharePoint admin center, choose **Class SharePoint admin center** in the left pane.
 
-4. On the  **Add-in Catalog Site** page, choose **OK** to accept the default option and create a new add-in catalog site.
+2. In the left task pane, choose  **apps**.
 
-5. On the  **Create Add-in Catalog Site Collection** page, specify the title of your Add-in Catalog site.
+3. On the **apps** page, choose **App Catalog**.
 
-6. Specify the web site address.
+4. On the **App Catalog Site** page, choose **OK** to accept the default option and create a new add-in catalog site.
 
-7. Set the  **Storage Quota** to the lowest possible value (currently 110). You will only be installing add-in packages on this site collection and they are very small.
+5. On the **Create App Catalog Site Collection** page, specify the title of your App Catalog site.
 
-8. Set the  **Server Resource Quota** to 0 (zero). (The server resource quota is related to throttling poorly performing sandboxed solutions, but you won't be installing any sandboxed solutions on your add-in catalog site.)
+6. Specify the **Web Site Address**.
 
-9. Choose  **OK**.
+7. Specify an **Administrator**.
 
-10. To add an add-in to the Add-in Catalog Site, browse to the site you have just created. In the left navigation pane, choose  **Office Add-ins**, and then, to upload an Office Add-in manifest file, choose  **new add-in**.
+8. Set the **Server Resource Quota** to 0 (zero). (The server resource quota is related to throttling poorly performing sandboxed solutions, but you won't be installing any sandboxed solutions on your app catalog site.)
 
-## Publish an add-in to an add-in catalog
+9. Choose **OK**.
 
-To publish an add-in to an add-in catalog, complete the following steps.
+To add an add-in to the App Catalog Site, browse to the site you have just created. One way to find the app catalog is to choose **site collections** in the left pane, and the app catalog URL will appear in the list of site collections. Once in the app catalog you can add Office add-ins using steps in the next section.
 
-1. Browse to the add-in catalog:
+## Publish an add-in to an app catalog
 
-    - Open the SharePoint Central Administration main page.
+To publish an add-in to an existing app catalog, complete the following steps.
 
-    - Select  **Add-ins**.
+1. Browse to the app catalog:
 
-    - Select  **Manage Add-in Catalog**.
+    - Open the App Catalog Site. If you are not sure how to find it, open the Classic SharePoint admin center page and then choose **site collections** in the left pane. The app catalog URL will be listed along with the other site collections.
 
-    - Choose the link provided, and then choose  **Office Add-ins** on the left navigation bar.
-
-2. Choose the  **Click to add new item** link.
-
-3. Choose  **Browse**, and then specify the [manifest](../develop/add-in-manifests.md) to upload.
+2. Choose **Apps for Office** in the left pane.
+3. In the **Apps for Office** page, choose **new**.
+4. In the **Add a document** dialog, select the **Choose Files** button.
+5. Locate and specify the [manifest](../develop/add-in-manifests.md) file to upload.
 
     Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
 
