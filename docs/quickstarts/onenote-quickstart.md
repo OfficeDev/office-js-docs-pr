@@ -60,7 +60,7 @@ try {
         // Queue a command to set the page title.
         page.title = "Hello World";
 
-        // Add text to the page by using the specified HTML.
+        // Queue a command to add an outline to the page.
         var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
