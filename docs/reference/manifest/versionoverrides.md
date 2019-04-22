@@ -29,6 +29,7 @@ The root element that contains information for the add-in commands implemented b
 |  [Resources](./resources.md)    |  Yes  | Defines a collection of resources (strings, URLs, and images) that other manifest elements reference.|
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing-multiple-versions) for details. |
 |  **WebApplicationInfo**    |  No  | Specifies details about the add-in's associated Web application. |
+| **EquivalentAddins** | No | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. |
 
 ### VersionOverrides example
 

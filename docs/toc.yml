@@ -308,6 +308,9 @@
         - name: Custom functions troubleshooting
           href: excel/custom-functions-troubleshooting.md
           displayName: Excel
+      - name: Enable compatibility with COM add-in or XLL
+        href: excel/make-your-excel-add-in-backwards-compatible-with-com-add-in-or-xll.md
+        displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
         displayName: Excel
@@ -714,6 +717,12 @@
       href: reference/manifest/disableentityhighlighting.md
     - name: DisplayName
       href: reference/manifest/displayname.md
+    - name: EquivalentAddin
+      href: reference/manifest/equivalentaddin.md
+    - name: EquivalentAddins
+      href: reference/manifest/equivalentaddins.md
+    - name: FileName
+      href: reference/manifest/filename.md
     - name: Form
       href: reference/manifest/form.md
     - name: FormSettings
@@ -744,6 +753,8 @@
       href: reference/manifest/permissions.md
     - name: PhoneSettings
       href: reference/manifest/phonesettings.md
+    - name: ProgID
+      href: reference/manifest/progid.md
     - name: ProviderName
       href: reference/manifest/providername.md
     - name: QueryUri
@@ -770,6 +781,8 @@
       href: reference/manifest/targetdialect.md
     - name: TargetDialects
       href: reference/manifest/targetdialects.md
+    - name: Type
+      href: reference/manifest/type.md
     - name: Version
       href: reference/manifest/version.md
     - name: VersionOverrides
