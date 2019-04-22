@@ -9,7 +9,7 @@ localization_priority: Normal
 
 specifies if the equivalent add-in is a COM addin or an XLL.
 
-**Add-in type:** Custom function
+**Add-in type:** Task pane, Custom function
 
 ## Syntax
 

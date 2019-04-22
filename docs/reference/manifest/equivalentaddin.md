@@ -9,7 +9,7 @@ localization_priority: Normal
 
 specifies backwards compatibility for an equivalent COM add-in, or XLL.
 
-**Add-in type:** Custom function
+**Add-in type:** Task pane, Custom function
 
 ## Syntax
 
