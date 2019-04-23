@@ -1,7 +1,7 @@
 ---
 title: Add-in commands for Excel, Word, and PowerPoint
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/05/2019
 localization_priority: Priority
 ---
 
@@ -54,6 +54,10 @@ Add-in commands are currently supported on the following platforms:
 - Office Online
 
 More platforms are coming soon.
+
+## Debugging
+
+To debug an Add-in Command, you must run it in Office Online. For details, see [Debug add-ins in Office Online](../testing/debug-add-ins-in-office-online.md).
 
 ## Best practices
 

@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/17/2019
 localization_priority: Normal
 ---
 
@@ -24,6 +24,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 | Member | Type |
 |--------|------|
 | [ewsUrl](#ewsurl-string) | Member |
+| [masterCategories](#mastercategories-mastercategories) | Member |
 | [restUrl](#resturl-string) | Member |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Method |
@@ -74,6 +75,45 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+---
+---
+
+#### masterCategories :[MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+Gets an object that provides methods to manage the categories master list on this mailbox.
+
+> [!NOTE]
+> This member is not supported in Outlook for iOS or Outlook for Android.
+
+##### Type
+
+*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| Preview |
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox |
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
+
+##### Example
+
+This example gets the categories master list for this mailbox.
+
+```javascript
+Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  } else {
+    console.log("Master categories: " + JSON.stringify(asyncResult.value));
+  }
+});
+```
+
+---
+---
 
 #### restUrl :String
 
@@ -142,6 +182,9 @@ function loadNewItem(eventArgs) {
 }
 ```
 
+---
+---
+
 ####  convertToEwsId(itemId, restVersion) → {String}
 
 Converts an item ID formatted for REST into EWS format.
@@ -181,6 +224,9 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
+---
+---
+
 ####  convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
 
 Gets a dictionary containing time information in local client time.
@@ -207,6 +253,9 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 
 Type:
 [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
+
+---
+---
 
 ####  convertToRestId(itemId, restVersion) → {String}
 
@@ -247,6 +296,9 @@ var ewsId = Office.context.mailbox.item.itemId;
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
+---
+---
+
 ####  convertToUtcClientTime(input) → {Date}
 
 Gets a Date object from a dictionary containing time information.
@@ -278,6 +330,9 @@ A Date object with the time expressed in UTC.
 <dd>Date</dd>
 
 </dl>
+
+---
+---
 
 ####  displayAppointmentForm(itemId)
 
@@ -314,6 +369,9 @@ If the specified item identifier does not identify an existing appointment, a bl
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
+---
+---
+
 ####  displayMessageForm(itemId)
 
 Displays an existing message.
@@ -348,6 +406,9 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 ```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+---
+---
 
 #### displayNewAppointmentForm(parameters)
 
@@ -409,6 +470,9 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
+---
+---
+
 #### displayNewMessageForm(parameters)
 
 Displays a form for creating a new message.
@@ -467,6 +531,9 @@ Office.context.mailbox.displayNewMessageForm(
   });
 ```
 
+---
+---
+
 #### getCallbackTokenAsync([options], callback)
 
 Gets a string that contains a token used to call REST APIs or Exchange Web Services.
@@ -522,6 +589,9 @@ function cb(asyncResult) {
 }
 ```
 
+---
+---
+
 #### getCallbackTokenAsync(callback, [userContext])
 
 Gets a string that contains a token used to get an attachment or item from an Exchange Server.
@@ -561,6 +631,9 @@ function cb(asyncResult) {
 }
 ```
 
+---
+---
+
 ####  getUserIdentityTokenAsync(callback, [userContext])
 
 Gets a token identifying the user and the Office Add-in.
@@ -593,6 +666,9 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+---
+---
 
 ####  makeEwsRequestAsync(data, callback, [userContext])
 
@@ -691,6 +767,9 @@ function callback(asyncResult)  {
   // Process the returned response here.
 }
 ```
+
+---
+---
 
 ####  removeHandlerAsync(eventType, [options], [callback])
 
