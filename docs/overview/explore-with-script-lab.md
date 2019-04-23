@@ -31,6 +31,10 @@ Script Lab is supported for Excel, Word, and PowerPoint on the following clients
 - Office 2013 or later for Windows
 - Office 2016 or later for Mac
 
+## Next steps
+
+When you're ready to create your Office Add-in, try out the [5-minute quick start](/office/dev/add-ins/#5-minute-quick-starts) for your preferred Office application.
+
 ## See also
 
 - [Get Script Lab](https://store.office.com/app.aspx?assetid=WA104380862)
