@@ -1,5 +1,5 @@
 ---
-ms.date: 03/29/2019
+ms.date: 04/23/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -226,8 +226,8 @@ function secondHighest(values){
 
 In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
 
-- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
-- Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
+- Formatting ranges: Use the cell's address as the key to store information in [Office.Storage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `Office.Storage`.
+- Displaying cached values: If your function is used offline, display stored cached values from `Office.Storage` using `onCalculated`.
 - Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
 The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
