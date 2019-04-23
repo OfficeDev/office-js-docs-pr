@@ -12,7 +12,7 @@ Custom functions can perform mathematical calculations and request information f
 
 Custom functions are considered streaming if they request data at set intervals. While it is more common for streaming functions to request web data, they can also perform calculations or other offline actions at set intervals.
 
-The following example shows a clock function that returns the time each second. Note that this function uses the invocationContext parameter, which is automatically available as a parameter in your custom function. The function also implements a cancellation handler, which is a best practice when creating a streaming function.
+The following example shows a clock function that returns the time each second. This function uses the `invocationContext` parameter, which is always available as the last parameter in any custom function. The function also implements a cancellation handler, which is a best practice when creating a streaming function.
 
 ```JavaScript
 function clock(invocation) {
