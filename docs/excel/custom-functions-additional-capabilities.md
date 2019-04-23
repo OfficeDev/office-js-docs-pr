@@ -1,5 +1,5 @@
 ---
-ms.date: 03/14/2019
+ms.date: 04/23/2019
 description: Learn to implement volatile and offline streaming custom functions.
 title: Offline options for Excel custom functions (preview)
 localization_priority: Normal
