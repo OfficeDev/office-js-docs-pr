@@ -257,19 +257,22 @@
         displayName: Excel
       - name: Custom functions
         items:
-        - name: Custom functions overview
+        - name: Overview
           href: excel/custom-functions-overview.md
           displayName: Excel
-        - name: Custom functions quickstart
+        - name: Architecture
+          href: excel/custom-functions-architecture.md
+          displayName: Excel
+        - name: Quickstart
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
-        - name: Custom functions tutorial
+        - name: Tutorial
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
-        - name: Custom functions web requests
+        - name: Web requests
           href: excel/custom-functions-web-reqs.md
           displayName: Excel
-        - name: Custom functions runtime
+        - name: Runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
         - name: Custom functions additional capabilities
@@ -278,31 +281,37 @@
         - name: Custom functions parameter options
           href: excel/custom-functions-parameter-options.md
           displayName: Excel
-        - name: Custom functions metadata
+        - name: Metadata
           href: excel/custom-functions-json.md
           displayName: Excel
-        - name: Custom functions best practices
+        - name: Custom function metadata
+          href: excel/custom-functions-json-autogeneration.md
+          displayName: Excel
+        - name: Best practices
           href: excel/custom-functions-best-practices.md
           displayName: Excel
-        - name: Custom functions authentication
+        - name: Debugging
+          href: excel/custom-functions-debugging.md
+          displayName: Excel
+        - name: Authentication
           href: excel/custom-functions-authentication.md
           displayName: Excel
-        - name: Custom functions dialog
+        - name: Dialog
           href: excel/custom-functions-dialog.md
           displayName: Excel
-        - name: Custom functions changelog
+        - name: Changelog
           href: excel/custom-functions-changelog.md
           displayName: Excel
-        - name: Custom functions error handling
+        - name: Error handling
           href: excel/custom-functions-errors.md
           displayName: Excel
-        - name: Custom functions requirements
+        - name: Requirements
           href: excel/custom-functions-requirements.md
           displayName: Excel
-        - name: Custom functions naming guidelines
+        - name: Naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
-        - name: Custom functions troubleshooting
+        - name: Troubleshooting
           href: excel/custom-functions-troubleshooting.md
           displayName: Excel
       - name: Data validation

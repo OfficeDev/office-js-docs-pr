@@ -1,7 +1,7 @@
 ---
 title: Apply conditional formatting to ranges with the Excel JavaScript API
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Normal
 ---
 
@@ -28,7 +28,7 @@ The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/
 -	`topBottom`
 
 > [!NOTE]
-> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [*OrNullObject methods](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods) section.
+> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [*OrNullObject methods](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods) section.
 
 Only one format type can be set for the ConditionalFormat object. This is determined by the `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value. `type` is set when adding a conditional format to a range. 
 
