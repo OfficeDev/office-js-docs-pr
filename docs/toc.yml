@@ -305,6 +305,9 @@
         - name: Custom functions naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
+        - name: Batching custom functions
+          href: excel/custom-functions-batching.md
+          displayName: Excel
         - name: Custom functions troubleshooting
           href: excel/custom-functions-troubleshooting.md
           displayName: Excel
