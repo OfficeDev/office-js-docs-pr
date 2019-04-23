@@ -22,7 +22,7 @@ Excel has a number of built-in error messages which are returned to a cell if th
 
 ### My add-in won't load: verify certificates
 
-If your add-in fails to install, verify that the SSL certificates are configured correctly for the web server that's hosting your add-in. Typically if there is a problem with SSL certificates, you will see an error message in Excel warning you that your add-in could not be installed properly. For more information, see [Adding self-signed certificates as trusted root certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+If your add-in fails to install, verify that the SSL certificates are configured correctly for the web server that's hosting your add-in. Typically if there is a problem with SSL certificates, you will see an error message in Excel warning you that your add-in could not be installed properly. For more information, see [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ### My functions won't load: associate functions
 

@@ -25,7 +25,7 @@ On Mac:
 
 ## Requirements
 
-Before starting to debug, you should use the [Yeoman generator for Office add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project and ensure that you've trusted the certificate that the Yeoman generator provides. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). For information about trusting the certificate that the Yeoman generator provides, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+Before starting to debug, you should use the [Yeoman generator for Office add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project and ensure that you've trusted the certificate that the Yeoman generator provides. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). For information about trusting the certificate that the Yeoman generator provides, see [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ## Use the VS Code debugger for Excel Desktop
 
