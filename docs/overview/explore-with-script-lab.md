@@ -33,7 +33,7 @@ Script Lab is supported for Excel, Word, and PowerPoint on the following clients
 
 ## Next steps
 
-When you're ready to create your Office Add-in, try out the [5-minute quick start](/office/dev/add-ins/#5-minute-quick-starts) for your preferred Office application.
+When you're ready to create your Office Add-in, see the [5-minute quick start](/office/dev/add-ins/#5-minute-quick-starts) for your preferred Office application.
 
 ## See also
 
