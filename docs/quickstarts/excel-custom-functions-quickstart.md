@@ -61,7 +61,7 @@ Run the following command.
 ```
 
 > [!NOTE]
-> Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
 
 When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
@@ -74,7 +74,7 @@ npm run-script start:web
 ```
 
 > [!NOTE]
-> Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
 
 When you run this command, the local web server will start. To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
 

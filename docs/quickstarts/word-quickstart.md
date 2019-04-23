@@ -266,7 +266,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 1. Start the local web server and sideload your add-in.
 
     > [!NOTE]
-    > Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. 
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. 
 
     - To test your add-in in Word, run the following command to start the local web server, launch Word, and sideload the add-in:
 
