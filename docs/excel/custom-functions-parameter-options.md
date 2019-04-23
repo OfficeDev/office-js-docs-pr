@@ -1,5 +1,5 @@
 ---
-ms.date: 03/14/2019
+ms.date: 04/23/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions (preview)
 localization_priority: Normal
@@ -10,7 +10,9 @@ Custom functions are configurable with many different options for parameters.
 
 ## Optional parameters
 
-In Excel for Windows (version 1812 or later), you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
+Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. 
+
+For example, a function `=MAKEPIZZA` with one required parameter called `cheese` and one optional parameter called `anchovies` would appear as `=MAKEPIZZA(cheese, [anchovies])` in Excel.
 
 To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s Formula UI.
 

@@ -1,23 +1,24 @@
 ---
 ms.date: 04/23/2019
 description: Learn to implement volatile and offline streaming custom functions.
-title: Offline options for Excel custom functions (preview)
+title: Additional capabilities of custom functions (preview)
 localization_priority: Normal
 ---
-# Custom functions additional capabilities
 
-Custom functions can perform mathematical calculations and request information from external sources, such as the web. However, they also have some additional capabilities including streaming, cancelling, and handling volatile functions.
+# Additional capabilities of custom functions
+
+Custom functions can perform mathematical calculations and request information from external sources. More advanced custom functions can start and stop the streaming of data, cancel operations, and handle volatile values within functions.
 
 ## Offline streaming
 
-Custom functions are considered streaming if they request data at set intervals. While it is more common for streaming functions to request web data, they can also perform calculations or other offline actions at set intervals.
+Custom functions are considered streaming if they request data at set intervals. While it is more common for streaming functions to request web data, they can also regularly perform calculations or other offline actions.
 
 The following example shows a clock function that returns the time each second. This function uses the `invocationContext` parameter, which is always available as the last parameter in any custom function. The function also implements a cancellation handler, which is a best practice when creating a streaming function.
 
 ```JavaScript
 function clock(invocation) {
   const timer = setInterval() {
-    const time = currentTime();
+    var time = currentTime();
     invocation.setResult(time);
   }, 1000);
 
@@ -56,7 +57,7 @@ Streaming data from the web requires the same `options` to be declared in the JS
 
 It is a best practice to write a cancellation handler for streaming functions. A cancellation handler can reduce a function's bandwidth consumption, working memory, and CPU load.
 
-Excel automatically cancels the execution of a function in the following situations:
+Excel automatically cancels a function's execution in the following situations:
 
 - When the user edits or deletes a cell that references the function.
 
@@ -64,33 +65,17 @@ Excel automatically cancels the execution of a function in the following situati
 
 - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
-To enable the ability to cancel a function, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
+If you are autogenerating your JSON file, you can declare a cancelable function by using the tag `@cancelable`.
 
 ## Volatile values in functions
 
-Volatile functions are functions in which the value changes each time the cell is calculated. The value can change even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
+Volatile functions are functions in which the value changes each time the cell is calculated. The value can change even if none of the function's arguments change. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
 
-Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
+Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
-Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.
+Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require the generation of random inputs to determine an optimal solution.
 
-To declare a function volatile, add `"volatile": true` within the `options` object  for the function in the JSON metadata file, as shown in the following code sample. Note that a function cannot be marked both `"streaming": true` and `"volatile": true`; in the case where both are marked `true` the volatile option will be ignored.
-
-```json
-{
- "id": "TOMORROW",
-  "name": "TOMORROW",
-  "description":  "Returns tomorrow’s date",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-      "type": "string",
-      "dimensionality": "scalar"
-  },
-  "options": {
-      "volatile": true
-  }
-}
-```
+If choosing to autogenerate your JSON file, declare a volatile function with the JSDOC comment tag `@volatile`.
 
 ## See also
 
