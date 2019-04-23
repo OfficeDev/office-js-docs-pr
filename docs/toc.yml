@@ -9,6 +9,9 @@
   - name: Host and platform availability
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+  - name: Explore Office JS API using Script Lab
+    href: overview/explore-with-script-lab.md
+    displayName: Excel, Word, PowerPoint, Project
 
 - name: Quick Starts
   items:
