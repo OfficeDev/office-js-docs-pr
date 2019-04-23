@@ -92,7 +92,7 @@ function secondHighest(values){
 
 ## Invocation context parameter
 
-Every custom function automatically contains an `invocationContext` argument, which is invisibly present at the end of any list of parameters. Even if you declare no parameters, your custom function will have this parameter. This argument is not explicitly stated, so it does not appear to the end user in Excel, nor is it present in the code in your script files.
+Every custom function is automatically passed an `invocationContext` argument as the last argument. Even if you declare no parameters, your custom function will have this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocationContext` in your custom function, declare it as the last parameter.
 
 In the following code sample, you'll see the invocationContext explicitly stated for your reference.
 
