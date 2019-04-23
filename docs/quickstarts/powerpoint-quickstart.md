@@ -233,7 +233,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
     ![A screenshot of PowerPoint with the Show Taskpane button highlighted](../images/powerpoint_quickstart_addin_1c.png)
 
-3. Scroll to the bottom of the task pane and choose the **Run** link to insert the text "Hello World" into the current slide.
+3. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
 
     ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3c.png)
 

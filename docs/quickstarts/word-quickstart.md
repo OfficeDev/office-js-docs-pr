@@ -284,13 +284,11 @@ In this article, you'll walk through the process of building a Word task pane ad
 
         When you run this command, the local web server will start. To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
 
-2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
 
-3. Add some text to the document and then select the text that you've added.
-
-4. Scroll to the bottom of the task pane and choose the **Run** link to set the color of the selected text to red.
+3. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
 
     ![Screenshot of the Word application with the task pane add-in loaded](../images/word-quickstart-addin-1c.png)
 

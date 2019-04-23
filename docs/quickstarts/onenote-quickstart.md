@@ -48,7 +48,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Update the code
 
-In your code editor, open the **./src/taskpane/taskpane.js** file and add the following code within the **run** function. This code uses the OneNote JavaScript API to set the page title and add an outline to the body of the page.
+In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the OneNote JavaScript API to set the page title and add an outline to the body of the page.
 
 ```js
 try {
@@ -99,7 +99,7 @@ try {
 
 4. From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
 
-5. Scroll to the bottom of the task pane and choose the **Run** link to set the page title and add an outline to the body of the page.
+5. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
 
     ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in-4.png)
 

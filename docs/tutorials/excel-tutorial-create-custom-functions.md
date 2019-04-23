@@ -150,7 +150,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
     Before Excel can use your custom function, you need to describe it using metadata. You need to define the `id` used in the `associate` method previously, along with some other metadata.
 
 
-4. Open the **./src/functions/functions.json** file. Add the following JSON object to the 'functions' array and save the file.
+4. Open the file **./src/functions/functions.json**. Add the following JSON object to the 'functions' array and save the file.
 
     ```JSON
     {

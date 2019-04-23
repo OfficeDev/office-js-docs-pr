@@ -197,7 +197,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 3. Select any range of cells in the worksheet.
 
-4. Scroll to the bottom of the task pane and choose the **Run** link to set the color of the selected range to yellow.
+4. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
     ![Excel add-in](../images/excel-quickstart-addin-3c.png)
 

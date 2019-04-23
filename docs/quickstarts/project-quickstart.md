@@ -50,7 +50,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Update the code
 
-In your code editor, open the **./src/taskpane/taskpane.js** file and add the following code within the **run** function. This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.
+In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.
 
 ```js
 var taskGuid;
@@ -107,7 +107,7 @@ Office.context.document.getSelectedTaskAsync(
 
 4. Select a single task within the project.
 
-5. Scroll to the bottom of the task pane and choose the **Run** link to rename the selected task and add notes to the selected task.
+5. At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.
 
     ![Screenshot of the Project application with the task pane add-in loaded](../images/project-quickstart-addin-1.png)
 
