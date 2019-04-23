@@ -18,7 +18,7 @@ To make a parameter optional, add `"optional": true` to the parameter in the JSO
 {
     "id": "ADD",
     "name": "ADD",
-    "description": "Add two numbers",
+    "description": "Adds two or more numbers",
     "helpUrl": "http://www.contoso.com",
     "result": {
         "type": "number",
