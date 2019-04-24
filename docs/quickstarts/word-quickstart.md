@@ -268,21 +268,19 @@ In this article, you'll walk through the process of building a Word task pane ad
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. 
 
-    - To test your add-in in Word, run the following command to start the local web server, launch Word, and sideload the add-in:
+    - To test your add-in in Word, run the following command. When you run this command, the local web server will start and Word will open with your add-in loaded.
 
         ```
         npm start
         ```
 
-        When you run this command, the local web server will start and Word will open with your add-in loaded.
-
-    - To test your add-in in Word Online, run the following command to start the local web server:
+    - To test your add-in in Word Online, run the following command. When you run this command, the local web server will start.
 
         ```
         npm run-script start:web
         ```
 
-        When you run this command, the local web server will start. To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
+        To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
 
 2. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
