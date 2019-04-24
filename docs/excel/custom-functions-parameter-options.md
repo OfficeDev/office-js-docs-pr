@@ -108,7 +108,7 @@ The parameter allows you to get the context of the invoking cell, which can be h
 
 ### Addressing cell's context parameter
 
-In some cases you'll need to get the address of the cell that invoked your custom function. This is useful in the following types of scenarios:
+In some cases you need to get the address of the cell that invoked your custom function. This is useful in the following types of scenarios:
 
 - Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
