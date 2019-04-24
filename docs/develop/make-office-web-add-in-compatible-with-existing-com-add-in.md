@@ -7,33 +7,33 @@ localization_priority: Normal
 
 # Make your Office Web Add-in compatible with an existing COM add-in
 
-If you have an existing COM add-in, you can build equivalent functionality in your Office web add-in to extend your solution features to other platforms such as online or macOS. However, Office web add-ins don't have all of the functionality available in COM add-ins. Depending on the functionality your solution uses, the COM add-in may provide a better experience than the web add-in on Windows in Excel, Word, and PowerPoint.
+If you have an existing COM add-in, you can build equivalent functionality in your Office web add-in to extend your solution features to other platforms such as online or macOS. However, Office web add-ins don't have all of the functionality available in COM add-ins. Your COM add-in may provide a better experience than the web add-in on Windows in Excel, Word, and PowerPoint.
 
-You can configure your Office web add-in so that when an equivalent COM add-in is already installed on the user's computer, Office runs the COM add-in instead of your web add-in. The COM add-in is called equivalent because Office will seamlessly transition between the COM add-in and the web add-in depending on which is installed on Windows.
+You can configure your Office web add-in so that when an equivalent COM add-in is already installed on the user's computer, Office runs the COM add-in instead of your web add-in. The COM add-in is called "equivalent" because Office will seamlessly transition between the COM add-in and the web add-in depending on which is installed on Windows.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## Specify equivalent COM add-in in the manifest
+## Specify an equivalent COM add-in in the manifest
 
 To enable compatibility with an existing COM add-in, identify the equivalent COM add-in in the manifest of your web add-in. Then Office will use the COM add-in instead of your web add-in when running on Windows.
 
-Specify the `ProgID` of the equivalent COM add-in. Office will then use the COM add-in UI instead of your web add-in UI when the COM add-in is installed.
+Specify the `ProgID` of the equivalent COM add-in. Office will then use the COM add-in UI instead of your web add-in's UI when the COM add-in is installed.
 
 The following example shows how to specify both a COM add-in and an XLL as equivalent. Often you will specify both so for completeness this example shows both in context. They are identified by their `ProgID` and `FileName` respectively. For more information on XLL compatibility, see [Make your custom functions compatible with XLL user-defined functions](../excel/make-custom-functions-compatible-with-xll-udf.md).
 
 ```xml
 <VersionOverrides>
 ...
-<EquivalentAddins>  
-<EquivalentAddin>  
-       <ProgID>ContosoCOMAddin</ProgID>  
-       <Type>COM</Type>  
-  </EquivalentAddin>  
-  
-  <EquivalentAddin>  
-       <FileName>contosofunctions.xll</FileName>  
-       <Type>XLL</Type>  
-  </EquivalentAddin>  
+<EquivalentAddins>
+  <EquivalentAddin>
+    <ProgID>ContosoCOMAddin</ProgID>
+    <Type>COM</Type>
+  </EquivalentAddin>
+
+  <EquivalentAddin>
+    <FileName>contosofunctions.xll</FileName>
+    <Type>XLL</Type>
+  </EquivalentAddin>
 <EquivalentAddins>
 ...
 </VersionOverrides>
@@ -41,7 +41,7 @@ The following example shows how to specify both a COM add-in and an XLL as equiv
 
 ## Equivalent behavior for users
 
-When an equivalent COM add-in is specified in the web add-in manifest, Office suppresses your web add-in UI on Windows when the equivalent COM add-in is installed. This does not affect your web add-in UI on other platforms like online or macOS. Office only hides the ribbon buttons and does not prevent installation. Therefore your web add-in will still appear in the following UI locations:
+When an equivalent COM add-in is specified in the web add-in manifest, Office suppresses your web add-in's UI on Windows when the equivalent COM add-in is installed. This does not affect your web add-in's UI on other platforms like online or macOS. Office only hides the ribbon buttons and does not prevent installation. Therefore your web add-in will still appear in the following UI locations:
 
 - Under **My Add-ins** because it is technically installed.
 - As an entry in the ribbon manager.
