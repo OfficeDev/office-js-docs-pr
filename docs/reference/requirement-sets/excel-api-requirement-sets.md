@@ -20,15 +20,15 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 |  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | Preview  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
-| ExcelApi1.9  | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019       | Coming soon |
-| ExcelApi1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | Coming soon |
-| ExcelApi1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later  | 16.9 or later  | April 2018     | Coming soon |
-| ExcelApi1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later  | 15.36 or later | April 2017     | Coming soon |
-| ExcelApi1.5  | Version 1703 (Build 8067.2070) or later   | 2.2 or later  | 15.36 or later | March 2017     | Coming soon |
-| ExcelApi1.4  | Version 1701 (Build 7870.2024) or later   | 2.2 or later  | 15.36 or later | January 2017   | Coming soon |
-| ExcelApi1.3  | Version 1608 (Build 7369.2055) or later   | 1.27 or later | 15.27 or later | September 2016 | Version 1608 (Build 7601.6800) or later|
-| ExcelApi1.2  | Version 1601 (Build 6741.2088) or later   | 1.21 or later | 15.22 or later | January 2016   ||
-| ExcelApi1.1  | Version 1509 (Build 4266.1001) or later   | 1.19 or later | 15.20 or later | January 2016   ||
+| ExcelApi 1.9  | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019       | Coming soon |
+| ExcelApi 1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | Coming soon |
+| ExcelApi 1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later  | 16.9 or later  | April 2018     | Coming soon |
+| ExcelApi 1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later  | 15.36 or later | April 2017     | Coming soon |
+| ExcelApi 1.5  | Version 1703 (Build 8067.2070) or later   | 2.2 or later  | 15.36 or later | March 2017     | Coming soon |
+| ExcelApi 1.4  | Version 1701 (Build 7870.2024) or later   | 2.2 or later  | 15.36 or later | January 2017   | Coming soon |
+| ExcelApi 1.3  | Version 1608 (Build 7369.2055) or later   | 1.27 or later | 15.27 or later | September 2016 | Version 1608 (Build 7601.6800) or later|
+| ExcelApi 1.2  | Version 1601 (Build 6741.2088) or later   | 1.21 or later | 15.22 or later | January 2016   ||
+| ExcelApi 1.1  | Version 1509 (Build 4266.1001) or later   | 1.19 or later | 15.20 or later | January 2016   ||
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
