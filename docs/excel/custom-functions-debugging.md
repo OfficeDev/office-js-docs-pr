@@ -133,11 +133,11 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
 
 3. If you want to start your add-in in the desktop version of Excel, run the following command
     
-    `npm run start desktop`
+    `npm run start:desktop`
     
     Or if you prefer to start your add-in in Excel Online run the following command
     
-    `npm run start web`
+    `npm run start:web`
     
     For Excel Online you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
     
@@ -156,8 +156,8 @@ There are several build tasks available:
 - `npm run dev-server`: runs the web server used for development
 
 You can use the following tasks to start debugging on desktop or online.
-- `npm run start desktop`: Starts Excel on desktop and sideloads your add-in.
-- `npm run start web`: Starts Excel Online and sideloads your add-in.
+- `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in.
+- `npm run start:web`: Starts Excel Online and sideloads your add-in.
 - `npm run stop`: Stops Excel and debugging.
 
 ## See also
