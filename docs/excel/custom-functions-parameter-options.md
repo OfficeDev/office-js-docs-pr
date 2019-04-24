@@ -10,11 +10,11 @@ Custom functions are configurable with many different options for parameters.
 
 ## Optional parameters
 
-Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. 
+Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets.
 
 For example, a function `=MAKEPIZZA` with one required parameter called `cheese` and one optional parameter called `anchovies` would appear as `=MAKEPIZZA(cheese, [anchovies])` in Excel.
 
-To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s Formula UI.
+To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s formula UI.
 
 ```json
 {
@@ -50,7 +50,7 @@ To make a parameter optional, add `"optional": true` to the parameter in the JSO
 }
 ```
 
-When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to 98052. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
+When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to `98052`. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
 
 ```js
 function getWeatherReport(zipCode, dayOfWeek)
@@ -63,7 +63,7 @@ function getWeatherReport(zipCode, dayOfWeek)
     dayOfWeek = "Wednesday";
   }
 
-  // Get weather report for specified zipCode and dayOfWeek
+  // Get weather report for specified zipCode and dayOfWeek.
   // ...
 }
 ```
@@ -72,7 +72,7 @@ function getWeatherReport(zipCode, dayOfWeek)
 
 Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
 
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
+For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, the parameter's `type` property is set to `matrix`.
 
 ```js
 function secondHighest(values){
@@ -94,9 +94,9 @@ function secondHighest(values){
 
 ## Invocation context parameter
 
-Every custom function is automatically passed an `invocationContext` argument as the last argument. Even if you declare no parameters, your custom function will have this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocationContext` in your custom function, declare it as the last parameter.
+Every custom function is automatically passed an `invocationContext` argument as the last argument. Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocationContext` in your custom function, declare it as the last parameter.
 
-In the following code sample, you'll see the invocationContext explicitly stated for your reference.
+In the following code sample, the invocationContext explicitly stated for your reference.
 
 ```JavaScript
 subtract(one, two, invocationContext) {
@@ -106,11 +106,11 @@ subtract(one, two, invocationContext) {
 
 The parameter allows you to get the context of the invoking cell, which can be helpful in some scenarios including [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).
 
-## Addressing cell's context parameter
+### Addressing cell's context parameter
 
-In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
+In some cases you'll need to get the address of the cell that invoked your custom function. This is useful in the following types of scenarios:
 
-- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
 - Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
