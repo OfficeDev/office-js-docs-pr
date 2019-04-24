@@ -9,9 +9,11 @@ localization_priority: Priority
 
 If your custom functions call a remote service you can use a batching pattern to reduce the number of network calls to the remote service. To reduce network round trips you batch all the calls into a single call to the web service. This is ideal when the spreadsheet is recalculated. For example, if someone used your custom function in 100 cells in a spreadsheet, and then recalculated the spreadsheet, your custom function would run 100 times and make 100 network calls. By using a batching pattern, the calls can be combined to make all 100 calculations in a single network call.
 
-## Run the sample
+## View the completed sample
 
-If you want to try running a sample first to get started with the batching pattern, see [Custom function batching pattern](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching).
+You can follow this article and paste the code examples into your own project. For example, you can use yo office to create a new custom function project for TypeScript, then add all the code from this article to the project. you can then run the code and try it out.
+
+Also you can download or view the complete sample project at [Custom function batching pattern](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching). If you want to view the code in whole before reading any further, take a look at the [script file](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Excel-custom-functions/Batching/src/functions/functions.ts).
 
 ## Create the batching pattern in this article
 
@@ -21,9 +23,9 @@ To set up batching for your custom functions you'll need to write three main sec
 2. A function to make the remote request when the batch is ready.
 3. Server code to respond to the batch request, calculate all of the operation results, and return the values.
 
-In the following sections you will be shown how to construct the code one sample at a time. You'll add each code sample to your functions.ts file. It's recommended you create a brand new custom functions project using yo office. To create a new project see [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md).
+In the following sections you will be shown how to construct the code one example at a time. You'll add each code example to your functions.ts file. It's recommended you create a brand new custom functions project using yo office. To create a new project see [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md) and use TypeScript instead of JavaScript.
 
-## Batch each call
+## Batch each call to your custom function
 
 Your custom functions work by calling a remote service to perform the operation and calculate the result they need. This provides a way for them to store each requested operation into a batch. Later you'll see how to create a `_pushOperation` function to batch the operations. First, take a look at the following code example to see how to call `_pushOperation` from your custom function.
 
@@ -37,7 +39,7 @@ In the following code, the custom function performs division but relies on a rem
  * Divides two numbers using batching
  * @param dividend The number being divided
  * @param divisor The number the dividend is divided by
- * @returns The sum of the two numbers
+ * @returns The result of dividing the two numbers
  */
 function div2(dividend: number, divisor: number) {
   return _pushOperation(
@@ -49,7 +51,7 @@ function div2(dividend: number, divisor: number) {
 CustomFunctions.associate("DIV2", div2);
 ```
 
-Now to define the batch array which will store all operations to be passed in one network call to the remote service. The following code shows how to define an interface describing each batch entry in the array. The interface defines an operation, which is a string name of which operation to run. For example, if you had two custom functions named `multiply` and `divide`, you could reuse those as the operation names in your batch entries. `args` will hold the arguments that were passed to your custom function from Excel. And finally we store a promise to either `resolve` or `reject` depending on what information the remote service returns.
+Next, you will define the batch array which will store all operations to be passed in one network call. The following code shows how to define an interface describing each batch entry in the array. The interface defines an operation, which is a string name of which operation to run. For example, if you had two custom functions named `multiply` and `divide`, you could reuse those as the operation names in your batch entries. `args` will hold the arguments that were passed to your custom function from Excel. And finally, `resolve` or `reject` will store a promise holding the information the remote service returns.
 
 ```typescript
 interface IBatchEntry {
@@ -71,7 +73,7 @@ Finally when Excel calls your custom function, you need to push the operation in
 
 This code also checks to see if a batch is scheduled. In this example, each batch is scheduled to run every 100ms. You can adjust this value as needed. Higher values result in bigger batches being sent to the remote service, and a longer wait time for the user to see results. Lower values tend to send more batches to the remote service, but with a quick response time for users.
 
-### Add the _pushOperation function to functions.ts
+### Add the `_pushOperation` function to functions.ts
 
 ```typescript
 function _pushOperation(op: string, args: any[]) {
@@ -107,9 +109,9 @@ function _pushOperation(op: string, args: any[]) {
 
 ## Make the remote request
 
-The purpose of the `_makeRemoteRequest` function is to pass the batch of operations to the remote service, and then return the results back to each custom function. It first creates a copy of the batch array. This allows concurrent custom function calls from Excel to immediately begin batching in a new array. The copy is then turned into a simpler array that does not contain the promise information. It wouldn't make sense to pass the promises to a remote service since they would not work. The `_makeRemoteRequest will either reject or resolve each promise based on what the remote service returns.
+The purpose of the `_makeRemoteRequest` function is to pass the batch of operations to the remote service, and then return the results to each custom function. It first creates a copy of the batch array. This allows concurrent custom function calls from Excel to immediately begin batching in a new array. The copy is then turned into a simpler array that does not contain the promise information. It wouldn't make sense to pass the promises to a remote service since they would not work. The `_makeRemoteRequest will either reject or resolve each promise based on what the remote service returns.
 
-### Add the following _makeRemoteRequest method to functions.ts
+### Add the following `_makeRemoteRequest` method to functions.ts
 
 ```typescript
 function _makeRemoteRequest() {
@@ -141,9 +143,9 @@ function _makeRemoteRequest() {
 }
 ```
 
-### Modify _makeRemoteRequest for your own solution
+### Modify `_makeRemoteRequest` for your own solution
 
-The `_makeRemoteRequest` function calls `_fetchFromRemoteService` which as you'll see later is just a mock representing the remote service. This makes it easier to study and run the code in this article. But when you want to use this code for an actual remote service you should make the following changes:
+The `_makeRemoteRequest` function calls `_fetchFromRemoteService` which, as you'll see later, is just a mock representing the remote service. This makes it easier to study and run the code in this article. But when you want to use this code for an actual remote service you should make the following changes:
 
 - Decide how to serialize the batch operations over the network. For example, you may want to put the array into a JSON body.
 - Instead of calling `_fetchFromRemoteService` you'll need to make the actual network call to the remote service passing the batch of operations.
@@ -152,7 +154,7 @@ The `_makeRemoteRequest` function calls `_fetchFromRemoteService` which as you'l
 
 The last step is to handle the batch call in the remote service. The following code sample shows the `_fetchFromRemoteService` function. This function unpacks each operation, performs the specified operation, and returns the results. For learning purposes in this article, the `_fetchFromRemoteService` function is designed to run in your web add-in and mock a remote service. You can add this code to your functions.ts file so that you can study and run all the code in this article without having to set up an actual remote service.
 
-### Add the following _fetchFromRemoteService function to functions.ts
+### Add the following `_fetchFromRemoteService` function to functions.ts
 
 ```typescript
 async function _fetchFromRemoteService(
@@ -195,13 +197,13 @@ function pause(ms: number) {
 }
 ```
 
-### Modify _fetchFromRemoteService for your live remote service
+### Modify `_fetchFromRemoteService` for your live remote service
 
-To modify the `fetchFromRemoteService` function to run in your live remote service, make the following changes:
+To modify the `_fetchFromRemoteService` function to run in your live remote service, make the following changes:
 
-- Map from the client network call to this function.
+- Depending on your server platform (Node.js or others) map the client network call to this function.
 - Remove the `pause` function which simulates network latency as part of the mock.
-- Modify the function to unpack the actual network package that you defined (for example the batch array of operations may be a JSON body).
+- Modify the function declaration to work with the parameter passed if the parameter is changed for network purposes. For example, instead of an array, it may be a JSON body of batched operations to process.
 - Modify the function to perform the operations (or call functions that do the operations).
 - Apply an appropriate authentication mechanism. Ensure that only the correct callers can access the function.
 - Place the code in the remote service.
