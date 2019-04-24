@@ -464,7 +464,7 @@
       items:
       - name: Sideload Office Add-ins on iPad and Mac
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
-      - name: Debug on iPad and Mac
+      - name: Debug on Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: Usability testing
       href: develop/usability-testing.md
