@@ -7,17 +7,16 @@ localization_priority: Normal
 
 # EquivalentAddin element
 
-specifies backwards compatibility for an equivalent COM add-in, or XLL.
+Specifies backwards compatibility for an equivalent COM add-in or XLL.
 
 **Add-in type:** Task pane, Custom function
 
 ## Syntax
 
 ```XML
-<EquivalentAddin>  
-    <ProgID>{progid}</ProgID>  
-    <Type>COM</Type>  
-</EquivalentAddin>  
+<EquivalentAddin>
+   ...
+</EquivalentAddin>
 ```
 
 ## Contained in
@@ -39,4 +38,5 @@ To specify a COM add-in as the equivalent add-in, provide both the `ProgID` and 
 
 ## See also
 
-- [Make your Excel add-in backwards compatible with an existing COM add-in or Excel XLL](/office/dev/add-ins/excel/make-your-excel-add-in-backwards-compatible-with-com-add-in-or-xll)
+- [Make your custom functions compatible with XLL user-defined functions](../../excel/make-custom-functions-compatible-with-xll-udf.md)
+- [Make your Office Web Add-in compatible with an existing COM add-in](../../develop/make-office-web-add-in-compatible-with-existing-com-add-in.md)

@@ -164,6 +164,8 @@
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+      - name: Identify an equivalent COM add-in
+        href: develop/make-office-web-add-in-compatible-with-existing-com-add-in.md
       - name: How to find the proper order of manifest elements
         href: develop/manifest-element-ordering.md
 
@@ -305,12 +307,12 @@
         - name: Custom functions naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
+        - name: Identify an equivalent XLL
+          href: excel/make-custom-functions-compatible-with-xll-udf.md
+          displayName: Excel
         - name: Custom functions troubleshooting
           href: excel/custom-functions-troubleshooting.md
           displayName: Excel
-      - name: Enable compatibility with COM add-in or XLL
-        href: excel/make-your-excel-add-in-backwards-compatible-with-com-add-in-or-xll.md
-        displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
         displayName: Excel
