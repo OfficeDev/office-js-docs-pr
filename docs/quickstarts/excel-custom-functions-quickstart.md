@@ -57,22 +57,22 @@ To start, you'll use the Yeoman generator to create the custom functions project
 To test your add-in in Excel for Windows, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
 ```
-    npm run-script start:desktop
+    npm run start:desktop
 ```
 
 > [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
 
 # [Excel Online](#tab/excel-online)
 
 To test your add-in in Excel Online, run the following command. When you run this command, the local web server will start.
 
 ```
-npm run-script start:web
+npm run start:web
 ```
 
 > [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run-script start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
 
 To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
 

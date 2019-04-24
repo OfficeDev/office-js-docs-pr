@@ -222,7 +222,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
     - To test your add-in in PowerPoint Online, run the following command. When you run this command, the local web server will start.
 
         ```
-        npm run-script start:web
+        npm run start:web
         ```
 
         To use your add-in, open a new document in PowerPoint Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
