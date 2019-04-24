@@ -69,7 +69,7 @@ let _isBatchedRequestScheduled = false;
 
 Finally when Excel calls your custom function, you need to push the operation into the batch array. The following code shows how to add a new operation from a custom function. It creates a new batch entry, creates a new promise to resolve or reject the operation, and pushes the entry into the batch array.
 
-This code also checks to see if a batch is scheduled. In this case each batch is scheduled to run every 100ms. You can adjust this value as needed. Higher values will result in bigger batches being sent to the remote service, and a longer wait time for the user to see results. Lower values will tend to send more batches to the remote service, but with a quick response time for users.
+This code also checks to see if a batch is scheduled. In this example, each batch is scheduled to run every 100ms. You can adjust this value as needed. Higher values result in bigger batches being sent to the remote service, and a longer wait time for the user to see results. Lower values tend to send more batches to the remote service, but with a quick response time for users.
 
 ### Add the _pushOperation function to functions.ts
 
