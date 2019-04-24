@@ -103,18 +103,6 @@ try {
 
     ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in-4.png)
 
-## Troubleshooting and tips
-
-- You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.
-
-- When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.
-
-   ![Unloaded OneNote object in the debugger](../images/onenote-debug.png)
-
-- You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.
-
-- Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.). 
-
 ## Next steps
 
 Congratulations, you've successfully created a OneNote task pane add-in! Next, learn more about the core concepts of building OneNote add-ins.
