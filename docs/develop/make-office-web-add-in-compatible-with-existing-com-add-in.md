@@ -83,6 +83,3 @@ Once you specify an equivalent COM add-in for your web add-in, Office stops proc
 ## See also
 
 - [Make your Custom Functions compatible with XLL User Defined Functions](../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [Custom functions best practices](custom-functions-best-practices.md)
-- [Custom functions changelog](custom-functions-changelog.md)
-- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
