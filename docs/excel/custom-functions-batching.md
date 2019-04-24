@@ -60,7 +60,7 @@ interface IBatchEntry {
 }
 ```
 
-Next we create the batch array based on the previous interface. Also we create an `_isBatchedRequestSchedule variable to track if a batch is scheduled or not. This will be important later for timing batch calls to the remote service.
+Next, create the batch array that uses the previous interface. To track if a batch is scheduled or not, create an `_isBatchedRequestSchedule variable.  This will be important later for timing batch calls to the remote service.
 
 ```typescript
 const _batch: IBatchEntry[] = [];
