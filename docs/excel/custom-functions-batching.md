@@ -36,7 +36,7 @@ In the following code, the custom function performs division but relies on a rem
  * @CustomFunction
  * Divides two numbers using batching
  * @param dividend The number being divided
- * @param divisor The number to divide the dividend with
+ * @param divisor The number the dividend is divided by
  * @returns The sum of the two numbers
  */
 function div2(dividend: number, divisor: number) {
