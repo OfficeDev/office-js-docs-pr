@@ -27,7 +27,7 @@ In the following sections you will be shown how to construct the code one sample
 
 Your custom functions work by calling a remote service to perform the operation and calculate the result they need. This provides a way for them to store each requested operation into a batch. Later you'll see how to create a `_pushOperation` function to batch the operations. First, take a look at the following code example to see how to call `_pushOperation` from your custom function.
 
-In the following code the custom function performs division, but relies on a remote service to do the actual calculation. It calls `_pushOperation` to batch the operation along with other operations to the remote service. It names the operation **div2**. You can use any naming scheme you want for operations as long as the remote service is also using the same scheme (more on the remote service later). Also the arguments are passed which the remote service will need to run the operation.
+In the following code, the custom function performs division but relies on a remote service to do the actual calculation. It calls `_pushOperation` to batch the operation along with other operations to the remote service. It names the operation **div2**. You can use any naming scheme you want for operations as long as the remote service is also using the same scheme (more on the remote service later). Also, the arguments the remote service will need to run the operation are passed.
 
 ### Add the div2 custom function to functions.ts
 
