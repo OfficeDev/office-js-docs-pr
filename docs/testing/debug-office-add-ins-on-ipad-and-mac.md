@@ -1,5 +1,5 @@
 ---
-title: Debug Office Add-ins on Mac
+title: Debug Office Add-ins on a Mac
 description: ''
 ms.date: 04/24/2019
 localization_priority: Priority
