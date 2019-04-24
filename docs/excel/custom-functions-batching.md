@@ -15,7 +15,7 @@ If you want to try running a sample first to get started with the batching patte
 
 ## Create the batching pattern in this article
 
-To set up batching for your custom functions you will need to write three main sections of code.
+To set up batching for your custom functions you'll need to write three main sections of code.
 
 1. A push operation that adds a new operation to the batch of calls each time Excel calls your custom function.
 2. A function to make the remote request when the batch is ready.
