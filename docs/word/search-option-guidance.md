@@ -1,17 +1,18 @@
 ---
 title: Use search options to find text in your Word add-in 
 description: ''
-ms.date: 07/20/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
-# Use search options to find text in your Word add-in 
+# Use search options to find text in your Word add-in
 
 Add-ins frequently need to act based on the text of a document.
-A search function is exposed by every content control (this includes [Body](https://docs.microsoft.com/javascript/api/word/word.body), [Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph), [Range](https://docs.microsoft.com/javascript/api/word/word.range), [Table](https://docs.microsoft.com/javascript/api/word/word.table), [TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow), and the base [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol) object). This function takes in a string (or wldcard expression) representing the text you are searching for and a [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
+A search function is exposed by every content control (this includes [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow), and the base [ContentControl](/javascript/api/word/word.contentcontrol) object). This function takes in a string (or wldcard expression) representing the text you are searching for and a [SearchOptions](/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
 
 ## Search options
-The search options are a collection of boolean values defining how the search parameter should be treated. 
+
+The search options are a collection of boolean values defining how the search parameter should be treated.
 
 | Property	   | Description|
 |:---------------|:----|
@@ -24,6 +25,7 @@ The search options are a collection of boolean values defining how the search pa
 |matchWildcards|Gets or sets a value indicating whether the search will be performed using special search operators. Corresponds to the "Use wildcards" check box in the Find and Replace dialog box.|
 
 ## Wildcard guidance
+
 The following table provides guidance around the Word JavaScript API’s search wildcards.
 
 | To find:         | Wildcard |  Sample |
@@ -45,6 +47,7 @@ The following table provides guidance around the Word JavaScript API’s search 
 Wildcard search is essentially the same as searching on a regular expression. There are special characters in regular expressions, including '[', ']', '(', ')', '{', '}', '\*', '?', '<', '>', '!', and '@'. If one of these characters is part of the literal string the code is searching for, then it needs to be escaped, so that Word knows it should be treated literally and not as part of the logic of the regular expression. To escape a character in the Word UI search, you would precede it with a '\' character, but to escape it programmatically, put it between '[]' characters. For example, '[\*]\*' searches for any string that begins with a '\*' followed by any number of other characters. 
 
 ## Examples
+
 The following examples demonstrate common scenarios.
 
 ### Ignore punctuation search
@@ -52,14 +55,14 @@ The following examples demonstrate common scenarios.
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document and ignore punctuation.
     var searchResults = context.document.body.search('video you', {ignorePunct: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -70,8 +73,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = '#FFFF00'; //Yellow
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -89,13 +92,13 @@ Word.run(function (context) {
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document based on a prefix.
     var searchResults = context.document.body.search('vid', {matchPrefix: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
+
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
@@ -107,8 +110,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = '#FFFF00'; //Yellow
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -132,8 +135,8 @@ Word.run(function (context) {
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -144,8 +147,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = 'black';
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -163,14 +166,14 @@ Word.run(function (context) {
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document with a wildcard
     // for any string of characters that starts with 'to' and ends with 'n'.
     var searchResults = context.document.body.search('to*n', {matchWildCards: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
+
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
@@ -182,8 +185,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = 'pink';
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -196,4 +199,4 @@ Word.run(function (context) {
 });
 ```
 
-More information can be found in the [Word JavaScript Reference API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).
+More information can be found in the [Word JavaScript Reference API](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).

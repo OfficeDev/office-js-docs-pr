@@ -1,7 +1,7 @@
 ---
 title: Icon guidelines for Office Add-ins
 description: ''
-ms.date: 06/27/2018
+ms.date: 03/02/2019
 localization_priority: Priority
 ---
 
@@ -126,6 +126,9 @@ All modifiers should have a 1px transparent cutout between each element, includi
 
 
 ## Icon colors
+
+> [!NOTE]
+> These color guidelines are for ribbon icons used in [Add-in commands](add-in-commands.md). These icons are not rendered with Microsoft UI Fabric and the color palette is different from the palette described at [Microsoft UI Fabric | Colors | Shared](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color: 
 

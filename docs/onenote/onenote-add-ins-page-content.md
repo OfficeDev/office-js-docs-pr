@@ -1,7 +1,7 @@
 ---
 title: Work with OneNote page content
 description: ''
-ms.date: 1/10/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -18,14 +18,14 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 
 To create an empty OneNote page, use one of the following methods:
 
-- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
-- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
+- [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
 Then use methods in the following objects to work with the page content, such as `Page.addOutline` and `Outline.appendHtml`.
 
-- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
-- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
-- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph)
+- [Page](/javascript/api/onenote/onenote.page)
+- [Outline](/javascript/api/onenote/onenote.outline)
+- [Paragraph](/javascript/api/onenote/onenote.paragraph)
 
 The content and structure of a OneNote page are represented by HTML. Only a subset of HTML is supported for creating or updating page content, as described below.
 
@@ -57,6 +57,6 @@ Metadata such as title can still be queried for any page.
 ## See also
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

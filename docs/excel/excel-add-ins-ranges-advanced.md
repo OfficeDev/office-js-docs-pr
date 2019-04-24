@@ -1,13 +1,13 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 12/26/2018
+ms.date: 04/15/2019
 localization_priority: Normal
 ---
 
 # Work with ranges using the Excel JavaScript API (advanced)
 
-This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
 ## Work with dates using the Moment-MSDate plug-in
 
@@ -48,7 +48,7 @@ Excel.run(function (context) {
         var nowMoment = moment.fromOADate(nowMS);
         console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
 
-        // log the date as a UNIX-style timestamp 
+        // log the date as a UNIX-style timestamp
         var now = nowMoment.unix();
         console.log(`get (timestamp): ${now}`);
     });
@@ -60,16 +60,14 @@ Your add-in will have to format the ranges to display the dates in a more human-
 ## Work with multiple ranges simultaneously (preview)
 
 > [!NOTE]
-> The `RangeAreas` object is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> The `RangeAreas` object is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 The `RangeAreas` object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 ## Find special cells within a range (preview)
 
 > [!NOTE]
-> The `getSpecialCells` and `getSpecialCellsOrNullObject` methods are currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> The `getSpecialCells` and `getSpecialCellsOrNullObject` methods are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
 
@@ -102,7 +100,7 @@ If no cells with the targeted characteristic exist in the range, `getSpecialCell
 If you expect that cells with the targeted characteristic should always exist, you'll likely want your code to throw an error if those cells aren't there. If it's a valid scenario that there aren't any matching cells, your code should check for this possibility and handle it gracefully without throwing an error. You can achieve this behavior with the `getSpecialCellsOrNullObject` method and its returned `isNullObject` property. The following example uses this pattern. About this code, note:
 
 - The `getSpecialCellsOrNullObject` method always returns a proxy object, so it is never `null` in the ordinary JavaScript sense. But if no matching cells are found, the `isNullObject` property of the object is set to `true`.
-- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
 - You can test this code by first selecting a range that has no formula cells and running it. Then select a range that has at least one cell with a formula and run it again.
 
 ```js
@@ -178,8 +176,7 @@ Excel.run(function (context) {
 ## Copy and paste (preview)
 
 > [!NOTE]
-> The `Range.copyFrom` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> The `Range.copyFrom` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Range’s `copyFrom` function replicates the copy-and-paste behavior of the Excel UI. The range object that `copyFrom` is called on is the destination.
 The source to be copied is passed as a range or a string address representing a range.
@@ -243,8 +240,7 @@ Excel.run(function (context) {
 ## Remove duplicates (preview)
 
 > [!NOTE]
-> The Range object's `removeDuplicates` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> The Range object's `removeDuplicates` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 The Range object's `removeDuplicates` function removes rows with duplicate entries in the specified columns. The function goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
 

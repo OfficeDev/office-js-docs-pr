@@ -1,5 +1,5 @@
 ---
-ms.date: 01/08/2019
+ms.date: 02/06/2019
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions (preview)
 localization_priority: Normal
@@ -13,7 +13,11 @@ Custom functions use a new JavaScript runtime that differs from the runtime used
 
 ## Requesting external data
 
-Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. Within the JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
+Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+
+Within the JavaScript runtime used by custom functions, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
+
+Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
 ### XHR example
 
@@ -39,6 +43,9 @@ function sendWebRequest(thermometerID, data) {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
         };
+        
+        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
+        xhttp.setRequestHeader("Content-Type", "application/text");
         xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
         xhttp.send();  
     }
@@ -55,10 +62,10 @@ The following code sample establishes a `WebSocket` connection and then logs eac
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = (message) => {
+ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
-};
-ws.onerror = (error) => {
+}
+ws.onerror = function (error) {
     console.err(`Failed: ${error}`);
 }
 ```
@@ -84,105 +91,16 @@ The following methods are available on the `AsyncStorage` object:
 
 ### AsyncStorage example 
 
-The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.
+The following code sample calls the `AsyncStorage.setItem` function to set a key and value into `AsyncStorage`.
 
-```typescript
-_goGetData = async () => {
-    try {
-        const value = await AsyncStorage.getItem('toDoItem');
-        if (value !== null) {
-            //data exists and you can do something with it here
-        }
-    } catch (error) {
-        //handle errors here
-    }
-}
-```
+```JavaScript
+function StoreValue(key, value) {
 
-## Displaying a dialog box
-
-Within a custom function (or within any other part of an add-in), you can use the `OfficeRuntime.displayWebDialogOptions` API to display a dialog box. This dialog API provides an alternative to the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands, but not within custom functions.
-
-### Dialog API example
-
-In the following code sample, the function `getTokenViaDialog` uses the Dialog API’s `displayWebDialogOptions` function to display a dialog box.
-
-```js
-// Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
-
-function getStock (ticker) {
-  return new Promise(function (resolve, reject) {
-    // Get a token
-    getToken("https://www.contoso.com/auth")
-    .then(function (token) {
-
-      // Use token to get stock price
-      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
-      .then(function (result) {
-
-        // Return stock price to cell
-        resolve(result);
-      });
-    })
-    .catch(function (error) {
-      reject(error);
-    });
+  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
   });
-  
-  //Helper
-  function getToken(url) {
-    return new Promise(function (resolve,reject) {
-      if(_cachedToken) {
-        resolve(_cachedToken);
-      } else {
-        getTokenViaDialog(url)
-        .then(function (result) {
-          resolve(result);
-        })
-        .catch(function (result) {
-          reject(result);
-        });
-      }
-    });
-  }
-
-  function getTokenViaDialog(url) {
-    return new Promise (function (resolve, reject) {
-      if (_dialogOpen) {
-        // Can only have one dialog open at once, wait for previous dialog's token
-        let timeout = 5;
-        let count = 0;
-        var intervalId = setInterval(function () {
-          count++;
-          if(_cachedToken) {
-            resolve(_cachedToken);
-            clearInterval(intervalId);
-          }
-          if(count >= timeout) {
-            reject("Timeout while waiting for token");
-            clearInterval(intervalId);
-          }
-        }, 1000);
-      } else {
-        _dialogOpen = true;
-        OfficeRuntime.displayWebDialogOptions(url, {
-          height: '50%',
-          width: '50%',
-          onMessage: function (message, dialog) {
-            _cachedToken = message;
-            resolve(message);
-            dialog.closeDialog();
-            return;
-          },
-          onRuntimeError: function(error, dialog) {
-            reject(error);
-          },
-        }).catch(function (e) {
-          reject(e);
-        });
-      }
-    });
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: Office JavaScript API support for content and task pane add-ins in Office 2013
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -9,25 +9,25 @@ localization_priority: Normal
 # Office JavaScript API support for content and task pane add-ins in Office 2013
 
 
-You can use the [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) to create task pane or content add-ins for Office 2013 host applications. The objects and methods that content and task pane add-ins support are categorized as follows:
+You can use the [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) to create task pane or content add-ins for Office 2013 host applications. The objects and methods that content and task pane add-ins support are categorized as follows:
 
 
-1. **Common objects shared with other Office Add-ins.** These objects include [Office](https://docs.microsoft.com/javascript/api/office), [Context](https://docs.microsoft.com/javascript/api/office/office.context), and [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult). The  **Office** object is the root object of the Office JavaScript API. The **Context** object represents the add-in's runtime environment. Both **Office** and **Context** are the fundamental objects for any Office Add-in. The **AsyncResult** object represents the results of an asynchronous operation, such as the data returned to the **getSelectedDataAsync** method, which reads what a user has selected in a document.
-    
-2.  **The Document object.** The majority of the API available to content and task pane add-ins is exposed through the methods, properties, and events of the [Document](https://docs.microsoft.com/javascript/api/office/office.document) object. A content or task pane add-in can use the [Office.context.document](https://docs.microsoft.com/javascript/api/office/office.context#document) property to access the **Document** object, and through it, can access the key members of the API for working with data in documents, such as the [Bindings](https://docs.microsoft.com/javascript/api/office/office.bindings) and [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts) objects, and the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-), and [getFileAsync](https://docs.microsoft.com/javascript/api/office/office.document#getfileasync-filetype--options--callback-) methods. The **Document** object also provides the [mode](https://docs.microsoft.com/javascript/api/office/office.document#mode) property for determining whether a document is read-only or in edit mode, the [url](https://docs.microsoft.com/javascript/api/office/office.document#url) property to get the URL of the current document, and access to the [Settings](https://docs.microsoft.com/javascript/api/office/office.settings) object. The **Document** object also supports adding event handlers for the [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) event, so you can detect when a user changes their selection in the document.
-    
-   A content or task pane add-in can access the  **Document** object only after the DOM and runtime environment has been loaded, typically in the event handler for the [Office.initialize](https://docs.microsoft.com/javascript/api/office) event. For information about the flow of events when an add-in is initialized, and how to check that the DOM and runtime and loaded successfully, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
-    
-3.  **Objects for working with specific features.** To work with specific features of the API, use the following objects and methods:
-    
-    - The methods of the [Bindings](https://docs.microsoft.com/javascript/api/office/office.bindings) object to create or get bindings, and the methods and properties of the [Binding](https://docs.microsoft.com/javascript/api/office/office.binding) object to work with data.
-    
-    - The [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts), [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart) and associated objects to create and manipulate custom XML parts in Word documents.
-    
-    - The [File](https://docs.microsoft.com/javascript/api/office/office.file) and [Slice](https://docs.microsoft.com/javascript/api/office/office.slice) objects to create a copy of the entire document, break it into chunks or "slices", and then read or transmit the data in those slices.
-    
-    - The [Settings](https://docs.microsoft.com/javascript/api/office/office.settings) object to save custom data, such as user preferences, and add-in state.
-    
+1. **Common objects shared with other Office Add-ins.** These objects include [Office](/javascript/api/office), [Context](/javascript/api/office/office.context), and [AsyncResult](/javascript/api/office/office.asyncresult). The  **Office** object is the root object of the Office JavaScript API. The **Context** object represents the add-in's runtime environment. Both **Office** and **Context** are the fundamental objects for any Office Add-in. The **AsyncResult** object represents the results of an asynchronous operation, such as the data returned to the **getSelectedDataAsync** method, which reads what a user has selected in a document.
+
+2. **The Document object.** The majority of the API available to content and task pane add-ins is exposed through the methods, properties, and events of the [Document](/javascript/api/office/office.document) object. A content or task pane add-in can use the [Office.context.document](/javascript/api/office/office.context#document) property to access the **Document** object, and through it, can access the key members of the API for working with data in documents, such as the [Bindings](/javascript/api/office/office.bindings) and [CustomXmlParts](/javascript/api/office/office.customxmlparts) objects, and the [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-), and [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) methods. The **Document** object also provides the [mode](/javascript/api/office/office.document#mode) property for determining whether a document is read-only or in edit mode, the [url](/javascript/api/office/office.document#url) property to get the URL of the current document, and access to the [Settings](/javascript/api/office/office.settings) object. The **Document** object also supports adding event handlers for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event, so you can detect when a user changes their selection in the document.
+
+   A content or task pane add-in can access the  **Document** object only after the DOM and runtime environment has been loaded, typically in the event handler for the [Office.initialize](/javascript/api/office) event. For information about the flow of events when an add-in is initialized, and how to check that the DOM and runtime and loaded successfully, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
+
+3. **Objects for working with specific features.** To work with specific features of the API, use the following objects and methods:
+
+    - The methods of the [Bindings](/javascript/api/office/office.bindings) object to create or get bindings, and the methods and properties of the [Binding](/javascript/api/office/office.binding) object to work with data.
+
+    - The [CustomXmlParts](/javascript/api/office/office.customxmlparts), [CustomXmlPart](/javascript/api/office/office.customxmlpart) and associated objects to create and manipulate custom XML parts in Word documents.
+
+    - The [File](/javascript/api/office/office.file) and [Slice](/javascript/api/office/office.slice) objects to create a copy of the entire document, break it into chunks or "slices", and then read or transmit the data in those slices.
+
+    - The [Settings](/javascript/api/office/office.settings) object to save custom data, such as user preferences, and add-in state.
+
 
 > [!IMPORTANT]
 > Some of the API members aren't supported across all Office applications that can host content and task pane add-ins. To determine which members are supported, see any of the following:
@@ -37,7 +37,7 @@ For a summary of Office JavaScript API support across Office host applications, 
 
 ## Reading and writing to an active selection
 
-You can read or write to the user's current selection in a document, spreadsheet, or presentation. Depending on the host application for your add-in, you can specify the type of data structure to read or write as a parameter in the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) and [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) methods of the [Document](https://docs.microsoft.com/javascript/api/office/office.document) object. For example, you can specify any type of data (text, HTML, tabular data, or Office Open XML) for Word, text and tabular data for Excel, and text for PowerPoint and Project. You can also create event handlers to detect changes to the user's selection. The following example gets data from the selection as text using the **getSelectedDataAsync** method.
+You can read or write to the user's current selection in a document, spreadsheet, or presentation. Depending on the host application for your add-in, you can specify the type of data structure to read or write as a parameter in the [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) and [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) methods of the [Document](/javascript/api/office/office.document) object. For example, you can specify any type of data (text, HTML, tabular data, or Office Open XML) for Word, text and tabular data for Excel, and text for PowerPoint and Project. You can also create event handlers to detect changes to the user's selection. The following example gets data from the selection as text using the **getSelectedDataAsync** method.
 
 
 ```js
@@ -53,7 +53,7 @@ Office.context.document.getSelectedDataAsync(
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 
 ```
@@ -65,7 +65,7 @@ For more details and examples, see [Read and write data to the active selection 
 
 You can use the  **getSelectedDataAsync** and **setSelectedDataAsync** methods to read or write to the user's *current* selection in a document, spreadsheet, or presentation. However, if you would like to access the same region in a document across sessions of running your add-in without requiring the user to make a selection, you should first bind to that region. You can also subscribe to data and selection change events for that bound region.
 
-You can add a binding by using [addFromNamedItemAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-), [addFromPromptAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), or [addFromSelectionAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-) methods of the [Bindings](https://docs.microsoft.com/javascript/api/office/office.bindings) object. These methods return an identifier that you can use to access data in the binding, or to subscribe to its data change or selection change events.
+You can add a binding by using [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-), [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), or [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-) methods of the [Bindings](/javascript/api/office/office.bindings) object. These methods return an identifier that you can use to access data in the binding, or to subscribe to its data change or selection change events.
 
 The following is an example that adds a binding to the currently selected text in a document, by using the  **Bindings.addFromSelectionAsync** method.
 
@@ -93,22 +93,22 @@ For more details and examples, see [Bind to regions in a document or spreadsheet
 
 ## Getting entire documents
 
-If your task pane add-in runs in PowerPoint or Word, you can use the [Document.getFileAsync](https://docs.microsoft.com/javascript/api/office/office.document#getfileasync-filetype--options--callback-), [File.getSliceAsync](https://docs.microsoft.com/javascript/api/office/office.file#getsliceasync-sliceindex--callback-), and [File.closeAsync](https://docs.microsoft.com/javascript/api/office/office.file#closeasync-callback-) methods to get an entire presentation or document.
+If your task pane add-in runs in PowerPoint or Word, you can use the [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-), [File.getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-), and [File.closeAsync](/javascript/api/office/office.file#closeasync-callback-) methods to get an entire presentation or document.
 
-When you call  **Document.getFileAsync**, you get a copy of the document in a [File](https://docs.microsoft.com/javascript/api/office/office.file) object. The **File** object provides access to the document in "chunks" represented as [Slice](https://docs.microsoft.com/javascript/api/office/office.slice) objects. When you call **getFileAsync**, you can specify the file type (text or compressed Open Office XML format), and size of the slices (up to 4MB). To access the contents of the  **File** object, you then call **File.getSliceAsync** which returns the raw data in the [Slice.data](https://docs.microsoft.com/javascript/api/office/office.slice#data) property. If you specified compressed format, you will get the file data as a byte array. If you are transmitting the file to a web service, you can transform the compressed raw data to a base64-encoded string before submission. Finally, when you are finished getting slices of the file, use the **File.closeAsync** method to close the document.
+When you call  **Document.getFileAsync**, you get a copy of the document in a [File](/javascript/api/office/office.file) object. The **File** object provides access to the document in "chunks" represented as [Slice](/javascript/api/office/office.slice) objects. When you call **getFileAsync**, you can specify the file type (text or compressed Open Office XML format), and size of the slices (up to 4MB). To access the contents of the  **File** object, you then call **File.getSliceAsync** which returns the raw data in the [Slice.data](/javascript/api/office/office.slice#data) property. If you specified compressed format, you will get the file data as a byte array. If you are transmitting the file to a web service, you can transform the compressed raw data to a base64-encoded string before submission. Finally, when you are finished getting slices of the file, use the **File.closeAsync** method to close the document.
 
-For more details, see how to [get the whole document from an add-in for PowerPoint or Word](../word/get-the-whole-document-from-an-add-in-for-word.md). 
+For more details, see how to [get the whole document from an add-in for PowerPoint or Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
 
 
 ## Reading and writing custom XML parts of a Word document
 
-Using the Open Office XML file format and content controls, you can add custom XML parts to a Word document and bind elements in the XML parts to content controls in that document. When you open the document, Word reads and automatically populates bound content controls with data from the custom XML parts. Users can also write data into the content controls, and when the user saves the document, the data in the controls will be saved to the bound XML parts. Task pane add-ins for Word, can use the [Document.customXmlParts](https://docs.microsoft.com/javascript/api/office/office.document.customxmlparts) property,[CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts), [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart), and [CustomXmlNode](https://docs.microsoft.com/javascript/api/office/office.customxmlnode) objects to read and write data dynamically to the document.
+Using the Open Office XML file format and content controls, you can add custom XML parts to a Word document and bind elements in the XML parts to content controls in that document. When you open the document, Word reads and automatically populates bound content controls with data from the custom XML parts. Users can also write data into the content controls, and when the user saves the document, the data in the controls will be saved to the bound XML parts. Task pane add-ins for Word, can use the [Document.customXmlParts](/javascript/api/office/office.document#customxmlparts) property,[CustomXmlParts](/javascript/api/office/office.customxmlparts), [CustomXmlPart](/javascript/api/office/office.customxmlpart), and [CustomXmlNode](/javascript/api/office/office.customxmlnode) objects to read and write data dynamically to the document.
 
-Custom XML parts may be associated with namespaces. To get data from custom XML parts in a namespace, use the [CustomXmlParts.getByNamespaceAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlparts#getbynamespaceasync-ns--options--callback-) method.
+Custom XML parts may be associated with namespaces. To get data from custom XML parts in a namespace, use the [CustomXmlParts.getByNamespaceAsync](/javascript/api/office/office.customxmlparts#getbynamespaceasync-ns--options--callback-) method.
 
-You can also use the [CustomXmlParts.getByIdAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) method to access custom XML parts by their GUIDs. After getting a custom XML part, use the [CustomXmlPart.getXmlAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlpart#getxmlasync-options--callback-) method to get the XML data.
+You can also use the [CustomXmlParts.getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) method to access custom XML parts by their GUIDs. After getting a custom XML part, use the [CustomXmlPart.getXmlAsync](/javascript/api/office/office.customxmlpart#getxmlasync-options--callback-) method to get the XML data.
 
-To add a new custom XML part to a document, use the  **Document.customXmlParts** property to get the custom XML parts that are in the document, and call the [CustomXmlParts.addAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlparts#addasync-xml--options--callback-) method.
+To add a new custom XML part to a document, use the  **Document.customXmlParts** property to get the custom XML parts that are in the document, and call the [CustomXmlParts.addAsync](/javascript/api/office/office.customxmlparts#addasync-xml--options--callback-) method.
 
 For detailed information about how to work with custom XML parts with a task pane add-in, see [Creating Better Add-ins for Word with Office Open XML](../word/create-better-add-ins-for-word-with-office-open-xml.md).
 
@@ -116,9 +116,9 @@ For detailed information about how to work with custom XML parts with a task pan
 ## Persisting add-in settings
 
 
-Often you need to save custom data for your add-in, such as a user's preferences or the add-in's state, and access that data the next time the add-in is opened. You can use common web programming techniques to save that data, such as browser cookies or HTML 5 web storage. Alternatively, if your add-in runs in Excel, PowerPoint, or Word, you can use the methods of the [Settings](https://docs.microsoft.com/javascript/api/office/office.settings) object. Data created with the **Settings** object is stored in the spreadsheet, presentation, or document that the add-in was inserted into and saved with. This data is available to only the add-in that created it.
+Often you need to save custom data for your add-in, such as a user's preferences or the add-in's state, and access that data the next time the add-in is opened. You can use common web programming techniques to save that data, such as browser cookies or HTML 5 web storage. Alternatively, if your add-in runs in Excel, PowerPoint, or Word, you can use the methods of the [Settings](/javascript/api/office/office.settings) object. Data created with the **Settings** object is stored in the spreadsheet, presentation, or document that the add-in was inserted into and saved with. This data is available to only the add-in that created it.
 
-To avoid roundtrips to the server where the document is stored, data created with the **Settings** object is managed in memory at run time. Previously saved settings data is loaded into memory when the add-in is initialized, and changes to that data are only saved back to the document when you call the [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings#saveasync-options--callback-) method. Internally, the data is stored in a serialized JSON object as name/value pairs. You use the [get](https://docs.microsoft.com/javascript/api/office/office.settings#get-name-), [set](https://docs.microsoft.com/javascript/api/office/office.settings#set-name--value-), and [remove](https://docs.microsoft.com/javascript/api/office/office.settings#remove-name-) methods of the **Settings** object, to read, write, and delete items from the in-memory copy of the data. The following line of code shows how to create a setting named `themeColor` and set its value to 'green'.
+To avoid roundtrips to the server where the document is stored, data created with the **Settings** object is managed in memory at run time. Previously saved settings data is loaded into memory when the add-in is initialized, and changes to that data are only saved back to the document when you call the [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) method. Internally, the data is stored in a serialized JSON object as name/value pairs. You use the [get](/javascript/api/office/office.settings#get-name-), [set](/javascript/api/office/office.settings#set-name--value-), and [remove](/javascript/api/office/office.settings#remove-name-) methods of the **Settings** object, to read, write, and delete items from the in-memory copy of the data. The following line of code shows how to create a setting named `themeColor` and set its value to 'green'.
 
 
 
@@ -134,7 +134,7 @@ For more details about working with custom data using the methods of the  **Sett
 
 ## Reading properties of a project document
 
-If your task pane add-in runs in Project, your add-in can read data from some of the project fields, resource, and task fields in the active project. To do that, you use the methods and events of the [ProjectDocument](https://docs.microsoft.com/javascript/api/office/office.document) object, which extends the **Document** object to provide additional Project-specific functionality.
+If your task pane add-in runs in Project, your add-in can read data from some of the project fields, resource, and task fields in the active project. To do that, you use the methods and events of the [ProjectDocument](/javascript/api/office/office.document) object, which extends the **Document** object to provide additional Project-specific functionality.
 
 For examples of reading Project data, see [Create your first task pane add-in for Project 2013 by using a text editor](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
@@ -161,7 +161,6 @@ For more information, see [Requesting permissions for API use in content and tas
 
 ## See also
 
-- [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Schema reference for Office Add-ins manifests](../develop/add-in-manifests.md)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
-    

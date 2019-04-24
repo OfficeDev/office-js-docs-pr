@@ -1,13 +1,14 @@
 ---
 title: OneNote JavaScript API requirement sets
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
+ms.prod: onenote
 localization_priority: Normal
 ---
 
 # OneNote JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 The following table lists the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date.
 
@@ -21,7 +22,7 @@ For information about Common API requirement sets, see [Office Common API requir
 
 ## OneNote JavaScript API 1.1 
 
-OneNote JavaScript API 1.1 is the first version of the API. For details about the API, see the [OneNote JavaScript API programming overview](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview).
+OneNote JavaScript API 1.1 is the first version of the API. For details about the API, see the [OneNote JavaScript API programming overview](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview).
 
 ## Runtime requirement support check
 
@@ -52,6 +53,6 @@ The following code example shows an add-in that loads in all Office host applica
 
 ## See also
 
-- [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Specify Office hosts and API requirements](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office Add-ins XML manifest](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)

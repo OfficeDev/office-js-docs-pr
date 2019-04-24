@@ -25,11 +25,8 @@ To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property f
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-Then, open the Office application and insert your add-in. Right-click the add-in and you should see an **Inspect Element** option in the context menu.  Select that option and it will display the Inspector, where you can set breakpoints and debug your add-in.
-
+Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-ipad-and-mac.md). Right-click the add-in and you should see an **Inspect Element** option in the context menu.  Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
 > [!NOTE]
-> Please note that this is an experimental feature and there are no guarantees that we will preserve this functionality in future versions of Office applications.
->
 > If you are trying to use the inspector and the dialog flickers, try the following workaround:
 > 1. Reduce the size of the dialog.
 > 2. Choose **Inspect Element**, which opens in a new window.

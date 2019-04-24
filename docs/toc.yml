@@ -9,6 +9,9 @@
   - name: Host and platform availability
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+  - name: Explore Office JS API using Script Lab
+    href: overview/explore-with-script-lab.md
+    displayName: Excel, Word, PowerPoint, Project
 
 - name: Quick Starts
   items:
@@ -25,6 +28,9 @@
       displayName: Excel
     - name: Use Vue
       href: quickstarts/excel-quickstart-vue.md
+      displayName: Excel
+    - name: Build a custom function 
+      href: quickstarts/excel-custom-functions-quickstart.md
       displayName: Excel
   - name: Create Word add-in
     href: quickstarts/word-quickstart.md
@@ -128,7 +134,6 @@
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
 
-
   - name: Develop
     items:
     - name: Office versions and requirement sets
@@ -218,16 +223,16 @@
       displayName: Excel
       items:
       - name: Use Angular
-        href: excel/excel-add-ins-get-started-angular.md
+        href: quickstarts/excel-quickstart-angular.md
         displayName: Excel
       - name: Use jQuery
-        href: excel/excel-add-ins-get-started-jquery.md
+        href: quickstarts/excel-quickstart-jquery.md
         displayName: Excel
       - name: Use React
-        href: excel/excel-add-ins-get-started-react.md
+        href: quickstarts/excel-quickstart-react.md
         displayName: Excel
       - name: Use Vue
-        href: excel/excel-add-ins-get-started-vue.md
+        href: quickstarts/excel-quickstart-vue.md
         displayName: Excel
     - name: Excel add-in tutorial
       href: tutorials/excel-tutorial.md
@@ -255,23 +260,56 @@
         displayName: Excel
       - name: Custom functions
         items:
-        - name: Custom functions overview
+        - name: Overview
           href: excel/custom-functions-overview.md
           displayName: Excel
-        - name: Custom functions tutorial
+        - name: Architecture
+          href: excel/custom-functions-architecture.md
+          displayName: Excel
+        - name: Quickstart
+          href: quickstarts/excel-custom-functions-quickstart.md
+          displayName: Excel
+        - name: Tutorial
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
-        - name: Custom functions runtime
+        - name: Web requests
+          href: excel/custom-functions-web-reqs.md
+          displayName: Excel
+        - name: Runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
-        - name: Custom functions metadata
+        - name: Metadata
           href: excel/custom-functions-json.md
           displayName: Excel
-        - name: Custom functions best practices
+        - name: Custom function metadata
+          href: excel/custom-functions-json-autogeneration.md
+          displayName: Excel
+        - name: Best practices
           href: excel/custom-functions-best-practices.md
           displayName: Excel
-        - name: Custom functions changelog
+        - name: Debugging
+          href: excel/custom-functions-debugging.md
+          displayName: Excel
+        - name: Authentication
+          href: excel/custom-functions-authentication.md
+          displayName: Excel
+        - name: Dialog
+          href: excel/custom-functions-dialog.md
+          displayName: Excel
+        - name: Changelog
           href: excel/custom-functions-changelog.md
+          displayName: Excel
+        - name: Error handling
+          href: excel/custom-functions-errors.md
+          displayName: Excel
+        - name: Requirements
+          href: excel/custom-functions-requirements.md
+          displayName: Excel
+        - name: Naming guidelines
+          href: excel/custom-functions-naming.md
+          displayName: Excel
+        - name: Troubleshooting
+          href: excel/custom-functions-troubleshooting.md
           displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
@@ -297,6 +335,9 @@
       - name: Ranges (advanced)
         href: excel/excel-add-ins-ranges-advanced.md
         displayName: Excel
+      - name: Shapes
+        href: excel/excel-add-ins-shapes.md
+        displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
         displayName: Excel
@@ -318,7 +359,7 @@
     displayName: Word
     items:
     - name: Build your first Word add-in
-      href: word/word-add-ins.md
+      href: quickstarts/word-quickstart.md
       displayName: Word
     - name: Word add-in tutorial
       href: tutorials/word-tutorial.md
@@ -357,7 +398,7 @@
     displayName: PowerPoint
     items:
     - name: Build your first PowerPoint add-in
-      href: powerpoint/powerpoint-add-ins-get-started.md
+      href: quickstarts/powerpoint-quickstart.md
       displayName: PowerPoint
     - name: PowerPoint add-in tutorial
       href: tutorials/powerpoint-tutorial.md
@@ -374,7 +415,7 @@
     displayName: OneNote
     items:
     - name: Build your first OneNote add-in
-      href: onenote/onenote-add-ins-getting-started.md
+      href: quickstarts/onenote-quickstart.md
       displayName: OneNote
     - name: Work with OneNote page content
       href: onenote/onenote-add-ins-page-content.md
@@ -391,7 +432,7 @@
     displayName: Project
     items:
     - name: Build your first Project add-in
-      href: project/project-add-ins-get-started.md
+      href: quickstarts/project-quickstart.md
       displayName: Project
     - name: Create a Project add-in that uses REST with an on-premises OData service
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md

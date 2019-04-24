@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.1
 description: ''
-ms.date: 10/11/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -26,12 +26,12 @@ Requirement set 1.1 includes all of the features of Requirement set 1.0. It adde
 - Added [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback): Adds a file to a message or appointment as an attachment.
 - Added [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#additemattachmentasyncitemid-attachmentname-options-callback): Adds an Exchange item, such as a message, as an attachment to the message or appointment.
 - Added [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback): Removes an attachment from a message or appointment.
-- Added [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-bodyjavascriptapioutlook11officebody): Gets an object that provides methods for manipulating the body of an item.
-- Added [Office.context.mailbox.item.bcc](office.context.mailbox.item.md#bcc-recipientsjavascriptapioutlook11officerecipients): Gets or sets the recipients on the Bcc (blind carbon copy) line of a message.
+- Added [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-body): Gets an object that provides methods for manipulating the body of an item.
+- Added [Office.context.mailbox.item.bcc](office.context.mailbox.item.md#bcc-recipients) line of a message.
 - Added [Office.MailboxEnums.RecipientType](/javascript/api/outlook_1_1/office.mailboxenums.recipienttype): Specifies the type of recipient for an appointment.
 
 ## See also
 
-- [Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/)
+- [Outlook add-ins](/outlook/add-ins/)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Get started](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Get started](/outlook/add-ins/quick-start)

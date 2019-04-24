@@ -1,7 +1,7 @@
 ---
 title: VersionOverrides element in the manifest file
 description: ''
-ms.date: 01/15/2019
+ms.date: 01/29/2019
 localization_priority: Normal
 ---
 
@@ -17,7 +17,7 @@ The root element that contains information for the add-in commands implemented b
 |  **xsi:type**  |  Yes  | The schema version. At this time, the only valid values are `VersionOverridesV1_0` and `VersionOverridesV1_1`. |
 
 > [!NOTE]
-> Currently only Outlook 2016 supports the VersionOverrides v1.1 schema and the `VersionOverridesV1_1` type.
+> Currently only Outlook 2016 or later supports the VersionOverrides v1.1 schema and the `VersionOverridesV1_1` type.
 
 ## Child elements
 

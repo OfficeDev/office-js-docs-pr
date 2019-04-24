@@ -1,7 +1,7 @@
 ---
 title: Permissions element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -31,4 +31,4 @@ For mail add-ins
 
 ## Remarks
 
-For more detail, see [Requesting permissions for API use in content and task pane add-ins](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) and [Understanding Outlook add-in permissions](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions).
+For more detail, see [Requesting permissions for API use in content and task pane add-ins](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) and [Understanding Outlook add-in permissions](/outlook/add-ins/understanding-outlook-add-in-permissions).

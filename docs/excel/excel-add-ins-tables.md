@@ -1,18 +1,17 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: ''
-ms.date: 12/04/2017
+ms.date: 04/18/2019
 localization_priority: Priority
 ---
 
-
 # Work with tables using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with tables using the Excel JavaScript API. For the complete list of properties and methods that the **Table** and **TableCollection** objects support, see [Table Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.table) and [TableCollection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection).
+This article provides code samples that show how to perform common tasks with tables using the Excel JavaScript API. For the complete list of properties and methods that the **Table** and **TableCollection** objects support, see [Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table) and [TableCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection).
 
 ## Create a table
 
-The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel host application where the code is running supports [requirement set](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
 > [!NOTE]
 > To specify a name for a table, you must first create the table and then set its **name** property, as shown in the example below.
@@ -52,14 +51,14 @@ Excel.run(function (context) {
 
 ## Add rows to a table
 
-The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel host application where the code is running supports [requirement set](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
 > [!NOTE]
-> The **index** property of a [TableRow](https://docs.microsoft.com/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A **TableRow** object does not contain an **id** property that can be used as a unique key to identify the row.
+> The **index** property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A **TableRow** object does not contain an **id** property that can be used as a unique key to identify the row.
 
 ```js
 Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");       
+    var sheet = context.workbook.worksheets.getItem("Sample");
     var expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.rows.add(null /*add rows to the end of the table*/, [
@@ -90,15 +89,15 @@ Excel.run(function (context) {
 These examples show how to add a column to a table. The first example populates the new column with static values; the second example populates the new column with formulas.
 
 > [!NOTE]
-> The **index** property of a [TableColumn](https://docs.microsoft.com/javascript/api/excel/excel.tablecolumn) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.
+> The **index** property of a [TableColumn](/javascript/api/excel/excel.tablecolumn) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.
 
 ### Add a column that contains static values
 
-The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. If the Excel host application where the code is running supports [requirement set](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
 ```js
 Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");       
+    var sheet = context.workbook.worksheets.getItem("Sample");
     var expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.columns.add(null /*add columns to the end of the table*/, [
@@ -127,7 +126,7 @@ Excel.run(function (context) {
 
 ### Add a column that contains formulas
 
-The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. If the Excel host application where the code is running supports [requirement set](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
 ```js
 Excel.run(function (context) {
@@ -160,7 +159,7 @@ Excel.run(function (context) {
 
 ## Update column name
 
-The following code sample updates the name of the first column in the table to **Purchase date**. If the Excel host application where the code is running supports [requirement set](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample updates the name of the first column in the table to **Purchase date**. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
 ```js
 Excel.run(function (context) {
@@ -232,6 +231,30 @@ Excel.run(function (context) {
 **Table and data output**
 
 ![Table data in Excel](../images/excel-tables-get-data.png)
+
+## Detect data changes
+
+Your add-in may need to react to users changing the data in a table. To detect these changes, you can [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onChanged` event of a table. Event handlers for the `onChanged` event receive a [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) object when the event fires.
+
+The `TableChangedEventArgs` object provides information about the changes and the source. Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed. The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). The following code sample shows how to display the before and after values and types of a cell that has been changed.
+
+> [!NOTE]
+> `TableChangedEventArgs.details` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Table.onChanged event.
+function onTableChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
+```
 
 ## Sort data in a table
 
@@ -330,9 +353,38 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+## AutoFilter
+
+> [!NOTE]
+> `Table.autoFilter` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+An add-in can use the table's [AutoFilter](/javascript/api/excel/excel.autofilter) object to filter data. An `AutoFilter` object is the entire filter structure of a table or range. All of the filter operations discussed earlier in this article are compatible with the auto-filter. The single access point does make it easier to access and manage multiple filters.
+
+The following code sample shows the same [data filtering as the earlier code sample](#apply-filters-to-a-table), but done entirely through the auto-filter.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var expensesTable = sheet.tables.getItem("ExpensesTable");
+
+    expensesTable.autoFilter.apply(expensesTable.getRange(), 2, {
+        filterOn: Excel.FilterOn.values,
+        values: ["Restaurant", "Groceries"]
+    });
+    expensesTable.autoFilter.apply(expensesTable.getRange(), 3, {
+        filterOn: Excel.FilterOn.dynamic,
+        dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+An `AutoFilter` can also be applied to a range at the worksheet level. See [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#filter-data) for more information.
+
 ## Format a table
 
-The following code sample applies formatting to a table. It specifies different fill colors for the header row of the table, the body of the table, the second row of the table, and the first column of the table. For information about the properties you can use to specify format, see [RangeFormat Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.rangeformat).
+The following code sample applies formatting to a table. It specifies different fill colors for the header row of the table, the body of the table, the second row of the table, and the first column of the table. For information about the properties you can use to specify format, see [RangeFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.rangeformat).
 
 ```js
 Excel.run(function (context) {
@@ -398,7 +450,7 @@ Excel.run(function (context) {
 
 ## Import JSON data into a table
 
-The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. If the Excel host application where the code is running supports [requirement set](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
 ```js
 Excel.run(function (context) {
@@ -446,4 +498,3 @@ Excel.run(function (context) {
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-

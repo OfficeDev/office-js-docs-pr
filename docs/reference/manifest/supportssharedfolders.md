@@ -1,7 +1,7 @@
 ---
 title: SupportsSharedFolders element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 04/02/2019
 localization_priority: Normal
 ---
 
@@ -10,19 +10,31 @@ localization_priority: Normal
 Defines whether the Outlook add-in is available in delegate scenarios. The **SupportsSharedFolders** element is a child element of [DesktopFormFactor](desktopformfactor.md). It is set to *false* by default.
 
 > [!IMPORTANT]
-> This element is only available in the [Outlook add-ins Preview requirement set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) against Exchange Online. Add-ins that use this element cannot be published to AppSource or deployed via centralized deployment.
+> Delegate access for Outlook add-ins is currently [in preview](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview) and only supported in clients that run against Exchange Online. Add-ins that use this element cannot be published to AppSource or deployed via centralized deployment.
 
 The following is an example of the  **SupportsSharedFolders** element.
 
 ```XML
-<DesktopFormFactor>
-  <FunctionFile resid="residDesktopFuncUrl" />
-  <SupportsSharedFolders>true</SupportsSharedFolders>
-  <ExtensionPoint xsi:type="PrimaryCommandSurface">
-    <!-- information about this extension point -->
-  </ExtensionPoint>
+...
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    ...
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <SupportsSharedFolders>true</SupportsSharedFolders>
+          <FunctionFile resid="residDesktopFuncUrl" />
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <!-- configure selected extension point -->
+          </ExtensionPoint>
 
-  <!-- You can define more than one ExtensionPoint element as needed -->
+          <!-- You can define more than one ExtensionPoint element as needed -->
 
-</DesktopFormFactor>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    ...
+  </VersionOverrides>
+</VersionOverrides>
+...
 ```

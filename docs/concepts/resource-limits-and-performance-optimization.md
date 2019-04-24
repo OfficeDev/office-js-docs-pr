@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -17,23 +17,23 @@ You can also optimize the performance of your add-ins on desktop and mobile devi
 Run-time resource usage limits apply to all types of Office Add-ins. These limits help ensure performance for your users and mitigate denial-of-service attacks. Be sure to test your Office Add-in on your target host application by using a range of possible data, and measure its performance against the following run-time usage limits:
 
 - **CPU core usage** - A single CPU core usage threshold of 90%, observed three times in default 5-second intervals.
-    
+
    The default interval for a host rich client to check CPU core usage is every 5 seconds. If the host client detects the CPU core usage of an add-in is above the threshold value, it displays a message asking if the user wants to continue running the add-in. If the user chooses to continue, the host client does not ask the user again during that edit session. Administrators might want to use the **AlertInterval** registry key to raise the threshold to reduce the display of this warning message if users run CPU-intensive add-ins.
-    
+
 - **Memory usage** - A default memory usage threshold that is dynamically determined based on the available physical memory of the device.
-    
+
    By default, when a host rich client detects that physical memory usage on a device exceeds 80% of the available memory, the client starts monitoring the add-in's memory usage, at a document level for content and task pane add-ins, and at a mailbox level for Outlook add-ins. At a default interval of 5 seconds, the client warns the user if physical memory usage for a set of add-ins at the document or mailbox level exceeds 50%. This memory usage limit uses physical rather than virtual memory to ensure performance on devices with limited RAM, such as tablets. Administrators can override this dynamic setting with an explicit limit by using the  **MemoryAlertThreshold** Windows registry key as a global setting, ir adjust the alert interval by using the **AlertInterval** key as a global setting.
-    
+
 - **Crash tolerance** - A default limit of four crashes for an add-in.
-    
+
    Administrators can adjust the threshold for crashes by using the **RestartManagerRetryLimit** registry key.
-    
+
 - **Application blocking** - Prolonged unresponsiveness threshold of 5 seconds for an add-in.
-    
+
    This affects the user's experiences of the add-in and the host application. When this occurs, the host application automatically restarts all the active add-ins for a document or mailbox (where applicable), and warns the user as to which add-in became unresponsive. Add-ins can reach this threshold when they do not regularly yield processing while performing long-running tasks. There are techniques to ensure that blocking does not occur. Administrators cannot override this threshold.
-    
+
 ### Outlook add-ins
-    
+
 If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, Outlook disables the add-in. The Exchange Admin Center displays the disabled status of the app.
 
 > [!NOTE]
@@ -50,7 +50,7 @@ In addition to the CPU core, memory, and reliability rules, Outlook add-ins shou
     Using a group policy or application-specific setting in the Windows registry, administrators can adjust this number of times to retry evaluation in the  **OutlookActivationManagerRetryLimit** setting.
 
 ### Task pane and content add-ins
-    
+
 If any content or task pane add-in exceeds the preceding thresholds on CPU core or memory usage, or tolerance limit for crashes, the corresponding host application displays a warning for the user. At this point, the user can do one of the following:
 
 - Restart the add-in.
@@ -82,7 +82,7 @@ The following table lists the events that the Telemetry Log tracks for Office Ad
 |19|Add-in encountered runtime error|Critical|The Office Add-in had a problem that caused it to fail. For more details, look at the  **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 |20|Add-in failed to verify licensing|Critical|The licensing information for the Office Add-in could not be verified and may have expired. For more details, look at the  **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 
-For more information, see [Deploying Telemetry Dashboard](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) and [Troubleshooting Office files and custom solutions with the telemetry log](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
+For more information, see [Deploying Telemetry Dashboard](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) and [Troubleshooting Office files and custom solutions with the telemetry log](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
 
 
 ## Design and implementation techniques
@@ -90,19 +90,18 @@ For more information, see [Deploying Telemetry Dashboard](https://docs.microsoft
 While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the host application can remain responsive:
 
 - In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation. 
-    
+
    For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
-    
+
 - If your add-in uses a CPU-intensive algorithm to process a large volume of data, you can use web workers to perform the long-running task in the background while running a separate script in the foreground, such as displaying progress in the user interface. Web workers do not block user activities and allow the HTML page to remain responsive. For an example of web workers, see [The Basics of Web Workers](https://www.html5rocks.com/en/tutorials/workers/basics/). See [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) for more information about the Internet Explorer Web Workers API.
-    
+
 - If your add-in uses a CPU-intensive algorithm but you can divide the data input or output into smaller sets, consider creating a web service, passing the data to the web service to off-load the CPU, and wait for an asynchronous callback.
-    
+
 - Test your add-in against the highest volume of data you expect, and restrict your add-in to process up to that limit.
-    
+
 
 ## See also
 
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
-- [Limits for activation and JavaScript API for Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Limits for activation and JavaScript API for Outlook add-ins](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Performance optimization using the Excel JavaScript API](../excel/performance.md)
-    

@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.userProfile - requirement set 1.7
 description: ''
-ms.date: 10/31/2018
+ms.date: 04/12/2019
 localization_priority: Normal
 ---
 
@@ -14,8 +14,8 @@ localization_priority: Normal
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Members and methods
 
@@ -31,7 +31,7 @@ localization_priority: Normal
 ####  accountType :String
 
 > [!NOTE]
-> This member is currently only supported in Outlook 2016 for Mac, build 16.9.1212 and greater.
+> This member is currently only supported by Outlook 2016 for Mac (build 16.9.1212 or later).
 
 Gets the account type of the user associated with the mailbox. The possible values are listed in the following table.
 
@@ -42,7 +42,7 @@ Gets the account type of the user associated with the mailbox. The possible valu
 | `office365` | The mailbox is associated with an Office 365 work or school account. |
 | `outlookCom` | The mailbox is associated with a personal Outlook.com account. |
 
-##### Type:
+##### Type
 
 *   String
 
@@ -51,20 +51,23 @@ Gets the account type of the user associated with the mailbox. The possible valu
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
-```js
+```javascript
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
+
+---
+---
 
 ####  displayName :String
 
 Gets the user's display name.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -73,21 +76,24 @@ Gets the user's display name.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
-```js
+```javascript
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
+
+---
+---
 
 ####  emailAddress :String
 
 Gets the user's SMTP email address.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -96,21 +102,24 @@ Gets the user's SMTP email address.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
-```js
+```javascript
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+---
+---
 
 ####  timeZone :String
 
 Gets the user's default time zone.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -119,12 +128,12 @@ Gets the user's default time zone.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
-```js
+```javascript
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

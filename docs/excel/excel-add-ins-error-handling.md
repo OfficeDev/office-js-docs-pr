@@ -1,7 +1,7 @@
 ---
 title: Error handling
 description: ''
-ms.date: 10/16/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -72,4 +72,4 @@ The following table is a list of errors that the API may return.
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error)
+- [OfficeExtension.Error object (JavaScript API for Excel)](/javascript/api/office/officeextension.error)
