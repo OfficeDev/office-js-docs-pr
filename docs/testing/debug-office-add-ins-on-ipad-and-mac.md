@@ -5,7 +5,7 @@ ms.date: 04/24/2019
 localization_priority: Priority
 ---
 
-# Debug Office Add-ins on Mac
+# Debug Office Add-ins on a Mac
 
 You can use Visual Studio to develop and debug add-ins on Windows, but you can't use it to debug add-ins on the Mac. Because add-ins are developed using HTML and Javascript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.
 
