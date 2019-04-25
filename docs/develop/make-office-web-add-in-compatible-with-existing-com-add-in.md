@@ -68,7 +68,7 @@ If an admin deploys the web add-in to their tenant using centralized deployment,
 
 If a user has the COM add-in installed, and then gets a shared document with the embedded web add-in, then when they open the document, Office will:
 
-1. The user will see a trust prompt for the web add-in.
+1. Prompt the user to trust the web add-in.
 2. If trusted, the web add-in will install.
 3. Office hides the web add-in UI in the ribbon.
 
