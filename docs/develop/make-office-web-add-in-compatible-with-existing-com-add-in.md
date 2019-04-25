@@ -43,7 +43,7 @@ The following example shows how to specify both a COM add-in and an XLL as equiv
 
 When an equivalent COM add-in is specified in the web add-in manifest, Office suppresses your web add-in's UI on Windows when the equivalent COM add-in is installed. This does not affect your web add-in's UI on other platforms like online or macOS. Office only hides the ribbon buttons and does not prevent installation. Therefore your web add-in will still appear in the following UI locations:
 
-- Under **My Add-ins** because it is technically installed.
+- Under **My add-ins** because it is technically installed.
 - As an entry in the ribbon manager.
 
 The following scenarios describe what happens depending on how the user acquires the web add-in.
