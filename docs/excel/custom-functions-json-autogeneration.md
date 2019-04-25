@@ -1,5 +1,5 @@
 ---
-ms.date: 04/20/2019
+ms.date: 04/24/2019
 description: Use JSDOC tags to dynamically create your custom functions JSON metadata.
 title: Create JSON metadata for custom functions (preview)
 localization_priority: Priority
@@ -88,7 +88,8 @@ JavaScript Syntax: @param {type} name _description_
 To denote a custom function parameter as optional:
 * Put square brackets around the parameter name. For example: `@param {string} [text] Optional text`.
 
-Note that if you are using optional parameters and the data is not provided by Excel, the parameter by default will be populated with a `null` value.
+> [!NOTE]
+> The default value for optional parameters is `null`.
 
 #### TypeScript
 
@@ -105,7 +106,8 @@ To denote a custom function parameter as optional, do one of the following:
 
 For detailed description of the @param see: [JSDoc](http://usejsdoc.org/tags-param.html)
 
-Note that if you are using optional parameters and the data is not provided by Excel, the parameter by default will be populated with a `null` value.
+> [!NOTE]
+> The default value for optional parameters is `null`.
 
 ---
 ### @requiresAddress
