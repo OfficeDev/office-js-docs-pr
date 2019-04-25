@@ -15,7 +15,7 @@ You can configure your Office Add-in so that when an equivalent COM add-in is al
 
 ## Specify an equivalent COM add-in in the manifest
 
-To enable compatibility with an existing COM add-in, identify the equivalent COM add-in in the manifest of your web add-in. Then Office will use the COM add-in instead of your web add-in when running on Windows.
+To enable compatibility with an existing COM add-in, identify the equivalent COM add-in in the manifest of your Office Add-in. Then Office will use the COM add-in instead of your web add-in when running on Windows.
 
 Specify the `ProgID` of the equivalent COM add-in. Office will then use the COM add-in UI instead of your web add-in's UI when the COM add-in is installed.
 
