@@ -136,9 +136,9 @@ To declare a streaming or cancelable function, you will need to do two things:
 
 ### Using an invocation parameter
 
-When setting an invocation parameter, it should come last in the list of parameters specified. An invocation will allow you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`). 
+When setting an invocation parameter, it should come last in the list of parameters specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`). 
 
-If using Typescript, note that the invocation handler you use will need to be specified by type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`. 
+If you're using Typescript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
 
 ### Streaming and cancelable function example
 The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
@@ -162,7 +162,7 @@ function incrementValue(increment, invocation){
 
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
-The corresponding JSON for this function is as follows. Note that the invocation parameter does not need to be declared in the JSON file. 
+The corresponding JSON for this function is as follows. Note that the invocation parameter isn't declared.
 
 ```JSON
 {

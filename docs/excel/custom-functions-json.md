@@ -119,11 +119,11 @@ The `functions` property is an array of custom function objects. The following t
 
 The `options` object enables you to customize some aspects of how and when Excel executes the function. The following table lists the properties of the `options` object.
 
-|  Property  |  Data type  |  Required  |  Description  |
-|:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  No<br/><br/>Default value is `false`.  |  A cancelable function must declare an `invocation` parameter as the last parameter in the body of the function. If `"cancelable": true`, Excel calls the `invocation.onCanceled` method which you specify in the body of the function. (Do ***not*** register the `invocation` parameter in the `parameters` property). For more information, see [Streaming and cancelable functions](custom-functions-web-reqs.md#streaming-and-cancelable-functions). |
-|  `stream`  |  boolean  |  No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. A streaming function must also declare an `invocation` parameter as the last parameter in the body of the function. (Do ***not*** register the `invocation` parameter in the `parameters` property). Do not return a value within the body of the function. Instead, the result value is passed as the argument of the `invocation.setResult` callback method. For more information, see [Streaming and cancelable functions](custom-functions-web-reqs.md#streaming-and-cancelable-functions). |
-|  `volatile`  | boolean | No <br/><br/>Default value is `false`. | <br /><br /> If `true`, the function will recalculate each time Excel recalculates, instead of only when the formula's dependent values have changed. A function cannot be both streaming and volatile. If the `stream` and `volatile` properties are both set to `true`, the volatile option will be ignored. |
+| Property 	| Data type 	| Required 	| Default value 	| Description 	|
+|--------------	|-----------	|----------	|---------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `cancelable` 	| boolean 	| No 	| false 	| A cancelable function must declare an `invocation` parameter as the last parameter in the body of the function. If `"cancelable": true`, Excel calls the `invocation.onCanceled` method specified in the function's body. Don't register the `invocation` parameter in the `parameters` property. For more information, see [Streaming and cancelable functions](custom-functions-web-reqs.md#streaming-and-cancelable-functions). 	|
+| `stream` 	| boolean 	| No 	| false 	| If `true`, the function repeatedly outputs to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. A streaming function must also declare an `invocation` parameter as the last parameter in the body of the function. Don't register the `invocation` parameter in the `parameters` property. Don't return a value within the body of the function. Instead, the result value is passed as the argument of the `invocation.setResult` callback method. For more information, see [Streaming and cancelable functions](custom-functions-web-reqs.md#streaming-and-cancelable-functions). 	|
+| `volatile` 	| boolean 	| No 	| false 	| If `true`, the function will recalculate each time Excel recalculates, instead of only when the formula's dependent values have changed. A function cannot be both streaming and volatile. If the `stream` and `volatile` properties are both set to `true`, the volatile option will be ignored. 	|
 
 ## parameters
 
@@ -136,9 +136,6 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
 |  `optional`  | boolean | No | If `true`, the parameter is optional. |
-
->[!NOTE]
-> If the `type` property of an optional parameter is either not specified or set to `any`, you may notice issues such as linting errors in your IDE and optional parameters not being displayed when the function is being entered into a cell in Excel. This is projected to change in December of 2018.
 
 ## result
 
