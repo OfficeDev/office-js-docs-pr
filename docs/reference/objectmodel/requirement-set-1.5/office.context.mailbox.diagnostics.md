@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - requirement set 1.5
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
 ---
 
@@ -29,7 +29,7 @@ Provides diagnostic information to an Outlook add-in.
 
 ### Members
 
-####  hostName :String
+#### hostName: String
 
 Gets a string that represents the name of the host application.
 
@@ -47,7 +47,7 @@ A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `O
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-####  hostVersion :String
+#### hostVersion: String
 
 Gets a string that represents the version of either the host application or the Exchange Server.
 
@@ -65,7 +65,7 @@ If the mail add-in is running on the Outlook desktop client or Outlook for iOS, 
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-####  OWAView :String
+#### OWAView: String
 
 Gets a string that represents the current view of Outlook Web App.
 

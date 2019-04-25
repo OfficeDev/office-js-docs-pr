@@ -1,5 +1,5 @@
 ---
-ms.date: 04/23/2019
+ms.date: 04/25/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -42,7 +42,7 @@ The script file (**./src/functions/functions.js** or **./src/functions/functions
 
 The following code defines the custom function `add`  and then specifies association information for the function. For more information on associating functions, see [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
 
-The following code also provides code comments which define the function. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+The following code also provides code comments which define the function. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -204,7 +204,7 @@ In some cases you'll need to get the address of the cell that invoked your custo
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
 - Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
-The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
+The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this if you were to write this JSON file by hand. You can also use the `@requiresAddress` tag if automatically generating your JSON file. For more details, see [JSON Autogeneration](custom-functions-json-autogeneration.md).
 
 ```JSON
 {
