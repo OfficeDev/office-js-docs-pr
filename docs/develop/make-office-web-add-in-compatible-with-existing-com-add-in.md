@@ -58,7 +58,7 @@ If a user downloads the web add-in from AppSource, and the equivalent COM add-in
 
 ### Centralized deployment of web add-in
 
-If an admin deploys the web add-in to their tenant using centralized deployment, and the equivalent COM add-in is already installed, the user needs to restart Office before they will see any changes. After they restart Office, Office will:
+If an admin deploys the web add-in to their tenant using centralized deployment, and the equivalent COM add-in is already installed, the user needs to restart Office before they will see any changes. After Office restarts, it will:
 
 1. Install the web add-in.
 2. Hide the web add-in UI in the ribbon.
