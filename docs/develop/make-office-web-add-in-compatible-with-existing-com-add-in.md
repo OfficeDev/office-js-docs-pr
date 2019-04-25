@@ -9,7 +9,7 @@ localization_priority: Normal
 
 If you have an existing COM add-in, you can build equivalent functionality in your Office Add-in to extend your solution features to other platforms such as online or macOS. However, Office web add-ins don't have all of the functionality available in COM add-ins. Your COM add-in may provide a better experience than the web add-in on Windows in Excel, Word, and PowerPoint.
 
-You can configure your Office web add-in so that when an equivalent COM add-in is already installed on the user's computer, Office runs the COM add-in instead of your web add-in. The COM add-in is called "equivalent" because Office will seamlessly transition between the COM add-in and the web add-in depending on which is installed on Windows.
+You can configure your Office Add-in so that when an equivalent COM add-in is already installed on the user's computer, Office runs the COM add-in instead of your web add-in. The COM add-in is called "equivalent" because Office will seamlessly transition between the COM add-in and the web add-in depending on which is installed on Windows.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
