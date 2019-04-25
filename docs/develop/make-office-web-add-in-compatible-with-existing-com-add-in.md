@@ -50,7 +50,7 @@ The following scenarios describe what happens depending on how the user acquires
 
 ### AppSource acquisition of an Office Add-in
 
-If a user downloads the web add-in from the Office store, and the equivalent COM add-in is already installed, then Office will:
+If a user downloads the web add-in from AppSource, and the equivalent COM add-in is already installed, then Office will:
 
 1. Install the web add-in.
 2. Hide the web add-in UI in the ribbon.
