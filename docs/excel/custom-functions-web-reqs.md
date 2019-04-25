@@ -1,5 +1,5 @@
 ---
-ms.date: 03/21/2019
+ms.date: 04/25/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Web requests and other data handling with custom functions (preview)
 localization_priority: Priority
@@ -133,7 +133,6 @@ To declare a function as streaming or cancelable, use the JSDOC comment tags `@s
 
 ### Using an invocation parameter
 
-<<<<<<< HEAD
 The invocation parameter is the last parameter specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`).
 
 If you're using Typescript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
@@ -160,37 +159,24 @@ function incrementValue(increment, invocation){
 
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
-The corresponding JSON for this function is as follows. Note that the invocation parameter isn't declared.
 
-```JSON
-{
-  "id": "INCREMENTVALUE",
-  "name": "INCREMENTVALUE",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
+When you specify metadata for a streaming function in the JSON metadata file, you can autogenerate this by using a `@streaming` JSDOC comment tag in your function's script file. For more details, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+
+## Canceling a function
+
+In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
+
+- When the user edits or deletes a cell that references the function.
+- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
+- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
+
+To make a function cancelable, implement a handler in your function's code to tell it what to do when it is canceled. Additionally, use the `@cancelable` JSDOC comment tag in your function's script file. For more details, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ## See also
 
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Custom functions metadata](custom-functions-json.md)
+* [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
