@@ -36,7 +36,10 @@ CustomFunctions.associate("STOREVALUE", StoreValue);
 CustomFunctions.associate("GETVALUE", GetValue);
 ```
 
-[A more detailed code sample on GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) gives an example of passing this information to the task pane. Note that at this time, this sample uses `AsyncStorage` rather than `Office.Storage`, which was the previous name for this storage location. Some of the method names for `AsyncStorage` have changed, so we recommend consulting the `Office.Storage` reference documentation for correct methods.
+[A more detailed code sample on GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) gives an example of passing this information to the task pane.
+
+>[!NOTE]
+> `Office.Storage` replaced the previous storage location, `AsyncStorage` which will be deprecated in the future. If using `AsyncStorage` in your current custom functions code, please update it to `Office.Storage`.
 
 ## See also
 
