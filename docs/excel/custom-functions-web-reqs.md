@@ -121,7 +121,7 @@ ws.onerror(error){
 
 ## Streaming and cancelable functions
 
-Streaming custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh.
+Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything.
 
 Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. It is typically a best practice to make streaming functions also cancelable functions. Excel automatically cancels the execution of a function in the following situations:
 
@@ -129,14 +129,11 @@ Cancelable custom functions enable you to cancel the execution of a streaming cu
 - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
 - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
-To declare a streaming or cancelable function, you will need to do two things: 
-
-- Add streaming and/or cancelable properties to the function's JSON metadata, by declaring `"streaming": true` or `"cancelable": true`. 
-- Declare an invocation parameter which carries important context of the cell being called. 
+To declare a function as streaming or cancelable, use the JSDOC comment tags `@stream` or `@cancelable`.
 
 ### Using an invocation parameter
 
-When setting an invocation parameter, it should come last in the list of parameters specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`). 
+The invocation parameter is the last parameter specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`).
 
 If you're using Typescript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
 
