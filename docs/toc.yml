@@ -167,6 +167,8 @@
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+      - name: Identify an equivalent COM add-in
+        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
       - name: How to find the proper order of manifest elements
         href: develop/manifest-element-ordering.md
 
@@ -307,6 +309,9 @@
           displayName: Excel
         - name: Naming guidelines
           href: excel/custom-functions-naming.md
+          displayName: Excel
+        - name: Identify an equivalent XLL
+          href: excel/make-custom-functions-compatible-with-xll-udf.md
           displayName: Excel
         - name: Batching
           href: excel/custom-functions-batching.md
@@ -719,6 +724,12 @@
       href: reference/manifest/disableentityhighlighting.md
     - name: DisplayName
       href: reference/manifest/displayname.md
+    - name: EquivalentAddin
+      href: reference/manifest/equivalentaddin.md
+    - name: EquivalentAddins
+      href: reference/manifest/equivalentaddins.md
+    - name: FileName
+      href: reference/manifest/filename.md
     - name: Form
       href: reference/manifest/form.md
     - name: FormSettings
@@ -749,6 +760,8 @@
       href: reference/manifest/permissions.md
     - name: PhoneSettings
       href: reference/manifest/phonesettings.md
+    - name: ProgID
+      href: reference/manifest/progid.md
     - name: ProviderName
       href: reference/manifest/providername.md
     - name: QueryUri
@@ -775,6 +788,8 @@
       href: reference/manifest/targetdialect.md
     - name: TargetDialects
       href: reference/manifest/targetdialects.md
+    - name: Type
+      href: reference/manifest/type.md
     - name: Version
       href: reference/manifest/version.md
     - name: VersionOverrides
