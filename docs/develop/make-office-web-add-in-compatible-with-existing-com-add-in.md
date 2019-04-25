@@ -72,7 +72,7 @@ If a user has the COM add-in installed, and then gets a shared document with the
 2. If trusted, the web add-in will install.
 3. Hide the web add-in UI in the ribbon.
 
-### User uninstalls the COM add-in
+## Other COM add-in behavior
 
 If a user uninstalls the COM add-in, then Office restores the web add-in UI on Windows for the equivalent installed web add-in.
 
