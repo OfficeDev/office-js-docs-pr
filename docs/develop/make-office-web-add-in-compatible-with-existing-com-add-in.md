@@ -48,7 +48,7 @@ When an equivalent COM add-in is specified in the web add-in manifest, Office su
 
 The following scenarios describe what happens depending on how the user acquires the web add-in.
 
-### Office Store acquisition of web add-in
+### AppSource acquisition of an Office Add-in
 
 If a user downloads the web add-in from the Office store, and the equivalent COM add-in is already installed, then Office will:
 
