@@ -168,7 +168,7 @@
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
       - name: Identify an equivalent COM add-in
-        href: develop/make-office-web-add-in-compatible-with-existing-com-add-in.md
+        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
       - name: How to find the proper order of manifest elements
         href: develop/manifest-element-ordering.md
 
