@@ -305,6 +305,9 @@
         - name: Naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
+        - name: Save and share state
+          href: excel/custom-functions-save-state.md
+          displayName: Excel
         - name: Troubleshooting
           href: excel/custom-functions-troubleshooting.md
           displayName: Excel
