@@ -70,7 +70,7 @@ If a user has the COM add-in installed, and then gets a shared document with the
 
 1. Prompt the user to trust the web add-in.
 2. If trusted, the web add-in will install.
-3. Office hides the web add-in UI in the ribbon.
+3. Hide the web add-in UI in the ribbon.
 
 ### User uninstalls the COM add-in
 
