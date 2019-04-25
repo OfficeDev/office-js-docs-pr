@@ -5,7 +5,7 @@ ms.date: 04/22/2019
 localization_priority: Normal
 ---
 
-# Make your Office Web Add-in compatible with an existing COM add-in
+# Make your Office Add-in compatible with an existing COM add-in
 
 If you have an existing COM add-in, you can build equivalent functionality in your Office web add-in to extend your solution features to other platforms such as online or macOS. However, Office web add-ins don't have all of the functionality available in COM add-ins. Your COM add-in may provide a better experience than the web add-in on Windows in Excel, Word, and PowerPoint.
 
