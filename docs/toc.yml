@@ -281,7 +281,7 @@
         - name: Metadata
           href: excel/custom-functions-json.md
           displayName: Excel
-        - name: Custom function metadata
+        - name: Metadata generation
           href: excel/custom-functions-json-autogeneration.md
           displayName: Excel
         - name: Best practices
@@ -359,7 +359,6 @@
     - name: Excel JavaScript API reference
       href: /javascript/api/excel
       displayName: Excel
-
   - name: Word add-ins
     href: word/word-add-ins-programming-overview.md
     displayName: Word
