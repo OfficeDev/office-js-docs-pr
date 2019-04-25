@@ -150,47 +150,36 @@ To declare a function volatile, add `"volatile": true` within the `options` obje
 
 ## Saving and sharing state
 
-Custom functions can save data in global JavaScript variables, which can be used in subsequent calls. Saved state is useful when users call the same custom function from more than one cell, because all instances of the function can access the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+The main storage location for custom functions is `Office.Storage`. Storage is limited to 10 MB per domain (which may be shared across multiple add-ins). On Excel for Windows, `Office.Storage` is a separate location within the custom functions runtime, but for Excel Online and Excel for Mac, `Office.Storage` is the same as the browser's `localStorage`. `Office.Storage` is a useful storage location that can be accessed by both custom functions and your add-in's task pane.
 
-The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
+There are multiple ways to use `Office.Storage` to save and share state:
 
-- The `streamTemperature` function updates the temperature value that's displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.
+- You can store default values for custom functions to use when you are offline and unable to reach a web resource
+- You can save values for custom functions to use to avoid making additional calls to a web resource
+- You can save values here from your custom function for your task pane to use
+- You can store values from your task pane here for your custom function to use
 
-- Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.
-
-- If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs. 
-
-- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable. Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
+The following code sample illustrates how to storing an item into `Office.Storage` and then retrieve it.
 
 ```js
-var savedTemperatures;
+function StoreValue(key, value) {
 
-function streamTemperature(thermometerID, handler){
-  if(!savedTemperatures[thermometerID]){
-    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
-  }
-
-  function getNextTemperature(){
-    handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    var delayTime = 1000; // Amount of milliseconds to delay a request by.
-    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
-
-    handler.onCancelled() = function {
-      clearTimeout(delayTime);
-    }
-  }
-  getNextTemperature();
-}
-
-function refreshTemperature(thermometerID){
-  sendWebRequest(thermometerID, function(data){
-    savedTemperatures[thermometerID] = data.temperature;
+  return Office.Storage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
   });
-  setTimeout(function(){
-    refreshTemperature(thermometerID);
-  }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
+
+function GetValue(key) {
+  return Office.Storage.getItem(key);
+}
+
+CustomFunctions.associate("STOREVALUE", StoreValue);
+CustomFunctions.associate("GETVALUE", GetValue);
 ```
+
+[A more detailed code sample on GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) gives an example of passing this information to the task pane. Note that at this time, this sample uses `AsyncStorage` rather than `Office.Storage`, which was the previous name for this storage location. Some of the method names for `AsyncStorage` have changed, so we recommend consulting the `Office.Storage` reference documentation for correct methods.
 
 ## Coauthoring
 
