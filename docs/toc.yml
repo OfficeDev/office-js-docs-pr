@@ -345,14 +345,11 @@
         href: excel/excel-add-ins-worksheets.md
         displayName: Excel
     - name: Excel JavaScript API overview
-
-
-href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
       displayName: Excel
     - name: Excel JavaScript API reference
       href: /javascript/api/excel
       displayName: Excel
-
   - name: Word add-ins
     href: word/word-add-ins-programming-overview.md
     displayName: Word
