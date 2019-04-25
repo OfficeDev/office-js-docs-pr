@@ -170,7 +170,7 @@ If you have a document that contains test data you want to use while debugging y
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar. Visual Studio will automatically build the solution and start Office to host your add-in.
 
 > [!NOTE]
-> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly then Basic Auth may be disabled for accounts on your Office 365 tenant. In this case, try using a Microsoft account instead.
+> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Office 365 tenant. In this case, try using a Microsoft account instead. You may also need to set the property "Use multi-factor auth" to True in the Outlook Web Add-in project properties dialog.
 
 When Visual Studio builds the project it performs the following tasks:
 
@@ -179,6 +179,13 @@ When Visual Studio builds the project it performs the following tasks:
 2. Creates a set of registry entries on your computer that enable the add-in to appear in the host application.
 
 3. Builds the web application project, and then deploys it to the local IIS web server (https://localhost).
+
+4. If this is the first add-in project that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
+
+
+> [!NOTE]
+> The latest version of Office may use a newer web control to display the add-in contents when running on Windows 10. If this is the case, Visual Studio may prompt you to add a local network loopback exemption. This is required for the web control, in the Office host application, to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**.
+
 
 Next, Visual Studio does the following:
 

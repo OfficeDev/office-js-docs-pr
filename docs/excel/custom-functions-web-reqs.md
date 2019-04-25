@@ -123,7 +123,7 @@ ws.onerror(error){
 
 Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything.
 
-Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. It is typically a best practice to make streaming functions also cancelable functions. Excel automatically cancels the execution of a function in the following situations:
+Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel automatically cancels the execution of a function in the following situations:
 
 - When the user edits or deletes a cell that references the function.
 - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
@@ -133,6 +133,7 @@ To declare a function as streaming or cancelable, use the JSDOC comment tags `@s
 
 ### Using an invocation parameter
 
+<<<<<<< HEAD
 The invocation parameter is the last parameter specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`).
 
 If you're using Typescript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.

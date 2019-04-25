@@ -1,5 +1,5 @@
 ---
-ms.date: 01/08/2019
+ms.date: 03/29/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel (preview)
 localization_priority: Normal
@@ -7,11 +7,20 @@ localization_priority: Normal
 
 # Custom functions metadata (preview)
 
-When you define [custom functions](custom-functions-overview.md) within your Excel add-in, your add-in project must include a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users. This article describes the format of the JSON metadata file.
+When you define [custom functions](custom-functions-overview.md) within your Excel add-in, your add-in project includes a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users. This file is generated either:
+
+- by you, in a handwritten JSON file
+- from the JSDoc comments you enter at the beginning of your function
+
+Custom functions are registered when the user runs the add-in for the first time and after that are available to the same user in all workbooks.
+
+This article describes the format of the JSON metadata file, assuming you are writing it by hand. For information about JSDoc comment JSON file generation, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 For information about the other files that you must include in your add-in project to enable custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+> Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
 ## Example metadata
 
@@ -99,7 +108,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 ```
 
 > [!NOTE]
-> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json) GitHub repository.
+> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json) GitHub repository.
 
 ## functions 
 

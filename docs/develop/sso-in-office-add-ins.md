@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on for Office Add-ins
 description: ''
-ms.date: 03/22/2019
+ms.date: 04/10/2019
 localization_priority: Priority
 ---
 
@@ -40,7 +40,7 @@ The following diagram shows how the SSO process works.
 4. The Office host application requests the **add-in token** from the Azure AD v2.0 endpoint for the current user.
 5. Azure AD sends the add-in token to the Office host application.
 6. The Office host application sends the **add-in token** to the add-in as part of the result object returned by the `getAccessTokenAsync` call.
-7. JavaScript in the add-in can parse the token and extract the information it needs, such as the user's email address. 
+7. JavaScript in the add-in can parse the token and extract the information it needs, such as the user's email address.
 8. Optionally, the add-in can send HTTP request to its server-side for more data about the user; such as the user's preferences. Alternatively, the access token itself could be sent to the server-side for parsing and validation there.
 
 ## Develop an SSO add-in
@@ -52,7 +52,7 @@ This section describes the tasks involved in creating an Office Add-in that uses
 
 ### Create the service application
 
-Register the add-in at the registration portal for the Azure v2.0 endpoint: https://apps.dev.microsoft.com. This is a 5–10 minute process that includes the following tasks:
+Register the add-in at the registration portal for the Azure v2.0 endpoint. This is a 5–10 minute process that includes the following tasks:
 
 * Get a client ID and secret for the add-in.
 * Specify the permissions that your add-in needs to AAD v. 2.0 endpoint (and optionally to Microsoft Graph). The "profile" permission is always needed.
