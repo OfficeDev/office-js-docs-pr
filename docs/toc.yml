@@ -283,7 +283,7 @@
         - name: Metadata
           href: excel/custom-functions-json.md
           displayName: Excel
-        - name: Custom function metadata
+        - name: Metadata generation
           href: excel/custom-functions-json-autogeneration.md
           displayName: Excel
         - name: Best practices
@@ -312,6 +312,9 @@
           displayName: Excel
         - name: Identify an equivalent XLL
           href: excel/make-custom-functions-compatible-with-xll-udf.md
+          displayName: Excel
+        - name: Batching
+          href: excel/custom-functions-batching.md
           displayName: Excel
         - name: Troubleshooting
           href: excel/custom-functions-troubleshooting.md
@@ -358,7 +361,6 @@
     - name: Excel JavaScript API reference
       href: /javascript/api/excel
       displayName: Excel
-
   - name: Word add-ins
     href: word/word-add-ins-programming-overview.md
     displayName: Word

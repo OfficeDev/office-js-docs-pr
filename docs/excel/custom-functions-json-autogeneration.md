@@ -1,5 +1,5 @@
 ---
-ms.date: 04/03/2019
+ms.date: 04/25/2019
 description: Use JSDOC tags to dynamically create your custom functions JSON metadata.
 title: Create JSON metadata for custom functions (preview)
 localization_priority: Priority
@@ -48,7 +48,7 @@ This tag is required to create metadata for the custom function.
 
 There should also be a call to `CustomFunctions.associate("id", functionName);`
 
-#### id 
+#### id
 
 The id is used as the invariant identifier for the custom function stored in the document. It should not change.
 
@@ -58,7 +58,7 @@ The id is used as the invariant identifier for the custom function stored in the
 
 #### name
 
-Provides the display name for the custom function. 
+Provides the display name for the custom function.
 
 * If name is not provided, the id is also used as the name.
 * Allowed characters: Letters [Unicode Alphabetic character](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), numbers, period (.), and underscore (\_).
@@ -88,6 +88,9 @@ JavaScript Syntax: @param {type} name _description_
 To denote a custom function parameter as optional:
 * Put square brackets around the parameter name. For example: `@param {string} [text] Optional text`.
 
+> [!NOTE]
+> The default value for optional parameters is `null`.
+
 #### TypeScript
 
 TypeScript Syntax: @param name _description_
@@ -102,6 +105,9 @@ To denote a custom function parameter as optional, do one of the following:
 * Give the parameter a default value. For example: `function f(text: string = "abc")`
 
 For detailed description of the @param see: [JSDoc](http://usejsdoc.org/tags-param.html)
+
+> [!NOTE]
+> The default value for optional parameters is `null`.
 
 ---
 ### @requiresAddress
