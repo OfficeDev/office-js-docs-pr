@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.3
 description: ''
-ms.date: 02/15/2019
+ms.date: 04/24/2019
 localization_priority: Normal
 ---
 
@@ -16,7 +16,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ### Namespaces
 
@@ -24,7 +24,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 ### Members
 
-####  displayLanguage :String
+#### displayLanguage: String
 
 Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.
 
@@ -39,7 +39,7 @@ The `displayLanguage` value reflects the current **Display Language** setting sp
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -62,7 +62,7 @@ function write(message){
 }
 ```
 
-####  officeTheme :Object
+#### officeTheme: Object
 
 Provides access to the properties for Office theme colors.
 
@@ -89,7 +89,7 @@ Using Office theme colors let's you coordinate the color scheme of your add-in w
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -106,7 +106,7 @@ function applyOfficeTheme(){
 }
 ```
 
-####  roamingSettings :[RoamingSettings](/javascript/api/outlook_1_3/office.RoamingSettings)
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook_1_3/office.RoamingSettings)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
@@ -121,5 +121,5 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

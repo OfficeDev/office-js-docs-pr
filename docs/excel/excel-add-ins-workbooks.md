@@ -5,7 +5,6 @@ ms.date: 02/28/2019
 localization_priority: Priority
 ---
 
-
 # Work with workbooks using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with workbooks using the Excel JavaScript API. For the complete list of properties and methods that the **Workbook** object supports, see [Workbook Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook). This article also covers workbook-level actions performed through the [Application](/javascript/api/excel/excel.application) object.
@@ -71,7 +70,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### Insert a copy of an existing workbook into the current one
 
 > [!NOTE]
-> The `WorksheetCollection.addFromBase64` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> The `WorksheetCollection.addFromBase64` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A workbook's [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) has the `addFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as base64-encoded string, just like the `Excel.createWorkbook` call.
 
@@ -261,7 +260,7 @@ context.application.suspendApiCalculationUntilNextSync();
 ## Save the workbook
 
 > [!NOTE]
-> The `Workbook.save(saveBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> The `Workbook.save(saveBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.save(saveBehavior)` saves the workbook to persistent storage . The `save` method takes a single, optional parameter that can be one of the following values:
 
@@ -278,7 +277,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 ## Close the workbook
 
 > [!NOTE]
-> The `Workbook.close(closeBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> The `Workbook.close(closeBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.close(closeBehavior)` closes the workbook, along with add-ins that are associated with the workbook (the Excel application remains open). The `close` method takes a single, optional parameter that can be one of the following values:
 

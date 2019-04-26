@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 
-ms.date: 03/11/2019
+ms.date: 04/15/2019
 localization_priority: Priority
 ---
 
@@ -18,7 +18,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * The latest available version of Visual Studio 2017.
 
-* Office 365 (subscription version, also called “Click to Run”). Latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+* Office 365 (the subscription version of Office). Latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
 
 ## Set up the starter project
 
@@ -64,7 +64,7 @@ The following instruction are written generically so they can be used in multipl
 
 ## Configure the add-in
 
-1. In the following string, replace the placeholder “{tenant_ID}” with your Office 365 tenant ID. Use one of the methods in [Find your Office 365 tenant ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) to obtain it.
+1. In the following string, replace the placeholder “{tenant_ID}” with your Office 365 tenancy ID. If you didn't copy the tenancy ID when you registered the add-in with AAD, use one of the methods in [Find your Office 365 tenant ID](/onedrive/find-your-office-365-tenant-id) to obtain it.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -177,7 +177,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Below the `getOneDriveFiles` method, add the code below. Note the following about this code:
 
-    * The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token.
+    * The [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token.
     * If no user is signed into Office, the Office host will prompt the user to sign in.
     * The options parameter sets `forceConsent` to `false`, so the user will not be prompted to consent to giving the Office host access to your add-in every time she or he uses the add-in. The first time the user runs the add-in, the call of `getAccessTokenAsync` will fail, but error-handling logic that you add in a later step will automatically re-call with the `forceConsent` option set to `true` and the user will be prompted to consent, but only that first time.
     * You will create the `handleClientSideErrors` method in a later step.

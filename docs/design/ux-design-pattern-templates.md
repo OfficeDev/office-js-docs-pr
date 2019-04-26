@@ -1,7 +1,7 @@
 ---
 title: UX design patterns for Office Add-ins
 description: ''
-ms.date: 06/27/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -23,7 +23,6 @@ Use the UX pattern templates to:
 * Build add-ins that visually integrate with the default Office UI.
 * Ideate and visualize UX.
 
-
 ## Getting started
 
 The patterns are organized by key actions or experiences that are common in an add-in. The main groups are:
@@ -35,15 +34,12 @@ The patterns are organized by key actions or experiences that are common in an a
 
 Browse each grouping to get an idea of how you can design your add-in using best practices.
 
-
-
->NOTE: The example screens shown throughout this documentation are designed and displayed at a resolution of **1366x768**
-
-
-
+> [!NOTE]
+> The example screens shown throughout this documentation are designed and displayed at a resolution of **1366x768**.
 
 ## See also
+
 * [Design toolkits](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [Best practices for developing Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Get started using Fabric React](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Best practices for developing Office Add-ins](/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Get started using Fabric React](/office/dev/add-ins/design/using-office-ui-fabric-react)

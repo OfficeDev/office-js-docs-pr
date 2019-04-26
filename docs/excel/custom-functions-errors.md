@@ -20,7 +20,7 @@ function getComment(commentID) {
     .then(function (data) {
       return data.json();
     })
-    .then((json) => {
+    .then(function (json) {
       return json.body;
     })
     .catch(function (error) {

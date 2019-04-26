@@ -1,14 +1,12 @@
 ---
 title: Loading the DOM and runtime environment
 description: ''
-ms.date: 01/09/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
 
 # Loading the DOM and runtime environment
-
-
 
 An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic. 
 
@@ -18,55 +16,49 @@ The following figure shows the flow of events involved in starting a content or 
 
 ![Flow of events when starting a content or task pane add-in](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
-The following events occur when a content or task pane add-in starts: 
-
-
+The following events occur when a content or task pane add-in starts:
 
 1. The user opens a document that already contains an add-in or inserts an add-in in the document.
-    
+
 2. The Office host application reads the add-in's XML manifest from AppSource, an add-in catalog on SharePoint, or the shared folder catalog it originates from.
-    
+
 3. The Office host application opens the add-in's HTML page in a browser control.
-    
+
     The next two steps, steps 4 and 5, occur asynchronously and in parallel. For this reason, your add-in's code must make sure that both the DOM and the add-in runtime environment have finished loading before proceeding.
-    
+
 4. The browser control loads the DOM and HTML body, and calls the event handler for the  **window.onload** event.
-    
-5. The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#initialize-reason-) event of the [Office](/javascript/api/office) object, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).
-    
+
+5. The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#office-initialize) event of the [Office](/javascript/api/office) object, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).
+
 6. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
-    
+
 
 ## Startup of an Outlook add-in
-
-
 
 The following figure shows the flow of events involved in starting an Outlook add-in running on the desktop, tablet, or smartphone.
 
 ![Flow of events when starting Outlook add-in](../images/outlook15-loading-dom-agave-runtime.png)
 
-The following events occur when an Outlook add-in starts: 
-
-
+The following events occur when an Outlook add-in starts:
 
 1. When Outlook starts, Outlook reads the XML manifests for Outlook add-ins that have been installed for the user's email account.
-    
+
 2. The user selects an item in Outlook.
-    
+
 3. If the selected item satisfies the activation conditions of an Outlook add-in, Outlook activates the add-in and makes its button visible in the UI.
-    
+
 4. If the user clicks the button to start the Outlook add-in, Outlook opens the HTML page in a browser control. The next two steps, steps 5 and 6, occur in parallel.
-    
+
 5. The browser control loads the DOM and HTML body, and calls the event handler for the  **onload** event.
-    
-6. Outlook loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the event handler for the [initialize](/javascript/api/office#initialize-reason-) event of the [Office](/javascript/api/office) object of the add-in, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).
-    
+
+6. Outlook loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the event handler for the [initialize](/javascript/api/office#office-initialize) event of the [Office](/javascript/api/office) object of the add-in, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).
+
 7. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
-    
+
 
 ## Checking the load status
 
-One way to check that both the DOM and the runtime environment have finished loading is to use the jQuery [.ready()](https://api.jquery.com/ready/) function: `$(document).ready()`. For example, the following **onReady** event handler makes sure the DOM is first loaded before the code specific to initializing the add-in runs. Subsequently, the **onReady** handler proceeds to use the [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox) property to obtain the currently selected item in Outlook, and calls the main function of the add-in, `initDialer`.
+One way to check that both the DOM and the runtime environment have finished loading is to use the jQuery [.ready()](https://api.jquery.com/ready/) function: `$(document).ready()`. For example, the following **onReady** event handler makes sure the DOM is first loaded before the code specific to initializing the add-in runs. Subsequently, the **onReady** handler proceeds to use the [mailbox.item](/javascript/api/outlook/office.mailbox) property to obtain the currently selected item in Outlook, and calls the main function of the add-in, `initDialer`.
 
 ```js
 Office.onReady()
@@ -117,4 +109,3 @@ The phone dialer sample Outlook add-in shows a slightly different approach using
 ## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
-    
