@@ -9,10 +9,10 @@ localization_priority: Normal
 
 PivotTables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create PivotTables and interact with their components.
 
-If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user. 
-See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools. 
+If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user.
+See [Create a PivotTable to analyze worksheet data](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools.
 
-This article provides code samples for common scenarios. To further your understanding of the PivotTable API, see [**PivotTable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottable).
+This article provides code samples for common scenarios. To further your understanding of the PivotTable API, see [**PivotTable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottablecollection).
 
 > [!IMPORTANT]
 > PivotTables created with OLAP are not currently supported. There is also no support for Power Pivot.
@@ -39,7 +39,7 @@ This PivotTable could be generated through the JavaScript API or through the Exc
 
 ## Create a PivotTable
 
-PivotTables need a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`). 
+PivotTables need a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`).
 The following samples show various PivotTable creation techniques.
 
 ### Create a PivotTable with range addresses
@@ -130,9 +130,9 @@ Excel.run(function (context) {
 
 ## Add data hierarchies to the PivotTable
 
-Data hierarchies fill the PivotTable with information to combine based on the rows and columns. Adding the data hierarchies of **Crates Sold at Farm** and **Crates Sold Wholesale** gives sums of those figures for each row and column. 
+Data hierarchies fill the PivotTable with information to combine based on the rows and columns. Adding the data hierarchies of **Crates Sold at Farm** and **Crates Sold Wholesale** gives sums of those figures for each row and column.
 
-In the example, both **Farm** and **Type** are rows, with the crate sales as the data. 
+In the example, both **Farm** and **Type** are rows, with the crate sales as the data.
 
 ![A PivotTable showing the total sales of different fruit based on the farm they came from.](../images/excel-pivots-data-hierarchy.png)
 
@@ -149,6 +149,72 @@ Excel.run(function (context) {
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
+    return context.sync();
+});
+```
+
+## Slicers
+
+[Slicers](/javascript/api/excel/excel.slicer) allow data to be filtered from an Excel PivotTable or table. A slicer uses values from a specified column or PivotField to filter corresponding rows. Your add-in can adjust these filters, as can users [through the Excel UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d). The slicer itself is sits on top of the worksheet in the drawing layer.
+
+> [!NOTE]
+> This section focuses on slicers connected to PivotTables. The same techniques subsequently described apply to adding slicers to tables.
+
+Slicers are created by adding them to `slicers` property (which is of type [SlicerCollection](/javascript/api/excel/excel.slicercollection)) of a `Workbook` or `Worksheet` object. Slicers are added with the `SlicerCollection.add` method. This has three parameters:
+
+- `slicerSource`: The data source that the new slicer is based on. It can be a `PivotTable`, a `Table`, or a string representing the name or ID of a `PivotTable` or `Table`.
+- `sourceField`: The field in the data source to filter by. It can be a `PivotField`, a `TableColumn`, or a string representing the name or ID of a `PivotField` or `TableColumn`.
+- `slicerDestination`: 
+
+```js
+Excel.run(async (context) => {
+    var sheet = context.workbook.worksheets.getItem("Pivot");
+    var slicer = sheet.slicers.add(
+        "Farm Sales" /* The slicer data source. For PivotTables, this can be the PivotTable object reference or name. */,
+        "Type" /* The data source to filter by. For PivotTables, this can be a PivotField object reference or ID. */
+    );
+    slicer.name = "Fruit Slicer";
+    return context.sync();
+});
+```
+
+
+
+```js
+Excel.run(async (context) => {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    // Anything other than the following three values will be filtered out of the PivotTable for display and aggregation.
+    slicer.selectItems(["Lemon", "Lime", "Orange"]);
+    return context.sync();
+});
+```
+
+```js
+Excel.run(async (context) => {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    slicer.clearFilters();
+    return context.sync();
+});
+```
+
+```js
+Excel.run(async (context) => {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    slicer.caption = "Fruit Types";
+    slicer.left = 395;
+    slicer.top = 15;
+    slicer.height = 135;
+    slicer.width = 150;
+    slicer.style = "SlicerStyleLight6";
+    return context.sync();
+});
+```
+
+
+```js
+Excel.run(async (context) => {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.slicers.getItemAt(0).delete();
     return context.sync();
 });
 ```
