@@ -1,5 +1,5 @@
 ---
-ms.date: 02/08/2019
+ms.date: 04/25/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
 title: Naming guidelines for custom functions in Excel (preview)
 localization_priority: Normal
@@ -34,28 +34,9 @@ Also consider how you'd like people to use the functions within your add-in. In 
 
 ## Localizing function names
 
-You can localize your function names for different markets. You can set alternative `name` and `description` properties within your function metadata for each locale, as shown in the following example. You'll notice that the `id` property is always specified in your add-in's default language (in this case, English). The `id` of a function should be declared once and not change, nor be localized. The `name` and `description` of both the function and parameters are localized, into Russian in the following example.
+You can localize your function names for different markets using separate JSON files and override values in your add-in's manifest file. As a best practice, avoid giving your functions an id or name that is a built-in Excel function in another language as this could conflict with localized functions.
 
-```JSON
-{
-    "id": "SLEEP",
-    "name": "СПИ",
-    "description": "Спи за определен брой милисекунди",
-    "result": {
-        "dimensionality": "scalar"
-    },
-    "parameters": [
-        {
-        "name": "мс",
-        "description": "милисекунди",
-        "type": "number",
-        "dimensionality": "scalar"
-        }
-    ]
-}
-```
-
-You'll then use this metadata file with the variant text in another language as the metadata file that loads when an override locale occurs. You'll need to declare that this is your override file in your XML manifest file for your add-in. For information on setting up your XML file and declaring optional additional locales, see [Localization for Office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/localization).
+For full information on localizing, see [Localize custom functions](custom-functions-localize.md)
 
 ## See also
 
