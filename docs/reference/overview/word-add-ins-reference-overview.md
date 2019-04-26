@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API overview
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
 ---
@@ -32,7 +32,7 @@ If you use TypeScript and have npm, you can get the the TypeScript definitions b
 
 ## Running Word add-ins
 
-To run your add-in, use an Office.initialize event handler. For more information about add-in initialization, see [Understanding the API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office) .
+To run your add-in, use an Office.initialize event handler. For more information about add-in initialization, see [Understanding the API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office) .
 
 Add-ins that target Word 2016 or later execute by passing a function into the **Word.run()** method. The function passed into the **run** method must have a context argument. This [context object](/javascript/api/word/word.requestcontext) is different than the context object you get from the Office object, but it is also used to interact with the Word runtime environment. The context object provides access to the Word JavaScript API object model. The following example shows how to initialize and execute a Word add-in by using the **Word.run()** method.
 
@@ -132,6 +132,6 @@ For detailed information about the Word JavaScript API, see the [Word JavaScript
 
 ## See also
 
-* [Word add-ins overview](https://docs.microsoft.com/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Office Add-ins platform overview](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+* [Word add-ins overview](/office/dev/add-ins/word/word-add-ins-programming-overview)
+* [Office Add-ins platform overview](/office/dev/add-ins/overview/office-add-ins)
 * [Word add-in samples on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)

@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins in Office Online
 description: How to use Office Online to test and debug your add-ins.
-ms.date: 03/14/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -18,7 +18,7 @@ To get started:
     
   > [!NOTE]
   > To sign up for a free Office 365 developer subscription, join our [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program). 
-  > See the [Office 365 Developer Program documentation](https://docs.microsoft.com/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription.
+  > See the [Office 365 Developer Program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription.
      
 - Set up an add-in catalog on Office 365 (SharePoint Online). An add-in catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an add-in catalog document library. For more information, see [Publish task pane and content add-ins to an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
@@ -59,7 +59,7 @@ The following are some issues that you might encounter as you debug:
 ## See also
 
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
-- [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies)  
-- [Create effective AppSource apps and add-ins](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
+- [AppSource validation policies](/office/dev/store/validation-policies)  
+- [Create effective AppSource apps and add-ins](/office/dev/store/create-effective-office-store-listings)  
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
     

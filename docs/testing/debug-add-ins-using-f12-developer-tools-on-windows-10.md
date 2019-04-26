@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using F12 developer tools on Windows 10
 description: ''
-ms.date: 10/16/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -53,7 +53,7 @@ This example uses Word and a free add-in from AppSource.
     
 5. Set the breakpoint.
     
-   To set the breakpoint in **Home.js**, choose line 144, which is in the  `textChanged` function. You will see a red dot to the left of the line and a corresponding line in the **Call stack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
+   To set the breakpoint in **Home.js**, choose line 144, which is in the  `textChanged` function. You will see a red dot to the left of the line and a corresponding line in the **Call stack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
     
    ![Debugger with breakpoint in home.js file](../images/debugger-home-js-02.png)
 
@@ -66,5 +66,5 @@ This example uses Word and a free add-in from AppSource.
 
 ## See also
 
-- [Inspect running JavaScript with the Debugger](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
-- [Using the F12 developer tools](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
+- [Inspect running JavaScript with the Debugger](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
+- [Using the F12 developer tools](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))

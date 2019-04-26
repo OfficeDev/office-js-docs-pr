@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API requirement sets
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ---
 
 # Excel JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 Excel add-ins run across multiple versions of Office, including Office 2016 or later for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
@@ -37,7 +37,7 @@ For more information about versions, build numbers, and Office Online Server, se
 - [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+- [Office Online Server overview](/officeonlineserver/office-online-server-overview)
 
 ## Excel JavaScript preview APIs
 
@@ -446,10 +446,7 @@ The following is a complete list of APIs in preview.
 ||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)||
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)||
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
-||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
-||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
-|[Setting](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Returns or sets the alternative description text for a Shape object.|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|Returns or sets the alternative title text for a Shape object.|
 ||[delete()](/javascript/api/excel/excel.shape#delete--)|Removes the shape from the worksheet.|
@@ -706,11 +703,11 @@ The Excel JavaScript API requirement set 1.8 features include APIs for PivotTabl
 
 ### PivotTable
 
-Wave 2 of the PivotTable APIs lets add-ins set the hierarchies of a PivotTable. You can now control the data and how it is aggregated. Our [PivotTable article](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-pivottables) has more on the new PivotTable functionality.
+Wave 2 of the PivotTable APIs lets add-ins set the hierarchies of a PivotTable. You can now control the data and how it is aggregated. Our [PivotTable article](/office/dev/add-ins/excel/excel-add-ins-pivottables) has more on the new PivotTable functionality.
 
 ### Data Validation
 
-Data validation gives you control of what a user enters in a worksheet. You can limit cells to pre-defined answer sets or give pop-up warnings about undesirable input. Learn more about [adding data validation to ranges](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-data-validation) today.
+Data validation gives you control of what a user enters in a worksheet. You can limit cells to pre-defined answer sets or give pop-up warnings about undesirable input. Learn more about [adding data validation to ranges](/office/dev/add-ins/excel/excel-add-ins-data-validation) today.
 
 ### Charts
 
@@ -718,7 +715,7 @@ Another round of Chart APIs brings even greater programmatic control over chart 
 
 ### Events
 
-More [events](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-events) have been added for charts. Have your add-in react to users interacting with the chart. You can also [toggle events](https://docs.microsoft.com/office/dev/add-ins/excel/performance#enable-and-disable-events) firing across the entire workbook.
+More [events](/office/dev/add-ins/excel/excel-add-ins-events) have been added for charts. Have your add-in react to users interacting with the chart. You can also [toggle events](/office/dev/add-ins/excel/performance#enable-and-disable-events) firing across the entire workbook.
 
 |Object| What's new| Description|Requirement Set|
 |:----|:----|:----|:----|
@@ -979,7 +976,7 @@ With the new chart APIs, you can create additional chart types, add a data serie
 
 ### Events
 
-Excel events APIs provide a variety of event handlers that allow your add-in to automatically run a designated function when a specific event occurs. You can design that function to perform whatever actions your scenario requires. For a list of events that are currently available, see [Work with Events using the Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-events).
+Excel events APIs provide a variety of event handlers that allow your add-in to automatically run a designated function when a specific event occurs. You can design that function to perform whatever actions your scenario requires. For a list of events that are currently available, see [Work with Events using the Excel JavaScript API](/office/dev/add-ins/excel/excel-add-ins-events).
 
 ### Customize the appearance of worksheets and ranges
 
@@ -1666,6 +1663,6 @@ Excel JavaScript API 1.1 is the first version of the API. For details about the 
 
 ## See also
 
-- [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Specify Office hosts and API requirements](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office Add-ins XML manifest](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)

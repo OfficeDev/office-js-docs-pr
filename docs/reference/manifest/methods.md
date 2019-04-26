@@ -1,7 +1,7 @@
 ---
 title: Methods element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -29,5 +29,5 @@ Specifies the list of JavaScript API for Office methods that your Office Add-in 
 
 ## Remarks
 
-The  **Methods** and **Method** elements aren't supported in mail add-ins. For more information about requirement sets, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+The  **Methods** and **Method** elements aren't supported in mail add-ins. For more information about requirement sets, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 

@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-ins
 description: ''
-ms.date: 01/24/2019
+ms.date: 04/15/2019
 localization_priority: Priority
 ---
 
@@ -9,9 +9,9 @@ localization_priority: Priority
 
 You can use PowerPoint add-ins to build engaging solutions for your users' presentations across platforms including Windows, iOS, Office Online, and Mac. You can create two types of PowerPoint add-ins:
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://store.office.com/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
+- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/WA104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
-- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Shutterstock Images](https://store.office.com/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false) add-in, which you can use to add professional photos to your presentation. 
+- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907) add-in, which you can use to add professional photos to your presentation. 
 
 ## PowerPoint add-in scenarios
 
@@ -29,13 +29,13 @@ The code examples in this article demonstrate some basic tasks for developing ad
 If you are building a content add-in, you will need to get the presentation's active view and handle the `ActiveViewChanged` event, as part of your `Office.Initialize` handler.
 
 > [!NOTE]
-> In PowerPoint Online, the [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) event will never fire as Slide Show mode is treated as a new session. In this case, the add-in must fetch the active view on load, as shown in the following code sample.
+> In PowerPoint Online, the [Document.ActiveViewChanged](/javascript/api/office/office.document) event will never fire as Slide Show mode is treated as a new session. In this case, the add-in must fetch the active view on load, as shown in the following code sample.
 
 In the following code sample:
 
-- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document#getactiveviewasync-options--callback-) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" (**Slide Show** or **Reading View**).
+- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](/javascript/api/office/office.document#getactiveviewasync-options--callback-) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" (**Slide Show** or **Reading View**).
 
-- The  `registerActiveViewChanged` function calls the [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) method to register a handler for the [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) event.
+- The  `registerActiveViewChanged` function calls the [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) method to register a handler for the [Document.ActiveViewChanged](/javascript/api/office/office.document) event.
 
 
 ```js
@@ -84,7 +84,7 @@ function registerActiveViewChanged() {
 
 ## Navigate to a particular slide in the presentation
 
-In the following code sample, the `getSelectedRange` function calls the [Document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method to get the JSON object returned by `asyncResult.value`, which contains an array named **slides**. The **slides** array contains the ids, titles, and indexes of selected range of slides (or of the current slide, if multiple slides are not selected). It also saves the id of the first slide in the selected range to a global variable.
+In the following code sample, the `getSelectedRange` function calls the [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method to get the JSON object returned by `asyncResult.value`, which contains an array named **slides**. The **slides** array contains the ids, titles, and indexes of selected range of slides (or of the current slide, if multiple slides are not selected). It also saves the id of the first slide in the selected range to a global variable.
 
 ```js
 function getSelectedRange() {
@@ -103,7 +103,7 @@ function getSelectedRange() {
 }
 ```
 
-In the following code sample, the `goToFirstSlide` function calls the [Document.goToByIdAsync](https://docs.microsoft.com/javascript/api/office/office.document#gotobyidasync-id--gototype--options--callback-) method to navigate to the first slide that was identified by the `getSelectedRange` function shown previously.
+In the following code sample, the `goToFirstSlide` function calls the [Document.goToByIdAsync](/javascript/api/office/office.document#gotobyidasync-id--gototype--options--callback-) method to navigate to the first slide that was identified by the `getSelectedRange` function shown previously.
 
 ```js
 function goToFirstSlide() {
@@ -142,7 +142,7 @@ function goToSlideByIndex() {
 
 ## Get the URL of the presentation
 
-In the following code sample, the  `getFileUrl` function calls the [Document.getFileProperties](https://docs.microsoft.com/javascript/api/office/office.document#getfilepropertiesasync-options--callback-) method to get the URL of the presentation file.
+In the following code sample, the  `getFileUrl` function calls the [Document.getFileProperties](/javascript/api/office/office.document#getfilepropertiesasync-options--callback-) method to get the URL of the presentation file.
 
 ```js
 function getFileUrl() {
@@ -187,7 +187,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## See also
 
-- [PowerPoint Code Samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
+- [PowerPoint Code Samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [How to save add-in state and settings per document for content and task pane add-ins](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [Get the whole document from an add-in for PowerPoint or Word](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
