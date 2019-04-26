@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 04/17/2019
+ms.date: 04/24/2019
 localization_priority: Normal
 ---
 
@@ -51,7 +51,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 
 ### Members
 
-#### ewsUrl :String
+#### ewsUrl: String
 
 Gets the URL of the Exchange Web Services (EWS) endpoint for this email account. Read mode only.
 
@@ -79,7 +79,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 ---
 ---
 
-#### masterCategories :[MasterCategories](/javascript/api/outlook/office.mastercategories)
+#### masterCategories: [MasterCategories](/javascript/api/outlook/office.mastercategories)
 
 Gets an object that provides methods to manage the categories master list on this mailbox.
 
@@ -115,7 +115,7 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 ---
 ---
 
-#### restUrl :String
+#### restUrl: String
 
 Gets the URL of the REST endpoint for this email account.
 
@@ -139,7 +139,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 
 ### Methods
 
-####  addHandlerAsync(eventType, handler, [options], [callback])
+#### addHandlerAsync(eventType, handler, [options], [callback])
 
 Adds an event handler for a supported event.
 
@@ -185,7 +185,7 @@ function loadNewItem(eventArgs) {
 ---
 ---
 
-####  convertToEwsId(itemId, restVersion) → {String}
+#### convertToEwsId(itemId, restVersion) → {String}
 
 Converts an item ID formatted for REST into EWS format.
 
@@ -227,7 +227,7 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ---
 ---
 
-####  convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
+#### convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
 
 Gets a dictionary containing time information in local client time.
 
@@ -257,7 +257,7 @@ Type:
 ---
 ---
 
-####  convertToRestId(itemId, restVersion) → {String}
+#### convertToRestId(itemId, restVersion) → {String}
 
 Converts an item ID formatted for EWS into REST format.
 
@@ -299,7 +299,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 ---
 ---
 
-####  convertToUtcClientTime(input) → {Date}
+#### convertToUtcClientTime(input) → {Date}
 
 Gets a Date object from a dictionary containing time information.
 
@@ -334,7 +334,7 @@ A Date object with the time expressed in UTC.
 ---
 ---
 
-####  displayAppointmentForm(itemId)
+#### displayAppointmentForm(itemId)
 
 Displays an existing calendar appointment.
 
@@ -372,7 +372,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 ---
 ---
 
-####  displayMessageForm(itemId)
+#### displayMessageForm(itemId)
 
 Displays an existing message.
 
@@ -634,7 +634,7 @@ function cb(asyncResult) {
 ---
 ---
 
-####  getUserIdentityTokenAsync(callback, [userContext])
+#### getUserIdentityTokenAsync(callback, [userContext])
 
 Gets a token identifying the user and the Office Add-in.
 
@@ -670,7 +670,7 @@ function cb(asyncResult) {
 ---
 ---
 
-####  makeEwsRequestAsync(data, callback, [userContext])
+#### makeEwsRequestAsync(data, callback, [userContext])
 
 Makes an asynchronous request to an Exchange Web Services (EWS) service on the Exchange server that hosts the user’s mailbox.
 
@@ -771,7 +771,7 @@ function callback(asyncResult)  {
 ---
 ---
 
-####  removeHandlerAsync(eventType, [options], [callback])
+#### removeHandlerAsync(eventType, [options], [callback])
 
 Removes the event handlers for a supported event type.
 

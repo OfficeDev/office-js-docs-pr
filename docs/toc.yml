@@ -9,6 +9,9 @@
   - name: Host and platform availability
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+  - name: Explore Office JS API using Script Lab
+    href: overview/explore-with-script-lab.md
+    displayName: Excel, Word, PowerPoint, Project
 
 - name: Quick Starts
   items:
@@ -284,7 +287,7 @@
         - name: Metadata
           href: excel/custom-functions-json.md
           displayName: Excel
-        - name: Custom function metadata
+        - name: Metadata generation
           href: excel/custom-functions-json-autogeneration.md
           displayName: Excel
         - name: Best practices
@@ -310,6 +313,9 @@
           displayName: Excel
         - name: Naming guidelines
           href: excel/custom-functions-naming.md
+          displayName: Excel
+        - name: Batching
+          href: excel/custom-functions-batching.md
           displayName: Excel
         - name: Troubleshooting
           href: excel/custom-functions-troubleshooting.md
@@ -356,7 +362,6 @@
     - name: Excel JavaScript API reference
       href: /javascript/api/excel
       displayName: Excel
-
   - name: Word add-ins
     href: word/word-add-ins-programming-overview.md
     displayName: Word
@@ -467,7 +472,7 @@
       items:
       - name: Sideload Office Add-ins on iPad and Mac
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
-      - name: Debug on iPad and Mac
+      - name: Debug on Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: Usability testing
       href: develop/usability-testing.md
