@@ -1,5 +1,5 @@
 ---
-ms.date: 03/21/2019
+ms.date: 04/20/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Web requests and other data handling with custom functions (preview)
 localization_priority: Priority
@@ -143,32 +143,7 @@ function incrementValue(increment, handler){
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
 
-When you specify metadata for a streaming function in the JSON metadata file, you must set the properties "cancelable": true and "stream": true within the options object, as shown in the following example.
-
-```JSON
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
+When you specify metadata for a streaming function in the JSON metadata file, you can autogenerate this by using a `@streaming` JSDOC comment tag in your function's script file. For more details, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ## Canceling a function
 
@@ -178,12 +153,13 @@ In some situations, you may need to cancel the execution of a streaming custom f
 - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
 - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
-To make a function cancelable, implement a handler in your function's code to tell it what to do when it is canceled. Additionally, specify specify the property `"cancelable": true` within the options object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
+To make a function cancelable, implement a handler in your function's code to tell it what to do when it is canceled. Additionally, use the `@cancelable` JSDOC comment tag in your function's script file. For more details, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ## See also
 
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Custom functions metadata](custom-functions-json.md)
+* [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)

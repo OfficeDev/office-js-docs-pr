@@ -9,6 +9,9 @@
   - name: Host and platform availability
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+  - name: Explore Office JS API using Script Lab
+    href: overview/explore-with-script-lab.md
+    displayName: Excel, Word, PowerPoint, Project
 
 - name: Quick Starts
   items:
@@ -164,6 +167,8 @@
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+      - name: Identify an equivalent COM add-in
+        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
       - name: How to find the proper order of manifest elements
         href: develop/manifest-element-ordering.md
 
@@ -278,7 +283,7 @@
         - name: Metadata
           href: excel/custom-functions-json.md
           displayName: Excel
-        - name: Custom function metadata
+        - name: Metadata generation
           href: excel/custom-functions-json-autogeneration.md
           displayName: Excel
         - name: Best practices
@@ -307,6 +312,12 @@
           displayName: Excel
         - name: Save and share state
           href: excel/custom-functions-save-state.md
+          dispalyName: Excel
+        - name: Identify an equivalent XLL
+          href: excel/make-custom-functions-compatible-with-xll-udf.md
+          displayName: Excel
+        - name: Batching
+          href: excel/custom-functions-batching.md
           displayName: Excel
         - name: Troubleshooting
           href: excel/custom-functions-troubleshooting.md
@@ -353,7 +364,6 @@
     - name: Excel JavaScript API reference
       href: /javascript/api/excel
       displayName: Excel
-
   - name: Word add-ins
     href: word/word-add-ins-programming-overview.md
     displayName: Word
@@ -464,7 +474,7 @@
       items:
       - name: Sideload Office Add-ins on iPad and Mac
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
-      - name: Debug on iPad and Mac
+      - name: Debug on Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: Usability testing
       href: develop/usability-testing.md
@@ -717,6 +727,12 @@
       href: reference/manifest/disableentityhighlighting.md
     - name: DisplayName
       href: reference/manifest/displayname.md
+    - name: EquivalentAddin
+      href: reference/manifest/equivalentaddin.md
+    - name: EquivalentAddins
+      href: reference/manifest/equivalentaddins.md
+    - name: FileName
+      href: reference/manifest/filename.md
     - name: Form
       href: reference/manifest/form.md
     - name: FormSettings
@@ -747,6 +763,8 @@
       href: reference/manifest/permissions.md
     - name: PhoneSettings
       href: reference/manifest/phonesettings.md
+    - name: ProgID
+      href: reference/manifest/progid.md
     - name: ProviderName
       href: reference/manifest/providername.md
     - name: QueryUri
@@ -773,6 +791,8 @@
       href: reference/manifest/targetdialect.md
     - name: TargetDialects
       href: reference/manifest/targetdialects.md
+    - name: Type
+      href: reference/manifest/type.md
     - name: Version
       href: reference/manifest/version.md
     - name: VersionOverrides
