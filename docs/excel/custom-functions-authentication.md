@@ -45,7 +45,7 @@ The following examples are from the [Using Office.Storage in custom functions](h
 
 If the custom function authenticates, then it receives the access token and will need to store it in `Office.Storage`. The following code sample shows how to call the `Office.Storage.setItem` method to store a value. The `StoreValue` function is a custom function that for example purposes stores a value from the user. You can modify this to store any token value you need.
 
-```javascript
+```js
 function StoreValue(key, value) {
   return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
       return "Success: Item with key '" + key + "' saved to AsyncStorage.";
@@ -57,7 +57,7 @@ function StoreValue(key, value) {
 
 When the task pane needs the access token, it can retrieve the token from `Office.Storage`. The following code sample shows how to use the `Office.Storage.getItem` method to retrieve the token.
 
-```javascript
+```js
 function ReceiveTokenFromCustomFunction() {
    var key = "token";
    var tokenSendStatus = document.getElementById('tokenSendStatus');
