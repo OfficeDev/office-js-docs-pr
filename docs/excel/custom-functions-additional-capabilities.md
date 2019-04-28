@@ -1,5 +1,5 @@
 ---
-ms.date: 04/23/2019
+ms.date: 04/25/2019
 description: Learn to implement volatile and offline streaming custom functions.
 title: Additional capabilities of custom functions (preview)
 localization_priority: Normal
@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Custom functions can perform mathematical calculations and request information from external sources. More advanced custom functions can start and stop the streaming of data, cancel operations, and handle volatile values within functions.
 
-## Offline streaming
+## Streaming
 
 Custom functions are considered streaming if they request data at set intervals. While it is more common for streaming functions to request web data, they can also regularly perform calculations or other offline actions.
 
