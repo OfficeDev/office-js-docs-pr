@@ -1,58 +1,43 @@
 ---
-ms.date: 04/23/2019
+ms.date: 04/28/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions (preview)
 localization_priority: Normal
 ---
+
 # Custom functions parameter options
 
-Custom functions are configurable with many different options for parameters.
+Custom functions are configurable with many different options for parameters
 
 ## Optional parameters
 
-Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets.
+Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function would appear as `=CONTOSO.ADD(first, second, [third])` in Excel.
 
-For example, a function `=MAKEPIZZA` with one required parameter called `cheese` and one optional parameter called `anchovies` would appear as `=MAKEPIZZA(cheese, [anchovies])` in Excel.
-
-To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s formula UI.
-
-```json
-{
-    "id": "ADD",
-    "name": "ADD",
-    "description": "Adds two or more numbers",
-    "helpUrl": "http://www.contoso.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-        },
-    "parameters": [
-        {
-            "name": "first",
-            "description": "first number to add",
-            "type": "number",
-            "dimensionality": "scalar"
-        },
-        {
-            "name": "second",
-            "description": "second number to add",
-            "type": "number",
-            "dimensionality": "scalar",
-        },
-        {
-            "name": "third",
-            "description": "third optional number to add",
-            "type": "number",
-            "dimensionality": "scalar",
-            "optional": true
-        }
-    ]
+```js
+/**
+ * Add two numbers
+ * @customfunction 
+ * @param {number} first First number
+ * @param {number} second Second number
+ * @param {number} [third] Third number
+ * @returns {number} The sum of the two (or optionally three) numbers.
+ */
+function add(first, second, [third]) {
+  return first + second;
 }
+CustomFunctions.associate("ADD", add);
 ```
 
 When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to `98052`. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
 
 ```js
+/**
+ * Gets a weather report for a specified zipCode and dayOfWeek
+ * @customfunction
+ * @param {number} zipCode Zip code
+ * @param {string} dayOfWeek Day of the week
+ * @returns {string} Weather report for the day of the week in that zip code.
+ */
 function getWeatherReport(zipCode, dayOfWeek)
 {
   if (zipCode === undefined) {
@@ -94,14 +79,22 @@ function secondHighest(values){
 
 ## Invocation context parameter
 
-Every custom function is automatically passed an `invocationContext` argument as the last argument. Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocationContext` in your custom function, declare it as the last parameter.
+Every custom function is automatically passed an `invocation` argument as the last argument, which can be used when you wish to find the address of a cell or handle what happens when [canceling a function](custom-functions-web-reqs.md#stream-and-cancel-functions). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
 
-In the following code sample, the invocationContext explicitly stated for your reference.
+In the following code sample, the `invocation` context is explicitly stated for your reference.
 
-```JavaScript
-subtract(one, two, invocationContext) {
-  return one - two;
+```js
+/**
+ * Add two numbers
+ * @customfunction 
+ * @param {number} first First number
+ * @param {number} second Second number
+ * @returns {number} The sum of the two (or optionally three) numbers.
+ */
+function add(first, second, invocation) {
+  return first + second;
 }
+CustomFunctions.associate("ADD", add);
 ```
 
 The parameter allows you to get the context of the invoking cell, which can be helpful in some scenarios including [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).
@@ -114,37 +107,19 @@ In some cases you need to get the address of the cell that invoked your custom f
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
 - Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
-The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
-
-```JSON
-{
-   "id": "ADDTIME",
-   "name": "ADDTIME",
-   "description": "Display current date and add the amount of hours to it designated by the parameter",
-   "helpUrl": "http://www.contoso.com",
-   "result": {
-      "type": "number",
-      "dimensionality": "scalar"
-   },
-   "parameters": [
-      {
-         "name": "Additional time",
-         "description": "Amount of hours to increase current date by",
-         "type": "number",
-         "dimensionality": "scalar"
-      }
-   ],
-   "options": {
-      "requiresAddress": true
-   }
-}
-```
-
-In the script file (**./src/functions/functions.js** or **./src/functions/functions.ts**), you'll also need to add a `getAddress` function to find a cell's address. This function may take parameters, as shown in the following sample as `parameter1`. The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.
+To request an addressing cell's context in a function, you need to use a helper function to find the cell's address, such as the one in the following example. The information about a cell's address is exposed only if `@requiresAddress` is tagged in the function's comments.
 
 ```js
-function getAddress(parameter1, invocationContext) {
-    return invocationContext.address;
+/**
+ * Helper function to get the address of a cell
+ * @customfunction
+ * @param invocation Uses the invocation parameter present in each cell
+ * @requiresAddress 
+ * @returns {string} Returns address of cell
+ */
+
+function getAddress(invocation) {
+    return invocation.address;
 }
 ```
 
