@@ -136,7 +136,7 @@ Streaming custom functions enable you to output data to cells repeatedly over ti
 
 - Excel displays each new value automatically using the `setResult` callback.
 - The second input parameter, `invocation`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
-- The `onCanceled` callback defines the function that executes when the function is canceled. You should implement a cancelation handler like this to reduce a function's bandwidth consumption, working memory, and CPU load.
+- The `onCanceled` callback defines the function that executes when the function is canceled. You should implement a cancellation handler like this to reduce a function's bandwidth consumption, working memory, and CPU load.
 
 ```js
 /**
