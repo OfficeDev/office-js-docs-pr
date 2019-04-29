@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.6
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/24/2019
 localization_priority: Normal
 ---
 
@@ -84,7 +84,7 @@ Office.initialize = function () {
 
 ### Members
 
-#### attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_6/office.attachmentdetails)>
+#### attachments: Array.<[AttachmentDetails](/javascript/api/outlook_1_6/office.attachmentdetails)>
 
 Gets an array of attachments for the item. Read mode only.
 
@@ -127,7 +127,7 @@ if (item.attachments.length > 0) {
 console.log(outputString);
 ```
 
-####  bcc :[Recipients](/javascript/api/outlook_1_6/office.recipients)
+#### bcc: [Recipients](/javascript/api/outlook_1_6/office.recipients)
 
 Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
 
@@ -155,7 +155,7 @@ function callback(asyncResult) {
 }
 ```
 
-####  body :[Body](/javascript/api/outlook_1_6/office.body)
+#### body: [Body](/javascript/api/outlook_1_6/office.body)
 
 Gets an object that provides methods for manipulating the body of an item.
 
@@ -195,7 +195,7 @@ The following is an example of the result parameter passed to the callback funct
 }
 ```
 
-####  cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_6/office.recipients)
+#### cc: Array.<[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_6/office.recipients)
 
 Provides access to the Cc (carbon copy) recipients of a message. The type of object and level of access depends on the mode of the current item.
 
@@ -233,7 +233,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-####  (nullable) conversationId :String
+#### (nullable) conversationId: String
 
 Gets an identifier for the email conversation that contains a particular message.
 
@@ -260,7 +260,7 @@ var conversationId = Office.context.mailbox.item.conversationId;
 console.log("conversationId: " + conversationId);
 ```
 
-#### dateTimeCreated :Date
+#### dateTimeCreated: Date
 
 Gets the date and time that an item was created. Read mode only.
 
@@ -283,7 +283,7 @@ var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
 
-#### dateTimeModified :Date
+#### dateTimeModified: Date
 
 Gets the date and time that an item was last modified. Read mode only.
 
@@ -309,7 +309,7 @@ var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
 
-####  end :Date|[Time](/javascript/api/outlook_1_6/office.time)
+#### end: Date|[Time](/javascript/api/outlook_1_6/office.time)
 
 Gets or sets the date and time that the appointment is to end.
 
@@ -360,7 +360,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-#### from :[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)
+#### from: [EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)
 
 Gets the email address of the sender of a message. Read mode only.
 
@@ -388,7 +388,7 @@ console.log("From " + from);
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read|
 
-#### internetMessageId :String
+#### internetMessageId: String
 
 Gets the Internet message identifier for an email message. Read mode only.
 
@@ -410,7 +410,7 @@ Gets the Internet message identifier for an email message. Read mode only.
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
-#### itemClass :String
+#### itemClass: String
 
 Gets the Exchange Web Services item class of the selected item. Read mode only.
 
@@ -442,7 +442,7 @@ var itemClass = Office.context.mailbox.item.itemClass;
 console.log("Item class: " + itemClass);
 ```
 
-#### (nullable) itemId :String
+#### (nullable) itemId: String
 
 Gets the Exchange Web Services item identifier for the current item. Read mode only.
 
@@ -476,7 +476,7 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-####  itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_6/office.mailboxenums.itemtype)
+#### itemType: [Office.MailboxEnums.ItemType](/javascript/api/outlook_1_6/office.mailboxenums.itemtype)
 
 Gets the type of item that an instance represents.
 
@@ -504,7 +504,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 }
 ```
 
-####  location :String|[Location](/javascript/api/outlook_1_6/office.location)
+#### location: String|[Location](/javascript/api/outlook_1_6/office.location)
 
 Gets or sets the location of an appointment.
 
@@ -543,7 +543,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-#### normalizedSubject :String
+#### normalizedSubject: String
 
 Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.
 
@@ -568,7 +568,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
 
-####  notificationMessages :[NotificationMessages](/javascript/api/outlook_1_6/office.notificationmessages)
+#### notificationMessages: [NotificationMessages](/javascript/api/outlook_1_6/office.notificationmessages)
 
 Gets the notification messages for an item.
 
@@ -595,7 +595,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 );
 ```
 
-####  optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_6/office.recipients)
+#### optionalAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_6/office.recipients)
 
 Provides access to the optional attendees of an event. The type of object and level of access depends on the mode of the current item.
 
@@ -634,7 +634,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-#### organizer :[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)
+#### organizer: [EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)
 
 Gets the email address of the meeting organizer for a specified meeting. Read mode only.
 
@@ -658,7 +658,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
 
-####  requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_6/office.recipients)
+#### requiredAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_6/office.recipients)
 
 Provides access to the required attendees of an event. The type of object and level of access depends on the mode of the current item.
 
@@ -698,7 +698,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-#### sender :[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)
+#### sender: [EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)
 
 Gets the email address of the sender of an email message. Read mode only.
 
@@ -727,7 +727,7 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
-####  start :Date|[Time](/javascript/api/outlook_1_6/office.time)
+#### start: Date|[Time](/javascript/api/outlook_1_6/office.time)
 
 Gets or sets the date and time that the appointment is to begin.
 
@@ -778,7 +778,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-####  subject :String|[Subject](/javascript/api/outlook_1_6/office.subject)
+#### subject: String|[Subject](/javascript/api/outlook_1_6/office.subject)
 
 Gets or sets the description that appears in the subject field of an item.
 
@@ -818,7 +818,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-####  to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_6/office.recipients)
+#### to: Array.<[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_6/office.recipients)
 
 Provides access to the recipients on the **To** line of a message. The type of object and level of access depends on the mode of the current item.
 
@@ -858,7 +858,7 @@ function callback(asyncResult) {
 
 ### Methods
 
-####  addFileAttachmentAsync(uri, attachmentName, [options], [callback])
+#### addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
 Adds a file to a message or appointment as an attachment.
 
@@ -934,7 +934,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
   });
 ```
 
-####  addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
+#### addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 Adds an Exchange item, such as a message, as an attachment to the message or appointment.
 
@@ -992,7 +992,7 @@ function addAttachment() {
 }
 ```
 
-####  close()
+#### close()
 
 Closes the current item that is being composed.
 
@@ -1470,7 +1470,7 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  getSelectedDataAsync(coercionType, [options], callback) → {String}
+#### getSelectedDataAsync(coercionType, [options], callback) → {String}
 
 Asynchronously returns selected data from the subject or body of a message.
 
@@ -1607,7 +1607,7 @@ var fruits = selectedMatches.fruits;
 var veggies = selectedMatches.veggies;
 ```
 
-####  loadCustomPropertiesAsync(callback, [userContext])
+#### loadCustomPropertiesAsync(callback, [userContext])
 
 Asynchronously loads custom properties for this add-in on the selected item.
 
@@ -1655,7 +1655,7 @@ function saveCallback(asyncResult) {
 }
 ```
 
-####  removeAttachmentAsync(attachmentId, [options], [callback])
+#### removeAttachmentAsync(attachmentId, [options], [callback])
 
 Removes an attachment from a message or appointment.
 
@@ -1699,7 +1699,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
-####  saveAsync([options], callback)
+#### saveAsync([options], callback)
 
 Asynchronously saves an item.
 
@@ -1750,7 +1750,7 @@ The following is an example of the `result` parameter passed to the callback fun
 }
 ```
 
-####  setSelectedDataAsync(data, [options], callback)
+#### setSelectedDataAsync(data, [options], callback)
 
 Asynchronously inserts data into the body or subject of a message.
 
