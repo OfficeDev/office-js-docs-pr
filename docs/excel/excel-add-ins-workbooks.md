@@ -289,7 +289,7 @@ Excel.run(function (context) {
 });
 ```
 
-Each comment contains zero or more replies. `Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply](/javascript/api/excel/excel.commentreply) objects. To add a reply to a comment, use the `CommentReplyCollection.add`method, passing in the text of the reply. Replies are displayed in the order they are added. The following code sample adds a reply to the first comment in the workbook.
+Each comment contains zero or more replies. `Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply](/javascript/api/excel/excel.commentreply) objects. To add a reply to a comment, use the `CommentReplyCollection.add` method, passing in the text of the reply. Replies are displayed in the order they are added. The following code sample adds a reply to the first comment in the workbook.
 
 ```js
 Excel.run(function (context) {
@@ -300,7 +300,7 @@ Excel.run(function (context) {
 });
 ```
 
-TO edit a comment or comment reply, set its `Comment.content` property or `CommentReply.content` property. To delete a comment or comment reply, use the `Comment.delete` method or `CommentReply.delete` method. Deleting a comment also deletes all the replies associated with that comment.
+To edit a comment or comment reply, set its `Comment.content` property or `CommentReply.content` property. To delete a comment or comment reply, use the `Comment.delete` method or `CommentReply.delete` method. Deleting a comment also deletes all the replies associated with that comment.
 
 > [!TIP]
 > Comments can also be managed at the [Worksheet](/javascript/api/excel/excel.worksheet) level using the same techniques.
