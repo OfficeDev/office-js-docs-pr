@@ -158,7 +158,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 365 for iPad</td>
     <td>- TaskPane<br>
         - Content<br>
-        - Custom Functions></td>
+        - Custom Functions</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
