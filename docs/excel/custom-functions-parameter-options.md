@@ -1,5 +1,5 @@
 ---
-ms.date: 04/28/2019
+ms.date: 04/29/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions (preview)
 localization_priority: Normal
@@ -7,7 +7,10 @@ localization_priority: Normal
 
 # Custom functions parameter options
 
-Custom functions are configurable with many different options for parameters
+Custom functions are configurable with many different options for parameters: 
+- [Optional parameters](#custom-functions-optional-parameters)
+- [Range parameters](#range-parameters)
+- [Invocation context parameter](#invocation-context-parameter)
 
 ## Custom functions optional parameters
 
