@@ -49,6 +49,7 @@ The following command capabilities are currently supported.
 
 Add-in commands are currently supported on the following platforms:
 
+- Outlook 2016 for Windows (build 16.0.4678.1000+)
 - Office 365 for Windows (build 16.0.6769+)
 - Office 2019 for Windows
 - Office 365 for Mac (build 15.33+)
