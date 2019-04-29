@@ -18,7 +18,7 @@ For an Office Add-ins sample that's built using the Angular framework, see [Word
 
 Open an nodejs window and enter the following at the command line:
 
-```command line
+```command&nbsp;line
 npm install --save-dev @types/office-js
 ```
 
@@ -147,7 +147,7 @@ Application performance is one of the most important aspects of user experience.
 
 To use the AOT compiler, add `--aot` to the `ng build` or `ng serve` command:
 
-```command line
+```command&nbsp;line
 ng build --aot
 ng serve --aot
 ```

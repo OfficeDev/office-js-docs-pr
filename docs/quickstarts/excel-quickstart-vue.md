@@ -16,13 +16,13 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 - Install the [Vue CLI](https://github.com/vuejs/vue-cli) globally.
 
-    ```command line
+    ```command&nbsp;line
     npm install -g vue-cli
     ```
 
 - Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
-    ```command line
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -30,7 +30,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 Use the Vue CLI to generate a new Vue app. From the terminal, run the following command and then answer the prompts as described below.
 
-```command line
+```command&nbsp;line
 vue init webpack my-add-in
 ```
 
@@ -48,13 +48,13 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 1. Navigate to your app folder.
 
-    ```command line
+    ```command&nbsp;line
     cd my-add-in
     ```
 
 2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.
 
-    ```command line
+    ```command&nbsp;line
     yo office
     ```
 
@@ -181,7 +181,7 @@ To enable HTTPS for your app, open the file **package.json** in the root folder 
 
 1. From the terminal, run the following command to start the dev server.
 
-    ```command line
+    ```command&nbsp;line
     npm start
     ```
 

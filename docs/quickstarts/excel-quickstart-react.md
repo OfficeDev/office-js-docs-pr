@@ -15,7 +15,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 - [Node.js](https://nodejs.org)
 
 - Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
-    ```command line
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -23,7 +23,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 1. Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
-    ```command line
+    ```command&nbsp;line
     yo office
     ```
 
@@ -37,7 +37,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 2. Navigate to the root folder of the project.
 
-    ```command line
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
