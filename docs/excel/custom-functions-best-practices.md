@@ -27,10 +27,10 @@ The following code sample shows how to do this association. The sample defines t
 
 ```js
 /**
- * Add two numbers
- * @customfunction 
- * @param {number} first First number
- * @param {number} second Second number
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
  * @returns {number} The sum of the two numbers.
  */
 function add(first, second) {
@@ -46,18 +46,18 @@ Keep in mind the following best practices when creating custom functions in your
 
 * In the JSON metadata file, ensure that the value of each `id` property contains only alphanumeric characters and periods.
 
-* In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value. 
+* In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value.
 
 * Do not change the value of an `id` property in the JSON metadata file after it's been associated with a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
 
-* In the JavaScript file, specify a custom function association after each function. For example, the following code sample defines two custom functions and each is followed by their accompanying association information.
+* In the JavaScript file, specify a custom function association after each function. This is done by calling the `CustomFunctions.associate` method, as seen in the following example.
 
     ```js
     /**
-     * Add two numbers
-     * @customfunction 
-     * @param {number} first First number
-     * @param {number} second Second number
+     * Add two numbers.
+     * @customfunction
+     * @param {number} first First number.
+     * @param {number} second Second number.
      * @returns {number} The sum of the two numbers.
      */
     function add(first, second) {
@@ -81,7 +81,7 @@ Keep in mind the following best practices when creating custom functions in your
 
     ```
 
-    The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file. 
+    The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file. You only need to add this JSON if you are preparing your own JSON file by hand and not using autogeneration.
 
     ```json
     {
@@ -101,7 +101,7 @@ Keep in mind the following best practices when creating custom functions in your
     }
     ```
 
-## Declaring optional parameters 
+## Declaring optional parameters
 
 In Excel for Windows (version 1812 or later), you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
 

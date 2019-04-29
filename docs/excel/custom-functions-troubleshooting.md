@@ -1,5 +1,5 @@
 ---
-ms.date: 04/18/2019
+ms.date: 04/29/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions (preview)
 localization_priority: Priority
@@ -32,10 +32,10 @@ The following example shows an add function, followed by the function's name `ad
 
 ```js
 /**
- * Add two numbers
- * @customfunction 
- * @param {number} first First number
- * @param {number} second Second number
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
  * @returns {number} The sum of the two numbers.
  */
 function add(first, second) {

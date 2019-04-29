@@ -1,5 +1,5 @@
 ---
-ms.date: 04/28/2019
+ms.date: 04/29/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -11,7 +11,7 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-The following illustration shows how you can call a function you've created with JavaScript or Typescript. In this example, the custom function is a clock, designed by the company Contoso. Entering `=CONTOSO.CLOCK` gives you the present time, which updates itself once every second.
+The following illustration shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function is a clock. Entering `=CONTOSO.CLOCK` gives you the present time, which updates itself once every second. `CONTOSO` is an optional namespace added to better identify the CLOCK function from possible other CLOCK functions in other add-ins. 
 
 <img alt="animated image showing an end user inserting the CONTOSO.CLOCK custom function into a cell of an Excel worksheet" src="../images/ClockFunction.gif" />
 
@@ -19,8 +19,8 @@ The following code defines the custom function `=CLOCK`.
 
 ```js
 /**
- * Displays the current time once a second
- * @customfunction 
+ * Displays the current time once a second.
+ * @customfunction
  * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
  */
 function clock(invocation) {
@@ -41,7 +41,7 @@ CustomFunctions.associate("CLOCK", clock);
 
 ## Components of a custom functions add-in project
 
-If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions: 
+If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions:
 
 | File | File format | Description |
 |------|-------------|-------------|
