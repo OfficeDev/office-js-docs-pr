@@ -20,18 +20,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## Sideload an Office Add-in in Office 365
-
-
-1. Sign in to your Office 365 account.
-    
-2. Open the App Launcher on the left end of the toolbar and select  **Excel**,  **Word**, or  **PowerPoint**, and then create a new document.
-    
-3. Continue with steps 3 - 6 in the next section **Sideload an Office Add-in in Office Online**.
-    
-
 ## Sideload an Office Add-in in Office Online
-
 
 1. Open [Microsoft Office Online](https://office.live.com/).
     
@@ -57,6 +46,16 @@ The following video walks you through the process of sideloading your add-in in 
 > - Enter “**about:flags**” in the Edge search bar to bring up the Developer Settings options.  Check the “**Allow localhost loopback**” option and restart Edge.
 
 >    ![The Edge Allow localhost loopback option with the box checked.](../images/allow-localhost-loopback.png)
+
+
+## Sideload an Office Add-in in Office 365
+
+1. Sign in to your Office 365 account.
+    
+2. Open the App Launcher on the left end of the toolbar and select  **Excel**,  **Word**, or  **PowerPoint**, and then create a new document.
+    
+3. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office Online**.
+
 
 ## Sideload an add-in when using Visual Studio
 
