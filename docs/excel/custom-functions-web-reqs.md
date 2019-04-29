@@ -122,7 +122,7 @@ The following code sample establishes a WebSocket connection and then logs each 
 let ws = new WebSocket('wss://bundles.office.com');
 
 ws.onmessage(message) {
-    console.log(`Recieved: ${message}`);
+    console.log(`Received: ${message}`);
 }
 
 ws.onerror(error){
@@ -152,9 +152,9 @@ function increment(incrementBy, invocation) {
     invocation.setResult(result);
   }, 1000);
 
-  invocation.onCanceled = () => {
+  invocation.onCanceled = function(){
     clearInterval(timer);
-  };
+    }
 }
 CustomFunctions.associate("INCREMENT", increment);
 ```

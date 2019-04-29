@@ -116,14 +116,15 @@ To request an addressing cell's context in a function, you need to use a helper 
 /**
  * Helper function to get the address of a cell
  * @customfunction
- * @param invocation Uses the invocation parameter present in each cell
+ * @param {CustomFunctions.Invocation} invocation Uses the invocation parameter present in each cell
  * @requiresAddress 
  * @returns {string} Returns address of cell
  */
 
 function getAddress(invocation) {
-    return invocation.address;
+  return invocation.address;
 }
+CustomFunctions.associate("GETADDRESS", getAddress);
 ```
 
 By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
