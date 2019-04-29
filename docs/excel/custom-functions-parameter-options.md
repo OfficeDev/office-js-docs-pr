@@ -11,7 +11,7 @@ Custom functions are configurable with many different options for parameters
 
 ## Custom functions optional parameters
 
-Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function would appear as `=CONTOSO.ADD(first, second, [third])` in Excel.
+Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.
 
 ```js
 /**
