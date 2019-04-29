@@ -32,6 +32,12 @@ To fix a name conflict, change the name in your add-in and try the function agai
 
 Also consider how you'd like people to use the functions within your add-in. In many cases, it makes sense to add multiple arguments to a function rather than create multiple functions with the same or similar names.
 
+## Best practices
+
+- Function names should indicate the action of the function, such as `=GETZIPCODE` instead of `ZIPCODE`.
+- Avoid ambiguous abbreviations in function names. Clarity is more important than brevity. Choose a name like `=INCREASETIME` rather than `=INC`.
+- Consistently use the same verbs for functions which perform similar actions. For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.
+
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
