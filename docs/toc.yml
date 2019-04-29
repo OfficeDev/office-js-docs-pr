@@ -502,7 +502,7 @@
 
   - name: Publish
     items:
-    - name: Deploy and publish your Office Add-in
+    - name: Overview
       href: publish/publish.md
     - name: Host an Office Add-in on Microsoft Azure
       href: publish/host-an-office-add-in-on-microsoft-azure.md
