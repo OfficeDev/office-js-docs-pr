@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.1
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
 ---
 
@@ -25,7 +25,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 ### Members
 
-####  displayLanguage :String
+#### displayLanguage: String
 
 Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.
 
@@ -63,7 +63,7 @@ function write(message){
 }
 ```
 
-####  roamingSettings :[RoamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
