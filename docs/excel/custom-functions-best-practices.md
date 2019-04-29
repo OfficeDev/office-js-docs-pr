@@ -1,5 +1,5 @@
 ---
-ms.date: 01/08/2019
+ms.date: 04/28/2019
 description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices (preview)
 localization_priority: Normal
@@ -26,7 +26,14 @@ As described in the [custom functions overview](custom-functions-overview.md) ar
 The following code sample shows how to do this association. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
 ```js
-function add(first, second){
+/**
+ * Add two numbers
+ * @customfunction 
+ * @param {number} first First number
+ * @param {number} second Second number
+ * @returns {number} The sum of the two numbers.
+ */
+function add(first, second) {
   return first + second;
 }
 
@@ -43,28 +50,35 @@ Keep in mind the following best practices when creating custom functions in your
 
 * Do not change the value of an `id` property in the JSON metadata file after it's been associated with a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
 
-* In the JavaScript file, specify all custom function associations in the same location. For example, the following code sample defines two custom functions and then specifies the association information for both functions.
+* In the JavaScript file, specify a custom function association after each function. For example, the following code sample defines two custom functions and each is followed by their accompanying association information.
 
     ```js
-    function add(first, second){
+    /**
+     * Add two numbers
+     * @customfunction 
+     * @param {number} first First number
+     * @param {number} second Second number
+     * @returns {number} The sum of the two numbers.
+     */
+    function add(first, second) {
       return first + second;
     }
 
-    function increment(incrementBy, callback) {
-      var result = 0;
-      var timer = setInterval(function() {
-        result += incrementBy;
-        callback.setResult(result);
-      }, 1000);
+    CustomFunctions.associate("ADD", add);
 
-      callback.onCanceled = function() {
-        clearInterval(timer);
-      };
+    /**
+     * Writes a message to console.log().
+     * @customfunction LOG
+     * @param {string} message String to write.
+     * @returns String to write.
+     */
+    function logMessage(message) {
+      console.log(message);
+      return message;
     }
 
-    // associate `id` values in the JSON metadata file to JavaScript function names
-    CustomFunctions.associate("ADD", add);
-    CustomFunctions.associate("INCREMENT", increment);
+    CustomFunctions.associate("LOG", logMessage);
+
     ```
 
     The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file. 
