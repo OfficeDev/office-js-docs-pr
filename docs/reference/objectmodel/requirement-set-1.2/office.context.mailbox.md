@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.2
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
 ---
 
@@ -29,7 +29,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 
 ### Members
 
-#### ewsUrl :String
+#### ewsUrl: String
 
 Gets the URL of the Exchange Web Services (EWS) endpoint for this email account. Read mode only.
 
@@ -52,7 +52,7 @@ The `ewsUrl` value can be used by a remote service to make EWS calls to the user
 
 ### Methods
 
-####  convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)}
+#### convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)}
 
 Gets a dictionary containing time information in local client time.
 
@@ -79,7 +79,7 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 Type:
 [LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)
 
-####  convertToUtcClientTime(input) → {Date}
+#### convertToUtcClientTime(input) → {Date}
 
 Gets a Date object from a dictionary containing time information.
 
@@ -111,7 +111,7 @@ A Date object with the time expressed in UTC.
 
 </dl>
 
-####  displayAppointmentForm(itemId)
+#### displayAppointmentForm(itemId)
 
 Displays an existing calendar appointment.
 
@@ -146,7 +146,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  displayMessageForm(itemId)
+#### displayMessageForm(itemId)
 
 Displays an existing message.
 
@@ -275,7 +275,7 @@ function cb(asyncResult) {
 }
 ```
 
-####  getUserIdentityTokenAsync(callback, [userContext])
+#### getUserIdentityTokenAsync(callback, [userContext])
 
 Gets a token identifying the user and the Office Add-in.
 
@@ -308,7 +308,7 @@ function cb(asyncResult) {
 }
 ```
 
-####  makeEwsRequestAsync(data, callback, [userContext])
+#### makeEwsRequestAsync(data, callback, [userContext])
 
 Makes an asynchronous request to an Exchange Web Services (EWS) service on the Exchange server that hosts the user’s mailbox.
 

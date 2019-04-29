@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.userProfile - requirement set 1.5
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
 ---
 
@@ -27,7 +27,7 @@ localization_priority: Normal
 
 ### Members
 
-####  displayName :String
+#### displayName: String
 
 Gets the user's display name.
 
@@ -50,7 +50,7 @@ Gets the user's display name.
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  emailAddress :String
+#### emailAddress: String
 
 Gets the user's SMTP email address.
 
@@ -73,7 +73,7 @@ Gets the user's SMTP email address.
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  timeZone :String
+#### timeZone: String
 
 Gets the user's default time zone.
 
