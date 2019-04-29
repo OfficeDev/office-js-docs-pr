@@ -1,5 +1,5 @@
 ---
-ms.date: 03/29/2019
+ms.date: 04/29/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -61,7 +61,7 @@ function add(first, second){
  CustomFunctions.associate("ADD", add);
 ```
 
-Note that the functions.html file, which governs the loading of the custom functions runtime, should contain the current CDN for custom functions. If you have prepared your project using the most current version of yo office, this CDN will already be present, but if you are retrofitting a previous custom function from March 2019 or earlier, you may need to copy in the code below to the functions.html page.
+Note that the **functions.html** file, which governs the loading of the custom functions runtime, must link to the current CDN for custom functions. Projects prepared with the current version of the Yo Office generator reference the correct CDN. However, if you are retrofitting a previous custom function project from March 2019 or earlier, you need to copy in the code below to the **functions.html** page.
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/beta/hosted/custom-functions-runtime.js" type="text/javascript"></script>
