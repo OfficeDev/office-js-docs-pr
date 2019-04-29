@@ -22,7 +22,7 @@ You'll need the following tools and related resources to begin creating custom f
 
 - The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
-    ```command line
+    ```command-line
     npm install -g yo generator-office
     ```
 
@@ -35,7 +35,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 1. Run the following command and then answer the prompts as follows.
 
-    ```command line
+    ```commandline
     yo office
     ```
 
@@ -51,7 +51,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 2. Navigate to the project folder you just created.
 
-    ```command line
+    ```command&#160;line
     cd stock-ticker
     ```
 
@@ -59,7 +59,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 4. Build the project.
 
-    ```command line
+    ```command&nbsp;line
     npm run build
     ```
 
