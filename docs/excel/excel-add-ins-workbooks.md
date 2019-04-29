@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 04/22/2019
+ms.date: 04/29/2019
 localization_priority: Priority
 ---
 
@@ -262,9 +262,9 @@ context.application.suspendApiCalculationUntilNextSync();
 > [!NOTE]
 > The comment APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-All the [comments](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) added to a workbook are tracked by the `Workbook.comments` property. This is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object, which maintains a collection of [Comment](/javascript/api/excel/excel.comment) objects. This collection contains comments created by the user and comments created by your add-in.
+All [comments](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) within a workbook are tracked by the `Workbook.comments` property. This includes comments created by users and also comments created by your add-in. The `Workbook.comments` property is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object that contains a collection of [Comment](/javascript/api/excel/excel.comment) objects.
 
-Comments are added to the workbook with the `CommentCollection.add` method. This method takes in the comment's text, as a string, and the cell where the comment will go, as a string or [Range](/javascript/api/excel/excel.range) object. The following code sample adds a comment to cell **A2**.
+To add comments to a workbook, use the `CommentCollection.add` method, passing in the comment's text, as a string, and the cell where the comment will be added, as either a string or [Range](/javascript/api/excel/excel.range) object. The following code sample adds a comment to cell **A2**.
 
 ```js
 Excel.run(function (context) {
@@ -276,7 +276,7 @@ Excel.run(function (context) {
 });
 ```
 
-Comments contain metadata about their creation, such as the author and creation date. Comments created by your add-in are considered to be authored by the current user. The following sample shows how to display the author's email, author's name, and creation date of a comment at **A2**.
+Each comment contains metadata about its creation, such as the author and creation date. Comments created by your add-in are considered to be authored by the current user. The following sample shows how to display the author's email, author's name, and creation date of a comment at **A2**.
 
 ```js
 Excel.run(function (context) {
@@ -289,7 +289,7 @@ Excel.run(function (context) {
 });
 ```
 
-Every comment forms the head of a thread containing zero or more replies. `Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply]/javascript/api/excel/excel.commentreply) objects. `CommentReplyCollection.add` creates a new reply using the provided content string. Replies are displayed in the order they are added. The following code sample adds a reply to the first comment in the workbook.
+Each comment contains zero or more replies. `Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply](/javascript/api/excel/excel.commentreply) objects. To add a reply to a comment, use the `CommentReplyCollection.add`method, passing in the text of the reply. Replies are displayed in the order they are added. The following code sample adds a reply to the first comment in the workbook.
 
 ```js
 Excel.run(function (context) {
@@ -300,10 +300,10 @@ Excel.run(function (context) {
 });
 ```
 
-Comments and comment replies can be edited by setting their `Comment.content` or `CommentReply.content` properties. They can be deleted using the `Comment.delete` or `CommentReply.delete` methods. Deleting a comment also deletes all the replies associated with that comment.
+TO edit a comment or comment reply, set its `Comment.content` property or `CommentReply.content` property. To delete a comment or comment reply, use the `Comment.delete` method or `CommentReply.delete` method. Deleting a comment also deletes all the replies associated with that comment.
 
 > [!TIP]
->Comments can also be managed at the [Worksheet](/javascript/api/excel/excel.worksheet) level using the same techniques.
+> Comments can also be managed at the [Worksheet](/javascript/api/excel/excel.worksheet) level using the same techniques.
 
 ## Save the workbook
 
