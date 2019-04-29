@@ -1,7 +1,7 @@
 ---
 title: Fundamental programming concepts with the Excel JavaScript API
 description: Use the Excel JavaScript API to build add-ins for Excel.
-ms.date: 03/19/2019
+ms.date: 04/25/2019
 localization_priority: Priority
 ---
 
@@ -22,14 +22,14 @@ The following example shows how to use **Excel.run**. The catch statement catche
 
 ```js
 Excel.run(function (context) {
-  // You can use the Excel JavaScript API here in the batch function
-  // to execute actions on the Excel object model.
-  console.log('Your code goes here.');
+    // You can use the Excel JavaScript API here in the batch function
+    // to execute actions on the Excel object model.
+    console.log('Your code goes here.');
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -37,7 +37,7 @@ Excel.run(function (context) {
 
 **Excel.run** has an overload that takes in a [RunOptions](/javascript/api/excel/excel.runoptions) object. This contains a set of properties that affect platform behavior when the function runs. The following property is currently supported:
 
- - `delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode. When **true**, the batch request is delayed and runs when the user exits cell edit mode. When **false**, the batch request automatically fails if the user is in cell edit mode (causing an error to reach the user). The default behavior with no `delayForCellEdit` property specified is equivalent to when it is **false**.
+- `delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode. When **true**, the batch request is delayed and runs when the user exits cell edit mode. When **false**, the batch request automatically fails if the user is in cell edit mode (causing an error to reach the user). The default behavior with no `delayForCellEdit` property specified is equivalent to when it is **false**.
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
@@ -54,7 +54,7 @@ The Excel JavaScript objects that you declare and use in an add-in are proxy obj
 For example, the following code snippet declares the local JavaScript object **selectedRange** to reference a selected range in the Excel document, and then sets some properties on that object. The **selectedRange** object is a proxy object, so the properties that are set and method that is invoked on that object will not be reflected in the Excel document until your add-in calls **context.sync()**.
 
 ```js
-const selectedRange = context.workbook.getSelectedRange();
+var selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -68,17 +68,17 @@ The following example shows a batch function that defines a local JavaScript pro
 
 ```js
 Excel.run(function (context) {
-  const selectedRange = context.workbook.getSelectedRange();
-  selectedRange.load('address');
-  return context.sync()
-    .then(function () {
-      console.log('The selected range is: ' + selectedRange.address);
-  });
+    var selectedRange = context.workbook.getSelectedRange();
+    selectedRange.load('address');
+    return context.sync()
+      .then(function () {
+        console.log('The selected range is: ' + selectedRange.address);
+    });
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -99,26 +99,26 @@ In the following example, only specific properties of the range are loaded.
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:B2';
-  const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:B2';
+    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
-  myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
+    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
 
-  return context.sync()
-    .then(function () {
-      console.log (myRange.address);              // ok
-      console.log (myRange.format.wrapText);      // ok
-      console.log (myRange.format.fill.color);    // ok
-      //console.log (myRange.format.font.color);  // not ok as it was not loaded
-  });
-}).then(function () {
-  console.log('done');
+    return context.sync()
+      .then(function () {
+        console.log (myRange.address);              // ok
+        console.log (myRange.format.wrapText);      // ok
+        console.log (myRange.format.fill.color);    // ok
+        //console.log (myRange.format.font.color);  // not ok as it was not loaded
+        });
+    }).then(function () {
+        console.log('done');
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -157,18 +157,18 @@ range.format.fill.color =  null;
 
 Formatting properties such as `size` and `color` will contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:
 
-* If all cells in the range have the same font color, `range.format.font.color` specifies that color.
-* If multiple font colors are present within the range, `range.format.font.color` is `null`.
+- If all cells in the range have the same font color, `range.format.font.color` specifies that color.
+- If multiple font colors are present within the range, `range.format.font.color` is `null`.
 
 ### Blank input for a property
 
 When you specify a blank value for a property (i.e., two quotation marks with no space in-between `''`), it will be interpreted as an instruction to clear or reset the property. For example:
 
-* If you specify a blank value for the `values` property of a range, the content of the range is cleared.
+- If you specify a blank value for the `values` property of a range, the content of the range is cleared.
 
-* If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.
+- If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.
 
-* If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.
+- If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.
 
 ### Blank property values in the response
 
@@ -187,9 +187,9 @@ range.formula = [['', '', '=Rand()']];
 ### Read an unbounded range
 
 An unbounded range address is a range address that specifies either entire column(s) or entire row(s). For example:
- 
-* Range addresses comprised of entire column(s):<ul><li>`C:C`</li><li>`A:F`</li></ul>
-* Range addresses comprised of entire row(s):<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+- Range addresses comprised of entire column(s):<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- Range addresses comprised of entire row(s):<ul><li>`2:2`</li><li>`1:4`</li></ul>
 
 When the API makes a request to retrieve an unbounded range (for example, `getRange('C:C')`), the response will contain `null` values for cell-level properties such as `values`, `text`, `numberFormat`, and `formula`. Other properties of the range, such as `address` and `cellCount`, will contain valid values for the unbounded range.
 
@@ -198,13 +198,16 @@ When the API makes a request to retrieve an unbounded range (for example, `getRa
 You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on unbounded range because the input request is too large. For example, the following code snippet is not valid because it attempts to specify `values` for an unbounded range. The API will return an error if you attempt to set cell-level properties for an unbounded range.
 
 ```js
-const range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 
 ## Read or write to a large range
 
 If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.
+
+> [!IMPORTANT]
+> Excel Online has a payload size limit for requests and responses of **5MB**. `RichAPI.Error` will be thrown if that limit is exceeded.
 
 ## Update all cells in a range
 
@@ -214,24 +217,24 @@ The following example gets a range that contains 20 cells, and then sets the num
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:A20';
-  const worksheet = context.workbook.worksheets.getItem(sheetName);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:A20';
+    var worksheet = context.workbook.worksheets.getItem(sheetName);
 
-  const range = worksheet.getRange(rangeAddress);
-  range.numberFormat = 'm/d/yyyy';
-  range.values = '3/11/2015';
-  range.load('text');
+    var range = worksheet.getRange(rangeAddress);
+    range.numberFormat = 'm/d/yyyy';
+    range.values = '3/11/2015';
+    range.load('text');
 
-  return context.sync()
-    .then(function () {
-      console.log(range.text);
-  });
+    return context.sync()
+      .then(function () {
+        console.log(range.text);
+    });
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -241,8 +244,8 @@ When an API error occurs, the API returns an **error** object that contains a co
 
 ## See also
 
-* [Get started with Excel add-ins](excel-add-ins-get-started-overview.md)
-* [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
-* [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
-* [Excel JavaScript API performance optimization](/office/dev/add-ins/excel/performance)
-* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Get started with Excel add-ins](excel-add-ins-get-started-overview.md)
+- [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
+- [Excel JavaScript API performance optimization](/office/dev/add-ins/excel/performance)
+- [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
