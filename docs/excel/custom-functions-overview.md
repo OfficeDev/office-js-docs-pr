@@ -11,16 +11,29 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet. The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.
+The following illustration shows how you can call a function you've created with JavaScript or Typescript. In this example, the custom function is a clock, designed by the company Contoso. Entering `=CONTOSO.CLOCK` gives you the present time, which updates itself once every second.
 
-<img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
+<img alt="animated image showing an end user inserting the CONTOSO.CLOCK custom function into a cell of an Excel worksheet" src="../images/ClockFunction.gif" />
 
-The following code defines the `ADD42` custom function.
+The following code defines the custom function `=CLOCK`.
 
 ```js
-function add42(a, b) {
-  return a + b + 42;
+/**
+ * Displays the current time once a second
+ * @customfunction 
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
+
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
 }
+CustomFunctions.associate("CLOCK", clock);
 ```
 
 > [!NOTE]
