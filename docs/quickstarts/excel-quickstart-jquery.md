@@ -164,7 +164,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 1. Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -179,7 +179,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 2. Navigate to the root folder of the project.
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 

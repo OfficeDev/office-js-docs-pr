@@ -238,7 +238,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 1. Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -253,7 +253,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 2. Navigate to the root folder of the project.
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 

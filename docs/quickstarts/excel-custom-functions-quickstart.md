@@ -26,7 +26,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 1. Run the following command and then answer the prompts as follows.
 
-    ```
+    ```command&nbsp;line
     yo office
     ```
 
@@ -40,13 +40,13 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 2. Navigate to the root folder of the project.
 
-    ```
+    ```command&nbsp;line
     cd stock-ticker
     ```
 
 3. Build the project.
 
-    ```
+    ```command&nbsp;line
     npm run build
     ```
 
@@ -56,8 +56,8 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 To test your add-in in Excel for Windows, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
-```
-    npm run start:desktop
+```command&nbsp;line
+npm run start:desktop
 ```
 
 > [!NOTE]
@@ -67,7 +67,7 @@ To test your add-in in Excel for Windows, run the following command. When you ru
 
 To test your add-in in Excel Online, run the following command. When you run this command, the local web server will start.
 
-```
+```command&nbsp;line
 npm run start:web
 ```
 
