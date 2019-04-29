@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, OneNote, and Project.
-ms.date: 04/03/2019
+ms.date: 04/29/2019
 localization_priority: Priority
 ---
 
@@ -82,7 +82,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Office 2019 for Windows<br>(one-time purchase)</td>
     <td>- TaskPane<br>
         - Content<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -110,7 +110,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Office 2016 for Windows<br>(one-time purchase)</td>
     <td>- TaskPane<br>
         - Content</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -130,7 +130,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Office 2013 for Windows<br>(one-time purchase)</td>
     <td>
         - TaskPane<br>
         - Content</td>
@@ -207,7 +207,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac</td>
+    <td>Office 2019 for Mac<br>(one-time purchase)</td>
     <td>- TaskPane<br>
         - Content<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -236,7 +236,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Office 2016 for Mac<br>(one-time purchase)</td>
     <td>- TaskPane<br>
         - Content</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -301,7 +301,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Office 2019 for Windows<br>(one-time purchase)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
@@ -316,7 +316,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Office 2016 for Windows<br>(one-time purchase)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
@@ -328,7 +328,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Office 2013 for Windows<br>(one-time purchase)</td>
     <td> - Mail Read<br>
       - Mail Compose</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -362,7 +362,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac</td>
+    <td>Office 2019 for Mac<br>(one-time purchase)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -375,7 +375,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Office 2016 for Mac<br>(one-time purchase)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -468,7 +468,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Office 2019 for Windows<br>(one-time purchase)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -496,7 +496,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Office 2016 for Windows<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -521,7 +521,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Office 2013 for Windows<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - BindingEvents<br>
@@ -601,7 +601,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac</td>
+    <td>Office 2019 for Mac<br>(one-time purchase)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -630,7 +630,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Office 2016 for Mac<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -702,7 +702,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Office 2019 for Windows<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -718,7 +718,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Office 2016 for Windows<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -733,7 +733,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Office 2013 for Windows<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane<br>
     </td>
@@ -780,7 +780,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac</td>
+    <td>Office 2019 for Mac<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -796,7 +796,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Office 2016 for Mac<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -852,21 +852,21 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Office 2019 for Windows<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Office 2016 for Windows<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Office 2013 for Windows<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
@@ -882,7 +882,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 - [Common API requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
 - [Add-in Commands requirement sets](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
 - [JavaScript API for Office reference](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Update history for Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016 and 2019 update history (Click-To-Run)](/officeupdates/update-history-office-2019)
 - [Office 2013 update history (Click-To-Run)](/officeupdates/update-history-office-2013)
 - [Office 2010, 2013, and 2016 update history (MSI)](/officeupdates/office-updates-msi)
 - [Outlook 2010, 2013, and 2016 update history (MSI)](/officeupdates/outlook-updates-msi)
+- [Update history for Office for Mac](/officeupdates/update-history-office-for-mac)
