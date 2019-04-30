@@ -76,7 +76,7 @@ try {
 
 1. Start the local web server by running the following command:
 
-    ```
+    ```command&nbsp;line
     npm run start:web
     ```
 

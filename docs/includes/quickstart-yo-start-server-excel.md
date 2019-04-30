@@ -6,13 +6,13 @@ Start the local web server and sideload your add-in.
 
 - To test your add-in in Excel, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
-    ```
+    ```command&nbsp;line
     npm start
     ```
 
 - To test your add-in in Excel Online, run the following command. When you run this command, the local web server will start.
 
-    ```
+    ```command&nbsp;line
     npm run start:web
     ```
 

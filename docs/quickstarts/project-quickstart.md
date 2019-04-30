@@ -94,7 +94,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. Start the local web server by running the following command:
 
-    ```
+    ```command&nbsp;line
     npm start
     ```
 

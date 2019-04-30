@@ -215,13 +215,13 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
     - To test your add-in in PowerPoint, run the following command. When you run this command, the local web server will start and PowerPoint will open with your add-in loaded.
 
-        ```
+        ```command&nbsp;line
         npm start
         ```
 
     - To test your add-in in PowerPoint Online, run the following command. When you run this command, the local web server will start.
 
-        ```
+        ```command&nbsp;line
         npm run start:web
         ```
 

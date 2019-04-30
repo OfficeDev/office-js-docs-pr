@@ -270,13 +270,13 @@ In this article, you'll walk through the process of building a Word task pane ad
 
     - To test your add-in in Word, run the following command. When you run this command, the local web server will start and Word will open with your add-in loaded.
 
-        ```
+        ```command&nbsp;line
         npm start
         ```
 
     - To test your add-in in Word Online, run the following command. When you run this command, the local web server will start.
 
-        ```
+        ```command&nbsp;line
         npm run start:web
         ```
 
