@@ -42,7 +42,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 - The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **src/taskpane/app/app.component.html** file contains the HTML markup for the task pane.
-- The **src/taskpane/taskpane.css** file contains the CSS styles that are referenced in the HTML file.
+- The **src/taskpane/taskpane.css** file contains CSS styles that are referenced in the HTML file.
 - The **src/taskpane/app/app.component.ts** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
 
 ## Try it out
