@@ -155,22 +155,22 @@ Excel.run(function (context) {
 
 ## Slicers
 
-[Slicers](/javascript/api/excel/excel.slicer) allow data to be filtered from an Excel PivotTable or table. A slicer uses values from a specified column or PivotField to filter corresponding rows. Your add-in can adjust these filters, as can users [through the Excel UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d). The slicer itself is sits on top of the worksheet in the drawing layer.
+[Slicers](/javascript/api/excel/excel.slicer) allow data to be filtered from an Excel PivotTable or table. A slicer uses values from a specified column or PivotField to filter corresponding rows. These values are stored as [SlicerItem](/javascript/api/excel/excel.sliceritem) objects in the `Slicer`. Your add-in can adjust these filters, as can users ([through the Excel UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). The slicer itself sits on top of the worksheet in the drawing layer.
 
 ![A slicer filtering data on a PivotTable.](../images/excel-slicer.png)
 
 > [!NOTE]
-> This section focuses on slicers connected to PivotTables. The same techniques subsequently described apply to adding slicers to tables.
+> This section focuses on slicers connected to PivotTables. The same techniques subsequently described also apply to adding slicers to tables.
 
 ### Create a slicer
 
 Slicers are created by adding them to `slicers` property (which is of type [SlicerCollection](/javascript/api/excel/excel.slicercollection)) of a `Workbook` or `Worksheet` object. Slicers are added with the `SlicerCollection.add` method. This has three parameters:
 
-- `slicerSource`: The data source on which the new slicer is based. It can be a `PivotTable`, a `Table`, or a string representing the name or ID of a `PivotTable` or `Table`.
-- `sourceField`: The field in the data source by which to filter. It can be a `PivotField`, a `TableColumn`, or a string representing the name or ID of a `PivotField` or `TableColumn`.
-- `slicerDestination`: The worksheet where the new slicer will be created. It can be a `Worksheet` object or the name or ID of a `Worksheet`. This parameter is unnecessary when the `SlicerCollection` is accessed through `Worksheet.slicers`. The collection's worksheet is used as the destination.
+- `slicerSource`: The data source on which the new slicer is based. It can be a `PivotTable`, `Table`, or string representing the name or ID of a `PivotTable` or `Table`.
+- `sourceField`: The field in the data source by which to filter. It can be a `PivotField`, `TableColumn`, or string representing the name or ID of a `PivotField` or `TableColumn`.
+- `slicerDestination`: The worksheet where the new slicer will be created. It can be a `Worksheet` object or the name or ID of a `Worksheet`. This parameter is unnecessary when the `SlicerCollection` is accessed through `Worksheet.slicers`. In this case, the collection's worksheet is used as the destination.
 
-The following code sample shows a new slicer added to the **Pivot** worksheet. The slicer's source is the **Farm Sales** PivotTable and filters using the **Type** data. The slicer is also named **Fruit Slicer** for for future reference.
+The following code sample shows a new slicer added to the **Pivot** worksheet. The slicer's source is the **Farm Sales** PivotTable and filters using the **Type** data. The slicer is also named **Fruit Slicer** for future reference.
 
 ```js
 Excel.run(async (context) => {
@@ -186,7 +186,7 @@ Excel.run(async (context) => {
 
 ### Filter items with a slicer
 
-The slicer filters the PivotTable with items from the `sourceField`. The `Slicer.selectItems` method sets the items that remain in the slicer. These items are passed to the method as an array of the items' keys (as strings). Any rows containing those items remain in the PivotTable's aggregation. Any subsequent call to `selectItems` sets the list to that call's list of keys.
+The slicer filters the PivotTable with items from the `sourceField`. The `Slicer.selectItems` method sets the items that remain in the slicer. These items are passed to the method as a `string[]`, representing the items' keys. Any rows containing those items remain in the PivotTable's aggregation. Subsequent calls to `selectItems` set the list to those calls' keys.
 
 > [!NOTE]
 > If `Slicer.selectItems` is passed an item that's not in the data source, an `InvalidArgument` error is thrown. The contents can be verified through the `Slicer.slicerItems` property, which is a [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
@@ -202,7 +202,7 @@ Excel.run(async (context) => {
 });
 ```
 
-To remove the filters from the slicer, use the `Slicer.clearFilters` method, as shown in the following sample.
+To remove filters from the slicer, use the `Slicer.clearFilters` method, as shown in the following sample. Note that this removes all the filters.
 
 ```js
 Excel.run(async (context) => {
@@ -214,7 +214,7 @@ Excel.run(async (context) => {
 
 ### Style and format a slicer
 
-A slicer's display settings are set through related `Slicer` properties. The following code sample sets the style to **SlicerStyleLight6**, sets the text at the top of the slicer to **Fruit Types**, places the slicer at the position **(395, 15)** on the drawing layer, and the size to **135x150** pixels.
+A slicer's display settings are set through related `Slicer` properties. The following code sample sets the style to **SlicerStyleLight6**, sets the text at the top of the slicer to **Fruit Types**, places the slicer at the position **(395, 15)** on the drawing layer, and the slicer's size to **135x150** pixels.
 
 ```js
 Excel.run(async (context) => {
