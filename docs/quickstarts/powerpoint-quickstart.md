@@ -189,8 +189,8 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
     - **Choose a project type:** `Office Add-in Task Pane project`
     - **Choose a script type:** `Javascript`
-    - **What do you want to name your add-in?:** `My Office Add-in`
-    - **Which Office client application would you like to support?:** `PowerPoint`
+    - **What do you want to name your add-in?** `My Office Add-in`
+    - **Which Office client application would you like to support?** `PowerPoint`
 
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint.png)
     

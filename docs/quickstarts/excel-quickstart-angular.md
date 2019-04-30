@@ -24,8 +24,8 @@ In this article, you'll walk through the process of building an Excel task pane 
 
     - **Choose a project type:** `Office Add-in Task Pane project using Angular framework`
     - **Choose a script type:** `TypeScript`
-    - **What do you want to name your add-in?:** `My Office Add-in`
-    - **Which Office client application would you like to support?:** `Excel`
+    - **What do you want to name your add-in?** `My Office Add-in`
+    - **Which Office client application would you like to support?** `Excel`
 
     ![Yeoman generator](../images/yo-office-excel-angular-2.png)
 
