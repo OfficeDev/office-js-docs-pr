@@ -1,5 +1,5 @@
 ---
-ms.date: 04/25/2019
+ms.date: 04/30/2019
 description: Localize your Excel custom functions. 
 title: Localize custom functions (preview)
 localization_priority: Normal
