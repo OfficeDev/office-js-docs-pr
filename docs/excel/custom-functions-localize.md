@@ -71,7 +71,7 @@ Compare the previous code sample with the English version that follows.
 
 ## Localize your add-in
 
-In addition to providing two JSON files, you need to provide your XML manifest file with an override value for the URL of your functions' script file. The following code sample shows a default `en-us` locale with an override functions script URL for `de-de` (Germany). The override file is a separate script file with localized German function names and ids.
+After creating a JSON file for each language, you need to update your XML manifest file with an override value for each locale that specifies the URL of each JSON metadata file. The following manifest XML shows a default `en-us` locale with an override JSON file URL for `de-de` (Germany). The **functions-de.json** file contains the localized German function names and ids.
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>
