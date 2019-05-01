@@ -33,7 +33,13 @@ function clock(invocation) {
     clearInterval(timer);
   };
 }
+
+function currentTime() {
+  return new Date().toLocaleTimeString();
+}
+
 CustomFunctions.associate("CLOCK", clock);
+CustomFunctions.associate("CURRENTTIME", currentTime);
 ```
 
 > [!NOTE]
