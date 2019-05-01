@@ -53,11 +53,10 @@ Each add-in requires a manifest file to define its settings and capabilities.
     ```
 
     - **Choose a project type:** `Office Add-in project containing the manifest only`
-    - **Choose a script type:** `Javascript`
     - **What do you want to name your add-in?** `My Office Add-in`
     - **Which Office client application would you like to support?** `Excel`
 
-    ![Yeoman generator](../images/yo-office-manifest-only.png)
+    ![Yeoman generator](../images/yo-office-manifest-only-vue.png)
 
     After you complete the wizard, the generator creates the manifest file.
 
