@@ -61,7 +61,7 @@ function getWeatherReport(zipCode, dayOfWeek)
 
 ## Range parameters
 
-Your custom function may accept a range of data as an input parameter. A function can also return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
+Your custom function may accept a range of cell data as an input parameter. A function can also return a range of data. Excel will pass a range of cell data as a two-dimensional array.
 
 For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, the parameter's `type` property is set to `matrix`.
 
