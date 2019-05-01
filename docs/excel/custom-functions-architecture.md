@@ -38,7 +38,7 @@ The `Office.Storage` object can be used to store data from your custom functions
 You can see a code sample using the `Storage` object in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
 For more general information about the `Storage` object, see [Custom functions runtime](./custom-functions-runtime.md).
 
-`Office.Storage` can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
+The `Storage` object can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
 
 ## See also
 
