@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office Online for testing
 description: 'Test your Office Add-in in Office Online by sideloading'
-ms.date: 03/19/2019
+ms.date: 04/29/2019
 localization_priority: Priority
 ---
 
@@ -20,28 +20,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## Sideload an Office Add-in in Office 365
-
-
-1. Sign in to your Office 365 account.
-    
-2. Open the App Launcher on the left end of the toolbar and select  **Excel**,  **Word**, or  **PowerPoint**, and then create a new document.
-    
-3. Open the  **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
-    
-4. On the  **Office Add-ins** dialog, select the **MY ORGANIZATION** tab, and then **Upload My Add-in**.
-    
-    ![A dialog titled Office Add-in with a link near the upper left corner that says "Upload My Add-in"](../images/office-add-ins.png)
-
-5.  **Browse** to the add-in manifest file, and then select **Upload**.
-    
-    ![The upload add-in dialog with buttons for browse, upload, and cancel](../images/upload-add-in.png)
-
-6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
-    
-
 ## Sideload an Office Add-in in Office Online
-
 
 1. Open [Microsoft Office Online](https://office.live.com/).
     
@@ -67,6 +46,16 @@ The following video walks you through the process of sideloading your add-in in 
 > - Enter “**about:flags**” in the Edge search bar to bring up the Developer Settings options.  Check the “**Allow localhost loopback**” option and restart Edge.
 
 >    ![The Edge Allow localhost loopback option with the box checked.](../images/allow-localhost-loopback.png)
+
+
+## Sideload an Office Add-in in Office 365
+
+1. Sign in to your Office 365 account.
+    
+2. Open the App Launcher on the left end of the toolbar and select  **Excel**,  **Word**, or  **PowerPoint**, and then create a new document.
+    
+3. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office Online**.
+
 
 ## Sideload an add-in when using Visual Studio
 
