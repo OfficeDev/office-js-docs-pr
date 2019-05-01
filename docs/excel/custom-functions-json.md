@@ -1,5 +1,5 @@
 ---
-ms.date: 03/29/2019
+ms.date: 05/01/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel (preview)
 localization_priority: Normal
@@ -9,8 +9,8 @@ localization_priority: Normal
 
 When you define [custom functions](custom-functions-overview.md) within your Excel add-in, your add-in project includes a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users. This file is generated either:
 
-- by you, in a handwritten JSON file
-- from the JSDoc comments you enter at the beginning of your function
+- By you, in a handwritten JSON file
+- From the JSDoc comments you enter at the beginning of your function
 
 Custom functions are registered when the user runs the add-in for the first time and after that are available to the same user in all workbooks.
 
