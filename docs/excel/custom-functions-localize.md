@@ -42,7 +42,7 @@ In the following code sample, you'll see the JSON file for a function with the `
 }
 ```
 
-Compare the previous code sample with the English version that follows.
+Compare the previous JSON with the following JSON for English.
 
 ```JSON
 {
