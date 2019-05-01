@@ -147,9 +147,6 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
 |  `optional`  | boolean | No | If `true`, the parameter is optional. |
 
->[!NOTE]
-> If the `type` property of an optional parameter is either not specified or set to `any`, you may notice issues such as linting errors in your IDE and optional parameters not being displayed when the function is being entered into a cell in Excel. This is projected to change in December of 2018.
-
 ## result
 
 The `result` object defines the type of information that is returned by the function. The following table lists the properties of the `result` object.
@@ -157,7 +154,6 @@ The `result` object defines the type of information that is returned by the func
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
-|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. |
 
 ## See also
 

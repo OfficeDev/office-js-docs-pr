@@ -23,7 +23,7 @@ Whereas regular parameters are required, optional parameters are not. When a use
  * @param {number} first First number
  * @param {number} second Second number
  * @param {number} [third] Third number to add. If omitted, third = 0.
- * @returns {number} The sum of the two numbers.
+ * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
   if (third) {
@@ -40,8 +40,8 @@ When you define a function that contains one or more optional parameters, you sh
 /**
  * Gets a weather report for a specified zipCode and dayOfWeek
  * @customfunction
- * @param {number} zipCode Zip code
- * @param {string} dayOfWeek Day of the week
+ * @param {number} zipCode Zip code. If omitted, zipCode = 98052.
+ * @param {string} dayOfWeek Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
 function getWeatherReport(zipCode, dayOfWeek)
@@ -61,7 +61,7 @@ function getWeatherReport(zipCode, dayOfWeek)
 
 ## Range parameters
 
-Your custom function may accept a range of data as an input parameter. A function can also return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
+Your custom function may accept a range of cell data as an input parameter. A function can also return a range of data. Excel will pass a range of cell data as a two-dimensional array.
 
 For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, the parameter's `type` property is set to `matrix`.
 
@@ -85,7 +85,7 @@ function secondHighest(values){
 
 ## Invocation context parameter
 
-Every custom function is automatically passed an `invocation` argument as the last argument, which can be used to find the address of a cell or handle what happens when [canceling a function](custom-functions-web-reqs.md#stream-and-cancel-functions). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
+Every custom function is automatically passed an `invocation` argument as the last argument. This argument can be used to retrieve additional context, such as the address of the calling cell. Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#stream-and-cancel-functions). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
 
 In the following code sample, the `invocation` context is explicitly stated for your reference.
 

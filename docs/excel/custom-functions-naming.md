@@ -1,5 +1,5 @@
 ---
-ms.date: 02/08/2019
+ms.date: 04/29/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
 title: Naming guidelines for custom functions in Excel (preview)
 localization_priority: Normal
@@ -30,7 +30,12 @@ If your function name is the same as a function name in an add-in that already e
 
 To fix a name conflict, change the name in your add-in and try the function again. You can also uninstall the add-in with the conflicting name. Or, if you're testing your add-in in different environments, try using a different namespace to differentiate your function (such as NAMESPACE_NAMEOFFUNCTION).
 
-Also consider how you'd like people to use the functions within your add-in. In many cases, it makes sense to add multiple arguments to a function rather than create multiple functions with the same or similar names.
+## Best practices
+
+- Consider adding multiple arguments to a function rather than creating multiple functions with the same or similar names.
+- Function names should indicate the action of the function, such as `=GETZIPCODE` instead of `ZIPCODE`.
+- Avoid ambiguous abbreviations in function names. Clarity is more important than brevity. Choose a name like `=INCREASETIME` rather than `=INC`.
+- Consistently use the same verbs for functions which perform similar actions. For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.
 
 ## See also
 

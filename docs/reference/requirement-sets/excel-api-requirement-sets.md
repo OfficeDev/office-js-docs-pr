@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -20,14 +20,15 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 |  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | Preview  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
-| ExcelApi1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | Coming soon |
-| ExcelApi1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later | 16.9 or later | April 2018 | Coming soon |
-| ExcelApi1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later |15.36 or later| April 2017 | Coming soon|
-| ExcelApi1.5  | Version 1703 (Build 8067.2070) or later   | 2.2 or later |15.36 or later| March 2017 | Coming soon|
-| ExcelApi1.4  | Version 1701 (Build 7870.2024) or later   | 2.2 or later |15.36 or later| January 2017 | Coming soon|
-| ExcelApi1.3  | Version 1608 (Build 7369.2055) or later | 1.27 or later |  15.27 or later| September 2016 | Version 1608 (Build 7601.6800) or later|
-| ExcelApi1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
-| ExcelApi1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
+| ExcelApi 1.9  | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019       | Coming soon |
+| ExcelApi 1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | Coming soon |
+| ExcelApi 1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later  | 16.9 or later  | April 2018     | Coming soon |
+| ExcelApi 1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later  | 15.36 or later | April 2017     | Coming soon |
+| ExcelApi 1.5  | Version 1703 (Build 8067.2070) or later   | 2.2 or later  | 15.36 or later | March 2017     | Coming soon |
+| ExcelApi 1.4  | Version 1701 (Build 7870.2024) or later   | 2.2 or later  | 15.36 or later | January 2017   | Coming soon |
+| ExcelApi 1.3  | Version 1608 (Build 7369.2055) or later   | 1.27 or later | 15.27 or later | September 2016 | Version 1608 (Build 7601.6800) or later|
+| ExcelApi 1.2  | Version 1601 (Build 6741.2088) or later   | 1.21 or later | 15.22 or later | January 2016   ||
+| ExcelApi 1.1  | Version 1509 (Build 4266.1001) or later   | 1.19 or later | 15.20 or later | January 2016   ||
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
@@ -41,14 +42,16 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ## Excel JavaScript preview APIs
 
-New Excel JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired. The following table lists the APIs currently available in preview. To provide feedback about a preview API, please use the feedback mechanism at the end of the web page where the API is documented.
+New Excel JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.
 
 > [!NOTE]
 > Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
 >
 > To use preview APIs, you must reference the **beta** library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js and you may also need to join the Office Insider program to get a sufficiently recent Office build.
 
-More than 400 new Excel APIs are currently in preview. The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list. Please try the new features and share your feedback with us.
+## What’s new in Excel JavaScript API 1.9
+
+More than 400 new Excel APIs were introduced with the 1.9 requirement set. The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
@@ -73,62 +76,62 @@ The following is a complete list of APIs in preview.
 |[Application](/javascript/api/excel/excel.application)|[calculationEngineVersion](/javascript/api/excel/excel.application#calculationengineversion)|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|
 ||[calculationState](/javascript/api/excel/excel.application#calculationstate)|Returns a CalculationState that indicates the calculation state of the application. See Excel.CalculationState for details. Read-only.|
 ||[iterativeCalculation](/javascript/api/excel/excel.application#iterativecalculation)|Returns the Iterative Calculation settings.|
-||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendscreenupdatinguntilnextsync--)|Suspends screen updating until the next "context.sync()" is called.|
-|[AutoFilter](/javascript/api/excel/excel.autofilter)|[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply-range--columnindex--criteria-)|Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.|
-||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearcriteria--)|Clears the criteria if AutoFilter has filters|
+||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendscreenupdatinguntilnextsync--)|Suspends sceen updating until the next "context.sync()" is called.|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply-range--columnindex--criteria-)|Applies the AutoFilter to a range. This filters the column if column index and filter criteria are specified.|
+||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearcriteria--)|Clears the filter criteria of the AutoFilter.|
 ||[getRange()](/javascript/api/excel/excel.autofilter#getrange--)|Returns the Range object that represents the range to which the AutoFilter applies.|
-||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getrangeornullobject--)|If there is Range object associated with the AutoFilter, this method returns it.|
-||[criteria](/javascript/api/excel/excel.autofilter#criteria)|Array that holds all filter criteria in an autofiltered range. Read-Only.|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getrangeornullobject--)|Returns the Range object that represents the range to which the AutoFilter applies.|
+||[criteria](/javascript/api/excel/excel.autofilter#criteria)|An array that holds all the filter criteria in the autofiltered range. Read-Only.|
 ||[enabled](/javascript/api/excel/excel.autofilter#enabled)|Indicates if the AutoFilter is enabled or not. Read-Only.|
 ||[isDataFiltered](/javascript/api/excel/excel.autofilter#isdatafiltered)|Indicates if the AutoFilter has filter criteria. Read-Only.|
 ||[reapply()](/javascript/api/excel/excel.autofilter#reapply--)|Applies the specified Autofilter object currently on the range.|
 ||[remove()](/javascript/api/excel/excel.autofilter#remove--)|Removes the AutoFilter for the range.|
-|[CellBorder](/javascript/api/excel/excel.cellborder)|[color](/javascript/api/excel/excel.cellborder#color)||
-||[style](/javascript/api/excel/excel.cellborder#style)||
-||[tintAndShade](/javascript/api/excel/excel.cellborder#tintandshade)||
-||[weight](/javascript/api/excel/excel.cellborder#weight)||
-|[CellBorderCollection](/javascript/api/excel/excel.cellbordercollection)|[bottom](/javascript/api/excel/excel.cellbordercollection#bottom)||
-||[diagonalDown](/javascript/api/excel/excel.cellbordercollection#diagonaldown)||
-||[diagonalUp](/javascript/api/excel/excel.cellbordercollection#diagonalup)||
-||[horizontal](/javascript/api/excel/excel.cellbordercollection#horizontal)||
-||[left](/javascript/api/excel/excel.cellbordercollection#left)||
-||[right](/javascript/api/excel/excel.cellbordercollection#right)||
-||[top](/javascript/api/excel/excel.cellbordercollection#top)||
-||[vertical](/javascript/api/excel/excel.cellbordercollection#vertical)||
-|[CellProperties](/javascript/api/excel/excel.cellproperties)|[address](/javascript/api/excel/excel.cellproperties#address)||
-||[addressLocal](/javascript/api/excel/excel.cellproperties#addresslocal)||
-||[hidden](/javascript/api/excel/excel.cellproperties#hidden)||
-|[CellPropertiesFill](/javascript/api/excel/excel.cellpropertiesfill)|[color](/javascript/api/excel/excel.cellpropertiesfill#color)||
-||[pattern](/javascript/api/excel/excel.cellpropertiesfill#pattern)||
-||[patternColor](/javascript/api/excel/excel.cellpropertiesfill#patterncolor)||
-||[patternTintAndShade](/javascript/api/excel/excel.cellpropertiesfill#patterntintandshade)||
-||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfill#tintandshade)||
-|[CellPropertiesFont](/javascript/api/excel/excel.cellpropertiesfont)|[bold](/javascript/api/excel/excel.cellpropertiesfont#bold)||
-||[color](/javascript/api/excel/excel.cellpropertiesfont#color)||
-||[italic](/javascript/api/excel/excel.cellpropertiesfont#italic)||
-||[name](/javascript/api/excel/excel.cellpropertiesfont#name)||
-||[size](/javascript/api/excel/excel.cellpropertiesfont#size)||
-||[strikethrough](/javascript/api/excel/excel.cellpropertiesfont#strikethrough)||
-||[subscript](/javascript/api/excel/excel.cellpropertiesfont#subscript)||
-||[superscript](/javascript/api/excel/excel.cellpropertiesfont#superscript)||
-||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfont#tintandshade)||
-||[underline](/javascript/api/excel/excel.cellpropertiesfont#underline)||
-|[CellPropertiesFormat](/javascript/api/excel/excel.cellpropertiesformat)|[autoIndent](/javascript/api/excel/excel.cellpropertiesformat#autoindent)||
-||[borders](/javascript/api/excel/excel.cellpropertiesformat#borders)||
-||[fill](/javascript/api/excel/excel.cellpropertiesformat#fill)||
-||[font](/javascript/api/excel/excel.cellpropertiesformat#font)||
-||[horizontalAlignment](/javascript/api/excel/excel.cellpropertiesformat#horizontalalignment)||
-||[indentLevel](/javascript/api/excel/excel.cellpropertiesformat#indentlevel)||
-||[protection](/javascript/api/excel/excel.cellpropertiesformat#protection)||
-||[readingOrder](/javascript/api/excel/excel.cellpropertiesformat#readingorder)||
-||[shrinkToFit](/javascript/api/excel/excel.cellpropertiesformat#shrinktofit)||
-||[textOrientation](/javascript/api/excel/excel.cellpropertiesformat#textorientation)||
-||[useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#usestandardheight)||
-||[useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#usestandardwidth)||
-||[verticalAlignment](/javascript/api/excel/excel.cellpropertiesformat#verticalalignment)||
-||[wrapText](/javascript/api/excel/excel.cellpropertiesformat#wraptext)|Creates and opens a new workbook.  Optionally, the workbook can be pre-populated with a base64-encoded .xlsx file.|
-|[CellPropertiesProtection](/javascript/api/excel/excel.cellpropertiesprotection)|[formulaHidden](/javascript/api/excel/excel.cellpropertiesprotection#formulahidden)||
-||[locked](/javascript/api/excel/excel.cellpropertiesprotection#locked)||
+|[CellBorder](/javascript/api/excel/excel.cellborder)|[color](/javascript/api/excel/excel.cellborder#color)|Represents the `color` property of a single border.|
+||[style](/javascript/api/excel/excel.cellborder#style)|Represents the `style` property of a single border.|
+||[tintAndShade](/javascript/api/excel/excel.cellborder#tintandshade)|Represents the `tintAndShade` property of a single border.|
+||[weight](/javascript/api/excel/excel.cellborder#weight)|Represents the `weight` property of a single border.|
+|[CellBorderCollection](/javascript/api/excel/excel.cellbordercollection)|[bottom](/javascript/api/excel/excel.cellbordercollection#bottom)|Represents the `format.borders.bottom` property.|
+||[diagonalDown](/javascript/api/excel/excel.cellbordercollection#diagonaldown)|Represents the `format.borders.diagonalDown` property.|
+||[diagonalUp](/javascript/api/excel/excel.cellbordercollection#diagonalup)|Represents the `format.borders.diagonalUp` property.|
+||[horizontal](/javascript/api/excel/excel.cellbordercollection#horizontal)|Represents the `format.borders.horizontal` property.|
+||[left](/javascript/api/excel/excel.cellbordercollection#left)|Represents the `format.borders.left` property.|
+||[right](/javascript/api/excel/excel.cellbordercollection#right)|Represents the `format.borders.right` property.|
+||[top](/javascript/api/excel/excel.cellbordercollection#top)|Represents the `format.borders.top` property.|
+||[vertical](/javascript/api/excel/excel.cellbordercollection#vertical)|Represents the `format.borders.vertical` property.|
+|[CellProperties](/javascript/api/excel/excel.cellproperties)|[address](/javascript/api/excel/excel.cellproperties#address)|Represents the `address` property.|
+||[addressLocal](/javascript/api/excel/excel.cellproperties#addresslocal)|Represents the `addressLocal` property.|
+||[hidden](/javascript/api/excel/excel.cellproperties#hidden)|Represents the `hidden` property.|
+|[CellPropertiesFill](/javascript/api/excel/excel.cellpropertiesfill)|[color](/javascript/api/excel/excel.cellpropertiesfill#color)|Represents the `format.fill.color` property.|
+||[pattern](/javascript/api/excel/excel.cellpropertiesfill#pattern)|Represents the `format.fill.pattern` property.|
+||[patternColor](/javascript/api/excel/excel.cellpropertiesfill#patterncolor)|Represents the `format.fill.patternColor` property.|
+||[patternTintAndShade](/javascript/api/excel/excel.cellpropertiesfill#patterntintandshade)|Represents the `format.fill.patternTintAndShade` property.|
+||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfill#tintandshade)|Represents the `format.fill.tintAndShade` property.|
+|[CellPropertiesFont](/javascript/api/excel/excel.cellpropertiesfont)|[bold](/javascript/api/excel/excel.cellpropertiesfont#bold)|Represents the `format.font.bold` property.|
+||[color](/javascript/api/excel/excel.cellpropertiesfont#color)|Represents the `format.font.color` property.|
+||[italic](/javascript/api/excel/excel.cellpropertiesfont#italic)|Represents the `format.font.italic` property.|
+||[name](/javascript/api/excel/excel.cellpropertiesfont#name)|Represents the `format.font.name` property.|
+||[size](/javascript/api/excel/excel.cellpropertiesfont#size)|Represents the `format.font.size` property.|
+||[strikethrough](/javascript/api/excel/excel.cellpropertiesfont#strikethrough)|Represents the `format.font.strikethrough` property.|
+||[subscript](/javascript/api/excel/excel.cellpropertiesfont#subscript)|Represents the `format.font.subscript` property.|
+||[superscript](/javascript/api/excel/excel.cellpropertiesfont#superscript)|Represents the `format.font.superscript` property.|
+||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfont#tintandshade)|Represents the `format.font.tintAndShade` property.|
+||[underline](/javascript/api/excel/excel.cellpropertiesfont#underline)|Represents the `format.font.underline` property.|
+|[CellPropertiesFormat](/javascript/api/excel/excel.cellpropertiesformat)|[autoIndent](/javascript/api/excel/excel.cellpropertiesformat#autoindent)|Represents the `autoIndent` property.|
+||[borders](/javascript/api/excel/excel.cellpropertiesformat#borders)|Represents the `borders` property.|
+||[fill](/javascript/api/excel/excel.cellpropertiesformat#fill)|Represents the `fill` property.|
+||[font](/javascript/api/excel/excel.cellpropertiesformat#font)|Represents the `font` property.|
+||[horizontalAlignment](/javascript/api/excel/excel.cellpropertiesformat#horizontalalignment)|Represents the `horizontalAlignment` property.|
+||[indentLevel](/javascript/api/excel/excel.cellpropertiesformat#indentlevel)|Represents the `indentLevel` property.|
+||[protection](/javascript/api/excel/excel.cellpropertiesformat#protection)|Represents the `protection` property.|
+||[readingOrder](/javascript/api/excel/excel.cellpropertiesformat#readingorder)|Represents the `readingOrder` property.|
+||[shrinkToFit](/javascript/api/excel/excel.cellpropertiesformat#shrinktofit)|Represents the `shrinkToFit` property.|
+||[textOrientation](/javascript/api/excel/excel.cellpropertiesformat#textorientation)|Represents the `textOrientation` property.|
+||[useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#usestandardheight)|Represents the `useStandardHeight` property.|
+||[useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#usestandardwidth)|Represents the `useStandardWidth` property.|
+||[verticalAlignment](/javascript/api/excel/excel.cellpropertiesformat#verticalalignment)|Represents the `verticalAlignment` property.|
+||[wrapText](/javascript/api/excel/excel.cellpropertiesformat#wraptext)|Represents the `wrapText` property.|
+|[CellPropertiesProtection](/javascript/api/excel/excel.cellpropertiesprotection)|[formulaHidden](/javascript/api/excel/excel.cellpropertiesprotection#formulahidden)|Represents the `format.protection.formulaHidden` property.|
+||[locked](/javascript/api/excel/excel.cellpropertiesprotection#locked)|Represents the `format.protection.locked` property.|
 |[ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail)|[valueAfter](/javascript/api/excel/excel.changedeventdetail#valueafter)|Represents the value after changed. The data returned could be of type string, number, or a boolean. Cells that contain an error will return the error string.|
 ||[valueBefore](/javascript/api/excel/excel.changedeventdetail#valuebefore)|Represents the value before changed. The data returned could be of type string, number, or a boolean. Cells that contain an error will return the error string.|
 ||[valueTypeAfter](/javascript/api/excel/excel.changedeventdetail#valuetypeafter)|Represents the type of value after changed|
@@ -187,9 +190,9 @@ The following is a complete list of APIs in preview.
 ||[showLeaderLines](/javascript/api/excel/excel.chartseries#showleaderlines)|True if Microsoft Excel show leaderlines for each datalabel in series. Read/Write.|
 ||[splitValue](/javascript/api/excel/excel.chartseries#splitvalue)|Returns or sets the threshold value separating the two sections of either a pie of pie chart or a bar of pie chart. Read/Write.|
 |[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[linkNumberFormat](/javascript/api/excel/excel.charttrendlinelabel#linknumberformat)|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
-|[ColumnProperties](/javascript/api/excel/excel.columnproperties)|[address](/javascript/api/excel/excel.columnproperties#address)||
-||[addressLocal](/javascript/api/excel/excel.columnproperties#addresslocal)||
-||[columnIndex](/javascript/api/excel/excel.columnproperties#columnindex)||
+|[ColumnProperties](/javascript/api/excel/excel.columnproperties)|[address](/javascript/api/excel/excel.columnproperties#address)|Represents the `address` property.|
+||[addressLocal](/javascript/api/excel/excel.columnproperties#addresslocal)|Represents the `addressLocal` property.|
+||[columnIndex](/javascript/api/excel/excel.columnproperties#columnindex)|Represents the `columnIndex` property.|
 |[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|Get or set the content.|
 ||[delete()](/javascript/api/excel/excel.comment#delete--)|Deletes the comment thread.|
 ||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Get location of the comment.|
@@ -326,19 +329,20 @@ The following is a complete list of APIs in preview.
 |[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)|[horizontalFitToPages](/javascript/api/excel/excel.pagelayoutzoomoptions#horizontalfittopages)|Number of pages to fit horizontally. This value can be null if percentage scale is used.|
 ||[scale](/javascript/api/excel/excel.pagelayoutzoomoptions#scale)|Print page scale value can be between 10 and 400. This value can be null if fit to page tall or wide is specified.|
 ||[verticalFitToPages](/javascript/api/excel/excel.pagelayoutzoomoptions#verticalfittopages)|Number of pages to fit vertically. This value can be null if percentage scale is used.|
-|[PivotField](/javascript/api/excel/excel.pivotfield)|[sortByValues(sortby: "Ascending" \| "Descending", valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
-||[sortByValues(sortby: Excel.SortBy, valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[autoFormat](/javascript/api/excel/excel.pivotlayout#autoformat)|True if formatting will be automatically formatted when it’s refreshed or when fields are moved|
-||[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|True if the field list should be shown or hidden from the UI.|
-||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Gets the cell in the PivotTable's data body that contains the value for the intersection of the specified dataHierarchy, rowItems, and columnItems.|
+|[PivotField](/javascript/api/excel/excel.pivotfield)|[sortByLabels(sortBy: SortBy)](/javascript/api/excel/excel.pivotfield#sortbylabels-sortby-)|Sorts the PivotField. If a DataPivotHierarchy is specified, then sort will be applied based on it, if not sort will be based on the PivotField itself.|
+||[sortByValues(sortBy: "Ascending" \| "Descending", valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
+||[sortByValues(sortBy: Excel.SortBy, valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
+|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[autoFormat](/javascript/api/excel/excel.pivotlayout#autoformat)|Specifies whether formatting will be automatically formatted when it’s refreshed or when fields are moved|
+||[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|Specifies whether the field list can be shown in the UI.|
+||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Gets a unique cell in the PivotTable based on a data hierarchy and the row and column items of their respective hierarchies. The returned cell is the intersection of the given row and column that contains the data from the given hierarchy. This method is the inverse of calling getPivotItems and getDataHierarchy on a particular cell.|
 ||[getDataHierarchy(cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getdatahierarchy-cell-)|Gets the DataHierarchy that is used to calculate the value in a specified range within the PivotTable.|
 ||[getPivotItems(axis: "Unknown" \| "Row" \| "Column" \| "Data" \| "Filter", cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getpivotitems-axis--cell-)|Gets the PivotItems from an axis that make up the value in a specified range within the PivotTable.|
 ||[getPivotItems(axis: Excel.PivotAxis, cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getpivotitems-axis--cell-)|Gets the PivotItems from an axis that make up the value in a specified range within the PivotTable.|
-||[preserveFormatting](/javascript/api/excel/excel.pivotlayout#preserveformatting)|True if formatting is preserved when the report is refreshed or recalculated by operations such as pivoting, sorting, or changing page field items.|
-||[setAutosortOnCell(cell: Range \| string, sortby: "Ascending" \| "Descending")](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|Sets an autosort using the specified cell to automatically select all criteria and context for the sort.|
-||[setAutosortOnCell(cell: Range \| string, sortby: Excel.SortBy)](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|Sets an autosort using the specified cell to automatically select all criteria and context for the sort.|
-|[PivotTable](/javascript/api/excel/excel.pivottable)|[enableDataValueEditing](/javascript/api/excel/excel.pivottable#enabledatavalueediting)|True if the PivotTable should use custom lists when sorting.|
-||[useCustomSortLists](/javascript/api/excel/excel.pivottable#usecustomsortlists)|True if the PivotTable should use custom lists when sorting.|
+||[preserveFormatting](/javascript/api/excel/excel.pivotlayout#preserveformatting)|Specifies whether formatting is preserved when the report is refreshed or recalculated by operations such as pivoting, sorting, or changing page field items.|
+||[setAutoSortOnCell(cell: Range \| string, sortBy: "Ascending" \| "Descending")](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|Sets the PivotTable to automatically sort using the specified cell to automatically select all necessary criteria and context. This behaves identically to applying an autosort from the UI.|
+||[setAutoSortOnCell(cell: Range \| string, sortBy: Excel.SortBy)](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|Sets the PivotTable to automatically sort using the specified cell to automatically select all necessary criteria and context. This behaves identically to applying an autosort from the UI.|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[enableDataValueEditing](/javascript/api/excel/excel.pivottable#enabledatavalueediting)|Specifies whether the PivotTable allows values in the data body to be edited by the user.|
+||[useCustomSortLists](/javascript/api/excel/excel.pivottable#usecustomsortlists)|Specifies whether the PivotTable uses custom lists when sorting.|
 |[PivotTableStyle](/javascript/api/excel/excel.pivottablestyle)|[delete()](/javascript/api/excel/excel.pivottablestyle#delete--)|Deletes the PivotTableStyle.|
 ||[duplicate()](/javascript/api/excel/excel.pivottablestyle#duplicate--)|Creates a duplicate of this PivotTableStyle with copies of all the style elements.|
 ||[name](/javascript/api/excel/excel.pivottablestyle#name)|Gets the name of the PivotTableStyle.|
@@ -373,13 +377,17 @@ The following is a complete list of APIs in preview.
 ||[getSpillingToRangeOrNullObject()](/javascript/api/excel/excel.range#getspillingtorangeornullobject--)|Gets the range object containing the spill range when called on an anchor cell. Read-only.|
 ||[getTables(fullyContained?: boolean)](/javascript/api/excel/excel.range#gettables-fullycontained-)|Gets a scoped collection of tables that overlap with the range.|
 ||[hasSpill](/javascript/api/excel/excel.range#hasspill)|Represents if all cells have a spill border.|
+||[height](/javascript/api/excel/excel.range#height)|Returns the distance in points, for 100% zoom, from top edge of the range to bottom edge of the range. Read-only.|
+||[left](/javascript/api/excel/excel.range#left)|Returns the distance in points, for 100% zoom, from left edge of the worksheet to left edge of the range. Read-only.|
 ||[linkedDataTypeState](/javascript/api/excel/excel.range#linkeddatatypestate)|Represents the data type state of each cell. Read-only.|
+||[top](/javascript/api/excel/excel.range#top)|Returns the distance in points, for 100% zoom, from top edge of the worksheet to top edge of the range. Read-only.|
+||[width](/javascript/api/excel/excel.range#width)|Returns the distance in points, for 100% zoom, from left edge of the range to right edge of the range. Read-only.|
 ||[removeDuplicates(columns: number[], includesHeader: boolean)](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-)|Removes duplicate values from the range specified by the columns.|
 ||[replaceAll(text: string, replacement: string, criteria: Excel.ReplaceCriteria)](/javascript/api/excel/excel.range#replaceall-text--replacement--criteria-)|Finds and replaces the given string based on the criteria specified within the current range.|
-||[setCellProperties(cellPropertiesData: SettableCellProperties[][] \| OfficeExtension.ClientResult<SettableCellProperties[][]>)](/javascript/api/excel/excel.range#setcellproperties-cellpropertiesdata-)|Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.|
-||[setColumnProperties(columnPropertiesData: SettableColumnProperties[] \| OfficeExtension.ClientResult<SettableColumnProperties[]>)](/javascript/api/excel/excel.range#setcolumnproperties-columnpropertiesdata-)|Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.|
+||[setCellProperties(cellPropertiesData: SettableCellProperties[][])](/javascript/api/excel/excel.range#setcellproperties-cellpropertiesdata-)|Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.|
+||[setColumnProperties(columnPropertiesData: SettableColumnProperties[])](/javascript/api/excel/excel.range#setcolumnproperties-columnpropertiesdata-)|Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.|
 ||[setDirty()](/javascript/api/excel/excel.range#setdirty--)|Set a range to be recalculated when the next recalculation occurs.|
-||[setRowProperties(rowPropertiesData: SettableRowProperties[] \| OfficeExtension.ClientResult<SettableRowProperties[]>)](/javascript/api/excel/excel.range#setrowproperties-rowpropertiesdata-)|Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.|
+||[setRowProperties(rowPropertiesData: SettableRowProperties[])](/javascript/api/excel/excel.range#setrowproperties-rowpropertiesdata-)|Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.|
 |[RangeAreas](/javascript/api/excel/excel.rangeareas)|[calculate()](/javascript/api/excel/excel.rangeareas#calculate--)|Calculates all cells in the RangeAreas.|
 ||[clear(applyTo?: "All" \| "Formats" \| "Contents" \| "Hyperlinks" \| "RemoveHyperlinks")](/javascript/api/excel/excel.rangeareas#clear-applyto-)|Clears values, format, fill, border, etc on each of the areas that comprise this RangeAreas object.|
 ||[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.rangeareas#clear-applyto-)|Clears values, format, fill, border, etc on each of the areas that comprise this RangeAreas object.|
@@ -436,17 +444,24 @@ The following is a complete list of APIs in preview.
 ||[uniqueRemaining](/javascript/api/excel/excel.removeduplicatesresult#uniqueremaining)|Number of remaining unique rows present in the resulting range.|
 |[ReplaceCriteria](/javascript/api/excel/excel.replacecriteria)|[completeMatch](/javascript/api/excel/excel.replacecriteria#completematch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 ||[matchCase](/javascript/api/excel/excel.replacecriteria#matchcase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
-|[RowProperties](/javascript/api/excel/excel.rowproperties)|[address](/javascript/api/excel/excel.rowproperties#address)||
-||[addressLocal](/javascript/api/excel/excel.rowproperties#addresslocal)||
-||[rowIndex](/javascript/api/excel/excel.rowproperties#rowindex)||
+|[RowProperties](/javascript/api/excel/excel.rowproperties)|[address](/javascript/api/excel/excel.rowproperties#address)|Represents the `address` property.|
+||[addressLocal](/javascript/api/excel/excel.rowproperties#addresslocal)|Represents the `addressLocal` property.|
+||[rowIndex](/javascript/api/excel/excel.rowproperties#rowindex)|Represents the `rowIndex` property.|
 |[SearchCriteria](/javascript/api/excel/excel.searchcriteria)|[completeMatch](/javascript/api/excel/excel.searchcriteria#completematch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 ||[matchCase](/javascript/api/excel/excel.searchcriteria#matchcase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
 ||[searchDirection](/javascript/api/excel/excel.searchcriteria#searchdirection)|Specifies the search direction. Default is forward. See Excel.SearchDirection.|
-|[SettableCellProperties](/javascript/api/excel/excel.settablecellproperties)|[format](/javascript/api/excel/excel.settablecellproperties#format)||
-||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)||
-||[style](/javascript/api/excel/excel.settablecellproperties#style)||
-|[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
+|[SettableCellProperties](/javascript/api/excel/excel.settablecellproperties)|[format](/javascript/api/excel/excel.settablecellproperties#format)|Represents the `format` property.|
+||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)|Represents the `hyperlink` property.|
+||[style](/javascript/api/excel/excel.settablecellproperties#style)|Represents the `style` property.|
+|[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)|Represents the `columnHidden` property.|
+||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
+||[format: Excel.CellPropertiesFormat & {
+            columnWidth?](/javascript/api/excel/excel.settablecolumnproperties#format)|Represents the `format` property.|
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel.CellPropertiesFormat & {
+            rowHeight?](/javascript/api/excel/excel.settablerowproperties#format)|Represents the `format` property.|
+||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
+||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)|Represents the `rowHidden` property.|
+|[Setting](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Returns or sets the alternative description text for a Shape object.|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|Returns or sets the alternative title text for a Shape object.|
 ||[delete()](/javascript/api/excel/excel.shape#delete--)|Removes the shape from the worksheet.|
@@ -664,7 +679,7 @@ The following is a complete list of APIs in preview.
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|Save current workbook.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True if the workbook uses the 1904 date system.|
 ||[usePrecisionAsDisplayed](/javascript/api/excel/excel.workbook#useprecisionasdisplayed)|True if calculations in this workbook will be done using only the precision of the numbers as they're displayed.|
-|[WorkbookAutoSaveSetting[...]](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)|[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
+|[WorkbookAutoSave SettingChangedEventArgs](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)|[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[enableCalculation](/javascript/api/excel/excel.worksheet#enablecalculation)|Gets or sets the enableCalculation property of the worksheet.|
 ||[findAll(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findall-text--criteria-)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|
 ||[findAllOrNullObject(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findallornullobject-text--criteria-)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|
@@ -672,8 +687,10 @@ The following is a complete list of APIs in preview.
 ||[autoFilter](/javascript/api/excel/excel.worksheet#autofilter)|Represents the AutoFilter object of the worksheet. Read-Only.|
 ||[comments](/javascript/api/excel/excel.worksheet#comments)|Returns a collection of all the Comments objects on the worksheet. Read-only.|
 ||[horizontalPageBreaks](/javascript/api/excel/excel.worksheet#horizontalpagebreaks)|Gets the horizontal page break collection for the worksheet. This collection only contains manual page breaks.|
+||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Occurs when sorting on columns.|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Occurs when filter is applied on a specific worksheet.|
 ||[onFormatChanged](/javascript/api/excel/excel.worksheet#onformatchanged)|Occurs when format changed on a specific worksheet.|
+||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Occurs when sorting on rows.|
 ||[pageLayout](/javascript/api/excel/excel.worksheet#pagelayout)|Gets the PageLayout object of the worksheet.|
 ||[shapes](/javascript/api/excel/excel.worksheet#shapes)|Returns the collection of all the Shape objects on the worksheet. Read-only.|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Returns collection of slicers that are part of the worksheet. Read-only.|
@@ -683,17 +700,27 @@ The following is a complete list of APIs in preview.
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: "None" \| "Before" \| "After" \| "Beginning" \| "End", relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Inserts the specified worksheets of a workbook into the current workbook.|
 ||[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Inserts the specified worksheets of a workbook into the current workbook.|
 ||[onChanged](/javascript/api/excel/excel.worksheetcollection#onchanged)|Occurs when any worksheet in the workbook is changed.|
+||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Occurs when sorting on columns.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Occurs when any worksheet's filter is applied in the workbook.|
 ||[onFormatChanged](/javascript/api/excel/excel.worksheetcollection#onformatchanged)|Occurs when any worksheet in the workbook has format changed.|
+||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Occurs when sorting on rows.|
 ||[onSelectionChanged](/javascript/api/excel/excel.worksheetcollection#onselectionchanged)|Occurs when the selection changes on any worksheet.|
+|[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet.|
+||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
+||[type](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
+||[worksheetId](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#worksheetid)|Gets the id of the worksheet in which the sorting happened.|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|Represents the id of the worksheet in which the filter is applied.|
-|[WorksheetFormatChanged[...]](/javascript/api/excel/excel.worksheetformatchangedeventargs)|[address](/javascript/api/excel/excel.worksheetformatchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
+|[WorksheetFormatChangedEventArgs](/javascript/api/excel/excel.worksheetformatchangedeventargs)|[address](/javascript/api/excel/excel.worksheetformatchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
 ||[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.worksheetformatchangedeventargs#getrange-ctx-)|Gets the range that represents the changed area of a specific worksheet.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.worksheetformatchangedeventargs#getrangeornullobject-ctx-)|Gets the range that represents the changed area of a specific worksheet. It might return null object.|
 ||[source](/javascript/api/excel/excel.worksheetformatchangedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
 ||[type](/javascript/api/excel/excel.worksheetformatchangedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetformatchangedeventargs#worksheetid)|Gets the id of the worksheet in which the data changed.|
+|[WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs)|[address](/javascript/api/excel/excel.worksheetrowsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet.|
+||[source](/javascript/api/excel/excel.worksheetrowsortedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
+||[type](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
+||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetid)|Gets the id of the worksheet in which the sorting happened.|
 |[WorksheetSearchCriteria](/javascript/api/excel/excel.worksheetsearchcriteria)|[completeMatch](/javascript/api/excel/excel.worksheetsearchcriteria#completematch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 ||[matchCase](/javascript/api/excel/excel.worksheetsearchcriteria#matchcase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
 

@@ -11,7 +11,7 @@ Volatile functions are functions in which the value changes each time the cell i
 
 Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
-Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, [Monte Carlo simulations](https://en.wikipedia.org/wiki/Monte_Carlo_method
+Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modeling. For example, [Monte Carlo simulations](https://en.wikipedia.org/wiki/Monte_Carlo_method
 ) require the generation of random inputs to determine an optimal solution.
 
 If choosing to autogenerate your JSON file, declare a volatile function with the JSDOC comment tag `@volatile`.
