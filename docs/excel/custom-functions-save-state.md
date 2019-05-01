@@ -19,8 +19,7 @@ There are multiple ways to use `Office.Storage` for state management:
 The following code sample illustrates how to store an item into `Office.Storage` and retrieve it.
 
 ```js
-function StoreValue(key, value) {
-
+function storeValue(key, value) {
   return Office.Storage.setItem(key, value).then(function (result) {
       return "Success: Item with key '" + key + "' saved to AsyncStorage.";
   }, function (error) {
