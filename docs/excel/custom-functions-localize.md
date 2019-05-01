@@ -78,7 +78,7 @@ After creating a JSON file for each language, you need to update your XML manife
 ...
 <Resources>
      <bt:Urls>
-        <bt:Url id="Contoso.Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
+        <bt:Url id="Contoso.Functions.Metadata.Url" DefaultValue="https://localhost:3000/dist/functions.json"/>
           <bt:Override Locale="de-de" Value="https://localhost:3000/src/functions/functionsInGerman.js" />
      </bt:Urls>
 </Resources>
