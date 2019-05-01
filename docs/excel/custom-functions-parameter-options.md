@@ -123,7 +123,7 @@ To request an addressing cell's context in a function, you need to use a functio
 
 ```js
 /**
- * Helper function to get the address of a cell.
+ * Function that gets the address of a cell.
  * @customfunction
  * @param {CustomFunctions.Invocation} invocation Uses the invocation parameter present in each cell.
  * @requiresAddress
