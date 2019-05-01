@@ -36,7 +36,7 @@ Your custom functions code cannot directly interact with code in other parts of 
 The `Office.Storage` object can be used to store data from your custom functions and get data from your task pane code. For more information about storing and sharing data, see [Save and share state](custom-functions-save-state.md).
 
 You can see a code sample using the `Storage` object in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
-For more general information about `Office.Storage`, see [Custom functions runtime](./custom-functions-runtime.md).
+For more general information about the `Storage` object, see [Custom functions runtime](./custom-functions-runtime.md).
 
 `Office.Storage` can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
 
