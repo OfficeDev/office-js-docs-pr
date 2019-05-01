@@ -1,5 +1,5 @@
 ---
-ms.date: 04/18/2019
+ms.date: 04/29/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions (preview)
 localization_priority: Priority
@@ -33,7 +33,14 @@ In your custom functions' script file, you need to associate each custom functio
 The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
 
 ```js
-function add(first, second){
+/**
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
+ * @returns {number} The sum of the two numbers.
+ */
+function add(first, second) {
   return first + second;
 }
 
