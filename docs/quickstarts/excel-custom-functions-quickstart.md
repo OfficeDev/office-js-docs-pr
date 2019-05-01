@@ -22,7 +22,7 @@ You'll need the following tools and related resources to begin creating custom f
 
 - The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
-    ```
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -35,7 +35,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 1. Run the following command and then answer the prompts as follows.
 
-    ```
+    ```command&nbsp;line
     yo office
     ```
 
@@ -51,7 +51,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 2. Navigate to the project folder you just created.
 
-    ```
+    ```command&nbsp;line
     cd stock-ticker
     ```
 
@@ -59,7 +59,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 4. Build the project.
 
-    ```
+    ```command&nbsp;line
     npm run build
     ```
 
@@ -67,14 +67,14 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     - If you use Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
-        ```
+        ```command&nbsp;line
          npm run start
         ```
         After running this command, your command prompt will show details about starting the web server. Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.
 
     - If you use Excel Online to test your custom functions, run the following command to start the local web server:
 
-        ```
+        ```command&nbsp;line
         npm run start-web
         ```
 
