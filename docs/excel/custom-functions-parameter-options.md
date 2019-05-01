@@ -85,7 +85,7 @@ function secondHighest(values){
 
 ## Invocation context parameter
 
-Every custom function is automatically passed an `invocation` argument as the last argument, which can be used to find the address of a cell or handle what happens when [canceling a function](custom-functions-web-reqs.md#stream-and-cancel-functions). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
+Every custom function is automatically passed an `invocation` argument as the last argument. This argument can be used to retrieve additional context, such as the address of the calling cell. Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#stream-and-cancel-functions). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
 
 In the following code sample, the `invocation` context is explicitly stated for your reference.
 
