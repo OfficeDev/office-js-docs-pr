@@ -141,9 +141,9 @@ Streaming custom functions enable you to output data to cells repeatedly over ti
 ```js
 /**
  * Increments a value once a second.
- * @customfunction 
- * @param {number} incrementBy Amount to increment
- * @param {CustomFunctions.StreamingInvocation<number>}
+ * @customfunction
+ * @param {number} incrementBy Amount to increment.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation cell's invocation context parameter.
  */
 function increment(incrementBy, invocation) {
   let result = 0;
