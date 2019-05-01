@@ -409,9 +409,8 @@ The following is a complete list of APIs in preview.
 ||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)|Represents the `hyperlink` property.|
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)|Represents the `style` property.|
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)|Represents the `columnHidden` property.|
-||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)|[format: Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablecolumnproperties#format)|Represents the `format` property.|
+||[format](/javascript/api/excel/excel.settablecolumnproperties#format)|Represents the `format` property.|
 |[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablerowproperties#format)|Represents the `format` property.|
-||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
 ||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)|Represents the `rowHidden` property.|
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Returns or sets the alternative description text for a Shape object.|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|Returns or sets the alternative title text for a Shape object.|
