@@ -115,7 +115,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. In the **stock-ticker** project, find the file **./src/functions/functions.js** and open it in your code editor.
 
-2. In **functions.js**, locate the `increment` function and add the following code immediately after that function.
+2. In **functions.js**, locate the `increment` function and add the following code after that function.
 
     ```js
     /**
@@ -217,7 +217,6 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
             clearInterval(timer);
         };
     }
-    
     CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
     ```
     
