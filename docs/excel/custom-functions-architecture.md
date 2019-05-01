@@ -19,7 +19,7 @@ The following table highlights the differences between the custom functions runt
 | Custom functions runtime 	| Browser engine runtime 	|
 |------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------	|
 | Supports returning a value from a cell 	| Supports Office.js APIs and UI elements 	|
-| Does not have `localStorage` object, instead uses the `Office.Storage` object. 	| Has `localStorage` object, can optionally use the `Office.Storage` object. 	|
+| Does not have `localStorage` object, instead uses the `Office.storage` object. 	| Has `localStorage` object, can optionally use the `Office.storage` object. 	|
 | Does not support interacting with the DOM, or loading libraries that depend on the DOM such as jQuery.	| Supports interacting with the DOM and loading libraries that depend on the DOM. |
 
 
@@ -33,12 +33,12 @@ The browser engine runtime supports the Office.js APIs. Keep in mind that any of
 
 Your custom functions code cannot directly interact with code in other parts of your web add-in, like the task pane because they are in different runtimes. But in some scenarios you may need to share data, such as passing a token.
 
-The `Office.Storage` object can be used to store data from your custom functions and get data from your task pane code. For more information about storing and sharing data, see [Save and share state](custom-functions-save-state.md).
+The `Office.storage` object can be used to store data from your custom functions and get data from your task pane code. For more information about storing and sharing data, see [Save and share state](custom-functions-save-state.md).
 
-You can see a code sample using the `Storage` object in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
+You can see a code sample using the `storage` object in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
 For more general information about the `Storage` object, see [Custom functions runtime](./custom-functions-runtime.md).
 
-The `Storage` object can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
+The `storage` object can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
 
 ## See also
 
