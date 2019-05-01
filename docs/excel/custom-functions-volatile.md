@@ -1,5 +1,5 @@
 ---
-ms.date: 04/28/2019
+ms.date: 04/30/2019
 description: Learn to implement volatile and offline streaming custom functions.
 title: Volatile values in functions (preview)
 localization_priority: Normal
@@ -14,7 +14,7 @@ Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. 
 Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modeling. For example, [Monte Carlo simulations](https://en.wikipedia.org/wiki/Monte_Carlo_method
 ) require the generation of random inputs to determine an optimal solution.
 
-If choosing to autogenerate your JSON file, declare a volatile function with the JSDOC comment tag `@volatile`.
+If choosing to autogenerate your JSON file, declare a volatile function with the JSDOC comment tag `@volatile`. From more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ## See also
 

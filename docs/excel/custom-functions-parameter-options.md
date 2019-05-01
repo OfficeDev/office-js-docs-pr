@@ -1,5 +1,5 @@
 ---
-ms.date: 04/29/2019
+ms.date: 04/30/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions (preview)
 localization_priority: Normal
@@ -20,13 +20,13 @@ Whereas regular parameters are required, optional parameters are not. When a use
 /**
  * Add two numbers
  * @customfunction 
- * @param {number} first First number
- * @param {number} second Second number
+ * @param {number} first First number.
+ * @param {number} second Second number.
  * @param {number} [third] Third number to add. If omitted, third = 0.
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-  if (third) {
+  if (third === undefined) {
     return first + second + third;
   }
   return first + second;
@@ -66,10 +66,15 @@ Your custom function may accept a range of cell data as an input parameter. A fu
 For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, the parameter's `type` property is set to `matrix`.
 
 ```js
+/**
+ * Returns the second highest value in a matrixed range of values.
+ * @customfunction
+ * @param {[][]} values Multiple ranges of values.  
+ */
 function secondHighest(values){
   let highest = values[0][0], secondHighest = values[0][0];
   for(var i = 0; i < values.length; i++){
-    for(var j = 1; j < values[i].length; j++){
+    for(var j = 0; j < values[i].length; j++){
       if(values[i][j] >= highest){
         secondHighest = highest;
         highest = values[i][j];
@@ -81,9 +86,10 @@ function secondHighest(values){
   }
   return secondHighest;
 }
+CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 ```
 
-## Invocation context parameter
+## Invocation parameter
 
 Every custom function is automatically passed an `invocation` argument as the last argument. This argument can be used to retrieve additional context, such as the address of the calling cell. Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#stream-and-cancel-functions). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
 
@@ -91,10 +97,10 @@ In the following code sample, the `invocation` context is explicitly stated for 
 
 ```js
 /**
- * Add two numbers
+ * Add two numbers.
  * @customfunction 
- * @param {number} first First number
- * @param {number} second Second number
+ * @param {number} first First number.
+ * @param {number} second Second number.
  * @returns {number} The sum of the two (or optionally three) numbers.
  */
 function add(first, second, invocation) {
@@ -109,19 +115,19 @@ The parameter allows you to get the context of the invoking cell, which can be h
 
 In some cases you need to get the address of the cell that invoked your custom function. This is useful in the following types of scenarios:
 
-- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
-- Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
+- Formatting ranges: Use the cell's address as the key to store information in [Office.storage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `Office.storage`.
+- Displaying cached values: If your function is used offline, display stored cached values from `Office.storage` using `onCalculated`.
 - Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
-To request an addressing cell's context in a function, you need to use a helper function to find the cell's address, such as the one in the following example. The information about a cell's address is exposed only if `@requiresAddress` is tagged in the function's comments.
+To request an addressing cell's context in a function, you need to use a function to find the cell's address, such as the one in the following example. The information about a cell's address is exposed only if `@requiresAddress` is tagged in the function's comments.
 
 ```js
 /**
- * Helper function to get the address of a cell
+ * Helper function to get the address of a cell.
  * @customfunction
- * @param {CustomFunctions.Invocation} invocation Uses the invocation parameter present in each cell
- * @requiresAddress 
- * @returns {string} Returns address of cell
+ * @param {CustomFunctions.Invocation} invocation Uses the invocation parameter present in each cell.
+ * @requiresAddress
+ * @returns {string} Returns address of cell.
  */
 
 function getAddress(invocation) {
