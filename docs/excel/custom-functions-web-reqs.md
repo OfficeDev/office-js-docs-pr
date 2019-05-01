@@ -1,5 +1,5 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/01/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions (preview)
 localization_priority: Priority
@@ -30,9 +30,9 @@ In the following code sample, the **getTemperature** function calls the sendWebR
 
 ```js
 /**
- * Receives a temperature from an online source
+ * Receives a temperature from an online source.
  * @customfunction
- * @param {number} thermometerID Identification number of the thermometer
+ * @param {number} thermometerID Identification number of the thermometer.
  */
 function getTemperature(thermometerID) {
   return new Promise(function(setResult) {
@@ -43,7 +43,7 @@ function getTemperature(thermometerID) {
   });
 }
 
-// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
+// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions.  
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -71,8 +71,8 @@ In the following code sample, the stockPriceStream function uses a stock ticker 
 /**
  * Streams a stock price.
  * @customfunction 
- * @param {string} ticker stock ticker
- * @param {CustomFunctions.StreamingInvocation<number>} invocation
+ * @param {string} ticker Stock ticker.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation Invocation parameter necessary for streaming functions.
  */
 function stockPriceStream(ticker, invocation) {
     var updateFrequency = 1000 /* milliseconds*/;
@@ -156,7 +156,7 @@ The following code sample is a custom function that adds a number to the result 
  * Increments a value once a second.
  * @customfunction
  * @param {number} incrementBy Amount to increment.
- * @param {CustomFunctions.StreamingInvocation<number>} invocation cell's invocation context parameter.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation Invocation parameter necessary for streaming functions.
  */
 function increment(incrementBy, invocation) {
   let result = 0;
