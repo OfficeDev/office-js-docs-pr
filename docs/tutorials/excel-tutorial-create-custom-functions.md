@@ -142,7 +142,13 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
     The `CustomFunctions.associate` code associates the `id` of the function with the function address of `increment` in JavaScript so that Excel can call your function.
 
-3. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
+3. Run the following command to rebuild the project.
+
+    ```command&nbsp;line
+    npm run build
+    ```
+
+4. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
 # [Excel for Windows](#tab/excel-windows)
 
@@ -167,7 +173,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 --- 
 
-<ol start="4">
+<ol start="5">
 <li> Try out the new function. In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter. You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</li>
 </ol>
 
@@ -222,7 +228,13 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
     
     Before Excel can use your custom function, you need to describe it using metadata.
     
-2. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
+2. Run the following command to rebuild the project.
+
+    ```command&nbsp;line
+    npm run build
+    ```
+
+3. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
 # [Excel for Windows](#tab/excel-windows)
 
@@ -247,7 +259,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 
 --- 
 
-<ol start="3">
+<ol start="4">
 <li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter. Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</li>
 </ol>
 
