@@ -1,5 +1,5 @@
 ---
-ms.date: 02/06/2019
+ms.date: 04/30/2019
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions (preview)
 localization_priority: Normal
@@ -72,34 +72,36 @@ ws.onerror = function (error) {
 
 ## Storing and accessing data
 
-Within a custom function (or within any other part of an add-in), you can store and access data by using the `OfficeRuntime.AsyncStorage` object. `AsyncStorage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. An add-in can store up to 10 MB of data using `AsyncStorage`.
+Within a custom function (or within any other part of an add-in), you can store and access data by using the `Office.storage` object. `Office.storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Office.storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
-`AsyncStorage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `AsyncStorage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (e.g. www.contoso.com/addin1, www.contoso.com/addin2), they are also permitted to share information back and forth through `AsyncStorage`. Note that add-ins which have different subdomains will have different instances of `AsyncStorage` (e.g. subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2). 
+`Office.storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `Office.storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (e.g. www.contoso.com/addin1, www.contoso.com/addin2), they are also permitted to share information back and forth through `Office.storage`. Note that add-ins which have different subdomains will have different instances of `Office.storage` (e.g. subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2).
 
-Because `AsyncStorage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
+Because `Office.storage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
 
-The following methods are available on the `AsyncStorage` object:
+The following methods are available on the `Office.storage` object:
  
  - `getItem`
+ - `getItems`
  - `setItem`
+ - `setItems`
  - `removeItem`
- - `getAllKeys`
- - `flushGetRequests`
- - `multiGet`
- - `multiSet`
- - `multiRemove`: You will note that there is no implementation of a method for clearing all information (such as `clear`). Instead, you should instead use `multiRemove` to remove multiple entries at a time.
+ - `removeItems`
+ - `getKeys`
 
-### AsyncStorage example 
+.[!NOTE]
+> There's no method for clearing all information (such as `clear`). Instead, you should instead use `removeItems` to remove multiple entries at a time.
 
-The following code sample calls the `AsyncStorage.setItem` function to set a key and value into `AsyncStorage`.
+### Office.storage example
+
+The following code sample calls the `Office.storage.setItem` function to set a key and value into `Office.storage`.
 
 ```JavaScript
 function StoreValue(key, value) {
 
-  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
-      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  return OfficeRuntime.storage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to storage.";
   }, function (error) {
-      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+      return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
 }
 ```

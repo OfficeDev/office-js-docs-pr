@@ -326,6 +326,9 @@
         - name: Naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
+        - name: Save and share state
+          href: excel/custom-functions-save-state.md
+          dispalyName: Excel
         - name: Localization
           href: excel/custom-functions-localize.md
           displayName: Excel
