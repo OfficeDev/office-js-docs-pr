@@ -1,5 +1,5 @@
 ---
-ms.date: 04/23/2019
+ms.date: 04/30/2019
 description: Authenticate users using custom functions in Excel.
 title: Authentication for Custom Functions
 ---
@@ -46,28 +46,42 @@ The following examples are from the [Using Office.Storage in custom functions](h
 If the custom function authenticates, then it receives the access token and will need to store it in `Office.Storage`. The following code sample shows how to call the `Office.Storage.setItem` method to store a value. The `StoreValue` function is a custom function that for example purposes stores a value from the user. You can modify this to store any token value you need.
 
 ```js
-function StoreValue(key, value) {
+/**
+ * Stores a key-value pair into Office.storage.
+ * @customfunction
+ * @param {string} key Key of item to put into storage.
+ * @param {*} value Value of item to put into storage.
+ */
+function storeValue(key, value) {
   return OfficeRuntime.storage.setItem(key, value).then(function (result) {
       return "Success: Item with key '" + key + "' saved to AsyncStorage.";
   }, function (error) {
       return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
   });
 }
+
+CustomFunctions.associate("STOREVALUE", storeValue);
 ```
 
 When the task pane needs the access token, it can retrieve the token from `Office.Storage`. The following code sample shows how to use the `Office.Storage.getItem` method to retrieve the token.
 
 ```js
-function ReceiveTokenFromCustomFunction() {
-   var key = "token";
-   var tokenSendStatus = document.getElementById('tokenSendStatus');
-   OfficeRuntime.storage.getItem(key).then(function (result) {
-      tokenSendStatus.value = "Success: Item with key '" + key + "' read from AsyncStorage.";
-      document.getElementById('tokenTextBox2').value = result;
-   }, function (error) {
-      tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from AsyncStorage. " + error;
-   });
+/**
+ * Read a token from storage.
+ * @customfunction GETTOKEN
+ */
+function receiveTokenFromCustomFunction() {
+  var key = "token";
+  var tokenSendStatus = document.getElementById('tokenSendStatus');
+  OfficeRuntime.storage.getItem(key).then(function (result) {
+     tokenSendStatus.value = "Success: Item with key '" + key + "' read from storage.";
+     document.getElementById('tokenTextBox2').value = result;
+  }, function (error) {
+     tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from storage. " + error;
+  });
 }
+CustomFunctions.associate("GETTOKEN", receiveTokenFromCustomFunction);
+
 ```
 
 ## General guidance
@@ -76,8 +90,8 @@ Office Add-ins are web-based and you can use any web authentication technique. T
 
 Avoid using the following locations to store data when developing custom functions:  
 
-- `localStorage`: Custom functions do not have access to the global `window` object and therefore have no access to data     stored in `localStorage`.
-- `Office.context.document.settings`:  This location is not secure and information can be extracted by anyone using the     add-in.
+- `localStorage`: Custom functions do not have access to the global `window` object and therefore have no access to data stored in `localStorage`.
+- `Office.context.document.settings`:  This location is not secure and information can be extracted by anyone using the add-in.
 
 ## See also
 

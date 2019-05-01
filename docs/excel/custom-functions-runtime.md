@@ -88,7 +88,8 @@ The following methods are available on the `Office.storage` object:
  - `removeItems`
  - `getKeys`
 
-You will note that there is no implementation of a method for clearing all information (such as `clear`). Instead, you should instead use `removeItems` to remove multiple entries at a time.
+.[!NOTE]
+> There's no method for clearing all information (such as `clear`). Instead, you should instead use `removeItems` to remove multiple entries at a time.
 
 ### Office.storage example
 
