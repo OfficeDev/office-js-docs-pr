@@ -47,7 +47,7 @@ If the custom function authenticates, then it receives the access token and will
 
 ```js
 function StoreValue(key, value) {
-  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
+  return OfficeRuntime.storage.setItem(key, value).then(function (result) {
       return "Success: Item with key '" + key + "' saved to AsyncStorage.";
   }, function (error) {
       return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
@@ -61,7 +61,7 @@ When the task pane needs the access token, it can retrieve the token from `Offic
 function ReceiveTokenFromCustomFunction() {
    var key = "token";
    var tokenSendStatus = document.getElementById('tokenSendStatus');
-   OfficeRuntime.AsyncStorage.getItem(key).then(function (result) {
+   OfficeRuntime.storage.getItem(key).then(function (result) {
       tokenSendStatus.value = "Success: Item with key '" + key + "' read from AsyncStorage.";
       document.getElementById('tokenTextBox2').value = result;
    }, function (error) {
