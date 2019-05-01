@@ -10,7 +10,7 @@ localization_priority: Normal
 Custom functions are configurable with many different options for parameters: 
 - [Optional parameters](#custom-functions-optional-parameters)
 - [Range parameters](#range-parameters)
-- [Invocation context parameter](#invocation-context-parameter)
+- [Invocation context parameter](#invocation-parameter)
 
 ## Custom functions optional parameters
 
