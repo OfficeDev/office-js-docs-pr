@@ -141,8 +141,8 @@ If you're using Typescript, the invocation handler needs to be of type `CustomFu
 The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
 
 - Excel displays each new value automatically using the `setResult` method.
-- The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu. 
-- The `onCanceled` callback defines the function that executes when the function is canceled. 
+- The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu.
+- The `onCanceled` callback defines the function that executes when the function is canceled.
 
 ```JavaScript
 function incrementValue(increment, invocation){
