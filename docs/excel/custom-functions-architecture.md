@@ -1,5 +1,5 @@
 ---
-ms.date: 04/23/2019
+ms.date: 04/30/2019
 description: Learn about Excel custom functions' runtime. 
 title: Custom functions architecture (preview)
 localization_priority: Priority
@@ -12,7 +12,7 @@ localization_priority: Priority
 
 An Office Web Add-in can interact with the user as a task pane, or a content pane, and can include commands and custom functions. All of these parts run in a browser engine runtime except for custom functions. Custom functions run in a separate custom functions runtime to optimize for calculation speed.
 
-Note that if you're using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to generate your project, the custom functions runtime will load through the custom-functions.js script file referenced in the functions.html file. The functions.html serves only to load the runtime and shouldn't be used as the task pane for your add-in.
+Note that if you're using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to generate your project, the custom functions runtime will load through the custom-functions.js script file referenced in the **functions.html** file. The **functions.html** serves only to load the runtime and shouldn't be used as the task pane for your add-in.
 
 The following table highlights the differences between the custom functions runtime and the browser engine runtime:
 
