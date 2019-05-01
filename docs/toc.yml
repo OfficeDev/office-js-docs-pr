@@ -290,6 +290,12 @@
         - name: Runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
+        - name: Volatile functions
+          href: excel/custom-functions-volatile.md
+          displayName: Excel
+        - name: Custom functions parameter options
+          href: excel/custom-functions-parameter-options.md
+          displayName: Excel
         - name: Metadata
           href: excel/custom-functions-json.md
           displayName: Excel

@@ -1,11 +1,11 @@
 ---
-ms.date: 04/25/2019
+ms.date: 04/30/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
-title: Web requests and other data handling with custom functions (preview)
+title: Receive and handle data with custom functions (preview)
 localization_priority: Priority
 ---
 
-# Receiving and handling data with custom functions
+# Receive and handle data with custom functions
 
 One of the ways that custom functions enhance Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets). Custom functions can request data through XHR and fetch requests as well as stream this data in real time.
 
@@ -28,10 +28,15 @@ Note that a simple CORS implementation cannot use cookies and only supports simp
 
 In the following code sample, the **getTemperature** function calls the sendWebRequest function to get the temperature of a particular area based on thermometer ID. The sendWebRequest function uses XHR to issue a GET request to an endpoint that can provide the data.
 
-```JavaScript
+```js
+/**
+ * Receives a temperature from an online source
+ * @customfunction
+ * @param {number} thermometerID Identification number of the thermometer
+ */
 function getTemperature(thermometerID) {
   return new Promise(function(setResult) {
-      sendWebRequest(thermometerID, function(data){ 
+      sendWebRequest(thermometerID, function(data){
           storeLastTemperature(thermometerID, data.temperature);
           setResult(data.temperature);
       });
@@ -60,10 +65,16 @@ For another sample of an XHR request with more context, see the `getFile` functi
 
 ### Fetch example
 
-In the following code sample, the stockPriceStream function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds. For more details about this sample and to get the accompanying JSON, see the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function). 
+In the following code sample, the stockPriceStream function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds. For more details about this sample and to get the accompanying JSON, see the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).
 
-```JavaScript
-function stockPriceStream(ticker, handler) {
+```js
+/**
+ * Streams a stock price.
+ * @customfunction 
+ * @param {string} ticker stock ticker
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation
+ */
+function stockPriceStream(ticker, invocation) {
     var updateFrequency = 1000 /* milliseconds*/;
     var isPending = false;
 
@@ -81,17 +92,17 @@ function stockPriceStream(ticker, handler) {
                 return response.text();
             })
             .then(function(text) {
-                handler.setResult(parseFloat(text));
+                invocation.setResult(parseFloat(text));
             })
             .catch(function(error) {
-                handler.setResult(error);
+                invocation.setResult(error);
             })
             .then(function() {
                 isPending = false;
             });
     }, updateFrequency);
 
-    handler.onCanceled = () => {
+    invocation.onCanceled = () => {
         clearInterval(timer);
     };
 }
@@ -99,7 +110,7 @@ function stockPriceStream(ticker, handler) {
 CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
 ```
 
-## Receiving data via WebSockets
+## Receive data via WebSockets
 
 Within a custom function, you can use WebSockets to exchange data over a persistent connection with a server. By using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
 
@@ -107,11 +118,11 @@ Within a custom function, you can use WebSockets to exchange data over a persist
 
 The following code sample establishes a WebSocket connection and then logs each incoming message from the server.
 
-```JavaScript
-var ws = new WebSocket('wss://bundles.office.com');
+```js
+let ws = new WebSocket('wss://bundles.office.com');
 
 ws.onmessage(message) {
-    console.log(`Recieved: ${message}`);
+    console.log(`Received: ${message}`);
 }
 
 ws.onerror(error){
@@ -119,21 +130,17 @@ ws.onerror(error){
 }
 ```
 
-## Streaming and cancelable functions
+## Stream and cancel functions
 
 Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything.
 
-Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel automatically cancels the execution of a function in the following situations:
-
-- When the user edits or deletes a cell that references the function.
-- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
-- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
+Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load.
 
 To declare a function as streaming or cancelable, use the JSDOC comment tags `@stream` or `@cancelable`.
 
 ### Using an invocation parameter
 
-The invocation parameter is the last parameter specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
+The `invocation` parameter is the last parameter of any custom function by default. The `invocation` parameter gives context about the cell (such as its address) and also allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
 
 If you're using TypeScript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
 
@@ -144,33 +151,33 @@ The following code sample is a custom function that adds a number to the result 
 - The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu.
 - The `onCanceled` callback defines the function that executes when the function is canceled.
 
-```JavaScript
-function incrementValue(increment, invocation){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction
+ * @param {number} incrementBy Amount to increment.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation cell's invocation context parameter.
+ */
+function increment(incrementBy, invocation) {
+  let result = 0;
+  const timer = setInterval(() => {
+    result += incrementBy;
     invocation.setResult(result);
   }, 1000);
 
   invocation.onCanceled = function(){
     clearInterval(timer);
-  }
+    }
 }
-
-CustomFunctions.associate("INCREMENTVALUE", incrementValue);
+CustomFunctions.associate("INCREMENT", increment);
 ```
 
-When you specify metadata for a streaming function in the JSON metadata file, you can autogenerate this by using a `@streaming` JSDOC comment tag in your function's script file. For more details, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
-
-## Canceling a function
-
-In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
-
-- When the user edits or deletes a cell that references the function.
-- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
-- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
-
-To make a function cancelable, implement a handler in your function's code to tell it what to do when it is canceled. Additionally, use the `@cancelable` JSDOC comment tag in your function's script file. For more details, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+>[!NOTE]
+> Excel cancels the execution of a function in the following situations:
+>
+> - When the user edits or deletes a cell that references the function.
+> - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
+> - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
 ## See also
 

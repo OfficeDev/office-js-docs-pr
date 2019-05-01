@@ -1,5 +1,5 @@
 ---
-ms.date: 04/29/2019
+ms.date: 04/30/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -127,32 +127,6 @@ The following basic XML markup shows an example of the `<ExtensionPoint>` and `<
 
 > [!NOTE]
 > Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.
-
-## Declaring a volatile function
-
-[Volatile functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
-
-Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel's volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
-
-Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.
-
-To declare a function volatile, add `"volatile": true` within the `options` object  for the function in the JSON metadata file, as shown in the following code sample. Note that a function cannot be marked both `"streaming": true` and `"volatile": true`; in the case where both are marked `true` the volatile option will be ignored.
-
-```json
-{
- "id": "TOMORROW",
-  "name": "TOMORROW",
-  "description":  "Returns tomorrow’s date",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-      "type": "string",
-      "dimensionality": "scalar"
-  },
-  "options": {
-      "volatile": true
-  }
-}
-```
 
 ## Saving and sharing state
 
