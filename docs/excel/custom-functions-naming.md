@@ -34,7 +34,7 @@ Also consider how you'd like people to use the functions within your add-in. In 
 
 ## Localizing function names
 
-You can localize your function names for different markets using separate JSON files and override values in your add-in's manifest file. As a best practice, avoid giving your functions an id or name that is a built-in Excel function in another language as this could conflict with localized functions.
+You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file. As a best practice, avoid giving your functions an id or name that is a built-in Excel function in another language as this could conflict with localized functions.
 
 For full information on localizing, see [Localize custom functions](custom-functions-localize.md)
 
