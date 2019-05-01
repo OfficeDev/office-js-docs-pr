@@ -133,9 +133,9 @@ To declare a function as streaming or cancelable, use the JSDOC comment tags `@s
 
 ### Using an invocation parameter
 
-The invocation parameter is the last parameter specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`).
+The invocation parameter is the last parameter specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
 
-If you're using Typescript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
+If you're using TypeScript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
 
 ### Streaming and cancelable function example
 The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
