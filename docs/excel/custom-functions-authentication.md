@@ -12,7 +12,7 @@ In some scenarios your custom function will need to authenticate the user in ord
 
 The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes by using [Office.Storage](/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data.
 
-Additionally, there is a benefit to using `Office.Storage`; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.
+Additionally, there is a benefit to using the `Storage` object; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.
 
 ### Suggested usage
 
