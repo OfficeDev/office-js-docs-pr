@@ -38,7 +38,7 @@ You can use VS Code to debug custom functions in Office Excel on the desktop.
 
 1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
 2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-3. Choose **Terminal > Run Task** and type or select **Dev Server**. 
+3. Choose **Terminal > Run Task** and type or select **Dev Server**.
 
 ### Start the VS Code debugger
 
@@ -142,7 +142,7 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
     For Excel Online you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
     
 4. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-5. In developer tools, open your source code script file (functions.js or functions.ts). Your custom functions code may be located near the end of the file.
+5. In developer tools, open your source code script file (**functions.js** or **functions.ts**). Your custom functions code may be located near the end of the file.
 6. In the custom function source code, apply a breakpoint by selecting a line of code.
 
 If you need to change the code you can make edits in Visual Studio and save the changes. Refresh the browser to see the changes loaded.

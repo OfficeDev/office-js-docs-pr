@@ -1,5 +1,5 @@
 ---
-ms.date: 04/28/2019
+ms.date: 05/01/2019
 description: Handle errors in your Excel custom functions.
 title: Error handling for custom functions in Excel (preview)
 localization_priority: Priority
@@ -15,9 +15,9 @@ In the following code sample, `.catch` will handle any errors that occur previou
 
 ```js
 /**
- * Gets a comment from the hypothetical contoso.com/comments API
+ * Gets a comment from the hypothetical contoso.com/comments API.
  * @customfunction
- * @param {number} commentID ID of comment
+ * @param {number} commentID ID of a comment.
  */
 function getComment(commentID) {
   let url = "https://www.contoso.com/comments/" + x;
