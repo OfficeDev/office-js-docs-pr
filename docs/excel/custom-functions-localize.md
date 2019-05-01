@@ -15,7 +15,7 @@ To localize your custom functions, create a new JSON metadata file for each lang
 
 The `name` and `description` appear in Excel and are localized. However, the `id` of each function is not localized. The `id` property is how Excel identifies your function as unique and should not be changed once it is set.
 
-In the following code sample, you'll see the JSON file for a function with the `id` property "MULTIPLY." The `name` and `description` property of the function is localized for German. Each parameter `name` and `description` is also localized for German.
+The following JSON shows how to define a function with the `id` property "MULTIPLY." The `name` and `description` property of the function is localized for German. Each parameter `name` and `description` is also localized for German.
 
 ```JSON
 {
