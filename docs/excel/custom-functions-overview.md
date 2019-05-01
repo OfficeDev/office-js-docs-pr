@@ -154,7 +154,6 @@ To declare a function volatile, add `"volatile": true` within the `options` obje
 }
 ```
 
-
 ## Coauthoring
 
 Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
