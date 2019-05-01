@@ -50,7 +50,7 @@ Keep in mind the following best practices when creating custom functions in your
 
 * Do not change the value of an `id` property in the JSON metadata file after it's been associated with a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
 
-* In the JavaScript file, specify a custom function association after each function. This is done by calling the `CustomFunctions.associate` method, as seen in the following example.
+* In the JavaScript file, associate each custom function with its metadata `id`. This is done by calling the `CustomFunctions.associate` method, as seen in the following example.
 
     ```js
     /**
