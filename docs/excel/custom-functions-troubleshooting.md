@@ -23,6 +23,7 @@ Generally, these errors correspond to the errors you might already be familiar w
 - A `#NAME` error generally means there has been an issue registering your functions.
 - A `#VALUE` error typically indicates an error in the functions' script file.
 - A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
+- A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
 
 ## Common issues
 

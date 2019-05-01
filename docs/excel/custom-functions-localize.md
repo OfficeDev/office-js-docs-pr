@@ -86,7 +86,6 @@ After creating a JSON file for each language, you need to update your XML manife
 </Resources>
 ```
 
-
 For more information on the process of localizing an add-in, see [Localization for Office Add-ins](../develop/localization.md#control-localization-from-the-manifest).
 
 ## See also
