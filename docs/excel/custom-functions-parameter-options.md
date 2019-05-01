@@ -41,7 +41,7 @@ When you define a function that contains one or more optional parameters, you sh
  * Gets a weather report for a specified zipCode and dayOfWeek
  * @customfunction
  * @param {number} zipCode Zip code. If omitted, zipCode = 98052.
- * @param {string} dayOfWeek Day of the week
+ * @param {string} dayOfWeek Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
 function getWeatherReport(zipCode, dayOfWeek)
