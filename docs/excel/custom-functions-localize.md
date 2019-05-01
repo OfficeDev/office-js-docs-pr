@@ -11,7 +11,7 @@ To make your custom functions work around the world, localize them into differen
 
 ## Localize function names
 
-To declare a localized function name, create additional `name` and `description` properties within your function's JSON file. You can declare multiple localized names and descriptions.
+To localize your custom functions, create a new JSON metadata file for each language. In each language JSON file, create `name` and `description` properties in the target language. The default file for English is named **functions.json**. It's recommended you use the locale in the filename for each additional JSON file, such as **functions-de.json** to help identify them. 
 
 The `name` and `description` appear in Excel and are localized. However, the `id` of each function is not localized. The `id` property is how Excel identifies your function as unique and should not be changed once it is set.
 
