@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: Use the Excel JavaScript API to create PivotTables and interact with their components. 
-ms.date: 04/30/2019
+ms.date: 05/01/2019
 localization_priority: Normal
 ---
 
@@ -153,7 +153,10 @@ Excel.run(function (context) {
 });
 ```
 
-## Slicers
+## Slicers (preview)
+
+> [!NOTE]
+> The slicer APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 [Slicers](/javascript/api/excel/excel.slicer) allow data to be filtered from an Excel PivotTable or table. A slicer uses values from a specified column or PivotField to filter corresponding rows. These values are stored as [SlicerItem](/javascript/api/excel/excel.sliceritem) objects in the `Slicer`. Your add-in can adjust these filters, as can users ([through the Excel UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). The slicer sits on top of the worksheet in the drawing layer, as shown in the following screenshot.
 
