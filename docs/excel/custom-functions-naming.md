@@ -1,5 +1,5 @@
 ---
-ms.date: 04/29/2019
+ms.date: 04/30/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
 title: Naming guidelines for custom functions in Excel (preview)
 localization_priority: Normal
@@ -36,6 +36,12 @@ To fix a name conflict, change the name in your add-in and try the function agai
 - Function names should indicate the action of the function, such as `=GETZIPCODE` instead of `ZIPCODE`.
 - Avoid ambiguous abbreviations in function names. Clarity is more important than brevity. Choose a name like `=INCREASETIME` rather than `=INC`.
 - Consistently use the same verbs for functions which perform similar actions. For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.
+
+## Localizing function names
+
+You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file. As a best practice, avoid giving your functions an id or name that is a built-in Excel function in another language as this could conflict with localized functions.
+
+For full information on localizing, see [Localize custom functions](custom-functions-localize.md)
 
 ## See also
 

@@ -320,6 +320,9 @@
         - name: Naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
+        - name: Localization
+          href: excel/custom-functions-localize.md
+          displayName: Excel
         - name: Identify an equivalent XLL
           href: excel/make-custom-functions-compatible-with-xll-udf.md
           displayName: Excel
