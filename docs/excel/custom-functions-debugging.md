@@ -25,7 +25,7 @@ On Mac:
 
 ## Requirements
 
-Before starting to debug, you should create a custom functions add-in project using the Yo Office generator and ensured that you have trusted self-signed certificates for your project. For instructions to create a project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). For instructions on trusting certificates, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+Before starting to debug, you should create a custom functions add-in project. You can do this using the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). For instructions on trusting certificates, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ## Use the VS Code debugger for Excel Desktop
 
