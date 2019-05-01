@@ -23,7 +23,7 @@ Whereas regular parameters are required, optional parameters are not. When a use
  * @param {number} first First number
  * @param {number} second Second number
  * @param {number} [third] Third number to add. If omitted, third = 0.
- * @returns {number} The sum of the two numbers.
+ * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
   if (third) {
