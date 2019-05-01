@@ -118,6 +118,12 @@ Integrating data from the Web is a great way to extend Excel through custom func
 2. In **functions.js**, locate the `increment` function and add the following code immediately after that function.
 
     ```js
+    /**
+    * Fetches current stock price
+    * @customfunction 
+    * @param {string} ticker Stock symbol
+    * @returns {number} The current stock price.
+    */
     function stockPrice(ticker) {
         var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
         return fetch(url)
@@ -131,49 +137,12 @@ Integrating data from the Web is a great way to extend Excel through custom func
         // Note: in case of an error, the returned rejected Promise
         //    will be bubbled up to Excel to indicate an error.
     }
-    ```
-
-    > [!NOTE]
-    > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
-    > To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
-
-3. In **functions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
-
-    ```js
     CustomFunctions.associate("STOCKPRICE", stockprice);
     ```
 
     The `CustomFunctions.associate` code associates the `id` of the function with the function address of `increment` in JavaScript so that Excel can call your function.
 
-    Before Excel can use your custom function, you need to describe it using metadata. You need to define the `id` used in the `associate` method previously, along with some other metadata.
-
-
-4. Open the file **./src/functions/functions.json**. Add the following JSON object to the 'functions' array and save the file.
-
-    ```JSON
-    {
-        "id": "STOCKPRICE",
-        "name": "STOCKPRICE",
-        "description": "Fetches current stock price",
-        "helpUrl": "http://www.contoso.com/help",
-        "result": {
-            "type": "number",
-            "dimensionality": "scalar"
-        },  
-        "parameters": [
-            {
-                "name": "ticker",
-                "description": "stock symbol",
-                "type": "string",
-                "dimensionality": "scalar"
-            }
-        ]
-    }
-    ```
-
-    This JSON describes the `stockPrice` function, its parameters, and the type of result it returns.
-
-5. Re-register the add-in in Excel so that the new function is available. 
+3. Re-register the add-in in Excel so that the new function is available. 
 
 # [Excel for Windows](#tab/excel-windows)
 
@@ -198,7 +167,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 --- 
 
-<ol start="6">
+<ol start="4">
 <li> Try out the new function. In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter. You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</li>
 </ol>
 
@@ -210,6 +179,12 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 1. In the **stock-ticker** project, add the following code to **./src/functions/functions.js** and save the file.
 
     ```js
+    /**
+    * Streams real time stock price
+    * @customfunction 
+    * @param {string} ticker Stock symbol
+    * @param {CustomFunctions.StreamingInvocation<number>} invocation
+    */
     function stockPriceStream(ticker, handler) {
         var updateFrequency = 1000 /* milliseconds*/;
         var isPending = false;
@@ -248,36 +223,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
     
     Before Excel can use your custom function, you need to describe it using metadata.
     
-2. In the **stock-ticker** project add the following object to the `functions` array within the **./src/functions/functions.json** file and save the file.
-    
-    ```json
-    { 
-        "id": "STOCKPRICESTREAM",
-        "name": "STOCKPRICESTREAM",
-        "description": "Streams real time stock price",
-        "helpUrl": "http://www.contoso.com/help",
-        "result": {
-            "type": "number",
-            "dimensionality": "scalar"
-        },  
-        "parameters": [
-            {
-                "name": "ticker",
-                "description": "stock symbol",
-                "type": "string",
-                "dimensionality": "scalar"
-            }
-        ],
-        "options": {
-            "stream": true,
-            "cancelable": true
-        }
-    }
-    ```
-
-    This JSON describes the `stockPriceStream` function. For any streaming function, the `stream` property and the `cancelable` property must be set to `true` within the `options` object, as shown in this code sample.
-
-3. Re-register the add-in in Excel so that the new function is available.
+2. Re-register the add-in in Excel so that the new function is available.
 
 # [Excel for Windows](#tab/excel-windows)
 
@@ -302,7 +248,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 
 --- 
 
-<ol start="4">
+<ol start="3">
 <li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter. Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</li>
 </ol>
 
