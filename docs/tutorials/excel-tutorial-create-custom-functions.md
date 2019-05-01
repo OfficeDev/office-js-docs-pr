@@ -142,7 +142,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
     The `CustomFunctions.associate` code associates the `id` of the function with the function address of `increment` in JavaScript so that Excel can call your function.
 
-3. Re-register the add-in in Excel so that the new function is available. 
+3. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
 # [Excel for Windows](#tab/excel-windows)
 
@@ -222,7 +222,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
     
     Before Excel can use your custom function, you need to describe it using metadata.
     
-2. Re-register the add-in in Excel so that the new function is available.
+2. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
 # [Excel for Windows](#tab/excel-windows)
 
