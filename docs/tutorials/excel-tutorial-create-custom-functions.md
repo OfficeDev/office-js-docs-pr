@@ -29,7 +29,7 @@ In this tutorial, you will:
 
 * The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
-    ```
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -46,7 +46,7 @@ In this tutorial, you will:
 
 1. Run the following command and then answer the prompts as follows.
     
-    ```
+    ```command&nbsp;line
     yo office
     ```
     
@@ -60,7 +60,7 @@ In this tutorial, you will:
 
 2. Go to the project folder.
     
-    ```
+    ```command&nbsp;line
     cd stock-ticker
     ```
 
@@ -68,7 +68,7 @@ In this tutorial, you will:
 
 4. Build the project.
     
-    ```
+    ```command&nbsp;line
     npm run build
     ```
 
@@ -78,7 +78,7 @@ In this tutorial, you will:
 
 Run the following command.
 
-```
+```command&nbsp;line
 npm start desktop
 ```
 
@@ -91,7 +91,7 @@ This command starts the web server, and sideloads your custom function add-in in
 
 Run the following command.
 
-```
+```command&nbsp;line
 npm start web
 ```
 

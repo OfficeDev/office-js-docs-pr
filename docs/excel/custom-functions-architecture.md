@@ -1,5 +1,5 @@
 ---
-ms.date: 04/23/2019
+ms.date: 04/30/2019
 description: Learn about Excel custom functions' runtime. 
 title: Custom functions architecture (preview)
 localization_priority: Priority
@@ -12,14 +12,14 @@ localization_priority: Priority
 
 An Office Web Add-in can interact with the user as a task pane, or a content pane, and can include commands and custom functions. All of these parts run in a browser engine runtime except for custom functions. Custom functions run in a separate custom functions runtime to optimize for calculation speed.
 
-Note that if you're using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to generate your project, the custom functions runtime will load through the custom-functions.js script file referenced in the functions.html file. The functions.html serves only to load the runtime and shouldn't be used as the task pane for your add-in.
+Note that if you're using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to generate your project, the custom functions runtime will load through the custom-functions.js script file referenced in the **functions.html** file. The **functions.html** serves only to load the runtime and shouldn't be used as the task pane for your add-in.
 
 The following table highlights the differences between the custom functions runtime and the browser engine runtime:
 
 | Custom functions runtime 	| Browser engine runtime 	|
 |------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------	|
 | Supports returning a value from a cell 	| Supports Office.js APIs and UI elements 	|
-| Does not have `localStorage` object, instead uses `Office.Storage` 	| Has `localStorage` object, can optionally use `Office.Storage` object 	|
+| Does not have `localStorage` object, instead uses the `Office.Storage` object. 	| Has `localStorage` object, can optionally use the `Office.Storage` object. 	|
 | Does not support interacting with the DOM, or loading libraries that depend on the DOM such as jQuery.	| Supports interacting with the DOM and loading libraries that depend on the DOM. |
 
 
@@ -33,12 +33,12 @@ The browser engine runtime supports the Office.js APIs. Keep in mind that any of
 
 Your custom functions code cannot directly interact with code in other parts of your web add-in, like the task pane because they are in different runtimes. But in some scenarios you may need to share data, such as passing a token.
 
-`Office.Storage` can be used to store data from your custom functions and get data from your task pane code. For more information about storing and sharing data, see [Save and share state](custom-functions-save-state.md).
+The `Office.Storage` object can be used to store data from your custom functions and get data from your task pane code. For more information about storing and sharing data, see [Save and share state](custom-functions-save-state.md).
 
-You can see a code sample using `Office.Storage` in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
-For more general information about `Office.Storage`, see [Custom functions runtime](./custom-functions-runtime.md).
+You can see a code sample using the `Storage` object in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
+For more general information about the `Storage` object, see [Custom functions runtime](./custom-functions-runtime.md).
 
-`Office.Storage` can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
+The `Storage` object can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
 
 ## See also
 

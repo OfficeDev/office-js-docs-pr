@@ -1,7 +1,7 @@
 ---
 title: Add-in commands for Excel, Word, and PowerPoint
 description: ''
-ms.date: 04/05/2019
+ms.date: 04/29/2019
 localization_priority: Priority
 ---
 
@@ -49,8 +49,11 @@ The following command capabilities are currently supported.
 
 Add-in commands are currently supported on the following platforms:
 
-- Office 2016 or later for Windows (build 16.0.6769+)
-- Office for Mac (build 15.33+)
+- Outlook 2016 for Windows (build 16.0.4678.1000+)
+- Office 365 for Windows (build 16.0.6769+)
+- Office 2019 for Windows
+- Office 365 for Mac (build 15.33+)
+- Office 2019 for Mac
 - Office Online
 
 More platforms are coming soon.
@@ -66,7 +69,7 @@ Apply the following best practices when you develop add-in commands:
 - Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.
 - Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.
 - For the placement of your commands in the Office ribbon:
-	- Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../develop/add-in-manifests.md). 
+	- Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 	- Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office Desktop and Office Online) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office Online).  
 	- Place commands on a custom tab if you have more than six top-level commands.
     - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
