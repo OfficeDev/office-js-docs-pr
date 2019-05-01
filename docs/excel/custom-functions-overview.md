@@ -153,30 +153,6 @@ Excel Online and Excel for Windows with an Office 365 subscription allow you to 
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
-## Working with ranges of data
-
-Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
-
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
-
-```js
-function secondHighest(values){
-  let highest = values[0][0], secondHighest = values[0][0];
-  for(var i = 0; i < values.length; i++){
-    for(var j = 1; j < values[i].length; j++){
-      if(values[i][j] >= highest){
-        secondHighest = highest;
-        highest = values[i][j];
-      }
-      else if(values[i][j] >= secondHighest){
-        secondHighest = values[i][j];
-      }
-    }
-  }
-  return secondHighest;
-}
-```
-
 ## Known issues
 
 See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
