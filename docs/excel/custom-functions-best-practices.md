@@ -1,5 +1,5 @@
 ---
-ms.date: 04/28/2019
+ms.date: 05/01/2019
 description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices (preview)
 localization_priority: Normal
@@ -72,7 +72,7 @@ The following sample shows the JSON metadata that corresponds to the functions d
 
 ## Declaring optional parameters
 
-In Excel for Windows, you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
+In Excel for Windows, you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `GETTEMPERATURE` with one required parameter called `zipCode` and one optional parameter called `cityName` would appear as `=GETTEMPERATURE(zipCode, [cityName])` in Excel.
 
 To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s Formula UI.
 
@@ -106,10 +106,7 @@ To make a parameter optional, add `"optional": true` to the parameter in the JSO
             "dimensionality": "scalar",
             "optional": true
         }
-    ],
-    "options": {
-        "sync": false
-    }
+    ]
 }
 ```
 

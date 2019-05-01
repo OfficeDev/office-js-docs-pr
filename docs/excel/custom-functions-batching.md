@@ -1,5 +1,5 @@
 ---
-ms.date: 04/22/2019
+ms.date: 05/01/2019
 description: "Batch custom functions together to reduce network calls to a remote service."
 title: Batching custom function calls for a remote service
 localization_priority: Priority

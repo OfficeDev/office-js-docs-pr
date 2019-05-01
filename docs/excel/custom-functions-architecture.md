@@ -1,5 +1,5 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/01/2019
 description: Learn about Excel custom functions' runtime. 
 title: Custom functions architecture (preview)
 localization_priority: Priority
