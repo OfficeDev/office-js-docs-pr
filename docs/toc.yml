@@ -79,8 +79,9 @@
 - name: How-to guides
   items:
   - name: Design the User Interface
-    href: design/add-in-design.md
     items:
+    - name: Overview
+      href: design/add-in-design.md
     - name: Guidelines
       items:
       - name: Accessibility
@@ -90,8 +91,9 @@
       - name: Data visualization
         href: design/data-visualization-guidelines.md
     - name: Design language
-      href: design/add-in-design-language.md
       items:
+      - name: Overview
+        href: design/add-in-design-language.md
       - name: Typography
         href: design/add-in-typography.md
       - name: Color
@@ -104,8 +106,9 @@
         href: design/using-motion-office-addins.md
         displayName: Motion
     - name: Interface elements
-      href: design/interface-elements.md
       items:
+      - name: Overview
+        href: design/interface-elements.md
       - name: Add-in commands
         href: design/add-in-commands.md
       - name: Task panes
@@ -115,8 +118,9 @@
       - name: Content add-ins
         href: design/content-add-ins.md
     - name: UX design templates
-      href: design/ux-design-pattern-templates.md
       items:
+      - name: Overview
+        href: design/ux-design-pattern-templates.md
       - name: Authentication
         href: design/authentication-patterns.md
       - name: First run experience
@@ -141,8 +145,9 @@
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
     - name: Office JavaScript API
-      href: develop/understanding-the-javascript-api-for-office.md
       items:
+      - name: Understanding the JavaScript API for Office
+        href: develop/understanding-the-javascript-api-for-office.md
       - name: Support for content and task pane add-ins
         href: develop/support-for-task-pane-and-content-add-ins.md
       - name: Reference Office.js
@@ -157,8 +162,9 @@
         href: develop/persisting-add-in-state-and-settings.md
 
     - name: Manifest
-      href: develop/add-in-manifests.md
       items:
+      - name: Office Add-ins XML manifest
+        href: develop/add-in-manifests.md
       - name: Create add-in commands
         href: develop/create-addin-commands.md
       - name: Specify Office hosts
@@ -175,8 +181,9 @@
     - name: Authentication and authorization
       items:
       - name: Enable SSO in an add-in
-        href: develop/sso-in-office-add-ins.md
         items:
+        - name: Enable single sign-on
+          href: develop/sso-in-office-add-ins.md
         - name: Create an SSO add-in using ASP.NET
           href: develop/create-sso-office-add-ins-aspnet.md
         - name: Create an SSO add-in using Node.js
@@ -205,7 +212,6 @@
       items:
       - name: Create and debug Office Add-ins in Visual Studio
         href: develop/create-and-debug-office-add-ins-in-visual-studio.md
-        items:
       - name: Get JavaScript IntelliSense in Visual Studio
         href: develop/get-javascript-intellisense-in-visual-studio.md
       - name: Convert JavaScript to TypeScript
@@ -217,13 +223,17 @@
       href: develop/add-ins-with-angular2.md
 
   - name: Excel add-ins
-    href: excel/excel-add-ins-overview.md
     displayName: Excel
     items:
+    - name: Overview
+      href: excel/excel-add-ins-overview.md
+      displayName: Excel
     - name: Build your first Excel add-in
-      href: excel/excel-add-ins-get-started-overview.md
       displayName: Excel
       items:
+      - name: Get started with Excel add-ins
+        href: excel/excel-add-ins-get-started-overview.md
+        displayName: Excel
       - name: Use Angular
         href: quickstarts/excel-quickstart-angular.md
         displayName: Excel
@@ -280,6 +290,12 @@
         - name: Runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
+        - name: Volatile functions
+          href: excel/custom-functions-volatile.md
+          displayName: Excel
+        - name: Custom functions parameter options
+          href: excel/custom-functions-parameter-options.md
+          displayName: Excel
         - name: Metadata
           href: excel/custom-functions-json.md
           displayName: Excel
@@ -309,6 +325,9 @@
           displayName: Excel
         - name: Naming guidelines
           href: excel/custom-functions-naming.md
+          displayName: Excel
+        - name: Localization
+          href: excel/custom-functions-localize.md
           displayName: Excel
         - name: Identify an equivalent XLL
           href: excel/make-custom-functions-compatible-with-xll-udf.md
@@ -361,10 +380,13 @@
     - name: Excel JavaScript API reference
       href: /javascript/api/excel
       displayName: Excel
+  
   - name: Word add-ins
-    href: word/word-add-ins-programming-overview.md
     displayName: Word
     items:
+    - name: Overview
+      href: word/word-add-ins-programming-overview.md
+      displayName: Word
     - name: Build your first Word add-in
       href: quickstarts/word-quickstart.md
       displayName: Word
@@ -401,9 +423,11 @@
     displayName: Outlook
 
   - name: PowerPoint add-ins
-    href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
     items:
+    - name: Overview
+      href: powerpoint/powerpoint-add-ins.md
+      displayName: PowerPoint
     - name: Build your first PowerPoint add-in
       href: quickstarts/powerpoint-quickstart.md
       displayName: PowerPoint
@@ -418,9 +442,11 @@
       displayName: PowerPoint
 
   - name: OneNote add-ins
-    href: onenote/onenote-add-ins-programming-overview.md
     displayName: OneNote
     items:
+    - name: Overview
+      href: onenote/onenote-add-ins-programming-overview.md
+      displayName: OneNote
     - name: Build your first OneNote add-in
       href: quickstarts/onenote-quickstart.md
       displayName: OneNote
@@ -435,9 +461,11 @@
       displayName: OneNote
 
   - name: Project add-ins
-    href: project/project-add-ins.md
     displayName: Project
     items:
+    - name: Overview
+      href: project/project-add-ins.md
+      displayName: Project
     - name: Build your first Project add-in
       href: quickstarts/project-quickstart.md
       displayName: Project
@@ -449,8 +477,9 @@
       displayName: Project
 
   - name: Test and debug
-    href: testing/test-debug-office-add-ins.md
     items:
+    - name: Overview
+      href: testing/test-debug-office-add-ins.md
     - name: Windows
       items:
       - name: Sideload Office Add-ins on Windows
@@ -481,8 +510,9 @@
       href: testing/troubleshoot-manifest.md
 
   - name: Publish
-    href: publish/publish.md
     items:
+    - name: Overview
+      href: publish/publish.md
     - name: Host an Office Add-in on Microsoft Azure
       href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Package your add-in using Visual Studio
@@ -537,8 +567,9 @@
     - name: Outlook object model
       items:
       - name: Preview Requirement Set
-        href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
         items:
+        - name: Overview
+          href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
         - name: Office
           href: reference/objectmodel/preview-requirement-set/office.md
         - name: Office.context
@@ -554,8 +585,9 @@
         - name: Outlook Preview API Reference
           href: /javascript/api/outlook
       - name: Requirement Set 1.7
-        href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
         items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
         - name: Office
           href: reference/objectmodel/requirement-set-1.7/office.md
         - name: Office.context
@@ -571,8 +603,9 @@
         - name: Outlook 1.7 API Reference
           href: /javascript/api/outlook_1_7
       - name: Requirement Set 1.6
-        href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
         items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
         - name: Office
           href: reference/objectmodel/requirement-set-1.6/office.md
         - name: Office.context
@@ -588,8 +621,9 @@
         - name: Outlook 1.6 API Reference
           href: /javascript/api/outlook_1_6
       - name: Requirement Set 1.5
-        href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
         items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
         - name: Office
           href: reference/objectmodel/requirement-set-1.5/office.md
         - name: Office.context
@@ -605,8 +639,9 @@
         - name: Outlook 1.5 API Reference
           href: /javascript/api/outlook_1_5
       - name: Requirement Set 1.4
-        href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
         items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
         - name: Office
           href: reference/objectmodel/requirement-set-1.4/office.md
         - name: Office.context
@@ -622,8 +657,9 @@
         - name: Outlook 1.4 API Reference
           href: /javascript/api/outlook_1_4
       - name: Requirement Set 1.3
-        href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
         items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
         - name: Office
           href: reference/objectmodel/requirement-set-1.3/office.md
         - name: Office.context
@@ -639,8 +675,9 @@
         - name: Outlook 1.3 API Reference
           href: /javascript/api/outlook_1_3
       - name: Requirement Set 1.2
-        href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
         items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
         - name: Office
           href: reference/objectmodel/requirement-set-1.2/office.md
         - name: Office.context
@@ -656,8 +693,9 @@
         - name: Outlook 1.2 API Reference
           href: /javascript/api/outlook_1_2
       - name: Requirement Set 1.1
-        href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
         items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
         - name: Office
           href: reference/objectmodel/requirement-set-1.1/office.md
         - name: Office.context
@@ -793,8 +831,9 @@
     - name: Version
       href: reference/manifest/version.md
     - name: VersionOverrides
-      href: reference/manifest/versionoverrides.md
       items: 
+      - name: VersionOverrides
+        href: reference/manifest/versionoverrides.md
       - name: Action
         href: reference/manifest/action.md
       - name: AllFormFactors
