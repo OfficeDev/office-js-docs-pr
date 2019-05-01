@@ -33,9 +33,11 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
 
+## Custom Functions
+
 [Custom Functions](../../excel/custom-functions-overview.md) use separate requirement sets from the core Excel JavaScript APIs. The following table lists the Custom Functions requirement sets, the supported Office host applications, and the build versions or number for those applications.
 
-|  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |
+|  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20072) or later | Not supported | 16.24 or later | April 2019 | Coming soon |
 
