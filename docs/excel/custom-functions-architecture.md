@@ -19,7 +19,7 @@ The following table highlights the differences between the custom functions runt
 | Custom functions runtime 	| Browser engine runtime 	|
 |------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------	|
 | Supports returning a value from a cell 	| Supports Office.js APIs and UI elements 	|
-| Does not have `localStorage` object, instead uses `Office.Storage` 	| Has `localStorage` object, can optionally use `Office.Storage` object 	|
+| Does not have `localStorage` object, instead uses the `Office.Storage` object. 	| Has `localStorage` object, can optionally use the `Office.Storage` object. 	|
 | Does not support interacting with the DOM, or loading libraries that depend on the DOM such as jQuery.	| Supports interacting with the DOM and loading libraries that depend on the DOM. |
 
 
