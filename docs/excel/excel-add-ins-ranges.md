@@ -18,7 +18,7 @@ The following examples show different ways to get a reference to a range within 
 
 ### Get range by address
 
-The following code sample gets the range with address **B2:B5** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.
+The following code sample gets the range with address **B2:C5** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
