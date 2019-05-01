@@ -134,9 +134,23 @@ ws.onerror(error){
 
 Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything.
 
-Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel automatically cancels the execution of a function in the following situations:
+Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load.
 
-<<<<<<< HEAD
+To declare a function as streaming or cancelable, use the JSDOC comment tags `@stream` or `@cancelable`.
+
+### Using an invocation parameter
+
+The `invocation` parameter is the last parameter of any custom function by default. The `invocation` parameter gives context about the cell (such as its address) and also allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
+
+If you're using TypeScript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
+
+### Streaming and cancelable function example
+The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
+
+- Excel displays each new value automatically using the `setResult` method.
+- The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu.
+- The `onCanceled` callback defines the function that executes when the function is canceled.
+
 ```js
 /**
  * Increments a value once a second.
@@ -148,32 +162,6 @@ function increment(incrementBy, invocation) {
   let result = 0;
   const timer = setInterval(() => {
     result += incrementBy;
-=======
-- When the user edits or deletes a cell that references the function.
-- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
-- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
-
-To declare a function as streaming or cancelable, use the JSDOC comment tags `@stream` or `@cancelable`.
-
-### Using an invocation parameter
-
-The invocation parameter is the last parameter specified. An invocation allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
-
-If you're using TypeScript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
-
-### Streaming and cancelable function example
-The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
-
-- Excel displays each new value automatically using the `setResult` method.
-- The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu.
-- The `onCanceled` callback defines the function that executes when the function is canceled.
-
-```JavaScript
-function incrementValue(increment, invocation){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
->>>>>>> f1eb3c60641c761b58ce404c6211ee3156506a23
     invocation.setResult(result);
   }, 1000);
 
