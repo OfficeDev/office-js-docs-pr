@@ -86,7 +86,6 @@ After creating a JSON file for each language, you need to update your XML manife
 </Resources>
 ```
 
-If you're using the Yo Office generator to make your custom functions project, make sure your webpack.config.js file is properly configured to handle additional JSON files.
 
 For more information on the process of localizing an add-in, see [Localization for Office Add-ins](../develop/localization.md#control-localization-from-the-manifest).
 
