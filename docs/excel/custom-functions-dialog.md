@@ -81,7 +81,7 @@ function getStock (ticker) {
           onMessage: function (message, dialog) {
             _cachedToken = message;
             resolve(message);
-            Dialog.close();
+            dialog.close();
             return;
           },
           onRuntimeError: function(error, dialog) {
