@@ -62,7 +62,7 @@ The following table compares features across XLL user-defined functions, XLL com
 | Volatile functions | Yes | Yes | Yes |
 | Multi-threaded recalculation support | Yes | Yes | Yes |
 | Calculation behavior | No UI. Excel can be unresponsive during calculation. | Users will see #BUSY! until a result is returned. | Users will see #BUSY! until a result is returned. |
-| Requirement sets | N/A | CustomFunctions 1.1 only | CustomFunctions 1.1 and later |
+| Requirement sets | N/A | CustomFunctions 1.1 and later | CustomFunctions 1.1 and later |
 
 ## See also
 
