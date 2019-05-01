@@ -1,5 +1,5 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/01/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -21,7 +21,7 @@ The following code defines the custom function `=CLOCK`.
 /**
  * Displays the current time once a second.
  * @customfunction
- * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Invocation parameter used for streaming functions.
  */
 function clock(invocation) {
   const timer = setInterval(() => {
@@ -67,8 +67,8 @@ The following code also provides code comments which define the function. The re
 /**
  * Adds two numbers.
  * @customfunction 
- * @param first First number
- * @param second Second number
+ * @param first First number.
+ * @param second Second number.
  * @returns The sum of the two numbers.
  */
 
@@ -147,32 +147,6 @@ The following basic XML markup shows an example of the `<ExtensionPoint>` and `<
 > [!NOTE]
 > Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.
 
-## Declaring a volatile function
-
-[Volatile functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
-
-Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel's volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
-
-Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.
-
-To declare a function volatile, add `"volatile": true` within the `options` object  for the function in the JSON metadata file, as shown in the following code sample. Note that a function cannot be marked both `"streaming": true` and `"volatile": true`; in the case where both are marked `true` the volatile option will be ignored.
-
-```json
-{
- "id": "TOMORROW",
-  "name": "TOMORROW",
-  "description":  "Returns tomorrow’s date",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-      "type": "string",
-      "dimensionality": "scalar"
-  },
-  "options": {
-      "volatile": true
-  }
-}
-```
-
 ## Coauthoring
 
 Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
@@ -202,50 +176,6 @@ function secondHighest(values){
   return secondHighest;
 }
 ```
-
-## Determine which cell invoked your custom function
-
-In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
-
-- Formatting ranges: Use the cell's address as the key to store information in the [Office.Storage object](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from the `Office.Storage` object.
-- Displaying cached values: If your function is used offline, display stored cached values from the `Storage` object using `onCalculated`.
-- Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
-
-The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this if you were to write this JSON file by hand. You can also use the `@requiresAddress` tag if automatically generating your JSON file. For more details, see [JSON Autogeneration](custom-functions-json-autogeneration.md).
-
-```JSON
-{
-   "id": "ADDTIME",
-   "name": "ADDTIME",
-   "description": "Display current date and add the amount of hours to it designated by the parameter",
-   "helpUrl": "http://www.contoso.com",
-   "result": {
-      "type": "number",
-      "dimensionality": "scalar"
-   },
-   "parameters": [
-      {
-         "name": "Additional time",
-         "description": "Amount of hours to increase current date by",
-         "type": "number",
-         "dimensionality": "scalar"
-      }
-   ],
-   "options": {
-      "requiresAddress": true
-   }
-}
-```
-
-In the script file (**./src/functions/functions.js** or **./src/functions/functions.ts**), you'll also need to add a `getAddress` function to find a cell's address. This function may take parameters, as shown in the following sample as `parameter1`. The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.
-
-```js
-function getAddress(parameter1, invocationContext) {
-    return invocationContext.address;
-}
-```
-
-By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
 ## Known issues
 
