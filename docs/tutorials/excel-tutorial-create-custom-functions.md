@@ -137,7 +137,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
         // Note: in case of an error, the returned rejected Promise
         //    will be bubbled up to Excel to indicate an error.
     }
-    CustomFunctions.associate("STOCKPRICE", stockprice);
+    CustomFunctions.associate("STOCKPRICE", stockPrice);
     ```
 
     The `CustomFunctions.associate` code associates the `id` of the function with the function address of `increment` in JavaScript so that Excel can call your function.
@@ -218,7 +218,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
         };
     }
     
-    CustomFunctions.associate("STOCKPRICESTREAM", stockpricestream);
+    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
     ```
     
     Before Excel can use your custom function, you need to describe it using metadata.
