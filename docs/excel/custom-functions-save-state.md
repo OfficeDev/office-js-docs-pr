@@ -7,7 +7,7 @@ localization_priority: Priority
 
 ## Save and share state in custom functions
 
-The main storage location for custom functions is `Office.Storage`. Storage is limited to 10 MB per domain (which may be shared across multiple add-ins). On Excel for Windows, `Office.Storage` is a separate location within the custom functions runtime, but for Excel Online and Excel for Mac, `Office.Storage` is the same as the browser's `localStorage`. `Office.Storage` is a useful storage location that can be accessed by both custom functions and your add-in's task pane.
+Use the `Office.Storage` object to save state related to custom functions or the task pane in your add-in. Storage is limited to 10 MB per domain (which may be shared across multiple add-ins). On Excel for Windows, the `Storage` object is a separate location within the custom functions runtime, but for Excel Online and Excel for Mac, the `Storage` object is the same as the browser's `localStorage`.
 
 There are multiple ways to use `Office.Storage` for state management:
 
