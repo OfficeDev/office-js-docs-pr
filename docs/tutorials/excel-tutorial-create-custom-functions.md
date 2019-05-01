@@ -185,7 +185,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
     * @param {string} ticker Stock symbol
     * @param {CustomFunctions.StreamingInvocation<number>} invocation
     */
-    function stockPriceStream(ticker, handler) {
+    function stockPriceStream(ticker, invocation) {
         var updateFrequency = 1000 /* milliseconds*/;
         var isPending = false;
 
@@ -203,17 +203,17 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
                     return response.text();
                 })
                 .then(function(text) {
-                    handler.setResult(parseFloat(text));
+                    invocation.setResult(parseFloat(text));
                 })
                 .catch(function(error) {
-                    handler.setResult(error);
+                    invocation.setResult(error);
                 })
                 .then(function() {
                     isPending = false;
                 });
         }, updateFrequency);
 
-        handler.onCanceled = () => {
+        invocation.onCanceled = () => {
             clearInterval(timer);
         };
     }
