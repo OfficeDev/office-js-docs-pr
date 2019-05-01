@@ -189,7 +189,7 @@ function secondHighest(values){
 
 In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
 
-- Formatting ranges: Use the cell's address as the key to store information in [Office.Storage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `Office.Storage`.
+- Formatting ranges: Use the cell's address as the key to store information in the [Office.Storage object](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from the `Office.Storage` object.
 - Displaying cached values: If your function is used offline, display stored cached values from `Office.Storage` using `onCalculated`.
 - Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
