@@ -152,4 +152,5 @@ Learn about an overview of [the custom functions runtime](custom-functions-runti
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Custom functions requirements](custom-functions-requirements.md)
 * [Naming guidelines](custom-functions-naming.md)
-
+* [Best practices](custom-functions-best-practices.md)
+* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)

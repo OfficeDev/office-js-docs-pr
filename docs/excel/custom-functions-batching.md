@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: "Batch custom functions together to reduce network calls to a remote service."
 title: Batching custom function calls for a remote service
 localization_priority: Priority
@@ -210,9 +210,11 @@ To modify the `_fetchFromRemoteService` function to run in your live remote serv
 - Apply an appropriate authentication mechanism. Ensure that only the correct callers can access the function.
 - Place the code in the remote service.
 
+## Next steps
+Learn about [the various parameters](custom-functions-parameter-options.md) you can use in your custom functions. Or review the basics behind making [a web call through a custom function](custom-functions-web-reqs.md).
+
 ## See also
 
+* [Volatile values in functions](custom-functions-volatile.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions metadata](custom-functions-json.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

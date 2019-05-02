@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Learn about Excel custom functions' runtime. 
 title: Custom functions architecture
 localization_priority: Priority
@@ -39,10 +39,13 @@ For more general information about the `storage` object, see [Custom functions r
 
 The `storage` object can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
 
+## Next steps
+Learn more about how to [use the custom functions runtime](custom-functions-runtime.md).
+
 ## See also
 
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
