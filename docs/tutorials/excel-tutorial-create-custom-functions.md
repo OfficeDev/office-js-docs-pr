@@ -169,7 +169,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
---- 
+---
 
 <ol start="5">
 <li> Try out the new function. In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter. You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</li>
