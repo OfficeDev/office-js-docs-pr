@@ -153,10 +153,10 @@ Integrating data from the Web is a great way to extend Excel through custom func
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
-    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
+    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
 
 # [Excel Online](#tab/excel-online)
 
@@ -239,10 +239,10 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
-    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
+    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
 
 # [Excel Online](#tab/excel-online)
 
