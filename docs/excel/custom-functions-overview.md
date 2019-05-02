@@ -9,35 +9,23 @@ localization_priority: Priority
 
 Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. This article describes how to create custom functions in Excel.
 
-The following illustration shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function is a clock. Entering `=CONTOSO.CLOCK` gives you the present time, which updates itself once every second. `CONTOSO` is an optional namespace added to better identify the CLOCK function from possible other CLOCK functions in other add-ins. 
+The following animated image shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
-<img alt="animated image showing an end user inserting the CONTOSO.CLOCK custom function into a cell of an Excel worksheet" src="../images/ClockFunction.gif" />
+<img alt="animated image showing an end user inserting the CONTOSO.CLOCK custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
 
-The following code defines the custom function `=CLOCK`.
+The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 
 ```js
 /**
- * Displays the current time once a second.
+ * Returns the volume of a sphere. 
  * @customfunction
- * @param {CustomFunctions.StreamingInvocation<string>} invocation Invocation parameter used for streaming functions.
+ * @param {number} radius
  */
-function clock(invocation) {
-  const timer = setInterval(() => {
-    const time = currentTime();
-    invocation.setResult(time);
-  }, 1000);
-
-  invocation.onCanceled = () => {
-    clearInterval(timer);
-  };
+function sphereVolume(radius) {
+  const pi = 3.14159265
+  return Math.pow(radius, 3)*4*pi
 }
-
-function currentTime() {
-  return new Date().toLocaleTimeString();
-}
-
-CustomFunctions.associate("CLOCK", clock);
-CustomFunctions.associate("CURRENTTIME", currentTime);
+CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 ```
 
 > [!NOTE]
