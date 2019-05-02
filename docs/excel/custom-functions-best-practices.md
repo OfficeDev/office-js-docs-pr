@@ -11,14 +11,6 @@ This article describes best practices for developing custom functions in Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## Troubleshooting
-
-1. If you are testing your add-in in Office on Windows, you should enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues.
-
-2. Your add-in will not load if one or more custom functions conflicts with a previously registered add-in's custom functions. In this case, you can either remove the existing add-in, or if you encounter this error while developing an add-in, you can specify a different namespace name in your manifest. For more information, see [Custom functions overview](custom-functions-overview.md#manifest-file).
-
-3. To report feedback to the Excel Custom Functions team about this method of troubleshooting, send the team feedback. To do this, select **File | Feedback | Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
-
 ## Associating function names with JSON metadata
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to form a complete function. For a function to work properly, you need to associate the id with the JavaScript implementation. Make sure there is an association, otherwise the function will not be called.
@@ -67,64 +59,6 @@ The following sample shows the JSON metadata that corresponds to the functions d
       ...
     }
   ]
-}
-```
-
-## Declaring optional parameters
-
-In Excel for Windows, you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `GETTEMPERATURE` with one required parameter called `zipCode` and one optional parameter called `cityName` would appear as `=GETTEMPERATURE(zipCode, [cityName])` in Excel.
-
-To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s Formula UI.
-
-```json
-{
-    "id": "ADD",
-    "name": "ADD",
-    "description": "Add two numbers",
-    "helpUrl": "http://www.contoso.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-        },
-    "parameters": [
-        {
-            "name": "first",
-            "description": "first number to add",
-            "type": "number",
-            "dimensionality": "scalar"
-        },
-        {
-            "name": "second",
-            "description": "second number to add",
-            "type": "number",
-            "dimensionality": "scalar",
-        },
-        {
-            "name": "third",
-            "description": "third optional number to add",
-            "type": "number",
-            "dimensionality": "scalar",
-            "optional": true
-        }
-    ]
-}
-```
-
-When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to 98052. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
-
-```js
-function getWeatherReport(zipCode, dayOfWeek)
-{
-  if (zipCode === undefined) {
-      zipCode = "98052";
-  }
-
-  if (dayOfWeek === undefined) {
-    dayOfWeek = "Wednesday";
-  }
-
-  // Get weather report for specified zipCode and dayOfWeek
-  // ...
 }
 ```
 
