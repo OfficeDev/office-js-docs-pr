@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: 
-ms.date: 04/23/2019
+ms.date: 05/02/2019
 ms.prod: onenote
 localization_priority: Priority
 ---

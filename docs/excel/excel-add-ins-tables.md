@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: ''
-ms.date: 04/18/2019
+ms.date: 04/30/2019
 localization_priority: Priority
 ---
 
@@ -238,9 +238,6 @@ Your add-in may need to react to users changing the data in a table. To detect t
 
 The `TableChangedEventArgs` object provides information about the changes and the source. Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed. The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). The following code sample shows how to display the before and after values and types of a cell that has been changed.
 
-> [!NOTE]
-> `TableChangedEventArgs.details` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
 function onTableChanged(eventArgs) {
@@ -354,9 +351,6 @@ Excel.run(function (context) {
 ```
 
 ## AutoFilter
-
-> [!NOTE]
-> `Table.autoFilter` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 An add-in can use the table's [AutoFilter](/javascript/api/excel/excel.autofilter) object to filter data. An `AutoFilter` object is the entire filter structure of a table or range. All of the filter operations discussed earlier in this article are compatible with the auto-filter. The single access point does make it easier to access and manage multiple filters.
 

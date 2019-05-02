@@ -1,5 +1,5 @@
 ---
-ms.date: 01/08/2019
+ms.date: 04/28/2019
 description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices (preview)
 localization_priority: Normal
@@ -26,7 +26,14 @@ As described in the [custom functions overview](custom-functions-overview.md) ar
 The following code sample shows how to do this association. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
 ```js
-function add(first, second){
+/**
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
+ * @returns {number} The sum of the two numbers.
+ */
+function add(first, second) {
   return first + second;
 }
 
@@ -35,61 +42,37 @@ CustomFunctions.associate("ADD", add);
 
 Keep in mind the following best practices when creating custom functions in your JavaScript file and specifying corresponding information in the JSON metadata file.
 
-* Only use uppercase letters for a function's `name` and `id` in the JSON metadata file. Do not use a mix of cases or only lowercase letters. If you do, you may end up with two values that only differ by case which will cause unintentional overwriting of your functions. For example, a function object with an `id` value of **add** could be overwritten by declaration later in the file of function object with an `id` value of **ADD**. Additionally, the `name` property defines the function name that end users will see in Excel. Using uppercase letters for the name of each custom function provides a consistent experience in Excel, where all built-in function names are uppercase.
-
 * In the JSON metadata file, ensure that the value of each `id` property contains only alphanumeric characters and periods.
 
-* In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value. 
+* In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value.
 
 * Do not change the value of an `id` property in the JSON metadata file after it's been associated with a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
 
-* In the JavaScript file, specify all custom function associations in the same location. For example, the following code sample defines two custom functions and then specifies the association information for both functions.
+* In the JavaScript file, specify a custom function association using `CustomFunctions.associate` after each function.
 
-    ```js
-    function add(first, second){
-      return first + second;
-    }
+The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file, which is a best practices when writing JSON by hand. You only need to add this JSON if you are preparing your own JSON file by hand and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](#custom-functions-json-autogeneration.md).
 
-    function increment(incrementBy, callback) {
-      var result = 0;
-      var timer = setInterval(function() {
-        result += incrementBy;
-        callback.setResult(result);
-      }, 1000);
-
-      callback.onCanceled = function() {
-        clearInterval(timer);
-      };
-    }
-
-    // associate `id` values in the JSON metadata file to JavaScript function names
-    CustomFunctions.associate("ADD", add);
-    CustomFunctions.associate("INCREMENT", increment);
-    ```
-
-    The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file. 
-
-    ```json
+```json
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+  "functions": [
     {
-      "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-      "functions": [
-        {
-          "id": "ADD",
-          "name": "ADD",
-          ...
-        },
-        {
-          "id": "INCREMENT",
-          "name": "INCREMENT",
-          ...
-        }
-      ]
+      "id": "ADD",
+      "name": "ADD",
+      ...
+    },
+    {
+      "id": "INCREMENT",
+      "name": "INCREMENT",
+      ...
     }
-    ```
+  ]
+}
+```
 
-## Declaring optional parameters 
+## Declaring optional parameters
 
-In Excel for Windows (version 1812 or later), you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
+In Excel for Windows, you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
 
 To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s Formula UI.
 

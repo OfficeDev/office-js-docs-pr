@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: 
-ms.date: 04/23/2019
+ms.date: 05/02/2019
 ms.prod: word
 localization_priority: Priority
 ---

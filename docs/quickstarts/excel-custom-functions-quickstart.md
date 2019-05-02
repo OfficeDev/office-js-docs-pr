@@ -1,5 +1,5 @@
 ---
-ms.date: 04/23/2019
+ms.date: 05/02/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start (preview)
 ms.prod: excel

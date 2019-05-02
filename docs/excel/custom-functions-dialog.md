@@ -1,22 +1,25 @@
 ---
-ms.date: 03/21/2019
+ms.date: 04/29/2019
 description: Create dialog boxes through custom functions in Excel using JavaScript.
 title: Custom functions dialogs (preview)
 localization_priority: Priority
 ---
 # Display a dialog box in custom functions
 
-If your custom function needs to interact with the user, you can create a dialog box using the `OfficeRuntime.Dialog` object. A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
+If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
 
-Note: The `OfficeRuntime.Dialog` object is part of the custom functions runtime. It cannot be used from the context of a task pane. To create a dialog from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
+Note: The `Office.Dialog` object is part of the custom functions runtime. It cannot be used from the context of a task pane. To create a dialog from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
 
 ## Dialog API example
 
 In the following code sample, the function `getTokenViaDialog` uses the Dialog API’s `displayWebDialog` function to display a dialog box.
 
 ```js
-// Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
-
+/**
+ * Retrieves a stock price
+ * @customfunction
+ * @param {string} ticker stock ticker, e.g. "msft"
+ */
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
@@ -72,13 +75,13 @@ function getStock (ticker) {
         }, 1000);
       } else {
         _dialogOpen = true;
-        OfficeRuntime.displayWebDialog(url, {
+        Office.displayWebDialogOptions(url, {
           height: '50%',
           width: '50%',
           onMessage: function (message, dialog) {
             _cachedToken = message;
             resolve(message);
-            dialog.close();
+            Dialog.close();
             return;
           },
           onRuntimeError: function(error, dialog) {

@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using React
 description: 
-ms.date: 04/23/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
 ---

@@ -1,5 +1,5 @@
 ---
-ms.date: 04/23/2019
+ms.date: 05/01/2019
 description: Debug your custom functions in Excel.
 title: Custom functions debugging (preview)
 localization_priority: Normal
@@ -48,7 +48,7 @@ You can use VS Code to debug custom functions in Office Excel on the desktop.
 
 ### Start debugging
 
-1. In VS Code, open your source code script file (functions.js or functions.ts).
+1. In VS Code, open your source code script file (**functions.js** or **functions.ts**).
 2. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code.
 3. In the Excel workbook, enter a formula that uses your custom function.
 
@@ -86,7 +86,7 @@ You can use VS Code to debug custom functions in Excel Online in the Microsoft E
 
 
 ### Set breakpoints
-1. In VS Code, open your source code script file (functions.js or functions.ts).
+1. In VS Code, open your source code script file (**functions.js** or **functions.ts**).
 2. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code.
 3. In the Excel workbook, enter a formula that uses your custom function.
 
@@ -119,7 +119,7 @@ You can use the browser developer tools to debug custom functions in Excel Onlin
 ### Start debugging
 
 1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-2. In developer tools, open your source code script file using **Cmd+P** or **Ctrl+P** (functions.js or functions.ts).
+2. In developer tools, open your source code script file using **Cmd+P** or **Ctrl+P** (**functions.js** or **functions.ts**).
 3. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code. 
 
 If you need to change the code you can make edits in VS Code and save the changes. Refresh the browser to see the changes loaded.

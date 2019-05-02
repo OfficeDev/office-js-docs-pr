@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial (preview)
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 04/23/2019
+ms.date: 05/02/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 

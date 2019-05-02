@@ -1,5 +1,5 @@
 ---
-ms.date: 03/29/2019
+ms.date: 04/30/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -11,16 +11,35 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet. The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.
+The following illustration shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function is a clock. Entering `=CONTOSO.CLOCK` gives you the present time, which updates itself once every second. `CONTOSO` is an optional namespace added to better identify the CLOCK function from possible other CLOCK functions in other add-ins. 
 
-<img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
+<img alt="animated image showing an end user inserting the CONTOSO.CLOCK custom function into a cell of an Excel worksheet" src="../images/ClockFunction.gif" />
 
-The following code defines the `ADD42` custom function.
+The following code defines the custom function `=CLOCK`.
 
 ```js
-function add42(a, b) {
-  return a + b + 42;
+/**
+ * Displays the current time once a second.
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
+
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
 }
+
+function currentTime() {
+  return new Date().toLocaleTimeString();
+}
+
+CustomFunctions.associate("CLOCK", clock);
+CustomFunctions.associate("CURRENTTIME", currentTime);
 ```
 
 > [!NOTE]
@@ -28,7 +47,7 @@ function add42(a, b) {
 
 ## Components of a custom functions add-in project
 
-If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions: 
+If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions:
 
 | File | File format | Description |
 |------|-------------|-------------|
@@ -42,7 +61,7 @@ The script file (**./src/functions/functions.js** or **./src/functions/functions
 
 The following code defines the custom function `add`  and then specifies association information for the function. For more information on associating functions, see [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
 
-The following code also provides code comments which define the function. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+The following code also provides code comments which define the function. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -59,6 +78,12 @@ function add(first, second){
 
 // associate `id` values in the JSON metadata file to the JavaScript function names
  CustomFunctions.associate("ADD", add);
+```
+
+Note that the **functions.html** file, which governs the loading of the custom functions runtime, must link to the current CDN for custom functions. Projects prepared with the current version of the Yo Office generator reference the correct CDN. If you are retrofitting a previous custom function project from March 2019 or earlier, you need to copy in the code below to the **functions.html** page.
+
+```HTML
+<script src="https://appsforoffice.microsoft.com/lib/beta/hosted/custom-functions-runtime.js" type="text/javascript"></script>
 ```
 
 ### Manifest file
@@ -148,50 +173,6 @@ To declare a function volatile, add `"volatile": true` within the `options` obje
 }
 ```
 
-## Saving and sharing state
-
-Custom functions can save data in global JavaScript variables, which can be used in subsequent calls. Saved state is useful when users call the same custom function from more than one cell, because all instances of the function can access the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
-
-The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
-
-- The `streamTemperature` function updates the temperature value that's displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.
-
-- Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.
-
-- If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs. 
-
-- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable. Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
-
-```js
-var savedTemperatures;
-
-function streamTemperature(thermometerID, handler){
-  if(!savedTemperatures[thermometerID]){
-    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
-  }
-
-  function getNextTemperature(){
-    handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    var delayTime = 1000; // Amount of milliseconds to delay a request by.
-    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
-
-    handler.onCancelled() = function {
-      clearTimeout(delayTime);
-    }
-  }
-  getNextTemperature();
-}
-
-function refreshTemperature(thermometerID){
-  sendWebRequest(thermometerID, function(data){
-    savedTemperatures[thermometerID] = data.temperature;
-  });
-  setTimeout(function(){
-    refreshTemperature(thermometerID);
-  }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
-}
-```
-
 ## Coauthoring
 
 Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
@@ -226,11 +207,11 @@ function secondHighest(values){
 
 In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
 
-- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
-- Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
+- Formatting ranges: Use the cell's address as the key to store information in the [Office.Storage object](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from the `Office.Storage` object.
+- Displaying cached values: If your function is used offline, display stored cached values from the `Storage` object using `onCalculated`.
 - Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
-The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
+The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this if you were to write this JSON file by hand. You can also use the `@requiresAddress` tag if automatically generating your JSON file. For more details, see [JSON Autogeneration](custom-functions-json-autogeneration.md).
 
 ```JSON
 {

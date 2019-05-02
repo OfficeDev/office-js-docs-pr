@@ -1,5 +1,5 @@
 ---
-ms.date: 04/18/2019
+ms.date: 05/01/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions (preview)
 localization_priority: Priority
@@ -18,6 +18,12 @@ If you are testing your add-in in Office on Windows, you should [enable runtime 
 
 Excel has a number of built-in error messages which are returned to a cell if there is calculation error. Custom functions only use the following error messages: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#BUSY!`.
 
+Generally, these errors correspond to the errors you might already be familiar with in Excel. The are only a few exceptions specific to custom functions, listed here:
+
+- A `#NAME` error generally means there has been an issue registering your functions.
+- A `#VALUE` error typically indicates an error in the functions' script file.
+- A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
+
 ## Common issues
 
 ### My add-in won't load: verify certificates
@@ -31,7 +37,14 @@ In your custom functions' script file, you need to associate each custom functio
 The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
 
 ```js
-function add(first, second){
+/**
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
+ * @returns {number} The sum of the two numbers.
+ */
+function add(first, second) {
   return first + second;
 }
 

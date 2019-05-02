@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 04/18/2019
+ms.date: 04/30/2019
 localization_priority: Priority
 ---
 
@@ -280,9 +280,6 @@ Your add-in may need to react to users changing the data in a worksheet. To dete
 
 The `WorksheetChangedEventArgs` object provides information about the changes and the source. Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed. The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). The following code sample shows how to display the before and after values and types of a cell that has been changed.
 
-> [!NOTE]
-> `WorksheetChangedEventArgs.details` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
 function onWorksheetChanged(eventArgs) {
@@ -298,10 +295,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## Find all cells with matching text (preview)
-
-> [!NOTE]
-> The Worksheet object's `findAll` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Find all cells with matching text
 
 The `Worksheet` object has a `find` method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once. The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you expect that the specified string may not exist in the worksheet, use the [findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) method instead, so your code gracefully handles that scenario.
 
@@ -327,9 +321,6 @@ Excel.run(function (context) {
 > - For examples that show how to search a large range for multiple sub-ranges based on cell characteristics, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 ## Filter data
-
-> [!NOTE]
-> `AutoFilter` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters across a range within the worksheet. This is created with `Worksheet.autoFilter.apply`, which has the following parameters:
 
@@ -395,6 +386,42 @@ The `protect` method has two optional parameters:
 - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
 
 The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
+
+## Page layout and print settings
+
+Add-ins have access to page layout settings at a worksheet level. These control how the sheet is printed. A `Worksheet` object has three layout-related properties: `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
+
+`Worksheet.horizontalPageBreaks` and `Worksheet.verticalPageBreaks` are [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection). These are collections of [PageBreaks](/javascript/api/excel/excel.pagebreak), which specify ranges where manual page breaks are inserted. The following code sample adds a horizontal page break above row **21**.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependant any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
+
+The following code sample centers the page (both vertically and horizontally), sets a title row that will be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Center the page in both directions.
+    sheet.pageLayout.centerHorizontally = true;
+    sheet.pageLayout.centerVertically = true;
+
+    // Set the first row as the title row for every page.
+    sheet.pageLayout.setPrintTitleRows("$1:$1");
+
+    // Limit the area to be printed to the range "A1:D100".
+    sheet.pageLayout.setPrintArea("A1:D100");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
 
 ## See also
 
