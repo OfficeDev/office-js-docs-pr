@@ -1,10 +1,10 @@
 ---
 ms.date: 05/01/2019
 description: Debug your custom functions in Excel.
-title: Custom functions debugging (preview)
+title: Custom functions debugging
 localization_priority: Normal
 ---
-# Custom functions debugging (preview)
+# Custom functions debugging
 
 Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
 
