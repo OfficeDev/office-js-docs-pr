@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel
 localization_priority: Priority
@@ -143,11 +143,13 @@ For more information on coauthoring, see [About coauthoring in Excel](/office/vb
 
 See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
-## See also
+## Next steps
 
-* [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
+Learn about an overview of [the custom functions runtime](custom-functions-runtime.md).
+
+## See also 
+* [Excel custom functions quick start](../quickstarts/excel-custom-functions-quickstart.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Custom functions debugging](custom-functions-debugging.md)
+* [Custom functions requirements](custom-functions-requirements.md)
+* [Naming guidelines](custom-functions-naming.md)
+
