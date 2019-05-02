@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Handle errors in your Excel custom functions.
 title: Error handling for custom functions in Excel
 localization_priority: Priority
@@ -33,10 +33,12 @@ function getComment(commentID) {
 }
 ```
 
+## Next steps
+Learn how to [troubleshoot problems with your custom functions](custom-functions-troubleshooting.md).
+
 ## See also
 
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
+* [Custom functions debugging](custom-functions-debugging.md)
 * [Custom functions changelog](custom-functions-changelog.md)
+* [Custom functions requirements](custom-functions-requirements.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

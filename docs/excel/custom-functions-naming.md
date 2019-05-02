@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
 title: Naming guidelines for custom functions in Excel
 localization_priority: Normal
@@ -47,6 +47,9 @@ To fix a naming conflict, change the `name` in your add-in and try the function 
 You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file. As a best practice, avoid giving your functions an `id` or `name` that is a built-in Excel function in another language as this could conflict with localized functions.
 
 For full information on localizing, see [Localize custom functions](custom-functions-localize.md)
+
+## Next steps
+Learn about [error handling best practices](#custom-functions-errors.md).
 
 ## See also
 

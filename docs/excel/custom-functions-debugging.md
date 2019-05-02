@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Debug your custom functions in Excel.
 title: Custom functions debugging
 localization_priority: Normal
@@ -160,10 +160,13 @@ You can use the following tasks to start debugging on desktop or online.
 - `npm run start web`: Starts Excel Online and sideloads your add-in.
 - `npm run stop`: Stops Excel and debugging.
 
+## Next steps
+Learn about [authentication practices in custom functions](custom-functions-authentication.md).
+
 ## See also
 
-* [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Custom functions troubleshooting](custom-functions-troubleshooting.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

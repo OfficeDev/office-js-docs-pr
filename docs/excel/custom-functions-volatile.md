@@ -1,5 +1,5 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/02/2019
 description: Learn to implement volatile and offline streaming custom functions.
 title: Volatile values in functions (preview)
 localization_priority: Normal
@@ -16,10 +16,11 @@ Custom functions allow you to create your own volatile functions, which may be u
 
 If choosing to autogenerate your JSON file, declare a volatile function with the JSDOC comment tag `@volatile`. From more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
+## Next steps
+Learn how to [autogenerate the JSON for your functions](custom-functions-json-autogeneration.md) or review [best practices for associating your functions](custom-functions-best-practices.md).
+
 ## See also
 
-* [Create custom functions in Excel](custom-functions-overview.md)
+* [Custom functions parameter options](custom-functions-parameter-options.md)
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

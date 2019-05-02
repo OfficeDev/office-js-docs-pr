@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -151,10 +151,12 @@ The `result` object defines the type of information that is returned by the func
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
 
+## Next steps
+Learn the [best practices for naming your function](custom-functions-naming.md) or discover how to [localize your function](custom-functions-localize.md) using the previously described handwritten JSON method.
+
 ## See also
 
-* [Create custom functions in Excel](custom-functions-overview.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogenerate.md)
+* [Custom functions parameter options](custom-functions-parameter-options.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

@@ -217,4 +217,5 @@ Learn about [the various parameters](custom-functions-parameter-options.md) you 
 
 * [Volatile values in functions](custom-functions-volatile.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

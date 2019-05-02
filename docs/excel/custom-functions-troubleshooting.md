@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions
 localization_priority: Priority
@@ -74,10 +74,15 @@ If using Excel for Windows or Mac, you can report feedback to the Office extensi
 
 Feel free to submit an issue you encounter either through the "Content feedback" feature at the bottom of any documentation page, or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
+## Next steps
+Learn how to [debug your custom functions](custom-functions-debugging.md).
+
 ## See also
 
-* [Custom functions metadata](custom-functions-json.md)
+* [Custom functions metadata autogeneration](custom-functions-json-autogenerate.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
+

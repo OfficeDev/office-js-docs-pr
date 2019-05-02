@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Localize your Excel custom functions. 
 title: Localize custom functions
 localization_priority: Normal
@@ -91,10 +91,12 @@ After creating a JSON file for each language, you need to update your XML manife
 
 For more information on the process of localizing an add-in, see [Localization for Office Add-ins](../develop/localization.md#control-localization-from-the-manifest).
 
+## Next steps
+Learn about [naming conventions for custom functions](custom-functions-naming.md) or discover [error handling best practices](custom-functions-errors.md).
+
 ## See also
 
-* [Create custom functions in Excel](custom-functions-overview.md)
 * [Custom functions metadata](custom-functions-json.md)
+* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

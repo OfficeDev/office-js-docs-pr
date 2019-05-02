@@ -189,4 +189,5 @@ Learn about [different parameter types your functions can use](custom-functions-
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
