@@ -1,15 +1,13 @@
 ---
 ms.date: 05/01/2019
 description: Learn best practices for developing custom functions in Excel.
-title: Custom functions best practices (preview)
+title: Custom functions best practices
 localization_priority: Normal
 ---
 
-# Custom functions best practices (preview)
+# Custom functions best practices
 
 This article describes best practices for developing custom functions in Excel.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Associating function names with JSON metadata
 

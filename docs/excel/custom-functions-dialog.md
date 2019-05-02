@@ -1,7 +1,7 @@
 ---
 ms.date: 05/01/2019
 description: Create dialogs through custom functions in Excel using JavaScript.
-title: Custom functions dialogs (preview)
+title: Custom functions dialogs
 localization_priority: Priority
 ---
 # Display a dialog in custom functions

@@ -1,7 +1,7 @@
 ---
 ms.date: 05/01/2019
 description: Localize your Excel custom functions. 
-title: Localize custom functions (preview)
+title: Localize custom functions
 localization_priority: Normal
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.date: 05/01/2019
 description: Use `Office.Storage` to save state with custom functions. 
-title: Save and share state in custom functions (preview)
+title: Save and share state in custom functions
 localization_priority: Priority
 ---
 

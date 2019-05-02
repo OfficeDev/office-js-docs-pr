@@ -1,7 +1,7 @@
 ---
 ms.date: 05/01/2019
 description: Learn about Excel custom functions' runtime. 
-title: Custom functions architecture (preview)
+title: Custom functions architecture
 localization_priority: Priority
 ---
 # Custom functions architecture
@@ -21,7 +21,6 @@ The following table highlights the differences between the custom functions runt
 | Supports returning a value from a cell 	| Supports Office.js APIs and UI elements 	|
 | Does not have `localStorage` object, instead uses the `Office.storage` object. 	| Has `localStorage` object, can optionally use the `Office.storage` object. 	|
 | Does not support interacting with the DOM, or loading libraries that depend on the DOM such as jQuery.	| Supports interacting with the DOM and loading libraries that depend on the DOM. |
-
 
 ## Browser engine runtime
 

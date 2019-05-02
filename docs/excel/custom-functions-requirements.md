@@ -1,12 +1,12 @@
 ---
 ms.date: 05/01/2019
 description: Learn how to use custom functions on different platforms. 
-title: Custom functions requirements (preview)
+title: Custom functions requirements
 localization_priority: Priority
 ---
 # Custom functions requirements
 
-Custom functions are currently available in developer preview on the following platforms:
+Custom functions are currently available on the following platforms:
 
 - Excel Online
 - Excel for Windows (64-bit version 1810 or later)

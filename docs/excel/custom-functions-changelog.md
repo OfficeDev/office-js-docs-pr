@@ -1,13 +1,13 @@
 ---
-ms.date: 01/08/2019
+ms.date: 05/01/2019
 description: Discover the latest updates to Excel custom functions.
-title: Custom functions changelog (preview)
+title: Custom functions changelog
 localization_priority: Normal
 ---
 
-# Custom functions changelog (preview)
+# Custom functions changelog
 
-Excel custom functions is still in preview and that means there are frequent changes to the product, including changes and the release of new features. This changelog provides the most up-to-date information about any changes to the product.
+This changelog provides the most up-to-date information about any changes to the product.
 
 - **Nov 7, 2017**: Shipped* the custom functions preview and samples
 - **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later

@@ -1,7 +1,7 @@
 ---
 ms.date: 05/01/2019
 description: Troubleshoot common problems in Excel custom functions.
-title: Troubleshoot custom functions (preview)
+title: Troubleshoot custom functions
 localization_priority: Priority
 ---
 # Troubleshoot custom functions
