@@ -40,7 +40,7 @@ Keep in mind the following best practices when creating custom functions in your
 
 * In the JavaScript file, specify a custom function association using `CustomFunctions.associate` after each function.
 
-The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file, which is a best practices when writing JSON by hand. You only need to add this JSON if you are preparing your own JSON file by hand and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](#custom-functions-json-autogeneration.md).
+The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file, which is a best practices when writing JSON by hand. You only need to add this JSON if you are preparing your own JSON file by hand and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```json
 {
