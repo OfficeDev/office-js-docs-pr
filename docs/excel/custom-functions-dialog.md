@@ -13,7 +13,7 @@ If your custom function needs to interact with the user, you can create a dialog
 
 ## Dialog API example
 
-In the following code sample, the function `getTokenViaDialog` uses the Dialog API’s `displayWebDialog` function to display a dialog.
+In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog.
 
 ```js
 /**
@@ -45,7 +45,7 @@ function getTokenViaDialog(url) {
         onMessage: function (message, dialog) {
           _cachedToken = message;
           resolve(message);
-          Dialog.close();
+          dialog.close();
           return;
         },
         onRuntimeError: function(error, dialog) {
