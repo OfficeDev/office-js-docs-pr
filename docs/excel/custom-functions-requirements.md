@@ -9,7 +9,7 @@ localization_priority: Priority
 Custom functions are currently available in developer preview on the following platforms:
 
 - Excel Online
-- Excel for Windows (64-bit version 1810 or later).
+- Excel for Windows (64-bit version 1810 or later)
 - Excel for Mac (version 13.329 or later)
 
 ## Excel Online
