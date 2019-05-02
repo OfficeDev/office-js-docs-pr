@@ -100,6 +100,6 @@ Learn about the [dialog API for custom functions](custom-functions-dialog.md).
 ## See also
 
 * [Custom functions architecture](custom-functions-architecture.md)
+* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Excel custom functions tutorial](excel-tutorial-custom-functions.md)

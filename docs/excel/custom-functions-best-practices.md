@@ -65,10 +65,11 @@ The following sample shows the JSON metadata that corresponds to the functions d
 In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the [JavaScript runtime](custom-functions-runtime.md), custom functions cannot access the DOM.
 
 ## Next steps
-Learn how to [automatically generate JSON metadata for your functions](custom-functions-json-autogeneration.md). 
+Learn how to [perform web requests with custom functions](custom-functions-web-reqs.md).
 
 ## See also
 
+* [Autogenerate JSON metadata for custom functions](custom-functions-autogeneration.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Custom functions changelog](custom-functions-changelog.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

@@ -180,10 +180,11 @@ CustomFunctions.associate("INCREMENT", increment);
 > - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
 ## Next steps
-Learn about [different parameter types your functions can use](custom-functions-parameter-options.md) or discover how to [batch multiple API calls](custom-functions-batching.md).
+Learn about [different parameter types your functions can use](custom-functions-parameter-options.md) Discover how to [batch multiple API calls](custom-functions-batching.md).
 
 ## See also
 
+* []
 * [Volatile values in functions](custom-functions-volatile.md)
 * [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Custom functions metadata](custom-functions-json.md)

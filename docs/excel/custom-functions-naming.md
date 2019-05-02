@@ -49,7 +49,7 @@ You can localize your function names for different languages using separate JSON
 For full information on localizing, see [Localize custom functions](custom-functions-localize.md)
 
 ## Next steps
-Learn about [error handling best practices](#custom-functions-errors.md).
+Learn about [error handling best practices](custom-functions-errors.md).
 
 ## See also
 

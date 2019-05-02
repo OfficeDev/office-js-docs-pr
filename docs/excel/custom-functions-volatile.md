@@ -17,7 +17,7 @@ Custom functions allow you to create your own volatile functions, which may be u
 If choosing to autogenerate your JSON file, declare a volatile function with the JSDOC comment tag `@volatile`. From more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ## Next steps
-Learn how to [autogenerate the JSON for your functions](custom-functions-json-autogeneration.md) or review [best practices for associating your functions](custom-functions-best-practices.md).
+Learn how to [save state in your custom functions](custom-functions-save-state.md).
 
 ## See also
 

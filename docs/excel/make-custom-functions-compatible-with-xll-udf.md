@@ -1,7 +1,7 @@
 ---
 title: Make your custom functions compatible with XLL user-defined functions
 description: 'Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions'
-ms.date: 04/22/2019
+ms.date: 05/02/2019
 localization_priority: Normal
 ---
 

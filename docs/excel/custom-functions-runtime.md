@@ -111,7 +111,7 @@ function StoreValue(key, value) {
 In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the JavaScript runtime, custom functions cannot access the DOM.
 
 ## Next steps
-Learn how custom functions can [perform web requests](custom-functions-web-reqs.md).
+Learn some crucial [best practices for custom functions](custom-functions-best-practices.md).
 
 ## See also
 

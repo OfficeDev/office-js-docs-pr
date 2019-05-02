@@ -139,10 +139,11 @@ CustomFunctions.associate("GETADDRESS", getAddress);
 By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
 ## Next steps
-Learn how to use [volatile values in your custom functions](custom-functions-volatile.md).
+Learn how to [save state in your custom functions](custom-functions-save-state.md) or use [volatile values in your custom functions](custom-functions-volatile.md).
 
 ## See also
 
+* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)

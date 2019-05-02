@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/02/2019
 description: Learn how to use custom functions on different platforms. 
 title: Custom functions requirements
 localization_priority: Priority
@@ -23,7 +23,7 @@ If you are using a version of Office on your desktop which you downloaded from t
 ## Subscribe to Office 365
 If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/en-us/office/dev-program).
 
-
+## See also
 * [Custom functions overview](custom-functions-overview.md)
 * [Custom functions changelog](custom-functions-changelog.md)
 * [Custom functions best practices](custom-functions-best-practices.md)

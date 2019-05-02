@@ -85,4 +85,3 @@ Learn how to [debug your custom functions](custom-functions-debugging.md).
 * [Custom functions changelog](custom-functions-changelog.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
-

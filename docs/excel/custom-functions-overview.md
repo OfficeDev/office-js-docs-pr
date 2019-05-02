@@ -145,11 +145,11 @@ See known issues on our [Excel Custom Functions GitHub repo](https://github.com/
 
 ## Next steps
 
-Learn about an overview of [the custom functions runtime](custom-functions-runtime.md).
+Want to try out custom functions? Check out the simple [custom functions quick start](../quickstarts/excel-custom-functions-quickstart.md) or the more in-depth [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md) if you haven't already.
+
+Ready to read more about the capabilities custom functions? Learn about an overview of [the custom functions architecture](custom-functions-architecture.md).
 
 ## See also 
-* [Excel custom functions quick start](../quickstarts/excel-custom-functions-quickstart.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Custom functions requirements](custom-functions-requirements.md)
 * [Naming guidelines](custom-functions-naming.md)
 * [Best practices](custom-functions-best-practices.md)

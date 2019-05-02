@@ -1,6 +1,6 @@
 ---
-ms.date: 05/01/2019
-description: Use `Office.Storage` to save state with custom functions. 
+ms.date: 05/02/2019
+description: Use `Office.storage` to save state with custom functions. 
 title: Save and share state in custom functions
 localization_priority: Priority
 ---
@@ -39,6 +39,9 @@ CustomFunctions.associate("GETVALUE", GetValue);
 
 >[!NOTE]
 > The `storage` object replaces the previous storage object named `AsyncStorage` which is now deprecated. If using the `AsyncStorage` object in your current custom functions code, please update it to use the `storage` object.
+
+## Next steps
+Learn how to [autogenerate the JSON metadata for your custom functions](custom-functions-json-autogeneration.md). 
 
 ## See also
 

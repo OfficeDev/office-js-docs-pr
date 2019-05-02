@@ -161,7 +161,7 @@ You can use the following tasks to start debugging on desktop or online.
 - `npm run stop`: Stops Excel and debugging.
 
 ## Next steps
-Learn about [authentication practices in custom functions](custom-functions-authentication.md).
+Learn about [authentication practices in custom functions](custom-functions-authentication.md). Or, review [custom function's unique architecture](custom-functions-architecture.md).
 
 ## See also
 
