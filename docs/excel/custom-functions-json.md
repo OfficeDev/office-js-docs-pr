@@ -20,7 +20,7 @@ For information about the other files that you must include in your add-in proje
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-> Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
+Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
 ## Example metadata
 
