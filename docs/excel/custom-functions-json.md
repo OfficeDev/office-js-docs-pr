@@ -59,7 +59,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 	  "description": "Get the day of the week",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
-		"type": "string"
+		"dimensionality": "scalar"
 	  },
 	  "parameters": []
 	},
@@ -69,7 +69,6 @@ The following example shows the contents of a JSON metadata file for an add-in t
 	  "description":  "Count up from zero",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
-		"type": "number",
 		"dimensionality": "scalar"
 	  },
 	  "parameters": [
@@ -91,7 +90,6 @@ The following example shows the contents of a JSON metadata file for an add-in t
 	  "description":  "Get the second highest number from a range",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
-		"type": "number",
 		"dimensionality": "scalar"
 	  },
 	  "parameters": [
