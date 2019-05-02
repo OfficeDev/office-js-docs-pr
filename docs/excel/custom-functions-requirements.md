@@ -1,5 +1,5 @@
 ---
-ms.date: 01/30/2019
+ms.date: 05/01/2019
 description: Learn how to use custom functions on different platforms. 
 title: Custom functions requirements (preview)
 localization_priority: Priority
@@ -9,13 +9,11 @@ localization_priority: Priority
 Custom functions are currently available in developer preview on the following platforms:
 
 - Excel Online
-- Excel for Windows (64-bit version 1810 or later). At present, Excel for Windows 32-bit may not work for all scenarios. 
+- Excel for Windows (64-bit version 1810 or later).
 - Excel for Mac (version 13.329 or later)
 
-Note that the custom functions feature is currently in preview and subject to change. It is not currently supported for use in production environments.
-
 ## Excel Online
-To use custom functions within Excel Online, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account). 
+To use custom functions within Excel Online, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account).
 
 ## Excel for Windows and Excel for Mac
 To use custom functions within Excel for Windows or Excel for Mac, you must have an Office 365 subscription, join the [Office Insider](https://products.office.com/office-insider) program (**Insider** level -- formerly called "Insider Fast"), and use a sufficiently recent build of Excel (as specified previously).
