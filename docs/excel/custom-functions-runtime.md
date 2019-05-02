@@ -1,5 +1,5 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/01/2019
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions (preview)
 localization_priority: Normal
@@ -58,7 +58,7 @@ Within a custom function, you can use [WebSockets](https://developer.mozilla.org
 
 ### WebSockets example
 
-The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server. 
+The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server.
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
@@ -72,14 +72,14 @@ ws.onerror = function (error) {
 
 ## Storing and accessing data
 
-Within a custom function (or within any other part of an add-in), you can store and access data by using the `Office.storage` object. `Office.storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Office.storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
+Within a custom function (or within any other part of an add-in), you can store and access data by using the `Office.storage` object. `Storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
-`Office.storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `Office.storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (e.g. www.contoso.com/addin1, www.contoso.com/addin2), they are also permitted to share information back and forth through `Office.storage`. Note that add-ins which have different subdomains will have different instances of `Office.storage` (e.g. subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2).
+`Storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (e.g. www.contoso.com/addin1, www.contoso.com/addin2), they are also permitted to share information back and forth through `storage`. Note that add-ins which have different subdomains will have different instances of `storage` (e.g. subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2).
 
-Because `Office.storage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
+Because `storage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
 
-The following methods are available on the `Office.storage` object:
- 
+The following methods are available on the `storage` object:
+
  - `getItem`
  - `getItems`
  - `setItem`
@@ -93,7 +93,7 @@ The following methods are available on the `Office.storage` object:
 
 ### Office.storage example
 
-The following code sample calls the `Office.storage.setItem` function to set a key and value into `Office.storage`.
+The following code sample calls the `Office.storage.setItem` function to set a key and value into `storage`.
 
 ```JavaScript
 function StoreValue(key, value) {
