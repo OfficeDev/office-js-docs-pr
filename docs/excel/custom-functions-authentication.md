@@ -25,17 +25,17 @@ If a token doesn't exist, you should use the Dialog API to ask the user to sign 
 > [!NOTE]
 > The custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use `Officeruntime.Dialog` to authenticate users in the custom functions runtime.
 
-For information on how to use the `OfficeRuntime.Dialog`, see [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog).
+For information on how to use the `Dialog` object, see [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog).
 
 When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `Office.storage`.
 
 The following diagram outlines this basic process. Note that the dotted line indicates that while they perform separate actions, custom functions and your add-in's task pane are both part of your add-in as a whole.
 
 1. You issue a custom function call from a cell in an Excel workbook.
-2. The custom function uses `Officeruntime.Dialog` to pass your user credentials to a website.
+2. The custom function uses `Dialog` to pass your user credentials to a website.
 3. This website then returns an access token to the custom function.
-4. Your custom function then sets this access token to the `Office.Storage`.
-5. Your add-in's task pane accesses the token from `Office.Storage`.
+4. Your custom function then sets this access token to the `storage`.
+5. Your add-in's task pane accesses the token from `storage`.
 
 ![Diagram of custom function using dialog API to get access token, and then share token with task pane through the Office.Storage API.](../images/authentication-diagram.png "Authentication diagram.")
 
@@ -63,7 +63,7 @@ function storeValue(key, value) {
 CustomFunctions.associate("STOREVALUE", storeValue);
 ```
 
-When the task pane needs the access token, it can retrieve the token from `Office.storage`. The following code sample shows how to use the `Office.storage.getItem` method to retrieve the token.
+When the task pane needs the access token, it can retrieve the token from `storage`. The following code sample shows how to use the `storage.getItem` method to retrieve the token.
 
 ```js
 /**

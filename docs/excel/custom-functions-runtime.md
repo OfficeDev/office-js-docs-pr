@@ -60,7 +60,7 @@ Within a custom function, you can use [WebSockets](https://developer.mozilla.org
 
 The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server.
 
-```typescript
+```JavaScript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
