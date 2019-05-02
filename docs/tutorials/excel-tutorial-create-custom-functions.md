@@ -1,5 +1,5 @@
 ---
-title: Excel custom functions tutorial (preview)
+title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
 ms.date: 05/02/2019
 ms.prod: excel
@@ -8,7 +8,7 @@ ms.topic: tutorial
 localization_priority: Normal
 ---
 
-# Tutorial: Create custom functions in Excel (preview)
+# Tutorial: Create custom functions in Excel
 
 Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`. You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
 
@@ -18,8 +18,6 @@ In this tutorial, you will:
 > * Use a prebuilt custom function to perform a simple calculation.
 > * Create a custom function that gets data from the web.
 > * Create a custom function that streams real-time data from the web.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Prerequisites
 
@@ -31,7 +29,7 @@ In this tutorial, you will:
 
 ## Create a custom functions project
 
- To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out.
+ To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
 
 1. Run the following command and then answer the prompts as follows.
     
@@ -70,7 +68,7 @@ npm run start:desktop
 ```
 
 > [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides. 
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
 
 # [Excel Online](#tab/excel-online)
 
@@ -81,7 +79,7 @@ npm run start:web
 ```
 
 > [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides.
 
 To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
 

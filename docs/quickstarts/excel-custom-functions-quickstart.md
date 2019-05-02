@@ -1,7 +1,7 @@
 ---
 ms.date: 05/02/2019
 description: Developing custom functions in Excel quick start guide.
-title: Custom functions quick start (preview)
+title: Custom functions quick start
 ms.prod: excel
 localization_priority: Normal
 ---
