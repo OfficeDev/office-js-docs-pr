@@ -27,11 +27,11 @@ Generally, these errors correspond to the errors you might already be familiar w
 - A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
 - A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
 
+## Clear the Office cache
+
+Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see the "Clear the Office cache" section in the article [Validate and troubleshoot issues with your manifest](https://docs.microsoft.com/office/dev/add-ins/testing/troubleshoot-manifest?branch=master#clear-the-office-cache)
+
 ## Common issues
-
-### My add-in won't load: verify certificates
-
-If your add-in fails to install, verify that the SSL certificates are configured correctly for the web server that's hosting your add-in. Typically if there is a problem with SSL certificates, you will see an error message in Excel warning you that your add-in could not be installed properly. For more information, see [Adding self-signed certificates as trusted root certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ### My functions won't load: associate functions
 
@@ -63,6 +63,10 @@ If you see the error "We can't open this add-in from localhost," you will need t
 ### Ensure promises return
 
 When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #BUSY!. Check your functions to make sure that any promises are properly returning a result to a cell.
+
+### Error: The dev server is already running on port 3000
+
+Sometimes when running `npm start` you may see an error that the dev server is already running on port 3000 (or whichever port your add-in uses). You can stop the dev server by running `npm stop` or by closing the node window. But in some cases in can take a few minutes for the dev server to actually stop running.
 
 ## Reporting Feedback
 
