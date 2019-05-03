@@ -1,5 +1,5 @@
 ---
-ms.date: 04/28/2019
+ms.date: 05/03/2019
 description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices (preview)
 localization_priority: Normal
@@ -10,14 +10,6 @@ localization_priority: Normal
 This article describes best practices for developing custom functions in Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-## Troubleshooting
-
-1. If you are testing your add-in in Office on Windows, you should enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues.
-
-2. Your add-in will not load if one or more custom functions conflicts with a previously registered add-in's custom functions. In this case, you can either remove the existing add-in, or if you encounter this error while developing an add-in, you can specify a different namespace name in your manifest.
-
-3. To report feedback to the Excel Custom Functions team about this method of troubleshooting, send the team feedback. To do this, select **File | Feedback | Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
 
 ## Associating function names with JSON metadata
 
@@ -50,7 +42,7 @@ Keep in mind the following best practices when creating custom functions in your
 
 * In the JavaScript file, specify a custom function association using `CustomFunctions.associate` after each function.
 
-The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file, which is a best practices when writing JSON by hand. You only need to add this JSON if you are preparing your own JSON file by hand and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](#custom-functions-json-autogeneration.md).
+The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file, which is a best practices when writing JSON by hand. You only need to add this JSON if you are preparing your own JSON file by hand and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```json
 {
@@ -70,75 +62,16 @@ The following sample shows the JSON metadata that corresponds to the functions d
 }
 ```
 
-## Declaring optional parameters
-
-In Excel for Windows, you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
-
-To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s Formula UI.
-
-```json
-{
-    "id": "ADD",
-    "name": "ADD",
-    "description": "Add two numbers",
-    "helpUrl": "http://www.contoso.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-        },
-    "parameters": [
-        {
-            "name": "first",
-            "description": "first number to add",
-            "type": "number",
-            "dimensionality": "scalar"
-        },
-        {
-            "name": "second",
-            "description": "second number to add",
-            "type": "number",
-            "dimensionality": "scalar",
-        },
-        {
-            "name": "third",
-            "description": "third optional number to add",
-            "type": "number",
-            "dimensionality": "scalar",
-            "optional": true
-        }
-    ],
-    "options": {
-        "sync": false
-    }
-}
-```
-
-When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to 98052. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
-
-```js
-function getWeatherReport(zipCode, dayOfWeek)
-{
-  if (zipCode === undefined) {
-      zipCode = "98052";
-  }
-
-  if (dayOfWeek === undefined) {
-    dayOfWeek = "Wednesday";
-  }
-
-  // Get weather report for specified zipCode and dayOfWeek
-  // ...
-}
-```
-
 ## Additional considerations
 
 In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the [JavaScript runtime](custom-functions-runtime.md), custom functions cannot access the DOM.
 
+## Next steps
+Learn how to [perform web requests with custom functions](custom-functions-web-reqs.md).
+
 ## See also
 
-* [Create custom functions in Excel](custom-functions-overview.md)
+* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

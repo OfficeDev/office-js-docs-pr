@@ -1,5 +1,5 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/03/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -11,35 +11,23 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-The following illustration shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function is a clock. Entering `=CONTOSO.CLOCK` gives you the present time, which updates itself once every second. `CONTOSO` is an optional namespace added to better identify the CLOCK function from possible other CLOCK functions in other add-ins. 
+The following animated image shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
-<img alt="animated image showing an end user inserting the CONTOSO.CLOCK custom function into a cell of an Excel worksheet" src="../images/ClockFunction.gif" />
+<img alt="animated image showing an end user inserting the CONTOSO.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
 
-The following code defines the custom function `=CLOCK`.
+The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 
 ```js
 /**
- * Displays the current time once a second.
+ * Returns the volume of a sphere. 
  * @customfunction
- * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ * @param {number} radius
  */
-function clock(invocation) {
-  const timer = setInterval(() => {
-    const time = currentTime();
-    invocation.setResult(time);
-  }, 1000);
-
-  invocation.onCanceled = () => {
-    clearInterval(timer);
-  };
+function sphereVolume(radius) {
+  const pi = 3.14159265
+  return Math.pow(radius, 3)*4*pi
 }
-
-function currentTime() {
-  return new Date().toLocaleTimeString();
-}
-
-CustomFunctions.associate("CLOCK", clock);
-CustomFunctions.associate("CURRENTTIME", currentTime);
+CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 ```
 
 > [!NOTE]
@@ -67,8 +55,8 @@ The following code also provides code comments which define the function. The re
 /**
  * Adds two numbers.
  * @customfunction 
- * @param first First number
- * @param second Second number
+ * @param first First number.
+ * @param second Second number.
  * @returns The sum of the two numbers.
  */
 
@@ -147,115 +135,24 @@ The following basic XML markup shows an example of the `<ExtensionPoint>` and `<
 > [!NOTE]
 > Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.
 
-## Declaring a volatile function
-
-[Volatile functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
-
-Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel's volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
-
-Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.
-
-To declare a function volatile, add `"volatile": true` within the `options` object  for the function in the JSON metadata file, as shown in the following code sample. Note that a function cannot be marked both `"streaming": true` and `"volatile": true`; in the case where both are marked `true` the volatile option will be ignored.
-
-```json
-{
- "id": "TOMORROW",
-  "name": "TOMORROW",
-  "description":  "Returns tomorrow’s date",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-      "type": "string",
-      "dimensionality": "scalar"
-  },
-  "options": {
-      "volatile": true
-  }
-}
-```
-
 ## Coauthoring
 
 Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
-## Working with ranges of data
-
-Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
-
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
-
-```js
-function secondHighest(values){
-  let highest = values[0][0], secondHighest = values[0][0];
-  for(var i = 0; i < values.length; i++){
-    for(var j = 1; j < values[i].length; j++){
-      if(values[i][j] >= highest){
-        secondHighest = highest;
-        highest = values[i][j];
-      }
-      else if(values[i][j] >= secondHighest){
-        secondHighest = values[i][j];
-      }
-    }
-  }
-  return secondHighest;
-}
-```
-
-## Determine which cell invoked your custom function
-
-In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
-
-- Formatting ranges: Use the cell's address as the key to store information in the [Office.Storage object](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from the `Office.Storage` object.
-- Displaying cached values: If your function is used offline, display stored cached values from the `Storage` object using `onCalculated`.
-- Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
-
-The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this if you were to write this JSON file by hand. You can also use the `@requiresAddress` tag if automatically generating your JSON file. For more details, see [JSON Autogeneration](custom-functions-json-autogeneration.md).
-
-```JSON
-{
-   "id": "ADDTIME",
-   "name": "ADDTIME",
-   "description": "Display current date and add the amount of hours to it designated by the parameter",
-   "helpUrl": "http://www.contoso.com",
-   "result": {
-      "type": "number",
-      "dimensionality": "scalar"
-   },
-   "parameters": [
-      {
-         "name": "Additional time",
-         "description": "Amount of hours to increase current date by",
-         "type": "number",
-         "dimensionality": "scalar"
-      }
-   ],
-   "options": {
-      "requiresAddress": true
-   }
-}
-```
-
-In the script file (**./src/functions/functions.js** or **./src/functions/functions.ts**), you'll also need to add a `getAddress` function to find a cell's address. This function may take parameters, as shown in the following sample as `parameter1`. The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.
-
-```js
-function getAddress(parameter1, invocationContext) {
-    return invocationContext.address;
-}
-```
-
-By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
-
 ## Known issues
 
 See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
-## See also
+## Next steps
 
-* [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Custom functions debugging](custom-functions-debugging.md)
+Want to try out custom functions? Check out the simple [custom functions quick start](../quickstarts/excel-custom-functions-quickstart.md) or the more in-depth [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md) if you haven't already.
+
+Ready to read more about the capabilities custom functions? Learn about an overview of [the custom functions architecture](custom-functions-architecture.md).
+
+## See also 
+* [Custom functions requirements](custom-functions-requirements.md)
+* [Naming guidelines](custom-functions-naming.md)
+* [Best practices](custom-functions-best-practices.md)
+* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)

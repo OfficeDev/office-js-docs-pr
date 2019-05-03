@@ -1,5 +1,5 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/02/2019
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions (preview)
 localization_priority: Normal
@@ -7,9 +7,11 @@ localization_priority: Normal
 
 # Runtime for Excel custom functions (preview)
 
-Custom functions use a new JavaScript runtime that differs from the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes new APIs that you can use to perform common web-based actions within custom functions such as requesting external data or exchanging data over a persistent connection with a server. The JavaScript runtime also provides access to new APIs in the `OfficeRuntime` namespace that can be used within custom functions or by other parts of an add-in to store data or display a dialog box. This article describes how to use these APIs within custom functions and also outlines additional considerations to keep in mind as you develop custom functions.
+Custom functions use a new JavaScript runtime that differs from the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes new APIs that you can use to perform common web-based actions within custom functions such as requesting external data or exchanging data over a persistent connection with a server.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+The JavaScript runtime also provides access to new APIs in the `OfficeRuntime` namespace that can be used within custom functions or by other parts of an add-in to store data or display a dialog box. This article describes how to use these APIs within custom functions and also outlines additional considerations to keep in mind as you develop custom functions.
 
 ## Requesting external data
 
@@ -58,9 +60,9 @@ Within a custom function, you can use [WebSockets](https://developer.mozilla.org
 
 ### WebSockets example
 
-The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server. 
+The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server.
 
-```typescript
+```JavaScript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
@@ -72,14 +74,14 @@ ws.onerror = function (error) {
 
 ## Storing and accessing data
 
-Within a custom function (or within any other part of an add-in), you can store and access data by using the `Office.storage` object. `Office.storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Office.storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
+Within a custom function (or within any other part of an add-in), you can store and access data by using the `Office.storage` object. `Storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
-`Office.storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `Office.storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (e.g. www.contoso.com/addin1, www.contoso.com/addin2), they are also permitted to share information back and forth through `Office.storage`. Note that add-ins which have different subdomains will have different instances of `Office.storage` (e.g. subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2).
+`Storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (e.g. www.contoso.com/addin1, www.contoso.com/addin2), they are also permitted to share information back and forth through `storage`. Note that add-ins which have different subdomains will have different instances of `storage` (e.g. subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2).
 
-Because `Office.storage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
+Because `storage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
 
-The following methods are available on the `Office.storage` object:
- 
+The following methods are available on the `storage` object:
+
  - `getItem`
  - `getItems`
  - `setItem`
@@ -93,7 +95,7 @@ The following methods are available on the `Office.storage` object:
 
 ### Office.storage example
 
-The following code sample calls the `Office.storage.setItem` function to set a key and value into `Office.storage`.
+The following code sample calls the `Office.storage.setItem` function to set a key and value into `storage`.
 
 ```JavaScript
 function StoreValue(key, value) {
@@ -110,10 +112,12 @@ function StoreValue(key, value) {
 
 In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the JavaScript runtime, custom functions cannot access the DOM.
 
+## Next steps
+Learn some crucial [best practices for custom functions](custom-functions-best-practices.md).
+
 ## See also
 
 * [Create custom functions in Excel](custom-functions-overview.md)
-* [Custom functions metadata](custom-functions-json.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Custom functions architecture](custom-functions-architecture.md)
+* [Display a dialog in custom functions](custom-functions-dialog.md)
+* [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

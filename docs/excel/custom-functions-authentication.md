@@ -1,41 +1,44 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/03/2019
 description: Authenticate users using custom functions in Excel.
-title: Authentication for Custom Functions
+title: Authentication for custom functions ([review)
+localization_priority: Priority
 ---
 
-# Authentication
+# Authentication for custom functions (preview)
 
 In some scenarios your custom function will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, you should be aware that custom functions run in a separate runtime from the task pane and other UI elements of your add-in. Because of this, you'll need to pass data back and forth between the two runtimes using the `Office.Storage` object and the Dialog API.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
   
 ## Office.Storage object
 
 The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes by using [Office.Storage](/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data.
 
-Additionally, there is a benefit to using the `Storage` object; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.
+Additionally, there is a benefit to using the `storage` object; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.
 
 ### Suggested usage
 
-When you need to authenticate either from the task pane or a custom function, check `Office.Storage` to see if the access token was already acquired. If not, use the dialog API to authenticate the user, retrieve the access token, and then store the token in `Office.Storage` for future use.
+When you need to authenticate either from the task pane or a custom function, check `storage` to see if the access token was already acquired. If not, use the dialog API to authenticate the user, retrieve the access token, and then store the token in `storage` for future use.
 
 ## Dialog API
 
-If a token doesn't exist, you should use the Dialog API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored in `Office.Storage`.
+If a token doesn't exist, you should use the Dialog API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored in `storage`.
 
 > [!NOTE]
 > The custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use `Officeruntime.Dialog` to authenticate users in the custom functions runtime.
 
-For information on how to use the `OfficeRuntime.Dialog`, see [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog).
+For information on how to use the `Dialog` object, see [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog).
 
-When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `Office.Storage`.
+When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `Office.storage`.
 
 The following diagram outlines this basic process. Note that the dotted line indicates that while they perform separate actions, custom functions and your add-in's task pane are both part of your add-in as a whole.
 
 1. You issue a custom function call from a cell in an Excel workbook.
-2. The custom function uses `Officeruntime.Dialog` to pass your user credentials to a website.
+2. The custom function uses `Dialog` to pass your user credentials to a website.
 3. This website then returns an access token to the custom function.
-4. Your custom function then sets this access token to the `Office.Storage`.
-5. Your add-in's task pane accesses the token from `Office.Storage`.
+4. Your custom function then sets this access token to the `storage`.
+5. Your add-in's task pane accesses the token from `storage`.
 
 ![Diagram of custom function using dialog API to get access token, and then share token with task pane through the Office.Storage API.](../images/authentication-diagram.png "Authentication diagram.")
 
@@ -43,7 +46,7 @@ The following diagram outlines this basic process. Note that the dotted line ind
 
 The following examples are from the [Using Office.Storage in custom functions](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) code sample. Refer to this code sample for a complete example of sharing data between custom functions and the task pane.
 
-If the custom function authenticates, then it receives the access token and will need to store it in `Office.Storage`. The following code sample shows how to call the `Office.Storage.setItem` method to store a value. The `StoreValue` function is a custom function that for example purposes stores a value from the user. You can modify this to store any token value you need.
+If the custom function authenticates, then it receives the access token and will need to store it in `storage`. The following code sample shows how to call the `storage.setItem` method to store a value. The `storeValue` function is a custom function that for example purposes stores a value from the user. You can modify this to store any token value you need.
 
 ```js
 /**
@@ -54,16 +57,16 @@ If the custom function authenticates, then it receives the access token and will
  */
 function storeValue(key, value) {
   return OfficeRuntime.storage.setItem(key, value).then(function (result) {
-      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+      return "Success: Item with key '" + key + "' saved to storage.";
   }, function (error) {
-      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+      return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
 }
 
 CustomFunctions.associate("STOREVALUE", storeValue);
 ```
 
-When the task pane needs the access token, it can retrieve the token from `Office.Storage`. The following code sample shows how to use the `Office.Storage.getItem` method to retrieve the token.
+When the task pane needs the access token, it can retrieve the token from `storage`. The following code sample shows how to use the `storage.getItem` method to retrieve the token.
 
 ```js
 /**
@@ -93,9 +96,12 @@ Avoid using the following locations to store data when developing custom functio
 - `localStorage`: Custom functions do not have access to the global `window` object and therefore have no access to data stored in `localStorage`.
 - `Office.context.document.settings`:  This location is not secure and information can be extracted by anyone using the add-in.
 
+## Next steps
+Learn about the [dialog API for custom functions](custom-functions-dialog.md).
+
 ## See also
 
-* [Custom functions metadata](custom-functions-json.md)
+* [Custom functions architecture](custom-functions-architecture.md)
+* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Excel custom functions tutorial](excel-tutorial-custom-functions.md)

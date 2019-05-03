@@ -1,14 +1,16 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/03/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions (preview)
 localization_priority: Priority
 ---
-# Troubleshoot custom functions
+# Troubleshoot custom functions (preview)
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
 
-To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as not [verifying SSL certificates](#my-add-in-wont-load-verify-certificates) properly, [leaving promises unresolved](#ensure-promises-return), and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return) and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
 
 ## Enable runtime logging
 
@@ -23,12 +25,9 @@ Generally, these errors correspond to the errors you might already be familiar w
 - A `#NAME` error generally means there has been an issue registering your functions.
 - A `#VALUE` error typically indicates an error in the functions' script file.
 - A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
+- A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
 
 ## Common issues
-
-### My add-in won't load: verify certificates
-
-If your add-in fails to install, verify that the SSL certificates are configured correctly for the web server that's hosting your add-in. Typically if there is a problem with SSL certificates, you will see an error message in Excel warning you that your add-in could not be installed properly. For more information, see [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ### My functions won't load: associate functions
 
@@ -61,7 +60,7 @@ If you see the error "We can't open this add-in from localhost," you will need t
 
 When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #BUSY!. Check your functions to make sure that any promises are properly returning a result to a cell.
 
-## Reporting Feedback
+## Reporting feedback
 
 If you are encountering issues that aren't documented here, let us know. There are two ways to report issues.
 
@@ -73,10 +72,14 @@ If using Excel for Windows or Mac, you can report feedback to the Office extensi
 
 Feel free to submit an issue you encounter either through the "Content feedback" feature at the bottom of any documentation page, or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
+## Next steps
+Learn how to [debug your custom functions](custom-functions-debugging.md).
+
 ## See also
 
-* [Custom functions metadata](custom-functions-json.md)
+* [Custom functions metadata autogeneration](custom-functions-json-autogeneration.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

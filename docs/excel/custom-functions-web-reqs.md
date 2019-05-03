@@ -1,13 +1,15 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/03/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions (preview)
 localization_priority: Priority
 ---
 
-# Receive and handle data with custom functions
+# Receive and handle data with custom functions (preview)
 
-One of the ways that custom functions enhance Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets). Custom functions can request data through XHR and fetch requests as well as stream this data in real time.
+One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets). Custom functions can request data through XHR and `fetch` requests as well as stream this data in real time.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 The documentation below illustrates some samples of web requests, but to build a streaming function for yourself, try the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).
 
@@ -65,7 +67,7 @@ For another sample of an XHR request with more context, see the `getFile` functi
 
 ### Fetch example
 
-In the following code sample, the stockPriceStream function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds. For more details about this sample and to get the accompanying JSON, see the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).
+In the following code sample, the `stockPriceStream` function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds. For more details about this sample, see the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).
 
 ```js
 /**
@@ -179,11 +181,16 @@ CustomFunctions.associate("INCREMENT", increment);
 > - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
 > - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
+## Next steps
+Learn about [different parameter types your functions can use](custom-functions-parameter-options.md) Discover how to [batch multiple API calls](custom-functions-batching.md).
+
 ## See also
 
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Custom functions metadata](custom-functions-json.md)
+* []
+* [Volatile values in functions](custom-functions-volatile.md)
 * [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+* [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
+* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

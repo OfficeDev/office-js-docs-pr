@@ -1,5 +1,5 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/03/2019
 description: Debug your custom functions in Excel.
 title: Custom functions debugging (preview)
 localization_priority: Normal
@@ -25,7 +25,7 @@ On Mac:
 
 ## Requirements
 
-Before starting to debug, you should use the [Yeoman generator for Office add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project and ensure that you've trusted the certificate that the Yeoman generator provides. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). For information about trusting the certificate that the Yeoman generator provides, see [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+Before starting to debug, you should use the [Yeoman generator for Office add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). 
 
 ## Use the VS Code debugger for Excel Desktop
 
@@ -38,7 +38,7 @@ You can use VS Code to debug custom functions in Office Excel on the desktop.
 
 1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
 2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-3. Choose **Terminal > Run Task** and type or select **Dev Server**. 
+3. Choose **Terminal > Run Task** and type or select **Dev Server**.
 
 ### Start the VS Code debugger
 
@@ -142,7 +142,7 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
     For Excel Online you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
     
 4. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-5. In developer tools, open your source code script file (functions.js or functions.ts). Your custom functions code may be located near the end of the file.
+5. In developer tools, open your source code script file (**functions.js** or **functions.ts**). Your custom functions code may be located near the end of the file.
 6. In the custom function source code, apply a breakpoint by selecting a line of code.
 
 If you need to change the code you can make edits in Visual Studio and save the changes. Refresh the browser to see the changes loaded.
@@ -160,10 +160,13 @@ You can use the following tasks to start debugging on desktop or online.
 - `npm run start:web`: Starts Excel Online and sideloads your add-in.
 - `npm run stop`: Stops Excel and debugging.
 
+## Next steps
+Learn about [authentication practices in custom functions](custom-functions-authentication.md). Or, review [custom function's unique architecture](custom-functions-architecture.md).
+
 ## See also
 
-* [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Custom functions troubleshooting](custom-functions-troubleshooting.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
