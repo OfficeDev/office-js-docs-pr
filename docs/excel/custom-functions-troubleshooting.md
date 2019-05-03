@@ -10,7 +10,7 @@ When developing custom functions, you may encounter errors in the product while 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as not [verifying ssl certificates](#my-add-in-wont-load-verify-certificates) properly, [leaving promises unresolved](#ensure-promises-return), and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
+To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return) and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
 
 ## Enable runtime logging
 
@@ -68,7 +68,7 @@ When Excel is waiting for a custom function to complete, it displays #BUSY! in t
 
 Sometimes when running `npm start` you may see an error that the dev server is already running on port 3000 (or whichever port your add-in uses). You can stop the dev server by running `npm stop` or by closing the node window. But in some cases in can take a few minutes for the dev server to actually stop running.
 
-## Reporting Feedback
+## Reporting feedback
 
 If you are encountering issues that aren't documented here, let us know. There are two ways to report issues.
 
