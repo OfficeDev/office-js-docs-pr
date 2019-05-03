@@ -156,7 +156,7 @@ Learn the [best practices for naming your function](custom-functions-naming.md) 
 
 ## See also
 
-* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogenerate.md)
+* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Custom functions parameter options](custom-functions-parameter-options.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

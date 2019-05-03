@@ -1,5 +1,5 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/03/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions
 localization_priority: Priority
@@ -79,7 +79,7 @@ Learn how to [debug your custom functions](custom-functions-debugging.md).
 
 ## See also
 
-* [Custom functions metadata autogeneration](custom-functions-json-autogenerate.md)
+* [Custom functions metadata autogeneration](custom-functions-json-autogeneration.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
