@@ -1,11 +1,11 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/03/2019
 description: Learn to implement volatile and offline streaming custom functions.
 title: Volatile values in functions (preview)
 localization_priority: Normal
 ---
 
-## Volatile values in functions (preview)
+# Volatile values in functions (preview)
 
 Volatile functions are functions in which the value changes each time the cell is calculated. The value can change even if none of the function's arguments change. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
 
