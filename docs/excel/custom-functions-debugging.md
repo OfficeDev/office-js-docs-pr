@@ -25,7 +25,7 @@ On Mac:
 
 ## Requirements
 
-Before starting to debug, you should create a custom functions add-in project. You can do this using the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). For instructions on trusting certificates, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+Before starting to debug, you should use the [Yeoman generator for Office add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). 
 
 ## Use the VS Code debugger for Excel Desktop
 
@@ -133,11 +133,11 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
 
 3. If you want to start your add-in in the desktop version of Excel, run the following command
     
-    `npm run start desktop`
+    `npm run start:desktop`
     
     Or if you prefer to start your add-in in Excel Online run the following command
     
-    `npm run start web`
+    `npm run start:web`
     
     For Excel Online you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
     
@@ -156,8 +156,8 @@ There are several build tasks available:
 - `npm run dev-server`: runs the web server used for development
 
 You can use the following tasks to start debugging on desktop or online.
-- `npm run start desktop`: Starts Excel on desktop and sideloads your add-in.
-- `npm run start web`: Starts Excel Online and sideloads your add-in.
+- `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in.
+- `npm run start:web`: Starts Excel Online and sideloads your add-in.
 - `npm run stop`: Stops Excel and debugging.
 
 ## Next steps

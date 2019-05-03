@@ -1,29 +1,23 @@
 ---
-title: Build an Excel add-in using Vue
+title: Build an Excel task pane add-in using Vue
 description: 
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
 ---
 
-# Build an Excel add-in using Vue
+# Build an Excel task pane add-in using Vue
 
-In this article, you'll walk through the process of building an Excel add-in using Vue and the Excel JavaScript API.
+In this article, you'll walk through the process of building an Excel task pane add-in using Vue and the Excel JavaScript API.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Install the [Vue CLI](https://github.com/vuejs/vue-cli) globally.
 
     ```command&nbsp;line
     npm install -g vue-cli
-    ```
-
-- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
     ```
 
 ## Generate a new Vue app
@@ -58,11 +52,11 @@ Each add-in requires a manifest file to define its settings and capabilities.
     yo office
     ```
 
-    - **Choose a project type:** `Office Add-in containing the manifest only`
-    - **What do you want to name your add-in?:** `My Office Add-in`
-    - **Which Office client application would you like to support?:** `Excel`
+    - **Choose a project type:** `Office Add-in project containing the manifest only`
+    - **What do you want to name your add-in?** `My Office Add-in`
+    - **Which Office client application would you like to support?** `Excel`
 
-    ![Yeoman generator](../images/yo-office.png)
+    ![Yeoman generator](../images/yo-office-manifest-only-vue.png)
 
     After you complete the wizard, the generator creates the manifest file.
 
@@ -209,7 +203,7 @@ To enable HTTPS for your app, open the file **package.json** in the root folder 
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using Vue! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
+Congratulations, you've successfully created an Excel task pane add-in using Vue! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
 > [Excel add-in tutorial](../tutorials/excel-tutorial.md)

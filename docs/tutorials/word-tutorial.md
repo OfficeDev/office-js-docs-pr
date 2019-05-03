@@ -39,7 +39,7 @@ Complete the following steps to create the Word add-in project that you'll use a
 
 3. Run the command `npm install` to install the tools and libraries listed in the package.json file. 
 
-4. Carry out the steps in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
+4. Carry out the steps in [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
 
 ## Insert a range of text
 
