@@ -1,10 +1,10 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/03/2019
 description: Learn how to use custom functions on different platforms. 
-title: Custom functions requirements
+title: Custom functions requirements (preview)
 localization_priority: Priority
 ---
-# Custom functions requirements
+# Custom functions requirements (preview)
 
 Custom functions are currently available on the following platforms:
 

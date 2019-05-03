@@ -1,17 +1,19 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/03/2019
 description: Create custom functions in Excel using JavaScript.
-title: Create custom functions in Excel
+title: Create custom functions in Excel (preview)
 localization_priority: Priority
 ---
 
-# Create custom functions in Excel
+# Create custom functions in Excel (preview)
 
 Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. This article describes how to create custom functions in Excel.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 The following animated image shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
-<img alt="animated image showing an end user inserting the CONTOSO.CLOCK custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
+<img alt="animated image showing an end user inserting the CONTOSO.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
 
 The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 

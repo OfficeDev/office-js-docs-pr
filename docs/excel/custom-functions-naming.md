@@ -1,12 +1,14 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/03/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
-title: Naming guidelines for custom functions in Excel
+title: Naming guidelines for custom functions in Excel (preview)
 localization_priority: Normal
 ---
-# Naming guidelines
+# Naming guidelines (preview)
 
-A custom function is identified by an **id** and **name** property in the JSON metadata file. 
+A custom function is identified by an **id** and **name** property in the JSON metadata file.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 - The function `id` is used to uniquely identify custom functions in your JavaScript code. 
 - The function `name` is used as the display name that appears to a user in Excel. 

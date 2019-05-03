@@ -1,10 +1,10 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/03/2019
 description: Debug your custom functions in Excel.
-title: Custom functions debugging
+title: Custom functions debugging (preview)
 localization_priority: Normal
 ---
-# Custom functions debugging
+# Custom functions debugging (preview)
 
 Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
 

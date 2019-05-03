@@ -1,11 +1,11 @@
 ---
-ms.date: 05/01/2019
+ms.date: 05/03/2019
 description: Discover the latest updates to Excel custom functions.
-title: Custom functions changelog
+title: Custom functions changelog (preview)
 localization_priority: Normal
 ---
 
-# Custom functions changelog
+# Custom functions changelog (preview)
 
 This changelog provides the most up-to-date information about any changes to the product.
 

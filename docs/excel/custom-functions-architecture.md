@@ -1,12 +1,14 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/03/2019
 description: Learn about Excel custom functions' runtime. 
-title: Custom functions architecture
+title: Custom functions architecture (preview)
 localization_priority: Priority
 ---
-# Custom functions architecture
+# Custom functions architecture (preview)
 
  Custom functions are with their own unique runtime that prioritizes execution of calculations. This article will cover the differences between the custom functions runtime and the browser-based JavaScript engine which powers most other parts of your add-in.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Custom functions runtime
 
