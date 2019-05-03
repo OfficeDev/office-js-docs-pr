@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 04/15/2019
+ms.date: 04/30/2019
 localization_priority: Normal
 ---
 
@@ -57,17 +57,11 @@ Excel.run(function (context) {
 
 Your add-in will have to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
 
-## Work with multiple ranges simultaneously (preview)
-
-> [!NOTE]
-> The `RangeAreas` object is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Work with multiple ranges simultaneously
 
 The `RangeAreas` object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-## Find special cells within a range (preview)
-
-> [!NOTE]
-> The `getSpecialCells` and `getSpecialCellsOrNullObject` methods are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Find special cells within a range
 
 The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
 
@@ -173,10 +167,7 @@ Excel.run(function (context) {
 })
 ```
 
-## Copy and paste (preview)
-
-> [!NOTE]
-> The `Range.copyFrom` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Copy and paste
 
 Range’s `copyFrom` function replicates the copy-and-paste behavior of the Excel UI. The range object that `copyFrom` is called on is the destination.
 The source to be copied is passed as a range or a string address representing a range.
@@ -237,10 +228,7 @@ Excel.run(function (context) {
 
 ![Data in Excel after range’s copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## Remove duplicates (preview)
-
-> [!NOTE]
-> The Range object's `removeDuplicates` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Remove duplicates
 
 The Range object's `removeDuplicates` function removes rows with duplicate entries in the specified columns. The function goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
 

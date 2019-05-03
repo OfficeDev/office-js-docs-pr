@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 04/29/2019
+ms.date: 05/01/2019
 localization_priority: Priority
 ---
 
@@ -67,7 +67,7 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### Insert a copy of an existing workbook into the current one
+### Insert a copy of an existing workbook into the current one (preview)
 
 > [!NOTE]
 > The `WorksheetCollection.addFromBase64` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
@@ -257,7 +257,7 @@ The Excel API also lets add-ins turn off calculations until `RequestContext.sync
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## Comments
+## Comments (preview)
 
 > [!NOTE]
 > The comment APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
@@ -305,7 +305,7 @@ To edit a comment or comment reply, set its `Comment.content` property or `Comme
 > [!TIP]
 > Comments can also be managed at the [Worksheet](/javascript/api/excel/excel.worksheet) level using the same techniques.
 
-## Save the workbook
+## Save the workbook (preview)
 
 > [!NOTE]
 > The `Workbook.save` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
@@ -322,7 +322,7 @@ To edit a comment or comment reply, set its `Comment.content` property or `Comme
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## Close the workbook
+## Close the workbook (preview)
 
 > [!NOTE]
 > The `Workbook.close` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]

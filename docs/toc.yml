@@ -275,26 +275,41 @@
         - name: Overview
           href: excel/custom-functions-overview.md
           displayName: Excel
-        - name: Architecture
-          href: excel/custom-functions-architecture.md
-          displayName: Excel
-        - name: Quickstart
+        - name: Quick Start
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
         - name: Tutorial
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
-        - name: Web requests
-          href: excel/custom-functions-web-reqs.md
+        - name: Architecture
+          href: excel/custom-functions-architecture.md
           displayName: Excel
-        - name: Runtime
-          href: excel/custom-functions-runtime.md
+        - name: Authentication
+          href: excel/custom-functions-authentication.md
           displayName: Excel
-        - name: Volatile functions
-          href: excel/custom-functions-volatile.md
+        - name: Batching
+          href: excel/custom-functions-batching.md
           displayName: Excel
-        - name: Custom functions parameter options
-          href: excel/custom-functions-parameter-options.md
+        - name: Best practices
+          href: excel/custom-functions-best-practices.md
+          displayName: Excel
+        - name: Changelog
+          href: excel/custom-functions-changelog.md
+          displayName: Excel
+        - name: Debugging
+          href: excel/custom-functions-debugging.md
+          displayName: Excel
+        - name: Dialog
+          href: excel/custom-functions-dialog.md
+          displayName: Excel
+        - name: Error handling
+          href: excel/custom-functions-errors.md
+          displayName: Excel
+        - name: Identify an equivalent XLL
+          href: excel/make-custom-functions-compatible-with-xll-udf.md
+          displayName: Excel
+        - name: Localization
+          href: excel/custom-functions-localize.md
           displayName: Excel
         - name: Metadata
           href: excel/custom-functions-json.md
@@ -302,41 +317,29 @@
         - name: Metadata generation
           href: excel/custom-functions-json-autogeneration.md
           displayName: Excel
-        - name: Best practices
-          href: excel/custom-functions-best-practices.md
+        - name: Naming guidelines
+          href: excel/custom-functions-naming.md
           displayName: Excel
-        - name: Debugging
-          href: excel/custom-functions-debugging.md
-          displayName: Excel
-        - name: Authentication
-          href: excel/custom-functions-authentication.md
-          displayName: Excel
-        - name: Dialog
-          href: excel/custom-functions-dialog.md
-          displayName: Excel
-        - name: Changelog
-          href: excel/custom-functions-changelog.md
-          displayName: Excel
-        - name: Error handling
-          href: excel/custom-functions-errors.md
+        - name: Parameter options
+          href: excel/custom-functions-parameter-options.md
           displayName: Excel
         - name: Requirements
           href: excel/custom-functions-requirements.md
           displayName: Excel
-        - name: Naming guidelines
-          href: excel/custom-functions-naming.md
+        - name: Runtime
+          href: excel/custom-functions-runtime.md
           displayName: Excel
-        - name: Localization
-          href: excel/custom-functions-localize.md
-          displayName: Excel
-        - name: Identify an equivalent XLL
-          href: excel/make-custom-functions-compatible-with-xll-udf.md
-          displayName: Excel
-        - name: Batching
-          href: excel/custom-functions-batching.md
+        - name: Save and share state
+          href: excel/custom-functions-save-state.md
           displayName: Excel
         - name: Troubleshooting
           href: excel/custom-functions-troubleshooting.md
+          displayName: Excel
+        - name: Volatile functions
+          href: excel/custom-functions-volatile.md
+          displayName: Excel
+        - name: Web requests
+          href: excel/custom-functions-web-reqs.md
           displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md

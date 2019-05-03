@@ -1,12 +1,14 @@
 ---
-ms.date: 04/28/2019
+ms.date: 05/03/2019
 description: Learn about Excel custom functions' runtime. 
 title: Custom functions architecture (preview)
 localization_priority: Priority
 ---
-# Custom functions architecture
+# Custom functions architecture (preview)
 
  Custom functions are with their own unique runtime that prioritizes execution of calculations. This article will cover the differences between the custom functions runtime and the browser-based JavaScript engine which powers most other parts of your add-in.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Custom functions runtime
 
@@ -19,9 +21,8 @@ The following table highlights the differences between the custom functions runt
 | Custom functions runtime 	| Browser engine runtime 	|
 |------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------	|
 | Supports returning a value from a cell 	| Supports Office.js APIs and UI elements 	|
-| Does not have `localStorage` object, instead uses `AsyncStorage` 	| Has `localStorage` object, can optionally use `AsyncStorage` object 	|
+| Does not have `localStorage` object, instead uses the `Office.storage` object. 	| Has `localStorage` object, can optionally use the `Office.storage` object. 	|
 | Does not support interacting with the DOM, or loading libraries that depend on the DOM such as jQuery.	| Supports interacting with the DOM and loading libraries that depend on the DOM. |
-
 
 ## Browser engine runtime
 
@@ -33,17 +34,20 @@ The browser engine runtime supports the Office.js APIs. Keep in mind that any of
 
 Your custom functions code cannot directly interact with code in other parts of your web add-in, like the task pane because they are in different runtimes. But in some scenarios you may need to share data, such as passing a token.
 
-`AsyncStorage` can be used to store data from your custom functions and get data from your task pane code. For more information about storing and sharing data, see [Saving and sharing state](custom-functions-overview.md#saving-and-sharing-state).
+The `Office.storage` object can be used to store data from your custom functions and get data from your task pane code. For more information about storing and sharing data, see [Save and share state](custom-functions-save-state.md).
 
-You can see a code sample using `AsyncStorage` in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
-For more general information about `AsyncStorage`, see [Custom functions runtime](./custom-functions-runtime.md).
+You can see a code sample using the `storage` object in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
+For more general information about the `storage` object, see [Custom functions runtime](./custom-functions-runtime.md).
 
-`AsyncStorage` can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
+The `storage` object can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
+
+## Next steps
+Learn more about how to [use the custom functions runtime](custom-functions-runtime.md).
 
 ## See also
 
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

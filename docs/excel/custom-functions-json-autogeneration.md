@@ -1,13 +1,15 @@
 ---
-ms.date: 04/25/2019
+ms.date: 05/03/2019
 description: Use JSDOC tags to dynamically create your custom functions JSON metadata.
-title: Create JSON metadata for custom functions (preview)
+title: Autogenerate JSON metadata for custom functions (preview)
 localization_priority: Priority
 ---
 
-# Create JSON metadata for custom functions (preview)
+# Autogenerate JSON metadata for custom functions (preview)
 
 When an Excel custom function is written in JavaScript or TypeScript, JSDoc tags are used to provide extra information about the custom function. The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md). Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.
 
@@ -178,11 +180,11 @@ A function can return a Promise, which will provide the value when the promise i
 
 Any other type will be treated as an error.
 
+## Next steps
+Learn about [naming conventions for custom functions](custom-functions-naming.md). Alternatively, learn how to [localize your functions](custom-functions-localize.md) which requires you to [write your JSON file by hand](custom-functions-json.md).
+
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Custom functions debugging](custom-functions-debugging.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

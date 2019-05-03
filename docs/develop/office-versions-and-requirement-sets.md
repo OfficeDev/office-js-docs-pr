@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: ''
-ms.date: 04/19/2019
+ms.date: 05/01/2019
 localization_priority: Priority
 ---
 
@@ -21,7 +21,6 @@ To identify the Office version that you're using, from within an Office applicat
 
 ![Checking your Office version](../images/office-version-number-ui.jpg)
 
-
 ## Office requirement sets availability
 
 Office Add-ins can use API requirement sets to determine whether the Office host supports the API members that it need to use. Requirement set support varies by Office host and the Office host version (see previous section).
@@ -32,7 +31,7 @@ In addition, other functionality such as add-in commands (ribbon extensibility) 
 
 An add-in can only use APIs in requirement sets that are supported by the version of Office host where the add-in is running. To know exactly which requirement sets are available for a specific Office host version, refer to the following host-specific requirement set articles:
 
-- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
+- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi, [CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
 - [Word JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [OneNote JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
 - [Understanding Outlook API requirement sets](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Mailbox)

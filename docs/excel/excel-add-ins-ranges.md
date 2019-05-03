@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (fundamental)
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/30/2019
 localization_priority: Priority
 ---
 
@@ -538,10 +538,7 @@ Excel.run(function (context) {
 
 Ranges can have formats applied to individual cells based on conditions. For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).
 
-## Find a cell using string matching (preview)
-
-> [!NOTE]
-> The Range object's `find` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Find a cell using string matching
 
 The `Range` object has a `find` method to search for a specified string within the range. It returns the range of the first cell with matching text. The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console. Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range. If you expect that the specified string may not exist in the range, use the [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) method instead, so your code gracefully handles that scenario.
 

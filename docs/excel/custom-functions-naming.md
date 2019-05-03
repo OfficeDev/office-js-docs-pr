@@ -1,24 +1,31 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/03/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
 title: Naming guidelines for custom functions in Excel (preview)
 localization_priority: Normal
 ---
-# Naming guidelines
+# Naming guidelines (preview)
 
-A custom function is identified by an **id** and **name** property in the JSON metadata file. The function id is used to uniquely identify custom functions in your JavaScript code. The function name is used as the display name that appears to a user in Excel. A function name can differ from the function ID, such as for localization purposes. But in general it should stay the same as the ID if there is no compelling reason for them to differ.
+A custom function is identified by an **id** and **name** property in the JSON metadata file.
 
-Function names and function IDs share some common requirements:
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-- Function ids may only use characters A through Z, numbers zero through nine, underscores, and periods.
+- The function `id` is used to uniquely identify custom functions in your JavaScript code. 
+- The function `name` is used as the display name that appears to a user in Excel. 
 
-- Function names may use any Unicode alphabetic characters, underscores, and periods.
+A function `name` can differ from the function `id`, such as for localization purposes. In general, a function's `name` should stay the same as the `id` if there is no compelling reason for them to differ.
 
-- They must start with a letter and have a minimum limit of three characters.
+A function's `name` and `id` share some common requirements:
 
-Excel uses uppercase letters for built-in function names (such as `SUM`). Therefore, consider using uppercase letters for your custom function names and function IDs as a best practice.
+- A function's `id` may only use characters A through Z, numbers zero through nine, underscores, and periods.
 
-Function names shouldn't be named the same as:
+- A function's `name` may use any Unicode alphabetic characters, underscores, and periods.
+
+- Both function `name` and `id` must start with a letter and have a minimum limit of three characters.
+
+Excel uses uppercase letters for built-in function names (such as `SUM`). Therefore, consider using uppercase letters for your custom function's `name` and `id` as a best practice.
+
+A function's `name` shouldn't be named the same as:
 
 - Any cells between A1 to XFD1048576 or any cells between R1C1 to R1048576C16384.
 
@@ -26,9 +33,9 @@ Function names shouldn't be named the same as:
 
 ## Naming conflicts
 
-If your function name is the same as a function name in an add-in that already exists, the **#REF!** error will appear in your workbook.
+If your function `name` is the same as a function `name` in an add-in that already exists, the **#REF!** error will appear in your workbook.
 
-To fix a name conflict, change the name in your add-in and try the function again. You can also uninstall the add-in with the conflicting name. Or, if you're testing your add-in in different environments, try using a different namespace to differentiate your function (such as NAMESPACE_NAMEOFFUNCTION).
+To fix a naming conflict, change the `name` in your add-in and try the function again. You can also uninstall the add-in with the conflicting name. Or, if you're testing your add-in in different environments, try using a different namespace to differentiate your function (such as `NAMESPACE_NAMEOFFUNCTION`).
 
 ## Best practices
 
@@ -39,9 +46,12 @@ To fix a name conflict, change the name in your add-in and try the function agai
 
 ## Localizing function names
 
-You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file. As a best practice, avoid giving your functions an id or name that is a built-in Excel function in another language as this could conflict with localized functions.
+You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file. As a best practice, avoid giving your functions an `id` or `name` that is a built-in Excel function in another language as this could conflict with localized functions.
 
 For full information on localizing, see [Localize custom functions](custom-functions-localize.md)
+
+## Next steps
+Learn about [error handling best practices](custom-functions-errors.md).
 
 ## See also
 

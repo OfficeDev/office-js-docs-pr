@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, OneNote, and Project.
-ms.date: 04/29/2019
+ms.date: 05/01/2019
 localization_priority: Priority
 ---
 
@@ -25,6 +25,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office Online</td>
     <td> - TaskPane<br>
         - Content<br>
+        - Custom Functions<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
     <td>
@@ -56,6 +57,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 365 for Windows</td>
     <td> - TaskPane<br>
         - Content<br>
+        - Custom Functions<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
     <td>
@@ -155,7 +157,8 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 365 for iPad</td>
     <td>- TaskPane<br>
-        - Content</td>
+        - Content<br>
+        - Custom Functions</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
@@ -184,6 +187,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 365 for Mac</td>
     <td>- TaskPane<br>
         - Content<br>
+        - Custom Functions<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
@@ -264,7 +268,52 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 
 *&ast; - Added with post-release updates.*
 
-<br/>
+## Custom Functions
+
+<table style="width:80%">
+  <tr>
+    <th style="width:10%">Platform</th>
+    <th style="width:10%">Extension points</th>
+    <th style="width:20%">API requirement sets</th>
+    <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
+  </tr>
+  <tr>
+    <td>Office Online</td>
+    <td>
+        - Custom Functions</td>
+    <td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Office 365 for Windows</td>
+    <td>
+        - Custom Functions</td>
+    <td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Office 365 for iPad</td>
+    <td>
+        - Custom Functions</td>
+    <td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Office 365 for Mac</td>
+    <td>
+        - Custom Functions</td>
+    <td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>
+    </td>
+  </tr>
+</table>
 
 ## Outlook
 

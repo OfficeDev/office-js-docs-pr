@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: ''
-ms.date: 04/10/2019
+ms.date: 05/02/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
@@ -44,7 +44,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| Access Web Apps<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|
+| Access Web Apps<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Binding.addHandlerAsync<br>Binding.removeHandlerAsync|
 
 ---
 

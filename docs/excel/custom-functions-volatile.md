@@ -1,13 +1,15 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/02/2019
 description: Learn to implement volatile and offline streaming custom functions.
 title: Volatile values in functions (preview)
 localization_priority: Normal
 ---
 
-## Volatile values in functions
+## Volatile values in functions (preview)
 
 Volatile functions are functions in which the value changes each time the cell is calculated. The value can change even if none of the function's arguments change. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
@@ -16,10 +18,11 @@ Custom functions allow you to create your own volatile functions, which may be u
 
 If choosing to autogenerate your JSON file, declare a volatile function with the JSDOC comment tag `@volatile`. From more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
+## Next steps
+Learn how to [save state in your custom functions](custom-functions-save-state.md).
+
 ## See also
 
-* [Create custom functions in Excel](custom-functions-overview.md)
+* [Custom functions parameter options](custom-functions-parameter-options.md)
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Create custom functions in Excel](custom-functions-overview.md)

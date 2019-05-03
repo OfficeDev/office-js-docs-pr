@@ -1,12 +1,14 @@
 ---
-ms.date: 04/18/2019
+ms.date: 05/03/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions (preview)
 localization_priority: Priority
 ---
-# Troubleshoot custom functions
+# Troubleshoot custom functions (preview)
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as not [verifying ssl certificates](#my-add-in-wont-load-verify-certificates) properly, [leaving promises unresolved](#ensure-promises-return), and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
 
@@ -18,7 +20,12 @@ If you are testing your add-in in Office on Windows, you should [enable runtime 
 
 Excel has a number of built-in error messages which are returned to a cell if there is calculation error. Custom functions only use the following error messages: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#BUSY!`.
 
-A `#NAME` error generally means there has been an issue registering your functions. A `#VALUE` error typically indicates an error in the functions' script file.
+Generally, these errors correspond to the errors you might already be familiar with in Excel. The are only a few exceptions specific to custom functions, listed here:
+
+- A `#NAME` error generally means there has been an issue registering your functions.
+- A `#VALUE` error typically indicates an error in the functions' script file.
+- A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
+- A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
 
 ## Common issues
 
@@ -33,7 +40,14 @@ In your custom functions' script file, you need to associate each custom functio
 The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
 
 ```js
-function add(first, second){
+/**
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
+ * @returns {number} The sum of the two numbers.
+ */
+function add(first, second) {
   return first + second;
 }
 
@@ -62,10 +76,14 @@ If using Excel for Windows or Mac, you can report feedback to the Office extensi
 
 Feel free to submit an issue you encounter either through the "Content feedback" feature at the bottom of any documentation page, or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
+## Next steps
+Learn how to [debug your custom functions](custom-functions-debugging.md).
+
 ## See also
 
-* [Custom functions metadata](custom-functions-json.md)
+* [Custom functions metadata autogeneration](custom-functions-json-autogeneration.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
