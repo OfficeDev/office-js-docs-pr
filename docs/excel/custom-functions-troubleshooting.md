@@ -10,7 +10,7 @@ When developing custom functions, you may encounter errors in the product while 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as not [verifying ssl certificates](#my-add-in-wont-load-verify-certificates) properly, [leaving promises unresolved](#ensure-promises-return), and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
+To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return) and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
 
 ## Enable runtime logging
 
@@ -28,10 +28,6 @@ Generally, these errors correspond to the errors you might already be familiar w
 - A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
 
 ## Common issues
-
-### My add-in won't load: verify certificates
-
-If your add-in fails to install, verify that the SSL certificates are configured correctly for the web server that's hosting your add-in. Typically if there is a problem with SSL certificates, you will see an error message in Excel warning you that your add-in could not be installed properly. For more information, see [Adding self-signed certificates as trusted root certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ### My functions won't load: associate functions
 
@@ -64,7 +60,7 @@ If you see the error "We can't open this add-in from localhost," you will need t
 
 When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #BUSY!. Check your functions to make sure that any promises are properly returning a result to a cell.
 
-## Reporting Feedback
+## Reporting feedback
 
 If you are encountering issues that aren't documented here, let us know. There are two ways to report issues.
 
