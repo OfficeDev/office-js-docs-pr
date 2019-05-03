@@ -66,7 +66,7 @@ When Excel is waiting for a custom function to complete, it displays #BUSY! in t
 
 ### Error: The dev server is already running on port 3000
 
-Sometimes when running `npm start` you may see an error that the dev server is already running on port 3000 (or whichever port your add-in uses). You can stop the dev server by running `npm stop` or by closing the node window. But in some cases in can take a few minutes for the dev server to actually stop running.
+Sometimes when running `npm start` you may see an error that the dev server is already running on port 3000 (or whichever port your add-in uses). You can stop the dev server by running `npm stop` or by closing the Node.js window. But in some cases in can take a few minutes for the dev server to actually stop running.
 
 ## Reporting feedback
 
