@@ -31,7 +31,7 @@ The following table shows which browser is used for the various platforms and op
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML 5 features such as media, recording, and location.
 
 > [!NOTE]
-> Until they are generally available, you need to be a Windows Insider to get a Windows version 1903 or greater, and you may need to be an Office Insider to get Office version 16.0.11629 or greater.
+> Until they are generally available, you need to be a Windows Insider to get a Windows version 1903 or greater, and you need to be an Office Insider to get Office version 16.0.11629 or greater.
 >
 > To join Windows Insiders:
 > 
