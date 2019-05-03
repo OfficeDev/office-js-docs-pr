@@ -61,6 +61,8 @@
   items:
   - name: Requirements for running add-ins
     href: concepts/requirements-for-running-office-add-ins.md
+  - name: Web viewers used by Office Add-ins
+    href: concepts/web-viewers-used-by-office-web-add-ins.md
   - name: Add-in development best practices
     href: concepts/add-in-development-best-practices.md
   - name: Add-in development lifecycle
