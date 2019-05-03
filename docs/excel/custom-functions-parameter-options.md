@@ -1,16 +1,18 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/03/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions (preview)
 localization_priority: Normal
 ---
 
-# Custom functions parameter options
+# Custom functions parameter options (preview)
 
-Custom functions are configurable with many different options for parameters: 
+Custom functions are configurable with many different options for parameters:
 - [Optional parameters](#custom-functions-optional-parameters)
 - [Range parameters](#range-parameters)
 - [Invocation context parameter](#invocation-parameter)
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Custom functions optional parameters
 
@@ -113,7 +115,7 @@ The parameter allows you to get the context of the invoking cell, which can be h
 
 ### Addressing cell's context parameter
 
-In some cases you need to get the address of the cell that invoked your custom function. This is useful in the following types of scenarios:
+In some cases you need to get the address of the cell that invoked your custom function. This is useful in the following scenarios:
 
 - Formatting ranges: Use the cell's address as the key to store information in [Office.storage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `Office.storage`.
 - Displaying cached values: If your function is used offline, display stored cached values from `Office.storage` using `onCalculated`.
@@ -138,10 +140,14 @@ CustomFunctions.associate("GETADDRESS", getAddress);
 
 By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
+## Next steps
+Learn how to [save state in your custom functions](custom-functions-save-state.md) or use [volatile values in your custom functions](custom-functions-volatile.md).
+
 ## See also
 
-* [Create custom functions in Excel](custom-functions-overview.md)
-* [Custom functions metadata](custom-functions-json.md)
+* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
+* [Custom functions metadata](custom-functions-json.md)
+* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

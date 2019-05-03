@@ -1,5 +1,5 @@
 ---
-ms.date: 03/29/2019
+ms.date: 05/03/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel (preview)
 localization_priority: Normal
@@ -7,10 +7,14 @@ localization_priority: Normal
 
 # Custom functions metadata (preview)
 
-When you define [custom functions](custom-functions-overview.md) within your Excel add-in, your add-in project includes a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users. This file is generated either:
+When you define [custom functions](custom-functions-overview.md) within your Excel add-in, your add-in project includes a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users. 
 
-- by you, in a handwritten JSON file
-- from the JSDoc comments you enter at the beginning of your function
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+This file is generated either:
+
+- By you, in a handwritten JSON file
+- From the JSDoc comments you enter at the beginning of your function
 
 Custom functions are registered when the user runs the add-in for the first time and after that are available to the same user in all workbooks.
 
@@ -18,9 +22,7 @@ This article describes the format of the JSON metadata file, assuming you are wr
 
 For information about the other files that you must include in your add-in project to enable custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-> Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
+Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
 ## Example metadata
 
@@ -59,7 +61,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 	  "description": "Get the day of the week",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
-		"type": "string"
+		"dimensionality": "scalar"
 	  },
 	  "parameters": []
 	},
@@ -69,7 +71,6 @@ The following example shows the contents of a JSON metadata file for an add-in t
 	  "description":  "Count up from zero",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
-		"type": "number",
 		"dimensionality": "scalar"
 	  },
 	  "parameters": [
@@ -91,7 +92,6 @@ The following example shows the contents of a JSON metadata file for an add-in t
 	  "description":  "Get the second highest number from a range",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
-		"type": "number",
 		"dimensionality": "scalar"
 	  },
 	  "parameters": [
@@ -155,10 +155,12 @@ The `result` object defines the type of information that is returned by the func
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
 
+## Next steps
+Learn the [best practices for naming your function](custom-functions-naming.md) or discover how to [localize your function](custom-functions-localize.md) using the previously described handwritten JSON method.
+
 ## See also
 
-* [Create custom functions in Excel](custom-functions-overview.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+* [Custom functions parameter options](custom-functions-parameter-options.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
