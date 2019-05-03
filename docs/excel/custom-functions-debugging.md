@@ -1,10 +1,10 @@
 ---
 ms.date: 05/03/2019
 description: Debug your custom functions in Excel.
-title: Custom functions debugging (preview)
+title: Custom functions debugging
 localization_priority: Normal
 ---
-# Custom functions debugging (preview)
+# Custom functions debugging
 
 Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
 
@@ -18,14 +18,12 @@ On Mac:
 - [Excel Online and browser tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
 - [Command line](#use-the-command-line-tools-to-debug)
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 > [!NOTE]
 > For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#use-the-command-line-tools-to-debug) at the end of this article.
 
 ## Requirements
 
-Before starting to debug, you should create a custom functions add-in project. You can do this using the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). For instructions on trusting certificates, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+Before starting to debug, you should create a custom functions add-in project. You can do this using the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). 
 
 ## Use the VS Code debugger for Excel Desktop
 

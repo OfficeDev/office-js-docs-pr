@@ -11,8 +11,6 @@ If you have existing Excel XLLs, you can build equivalent custom functions in an
 
 You can configure your Office Add-in so that when an equivalent XLL is already installed on the user's computer, Excel runs the XLL instead of your Office Add-in custom functions. The XLL is called equivalent because Excel will seamlessly transition between the XLL and the Office Add-in custom functions depending on which is installed on Windows.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 ## Specify equivalent XLL in the manifest
 
 To enable compatibility with an existing XLL, identify the equivalent XLL in the manifest of your Office Add-in. Then Excel will use the XLL's functions instead of your Office Add-in custom functions when running on Windows.

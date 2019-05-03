@@ -1,14 +1,12 @@
 ---
 ms.date: 05/03/2019
 description: Troubleshoot common problems in Excel custom functions.
-title: Troubleshoot custom functions (preview)
+title: Troubleshoot custom functions
 localization_priority: Priority
 ---
-# Troubleshoot custom functions (preview)
+# Troubleshoot custom functions
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as not [verifying ssl certificates](#my-add-in-wont-load-verify-certificates) properly, [leaving promises unresolved](#ensure-promises-return), and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
 
