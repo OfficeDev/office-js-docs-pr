@@ -1,7 +1,7 @@
 ---
 title: Make your Excel add-in compatible with an existing COM add-in
 description: 'Enable compatibility with an equivalent COM add-in that has the same functionality as your Excel add-in'
-ms.date: 04/22/2019
+ms.date: 05/03/2019
 localization_priority: Normal
 ---
 
