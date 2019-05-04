@@ -5,11 +5,11 @@ ms.date: 05/03/2019
 localization_priority: Normal
 ---
 
-# Extend custom functions with XLL user-defined functions
+# Extend custom functions with XLL user-defined functions (preview)
 
 If you have existing Excel XLLs, you can build equivalent custom functions in an Office Add-in to extend your solution features to other platforms such as online or macOS. However, Office Add-ins don't have all of the functionality available in XLLs. Depending on the functionality your solution uses, the XLL may provide a better experience than the Office Add-in custom functions on Excel for Windows.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+[!include[COM add-in and XLL UDF compatibility note](../includes/xll-compatibility-note.md)]
 
 You can configure your Office Add-in so that when an equivalent XLL is already installed on the user's computer, Excel runs the XLL instead of your Office Add-in custom functions. The XLL is called equivalent because Excel will seamlessly transition between the XLL and the Office Add-in custom functions depending on which is installed on Windows.
 
