@@ -12,6 +12,8 @@ Custom functions are configurable with many different options for parameters:
 - [Range parameters](#range-parameters)
 - [Invocation context parameter](#invocation-parameter)
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 ## Custom functions optional parameters
 
 Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.

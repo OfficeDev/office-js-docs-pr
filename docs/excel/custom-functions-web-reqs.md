@@ -9,6 +9,8 @@ localization_priority: Priority
 
 One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets). Custom functions can request data through XHR and `fetch` requests as well as stream this data in real time.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 The documentation below illustrates some samples of web requests, but to build a streaming function for yourself, try the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).
 
 ## Functions that return data from external sources

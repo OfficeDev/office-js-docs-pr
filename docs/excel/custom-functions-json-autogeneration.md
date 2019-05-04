@@ -9,6 +9,8 @@ localization_priority: Priority
 
 When an Excel custom function is written in JavaScript or TypeScript, JSDoc tags are used to provide extra information about the custom function. The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md). Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.
 
 The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript. For more information, see the [@param](#param) tag and [Types](#types) section.
@@ -104,7 +106,7 @@ To denote a custom function parameter as optional, do one of the following:
 * Use an optional parameter. For example: `function f(text?: string)`
 * Give the parameter a default value. For example: `function f(text: string = "abc")`
 
-For detailed description of the @param see: [JSDoc](http://usejsdoc.org/tags-param.html)
+For detailed description of the @param see: [JSDoc](https://usejsdoc.org/tags-param.html)
 
 > [!NOTE]
 > The default value for optional parameters is `null`.

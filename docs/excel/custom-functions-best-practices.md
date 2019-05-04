@@ -9,6 +9,8 @@ localization_priority: Normal
 
 This article describes best practices for developing custom functions in Excel.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 ## Associating function names with JSON metadata
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to form a complete function. For a function to work properly, you need to associate the id with the JavaScript implementation. Make sure there is an association, otherwise the function will not be called.

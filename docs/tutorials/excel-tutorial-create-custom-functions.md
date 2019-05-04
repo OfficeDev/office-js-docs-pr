@@ -1,5 +1,5 @@
 ---
-title: Excel custom functions tutorial (preview)
+title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
 ms.date: 05/02/2019
 ms.prod: excel
@@ -8,7 +8,7 @@ ms.topic: tutorial
 localization_priority: Normal
 ---
 
-# Tutorial: Create custom functions in Excel (preview)
+# Tutorial: Create custom functions in Excel
 
 Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`. You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
 
@@ -19,22 +19,9 @@ In this tutorial, you will:
 > * Create a custom function that gets data from the web.
 > * Create a custom function that streams real-time data from the web.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 ## Prerequisites
 
-* [Node.js](https://nodejs.org/en/) (version 8.0.0 or later)
-
-* [Git Bash](https://git-scm.com/downloads) (or another Git client)
-
-* The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Even if you have previously installed the Yeoman generator, we recommend updating your package to the latest version from npm.
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 * Excel for Windows (64-bit version 1810 or later) or Excel Online
 
@@ -42,7 +29,7 @@ In this tutorial, you will:
 
 ## Create a custom functions project
 
- To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some initial custom functions that you can try out.
+ To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
 
 1. Run the following command and then answer the prompts as follows.
     
@@ -50,69 +37,67 @@ In this tutorial, you will:
     yo office
     ```
     
-    * Choose a project type: `Excel Custom Functions Add-in project (...)`
-    * Choose a script type: `JavaScript`
-    * What do you want to name your add-in? `stock-ticker`
-    
-    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
-    
-    The Yeoman generator creates the project files and installs supporting Node.js components.
+    * **Choose a project type:** `Excel Custom Functions Add-in project (...)`
+    * **Choose a script type:** `JavaScript`
+    * **What do you want to name your add-in?** `stock-ticker`
 
-2. Go to the project folder.
+    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/yo-office-excel-cf.png)
+    
+    The Yeoman generator will create the project files and install supporting Node components.
+
+2. Navigate to the root folder of the project.
     
     ```command&nbsp;line
     cd stock-ticker
     ```
 
-3. Trust the self-signed certificate that is needed to run this project. For detailed instructions for either Windows or Mac, see [Adding Self Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).  
-
-4. Build the project.
+3. Build the project.
     
     ```command&nbsp;line
     npm run build
     ```
 
-5. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel Online.
+4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows or Excel Online.
 
 # [Excel for Windows](#tab/excel-windows)
 
-Run the following command.
+To test your add-in in Excel for Windows, run the following command. When you run this command, the local web server will start and Excel for Windows will open with your add-in loaded.
 
 ```command&nbsp;line
-npm start desktop
+npm run start:desktop
 ```
 
-This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
-
 > [!NOTE]
-> If your add-in does not load, check that you have completed step 3 properly. You can also enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as any installation or runtime problems. Runtime logging writes `console.log` statements to a log file to help you find and fix issues.
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
 
 # [Excel Online](#tab/excel-online)
 
-Run the following command.
+To test your add-in in Excel Online, run the following command. When you run this command, the local web server will start.
 
 ```command&nbsp;line
-npm start web
+npm run start:web
 ```
 
-This command starts the web server. Use the following steps to sideload your add-in.
-
-<ol type="a">
-   <li>In Excel Online, choose the <strong>Insert</strong> tab and then choose <strong>Add-ins</strong>.<br/>
-   <img src="../images/excel-cf-online-register-add-in-1.png" alt="Insert ribbon in Excel Online with the My Add-ins icon highlighted"></li>
-   <li>Choose <strong>Manage My Add-ins</strong> and select <strong>Upload My Add-in</strong>.</li> 
-   <li>Choose <strong>Browse...</strong> and navigate to the root directory of the project that the Yeoman generator created.</li> 
-   <li>Select the file <strong>manifest.xml</strong> and choose <strong>Open</strong>, then choose <strong>Upload</strong>.</li>
-</ol>
-
 > [!NOTE]
-> If your add-in does not load, check that you have completed step 3 properly.
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides.
+
+To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
+
+1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+
+   ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+   
+2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
+
+3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
+
+4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 --- 
     
 ## Try out a prebuilt custom function
 
-The custom functions project that you created alrady has two prebuilt custom functions named ADD and INCREMENT. The code for these prebuilt functions is in the  **src/functions/functions.js** file. The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
+The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
 
 Next you'll try out the `ADD` custom function by completing the following steps:
 
@@ -126,11 +111,17 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet. You’ll use the IEX Trading API, which is free and does not require authentication.
 
-1. In the **stock-ticker** project, find the file **src/functions/functions.js** and open it in your code editor.
+1. In the **stock-ticker** project, find the file **./src/functions/functions.js** and open it in your code editor.
 
-2. In **functions.js**, locate the `increment` function and add the following code immediately after that function.
+2. In **functions.js**, locate the `increment` function and add the following code after that function.
 
     ```js
+    /**
+    * Fetches current stock price
+    * @customfunction 
+    * @param {string} ticker Stock symbol
+    * @returns {number} The current stock price.
+    */
     function stockPrice(ticker) {
         var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
         return fetch(url)
@@ -144,58 +135,28 @@ Integrating data from the Web is a great way to extend Excel through custom func
         // Note: in case of an error, the returned rejected Promise
         //    will be bubbled up to Excel to indicate an error.
     }
-
-> [!NOTE]
-> In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
-> To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
-
-3. In **functions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
-
-    ```js
-    CustomFunctions.associate("STOCKPRICE", stockprice);
+    CustomFunctions.associate("STOCKPRICE", stockPrice);
     ```
 
-    The `CustomFunctions.associate` code associates the `id` of the function with the function address of `increment` in JavaScript so that Excel can call your function.
+    The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPrice` in JavaScript so that Excel can call your function.
 
-    Before Excel can use your custom function, you need to describe it using metadata. You need to define the `id` used in the `associate` method previously, along with some other metadata.
+3. Run the following command to rebuild the project.
 
-
-4. Open the **src/functions/functions.json** file. Add the following JSON object to the 'functions' array and save the file.
-
-    ```JSON
-    {
-        "id": "STOCKPRICE",
-        "name": "STOCKPRICE",
-        "description": "Fetches current stock price",
-        "helpUrl": "http://www.contoso.com/help",
-        "result": {
-            "type": "number",
-            "dimensionality": "scalar"
-        },  
-        "parameters": [
-            {
-                "name": "ticker",
-                "description": "stock symbol",
-                "type": "string",
-                "dimensionality": "scalar"
-            }
-        ]
-    }
+    ```command&nbsp;line
+    npm run build
     ```
 
-    This JSON describes the `stockPrice` function, its parameters, and the type of result it returns.
-
-5. Re-register the add-in in Excel so that the new function is available. 
+4. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
 # [Excel for Windows](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
-    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
+    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
 
 # [Excel Online](#tab/excel-online)
 
@@ -208,9 +169,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
---- 
+---
 
-<ol start="6">
+<ol start="5">
 <li> Try out the new function. In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter. You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</li>
 </ol>
 
@@ -219,10 +180,16 @@ Integrating data from the Web is a great way to extend Excel through custom func
 The `stockPrice` function returns the price of a stock at a specific moment in time, but stock prices are always changing. 
 Next you’ll create a custom function named `stockPriceStream` that gets the price of a stock every 1000 milliseconds.
 
-1. In the **stock-ticker** project, add the following code to **src/functions/functions.js** and save the file.
+1. In the **stock-ticker** project, add the following code to **./src/functions/functions.js** and save the file.
 
     ```js
-    function stockPriceStream(ticker, handler) {
+    /**
+    * Streams real time stock price
+    * @customfunction 
+    * @param {string} ticker Stock symbol
+    * @param {CustomFunctions.StreamingInvocation<number>} invocation
+    */
+    function stockPriceStream(ticker, invocation) {
         var updateFrequency = 1000 /* milliseconds*/;
         var isPending = false;
 
@@ -240,66 +207,42 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
                     return response.text();
                 })
                 .then(function(text) {
-                    handler.setResult(parseFloat(text));
+                    invocation.setResult(parseFloat(text));
                 })
                 .catch(function(error) {
-                    handler.setResult(error);
+                    invocation.setResult(error);
                 })
                 .then(function() {
                     isPending = false;
                 });
         }, updateFrequency);
 
-        handler.onCanceled = () => {
+        invocation.onCanceled = () => {
             clearInterval(timer);
         };
     }
-    
-    CustomFunctions.associate("STOCKPRICESTREAM", stockpricestream);
+    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
     ```
     
-    Before Excel can use your custom function, you need to describe it using metadata.
+    The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPriceStream` in JavaScript so that Excel can call your function.
     
-2. In the **stock-ticker** project add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
-    
-    ```json
-    { 
-        "id": "STOCKPRICESTREAM",
-        "name": "STOCKPRICESTREAM",
-        "description": "Streams real time stock price",
-        "helpUrl": "http://www.contoso.com/help",
-        "result": {
-            "type": "number",
-            "dimensionality": "scalar"
-        },  
-        "parameters": [
-            {
-                "name": "ticker",
-                "description": "stock symbol",
-                "type": "string",
-                "dimensionality": "scalar"
-            }
-        ],
-        "options": {
-            "stream": true,
-            "cancelable": true
-        }
-    }
+2. Run the following command to rebuild the project.
+
+    ```command&nbsp;line
+    npm run build
     ```
 
-    This JSON describes the `stockPriceStream` function. For any streaming function, the `stream` property and the `cancelable` property must be set to `true` within the `options` object, as shown in this code sample.
-
-3. Re-register the add-in in Excel so that the new function is available.
+3. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
 # [Excel for Windows](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
-    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
+    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
 
 # [Excel Online](#tab/excel-online)
 
