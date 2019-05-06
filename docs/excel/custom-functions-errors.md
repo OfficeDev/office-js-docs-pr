@@ -1,11 +1,11 @@
 ---
 ms.date: 05/03/2019
 description: Handle errors in your Excel custom functions.
-title: Error handling for custom functions in Excel (preview)
+title: Error handling for custom functions in Excel
 localization_priority: Priority
 ---
 
-# Error handling within custom functions (preview)
+# Error handling within custom functions
 
 When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md).
 
@@ -41,6 +41,5 @@ Learn how to [troubleshoot problems with your custom functions](custom-functions
 ## See also
 
 * [Custom functions debugging](custom-functions-debugging.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Custom functions requirements](custom-functions-requirements.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

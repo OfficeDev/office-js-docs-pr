@@ -1,11 +1,11 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/06/2019
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
-title: Runtime for Excel custom functions (preview)
+title: Runtime for Excel custom functions
 localization_priority: Normal
 ---
 
-# Runtime for Excel custom functions (preview)
+# Runtime for Excel custom functions
 
 Custom functions use a new JavaScript runtime that differs from the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes new APIs that you can use to perform common web-based actions within custom functions such as requesting external data or exchanging data over a persistent connection with a server.
 

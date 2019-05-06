@@ -1,10 +1,10 @@
 ---
 ms.date: 05/03/2019
 description: Learn how to use custom functions on different platforms. 
-title: Custom functions requirements (preview)
+title: Custom functions requirements
 localization_priority: Priority
 ---
-# Custom functions requirements (preview)
+# Custom functions requirements
 
 Custom functions are currently available on the following platforms:
 
@@ -25,6 +25,5 @@ If you don't already have an Office 365 subscription, you can get one by joining
 
 ## See also
 * [Custom functions overview](custom-functions-overview.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -1,11 +1,11 @@
 ---
 ms.date: 05/03/2019
 description: Localize your Excel custom functions. 
-title: Localize custom functions (preview)
+title: Localize custom functions
 localization_priority: Normal
 ---
 
-# Localize custom functions (preview)
+# Localize custom functions
 
 You can localize both your add-in and your custom function names. You need to provide localized function names in the functions' JSON file and provide locale information in the XML manifest file.
 

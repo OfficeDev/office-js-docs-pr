@@ -1,12 +1,14 @@
 ---
 ms.date: 05/03/2019
 description: Debug your custom functions in Excel.
-title: Custom functions debugging (preview)
+title: Custom functions debugging
 localization_priority: Normal
 ---
-# Custom functions debugging (preview)
+# Custom functions debugging
 
 Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 On Windows:
 - [Excel Desktop and Visual Studio Code (VS Code) debugger](#use-the-vs-code-debugger-for-excel-desktop)
@@ -17,8 +19,6 @@ On Windows:
 On Mac:
 - [Excel Online and browser tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
 - [Command line](#use-the-command-line-tools-to-debug)
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 > [!NOTE]
 > For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#use-the-command-line-tools-to-debug) at the end of this article.
@@ -167,6 +167,5 @@ Learn about [authentication practices in custom functions](custom-functions-auth
 
 * [Custom functions troubleshooting](custom-functions-troubleshooting.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

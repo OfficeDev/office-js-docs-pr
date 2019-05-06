@@ -1,10 +1,10 @@
 ---
 ms.date: 05/03/2019
 description: Troubleshoot common problems in Excel custom functions.
-title: Troubleshoot custom functions (preview)
+title: Troubleshoot custom functions
 localization_priority: Priority
 ---
-# Troubleshoot custom functions (preview)
+# Troubleshoot custom functions
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
 
@@ -88,6 +88,5 @@ Learn how to [debug your custom functions](custom-functions-debugging.md).
 * [Custom functions metadata autogeneration](custom-functions-json-autogeneration.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
