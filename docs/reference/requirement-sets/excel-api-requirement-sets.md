@@ -39,7 +39,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 
 |  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20072) or later | Not supported | 16.24 or later | April 2019 | Coming soon |
+| CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) or later | Not supported | 16.24 or later | April 2019 | Coming soon |
 
 For more information about versions, build numbers, and Office Online Server, see:
 
