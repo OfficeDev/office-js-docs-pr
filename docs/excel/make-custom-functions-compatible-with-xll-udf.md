@@ -68,5 +68,4 @@ The following table compares features across XLL user-defined functions, XLL com
 
 - [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 - [Custom functions best practices](custom-functions-best-practices.md)
-- [Custom functions changelog](custom-functions-changelog.md)
 - [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
