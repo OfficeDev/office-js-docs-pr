@@ -13,7 +13,7 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 The following animated image shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
-<img alt="animated image showing an end user inserting the CONTOSO.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
 
 The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 
@@ -33,7 +33,7 @@ CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 > [!NOTE]
 > The [Known issues](#known-issues) section later in this article specifies current limitations of custom functions.
 
-## Components of a custom functions add-in project
+## How a custom function is defined in code
 
 If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions:
 
@@ -45,11 +45,11 @@ If you use the [Yo Office generator](https://github.com/OfficeDev/generator-offi
 
 ### Script file
 
-The script file (**./src/functions/functions.js** or **./src/functions/functions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions, comments which define the function, and associates the names of the custom functions to objects in the JSON metadata file.
+The script file (**./src/functions/functions.js** or **./src/functions/functions.ts**) contains the code that defines custom functions, comments which define the function, and associates the names of the custom functions to objects in the JSON metadata file.
 
-The following code defines the custom function `add`  and then specifies association information for the function. For more information on associating functions, see [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
+The following code defines the custom function `add`. The code comments are used to generate a JSON metadata file that describes the custom function to Excel. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
-The following code also provides code comments which define the function. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+The following code also calls `CustomFunctions.associate("ADD", add)` to associate the function `add()` with its ID in the JSON metadata file `ADD`. For more information about associating functions, see [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
 
 ```js
 /**

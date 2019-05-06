@@ -8,6 +8,8 @@ localization_priority: Priority
 
  Custom functions are with their own unique runtime that prioritizes execution of calculations. This article will cover the differences between the custom functions runtime and the browser-based JavaScript engine which powers most other parts of your add-in.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 ## Custom functions runtime
 
 An Office Web Add-in can interact with the user as a task pane, or a content pane, and can include commands and custom functions. All of these parts run in a browser engine runtime except for custom functions. Custom functions run in a separate custom functions runtime to optimize for calculation speed.
