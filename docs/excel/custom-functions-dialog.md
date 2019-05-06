@@ -1,31 +1,31 @@
 ---
-ms.date: 05/03/2019
-description: Create dialogs through custom functions in Excel using JavaScript.
-title: Custom functions dialogs (preview)
+ms.date: 05/06/2019
+description: Create a dialog box through custom functions in Excel using JavaScript.
+title: Display a dialog box from a custom function
 localization_priority: Priority
 ---
-# Display a dialog in custom functions (preview)
+# Display a dialog box from a custom function
 
-If your custom function needs to interact with the user, you can create a dialog using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). A common scenario for using the dialog is to authenticate a user so that your custom function can access a web service. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
+If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> The `Office.Dialog` object is part of the custom functions runtime. Task panes don't use the `Dialog` object. To create a dialog from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
+> The `Office.Dialog` object is part of the custom functions runtime. Task panes don't use the `Dialog` object. To create a dialog box from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
 
-## Dialog API example
+## dialog box API example
 
-In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog.
+In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog box.
 
 ```js
 /**
- * Function retrieves a cached token or opens a dialog if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
  * @param {string} url URL for a stored token.
  */
 function getTokenViaDialog(url) {
   return new Promise (function (resolve, reject) {
     if (_dialogOpen) {
-      // Can only have one dialog open at once, wait for previous dialog's token
+      // Can only have one dialog box open at once, wait for previous dialog box's token
       let timeout = 5;
       let count = 0;
       var intervalId = setInterval(function () {

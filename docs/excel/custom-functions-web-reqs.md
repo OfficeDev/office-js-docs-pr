@@ -1,11 +1,11 @@
 ---
 ms.date: 05/03/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
-title: Receive and handle data with custom functions (preview)
+title: Receive and handle data with custom functions
 localization_priority: Priority
 ---
 
-# Receive and handle data with custom functions (preview)
+# Receive and handle data with custom functions
 
 One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets). Custom functions can request data through XHR and `fetch` requests as well as stream this data in real time.
 
@@ -186,7 +186,6 @@ Learn about [different parameter types your functions can use](custom-functions-
 
 ## See also
 
-* []
 * [Volatile values in functions](custom-functions-volatile.md)
 * [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Custom functions metadata](custom-functions-json.md)

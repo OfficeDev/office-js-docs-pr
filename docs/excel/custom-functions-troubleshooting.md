@@ -1,10 +1,10 @@
 ---
 ms.date: 05/03/2019
 description: Troubleshoot common problems in Excel custom functions.
-title: Troubleshoot custom functions (preview)
+title: Troubleshoot custom functions
 localization_priority: Priority
 ---
-# Troubleshoot custom functions (preview)
+# Troubleshoot custom functions
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
 
@@ -26,6 +26,10 @@ Generally, these errors correspond to the errors you might already be familiar w
 - A `#VALUE` error typically indicates an error in the functions' script file.
 - A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
 - A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
+
+## Clear the Office cache
+
+Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see the "Clear the Office cache" section in the article [Validate and troubleshoot issues with your manifest](https://docs.microsoft.com/office/dev/add-ins/testing/troubleshoot-manifest?branch=master#clear-the-office-cache)
 
 ## Common issues
 
@@ -60,6 +64,10 @@ If you see the error "We can't open this add-in from localhost," you will need t
 
 When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #BUSY!. Check your functions to make sure that any promises are properly returning a result to a cell.
 
+### Error: The dev server is already running on port 3000
+
+Sometimes when running `npm start` you may see an error that the dev server is already running on port 3000 (or whichever port your add-in uses). You can stop the dev server by running `npm stop` or by closing the Node.js window. But in some cases in can take a few minutes for the dev server to actually stop running.
+
 ## Reporting feedback
 
 If you are encountering issues that aren't documented here, let us know. There are two ways to report issues.
@@ -80,6 +88,5 @@ Learn how to [debug your custom functions](custom-functions-debugging.md).
 * [Custom functions metadata autogeneration](custom-functions-json-autogeneration.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

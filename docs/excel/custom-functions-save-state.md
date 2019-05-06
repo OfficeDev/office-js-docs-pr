@@ -1,11 +1,11 @@
 ---
 ms.date: 05/03/2019
 description: Use `Office.storage` to save state with custom functions. 
-title: Save and share state in custom functions (preview)
+title: Save and share state in custom functions
 localization_priority: Priority
 ---
 
-## Save and share state in custom functions (preview)
+## Save and share state in custom functions
 
 Use the `Office.storage` object to save state related to custom functions or the task pane in your add-in. Storage is limited to 10 MB per domain (which may be shared across multiple add-ins). On Excel for Windows, the `storage` object is a separate location within the custom functions runtime, but for Excel Online and Excel for Mac, the `storage` object is the same as the browser's `localStorage`.
 
@@ -50,6 +50,5 @@ Learn how to [autogenerate the JSON metadata for your custom functions](custom-f
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Custom functions debugging](custom-functions-debugging.md)
