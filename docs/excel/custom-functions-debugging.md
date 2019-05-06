@@ -67,7 +67,7 @@ You can use VS Code to debug custom functions in Excel Online in the Microsoft E
 ### Start the VS Code debugger
 
 4. Choose **View > Debug** or enter **Ctrl+Shift+D** to switch to debug view.
-5. From the Debug options, choose **Office Online (Edge)**.
+5. From the Debug options, choose **Office Online (Microsoft Edge)**.
 6. Open Excel Online using the Microsoft Edge browser, open Excel Online, and create a new workbook.
 7. Choose **Share** in the ribbon and copy the link for the URL for this new workbook.
 8. Select **F5** (or choose **Debug > Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
