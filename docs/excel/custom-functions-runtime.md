@@ -74,7 +74,7 @@ ws.onerror = function (error) {
 
 ## Storing and accessing data
 
-Within a custom function (or within any other part of an add-in), you can store and access data by using the `Office.storage` object. `Storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
+Within a custom function (or within any other part of an add-in), you can store and access data by using the `OfficeRuntime.storage` object. `Storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
 `Storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (e.g. www.contoso.com/addin1, www.contoso.com/addin2), they are also permitted to share information back and forth through `storage`. Note that add-ins which have different subdomains will have different instances of `storage` (e.g. subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2).
 
@@ -93,9 +93,9 @@ The following methods are available on the `storage` object:
 .[!NOTE]
 > There's no method for clearing all information (such as `clear`). Instead, you should instead use `removeItems` to remove multiple entries at a time.
 
-### Office.storage example
+### OfficeRuntime.storage example
 
-The following code sample calls the `Office.storage.setItem` function to set a key and value into `storage`.
+The following code sample calls the `OfficeRuntime.storage.setItem` function to set a key and value into `storage`.
 
 ```JavaScript
 function StoreValue(key, value) {
