@@ -1,5 +1,5 @@
 ---
-title: Extend custom functions with XLL user-defined functions
+title: 'Extend custom functions with XLL user-defined functions'
 description: 'Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions' 
 ms.date: 05/03/2019
 localization_priority: Normal
