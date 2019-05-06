@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/06/2019
 description: Debug your custom functions in Excel.
 title: Custom functions debugging
 localization_priority: Normal
