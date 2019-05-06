@@ -50,6 +50,5 @@ Learn how to [autogenerate the JSON metadata for your custom functions](custom-f
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Custom functions debugging](custom-functions-debugging.md)

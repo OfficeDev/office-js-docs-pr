@@ -25,6 +25,5 @@ If you don't already have an Office 365 subscription, you can get one by joining
 
 ## See also
 * [Custom functions overview](custom-functions-overview.md)
-* [Custom functions changelog](custom-functions-changelog.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
