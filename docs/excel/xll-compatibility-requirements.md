@@ -4,7 +4,7 @@ description: Learn the requirements to use COM add-in and XLL UDF compatibility 
 title: COM add-in and XLL UDF requirements
 localization_priority: Priority
 ---
-# COM add-in and XLL UDF compatibility requirements
+# COM add-in and XLL UDF compatibility requirements (preview)
 
 COM add-in and XLL UDF compatibility is currently available on the following platforms:
 
