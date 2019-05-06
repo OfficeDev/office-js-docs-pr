@@ -15,7 +15,7 @@ This article describes best practices for developing custom functions in Excel.
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to form a complete function. If you are using `yo office` the JSON metadata can be generated from the code comments. Otherwise you need to build the JSON metadata file manually.
 
-For a function to work properly, you need to associate the id with the JavaScript implementation. Make sure there is an association, otherwise the function will not be called. The following code sample shows how to make the association using the `CustomFunctions.associate()` method. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
+For a function to work properly, you need to associate the function's `id` property with the JavaScript implementation. Make sure there is an association, otherwise the function will not be called. The following code sample shows how to make the association using the `CustomFunctions.associate()` method. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
 ```js
 /**
