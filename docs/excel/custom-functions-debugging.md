@@ -21,18 +21,19 @@ On Mac:
 - [Command line](#use-the-command-line-tools-to-debug)
 
 > [!NOTE]
-> For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#use-the-command-line-tools-to-debug) at the end of this article.
+> For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#commands-for-building-and-running-your-add-in) at the end of this article.
 
 ## Requirements
 
-Before starting to debug, you should use the [Yeoman generator for Office add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md). 
+Before starting to debug, you should use the [Yeoman generator for Office add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
 
 ## Use the VS Code debugger for Excel Desktop
 
 You can use VS Code to debug custom functions in Office Excel on the desktop.
 
 > [!NOTE]
-> Desktop debugging for the Mac is not available but can be achieved [using the browser tools to debug Excel Online](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online).
+> Desktop debugging for the Mac is not available but can be achieved [using the browser tools and command line to debug Excel Online](#use-the-command-line-tools-to-debug)
+).
 
 ### Run your add-in from VS Code
 
