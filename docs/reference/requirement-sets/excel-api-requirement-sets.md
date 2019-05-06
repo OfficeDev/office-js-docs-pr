@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: ''
-ms.date: 05/01/2019
+ms.date: 05/03/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -63,15 +63,15 @@ More than 500 new Excel APIs were introduced with the 1.9 requirement set. The f
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Shapes | Insert, position, and format images, geometric shapes and text boxes. | [ShapeCollection](/javascript/api/excel/excel.shapecollection) [Shape](/javascript/api/excel/excel.shape) [GeometricShape](/javascript/api/excel/excel.geometricshape)  [Image](/javascript/api/excel/excel.image) |
+| [Shapes](../../excel/excel-add-ins-shapes.md) | Insert, position, and format images, geometric shapes and text boxes. | [ShapeCollection](/javascript/api/excel/excel.shapecollection) [Shape](/javascript/api/excel/excel.shape) [GeometricShape](/javascript/api/excel/excel.geometricshape)  [Image](/javascript/api/excel/excel.image) |
+| [Auto Filter](../../excel/excel-add-ins-worksheets.md#filter-data) | Add filters to ranges. | [AutoFilter](/javascript/api/excel/excel.autofilter) |
+| [Areas](../../excel/excel-add-ins-multiple-ranges.md) | Support for discontinuous ranges. | [RangeAreas](/javascript/api/excel/excel.rangeareas) |
+| [Special Cells](../../excel/excel-add-ins-multiple-ranges.md#get-special-cells-from-multiple-ranges) | Get cells containing dates, comments, or formulas within a range. | [Range](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|
+| [Find](../../excel/excel-add-ins-ranges.md#find-a-cell-using-string-matching) | Find values or formulas within a range or worksheet. | [Range](/javascript/api/excel/excel.range#find-text--criteria-)[Worksheet](/javascript/api/excel/excel.worksheet#findall-text--criteria-) |
+| [Copy and Paste](../../excel/excel-add-ins-ranges-advanced.md#copy-and-paste) | Copy values, formats, and formulas from one range to another. | [Range](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) |
+| [Calculation](../../excel/performance.md#suspend-calculation-temporarily) | Greater control over the Excel calculation engine. | [Application](/javascript/api/excel/excel.application) |
 | New Charts | Explore our new supported chart types: maps, box and whisker, waterfall, sunburst, pareto. and funnel. | [Chart](/javascript/api/excel/excel.charttype) |
-| Auto Filter | Add filters to ranges. | [AutoFilter](/javascript/api/excel/excel.autofilter) |
-| Areas | Support for discontinuous ranges. | [RangeAreas](/javascript/api/excel/excel.rangeareas) |
-| Special Cells | Get cells containing dates, comments, or formulas within a range. | [Range](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|
-| Find | Find values or formulas within a range or worksheet. | [Range](/javascript/api/excel/excel.range#find-text--criteria-)[Worksheet](/javascript/api/excel/excel.worksheet#findall-text--criteria-) |
-| Copy Paste | Copy values, formats, and formulas from one range to another. | [Range](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) |
 | RangeFormat | New capabilities with range formats. | [Range](/javascript/api/excel/excel.rangeformat) |
-| Calculation | Greater control over the Excel calculation engine. | [Application](/javascript/api/excel/excel.application) |
 
 The following is a complete list of APIs in preview.
 
