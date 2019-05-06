@@ -14,7 +14,7 @@ The Office JavaScript API open specifications provide information about new Java
 
 ## New Excel JavaScript APIs
 
-Join us in reviewing our design for new Excel JavaScript APIs. The latest updates can be found in the [Excel JavaScript API requirement sets page](/requirement-sets/excel-api-requirement-sets.md#excel-javascript-preview-apis).
+Join us in reviewing our design for new Excel JavaScript APIs. The latest updates can be found in the [Excel JavaScript API requirement sets page](./requirement-sets/excel-api-requirement-sets.md#excel-javascript-preview-apis).
 
 **See the [Excel JavaScript preview APIs](/javascript/api/excel) to learn more and provide your feedback.**
 
