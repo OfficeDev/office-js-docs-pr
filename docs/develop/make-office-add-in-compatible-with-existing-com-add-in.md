@@ -1,17 +1,17 @@
 ---
 title: Make your Excel add-in compatible with an existing COM add-in
 description: 'Enable compatibility with an equivalent COM add-in that has the same functionality as your Excel add-in'
-ms.date: 05/03/2019
+ms.date: 05/06/2019
 localization_priority: Normal
 ---
 
-# Make your Excel add-in compatible with an existing COM add-in
+# Make your Office Add-in compatible with an existing COM add-in (preview)
 
 If you have an existing COM add-in, you can build equivalent functionality in your Excel add-in to extend your solution features to other platforms such as online or macOS. However, Excel add-ins don't have all of the functionality available in COM add-ins. Your COM add-in may provide a better experience than the Excel add-in on Windows.
 
 You can configure your Excel add-in so that when an equivalent COM add-in is already installed on the user's computer, Office runs the COM add-in instead of your Excel add-in. The COM add-in is called "equivalent" because Office will seamlessly transition between the COM add-in and the Excel add-in depending on which is installed on Windows.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+[!include[COM add-in and XLL UDF compatibility requirements note](../includes/xll-compatibility-note.md)]
 
 ## Specify an equivalent COM add-in in the manifest
 
