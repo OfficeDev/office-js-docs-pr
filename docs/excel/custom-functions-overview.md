@@ -24,8 +24,7 @@ The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
  * @param {number} radius
  */
 function sphereVolume(radius) {
-  const pi = 3.14159265
-  return Math.pow(radius, 3)*4*pi
+  return Math.pow(radius, 3) * 4 * Math.PI / 3;
 }
 CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 ```
