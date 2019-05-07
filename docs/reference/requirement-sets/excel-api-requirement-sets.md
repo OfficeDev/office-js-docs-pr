@@ -57,7 +57,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 > [!NOTE]
 > Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
 >
-> To use preview APIs, you must reference the **beta** library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js and you may also need to join the Office Insider program to get a recent Office build.
+> To use preview APIs, you must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and you may also need to join the Office Insider program to get a recent Office build.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
@@ -70,11 +70,11 @@ The following is a complete list of APIs currently in preview.
 
 | Class | Fields | Description |
 |:---|:---|:---|
-|[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|Get or set the content.|
+|[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|Gets or sets the comment's content.|
 ||[delete()](/javascript/api/excel/excel.comment#delete--)|Deletes the comment thread.|
 ||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Get location of the comment.|
-||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Gets the author's  email of the comment.|
-||[authorName](/javascript/api/excel/excel.comment#authorname)|Gets the author's  name of the comment.|
+||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Gets the author's email of the comment.|
+||[authorName](/javascript/api/excel/excel.comment#authorname)|Gets the author's name of the comment.|
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Gets the creation time of the comment. Returns null if the comment was converted from a note, since the comment does not have a creation date.|
 ||[id](/javascript/api/excel/excel.comment#id)|Represents the comment identifier. Read-only.|
 ||[replies](/javascript/api/excel/excel.comment#replies)|Represents a collection of reply objects associated with the comment. Read-only.|
@@ -86,9 +86,9 @@ The following is a complete list of APIs currently in preview.
 ||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getitembycell-celladdress-)|Gets the comment from the specified cell.|
 ||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|Gets a comment from the collection with the corresponding reply ID.|
 ||[items](/javascript/api/excel/excel.commentcollection#items)|Gets the loaded child items in this collection.|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|Get or set the content.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|Gets or sets the comment reply's content.|
 ||[delete()](/javascript/api/excel/excel.commentreply#delete--)|Deletes the comment reply.|
-||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Get location of the comment reply.|
+||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Gets the location of the comment reply.|
 ||[getParentComment()](/javascript/api/excel/excel.commentreply#getparentcomment--)|Get its parent comment of this reply.|
 ||[authorEmail](/javascript/api/excel/excel.commentreply#authoremail)|Gets the author's email of the comment reply.|
 ||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Gets the author's name of the comment reply.|
@@ -136,7 +136,7 @@ The following is a complete list of APIs currently in preview.
 ||[name](/javascript/api/excel/excel.slicer#name)|Represents the name of slicer.|
 ||[nameInFormula](/javascript/api/excel/excel.slicer#nameinformula)|Represents the slicer name used in the formula.|
 ||[id](/javascript/api/excel/excel.slicer#id)|Represents the unique id of slicer. Read-only.|
-||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|True if all filters currently applied on the slicer is cleared.|
+||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|True if all filters currently applied on the slicer are cleared.|
 ||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|Represents the collection of SlicerItems that are part of the slicer. Read-only.|
 ||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|Represents the worksheet containing the slicer. Read-only.|
 ||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|Select slicer items based on their keys. Previous selection will be cleared.|
@@ -172,7 +172,7 @@ The following is a complete list of APIs currently in preview.
 ||[setDefault(newDefaultStyle: SlicerStyle \| string)](/javascript/api/excel/excel.slicerstylecollection#setdefault-newdefaultstyle-)|Sets the default SlicerStyle for use in the parent object's scope.|
 |[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|Changes the table to use the default table style.|
 ||[onFiltered](/javascript/api/excel/excel.table#onfiltered)|Occurs when filter is applied on a specific table.|
-|[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|Occurs when filter is applied on any table in a workbook, or a worksheet.|
+|[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|Occurs when filter is applied on any table in a workbook or worksheet.|
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Represents the id of the table in which the filter is applied..|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Represents the id of the worksheet which contains the table.|
@@ -225,15 +225,15 @@ The following is a complete list of APIs currently in preview.
 |[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet.|
 ||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
 ||[type](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
-||[worksheetId](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#worksheetid)|Gets the id of the worksheet in which the sorting happened.|
+||[worksheetId](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#worksheetid)|Gets the id of the worksheet where the sorting happened.|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|Represents the id of the worksheet in which the filter is applied.|
 |[WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs)|[address](/javascript/api/excel/excel.worksheetrowsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet.|
 ||[source](/javascript/api/excel/excel.worksheetrowsortedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
 ||[type](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
-||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetid)|Gets the id of the worksheet in which the sorting happened.|
+||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetid)|Gets the id of the worksheet where the sorting happened.|
 |[WorksheetSingleClickedEventArgs](/javascript/api/excel/excel.worksheetsingleclickedeventargs)|[address](/javascript/api/excel/excel.worksheetsingleclickedeventargs#address)|Gets the address that represents the cell which was left-clicked/tapped for a specific worksheet.|
-||[offsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetx)|The distance, in points, from the left-clicked/tapped point to the left(right for RTL) gridline edge of the left-clicked/tapped cell.|
+||[offsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetx)|The distance, in points, from the left-clicked/tapped point to the left (right for RTL) gridline edge of the left-clicked/tapped cell.|
 ||[offsetY](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsety)|The distance, in points, from the left-clicked/tapped point to the top gridline edge of the left-clicked/tapped cell.|
 ||[type](/javascript/api/excel/excel.worksheetsingleclickedeventargs#type)|Gets the type of the event.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetsingleclickedeventargs#worksheetid)|Gets the id of the worksheet in which the cell was left-clicked/tapped.|
