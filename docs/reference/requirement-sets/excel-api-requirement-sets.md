@@ -61,7 +61,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| [Slicer](../../excel/excel-add-ins-pivottables.md##slicers-preview) | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/excel.slicer) |
+| [Slicer](../../excel/excel-add-ins-pivottables.md#slicers-preview) | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/excel.slicer) |
 | [Comments](../../excel/excel-add-ins-workbooks.md#comments-preview) | Add, edit, and delete comments. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | Workbook [Save](../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview) and [Close](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
 | [Insert Workbook](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
@@ -73,8 +73,8 @@ The following is a complete list of APIs currently in preview.
 |[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|Gets or sets the comment's content.|
 ||[delete()](/javascript/api/excel/excel.comment#delete--)|Deletes the comment thread.|
 ||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Get location of the comment.|
-||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Gets the author's email of the comment.|
-||[authorName](/javascript/api/excel/excel.comment#authorname)|Gets the author's name of the comment.|
+||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Gets the email of the comment's author.|
+||[authorName](/javascript/api/excel/excel.comment#authorname)|Gets the name of the comment's author.|
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Gets the creation time of the comment. Returns null if the comment was converted from a note, since the comment does not have a creation date.|
 ||[id](/javascript/api/excel/excel.comment#id)|Represents the comment identifier. Read-only.|
 ||[replies](/javascript/api/excel/excel.comment#replies)|Represents a collection of reply objects associated with the comment. Read-only.|
@@ -90,8 +90,8 @@ The following is a complete list of APIs currently in preview.
 ||[delete()](/javascript/api/excel/excel.commentreply#delete--)|Deletes the comment reply.|
 ||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Gets the location of the comment reply.|
 ||[getParentComment()](/javascript/api/excel/excel.commentreply#getparentcomment--)|Get its parent comment of this reply.|
-||[authorEmail](/javascript/api/excel/excel.commentreply#authoremail)|Gets the author's email of the comment reply.|
-||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Gets the author's name of the comment reply.|
+||[authorEmail](/javascript/api/excel/excel.commentreply#authoremail)|Gets the email of the comment reply's author.|
+||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Gets the name of the comment reply's author.|
 ||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|Gets the creation time of the comment reply.|
 ||[id](/javascript/api/excel/excel.commentreply#id)|Represents the comment reply identifier. Read-only.|
 |[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: "Plain")](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Creates a comment reply for comment.|
