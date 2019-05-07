@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: ''
-ms.date: 05/07/2019
+ms.date: 05/02/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
