@@ -604,6 +604,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - BindingEvents<br>
+         - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
          - File<br>
@@ -805,6 +806,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
+         - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
          - PdfFile<br>
