@@ -14,7 +14,7 @@ Defines a rich tooltip (both Title and Description). It is used by both [Button]
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 | [Title](#title) | Yes | The text for the supertip. |
-| [Description](#description) | Yes | The description for the supertip.<br>**Note**: For Outlook, only Windows and Mac clients support the **Description** element. |
+| [Description](#description) | Yes | The description for the supertip.<br>**Note**: (Outlook) Only Windows and Mac clients are supported. |
 
 ### Title
 
