@@ -153,7 +153,7 @@ The following is a complete list of APIs currently in preview.
 |[SlicerItem](/javascript/api/excel/excel.sliceritem)|[isSelected](/javascript/api/excel/excel.sliceritem#isselected)|True if the slicer item is selected.|
 ||[hasData](/javascript/api/excel/excel.sliceritem#hasdata)|True if the slicer item has data.|
 ||[key](/javascript/api/excel/excel.sliceritem#key)|Represents the unique value representing the slicer item.|
-||[name](/javascript/api/excel/excel.sliceritem#name)|Represents the value displayed on UI.|
+||[name](/javascript/api/excel/excel.sliceritem#name)|Represents the value displayed in the UI.|
 |[SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)|[getCount()](/javascript/api/excel/excel.sliceritemcollection#getcount--)|Returns the number of slicer items in the slicer.|
 ||[getItem(key: string)](/javascript/api/excel/excel.sliceritemcollection#getitem-key-)|Gets a slicer item object using its key or name.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.sliceritemcollection#getitemat-index-)|Gets a slicer item based on its position in the collection.|
