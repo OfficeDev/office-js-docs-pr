@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/07/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions
 localization_priority: Priority
@@ -182,7 +182,9 @@ CustomFunctions.associate("INCREMENT", increment);
 > - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
 ## Next steps
-Learn about [different parameter types your functions can use](custom-functions-parameter-options.md). Discover how to [batch multiple API calls](custom-functions-batching.md).
+
+* Learn about [different parameter types your functions can use](custom-functions-parameter-options.md).
+* Discover how to [batch multiple API calls](custom-functions-batching.md).
 
 ## See also
 
