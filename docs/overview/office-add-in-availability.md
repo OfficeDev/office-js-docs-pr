@@ -54,7 +54,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365)</td>
     <td> - TaskPane<br>
         - Content<br>
         - Custom Functions<br>
@@ -287,7 +287,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office for Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365)</td>
     <td>
         - Custom Functions</td>
     <td>
@@ -339,7 +339,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office for Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
@@ -493,7 +493,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office for Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -739,7 +739,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365)</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
