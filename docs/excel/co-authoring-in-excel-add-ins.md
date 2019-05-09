@@ -1,7 +1,7 @@
 ---
 title: Coauthoring in Excel add-ins
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Normal
 ---
 
@@ -17,9 +17,9 @@ Coauthoring is available on the following platforms:
 
 - Excel Online
 - Excel for Android
-- Excel for iOS
-- Excel Mobile for Windows 10
-- Excel for Windows Desktop for Office 365 customers (Windows desktop build 16.0.8326.2076 or later, which is available to current channel customers effective August 2017)
+- Excel for iPad
+- Excel Mobile on Windows 10
+- Excel on Windows Desktop for Office 365 customers (Windows desktop build 16.0.8326.2076 or later, which is available to current channel customers effective August 2017)
 
 ## Coauthoring overview
 

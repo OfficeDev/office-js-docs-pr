@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 04/17/2019
+ms.date: 05/08/2019
 localization_priority: Priority
 ---
 
@@ -34,43 +34,43 @@ Added a new optional parameter `options`, which is a dictionary with one valid v
 
 Added a new object that represents the content of an attachment.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)
 
 Added a new method that allows you to attach a file represented as a base64 encoded string to a message or appointment.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
 
 Added a new method to get the content of a specific attachment.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
 
 Added a new method that gets an item's attachments in compose mode.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
 
 Added a new enum that specifies the formatting that applies to an attachment's content.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus)
 
 Added a new enum that specifies whether an attachment was added to or removed from an item.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.EventType.AttachmentsChanged](/javascript/api/office/office.eventtype)
 
 Added `AttachmentsChanged` event to `Item`.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 ---
 
@@ -85,37 +85,37 @@ In Outlook, a user can group messages and appointments by using a category to co
 
 Added a new object that represents an item's categories.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [CategoryDetails](/javascript/api/outlook/office.categorydetails)
 
 Added a new object that represents a category's details (its name and associated color).
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [MasterCategories](/javascript/api/outlook/office.mastercategories)
 
 Added a new object that represents the categories master list on a mailbox.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
 
 Added a new property that represents the categories master list on a mailbox.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
 
 Added a new property that represents the set of categories on an item.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
 
 Added a new enum that specifies the colors available to be associated with categories.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 ---
 
@@ -125,25 +125,25 @@ Added a new enum that specifies the colors available to be associated with categ
 
 Added a new object that represents the properties of an appointment or message item in a shared folder, calendar, or mailbox.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
 
 Added a new method that gets an object which represents the sharedProperties of an appointment or message item.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)
 
 Added a new bit flag enum that specifies the delegate permissions.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md)
 
 Added a child element to the [DesktopFormFactor](../../manifest/desktopformfactor.md) manifest element. It defines whether the add-in is available in delegate scenarios.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 ---
 
@@ -153,37 +153,37 @@ Added a child element to the [DesktopFormFactor](../../manifest/desktopformfacto
 
 Added a new object that represents the set of locations on an appointment.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [LocationDetails](/javascript/api/outlook/office.locationdetails)
 
 Added a new object that represents a location. Read only.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [LocationIdentifier](/javascript/api/outlook/office.locationidentifier)
 
 Added a new object that represents the id of a location.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
 
 Added a new property that represents the set of locations on an appointment.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)
 
 Added a new enum that specifies an appointment location's type.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.EventType.EnhancedLocationsChanged](/javascript/api/office/office.eventtype)
 
 Added `EnhancedLocationsChanged` event to `Item`.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 ---
 
@@ -193,7 +193,7 @@ Added `EnhancedLocationsChanged` event to `Item`.
 
 Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Available in**: Outlook for Windows (Office 365), Outlook on the web (Classic)
+**Available in**: Outlook on Windows (connected to Office 365), Outlook on the web (Classic)
 
 ---
 
@@ -203,13 +203,13 @@ Added a new function that returns initialization data passed when the add-in is 
 
 Added a new object that represents the internet headers of a message item.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
 Added a new property that represents the internet headers on a message item.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 ---
 
@@ -219,13 +219,13 @@ Added a new property that represents the internet headers on a message item.
 
 Added ability to get Office theme.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 #### [Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Added `OfficeThemeChanged` event to `Mailbox`.
 
-**Available in**: Outlook for Windows (Office 365)
+**Available in**: Outlook on Windows (connected to Office 365)
 
 ---
 
@@ -235,7 +235,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 Added access to `getAccessTokenAsync`, which allows add-ins to [get an access token](/outlook/add-ins/authenticate-a-user-with-an-sso-token) for the Microsoft Graph API.
 
-**Available in**: Outlook for Windows (Office 365), Outlook for Mac (Office 365), Outlook on the web (Office 365 and Outlook.com), Outlook on the web (Classic)
+**Available in**: Outlook on Windows (connected to Office 365), Outlook for Mac (connected to Office 365), Outlook on the web (Outlook.com and connected to Office 365), Outlook on the web (Classic)
 
 ## See also
 

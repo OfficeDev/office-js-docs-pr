@@ -1,5 +1,5 @@
 ---
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions
 localization_priority: Normal
@@ -110,7 +110,7 @@ function StoreValue(key, value) {
 
 ## Additional considerations
 
-In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the JavaScript runtime, custom functions cannot access the DOM.
+In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. In Excel on Windows, where custom functions use the JavaScript runtime, custom functions cannot access the DOM.
 
 ## Next steps
 Learn some crucial [best practices for custom functions](custom-functions-best-practices.md).

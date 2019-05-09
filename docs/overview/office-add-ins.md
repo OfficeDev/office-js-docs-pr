@@ -1,14 +1,14 @@
 ---
 title: Office Add-ins platform overview | Microsoft Docs
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
 ---
 
 
 # Office Add-ins platform overview
 
-You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.
+You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office on Windows, Office Online, Office for Mac, and Office for iPad.
 
 Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
 
@@ -18,11 +18,11 @@ Office Add-ins can do almost anything a webpage can do inside a browser. Use the
 
 ## How are Office Add-ins different from COM and VSTO add-ins?
 
-COM or VSTO add-ins are earlier Office integration solutions that run only on Office for Windows. Unlike COM add-ins, Office Add-ins don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the host application, for example Excel, reads the add-in manifest and hooks up the add-in’s custom ribbon buttons and menu commands in the UI. When needed, it loads the add-in's JavaScript and HTML code, which executes in the context of a browser in a sandbox.
+COM or VSTO add-ins are earlier Office integration solutions that run only on Office on Windows. Unlike COM add-ins, Office Add-ins don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the host application, for example Excel, reads the add-in manifest and hooks up the add-in’s custom ribbon buttons and menu commands in the UI. When needed, it loads the add-in's JavaScript and HTML code, which executes in the context of a browser in a sandbox.
 
 Office Add-ins provide the following advantages over add-ins built using VBA, COM, or VSTO:
 
-- Cross-platform support. Office Add-ins run in Office for Windows, Mac, iOS, and Office Online.
+- Cross-platform support. Office Add-ins run in Office on Windows, Mac, iOS, and Office Online.
 
 - Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization.
 
@@ -76,7 +76,7 @@ Custom UI and task panes are specified in the add-in manifest.  
 
 #### Custom buttons and menu commands  
 
-You can add custom ribbon buttons and menu items to the ribbon in Office for Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
+You can add custom ribbon buttons and menu items to the ribbon in Office on Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
 *Figure 3. Add-in commands in the ribbon*
 

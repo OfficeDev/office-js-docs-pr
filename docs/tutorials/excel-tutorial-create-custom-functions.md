@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -23,7 +23,7 @@ In this tutorial, you will:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel for Windows (64-bit version 1810 or later) or Excel Online
+* Excel on Windows (64-bit version 1810 or later) or Excel Online
 
 * Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
 
@@ -57,11 +57,11 @@ In this tutorial, you will:
     npm run build
     ```
 
-4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows or Excel Online.
+4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on Windows or Excel Online.
 
-# [Excel for Windows](#tab/excel-windows)
+# [Excel on Windows](#tab/excel-windows)
 
-To test your add-in in Excel for Windows, run the following command. When you run this command, the local web server will start and Excel for Windows will open with your add-in loaded.
+To test your add-in in Excel on Windows, run the following command. When you run this command, the local web server will start and Excel on Windows will open with your add-in loaded.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -146,17 +146,17 @@ Integrating data from the Web is a great way to extend Excel through custom func
     npm run build
     ```
 
-4. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
+4. Complete the following steps (for either Excel on Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
-# [Excel for Windows](#tab/excel-windows)
+# [Excel on Windows](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
+    ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
-    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
+    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
 
 # [Excel Online](#tab/excel-online)
 
@@ -232,17 +232,17 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
     npm run build
     ```
 
-3. Complete the following steps (for either Excel for Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
+3. Complete the following steps (for either Excel on Windows or Excel Online) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
-# [Excel for Windows](#tab/excel-windows)
+# [Excel on Windows](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
+    ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
-    ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
+    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
 
 # [Excel Online](#tab/excel-online)
 

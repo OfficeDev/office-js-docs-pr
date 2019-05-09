@@ -1,7 +1,7 @@
 ---
 title: Add-in commands for Excel, Word, and PowerPoint
 description: ''
-ms.date: 04/29/2019
+ms.date: 05/08/2019
 localization_priority: Priority
 ---
 
@@ -49,10 +49,10 @@ The following command capabilities are currently supported.
 
 Add-in commands are currently supported on the following platforms:
 
-- Outlook 2016 for Windows (build 16.0.4678.1000+)
-- Office 365 for Windows (build 16.0.6769+)
-- Office 2019 for Windows
-- Office 365 for Mac (build 15.33+)
+- Outlook 2016 on Windows (build 16.0.4678.1000+)
+- Office on Windows connected to Office 365 (build 16.0.6769+)
+- Office 2019 on Windows
+- Office for Mac connected to Office 365 (build 15.33+)
 - Office 2019 for Mac
 - Office Online
 

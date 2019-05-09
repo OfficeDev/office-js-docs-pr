@@ -1,14 +1,14 @@
 ---
 title: Excel add-ins overview
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
 ---
 
 
 # Excel add-ins overview
 
-An Excel add-in allows you to extend Excel application functionality across multiple platforms including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Use Excel add-ins within a workbook to:
+An Excel add-in allows you to extend Excel application functionality across multiple platforms including Office on Windows, Office Online, Office for Mac, and Office for iPad. Use Excel add-ins within a workbook to:
 
 - Interact with Excel objects, read and write Excel data.
 - Extend functionality using web based task pane or content pane
@@ -17,13 +17,13 @@ An Excel add-in allows you to extend Excel application functionality across mult
 
 The Office Add-ins platform provides the framework and Office.js JavaScript APIs that enable you to create and run Excel add-ins. By using the Office Add-ins platform to create your Excel add-in, you'll get the following benefits:
 
-* **Cross-platform support**: Excel add-ins run in Office for Windows, Mac, iOS, and Office Online.
+* **Cross-platform support**: Excel add-ins run in Office on Windows, Mac, iOS, and Office Online.
 * **Centralized deployment**: Admins can quickly and easily deploy Excel add-ins to users throughout an organization.
 * **Use of standard web technology**: Create your Excel add-in using familiar web technologies such as HTML, CSS, and JavaScript.
 * **Distribution via AppSource**: Share your Excel add-in with a broad audience by publishing it to [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
 
 > [!NOTE]
-> Excel add-ins are different from COM and VSTO add-ins, which are earlier Office integration solutions that run only on Office for Windows. Unlike COM add-ins, Excel add-ins do not require you to install any code on a user's device, or within Excel. 
+> Excel add-ins are different from COM and VSTO add-ins, which are earlier Office integration solutions that run only in Office on Windows. Unlike COM add-ins, Excel add-ins do not require you to install any code on a user's device, or within Excel.
 
 ## Components of an Excel add-in
 
