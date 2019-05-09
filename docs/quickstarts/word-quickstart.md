@@ -1,14 +1,14 @@
 ---
 title: Build your first Word task pane add-in
 description: 
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
 ---
 
 # Build your first Word task pane add-in
 
-_Applies to: Word 2016 or later for Windows, Word for iPad, Word for Mac_
+_Applies to: Word 2016 or later on Windows, Word for iPad, Word for Mac_
 
 In this article, you'll walk through the process of building a Word task pane add-in.
 

@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 04/24/2019
+ms.date: 05/08/2019
 localization_priority: Normal
 ---
 
@@ -1927,7 +1927,7 @@ Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggest
 Gets initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
 > [!NOTE]
-> This method is only supported by Outlook 2016 or later for Windows (Click-to-Run versions later than 16.0.8413.1000) and Outlook on the web for Office 365.
+> This method is only supported by Outlook 2016 or later on Windows (Click-to-Run versions later than 16.0.8413.1000) and Outlook on the web for Office 365.
 
 ##### Parameters
 

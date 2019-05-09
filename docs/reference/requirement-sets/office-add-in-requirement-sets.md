@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: ''
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
@@ -116,7 +116,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-|Outlook for Windows<br>Outlook for web<br>Outlook for Android<br>Outlook for Mac<br>Outlook Web App |See [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md).|
+|Outlook on Windows<br>Outlook for web<br>Outlook for Android<br>Outlook for Mac<br>Outlook Web App |See [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md).|
 
 ---
 

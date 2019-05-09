@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
 ---
 
@@ -65,7 +65,7 @@ When you specify Office hosts or API requirements, there are several factors to 
 
 To make your add-in run in one Office host application, use the  **Hosts** and **Host** elements in the manifest. If you don't specify the **Hosts** element, your add-in will run in all hosts.
 
-For example, the following  **Hosts** and **Host** declaration specifies that the add-in will work with any release of Excel, which includes Excel for Windows, Excel Online, and Excel for iPad.
+For example, the following  **Hosts** and **Host** declaration specifies that the add-in will work with any release of Excel, which includes Excel on Windows, Excel Online, and Excel for iPad.
 
 ```xml
 <Hosts>
@@ -75,14 +75,14 @@ For example, the following  **Hosts** and **Host** declaration specifies that th
 
 The  **Hosts** element can contain one or more **Host** elements. The **Host** element specifies the Office host your add-in requires. The **Name** attribute is required and can be set to one of the following values.
 
-| Name          | Office host applications                      |
-|:--------------|:----------------------------------------------|
-| Database      | Access web apps                               |
-| Document      | Word for Windows, Mac, iPad and Online        |
-| Mailbox       | Outlook for Windows, Mac, Web and Outlook.com |
-| Presentation  | PowerPoint for Windows, Mac, iPad and Online  |
-| Project       | Project                                       |
-| Workbook      | Excel Windows, Mac, iPad and Online           |
+| Name          | Office host applications                                                              |
+|:--------------|:--------------------------------------------------------------------------------------|
+| Database      | Access web apps                                                                       |
+| Document      | Word on Windows, word for Mac, Word for iPad, and Word Online                         |
+| Mailbox       | Outlook on Windows, Outlook for Mac, Outlook on the web, and Outlook.com              |
+| Presentation  | PowerPoint on Windows, PowerPoint for Mac, PowerPoint for iPad, and PowerPoint Online |
+| Project       | Project                                                                               |
+| Workbook      | Excel on Windows, Excel for Mac, Excel for iPad, and Excel Online                     |
 
 > [!NOTE]
 > The  `Name` attribute specifies the Office host application that can run your add-in. Office hosts are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook and Outlook Web App can be used to run your add-in. 
@@ -93,7 +93,7 @@ The  **Hosts** element can contain one or more **Host** elements. The **Host** e
 The  **Requirements** element specifies the minimum requirement sets or API members that must be supported by the Office host to run your add-in. The **Requirements** element can specify both requirement sets and individual methods used in your add-in. In version 1.1 of the add-in manifest schema, the **Requirements** element is optional for all add-ins, except for Outlook add-ins.
 
 > [!WARNING]
-> Only use the **Requirements** element to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the **Requirements** element, the add-in won't run in that host or platform, and won't display in **My Add-ins**. Instead, we recommend that you make your add-in available on all platforms of an Office host, such as Excel for Windows, Excel Online, and Excel for iPad. To make your add-in available on  _all_ Office hosts and platforms, use runtime checks instead of the **Requirements** element.
+> Only use the **Requirements** element to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the **Requirements** element, the add-in won't run in that host or platform, and won't display in **My Add-ins**. Instead, we recommend that you make your add-in available on all platforms of an Office host, such as Excel on Windows, Excel Online, and Excel for iPad. To make your add-in available on  _all_ Office hosts and platforms, use runtime checks instead of the **Requirements** element.
 
 The following code example shows an add-in that loads in all Office host applications that support the following:
 

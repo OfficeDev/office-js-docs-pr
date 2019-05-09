@@ -1,5 +1,5 @@
 ---
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices
 localization_priority: Normal
@@ -94,7 +94,7 @@ The following sample shows the JSON metadata that corresponds to the functions d
 
 ## Additional considerations
 
-Avoid accessing the Document Object Model (DOM) directly or indirectly (for example, using jQuery) from your custom function. On Excel for Windows, where custom functions use the [JavaScript runtime](custom-functions-runtime.md), custom functions cannot access the DOM.
+Avoid accessing the Document Object Model (DOM) directly or indirectly (for example, using jQuery) from your custom function. In Excel on Windows, where custom functions use the [JavaScript runtime](custom-functions-runtime.md), custom functions cannot access the DOM.
 
 ## Next steps
 Learn how to [perform web requests with custom functions](custom-functions-web-reqs.md).

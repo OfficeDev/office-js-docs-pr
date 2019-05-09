@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: 
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
 ---
@@ -14,7 +14,7 @@ In this article, you'll walk through the process of building a Project task pane
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Project 2016 or later for Windows 
+- Project 2016 or later on Windows
 
 ## Create the add-in
 

@@ -2,7 +2,7 @@
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
 ms.topic: article
-ms.date: 04/23/2019
+ms.date: 05/08/2019
 localization_priority: Normal
 ---
 
@@ -25,10 +25,10 @@ Sounds good so far? Take a look at this one-minute video to see Script Lab in ac
 
 Script Lab is supported for Excel, Word, and PowerPoint on the following clients.
 
-- Office 365 for Windows
-- Office 365 for Mac
+- Office on Windows (connected to Office 365)
+- Office for Mac (connected to Office 365)
 - Office Online
-- Office 2013 or later for Windows
+- Office 2013 or later on Windows
 - Office 2016 or later for Mac
 
 ## Next steps
