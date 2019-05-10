@@ -170,7 +170,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
-        - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
         - ImageCoercion<br>
@@ -806,7 +805,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - Content<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
-     <td> - ActiveView<br>
+    <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
