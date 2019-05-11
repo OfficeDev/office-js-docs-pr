@@ -1,5 +1,5 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -14,7 +14,7 @@ With custom functions, developers can now add new functions to Excel by defining
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel for Windows (64-bit version 1810 or later) or Excel Online
+* Excel on Windows (64-bit version 1810 or later) or Excel Online
 
 * Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
 
@@ -48,14 +48,14 @@ To start, you'll use the Yeoman generator to create the custom functions project
     npm run build
     ```
 
-4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows or Excel Online. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
+4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on Windows or Excel Online. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
 
 > [!NOTE]
 > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
 
-# [Excel for Windows](#tab/excel-windows)
+# [Excel on Windows](#tab/excel-windows)
 
-To test your add-in in Excel for Windows, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
+To test your add-in in Excel on Windows, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
 ```command&nbsp;line
 npm run start:desktop

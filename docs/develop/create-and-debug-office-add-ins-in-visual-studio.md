@@ -1,7 +1,7 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
-description: 'Use Visual Studio to create and debug Office Add-ins on the Office desktop client for Windows'
-ms.date: 03/19/2019
+description: 'Use Visual Studio to create and debug Office Add-ins in the Office desktop client on Windows'
+ms.date: 05/08/2019
 localization_priority: Priority
 ---
 
@@ -205,7 +205,7 @@ If your add-in isn't visible within the document that's displayed in the host ap
 
 1. In Excel, PowerPoint, or Word, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
 
-    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
 2. In the list of available add-ins, find the **Developer Add-ins** section and select the your add-in to register it.
 

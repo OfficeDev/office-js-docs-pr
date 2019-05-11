@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/09/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -71,7 +71,7 @@ For example, suppose that your function returns the second highest value from a 
 /**
  * Returns the second highest value in a matrixed range of values.
  * @customfunction
- * @param {[][]} values Multiple ranges of values.  
+ * @param {number[][]} values Multiple ranges of values.  
  */
 function secondHighest(values){
   let highest = values[0][0], secondHighest = values[0][0];

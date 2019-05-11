@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: ''
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -10,14 +10,14 @@ localization_priority: Priority
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Excel add-ins run across multiple versions of Office, including Office 2016 or later for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
+Excel add-ins run across multiple versions of Office, including Office 2016 or later on Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > For information about using preview APIs, see the [Excel JavaScript preview APIs](#excel-javascript-preview-apis) section within this article.
 
-|  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
+|  Requirement set  |  Office on Windows<br>(connected to Office 365)  |  Office for iPad<br>(connected to Office 365)  |  Office for Mac<br>(connected to Office 365)  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Preview](/javascript/api/excel)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
 | ExcelApi 1.9  | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019       | Coming soon |
@@ -37,7 +37,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 
 [Custom Functions](../../excel/custom-functions-overview.md) use separate requirement sets from the core Excel JavaScript APIs. The following table lists the Custom Functions requirement sets, the supported Office host applications, and the build versions or number for those applications.
 
-|  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online | Office Online Server |
+|  Requirement set  |  Office on Windows<br>(connected to Office 365)  |  Office for iPad<br>(connected to Office 365)  |  Office for Mac<br>(connected to Office 365)  | Office Online | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) or later | Not supported | 16.24 or later | April 2019 | Coming soon |
 

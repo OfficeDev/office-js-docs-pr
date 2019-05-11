@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
 ---
 
@@ -25,7 +25,7 @@ The autoopen feature is currently <!-- in **developer preview** and it is only -
 
 |**Products**|**Platforms**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Supported platforms for all products:<ul><li>Office for Windows Desktop. Build 16.0.8121.1000+</li><li>Office for Mac. Build 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Supported platforms for all products:<ul><li>Office on Windows Desktop. Build 16.0.8121.1000+</li><li>Office for Mac. Build 15.34.17051500+</li><li>Office Online</li></ul>|
 
 
 ## Best practices

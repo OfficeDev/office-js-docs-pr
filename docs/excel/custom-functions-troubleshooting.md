@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/08/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions
 localization_priority: Priority
@@ -74,7 +74,7 @@ If you are encountering issues that aren't documented here, let us know. There a
 
 ### In Excel on Windows or Mac
 
-If using Excel for Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File -> Feedback -> Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
+If using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File -> Feedback -> Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
 
 ### In Github
 
