@@ -1,7 +1,7 @@
 ---
 title: API open specifications for the Office JavaScript API
 description: ''
-ms.date: 05/07/2019
+ms.date: 05/13/2019
 localization_priority: Priority
 ---
 
@@ -14,12 +14,7 @@ The Office JavaScript API open specifications provide information about new Java
 
 ## Open specifications
 
-The open specification phase allows us to hear from the community about upcoming designs. All of the features listed in the following section are currently welcoming design feedback of any kind.
-
-Please note that these features are not yet implemented and do not have release dates. The functionality will not be testable until entering the preview phase.
-
-### Sample
-The specification for "Sample" is now available for public review. Please head over [this page](./sample.md) and share your thoughts.
+The open specification phase allows us to hear from the community about upcoming designs. Currently, we have no APIs in the public open specification phase. We will update this page with new designs as they become available.
 
 ## Preview APIs
 
