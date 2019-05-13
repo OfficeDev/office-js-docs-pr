@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API overview
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/13/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -10,11 +10,11 @@ localization_priority: Priority
 
 You can use the Excel JavaScript API to build add-ins for Excel 2016 or later. The following list shows the high-level Excel objects that are available in the API. Each object page link contains a description of the properties, events, and methods that are available on the object. Explore the links from the menu to learn more.
 
-Some of the core Excel objects are listed below for convenience: 
+Some of the core Excel objects are listed below for convenience:
 
 - [Workbook](/javascript/api/excel/excel.workbook): The top-level object that contains related workbook objects such as worksheets, tables, ranges, etc. It also can be used to list related references.
 
-- [Worksheet](/javascript/api/excel/excel.worksheet): Represents a worksheet in a workbook. 
+- [Worksheet](/javascript/api/excel/excel.worksheet): Represents a worksheet in a workbook.
     - [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection): A collection of the **Worksheet** objects in a workbook.
     - [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection): Represents the protection of a **Worksheet** object.
 
@@ -32,12 +32,12 @@ Some of the core Excel objects are listed below for convenience:
 - [Chart](/javascript/api/excel/excel.chart): Represents a chart object in a worksheet, which is a visual representation of underlying data.
     - [ChartCollection](/javascript/api/excel/excel.chartcollection): A collection of charts in a worksheet.
 	
-- [PivotTable](/javascript/api/excel/excel.pivottable): Represents an Excel PivotTable, which is a hierarchical grouping and presentation of data. 
+- [PivotTable](/javascript/api/excel/excel.pivottable): Represents an Excel PivotTable, which is a hierarchical grouping and presentation of data.
     - [PivotTableCollection](/javascript/api/excel/excel.pivottablecollection): A collection of PivotTables in a worksheet.
 
 - [Filter](/javascript/api/excel/excel.filter): Represents an object that manages the filtering of a table's column.
 
-- [NamedItem](/javascript/api/excel/excel.nameditem): Represents a defined name for a range of cells or a value. 
+- [NamedItem](/javascript/api/excel/excel.nameditem): Represents a defined name for a range of cells or a value.
     - [NamedItemCollection](/javascript/api/excel/excel.nameditemcollection): A collection of the **NamedItem** objects in a workbook.
 
 - [Binding](/javascript/api/excel/excel.binding): An abstract class that represents a binding to a section of the workbook.
@@ -45,7 +45,7 @@ Some of the core Excel objects are listed below for convenience:
 
 ## Excel JavaScript API open specifications
 
-As we design and develop new APIs for Excel add-ins, we'll make them available for your feedback on our [Open API specifications](../openspec.md) page. Find out what new features are in the pipeline for the Excel JavaScript APIs, and provide your input on our design specifications.
+As we design and develop new APIs for Excel add-ins, we'll make them available for your feedback on our [Open API specifications](../openspec/openspec.md) page. Find out what new features are in the pipeline for the Excel JavaScript APIs, and provide your input on our design specifications.
 
 ## Excel JavaScript API requirement sets
 
