@@ -737,8 +737,6 @@
     items:
       - name: Overview
         href: reference/openspec/openspec.md
-      - name: Sample
-        href: reference/openspec/sample.md
 
   - name: Error codes
     href: reference/javascript-api-for-office-error-codes.md
