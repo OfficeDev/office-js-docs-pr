@@ -734,7 +734,9 @@
       href: /javascript/api/word
 
   - name: API open specifications
-    href: reference/openspec.md
+    items:
+      - name: Overview
+        href: reference/openspec/openspec.md
 
   - name: Error codes
     href: reference/javascript-api-for-office-error-codes.md
