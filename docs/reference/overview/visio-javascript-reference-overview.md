@@ -1,7 +1,7 @@
 ---
 title: Visio JavaScript API overview
 description: ''
-ms.date: 10/11/2018
+ms.date: 05/13/2019
 ms.prod: visio
 localization_priority: Priority
 ---
@@ -194,10 +194,6 @@ After that, all you need is the URL of a Visio diagram that you want to work wit
 ![Copy Visio file URL from Embed dialog](../images/Visio-embed-url.png)
 
 If you are using Visio Online in Edit mode, open the Embed dialog by choosing **File** > **Share** > **Embed**. If you are using Visio Online in View mode, open the Embed dialog by choosing '...' and then **Embed**.
-
-## Open API specifications
-
-As we design and develop new APIs, we'll make them available for your feedback on our [Open API specifications](../openspec.md) page. Find out what new features are in the pipeline, and provide your input on our design specifications.
 
 ## Visio JavaScript API reference
 

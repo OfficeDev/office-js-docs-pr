@@ -1,7 +1,7 @@
 ---
 title: JavaScript API for Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/13/2019
 localization_priority: Priority
 ---
 
@@ -31,7 +31,7 @@ Learn more about [supported hosts and other requirements](../concepts/requiremen
 
 ## Open API specifications
 
-As we design and develop new APIs for Office Add-ins, we'll make them available for your feedback on our [Open API specifications](openspec.md) page. Find out what new features are in the pipeline, and provide your input on our design specifications.
+As we design and develop new APIs for Office Add-ins, we'll make them available for your feedback on our [Open API specifications](openspec/openspec.md) page. Find out what new features are in the pipeline, and provide your input on our design specifications.
 
 ## See also
 
