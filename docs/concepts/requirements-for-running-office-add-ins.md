@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/14/2019
 localization_priority: Priority
 ---
 
@@ -23,7 +23,7 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 > [!TIP]
-> When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server. 
+> When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server.
 
 For content and task pane add-ins, in the supported Office host applications - Access web apps, Word, Excel, PowerPoint, or Project - you also need an [add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
 
@@ -43,12 +43,12 @@ The following software is required for developing an Office Add-in for the suppo
 
   If you have a valid Office 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
-- Internet Explorer 11 or later, which must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or later.
+- Internet Explorer 11 or Microsoft Edge (depending on the Windows and Office versions) must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or Microsoft Edge. See [Web viewers used by Office Add-ins](web-viewers-used-by-office-web-add-ins.md) for more details.
 
   > [!NOTE]
   > Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you are using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
 
-- One of the following as the default browser: Internet Explorer 11 or later, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
+- One of the following as the default browser: Internet Explorer 11, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 - An HTML and JavaScript editor such as Notepad, [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or a third-party web development tool.
 
 ## Client requirements: OS X desktop
@@ -63,7 +63,7 @@ The following are the minimum client versions of Office for Mac that support Off
 
 ## Client requirements: Browser support for Office Online web clients and SharePoint
 
-Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11 or later, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
+Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
 
 ## Client requirements: non-Windows smartphone and tablet
@@ -85,3 +85,4 @@ Specifically for Outlook Web App running in a browser on smartphones and non-Win
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
+- [Web viewers used by Office Add-ins](web-viewers-used-by-office-web-add-ins.md)
