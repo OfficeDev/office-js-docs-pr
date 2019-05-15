@@ -282,6 +282,9 @@ In this article, you'll walk through the process of building a Word task pane ad
 
         To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
 
+    > [!IMPORTANT]
+    > The first time you start the local web server, you will need to install the Developer CA certificate so that `https://localhost` is trusted. This is done automatically by yo office. You need to accept the prompt that allows this install. 
+
 2. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)

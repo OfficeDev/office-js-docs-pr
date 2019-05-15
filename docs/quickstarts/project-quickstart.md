@@ -101,6 +101,9 @@ Office.context.document.getSelectedTaskAsync(
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm start`, accept the prompt to install the certificate that the Yeoman generator provides. 
 
+    > [!IMPORTANT]
+    > The first time you start the local web server, you will need to install the Developer CA certificate so that `https://localhost` is trusted. This is done automatically by yo office. You need to accept the prompt that allows this install. 
+
 2. In Project, create a simple project plan.
 
 3. Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).

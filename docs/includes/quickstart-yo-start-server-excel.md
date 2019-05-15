@@ -18,3 +18,5 @@ Start the local web server and sideload your add-in.
 
     To use your add-in, open a new workbook in Excel Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
 
+> [!IMPORTANT]
+> The first time you start the local web server, you will need to install the Developer CA certificate so that `https://localhost` is trusted. This is done automatically by yo office. You need to accept the prompt that allows this install. 

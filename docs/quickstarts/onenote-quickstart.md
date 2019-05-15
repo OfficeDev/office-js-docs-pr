@@ -82,6 +82,9 @@ try {
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
+
+    > [!IMPORTANT]
+    > The first time you start the local web server, you will need to install the Developer CA certificate so that `https://localhost` is trusted. This is done automatically by yo office. You need to accept the prompt that allows this install. 
     
 2. In [OneNote Online](https://www.onenote.com/notebooks), open a notebook and create a new page.
 
