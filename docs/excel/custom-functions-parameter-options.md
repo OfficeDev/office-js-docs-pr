@@ -28,7 +28,7 @@ Whereas regular parameters are required, optional parameters are not. When a use
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-  if (third === undefined) {
+  if (third !== undefined) {
     return first + second + third;
   }
   return first + second;
