@@ -2,7 +2,7 @@
 
     ```command&nbsp;line
     npm start
-    ``` 
+    ```
 
 2. Open either Internet Explorer or Microsoft Edge and navigate to `https://localhost:3000`. If the page loads without any certificate errors, proceed to the next section in this article (**Try it out**). If your browser indicates that the site's certificate is not trusted, proceed to the following step.
 
