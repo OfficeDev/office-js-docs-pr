@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins in Office Online
 description: How to use Office Online to test and debug your add-ins.
-ms.date: 03/19/2019
+ms.date: 05/16/2019
 localization_priority: Priority
 ---
 
@@ -52,7 +52,7 @@ The following are some issues that you might encounter as you debug:
     
 - Some JavaScript errors that you see might originate from Office Online.
       
-- The browser might show an invalid certificate error that you will need to bypass.
+- The browser might show an invalid certificate error that you will need to bypass. The process for doing this varies with the browser and the various browsers' UIs for doing this change periodically. You should search the browser's help or search online for instructions. (For example, search for "Edge invalid certificate warning".) Most browsers will have a link on the warning page that enables you to click through to the add-in page. For example, Microsoft Edge has a link "Go on to the webpage (Not recommended)". But you will usually have to go through this link every time the add-in reloads. For a longer lasting bypass, see the help as suggested.
       
 - If you set breakpoints in your code, Office Online might throw an error indicating that it is unable to save.
 
