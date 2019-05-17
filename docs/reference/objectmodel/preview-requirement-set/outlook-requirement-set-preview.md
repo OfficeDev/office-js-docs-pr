@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 05/08/2019
+ms.date: 05/17/2019
 localization_priority: Priority
 ---
 
@@ -17,16 +17,6 @@ The Preview Requirement set includes all of the features of [Requirement set 1.7
 ## Features in preview
 
 The following features are in preview.
-
-### Add-in commands
-
-#### [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
-
-Added a new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
-
-**Available in**: Outlook on the web (Classic)
-
----
 
 ### Attachments
 
@@ -71,6 +61,16 @@ Added a new enum that specifies whether an attachment was added to or removed fr
 Added `AttachmentsChanged` event to `Item`.
 
 **Available in**: Outlook on Windows (connected to Office 365)
+
+---
+
+### Block on send
+
+#### [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
+
+Added a new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
+
+**Available in**: Outlook on the web (Classic)
 
 ---
 
