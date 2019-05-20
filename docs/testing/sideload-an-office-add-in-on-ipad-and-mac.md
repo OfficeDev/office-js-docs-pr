@@ -81,7 +81,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
     ![Office Add-in displayed in Office for Mac](../images/lorem-ipsum-wikipedia.png)
     
     > [!NOTE]
-    > Add-ins are cached often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while you're developing it, you can clear the `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. If that folder doesn't exist, clear the files in the `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/` folder.
+    > Add-ins are cached often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while you're developing it, you can delete the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder.  [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 ## See also
 
