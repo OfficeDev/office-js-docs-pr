@@ -728,7 +728,9 @@ Open the /function-file/function-file.html file. This is a UI-less HTML file tha
 
     - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-    - For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+    - For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+    
+        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 3. If for any reason, your server is not running, then in a Git Bash window, or Node.JS-enabled system prompt, navigate to the **Start** folder of the project and run the command `npm start`. You do not need to rebuild the project because the only JavaScript file you changed is not part of the built bundle.js.
 
