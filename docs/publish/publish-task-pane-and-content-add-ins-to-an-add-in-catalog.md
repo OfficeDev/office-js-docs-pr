@@ -70,7 +70,7 @@ Even though SharePoint names the catalog an "app" catalog, you can register Offi
 
 10. Choose **OK**.
 
-To add an add-in to the App Catalog Site, browse to the site you have just created. One way to find the app catalog is to choose **site collections** in the left pane, and the app catalog URL will appear in the list of site collections. Once in the app catalog you can add Office add-ins using steps in the next section.
+The app catalog is now set up.
 
 ## Publish an add-in to an app catalog
 
