@@ -25,7 +25,7 @@ To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property f
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-ipad-and-mac.md). Right-click the add-in and you should see an **Inspect Element** option in the context menu.  Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
+Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-ipad-and-mac.md). Right-click the add-in and you should see an **Inspect Element** option in the context menu. Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
 
 > [!NOTE]
 > If you're trying to use the inspector and the dialog flickers, update Office to the latest version. If that doesn't resolve the flickering, try the following workaround:
@@ -36,7 +36,7 @@ Then, open the Office application and [sideload your add-in](sideload-an-office-
 
 ## Clearing the Office application's cache on a Mac or iPad
 
-Add-ins are often cached in Office for Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If  more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
+Add-ins are often cached in Office for Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
 
 On a Mac, you can clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. 
 
