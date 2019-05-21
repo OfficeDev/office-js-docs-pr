@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 11/02/2018
+ms.date: 05/21/2019
 localization_priority: Priority
 ---
 
