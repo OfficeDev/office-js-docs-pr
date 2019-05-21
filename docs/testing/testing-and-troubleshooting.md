@@ -90,7 +90,8 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 ```
 
 ## Changes to add-in commands including ribbon buttons and menu items do not take effect
-Sometimes changes to add-in commands such as the icon for a ribbon button or the text of a menu item do not seem to take effect. Clear the Office cache of the old versions.
+
+If changes you've made in the manifest, such as file names of ribbon button icons or text of menu items, do not seem to take effect, try clearing the Office cache on your computer. 
 
 #### For Windows:
 Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.

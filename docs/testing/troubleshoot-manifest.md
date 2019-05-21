@@ -129,7 +129,7 @@ You might see messages in the log file that are confusing or that are classified
 
 ## Clear the Office cache
 
-If changes you've made in the manifest, such as file names of ribbon button icons, or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer. 
+If changes you've made in the manifest, such as file names of ribbon button icons or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer. 
 
 #### For Windows:
 Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
