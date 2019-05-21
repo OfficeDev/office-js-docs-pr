@@ -85,7 +85,6 @@ To add a URL to your list of trusted sites:
 This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
-
 Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
 ```
 
