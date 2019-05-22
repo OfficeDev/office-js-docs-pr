@@ -34,12 +34,10 @@ Then, open the Office application and [sideload your add-in](sideload-an-office-
 > 3. Resize the dialog to its original size.
 > 4. Use the inspector as required.
 
-## Clearing the Office application's cache on a Mac or iPad
+## Clearing the Office application's cache on a Mac
 
 Add-ins are often cached in Office for Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
 
 On a Mac, you can clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-On an iPad, you can call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
