@@ -1,7 +1,7 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint catalog
 description: To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the add-in catalog for their organization.
-ms.date: 03/19/2019
+ms.date: 05/22/2019
 localization_priority: Priority
 ---
 
@@ -14,11 +14,11 @@ An add-in catalog is a dedicated site collection in a SharePoint web application
 > - If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](../publish/centralized-deployment.md) to publish your add-ins.
 > - SharePoint catalogs are not supported for Office for Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).   
 
-## Set up an add-in catalog
+## Create an add-in catalog
 
-Complete the steps in one of the following sections to set up an add-in catalog on SharePoint or on Office 365.
+Complete the steps in one of the following sections to create an add-in catalog on SharePoint or on Office 365.
 
-### To set up an add-in catalog for on-premises SharePoint
+### To create an add-in catalog for on-premises SharePoint
 
 > [!NOTE]
 > The UI in on-premises SharePoint still refers to add-ins as **apps**.
@@ -41,22 +41,22 @@ Complete the steps in one of the following sections to set up an add-in catalog 
 
 9. To add an add-in to the Office Add-ins add-in catalog, choose **Apps for Office**.
 
-### To set up an app catalog on Office 365
+### To create an app catalog on Office 365
 
 Even though SharePoint names the catalog an "app" catalog, you can register Office Add-ins in the app catalog.
 
-1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)
+1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
 
 2. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
 
     > [!NOTE]
-    > You need to use the Classic SharePoint admin center to set up the catalog. If you are in the new SharePoint admin center, choose **Class SharePoint admin center** in the left pane.
+    > You need to use the Classic SharePoint admin center to create the catalog. If you are in the new SharePoint admin center, choose **Classic SharePoint admin center** in the left pane.
 
 3. In the left task pane, choose  **apps**.
 
 4. On the **apps** page, choose **App Catalog**.
     > [!NOTE]
-    > If an app catalog is already created and appears on this page, then you can skip the rest of these steps and go to the next section to publish your add-in to the catalog.
+    > If an app catalog is already created and appears on this page, then you can skip the rest of these steps and go to the next section of this article to publish your add-in to the catalog.
 
 5. On the **App Catalog Site** page, choose **OK** to accept the default option and create a new add-in catalog site.
 
@@ -70,16 +70,16 @@ Even though SharePoint names the catalog an "app" catalog, you can register Offi
 
 10. Choose **OK**.
 
-The app catalog is now set up.
+The app catalog is now created.
 
 ## Publish an add-in to an app catalog
 
 To publish an add-in to an existing app catalog, complete the following steps.
 
-1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)
+1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
 2. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
     > [!NOTE]
-    > You need to use the Classic SharePoint admin center to set up the catalog. If you are in the new SharePoint admin center, choose **Class SharePoint admin center** in the left pane.
+    > You need to use the Classic SharePoint admin center to create the catalog. If you are in the new SharePoint admin center, choose **Classic SharePoint admin center** in the left pane.
 3. In the left task pane, choose  **apps**.
 4. On the **apps** page, choose **App Catalog**.
 5. Choose **Distribute apps for Office**.
