@@ -1,7 +1,7 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint catalog
 description: To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the add-in catalog for their organization.
-ms.date: 03/19/2019
+ms.date: 05/22/2019
 localization_priority: Priority
 ---
 
@@ -14,11 +14,11 @@ An add-in catalog is a dedicated site collection in a SharePoint web application
 > - If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](../publish/centralized-deployment.md) to publish your add-ins.
 > - SharePoint catalogs are not supported for Office for Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).   
 
-## Set up an add-in catalog
+## Create an add-in catalog
 
-Complete the steps in one of the following sections to set up an add-in catalog on SharePoint or on Office 365.
+Complete the steps in one of the following sections to create an add-in catalog on SharePoint or on Office 365.
 
-### To set up an add-in catalog for on-premises SharePoint
+### To create an add-in catalog for on-premises SharePoint
 
 > [!NOTE]
 > The UI in on-premises SharePoint still refers to add-ins as **apps**.
@@ -41,45 +41,52 @@ Complete the steps in one of the following sections to set up an add-in catalog 
 
 9. To add an add-in to the Office Add-ins add-in catalog, choose **Apps for Office**.
 
-### To set up an add-in catalog on Office 365
+### To create an app catalog on Office 365
 
-1. On the Office 365 admin center page, choose  **Admin**, and then choose  **SharePoint**.
+Even though SharePoint names the catalog an "app" catalog, you can register Office Add-ins in the app catalog.
 
-2. In the left task pane, choose  **add-ins**.
+1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
 
-3. On the  **add-ins** page, choose **Add-in Catalog**.
+2. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
 
-4. On the  **Add-in Catalog Site** page, choose **OK** to accept the default option and create a new add-in catalog site.
+    > [!NOTE]
+    > You need to use the Classic SharePoint admin center to create the catalog. If you are in the new SharePoint admin center, choose **Classic SharePoint admin center** in the left pane.
 
-5. On the  **Create Add-in Catalog Site Collection** page, specify the title of your Add-in Catalog site.
+3. In the left task pane, choose  **apps**.
 
-6. Specify the web site address.
+4. On the **apps** page, choose **App Catalog**.
+    > [!NOTE]
+    > If an app catalog is already created and appears on this page, then you can skip the rest of these steps and go to the next section of this article to publish your add-in to the catalog.
 
-7. Set the  **Storage Quota** to the lowest possible value (currently 110). You will only be installing add-in packages on this site collection and they are very small.
+5. On the **App Catalog Site** page, choose **OK** to accept the default option and create a new add-in catalog site.
 
-8. Set the  **Server Resource Quota** to 0 (zero). (The server resource quota is related to throttling poorly performing sandboxed solutions, but you won't be installing any sandboxed solutions on your add-in catalog site.)
+6. On the **Create App Catalog Site Collection** page, specify the title of your App Catalog site.
 
-9. Choose  **OK**.
+7. Specify the **Web Site Address**.
 
-10. To add an add-in to the Add-in Catalog Site, browse to the site you have just created. In the left navigation pane, choose  **Office Add-ins**, and then, to upload an Office Add-in manifest file, choose  **new add-in**.
+8. Specify an **Administrator**.
 
-## Publish an add-in to an add-in catalog
+9. Set the **Server Resource Quota** to 0 (zero). (The server resource quota is related to throttling poorly performing sandboxed solutions, but you won't be installing any sandboxed solutions on your app catalog site.)
 
-To publish an add-in to an add-in catalog, complete the following steps.
+10. Choose **OK**.
 
-1. Browse to the add-in catalog:
+The app catalog is now created.
 
-    - Open the SharePoint Central Administration main page.
+## Publish an add-in to an app catalog
 
-    - Select  **Add-ins**.
+To publish an add-in to an existing app catalog, complete the following steps.
 
-    - Select  **Manage Add-in Catalog**.
-
-    - Choose the link provided, and then choose  **Office Add-ins** on the left navigation bar.
-
-2. Choose the  **Click to add new item** link.
-
-3. Choose  **Browse**, and then specify the [manifest](../develop/add-in-manifests.md) to upload.
+1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
+2. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
+    > [!NOTE]
+    > You need to use the Classic SharePoint admin center to create the catalog. If you are in the new SharePoint admin center, choose **Classic SharePoint admin center** in the left pane.
+3. In the left task pane, choose  **apps**.
+4. On the **apps** page, choose **App Catalog**.
+5. Choose **Distribute apps for Office**.
+6. In the **Apps for Office** page, choose **New**.
+7. In the **Add a document** dialog, select the **Choose Files** button.
+8. Locate and specify the [manifest](../develop/add-in-manifests.md) file to upload and choose **Open**.
+9. In the **Add a document** dialog, choose **OK**.
 
     Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
 
