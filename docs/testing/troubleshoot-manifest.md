@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 11/02/2018
+ms.date: 05/21/2019
 localization_priority: Priority
 ---
 
@@ -129,13 +129,15 @@ You might see messages in the log file that are confusing or that are classified
 
 ## Clear the Office cache
 
-If changes you've made in the manifest, such as file names of ribbon button icons, or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer. 
+If changes you've made in the manifest, such as file names of ribbon button icons or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer. 
 
 #### For Windows:
-Delete the content of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 #### For Mac:
-Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+Delete the contents of the folder `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### For iOS:
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.

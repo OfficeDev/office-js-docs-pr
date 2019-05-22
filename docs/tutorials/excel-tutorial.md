@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 01/28/2019
+ms.date: 05/21/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
@@ -728,7 +728,9 @@ Open the /function-file/function-file.html file. This is a UI-less HTML file tha
 
     - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-    - For Mac: `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+    - For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+    
+        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 3. If for any reason, your server is not running, then in a Git Bash window, or Node.JS-enabled system prompt, navigate to the **Start** folder of the project and run the command `npm start`. You do not need to rebuild the project because the only JavaScript file you changed is not part of the built bundle.js.
 
