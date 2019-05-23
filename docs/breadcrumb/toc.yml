@@ -5,15 +5,3 @@
   - name: Add-ins
     tocHref: /office/dev/add-ins/
     topicHref: /office/dev/add-ins
-    items:
-    - name: Tutorials
-      items: 
-      - name: Excel add-in tutorial
-        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
-        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
-      - name: PowerPoint add-in tutorial
-        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-      - name: Word add-in tutorial
-        tocHref: /office/dev/add-ins/tutorials/word-tutorial
-        topicHref: /office/dev/add-ins/tutorials/word-tutorial
