@@ -1,13 +1,13 @@
 ---
-title: Web viewers used by Office Add-ins
+title: Browsers used by Office Add-ins
 description: ''
-ms.date: 05/03/2019
+ms.date: 05/23/2019
 localization_priority: Priority
 ---
 
-# Web viewers used by Office Add-ins
+# Browsers used by Office Add-ins
 
-Since Office Add-ins are web applications, they need a web page viewer to display the HTML pages of the web application and a JavaScript engine to run the JavaScript. Both are supplied by a browser installed on the user’s computer.
+Since Office Add-ins are web applications, they need an embedded mini-browser to display the HTML pages of the web application in a task pane or content add-in window. (An embedded mini-browser is typically called a WebView control or WebBrowser control.) Add-ins also need a JavaScript engine to run the JavaScript. Both the mini-browser and the engine are supplied by a browser installed on the user’s computer.
 
 Which browser is used depends on:
 
