@@ -56,7 +56,7 @@ The id is used as the invariant identifier for the custom function stored in the
 
 * If id is not provided, the JavaScript/TypeScript function name is converted to uppercase, disallowed characters are removed.
 * The id must be unique for all custom functions.
-* The characters allowed are limited to: A-Z, a-z, 0-9, underscores, and period (.).
+* The characters allowed are limited to: A-Z, a-z, 0-9, underscores (\_), and period (.).
 
 #### name
 
