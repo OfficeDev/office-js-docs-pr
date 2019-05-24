@@ -1,5 +1,5 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -16,8 +16,6 @@ With custom functions, developers can now add new functions to Excel by defining
 
 * Excel on Windows (64-bit version 1810 or later) or Excel Online
 
-* Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
-
 ## Build your first custom functions project
 
 To start, you'll use the Yeoman generator to create the custom functions project. This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.
@@ -28,11 +26,11 @@ To start, you'll use the Yeoman generator to create the custom functions project
     yo office
     ```
 
-    - **Choose a project type:** `Excel Custom Functions Add-in project (...)`
+    - **Choose a project type:** `Excel Custom Functions Add-in project`
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `stock-ticker`
 
-    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/yo-office-excel-cf.png)
+    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/UpdatedYoOfficePrompt.png)
 
     The Yeoman generator will create the project files and install supporting Node components.
 
