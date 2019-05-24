@@ -134,11 +134,9 @@ ws.onerror(error){
 
 ## Stream and cancel functions
 
-Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything.
+Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything. Streaming might be online or offline, such as a function which counts a number up by one each second (offline) or a function which requests data from the web at set intervals (online). To declare a streaming function, use the JSDoc comment tag `@stream`.
 
-Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load.
-
-To declare a function as streaming or cancelable, use the JSDOC comment tags `@stream` or `@cancelable`.
+Cancelable custom functions enable you to cancel the execution of an asynchronous custom function to reduce its bandwidth consumption, working memory, and CPU load. Declare them using the tag `@cancelable`.  Because cancelable functions are only asynchronous functions which are *not* streaming, you will likely use this tag much less frequently. An example usage of a cancelable function would be a function takes a single input and returns a single value based on a web request. This operation isn't streaming (because it returns a single value), but you need to make the function cancelable to address a situation where the single input changes before the web request can be completed. Streaming functions handle this situation by default and therefore do not need to be tagged as both streaming and cancelable. 
 
 ### Using an invocation parameter
 
