@@ -102,7 +102,7 @@
         "redirect_document_id": true 
       }, 
       {   
-        "source_path": "/office/dev/add-ins/concepts/web-viewers-used-by-office-web-add-ins.md", 
+        "source_path": "docs/concepts/web-viewers-used-by-office-web-add-ins.md", 
         "redirect_url": "/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins" 
       }, 
       {   
