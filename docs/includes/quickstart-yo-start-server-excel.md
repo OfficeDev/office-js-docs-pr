@@ -2,7 +2,12 @@
 Start the local web server and sideload your add-in.
 
 > [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. 
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+>
+> On Mac, you may need to run the following command before proceeding.
+> ```command&nbsp;line
+>    npm run dev-server
+>    ```
 
 - To test your add-in in Excel, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
 

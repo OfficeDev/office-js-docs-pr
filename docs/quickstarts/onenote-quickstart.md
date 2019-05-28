@@ -81,8 +81,13 @@ try {
     ```
 
     > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides. 
-    
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides.
+    >
+    > On Mac, you may need to run the following command then re-run `npm run start:web`.
+    > ```command&nbsp;line
+    >    npm run dev-server
+    >    ```
+
 2. In [OneNote Online](https://www.onenote.com/notebooks), open a notebook and create a new page.
 
 3. Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.

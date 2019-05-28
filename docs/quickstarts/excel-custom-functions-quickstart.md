@@ -50,6 +50,11 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 > [!NOTE]
 > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
+>
+> On Mac, you may need to run the following command before proceeding.
+> ```command&nbsp;line
+>    npm run dev-server
+>    ```
 
 # [Excel on Windows](#tab/excel-windows)
 
@@ -69,6 +74,11 @@ npm run start:web
 
 > [!NOTE]
 > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides.
+>
+> On Mac, you may need to run the following command before proceeding.
+> ```command&nbsp;line
+>    npm run dev-server
+>    ```
 
 To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
 

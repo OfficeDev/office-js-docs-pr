@@ -100,6 +100,11 @@ Office.context.document.getSelectedTaskAsync(
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm start`, accept the prompt to install the certificate that the Yeoman generator provides. 
+    >
+    > On Mac, you may need to run the following command then re-run `npm start`.
+    > ```command&nbsp;line
+    >    npm run dev-server
+    >    ```
 
 2. In Project, create a simple project plan.
 
