@@ -1,13 +1,13 @@
 ---
 title: Browsers used by Office Add-ins
-description: ''
-ms.date: 05/23/2019
+description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
+ms.date: 05/28/2019
 localization_priority: Priority
 ---
 
 # Browsers used by Office Add-ins
 
-Since Office Add-ins are web applications, they need an embedded mini-browser to display the HTML pages of the web application in a task pane or content add-in window. (An embedded mini-browser is typically called a WebView control or WebBrowser control.) Add-ins also need a JavaScript engine to run the JavaScript. Both the mini-browser and the engine are supplied by a browser installed on the user’s computer.
+Office add-ins are web applications that are displayed using iFrames when running in Office Online and using embedded browser controls in Office for desktop and mobile clients. Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user’s computer.
 
 Which browser is used depends on:
 
