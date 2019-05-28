@@ -84,7 +84,7 @@ try {
 > npm run dev-server
 > ```
 
-1. To test your add-in in OneNote Online, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
     ```command&nbsp;line
     npm run start:web
