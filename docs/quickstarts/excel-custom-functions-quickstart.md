@@ -40,11 +40,14 @@ To start, you'll use the Yeoman generator to create the custom functions project
     cd stock-ticker
     ```
 
-3. Build the project. This will also install certificates that your project needs in order to function properly. 
+3. Build the project. 
 
     ```command&nbsp;line
     npm run build
     ```
+
+    > [!NOTE]
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run build`, accept the prompt to install the certificate that the Yeoman generator provides.
 
 4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on Windows or Excel Online. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
 
@@ -56,14 +59,6 @@ To test your add-in in Excel on Windows, run the following command. When you run
 npm run start:desktop
 ```
 
-> [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.
->
-> On Mac, you may need to run the following command then re-run `npm run start:desktop`.
-> ```command&nbsp;line
->    npm run dev-server
->    ```
-
 # [Excel Online](#tab/excel-online)
 
 To test your add-in in Excel Online, run the following command. When you run this command, the local web server will start.
@@ -71,14 +66,6 @@ To test your add-in in Excel Online, run the following command. When you run thi
 ```command&nbsp;line
 npm run start:web
 ```
-
-> [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides.
->
-> On Mac, you may need to run the following command then re-run `npm run start:web`.
-> ```command&nbsp;line
->    npm run dev-server
->    ```
 
 To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
 
