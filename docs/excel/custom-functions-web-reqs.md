@@ -52,12 +52,11 @@ function sendWebRequest(thermometerID, data) {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
         };
-
-        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
-        xhttp.setRequestHeader("Content-Type", "application/text");
-        xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
-        xhttp.send();  
     }
+    //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
+    xhttp.setRequestHeader("Content-Type", "application/text");
+    xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
+    xhttp.send();  
 }
 
 CustomFunctions.associate("GETTEMPERATURE", getTemperature);
