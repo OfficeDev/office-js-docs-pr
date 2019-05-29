@@ -93,9 +93,9 @@ Office.context.document.getSelectedTaskAsync(
 ## Try it out
 
 > [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+1. Run the following command in the root directory of your project. When you run this command, the local web server will start.
 
     ```command&nbsp;line
     npm start
