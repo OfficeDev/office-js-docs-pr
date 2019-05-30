@@ -1,13 +1,13 @@
 ---
-title: Web viewers used by Office Add-ins
-description: ''
-ms.date: 05/03/2019
+title: Browsers used by Office Add-ins
+description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
+ms.date: 05/28/2019
 localization_priority: Priority
 ---
 
-# Web viewers used by Office Add-ins
+# Browsers used by Office Add-ins
 
-Since Office Add-ins are web applications, they need a web page viewer to display the HTML pages of the web application and a JavaScript engine to run the JavaScript. Both are supplied by a browser installed on the user’s computer.
+Office add-ins are web applications that are displayed using iFrames when running in Office Online and using embedded browser controls in Office for desktop and mobile clients. Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user’s computer.
 
 Which browser is used depends on:
 

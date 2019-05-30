@@ -43,7 +43,7 @@ The following software is required for developing an Office Add-in for the suppo
 
   If you have a valid Office 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
-- Internet Explorer 11 or Microsoft Edge (depending on the Windows and Office versions) must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or Microsoft Edge. See [Web viewers used by Office Add-ins](web-viewers-used-by-office-web-add-ins.md) for more details.
+- Internet Explorer 11 or Microsoft Edge (depending on the Windows and Office versions) must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or Microsoft Edge. See [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md) for more details.
 
   > [!NOTE]
   > Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you are using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
@@ -85,4 +85,4 @@ Specifically for Outlook Web App running in a browser on smartphones and non-Win
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
-- [Web viewers used by Office Add-ins](web-viewers-used-by-office-web-add-ins.md)
+- [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md)

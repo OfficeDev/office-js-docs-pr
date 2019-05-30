@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: ''
-ms.date: 05/23/2019
+ms.date: 05/29/2019
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -10,7 +10,7 @@ localization_priority: Priority
 
 Outlook add-ins declare what API versions they require by using the [Requirements](/office/dev/add-ins/reference/manifest/requirements) element in their [manifest](/office/dev/add-ins/develop/add-in-manifests). Outlook add-ins always include a [Set](/office/dev/add-ins/reference/manifest/set) element with a `Name` attribute set to `Mailbox` and a `MinVersion` attribute set to the minimum API requirement set that supports the add-in's scenarios.
 
-For example, the following manifest snippet indicates a minimum requirement set of 1.1:
+For example, the following manifest snippet indicates a minimum requirement set of 1.1.
 
 ```xml
 <Requirements>
@@ -26,17 +26,29 @@ Setting a minimum requirement set version in the manifest controls which Outlook
 
 ## Using APIs from later requirement sets
 
-Setting a requirement set does not limit the available APIs that the add-in can use. For example, if the add-in specifies requirement set 1.1, but it is running in an Outlook client which support 1.3, the add-in can use APIs from requirement set 1.3.
+Setting a requirement set does not limit the available APIs that the add-in can use. For example, if the add-in specifies requirement set 1.1, but it is running in an Outlook client which supports 1.3, the add-in can use APIs from requirement set 1.3.
 
-To use newer APIs, developers can just check for their existence by using standard JavaScript technique:
+To use a newer API, developers can check if a particular host supports the requirement set by doing the following.
 
 ```js
-if (item.somePropertyOrFunction !== undefined) {
-  item.somePropertyOrFunction ...
+if (Office.context.requirements.isSetSupported('Mailbox', 1.3) === true) {
+  // Perform actions.
+}
+else {
+  // Provide alternate flow/logic.
 }
 ```
 
-No such checks are necessary for any APIs which are present in the requirement set version specified in in the manifest.
+Alternatively, developers can check for the existence of a newer API by using standard JavaScript technique.
+
+```js
+if (item.somePropertyOrFunction !== undefined) {
+  // Use item.somePropertyOrFunction.
+  item.somePropertyOrFunction;
+}
+```
+
+No such checks are necessary for any APIs which are present in the requirement set version specified in the manifest.
 
 ## Choosing a minimum requirement set
 
