@@ -54,7 +54,7 @@ There should also be a call to `CustomFunctions.associate("id", functionName);`
 
 The id is used as the invariant identifier for the custom function stored in the document. It should not change.
 
-* If id is not provided, the JavaScript/TypeScript function name is converted to uppercase, disallowed characters are removed.
+* If id is not provided, the JavaScript/TypeScript function name is converted to uppercase and disallowed characters are removed.
 * The id must be unique for all custom functions.
 * The characters allowed are limited to: A-Z, a-z, 0-9, underscores (\_), and period (.).
 
