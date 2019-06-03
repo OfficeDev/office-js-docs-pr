@@ -791,7 +791,7 @@
       href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
       displayName: Project
 
-- name: Visio 
+- name: Visio add-ins
   items:
   - name: API Overview
     href: reference/overview/visio-javascript-reference-overview.md
