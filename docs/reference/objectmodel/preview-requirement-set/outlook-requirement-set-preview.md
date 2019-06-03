@@ -127,15 +127,15 @@ Added a new object that represents the properties of an appointment or message i
 
 **Available in**: Outlook on Windows (connected to Office 365)
 
-#### [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
-
-Added a new method that gets an object which represents the sharedProperties of an appointment or message item.
-
-**Available in**: Outlook on Windows (connected to Office 365)
-
 #### [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
 
 Added a new method that gets the id of a saved appointment or message item.
+
+**Available in**: Outlook on Windows (connected to Office 365)
+
+#### [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
+
+Added a new method that gets an object which represents the sharedProperties of an appointment or message item.
 
 **Available in**: Outlook on Windows (connected to Office 365)
 
