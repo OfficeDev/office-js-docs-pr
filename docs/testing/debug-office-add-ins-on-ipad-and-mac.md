@@ -43,6 +43,6 @@ You can clear the cache using an existing add-in.
 
 ![Screen shot of clear web cache option on personality menu.](../images/mac-clear-cache-menu.png)
 
-On a Mac, you can clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder.
+You can also clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder.
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
