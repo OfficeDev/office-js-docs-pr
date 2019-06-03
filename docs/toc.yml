@@ -391,7 +391,7 @@
 
 - name: Excel add-ins
   items: 
-  - name: About Excel add-ins
+  - name: Overview
     href: excel/excel-add-ins-overview.md
     displayName: Excel
   - name: Quick Starts
@@ -552,7 +552,7 @@
 
 - name: OneNote add-ins
   items:
-  - name: About OneNote add-ins
+  - name: Overview
     href: onenote/onenote-add-ins-programming-overview.md
     displayName: OneNote
   - name: Build your first OneNote add-in
@@ -575,7 +575,7 @@
 
 - name: Outlook add-ins
   items:
-  - name: About Outlook add-ins
+  - name: Overview
     href: /outlook/add-ins/index?context=office/dev/add-ins/context
     displayName: Outlook
   - name: Build your first Outlook add-in
@@ -747,7 +747,7 @@
 
 - name: PowerPoint add-ins
   items:
-  - name: About PowerPoint add-ins
+  - name: Overview
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
   - name: Build your first PowerPoint add-in
@@ -773,7 +773,7 @@
   
 - name: Project add-ins
   items:
-  - name: About Project add-ins
+  - name: Overview
     href: project/project-add-ins.md
     displayName: Project
   - name: Build your first Project add-in
@@ -793,7 +793,7 @@
 
 - name: Visio add-ins
   items:
-  - name: API Overview
+  - name: Overview
     href: reference/overview/visio-javascript-reference-overview.md
     displayName: Visio
   - name: API reference
@@ -840,8 +840,6 @@
     - name: Use search options to find text in your Word add-in 
       href: word/search-option-guidance.md
       displayName: Word
-
- 
 
 
 
