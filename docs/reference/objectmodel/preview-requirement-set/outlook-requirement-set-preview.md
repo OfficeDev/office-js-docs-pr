@@ -129,7 +129,7 @@ Added a new object that represents the properties of an appointment or message i
 
 #### [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
 
-Added a new method that gets the id of a saved appointment or message item.
+Added a new method that gets the ID of a saved appointment or message item.
 
 **Available in**: Outlook on Windows (connected to Office 365)
 

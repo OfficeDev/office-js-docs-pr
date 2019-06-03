@@ -1982,7 +1982,7 @@ Asynchronously gets the ID of a saved item. Compose mode only.
 When invoked, this method returns the item ID via the callback method.
 
 > [!NOTE]
-> If your add-in calls `getItemIdAsync` on an item in compose mode in order to get an `itemId` to use with EWS or the REST API, be aware that when Outlook is in cached mode, it may take some time before the item is actually synced to the server. Until the item is synced, using the `itemId` will return an error.
+> If your add-in calls `getItemIdAsync` on an item in compose mode (e.g., to get an `itemId` to use with EWS or the REST API), be aware that when Outlook is in cached mode, it may take some time before the item is synced to the server. Until the item is synced, the `itemId` is not recognized and using it returns an error.
 
 ##### Parameters
 
@@ -2015,7 +2015,7 @@ Office.context.mailbox.item.getItemIdAsync(
   });
 ```
 
-The following is an example of the `result` parameter passed to the callback function. The `value` property contains the item ID.
+The following example shows the structure of the `result` parameter that's passed to the callback function. The `value` property contains the item ID.
 
 ```json
 {
