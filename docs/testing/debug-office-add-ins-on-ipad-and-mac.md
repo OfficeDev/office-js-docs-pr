@@ -40,8 +40,10 @@ Add-ins are often cached in Office for Mac, for performance reasons. Normally, t
 
 You can clear the cache using an existing add-in.
 - Choose the personality menu. Then choose **Clear Web Cache**.
-
-![Screen shot of clear web cache option on personality menu.](../images/mac-clear-cache-menu.png)
+    > [!NOTE]
+    > You must run macOS version 10.13.6 or later to see the personality menu.
+    
+    ![Screen shot of clear web cache option on personality menu.](../images/mac-clear-cache-menu.png)
 
 You can also clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder.
 
