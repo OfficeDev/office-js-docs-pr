@@ -27,7 +27,65 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     - name: Browsers used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook    
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+    - name: Design the User Interface
+      items:
+      - name: Overview
+        href: design/add-in-design.md
+      - name: Guidelines
+        items:
+        - name: Accessibility
+          href: design/accessibility-guidelines.md
+        - name: Voice
+          href: design/voice-guidelines.md
+        - name: Data visualization
+          href: design/data-visualization-guidelines.md
+      - name: Design language
+        items:
+        - name: Overview
+          href: design/add-in-design-language.md
+        - name: Typography
+          href: design/add-in-typography.md
+        - name: Color
+          href: design/add-in-color.md
+        - name: Layout
+          href: design/add-in-layout.md
+        - name: Icons
+          href: design/add-in-icons.md
+        - name: Using motion
+          href: design/using-motion-office-addins.md
+      - name: Interface elements
+        items:
+        - name: Overview
+          href: design/interface-elements.md
+        - name: Add-in commands
+          href: design/add-in-commands.md
+        - name: Task panes
+          href: design/task-pane-add-ins.md
+        - name: Dialog boxes
+          href: design/dialog-boxes.md
+        - name: Content add-ins
+          href: design/content-add-ins.md
+      - name: UX design templates
+        items:
+        - name: Overview
+          href: design/ux-design-pattern-templates.md
+        - name: Authentication
+          href: design/authentication-patterns.md
+        - name: First run experience
+          href: design/first-run-experience-patterns.md
+        - name: Navigation
+          href: design/navigation-patterns.md
+        - name: Branding
+          href: design/branding-patterns.md
+      - name: Resources
+        items:
+        - name: Design toolkits
+          href: design/design-toolkits.md
+        - name: Office UI Fabric
+          href: design/office-ui-fabric.md
+        - name: Get started using Fabric React
+          href: design/using-office-ui-fabric-react.md
     - name: Office versions and requirement sets
       href: develop/office-versions-and-requirement-sets.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
@@ -40,124 +98,6 @@
     - name: Privacy and security
       href: concepts/privacy-and-security.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
-  
-  
-   - name: Design the User Interface
-    items:
-    - name: Overview
-      href: design/add-in-design.md
-    - name: Guidelines
-      items:
-      - name: Accessibility
-        href: design/accessibility-guidelines.md
-      - name: Voice
-        href: design/voice-guidelines.md
-      - name: Data visualization
-        href: design/data-visualization-guidelines.md
-    - name: Design language
-      items:
-      - name: Overview
-        href: design/add-in-design-language.md
-      - name: Typography
-        href: design/add-in-typography.md
-      - name: Color
-        href: design/add-in-color.md
-      - name: Layout
-        href: design/add-in-layout.md
-      - name: Icons
-        href: design/add-in-icons.md
-      - name: Using motion
-        href: design/using-motion-office-addins.md
-    - name: Interface elements
-      items:
-      - name: Overview
-        href: design/interface-elements.md
-      - name: Add-in commands
-        href: design/add-in-commands.md
-      - name: Task panes
-        href: design/task-pane-add-ins.md
-      - name: Dialog boxes
-        href: design/dialog-boxes.md
-      - name: Content add-ins
-        href: design/content-add-ins.md
-    - name: UX design templates
-      items:
-      - name: Overview
-        href: design/ux-design-pattern-templates.md
-      - name: Authentication
-        href: design/authentication-patterns.md
-      - name: First run experience
-        href: design/first-run-experience-patterns.md
-      - name: Navigation
-        href: design/navigation-patterns.md
-      - name: Branding
-        href: design/branding-patterns.md
-    - name: Resources
-      items:
-      - name: Design toolkits
-        href: design/design-toolkits.md
-      - name: Office UI Fabric
-        href: design/office-ui-fabric.md
-      - name: Get started using Fabric React
-        href: design/using-office-ui-fabric-react.md
-  - name: Design the User Interface
-    items:
-    - name: Overview
-      href: design/add-in-design.md
-    - name: Guidelines
-      items:
-      - name: Accessibility
-        href: design/accessibility-guidelines.md
-      - name: Voice
-        href: design/voice-guidelines.md
-      - name: Data visualization
-        href: design/data-visualization-guidelines.md
-    - name: Design language
-      items:
-      - name: Overview
-        href: design/add-in-design-language.md
-      - name: Typography
-        href: design/add-in-typography.md
-      - name: Color
-        href: design/add-in-color.md
-      - name: Layout
-        href: design/add-in-layout.md
-      - name: Icons
-        href: design/add-in-icons.md
-      - name: Using motion
-        href: design/using-motion-office-addins.md
-    - name: Interface elements
-      items:
-      - name: Overview
-        href: design/interface-elements.md
-      - name: Add-in commands
-        href: design/add-in-commands.md
-      - name: Task panes
-        href: design/task-pane-add-ins.md
-      - name: Dialog boxes
-        href: design/dialog-boxes.md
-      - name: Content add-ins
-        href: design/content-add-ins.md
-    - name: UX design templates
-      items:
-      - name: Overview
-        href: design/ux-design-pattern-templates.md
-      - name: Authentication
-        href: design/authentication-patterns.md
-      - name: First run experience
-        href: design/first-run-experience-patterns.md
-      - name: Navigation
-        href: design/navigation-patterns.md
-      - name: Branding
-        href: design/branding-patterns.md
-    - name: Resources
-      items:
-      - name: Design toolkits
-        href: design/design-toolkits.md
-      - name: Office UI Fabric
-        href: design/office-ui-fabric.md
-      - name: Get started using Fabric React
-        href: design/using-office-ui-fabric-react.md  
   - name: Develop
     items:
     - name: Address same origin policy limitations
