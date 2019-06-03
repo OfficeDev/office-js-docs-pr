@@ -1,6 +1,9 @@
 ---
 title: Excel add-ins overview
 description: Resources for learning about Excel add-ins.
+layout: HubPage
+hide_bc: true
+ms.topic: hub-page
 ms.date: 06/01/2019
 localization_priority: Priority
 ---
