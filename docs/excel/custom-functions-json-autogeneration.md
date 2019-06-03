@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/03/2019
 description: Use JSDOC tags to dynamically create your custom functions JSON metadata.
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Priority
@@ -52,20 +52,32 @@ There should also be a call to `CustomFunctions.associate("id", functionName);`
 
 #### id
 
-The id is used as the invariant identifier for the custom function stored in the document. It should not change.
+The `id` is used as the invariant identifier for the custom function stored in the document. It should not change.
 
-* If id is not provided, the JavaScript/TypeScript function name is converted to uppercase and disallowed characters are removed.
-* The id must be unique for all custom functions.
+* If `id` is not provided, the JavaScript/TypeScript function name is converted to uppercase and disallowed characters are removed.
+* The `id` must be unique for all custom functions.
 * The allowed characters are limited to: A-Z, a-z, 0-9, underscores (\_), and period (.).
 
 #### name
 
-Provides the display name for the custom function.
+Provides the display `name` for the custom function.
 
 * If name is not provided, the id is also used as the name.
 * Allowed characters: Letters [Unicode Alphabetic character](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), numbers, period (.), and underscore (\_).
 * Must start with a letter.
 * Maximum length is 128 characters.
+
+### description
+
+A description does not require any specific tag. Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment. By default, whatever text is untagged in the JSDoc comment section will be the description of the function. The description appears to users in Excel as they are entering the function. In the following example, the phrase "A function that sums two numbers" is the description for the custom function with the id property of `SUM`.
+
+```JS
+/**
+/* @customfunction SUM
+/* A function that sums two numbers
+...
+ */
+```
 
 ---
 ### @helpurl
@@ -170,7 +182,7 @@ Use a two-dimensional array type to have the parameter or return value be a matr
 
 A non-streaming function can indicate an error by returning an Error type.
 
-A streaming function can indicate an error by calling setResult() with an Error type.
+A streaming function can indicate an error by calling `setResult()` with an Error type.
 
 ### Promise
 
