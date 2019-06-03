@@ -1992,6 +1992,12 @@ When invoked, this method returns the item ID via the callback method.
 |`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>On success, the item identifier is provided in the `asyncResult.value` property.|
 
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`ItemNotSaved`|The id can't be retrieved until the item is saved.|
+
 ##### Requirements
 
 |Requirement|Value|
