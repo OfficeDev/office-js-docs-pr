@@ -430,7 +430,7 @@
     - name: API requirement sets
       href: reference/requirement-sets/excel-api-requirement-sets.md
       displayName: Excel
-    - name: Excel API reference
+    - name: API reference
       href: /javascript/api/excel
       displayName: Excel
     - name: Fundamental programming concepts
@@ -566,7 +566,7 @@
     - name: API requirement sets
       href: reference/requirement-sets/onenote-api-requirement-sets.md
       displayName: OneNote
-    - name: OneNote API reference
+    - name: API reference
       href: /javascript/api/onenote
       displayName: OneNote
     - name: Work with OneNote page content
@@ -819,7 +819,7 @@
     - name: API requirement sets
       href: reference/requirement-sets/word-api-requirement-sets.md
       displayName: Word
-    - name: Word API reference
+    - name: API reference
       href: /javascript/api/word
       displayName: Word
     - name: Create better add-ins for Word with Office Open XML
