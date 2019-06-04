@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 05/17/2019
+ms.date: 06/03/2019
 localization_priority: Priority
 ---
 
@@ -124,6 +124,12 @@ Added a new enum that specifies the colors available to be associated with categ
 #### [SharedProperties](/javascript/api/outlook/office.sharedproperties)
 
 Added a new object that represents the properties of an appointment or message item in a shared folder, calendar, or mailbox.
+
+**Available in**: Outlook on Windows (connected to Office 365)
+
+#### [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
+
+Added a new method that gets the ID of a saved appointment or message item.
 
 **Available in**: Outlook on Windows (connected to Office 365)
 
