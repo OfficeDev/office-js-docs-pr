@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 05/30/2019
+ms.date: 06/03/2019
 localization_priority: Normal
 ---
 
@@ -64,6 +64,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
 | [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Method |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | Method |
 | [getRegExMatches](#getregexmatches--object) | Method |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
@@ -1969,6 +1970,58 @@ Office.context.mailbox.item.getInitializationContextAsync(
     }
   }
 );
+```
+
+---
+---
+
+#### getItemIdAsync([options], callback)
+
+Asynchronously gets the ID of a saved item. Compose mode only.
+
+When invoked, this method returns the item ID via the callback method.
+
+> [!NOTE]
+> If your add-in calls `getItemIdAsync` on an item in compose mode (e.g., to get an `itemId` to use with EWS or the REST API), be aware that when Outlook is in cached mode, it may take some time before the item is synced to the server. Until the item is synced, the `itemId` is not recognized and using it returns an error.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>On success, the item identifier is provided in the `asyncResult.value` property.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`ItemNotSaved`|The id can't be retrieved until the item is saved.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
+
+##### Examples
+
+```javascript
+Office.context.mailbox.item.getItemIdAsync(
+  function callback(result) {
+    // Process the result.
+  });
+```
+
+The following example shows the structure of the `result` parameter that's passed to the callback function. The `value` property contains the item ID.
+
+```json
+{
+  "value":"AAMkADI5...AAA=",
+  "status":"succeeded"
+}
 ```
 
 ---
