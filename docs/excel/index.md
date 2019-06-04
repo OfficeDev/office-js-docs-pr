@@ -14,7 +14,7 @@ localization_priority: Priority
         <p></p>
         <ul class="cardsM cols cols1">
             <li>
-                <a class="card x-hidden-focus" href="overview/office-add-ins.md" target="_blank">
+                <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
                     <div class="cardImageOuter">
                         <div class="cardImage">
                             <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
@@ -27,6 +27,47 @@ localization_priority: Priority
                 </a>
             </li>
         </ul>
+        <ul class="cardsM cols cols3">
+            <li>
+                <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Get started with Excel add-ins</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam leo metus, iaculis eget augue et, efficitur iaculis turpis. Vivamus congue eleifend eleifend. Phasellus in vehicula nibh. Donec rhoncus, ligula vel.</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Excel JavaScript API</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim euismod ullamcorper. Sed augue nibh, dictum sed pharetra sit amet, condimentum id ante. Nullam porttitor efficitur laoreet. Fusce id dolor.</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Custom functions in Excel</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies euismod est, vitae accumsan nisi volutpat in. Sed augue massa, lobortis quis consequat eu, congue sed enim. Pellentesque tincidunt molestie.</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
         <ul class="pivots">
             <li>
                 <a href="#home"></a>
@@ -35,7 +76,7 @@ localization_priority: Priority
                         <a href="#home-all"></a>
                         <ul id="home-all" class="cardsM cols cols3">
                             <li>
-                              <a class="card x-hidden-focus" href="excel/excel-add-ins-overview.md" target="_blank">
+                              <a class="card x-hidden-focus" href="excel-add-ins-overview.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
                                         <img src="../images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
@@ -48,7 +89,7 @@ localization_priority: Priority
                               </a>
                             </li>
                             <li>
-                              <a class="card x-hidden-focus" href="onenote/onenote-add-ins-programming-overview.md" target="_blank">
+                              <a class="card x-hidden-focus" href="../onenote/onenote-add-ins-programming-overview.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
                                         <img src="../images/index/OneNoteLogoColor.svg" alt="OneNote add-ins" />
@@ -74,7 +115,7 @@ localization_priority: Priority
                               </a>
                             </li>
                             <li>
-                              <a class="card x-hidden-focus" href="powerpoint/powerpoint-add-ins.md" target="_blank">
+                              <a class="card x-hidden-focus" href="../powerpoint/powerpoint-add-ins.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
                                         <img src="../images/index/PowerPointLogoColor.svg" alt="PowerPoint add-ins" />
@@ -87,7 +128,7 @@ localization_priority: Priority
                               </a>
                             </li>
                             <li>
-                              <a class="card x-hidden-focus" href="project/project-add-ins.md" target="_blank">
+                              <a class="card x-hidden-focus" href="../project/project-add-ins.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
                                         <img src="../images/index/ProjectLogoColor.svg" alt="Project add-ins" />
@@ -100,7 +141,7 @@ localization_priority: Priority
                               </a>
                             </li>
                             <li>
-                              <a class="card x-hidden-focus" href="word/word-add-ins-programming-overview.md" target="_blank">
+                              <a class="card x-hidden-focus" href="../word/word-add-ins-programming-overview.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
                                         <img src="../images/index/WordLogoColor.svg" alt="Word add-ins" />
