@@ -18,12 +18,14 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                            <img src="https://docs.microsoft.com/en-us/office/media/icons/blocks-blue.svg" alt="Add-ins" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Heading</h3>
-                        <p><a href=" ">Link name</a></p>
+                        <h3>Overview</h3>
+                        <p><a href=" "></a></p>
+                        <p><a href=" "></a></p>
+                        <p><a href=" "></a></p>
                     </div>
                 </div>
             </div>
@@ -35,12 +37,14 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                            <img src="../images/index-excel/i_get-started.svg" alt="Getting started" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Heading</h3>
-                        <p><a href=" ">Link name</a></p>
+                        <h3>Getting started</h3>
+                        <p><a href=" "></a></p>
+                        <p><a href=" "></a></p>
+                        <p><a href=" "></a></p>
                     </div>
                 </div>
             </div>
@@ -52,12 +56,14 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/en-us/office/media/icons/tasks.svg" alt="Tasks" />
+                            <img src="../images/index-excel/i_code-blocks.svg" alt="Excel JavaScript API" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Heading</h3>
-                        <p><a href=" ">Link name</a></p>
+                        <h3>Excel JavaScript API</h3>
+                        <p><a href=" "></a></p>
+                        <p><a href=" "></a></p>
+                        <p><a href=" "></a></p>
                     </div>
                 </div>
             </div>
@@ -71,11 +77,13 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                            <img src="../images/index-excel/i_code-automate.svg" alt="Custom functions" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Heading</h3>
+                        <h3>Custom functions</h3>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
@@ -88,11 +96,13 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                            <img src="../images/index-excel/i_recommended-testing.svg" alt="Testing and debugging" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Heading</h3>
+                        <h3>Testing and debugging</h3>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
@@ -105,11 +115,13 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                            <img src="../images/index-excel/i_deploy.svg" alt="Publishing" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Heading</h3>
+                        <h3>Publishing</h3>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
@@ -137,7 +149,7 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="../images/index/i_support.svg" alt="API questions" /></a>
+                            <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="../images/index-excel/i_support.svg" alt="API questions" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -153,7 +165,7 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="../images/index/i_bug.svg" alt="API issues" /></a>
+                            <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="../images/index-excel/i_bug.svg" alt="API issues" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -169,7 +181,7 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="../images/index/i_feedback.svg" alt="API feature requests" /></a>
+                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="../images/index-excel/i_feedback.svg" alt="API feature requests" /></a>
                         </div>
                     </div>
                     <div class="cardText">
