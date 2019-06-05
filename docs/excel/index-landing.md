@@ -74,8 +74,6 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
             </div>
         </div>
     </li>
-</ul>
-<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
