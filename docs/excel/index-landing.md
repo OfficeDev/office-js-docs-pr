@@ -23,9 +23,9 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                     </div>
                     <div class="cardText">
                         <h3>Overview</h3>
-                        <p><a href=" "></a></p>
-                        <p><a href=" "></a></p>
-                        <p><a href=" "></a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
             </div>
@@ -42,14 +42,16 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href=" "></a></p>
-                        <p><a href=" "></a></p>
-                        <p><a href=" "></a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
+</ul>
+<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -61,9 +63,12 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                     </div>
                     <div class="cardText">
                         <h3>Excel JavaScript API</h3>
-                        <p><a href=" "></a></p>
-                        <p><a href=" "></a></p>
-                        <p><a href=" "></a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
             </div>
@@ -85,11 +90,16 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                         <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
+                        <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
+</ul>
+<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -101,8 +111,6 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                     </div>
                     <div class="cardText">
                         <h3>Testing and debugging</h3>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
@@ -120,8 +128,6 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                     </div>
                     <div class="cardText">
                         <h3>Publishing</h3>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
