@@ -1,10 +1,9 @@
 ---
+layout: LandingPage
+ms.topic: landing-page
 title: Excel add-ins overview
 description: Resources for learning about Excel add-ins.
-layout: HubPage
-hide_bc: true
-ms.topic: hub-page
-ms.date: 06/01/2019
+ms.date: 06/03/2019
 localization_priority: Priority
 ---
 <div id="main" class="v2">
@@ -32,7 +31,7 @@ localization_priority: Priority
                 <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                            <img src="../images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
                         </div>
                     </div>
                     <div class="cardText">
