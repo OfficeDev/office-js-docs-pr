@@ -50,8 +50,6 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
             </div>
         </div>
     </li>
-</ul>
-<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -66,14 +64,13 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                         <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
                         <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
+</ul>
+<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -86,18 +83,11 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                     <div class="cardText">
                         <h3>Custom functions</h3>
                         <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
-</ul>
-<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
