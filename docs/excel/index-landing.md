@@ -6,212 +6,177 @@ description: Resources for learning about Excel add-ins.
 ms.date: 06/03/2019
 localization_priority: Priority
 ---
-<div id="main" class="v2">
-    <div class="container">
-        <h1>Excel Add-ins documentation</h1>
-        <p style="font-size: 1.12rem;margin-bottom: 1rem;">The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</p>
-        <p></p>
-        <ul class="cardsM cols cols1">
-            <li>
-                <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
+
+# Excel Add-ins documentation
+
+The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.
+
+<ul class="panelContent cardsF">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
                             <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Office Add-ins guidance</h3>
-                        <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
+                        <h3>Heading</h3>
+                        <p><a href=" ">Link name</a></p>
                     </div>
-                </a>
-            </li>
-        </ul>
-        <ul class="cardsM cols cols3">
-            <li>
-                <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Get started with Excel add-ins</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam leo metus, iaculis eget augue et, efficitur iaculis turpis. Vivamus congue eleifend eleifend. Phasellus in vehicula nibh. Donec rhoncus, ligula vel.</p>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
                             <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Excel JavaScript API</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim euismod ullamcorper. Sed augue nibh, dictum sed pharetra sit amet, condimentum id ante. Nullam porttitor efficitur laoreet. Fusce id dolor.</p>
+                        <h3>Heading</h3>
+                        <p><a href=" ">Link name</a></p>
                     </div>
-                </a>
-            </li>
-            <li>
-                <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/en-us/office/media/icons/tasks.svg" alt="Tasks" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Heading</h3>
+                        <p><a href=" ">Link name</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+<ul class="panelContent cardsF">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
                             <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Custom functions in Excel</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies euismod est, vitae accumsan nisi volutpat in. Sed augue massa, lobortis quis consequat eu, congue sed enim. Pellentesque tincidunt molestie.</p>
+                        <h3>Heading</h3>
+                        <p><a href=" ">Link name</a></p>
                     </div>
-                </a>
-            </li>
-        </ul>
-        <ul class="pivots">
-            <li>
-                <a href="#home"></a>
-                <ul id="home">
-                    <li>
-                        <a href="#home-all"></a>
-                        <ul id="home-all" class="cardsM cols cols3">
-                            <li>
-                              <a class="card x-hidden-focus" href="excel-add-ins-overview.md" target="_blank">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="../images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
-                                    </div>
-                                </div>
-                                <div class="cardText">
-                                    <h3>Excel add-ins</h3>
-                                    <p>Build Excel add-ins.</p>
-                                </div>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="card x-hidden-focus" href="../onenote/onenote-add-ins-programming-overview.md" target="_blank">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="../images/index/OneNoteLogoColor.svg" alt="OneNote add-ins" />
-                                    </div>
-                                </div>
-                                <div class="cardText">
-                                    <h3>OneNote add-ins</h3>
-                                    <p>Build OneNote add-ins.</p>
-                                </div>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="card x-hidden-focus" href="/outlook/add-ins/index" target="_blank">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="../images/index/OutlookLogoColor.svg" alt="Outlook add-ins" />
-                                    </div>
-                                </div>
-                                <div class="cardText">
-                                    <h3>Outlook add-ins</h3>
-                                    <p>Build Outlook add-ins.</p>
-                                </div>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="card x-hidden-focus" href="../powerpoint/powerpoint-add-ins.md" target="_blank">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="../images/index/PowerPointLogoColor.svg" alt="PowerPoint add-ins" />
-                                    </div>
-                                </div>
-                                <div class="cardText">
-                                    <h3>PowerPoint add-ins</h3>
-                                    <p>Build PowerPoint add-ins.</p>
-                                </div>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="card x-hidden-focus" href="../project/project-add-ins.md" target="_blank">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="../images/index/ProjectLogoColor.svg" alt="Project add-ins" />
-                                    </div>
-                                </div>
-                                <div class="cardText">
-                                    <h3>Project add-ins</h3>
-                                    <p>Build Project add-ins.</p>
-                                </div>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="card x-hidden-focus" href="../word/word-add-ins-programming-overview.md" target="_blank">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="../images/index/WordLogoColor.svg" alt="Word add-ins" />
-                                    </div>
-                                </div>
-                                <div class="cardText">
-                                    <h3>Word add-ins</h3>
-                                    <p>Build Word add-ins.</p>
-                                </div>
-                              </a>
-                            </li>
-                            <li class="fullSpan">
-                              <hr />
-                              <br/>
-                              <h2>Resources</h2>
-                              <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
-                                    <li>
-                                        <div class="cardSize">
-                                            <div class="cardPadding">
-                                                <div class="card">
-                                                    <div class="cardImageOuter">
-                                                        <div class="cardImage">
-                                                            <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="../images/index/i_support.svg" alt="API questions" /></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cardText">
-                                                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Office JavaScript API questions</h3></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="cardSize">
-                                            <div class="cardPadding">
-                                                <div class="card">
-                                                    <div class="cardImageOuter">
-                                                        <div class="cardImage">
-                                                            <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="../images/index/i_bug.svg" alt="API issues" /></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cardText">
-                                                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Office JavaScript API issues</h3></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="cardSize">
-                                            <div class="cardPadding">
-                                                <div class="card">
-                                                    <div class="cardImageOuter">
-                                                        <div class="cardImage">
-                                                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="../images/index/i_feedback.svg" alt="API feature requests" /></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cardText">
-                                                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Office JavaScript API feature requests</h3></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <p><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.</p>
-                            </li>
-                       </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Heading</h3>
+                        <p><a href=" ">Link name</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/blocks.svg" alt="Office Add-ins platform" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Heading</h3>
+                        <p><a href=" ">Link name</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+---
+
+<h2>Featured Articles</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam leo metus, iaculis eget augue et, efficitur iaculis turpis. Vivamus congue eleifend eleifend. Phasellus in vehicula nibh. Donec rhoncus, ligula vel.</p>
+<ul class="panelContent cardsW">
+    <li></li>
+</ul>
+
+---
+
+<h2>Resources</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam leo metus, iaculis eget augue et, efficitur iaculis turpis. Vivamus congue eleifend eleifend. Phasellus in vehicula nibh. Donec rhoncus, ligula vel.</p>
+<ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="../images/index/i_support.svg" alt="API questions" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Office JavaScript API questions</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="../images/index/i_bug.svg" alt="API issues" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Office JavaScript API issues</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="../images/index/i_feedback.svg" alt="API feature requests" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Office JavaScript API feature requests</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
