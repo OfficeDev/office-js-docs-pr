@@ -138,10 +138,81 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
 
 ---
 
-<h2>Featured Articles</h2>
+<h2>Featured articles</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam leo metus, iaculis eget augue et, efficitur iaculis turpis. Vivamus congue eleifend eleifend. Phasellus in vehicula nibh. Donec rhoncus, ligula vel.</p>
 <ul class="panelContent cardsW">
-    <li></li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Category</h3>
+                        <p>Add link to article</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Category</h3>
+                        <p>Add link to article</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Category</h3>
+                        <p>Add link to article</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Category</h3>
+                        <p>Add link to article</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Category</h3>
+                        <p>Add link to article</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Category</h3>
+                        <p>Add link to article</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
 </ul>
 
 ---
