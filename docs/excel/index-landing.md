@@ -149,7 +149,7 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="../images/index-excel/i_support.svg" alt="API questions" /></a>
+                            <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="../images/index/i_support.svg" alt="API questions" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -165,7 +165,7 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="../images/index-excel/i_bug.svg" alt="API issues" /></a>
+                            <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="../images/index/i_bug.svg" alt="API issues" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -181,7 +181,7 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="../images/index-excel/i_feedback.svg" alt="API feature requests" /></a>
+                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="../images/index/i_feedback.svg" alt="API feature requests" /></a>
                         </div>
                     </div>
                     <div class="cardText">
