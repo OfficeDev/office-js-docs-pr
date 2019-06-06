@@ -203,6 +203,9 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 ---
 
 <h2>Resources</h2>
+
+[!include[HTTPS guidance](../includes/https-guidance.md)]
+
 <p>Use the following resources to ask questions, report issues, or submit feature requests related to the Excel JavaScript API or Office Add-ins platform. For information about other learning resources, see <a href="../resources/resources-links-help.md">Office Add-ins additional resources</a>.</p>
 <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
     <li>
