@@ -169,7 +169,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Office Add-ins development</h3>
-                        <p>Explore key aspects of Office Add-in development.</p>
+                        <p>Explore key aspects of Office Add-ins development.</p>
                         <br/>
                         <ul>
                             <li><a href="../develop/specify-office-hosts-and-api-requirements.md">Specify Office hosts and API requirements</a></li>
