@@ -42,7 +42,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <div class="cardText">
                         <h3>Getting started</h3>
                         <p><a href="excel-add-ins-get-started-overview.md">Build your first Excel add-in</a></p>
-                        <p><a href="../overview/explore-with-script-lab.md">Explore the API using Script Lab</a></p>
+                        <p><a href="../overview/explore-with-script-lab.md">Explore the API with Script Lab</a></p>
                     </div>
                 </div>
             </div>
@@ -203,7 +203,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 ---
 
 <h2>Resources</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam leo metus, iaculis eget augue et, efficitur iaculis turpis. Vivamus congue eleifend eleifend. Phasellus in vehicula nibh. Donec rhoncus, ligula vel.</p>
+<p>Use the following resources to ask questions, report issues, or submit feature requests related to the Excel JavaScript API or Office Add-ins platform. For information about other learning resources, see <a href="../resources/resources-links-help.md">Office Add-ins additional resources</a>.</p>
 <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
     <li>
         <div class="cardSize">
@@ -215,7 +215,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Office JavaScript API questions</h3></a>
+                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Excel JavaScript API questions</h3></a>
                     </div>
                 </div>
             </div>
@@ -231,7 +231,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Office JavaScript API issues</h3></a>
+                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Excel JavaScript API issues</h3></a>
                     </div>
                 </div>
             </div>
@@ -247,7 +247,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Office JavaScript API feature requests</h3></a>
+                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Excel JavaScript API feature requests</h3></a>
                     </div>
                 </div>
             </div>
