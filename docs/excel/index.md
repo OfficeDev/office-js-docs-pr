@@ -11,7 +11,7 @@ localization_priority: Priority
 
 With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Excel across multiple platforms, including Excel for Windows, Excel for the web, Excel for Mac, and Excel for iPad. Learn how to build, test, debug, and publish Excel add-ins.
 
-<ul class="panelContent cardsF">
+<ul class="panelContent cardsM">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -169,7 +169,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Office Add-ins development</h3>
-                        <p>Explore some key aspects of Office Add-in development.</p>
+                        <p>Explore key aspects of Office Add-in development.</p>
                         <br/>
                         <ul>
                             <li><a href="../develop/specify-office-hosts-and-api-requirements.md">Specify Office hosts and API requirements</a></li>
