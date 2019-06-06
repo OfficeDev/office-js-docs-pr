@@ -393,10 +393,10 @@
 
 - name: Excel add-ins
   items: 
-  - name: Overview
+  - name: About Excel add-ins
     href: excel/index.md
     displayName: Excel
-  - name: About Excel add-ins
+  - name: Overview
     href: excel/excel-add-ins-overview.md
     displayName: Excel
   - name: Quick Starts
