@@ -66,7 +66,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         <p><a href="/javascript/api/excel">API reference</a></p>
                         <p><a href="excel-add-ins-core-concepts.md">Fundamental programming concepts</a></p>
                         <p><a href="excel-add-ins-advanced-concepts.md">Advanced programming concepts</a></p>
-                        <p><a href="excel-add-ins-worksheet-functions.md">See more <span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
+                        <p><a href="excel-add-ins-worksheet-functions.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         <p><a href="custom-functions-architecture.md">Custom functions architecture</a></p>
                         <p><a href="custom-functions-best-practices.md">Custom functions best practices</a></p>
                         <p><a href="custom-functions-debugging.md">Custom functions debugging</a></p>
-                        <p><a href="custom-functions-authentication.md">See more <span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
+                        <p><a href="custom-functions-authentication.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <li><a href="../concepts/resource-limits-and-performance-optimization.md">Resource limits and performance</a></li>
                             <li><a href="../concepts/privacy-and-security.md">Privacy and security</a></li>
                             <li><a href="../design/add-in-design.md">Design principles</a></li>
-                            <li><a href="../concepts/add-in-development-best-practices.md">See more <span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
+                            <li><a href="../concepts/add-in-development-best-practices.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -193,7 +193,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <li><a href="../design/using-office-ui-fabric-react.md">Get started with Fabric React</a></li>
                             <li><a href="../develop/create-and-debug-office-add-ins-in-visual-studio.md">Create Office Add-ins in Visual Studio</a></li>
                             <li><a href="../develop/addressing-same-origin-policy-limitations.md">Address same-origin policy limitations</a></li>
-                            <li><a href="../develop/addressing-same-origin-policy-limitations.md">See more <span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
+                            <li><a href="../develop/addressing-same-origin-policy-limitations.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
                         </ul>
                     </div>
                 </div>
