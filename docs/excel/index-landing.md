@@ -56,7 +56,7 @@ The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platfor
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-excel/i_code-blocks.svg" alt="Excel JavaScript API" />
+                            <img src="../images/index-excel/i_article.svg" alt="Excel JavaScript API" />
                         </div>
                     </div>
                     <div class="cardText">
