@@ -133,11 +133,13 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/monitor-with-code.svg" alt="Office Add-ins concepts graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-excel/developer-documentation.svg" alt="Office Add-ins concepts graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Office Add-ins concepts</h3>
+                        <p>Learn fundamental concepts about Office Add-ins.</p>
+                        <br/>
                         <ul>
                             <li><a href="../overview/office-add-ins.md">About Office Add-ins</a></li>
                             <li><a href="../concepts/requirements-for-running-office-add-ins.md">Requirements for running Office Add-ins</a></li>
@@ -167,6 +169,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Office Add-ins development</h3>
+                        <p>Explore some key aspects of Office Add-in development.</p>
+                        <br/>
                         <ul>
                             <li><a href="../develop/specify-office-hosts-and-api-requirements.md">Specify Office hosts and API requirements</a></li>
                             <li><a href="../develop/sso-in-office-add-ins.md">Authentication and authorization (SSO)</a></li>
@@ -180,37 +184,6 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <li><a href="../develop/addressing-same-origin-policy-limitations.md">Address same-origin policy limitations</a></li>
                             <li><a href="../develop/addressing-same-origin-policy-limitations.md">See more <span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-<h3>Excel add-ins</h3>
-<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including Excel add-ins.</p>
-<p><b>Note</b>: See the <b>Excel add-ins</b> section within the table of contents for the full list of <i>Excel add-ins</i> articles.</p>
-
-<ul class="panelContent cardsW">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
                     </div>
                 </div>
             </div>
