@@ -24,8 +24,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <div class="cardText">
                         <h3>Overview</h3>
                         <p><a href="excel-add-ins-overview.md">Excel add-ins overview</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
+                        <p><a href="../concepts/requirements-for-running-office-add-ins.md">Requirements for running Office Add-ins</a></p>
                     </div>
                 </div>
             </div>
@@ -42,9 +41,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
+                        <p><a href="excel-add-ins-get-started-overview.md">Build your first Excel add-in</a></p>
+                        <p><a href="../overview/explore-with-script-lab.md">Explore Office JavaScript API using Script Lab</a></p>
                     </div>
                 </div>
             </div>
@@ -61,9 +59,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Excel JavaScript API</h3>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
-                        <p><a href=" ">Link name</a></p>
+                        <p><a href="../reference/overview/excel-add-ins-reference-overview.md">Excel JavaScript API overview</a></p>
+                        <p><a href="/javascript/api/excel">API reference</a></p>
                     </div>
                 </div>
             </div>
@@ -82,7 +79,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Custom functions</h3>
-                        <p><a href=" ">Link name</a></p>
+                        <p><a href="custom-functions-overview.md">Create custom functions in Excel</a></p>
                     </div>
                 </div>
             </div>
@@ -99,7 +96,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Testing and debugging</h3>
-                        <p><a href=" ">Link name</a></p>
+                        <p><a href="../testing/test-debug-office-add-ins.md">Test and debug Office Add-ins</a></p>
                     </div>
                 </div>
             </div>
@@ -116,7 +113,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Publishing</h3>
-                        <p><a href=" ">Link name</a></p>
+                        <p><a href="../publish/publish.md">Deploy and publish Office Add-ins</a></p>
                     </div>
                 </div>
             </div>
