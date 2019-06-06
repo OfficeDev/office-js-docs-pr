@@ -1,5 +1,5 @@
 <h2>Resources</h2>
-<p>Use the following resources to ask questions, report issues, or submit feature requests related to the JavaScript API or Office Add-ins platform. For information about other learning resources, see <a href="../resources/resources-links-help.md">Office Add-ins additional resources</a>.</p>
+<p>Use the following resources to ask questions, report issues, or submit feature requests related to the Office Add-ins platform or JavaScript API. For information about other learning resources, see <a href="../resources/resources-links-help.md">Office Add-ins additional resources</a>.</p>
 <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
     <li>
         <div class="cardSize">
