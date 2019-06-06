@@ -394,6 +394,9 @@
 - name: Excel add-ins
   items: 
   - name: Overview
+    href: excel/index.md
+    displayName: Excel
+  - name: About Excel add-ins
     href: excel/excel-add-ins-overview.md
     displayName: Excel
   - name: Quick Starts
