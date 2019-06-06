@@ -62,7 +62,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <div class="cardText">
                         <h3>Excel JavaScript API</h3>
                         <p><a href="../reference/overview/excel-add-ins-reference-overview.md">API overview</a></p>
-                        <p><a href="../quickstarts/excel-add-ins-get-started-overview.md"></a>Quick start: Get started with Excel add-ins</p>
+                        <p><a href="excel-add-ins-get-started-overview.md"></a>Quick start: Get started with Excel add-ins</p>
                         <p><a href="../tutorials/excel-tutorial.md"></a>Tutorial: Create an Excel task pane add-in</p>
                         <p><a href="../reference/requirement-sets/excel-api-requirement-sets.md">API requirement sets</a></p>
                         <p><a href="/javascript/api/excel">API reference</a></p>
