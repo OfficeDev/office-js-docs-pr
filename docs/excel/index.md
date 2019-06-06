@@ -62,8 +62,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <div class="cardText">
                         <h3>Excel JavaScript API</h3>
                         <p><a href="../reference/overview/excel-add-ins-reference-overview.md">API overview</a></p>
-                        <p><a href="excel-add-ins-get-started-overview.md"></a>Quick start: Get started with Excel add-ins</p>
-                        <p><a href="../tutorials/excel-tutorial.md"></a>Tutorial: Create an Excel task pane add-in</p>
+                        <p><a href="excel-add-ins-get-started-overview.md">Quick start: Get started with Excel add-ins</a></p>
+                        <p><a href="../tutorials/excel-tutorial.md">Tutorial: Create an Excel task pane add-in</a></p>
                         <p><a href="../reference/requirement-sets/excel-api-requirement-sets.md">API requirement sets</a></p>
                         <p><a href="/javascript/api/excel">API reference</a></p>
                         <p><a href="excel-add-ins-core-concepts.md">Fundamental programming concepts</a></p>
@@ -86,7 +86,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <div class="cardText">
                         <h3>Custom functions</h3>
                         <p><a href="custom-functions-overview.md">Create custom functions in Excel</a></p>
-                        <p><a href="../quickstarts/excel-custom-functions-quickstart.md"></a>Quick start: Get started developing Excel custom functions</p>
+                        <p><a href="../quickstarts/excel-custom-functions-quickstart.md">Quick start: Get started with Excel custom functions</a></p>
                         <p><a href="/tutorials/excel-tutorial-create-custom-functions.md">Tutorial: Create custom functions in Excel</a></p>
                         <p><a href="custom-functions-requirements.md">Requirements for custom functions</a></p>
                         <p><a href="custom-functions-architecture.md">Custom functions architecture</a></p>
