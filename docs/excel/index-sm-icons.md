@@ -11,14 +11,14 @@ localization_priority: Priority
 
 With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Excel across multiple platforms, including Excel for Windows, Excel for the web, Excel for Mac, and Excel for iPad. Learn how to build, test, debug, and publish Excel add-ins.
 
-<ul class="panelContent cardsK cols cols2">
+<ul class="panelContent cardsF cols cols2">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/developer-documentation.svg" alt="Office Add-ins concepts graphic" data-linktype="external" class="x-hidden-focus"/>
+                        <div class="cardImage">
+                            <img src="../images/index-excel/i_article.svg" alt="Overview" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -35,8 +35,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/get-started.svg" alt="Getting started graphic" data-linktype="external" class="x-hidden-focus"/>
+                        <div class="cardImage">
+                            <img src="../images/index-excel/i_get-started.svg" alt="Getting started" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -49,14 +49,14 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
         </div>
     </li>
 </ul>
-<ul class="panelContent cardsK cols cols2">
+<ul class="panelContent cardsF cols cols2">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/monitor-with-code.svg" alt="Excel JavaScript API graphic" data-linktype="external" class="x-hidden-focus"/>
+                        <div class="cardImage">
+                            <img src="../images/index-excel/i_code-blocks.svg" alt="Excel JavaScript API" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -78,8 +78,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/custom-functions.svg" alt="Excel custom functions graphic" data-linktype="external" class="x-hidden-focus"/>
+                        <div class="cardImage">
+                            <img src="../images/index-excel/i_code-automate.svg" alt="Custom functions" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -97,14 +97,14 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
         </div>
     </li>
 </ul>
-<ul class="panelContent cardsK cols cols2">
+<ul class="panelContent cardsF cols cols2">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/test.svg" alt="Testing and debugging graphic" data-linktype="external" class="x-hidden-focus"/>
+                        <div class="cardImage">
+                            <img src="../images/index-excel/i_recommended-testing.svg" alt="Testing and debugging" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -120,8 +120,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/deploy.svg" alt="Publish graphic" data-linktype="external" class="x-hidden-focus"/>
+                        <div class="cardImage">
+                            <img src="../images/index-excel/i_deploy.svg" alt="Publishing" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -177,7 +177,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/development.svg" alt="Office Add-ins development graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-excel/monitor-with-code.svg" alt="Office Add-ins development graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">
