@@ -80,7 +80,7 @@ localization_priority: Normal
                               <a class="card x-hidden-focus" href="powerpoint/powerpoint-add-ins.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="images/index/PowerPointLogoColor.svg" alt="PowerPoint add-ins" />
+                                        <img src="images/index/logo-powerpoint.svg" alt="PowerPoint add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">
@@ -93,7 +93,7 @@ localization_priority: Normal
                               <a class="card x-hidden-focus" href="project/project-add-ins.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="images/index/ProjectLogoColor.svg" alt="Project add-ins" />
+                                        <img src="images/index/logo-project-server.svg" alt="Project add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">
@@ -106,7 +106,7 @@ localization_priority: Normal
                               <a class="card x-hidden-focus" href="word/word-add-ins-programming-overview.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="images/index/WordLogoColor.svg" alt="Word add-ins" />
+                                        <img src="images/index/logo-word.svg" alt="Word add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">
