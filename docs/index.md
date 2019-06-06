@@ -20,7 +20,7 @@ localization_priority: Normal
                 <a class="card x-hidden-focus" href="overview/office-add-ins.md" target="_blank">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="images/index/blocks.svg" alt="Office Add-ins platform" />
+                            <img src="images/index/logo-office.svg" alt="Office Add-ins platform" />
                         </div>
                     </div>
                     <div class="cardText">
