@@ -48,6 +48,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
             </div>
         </div>
     </li>
+</ul>
+<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -66,8 +68,6 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
             </div>
         </div>
     </li>
-</ul>
-<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -85,6 +85,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
             </div>
         </div>
     </li>
+</ul>
+<ul class="panelContent cardsF">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
