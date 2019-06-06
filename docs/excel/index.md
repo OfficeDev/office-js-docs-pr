@@ -124,7 +124,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 ---
 
 <h2>Featured articles</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam leo metus, iaculis eget augue et, efficitur iaculis turpis. Vivamus congue eleifend eleifend. Phasellus in vehicula nibh. Donec rhoncus, ligula vel.</p>
+<p>...the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
@@ -201,7 +201,5 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 </ul>
 
 ---
-
-<h2>Resources</h2>
 
 [!include[Office Add-ins resources](../includes/landing-page-resources.md)]
