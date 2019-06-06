@@ -31,7 +31,7 @@ localization_priority: Priority
                 <a class="card x-hidden-focus" href="../overview/office-add-ins.md" target="_blank">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
+                            <img src="../images/index/logo-excel.svg" alt="Excel add-ins" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -78,7 +78,7 @@ localization_priority: Priority
                               <a class="card x-hidden-focus" href="excel-add-ins-overview.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="../images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
+                                        <img src="../images/index/logo-excel.svg" alt="Excel add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">
@@ -91,7 +91,7 @@ localization_priority: Priority
                               <a class="card x-hidden-focus" href="../onenote/onenote-add-ins-programming-overview.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="../images/index/OneNoteLogoColor.svg" alt="OneNote add-ins" />
+                                        <img src="../images/index/logo-onenote.svg" alt="OneNote add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">
@@ -104,7 +104,7 @@ localization_priority: Priority
                               <a class="card x-hidden-focus" href="/outlook/add-ins/index" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="../images/index/OutlookLogoColor.svg" alt="Outlook add-ins" />
+                                        <img src="../images/index/logo-outlook.svg" alt="Outlook add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">
@@ -117,7 +117,7 @@ localization_priority: Priority
                               <a class="card x-hidden-focus" href="../powerpoint/powerpoint-add-ins.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="../images/index/PowerPointLogoColor.svg" alt="PowerPoint add-ins" />
+                                        <img src="../images/index/logo-powerpoint.svg" alt="PowerPoint add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">
@@ -130,7 +130,7 @@ localization_priority: Priority
                               <a class="card x-hidden-focus" href="../project/project-add-ins.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="../images/index/ProjectLogoColor.svg" alt="Project add-ins" />
+                                        <img src="../images/index/logo-project-server.svg" alt="Project add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">
@@ -143,7 +143,7 @@ localization_priority: Priority
                               <a class="card x-hidden-focus" href="../word/word-add-ins-programming-overview.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img src="../images/index/WordLogoColor.svg" alt="Word add-ins" />
+                                        <img src="../images/index/logo-word.svg" alt="Word add-ins" />
                                     </div>
                                 </div>
                                 <div class="cardText">

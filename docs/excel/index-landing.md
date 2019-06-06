@@ -1,9 +1,9 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Excel add-ins overview
+title: Excel add-ins documentation
 description: Resources for learning about Excel add-ins.
-ms.date: 06/03/2019
+ms.date: 06/06/2019
 localization_priority: Priority
 ---
 
