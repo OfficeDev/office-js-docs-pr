@@ -128,7 +128,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 <h3>Office Add-ins guidance</h3>
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including Excel add-ins.</p>
 <p><b>Note</b>: See the <b>Office Add-ins guidance</b> section within the table of contents for the full list of <i>Office Add-ins guidance</i> articles.</p>
-<ul class="panelContent cardsW">
+<ul class="cardsM cols cols1">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -176,8 +176,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 </ul>
 
 <h3>Excel add-ins</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam leo metus, iaculis eget augue et, efficitur iaculis turpis. Vivamus congue eleifend eleifend. Phasellus in vehicula nibh. Donec rhoncus, ligula vel.
-</p>
+<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including Excel add-ins.</p>
+<p><b>Note</b>: See the <b>Excel add-ins</b> section within the table of contents for the full list of <i>Excel add-ins</i> articles.</p>
 
 <ul class="panelContent cardsW">
     <li>
