@@ -155,56 +155,17 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
+                        <h3>Office Add-ins development</h3>
+                        <p><a href="../develop/specify-office-hosts-and-api-requirements.md">Specify Office hosts and API requirements</a></p>
+                        <p><a href=""></a></p>
+                        <p><a href=""></a></p>
+                        <p><a href=""></a></p>
+                        <p><a href=""></a></p>
+                        <p><a href=""></a></p>
+                        <p><a href=""></a></p>
+                        <p><a href=""></a></p>
+                        <p><a href=""></a></p>
+                        <p><a href="">See more <span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>
             </div>
@@ -217,54 +178,6 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 </p>
 
 <ul class="panelContent cardsW">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Category</h3>
-                        <p>Add link to article</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
     <li>
         <div class="cardSize">
             <div class="cardPadding">
