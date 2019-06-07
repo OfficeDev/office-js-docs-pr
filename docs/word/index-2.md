@@ -41,7 +41,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="excel-add-ins-get-started-overview.md">Build your first Word add-in</a></p>
+                        <p><a href="../quickstarts/word-quickstart.md">Build your first Word add-in</a></p>
                         <p><a href="../overview/explore-with-script-lab.md">Explore the API with Script Lab</a></p>
                     </div>
                 </div>
@@ -59,38 +59,12 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Word JavaScript API</h3>
-                        <p><a href="../reference/overview/excel-add-ins-reference-overview.md">API overview</a></p>
-                        <p><a href="../tutorials/excel-tutorial.md">Tutorial: Create an Word task pane add-in</a></p>
-                        <p><a href="../reference/requirement-sets/excel-api-requirement-sets.md">API requirement sets</a></p>
+                        <p><a href="../overview/word-add-ins-reference-overview.md">API overview</a></p>
+                        <p><a href="../tutorials/word-tutorial.md">Tutorial: Create an Word task pane add-in</a></p>
+                        <p><a href="../reference/requirement-sets/word-api-requirement-sets.md">API requirement sets</a></p>
                         <p><a href="../overview/office-add-in-availability.md">Host and platform availability</a></p>
-                        <p><a href="excel-add-ins-core-concepts.md">Fundamental programming concepts</a></p>
-                        <p><a href="excel-add-ins-advanced-concepts.md">Advanced programming concepts</a></p>
-                        <p><a href="/javascript/api/excel">API reference</a></p>
-                        <p><a href="excel-add-ins-worksheet-functions.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-excel/i_code-automate.svg" alt="Custom functions" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Custom functions</h3>
-                        <p><a href="custom-functions-overview.md">Custom functions overview</a></p>
-                        <p><a href="/tutorials/excel-tutorial-create-custom-functions.md">Tutorial: Create custom functions in Excel</a></p>
-                        <p><a href="custom-functions-requirements.md">Requirements for custom functions</a></p>
-                        <p><a href="custom-functions-architecture.md">Custom functions architecture</a></p>
-                        <p><a href="custom-functions-best-practices.md">Best practices for developing custom functions</a></p>
-                        <p><a href="custom-functions-debugging.md">Debugging custom functions</a></p>
-                        <p><a href="custom-functions-troubleshooting.md">Troubleshooting problems with custom functions</a></p>
-                        <p><a href="custom-functions-authentication.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
+                        <p><a href="/javascript/api/word">API reference</a></p>
+                        <p><a href="create-better-add-ins-for-word-with-office-open-xml.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>
             </div>
