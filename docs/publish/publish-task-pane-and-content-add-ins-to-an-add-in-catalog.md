@@ -69,9 +69,6 @@ Complete the steps in one of the following sections to publish an Office Add-in 
 8. Locate and specify the [manifest](../develop/add-in-manifests.md) file to upload and choose **Open**.
 9. In the **Add a document** dialog, choose **OK**.
 
-
-Content and task pane add-ins in this catalog are now available to Office applications like Excel and word. To insert an add-in from the app catalog, . To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
-
 ### To publish an add-in to an app catalog with on-premises SharePoint Server
 
 1. Open the **Central Administration** page.
