@@ -100,6 +100,7 @@ For Office applications on the desktop, you can find Office Add-ins from the app
 3. Enter the URL of the SharePoint app catalog in the **Catalog Url** box and choose **Add catalog**.
     Use the shorter form of the URL. For example, if the URL of the SharePoint app catalog is:
     - `https://<domain>/sites/<AddinCatalogSiteCollection>/AgaveCatalog`
+    
     Specify just the URL of the parent site collection:
     - `https://<domain>/sites/<AddinCatalogSiteCollection>`
 4. Close and reopen the Office application. 
