@@ -394,7 +394,7 @@
 - name: Excel add-ins
   items: 
   - name: About Excel add-ins
-    href: excel/index.md
+    href: excel/index-3.md
     displayName: Excel
   - name: Overview
     href: excel/excel-add-ins-overview.md
