@@ -11,7 +11,7 @@ localization_priority: Priority
 
 With Word add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Word across multiple platforms, including Word for Windows, Word for the web, Word for Mac, and Word for iPad. Learn how to build, test, debug, and publish Word add-ins.
 
-<ul class="panelContent cardsF cols cols2">
+<ul class="panelContent cardsF cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -86,7 +86,8 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 </div>
             </div>
         </div>
-        <br/>
+    </li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
