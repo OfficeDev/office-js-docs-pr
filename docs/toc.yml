@@ -752,6 +752,9 @@
 
 - name: PowerPoint add-ins
   items:
+  - name: About PowerPoint add-ins
+    href: powerpoint/index-2.md
+    displayName: PowerPoint
   - name: Overview
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint

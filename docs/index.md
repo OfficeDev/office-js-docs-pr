@@ -77,7 +77,7 @@ localization_priority: Normal
                               </a>
                             </li>
                             <li>
-                              <a class="card x-hidden-focus" href="powerpoint/powerpoint-add-ins.md" target="_blank">
+                              <a class="card x-hidden-focus" href="powerpoint/index-2.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
                                         <img src="images/index/logo-powerpoint.svg" alt="PowerPoint add-ins" />

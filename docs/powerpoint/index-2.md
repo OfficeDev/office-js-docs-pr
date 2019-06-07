@@ -1,15 +1,15 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Word add-ins documentation
-description: Resources for learning about Word add-ins.
+title: PowerPoint add-ins documentation
+description: Resources for learning about PowerPoint add-ins.
 ms.date: 06/06/2019
 localization_priority: Priority
 ---
 
-# Word Add-ins documentation
+# PowerPoint Add-ins documentation
 
-With Word add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Word across multiple platforms, including Word for Windows, Word for the web, Word for Mac, and Word for iPad. Learn how to build, test, debug, and publish Word add-ins.
+With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in PowerPoint across multiple platforms, including PowerPoint for Windows, PowerPoint for the web, PowerPoint for Mac, and PowerPoint for iPad. Learn how to build, test, debug, and publish PowerPoint add-ins.
 
 <ul class="panelContent cardsF cols cols2">
     <li>
@@ -23,7 +23,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Overview</h3>
-                        <p><a href="word-add-ins-programming-overview.md">Word add-ins overview</a></p>
+                        <p><a href="powerpoint-add-ins.md">PowerPoint add-ins overview</a></p>
                         <p><a href="../concepts/requirements-for-running-office-add-ins.md">Requirements for running Office Add-ins</a></p>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="../quickstarts/word-quickstart.md">Build your first Word add-in</a></p>
+                        <p><a href="../quickstarts/powerpoint-quickstart.md">Build your first PowerPoint add-in</a></p>
                         <p><a href="../overview/explore-with-script-lab.md">Explore the API with Script Lab</a></p>
                     </div>
                 </div>
@@ -54,17 +54,16 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="Word JavaScript API" />
+                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="PowerPoint JavaScript API" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Word JavaScript API</h3>
-                        <p><a href="../reference/overview/word-add-ins-reference-overview.md">API overview</a></p>
-                        <p><a href="../tutorials/word-tutorial.md">Tutorial: Create an Word task pane add-in</a></p>
-                        <p><a href="../reference/requirement-sets/word-api-requirement-sets.md">API requirement sets</a></p>
+                        <h3>PowerPoint JavaScript API</h3>
+                        <p><a href="../reference/requirement-sets/powerpoint-and-project-note.md">API overview</a></p>
+                        <p><a href="../tutorials/powerpoint-tutorial.md">Tutorial: Create a PowerPoint task pane add-in</a></p>
                         <p><a href="../overview/office-add-in-availability.md">Host and platform availability</a></p>
-                        <p><a href="/javascript/api/word">API reference</a></p>
-                        <p><a href="create-better-add-ins-for-word-with-office-open-xml.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
+                        <p><a href="/javascript/api/powerpoint">API reference</a></p>
+                        <p><a href="get-the-whole-document-from-an-add-in-for-powerpoint.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>
             </div>
@@ -86,7 +85,6 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 </div>
             </div>
         </div>
-        <br/>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -109,7 +107,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
 
 <h2>Office Add-ins guidance</h2>
 
-<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including Word add-ins.</p>
+<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including PowerPoint add-ins.</p>
 
 <p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
 
