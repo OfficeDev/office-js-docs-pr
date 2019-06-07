@@ -123,7 +123,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 
 ---
 
-<h2>Important information about Office Add-ins</h2>
+<h2>Learn more about Office Add-ins</h2>
 
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including Excel add-ins.</p>
 
