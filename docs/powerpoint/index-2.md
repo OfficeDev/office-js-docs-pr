@@ -109,6 +109,8 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
 
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including PowerPoint add-ins.</p>
 
+<p>This information is especially relevant to building PowerPoint add-ins, because the [host-specific JavaScript API for PowerPoint](/javascript/api/powerpoint) is currently very limited. Therefore, you'll mainly use the [Common API](/javascript/api/office) to implement interaction between your add-in and the PowerPoint document.</p>
+
 <p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
