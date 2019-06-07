@@ -11,8 +11,11 @@ localization_priority: Priority
 
 With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Excel across multiple platforms, including Excel for Windows, Excel for the web, Excel for Mac, and Excel for iPad. Learn how to build, test, debug, and publish Excel add-ins.
 <br/>
-<ul class="panelContent cardsM cols cols2">
+<ul class="panelContent cardsM  cols2">
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <a href="excel-add-ins-overview.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
@@ -24,8 +27,14 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <p>test</p>
                         </div>
                     </a>
+                </div>
+            </div>
+        </div>
     </li>
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <a href="excel-add-ins-get-started-overview.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
@@ -37,8 +46,14 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <p>test</p>
                         </div>
                     </a>
+                </div>
+            </div>
+        </div>
     </li>
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <a href="../reference/overview/excel-add-ins-reference-overview.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
@@ -50,8 +65,14 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <p>test</p>
                         </div>
                     </a>
+                </div>
+            </div>
+        </div>
     </li>
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <a href="custom-functions-overview.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
@@ -63,8 +84,14 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <p>test</p>
                         </div>
                     </a>
+                </div>
+            </div>
+        </div>
     </li>
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <a href="../testing/test-debug-office-add-ins.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
@@ -76,8 +103,14 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <p>test</p>
                         </div>
                     </a>
+                </div>
+            </div>
+        </div>
     </li>
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
                     <a href="../publish/publish.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
@@ -89,6 +122,9 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                             <p>test</p>
                         </div>
                     </a>
+                </div>
+            </div>
+        </div>
     </li>
 </ul>
 
