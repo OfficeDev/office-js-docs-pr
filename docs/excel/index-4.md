@@ -24,7 +24,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                         <div class="cardText">
                             <h3>Overview</h3>
-                            <p>Un sed lacus sit amet ipsum aliquam faucibus. Phasellus varius sed erat eu fringilla. Pellentesque ante leo, blandit quis nunc ornare, egestas aliquet augue. Vivamus bibendum metus a lorem mattis lacinia et ut lacus.</p>
+                            <p>test</p>
                         </div>
                     </a>
                 </div>
@@ -43,7 +43,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                         <div class="cardText">
                             <h3>Getting started</h3>
-                            <p>Un sed lacus sit amet ipsum aliquam faucibus. Phasellus varius sed erat eu fringilla. Pellentesque ante leo, blandit quis nunc ornare, egestas aliquet augue. Vivamus bibendum metus a lorem mattis lacinia et ut lacus.</p>
+                            <p>test</p>
                         </div>
                     </a>
                 </div>
@@ -62,7 +62,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                         <div class="cardText">
                             <h3>Excel JavaScript API</h3>
-                            <p>Un sed lacus sit amet ipsum aliquam faucibus. Phasellus varius sed erat eu fringilla. Pellentesque ante leo, blandit quis nunc ornare, egestas aliquet augue. Vivamus bibendum metus a lorem mattis lacinia et ut lacus.</p>
+                            <p>test</p>
                         </div>
                     </a>
                 </div>
@@ -83,7 +83,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                         <div class="cardText">
                             <h3>Custom functions</h3>
-                            <p>Un sed lacus sit amet ipsum aliquam faucibus. Phasellus varius sed erat eu fringilla. Pellentesque ante leo, blandit quis nunc ornare, egestas aliquet augue. Vivamus bibendum metus a lorem mattis lacinia et ut lacus.</p>
+                            <p>test</p>
                         </div>
                     </a>
                 </div>
@@ -102,7 +102,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                         <div class="cardText">
                             <h3>Testing and debugging</h3>
-                            <p>Un sed lacus sit amet ipsum aliquam faucibus. Phasellus varius sed erat eu fringilla. Pellentesque ante leo, blandit quis nunc ornare, egestas aliquet augue. Vivamus bibendum metus a lorem mattis lacinia et ut lacus.</p>
+                            <p>test</p>
                         </div>
                     </a>
                 </div>
@@ -121,7 +121,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         </div>
                         <div class="cardText">
                             <h3>Publishing</h3>
-                            <p>Un sed lacus sit amet ipsum aliquam faucibus. Phasellus varius sed erat eu fringilla. Pellentesque ante leo, blandit quis nunc ornare, egestas aliquet augue. Vivamus bibendum metus a lorem mattis lacinia et ut lacus.</p>
+                            <p>test</p>
                         </div>
                     </a>
                 </div>
