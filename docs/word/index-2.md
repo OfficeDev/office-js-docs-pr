@@ -86,6 +86,21 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 </div>
             </div>
         </div>
+         <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index-landing-page/i_deploy.svg" alt="Publishing" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Publishing</h3>
+                        <p><a href="../publish/publish.md">Deploy and publish Office Add-ins</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </li>
     <li>
         <div class="cardSize">
