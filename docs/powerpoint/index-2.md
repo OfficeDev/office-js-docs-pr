@@ -60,7 +60,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     <div class="cardText">
                         <h3>PowerPoint JavaScript API</h3>
                         <p><a href="../reference/requirement-sets/powerpoint-and-project-note.md">API overview</a></p>
-                        <p><a href="../tutorials/powerpoint-tutorial.md">Tutorial: Create a PowerPoint task pane add-in</a></p>
+                        <p><a href="../tutorials/powerpoint-tutorial.md">Tutorial: Create a task pane add-in</a></p>
                         <p><a href="../overview/office-add-in-availability.md">Host and platform availability</a></p>
                         <p><a href="/javascript/api/powerpoint">API reference</a></p>
                         <p><a href="get-the-whole-document-from-an-add-in-for-powerpoint.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>

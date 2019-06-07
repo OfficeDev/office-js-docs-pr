@@ -11,7 +11,7 @@ localization_priority: Priority
 
 With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in OneNote for the web. Learn how to build, test, debug, and publish OneNote add-ins.
 
-<ul class="panelContent cardsF cols cols2">
+<ul class="panelContent cardsF cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -83,7 +83,8 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                 </div>
             </div>
         </div>
-        <br/>
+    </li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
