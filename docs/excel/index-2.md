@@ -11,7 +11,7 @@ localization_priority: Priority
 
 With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Excel across multiple platforms, including Excel for Windows, Excel for the web, Excel for Mac, and Excel for iPad. Learn how to build, test, debug, and publish Excel add-ins.
 
-<ul class="panelContent cardsF cols cols2">
+<ul class="panelContent cardsF cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -63,10 +63,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         <p><a href="../tutorials/excel-tutorial.md">Tutorial: Create an Excel task pane add-in</a></p>
                         <p><a href="../reference/requirement-sets/excel-api-requirement-sets.md">API requirement sets</a></p>
                         <p><a href="../overview/office-add-in-availability.md">Host and platform availability</a></p>
-                        <p><a href="excel-add-ins-core-concepts.md">Fundamental programming concepts</a></p>
-                        <p><a href="excel-add-ins-advanced-concepts.md">Advanced programming concepts</a></p>
                         <p><a href="/javascript/api/excel">API reference</a></p>
-                        <p><a href="excel-add-ins-worksheet-functions.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
+                        <p><a href="excel-add-ins-core-concepts.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>
             </div>
@@ -88,8 +86,6 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         <p><a href="custom-functions-requirements.md">Requirements for custom functions</a></p>
                         <p><a href="custom-functions-architecture.md">Custom functions architecture</a></p>
                         <p><a href="custom-functions-best-practices.md">Best practices for developing custom functions</a></p>
-                        <p><a href="custom-functions-debugging.md">Debugging custom functions</a></p>
-                        <p><a href="custom-functions-troubleshooting.md">Troubleshooting problems with custom functions</a></p>
                         <p><a href="custom-functions-authentication.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>
