@@ -104,7 +104,7 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
 
 ---
 
-<h2>Office Add-ins guidance</h2>
+<h2>Additional guidance</h2>
 
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including OneNote add-ins.</p>
 
