@@ -41,8 +41,8 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="../quickstarts/word-quickstart.md">Build your first Word add-in</a></p>
-                        <p><a href="../tutorials/word-tutorial.md">Tutorial: Create a Word task pane add-in</a></p>
+                        <p><a href="../quickstarts/word-quickstart.md">Quick Start: Word add-in</a></p>
+                        <p><a href="../tutorials/word-tutorial.md">Word add-in tutorial</a></p>
                         <p><a href="../overview/explore-with-script-lab.md">Explore the API with Script Lab</a></p>
                     </div>
                 </div>

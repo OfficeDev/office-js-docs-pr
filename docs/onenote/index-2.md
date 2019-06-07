@@ -40,7 +40,7 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="../quickstarts/onenote-quickstart.md">Build your first OneNote add-in</a></p>
+                        <p><a href="../quickstarts/onenote-quickstart.md">Quick Start: OneNote add-in</a></p>
                     </div>
                 </div>
             </div>

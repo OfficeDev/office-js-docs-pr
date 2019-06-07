@@ -41,7 +41,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="excel-add-ins-get-started-overview.md">Build your first Excel add-in</a></p>
+                        <p><a href="excel-add-ins-get-started-overview.md">Quick Start: Excel task pane add-in</a></p>
+                        <p><a href="../quickstarts/excel-custom-functions-quickstart.md">Quick Start: Excel custom functions add-in</a></p>
                         <p><a href="../overview/explore-with-script-lab.md">Explore the API with Script Lab</a></p>
                     </div>
                 </div>
@@ -82,10 +83,10 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <div class="cardText">
                         <h3>Custom functions</h3>
                         <p><a href="custom-functions-overview.md">Custom functions overview</a></p>
-                        <p><a href="/tutorials/excel-tutorial-create-custom-functions.md">Tutorial: Create custom functions in Excel</a></p>
+                        <p><a href="/tutorials/excel-tutorial-create-custom-functions.md">Tutorial: Create custom functions</a></p>
                         <p><a href="custom-functions-requirements.md">Requirements for custom functions</a></p>
                         <p><a href="custom-functions-architecture.md">Custom functions architecture</a></p>
-                        <p><a href="custom-functions-best-practices.md">Best practices for developing custom functions</a></p>
+                        <p><a href="custom-functions-best-practices.md">Best practices</a></p>
                         <p><a href="custom-functions-authentication.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>

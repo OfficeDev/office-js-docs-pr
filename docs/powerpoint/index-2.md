@@ -41,8 +41,8 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="../quickstarts/powerpoint-quickstart.md">Build your first PowerPoint add-in</a></p>
-                        <p><a href="../tutorials/powerpoint-tutorial.md">Tutorial: Create a PowerPoint task pane add-in</a></p>
+                        <p><a href="../quickstarts/powerpoint-quickstart.md">Quick Start: PowerPoint add-in</a></p>
+                        <p><a href="../tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial</a></p>
                         <p><a href="../overview/explore-with-script-lab.md">Explore the API with Script Lab</a></p>
                     </div>
                 </div>
