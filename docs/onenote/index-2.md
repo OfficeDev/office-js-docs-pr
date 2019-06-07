@@ -57,7 +57,7 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>OneNote JavaScript API</h3>
-                        <p><a href="..reference/overview/onenote-add-ins-javascript-reference.md">API overview</a></p>
+                        <p><a href="../reference/overview/onenote-add-ins-javascript-reference.md">API overview</a></p>
                         <p><a href="../reference/requirement-sets/onenote-api-requirement-sets.md">API requirement sets</a></p>
                         <p><a href="../overview/office-add-in-availability.md">Host and platform availability</a></p>
                         <p><a href="/javascript/api/onenote">API reference</a></p>
