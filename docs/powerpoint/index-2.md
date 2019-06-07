@@ -11,7 +11,7 @@ localization_priority: Priority
 
 With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in PowerPoint across multiple platforms, including PowerPoint for Windows, PowerPoint for the web, PowerPoint for Mac, and PowerPoint for iPad. Learn how to build, test, debug, and publish PowerPoint add-ins.
 
-<ul class="panelContent cardsF cols cols2">
+<ul class="panelContent cardsF cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -85,7 +85,8 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                 </div>
             </div>
         </div>
-        <br/>
+    </li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
