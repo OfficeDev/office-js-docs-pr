@@ -18,12 +18,12 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-excel/i_article.svg" alt="Overview" />
+                            <img src="../images/index-landing-page/i_article.svg" alt="Overview" />
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Overview</h3>
-                        <p><a href="excel-add-ins-overview.md">Word add-ins overview</a></p>
+                        <p><a href="word-add-ins-programming-overview.md">Word add-ins overview</a></p>
                         <p><a href="../concepts/requirements-for-running-office-add-ins.md">Requirements for running Office Add-ins</a></p>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-excel/i_get-started.svg" alt="Getting started" />
+                            <img src="../images/index-landing-page/i_get-started.svg" alt="Getting started" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -54,12 +54,12 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-excel/i_code-blocks.svg" alt="Word JavaScript API" />
+                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="Word JavaScript API" />
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Word JavaScript API</h3>
-                        <p><a href="../overview/word-add-ins-reference-overview.md">API overview</a></p>
+                        <p><a href="../overview/reference/word-add-ins-reference-overview.md">API overview</a></p>
                         <p><a href="../tutorials/word-tutorial.md">Tutorial: Create an Word task pane add-in</a></p>
                         <p><a href="../reference/requirement-sets/word-api-requirement-sets.md">API requirement sets</a></p>
                         <p><a href="../overview/office-add-in-availability.md">Host and platform availability</a></p>
@@ -76,7 +76,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-excel/i_recommended-testing.svg" alt="Testing and debugging" />
+                            <img src="../images/index-landing-page/i_recommended-testing.svg" alt="Testing and debugging" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -93,7 +93,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-excel/i_deploy.svg" alt="Publishing" />
+                            <img src="../images/index-landing-page/i_deploy.svg" alt="Publishing" />
                         </div>
                     </div>
                     <div class="cardText">

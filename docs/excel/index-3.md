@@ -18,7 +18,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/developer-documentation.svg" alt="Office Add-ins concepts graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-landing-page/developer-documentation.svg" alt="Office Add-ins concepts graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -36,7 +36,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/get-started.svg" alt="Getting started graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-landing-page/get-started.svg" alt="Getting started graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -56,7 +56,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/monitor-with-code.svg" alt="Excel JavaScript API graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-landing-page/monitor-with-code.svg" alt="Excel JavaScript API graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -79,7 +79,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/custom-functions.svg" alt="Excel custom functions graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-landing-page/custom-functions.svg" alt="Excel custom functions graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -104,7 +104,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/test.svg" alt="Testing and debugging graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-landing-page/test.svg" alt="Testing and debugging graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -121,7 +121,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/deploy.svg" alt="Publish graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-landing-page/deploy.svg" alt="Publish graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">

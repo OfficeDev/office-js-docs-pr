@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/developer-documentation.svg" alt="Office Add-ins concepts graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-landing-page/developer-documentation.svg" alt="Office Add-ins concepts graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -36,7 +36,7 @@
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="../images/index-excel/monitor-with-code.svg" alt="Office Add-ins development graphic" data-linktype="external" class="x-hidden-focus"/>
+                            <img src="../images/index-landing-page/monitor-with-code.svg" alt="Office Add-ins development graphic" data-linktype="external" class="x-hidden-focus"/>
                         </div>
                     </div>
                     <div class="cardText">

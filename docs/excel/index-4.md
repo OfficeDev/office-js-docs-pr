@@ -20,7 +20,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <a href="excel-add-ins-overview.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
-                                <img src="../images/index-excel/i_article.svg" alt="Excel add-ins overview" />
+                                <img src="../images/index-landing-page/i_article.svg" alt="Excel add-ins overview" />
                             </div>
                         </div>
                         <div class="cardText">
@@ -39,7 +39,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <a href="excel-add-ins-get-started-overview.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
-                                <img src="../images/index-excel/i_get-started.svg" alt="Getting started" />
+                                <img src="../images/index-landing-page/i_get-started.svg" alt="Getting started" />
                             </div>
                         </div>
                         <div class="cardText">
@@ -58,7 +58,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <a href="../reference/overview/excel-add-ins-reference-overview.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
-                                <img src="../images/index-excel/i_code-blocks.svg" alt="Excel JavaScript API" />
+                                <img src="../images/index-landing-page/i_code-blocks.svg" alt="Excel JavaScript API" />
                             </div>
                         </div>
                         <div class="cardText">
@@ -77,7 +77,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <a href="custom-functions-overview.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
-                                <img src="../images/index-excel/i_code-automate.svg" alt="Custom functions" />
+                                <img src="../images/index-landing-page/i_code-automate.svg" alt="Custom functions" />
                             </div>
                         </div>
                         <div class="cardText">
@@ -96,7 +96,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <a href="../testing/test-debug-office-add-ins.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
-                                <img src="../images/index-excel/i_recommended-testing.svg" alt="Testing and debugging" />
+                                <img src="../images/index-landing-page/i_recommended-testing.svg" alt="Testing and debugging" />
                             </div>
                         </div>
                         <div class="cardText">
@@ -115,7 +115,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     <a href="../publish/publish.md">
                         <div class="cardImageOuter">
                             <div class="cardImage">
-                                <img src="../images/index-excel/i_deploy.svg" alt="Publishing" />
+                                <img src="../images/index-landing-page/i_deploy.svg" alt="Publishing" />
                             </div>
                         </div>
                         <div class="cardText">
