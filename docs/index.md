@@ -103,7 +103,7 @@ localization_priority: Normal
                               </a>
                             </li>
                             <li>
-                              <a class="card x-hidden-focus" href="word/word-add-ins-programming-overview.md" target="_blank">
+                              <a class="card x-hidden-focus" href="word/index-2.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
                                         <img src="images/index/logo-word.svg" alt="Word add-ins" />

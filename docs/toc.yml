@@ -807,6 +807,9 @@
 
 - name: Word add-ins
   items:
+  - name: About Word add-ins
+    href: word/index-2.md
+    displayName: Word
   - name: Overview
     href: word/word-add-ins-programming-overview.md
     displayName: Word
