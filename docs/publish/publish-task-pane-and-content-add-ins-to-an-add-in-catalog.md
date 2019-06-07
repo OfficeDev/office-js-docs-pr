@@ -22,6 +22,8 @@ Complete the steps in one of the following sections to create an app catalog wit
 
 To create the SharePoint app catalog, follow the instructions at [Configure the App Catalog site for a web application](https://docs.microsoft.com/en-us/sharepoint/administration/manage-the-app-catalog).
 
+Once you have created the app catalog follow the steps to [publish an Office Add-in](#publish-an-office-add-in).
+
 ### To create an app catalog on Office 365
 
 1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
@@ -49,9 +51,11 @@ To create the SharePoint app catalog, follow the instructions at [Configure the 
 
 10. Choose **OK**.
 
-The app catalog is now created.
+## Publish an Office Add-in
 
-## Publish an add-in to a SharePoint app catalog on Office 365
+Complete the steps in one of the following sections to publish an Office Add-in to an app catalog on Office 365 or on-premises SharePoint Server.
+
+### To publish an Office add-in to a SharePoint app catalog on Office 365
 
 1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
 2. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
@@ -65,9 +69,10 @@ The app catalog is now created.
 8. Locate and specify the [manifest](../develop/add-in-manifests.md) file to upload and choose **Open**.
 9. In the **Add a document** dialog, choose **OK**.
 
-    Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
 
-## Publish an add-in to an app catalog with on-premises SharePoint Server
+Content and task pane add-ins in this catalog are now available to Office applications like Excel and word. To insert an add-in from the app catalog, . To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
+
+### To publish an add-in to an app catalog with on-premises SharePoint Server
 
 1. Open the **Central Administration** page.
 2. In the left task pane, choose **Apps**.
@@ -80,24 +85,30 @@ The app catalog is now created.
 9. Locate and specify the [manifest](../develop/add-in-manifests.md) file to upload and choose **Open**.
 10. In the **Add a document** dialog, choose **OK**.
 
-    Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
+## Insert Office Add-ins from the app catalog
 
-## End user experience with the app catalog
+For online Office applications, you can find Office Add-ins from the app catalog by completing the following steps.
 
-End users can access the app catalog in an Office application by completing the following steps:
+1. Open the online Office application (Excel, PowerPoint, or Word).
+2. Create or open a document.
+3. Choose **Insert** > **Add-ins**.
+4. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
+    The Office Add-ins are listed.
+5. Choose an Office Add-in and then choose **Add**.
 
-1. In the Office application, go to  **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
+For Office applications on the desktop, you can find Office Add-ins from the app catalog by completing the following steps.
 
-2. Specify the URL of the  _parent SharePoint site collection_ of the SharePoint app catalog.
-
-    For example, if the URL of the SharePoint app catalog is:
-
+1. Open the desktop Office application (Excel, Word, or PowerPoint)
+2. Choose **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
+3. Enter the URL of the SharePoint app catalog in the **Catalog Url** box and choose **Add catalog**.
+    Use the shorter form of the URL. For example, if the URL of the SharePoint app catalog is:
     - `https://<domain>/sites/<AddinCatalogSiteCollection>/AgaveCatalog`
-
     Specify just the URL of the parent site collection:
-
     - `https://<domain>/sites/<AddinCatalogSiteCollection>`
-
-3. Close and reopen the Office application. The add-ins will be available in the **Office Add-ins** dialog box.
+4. Close and reopen the Office application. 
+5. Choose **Insert** > **Get Add-ins**.
+4. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
+    The Office Add-ins are listed.
+5. Choose an Office Add-in and then choose **Add**.
 
 Alternatively, an administrator can specify an app catalog on SharePoint by using group policy. For details, see the section [Using Group Policy to manage how users can install and use Office Add-ins](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
