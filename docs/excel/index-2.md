@@ -41,7 +41,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="excel-add-ins-get-started-overview.md">Quick Start: Create an Excel add-in</a></p>
+                        <p><a href="excel-add-ins-get-started-overview.md">Quick Start: Create a task pane add-in</a></p>
                         <p><a href="../quickstarts/excel-custom-functions-quickstart.md">Quick Start: Create custom functions</a></p>
                         <p><a href="../overview/explore-with-script-lab.md">Explore the API with Script Lab</a></p>
                     </div>
