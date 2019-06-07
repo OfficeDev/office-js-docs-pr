@@ -51,7 +51,7 @@ localization_priority: Normal
                               </a>
                             </li>
                             <li>
-                              <a class="card x-hidden-focus" href="onenote/onenote-add-ins-programming-overview.md" target="_blank">
+                              <a class="card x-hidden-focus" href="onenote/index-2.md" target="_blank">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
                                         <img src="images/index/logo-onenote.svg" alt="OneNote add-ins" />

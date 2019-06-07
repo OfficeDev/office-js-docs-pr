@@ -557,6 +557,9 @@
 
 - name: OneNote add-ins
   items:
+  - name: About OneNote add-ins
+    href: onenote/index-2.md
+    displayName: OneNote
   - name: Overview
     href: onenote/onenote-add-ins-programming-overview.md
     displayName: OneNote
