@@ -20,7 +20,7 @@ To get started:
   > To sign up for a free Office 365 developer subscription, join our [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program). 
   > See the [Office 365 Developer Program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription.
      
-- Set up an add-in catalog on Office 365 (SharePoint Online). An add-in catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an add-in catalog document library. For more information, see [Publish task pane and content add-ins to an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- Set up an app catalog on Office 365 (SharePoint Online). An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
 
 ## Debug your add-in from Excel Online or Word Online
@@ -38,7 +38,7 @@ To debug your add-in by using Office Online:
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
     ```
     
-3. Upload the manifest to the Office Add-ins library in the add-in catalog on SharePoint.
+3. Upload the manifest to the Office Add-ins library in the app catalog on SharePoint.
     
 4. Launch Excel Online or Word Online from the app launcher in Office 365, and open a new document.
     
