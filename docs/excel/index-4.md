@@ -44,7 +44,6 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                         <div class="cardText">
                             <h3>Getting started</h3>
                             <p>Un sed lacus sit amet ipsum aliquam faucibus. Phasellus varius sed erat eu fringilla. Pellentesque ante leo, blandit quis nunc ornare, egestas aliquet augue. Vivamus bibendum metus a lorem mattis lacinia et ut lacus.</p>
-                            <p><a href="../overview/explore-with-script-lab.md">Explore the API with Script Lab</a></p>
                         </div>
                     </a>
                 </div>
@@ -71,7 +70,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
         </div>
     </li>
 </ul>
-<ul class="panelContent cardsF">
+<ul class="panelContent cardsM cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
