@@ -7,7 +7,7 @@ metadata:
   author: o365devx
   ms.topic: landing-page
   ms.prod: non-product-specific
-  ms.date: 05/08/2019
+  ms.date: 06/10/2019
   ms.author: o365devx
 abstract:
   description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office on Windows, Office Online, Office for Mac, and Office for iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
@@ -21,10 +21,22 @@ abstract:
     href: https://channel9.msdn.com/Events/Connect/2017/T192
     width: 250
 sections:
+- title: Try out the APIs
+  items:
+  - type: paragraph
+    text: 'Explore Office JavaScript APIs.'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://raw.githubusercontent.com/OfficeDev/script-lab/master/packages/editor/public/assets/images/icon-large.svg
+        alt: 'Script Lab logo'
+      text: Script Lab
+      href: https://docs.microsoft.com/office/dev/add-ins/overview/explore-with-script-lab
 - title: 5-Minute Quick Starts
   items:
   - type: paragraph
-    text: 'Learn how to create your first Office Add-in:'
+    text: 'Learn how to create your first Office Add-in.'
   - type: list
     style: icon48
     items: 
