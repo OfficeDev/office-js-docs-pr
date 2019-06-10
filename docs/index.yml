@@ -29,7 +29,7 @@ sections:
     style: icon48
     items:
     - image:
-        src: https://raw.githubusercontent.com/OfficeDev/script-lab/master/packages/editor/public/assets/images/icon-large.svg
+        src: https://github.com/OfficeDev/script-lab/blob/master/packages/editor/public/assets/images/icon-64.png
         alt: 'Script Lab logo'
       text: Script Lab
       href: https://docs.microsoft.com/office/dev/add-ins/overview/explore-with-script-lab
