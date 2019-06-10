@@ -17,7 +17,7 @@ The function parameter types may be provided using the [@param](#param) tag in J
 
 ### Adding a description to a function
 
-The description is displayed to the user as help text when they need help to understand what your custom function does. The description doesn't require any specific tag. Just enter a short text description in the JSDoc comment. In general the description is placed at the start of the JSDoc comment section. But it will work no matter where it is placed.
+The description is displayed to the user as help text when they need help to understand what your custom function does. The description doesn't require any specific tag. Just enter a short text description in the JSDoc comment. In general the description is placed at the start of the JSDoc comment section, but it will work no matter where it is placed.
 
 To see examples of the built-in function descriptions, open Excel, go to the **Formulas** tab, and choose **Insert function**. You can then browse through all the function descriptions, and also see your own custom functions listed.
 
