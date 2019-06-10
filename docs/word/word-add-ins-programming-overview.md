@@ -78,7 +78,7 @@ After you develop your add-in, you can [publish](../publish/publish.md) it to a 
 
 ## What's coming up for Word add-ins?
 
-As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [API open specifications](/office/dev/add-ins/reference/openspec) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
+As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [API open specifications](/office/dev/add-ins/reference/openspec/openspec) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
 
 ## See also
 

@@ -5,7 +5,7 @@ title: Save and share state in custom functions
 localization_priority: Priority
 ---
 
-## Save and share state in custom functions
+# Save and share state in custom functions
 
 Use the `OfficeRuntime.storage` object to save state related to custom functions or the task pane in your add-in. Storage is limited to 10 MB per domain (which may be shared across multiple add-ins). In Excel on Windows, the `storage` object is a separate location within the custom functions runtime, but for Excel Online and Excel for Mac, the `storage` object is the same as the browser's `localStorage`.
 
