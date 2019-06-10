@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API overview
 description: ''
-ms.date: 05/13/2019
+ms.date: 06/10/2019
 ms.prod: word
 localization_priority: Priority
 ---
@@ -23,8 +23,8 @@ The Word JavaScript API is loaded by Office.js. The Word JavaScript API changes 
 
 You can reference Office.js from the following locations:
 
-* https://appsforoffice.microsoft.com/lib/1/hosted/office.js - use this resource for production add-ins.
-* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - use this resource when you're trying out preview features.
+- https://appsforoffice.microsoft.com/lib/1/hosted/office.js - use this resource for production add-ins.
+- https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - use this resource when you're trying out preview features.
 
 If you're using [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs), you can download the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) to get project templates that include Office.js.  You can also use [nuget to get Office.js](https://www.nuget.org/packages/Microsoft.Office.js/).
 
@@ -95,7 +95,6 @@ The Word proxy objects have methods for accessing and updating the object model.
 
 The following example shows how the command queue works. When **context.sync()** is called, the command to load the body text is executed in Word. Then, the command to insert text into the body in Word occurs. The results are then returned to the body proxy object. The value of the **body.text** property in the Word JavaScript API is the value of the Word document body <u>before</u> the text was inserted into Word document.
 
-
 ```js
 // Run a batch operation against the Word JavaScript API.
 Word.run(function (context) {
@@ -118,10 +117,6 @@ Word.run(function (context) {
 })
 ```
 
-## Word JavaScript API open specifications
-
-As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](../openspec/openspec.md) page. Find out what new features are in the pipeline for the Word JavaScript APIs and provide your input on our design specifications.
-
 ## Word JavaScript API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about Word JavaScript API requirement sets, see the [Word JavaScript API requirement sets](../requirement-sets/word-api-requirement-sets.md) article.
@@ -132,6 +127,7 @@ For detailed information about the Word JavaScript API, see the [Word JavaScript
 
 ## See also
 
-* [Word add-ins overview](/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Office Add-ins platform overview](/office/dev/add-ins/overview/office-add-ins)
-* [Word add-in samples on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [Word add-ins overview](/office/dev/add-ins/word/word-add-ins-programming-overview)
+- [Office Add-ins platform overview](/office/dev/add-ins/overview/office-add-ins)
+- [Word add-in samples on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [Open API specifications](../openspec/openspec.md)
