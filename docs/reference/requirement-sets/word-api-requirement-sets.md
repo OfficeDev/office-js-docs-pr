@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API requirement sets
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/11/2019
 ms.prod: word
 localization_priority: Priority
 ---
@@ -14,7 +14,7 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 
 > [!NOTE]
 > For the requirement sets that are marked as Beta, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> 
+>
 > Entries not listed as Beta are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  Requirement set  |   Office on Windows\*<br>(connected to Office 365)  |  Office for iPad<br>(connected to Office 365)  |  Office for Mac<br>(connected to Office 365)  | Office Online  | Office Online Server  |
@@ -62,7 +62,8 @@ The following is a complete list of APIs currently in preview.
 ||[id](/javascript/api/word/word.customxmlpart#id)|Gets the ID of the custom XML part. Read only.|
 ||[namespaceUri](/javascript/api/word/word.customxmlpart#namespaceuri)|Gets the namespace URI of the custom XML part. Read only.|
 ||[setXml(xml: string)](/javascript/api/word/word.customxmlpart#setxml-xml-)|Sets the full XML content of the custom XML part.|
-slows down the host application, so please remember to free any objects you add, once you're done using them. You will need to call "context.sync()" before the memory release takes effect.|
+||[track()](/javascript/api/word/word.customxmlpart#track--)|Track the object for automatic adjustment based on surrounding changes in the document. This call is a shorthand for context.trackedObjects.add(thisObject). If you are using this object across ".sync" calls and outside the sequential execution of a ".run" batch, and get an "InvalidObjectPath" error when setting a property or invoking a method on the object, you needed to have added the object to the tracked object collection when the object was first created.|
+||[untrack()](/javascript/api/word/word.customxmlpart#untrack--)|Release the memory associated with this object, if it has previously been tracked. This call is shorthand for context.trackedObjects.remove(thisObject). Having many tracked objects slows down the host application, so please remember to free any objects you add, once you're done using them. You will need to call "context.sync()" before the memory release takes effect.|
 ||[updateAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#updateattribute-xpath--namespacemappings--name--value-)|Updates the value of an attribute with the given name of the element identified by xpath.|
 ||[updateElement(xpath: string, xml: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#updateelement-xpath--xml--namespacemappings-)|Updates the XML of the element identified by xpath.|
 |[CustomXmlPartCollection](/javascript/api/word/word.customxmlpartcollection)|[add(xml: string)](/javascript/api/word/word.customxmlpartcollection#add-xml-)|Adds a new custom XML part to the document.|
@@ -71,12 +72,31 @@ slows down the host application, so please remember to free any objects you add,
 ||[getItem(id: string)](/javascript/api/word/word.customxmlpartcollection#getitem-id-)|Gets a custom XML part based on its ID. Read only.|
 ||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartcollection#getitemornullobject-id-)|Gets a custom XML part based on its ID. Returns a null object if the CustomXmlPart does not exist.|
 ||[items](/javascript/api/word/word.customxmlpartcollection#items)|Gets the loaded child items in this collection.|
+||[track()](/javascript/api/word/word.customxmlpartcollection#track--)|Track the object for automatic adjustment based on surrounding changes in the document. This call is a shorthand for context.trackedObjects.add(thisObject). If you are using this object across ".sync" calls and outside the sequential execution of a ".run" batch, and get an "InvalidObjectPath" error when setting a property or invoking a method on the object, you needed to have added the object to the tracked object collection when the object was first created.|
+||[untrack()](/javascript/api/word/word.customxmlpartcollection#untrack--)|Release the memory associated with this object, if it has previously been tracked. This call is shorthand for context.trackedObjects.remove(thisObject). Having many tracked objects slows down the host application, so please remember to free any objects you add, once you're done using them. You will need to call "context.sync()" before the memory release takes effect.|
+|[CustomXmlPartCollectionData](/javascript/api/word/word.customxmlpartcollectiondata)|[items](/javascript/api/word/word.customxmlpartcollectiondata#items)||
+|[CustomXmlPartCollectionLoadOptions](/javascript/api/word/word.customxmlpartcollectionloadoptions)|[$all](/javascript/api/word/word.customxmlpartcollectionloadoptions#$all)||
+||[id](/javascript/api/word/word.customxmlpartcollectionloadoptions#id)|For EACH ITEM in the collection: Gets the ID of the custom XML part. Read only.|
+||[namespaceUri](/javascript/api/word/word.customxmlpartcollectionloadoptions#namespaceuri)|For EACH ITEM in the collection: Gets the namespace URI of the custom XML part. Read only.|
+|[CustomXmlPartCollectionUpdateData](/javascript/api/word/word.customxmlpartcollectionupdatedata)|[items](/javascript/api/word/word.customxmlpartcollectionupdatedata#items)||
+|[CustomXmlPartData](/javascript/api/word/word.customxmlpartdata)|[id](/javascript/api/word/word.customxmlpartdata#id)|Gets the ID of the custom XML part. Read only.|
+||[namespaceUri](/javascript/api/word/word.customxmlpartdata#namespaceuri)|Gets the namespace URI of the custom XML part. Read only.|
+|[CustomXmlPartLoadOptions](/javascript/api/word/word.customxmlpartloadoptions)|[$all](/javascript/api/word/word.customxmlpartloadoptions#$all)||
+||[id](/javascript/api/word/word.customxmlpartloadoptions#id)|Gets the ID of the custom XML part. Read only.|
+||[namespaceUri](/javascript/api/word/word.customxmlpartloadoptions#namespaceuri)|Gets the namespace URI of the custom XML part. Read only.|
 |[CustomXmlPartScopedCollection](/javascript/api/word/word.customxmlpartscopedcollection)|[getCount()](/javascript/api/word/word.customxmlpartscopedcollection#getcount--)|Gets the number of items in the collection.|
 ||[getItem(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitem-id-)|Gets a custom XML part based on its ID. Read only.|
 ||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitemornullobject-id-)|Gets a custom XML part based on its ID. Returns a null object if the CustomXmlPart does not exist in the collection.|
 ||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitem--)|If the collection contains exactly one item, this method returns it. Otherwise, this method produces an error.|
 ||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|If the collection contains exactly one item, this method returns it. Otherwise, this method returns a null object.|
 ||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|Gets the loaded child items in this collection.|
+||[track()](/javascript/api/word/word.customxmlpartscopedcollection#track--)|Track the object for automatic adjustment based on surrounding changes in the document. This call is a shorthand for context.trackedObjects.add(thisObject). If you are using this object across ".sync" calls and outside the sequential execution of a ".run" batch, and get an "InvalidObjectPath" error when setting a property or invoking a method on the object, you needed to have added the object to the tracked object collection when the object was first created.|
+||[untrack()](/javascript/api/word/word.customxmlpartscopedcollection#untrack--)|Release the memory associated with this object, if it has previously been tracked. This call is shorthand for context.trackedObjects.remove(thisObject). Having many tracked objects slows down the host application, so please remember to free any objects you add, once you're done using them. You will need to call "context.sync()" before the memory release takes effect.|
+|[CustomXmlPartScopedCollectionData](/javascript/api/word/word.customxmlpartscopedcollectiondata)|[items](/javascript/api/word/word.customxmlpartscopedcollectiondata#items)||
+|[CustomXmlPartScopedCollectionLoadOptions](/javascript/api/word/word.customxmlpartscopedcollectionloadoptions)|[$all](/javascript/api/word/word.customxmlpartscopedcollectionloadoptions#$all)||
+||[id](/javascript/api/word/word.customxmlpartscopedcollectionloadoptions#id)|For EACH ITEM in the collection: Gets the ID of the custom XML part. Read only.|
+||[namespaceUri](/javascript/api/word/word.customxmlpartscopedcollectionloadoptions#namespaceuri)|For EACH ITEM in the collection: Gets the namespace URI of the custom XML part. Read only.|
+|[CustomXmlPartScopedCollectionUpdateData](/javascript/api/word/word.customxmlpartscopedcollectionupdatedata)|[items](/javascript/api/word/word.customxmlpartscopedcollectionupdatedata#items)||
 |[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deletebookmark-name-)|Deletes a bookmark, if exists, from the document.|
 ||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getbookmarkrange-name-)|Gets a bookmark's range. Throws if the bookmark does not exist.|
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|Gets a bookmark's range. Returns a null object if the bookmark does not exist.|
@@ -88,7 +108,14 @@ slows down the host application, so please remember to free any objects you add,
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|Gets a bookmark's range. Returns a null object if the bookmark does not exist.|
 ||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|Gets the custom XML parts in the document. Read-only.|
 ||[settings](/javascript/api/word/word.documentcreated#settings)|Gets the add-in's settings in the document. Read-only.|
+|[DocumentCreatedData](/javascript/api/word/word.documentcreateddata)|[customXmlParts](/javascript/api/word/word.documentcreateddata#customxmlparts)|Gets the custom XML parts in the document. Read-only.|
+||[settings](/javascript/api/word/word.documentcreateddata#settings)|Gets the add-in's settings in the document. Read-only.|
+|[DocumentData](/javascript/api/word/word.documentdata)|[customXmlParts](/javascript/api/word/word.documentdata#customxmlparts)|Gets the custom XML parts in the document. Read-only.|
+||[settings](/javascript/api/word/word.documentdata#settings)|Gets the add-in's settings in the document. Read-only.|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|Gets the format of the inline image. Read-only.|
+|[InlinePictureCollectionLoadOptions](/javascript/api/word/word.inlinepicturecollectionloadoptions)|[imageFormat](/javascript/api/word/word.inlinepicturecollectionloadoptions#imageformat)|For EACH ITEM in the collection: Gets the format of the inline image. Read-only.|
+|[InlinePictureData](/javascript/api/word/word.inlinepicturedata)|[imageFormat](/javascript/api/word/word.inlinepicturedata#imageformat)|Gets the format of the inline image. Read-only.|
+|[InlinePictureLoadOptions](/javascript/api/word/word.inlinepictureloadoptions)|[imageFormat](/javascript/api/word/word.inlinepictureloadoptions#imageformat)|Gets the format of the inline image. Read-only.|
 |[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|Gets the font of the bullet, number or picture at the specified level in the list.|
 ||[getLevelPicture(level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|Gets the base64 encoded string representation of the picture at the specified level in the list.|
 ||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|Resets the font of the bullet, number or picture at the specified level in the list.|
@@ -97,6 +124,10 @@ slows down the host application, so please remember to free any objects you add,
 ||[insertBookmark(name: string)](/javascript/api/word/word.range#insertbookmark-name-)|Inserts a bookmark on the range. If a bookmark of the same name exists somewhere, it is deleted first.|
 |[Setting](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete--)|Deletes the setting.|
 ||[key](/javascript/api/word/word.setting#key)|Gets the key of the setting. Read only.|
+||[set(properties: Interfaces.SettingUpdateData, options?: OfficeExtension.UpdateOptions)](/javascript/api/word/word.setting#set-properties--options-)|Sets multiple properties of an object at the same time. You can pass either a plain object with the appropriate properties, or another API object of the same type.|
+||[set(properties: Word.Setting)](/javascript/api/word/word.setting#set-properties-)|Sets multiple properties on the object at the same time, based on an existing loaded object.|
+||[track()](/javascript/api/word/word.setting#track--)|Track the object for automatic adjustment based on surrounding changes in the document. This call is a shorthand for context.trackedObjects.add(thisObject). If you are using this object across ".sync" calls and outside the sequential execution of a ".run" batch, and get an "InvalidObjectPath" error when setting a property or invoking a method on the object, you needed to have added the object to the tracked object collection when the object was first created.|
+||[untrack()](/javascript/api/word/word.setting#untrack--)|Release the memory associated with this object, if it has previously been tracked. This call is shorthand for context.trackedObjects.remove(thisObject). Having many tracked objects slows down the host application, so please remember to free any objects you add, once you're done using them. You will need to call "context.sync()" before the memory release takes effect.|
 ||[value](/javascript/api/word/word.setting#value)|Gets or sets the value of the setting.|
 |[SettingCollection](/javascript/api/word/word.settingcollection)|[add(key: string, value: any)](/javascript/api/word/word.settingcollection#add-key--value-)|Creates a new setting or sets an existing setting.|
 ||[deleteAll()](/javascript/api/word/word.settingcollection#deleteall--)|Deletes all settings in this add-in.|
@@ -104,6 +135,19 @@ slows down the host application, so please remember to free any objects you add,
 ||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|Gets a setting object by its key, which is case-sensitive. Throws if the setting does not exist.|
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|Gets a setting object by its key, which is case-sensitive. Returns a null object if the setting does not exist.|
 ||[items](/javascript/api/word/word.settingcollection#items)|Gets the loaded child items in this collection.|
+||[track()](/javascript/api/word/word.settingcollection#track--)|Track the object for automatic adjustment based on surrounding changes in the document. This call is a shorthand for context.trackedObjects.add(thisObject). If you are using this object across ".sync" calls and outside the sequential execution of a ".run" batch, and get an "InvalidObjectPath" error when setting a property or invoking a method on the object, you needed to have added the object to the tracked object collection when the object was first created.|
+||[untrack()](/javascript/api/word/word.settingcollection#untrack--)|Release the memory associated with this object, if it has previously been tracked. This call is shorthand for context.trackedObjects.remove(thisObject). Having many tracked objects slows down the host application, so please remember to free any objects you add, once you're done using them. You will need to call "context.sync()" before the memory release takes effect.|
+|[SettingCollectionData](/javascript/api/word/word.settingcollectiondata)|[items](/javascript/api/word/word.settingcollectiondata#items)||
+|[SettingCollectionLoadOptions](/javascript/api/word/word.settingcollectionloadoptions)|[$all](/javascript/api/word/word.settingcollectionloadoptions#$all)||
+||[key](/javascript/api/word/word.settingcollectionloadoptions#key)|For EACH ITEM in the collection: Gets the key of the setting. Read only.|
+||[value](/javascript/api/word/word.settingcollectionloadoptions#value)|For EACH ITEM in the collection: Gets or sets the value of the setting.|
+|[SettingCollectionUpdateData](/javascript/api/word/word.settingcollectionupdatedata)|[items](/javascript/api/word/word.settingcollectionupdatedata#items)||
+|[SettingData](/javascript/api/word/word.settingdata)|[key](/javascript/api/word/word.settingdata#key)|Gets the key of the setting. Read only.|
+||[value](/javascript/api/word/word.settingdata#value)|Gets or sets the value of the setting.|
+|[SettingLoadOptions](/javascript/api/word/word.settingloadoptions)|[$all](/javascript/api/word/word.settingloadoptions#$all)||
+||[key](/javascript/api/word/word.settingloadoptions#key)|Gets the key of the setting. Read only.|
+||[value](/javascript/api/word/word.settingloadoptions#value)|Gets or sets the value of the setting.|
+|[SettingUpdateData](/javascript/api/word/word.settingupdatedata)|[value](/javascript/api/word/word.settingupdatedata#value)|Gets or sets the value of the setting.|
 |[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|Merges the cells bounded inclusively by a first and last cell.|
 |[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|Splits the cell into the specified number of rows and columns.|
 |[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|Inserts a content control on the row.|
