@@ -11,7 +11,7 @@ COM add-in compatibility is currently available on the following platforms:
 - Excel Online
 - Excel on Windows (64-bit version 1810 or later)
 - Excel for Mac
-- Word and Powerpoint (Note that for these two products, you must have an Office 365 subscription and join the [Office Insider](https://products.office.com/office-insider) program at the **Insider** level -- formerly called "Insider Fast")
+- Word and Powerpoint (Note that for these two products, you must have an Office 365 subscription, join the [Office Insider](https://products.office.com/office-insider) program at the **Insider** level -- formerly called "Insider Fast", and be using version 16.0.11629.20214 of Word or Powerpoint).
 
 XLL UDF compatibility is currently available on the following platforms:
 
