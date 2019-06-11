@@ -1722,7 +1722,7 @@ item.getAttachmentsAsync(options, callback);
 function callback(result) {
   if (result.value.length > 0) {
     for (i = 0 ; i < result.value.length ; i++) {
-      result.asyncContext.currentItem.getAttachmentContentAsync(result.value[i].id, options, handleAttachmentsCallback);
+      result.asyncContext.currentItem.getAttachmentContentAsync(result.value[i].id, handleAttachmentsCallback);
     }
   }
 }
