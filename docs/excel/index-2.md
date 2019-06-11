@@ -60,7 +60,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Excel JavaScript API</h3>
-                        <p><a href="../reference/overview/excel-add-ins-reference-overview.md">API overview</a></p>
+                        <p><a href="../reference/overview/excel-add-ins-reference-overview.md">API capabilities</a></p>
                         <p><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></p>
                         <p><a href="../reference/requirement-sets/excel-api-requirement-sets.md">API requirement sets</a></p>
                         <p><a href="../overview/office-add-in-availability.md">Host and platform availability</a></p>
