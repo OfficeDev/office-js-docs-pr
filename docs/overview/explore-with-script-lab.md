@@ -2,13 +2,13 @@
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
 ms.topic: article
-ms.date: 06/07/2019
+ms.date: 06/12/2019
 localization_priority: Normal
 ---
 
 # Explore Office JavaScript API using Script Lab
 
-The [Script Lab add-in](https://store.office.com/app.aspx?assetid=WA104380862), which is available free from the Office store, enables you to explore the Office JavaScript API while you are working in an Office program such as Excel or Word. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your add-in.
+The [Script Lab add-in](https://store.office.com/app.aspx?assetid=WA104380862), which is available free from the Office store, enables you to explore the Office JavaScript API while you're working in an Office program such as Excel or Word. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your add-in.
 
 ## What is Script Lab?
 
@@ -20,6 +20,21 @@ Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins
 Sounds good so far? Take a look at this one-minute video to see Script Lab in action.
 
 [![Preview video showing Script Lab running in Excel, Word, and PowerPoint Online.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+
+## Key Script Lab features
+
+Script Lab offers a number of features to help you dive into developing your Office Add-in. Key features include the following.
+
+1. Code and style
+
+   - Along with your ability to run code in Excel, Word, and PowerPoint, you can configure your HTML and CSS. This means you can play with element placement and styling in your UI.
+
+   - If you would like to try out beta or preview APIs, update your libraries to use the beta CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and the preview type definitions @types/office-js-preview. You may also have to sign up for the [Office Insider program](https://products.office.com/office-insider).
+
+1. Share code
+   - Create GitHub gists
+   - Import GitHub gists
+   - Import snippet YAML
 
 ## Script Lab supported clients
 
