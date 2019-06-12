@@ -75,7 +75,7 @@ For Outlook add-ins, install it in an Exchange mailbox, and specify the location
 
 ## 7. Publish the add-in
 
-You can submit the add-in to AppSource, from which customers can install the add-in. In addition, you can publish task pane and content add-ins to a private folder add-in catalog on SharePoint or to a shared network folder, and you can deploy an Outlook add-in directly on an Exchange server for your organization. For details, see [Publish your Office Add-in](../publish/publish.md).
+You can submit the add-in to AppSource, from which customers can install the add-in. In addition, you can publish task pane and content add-ins to an app catalog on SharePoint or to a shared network folder, and you can deploy an Outlook add-in directly on an Exchange server for your organization. For details, see [Publish your Office Add-in](../publish/publish.md).
 
 
 ## 8. Maintain the add-in

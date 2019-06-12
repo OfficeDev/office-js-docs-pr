@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 06/03/2019
+ms.date: 06/11/2019
 localization_priority: Normal
 ---
 
@@ -1716,26 +1716,26 @@ Type:
 ```javascript
 var item = Office.context.mailbox.item;
 var listOfAttachments = [];
-item.getAttachmentsAsync(callback);
+var options = {asyncContext: {currentItem: item}};
+item.getAttachmentsAsync(options, callback);
 
 function callback(result) {
   if (result.value.length > 0) {
     for (i = 0 ; i < result.value.length ; i++) {
-      var options = {asyncContext: {type: result.value[i].attachmentType}};
-      getAttachmentContentAsync(result.value[i].id, options, handleAttachmentsCallback);
+      result.asyncContext.currentItem.getAttachmentContentAsync(result.value[i].id, handleAttachmentsCallback);
     }
   }
 }
 
 function handleAttachmentsCallback(result) {
   // Parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file.
-  if (result.format === Office.MailboxEnums.AttachmentContentFormat.Base64) {
+  if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Base64) {
     // Handle file attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.Eml) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Eml) {
     // Handle email item attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
     // Handle .icalender attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.Url) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Url) {
     // Handle cloud attachment.
   } else {
     // Handle attachment formats that are not supported.
