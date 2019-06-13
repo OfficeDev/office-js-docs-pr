@@ -76,7 +76,7 @@ If a user has the COM add-in installed, and then gets a shared document with the
 
 ## Other COM add-in behavior
 
-If a user uninstalls the COM add-in, then Office restores the Office on Windows Add-in UI for the equivalent installed Office Add-in.
+If a user uninstalls the COM add-in, then Office on Windows restores the Office Add-in UI for the equivalent installed Office Add-in.
 
 After you specify an equivalent COM add-in for your Office Add-in, Office stops processing updates for your Office Add-in. To acquire the latest updates for the Office Add-in, the user must first uninstall the COM add-in.
 
