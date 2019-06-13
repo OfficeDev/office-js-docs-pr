@@ -16,9 +16,9 @@ You can configure your Office Add-in so that when the equivalent COM add-in is a
 
 ## Specify an equivalent COM add-in in the manifest
 
-To enable compatibility with an existing COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then Office on Windows will use the COM add-in instead of the Office Add-in.
+To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed.
 
-The following example shows the portion of the manifest that specifies a COM add-in and an XLL as equivalent. Often you will specify both, so for completeness this example shows both in context. The equivalent add-ins are identified by their `ProgID` and `FileName` respectively. For more information on XLL compatibility, see [Make your custom functions compatible with XLL user-defined functions](../excel/make-custom-functions-compatible-with-xll-udf.md).
+The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the `ProgID` element identifies the COM add-in.
 
 ```xml
 <VersionOverrides>
@@ -28,15 +28,13 @@ The following example shows the portion of the manifest that specifies a COM add
       <ProgID>ContosoCOMAddin</ProgID>
       <Type>COM</Type>
     </EquivalentAddin>
-
-    <EquivalentAddin>
-      <FileName>contosofunctions.xll</FileName>
-      <Type>XLL</Type>
-    </EquivalentAddin>
   <EquivalentAddins>
   ...
 </VersionOverrides>
 ```
+
+> [!TIP]
+> For information about COM add-in and XLL UDF compatibility, see [Make your custom functions compatible with XLL user-defined functions](../excel/make-custom-functions-compatible-with-xll-udf.md).
 
 ## Equivalent behavior for users
 
