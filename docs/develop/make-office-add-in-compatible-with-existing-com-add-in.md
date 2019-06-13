@@ -1,6 +1,6 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
-description: 'Enable compatibility with an equivalent COM add-in that has the same functionality as your Office Add-in'
+description: 'Enable compatibility between your Office Add-in and equivalent COM add-in'
 ms.date: 06/13/2019
 localization_priority: Normal
 ---
