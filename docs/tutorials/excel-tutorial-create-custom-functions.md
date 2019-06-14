@@ -104,7 +104,10 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 ## Create a custom function that requests data from the web
 
-Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet. You’ll use the IEX Trading API, which is free and does not require authentication.
+Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet. 
+
+> [!NOTE]
+> The following code requests a stock quote using the IEX Trading API. Before you can run the code, you'll need to [create a free account with IEX Cloud](https://iexcloud.io/) so that you can get the API token that's required in the API request.  
 
 1. In the **stock-ticker** project, find the file **./src/functions/functions.js** and open it in your code editor.
 
@@ -118,7 +121,8 @@ Integrating data from the Web is a great way to extend Excel through custom func
     * @returns {number} The current stock price.
     */
     function stockPrice(ticker) {
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         return fetch(url)
             .then(function(response) {
                 return response.text();
@@ -194,7 +198,8 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
                 return;
             }
 
-            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
             isPending = true;
 
             fetch(url)
