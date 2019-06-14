@@ -70,27 +70,12 @@ The following is a complete list of APIs currently in preview.
 ||[getItem(id: string)](/javascript/api/word/word.customxmlpartcollection#getitem-id-)|Gets a custom XML part based on its ID. Read only.|
 ||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartcollection#getitemornullobject-id-)|Gets a custom XML part based on its ID. Returns a null object if the CustomXmlPart does not exist.|
 ||[items](/javascript/api/word/word.customxmlpartcollection#items)|Gets the loaded child items in this collection.|
-|[CustomXmlPartCollectionData](/javascript/api/word/word.customxmlpartcollectiondata)|[items](/javascript/api/word/word.customxmlpartcollectiondata#items)||
-|[CustomXmlPartCollectionLoadOptions](/javascript/api/word/word.customxmlpartcollectionloadoptions)|[$all](/javascript/api/word/word.customxmlpartcollectionloadoptions#$all)||
-||[id](/javascript/api/word/word.customxmlpartcollectionloadoptions#id)|For EACH ITEM in the collection: Gets the ID of the custom XML part. Read only.|
-||[namespaceUri](/javascript/api/word/word.customxmlpartcollectionloadoptions#namespaceuri)|For EACH ITEM in the collection: Gets the namespace URI of the custom XML part. Read only.|
-|[CustomXmlPartCollectionUpdateData](/javascript/api/word/word.customxmlpartcollectionupdatedata)|[items](/javascript/api/word/word.customxmlpartcollectionupdatedata#items)||
-|[CustomXmlPartData](/javascript/api/word/word.customxmlpartdata)|[id](/javascript/api/word/word.customxmlpartdata#id)|Gets the ID of the custom XML part. Read only.|
-||[namespaceUri](/javascript/api/word/word.customxmlpartdata#namespaceuri)|Gets the namespace URI of the custom XML part. Read only.|
-|[CustomXmlPartLoadOptions](/javascript/api/word/word.customxmlpartloadoptions)|[$all](/javascript/api/word/word.customxmlpartloadoptions#$all)||
-||[id](/javascript/api/word/word.customxmlpartloadoptions#id)|Gets the ID of the custom XML part. Read only.|
-||[namespaceUri](/javascript/api/word/word.customxmlpartloadoptions#namespaceuri)|Gets the namespace URI of the custom XML part. Read only.|
 |[CustomXmlPartScopedCollection](/javascript/api/word/word.customxmlpartscopedcollection)|[getCount()](/javascript/api/word/word.customxmlpartscopedcollection#getcount--)|Gets the number of items in the collection.|
 ||[getItem(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitem-id-)|Gets a custom XML part based on its ID. Read only.|
 ||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitemornullobject-id-)|Gets a custom XML part based on its ID. Returns a null object if the CustomXmlPart does not exist in the collection.|
 ||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitem--)|If the collection contains exactly one item, this method returns it. Otherwise, this method produces an error.|
 ||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|If the collection contains exactly one item, this method returns it. Otherwise, this method returns a null object.|
 ||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|Gets the loaded child items in this collection.|
-|[CustomXmlPartScopedCollectionData](/javascript/api/word/word.customxmlpartscopedcollectiondata)|[items](/javascript/api/word/word.customxmlpartscopedcollectiondata#items)||
-|[CustomXmlPartScopedCollectionLoadOptions](/javascript/api/word/word.customxmlpartscopedcollectionloadoptions)|[$all](/javascript/api/word/word.customxmlpartscopedcollectionloadoptions#$all)||
-||[id](/javascript/api/word/word.customxmlpartscopedcollectionloadoptions#id)|For EACH ITEM in the collection: Gets the ID of the custom XML part. Read only.|
-||[namespaceUri](/javascript/api/word/word.customxmlpartscopedcollectionloadoptions#namespaceuri)|For EACH ITEM in the collection: Gets the namespace URI of the custom XML part. Read only.|
-|[CustomXmlPartScopedCollectionUpdateData](/javascript/api/word/word.customxmlpartscopedcollectionupdatedata)|[items](/javascript/api/word/word.customxmlpartscopedcollectionupdatedata#items)||
 |[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deletebookmark-name-)|Deletes a bookmark, if exists, from the document.|
 ||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getbookmarkrange-name-)|Gets a bookmark's range. Throws if the bookmark does not exist.|
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|Gets a bookmark's range. Returns a null object if the bookmark does not exist.|
@@ -102,14 +87,7 @@ The following is a complete list of APIs currently in preview.
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|Gets a bookmark's range. Returns a null object if the bookmark does not exist.|
 ||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|Gets the custom XML parts in the document. Read-only.|
 ||[settings](/javascript/api/word/word.documentcreated#settings)|Gets the add-in's settings in the document. Read-only.|
-|[DocumentCreatedData](/javascript/api/word/word.documentcreateddata)|[customXmlParts](/javascript/api/word/word.documentcreateddata#customxmlparts)|Gets the custom XML parts in the document. Read-only.|
-||[settings](/javascript/api/word/word.documentcreateddata#settings)|Gets the add-in's settings in the document. Read-only.|
-|[DocumentData](/javascript/api/word/word.documentdata)|[customXmlParts](/javascript/api/word/word.documentdata#customxmlparts)|Gets the custom XML parts in the document. Read-only.|
-||[settings](/javascript/api/word/word.documentdata#settings)|Gets the add-in's settings in the document. Read-only.|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|Gets the format of the inline image. Read-only.|
-|[InlinePictureCollectionLoadOptions](/javascript/api/word/word.inlinepicturecollectionloadoptions)|[imageFormat](/javascript/api/word/word.inlinepicturecollectionloadoptions#imageformat)|For EACH ITEM in the collection: Gets the format of the inline image. Read-only.|
-|[InlinePictureData](/javascript/api/word/word.inlinepicturedata)|[imageFormat](/javascript/api/word/word.inlinepicturedata#imageformat)|Gets the format of the inline image. Read-only.|
-|[InlinePictureLoadOptions](/javascript/api/word/word.inlinepictureloadoptions)|[imageFormat](/javascript/api/word/word.inlinepictureloadoptions#imageformat)|Gets the format of the inline image. Read-only.|
 |[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|Gets the font of the bullet, number or picture at the specified level in the list.|
 ||[getLevelPicture(level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|Gets the base64 encoded string representation of the picture at the specified level in the list.|
 ||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|Resets the font of the bullet, number or picture at the specified level in the list.|
@@ -118,8 +96,6 @@ The following is a complete list of APIs currently in preview.
 ||[insertBookmark(name: string)](/javascript/api/word/word.range#insertbookmark-name-)|Inserts a bookmark on the range. If a bookmark of the same name exists somewhere, it is deleted first.|
 |[Setting](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete--)|Deletes the setting.|
 ||[key](/javascript/api/word/word.setting#key)|Gets the key of the setting. Read only.|
-||[set(properties: Interfaces.SettingUpdateData, options?: OfficeExtension.UpdateOptions)](/javascript/api/word/word.setting#set-properties--options-)|Sets multiple properties of an object at the same time. You can pass either a plain object with the appropriate properties, or another API object of the same type.|
-||[set(properties: Word.Setting)](/javascript/api/word/word.setting#set-properties-)|Sets multiple properties on the object at the same time, based on an existing loaded object.|
 ||[value](/javascript/api/word/word.setting#value)|Gets or sets the value of the setting.|
 |[SettingCollection](/javascript/api/word/word.settingcollection)|[add(key: string, value: any)](/javascript/api/word/word.settingcollection#add-key--value-)|Creates a new setting or sets an existing setting.|
 ||[deleteAll()](/javascript/api/word/word.settingcollection#deleteall--)|Deletes all settings in this add-in.|
@@ -127,17 +103,6 @@ The following is a complete list of APIs currently in preview.
 ||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|Gets a setting object by its key, which is case-sensitive. Throws if the setting does not exist.|
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|Gets a setting object by its key, which is case-sensitive. Returns a null object if the setting does not exist.|
 ||[items](/javascript/api/word/word.settingcollection#items)|Gets the loaded child items in this collection.|
-|[SettingCollectionData](/javascript/api/word/word.settingcollectiondata)|[items](/javascript/api/word/word.settingcollectiondata#items)||
-|[SettingCollectionLoadOptions](/javascript/api/word/word.settingcollectionloadoptions)|[$all](/javascript/api/word/word.settingcollectionloadoptions#$all)||
-||[key](/javascript/api/word/word.settingcollectionloadoptions#key)|For EACH ITEM in the collection: Gets the key of the setting. Read only.|
-||[value](/javascript/api/word/word.settingcollectionloadoptions#value)|For EACH ITEM in the collection: Gets or sets the value of the setting.|
-|[SettingCollectionUpdateData](/javascript/api/word/word.settingcollectionupdatedata)|[items](/javascript/api/word/word.settingcollectionupdatedata#items)||
-|[SettingData](/javascript/api/word/word.settingdata)|[key](/javascript/api/word/word.settingdata#key)|Gets the key of the setting. Read only.|
-||[value](/javascript/api/word/word.settingdata#value)|Gets or sets the value of the setting.|
-|[SettingLoadOptions](/javascript/api/word/word.settingloadoptions)|[$all](/javascript/api/word/word.settingloadoptions#$all)||
-||[key](/javascript/api/word/word.settingloadoptions#key)|Gets the key of the setting. Read only.|
-||[value](/javascript/api/word/word.settingloadoptions#value)|Gets or sets the value of the setting.|
-|[SettingUpdateData](/javascript/api/word/word.settingupdatedata)|[value](/javascript/api/word/word.settingupdatedata#value)|Gets or sets the value of the setting.|
 |[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|Merges the cells bounded inclusively by a first and last cell.|
 |[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|Splits the cell into the specified number of rows and columns.|
 |[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|Inserts a content control on the row.|
