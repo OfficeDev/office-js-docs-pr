@@ -29,7 +29,9 @@ A function's `name` shouldn't be named the same as:
 
 - Any cells between A1 to XFD1048576 or any cells between R1C1 to R1048576C16384.
 
-- Any Excel 4.0 Macro Function (such as `RUN`, `ECHO`).  For a full list of these functions, see [this article](https://www.microsoft.com/en-us/download/details.aspx?id=1465).
+- Any [Excel 4.0 Macro Function](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf) (such as `RUN`, `ECHO`).  
+
+- In general, avoid naming your functions after any built-in Excel function. For a full list of all current built-in functions, see [this article](https://support.office.com/article/excel-functions-alphabetical-b3944572-255d-4efb-bb96-c6d90033e188).
 
 ## Naming conflicts
 

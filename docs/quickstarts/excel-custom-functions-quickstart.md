@@ -1,5 +1,5 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/14/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -28,7 +28,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     - **Choose a project type:** `Excel Custom Functions Add-in project`
     - **Choose a script type:** `JavaScript`
-    - **What do you want to name your add-in?** `stock-ticker`
+    - **What do you want to name your add-in?** `stargazer`
 
     ![Yeoman generator for Office Add-ins prompts for custom functions](../images/UpdatedYoOfficePrompt.png)
 
@@ -37,7 +37,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 2. The Yeoman generator will give you some instructions in your command line about what to do with the project, but ignore them and continue to follow our instructions. Navigate to the root folder of the project.
 
     ```command&nbsp;line
-    cd stock-ticker
+    cd stargazer
     ```
 
 3. Build the project. 
