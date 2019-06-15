@@ -28,7 +28,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     - **Choose a project type:** `Excel Custom Functions Add-in project`
     - **Choose a script type:** `JavaScript`
-    - **What do you want to name your add-in?** `stargazer`
+    - **What do you want to name your add-in?** `starcount`
 
     ![Yeoman generator for Office Add-ins prompts for custom functions](../images/UpdatedYoOfficePrompt.png)
 

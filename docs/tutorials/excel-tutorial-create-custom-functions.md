@@ -37,7 +37,7 @@ In this tutorial, you will:
     
     * **Choose a project type:** `Excel Custom Functions Add-in project`
     * **Choose a script type:** `JavaScript`
-    * **What do you want to name your add-in?** `stargazer`
+    * **What do you want to name your add-in?** `starcount`
 
     ![Yeoman generator for Office Add-ins prompts for custom functions](../images/UpdatedYoOfficePrompt.png)
     
@@ -46,7 +46,7 @@ In this tutorial, you will:
 2. Navigate to the root folder of the project.
     
     ```command&nbsp;line
-    cd stargazer
+    cd starcount
     ```
 
 3. Build the project.
@@ -104,9 +104,9 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 ## Create a custom function that requests data from the web
 
-Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `starGazer` that shows how many stars a given Github repository possesses.
+Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
 
-1. In the **stargazer** project, find the file **./src/functions/functions.js** and open it in your code editor. 
+1. In the **starcount** project, find the file **./src/functions/functions.js** and open it in your code editor. 
 
 2. In **function.js**, add the following code: 
 
@@ -154,7 +154,7 @@ The `CustomFunctions.associate` code associates the `id` of the function with th
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
     ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
-3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stargazer** add-in to register it.
+3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
     ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
 
 ### [Excel Online](#tab/excel-online)
@@ -176,54 +176,37 @@ The `CustomFunctions.associate` code associates the `id` of the function with th
 
 ## Create a streaming asynchronous custom function
 
-The `getStarCount` function returns the number of stars a repository has at a specific moment in time, but star counts are always changing. Next we'll create a streaming function, `getStarCountStream` that returns the number of stars once a second from Github. To see this star count increase, you need to have a Github account so you can give a star to the repository and watch your function pick up this information in real time. If you don't have a Github account, [you can create one here](https://github.com/join).
+The `getStarCount` function returns the number of stars a repository has at a specific moment in time, but custom functions can also retrieve or display data that is ever-changing. These functions are called streaming functions and they must include an `invocation` parameter which refers to the content inside of a given cell. This is so that the contents of the cell can be changed in real-time.  
 
-1. In the **stargazer** project, add the following code to **./src/functions/functions.js** and save the file.
+In this new function, we will be making a spinner out of ASCII characters. The spinner will "spin" by displaying a different value every 300 milliseconds. In the event that spinning needs to be cancelled, the contents of the cell will change to display an error message.
 
-    ```js
-    /**
-    * Streams real time stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @param {CustomFunctions.StreamingInvocation<number>} invocation
-    */
-    function stockPriceStream(ticker, invocation) {
-        var updateFrequency = 1000 /* milliseconds*/;
-        var isPending = false;
+1. In the **starcount** project, add the following code to **./src/functions/functions.js** and save the file. 
 
-        var timer = setInterval(function() {
-            // If there is already a pending request, skip this iteration:
-            if (isPending) {
-                return;
-            }
+```JS
+/**
+ * Displays a spinner.
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation.
+ */
 
-            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
-            isPending = true;
+function spin() {
+  const spinIcons = "|/-\\";
+  setInterval(function () {
+      for (var i = 0; i < spinIcons.length; i++) {
+        invocation.setResult(i);
+      }
+    }, 300);
 
-            fetch(url)
-                .then(function(response) {
-                    return response.text();
-                })
-                .then(function(text) {
-                    invocation.setResult(parseFloat(text));
-                })
-                .catch(function(error) {
-                    invocation.setResult(error);
-                })
-                .then(function() {
-                    isPending = false;
-                });
-        }, updateFrequency);
-
-        invocation.onCanceled = () => {
-            clearInterval(timer);
-        };
+    invocation.onCanceled = () => {
+      return "Spinner cannot spin right now, sorry!";
     }
-    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
-    ```
-    
-    The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPriceStream` in JavaScript so that Excel can call your function.
-    
+}
+
+CustomFunctions.associate("SPIN", spin);
+```
+
+The `CustomFunctions.associate` code associates the `id` of the function with the function address of `spin` in JavaScript so that Excel can call your function.
+
 2. Run the following command to rebuild the project.
 
     ```command&nbsp;line
@@ -239,7 +222,7 @@ The `getStarCount` function returns the number of stars a repository has at a sp
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
     ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
-3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stargazer** add-in to register it.
+3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
     ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
 
 # [Excel Online](#tab/excel-online)
@@ -256,12 +239,12 @@ The `getStarCount` function returns the number of stars a repository has at a sp
 --- 
 
 <ol start="4">
-<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter. Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</li>
+<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.SPIN())</strong> and press enter. You'll see a spinning line in your cell. While this spin function is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</li>
 </ol>
 
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
 
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
