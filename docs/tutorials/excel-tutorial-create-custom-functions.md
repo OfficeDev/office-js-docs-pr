@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 06/14/2019
+ms.date: 06/17/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -180,25 +180,31 @@ The `getStarCount` function returns the number of stars a repository has at a sp
 
 In this new function, we will be making a spinner out of ASCII characters. The spinner will "spin" by displaying a different value every 300 milliseconds. In the event that spinning needs to be cancelled, the contents of the cell will change to display an error message.
 
-1. In the **starcount** project, add the following code to **./src/functions/functions.js** and save the file. 
+1. In the **starcount** project, add the following code to **./src/functions/functions.js** and save the file.
 
 ```JS
 /**
  * Displays a spinner.
  * @customfunction
- * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation.
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom
+function invocation.
  */
-
-function spin() {
-  const spinIcons = "|/-\\";
-  setInterval(function () {
-      for (var i = 0; i < spinIcons.length; i++) {
-        invocation.setResult(i);
-      }
+function spin(invocation: CustomFunctions.StreamingInvocation<string>) {
+    const spinIcons = "|/-\\";
+    var i;
+    if (i == undefined) {
+        i = 0;
+    }
+    const timer = setInterval(function () {
+        i++;
+        if (i >= spinIcons.length) {
+            i=0;
+        }
+        invocation.setResult(spinIcons[i]);
     }, 300);
 
     invocation.onCanceled = () => {
-      return "Spinner cannot spin right now, sorry!";
+        clearInterval(timer);
     }
 }
 
