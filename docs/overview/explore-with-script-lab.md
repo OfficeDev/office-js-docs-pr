@@ -33,17 +33,16 @@ In addition to JavaScript or TypeScript code that calls the Office JS API, each 
 > [!TIP]
 > To call preview APIs within a snippet, you'll need to update the snippet's libraries to use the beta CDN (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) and the preview type definitions `@types/office-js-preview`. Additionally, some preview APIs are only accessible if you've signed up for the [Office Insider program](https://products.office.com/office-insider) and are running an Insider build of Office.
 
-### Import snippets
 
-...
+### Save and share snippets
+
    - Create GitHub gists
    - Import GitHub gists
    - Import snippet YAML
 
+### Import snippets
 
-### Save and share snippets
-
-...
+You can import a snippet into Script Lab either by specifying the URL to the public [GitHub gist](https://gist.github.com) where the snippet YAML is stored or by pasting in the complete YAML for the snippet. This feature is may be useful in scenarios where someone else has their snippet with you by either publishing it to a GitHub gist or providing their snippet's YAML.
 
 ## Supported clients
 
