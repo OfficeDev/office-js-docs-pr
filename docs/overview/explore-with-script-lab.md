@@ -2,7 +2,7 @@
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
 ms.topic: article
-ms.date: 06/12/2019
+ms.date: 06/17/2019
 localization_priority: Normal
 ---
 
@@ -12,31 +12,48 @@ The [Script Lab add-in](https://store.office.com/app.aspx?assetid=WA104380862), 
 
 ## What is Script Lab?
 
-Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins using the Office JavaScript API in Excel, Word, or PowerPoint. It provides IntelliSense so you can see what's available and is built on the Monaco framework, the same framework used by Visual Studio Code. Through Script Lab, you can access a library of samples to quickly try out features or you can choose a sample as the base for your own code. You are also welcome to expand the sample library by adding snippets to the [office-js-snippets repo](https://github.com/OfficeDev/office-js-snippets#office-js-snippets). Another exciting feature of Script Lab is beta or preview functionality is available for you to try.
-
-> [!TIP]
-> To participate in beta or preview, you may have to sign up for the [Office Insider program](https://products.office.com/office-insider).
+Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins using the Office JavaScript API in Excel, Word, or PowerPoint. It provides IntelliSense so you can see what's available and is built on the Monaco framework, the same framework used by Visual Studio Code. Through Script Lab, you can access a library of samples to quickly try out features or you can use a sample as the starting point for your own code. You can even use Script Lab to try preview APIs.
 
 Sounds good so far? Take a look at this one-minute video to see Script Lab in action.
 
 [![Preview video showing Script Lab running in Excel, Word, and PowerPoint Online.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
 
-## Key Script Lab features
+## Key features
 
-Script Lab offers a number of features to help you dive into developing your Office Add-in. Key features include the following.
+Script Lab offers a number of features to help you explore the Office JavaScript API and prototype add-in functionality.
 
 1. Code and style
 
    - Along with your ability to run code in Excel, Word, and PowerPoint, you can configure your HTML and CSS. This means you can play with element placement and styling in your UI.
 
-   - If you would like to try out beta or preview APIs, update your libraries to use the beta CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and the preview type definitions @types/office-js-preview. You may also have to sign up for the [Office Insider program](https://products.office.com/office-insider).
+   - If you would like to try out preview APIs, update your libraries to use the beta CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and the preview type definitions @types/office-js-preview. You may also have to sign up for the [Office Insider program](https://products.office.com/office-insider).
+
+> [!TIP]
+> Some preview APIs are only accessible if you've signed up for the [Office Insider program](https://products.office.com/office-insider) and are running an Insider build of Office.
+
 
 1. Share code
    - Create GitHub gists
    - Import GitHub gists
    - Import snippet YAML
 
-## Script Lab supported clients
+### Explore samples
+
+Get started quickly with a collection of built-in sample snippets that show how to complete certain tasks with the API. You can run the samples to instantly see the result in the task pane or document, examine the samples to learn how the API works, and even use sample snippets as the basis for prototyping functionality of your own add-in.
+
+### Import snippets
+
+...
+
+### Code and style
+
+In addition to JavaScript or TypeScript code that calls the Office JS API, each snippet also contains HTML  markup that defines content of the task pane and CSS that defines the appearance of the task pane. You can  customize the HTML markup and CSS to experiment with element placement and styling as you prototype task pane design for your own add-in.
+
+### Save and share snippets
+
+...
+
+## Supported clients
 
 Script Lab is supported for Excel, Word, and PowerPoint on the following clients.
 
@@ -47,6 +64,8 @@ Script Lab is supported for Excel, Word, and PowerPoint on the following clients
 - Office 2016 or later for Mac
 
 ## Next steps
+
+You're welcome to expand the sample library in Script Lab by contributing new snippets to the [office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) GitHub repository. 
 
 When you're ready to create your Office Add-in, see the [5-minute quick start](/office/dev/add-ins/#5-minute-quick-starts) for your preferred Office application.
 
