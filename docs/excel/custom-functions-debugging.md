@@ -1,5 +1,5 @@
 ---
-ms.date: 05/06/2019
+ms.date: 06/17/2019
 description: Debug your custom functions in Excel.
 title: Custom functions debugging
 localization_priority: Normal
@@ -7,8 +7,6 @@ localization_priority: Normal
 # Custom functions debugging
 
 Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 On Windows:
 - [Excel Desktop and Visual Studio Code (VS Code) debugger](#use-the-vs-code-debugger-for-excel-desktop)

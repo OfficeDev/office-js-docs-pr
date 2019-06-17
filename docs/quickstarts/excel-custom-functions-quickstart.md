@@ -1,5 +1,5 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/17/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -14,7 +14,11 @@ With custom functions, developers can now add new functions to Excel by defining
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (version 1810 or later) or Excel Online
+* Excel on Windows (version 1904 or later, connected to Office 365 subscription) or Excel on the web
+* Excel custom functions is supported on Office on Mac (connected to Office 365 subscription) and an update to this tutorial is forthcoming.
+
+>[!NOTE]
+>Excel custom functions is not supported on Office 2019 (one-time purchase).
 
 ## Build your first custom functions project
 

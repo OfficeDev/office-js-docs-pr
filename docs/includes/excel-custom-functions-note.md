@@ -1,3 +1,2 @@
 > [!IMPORTANT]
-> The custom functions feature is being released to production! Discover the latest updates to custom functions [in this blog post](https://developer.microsoft.com/en-us/office/blogs/office-extensibility-build-2019/).
-
+> Note that Excel custom functions is available for Office on Windows (version 1904 or later, connected to Office 365 subscription), Office on Mac (version 16.24 or later, connected to Office 365 subscription), and Office on web. Excel custom functions is not supported on Office 2019 (one-time purchase).
