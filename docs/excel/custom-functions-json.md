@@ -1,5 +1,5 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/17/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -108,7 +108,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 ```
 
 > [!NOTE]
-> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json) GitHub repository.
+> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub repository's commit history. As the project has been adjusted to automatically generate JSON, a full sample of handwritten JSON is only available in previous versions of the project.
 
 ## functions 
 
