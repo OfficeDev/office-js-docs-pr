@@ -60,6 +60,11 @@ For more information on this process, see [Associating function names with json 
 
 If you see the error "We can't open this add-in from localhost," you will need to enable a local loopback exception. For details on how to do this, see [this Microsoft support article](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work).
 
+### Runtime logging reports "TypeError: Network request failed" on Excel for Windows
+
+If you see the error  "TypeError: Network request failed" in your [runtime log](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-troubleshooting#enable-runtime-logging) while making calls to your localhost server. In this case, you will need to enable a local loopback exception. For details on how to do this, see [this Microsoft support article](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work).
+
+
 ### Ensure promises return
 
 When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #BUSY!. Check your functions to make sure that any promises are properly returning a result to a cell.
