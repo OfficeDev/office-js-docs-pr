@@ -35,7 +35,7 @@ In addition to JavaScript or TypeScript code that calls the Office JS API, each 
 
 ### Save and share snippets
 
-By default, snippets that you open in Script Lab will be saved to your browser cache. To save a snippet permanently, you can export it to a [GitHub gist](https://gist.github.com). Create a new secret gist to save a snippet for your personal use, or create a shared gist if you plan to share it with others. 
+By default, snippets that you open in Script Lab will be saved to your browser cache. To save a snippet permanently, you can export it to a [GitHub gist](https://gist.github.com). Create a secret gist to save a snippet exclusively for your own use, or create a shared gist if you plan to share it with others. 
 
 ### Import snippets
 
