@@ -39,7 +39,7 @@ By default, snippets that you open in Script Lab will be saved to your browser c
 
 ### Import snippets
 
-You can import a snippet into Script Lab either by specifying the URL to the public [GitHub gist](https://gist.github.com) where the snippet YAML is stored or by pasting in the complete YAML for the snippet. This feature is may be useful in scenarios where someone else has their snippet with you by either publishing it to a GitHub gist or providing their snippet's YAML.
+You can import a snippet into Script Lab either by specifying the URL to the public [GitHub gist](https://gist.github.com) where the snippet YAML is stored or by pasting in the complete YAML for the snippet. This feature is may be useful in scenarios where someone else has shared their snippet with you by either publishing it to a GitHub gist or providing their snippet's YAML.
 
 ## Supported clients
 
