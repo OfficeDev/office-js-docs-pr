@@ -1,5 +1,5 @@
 ---
-ms.date: 06/10/2019
+ms.date: 06/17/2019
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Priority
