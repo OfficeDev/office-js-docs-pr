@@ -22,32 +22,24 @@ Sounds good so far? Take a look at this one-minute video to see Script Lab in ac
 
 Script Lab offers a number of features to help you explore the Office JavaScript API and prototype add-in functionality.
 
-1. Code and style
-
-   - Along with your ability to run code in Excel, Word, and PowerPoint, you can configure your HTML and CSS. This means you can play with element placement and styling in your UI.
-
-   - If you would like to try out preview APIs, update your libraries to use the beta CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and the preview type definitions @types/office-js-preview. You may also have to sign up for the [Office Insider program](https://products.office.com/office-insider).
-
-> [!TIP]
-> Some preview APIs are only accessible if you've signed up for the [Office Insider program](https://products.office.com/office-insider) and are running an Insider build of Office.
-
-
-1. Share code
-   - Create GitHub gists
-   - Import GitHub gists
-   - Import snippet YAML
-
 ### Explore samples
 
 Get started quickly with a collection of built-in sample snippets that show how to complete certain tasks with the API. You can run the samples to instantly see the result in the task pane or document, examine the samples to learn how the API works, and even use sample snippets as the basis for prototyping functionality of your own add-in.
 
+### Code and style
+
+In addition to JavaScript or TypeScript code that calls the Office JS API, each snippet also contains HTML markup that defines content of the task pane and CSS that defines the appearance of the task pane. You can customize the HTML markup and CSS to experiment with element placement and styling as you prototype task pane design for your own add-in.
+
+> [!TIP]
+> To call preview APIs within a snippet, you'll need to update the snippet's libraries to use the beta CDN (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) and the preview type definitions `@types/office-js-preview`. Additionally, some preview APIs are only accessible if you've signed up for the [Office Insider program](https://products.office.com/office-insider) and are running an Insider build of Office.
+
 ### Import snippets
 
 ...
+   - Create GitHub gists
+   - Import GitHub gists
+   - Import snippet YAML
 
-### Code and style
-
-In addition to JavaScript or TypeScript code that calls the Office JS API, each snippet also contains HTML  markup that defines content of the task pane and CSS that defines the appearance of the task pane. You can  customize the HTML markup and CSS to experiment with element placement and styling as you prototype task pane design for your own add-in.
 
 ### Save and share snippets
 
