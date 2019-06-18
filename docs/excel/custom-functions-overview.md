@@ -1,5 +1,5 @@
 ---
-ms.date: 06/17/2019
+ms.date: 05/15/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel
 localization_priority: Priority

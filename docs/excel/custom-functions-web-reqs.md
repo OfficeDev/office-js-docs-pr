@@ -1,5 +1,5 @@
 ---
-ms.date: 06/17/2019
+ms.date: 05/30/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions
 localization_priority: Priority
