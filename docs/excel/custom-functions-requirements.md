@@ -10,7 +10,7 @@ Custom functions are currently available on the following platforms:
 
 - Excel on the web
 - Excel on Windows (version 1904 or later, connected to Office 365 subscription)
-- Excel for Mac (version 16.24 or later, connected to Office 365 subscription)
+- Excel on Mac (version 16.24 or later, connected to Office 365 subscription)
 
 >[!NOTE]
 >Excel custom functions is not supported on Office 2019 (one-time purchase).
