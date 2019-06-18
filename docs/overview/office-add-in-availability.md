@@ -295,15 +295,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office for iPad<br>(connected to Office 365)</td>
-    <td>
-        - Custom Functions</td>
-    <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
-    <td>
-    </td>
-  </tr>
-  <tr>
     <td>Office for Mac<br>(connected to Office 365)</td>
     <td>
         - Custom Functions</td>
