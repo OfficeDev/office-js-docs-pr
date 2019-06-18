@@ -343,6 +343,9 @@
         - name: Web requests
           href: excel/custom-functions-web-reqs.md
           displayName: Excel
+        - name: COM add-in and XLL UDF compatibility requirements
+          href: excel/xll-compatibility-requirements.md
+          displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
         displayName: Excel

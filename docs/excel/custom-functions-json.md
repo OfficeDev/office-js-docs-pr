@@ -9,8 +9,6 @@ localization_priority: Normal
 
 When you define [custom functions](custom-functions-overview.md) within your Excel add-in, your add-in project includes a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 This file is generated either:
 
 - By you, in a handwritten JSON file
