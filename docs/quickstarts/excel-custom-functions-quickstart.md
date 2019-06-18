@@ -18,7 +18,7 @@ With custom functions, developers can now add new functions to Excel by defining
 * Excel custom functions are supported in Office on Mac (connected to Office 365 subscription) and an update to this tutorial is forthcoming.
 
 >[!NOTE]
->Excel custom functions is not supported on Office 2019 (one-time purchase).
+>Excel custom functions are not supported in Office 2019 (one-time purchase).
 
 ## Build your first custom functions project
 
