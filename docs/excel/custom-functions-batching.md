@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: "Batch custom functions together to reduce network calls to a remote service."
 title: Batching custom function calls for a remote service
 localization_priority: Priority
@@ -10,8 +10,6 @@ localization_priority: Priority
 If your custom functions call a remote service you can use a batching pattern to reduce the number of network calls to the remote service. To reduce network round trips you batch all the calls into a single call to the web service. This is ideal when the spreadsheet is recalculated.
 
 For example, if someone used your custom function in 100 cells in a spreadsheet, and then recalculated the spreadsheet, your custom function would run 100 times and make 100 network calls. By using a batching pattern, the calls can be combined to make all 100 calculations in a single network call.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## View the completed sample
 
