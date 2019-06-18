@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Authenticate users using custom functions in Excel.
 title: Authentication for custom functions
 localization_priority: Priority
@@ -8,8 +8,6 @@ localization_priority: Priority
 # Authentication for custom functions
 
 In some scenarios your custom function will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, you should be aware that custom functions run in a separate runtime from the task pane and other UI elements of your add-in. Because of this, you'll need to pass data back and forth between the two runtimes using the `OfficeRuntime.storage` object and the Dialog API.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## OfficeRuntime.storage object
 
