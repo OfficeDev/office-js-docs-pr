@@ -808,7 +808,7 @@
       href: reference/manifest/permissions.md
     - name: PhoneSettings
       href: reference/manifest/phonesettings.md
-    - name: ProgID
+    - name: ProgId
       href: reference/manifest/progid.md
     - name: ProviderName
       href: reference/manifest/providername.md

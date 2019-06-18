@@ -1,11 +1,11 @@
 ---
-title: ProgID element in the manifest file
+title: ProgId element in the manifest file
 description: ''
 ms.date: 05/03/2019
 localization_priority: Normal
 ---
 
-# ProgID element
+# ProgId element
 
 Specifies the programmatic identifier of the equivalent COM add-in for the task pane of your web add-in.
 
@@ -14,7 +14,7 @@ Specifies the programmatic identifier of the equivalent COM add-in for the task 
 ## Syntax
 
 ```XML
-    <ProgID>string</ProgID>  
+    <ProgId>string</ProgId>  
 ```
 
 ## Contained in

@@ -29,12 +29,12 @@ Specifies backwards compatibility for an equivalent COM add-in or XLL.
 
 ## Can contain
 
-[ProgID](progid.md)
+[ProgId](progid.md)
 [FileName](filename.md)
 
 ## Remarks
 
-To specify a COM add-in as the equivalent add-in, provide both the `ProgID` and `Type` elements. To specify an XLL as the equivalent add-in, provide both the `FileName` and `Type` elements.
+To specify a COM add-in as the equivalent add-in, provide both the `ProgId` and `Type` elements. To specify an XLL as the equivalent add-in, provide both the `FileName` and `Type` elements.
 
 ## See also
 
