@@ -51,11 +51,9 @@ You can import a snippet into Script Lab either by specifying the URL to the pub
 
 Script Lab is supported for Excel, Word, and PowerPoint on the following clients.
 
-- Office on Windows (connected to Office 365 subscription)
-- Office on Mac (connected to Office 365 subscription)
-- Office on the web
 - Office 2013 or later on Windows
 - Office 2016 or later on Mac
+- Office on the web
 
 ## Next steps
 
