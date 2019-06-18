@@ -298,6 +298,9 @@
         - name: Best practices
           href: excel/custom-functions-best-practices.md
           displayName: Excel
+        - name: COM add-in and XLL UDF compatibility requirements
+          href: excel/xll-compatibility-requirements.md
+          displayName: Excel
         - name: Debugging
           href: excel/custom-functions-debugging.md
           displayName: Excel
@@ -342,9 +345,6 @@
           displayName: Excel
         - name: Web requests
           href: excel/custom-functions-web-reqs.md
-          displayName: Excel
-        - name: COM add-in and XLL UDF compatibility requirements
-          href: excel/xll-compatibility-requirements.md
           displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
@@ -808,7 +808,7 @@
       href: reference/manifest/permissions.md
     - name: PhoneSettings
       href: reference/manifest/phonesettings.md
-    - name: ProgID
+    - name: ProgId
       href: reference/manifest/progid.md
     - name: ProviderName
       href: reference/manifest/providername.md
