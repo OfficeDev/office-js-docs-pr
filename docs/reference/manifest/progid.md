@@ -1,7 +1,7 @@
 ---
 title: ProgId element in the manifest file
 description: ''
-ms.date: 05/03/2019
+ms.date: 06/19/2019
 localization_priority: Normal
 ---
 
