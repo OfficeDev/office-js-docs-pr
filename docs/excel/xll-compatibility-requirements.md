@@ -8,7 +8,7 @@ localization_priority: Priority
 
 COM add-in and XLL UDF compatibility is currently available on the following platforms, all of which require an Office 365 subscription:
 
-- Excel on web
+- Excel on the web
 - Excel on Windows (version 1904 or later)
 - Excel for Mac (version 13.329 or later)
 
