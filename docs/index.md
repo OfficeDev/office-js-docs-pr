@@ -11,9 +11,9 @@ ms.author: o365devx
 localization_priority: Normal
 ---
 
-<h1>Office Add-ins documentation</h1>
+# Office Add-ins documentation
 
-<p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office on Windows, Office on the web, Office on Mac, and Office on iPad.</p>
+Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office on Windows, Office on the web, Office on Mac, and Office on iPad.
 
 <ul class="cardsM cols cols1">
     <li>
@@ -112,12 +112,11 @@ localization_priority: Normal
     </li>
 </ul>
 
-<hr />
-<br />
+---
 
 <h2>Resources</h2>
 
-<ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
+<ul class="cardsF cols cols4" style="display:flex!important;">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
