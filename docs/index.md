@@ -14,7 +14,7 @@ localization_priority: Normal
 <div id="main" class="v2">
     <div class="container">
         <h1>Office Add-ins documentation</h1>
-        <p>Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Windows, Mac, iPad, and in a web browser.</p>
+        <p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Windows, Mac, iPad, and in a web browser.</p>
         <p></p>
         <ul class="cardsM cols cols1">
             <li>
