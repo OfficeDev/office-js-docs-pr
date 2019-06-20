@@ -1,5 +1,5 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/18/2019
 description: Use `OfficeRuntime.storage` to save state with custom functions. 
 title: Save and share state in custom functions
 localization_priority: Priority

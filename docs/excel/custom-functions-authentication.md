@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Authenticate users using custom functions in Excel.
 title: Authentication for custom functions
 localization_priority: Priority

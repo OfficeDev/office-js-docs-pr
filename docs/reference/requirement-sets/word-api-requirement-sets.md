@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API requirement sets
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/11/2019
 ms.prod: word
 localization_priority: Priority
 ---
@@ -14,7 +14,7 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 
 > [!NOTE]
 > For the requirement sets that are marked as Beta, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> 
+>
 > Entries not listed as Beta are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  Requirement set  |   Office on Windows\*<br>(connected to Office 365)  |  Office for iPad<br>(connected to Office 365)  |  Office for Mac<br>(connected to Office 365)  | Office Online  | Office Online Server  |
@@ -62,7 +62,6 @@ The following is a complete list of APIs currently in preview.
 ||[id](/javascript/api/word/word.customxmlpart#id)|Gets the ID of the custom XML part. Read only.|
 ||[namespaceUri](/javascript/api/word/word.customxmlpart#namespaceuri)|Gets the namespace URI of the custom XML part. Read only.|
 ||[setXml(xml: string)](/javascript/api/word/word.customxmlpart#setxml-xml-)|Sets the full XML content of the custom XML part.|
-slows down the host application, so please remember to free any objects you add, once you're done using them. You will need to call "context.sync()" before the memory release takes effect.|
 ||[updateAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#updateattribute-xpath--namespacemappings--name--value-)|Updates the value of an attribute with the given name of the element identified by xpath.|
 ||[updateElement(xpath: string, xml: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#updateelement-xpath--xml--namespacemappings-)|Updates the XML of the element identified by xpath.|
 |[CustomXmlPartCollection](/javascript/api/word/word.customxmlpartcollection)|[add(xml: string)](/javascript/api/word/word.customxmlpartcollection#add-xml-)|Adds a new custom XML part to the document.|
