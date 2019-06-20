@@ -7,11 +7,27 @@
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
+                            <a href="../overview/explore-with-script-lab.md"><img src="../images/index/ScriptLabLogoColor.svg" alt="Script Lab" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <a href="../overview/explore-with-script-lab.md" target="_blank"><h3>Explore the APIs</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
                             <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="../images/index/i_support.svg" alt="API questions" /></a>
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>JavaScript API questions</h3></a>
+                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Ask questions</h3></a>
                     </div>
                 </div>
             </div>
@@ -27,7 +43,7 @@
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>JavaScript API issues</h3></a>
+                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Report issues</h3></a>
                     </div>
                 </div>
             </div>
@@ -43,7 +59,7 @@
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>JavaScript API feature requests</h3></a>
+                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Request features</h3></a>
                     </div>
                 </div>
             </div>
