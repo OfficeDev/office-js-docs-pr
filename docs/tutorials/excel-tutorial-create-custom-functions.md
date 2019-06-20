@@ -189,7 +189,7 @@ In this new function, we will be making a spinner out of ASCII characters. The s
  * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom
 function invocation.
  */
-function spin(invocation: CustomFunctions.StreamingInvocation<string>) {
+function spin(invocation) {
     const spinIcons = "|/-\\";
     var i;
     if (i == undefined) {
