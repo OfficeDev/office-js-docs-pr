@@ -11,6 +11,8 @@ If your custom functions call a remote service you can use a batching pattern to
 
 For example, if someone used your custom function in 100 cells in a spreadsheet, and then recalculated the spreadsheet, your custom function would run 100 times and make 100 network calls. By using a batching pattern, the calls can be combined to make all 100 calculations in a single network call.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 ## View the completed sample
 
 You can follow this article and paste the code examples into your own project. For example, you can use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create a new custom function project for TypeScript, then add all the code from this article to the project. You can then run the code and try it out.

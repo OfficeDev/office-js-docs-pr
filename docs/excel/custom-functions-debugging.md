@@ -8,6 +8,8 @@ localization_priority: Normal
 
 Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 On Windows:
 - [Excel Desktop and Visual Studio Code (VS Code) debugger](#use-the-vs-code-debugger-for-excel-desktop)
 - [Excel on the web and VS Code debugger](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)

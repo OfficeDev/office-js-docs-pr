@@ -9,6 +9,8 @@ localization_priority: Priority
 
 In some scenarios your custom function will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, you should be aware that custom functions run in a separate runtime from the task pane and other UI elements of your add-in. Because of this, you'll need to pass data back and forth between the two runtimes using the `OfficeRuntime.storage` object and the Dialog API.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 ## OfficeRuntime.storage object
 
 The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
