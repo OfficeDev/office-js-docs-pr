@@ -26,7 +26,7 @@ Within custom functions runtime, XHR implements additional security measures by 
 
 Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a Content-Type header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
-In the following code sample, the **getStarCount** function calls the Github API to discover the amount of stars given to a particular user's repository.
+In the following code sample, the **getStarCount** function calls the Github API to discover the amount of stars given to a particular user's repository. You'll note that this is an asynchronous function which uses a JavaScript Promise. When data is returned, the Promise is resolved and you can perform `GET` and `SEND` operations.
 
 ```js
 /**
@@ -66,9 +66,9 @@ async function getStarCount(userName: string, repoName: string) {
 }
 ```
 
-For another sample of an XHR request with more context, see the `getFile` function within [this file](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js) in the [Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload) Github repository.
-
 ### Fetch example
+
+It may be preferable to use the `Fetch` API over XHR for simplicity, as it avoids nested callbacks.
 
 In the following code sample, the **stockPriceStream** function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds from a hypothetical stock API. Because this function will request the price at set intervals, it is a streaming function and therefore uses an `invocation` parameter. This parameter is the context of the cell into which data streams. You use `invocation.setResult` to indicate what should be streamed into a cell and `invocation.onCanceled` to indicate what the function should do if it is canceled in the midst of a web request.
 
@@ -131,7 +131,7 @@ The following code sample is a custom function that adds a number to the result 
 - The `onCanceled` callback defines the function that executes when the function is canceled.
 - Streaming isn't necessarily tied to making a web request: in this case, the function isn't making a web request but is still getting data at set intervals, so it requires the use of the streaming `invocation` parameter.
 
-```JS
+```js
 /**
  * Increments a value once a second.
  * @customfunction INC increment
