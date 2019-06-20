@@ -6,7 +6,7 @@ description: Learn how to build Office Add-ins.
 ms.topic: hub-page
 author: o365devx
 ms.prod: non-product-specific
-ms.date: 05/23/2019
+ms.date: 06/30/2019
 ms.author: o365devx
 localization_priority: Normal
 ---
@@ -120,6 +120,22 @@ localization_priority: Normal
                               <br/>
                               <h2>Resources</h2>
                               <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
+                                    <li>
+                                        <div class="cardSize">
+                                            <div class="cardPadding">
+                                                <div class="card">
+                                                    <div class="cardImageOuter">
+                                                        <div class="cardImage">
+                                                            <a href="overview/explore-with-script-lab.md" target="_blank"><img src="images/index/ScriptLabLogoColor.svg" alt="Script Lab" /></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cardText">
+                                                        <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore the Office JavaScript APIs</h3></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                     <li>
                                         <div class="cardSize">
                                             <div class="cardPadding">
