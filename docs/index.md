@@ -113,7 +113,6 @@ localization_priority: Normal
         </ul>
         <br/>
         <hr/>
-        <br/>
         <h2>Resources</h2>
         <ul class="cardsF cols cols4" style="display:flex!important;">
             <li>
@@ -174,7 +173,7 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Submit feature requests</h3></a>
+                                <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Request features</h3></a>
                             </div>
                         </div>
                     </div>
