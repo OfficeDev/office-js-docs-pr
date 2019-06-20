@@ -68,7 +68,7 @@ async function getStarCount(userName: string, repoName: string) {
 
 ### Fetch example
 
-It may be preferable to use the `Fetch` API over XHR for simplicity, as it avoids nested callbacks.
+Using `Fetch` avoids nested callbacks and may be preferable in some cases to XHR. 
 
 In the following code sample, the **stockPriceStream** function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds from a hypothetical stock API. Because this function will request the price at set intervals, it is a streaming function and therefore uses an `invocation` parameter. This parameter is the context of the cell into which data streams. You use `invocation.setResult` to indicate what should be streamed into a cell and `invocation.onCanceled` to indicate what the function should do if it is canceled in the midst of a web request.
 
