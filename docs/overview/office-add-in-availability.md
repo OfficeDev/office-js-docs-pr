@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
-description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, OneNote, and Project.
-ms.date: 05/23/2019
+description: Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.
+ms.date: 06/13/2019
 localization_priority: Priority
 ---
 
@@ -22,7 +22,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td> - TaskPane<br>
         - Content<br>
         - Custom Functions<br>
@@ -54,7 +54,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
     <td> - TaskPane<br>
         - Content<br>
         - Custom Functions<br>
@@ -155,7 +155,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for iPad<br>(connected to Office 365)</td>
+    <td>Office on iPad<br>(connected to Office 365 subscription)</td>
     <td>- TaskPane<br>
         - Content<br>
         - Custom Functions</td>
@@ -183,7 +183,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(connected to Office 365)</td>
+    <td>Office on Mac<br>(connected to Office 365 subscription)</td>
     <td>- TaskPane<br>
         - Content<br>
         - Custom Functions<br>
@@ -214,7 +214,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac<br>(one-time purchase)</td>
+    <td>Office 2019 on Mac<br>(one-time purchase)</td>
     <td>- TaskPane<br>
         - Content<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -243,7 +243,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac<br>(one-time purchase)</td>
+    <td>Office 2016 on Mac<br>(one-time purchase)</td>
     <td>- TaskPane<br>
         - Content</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -277,7 +277,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td>
         - Custom Functions</td>
     <td>
@@ -286,7 +286,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
     <td>
         - Custom Functions</td>
     <td>
@@ -315,7 +315,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web<br>(new)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -329,7 +329,20 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365)</td>
+    <td>Office on the web<br>(classic)</td>
+    <td> - Mail Read<br>
+      - Mail Compose<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+    <td>Not available</td>
+  </tr>
+  <tr>
+    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
@@ -381,7 +394,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office for iOS<br>(connected to Office 365)</td>
+    <td>Office on iOS<br>(connected to Office 365 subscription)</td>
     <td> - Mail Read<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -392,7 +405,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(connected to Office 365)</td>
+    <td>Office on Mac<br>(connected to Office 365 subscription)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -406,7 +419,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac<br>(one-time purchase)</td>
+    <td>Office 2019 on Mac<br>(one-time purchase)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -419,7 +432,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac<br>(one-time purchase)</td>
+    <td>Office 2016 on Mac<br>(one-time purchase)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -432,7 +445,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office for Android<br>(connected to Office 365)</td>
+    <td>Office on Android<br>(connected to Office 365 subscription)</td>
     <td> - Mail Read<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -458,7 +471,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -484,7 +497,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -588,7 +601,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office for iPad<br>(connected to Office 365)</td>
+    <td>Office on iPad<br>(connected to Office 365 subscription)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -616,7 +629,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(connected to Office 365)</td>
+    <td>Office on Mac<br>(connected to Office 365 subscription)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -645,7 +658,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac<br>(one-time purchase)</td>
+    <td>Office 2019 on Mac<br>(one-time purchase)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -674,7 +687,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac<br>(one-time purchase)</td>
+    <td>Office 2016 on Mac<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -714,7 +727,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -730,7 +743,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365)</td>
+    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -793,7 +806,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for iPad<br>(connected to Office 365)</td>
+    <td>Office on iPad<br>(connected to Office 365 subscription)</td>
     <td> - Content<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
@@ -808,7 +821,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(connected to Office 365)</td>
+    <td>Office on Mac<br>(connected to Office 365 subscription)</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -824,7 +837,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac<br>(one-time purchase)</td>
+    <td>Office 2019 on Mac<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -840,7 +853,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac<br>(one-time purchase)</td>
+    <td>Office 2016 on Mac<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -870,7 +883,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
