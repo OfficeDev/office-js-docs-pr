@@ -1,14 +1,14 @@
 ---
 title: Office Add-ins platform overview | Microsoft Docs
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
 
 # Office Add-ins platform overview
 
-You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office on Windows, Office Online, Office for Mac, and Office for iPad.
+You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
 
 Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
 
@@ -22,7 +22,7 @@ COM or VSTO add-ins are earlier Office integration solutions that run only on Of
 
 Office Add-ins provide the following advantages over add-ins built using VBA, COM, or VSTO:
 
-- Cross-platform support. Office Add-ins run in Office on Windows, Mac, iOS, and Office Online.
+- Cross-platform support. Office Add-ins run in Office on the web, Windows, Mac, and iPad.
 
 - Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization.
 
@@ -76,7 +76,7 @@ Custom UI and task panes are specified in the add-in manifest.  
 
 #### Custom buttons and menu commands  
 
-You can add custom ribbon buttons and menu items to the ribbon in Office on Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
+You can add custom ribbon buttons and menu items to the ribbon in Office on the web and Windows. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
 *Figure 3. Add-in commands in the ribbon*
 

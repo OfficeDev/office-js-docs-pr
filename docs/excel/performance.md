@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 04/30/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -11,7 +11,7 @@ There are multiple ways that you can perform common tasks with the Excel JavaScr
 
 ## Minimize the number of sync() calls
 
-In the Excel JavaScript API, ```sync()``` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel Online. To optimize performance, minimize the number of calls to ```sync()``` by queueing up as many changes as possible before calling it.
+In the Excel JavaScript API, ```sync()``` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to ```sync()``` by queueing up as many changes as possible before calling it.
 
 See [Core Concepts - sync()](excel-add-ins-core-concepts.md#sync) for code samples that follow this practice.
 

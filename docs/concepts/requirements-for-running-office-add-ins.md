@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: ''
-ms.date: 05/14/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -61,21 +61,21 @@ The following are the minimum client versions of Office for Mac that support Off
 - Excel for Mac version 15.19 (160206)
 - PowerPoint for Mac version 15.24 (160614)
 
-## Client requirements: Browser support for Office Online web clients and SharePoint
+## Client requirements: Browser support for Office web clients and SharePoint
 
 Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
 
 ## Client requirements: non-Windows smartphone and tablet
 
-Specifically for Outlook Web App running in a browser on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
+Specifically for Outlook running in a browser on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
 
 
 | Host application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook for Android|Android tablets and smartphones|Android 4.4 KitKat later|On the latest update of Office 365 for business or Exchange Online|Native app for Android, browser not applicable|
-|Outlook for iOS|iPad tablets, iPhone smartphones|iOS 11 or later|On the latest update of Office 365 for business or Exchange Online|Native app for iOS, browser not applicable|
-|Outlook Web App|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Office 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
+|Outlook on Android|Android tablets and smartphones|Android 4.4 KitKat later|On the latest update of Office 365 for business or Exchange Online|Native app for Android, browser not applicable|
+|Outlook on iOS|iPad tablets, iPhone smartphones|iOS 11 or later|On the latest update of Office 365 for business or Exchange Online|Native app for iOS, browser not applicable|
+|Outlook on the web|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Office 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
 
 > [!NOTE]
 > The native apps OWA for Android, OWA for iPad, and OWA for iPhone have been [deprecated](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) and are no longer required or available for testing Outlook add-ins.

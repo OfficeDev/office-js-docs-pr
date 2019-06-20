@@ -1,7 +1,7 @@
 ---
 title: Word add-ins overview
 description: ''
-ms.date: 06/12/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -40,9 +40,9 @@ You can use any web server technology to host your Word add-in, such as ASP.NET,
 The Word JavaScript APIs give your application access to the objects and metadata found in a Word document. You can use these APIs to create add-ins that target:
 
 * Word 2013 or later on Windows
-* Word Online
-* Word 2016 or later for Mac
-* Word for iPad
+* Word on the web
+* Word 2016 or later on Mac
+* Word on iPad
 
 Write your add-in once, and it will run in all versions of Word across multiple platforms. For details, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
 

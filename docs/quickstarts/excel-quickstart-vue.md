@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using Vue
 description: 
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -181,14 +181,14 @@ To enable HTTPS for your app, open the file **package.json** in the root folder 
 
 2. In a web browser, navigate to `https://localhost:8080`. If your browser indicates that the site's certificate is not trusted, you will need to configure your computer to trust the certificate. 
 
-3. After your browser loads the add-in page without any certificate errors, you're ready test your add-in. 
+3. After your browser loads the add-in page without any certificate errors, you're ready test your add-in.
 
 ## Try it out
 
 1. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.

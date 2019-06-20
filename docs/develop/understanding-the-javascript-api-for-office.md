@@ -1,7 +1,7 @@
 ---
 title: Understanding the JavaScript API for Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -174,7 +174,7 @@ This table summarizes the API and features supported across add-in types (conten
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**Host name**|Database|Workbook|Mailbox|Presentation|Document|Project|
-||**Supported** **Host applications**|Access web apps|Excel,<br/>Excel Online|Outlook,<br/>Outlook Web App,<br/>OWA for Devices|PowerPoint,<br/>PowerPoint Online|Word|Project|
+||**Supported** **Host applications**|Access web apps|Excel on Windows,<br/>Excel on the web|Outlook on Windows,<br/>Outlook on the web,<br/>Outlook on Android,<br>Outlook on iOS|PowerPoint on Windows,<br/>PowerPoint on the web|Word on Windows|Project on Windows|
 |**Supported add-in types**|Content|Y|Y||Y|||
 ||Task pane||Y||Y|Y|Y|
 ||Outlook|||Y||||

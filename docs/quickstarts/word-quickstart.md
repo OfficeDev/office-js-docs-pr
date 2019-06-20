@@ -1,14 +1,14 @@
 ---
 title: Build your first Word task pane add-in
 description: 
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: word
 localization_priority: Priority
 ---
 
 # Build your first Word task pane add-in
 
-_Applies to: Word 2016 or later on Windows, Word for iPad, Word for Mac_
+_Applies to: Word 2016 or later on Windows, and Word on iPad and Mac_
 
 In this article, you'll walk through the process of building a Word task pane add-in.
 
@@ -281,13 +281,13 @@ In this article, you'll walk through the process of building a Word task pane ad
         npm start
         ```
 
-    - To test your add-in in Word Online, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
 
 2. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
