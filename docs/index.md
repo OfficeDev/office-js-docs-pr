@@ -11,9 +11,11 @@ ms.author: o365devx
 localization_priority: Normal
 ---
 
-# Office Add-ins documentation
+<h1>Office Add-ins documentation</h1>
 
-Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office on Windows, Office on the web, Office on Mac, and Office on iPad.
+<p>Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office on Windows, Office on the web, Office on Mac, and Office on iPad.</p>
+
+<h2>Test this H2</h2>
 
 <ul class="cardsM cols cols1">
     <li>
@@ -112,6 +114,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
     </li>
 </ul>
 
+<br/>
 ---
 
 <h2>Resources</h2>
@@ -127,7 +130,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore the Office JavaScript APIs</h3></a>
+                        <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore the APIs</h3></a>
                     </div>
                 </div>
             </div>
@@ -143,7 +146,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Office JavaScript API questions</h3></a>
+                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Ask questions</h3></a>
                     </div>
                 </div>
             </div>
@@ -159,7 +162,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Office JavaScript API issues</h3></a>
+                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Report issues</h3></a>
                     </div>
                 </div>
             </div>
@@ -175,7 +178,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Office JavaScript API feature requests</h3></a>
+                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Submit feature requests</h3></a>
                     </div>
                 </div>
             </div>
