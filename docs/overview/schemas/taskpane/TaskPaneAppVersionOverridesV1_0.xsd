@@ -266,7 +266,7 @@
   <xs:complexType name="Page">
     <xs:annotation>
       <xs:documentation>
-        Specifies location of the HTML file.
+        Specifies the location of the HTML file.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -277,7 +277,7 @@
   <xs:complexType name="Metadata">
     <xs:annotation>
       <xs:documentation>
-        Specifies location of the JSON metadata file.
+        Specifies the location of the JSON metadata file.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
