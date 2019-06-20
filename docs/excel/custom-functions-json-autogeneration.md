@@ -23,9 +23,9 @@ To see examples of the built-in function descriptions, open Excel, go to the **F
 
 In the following example, the phrase "Calculates the volume of a sphere." is the description for the custom function.
 
-```JS
+```js
 /**
-/* Calculates the volume of a sphere
+/* Calculates the volume of a sphere.
 /* @customfunction VOLUME
 ...
  */
@@ -61,11 +61,21 @@ A function can't have both `@cancelable` and `@streaming` tags.
 
 Syntax: @customfunction _id_ _name_
 
-Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.
+Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function. 
 
 This tag is required to create metadata for the custom function.
 
 There should also be a call to `CustomFunctions.associate("id", functionName);`
+
+As an example, see the following code sample.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction
+ * ...
+ */
+```
 
 #### id
 
@@ -74,6 +84,16 @@ The `id` is an invariant identifier for the custom function.
 * If `id` isn't provided, the JavaScript/TypeScript function name is converted to uppercase and disallowed characters are removed.
 * The `id` must be unique for all custom functions.
 * The allowed characters are limited to: A-Z, a-z, 0-9, underscores (\_), and period (.).
+
+In the following example, increment is the `id` and the `name` of the function.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction increment
+ * ...
+ */
+```
 
 #### name
 
@@ -84,15 +104,27 @@ Provides the display `name` for the custom function.
 * Must start with a letter.
 * Maximum length is 128 characters.
 
+In the following example, INC is the `id` of the function and `increment` is the `name`.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction INC increment
+ * ...
+ */
+```
+
 ### description
 
 A description doesn't require any specific tag. Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment. By default, whatever text is untagged in the JSDoc comment section will be the description of the function. The description appears to users in Excel as they are entering the function. In the following example, the phrase "A function that sums two numbers" is the description for the custom function with the id property of `SUM`.
 
-```JS
+In the following example, SUM is the `id` and `name` of the function and a description is given.
+
+```js
 /**
-/* @customfunction SUM
-/* A function that sums two numbers
-...
+ * A function that sums two numbers.
+ * @customfunction SUM
+ * ...
  */
 ```
 
@@ -103,6 +135,17 @@ A description doesn't require any specific tag. Add a description to a custom fu
 Syntax: @helpurl _url_
 
 The provided _url_ is displayed in Excel.
+
+In the following example, the `helpurl` is www.contoso.com/help.
+
+```js
+/**
+ * A function which streams the temperature in a town you specify.
+ * @customfunction getTemp
+ * @helpurl www.contoso.com/weatherhelp
+ * ...
+ */
+```
 
 ---
 ### @param
@@ -122,6 +165,19 @@ To denote a custom function parameter as optional:
 > [!NOTE]
 > The default value for optional parameters is `null`.
 
+The following example shows a SUM function which adds two or three numbers, with the third number as an optional parameter.
+
+```js
+/**
+ * A function which sums two, or optionally three, numbers.
+ * @customfunction SUM
+ * @param firstNumber {number} First number to add.
+ * @param secondNumber {number} Second number to add.
+ * @param [thirdNumber] {number} Optional third number you wish to add.
+ * ...
+ */
+```
+
 #### TypeScript
 
 TypeScript Syntax: @param name _description_
@@ -140,13 +196,28 @@ For detailed description of the @param see: [JSDoc](https://jsdoc.app/tags-param
 > [!NOTE]
 > The default value for optional parameters is `null`.
 
+The following example shows the `add` function that adds two numbers.
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
+
 ---
 ### @requiresAddress
 <a id="requiresAddress"/>
 
-Indicates that the address of the cell where the function is being evaluated should be provided. 
+Indicates that the address of the cell where the function is being evaluated should be provided.
 
-The last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `address` property will contain the address.
+The last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `address` property will contain the address. For an example of a function that uses the `@requiresAddress` tag, see [Addressing cell's context parameter](./custom-functions-parameter-options#addressing-cells-context-parameter.md).
 
 ---
 ### @returns
@@ -157,6 +228,21 @@ Syntax: @returns {_type_}
 Provides the type for the return value.
 
 If `{type}` is omitted, the TypeScript type info will be used. If there is no type info, the type will be `any`.
+
+The following example shows the `add` function that uses the `@returns` tag.
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
 
 ---
 ### @streaming
@@ -169,7 +255,7 @@ The function should return `void`.
 
 Streaming functions don't return values directly, but rather should call `setResult(result: ResultType)` using the last parameter.
 
-Exceptions thrown by a streaming function are ignored. `setResult()` may be called with Error to indicate an error result.
+Exceptions thrown by a streaming function are ignored. `setResult()` may be called with Error to indicate an error result. For an example of a streaming function and more information, see [Make a streaming function](./custom-functions-web-reqs#make-a-streaming-function.md).
 
 Streaming functions can't be marked as [@volatile](#volatile).
 
@@ -180,6 +266,19 @@ Streaming functions can't be marked as [@volatile](#volatile).
 A volatile function is one whose result isn't the same from one moment to the next, even if it takes no arguments or the arguments haven't changed. Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done. For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.
 
 Streaming functions can't be volatile.
+
+The following function is volatile and uses the `@volatile` tag.
+
+```js
+/**
+ * Simulates rolling a 6-sided dice.
+ * @customfunction
+ * @volatile
+ */
+function roll6sided(): number {
+  return Math.floor(Math.random() * 6) + 1;
+}
+```
 
 ---
 
