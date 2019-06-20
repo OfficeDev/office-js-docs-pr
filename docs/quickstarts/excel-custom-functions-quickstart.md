@@ -1,5 +1,5 @@
 ---
-ms.date: 06/14/2019
+ms.date: 06/20/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -30,7 +30,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `starcount`
 
-    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/UpdatedYoOfficePrompt.png)
+    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/starcountPrompt.png)
 
     The Yeoman generator will create the project files and install supporting Node components.
 

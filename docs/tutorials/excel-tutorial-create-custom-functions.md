@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -39,7 +39,7 @@ In this tutorial, you will:
     * **Choose a script type:** `JavaScript`
     * **What do you want to name your add-in?** `starcount`
 
-    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/UpdatedYoOfficePrompt.png)
+    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/starcountPrompt.png)
     
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -155,7 +155,7 @@ The `CustomFunctions.associate` code associates the `id` of the function with th
     ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
-    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
+    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)
 
 ### [Excel Online](#tab/excel-online)
 
@@ -229,7 +229,7 @@ The `CustomFunctions.associate` code associates the `id` of the function with th
     ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
-    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
+    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)
 
 # [Excel Online](#tab/excel-online)
 
