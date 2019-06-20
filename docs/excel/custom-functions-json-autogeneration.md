@@ -1,5 +1,5 @@
 ---
-ms.date: 06/10/2019
+ms.date: 06/18/2019
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Priority
@@ -135,7 +135,7 @@ To denote a custom function parameter as optional, do one of the following:
 * Use an optional parameter. For example: `function f(text?: string)`
 * Give the parameter a default value. For example: `function f(text: string = "abc")`
 
-For detailed description of the @param see: [JSDoc](https://usejsdoc.org/tags-param.html)
+For detailed description of the @param see: [JSDoc](https://jsdoc.app/tags-param.html)
 
 > [!NOTE]
 > The default value for optional parameters is `null`.

@@ -1,15 +1,15 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: Learn the requirements to use COM add-in and XLL UDF compatibility features. 
 title: COM add-in and XLL UDF requirements
 localization_priority: Priority
 ---
 # COM add-in and XLL UDF compatibility requirements (preview)
 
-COM add-in and XLL UDF compatibility is currently available on the following platforms:
+COM add-in and XLL UDF compatibility is currently available on the following platforms, all of which require an Office 365 subscription:
 
-- Excel Online
-- Excel on Windows (64-bit version 1810 or later)
+- Excel on the web
+- Excel on Windows (version 1904 or later)
 - Excel for Mac (version 13.329 or later)
 
 ## Excel Online

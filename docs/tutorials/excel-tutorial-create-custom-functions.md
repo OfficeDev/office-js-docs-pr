@@ -23,7 +23,7 @@ In this tutorial, you will:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (version 1810 or later) or Excel Online
+* Excel on Windows (version 1904 or later, connected to Office 365 subscription) or Excel on the web
 
 ## Create a custom functions project
 
@@ -133,7 +133,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
       catch (error) {
         return error;
       }
-    }
+      
     CustomFunctions.associate("GETSTARCOUNT", getStarCount);
 ```
 

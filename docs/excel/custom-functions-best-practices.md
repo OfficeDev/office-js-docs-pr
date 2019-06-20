@@ -1,5 +1,5 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/18/2019
 description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices
 localization_priority: Normal
