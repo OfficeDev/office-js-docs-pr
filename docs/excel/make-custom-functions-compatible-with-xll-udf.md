@@ -1,7 +1,7 @@
 ---
 title: 'Extend custom functions with XLL user-defined functions'
 description: 'Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions (preview)'
-ms.date: 05/08/2019
+ms.date: 06/19/2019
 localization_priority: Normal
 ---
 
@@ -17,23 +17,22 @@ To enable compatibility with an existing XLL, identify the equivalent XLL in the
 
 To set the equivalent XLL for your custom functions, specify the `FileName` of the XLL. When the user opens a workbook with functions from the XLL, Excel converts the functions to compatible functions. The workbook then uses the XLL when opened in Excel on Windows, and it will use custom functions from your Excel add-in when opened online or on macOS.
 
-The following example shows how to specify both a COM add-in and an XLL as equivalent. Often you will specify both so for completeness this example shows both in context. They are identified by their `ProgID` and `FileName` respectively. For more information on COM add-in compatibility, see [Make your Excel add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+The following example shows how to specify both a COM add-in and an XLL as equivalent. Often you will specify both so for completeness this example shows both in context. They are identified by their `ProgId` and `FileName` respectively. The `EquivalentAddins` element must be positioned immediately before the closing `VersionOverrides` tag. For more information on COM add-in compatibility, see [Make your Excel add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```xml
 <VersionOverrides>
-...
-<EquivalentAddins>
-  <EquivalentAddin>
-    <ProgID>ContosoCOMAddin</ProgID>
-    <Type>COM</Type>
-  </EquivalentAddin>
+  ...
+  <EquivalentAddins>
+    <EquivalentAddin>
+      <ProgId>ContosoCOMAddin</ProgId>
+      <Type>COM</Type>
+    </EquivalentAddin>
 
-  <EquivalentAddin>
-    <FileName>contosofunctions.xll</FileName>
-    <Type>XLL</Type>
-  </EquivalentAddin>
-<EquivalentAddins>
-...
+    <EquivalentAddin>
+      <FileName>contosofunctions.xll</FileName>
+      <Type>XLL</Type>
+    </EquivalentAddin>
+  <EquivalentAddins>
 </VersionOverrides>
 ```
 

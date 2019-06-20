@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/18/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -108,7 +108,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 ```
 
 > [!NOTE]
-> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json) GitHub repository.
+> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub repository's commit history. As the project has been adjusted to automatically generate JSON, a full sample of handwritten JSON is only available in previous versions of the project.
 
 ## functions 
 
@@ -130,9 +130,9 @@ The `options` object enables you to customize some aspects of how and when Excel
 
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, Excel calls the `onCanceled` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). In the body of the function, a handler must be assigned to the `caller.onCanceled` member. For more information, see [Canceling a function](custom-functions-web-reqs.md#stream-and-cancel-functions). |
-|  `requiresAddress`  | boolean | No <br/><br/>Default value is `false`. | <br /><br /> If true, your custom function can access the address of the cell that invoked your custom function. To get the address of the cell that invoked your custom function, use context.address in your custom function. For more information, see [Determine which cell invoked your custom function](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function). Custom functions cannot be set as both streaming and requiresAddress. When using this option, the 'invocationContext' parameter must be the last parameter passed in options. |
-|  `stream`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). The function should have no `return` statement. Instead, the result value is passed as the argument of the `caller.setResult` callback method. For more information, see [Streaming functions](custom-functions-web-reqs.md#stream-and-cancel-functions). |
+|  `cancelable`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function cannot be both streaming and cancelable. For more information, see the note near the end of [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
+|  `requiresAddress`  | boolean | No <br/><br/>Default value is `false`. | <br /><br /> If true, your custom function can access the address of the cell that invoked your custom function. To get the address of the cell that invoked your custom function, use context.address in your custom function. For more information, see [Determine which cell invoked your custom function](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function). Custom functions cannot be set as both streaming and requiresAddress. When using this option, the 'invocation' parameter must be the last parameter passed in options. |
+|  `stream`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback method. For more information, see [Streaming functions](custom-functions-web-reqs.md#make-a-streaming-function). |
 |  `volatile`  | boolean | No <br/><br/>Default value is `false`. | <br /><br /> If `true`, the function will recalculate each time Excel recalculates, instead of only when the formula's dependent values have changed. A function cannot be both streaming and volatile. If the `stream` and `volatile` properties are both set to `true`, the volatile option will be ignored. |
 
 ## parameters

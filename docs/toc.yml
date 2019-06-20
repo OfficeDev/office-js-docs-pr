@@ -214,7 +214,7 @@
       href: publish/package-your-add-in-using-visual-studio.md
     - name: Publish add-ins via Centralized Deployment
       href: publish/centralized-deployment.md
-    - name: Publish add-ins to a SharePoint catalog
+    - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Publish add-ins to AppSource
       href: /office/dev/store/submit-to-the-office-store
@@ -396,8 +396,6 @@
   - name: About Excel add-ins
     href: excel/index-2.md
     displayName: Excel
-  - name: Office Add-ins overview
-    href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/excel/aaa-test-redirect
   - name: Overview
     href: excel/excel-add-ins-overview.md
     displayName: Excel

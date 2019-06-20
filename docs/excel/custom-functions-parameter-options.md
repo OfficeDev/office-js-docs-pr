@@ -1,5 +1,5 @@
 ---
-ms.date: 05/09/2019
+ms.date: 06/18/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -93,7 +93,7 @@ CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 
 ## Invocation parameter
 
-Every custom function is automatically passed an `invocation` argument as the last argument. This argument can be used to retrieve additional context, such as the address of the calling cell. Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#stream-and-cancel-functions). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
+Every custom function is automatically passed an `invocation` argument as the last argument. This argument can be used to retrieve additional context, such as the address of the calling cell. Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#make-a-streaming-function). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
 
 In the following code sample, the `invocation` context is explicitly stated for your reference.
 

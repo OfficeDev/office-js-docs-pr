@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 05/30/2019
+ms.date: 06/11/2019
 localization_priority: Normal
 ---
 
@@ -64,6 +64,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
 | [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Method |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | Method |
 | [getRegExMatches](#getregexmatches--object) | Method |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
@@ -1715,26 +1716,26 @@ Type:
 ```javascript
 var item = Office.context.mailbox.item;
 var listOfAttachments = [];
-item.getAttachmentsAsync(callback);
+var options = {asyncContext: {currentItem: item}};
+item.getAttachmentsAsync(options, callback);
 
 function callback(result) {
   if (result.value.length > 0) {
     for (i = 0 ; i < result.value.length ; i++) {
-      var options = {asyncContext: {type: result.value[i].attachmentType}};
-      getAttachmentContentAsync(result.value[i].id, options, handleAttachmentsCallback);
+      result.asyncContext.currentItem.getAttachmentContentAsync(result.value[i].id, handleAttachmentsCallback);
     }
   }
 }
 
 function handleAttachmentsCallback(result) {
   // Parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file.
-  if (result.format === Office.MailboxEnums.AttachmentContentFormat.Base64) {
+  if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Base64) {
     // Handle file attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.Eml) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Eml) {
     // Handle email item attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
     // Handle .icalender attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.Url) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Url) {
     // Handle cloud attachment.
   } else {
     // Handle attachment formats that are not supported.
@@ -1969,6 +1970,58 @@ Office.context.mailbox.item.getInitializationContextAsync(
     }
   }
 );
+```
+
+---
+---
+
+#### getItemIdAsync([options], callback)
+
+Asynchronously gets the ID of a saved item. Compose mode only.
+
+When invoked, this method returns the item ID via the callback method.
+
+> [!NOTE]
+> If your add-in calls `getItemIdAsync` on an item in compose mode (e.g., to get an `itemId` to use with EWS or the REST API), be aware that when Outlook is in cached mode, it may take some time before the item is synced to the server. Until the item is synced, the `itemId` is not recognized and using it returns an error.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>On success, the item identifier is provided in the `asyncResult.value` property.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`ItemNotSaved`|The id can't be retrieved until the item is saved.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
+
+##### Examples
+
+```javascript
+Office.context.mailbox.item.getItemIdAsync(
+  function callback(result) {
+    // Process the result.
+  });
+```
+
+The following example shows the structure of the `result` parameter that's passed to the callback function. The `value` property contains the item ID.
+
+```json
+{
+  "value":"AAMkADI5...AAA=",
+  "status":"succeeded"
+}
 ```
 
 ---

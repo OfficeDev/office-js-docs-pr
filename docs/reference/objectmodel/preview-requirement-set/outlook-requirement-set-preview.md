@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 05/17/2019
+ms.date: 06/14/2019
 localization_priority: Priority
 ---
 
@@ -70,7 +70,7 @@ Added `AttachmentsChanged` event to `Item`.
 
 Added a new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 
-**Available in**: Outlook on the web (Classic)
+**Available in**: Outlook on the web (classic)
 
 ---
 
@@ -124,6 +124,12 @@ Added a new enum that specifies the colors available to be associated with categ
 #### [SharedProperties](/javascript/api/outlook/office.sharedproperties)
 
 Added a new object that represents the properties of an appointment or message item in a shared folder, calendar, or mailbox.
+
+**Available in**: Outlook on Windows (connected to Office 365)
+
+#### [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
+
+Added a new method that gets the ID of a saved appointment or message item.
 
 **Available in**: Outlook on Windows (connected to Office 365)
 
@@ -193,7 +199,7 @@ Added `EnhancedLocationsChanged` event to `Item`.
 
 Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Available in**: Outlook on Windows (connected to Office 365), Outlook on the web (Classic)
+**Available in**: Outlook on Windows (connected to Office 365), Outlook on the web (classic)
 
 ---
 
@@ -235,7 +241,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 Added access to `getAccessTokenAsync`, which allows add-ins to [get an access token](/outlook/add-ins/authenticate-a-user-with-an-sso-token) for the Microsoft Graph API.
 
-**Available in**: Outlook on Windows (connected to Office 365), Outlook for Mac (connected to Office 365), Outlook on the web (Outlook.com and connected to Office 365), Outlook on the web (Classic)
+**Available in**: Outlook on Windows (connected to Office 365), Outlook for Mac (connected to Office 365), Outlook on the web (new), Outlook on the web (classic)
 
 ## See also
 

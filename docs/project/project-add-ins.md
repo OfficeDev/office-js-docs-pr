@@ -179,7 +179,7 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
 
 ## Distributing Project add-ins
 
-You can distribute add-ins through a file share, an add-in catalog in a SharePoint library, or AppSource. For more information, see [Publish your Office Add-in](../publish/publish.md).
+You can distribute add-ins through a file share, an app catalog in a SharePoint library, or AppSource. For more information, see [Publish your Office Add-in](../publish/publish.md).
 
 ## See also
 
