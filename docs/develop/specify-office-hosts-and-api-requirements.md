@@ -85,7 +85,7 @@ The  **Hosts** element can contain one or more **Host** elements. The **Host** e
 | Workbook      | Excel on Windows, Excel on Mac, Excel on iPad, and Excel on the web                       |
 
 > [!NOTE]
-> The  `Name` attribute specifies the Office host application that can run your add-in. Office hosts are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook and Outlook Web App can be used to run your add-in.
+> The  `Name` attribute specifies the Office host application that can run your add-in. Office hosts are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on Windows and on the web can be used to run your add-in.
 
 
 ## Set the Requirements element in the manifest

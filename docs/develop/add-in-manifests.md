@@ -399,7 +399,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
     receive without leaving your email client.">
     <Override Locale="fr-fr" Value="Visualisez les vidéos
       YouTube références dans vos courriers électronique
-      directement depuis Outlook et Outlook Web App."/>
+      directement depuis Outlook."/>
   </Description>
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->

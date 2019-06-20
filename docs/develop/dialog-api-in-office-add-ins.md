@@ -383,7 +383,7 @@ For a sample that shows a video in a dialog box, see the [video placemat design 
 A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an Iframe, such as Microsoft Account, Office 365, Google, and Facebook.
 
 > [!NOTE]
-> When you are using the Dialog APIs for this scenario, do *not* use the `displayInIframe: true` option in the call to `displayDialogAsync`. See [Take advantage of a performance option in Office on the web](#take-advantage-of-a-performance-option-in-office-online) previously in this article for details about this option.
+> When you are using the Dialog APIs for this scenario, do *not* use the `displayInIframe: true` option in the call to `displayDialogAsync`. See [Take advantage of a performance option in Office on the web](#take-advantage-of-a-performance-option-in-office-on-the-web) previously in this article for details about this option.
 
 The following is a simple and typical authentication flow:
 

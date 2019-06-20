@@ -53,13 +53,13 @@ The following software is required for developing an Office Add-in for the suppo
 
 ## Client requirements: OS X desktop
 
-Outlook for Mac, which is distributed as part of Office 365, supports Outlook add-ins. Running Outlook add-ins on Outlook for Mac has the same requirements as Outlook for Mac itself: the operating system must be at least OS X v10.10 "Yosemite". Because Outlook for Mac uses WebKit as a layout engine to render the add-in pages, there is no additional browser dependency.
+Outlook on Mac, which is distributed as part of Office 365, supports Outlook add-ins. Running Outlook add-ins in Outlook on Mac has the same requirements as Outlook on Mac itself: the operating system must be at least OS X v10.10 "Yosemite". Because Outlook on Mac uses WebKit as a layout engine to render the add-in pages, there is no additional browser dependency.
 
-The following are the minimum client versions of Office for Mac that support Office Add-ins:
+The following are the minimum client versions of Office on Mac that support Office Add-ins.
 
-- Word for Mac version 15.18 (160109)
-- Excel for Mac version 15.19 (160206)
-- PowerPoint for Mac version 15.24 (160614)
+- Word version 15.18 (160109)
+- Excel version 15.19 (160206)
+- PowerPoint version 15.24 (160614)
 
 ## Client requirements: Browser support for Office web clients and SharePoint
 

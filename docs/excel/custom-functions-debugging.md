@@ -10,12 +10,12 @@ Debugging for custom functions can be accomplished by multiple means, depending 
 
 On Windows:
 - [Excel Desktop and Visual Studio Code (VS Code) debugger](#use-the-vs-code-debugger-for-excel-desktop)
-- [Excel on the web and VS Code debugger](#use-the-vs-code-debugger-for-excel-online-in-microsoft-edge)
-- [Excel on the web and browser tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
+- [Excel on the web and VS Code debugger](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
+- [Excel on the web and browser tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Command line](#use-the-command-line-tools-to-debug)
 
 On Mac:
-- [Excel on the web and browser tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
+- [Excel on the web and browser tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Command line](#use-the-command-line-tools-to-debug)
 
 > [!NOTE]

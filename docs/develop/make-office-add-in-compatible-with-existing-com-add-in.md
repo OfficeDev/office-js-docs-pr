@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: 'Enable compatibility between your Office Add-in and equivalent COM add-in'
-ms.date: 06/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
 ---
 
@@ -43,7 +43,7 @@ When an equivalent COM add-in is specified in the Office Add-in manifest, Office
 - As an entry in the ribbon manager
 
 > [!NOTE]
-> Specifying an equivalent COM add-in in the manifest has no effect on other platforms like Office on the web or Office for Mac.
+> Specifying an equivalent COM add-in in the manifest has no effect on other platforms like Office on the web or Mac.
 
 The following scenarios describe what happens depending on how the user acquires the Office Add-in.
 

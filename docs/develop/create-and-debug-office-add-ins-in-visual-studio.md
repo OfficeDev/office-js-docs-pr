@@ -120,7 +120,7 @@ The following table describes the properties of the add-in project.
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
 |**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
 |**EWS Url**<br/>(Outlook add-ins only)|Exchange Web service URL (For example: `https://www.contoso.com/ews/exchange.aspx`). |
-|**OWA Url**<br/>(Outlook add-ins only)|Outlook Web App URL (For example: `https://www.contoso.com/owa`).|
+|**OWA Url**<br/>(Outlook add-ins only)|Outlook on the web URL (For example: `https://www.contoso.com/owa`).|
 |**Use multi-factor auth**<br/>(Outlook add-ins only)|Boolean value that indicates whether multi-factor authentication should be used.|
 |**User Name**<br/>(Outlook add-ins only)|Specifies the name of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|

@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 06/14/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -79,7 +79,7 @@ Added a new optional parameter `options`, which is a dictionary with one valid v
 In Outlook, a user can group messages and appointments by using a category to color-code them. The user defines categories in a master list on their mailbox. They can then apply one or more categories to an item.
 
 > [!NOTE]
-> This feature is not supported in Outlook for iOS or Outlook for Android.
+> This feature is not supported in Outlook on iOS or Android.
 
 #### [Categories](/javascript/api/outlook/office.categories)
 
@@ -241,7 +241,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 Added access to `getAccessTokenAsync`, which allows add-ins to [get an access token](/outlook/add-ins/authenticate-a-user-with-an-sso-token) for the Microsoft Graph API.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook for Mac (connected to Office 365 subscription), Outlook on the web (new), Outlook on the web (classic)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription), Outlook on the web (new), Outlook on the web (classic)
 
 ## See also
 

@@ -6,7 +6,7 @@ localization_priority: Priority
 ---
 # Custom functions requirements
 
-Custom functions are currently available on the following platforms:
+Custom functions are currently available on the following platforms.
 
 - Excel on the web
 - Excel on Windows (version 1904 or later, connected to Office 365 subscription)

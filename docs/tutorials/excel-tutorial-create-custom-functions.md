@@ -23,7 +23,7 @@ In this tutorial, you will:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (version 1904 or later, connected to Office 365 subscription) or Excel on the web
+* Excel on Windows (version 1904 or later, connected to Office 365 subscription) or on the web
 
 ## Create a custom functions project
 

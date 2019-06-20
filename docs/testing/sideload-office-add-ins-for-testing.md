@@ -71,4 +71,4 @@ If you're using Visual Studio to develop your add-in, the process to sideload is
 5. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
 6. Save the XML file.
 7. Right click the web project and choose **Debug** -> **Start new instance**. This will run the web project without launching Office.
-8. From Office on the web, sideload the add-in using steps previously described in [Sideload an Office Add-in in Office on the web](#sideload-an-office-add-in-in-office-online).
+8. From Office on the web, sideload the add-in using steps previously described in [Sideload an Office Add-in in Office on the web](#sideload-an-office-add-in-in-office-on-the-web).
