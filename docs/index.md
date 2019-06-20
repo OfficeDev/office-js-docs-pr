@@ -11,7 +11,7 @@ ms.author: o365devx
 localization_priority: Normal
 ---
 
-# Office Add-ins documentation
+<h1>Office Add-ins documentation</h1>
 
 <p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office on Windows, Office on the web, Office on Mac, and Office on iPad.</p>
 
@@ -110,76 +110,78 @@ localization_priority: Normal
         </div>
         </a>
     </li>
-    <li class="fullSpan">
-        <hr />
-        <br/>
-        <h2>Resources</h2>
-        <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
-            <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <a href="overview/explore-with-script-lab.md" target="_blank"><img src="images/index/ScriptLabLogoColor.svg" alt="Script Lab" /></a>
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore the Office JavaScript APIs</h3></a>
-                            </div>
+</ul>
+
+<hr />
+<br />
+
+<h2>Resources</h2>
+
+<ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="overview/explore-with-script-lab.md" target="_blank"><img src="images/index/ScriptLabLogoColor.svg" alt="Script Lab" /></a>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="images/index/i_support.svg" alt="API questions" /></a>
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Office JavaScript API questions</h3></a>
-                            </div>
-                        </div>
+                    <div class="cardText">
+                        <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore the Office JavaScript APIs</h3></a>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="images/index/i_bug.svg" alt="API issues" /></a>
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Office JavaScript API issues</h3></a>
-                            </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="images/index/i_support.svg" alt="API questions" /></a>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <a href="https://officespdev.uservoice.com/" target="_blank"><img src="images/index/i_feedback.svg" alt="API feature requests" /></a>
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Office JavaScript API feature requests</h3></a>
-                            </div>
-                        </div>
+                    <div class="cardText">
+                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Office JavaScript API questions</h3></a>
                     </div>
                 </div>
-            </li>
-        </ul>
-        <p><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.</p>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="images/index/i_bug.svg" alt="API issues" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Office JavaScript API issues</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="images/index/i_feedback.svg" alt="API feature requests" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Office JavaScript API feature requests</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </li>
 </ul>
+
+<p><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.</p>
