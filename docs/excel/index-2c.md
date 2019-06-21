@@ -40,7 +40,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="excel-add-ins-get-started-overview.md">Complete a 5-minute quick start</a> to build your first Excel add-in, then <a href="../overview/explore-with-script-lab.md">explore the API with Script Lab</a>.</p>
+                        <p><a href="excel-add-ins-get-started-overview.md">Build your first Excel add-in in less than 5 minutes</a>, then <a href="../overview/explore-with-script-lab.md">explore the API with Script Lab</a>.</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Testing and debugging</h3>
-                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug Excel add-ins.</a></p>
+                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug an Excel add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Publishing</h3>
-                        <p><a href="../publish/publish.md">Learn how to deploy and publish Excel add-ins.</a></p>
+                        <p><a href="../publish/publish.md">Learn how to deploy and publish an Excel add-in.</a></p>
                     </div>
                 </div>
             </div>
