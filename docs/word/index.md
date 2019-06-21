@@ -57,7 +57,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Word JavaScript API</h3>
-                        <p><a href="../reference/overview/word-add-ins-reference-overview.md">Learn how to use the Word JavaScript API to interact with objects in Word.</a></p>
+                        <p><a href="../reference/overview/word-add-ins-reference-overview.md">Learn how to use the Word JavaScript API to interact with document content and metadata in Word.</a></p>
                     </div>
                 </div>
             </div>

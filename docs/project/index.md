@@ -57,7 +57,7 @@ With Project add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>JavaScript API for Project</h3>
-                        <p><a href="../reference/requirement-sets/powerpoint-and-project-note.md">Learn how to use the Office JavaScript API to interact with objects in Project.</a></p>
+                        <p><a href="../reference/requirement-sets/powerpoint-and-project-note.md">Learn how to use the Office JavaScript API to access tasks, resources, and views in a project.</a></p>
                     </div>
                 </div>
             </div>

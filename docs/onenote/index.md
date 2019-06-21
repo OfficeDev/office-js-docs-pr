@@ -57,7 +57,7 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>OneNote JavaScript API</h3>
-                        <p><a href="../reference/overview/onenote-add-ins-javascript-reference.md">Learn how to use the OneNote JavaScript API to interact with objects in OneNote.</a></p>
+                        <p><a href="../reference/overview/onenote-add-ins-javascript-reference.md">Learn how to use the OneNote JavaScript API to interact with objects and notebook content in OneNote.</a></p>
                     </div>
                 </div>
             </div>

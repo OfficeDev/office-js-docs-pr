@@ -57,7 +57,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     </div>
                     <div class="cardText">
                         <h3>JavaScript API for PowerPoint</h3>
-                        <p><a href="../reference/requirement-sets/powerpoint-and-project-note.md">Learn how to use the Office JavaScript API to interact with objects in PowerPoint.</a></p>
+                        <p><a href="../reference/requirement-sets/powerpoint-and-project-note.md">Learn how to use the Office JavaScript API to interact with document content and metadata in PowerPoint.</a></p>
                     </div>
                 </div>
             </div>

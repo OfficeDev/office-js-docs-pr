@@ -57,7 +57,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Excel JavaScript API</h3>
-                        <p><a href="../reference/overview/excel-add-ins-reference-overview.md">Learn how to use the Excel JavaScript API to interact with objects in Excel.</a></p>
+                        <p><a href="../reference/overview/excel-add-ins-reference-overview.md">Learn how to use the Excel JavaScript API to interact with objects and workbook content in Excel.</a></p>
                     </div>
                 </div>
             </div>

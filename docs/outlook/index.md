@@ -74,7 +74,8 @@ With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Outlook JavaScript API</h3>
-                        <p><a href="/outlook/add-ins/apis?context=office/dev/add-ins/context">Learn how to use the Outlook JavaScript API to interact with objects in Outlook.</a></p>
+                        <p><a href="/outlook/add-ins/apis?context=office/dev/add-ins/context">Learn how to use the Outlook JavaScript API to interact with 
+                        objects in Outlook.</a></p>
                     </div>
                 </div>
             </div>
