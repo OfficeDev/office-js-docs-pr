@@ -1,7 +1,7 @@
 ---
 title: IconUrl element in the manifest file
 description: ''
-ms.date: 05/20/2019
+ms.date: 06/20/2019
 localization_priority: Normal
 ---
 
@@ -29,7 +29,7 @@ Specifies the URL of the image that is used to represent your Office Add-in in t
 
 ## Remarks
 
-For a mail add-in, the icon is displayed in the  **File** > **Manage add-ins** UI (Outlook) or **Settings** > **Manage add-ins** UI (Outlook Web App). For a content or task pane add-in, the icon is displayed in the **Insert** > **Add-ins** UI. For all add-in types, the icon is also used on the Office Store site, if you publish your add-in to the Office Store.
+For a mail add-in, the icon is displayed in the  **File** > **Manage add-ins** UI (Outlook) or **Settings** > **Manage add-ins** UI (Outlook on the web). For a content or task pane add-in, the icon is displayed in the **Insert** > **Add-ins** UI. For all add-in types, the icon is also used on the Office Store site, if you publish your add-in to the Office Store.
 
 The image must be in one of the following file formats: GIF, JPG, PNG, EXIF, BMP, or TIFF. For content and task pane apps, the image specified must be 32 x 32 pixels. For mail apps, the recommended image resolution is 64 x 64 pixels. You should also specify an icon for use with Office host applications running on high DPI screens using the [HighResolutionIconUrl](highresolutioniconurl.md) element. For more information, see the section _Create a consistent visual identity for your app_ in [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).
 

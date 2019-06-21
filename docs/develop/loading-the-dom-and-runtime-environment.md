@@ -1,7 +1,7 @@
 ---
 title: Loading the DOM and runtime environment
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -102,7 +102,7 @@ The phone dialer sample Outlook add-in shows a slightly different approach using
 >Office.initialize = function () {};
 >```
 >
-> If you do not call **Office.onReady** or assign an  **Office.initialize** event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run.
+> If you do not call **Office.onReady** or assign an  **Office.initialize** event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office web client, such as Excel, PowerPoint, or Outlook, it will fail to run.
 >
 > If your add-in includes more than one page, whenever it loads a new page that page must either call **Office.onReady** or assign an  **Office.initialize** event handler.
 

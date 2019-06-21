@@ -1,7 +1,7 @@
 ---
 title: Test and debug Office Add-ins
 description: 
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -15,7 +15,7 @@ You can use sideloading to install an Office Add-in for testing without having t
 
 - [Sideload Office Add-ins on Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-- [Sideload Office Add-ins in Office Online](sideload-office-add-ins-for-testing.md)
+- [Sideload Office Add-ins in Office on the web](sideload-office-add-ins-for-testing.md)
 
 - [Sideload Office Add-ins on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -29,7 +29,7 @@ The procedure for debugging an Office Add-in varies by platform as well. Each of
 
 - [Debug add-ins using F12 developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-- [Debug add-ins in Office Online](debug-add-ins-in-office-online.md)
+- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
 
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)
 
