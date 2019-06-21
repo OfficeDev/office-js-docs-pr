@@ -190,7 +190,7 @@
       items:
       - name: Sideload Add-ins in Office on the web
         href: testing/sideload-office-add-ins-for-testing.md
-      - name: Debug Office on the web
+      - name: Debug in Office on the web
         href: testing/debug-add-ins-in-office-online.md
     - name: iPad and Mac
       items:
