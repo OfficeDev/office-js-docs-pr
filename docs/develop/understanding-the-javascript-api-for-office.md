@@ -1,7 +1,7 @@
 ---
 title: Understanding the JavaScript API for Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/21/2019
 localization_priority: Priority
 ---
 
@@ -165,36 +165,3 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 ## Office JavaScript API object model
 
 Once initialized, the add-in can interact with the host (e.g. Excel, Outlook). The [Office JavaScript API object model](office-javascript-api-object-model.md) page has more details on specific usage patterns. There is also detailed reference documentation for both [Common APIs](/office/dev/add-ins/reference/javascript-api-for-office) and host-specific APIs.
-
-## API support matrix
-
-This table summarizes the API and features supported across add-in types (content, task pane, and Outlook) and the Office applications that can host them when you specify the Office host applications your add-in supports by using the [1.1 add-in manifest schema and features supported by v1.1 JavaScript API for Office](update-your-javascript-api-for-office-and-manifest-schema-version.md).
-
-
-|||||||||
-|:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-||**Host name**|Database|Workbook|Mailbox|Presentation|Document|Project|
-||**Supported** **Host applications**|Access web apps|Excel on Windows,<br/>Excel on the web|Outlook on Windows,<br/>Outlook on the web,<br/>Outlook on Android,<br>Outlook on iOS|PowerPoint on Windows,<br/>PowerPoint on the web|Word on Windows|Project on Windows|
-|**Supported add-in types**|Content|Y|Y||Y|||
-||Task pane||Y||Y|Y|Y|
-||Outlook|||Y||||
-|**Supported API features**|Read/Write Text||Y||Y|Y|Y<br/>(Read only)|
-||Read/Write Matrix||Y|||Y||
-||Read/Write Table||Y|||Y||
-||Read/Write HTML|||||Y||
-||Read/Write<br/>Office Open XML|||||Y||
-||Read task, resource, view, and field properties||||||Y|
-||Selection changed events||Y|||Y||
-||Get whole document||||Y|Y||
-||Bindings and binding events|Y<br/>(Only full and partial table bindings)|Y|||Y||
-||Read/Write Custom XML Parts|||||Y||
-||Persist add-in state data (settings)|Y<br/>(Per host add-in)|Y<br/>(Per document)|Y<br/>(Per mailbox)|Y<br/>(Per document)|Y<br/>(Per document)||
-||Settings changed events|Y|Y||Y|Y||
-||Get active view mode<br/>and view changed events||||Y|||
-||Navigate to locations<br/>in the document||Y||Y|Y||
-||Activate contextually<br/>using rules and RegEx|||Y||||
-||Read Item properties|||Y||||
-||Read User profile|||Y||||
-||Get attachments|||Y||||
-||Get User identity token|||Y||||
-||Call Exchange Web Services|||Y||||
