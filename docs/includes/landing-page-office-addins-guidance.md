@@ -62,3 +62,5 @@
         </div>
     </li>
 </ul>
+
+<p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>

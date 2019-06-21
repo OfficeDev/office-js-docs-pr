@@ -9,7 +9,7 @@ localization_priority: Priority
 
 # Excel Add-ins documentation
 
-With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Excel across multiple platforms, including Excel for Windows, Excel for the web, Excel for Mac, and Excel for iPad. Learn how to build, test, debug, and publish Excel add-ins.
+With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Excel across multiple platforms, including on Windows, Mac, iPad, and in a web browser. Learn how to build, test, debug, and publish Excel add-ins.
 
 <ul class="panelContent cardsF cols cols2">
     <li>
@@ -131,11 +131,9 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 
 ---
 
-<h2>Learn more about Office Add-ins</h2>
+<h2>Learn about Office Add-ins</h2>
 
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including Excel add-ins.</p>
-
-<p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 

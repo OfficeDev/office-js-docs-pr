@@ -9,7 +9,7 @@ localization_priority: Priority
 
 # PowerPoint Add-ins documentation
 
-With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in PowerPoint across multiple platforms, including PowerPoint for Windows, PowerPoint for the web, PowerPoint for Mac, and PowerPoint for iPad. Learn how to build, test, debug, and publish PowerPoint add-ins.
+With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in PowerPoint across multiple platforms, including on Windows, Mac, iPad, and in a web browser. Learn how to build, test, debug, and publish PowerPoint add-ins.
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -107,13 +107,11 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
 
 ---
 
-<h2>Learn more about Office Add-ins</h2>
+<h2>Learn about Office Add-ins</h2>
 
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including PowerPoint add-ins.</p>
 
 <p>This information is especially relevant to building PowerPoint add-ins, because the <a href="/javascript/api/powerpoint">host-specific JavaScript API for PowerPoint</a> is currently very limited. Therefore, you'll mainly use the <a href="/javascript/api/office">Common API</a> to implement interaction between your add-in and the PowerPoint document.</p>
-
-<p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 

@@ -9,7 +9,7 @@ localization_priority: Priority
 
 # OneNote Add-ins documentation
 
-With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in OneNote for the web. Learn how to build, test, debug, and publish OneNote add-ins.
+With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in OneNote on the web. Learn how to build, test, debug, and publish OneNote add-ins.
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -105,11 +105,9 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
 
 ---
 
-<h2>Learn more about Office Add-ins</h2>
+<h2>Learn about Office Add-ins</h2>
 
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including OneNote add-ins.</p>
-
-<p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 
