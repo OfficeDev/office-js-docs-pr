@@ -1,5 +1,5 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/21/2019
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Priority
@@ -109,21 +109,21 @@ In the following example, INC is the `id` of the function and `increment` is the
 ```js
 /**
  * Increments a value once a second.
- * @customfunction INC increment
+ * @customfunction INC INCREMENT
  * ...
  */
 ```
 
 ### description
 
-A description doesn't require any specific tag. Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment. By default, whatever text is untagged in the JSDoc comment section will be the description of the function. The description appears to users in Excel as they are entering the function. In the following example, the phrase "A function that sums two numbers" is the description for the custom function with the id property of `SUM`.
+A description doesn't require any specific tag. Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment. By default, whatever text is untagged in the JSDoc comment section will be the description of the function. The description appears to users in Excel as they are entering the function. In the following example, the phrase "A function that adds two numbers" is the description for the custom function with the id property of `ADD`.
 
-In the following example, SUM is the `id` and `name` of the function and a description is given.
+In the following example, ADD is the `id` and `name` of the function and a description is given.
 
 ```js
 /**
- * A function that sums two numbers.
- * @customfunction SUM
+ * A function that adds two numbers.
+ * @customfunction ADD
  * ...
  */
 ```
@@ -136,12 +136,12 @@ Syntax: @helpurl _url_
 
 The provided _url_ is displayed in Excel.
 
-In the following example, the `helpurl` is www.contoso.com/help.
+In the following example, the `helpurl` is www.contoso.com/weatherhelp.
 
 ```js
 /**
  * A function which streams the temperature in a town you specify.
- * @customfunction getTemp
+ * @customfunction getTemperature
  * @helpurl www.contoso.com/weatherhelp
  * ...
  */
@@ -165,12 +165,12 @@ To denote a custom function parameter as optional:
 > [!NOTE]
 > The default value for optional parameters is `null`.
 
-The following example shows a SUM function which adds two or three numbers, with the third number as an optional parameter.
+The following example shows a ADD function which adds two or three numbers, with the third number as an optional parameter.
 
 ```js
 /**
- * A function which sums two, or optionally three, numbers.
- * @customfunction SUM
+ * A function which adds two, or optionally three, numbers.
+ * @customfunction ADD
  * @param firstNumber {number} First number to add.
  * @param secondNumber {number} Second number to add.
  * @param [thirdNumber] {number} Optional third number you wish to add.
