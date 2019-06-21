@@ -1,15 +1,15 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: PowerPoint add-ins documentation
-description: Resources for learning about PowerPoint add-ins.
+title: Outlook add-ins documentation
+description: Resources for learning about Outlook add-ins.
 ms.date: 06/30/2019
 localization_priority: Priority
 ---
 
-# PowerPoint Add-ins documentation
+# Outlook Add-ins documentation
 
-With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in PowerPoint across multiple platforms, including on Windows, Mac, iPad, and in a web browser. Learn how to build, test, debug, and publish PowerPoint add-ins.
+With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Outlook across multiple platforms, including on Windows, Mac, iPad, and on the web. Learn how to build, test, debug, and publish Outlook add-ins.
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -23,7 +23,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     </div>
                     <div class="cardText">
                         <h3>Overview</h3>
-                        <p><a href="powerpoint-add-ins.md">Learn about the components and capabilities of a PowerPoint add-in.</a></p>
+                        <p><a href="/outlook/add-ins/index?context=office/dev/add-ins/context">Learn about the components and capabilities of a Outlook add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="../quickstarts/powerpoint-quickstart.md">Build your first PowerPoint add-in in under 5 minutes</a>, then <a href="../overview/explore-with-script-lab.md">explore the API with Script Lab</a>.</p>
+                        <p><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Build your first Outlook add-in in under 5 minutes</a>.</p>
                     </div>
                 </div>
             </div>
@@ -52,12 +52,12 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="PowerPoint JavaScript API" />
+                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="Outlook JavaScript API" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>PowerPoint JavaScript API</h3>
-                        <p><a href="../reference/requirement-sets/powerpoint-and-project-note.md">Learn how to use the PowerPoint JavaScript API to interact with objects in PowerPoint.</a></p>
+                        <h3>Outlook JavaScript API</h3>
+                        <p><a href="/outlook/add-ins/apis?context=office/dev/add-ins/context">Learn how to use the Outlook JavaScript API to interact with objects in Outlook.</a></p>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     </div>
                     <div class="cardText">
                         <h3>Testing and debugging</h3>
-                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug a PowerPoint add-in.</a></p>
+                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug a Outlook add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     </div>
                     <div class="cardText">
                         <h3>Publishing</h3>
-                        <p><a href="../publish/publish.md">Learn how to deploy and publish a PowerPoint add-in.</a></p>
+                        <p><a href="../publish/publish.md">Learn how to deploy and publish a Outlook add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
 
 <h2>Learn about Office Add-ins</h2>
 
-<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including PowerPoint add-ins.</p>
+<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including Outlook add-ins.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 
