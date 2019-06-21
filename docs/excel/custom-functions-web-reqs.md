@@ -69,6 +69,9 @@ For another sample of an XHR request with more context, see the `getFile` functi
 
 In the following code sample, the `stockPriceStream` function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds. For more details about this sample, see the [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function).
 
+> [!NOTE]
+> The following code requests a stock quote using the IEX Trading API. Before you can run the code, you'll need to [create a free account with IEX Cloud](https://iexcloud.io/) so that you can get the API token that's required in the API request.
+
 ```js
 /**
  * Streams a stock price.
@@ -86,7 +89,8 @@ function stockPriceStream(ticker, invocation) {
             return;
         }
 
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         isPending = true;
 
         fetch(url)
