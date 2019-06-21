@@ -125,7 +125,7 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore the APIs</h3></a>
+                                <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore the APIs<br/>with Script Lab</h3></a>
                             </div>
                         </div>
                     </div>

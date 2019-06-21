@@ -24,7 +24,7 @@
                             <li><a href="../concepts/resource-limits-and-performance-optimization.md">Resource limits and performance</a></li>
                             <li><a href="../concepts/privacy-and-security.md">Privacy and security</a></li>
                             <li><a href="../design/add-in-design.md">Design principles</a></li>
-                            <li><a href="../concepts/add-in-development-best-practices.md">Explore all Office Add-in concepts topics<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
+                            <li><a href="../concepts/add-in-development-best-practices.md">Explore all Office Add-in concepts<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
                         </ul>
                     </div>
                 </div>
