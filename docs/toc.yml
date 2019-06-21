@@ -558,7 +558,7 @@
 - name: OneNote add-ins
   items:
   - name: About OneNote add-ins
-    href: onenote/index-2.md
+    href: onenote/index.md
     displayName: OneNote
   - name: Overview
     href: onenote/onenote-add-ins-programming-overview.md
@@ -756,7 +756,7 @@
 - name: PowerPoint add-ins
   items:
   - name: About PowerPoint add-ins
-    href: powerpoint/index-2.md
+    href: powerpoint/index.md
     displayName: PowerPoint
   - name: Overview
     href: powerpoint/powerpoint-add-ins.md
@@ -814,7 +814,7 @@
 - name: Word add-ins
   items:
   - name: About Word add-ins
-    href: word/index-2.md
+    href: word/index.md
     displayName: Word
   - name: Overview
     href: word/word-add-ins-programming-overview.md
