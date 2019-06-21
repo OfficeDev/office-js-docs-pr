@@ -170,7 +170,7 @@ The following example shows a SUM function which adds two or three numbers, with
 ```js
 /**
  * A function which sums two, or optionally three, numbers.
- * @customfunction SUM
+ * @customfunction ADDNUMBERS
  * @param firstNumber {number} First number to add.
  * @param secondNumber {number} Second number to add.
  * @param [thirdNumber] {number} Optional third number you wish to add.
