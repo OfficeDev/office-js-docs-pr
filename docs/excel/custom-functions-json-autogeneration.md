@@ -90,7 +90,7 @@ In the following example, increment is the `id` and the `name` of the function.
 ```js
 /**
  * Increments a value once a second.
- * @customfunction increment
+ * @customfunction INCREMENT
  * ...
  */
 ```
