@@ -40,7 +40,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="excel-add-ins-get-started-overview.md">Build your first Excel add-in by completing a 5-minute quick start</a> and <a href="../overview/explore-with-script-lab.md">explore the API with Script Lab</a>.</p>
+                        <p><a href="excel-add-ins-get-started-overview.md">Build your first Excel add-in by completing a 5-minute quick start</a> and then <a href="../overview/explore-with-script-lab.md">explore the API with Script Lab</a>.</p>
                     </div>
                 </div>
             </div>
