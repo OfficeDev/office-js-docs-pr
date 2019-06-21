@@ -583,6 +583,9 @@
 
 - name: Outlook add-ins
   items:
+  - name: About Outlook add-ins
+    href: outlook/index.md
+    displayName: Outlook
   - name: Overview
     href: /outlook/add-ins/index?context=office/dev/add-ins/context
     displayName: Outlook
@@ -767,7 +770,7 @@
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.md
     displayName: PowerPoint
-  - name: PowerPoint JavaScript API
+  - name: JavaScript API for PowerPoint
     items:   
     - name: Overview
       href: reference/requirement-sets/powerpoint-and-project-note.md
@@ -784,13 +787,16 @@
   
 - name: Project add-ins
   items:
+  - name: About Project add-ins
+    href: project/index.md
+    displayName: Project
   - name: Overview
     href: project/project-add-ins.md
     displayName: Project
   - name: Build your first Project add-in
     href: quickstarts/project-quickstart.md
     displayName: Project
-  - name: Project JavaScript API
+  - name: JavaScript API for Project
     items:
     - name: Overview
       href: reference/requirement-sets/powerpoint-and-project-note.md

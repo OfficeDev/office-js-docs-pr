@@ -59,7 +59,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="/outlook/add-ins/index" target="_blank">
+                <a class="card x-hidden-focus" href="outlook/index.md" target="_blank">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-outlook.svg" alt="Outlook add-ins" />
@@ -85,7 +85,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="project/project-add-ins.md" target="_blank">
+                <a class="card x-hidden-focus" href="project/index.md" target="_blank">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-project-server.svg" alt="Project add-ins" />
