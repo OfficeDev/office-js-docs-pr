@@ -67,7 +67,7 @@ This tag is required to create metadata for the custom function.
 
 There should also be a call to `CustomFunctions.associate("id", functionName);`
 
-As an example, see the following code sample.
+The following example shows the simplest way to declare a custom function.
 
 ```js
 /**
@@ -90,7 +90,7 @@ In the following example, increment is the `id` and the `name` of the function.
 ```js
 /**
  * Increments a value once a second.
- * @customfunction increment
+ * @customfunction INCREMENT
  * ...
  */
 ```
@@ -169,8 +169,8 @@ The following example shows a ADD function which adds two or three numbers, with
 
 ```js
 /**
- * A function which adds two, or optionally three, numbers.
- * @customfunction ADD
+ * A function which sums two, or optionally three, numbers.
+ * @customfunction ADDNUMBERS
  * @param firstNumber {number} First number to add.
  * @param secondNumber {number} Second number to add.
  * @param [thirdNumber] {number} Optional third number you wish to add.
