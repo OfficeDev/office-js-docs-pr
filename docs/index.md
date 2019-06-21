@@ -33,7 +33,7 @@ localization_priority: Normal
         </ul>
         <ul class="cardsM cols cols3">
             <li>
-                <a class="card x-hidden-focus" href="excel/index-2.md" target="_blank">
+                <a class="card x-hidden-focus" href="excel/index-2c.md" target="_blank">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-excel.svg" alt="Excel add-ins" />
