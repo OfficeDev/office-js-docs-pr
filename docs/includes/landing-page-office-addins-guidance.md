@@ -1,3 +1,4 @@
+<p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
 <ul class="cardsK panelContent cols cols2">
     <li>
         <div class="cardSize">
@@ -62,5 +63,3 @@
         </div>
     </li>
 </ul>
-
-<p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
