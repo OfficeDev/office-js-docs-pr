@@ -67,7 +67,7 @@ This tag is required to create metadata for the custom function.
 
 There should also be a call to `CustomFunctions.associate("id", functionName);`
 
-As an example, see the following code sample.
+The following example shows the simplest way to declare a custom function.
 
 ```js
 /**
