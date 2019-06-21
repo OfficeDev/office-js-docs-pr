@@ -109,7 +109,7 @@ In the following example, INC is the `id` of the function and `increment` is the
 ```js
 /**
  * Increments a value once a second.
- * @customfunction INC increment
+ * @customfunction INC INCREMENT
  * ...
  */
 ```
