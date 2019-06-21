@@ -1,5 +1,5 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
 title: Naming guidelines for custom functions in Excel
 localization_priority: Normal
@@ -8,8 +8,10 @@ localization_priority: Normal
 
 A custom function is identified by an **id** and **name** property in the JSON metadata file.
 
-- The function `id` is used to uniquely identify custom functions in your JavaScript code. 
-- The function `name` is used as the display name that appears to a user in Excel. 
+- The function `id` is used to uniquely identify custom functions in your JavaScript code.
+- The function `name` is used as the display name that appears to a user in Excel.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 A function `name` can differ from the function `id`, such as for localization purposes. In general, a function's `name` should stay the same as the `id` if there is no compelling reason for them to differ.
 

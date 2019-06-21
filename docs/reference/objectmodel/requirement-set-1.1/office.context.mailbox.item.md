@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.1
 description: ''
-ms.date: 04/24/2019
+ms.date: 06/20/2019
 localization_priority: Normal
 ---
 
@@ -243,7 +243,7 @@ console.log("Date and time created: " + dateTimeCreated);
 Gets the date and time that an item was last modified. Read mode only.
 
 > [!NOTE]
-> This member is not supported in Outlook for iOS or Outlook for Android.
+> This member is not supported in Outlook on iOS or Android.
 
 ##### Type
 
@@ -846,7 +846,7 @@ The `addItemAttachmentAsync` method attaches the item with the specified Exchang
 
 You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.
 
-If your Office Add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.
+If your Office Add-in is running in Outlook on the web, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.
 
 ##### Parameters
 
@@ -901,9 +901,9 @@ function addAttachment() {
 Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
-In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
+In Outlook on the web, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
 
 If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.
 
@@ -968,9 +968,9 @@ Office.context.mailbox.item.displayReplyAllForm(
 Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
-In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
+In Outlook on the web, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
 
 If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.
 
@@ -1035,7 +1035,7 @@ Office.context.mailbox.item.displayReplyForm(
 Gets the entities found in the selected item's body.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 ##### Requirements
 
@@ -1063,7 +1063,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 Gets an array of all the entities of the specified entity type found in the selected item's body.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 ##### Parameters
 
@@ -1121,7 +1121,7 @@ Office.initialize = function () {
 Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.
 
@@ -1152,7 +1152,7 @@ Type: Array.<(String|[Contact](/javascript/api/outlook_1_1/office.contact)|[Meet
 Returns string values in the selected item that match the regular expressions defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.
 
@@ -1215,7 +1215,7 @@ var veggies = allMatches.veggies;
 Returns string values in the selected item that match the named regular expression defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.
 
@@ -1306,7 +1306,7 @@ function saveCallback(asyncResult) {
 
 Removes an attachment from a message or appointment.
 
-The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.
+The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook on the web and mobile devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.
 
 ##### Parameters
 

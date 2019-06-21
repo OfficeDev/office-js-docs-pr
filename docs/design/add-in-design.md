@@ -1,7 +1,7 @@
 ---
 title: Design your Office Add-ins
 description: ''
-ms.date: 12/04/2017
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -18,7 +18,7 @@ Office applications follow a general set of interaction guidelines. The apps sha
 
 Follow the Office design principles to create positive add-in experiences:
 
-- **Design explicitly for Office.** The functionality, look and feel of an add-in must harmoniously complement the Office experience. Add-ins should feel native. They should fit seamlessly into Word on an iPad or PowerPoint Online. A well-designed add-in will be an appropriate blend of your experience, the platform and the Office application. Consider using Office UI Fabric as your design language. Apply document and UI theming where appropriate.
+- **Design explicitly for Office.** The functionality, look and feel of an add-in must harmoniously complement the Office experience. Add-ins should feel native. They should fit seamlessly into Word on an iPad or PowerPoint on the web. A well-designed add-in will be an appropriate blend of your experience, the platform and the Office application. Consider using Office UI Fabric as your design language. Apply document and UI theming where appropriate.
 
 - **Focus on a few key tasks; do them well.** Help customers get one job done without getting in the way of other jobs. Provide real value to customers. Focus on common use cases, pick carefully those that benefit users most when interacting with Office documents.
 

@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: 
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Priority
 ---
@@ -90,7 +90,7 @@ try {
     npm run start:web
     ```
 
-2. In [OneNote Online](https://www.onenote.com/notebooks), open a notebook and create a new page.
+2. In [OneNote on the web](https://www.onenote.com/notebooks), open a notebook and create a new page.
 
 3. Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.
 

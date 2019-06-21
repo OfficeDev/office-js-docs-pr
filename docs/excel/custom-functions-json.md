@@ -1,5 +1,5 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -8,6 +8,8 @@ localization_priority: Normal
 # Custom functions metadata
 
 When you define [custom functions](custom-functions-overview.md) within your Excel add-in, your add-in project includes a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 This file is generated either:
 
@@ -20,7 +22,7 @@ This article describes the format of the JSON metadata file, assuming you are wr
 
 For information about the other files that you must include in your add-in project to enable custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
 
-Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
+Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel on the web.
 
 ## Example metadata
 
