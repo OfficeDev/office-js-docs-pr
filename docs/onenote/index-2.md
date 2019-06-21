@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: OneNote add-ins documentation
 description: Resources for learning about OneNote add-ins.
-ms.date: 06/30/2019
+ms.date: 06/06/2019
 localization_priority: Priority
 ---
 
@@ -23,7 +23,7 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Overview</h3>
-                        <p><a href="onenote-add-ins-programming-overview.md">Learn about the components and capabilities of a OneNote add-in.</a></p>
+                        <p><a href="onenote-add-ins-programming-overview.md">OneNote add-ins overview</a></p>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="../quickstarts/onenote-quickstart.md">Build your first OneNote add-in in under 5 minutes</a>.</p>
+                        <p><a href="../quickstarts/onenote-quickstart.md">Quick Start: Create a OneNote add-in</a></p>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,11 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>OneNote JavaScript API</h3>
-                        <p><a href="../reference/overview/onenote-add-ins-javascript-reference.md">Learn how to use the OneNote JavaScript API to interact with objects in OneNote.</a></p>
+                        <p><a href="../reference/overview/onenote-add-ins-javascript-reference.md">API capabilities</a></p>
+                        <p><a href="../reference/requirement-sets/onenote-api-requirement-sets.md">API requirement sets</a></p>
+                        <p><a href="../overview/office-add-in-availability.md">Host and platform availability</a></p>
+                        <p><a href="/javascript/api/onenote">API reference</a></p>
+                        <p><a href="onenote-add-ins-page-content.md">See more<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></p>
                     </div>
                 </div>
             </div>
@@ -74,7 +78,7 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Testing and debugging</h3>
-                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug a OneNote add-in.</a></p>
+                        <p><a href="../testing/test-debug-office-add-ins.md">Test and debug Office Add-ins</a></p>
                     </div>
                 </div>
             </div>
@@ -91,7 +95,7 @@ With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Publishing</h3>
-                        <p><a href="../publish/publish.md">Learn how to deploy and publish a OneNote add-in.</a></p>
+                        <p><a href="../publish/publish.md">Deploy and publish Office Add-ins</a></p>
                     </div>
                 </div>
             </div>

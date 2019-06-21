@@ -23,7 +23,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     </div>
                     <div class="cardText">
                         <h3>Overview</h3>
-                        <p><a href="powerpoint-add-ins.md">Learn about the components and capabilities of an PowerPoint add-in.</a></p>
+                        <p><a href="powerpoint-add-ins.md">Learn about the components and capabilities of a PowerPoint add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -69,29 +69,12 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-automate.svg" alt="Custom functions" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Custom functions</h3>
-                        <p><a href="custom-functions-overview.md">Learn how to add custom functions to PowerPoint.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
                             <img src="../images/index-landing-page/i_recommended-testing.svg" alt="Testing and debugging" />
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Testing and debugging</h3>
-                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug an PowerPoint add-in.</a></p>
+                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug a PowerPoint add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -108,7 +91,7 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
                     </div>
                     <div class="cardText">
                         <h3>Publishing</h3>
-                        <p><a href="../publish/publish.md">Learn how to deploy and publish an PowerPoint add-in.</a></p>
+                        <p><a href="../publish/publish.md">Learn how to deploy and publish a PowerPoint add-in.</a></p>
                     </div>
                 </div>
             </div>

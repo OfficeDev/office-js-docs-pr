@@ -23,7 +23,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Overview</h3>
-                        <p><a href="word-add-ins-programming-overview.md">Learn about the components and capabilities of an Word add-in.</a></p>
+                        <p><a href="word-add-ins-programming-overview.md">Learn about the components and capabilities of a Word add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Testing and debugging</h3>
-                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug an Word add-in.</a></p>
+                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug a Word add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@ With Word add-ins, you can use familiar web technologies such as HTML, CSS, and 
                     </div>
                     <div class="cardText">
                         <h3>Publishing</h3>
-                        <p><a href="../publish/publish.md">Learn how to deploy and publish an Word add-in.</a></p>
+                        <p><a href="../publish/publish.md">Learn how to deploy and publish a Word add-in.</a></p>
                     </div>
                 </div>
             </div>
