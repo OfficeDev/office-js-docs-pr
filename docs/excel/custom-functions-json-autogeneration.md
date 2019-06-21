@@ -141,7 +141,7 @@ In the following example, the `helpurl` is www.contoso.com/help.
 ```js
 /**
  * A function which streams the temperature in a town you specify.
- * @customfunction getTemp
+ * @customfunction getTemperature
  * @helpurl www.contoso.com/weatherhelp
  * ...
  */
