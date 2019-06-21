@@ -109,4 +109,4 @@ With Project add-ins, you can use familiar web technologies such as HTML, CSS, a
 
 ---
 
-[!include[Office Add-ins resources](../includes/landing-page-resources.md)]
+[!include[Office Add-ins resources](../includes/landing-page-resources-no-script-lab.md)]
