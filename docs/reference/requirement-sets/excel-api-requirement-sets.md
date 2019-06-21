@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -10,25 +10,25 @@ localization_priority: Priority
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Excel add-ins run across multiple versions of Office, including Office 2016 or later on Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
+Excel add-ins run across multiple versions of Office, including Office 2016 or later on Windows, and Office on the web, Mac, and iPad. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > For information about using preview APIs, see the [Excel JavaScript preview APIs](#excel-javascript-preview-apis) section within this article.
 
-|  Requirement set  |  Office on Windows<br>(connected to Office 365)  |  Office for iPad<br>(connected to Office 365)  |  Office for Mac<br>(connected to Office 365)  | Office Online  |  Office Online Server  |
+|  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Preview](/javascript/api/excel)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
-| ExcelApi 1.9  | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019       | Coming soon |
-| ExcelApi 1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | Coming soon |
-| ExcelApi 1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later  | 16.9 or later  | April 2018     | Coming soon |
-| ExcelApi 1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later  | 15.36 or later | April 2017     | Coming soon |
-| ExcelApi 1.5  | Version 1703 (Build 8067.2070) or later   | 2.2 or later  | 15.36 or later | March 2017     | Coming soon |
-| ExcelApi 1.4  | Version 1701 (Build 7870.2024) or later   | 2.2 or later  | 15.36 or later | January 2017   | Coming soon |
+| ExcelApi 1.9  | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019       | N/A |
+| ExcelApi 1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | N/A |
+| ExcelApi 1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later  | 16.9 or later  | April 2018     | N/A |
+| ExcelApi 1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later  | 15.36 or later | April 2017     | N/A |
+| ExcelApi 1.5  | Version 1703 (Build 8067.2070) or later   | 2.2 or later  | 15.36 or later | March 2017     | N/A |
+| ExcelApi 1.4  | Version 1701 (Build 7870.2024) or later   | 2.2 or later  | 15.36 or later | January 2017   | N/A |
 | ExcelApi 1.3  | Version 1608 (Build 7369.2055) or later   | 1.27 or later | 15.27 or later | September 2016 | Version 1608 (Build 7601.6800) or later|
-| ExcelApi 1.2  | Version 1601 (Build 6741.2088) or later   | 1.21 or later | 15.22 or later | January 2016   ||
-| ExcelApi 1.1  | Version 1509 (Build 4266.1001) or later   | 1.19 or later | 15.20 or later | January 2016   ||
+| ExcelApi 1.2  | Version 1601 (Build 6741.2088) or later   | 1.21 or later | 15.22 or later | January 2016   | N/A |
+| ExcelApi 1.1  | Version 1509 (Build 4266.1001) or later   | 1.19 or later | 15.20 or later | January 2016   | N/A|
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
@@ -37,9 +37,9 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 
 [Custom Functions](../../excel/custom-functions-overview.md) use separate requirement sets from the core Excel JavaScript APIs. The following table lists the Custom Functions requirement sets, the supported Office host applications, and the build versions or number for those applications.
 
-|  Requirement set  |  Office on Windows<br>(connected to Office 365)  |  Office for iPad<br>(connected to Office 365)  |  Office for Mac<br>(connected to Office 365)  | Office Online | Office Online Server |
+|  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) or later | Not supported | 16.24 or later | April 2019 | Coming soon |
+| CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) or later | Not supported | 16.24 or later | April 2019 | N/A |
 
 For more information about versions, build numbers, and Office Online Server, see:
 
