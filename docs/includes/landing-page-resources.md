@@ -11,7 +11,7 @@
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="../overview/explore-with-script-lab.md"><h3>Script Lab</h3></a>
+                        <a href="../overview/explore-with-script-lab.md"><h3>Explore APIs<br/>with Script Lab</h3></a>
                     </div>
                 </div>
             </div>
