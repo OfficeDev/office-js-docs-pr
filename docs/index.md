@@ -33,7 +33,7 @@ localization_priority: Normal
         </ul>
         <ul class="cardsM cols cols3">
             <li>
-                <a class="card x-hidden-focus" href="excel/index-2c.md" target="_blank">
+                <a class="card x-hidden-focus" href="excel/index.md" target="_blank">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-excel.svg" alt="Excel add-ins" />
@@ -46,7 +46,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="onenote/index-2.md" target="_blank">
+                <a class="card x-hidden-focus" href="onenote/index.md" target="_blank">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-onenote.svg" alt="OneNote add-ins" />
@@ -72,7 +72,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="powerpoint/index-2.md" target="_blank">
+                <a class="card x-hidden-focus" href="powerpoint/index.md" target="_blank">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-powerpoint.svg" alt="PowerPoint add-ins" />
@@ -98,7 +98,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="word/index-2.md" target="_blank">
+                <a class="card x-hidden-focus" href="word/index.md" target="_blank">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-word.svg" alt="Word add-ins" />
