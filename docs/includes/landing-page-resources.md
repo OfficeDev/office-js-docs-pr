@@ -1,6 +1,6 @@
 <h2>Resources</h2>
 <p>Use the following resources to explore the APIs, ask questions, report issues, or request features related to the Office Add-ins platform or JavaScript API. For information about additional resources, see <a href="../resources/resources-links-help.md">Office Add-ins additional resources</a>.</p>
-<ul class="panelContent cardsF cols cols2" style="display:flex!important;">
+<ul class="panelContent cardsF cols cols4" style="display:flex!important;">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -11,7 +11,7 @@
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="../overview/explore-with-script-lab.md"><h3>Explore the APIs</h3></a>
+                        <a href="../overview/explore-with-script-lab.md"><h3>Script Lab</h3></a>
                     </div>
                 </div>
             </div>

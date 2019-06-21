@@ -24,7 +24,7 @@
                             <li><a href="../concepts/resource-limits-and-performance-optimization.md">Resource limits and performance</a></li>
                             <li><a href="../concepts/privacy-and-security.md">Privacy and security</a></li>
                             <li><a href="../design/add-in-design.md">Design principles</a></li>
-                            <li><a href="../concepts/add-in-development-best-practices.md">Explore all Office Add-ins concepts articles<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
+                            <li><a href="../concepts/add-in-development-best-practices.md">Explore all Office Add-in concepts articles<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                             <li><a href="../develop/dialog-api-in-office-add-ins.md">Use the Dialog API</a></li>
                             <li><a href="../develop/understanding-the-javascript-api-for-office.md">Understanding the Office JavaScript API</a></li>
                             <li><a href="../design/using-office-ui-fabric-react.md">Get started with Fabric React</a></li>
-                            <li><a href="../develop/addressing-same-origin-policy-limitations.md">Explore all Office Addins development articles<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
+                            <li><a href="../develop/addressing-same-origin-policy-limitations.md">Explore all development articles<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
                         </ul>
                     </div>
                 </div>
