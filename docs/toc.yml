@@ -399,19 +399,13 @@
   - name: Overview
     href: excel/excel-add-ins-overview.md
     displayName: Excel
-  - name: Quick Starts
-    items:
-    - name: Get started with Excel add-ins
-      href: excel/excel-add-ins-get-started-overview.md
-      displayName: Excel
-    - name: Custom functions
-      href: quickstarts/excel-custom-functions-quickstart.md
+  - name: Build your first Excel add-in
+    items: 
+    - name: Task pane
+      href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
     - name: Task pane (Angular)
       href: quickstarts/excel-quickstart-angular.md
-      displayName: Excel
-    - name: Task pane
-      href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
     - name: Task pane (React)
       href: quickstarts/excel-quickstart-react.md
@@ -419,18 +413,13 @@
     - name: Task pane (Vue)
       href: quickstarts/excel-quickstart-vue.md
       displayName: Excel
-  - name: Tutorials
-    items:
-    - name: Create a task pane add-in
-      href: tutorials/excel-tutorial.md
-      displayName: Excel
-    - name: Create custom functions
-      href: tutorials/excel-tutorial-create-custom-functions.md
-      displayName: Excel
   - name: Excel JavaScript API
     items:
     - name: Overview
       href: reference/overview/excel-add-ins-reference-overview.md
+      displayName: Excel
+    - name: Excel add-in tutorial
+      href: tutorials/excel-tutorial.md
       displayName: Excel
     - name: API requirement sets
       href: reference/requirement-sets/excel-api-requirement-sets.md
@@ -497,6 +486,12 @@
     - name: Overview
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
+    - name: Get started with Excel custom functions
+      href: quickstarts/excel-custom-functions-quickstart.md
+      displayName: Excel
+    - name: Custom functions tutorial
+      href: tutorials/excel-tutorial-create-custom-functions.md
+      displayName: Excel 
     - name: Architecture
       href: excel/custom-functions-architecture.md
       displayName: Excel, Custom Functions

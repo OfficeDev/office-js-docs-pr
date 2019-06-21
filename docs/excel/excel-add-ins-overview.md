@@ -100,7 +100,7 @@ An Excel add-in interacts with objects in Excel by using the [JavaScript API for
 
 ## Next steps
 
-Get started by [creating your first Excel add-in](excel-add-ins-get-started-overview.md). Then, learn about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
+Get started by [creating your first Excel add-in](../quickstarts/excel-quickstart-jquery.md). Then, learn about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
 
 ## See also
 
