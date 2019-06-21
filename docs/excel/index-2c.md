@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: Excel add-ins documentation
 description: Resources for learning about Excel add-ins.
-ms.date: 06/06/2019
+ms.date: 06/30/2019
 localization_priority: Priority
 ---
 
@@ -40,7 +40,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="excel-add-ins-get-started-overview.md">Build your first Excel add-in by completing a 5-minute quick start</a> and then <a href="../overview/explore-with-script-lab.md">explore the API with Script Lab</a>.</p>
+                        <p><a href="excel-add-ins-get-started-overview.md">Complete a 5-minute quick start</a> to build your first Excel add-in, then <a href="../overview/explore-with-script-lab.md">explore the API with Script Lab</a>.</p>
                     </div>
                 </div>
             </div>
