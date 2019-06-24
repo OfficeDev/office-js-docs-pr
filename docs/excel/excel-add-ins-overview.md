@@ -48,7 +48,7 @@ To enable end users to install and use an Excel add-in, you must publish its man
 
 ## Capabilities of an Excel add-in
 
-In addition to interacting with the content in the workbook, Excel add-ins can add custom ribbon buttons or menu commands, insert task panes, open dialog boxes, and even embed rich, web-based objects such as charts or interactive visualizations within a worksheet.
+In addition to interacting with the content in the workbook, Excel add-ins can add custom ribbon buttons or menu commands, insert task panes, add custom functions, open dialog boxes, and even embed rich, web-based objects such as charts or interactive visualizations within a worksheet.
 
 ### Add-in commands
 
@@ -69,6 +69,16 @@ Task panes are interface surfaces that typically appear on the right side of the
 ![Task pane add-in in Excel](../images/excel-add-in-task-pane-insights.png)
 
 For more information about task panes, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md). For a sample that implements a task pane in Excel, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
+
+### Custom functions
+
+Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. 
+
+**Custom function**
+
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+
+For more information about custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
 
 ### Dialog boxes
 
