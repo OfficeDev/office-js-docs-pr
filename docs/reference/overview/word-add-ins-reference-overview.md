@@ -8,6 +8,9 @@ localization_priority: Priority
 
 # Word JavaScript API overview
 
+> [!NOTE]
+> Kim will be updating the structure and content of this article before the new TOC structure and landing pages are published to the live doc set.
+
 Word provides a rich set of APIs that you can use to create add-ins that interact with document content and metadata. Use these APIs to create compelling experiences that integrate with and extend Word. You can import and export content, assemble new documents from different data sources, and integrate with document workflows to create custom document solutions.
 
 You can use two JavaScript APIs to interact with the objects and metadata in a Word document:

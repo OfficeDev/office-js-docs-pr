@@ -8,6 +8,9 @@ localization_priority: Priority
 
 # Excel JavaScript API overview
 
+> [!NOTE]
+> Kim will be updating the structure and content of this article before the new TOC structure and landing pages are published to the live doc set.
+
 You can use the Excel JavaScript API to build add-ins for Excel 2016 or later. The following list shows the high-level Excel objects that are available in the API. Each object page link contains a description of the properties, events, and methods that are available on the object. Explore the links from the menu to learn more.
 
 Some of the core Excel objects are listed below for convenience:

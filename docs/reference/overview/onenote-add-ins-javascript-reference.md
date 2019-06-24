@@ -48,6 +48,9 @@ The following links show the high level OneNote objects available in the API. Ea
 
 ## OneNote JavaScript API requirement sets
 
+> [!NOTE]
+> Kim will be updating the structure and content of this article before the new TOC structure and landing pages are published to the live doc set.
+
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see the [OneNote JavaScript API requirement sets](../requirement-sets/onenote-api-requirement-sets.md) article.
 
 ## OneNote JavaScript API reference

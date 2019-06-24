@@ -7,6 +7,9 @@ localization_priority: Priority
 ---
 # PowerPoint and Project in the JavaScript API
 
+> [!NOTE]
+> Kim will be updating the structure and content of this article before the new TOC structure and landing pages are published to the live doc set.
+
 PowerPoint and Project support add-ins made with the JavaScript API. However, they currently do not have host-specific APIs. You interact with these hosts through the Common API. 
 
 ## See also
