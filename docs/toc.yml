@@ -3,9 +3,12 @@
 
 - name: Office Add-ins guidance
   items:
+  - name: About Office Add-ins
+    href: overview/index.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: Overview
     items:
-    - name: About Office Add-ins
+    - name: Office Add-ins platform overview
       href: overview/office-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     - name: Host and platform availability
