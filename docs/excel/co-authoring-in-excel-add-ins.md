@@ -1,7 +1,7 @@
 ---
 title: Coauthoring in Excel add-ins
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -13,6 +13,14 @@ With [coauthoring](https://support.office.com/article/Collaborate-on-Excel-workb
 > [!IMPORTANT]
 > In Excel for Office 365, you will notice AutoSave in the upper-left corner. When AutoSave is turned on, coauthors see your changes in real time. Consider the impact of this behavior on the design of your Excel add-in. Users can turn off AutoSave via the switch in the upper left of the Excel window.
 
+Coauthoring is available on the following platforms:
+
+- Excel Online
+- Excel for Android
+- Excel for iOS
+- Excel Mobile for Windows 10
+- Excel for Windows Desktop for Office 365 customers (Windows desktop build 16.0.8326.2076 or later, which is available to current channel customers effective August 2017)
+
 ## Coauthoring overview
 
 When you change a workbook's content, Excel automatically synchronizes those changes across all coauthors. Coauthors can change the content of a workbook, but so can code running within an Excel add-in. For example, when the following JavaScript code runs in an Office Add-in, the value of a range is set to Contoso:
@@ -20,7 +28,7 @@ When you change a workbook's content, Excel automatically synchronizes those cha
 ```js
 range.values = [['Contoso']];
 ```
-After 'Contoso' synchronizes across all coauthors, any user or add-in running in the same workbook will see the new value of the range.
+After 'Contoso' synchronizes across all coauthors, any user or add-in running in the same workbook will see the new value of the range. 
 
 Coauthoring only synchronizes the content within the shared workbook. Values copied from the workbook to JavaScript variables in an Excel add-in are not synchronized. For example, if your add-in stores the value of a cell (such as 'Contoso') in a JavaScript variable, and then a coauthor changes the value of the cell to 'Example', after synchronization all coauthors see 'Example' in the cell. However, the value of the JavaScript variable is still set to 'Contoso'. Furthermore, when multiple coauthors use the same add-in, each coauthor has their own copy of the variable, which is not synchronized. When you use variables that use workbook content, be sure you check for updated values in the workbook before you use the variable.
 

@@ -1,6 +1,6 @@
 1. Open a bash terminal in the root of the project (**[...]/My Office Add-in**) and run the following command to start the dev server.
 
-    ```command&nbsp;line
+    ```bash
     npm start
     ```
 

@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 04/30/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -57,11 +57,17 @@ Excel.run(function (context) {
 
 Your add-in will have to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
 
-## Work with multiple ranges simultaneously
+## Work with multiple ranges simultaneously (preview)
+
+> [!NOTE]
+> The `RangeAreas` object is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 The `RangeAreas` object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-## Find special cells within a range
+## Find special cells within a range (preview)
+
+> [!NOTE]
+> The `getSpecialCells` and `getSpecialCellsOrNullObject` methods are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
 
@@ -94,7 +100,7 @@ If no cells with the targeted characteristic exist in the range, `getSpecialCell
 If you expect that cells with the targeted characteristic should always exist, you'll likely want your code to throw an error if those cells aren't there. If it's a valid scenario that there aren't any matching cells, your code should check for this possibility and handle it gracefully without throwing an error. You can achieve this behavior with the `getSpecialCellsOrNullObject` method and its returned `isNullObject` property. The following example uses this pattern. About this code, note:
 
 - The `getSpecialCellsOrNullObject` method always returns a proxy object, so it is never `null` in the ordinary JavaScript sense. But if no matching cells are found, the `isNullObject` property of the object is set to `true`.
-- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
+- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
 - You can test this code by first selecting a range that has no formula cells and running it. Then select a range that has at least one cell with a formula and run it again.
 
 ```js
@@ -167,7 +173,10 @@ Excel.run(function (context) {
 })
 ```
 
-## Copy and paste
+## Copy and paste (preview)
+
+> [!NOTE]
+> The `Range.copyFrom` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Range’s `copyFrom` function replicates the copy-and-paste behavior of the Excel UI. The range object that `copyFrom` is called on is the destination.
 The source to be copied is passed as a range or a string address representing a range.
@@ -228,7 +237,10 @@ Excel.run(function (context) {
 
 ![Data in Excel after range’s copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## Remove duplicates
+## Remove duplicates (preview)
+
+> [!NOTE]
+> The Range object's `removeDuplicates` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 The Range object's `removeDuplicates` function removes rows with duplicate entries in the specified columns. The function goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
 

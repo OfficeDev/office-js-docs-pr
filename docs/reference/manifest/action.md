@@ -1,7 +1,7 @@
 ---
 title: Action element in the manifest file
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -135,7 +135,7 @@ The following examples show two different actions that use the **Title** element
 Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support task pane pinning. The user will be able to "pin" the task pane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable task pane in Outlook](/outlook/add-ins/pinnable-taskpane).
 
 > [!NOTE]
-> SupportsPinning is currently only supported by Outlook 2016 or later on Windows (build 7628.1000 or later) and Outlook 2016 or later on Mac (build 16.13.503 or later).
+> SupportsPinning is currently only supported by Outlook 2016 for Windows (build 7628.1000 or later) and Outlook 2016 for Mac (build 16.13.503 or later).
 
 ```xml
 <Action xsi:type="ShowTaskpane">

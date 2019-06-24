@@ -1,7 +1,7 @@
 ---
 title: Office namespace - requirement set 1.6
 description: ''
-ms.date: 04/24/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -33,7 +33,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 ### Members
 
-#### AsyncResultStatus: String
+####  AsyncResultStatus :String
 
 Specifies the result of an asynchronous call.
 
@@ -57,7 +57,7 @@ Specifies the result of an asynchronous call.
 
 ---
 
-#### CoercionType: String
+####  CoercionType :String
 
 Specifies how to coerce data returned or set by the invoked method.
 
@@ -81,7 +81,7 @@ Specifies how to coerce data returned or set by the invoked method.
 
 ---
 
-#### EventType: String
+####  EventType :String
 
 Specifies the event associated with an event handler.
 
@@ -104,7 +104,7 @@ Specifies the event associated with an event handler.
 
 ---
 
-#### SourceProperty: String
+####  SourceProperty :String
 
 Specifies the source of the data returned by the invoked method.
 

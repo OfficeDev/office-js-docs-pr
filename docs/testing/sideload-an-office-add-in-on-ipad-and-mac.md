@@ -1,37 +1,37 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
 # Sideload Office Add-ins on iPad and Mac for testing
 
-To see how your add-in will run in Office on iOS, you can sideload your add-in's manifest onto an iPad using iTunes, or sideload your add-in's manifest directly in Office on Mac. This action won't enable you to set breakpoints and debug your add-in's code while it's running, but you can see how it behaves and verify that the UI is usable and rendering appropriately. 
+To see how your add-in will run in Office for iOS, you can sideload your add-in's manifest onto an iPad using iTunes, or sideload your add-in's manifest directly in Office for Mac. This action won't enable you to set breakpoints and debug your add-in's code while it's running, but you can see how it behaves and verify that the UI is usable and rendering appropriately. 
 
-## Prerequisites for Office on iOS
+## Prerequisites for Office for iOS
 
 - A Windows or Mac computer with [iTunes](https://www.apple.com/itunes/download/) installed.
     
-- An iPad running iOS 8.2 or later with [Excel on iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) installed, and a sync cable.
+- An iPad running iOS 8.2 or later with [Excel for iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) installed, and a sync cable.
     
 - The manifest .xml file for the add-in you want to test.
     
 
-## Prerequisites for Office on Mac
+## Prerequisites for Office for Mac
 
-- A Mac running OS X v10.10 "Yosemite" or later with [Office on Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) installed.
+- A Mac running OS X v10.10 "Yosemite" or later with [Office for Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) installed.
     
-- Word on Mac version 15.18 (160109).
+- Word for Mac version 15.18 (160109).
    
-- Excel on Mac version 15.19 (160206).
+- Excel for Mac version 15.19 (160206).
 
-- PowerPoint on Mac version 15.24 (160614)
+- PowerPoint for Mac version 15.24 (160614)
     
 - The manifest .xml file for the add-in you want to test.
     
 
-## Sideload an add-in on Excel or Word on iPad
+## Sideload an add-in on Excel or Word for iPad
 
 1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with  **Trust This Computer?**. Choose **Trust** to continue.
 
@@ -52,10 +52,10 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
     ![Insert Add-ins in the Excel app](../images/excel-insert-add-in.png)
 
 
-## Sideload an add-in in Office on Mac
+## Sideload an add-in on Office for Mac
 
 > [!NOTE]
-> To sideload an Outlook add-in on Mac, see [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> To sideload Outlook for Mac add-in, see [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
 1. Open  **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
     
@@ -65,28 +65,23 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
     
 2. Open the folder in  **Finder** using the command `open .` (including the period or dot). Copy your add-in's manifest file to this folder.
     
-    ![Wef folder in Office on Mac](../images/all-my-files.png)
+    ![Wef folder in Office for Mac](../images/all-my-files.png)
 
 3. Open Word, and then open a document. Restart Word if it's already running.
     
 4. In Word, choose  **Insert** > **Add-ins** > **My Add-ins** (drop-down menu), and then choose your add-in.
     
-    ![My Add-ins in Office on Mac](../images/my-add-ins-wikipedia.png)
+    ![My Add-ins in Office for Mac](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
     > Sideloaded add-ins will not show up in the My Add-ins dialog box. They are only visible within the drop-down menu (small down-arrow to the right of My Add-ins on the **Insert** tab). Sideloaded add-ins are listed under the **Developer Add-ins** heading in this menu. 
     
 5. Verify that your add-in is displayed in Word.
     
-    ![Office Add-in displayed in Office on Mac](../images/lorem-ipsum-wikipedia.png)
+    ![Office Add-in displayed in Office for Mac](../images/lorem-ipsum-wikipedia.png)
     
-### Clearing the Office application's cache on a Mac
-
-Add-ins are often cached in Office on Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If  more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
-
-On a Mac, you can clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. 
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+    > [!NOTE]
+    > Add-ins are cached often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while you're developing it, you can clear the `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. If that folder doesn't exist, clear the files in the `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/` folder.
 
 ## See also
 

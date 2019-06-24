@@ -1,13 +1,16 @@
 ---
 title: Work with multiple ranges simultaneously in Excel add-ins
 description: ''
-ms.date: 04/30/2019
+ms.date: 02/20/2019
 localization_priority: Normal
 ---
 
-# Work with multiple ranges simultaneously in Excel add-ins
+# Work with multiple ranges simultaneously in Excel add-ins (preview)
 
 The Excel JavaScript library enables your add-in to perform operations, and set properties, on multiple ranges simultaneously. The ranges do not have to be contiguous. In addition to making your code simpler, this way of setting a property runs much faster than setting the same property individually for each of the ranges.
+
+> [!NOTE]
+> The APIs described in this article require **Office 2016 Click-to-Run version 1809 Build 10820.20000** or later. (You may need to join the [Office Insider program](https://products.office.com/office-insider) to get an appropriate build.)  [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 ## RangeAreas
 
@@ -32,41 +35,43 @@ Some examples:
 
 Be familiar with [Read properties of RangeAreas](#read-properties-of-rangeareas) before you write code that reads any properties listed. There are subtleties to what gets returned.
 
-- `address`
-- `addressLocal`
-- `cellCount`
-- `conditionalFormats`
-- `context`
-- `dataValidation`
-- `format`
-- `isEntireColumn`
-- `isEntireRow`
-- `style`
-- `worksheet`
+- address
+- addressLocal
+- cellCount
+- conditionalFormats
+- context
+- dataValidation
+- format
+- isEntireColumn
+- isEntireRow
+- style
+- worksheet
 
 ##### Methods
 
-- `calculate()`
-- `clear()`
-- `convertDataTypeToText()`
-- `convertToLinkedDataType()`
-- `copyFrom()`
-- `getEntireColumn()`
-- `getEntireRow()`
-- `getIntersection()`
-- `getIntersectionOrNullObject()`
-- `getOffsetRange()` (named `getOffsetRangeAreas` on the `RangeAreas` object)
-- `getSpecialCells()`
-- `getSpecialCellsOrNullObject()`
-- `getTables()`
-- `getUsedRange()` (named `getUsedRangeAreas` on the `RangeAreas` object)
-- `getUsedRangeOrNullObject()` (named `getUsedRangeAreasOrNullObject` on the `RangeAreas` object)
-- `load()`
-- `set()`
-- `setDirty()`
-- `toJSON()`
-- `track()`
-- `untrack()`
+Range methods in preview are marked.
+
+- calculate()
+- clear()
+- convertDataTypeToText() (preview)
+- convertToLinkedDataType() (preview)
+- copyFrom() (preview)
+- getEntireColumn()
+- getEntireRow()
+- getIntersection()
+- getIntersectionOrNullObject()
+- getOffsetRange() (named getOffsetRangeAreas on the RangeAreas object)
+- getSpecialCells() (preview)
+- getSpecialCellsOrNullObject() (preview)
+- getTables() (preview)
+- getUsedRange() (named getUsedRangeAreas on the RangeAreas object)
+- getUsedRangeOrNullObject() (named getUsedRangeAreasOrNullObject on the RangeAreas object)
+- load()
+- set()
+- setDirty() (preview)
+- toJSON()
+- track()
+- untrack()
 
 ### RangeArea-specific properties and methods
 
@@ -114,7 +119,7 @@ This example applies to scenarios in which you can hard code the range addresses
 
 ## Get special cells from multiple ranges
 
-The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAreas` object work analogously to methods of the same name on the `Range` object. These methods return the cells with the specified characteristic from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) section for more details on special cells.
+The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAreas` object work analogously to methods of the same name on the `Range` object. These methods return the cells with the specified characteristic from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) section for more details on special cells.
 
 When calling the `getSpecialCells` or `getSpecialCellsOrNullObject` method on a `RangeAreas` object:
 

@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.6
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -28,11 +28,11 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 ### Namespaces
 
-[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook.
+[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
 
 ### Members
 
-#### displayLanguage: String
+####  displayLanguage :String
 
 Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.
 
@@ -70,12 +70,12 @@ function write(message){
 }
 ```
 
-#### officeTheme: Object
+####  officeTheme :Object
 
 Provides access to the properties for Office theme colors.
 
 > [!NOTE]
-> This member is not supported in Outlook on iOS or Android.
+> This member is not supported in Outlook for iOS or Outlook for Android.
 
 Using Office theme colors let's you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.
 
@@ -114,7 +114,7 @@ function applyOfficeTheme(){
 }
 ```
 
-#### roamingSettings: [RoamingSettings](/javascript/api/outlook_1_6/office.RoamingSettings)
+####  roamingSettings :[RoamingSettings](/javascript/api/outlook_1_6/office.RoamingSettings)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 

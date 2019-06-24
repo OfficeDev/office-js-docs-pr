@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.7
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -26,7 +26,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [attachments](#attachments-arrayattachmentdetails) | Member |
 | [bcc](#bcc-recipients) | Member |
 | [body](#body-body) | Member |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
+| [cc](#cc-arrayemailaddressdetails) | Member |
 | [conversationId](#nullable-conversationid-string) | Member |
 | [dateTimeCreated](#datetimecreated-date) | Member |
 | [dateTimeModified](#datetimemodified-date) | Member |
@@ -39,15 +39,15 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [location](#location-stringlocation) | Member |
 | [normalizedSubject](#normalizedsubject-string) | Member |
 | [notificationMessages](#notificationmessages-notificationmessages) | Member |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | Member |
 | [organizer](#organizer-emailaddressdetailsorganizer) | Member |
 | [recurrence](#nullable-recurrence-recurrence) | Member |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
 | [sender](#sender-emailaddressdetails) | Member |
 | [seriesId](#nullable-seriesid-string) | Member |
 | [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | Member |
-| [to](#to-arrayemailaddressdetailsrecipients) | Member |
+| [to](#to-arrayemailaddressdetails) | Member |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Method |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Method |
@@ -55,8 +55,8 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
 | [displayReplyForm](#displayreplyformformdata-callback) | Method |
 | [getEntities](#getentities--entities) | Method |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | Method |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | Method |
 | [getRegExMatches](#getregexmatches--object) | Method |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
@@ -88,7 +88,7 @@ Office.initialize = function () {
 
 ### Members
 
-#### attachments: Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)>
+#### attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)>
 
 Gets an array of attachments for the item. Read mode only.
 
@@ -131,10 +131,7 @@ if (item.attachments.length > 0) {
 console.log(outputString);
 ```
 
----
----
-
-#### bcc: [Recipients](/javascript/api/outlook_1_7/office.recipients)
+####  bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
 Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
 
@@ -162,10 +159,7 @@ function callback(asyncResult) {
 }
 ```
 
----
----
-
-#### body: [Body](/javascript/api/outlook_1_7/office.body)
+####  body :[Body](/javascript/api/outlook_1_7/office.body)
 
 Gets an object that provides methods for manipulating the body of an item.
 
@@ -205,10 +199,7 @@ The following is an example of the result parameter passed to the callback funct
 }
 ```
 
----
----
-
-#### cc: Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+####  cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
 Provides access to the Cc (carbon copy) recipients of a message. The type of object and level of access depends on the mode of the current item.
 
@@ -246,10 +237,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
----
----
-
-#### (nullable) conversationId: String
+####  (nullable) conversationId :String
 
 Gets an identifier for the email conversation that contains a particular message.
 
@@ -276,10 +264,7 @@ var conversationId = Office.context.mailbox.item.conversationId;
 console.log("conversationId: " + conversationId);
 ```
 
----
----
-
-#### dateTimeCreated: Date
+#### dateTimeCreated :Date
 
 Gets the date and time that an item was created. Read mode only.
 
@@ -302,15 +287,12 @@ var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
 
----
----
-
-#### dateTimeModified: Date
+#### dateTimeModified :Date
 
 Gets the date and time that an item was last modified. Read mode only.
 
 > [!NOTE]
-> This member is not supported in Outlook on iOS or Android.
+> This member is not supported in Outlook for iOS or Outlook for Android.
 
 ##### Type
 
@@ -331,10 +313,7 @@ var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
 
----
----
-
-#### end: Date|[Time](/javascript/api/outlook_1_7/office.time)
+####  end :Date|[Time](/javascript/api/outlook_1_7/office.time)
 
 Gets or sets the date and time that the appointment is to end.
 
@@ -385,10 +364,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
----
----
-
-#### from: [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)
+#### from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)
 
 Gets the email address of the sender of a message.
 
@@ -430,10 +406,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
----
----
-
-#### internetMessageId: String
+#### internetMessageId :String
 
 Gets the Internet message identifier for an email message. Read mode only.
 
@@ -455,10 +428,7 @@ Gets the Internet message identifier for an email message. Read mode only.
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
----
----
-
-#### itemClass: String
+#### itemClass :String
 
 Gets the Exchange Web Services item class of the selected item. Read mode only.
 
@@ -490,10 +460,7 @@ var itemClass = Office.context.mailbox.item.itemClass;
 console.log("Item class: " + itemClass);
 ```
 
----
----
-
-#### (nullable) itemId: String
+#### (nullable) itemId :String
 
 Gets the Exchange Web Services item identifier for the current item. Read mode only.
 
@@ -527,10 +494,7 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
----
----
-
-#### itemType: [Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
+####  itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
 
 Gets the type of item that an instance represents.
 
@@ -558,10 +522,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 }
 ```
 
----
----
-
-#### location: String|[Location](/javascript/api/outlook_1_7/office.location)
+####  location :String|[Location](/javascript/api/outlook_1_7/office.location)
 
 Gets or sets the location of an appointment.
 
@@ -600,10 +561,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
----
----
-
-#### normalizedSubject: String
+#### normalizedSubject :String
 
 Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.
 
@@ -628,10 +586,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
 
----
----
-
-#### notificationMessages: [NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)
+####  notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)
 
 Gets the notification messages for an item.
 
@@ -658,10 +613,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 );
 ```
 
----
----
-
-#### optionalAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+####  optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
 Provides access to the optional attendees of an event. The type of object and level of access depends on the mode of the current item.
 
@@ -700,10 +652,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
----
----
-
-#### organizer: [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)
+#### organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)
 
 Gets the email address of the organizer for a specified meeting.
 
@@ -741,10 +690,7 @@ Office.context.mailbox.item.organizer.getAsync(
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
----
----
-
-#### (nullable) recurrence: [Recurrence](/javascript/api/outlook_1_7/office.recurrence)
+#### (nullable) recurrence :[Recurrence](/javascript/api/outlook_1_7/office.recurrence)
 
 Gets or sets the recurrence pattern of an appointment. Gets the recurrence pattern of a meeting request. Read and compose modes for appointment items. Read mode for meeting request items.
 
@@ -802,10 +748,7 @@ Recurrence = {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
----
----
-
-#### requiredAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+####  requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
 Provides access to the required attendees of an event. The type of object and level of access depends on the mode of the current item.
 
@@ -845,14 +788,11 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
----
----
-
-#### sender: [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)
+#### sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)
 
 Gets the email address of the sender of an email message. Read mode only.
 
-The [`from`](#from-emailaddressdetailsfrom) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
+The [`from`](#from-emailaddressdetails) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
 
 > [!NOTE]
 > The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.
@@ -877,14 +817,11 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
----
----
-
-#### (nullable) seriesId: String
+#### (nullable) seriesId :String
 
 Gets the id of the series that an instance belongs to.
 
-In Outlook on the web and desktop clients, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to. However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.
+In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to. However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.
 
 > [!NOTE]
 > The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier. The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api).
@@ -916,10 +853,7 @@ var isSeriesInstance = (seriesId != null);
 console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesInstance);
 ```
 
----
----
-
-#### start: Date|[Time](/javascript/api/outlook_1_7/office.time)
+####  start :Date|[Time](/javascript/api/outlook_1_7/office.time)
 
 Gets or sets the date and time that the appointment is to begin.
 
@@ -970,10 +904,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
----
----
-
-#### subject: String|[Subject](/javascript/api/outlook_1_7/office.subject)
+####  subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)
 
 Gets or sets the description that appears in the subject field of an item.
 
@@ -1015,10 +946,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
----
----
-
-#### to: Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+####  to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
 Provides access to the recipients on the **To** line of a message. The type of object and level of access depends on the mode of the current item.
 
@@ -1058,7 +986,7 @@ function callback(asyncResult) {
 
 ### Methods
 
-#### addFileAttachmentAsync(uri, attachmentName, [options], [callback])
+####  addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
 Adds a file to a message or appointment as an attachment.
 
@@ -1133,10 +1061,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
   });
 ```
 
----
----
-
-#### addHandlerAsync(eventType, handler, [options], [callback])
+####  addHandlerAsync(eventType, handler, [options], [callback])
 
 Adds an event handler for a supported event.
 
@@ -1174,10 +1099,7 @@ function myHandlerFunction(eventarg) {
 Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged, myHandlerFunction, myCallback);
 ```
 
----
----
-
-#### addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
+####  addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 Adds an Exchange item, such as a message, as an attachment to the message or appointment.
 
@@ -1185,7 +1107,7 @@ The `addItemAttachmentAsync` method attaches the item with the specified Exchang
 
 You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.
 
-If your Office Add-in is running in Outlook on the web, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.
+If your Office Add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.
 
 ##### Parameters
 
@@ -1235,10 +1157,7 @@ function addAttachment() {
 }
 ```
 
----
----
-
-#### close()
+####  close()
 
 Closes the current item that is being composed.
 
@@ -1257,21 +1176,18 @@ In the Outlook desktop client, if the message is an inline reply, the `close` me
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
----
----
-
 #### displayReplyAllForm(formData, [callback])
 
 Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
-In Outlook on the web, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
+In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
 
 If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.
 
-When attachments are specified in the `formData.attachments` parameter, Outlook on the web and desktop clients attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
+When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
 
 ##### Parameters
 
@@ -1379,21 +1295,18 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
----
----
-
 #### displayReplyForm(formData, [callback])
 
 Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
-In Outlook on the web, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
+In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
 
 If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.
 
-When attachments are specified in the `formData.attachments` parameter, Outlook on the web and desktop clients attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
+When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
 
 ##### Parameters
 
@@ -1501,15 +1414,12 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
----
----
-
 #### getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}
 
 Gets the entities found in the selected item's body.
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
 ##### Requirements
 
@@ -1532,15 +1442,12 @@ The following example accesses the contacts entities in the current item's body.
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
----
----
-
 #### getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}
 
 Gets an array of all the entities of the specified entity type found in the selected item's body.
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
 ##### Parameters
 
@@ -1592,15 +1499,12 @@ Office.initialize = function () {
 }
 ```
 
----
----
-
 #### getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}
 
 Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
 The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.
 
@@ -1625,15 +1529,12 @@ If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` 
 Type:
 Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>
 
----
----
-
 #### getRegExMatches() → {Object}
 
 Returns string values in the selected item that match the regular expressions defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
 The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.
 
@@ -1690,15 +1591,12 @@ var fruits = allMatches.fruits;
 var veggies = allMatches.veggies;
 ```
 
----
----
-
 #### getRegExMatchesByName(name) → (nullable) {Array.< String >}
 
 Returns string values in the selected item that match the named regular expression defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
 The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.
 
@@ -1737,10 +1635,7 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
----
----
-
-#### getSelectedDataAsync(coercionType, [options], callback) → {String}
+####  getSelectedDataAsync(coercionType, [options], callback) → {String}
 
 Asynchronously returns selected data from the subject or body of a message.
 
@@ -1795,15 +1690,12 @@ function setCallback(asyncResult) {
 }
 ```
 
----
----
-
 #### getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}
 
 Gets the entities found in a highlighted match a user has selected. Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
 ##### Requirements
 
@@ -1826,15 +1718,12 @@ The following example accesses the addresses entities in the highlighted match s
 var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 ```
 
----
----
-
 #### getSelectedRegExMatches() → {Object}
 
 Returns string values in a highlighted match that match the regular expressions defined in the manifest XML file. Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).
 
 > [!NOTE]
-> This method is not supported in Outlook on iOS or Android.
+> This method is not supported in Outlook for iOS or Outlook for Android.
 
 The `getSelectedRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.
 
@@ -1883,10 +1772,7 @@ var fruits = selectedMatches.fruits;
 var veggies = selectedMatches.veggies;
 ```
 
----
----
-
-#### loadCustomPropertiesAsync(callback, [userContext])
+####  loadCustomPropertiesAsync(callback, [userContext])
 
 Asynchronously loads custom properties for this add-in on the selected item.
 
@@ -1934,14 +1820,11 @@ function saveCallback(asyncResult) {
 }
 ```
 
----
----
-
-#### removeAttachmentAsync(attachmentId, [options], [callback])
+####  removeAttachmentAsync(attachmentId, [options], [callback])
 
 Removes an attachment from a message or appointment.
 
-The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook on the web and mobile devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.
+The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.
 
 ##### Parameters
 
@@ -1981,10 +1864,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
----
----
-
-#### removeHandlerAsync(eventType, [options], [callback])
+####  removeHandlerAsync(eventType, [options], [callback])
 
 Removes the event handlers for a supported event type.
 
@@ -2021,14 +1901,11 @@ Office.initialize = function (reason) {
 };
 ```
 
----
----
-
-#### saveAsync([options], callback)
+####  saveAsync([options], callback)
 
 Asynchronously saves an item.
 
-When invoked, this method saves the current message as a draft and returns the item id via the callback method. In Outlook on the web or Outlook in online mode, the item is saved to the server. In Outlook in cached mode, the item is saved to the local cache.
+When invoked, this method saves the current message as a draft and returns the item id via the callback method. In Outlook Web App or Outlook in online mode, the item is saved to the server. In Outlook in cached mode, the item is saved to the local cache.
 
 > [!NOTE]
 > If your add-in calls `saveAsync` on an item in compose mode in order to get an `itemId` to use with EWS or the REST API, be aware that when Outlook is in cached mode, it may take some time before the item is actually synced to the server. Until the item is synced, using the `itemId` will return an error.
@@ -2038,7 +1915,7 @@ Since appointments have no draft state, if `saveAsync` is called on an appointme
 > [!NOTE]
 > The following clients have different behavior for `saveAsync` on appointments in compose mode:
 >
-> - Outlook on Mac does not support saving a meeting. The `saveAsync` method fails when called from a meeting in compose mode. See [Cannot save a meeting as a draft in Outlook for Mac by using Office JS API](https://support.microsoft.com/help/4505745) for a workaround.
+> - Mac Outlook does not support `saveAsync` on a meeting in compose mode. Calling `saveAsync` on a meeting in Mac Outlook will return an error.
 > - Outlook on the web always sends an invitation or update when `saveAsync` is called on an appointment in compose mode.
 
 ##### Parameters
@@ -2075,10 +1952,7 @@ The following is an example of the `result` parameter passed to the callback fun
 }
 ```
 
----
----
-
-#### setSelectedDataAsync(data, [options], callback)
+####  setSelectedDataAsync(data, [options], callback)
 
 Asynchronously inserts data into the body or subject of a message.
 
@@ -2091,7 +1965,7 @@ The `setSelectedDataAsync` method inserts the specified string at the cursor loc
 |`data`|String||The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.|
 |`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
-|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|If `text`, the current style is applied in Outlook on the web and desktop clients. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook on the web and the default style is applied in Outlook desktop clients. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
+|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
 |`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|
 
 ##### Requirements

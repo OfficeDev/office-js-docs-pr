@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -10,7 +10,7 @@ localization_priority: Priority
 There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). You may not always have control over the version of Office your users have installed.  To handle this situation, we provide a system called requirement sets to help you determine whether an Office host supports the capabilities you need in your Office Add-in. 
 
 > [!NOTE]
-> - Office runs across multiple platforms, including Windows, in a browser, Mac, and iPad.
+> - Office runs across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.
 > - Examples of Office hosts are Office Products: Excel, Word, PowerPoint, Outlook, OneNote, and so forth.  
 > - A requirement set is a named group of API members e.g., `ExcelApi 1.5`, `WordApi 1.3`, and so on.  
 
@@ -20,6 +20,7 @@ There are many versions of Office on several platforms, and they don't all suppo
 To identify the Office version that you're using, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office will appear in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000):
 
 ![Checking your Office version](../images/office-version-number-ui.jpg)
+
 
 ## Office requirement sets availability
 
@@ -31,10 +32,10 @@ In addition, other functionality such as add-in commands (ribbon extensibility) 
 
 An add-in can only use APIs in requirement sets that are supported by the version of Office host where the add-in is running. To know exactly which requirement sets are available for a specific Office host version, refer to the following host-specific requirement set articles:
 
-- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi, [CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
+- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
 - [Word JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [OneNote JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [Understanding Outlook API requirement sets](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Mailbox)
+- [Understanding Outlook API requirement sets](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (MailBox)
 
 Some requirement sets contain APIs that can be used by any Office host. For information about these requirement sets, refer to the following articles:
 

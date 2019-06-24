@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -11,7 +11,7 @@ There are multiple ways that you can perform common tasks with the Excel JavaScr
 
 ## Minimize the number of sync() calls
 
-In the Excel JavaScript API, ```sync()``` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to ```sync()``` by queueing up as many changes as possible before calling it.
+In the Excel JavaScript API, ```sync()``` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel Online. To optimize performance, minimize the number of calls to ```sync()``` by queueing up as many changes as possible before calling it.
 
 See [Core Concepts - sync()](excel-add-ins-core-concepts.md#sync) for code samples that follow this practice.
 
@@ -122,6 +122,9 @@ Excel.run(async function(ctx) {
 ```
 
 ### Suspend screen updating
+
+> [!NOTE]
+> The `suspendScreenUpdatingUntilNextSync` method described in this article is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Excel displays changes your add-in makes approximately as they happen in the code. For large, iterative data sets, you may not need to see this progress on the screen in real-time. `Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the add-in calls `context.sync()`, or until `Excel.run` ends (implicitly calling `context.sync`). Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.
 

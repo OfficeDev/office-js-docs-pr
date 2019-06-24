@@ -1,7 +1,7 @@
 ---
 title: Host element in the manifest file
 description: ''
-ms.date: 06/20/2019
+ms.date: 10/09/2018
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ Specifies an individual Office application type where the add-in should activate
 
 ## Basic manifest
 
-When defined in the basic manifest (under [OfficeApp](officeapp.md)), the host type is determined by the `Name` attribute.
+When defined in the basic manifest (under [OfficeApp](officeapp.md)), the host type is determined by the `Name` attribute.   
 
 ### Attributes
 
@@ -55,7 +55,7 @@ When defined in [VersionOverrides](versionoverrides.md), the host type is determ
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Yes   |  Defines the settings for the desktop form factor. |
-|  [MobileFormFactor](mobileformfactor.md)    |  No   |  Defines the settings for the mobile form factor. **Note:** This element is only supported in Outlook on iOS. |
+|  [MobileFormFactor](mobileformfactor.md)    |  No   |  Defines the settings for the mobile form factor. **Note:** this element is only supported in Outlook for iOS. |
 |  [AllFormFactors](allformfactors.md)    |  No   |  Defines the settings for all form factors. Only used by custom functions in Excel. |
 
 ### xsi:type
@@ -63,7 +63,7 @@ When defined in [VersionOverrides](versionoverrides.md), the host type is determ
 Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) where the contained settings apply. The value must be one of the following:
 
 - `Document` (Word)
-- `MailHost` (Outlook)
+- `MailHost` (Outlook)    
 - `Notebook` (OneNote)
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)

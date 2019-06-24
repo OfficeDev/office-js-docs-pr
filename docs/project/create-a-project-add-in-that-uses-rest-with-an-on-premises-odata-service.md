@@ -1,7 +1,7 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -24,7 +24,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 - Visual Studio 2015 with Office Developer Tools for Visual Studio includes templates for creating Office and SharePoint Add-ins. Ensure that you have installed the most recent version of Office Developer Tools; see the  _Tools_ section of the [Office Add-ins and SharePoint downloads](https://developer.microsoft.com/office/docs).
 
-- The procedures and code examples in this article access the  **ProjectData** service of Project Server 2013 in a local domain. The jQuery methods in this article do not work with Project on the web.
+- The procedures and code examples in this article access the  **ProjectData** service of Project Server 2013 in a local domain. The jQuery methods in this article do not work with Project Online.
 
     Verify that the  **ProjectData** service is accessible from your development computer.
 
@@ -364,7 +364,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
 3. Add the  **retrieveOData** function, which concatenates values for the REST query and then calls the **ajax** function in jQuery to get the requested data from the **ProjectData** service. The **support.cors** variable enables cross-origin resource sharing (CORS) with the **ajax** function. If the **support.cors** statement is missing or is set to **false**, the  **ajax** function returns a **No transport** error.
 
    > [!NOTE]
-   > The following code works with an on-premises installation of Project Server 2013. For Project on the web, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
+   > The following code works with an on-premises installation of Project Server 2013. For Project Online, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
    In the **ajax** call, you can use either the _headers_ parameter or the _beforeSend_ parameter. The _complete_ parameter is an anonymous function so that it is in the same scope as the variables in **retrieveOData**. The function for the  _complete_ parameter displays results in the **odataText** control and also calls the **parseODataResult** method to parse and display the JSON response. The _error_ parameter specifies the named **getProjectDataErrorHandler** function, which writes an error message to the **odataText** control and also uses the **throwError** method to display a pop-up message.
 
@@ -381,7 +381,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
         accept.toLocaleLowerCase();
 
         // Enable cross-origin scripting (required by jQuery 1.5 and later).
-        // This does not work with Project on the web.
+        // This does not work with Project Online.
         $.support.cors = true;
 
         $.ajax({
@@ -837,7 +837,7 @@ function retrieveOData() {
     accept.toLocaleLowerCase();
 
     // Enable cross-origin scripting (required by jQuery 1.5 and later).
-    // This does not work with Project on the web.
+    // This does not work with Project Online.
     $.support.cors = true;
 
     $.ajax({
@@ -1091,7 +1091,7 @@ You can copy code for the SurfaceErrors.js file from the _Robust Programming_ se
 
 ## Next steps
 
-If  **HelloProjectOData** were a production add-in to be sold in AppSource or distributed in a SharePoint app catalog, it would be designed differently. For example, there would be no debug output in a text box, and probably no button to get the **ProjectData** endpoint. You would also have to rewrite the **retireveOData** function to handle Project Web App instances that have more than 100 projects.
+If  **HelloProjectOData** were a production add-in to be sold in AppSource or distributed in a SharePoint add-in catalog, it would be designed differently. For example, there would be no debug output in a text box, and probably no button to get the **ProjectData** endpoint. You would also have to rewrite the **retireveOData** function to handle Project Web App instances that have more than 100 projects.
 
 The add-in should contain additional error checks, plus logic to catch and explain or show edge cases. For example, if a Project Web App instance has 1000 projects with an average duration of five days and average cost of $2400, and the active project is the only one that has a duration longer than 20 days, the cost and work comparison would be skewed. That could be shown with a frequency graph. You could add options to display duration, compare similar length projects, or compare projects from the same or different departments. Or, add a way for the user to select from a list of fields to display.
 

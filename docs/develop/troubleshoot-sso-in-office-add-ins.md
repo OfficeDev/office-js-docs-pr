@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -10,8 +10,8 @@ localization_priority: Priority
 This article provides some guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
 
 > [!NOTE]
-> The Single Sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
-> [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> The Single Sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets]https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+> To use SSO, you must load the beta version of the Office JavaScript Library from https://appsforoffice.microsoft.com/lib/beta/hosted/office.js in the startup HTML page of the add-in.
 > If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## Debugging tools
@@ -47,7 +47,7 @@ Your add-in should respond to this error by falling back to an alternate system 
 
 The user is not signed into Office. Your code should recall the `getAccessTokenAsync` method and pass the option `forceAddAccount: true` in the [options](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. But don't do this more than once. The user may have decided not to sign-in.
 
-This error is never seen in Office on the web. If the user's cookie expires, Office returns error 13006.
+This error is never seen in Office Online. If the user's cookie expires, Office Online returns error 13006.
 
 ### 13002
 
@@ -70,7 +70,7 @@ Invalid Grant. This usually means that Office has not been pre-authorized to the
 
 ### 13006
 
-Client Error. Your code should suggest that the user sign out and restart Office, or restart the Office browser session.
+Client Error. Your code should suggest that the user sign out and restart Office, or restart the Office Online session.
 
 ### 13007
 
@@ -96,7 +96,7 @@ The add-in called the `getAccessTokenAsync` method with the option `forceConsent
 
 ### 13010
 
-The user is running the add-in in Office on Microsoft Edge or Internet Explorer. The user’s Office 365 domain, and the login.microsoftonline.com domain, are in a different security zones in the browser settings. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
+The user is running the add-in on Office Online and is using Edge or Internet Explorer. The user’s Office 365 domain, and the login.microsoftonline.com domain, are in a different security zones in the browser settings. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
 
 ### 13012
 

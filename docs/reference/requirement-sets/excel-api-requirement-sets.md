@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -10,36 +10,27 @@ localization_priority: Priority
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Excel add-ins run across multiple versions of Office, including Office 2016 or later on Windows, and Office on the web, Mac, and iPad. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
+Excel add-ins run across multiple versions of Office, including Office 2016 or later for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > For information about using preview APIs, see the [Excel JavaScript preview APIs](#excel-javascript-preview-apis) section within this article.
 
-|  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  |  Office Online Server  |
+|  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| [Preview](/javascript/api/excel)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
-| ExcelApi 1.9  | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019       | N/A |
-| ExcelApi 1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | N/A |
-| ExcelApi 1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later  | 16.9 or later  | April 2018     | N/A |
-| ExcelApi 1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later  | 15.36 or later | April 2017     | N/A |
-| ExcelApi 1.5  | Version 1703 (Build 8067.2070) or later   | 2.2 or later  | 15.36 or later | March 2017     | N/A |
-| ExcelApi 1.4  | Version 1701 (Build 7870.2024) or later   | 2.2 or later  | 15.36 or later | January 2017   | N/A |
-| ExcelApi 1.3  | Version 1608 (Build 7369.2055) or later   | 1.27 or later | 15.27 or later | September 2016 | Version 1608 (Build 7601.6800) or later|
-| ExcelApi 1.2  | Version 1601 (Build 6741.2088) or later   | 1.21 or later | 15.22 or later | January 2016   | N/A |
-| ExcelApi 1.1  | Version 1509 (Build 4266.1001) or later   | 1.19 or later | 15.20 or later | January 2016   | N/A|
+| Preview  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
+| ExcelApi1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | Coming soon |
+| ExcelApi1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later | 16.9 or later | April 2018 | Coming soon |
+| ExcelApi1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later |15.36 or later| April 2017 | Coming soon|
+| ExcelApi1.5  | Version 1703 (Build 8067.2070) or later   | 2.2 or later |15.36 or later| March 2017 | Coming soon|
+| ExcelApi1.4  | Version 1701 (Build 7870.2024) or later   | 2.2 or later |15.36 or later| January 2017 | Coming soon|
+| ExcelApi1.3  | Version 1608 (Build 7369.2055) or later | 1.27 or later |  15.27 or later| September 2016 | Version 1608 (Build 7601.6800) or later|
+| ExcelApi1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
+| ExcelApi1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
-
-## Custom Functions
-
-[Custom Functions](../../excel/custom-functions-overview.md) use separate requirement sets from the core Excel JavaScript APIs. The following table lists the Custom Functions requirement sets, the supported Office host applications, and the build versions or number for those applications.
-
-|  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web | Office Online Server |
-|:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) or later | Not supported | 16.24 or later | April 2019 | N/A |
 
 For more information about versions, build numbers, and Office Online Server, see:
 
@@ -50,370 +41,219 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ## Excel JavaScript preview APIs
 
-New Excel JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.
-
-The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
+New Excel JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired. The following table lists the APIs currently available in preview. To provide feedback about a preview API, please use the feedback mechanism at the end of the web page where the API is documented.
 
 > [!NOTE]
 > Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
 >
-> To use preview APIs, you must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and you may also need to join the Office Insider program to get a recent Office build.
+> To use preview APIs, you must reference the **beta** library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js and you may also need to join the Office Insider program to get a sufficiently recent Office build.
+
+More than 400 new Excel APIs are currently in preview. The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list. Please try the new features and share your feedback with us.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| [Slicer](../../excel/excel-add-ins-pivottables.md#slicers-preview) | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/excel.slicer) |
-| [Comments](../../excel/excel-add-ins-workbooks.md#comments-preview) | Add, edit, and delete comments. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
-| Workbook [Save](../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview) and [Close](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
-| [Insert Workbook](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
-
-The following is a complete list of APIs currently in preview.
-
-| Class | Fields | Description |
-|:---|:---|:---|
-|[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|Gets or sets the comment's content.|
-||[delete()](/javascript/api/excel/excel.comment#delete--)|Deletes the comment thread.|
-||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Gets the cell where this comment is located.|
-||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Gets the email of the comment's author.|
-||[authorName](/javascript/api/excel/excel.comment#authorname)|Gets the name of the comment's author.|
-||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Gets the creation time of the comment. Returns null if the comment was converted from a note, since the comment does not have a creation date.|
-||[id](/javascript/api/excel/excel.comment#id)|Represents the comment identifier. Read-only.|
-||[replies](/javascript/api/excel/excel.comment#replies)|Represents a collection of reply objects associated with the comment. Read-only.|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(content: string, cellAddress: Range \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|Creates a new comment with the given content on the given cell. An `InvalidArgument` error is thrown if the provided range is larger than one cell.|
-||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|Gets the number of comments in the collection.|
-||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|Gets a comment from the collection based on its ID. Read-only.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|Gets a comment from the collection based on its position.|
-||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getitembycell-celladdress-)|Gets the comment from the specified cell.|
-||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|Gets a comment from the collection with the corresponding reply ID.|
-||[items](/javascript/api/excel/excel.commentcollection#items)|Gets the loaded child items in this collection.|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|Gets or sets the comment's content.|
-||[delete()](/javascript/api/excel/excel.commentreply#delete--)|Deletes the comment reply.|
-||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Gets the cell where this comment reply is located.|
-||[getParentComment()](/javascript/api/excel/excel.commentreply#getparentcomment--)|Gets the parent comment of this reply.|
-||[authorEmail](/javascript/api/excel/excel.commentreply#authoremail)|Gets the email of the comment reply's author.|
-||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Gets the name of the comment reply's author.|
-||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|Gets the creation time of the comment reply.|
-||[id](/javascript/api/excel/excel.commentreply#id)|Represents the comment reply identifier. Read-only.|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Creates a comment reply for comment.|
-||[getCount()](/javascript/api/excel/excel.commentreplycollection#getcount--)|Gets the number of comment replies in the collection.|
-||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|Returns a comment reply identified by its ID. Read-only.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|Gets a comment reply based on its position in the collection.|
-||[items](/javascript/api/excel/excel.commentreplycollection#items)|Gets the loaded child items in this collection.|
-|[CustomFunctionEventArgs](/javascript/api/excel/excel.customfunctioneventargs)|[higherTicks](/javascript/api/excel/excel.customfunctioneventargs#higherticks)||
-||[lowerTicks](/javascript/api/excel/excel.customfunctioneventargs#lowerticks)||
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|Specifies whether the field list can be shown in the UI.|
-||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Gets a unique cell in the PivotTable based on a data hierarchy and the row and column items of their respective hierarchies. The returned cell is the intersection of the given row and column that contains the data from the given hierarchy. This method is the inverse of calling getPivotItems and getDataHierarchy on a particular cell.|
-|[PivotTableStyle](/javascript/api/excel/excel.pivottablestyle)|[delete()](/javascript/api/excel/excel.pivottablestyle#delete--)|Deletes the PivotTableStyle.|
-||[duplicate()](/javascript/api/excel/excel.pivottablestyle#duplicate--)|Creates a duplicate of this PivotTableStyle with copies of all the style elements.|
-||[name](/javascript/api/excel/excel.pivottablestyle#name)|Gets the name of the PivotTableStyle.|
-||[readOnly](/javascript/api/excel/excel.pivottablestyle#readonly)|Specifies if this PivotTableStyle object is read-only. Read-only.|
-|[PivotTableStyleCollection](/javascript/api/excel/excel.pivottablestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.pivottablestylecollection#add-name--makeuniquename-)|Creates a blank PivotTableStyle with the specified name.|
-||[getCount()](/javascript/api/excel/excel.pivottablestylecollection#getcount--)|Gets the number of PivotTable styles in the collection.|
-||[getDefault()](/javascript/api/excel/excel.pivottablestylecollection#getdefault--)|Gets the default PivotTableStyle for the parent object's scope.|
-||[getItem(name: string)](/javascript/api/excel/excel.pivottablestylecollection#getitem-name-)|Gets a PivotTableStyle by name.|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablestylecollection#getitemornullobject-name-)|Gets a PivotTableStyle by name. If the PivotTableStyle does not exist, will return a null object.|
-||[items](/javascript/api/excel/excel.pivottablestylecollection#items)|Gets the loaded child items in this collection.|
-||[setDefault(newDefaultStyle: PivotTableStyle \| string)](/javascript/api/excel/excel.pivottablestylecollection#setdefault-newdefaultstyle-)|Sets the default PivotTableStyle for use in the parent object's scope.|
-|[Range](/javascript/api/excel/excel.range)|[getSpillParent()](/javascript/api/excel/excel.range#getspillparent--)|Gets the range object containing the anchor cell for a cell getting spilled into. Fails if applied to a range with more than one cell. Read-only.|
-||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#getspillparentornullobject--)|Gets the range object containing the anchor cell for a cell getting spilled into. Read-only.|
-||[getSpillingToRange()](/javascript/api/excel/excel.range#getspillingtorange--)|Gets the range object containing the spill range when called on an anchor cell. Fails if applied to a range with more than one cell. Read-only.|
-||[getSpillingToRangeOrNullObject()](/javascript/api/excel/excel.range#getspillingtorangeornullobject--)|Gets the range object containing the spill range when called on an anchor cell. Read-only.|
-||[hasSpill](/javascript/api/excel/excel.range#hasspill)|Represents if all cells have a spill border.|
-||[height](/javascript/api/excel/excel.range#height)|Returns the distance in points, for 100% zoom, from top edge of the range to bottom edge of the range. Read-only.|
-||[left](/javascript/api/excel/excel.range#left)|Returns the distance in points, for 100% zoom, from left edge of the worksheet to left edge of the range. Read-only.|
-||[top](/javascript/api/excel/excel.range#top)|Returns the distance in points, for 100% zoom, from top edge of the worksheet to top edge of the range. Read-only.|
-||[width](/javascript/api/excel/excel.range#width)|Returns the distance in points, for 100% zoom, from left edge of the range to right edge of the range. Read-only.|
-|[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyto-destinationsheet-)|Copies and pastes a Shape object.|
-||[placement](/javascript/api/excel/excel.shape#placement)|Represents how the object is attached to the cells below it.|
-|[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addsvg-xml-)|Creates a scalable vector graphic (SVG) from an XML string and adds it to the worksheet. Returns a Shape object that represents the new image.|
-|[Slicer](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|Represents the caption of slicer.|
-||[clearFilters()](/javascript/api/excel/excel.slicer#clearfilters--)|Clears all the filters currently applied on the slicer.|
-||[delete()](/javascript/api/excel/excel.slicer#delete--)|Deletes the slicer.|
-||[getSelectedItems()](/javascript/api/excel/excel.slicer#getselecteditems--)|Returns an array of selected items' keys. Read-only.|
-||[height](/javascript/api/excel/excel.slicer#height)|Represents the height, in points, of the slicer.|
-||[left](/javascript/api/excel/excel.slicer#left)|Represents the distance, in points, from the left side of the slicer to the left of the worksheet.|
-||[name](/javascript/api/excel/excel.slicer#name)|Represents the name of slicer.|
-||[nameInFormula](/javascript/api/excel/excel.slicer#nameinformula)|Represents the slicer name used in the formula.|
-||[id](/javascript/api/excel/excel.slicer#id)|Represents the unique id of slicer. Read-only.|
-||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|True if all filters currently applied on the slicer are cleared.|
-||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|Represents the collection of SlicerItems that are part of the slicer. Read-only.|
-||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|Represents the worksheet containing the slicer. Read-only.|
-||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|Select slicer items based on their keys. Previous selection will be cleared.|
-||[sortBy](/javascript/api/excel/excel.slicer#sortby)|Represents the sort order of the items in the slicer. Possible values are: DataSourceOrder, Ascending, Descending.|
-||[style](/javascript/api/excel/excel.slicer#style)|Constant value that represents the Slicer style. Possible values are: SlicerStyleLight1 through SlicerStyleLight6, TableStyleOther1 through TableStyleOther2, SlicerStyleDark1 through SlicerStyleDark6. A custom user-defined style present in the workbook can also be specified.|
-||[top](/javascript/api/excel/excel.slicer#top)|Represents the distance, in points, from the top edge of the slicer to the top of the worksheet.|
-||[width](/javascript/api/excel/excel.slicer#width)|Represents the width, in points, of the slicer.|
-|[SlicerCollection](/javascript/api/excel/excel.slicercollection)|[add(slicerSource: string \| PivotTable \| Table, sourceField: string \| PivotField \| number \| TableColumn, slicerDestination?: string \| Worksheet)](/javascript/api/excel/excel.slicercollection#add-slicersource--sourcefield--slicerdestination-)|Adds a new slicer to the workbook.|
-||[getCount()](/javascript/api/excel/excel.slicercollection#getcount--)|Returns the number of slicers in the collection.|
-||[getItem(key: string)](/javascript/api/excel/excel.slicercollection#getitem-key-)|Gets a slicer object using its name or id.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.slicercollection#getitemat-index-)|Gets a slicer based on its position in the collection.|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.slicercollection#getitemornullobject-key-)|Gets a slicer using its name or id. If the slicer does not exist, will return a null object.|
-||[items](/javascript/api/excel/excel.slicercollection#items)|Gets the loaded child items in this collection.|
-|[SlicerItem](/javascript/api/excel/excel.sliceritem)|[isSelected](/javascript/api/excel/excel.sliceritem#isselected)|True if the slicer item is selected.|
-||[hasData](/javascript/api/excel/excel.sliceritem#hasdata)|True if the slicer item has data.|
-||[key](/javascript/api/excel/excel.sliceritem#key)|Represents the unique value representing the slicer item.|
-||[name](/javascript/api/excel/excel.sliceritem#name)|Represents the value displayed in the UI.|
-|[SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)|[getCount()](/javascript/api/excel/excel.sliceritemcollection#getcount--)|Returns the number of slicer items in the slicer.|
-||[getItem(key: string)](/javascript/api/excel/excel.sliceritemcollection#getitem-key-)|Gets a slicer item object using its key or name.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.sliceritemcollection#getitemat-index-)|Gets a slicer item based on its position in the collection.|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.sliceritemcollection#getitemornullobject-key-)|Gets a slicer item using its key or name. If the slicer item does not exist, will return a null object.|
-||[items](/javascript/api/excel/excel.sliceritemcollection#items)|Gets the loaded child items in this collection.|
-|[SlicerStyle](/javascript/api/excel/excel.slicerstyle)|[delete()](/javascript/api/excel/excel.slicerstyle#delete--)|Deletes the SlicerStyle.|
-||[duplicate()](/javascript/api/excel/excel.slicerstyle#duplicate--)|Creates a duplicate of this SlicerStyle with copies of all the style elements.|
-||[name](/javascript/api/excel/excel.slicerstyle#name)|Gets the name of the SlicerStyle.|
-||[readOnly](/javascript/api/excel/excel.slicerstyle#readonly)|Specifies if this SlicerStyle object is read-only. Read-only.|
-|[SlicerStyleCollection](/javascript/api/excel/excel.slicerstylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.slicerstylecollection#add-name--makeuniquename-)|Creates a blank SlicerStyle with the specified name.|
-||[getCount()](/javascript/api/excel/excel.slicerstylecollection#getcount--)|Gets the number of slicer styles in the collection.|
-||[getDefault()](/javascript/api/excel/excel.slicerstylecollection#getdefault--)|Gets the default SlicerStyle for the parent object's scope.|
-||[getItem(name: string)](/javascript/api/excel/excel.slicerstylecollection#getitem-name-)|Gets a SlicerStyle by name.|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.slicerstylecollection#getitemornullobject-name-)|Gets a SlicerStyle by name. If the SlicerStyle does not exist, will return a null object.|
-||[items](/javascript/api/excel/excel.slicerstylecollection#items)|Gets the loaded child items in this collection.|
-||[setDefault(newDefaultStyle: SlicerStyle \| string)](/javascript/api/excel/excel.slicerstylecollection#setdefault-newdefaultstyle-)|Sets the default SlicerStyle for use in the parent object's scope.|
-|[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|Changes the table to use the default table style.|
-||[onFiltered](/javascript/api/excel/excel.table#onfiltered)|Occurs when filter is applied on a specific table.|
-|[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|Occurs when filter is applied on any table in a workbook or worksheet.|
-|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Represents the id of the table in which the filter is applied..|
-||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
-||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Represents the id of the worksheet which contains the table.|
-|[TableStyle](/javascript/api/excel/excel.tablestyle)|[delete()](/javascript/api/excel/excel.tablestyle#delete--)|Deletes the TableStyle.|
-||[duplicate()](/javascript/api/excel/excel.tablestyle#duplicate--)|Creates a duplicate of this TableStyle with copies of all the style elements.|
-||[name](/javascript/api/excel/excel.tablestyle#name)|Gets the name of the TableStyle.|
-||[readOnly](/javascript/api/excel/excel.tablestyle#readonly)|Specifies if this TableStyle object is read-only. Read-only.|
-|[TableStyleCollection](/javascript/api/excel/excel.tablestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.tablestylecollection#add-name--makeuniquename-)|Creates a blank TableStyle with the specified name.|
-||[getCount()](/javascript/api/excel/excel.tablestylecollection#getcount--)|Gets the number of table styles in the collection.|
-||[getDefault()](/javascript/api/excel/excel.tablestylecollection#getdefault--)|Gets the default TableStyle for the parent object's scope.|
-||[getItem(name: string)](/javascript/api/excel/excel.tablestylecollection#getitem-name-)|Gets a TableStyle by name.|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.tablestylecollection#getitemornullobject-name-)|Gets a TableStyle by name. If the TableStyle does not exist, will return a null object.|
-||[items](/javascript/api/excel/excel.tablestylecollection#items)|Gets the loaded child items in this collection.|
-||[setDefault(newDefaultStyle: TableStyle \| string)](/javascript/api/excel/excel.tablestylecollection#setdefault-newdefaultstyle-)|Sets the default TableStyle for use in the parent object's scope.|
-|[TimelineStyle](/javascript/api/excel/excel.timelinestyle)|[delete()](/javascript/api/excel/excel.timelinestyle#delete--)|Deletes the TableStyle.|
-||[duplicate()](/javascript/api/excel/excel.timelinestyle#duplicate--)|Creates a duplicate of this TimelineStyle with copies of all the style elements.|
-||[name](/javascript/api/excel/excel.timelinestyle#name)|Gets the name of the TimelineStyle.|
-||[readOnly](/javascript/api/excel/excel.timelinestyle#readonly)|Specifies if this TimelineStyle object is read-only. Read-only.|
-|[TimelineStyleCollection](/javascript/api/excel/excel.timelinestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.timelinestylecollection#add-name--makeuniquename-)|Creates a blank TimelineStyle with the specified name.|
-||[getCount()](/javascript/api/excel/excel.timelinestylecollection#getcount--)|Gets the number of timeline styles in the collection.|
-||[getDefault()](/javascript/api/excel/excel.timelinestylecollection#getdefault--)|Gets the default TimelineStyle for the parent object's scope.|
-||[getItem(name: string)](/javascript/api/excel/excel.timelinestylecollection#getitem-name-)|Gets a TimelineStyle by name.|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getitemornullobject-name-)|Gets a TimelineStyle by name. If the TimelineStyle does not exist, will return a null object.|
-||[items](/javascript/api/excel/excel.timelinestylecollection#items)|Gets the loaded child items in this collection.|
-||[setDefault(newDefaultStyle: TimelineStyle \| string)](/javascript/api/excel/excel.timelinestylecollection#setdefault-newdefaultstyle-)|Sets the default TimelineStyle for use in the parent object's scope.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close-closebehavior-)|Close current workbook.|
-||[getActiveSlicer()](/javascript/api/excel/excel.workbook#getactiveslicer--)|Gets the currently active slicer in the workbook. If there is no active slicer, an exception is thrown.|
-||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getactiveslicerornullobject--)|Gets the currently active slicer in the workbook. If there is no active slicer, a null object is returned.|
-||[comments](/javascript/api/excel/excel.workbook#comments)|Represents a collection of Comments associated with the workbook. Read-only.|
-||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivottablestyles)|Represents a collection of PivotTableStyles associated with the workbook. Read-only.|
-||[slicerStyles](/javascript/api/excel/excel.workbook#slicerstyles)|Represents a collection of SlicerStyles associated with the workbook. Read-only.|
-||[slicers](/javascript/api/excel/excel.workbook#slicers)|Represents a collection of Slicers associated with the workbook. Read-only.|
-||[tableStyles](/javascript/api/excel/excel.workbook#tablestyles)|Represents a collection of TableStyles associated with the workbook. Read-only.|
-||[timelineStyles](/javascript/api/excel/excel.workbook#timelinestyles)|Represents a collection of TimelineStyles associated with the workbook. Read-only.|
-||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|Save current workbook.|
-||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True if the workbook uses the 1904 date system.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|Returns a collection of all the Comments objects on the worksheet. Read-only.|
-||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Occurs when sorting on columns.|
-||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Occurs when filter is applied on a specific worksheet.|
-||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Occurs when sorting on rows.|
-||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Occurs when left-clicked/tapped operation happens in the worksheet.|
-||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Returns collection of slicers that are part of the worksheet. Read-only.|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Inserts the specified worksheets of a workbook into the current workbook.|
-||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Occurs when sorting on columns.|
-||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Occurs when any worksheet's filter is applied in the workbook.|
-||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Occurs when sorting on rows.|
-|[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet.|
-||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
-||[type](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
-||[worksheetId](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#worksheetid)|Gets the id of the worksheet where the sorting happened.|
-|[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
-||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|Represents the id of the worksheet in which the filter is applied.|
-|[WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs)|[address](/javascript/api/excel/excel.worksheetrowsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet.|
-||[source](/javascript/api/excel/excel.worksheetrowsortedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
-||[type](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
-||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetid)|Gets the id of the worksheet where the sorting happened.|
-|[WorksheetSingleClickedEventArgs](/javascript/api/excel/excel.worksheetsingleclickedeventargs)|[address](/javascript/api/excel/excel.worksheetsingleclickedeventargs#address)|Gets the address that represents the cell which was left-clicked/tapped for a specific worksheet.|
-||[offsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetx)|The distance, in points, from the left-clicked/tapped point to the left (right for RTL) gridline edge of the left-clicked/tapped cell.|
-||[offsetY](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsety)|The distance, in points, from the left-clicked/tapped point to the top gridline edge of the left-clicked/tapped cell.|
-||[type](/javascript/api/excel/excel.worksheetsingleclickedeventargs#type)|Gets the type of the event.|
-||[worksheetId](/javascript/api/excel/excel.worksheetsingleclickedeventargs#worksheetid)|Gets the id of the worksheet in which the cell was left-clicked/tapped.|
-
-## What’s new in Excel JavaScript API 1.9
-
-More than 500 new Excel APIs were introduced with the 1.9 requirement set. The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
-
-| Feature area | Description | Relevant objects |
-|:--- |:--- |:--- |
-| [Shapes](../../excel/excel-add-ins-shapes.md) | Insert, position, and format images, geometric shapes and text boxes. | [ShapeCollection](/javascript/api/excel/excel.shapecollection) [Shape](/javascript/api/excel/excel.shape) [GeometricShape](/javascript/api/excel/excel.geometricshape)  [Image](/javascript/api/excel/excel.image) |
-| [Auto Filter](../../excel/excel-add-ins-worksheets.md#filter-data) | Add filters to ranges. | [AutoFilter](/javascript/api/excel/excel.autofilter) |
-| [Areas](../../excel/excel-add-ins-multiple-ranges.md) | Support for discontinuous ranges. | [RangeAreas](/javascript/api/excel/excel.rangeareas) |
-| [Special Cells](../../excel/excel-add-ins-multiple-ranges.md#get-special-cells-from-multiple-ranges) | Get cells containing dates, comments, or formulas within a range. | [Range](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|
-| [Find](../../excel/excel-add-ins-ranges.md#find-a-cell-using-string-matching) | Find values or formulas within a range or worksheet. | [Range](/javascript/api/excel/excel.range#find-text--criteria-)[Worksheet](/javascript/api/excel/excel.worksheet#findall-text--criteria-) |
-| [Copy and Paste](../../excel/excel-add-ins-ranges-advanced.md#copy-and-paste) | Copy values, formats, and formulas from one range to another. | [Range](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) |
-| [Calculation](../../excel/performance.md#suspend-calculation-temporarily) | Greater control over the Excel calculation engine. | [Application](/javascript/api/excel/excel.application) |
+| Slicer | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/excel.slicer) |
+| Comments | Add, edit, and delete comments. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| Shapes | Insert, position, and format images, geometric shapes and text boxes. | [ShapeCollection](/javascript/api/excel/excel.shapecollection) [Shape](/javascript/api/excel/excel.shape) [GeometricShape](/javascript/api/excel/excel.geometricshape)  [Image](/javascript/api/excel/excel.image) |
 | New Charts | Explore our new supported chart types: maps, box and whisker, waterfall, sunburst, pareto. and funnel. | [Chart](/javascript/api/excel/excel.charttype) |
+| Auto Filter | Add filters to ranges. | [AutoFilter](/javascript/api/excel/excel.autofilter) |
+| Areas | Support for discontinuous ranges. | [RangeAreas](/javascript/api/excel/excel.rangeareas) |
+| Special Cells | Get cells containing dates, comments, or formulas within a range. | [Range](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|
+| Find | Find values or formulas within a range or worksheet. | [Range](/javascript/api/excel/excel.range#find-text--criteria-)[Worksheet](/javascript/api/excel/excel.worksheet#findall-text--criteria-) |
+| Copy Paste | Copy values, formats, and formulas from one range to another. | [Range](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) |
 | RangeFormat | New capabilities with range formats. | [Range](/javascript/api/excel/excel.rangeformat) |
+| Workbook Save and Close | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
+| Insert Workbook | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
+| Calculation | Greater control over the Excel calculation engine. | [Application](/javascript/api/excel/excel.application) |
 
-The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
+The following is a complete list of APIs in preview.
 
 | Class | Fields | Description |
 |:---|:---|:---|
-|[Application](/javascript/api/excel/excel.application)|[calculationEngineVersion](/javascript/api/excel/excel.application#calculationengineversion)|Returns the Excel calculation engine version used for the last full recalculation. Read-only.|
-||[calculationState](/javascript/api/excel/excel.application#calculationstate)|Returns the calculation state of the application. See Excel.CalculationState for details. Read-only.|
+|[Application](/javascript/api/excel/excel.application)|[calculationEngineVersion](/javascript/api/excel/excel.application#calculationengineversion)|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|
+||[calculationState](/javascript/api/excel/excel.application#calculationstate)|Returns a CalculationState that indicates the calculation state of the application. See Excel.CalculationState for details. Read-only.|
 ||[iterativeCalculation](/javascript/api/excel/excel.application#iterativecalculation)|Returns the Iterative Calculation settings.|
-||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendscreenupdatinguntilnextsync--)|Suspends sceen updating until the next "context.sync()" is called.|
-|[AutoFilter](/javascript/api/excel/excel.autofilter)|[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply-range--columnindex--criteria-)|Applies the AutoFilter to a range. This filters the column if column index and filter criteria are specified.|
-||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearcriteria--)|Clears the filter criteria of the AutoFilter.|
+||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendscreenupdatinguntilnextsync--)|Suspends screen updating until the next "context.sync()" is called.|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply-range--columnindex--criteria-)|Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.|
+||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearcriteria--)|Clears the criteria if AutoFilter has filters|
 ||[getRange()](/javascript/api/excel/excel.autofilter#getrange--)|Returns the Range object that represents the range to which the AutoFilter applies.|
-||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getrangeornullobject--)|Returns the Range object that represents the range to which the AutoFilter applies.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.autofilter#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[criteria](/javascript/api/excel/excel.autofilter#criteria)|An array that holds all the filter criteria in the autofiltered range. Read-Only.|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getrangeornullobject--)|If there is Range object associated with the AutoFilter, this method returns it.|
+||[criteria](/javascript/api/excel/excel.autofilter#criteria)|Array that holds all filter criteria in an autofiltered range. Read-Only.|
 ||[enabled](/javascript/api/excel/excel.autofilter#enabled)|Indicates if the AutoFilter is enabled or not. Read-Only.|
 ||[isDataFiltered](/javascript/api/excel/excel.autofilter#isdatafiltered)|Indicates if the AutoFilter has filter criteria. Read-Only.|
 ||[reapply()](/javascript/api/excel/excel.autofilter#reapply--)|Applies the specified Autofilter object currently on the range.|
 ||[remove()](/javascript/api/excel/excel.autofilter#remove--)|Removes the AutoFilter for the range.|
-|[CellBorder](/javascript/api/excel/excel.cellborder)|[color](/javascript/api/excel/excel.cellborder#color)|Represents the `color` property of a single border.|
-||[style](/javascript/api/excel/excel.cellborder#style)|Represents the `style` property of a single border.|
-||[tintAndShade](/javascript/api/excel/excel.cellborder#tintandshade)|Represents the `tintAndShade` property of a single border.|
-||[weight](/javascript/api/excel/excel.cellborder#weight)|Represents the `weight` property of a single border.|
-|[CellBorderCollection](/javascript/api/excel/excel.cellbordercollection)|[bottom](/javascript/api/excel/excel.cellbordercollection#bottom)|Represents the `format.borders.bottom` property.|
-||[diagonalDown](/javascript/api/excel/excel.cellbordercollection#diagonaldown)|Represents the `format.borders.diagonalDown` property.|
-||[diagonalUp](/javascript/api/excel/excel.cellbordercollection#diagonalup)|Represents the `format.borders.diagonalUp` property.|
-||[horizontal](/javascript/api/excel/excel.cellbordercollection#horizontal)|Represents the `format.borders.horizontal` property.|
-||[left](/javascript/api/excel/excel.cellbordercollection#left)|Represents the `format.borders.left` property.|
-||[right](/javascript/api/excel/excel.cellbordercollection#right)|Represents the `format.borders.right` property.|
-||[top](/javascript/api/excel/excel.cellbordercollection#top)|Represents the `format.borders.top` property.|
-||[vertical](/javascript/api/excel/excel.cellbordercollection#vertical)|Represents the `format.borders.vertical` property.|
-|[CellProperties](/javascript/api/excel/excel.cellproperties)|[address](/javascript/api/excel/excel.cellproperties#address)|Represents the `address` property.|
-||[addressLocal](/javascript/api/excel/excel.cellproperties#addresslocal)|Represents the `addressLocal` property.|
-||[hidden](/javascript/api/excel/excel.cellproperties#hidden)|Represents the `hidden` property.|
-|[CellPropertiesFill](/javascript/api/excel/excel.cellpropertiesfill)|[color](/javascript/api/excel/excel.cellpropertiesfill#color)|Represents the `format.fill.color` property.|
-||[pattern](/javascript/api/excel/excel.cellpropertiesfill#pattern)|Represents the `format.fill.pattern` property.|
-||[patternColor](/javascript/api/excel/excel.cellpropertiesfill#patterncolor)|Represents the `format.fill.patternColor` property.|
-||[patternTintAndShade](/javascript/api/excel/excel.cellpropertiesfill#patterntintandshade)|Represents the `format.fill.patternTintAndShade` property.|
-||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfill#tintandshade)|Represents the `format.fill.tintAndShade` property.|
-|[CellPropertiesFont](/javascript/api/excel/excel.cellpropertiesfont)|[bold](/javascript/api/excel/excel.cellpropertiesfont#bold)|Represents the `format.font.bold` property.|
-||[color](/javascript/api/excel/excel.cellpropertiesfont#color)|Represents the `format.font.color` property.|
-||[italic](/javascript/api/excel/excel.cellpropertiesfont#italic)|Represents the `format.font.italic` property.|
-||[name](/javascript/api/excel/excel.cellpropertiesfont#name)|Represents the `format.font.name` property.|
-||[size](/javascript/api/excel/excel.cellpropertiesfont#size)|Represents the `format.font.size` property.|
-||[strikethrough](/javascript/api/excel/excel.cellpropertiesfont#strikethrough)|Represents the `format.font.strikethrough` property.|
-||[subscript](/javascript/api/excel/excel.cellpropertiesfont#subscript)|Represents the `format.font.subscript` property.|
-||[superscript](/javascript/api/excel/excel.cellpropertiesfont#superscript)|Represents the `format.font.superscript` property.|
-||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfont#tintandshade)|Represents the `format.font.tintAndShade` property.|
-||[underline](/javascript/api/excel/excel.cellpropertiesfont#underline)|Represents the `format.font.underline` property.|
-|[CellPropertiesFormat](/javascript/api/excel/excel.cellpropertiesformat)|[autoIndent](/javascript/api/excel/excel.cellpropertiesformat#autoindent)|Represents the `autoIndent` property.|
-||[borders](/javascript/api/excel/excel.cellpropertiesformat#borders)|Represents the `borders` property.|
-||[fill](/javascript/api/excel/excel.cellpropertiesformat#fill)|Represents the `fill` property.|
-||[font](/javascript/api/excel/excel.cellpropertiesformat#font)|Represents the `font` property.|
-||[horizontalAlignment](/javascript/api/excel/excel.cellpropertiesformat#horizontalalignment)|Represents the `horizontalAlignment` property.|
-||[indentLevel](/javascript/api/excel/excel.cellpropertiesformat#indentlevel)|Represents the `indentLevel` property.|
-||[protection](/javascript/api/excel/excel.cellpropertiesformat#protection)|Represents the `protection` property.|
-||[readingOrder](/javascript/api/excel/excel.cellpropertiesformat#readingorder)|Represents the `readingOrder` property.|
-||[shrinkToFit](/javascript/api/excel/excel.cellpropertiesformat#shrinktofit)|Represents the `shrinkToFit` property.|
-||[textOrientation](/javascript/api/excel/excel.cellpropertiesformat#textorientation)|Represents the `textOrientation` property.|
-||[useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#usestandardheight)|Represents the `useStandardHeight` property.|
-||[useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#usestandardwidth)|Represents the `useStandardWidth` property.|
-||[verticalAlignment](/javascript/api/excel/excel.cellpropertiesformat#verticalalignment)|Represents the `verticalAlignment` property.|
-||[wrapText](/javascript/api/excel/excel.cellpropertiesformat#wraptext)|Represents the `wrapText` property.|
-|[CellPropertiesProtection](/javascript/api/excel/excel.cellpropertiesprotection)|[formulaHidden](/javascript/api/excel/excel.cellpropertiesprotection#formulahidden)|Represents the `format.protection.formulaHidden` property.|
-||[locked](/javascript/api/excel/excel.cellpropertiesprotection#locked)|Represents the `format.protection.locked` property.|
+|[CellBorder](/javascript/api/excel/excel.cellborder)|[color](/javascript/api/excel/excel.cellborder#color)||
+||[style](/javascript/api/excel/excel.cellborder#style)||
+||[tintAndShade](/javascript/api/excel/excel.cellborder#tintandshade)||
+||[weight](/javascript/api/excel/excel.cellborder#weight)||
+|[CellBorderCollection](/javascript/api/excel/excel.cellbordercollection)|[bottom](/javascript/api/excel/excel.cellbordercollection#bottom)||
+||[diagonalDown](/javascript/api/excel/excel.cellbordercollection#diagonaldown)||
+||[diagonalUp](/javascript/api/excel/excel.cellbordercollection#diagonalup)||
+||[horizontal](/javascript/api/excel/excel.cellbordercollection#horizontal)||
+||[left](/javascript/api/excel/excel.cellbordercollection#left)||
+||[right](/javascript/api/excel/excel.cellbordercollection#right)||
+||[top](/javascript/api/excel/excel.cellbordercollection#top)||
+||[vertical](/javascript/api/excel/excel.cellbordercollection#vertical)||
+|[CellProperties](/javascript/api/excel/excel.cellproperties)|[address](/javascript/api/excel/excel.cellproperties#address)||
+||[addressLocal](/javascript/api/excel/excel.cellproperties#addresslocal)||
+||[hidden](/javascript/api/excel/excel.cellproperties#hidden)||
+|[CellPropertiesFill](/javascript/api/excel/excel.cellpropertiesfill)|[color](/javascript/api/excel/excel.cellpropertiesfill#color)||
+||[pattern](/javascript/api/excel/excel.cellpropertiesfill#pattern)||
+||[patternColor](/javascript/api/excel/excel.cellpropertiesfill#patterncolor)||
+||[patternTintAndShade](/javascript/api/excel/excel.cellpropertiesfill#patterntintandshade)||
+||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfill#tintandshade)||
+|[CellPropertiesFont](/javascript/api/excel/excel.cellpropertiesfont)|[bold](/javascript/api/excel/excel.cellpropertiesfont#bold)||
+||[color](/javascript/api/excel/excel.cellpropertiesfont#color)||
+||[italic](/javascript/api/excel/excel.cellpropertiesfont#italic)||
+||[name](/javascript/api/excel/excel.cellpropertiesfont#name)||
+||[size](/javascript/api/excel/excel.cellpropertiesfont#size)||
+||[strikethrough](/javascript/api/excel/excel.cellpropertiesfont#strikethrough)||
+||[subscript](/javascript/api/excel/excel.cellpropertiesfont#subscript)||
+||[superscript](/javascript/api/excel/excel.cellpropertiesfont#superscript)||
+||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfont#tintandshade)||
+||[underline](/javascript/api/excel/excel.cellpropertiesfont#underline)||
+|[CellPropertiesFormat](/javascript/api/excel/excel.cellpropertiesformat)|[autoIndent](/javascript/api/excel/excel.cellpropertiesformat#autoindent)||
+||[borders](/javascript/api/excel/excel.cellpropertiesformat#borders)||
+||[fill](/javascript/api/excel/excel.cellpropertiesformat#fill)||
+||[font](/javascript/api/excel/excel.cellpropertiesformat#font)||
+||[horizontalAlignment](/javascript/api/excel/excel.cellpropertiesformat#horizontalalignment)||
+||[indentLevel](/javascript/api/excel/excel.cellpropertiesformat#indentlevel)||
+||[protection](/javascript/api/excel/excel.cellpropertiesformat#protection)||
+||[readingOrder](/javascript/api/excel/excel.cellpropertiesformat#readingorder)||
+||[shrinkToFit](/javascript/api/excel/excel.cellpropertiesformat#shrinktofit)||
+||[textOrientation](/javascript/api/excel/excel.cellpropertiesformat#textorientation)||
+||[useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#usestandardheight)||
+||[useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#usestandardwidth)||
+||[verticalAlignment](/javascript/api/excel/excel.cellpropertiesformat#verticalalignment)||
+||[wrapText](/javascript/api/excel/excel.cellpropertiesformat#wraptext)|Creates and opens a new workbook.  Optionally, the workbook can be pre-populated with a base64-encoded .xlsx file.|
+|[CellPropertiesProtection](/javascript/api/excel/excel.cellpropertiesprotection)|[formulaHidden](/javascript/api/excel/excel.cellpropertiesprotection#formulahidden)||
+||[locked](/javascript/api/excel/excel.cellpropertiesprotection#locked)||
 |[ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail)|[valueAfter](/javascript/api/excel/excel.changedeventdetail#valueafter)|Represents the value after changed. The data returned could be of type string, number, or a boolean. Cells that contain an error will return the error string.|
 ||[valueBefore](/javascript/api/excel/excel.changedeventdetail#valuebefore)|Represents the value before changed. The data returned could be of type string, number, or a boolean. Cells that contain an error will return the error string.|
 ||[valueTypeAfter](/javascript/api/excel/excel.changedeventdetail#valuetypeafter)|Represents the type of value after changed|
 ||[valueTypeBefore](/javascript/api/excel/excel.changedeventdetail#valuetypebefore)|Represents the type of value before changed|
-|[Chart](/javascript/api/excel/excel.chart)|[activate()](/javascript/api/excel/excel.chart#activate--)|Activates the chart in the Excel UI.|
-||[pivotOptions](/javascript/api/excel/excel.chart#pivotoptions)|Encapsulates the options for a pivot chart. Read-only.|
-|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[colorScheme](/javascript/api/excel/excel.chartareaformat#colorscheme)|Returns or sets color scheme of the chart. Read/Write.|
-||[roundedCorners](/javascript/api/excel/excel.chartareaformat#roundedcorners)|Specifies whether or not chart area of the chart has rounded corners. Read/Write.|
-|[ChartAxis](/javascript/api/excel/excel.chartaxis)|[linkNumberFormat](/javascript/api/excel/excel.chartaxis#linknumberformat)|Represents whether or not the number format is linked to the cells. If true, the number format will change in the labels when it changes in the cells.|
-|[ChartBinOptions](/javascript/api/excel/excel.chartbinoptions)|[allowOverflow](/javascript/api/excel/excel.chartbinoptions#allowoverflow)|Specifies whether or not the bin overflow is enabled in a histogram chart or pareto chart. Read/Write.|
-||[allowUnderflow](/javascript/api/excel/excel.chartbinoptions#allowunderflow)|Specifies whether or not the bin underflow is enabled in a histogram chart or pareto chart. Read/Write.|
-||[count](/javascript/api/excel/excel.chartbinoptions#count)|Returns or sets the bin count of a histogram chart or pareto chart. Read/Write.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.chartbinoptions#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[overflowValue](/javascript/api/excel/excel.chartbinoptions#overflowvalue)|Returns or sets the bin overflow value of a histogram chart or pareto chart. Read/Write.|
-||[type](/javascript/api/excel/excel.chartbinoptions#type)|Returns or sets the bin's type for a histogram chart or pareto chart. Read/Write.|
-||[underflowValue](/javascript/api/excel/excel.chartbinoptions#underflowvalue)|Returns or sets the bin underflow value of a histogram chart or pareto chart. Read/Write.|
-||[width](/javascript/api/excel/excel.chartbinoptions#width)|Returns or sets the bin width value of a histogram chart or pareto chart. Read/Write.|
-|[ChartBoxwhiskerOptions](/javascript/api/excel/excel.chartboxwhiskeroptions)|[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.chartboxwhiskeroptions#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[quartileCalculation](/javascript/api/excel/excel.chartboxwhiskeroptions#quartilecalculation)|Returns or sets the quartile calculation type of a box and whisker chart. Read/Write.|
-||[showInnerPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#showinnerpoints)|Specifies whether or not the inner points are shown in a box and whisker chart. Read/Write.|
-||[showMeanLine](/javascript/api/excel/excel.chartboxwhiskeroptions#showmeanline)|Specifies whether or not the mean line is shown in a box and whisker chart. Read/Write.|
-||[showMeanMarker](/javascript/api/excel/excel.chartboxwhiskeroptions#showmeanmarker)|Specifies whether or not the mean marker is shown in a box and whisker chart. Read/Write.|
-||[showOutlierPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#showoutlierpoints)|Specifies whether or not outlier points are shown in a box and whisker chart. Read/Write.|
+|[Chart](/javascript/api/excel/excel.chart)|[activate()](/javascript/api/excel/excel.chart#activate--)|Activate the chart in the Excel UI.|
+||[pivotOptions](/javascript/api/excel/excel.chart#pivotoptions)|Encapsulates the options for the pivot chart. Read-only.|
+|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[colorScheme](/javascript/api/excel/excel.chartareaformat#colorscheme)|Returns or sets an integer that represents the color scheme for the chart. Read/Write.|
+||[roundedCorners](/javascript/api/excel/excel.chartareaformat#roundedcorners)|True if the chart area of the chart has rounded corners. Read/Write.|
+|[ChartAxis](/javascript/api/excel/excel.chartaxis)|[linkNumberFormat](/javascript/api/excel/excel.chartaxis#linknumberformat)|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
+|[ChartBinOptions](/javascript/api/excel/excel.chartbinoptions)|[allowOverflow](/javascript/api/excel/excel.chartbinoptions#allowoverflow)|Returns or sets if bin overflow enabled in a histogram chart or pareto chart. Read/Write.|
+||[allowUnderflow](/javascript/api/excel/excel.chartbinoptions#allowunderflow)|Returns or sets if bin underflow enabled in a histogram chart or pareto chart. Read/Write.|
+||[count](/javascript/api/excel/excel.chartbinoptions#count)|Returns or sets count of bin of a histogram chart or pareto chart. Read/Write.|
+||[overflowValue](/javascript/api/excel/excel.chartbinoptions#overflowvalue)|Returns or sets bin overflow value of a histogram chart or pareto chart. Read/Write.|
+||[type](/javascript/api/excel/excel.chartbinoptions#type)|Returns or sets bin type of a histogram chart or pareto chart. Read/Write.|
+||[underflowValue](/javascript/api/excel/excel.chartbinoptions#underflowvalue)|Returns or sets bin underflow value of a histogram chart or pareto chart. Read/Write.|
+||[width](/javascript/api/excel/excel.chartbinoptions#width)|Returns or sets bin width value of a histogram chart or pareto chart. Read/Write.|
+|[ChartBoxwhiskerOptions](/javascript/api/excel/excel.chartboxwhiskeroptions)|[quartileCalculation](/javascript/api/excel/excel.chartboxwhiskeroptions#quartilecalculation)|Returns or sets quartile calculation type of a Box & whisker chart. Read/Write.|
+||[showInnerPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#showinnerpoints)|Returns or sets if inner points showed in a Box & whisker chart. Read/Write.|
+||[showMeanLine](/javascript/api/excel/excel.chartboxwhiskeroptions#showmeanline)|Returns or sets if mean line showed in a Box & whisker chart. Read/Write.|
+||[showMeanMarker](/javascript/api/excel/excel.chartboxwhiskeroptions#showmeanmarker)|Returns or sets if mean marker showed in a Box & whisker chart. Read/Write.|
+||[showOutlierPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#showoutlierpoints)|Returns or sets if outlier points showed in a Box & whisker chart. Read/Write.|
 |[ChartDataLabel](/javascript/api/excel/excel.chartdatalabel)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabel#linknumberformat)|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
-|[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabels#linknumberformat)|Represents whether or not the number format is linked to the cells. If true, the number format will change in the labels when it changes in the cells|
-|[ChartErrorBars](/javascript/api/excel/excel.charterrorbars)|[endStyleCap](/javascript/api/excel/excel.charterrorbars#endstylecap)|Specifies whether or not the error bars have an end style cap.|
-||[include](/javascript/api/excel/excel.charterrorbars#include)|Specifies which parts of the error bars to include.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.charterrorbars#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[format](/javascript/api/excel/excel.charterrorbars#format)|Specifies the formatting type of the error bars.|
-||[type](/javascript/api/excel/excel.charterrorbars#type)|The type of range marked by the error bars.|
-||[visible](/javascript/api/excel/excel.charterrorbars#visible)|Specifies whether or not the error bars are displayed.|
-|[ChartErrorBarsFormat](/javascript/api/excel/excel.charterrorbarsformat)|[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.charterrorbarsformat#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[line](/javascript/api/excel/excel.charterrorbarsformat#line)|Represents the chart line formatting.|
-|[ChartMapOptions](/javascript/api/excel/excel.chartmapoptions)|[labelStrategy](/javascript/api/excel/excel.chartmapoptions#labelstrategy)|Returns or sets the series map labels strategy of a region map chart. Read/Write.|
-||[level](/javascript/api/excel/excel.chartmapoptions#level)|Returns or sets the series mapping level of a region map chart. Read/Write.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.chartmapoptions#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[projectionType](/javascript/api/excel/excel.chartmapoptions#projectiontype)|Returns or sets the series projection type of a region map chart. Read/Write.|
-|[ChartPivotOptions](/javascript/api/excel/excel.chartpivotoptions)|[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.chartpivotoptions#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[showAxisFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showaxisfieldbuttons)|Specifies whether or not to display the axis field buttons on a PivotChart. The ShowAxisFieldButtons property corresponds to the "Show Axis Field Buttons" command on the "Field Buttons" drop-down list of the "Analyze" tab, which is available when a PivotChart is selected.|
-||[showLegendFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showlegendfieldbuttons)|Specifies whether or not to display the legend field buttons on a PivotChart|
-||[showReportFilterFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showreportfilterfieldbuttons)|Specifies whether or not to display the report filter field buttons on a PivotChart.|
-||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showvaluefieldbuttons)|Specifies whether or not to display the show value field buttons on a PivotChart|
-|[ChartSeries](/javascript/api/excel/excel.chartseries)|[bubbleScale](/javascript/api/excel/excel.chartseries#bubblescale)|This can be an integer value from 0 (zero) to 300, representing the percentage of the default size. This property only applies to bubble charts. Read/Write.|
-||[gradientMaximumColor](/javascript/api/excel/excel.chartseries#gradientmaximumcolor)|Returns or sets the color for maximum value of a region map chart series. Read/Write.|
+|[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabels#linknumberformat)|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
+|[ChartErrorBars](/javascript/api/excel/excel.charterrorbars)|[endStyleCap](/javascript/api/excel/excel.charterrorbars#endstylecap)|Represents whether have the end style cap for the error bars.|
+||[include](/javascript/api/excel/excel.charterrorbars#include)|Represents which error-bar parts to include. See Excel.ChartErrorBarsInclude for details.|
+||[format](/javascript/api/excel/excel.charterrorbars#format)|Represents the formatting of chart ErrorBars.|
+||[type](/javascript/api/excel/excel.charterrorbars#type)|Represents the range marked by error bars. See Excel.ChartErrorBarsType for details.|
+||[visible](/javascript/api/excel/excel.charterrorbars#visible)|Represents whether shown error bars.|
+|[ChartErrorBarsFormat](/javascript/api/excel/excel.charterrorbarsformat)|[line](/javascript/api/excel/excel.charterrorbarsformat#line)|Represents chart line formatting.|
+|[ChartMapOptions](/javascript/api/excel/excel.chartmapoptions)|[labelStrategy](/javascript/api/excel/excel.chartmapoptions#labelstrategy)|Returns or sets series map labels strategy of a region map chart. Read/Write.|
+||[level](/javascript/api/excel/excel.chartmapoptions#level)|Returns or sets series map area of a region map chart. Read/Write.|
+||[projectionType](/javascript/api/excel/excel.chartmapoptions#projectiontype)|Returns or sets series projection type of a region map chart. Read/Write.|
+|[ChartPivotOptions](/javascript/api/excel/excel.chartpivotoptions)|[showAxisFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showaxisfieldbuttons)|Represents whether to display axis field buttons on a PivotChart.|
+||[showLegendFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showlegendfieldbuttons)|Represents whether to display legend field buttons on a PivotChart.|
+||[showReportFilterFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showreportfilterfieldbuttons)|Represents whether to display report filter field buttons on a PivotChart.|
+||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showvaluefieldbuttons)|Represents whether to display show value field buttons on a PivotChart.|
+|[ChartSeries](/javascript/api/excel/excel.chartseries)|[bubbleScale](/javascript/api/excel/excel.chartseries#bubblescale)|Returns or sets the scale factor for bubbles in the specified chart group. Can be an integer value from 0 (zero) to 300, corresponding to a percentage of the default size. Applies only to bubble charts. Read/Write.|
+||[gradientMaximumColor](/javascript/api/excel/excel.chartseries#gradientmaximumcolor)|Returns or sets the Color for maximum value of a region map chart series. Read/Write.|
 ||[gradientMaximumType](/javascript/api/excel/excel.chartseries#gradientmaximumtype)|Returns or sets the type for maximum value of a region map chart series. Read/Write.|
 ||[gradientMaximumValue](/javascript/api/excel/excel.chartseries#gradientmaximumvalue)|Returns or sets the maximum value of a region map chart series. Read/Write.|
-||[gradientMidpointColor](/javascript/api/excel/excel.chartseries#gradientmidpointcolor)|Returns or sets the color for midpoint value of a region map chart series. Read/Write.|
+||[gradientMidpointColor](/javascript/api/excel/excel.chartseries#gradientmidpointcolor)|Returns or sets the Color for midpoint value of a region map chart series. Read/Write.|
 ||[gradientMidpointType](/javascript/api/excel/excel.chartseries#gradientmidpointtype)|Returns or sets the type for midpoint value of a region map chart series. Read/Write.|
 ||[gradientMidpointValue](/javascript/api/excel/excel.chartseries#gradientmidpointvalue)|Returns or sets the midpoint value of a region map chart series. Read/Write.|
-||[gradientMinimumColor](/javascript/api/excel/excel.chartseries#gradientminimumcolor)|Returns or sets the color for minimum value of a region map chart series. Read/Write.|
+||[gradientMinimumColor](/javascript/api/excel/excel.chartseries#gradientminimumcolor)|Returns or sets the Color for minimum value of a region map chart series. Read/Write.|
 ||[gradientMinimumType](/javascript/api/excel/excel.chartseries#gradientminimumtype)|Returns or sets the type for minimum value of a region map chart series. Read/Write.|
 ||[gradientMinimumValue](/javascript/api/excel/excel.chartseries#gradientminimumvalue)|Returns or sets the minimum value of a region map chart series. Read/Write.|
 ||[gradientStyle](/javascript/api/excel/excel.chartseries#gradientstyle)|Returns or sets series gradient style of a region map chart. Read/Write.|
 ||[invertColor](/javascript/api/excel/excel.chartseries#invertcolor)|Returns or sets the fill color for negative data points in a series. Read/Write.|
-||[parentLabelStrategy](/javascript/api/excel/excel.chartseries#parentlabelstrategy)|Returns or sets the series parent label strategy area for a treemap chart. Read/Write.|
-||[binOptions](/javascript/api/excel/excel.chartseries#binoptions)|Encapsulates the bin options for histogram charts and pareto charts. Read-only.|
-||[boxwhiskerOptions](/javascript/api/excel/excel.chartseries#boxwhiskeroptions)|Encapsulates the options for the box and whisker charts. Read-only.|
-||[mapOptions](/javascript/api/excel/excel.chartseries#mapoptions)|Encapsulates the options for a region map chart. Read-only.|
-||[xErrorBars](/javascript/api/excel/excel.chartseries#xerrorbars)|Represents the error bar object of a chart series.|
-||[yErrorBars](/javascript/api/excel/excel.chartseries#yerrorbars)|Represents the error bar object of a chart series.|
-||[showConnectorLines](/javascript/api/excel/excel.chartseries#showconnectorlines)|Specifies whether or not connector lines are shown in waterfall charts. Read/Write.|
-||[showLeaderLines](/javascript/api/excel/excel.chartseries#showleaderlines)|Specifies whether or not leader lines are displayed for each data label in the series. Read/Write.|
-||[splitValue](/javascript/api/excel/excel.chartseries#splitvalue)|Returns or sets the threshold value that separates two sections of either a pie-of-pie chart or a bar-of-pie chart. Read/Write.|
+||[parentLabelStrategy](/javascript/api/excel/excel.chartseries#parentlabelstrategy)|Returns or sets series parent label strategy area of a treemap chart. Read/Write.|
+||[binOptions](/javascript/api/excel/excel.chartseries#binoptions)|Encapsulates the bin options only for histogram chart and pareto chart. Read-only.|
+||[boxwhiskerOptions](/javascript/api/excel/excel.chartseries#boxwhiskeroptions)|Encapsulates the options for the Box & Whisker chart. Read-only.|
+||[mapOptions](/javascript/api/excel/excel.chartseries#mapoptions)|Encapsulates the options for the Map chart. Read-only.|
+||[xerrorBars](/javascript/api/excel/excel.chartseries#xerrorbars)|Represents the error bar object for a chart series.|
+||[yerrorBars](/javascript/api/excel/excel.chartseries#yerrorbars)|Represents the error bar object for a chart series.|
+||[showConnectorLines](/javascript/api/excel/excel.chartseries#showconnectorlines)|Returns or sets if connector lines show in a waterfall chart. Read/Write.|
+||[showLeaderLines](/javascript/api/excel/excel.chartseries#showleaderlines)|True if Microsoft Excel show leaderlines for each datalabel in series. Read/Write.|
+||[splitValue](/javascript/api/excel/excel.chartseries#splitvalue)|Returns or sets the threshold value separating the two sections of either a pie of pie chart or a bar of pie chart. Read/Write.|
 |[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[linkNumberFormat](/javascript/api/excel/excel.charttrendlinelabel#linknumberformat)|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
-|[ColumnProperties](/javascript/api/excel/excel.columnproperties)|[address](/javascript/api/excel/excel.columnproperties#address)|Represents the `address` property.|
-||[addressLocal](/javascript/api/excel/excel.columnproperties#addresslocal)|Represents the `addressLocal` property.|
-||[columnIndex](/javascript/api/excel/excel.columnproperties#columnindex)|Represents the `columnIndex` property.|
+|[ColumnProperties](/javascript/api/excel/excel.columnproperties)|[address](/javascript/api/excel/excel.columnproperties#address)||
+||[addressLocal](/javascript/api/excel/excel.columnproperties#addresslocal)||
+||[columnIndex](/javascript/api/excel/excel.columnproperties#columnindex)||
+|[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|Get or set the content.|
+||[delete()](/javascript/api/excel/excel.comment#delete--)|Deletes the comment thread.|
+||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Get location of the comment.|
+||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Get author email of the comment.|
+||[authorName](/javascript/api/excel/excel.comment#authorname)|Get author name of the comment.|
+||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Get creation time of the comment. Will return null if the comment is converted from note, as in this case, the comment will not has created date.|
+||[id](/javascript/api/excel/excel.comment#id)|Represents the comment identifier. Read-only.|
+||[isParent](/javascript/api/excel/excel.comment#isparent)|Represents whether it is a comment thread or reply. Always return true here. Read-only.|
+||[replies](/javascript/api/excel/excel.comment#replies)|Represents a collection of reply objects associated with the comment. Read-only.|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(content: string, cellAddress: Range \| string, contentType?: "Plain")](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|Creates a new comment(comment thread) based on the cell location and content. Invalid argument will be thrown if the location is larger than one cell.|
+||[add(content: string, cellAddress: Range \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|Creates a new comment(comment thread) based on the cell location and content. Invalid argument will be thrown if the location is larger than one cell.|
+||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|Gets the number of comments in the collection.|
+||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|Returns a comment identified by its ID. Read-only.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|Gets a comment based on its position in the collection.|
+||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getitembycell-celladdress-)|Gets a comment on the specific cell in the collection.|
+||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|Gets a comment related to its reply ID in the collection.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.commentcollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[items](/javascript/api/excel/excel.commentcollection#items)|Gets the loaded child items in this collection.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|Get or set the content.|
+||[delete()](/javascript/api/excel/excel.commentreply#delete--)|Deletes the comment reply.|
+||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Get location of the comment reply.|
+||[getParentComment()](/javascript/api/excel/excel.commentreply#getparentcomment--)|Get its parent comment of this reply.|
+||[authorEmail](/javascript/api/excel/excel.commentreply#authoremail)|Get author email of the comment reply.|
+||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Get author name of the comment reply.|
+||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|Get creation time of the comment reply.|
+||[id](/javascript/api/excel/excel.commentreply#id)|Represents the comment reply identifier. Read-only.|
+||[isParent](/javascript/api/excel/excel.commentreply#isparent)|Represents whether it is a comment thread or reply. Always return false here. Read-only.|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: "Plain")](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Creates a comment reply for comment.|
+||[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Creates a comment reply for comment.|
+||[getCount()](/javascript/api/excel/excel.commentreplycollection#getcount--)|Gets the number of comment replies in the collection.|
+||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|Returns a comment reply identified by its ID. Read-only.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|Gets a comment reply based on its position in the collection.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.commentreplycollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[items](/javascript/api/excel/excel.commentreplycollection#items)|Gets the loaded child items in this collection.|
 |[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[getRanges()](/javascript/api/excel/excel.conditionalformat#getranges--)|Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.|
+|[CustomFunctionEventArgs](/javascript/api/excel/excel.customfunctioneventargs)|[higherTicks](/javascript/api/excel/excel.customfunctioneventargs#higherticks)||
+||[lowerTicks](/javascript/api/excel/excel.customfunctioneventargs#lowerticks)||
 |[DataValidation](/javascript/api/excel/excel.datavalidation)|[getInvalidCells()](/javascript/api/excel/excel.datavalidation#getinvalidcells--)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.|
 ||[getInvalidCellsOrNullObject()](/javascript/api/excel/excel.datavalidation#getinvalidcellsornullobject--)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will return null.|
 |[FilterCriteria](/javascript/api/excel/excel.filtercriteria)|[subField](/javascript/api/excel/excel.filtercriteria#subfield)|The property used by the filter to do rich filter on richvalues.|
-|[GeometricShape](/javascript/api/excel/excel.geometricshape)|[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.geometricshape#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[id](/javascript/api/excel/excel.geometricshape#id)|Returns the shape identifier. Read-only.|
+|[GeometricShape](/javascript/api/excel/excel.geometricshape)|[id](/javascript/api/excel/excel.geometricshape#id)|Returns the shape identifier. Read-only.|
 ||[shape](/javascript/api/excel/excel.geometricshape#shape)|Returns the Shape object for the geometric shape. Read-only.|
 |[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getCount()](/javascript/api/excel/excel.groupshapecollection#getcount--)|Returns the number of shapes in the shape group. Read-only.|
-||[getItem(key: string)](/javascript/api/excel/excel.groupshapecollection#getitem-key-)|Gets a shape using its Name or ID.|
+||[getItem(name: string)](/javascript/api/excel/excel.groupshapecollection#getitem-name-)|Gets a shape using its name.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.groupshapecollection#getitemat-index-)|Gets a shape based on its position in the collection.|
-||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.groupshapecollection#load-option-)||
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.groupshapecollection#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.groupshapecollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[items](/javascript/api/excel/excel.groupshapecollection#items)|Gets the loaded child items in this collection.|
 |[HeaderFooter](/javascript/api/excel/excel.headerfooter)|[centerFooter](/javascript/api/excel/excel.headerfooter#centerfooter)|Gets or sets the center footer of the worksheet.|
 ||[centerHeader](/javascript/api/excel/excel.headerfooter#centerheader)|Gets or sets the center header of the worksheet.|
 ||[leftFooter](/javascript/api/excel/excel.headerfooter#leftfooter)|Gets or sets the left footer of the worksheet.|
 ||[leftHeader](/javascript/api/excel/excel.headerfooter#leftheader)|Gets or sets the left header of the worksheet.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.headerfooter#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[rightFooter](/javascript/api/excel/excel.headerfooter#rightfooter)|Gets or sets the right footer of the worksheet.|
 ||[rightHeader](/javascript/api/excel/excel.headerfooter#rightheader)|Gets or sets the right header of the worksheet.|
-|[HeaderFooterGroup](/javascript/api/excel/excel.headerfootergroup)|[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.headerfootergroup#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[defaultForAllPages](/javascript/api/excel/excel.headerfootergroup#defaultforallpages)|The general header/footer, used for all pages unless even/odd or first page is specified.|
+|[HeaderFooterGroup](/javascript/api/excel/excel.headerfootergroup)|[defaultForAllPages](/javascript/api/excel/excel.headerfootergroup#defaultforallpages)|The general header/footer, used for all pages unless even/odd or first page is specified.|
 ||[evenPages](/javascript/api/excel/excel.headerfootergroup#evenpages)|The header/footer to use for even pages, odd header/footer needs to be specified for odd pages.|
 ||[firstPage](/javascript/api/excel/excel.headerfootergroup#firstpage)|The first page header/footer, for all other pages general or even/odd is used.|
 ||[oddPages](/javascript/api/excel/excel.headerfootergroup#oddpages)|The header/footer to use for odd pages, even header/footer needs to be specified for even pages.|
 ||[state](/javascript/api/excel/excel.headerfootergroup#state)|Gets or sets the state of which headers/footers are set. See Excel.HeaderFooterState for details.|
 ||[useSheetMargins](/javascript/api/excel/excel.headerfootergroup#usesheetmargins)|Gets or sets a flag indicating if headers/footers are aligned with the page margins set in the page layout options for the worksheet.|
 ||[useSheetScale](/javascript/api/excel/excel.headerfootergroup#usesheetscale)|Gets or sets a flag indicating if headers/footers should be scaled by the page percentage scale set in the page layout options for the worksheet.|
-|[Image](/javascript/api/excel/excel.image)|[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.image#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[format](/javascript/api/excel/excel.image#format)|Returns the format of the image. Read-only.|
+|[Image](/javascript/api/excel/excel.image)|[format](/javascript/api/excel/excel.image#format)|Returns the format of the image. Read-only.|
 ||[id](/javascript/api/excel/excel.image#id)|Represents the shape identifier for the image object. Read-only.|
 ||[shape](/javascript/api/excel/excel.image#shape)|Returns the Shape object associated with the image. Read-only.|
 |[IterativeCalculation](/javascript/api/excel/excel.iterativecalculation)|[enabled](/javascript/api/excel/excel.iterativecalculation#enabled)|True if Excel will use iteration to resolve circular references.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.iterativecalculation#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[maxChange](/javascript/api/excel/excel.iterativecalculation#maxchange)|Returns or sets the maximum amount of change between each iteration as Excel resolves circular references.|
 ||[maxIteration](/javascript/api/excel/excel.iterativecalculation#maxiteration)|Returns or sets the maximum number of iterations that Excel can use to resolve a circular reference.|
 |[Line](/javascript/api/excel/excel.line)|[beginArrowheadLength](/javascript/api/excel/excel.line#beginarrowheadlength)|Represents the length of the arrowhead at the beginning of the specified line.|
@@ -427,7 +267,6 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 ||[endArrowheadLength](/javascript/api/excel/excel.line#endarrowheadlength)|Represents the length of the arrowhead at the end of the specified line.|
 ||[endArrowheadStyle](/javascript/api/excel/excel.line#endarrowheadstyle)|Represents the style of the arrowhead at the end of the specified line.|
 ||[endArrowheadWidth](/javascript/api/excel/excel.line#endarrowheadwidth)|Represents the width of the arrowhead at the end of the specified line.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.line#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[beginConnectedShape](/javascript/api/excel/excel.line#beginconnectedshape)|Represents the shape to which the beginning of the specified line is attached. Read-only.|
 ||[beginConnectedSite](/javascript/api/excel/excel.line#beginconnectedsite)|Represents the connection site to which the beginning of a connector is connected. Read-only. Returns null when the beginning of the line is not attached to any shape.|
 ||[endConnectedShape](/javascript/api/excel/excel.line#endconnectedshape)|Represents the shape to which the end of the specified line is attached. Read-only.|
@@ -436,16 +275,15 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 ||[isBeginConnected](/javascript/api/excel/excel.line#isbeginconnected)|Specifies whether or not the beginning of the specified line is connected to a shape. Read-only.|
 ||[isEndConnected](/javascript/api/excel/excel.line#isendconnected)|Specifies whether or not the end of the specified line is connected to a shape. Read-only.|
 ||[shape](/javascript/api/excel/excel.line#shape)|Returns the Shape object associated with the line. Read-only.|
+|[ListDataValidation](/javascript/api/excel/excel.listdatavalidation)|[source](/javascript/api/excel/excel.listdatavalidation#source)|Source of the list for data validation|
 |[PageBreak](/javascript/api/excel/excel.pagebreak)|[delete()](/javascript/api/excel/excel.pagebreak#delete--)|Deletes a page break object.|
 ||[getCellAfterBreak()](/javascript/api/excel/excel.pagebreak#getcellafterbreak--)|Gets the first cell after the page break.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.pagebreak#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[columnIndex](/javascript/api/excel/excel.pagebreak#columnindex)|Represents the column index for the page break|
 ||[rowIndex](/javascript/api/excel/excel.pagebreak#rowindex)|Represents the row index for the page break|
 |[PageBreakCollection](/javascript/api/excel/excel.pagebreakcollection)|[add(pageBreakRange: Range \| string)](/javascript/api/excel/excel.pagebreakcollection#add-pagebreakrange-)|Adds a page break before the top-left cell of the range specified.|
 ||[getCount()](/javascript/api/excel/excel.pagebreakcollection#getcount--)|Gets the number of page breaks in the collection.|
 ||[getItem(index: number)](/javascript/api/excel/excel.pagebreakcollection#getitem-index-)|Gets a page break object via the index.|
-||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.pagebreakcollection#load-option-)||
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.pagebreakcollection#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.pagebreakcollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[items](/javascript/api/excel/excel.pagebreakcollection#items)|Gets the loaded child items in this collection.|
 ||[removePageBreaks()](/javascript/api/excel/excel.pagebreakcollection#removepagebreaks--)|Resets all manual page breaks in the collection.|
 |[PageLayout](/javascript/api/excel/excel.pagelayout)|[blackAndWhite](/javascript/api/excel/excel.pagelayout#blackandwhite)|Gets or sets the worksheet's black and white print option.|
@@ -463,7 +301,6 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 ||[getPrintTitleRowsOrNullObject()](/javascript/api/excel/excel.pagelayout#getprinttitlerowsornullobject--)|Gets the range object representing the title rows. If not set, this will return a null object.|
 ||[headerMargin](/javascript/api/excel/excel.pagelayout#headermargin)|Gets or sets the worksheet's header margin, in points, for use when printing.|
 ||[leftMargin](/javascript/api/excel/excel.pagelayout#leftmargin)|Gets or sets the worksheet's left margin, in points, for use when printing.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.pagelayout#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[orientation](/javascript/api/excel/excel.pagelayout#orientation)|Gets or sets the worksheet's orientation of the page.|
 ||[paperSize](/javascript/api/excel/excel.pagelayout#papersize)|Gets or sets the worksheet's paper size of the page.|
 ||[printComments](/javascript/api/excel/excel.pagelayout#printcomments)|Gets or sets whether the worksheet's comments should be displayed when printing.|
@@ -474,8 +311,8 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 ||[headersFooters](/javascript/api/excel/excel.pagelayout#headersfooters)|Header and footer configuration for the worksheet.|
 ||[rightMargin](/javascript/api/excel/excel.pagelayout#rightmargin)|Gets or sets the worksheet's right margin, in points, for use when printing.|
 ||[setPrintArea(printArea: Range \| RangeAreas \| string)](/javascript/api/excel/excel.pagelayout#setprintarea-printarea-)|Sets the worksheet's print area.|
+||[setPrintMargins(unit: "Points" \| "Inches" \| "Centimeters", marginOptions: Excel.PageLayoutMarginOptions)](/javascript/api/excel/excel.pagelayout#setprintmargins-unit--marginoptions-)|Sets the worksheet's page margins with units.|
 ||[setPrintMargins(unit: Excel.PrintMarginUnit, marginOptions: Excel.PageLayoutMarginOptions)](/javascript/api/excel/excel.pagelayout#setprintmargins-unit--marginoptions-)|Sets the worksheet's page margins with units.|
-||[setPrintMargins(unitString: "Points" \| "Inches" \| "Centimeters", marginOptions: Excel.PageLayoutMarginOptions)](/javascript/api/excel/excel.pagelayout#setprintmargins-unitstring--marginoptions-)|Sets the worksheet's page margins with units.|
 ||[setPrintTitleColumns(printTitleColumns: Range \| string)](/javascript/api/excel/excel.pagelayout#setprinttitlecolumns-printtitlecolumns-)|Sets the columns that contain the cells to be repeated at the left of each page of the worksheet for printing.|
 ||[setPrintTitleRows(printTitleRows: Range \| string)](/javascript/api/excel/excel.pagelayout#setprinttitlerows-printtitlerows-)|Sets the rows that contain the cells to be repeated at the top of each page of the worksheet for printing.|
 ||[topMargin](/javascript/api/excel/excel.pagelayout#topmargin)|Gets or sets the worksheet's top margin, in points, for use when printing.|
@@ -489,61 +326,79 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 |[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)|[horizontalFitToPages](/javascript/api/excel/excel.pagelayoutzoomoptions#horizontalfittopages)|Number of pages to fit horizontally. This value can be null if percentage scale is used.|
 ||[scale](/javascript/api/excel/excel.pagelayoutzoomoptions#scale)|Print page scale value can be between 10 and 400. This value can be null if fit to page tall or wide is specified.|
 ||[verticalFitToPages](/javascript/api/excel/excel.pagelayoutzoomoptions#verticalfittopages)|Number of pages to fit vertically. This value can be null if percentage scale is used.|
-|[PivotField](/javascript/api/excel/excel.pivotfield)|[sortByValues(sortBy: Excel.SortBy, valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
-||[sortByValues(sortByString: "Ascending" \| "Descending", valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortbystring--valueshierarchy--pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[autoFormat](/javascript/api/excel/excel.pivotlayout#autoformat)|Specifies whether formatting will be automatically formatted when it’s refreshed or when fields are moved|
+|[PivotField](/javascript/api/excel/excel.pivotfield)|[sortByValues(sortby: "Ascending" \| "Descending", valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
+||[sortByValues(sortby: Excel.SortBy, valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
+|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[autoFormat](/javascript/api/excel/excel.pivotlayout#autoformat)|True if formatting will be automatically formatted when it’s refreshed or when fields are moved|
+||[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|True if the field list should be shown or hidden from the UI.|
+||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Gets the cell in the PivotTable's data body that contains the value for the intersection of the specified dataHierarchy, rowItems, and columnItems.|
 ||[getDataHierarchy(cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getdatahierarchy-cell-)|Gets the DataHierarchy that is used to calculate the value in a specified range within the PivotTable.|
+||[getPivotItems(axis: "Unknown" \| "Row" \| "Column" \| "Data" \| "Filter", cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getpivotitems-axis--cell-)|Gets the PivotItems from an axis that make up the value in a specified range within the PivotTable.|
 ||[getPivotItems(axis: Excel.PivotAxis, cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getpivotitems-axis--cell-)|Gets the PivotItems from an axis that make up the value in a specified range within the PivotTable.|
-||[getPivotItems(axisString: "Unknown" \| "Row" \| "Column" \| "Data" \| "Filter", cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getpivotitems-axisstring--cell-)|Gets the PivotItems from an axis that make up the value in a specified range within the PivotTable.|
-||[preserveFormatting](/javascript/api/excel/excel.pivotlayout#preserveformatting)|Specifies whether formatting is preserved when the report is refreshed or recalculated by operations such as pivoting, sorting, or changing page field items.|
-||[setAutoSortOnCell(cell: Range \| string, sortBy: Excel.SortBy)](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|Sets the PivotTable to automatically sort using the specified cell to automatically select all necessary criteria and context. This behaves identically to applying an autosort from the UI.|
-||[setAutoSortOnCell(cell: Range \| string, sortByString: "Ascending" \| "Descending")](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortbystring-)|Sets the PivotTable to automatically sort using the specified cell to automatically select all necessary criteria and context. This behaves identically to applying an autosort from the UI.|
-|[PivotTable](/javascript/api/excel/excel.pivottable)|[enableDataValueEditing](/javascript/api/excel/excel.pivottable#enabledatavalueediting)|Specifies whether the PivotTable allows values in the data body to be edited by the user.|
-||[useCustomSortLists](/javascript/api/excel/excel.pivottable#usecustomsortlists)|Specifies whether the PivotTable uses custom lists when sorting.|
-|[Range](/javascript/api/excel/excel.range)|[autoFill(destinationRange: Range \| string, autoFillType?: Excel.AutoFillType)](/javascript/api/excel/excel.range#autofill-destinationrange--autofilltype-)|Fills range from the current range to the destination range.|
-||[autoFill(destinationRange: Range \| string, autoFillTypeString?: "FillDefault" \| "FillCopy" \| "FillSeries" \| "FillFormats" \| "FillValues" \| "FillDays" \| "FillWeekdays" \| "FillMonths" \| "FillYears" \| "LinearTrend" \| "GrowthTrend" \| "FlashFill")](/javascript/api/excel/excel.range#autofill-destinationrange--autofilltypestring-)|Fills range from the current range to the destination range.|
+||[preserveFormatting](/javascript/api/excel/excel.pivotlayout#preserveformatting)|True if formatting is preserved when the report is refreshed or recalculated by operations such as pivoting, sorting, or changing page field items.|
+||[setAutosortOnCell(cell: Range \| string, sortby: "Ascending" \| "Descending")](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|Sets an autosort using the specified cell to automatically select all criteria and context for the sort.|
+||[setAutosortOnCell(cell: Range \| string, sortby: Excel.SortBy)](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|Sets an autosort using the specified cell to automatically select all criteria and context for the sort.|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[enableDataValueEditing](/javascript/api/excel/excel.pivottable#enabledatavalueediting)|True if the PivotTable should use custom lists when sorting.|
+||[useCustomSortLists](/javascript/api/excel/excel.pivottable#usecustomsortlists)|True if the PivotTable should use custom lists when sorting.|
+|[PivotTableStyle](/javascript/api/excel/excel.pivottablestyle)|[delete()](/javascript/api/excel/excel.pivottablestyle#delete--)|Deletes the PivotTableStyle.|
+||[duplicate()](/javascript/api/excel/excel.pivottablestyle#duplicate--)|Creates a duplicate of this PivotTableStyle with copies of all the style elements.|
+||[name](/javascript/api/excel/excel.pivottablestyle#name)|Gets the name of the PivotTableStyle.|
+||[readOnly](/javascript/api/excel/excel.pivottablestyle#readonly)|True means that this PivotTableStyle object is read-only. Read-only.|
+|[PivotTableStyleCollection](/javascript/api/excel/excel.pivottablestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.pivottablestylecollection#add-name--makeuniquename-)|Creates a blank PivotTableStyle with the specified name.|
+||[getCount()](/javascript/api/excel/excel.pivottablestylecollection#getcount--)|Gets the number of PivotTable styles in the collection.|
+||[getDefault()](/javascript/api/excel/excel.pivottablestylecollection#getdefault--)|Gets the default PivotTableStyle for the parent object's scope.|
+||[getItem(name: string)](/javascript/api/excel/excel.pivottablestylecollection#getitem-name-)|Gets a PivotTableStyle by name.|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablestylecollection#getitemornullobject-name-)|Gets a PivotTableStyle by name. If the PivotTableStyle does not exist, will return a null object.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.pivottablestylecollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[items](/javascript/api/excel/excel.pivottablestylecollection#items)|Gets the loaded child items in this collection.|
+||[setDefault(newDefaultStyle: PivotTableStyle \| string)](/javascript/api/excel/excel.pivottablestylecollection#setdefault-newdefaultstyle-)|Sets the default PivotTableStyle for use in the parent object's scope.|
+|[Range](/javascript/api/excel/excel.range)|[autoFill(destinationRange: Range \| string, autoFillType?: "FillDefault" \| "FillCopy" \| "FillSeries" \| "FillFormats" \| "FillValues" \| "FillDays" \| "FillWeekdays" \| "FillMonths" \| "FillYears" \| "LinearTrend" \| "GrowthTrend" \| "FlashFill")](/javascript/api/excel/excel.range#autofill-destinationrange--autofilltype-)|Fills range from the current range to the destination range.|
+||[autoFill(destinationRange: Range \| string, autoFillType?: Excel.AutoFillType)](/javascript/api/excel/excel.range#autofill-destinationrange--autofilltype-)|Fills range from the current range to the destination range.|
 ||[convertDataTypeToText()](/javascript/api/excel/excel.range#convertdatatypetotext--)|Converts the range cells with datatypes into text.|
 ||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.range#converttolinkeddatatype-serviceid--languageculture-)|Converts the range cells into linked datatype in the worksheet.|
+||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: "All" \| "Formulas" \| "Values" \| "Formats", skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)|Copies cell data or formatting from the source range or RangeAreas to the current range.|
 ||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)|Copies cell data or formatting from the source range or RangeAreas to the current range.|
-||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyTypeString?: "All" \| "Formulas" \| "Values" \| "Formats", skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytypestring--skipblanks--transpose-)|Copies cell data or formatting from the source range or RangeAreas to the current range.|
 ||[find(text: string, criteria: Excel.SearchCriteria)](/javascript/api/excel/excel.range#find-text--criteria-)|Finds the given string based on the criteria specified.|
 ||[findOrNullObject(text: string, criteria: Excel.SearchCriteria)](/javascript/api/excel/excel.range#findornullobject-text--criteria-)|Finds the given string based on the criteria specified.|
 ||[flashFill()](/javascript/api/excel/excel.range#flashfill--)|Does FlashFill to current range.Flash Fill will automatically fills data when it senses a pattern, so the range must be single column range and have data around in order to find pattern.|
 ||[getCellProperties(cellPropertiesLoadOptions: CellPropertiesLoadOptions)](/javascript/api/excel/excel.range#getcellproperties-cellpropertiesloadoptions-)|Returns a 2D array, encapsulating the data for each cell's font, fill, borders, alignment, and other properties.|
 ||[getColumnProperties(columnPropertiesLoadOptions: ColumnPropertiesLoadOptions)](/javascript/api/excel/excel.range#getcolumnproperties-columnpropertiesloadoptions-)|Returns a single-dimensional array, encapsulating the data for each column's font, fill, borders, alignment, and other properties.  For properties that are not consistent across each cell within a given column, null will be returned.|
 ||[getRowProperties(rowPropertiesLoadOptions: RowPropertiesLoadOptions)](/javascript/api/excel/excel.range#getrowproperties-rowpropertiesloadoptions-)|Returns a single-dimensional array, encapsulating the data for each row's font, fill, borders, alignment, and other properties.  For properties that are not consistent across each cell within a given row, null will be returned.|
+||[getSpecialCells(cellType: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|Gets the RangeAreas object, comprising one or more rectangular ranges, that represents all the cells that match the specified type and value.|
 ||[getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType)](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|Gets the RangeAreas object, comprising one or more rectangular ranges, that represents all the cells that match the specified type and value.|
-||[getSpecialCells(cellTypeString: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.range#getspecialcells-celltypestring--cellvaluetype-)|Gets the RangeAreas object, comprising one or more rectangular ranges, that represents all the cells that match the specified type and value.|
+||[getSpecialCellsOrNullObject(cellType: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-)|Gets the RangeAreas object, comprising one or more ranges, that represents all the cells that match the specified type and value.|
 ||[getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType)](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-)|Gets the RangeAreas object, comprising one or more ranges, that represents all the cells that match the specified type and value.|
-||[getSpecialCellsOrNullObject(cellTypeString: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltypestring--cellvaluetype-)|Gets the RangeAreas object, comprising one or more ranges, that represents all the cells that match the specified type and value.|
+||[getSpillParent()](/javascript/api/excel/excel.range#getspillparent--)|Gets the range object containing the anchor cell for a cell getting spilled into. Fails if applied to a range with more than one cell. Read-only.|
+||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#getspillparentornullobject--)|Gets the range object containing the anchor cell for a cell getting spilled into. Read-only.|
+||[getSpillingToRange()](/javascript/api/excel/excel.range#getspillingtorange--)|Gets the range object containing the spill range when called on an anchor cell. Fails if applied to a range with more than one cell. Read-only.|
+||[getSpillingToRangeOrNullObject()](/javascript/api/excel/excel.range#getspillingtorangeornullobject--)|Gets the range object containing the spill range when called on an anchor cell. Read-only.|
 ||[getTables(fullyContained?: boolean)](/javascript/api/excel/excel.range#gettables-fullycontained-)|Gets a scoped collection of tables that overlap with the range.|
+||[hasSpill](/javascript/api/excel/excel.range#hasspill)|Represents if all cells have a spill border.|
 ||[linkedDataTypeState](/javascript/api/excel/excel.range#linkeddatatypestate)|Represents the data type state of each cell. Read-only.|
 ||[removeDuplicates(columns: number[], includesHeader: boolean)](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-)|Removes duplicate values from the range specified by the columns.|
 ||[replaceAll(text: string, replacement: string, criteria: Excel.ReplaceCriteria)](/javascript/api/excel/excel.range#replaceall-text--replacement--criteria-)|Finds and replaces the given string based on the criteria specified within the current range.|
-||[setCellProperties(cellPropertiesData: SettableCellProperties[][])](/javascript/api/excel/excel.range#setcellproperties-cellpropertiesdata-)|Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.|
-||[setColumnProperties(columnPropertiesData: SettableColumnProperties[])](/javascript/api/excel/excel.range#setcolumnproperties-columnpropertiesdata-)|Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.|
+||[setCellProperties(cellPropertiesData: SettableCellProperties[][] \| OfficeExtension.ClientResult<SettableCellProperties[][]>)](/javascript/api/excel/excel.range#setcellproperties-cellpropertiesdata-)|Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.|
+||[setColumnProperties(columnPropertiesData: SettableColumnProperties[] \| OfficeExtension.ClientResult<SettableColumnProperties[]>)](/javascript/api/excel/excel.range#setcolumnproperties-columnpropertiesdata-)|Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.|
 ||[setDirty()](/javascript/api/excel/excel.range#setdirty--)|Set a range to be recalculated when the next recalculation occurs.|
-||[setRowProperties(rowPropertiesData: SettableRowProperties[])](/javascript/api/excel/excel.range#setrowproperties-rowpropertiesdata-)|Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.|
+||[setRowProperties(rowPropertiesData: SettableRowProperties[] \| OfficeExtension.ClientResult<SettableRowProperties[]>)](/javascript/api/excel/excel.range#setrowproperties-rowpropertiesdata-)|Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.|
 |[RangeAreas](/javascript/api/excel/excel.rangeareas)|[calculate()](/javascript/api/excel/excel.rangeareas#calculate--)|Calculates all cells in the RangeAreas.|
+||[clear(applyTo?: "All" \| "Formats" \| "Contents" \| "Hyperlinks" \| "RemoveHyperlinks")](/javascript/api/excel/excel.rangeareas#clear-applyto-)|Clears values, format, fill, border, etc on each of the areas that comprise this RangeAreas object.|
 ||[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.rangeareas#clear-applyto-)|Clears values, format, fill, border, etc on each of the areas that comprise this RangeAreas object.|
-||[clear(applyToString?: "All" \| "Formats" \| "Contents" \| "Hyperlinks" \| "RemoveHyperlinks")](/javascript/api/excel/excel.rangeareas#clear-applytostring-)|Clears values, format, fill, border, etc on each of the areas that comprise this RangeAreas object.|
 ||[convertDataTypeToText()](/javascript/api/excel/excel.rangeareas#convertdatatypetotext--)|Converts all cells in the RangeAreas with datatypes into text.|
 ||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.rangeareas#converttolinkeddatatype-serviceid--languageculture-)|Converts all cells in the RangeAreas into linked datatype.|
+||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: "All" \| "Formulas" \| "Values" \| "Formats", skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.rangeareas#copyfrom-sourcerange--copytype--skipblanks--transpose-)|Copies cell data or formatting from the source range or RangeAreas to the current RangeAreas.|
 ||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.rangeareas#copyfrom-sourcerange--copytype--skipblanks--transpose-)|Copies cell data or formatting from the source range or RangeAreas to the current RangeAreas.|
-||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyTypeString?: "All" \| "Formulas" \| "Values" \| "Formats", skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.rangeareas#copyfrom-sourcerange--copytypestring--skipblanks--transpose-)|Copies cell data or formatting from the source range or RangeAreas to the current RangeAreas.|
 ||[getEntireColumn()](/javascript/api/excel/excel.rangeareas#getentirecolumn--)|Returns a RangeAreas object that represents the entire columns of the RangeAreas (for example, if the current RangeAreas represents cells "B4:E11, H2", it returns a RangeAreas that represents columns "B:E, H:H").|
 ||[getEntireRow()](/javascript/api/excel/excel.rangeareas#getentirerow--)|Returns a RangeAreas object that represents the entire rows of the RangeAreas (for example, if the current RangeAreas represents cells "B4:E11", it returns a RangeAreas that represents rows "4:11").|
 ||[getIntersection(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#getintersection-anotherrange-)|Returns the RangeAreas object that represents the intersection of the given ranges or RangeAreas. If no intersection is found, an ItemNotFound error will be thrown.|
 ||[getIntersectionOrNullObject(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#getintersectionornullobject-anotherrange-)|Returns the RangeAreas object that represents the intersection of the given ranges or RangeAreas. If no intersection is found, a null object is returned.|
 ||[getOffsetRangeAreas(rowOffset: number, columnOffset: number)](/javascript/api/excel/excel.rangeareas#getoffsetrangeareas-rowoffset--columnoffset-)|Returns an RangeAreas object that is shifted by the specific row and column offset. The dimension of the returned RangeAreas will match the original object. If the resulting RangeAreas is forced outside the bounds of the worksheet grid, an error will be thrown.|
+||[getSpecialCells(cellType: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.rangeareas#getspecialcells-celltype--cellvaluetype-)|Returns a RangeAreas object that represents all the cells that match the specified type and value. Throws an error if no special cells are found that match the criteria.|
 ||[getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType)](/javascript/api/excel/excel.rangeareas#getspecialcells-celltype--cellvaluetype-)|Returns a RangeAreas object that represents all the cells that match the specified type and value. Throws an error if no special cells are found that match the criteria.|
-||[getSpecialCells(cellTypeString: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.rangeareas#getspecialcells-celltypestring--cellvaluetype-)|Returns a RangeAreas object that represents all the cells that match the specified type and value. Throws an error if no special cells are found that match the criteria.|
+||[getSpecialCellsOrNullObject(cellType: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.rangeareas#getspecialcellsornullobject-celltype--cellvaluetype-)|Returns a RangeAreas object that represents all the cells that match the specified type and value. Returns a null object if no special cells are found that match the criteria.|
 ||[getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType)](/javascript/api/excel/excel.rangeareas#getspecialcellsornullobject-celltype--cellvaluetype-)|Returns a RangeAreas object that represents all the cells that match the specified type and value. Returns a null object if no special cells are found that match the criteria.|
-||[getSpecialCellsOrNullObject(cellTypeString: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.rangeareas#getspecialcellsornullobject-celltypestring--cellvaluetype-)|Returns a RangeAreas object that represents all the cells that match the specified type and value. Returns a null object if no special cells are found that match the criteria.|
 ||[getTables(fullyContained?: boolean)](/javascript/api/excel/excel.rangeareas#gettables-fullycontained-)|Returns a scoped collection of tables that overlap with any range in this RangeAreas object.|
 ||[getUsedRangeAreas(valuesOnly?: boolean)](/javascript/api/excel/excel.rangeareas#getusedrangeareas-valuesonly-)|Returns the used RangeAreas that comprises all the used areas of individual rectangular ranges in the RangeAreas object.|
 ||[getUsedRangeAreasOrNullObject(valuesOnly?: boolean)](/javascript/api/excel/excel.rangeareas#getusedrangeareasornullobject-valuesonly-)|Returns the used RangeAreas that comprises all the used areas of individual rectangular ranges in the RangeAreas object.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.rangeareas#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[address](/javascript/api/excel/excel.rangeareas#address)|Returns the RageAreas reference in A1-style. Address value will contain the worksheet name for each rectangular block of cells (e.g. "Sheet1!A1:B4, Sheet1!D1:D4"). Read-only.|
 ||[addressLocal](/javascript/api/excel/excel.rangeareas#addresslocal)|Returns the RageAreas reference in the user locale. Read-only.|
 ||[areaCount](/javascript/api/excel/excel.rangeareas#areacount)|Returns the number of rectangular ranges that comprise this RangeAreas object.|
@@ -563,8 +418,7 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 |[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[tintAndShade](/javascript/api/excel/excel.rangebordercollection#tintandshade)|Returns or sets a double that lightens or darkens a color for Range Borders, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|
 |[RangeCollection](/javascript/api/excel/excel.rangecollection)|[getCount()](/javascript/api/excel/excel.rangecollection#getcount--)|Returns the number of ranges in the RangeCollection.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangecollection#getitemat-index-)|Returns the range object based on its position in the RangeCollection.|
-||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.rangecollection#load-option-)||
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.rangecollection#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.rangecollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[items](/javascript/api/excel/excel.rangecollection#items)|Gets the loaded child items in this collection.|
 |[RangeFill](/javascript/api/excel/excel.rangefill)|[pattern](/javascript/api/excel/excel.rangefill#pattern)|Gets or sets the pattern of a Range. See Excel.FillPattern for details. LinearGradient and RectangularGradient are not supported.|
 ||[patternColor](/javascript/api/excel/excel.rangefill#patterncolor)|Sets HTML color code representing the color of the Range pattern, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
@@ -578,38 +432,35 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 ||[indentLevel](/javascript/api/excel/excel.rangeformat#indentlevel)|An integer from 0 to 250 that indicates the indent level.|
 ||[readingOrder](/javascript/api/excel/excel.rangeformat#readingorder)|The reading order for the range.|
 ||[shrinkToFit](/javascript/api/excel/excel.rangeformat#shrinktofit)|Indicates if text automatically shrinks to fit in the available column width.|
-|[RemoveDuplicatesResult](/javascript/api/excel/excel.removeduplicatesresult)|[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.removeduplicatesresult#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[removed](/javascript/api/excel/excel.removeduplicatesresult#removed)|Number of duplicated rows removed by the operation.|
+|[RemoveDuplicatesResult](/javascript/api/excel/excel.removeduplicatesresult)|[removed](/javascript/api/excel/excel.removeduplicatesresult#removed)|Number of duplicated rows removed by the operation.|
 ||[uniqueRemaining](/javascript/api/excel/excel.removeduplicatesresult#uniqueremaining)|Number of remaining unique rows present in the resulting range.|
 |[ReplaceCriteria](/javascript/api/excel/excel.replacecriteria)|[completeMatch](/javascript/api/excel/excel.replacecriteria#completematch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 ||[matchCase](/javascript/api/excel/excel.replacecriteria#matchcase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
-|[RowProperties](/javascript/api/excel/excel.rowproperties)|[address](/javascript/api/excel/excel.rowproperties#address)|Represents the `address` property.|
-||[addressLocal](/javascript/api/excel/excel.rowproperties#addresslocal)|Represents the `addressLocal` property.|
-||[rowIndex](/javascript/api/excel/excel.rowproperties#rowindex)|Represents the `rowIndex` property.|
+|[RowProperties](/javascript/api/excel/excel.rowproperties)|[address](/javascript/api/excel/excel.rowproperties#address)||
+||[addressLocal](/javascript/api/excel/excel.rowproperties#addresslocal)||
+||[rowIndex](/javascript/api/excel/excel.rowproperties#rowindex)||
 |[SearchCriteria](/javascript/api/excel/excel.searchcriteria)|[completeMatch](/javascript/api/excel/excel.searchcriteria#completematch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 ||[matchCase](/javascript/api/excel/excel.searchcriteria#matchcase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
 ||[searchDirection](/javascript/api/excel/excel.searchcriteria#searchdirection)|Specifies the search direction. Default is forward. See Excel.SearchDirection.|
-|[SettableCellProperties](/javascript/api/excel/excel.settablecellproperties)|[format](/javascript/api/excel/excel.settablecellproperties#format)|Represents the `format` property.|
-||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)|Represents the `hyperlink` property.|
-||[style](/javascript/api/excel/excel.settablecellproperties#style)|Represents the `style` property.|
-|[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)|Represents the `columnHidden` property.|
-||[format](/javascript/api/excel/excel.settablecolumnproperties#format)|Represents the `format` property.|
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablerowproperties#format)|Represents the `format` property.|
-||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)|Represents the `rowHidden` property.|
+|[SettableCellProperties](/javascript/api/excel/excel.settablecellproperties)|[format](/javascript/api/excel/excel.settablecellproperties#format)||
+||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)||
+||[style](/javascript/api/excel/excel.settablecellproperties#style)||
+|[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Returns or sets the alternative description text for a Shape object.|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|Returns or sets the alternative title text for a Shape object.|
 ||[delete()](/javascript/api/excel/excel.shape#delete--)|Removes the shape from the worksheet.|
 ||[geometricShapeType](/javascript/api/excel/excel.shape#geometricshapetype)|Represents the geometric shape type of this geometric shape. See Excel.GeometricShapeType for details. Returns null if the shape type is not "GeometricShape".|
+||[getAsImage(format: "UNKNOWN" \| "BMP" \| "JPEG" \| "GIF" \| "PNG" \| "SVG")](/javascript/api/excel/excel.shape#getasimage-format-)|Converts the shape to an image and returns the image as a base64-encoded string. The DPI is 96. The only supported formats are `Excel.PictureFormat.BMP`, `Excel.PictureFormat.PNG`, `Excel.PictureFormat.JPEG`, and `Excel.PictureFormat.GIF`.|
 ||[getAsImage(format: Excel.PictureFormat)](/javascript/api/excel/excel.shape#getasimage-format-)|Converts the shape to an image and returns the image as a base64-encoded string. The DPI is 96. The only supported formats are `Excel.PictureFormat.BMP`, `Excel.PictureFormat.PNG`, `Excel.PictureFormat.JPEG`, and `Excel.PictureFormat.GIF`.|
-||[getAsImage(formatString: "UNKNOWN" \| "BMP" \| "JPEG" \| "GIF" \| "PNG" \| "SVG")](/javascript/api/excel/excel.shape#getasimage-formatstring-)|Converts the shape to an image and returns the image as a base64-encoded string. The DPI is 96. The only supported formats are `Excel.PictureFormat.BMP`, `Excel.PictureFormat.PNG`, `Excel.PictureFormat.JPEG`, and `Excel.PictureFormat.GIF`.|
 ||[height](/javascript/api/excel/excel.shape#height)|Represents the height, in points, of the shape.|
 ||[incrementLeft(increment: number)](/javascript/api/excel/excel.shape#incrementleft-increment-)|Moves the shape horizontally by the specified number of points.|
 ||[incrementRotation(increment: number)](/javascript/api/excel/excel.shape#incrementrotation-increment-)|Rotates the shape clockwise around the z-axis by the specified number of degrees.|
 ||[incrementTop(increment: number)](/javascript/api/excel/excel.shape#incrementtop-increment-)|Moves the shape vertically by the specified number of points.|
 ||[left](/javascript/api/excel/excel.shape#left)|The distance, in points, from the left side of the shape to the left side of the worksheet.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.shape#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[lockAspectRatio](/javascript/api/excel/excel.shape#lockaspectratio)|Specifies whether or not the aspect ratio of this shape is locked.|
 ||[name](/javascript/api/excel/excel.shape#name)|Represents the name of the shape.|
+||[placement](/javascript/api/excel/excel.shape#placement)|Represents how the object is attached to the cells below it.|
 ||[connectionSiteCount](/javascript/api/excel/excel.shape#connectionsitecount)|Returns the number of connection sites on this shape. Read-only.|
 ||[fill](/javascript/api/excel/excel.shape#fill)|Returns the fill formatting of this shape. Read-only.|
 ||[geometricShape](/javascript/api/excel/excel.shape#geometricshape)|Returns the geometric shape associated with the shape. An error will be thrown if the shape type is not "GeometricShape".|
@@ -624,65 +475,109 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 ||[parentGroup](/javascript/api/excel/excel.shape#parentgroup)|Represents the parent group of this shape.|
 ||[textFrame](/javascript/api/excel/excel.shape#textframe)|Returns the text frame object of this shape. Read only.|
 ||[type](/javascript/api/excel/excel.shape#type)|Returns the type of this shape. See Excel.ShapeType for details. Read-only.|
-||[zOrderPosition](/javascript/api/excel/excel.shape#zorderposition)|Returns the position of the specified shape in the z-order, with 0 representing the bottom of the order stack. Read-only.|
+||[zorderPosition](/javascript/api/excel/excel.shape#zorderposition)|Returns the position of the specified shape in the z-order, with 0 representing the bottom of the order stack. Read-only.|
 ||[rotation](/javascript/api/excel/excel.shape#rotation)|Represents the rotation, in degrees, of the shape.|
+||[scaleHeight(scaleFactor: number, scaleType: "CurrentSize" \| "OriginalSize", scaleFrom?: "ScaleFromTopLeft" \| "ScaleFromMiddle" \| "ScaleFromBottomRight")](/javascript/api/excel/excel.shape#scaleheight-scalefactor--scaletype--scalefrom-)|Scales the height of the shape by a specified factor. For images, you can indicate whether you want to scale the shape relative to the original or the current size. Shapes other than pictures are always scaled relative to their current height.|
 ||[scaleHeight(scaleFactor: number, scaleType: Excel.ShapeScaleType, scaleFrom?: Excel.ShapeScaleFrom)](/javascript/api/excel/excel.shape#scaleheight-scalefactor--scaletype--scalefrom-)|Scales the height of the shape by a specified factor. For images, you can indicate whether you want to scale the shape relative to the original or the current size. Shapes other than pictures are always scaled relative to their current height.|
-||[scaleHeight(scaleFactor: number, scaleTypeString: "CurrentSize" \| "OriginalSize", scaleFrom?: "ScaleFromTopLeft" \| "ScaleFromMiddle" \| "ScaleFromBottomRight")](/javascript/api/excel/excel.shape#scaleheight-scalefactor--scaletypestring--scalefrom-)|Scales the height of the shape by a specified factor. For images, you can indicate whether you want to scale the shape relative to the original or the current size. Shapes other than pictures are always scaled relative to their current height.|
+||[scaleWidth(scaleFactor: number, scaleType: "CurrentSize" \| "OriginalSize", scaleFrom?: "ScaleFromTopLeft" \| "ScaleFromMiddle" \| "ScaleFromBottomRight")](/javascript/api/excel/excel.shape#scalewidth-scalefactor--scaletype--scalefrom-)|Scales the width of the shape by a specified factor. For images, you can indicate whether you want to scale the shape relative to the original or the current size. Shapes other than pictures are always scaled relative to their current width.|
 ||[scaleWidth(scaleFactor: number, scaleType: Excel.ShapeScaleType, scaleFrom?: Excel.ShapeScaleFrom)](/javascript/api/excel/excel.shape#scalewidth-scalefactor--scaletype--scalefrom-)|Scales the width of the shape by a specified factor. For images, you can indicate whether you want to scale the shape relative to the original or the current size. Shapes other than pictures are always scaled relative to their current width.|
-||[scaleWidth(scaleFactor: number, scaleTypeString: "CurrentSize" \| "OriginalSize", scaleFrom?: "ScaleFromTopLeft" \| "ScaleFromMiddle" \| "ScaleFromBottomRight")](/javascript/api/excel/excel.shape#scalewidth-scalefactor--scaletypestring--scalefrom-)|Scales the width of the shape by a specified factor. For images, you can indicate whether you want to scale the shape relative to the original or the current size. Shapes other than pictures are always scaled relative to their current width.|
+||[setZOrder(position: "BringToFront" \| "BringForward" \| "SendToBack" \| "SendBackward")](/javascript/api/excel/excel.shape#setzorder-position-)|Moves the specified shape up or down the collection's z-order, which shifts it in front of or behind other shapes.|
 ||[setZOrder(position: Excel.ShapeZOrder)](/javascript/api/excel/excel.shape#setzorder-position-)|Moves the specified shape up or down the collection's z-order, which shifts it in front of or behind other shapes.|
-||[setZOrder(positionString: "BringToFront" \| "BringForward" \| "SendToBack" \| "SendBackward")](/javascript/api/excel/excel.shape#setzorder-positionstring-)|Moves the specified shape up or down the collection's z-order, which shifts it in front of or behind other shapes.|
 ||[top](/javascript/api/excel/excel.shape#top)|The distance, in points, from the top edge of the shape to the top edge of the worksheet.|
 ||[visible](/javascript/api/excel/excel.shape#visible)|Represents the visibility of this shape.|
 ||[width](/javascript/api/excel/excel.shape#width)|Represents the width, in points, of the shape.|
 |[ShapeActivatedEventArgs](/javascript/api/excel/excel.shapeactivatedeventargs)|[shapeId](/javascript/api/excel/excel.shapeactivatedeventargs#shapeid)|Gets the id of the activated shape.|
 ||[type](/javascript/api/excel/excel.shapeactivatedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.shapeactivatedeventargs#worksheetid)|Gets the id of the worksheet in which the shape is activated.|
-|[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addGeometricShape(geometricShapeType: Excel.GeometricShapeType)](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-)|Adds a geometric shape to the worksheet. Returns a Shape object that represents the new shape.|
-||[addGeometricShape(geometricShapeTypeString: "LineInverse" \| "Triangle" \| "RightTriangle" \| "Rectangle" \| "Diamond" \| "Parallelogram" \| "Trapezoid" \| "NonIsoscelesTrapezoid" \| "Pentagon" \| "Hexagon" \| "Heptagon" \| "Octagon" \| "Decagon" \| "Dodecagon" \| "Star4" \| "Star5" \| "Star6" \| "Star7" \| "Star8" \| "Star10" \| "Star12" \| "Star16" \| "Star24" \| "Star32" \| "RoundRectangle" \| "Round1Rectangle" \| "Round2SameRectangle" \| "Round2DiagonalRectangle" \| "SnipRoundRectangle" \| "Snip1Rectangle" \| "Snip2SameRectangle" \| "Snip2DiagonalRectangle" \| "Plaque" \| "Ellipse" \| "Teardrop" \| "HomePlate" \| "Chevron" \| "PieWedge" \| "Pie" \| "BlockArc" \| "Donut" \| "NoSmoking" \| "RightArrow" \| "LeftArrow" \| "UpArrow" \| "DownArrow" \| "StripedRightArrow" \| "NotchedRightArrow" \| "BentUpArrow" \| "LeftRightArrow" \| "UpDownArrow" \| "LeftUpArrow" \| "LeftRightUpArrow" \| "QuadArrow" \| "LeftArrowCallout" \| "RightArrowCallout" \| "UpArrowCallout" \| "DownArrowCallout" \| "LeftRightArrowCallout" \| "UpDownArrowCallout" \| "QuadArrowCallout" \| "BentArrow" \| "UturnArrow" \| "CircularArrow" \| "LeftCircularArrow" \| "LeftRightCircularArrow" \| "CurvedRightArrow" \| "CurvedLeftArrow" \| "CurvedUpArrow" \| "CurvedDownArrow" \| "SwooshArrow" \| "Cube" \| "Can" \| "LightningBolt" \| "Heart" \| "Sun" \| "Moon" \| "SmileyFace" \| "IrregularSeal1" \| "IrregularSeal2" \| "FoldedCorner" \| "Bevel" \| "Frame" \| "HalfFrame" \| "Corner" \| "DiagonalStripe" \| "Chord" \| "Arc" \| "LeftBracket" \| "RightBracket" \| "LeftBrace" \| "RightBrace" \| "BracketPair" \| "BracePair" \| "Callout1" \| "Callout2" \| "Callout3" \| "AccentCallout1" \| "AccentCallout2" \| "AccentCallout3" \| "BorderCallout1" \| "BorderCallout2" \| "BorderCallout3" \| "AccentBorderCallout1" \| "AccentBorderCallout2" \| "AccentBorderCallout3" \| "WedgeRectCallout" \| "WedgeRRectCallout" \| "WedgeEllipseCallout" \| "CloudCallout" \| "Cloud" \| "Ribbon" \| "Ribbon2" \| "EllipseRibbon" \| "EllipseRibbon2" \| "LeftRightRibbon" \| "VerticalScroll" \| "HorizontalScroll" \| "Wave" \| "DoubleWave" \| "Plus" \| "FlowChartProcess" \| "FlowChartDecision" \| "FlowChartInputOutput" \| "FlowChartPredefinedProcess" \| "FlowChartInternalStorage" \| "FlowChartDocument" \| "FlowChartMultidocument" \| "FlowChartTerminator" \| "FlowChartPreparation" \| "FlowChartManualInput" \| "FlowChartManualOperation" \| "FlowChartConnector" \| "FlowChartPunchedCard" \| "FlowChartPunchedTape" \| "FlowChartSummingJunction" \| "FlowChartOr" \| "FlowChartCollate" \| "FlowChartSort" \| "FlowChartExtract" \| "FlowChartMerge" \| "FlowChartOfflineStorage" \| "FlowChartOnlineStorage" \| "FlowChartMagneticTape" \| "FlowChartMagneticDisk" \| "FlowChartMagneticDrum" \| "FlowChartDisplay" \| "FlowChartDelay" \| "FlowChartAlternateProcess" \| "FlowChartOffpageConnector" \| "ActionButtonBlank" \| "ActionButtonHome" \| "ActionButtonHelp" \| "ActionButtonInformation" \| "ActionButtonForwardNext" \| "ActionButtonBackPrevious" \| "ActionButtonEnd" \| "ActionButtonBeginning" \| "ActionButtonReturn" \| "ActionButtonDocument" \| "ActionButtonSound" \| "ActionButtonMovie" \| "Gear6" \| "Gear9" \| "Funnel" \| "MathPlus" \| "MathMinus" \| "MathMultiply" \| "MathDivide" \| "MathEqual" \| "MathNotEqual" \| "CornerTabs" \| "SquareTabs" \| "PlaqueTabs" \| "ChartX" \| "ChartStar" \| "ChartPlus")](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetypestring-)|Adds a geometric shape to the worksheet. Returns a Shape object that represents the new shape.|
+|[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addGeometricShape(geometricShapeType: "LineInverse" \| "Triangle" \| "RightTriangle" \| "Rectangle" \| "Diamond" \| "Parallelogram" \| "Trapezoid" \| "NonIsoscelesTrapezoid" \| "Pentagon" \| "Hexagon" \| "Heptagon" \| "Octagon" \| "Decagon" \| "Dodecagon" \| "Star4" \| "Star5" \| "Star6" \| "Star7" \| "Star8" \| "Star10" \| "Star12" \| "Star16" \| "Star24" \| "Star32" \| "RoundRectangle" \| "Round1Rectangle" \| "Round2SameRectangle" \| "Round2DiagonalRectangle" \| "SnipRoundRectangle" \| "Snip1Rectangle" \| "Snip2SameRectangle" \| "Snip2DiagonalRectangle" \| "Plaque" \| "Ellipse" \| "Teardrop" \| "HomePlate" \| "Chevron" \| "PieWedge" \| "Pie" \| "BlockArc" \| "Donut" \| "NoSmoking" \| "RightArrow" \| "LeftArrow" \| "UpArrow" \| "DownArrow" \| "StripedRightArrow" \| "NotchedRightArrow" \| "BentUpArrow" \| "LeftRightArrow" \| "UpDownArrow" \| "LeftUpArrow" \| "LeftRightUpArrow" \| "QuadArrow" \| "LeftArrowCallout" \| "RightArrowCallout" \| "UpArrowCallout" \| "DownArrowCallout" \| "LeftRightArrowCallout" \| "UpDownArrowCallout" \| "QuadArrowCallout" \| "BentArrow" \| "UturnArrow" \| "CircularArrow" \| "LeftCircularArrow" \| "LeftRightCircularArrow" \| "CurvedRightArrow" \| "CurvedLeftArrow" \| "CurvedUpArrow" \| "CurvedDownArrow" \| "SwooshArrow" \| "Cube" \| "Can" \| "LightningBolt" \| "Heart" \| "Sun" \| "Moon" \| "SmileyFace" \| "IrregularSeal1" \| "IrregularSeal2" \| "FoldedCorner" \| "Bevel" \| "Frame" \| "HalfFrame" \| "Corner" \| "DiagonalStripe" \| "Chord" \| "Arc" \| "LeftBracket" \| "RightBracket" \| "LeftBrace" \| "RightBrace" \| "BracketPair" \| "BracePair" \| "Callout1" \| "Callout2" \| "Callout3" \| "AccentCallout1" \| "AccentCallout2" \| "AccentCallout3" \| "BorderCallout1" \| "BorderCallout2" \| "BorderCallout3" \| "AccentBorderCallout1" \| "AccentBorderCallout2" \| "AccentBorderCallout3" \| "WedgeRectCallout" \| "WedgeRRectCallout" \| "WedgeEllipseCallout" \| "CloudCallout" \| "Cloud" \| "Ribbon" \| "Ribbon2" \| "EllipseRibbon" \| "EllipseRibbon2" \| "LeftRightRibbon" \| "VerticalScroll" \| "HorizontalScroll" \| "Wave" \| "DoubleWave" \| "Plus" \| "FlowChartProcess" \| "FlowChartDecision" \| "FlowChartInputOutput" \| "FlowChartPredefinedProcess" \| "FlowChartInternalStorage" \| "FlowChartDocument" \| "FlowChartMultidocument" \| "FlowChartTerminator" \| "FlowChartPreparation" \| "FlowChartManualInput" \| "FlowChartManualOperation" \| "FlowChartConnector" \| "FlowChartPunchedCard" \| "FlowChartPunchedTape" \| "FlowChartSummingJunction" \| "FlowChartOr" \| "FlowChartCollate" \| "FlowChartSort" \| "FlowChartExtract" \| "FlowChartMerge" \| "FlowChartOfflineStorage" \| "FlowChartOnlineStorage" \| "FlowChartMagneticTape" \| "FlowChartMagneticDisk" \| "FlowChartMagneticDrum" \| "FlowChartDisplay" \| "FlowChartDelay" \| "FlowChartAlternateProcess" \| "FlowChartOffpageConnector" \| "ActionButtonBlank" \| "ActionButtonHome" \| "ActionButtonHelp" \| "ActionButtonInformation" \| "ActionButtonForwardNext" \| "ActionButtonBackPrevious" \| "ActionButtonEnd" \| "ActionButtonBeginning" \| "ActionButtonReturn" \| "ActionButtonDocument" \| "ActionButtonSound" \| "ActionButtonMovie" \| "Gear6" \| "Gear9" \| "Funnel" \| "MathPlus" \| "MathMinus" \| "MathMultiply" \| "MathDivide" \| "MathEqual" \| "MathNotEqual" \| "CornerTabs" \| "SquareTabs" \| "PlaqueTabs" \| "ChartX" \| "ChartStar" \| "ChartPlus")](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-)|Adds a geometric shape to the worksheet. Returns a Shape object that represents the new shape.|
+||[addGeometricShape(geometricShapeType: Excel.GeometricShapeType)](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-)|Adds a geometric shape to the worksheet. Returns a Shape object that represents the new shape.|
 ||[addGroup(values: Array<string \| Shape>)](/javascript/api/excel/excel.shapecollection#addgroup-values-)|Groups a subset of shapes in this collection's worksheet. Returns a Shape object that represents the new group of shapes.|
 ||[addImage(base64ImageString: string)](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-)|Creates an image from a base64-encoded string and adds it to the worksheet. Returns the Shape object that represents the new image.|
+||[addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: "Straight" \| "Elbow" \| "Curve")](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-)|Adds a line to worksheet. Returns a Shape object that represents the new line.|
 ||[addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType)](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-)|Adds a line to worksheet. Returns a Shape object that represents the new line.|
-||[addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorTypeString?: "Straight" \| "Elbow" \| "Curve")](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortypestring-)|Adds a line to worksheet. Returns a Shape object that represents the new line.|
+||[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addsvg-xml-)|Creates a scalable vector graphic (SVG) from an XML string and adds it to the worksheet. Returns a Shape object that represents the new image.|
 ||[addTextBox(text?: string)](/javascript/api/excel/excel.shapecollection#addtextbox-text-)|Adds a text box to the worksheet with the provided text as the content. Returns a Shape object that represents the new text box.|
 ||[getCount()](/javascript/api/excel/excel.shapecollection#getcount--)|Returns the number of shapes in the worksheet. Read-only.|
-||[getItem(key: string)](/javascript/api/excel/excel.shapecollection#getitem-key-)|Gets a shape using its Name or ID.|
+||[getItem(name: string)](/javascript/api/excel/excel.shapecollection#getitem-name-)|Gets a shape using its name.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.shapecollection#getitemat-index-)|Gets a shape using its position in the collection.|
-||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.shapecollection#load-option-)||
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.shapecollection#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.shapecollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[items](/javascript/api/excel/excel.shapecollection#items)|Gets the loaded child items in this collection.|
 |[ShapeDeactivatedEventArgs](/javascript/api/excel/excel.shapedeactivatedeventargs)|[shapeId](/javascript/api/excel/excel.shapedeactivatedeventargs#shapeid)|Gets the id of the shape deactivated shape.|
 ||[type](/javascript/api/excel/excel.shapedeactivatedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.shapedeactivatedeventargs#worksheetid)|Gets the id of the worksheet in which the shape is deactivated.|
 |[ShapeFill](/javascript/api/excel/excel.shapefill)|[clear()](/javascript/api/excel/excel.shapefill#clear--)|Clears the fill formatting of this shape.|
 ||[foregroundColor](/javascript/api/excel/excel.shapefill#foregroundcolor)|Represents the shape fill foreground color in HTML color format, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.shapefill#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[type](/javascript/api/excel/excel.shapefill#type)|Returns the fill type of the shape. Read-only. See Excel.ShapeFillType for details.|
 ||[setSolidColor(color: string)](/javascript/api/excel/excel.shapefill#setsolidcolor-color-)|Sets the fill formatting of the shape to a uniform color. This changes the fill type to "Solid".|
 ||[transparency](/javascript/api/excel/excel.shapefill#transparency)|Returns or sets the transparency percentage of the fill as a value from 0.0 (opaque) through 1.0 (clear). Returns null if the shape type does not support transparency or the shape fill has inconsistent transparency, such as with a gradient fill type.|
 |[ShapeFont](/javascript/api/excel/excel.shapefont)|[bold](/javascript/api/excel/excel.shapefont#bold)|Represents the bold status of font. Returns null the TextRange includes both bold and non-bold text fragments.|
 ||[color](/javascript/api/excel/excel.shapefont#color)|The HTML color code representation of the text color (e.g. "#FF0000" represents red). Returns null if the TextRange includes text fragments with different colors.|
 ||[italic](/javascript/api/excel/excel.shapefont#italic)|Represents the italic status of font. Returns null if the TextRange includes both italic and non-italic text fragments.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.shapefont#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[name](/javascript/api/excel/excel.shapefont#name)|Represents font name (e.g. "Calibri"). If the text is Complex Script or East Asian language, this is the corresponding font name; otherwise it is the Latin font name.|
 ||[size](/javascript/api/excel/excel.shapefont#size)|Represents font size in points (e.g. 11). Returns null if the TextRange includes text fragments with different font sizes.|
 ||[underline](/javascript/api/excel/excel.shapefont#underline)|Type of underline applied to the font. Returns null if the TextRange includes text fragments with different underline styles. See Excel.ShapeFontUnderlineStyle for details.|
-|[ShapeGroup](/javascript/api/excel/excel.shapegroup)|[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.shapegroup#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
-||[id](/javascript/api/excel/excel.shapegroup#id)|Represents the shape identifier. Read-only.|
+|[ShapeGroup](/javascript/api/excel/excel.shapegroup)|[id](/javascript/api/excel/excel.shapegroup#id)|Represents the shape identifier. Read-only.|
 ||[shape](/javascript/api/excel/excel.shapegroup#shape)|Returns the Shape object associated with the group. Read-only.|
 ||[shapes](/javascript/api/excel/excel.shapegroup#shapes)|Returns the collection of Shape objects. Read-only.|
 ||[ungroup()](/javascript/api/excel/excel.shapegroup#ungroup--)|Ungroups any grouped shapes in the specified shape group.|
 |[ShapeLineFormat](/javascript/api/excel/excel.shapelineformat)|[color](/javascript/api/excel/excel.shapelineformat#color)|Represents the line color in HTML color format, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
 ||[dashStyle](/javascript/api/excel/excel.shapelineformat#dashstyle)|Represents the line style of the shape. Returns null when the line is not visible or there are inconsistent dash styles. See Excel.ShapeLineStyle for details.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.shapelineformat#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[style](/javascript/api/excel/excel.shapelineformat#style)|Represents the line style of the shape. Returns null when the line is not visible or there are inconsistent styles. See Excel.ShapeLineStyle for details.|
 ||[transparency](/javascript/api/excel/excel.shapelineformat#transparency)|Represents the degree of transparency of the specified line as a value from 0.0 (opaque) through 1.0 (clear). Returns null when the shape has inconsistent transparencies.|
 ||[visible](/javascript/api/excel/excel.shapelineformat#visible)|Represents whether or not the line formatting of a shape element is visible. Returns null when the shape has inconsistent visibilities.|
 ||[weight](/javascript/api/excel/excel.shapelineformat#weight)|Represents the weight of the line, in points. Returns null when the line is not visible or there are inconsistent line weights.|
+|[Slicer](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|Represents the caption of slicer.|
+||[clearFilters()](/javascript/api/excel/excel.slicer#clearfilters--)|Clears all the filters currently applied on the slicer.|
+||[delete()](/javascript/api/excel/excel.slicer#delete--)|Deletes the slicer.|
+||[getSelectedItems()](/javascript/api/excel/excel.slicer#getselecteditems--)|Returns an array of selected items' keys. Read-only.|
+||[height](/javascript/api/excel/excel.slicer#height)|Represents the height, in points, of the slicer.|
+||[left](/javascript/api/excel/excel.slicer#left)|Represents the distance, in points, from the left side of the slicer to the left of the worksheet.|
+||[name](/javascript/api/excel/excel.slicer#name)|Represents the name of slicer.|
+||[nameInFormula](/javascript/api/excel/excel.slicer#nameinformula)|Represents the name used in the formula.|
+||[id](/javascript/api/excel/excel.slicer#id)|Represents the unique id of slicer. Read-only.|
+||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|True if all filters currently applied on the slicer is cleared.|
+||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|Represents the collection of SlicerItems that are part of the slicer. Read-only.|
+||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|Represents the worksheet containing the slicer. Read-only.|
+||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|Select slicer items based on their keys. Previous selection will be cleared.|
+||[sortBy](/javascript/api/excel/excel.slicer#sortby)|Represents the sort order of the items in the slicer. Possible values are: DataSourceOrder, Ascending, Descending.|
+||[style](/javascript/api/excel/excel.slicer#style)|Constant value that represents the Slicer style. Possible values are: SlicerStyleLight1 thru SlicerStyleLight6, TableStyleOther1 thru TableStyleOther2, SlicerStyleDark1 thru SlicerStyleDark6. A custom user-defined style present in the workbook can also be specified.|
+||[top](/javascript/api/excel/excel.slicer#top)|Represents the distance, in points, from the top edge of the slicer to the top of the worksheet.|
+||[width](/javascript/api/excel/excel.slicer#width)|Represents the width, in points, of the slicer.|
+|[SlicerCollection](/javascript/api/excel/excel.slicercollection)|[add(slicerSource: string \| PivotTable \| Table, sourceField: string \| PivotField \| number \| TableColumn, slicerDestination?: string \| Worksheet)](/javascript/api/excel/excel.slicercollection#add-slicersource--sourcefield--slicerdestination-)|Adds a new slicer to the workbook.|
+||[getCount()](/javascript/api/excel/excel.slicercollection#getcount--)|Returns the number of slicers in the collection.|
+||[getItem(key: string)](/javascript/api/excel/excel.slicercollection#getitem-key-)|Gets a slicer object using its name or id.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.slicercollection#getitemat-index-)|Gets a slicer based on its position in the collection.|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.slicercollection#getitemornullobject-key-)|Gets a slicer using its name or id. If the slicer does not exist, will return a null object.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.slicercollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[items](/javascript/api/excel/excel.slicercollection#items)|Gets the loaded child items in this collection.|
+|[SlicerItem](/javascript/api/excel/excel.sliceritem)|[isSelected](/javascript/api/excel/excel.sliceritem#isselected)|True if the slicer item is selected.|
+||[hasData](/javascript/api/excel/excel.sliceritem#hasdata)|True if the slicer item has data.|
+||[key](/javascript/api/excel/excel.sliceritem#key)|Represents the unique value representing the slicer item.|
+||[name](/javascript/api/excel/excel.sliceritem#name)|Represents the value displayed on UI.|
+|[SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)|[getCount()](/javascript/api/excel/excel.sliceritemcollection#getcount--)|Returns the number of slicer items in the slicer.|
+||[getItem(key: string)](/javascript/api/excel/excel.sliceritemcollection#getitem-key-)|Gets a slicer item object using its key or name.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.sliceritemcollection#getitemat-index-)|Gets a slicer item based on its position in the collection.|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.sliceritemcollection#getitemornullobject-key-)|Gets a slicer item using its key or name. If the slicer item does not exist, will return a null object.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.sliceritemcollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[items](/javascript/api/excel/excel.sliceritemcollection#items)|Gets the loaded child items in this collection.|
+|[SlicerStyle](/javascript/api/excel/excel.slicerstyle)|[delete()](/javascript/api/excel/excel.slicerstyle#delete--)|Deletes the SlicerStyle.|
+||[duplicate()](/javascript/api/excel/excel.slicerstyle#duplicate--)|Creates a duplicate of this SlicerStyle with copies of all the style elements.|
+||[name](/javascript/api/excel/excel.slicerstyle#name)|Gets the name of the SlicerStyle.|
+||[readOnly](/javascript/api/excel/excel.slicerstyle#readonly)|True means that this SlicerStyle object is read-only. Read-only.|
+|[SlicerStyleCollection](/javascript/api/excel/excel.slicerstylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.slicerstylecollection#add-name--makeuniquename-)|Creates a blank SlicerStyle with the specified name.|
+||[getCount()](/javascript/api/excel/excel.slicerstylecollection#getcount--)|Gets the number of slicer styles in the collection.|
+||[getDefault()](/javascript/api/excel/excel.slicerstylecollection#getdefault--)|Gets the default SlicerStyle for the parent object's scope.|
+||[getItem(name: string)](/javascript/api/excel/excel.slicerstylecollection#getitem-name-)|Gets a SlicerStyle by name.|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.slicerstylecollection#getitemornullobject-name-)|Gets a SlicerStyle by name. If the SlicerStyle does not exist, will return a null object.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.slicerstylecollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[items](/javascript/api/excel/excel.slicerstylecollection#items)|Gets the loaded child items in this collection.|
+||[setDefault(newDefaultStyle: SlicerStyle \| string)](/javascript/api/excel/excel.slicerstylecollection#setdefault-newdefaultstyle-)|Sets the default SlicerStyle for use in the parent object's scope.|
 |[SortField](/javascript/api/excel/excel.sortfield)|[subField](/javascript/api/excel/excel.sortfield#subfield)|Represents the subfield that is the target property name of a rich value to sort on.|
 |[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getCount()](/javascript/api/excel/excel.stylecollection#getcount--)|Gets the number of styles in the collection.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.stylecollection#getitemat-index-)|Gets a style based on its position in the collection.|
-|[Table](/javascript/api/excel/excel.table)|[autoFilter](/javascript/api/excel/excel.table#autofilter)|Represents the AutoFilter object of the table. Read-Only.|
+|[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|Changes the table to use the default table style.|
+||[autoFilter](/javascript/api/excel/excel.table#autofilter)|Represents the AutoFilter object of the table. Read-Only.|
+||[onFiltered](/javascript/api/excel/excel.table#onfiltered)|Occurs when filter is applied on a specific table.|
 |[TableAddedEventArgs](/javascript/api/excel/excel.tableaddedeventargs)|[source](/javascript/api/excel/excel.tableaddedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
 ||[tableId](/javascript/api/excel/excel.tableaddedeventargs#tableid)|Gets the id of the table that is added.|
 ||[type](/javascript/api/excel/excel.tableaddedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
@@ -690,24 +585,38 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[details](/javascript/api/excel/excel.tablechangedeventargs#details)|Represents the information about the change detail|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[onAdded](/javascript/api/excel/excel.tablecollection#onadded)|Occurs when new table is added in a workbook.|
 ||[onDeleted](/javascript/api/excel/excel.tablecollection#ondeleted)|Occurs when the specified table is deleted in a workbook.|
+||[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|Occurs when filter is applied on any table in a workbook, or a worksheet.|
 |[TableDeletedEventArgs](/javascript/api/excel/excel.tabledeletedeventargs)|[source](/javascript/api/excel/excel.tabledeletedeventargs#source)|Specifies the source of the event. See Excel.EventSource for details.|
 ||[tableId](/javascript/api/excel/excel.tabledeletedeventargs#tableid)|Specifies the id of the table that is deleted.|
 ||[tableName](/javascript/api/excel/excel.tabledeletedeventargs#tablename)|Specifies the name of the table that is deleted.|
 ||[type](/javascript/api/excel/excel.tabledeletedeventargs#type)|Specifies the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.tabledeletedeventargs#worksheetid)|Specifies the id of the worksheet in which the table is deleted.|
+|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Represents the id of the table in which the filter is applied..|
+||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
+||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Represents the id of the worksheet which contains the table.|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getCount()](/javascript/api/excel/excel.tablescopedcollection#getcount--)|Gets the number of tables in the collection.|
 ||[getFirst()](/javascript/api/excel/excel.tablescopedcollection#getfirst--)|Gets the first table in the collection. The tables in the collection are sorted top to bottom and left to right, such that top left table is the first table in the collection.|
 ||[getItem(key: string)](/javascript/api/excel/excel.tablescopedcollection#getitem-key-)|Gets a table by Name or ID.|
-||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.tablescopedcollection#load-option-)||
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.tablescopedcollection#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.tablescopedcollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[items](/javascript/api/excel/excel.tablescopedcollection#items)|Gets the loaded child items in this collection.|
+|[TableStyle](/javascript/api/excel/excel.tablestyle)|[delete()](/javascript/api/excel/excel.tablestyle#delete--)|Deletes the TableStyle.|
+||[duplicate()](/javascript/api/excel/excel.tablestyle#duplicate--)|Creates a duplicate of this TableStyle with copies of all the style elements.|
+||[name](/javascript/api/excel/excel.tablestyle#name)|Gets the name of the TableStyle.|
+||[readOnly](/javascript/api/excel/excel.tablestyle#readonly)|True means that this TableStyle object is read-only. Read-only.|
+|[TableStyleCollection](/javascript/api/excel/excel.tablestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.tablestylecollection#add-name--makeuniquename-)|Creates a blank TableStyle with the specified name.|
+||[getCount()](/javascript/api/excel/excel.tablestylecollection#getcount--)|Gets the number of table styles in the collection.|
+||[getDefault()](/javascript/api/excel/excel.tablestylecollection#getdefault--)|Gets the default TableStyle for the parent object's scope.|
+||[getItem(name: string)](/javascript/api/excel/excel.tablestylecollection#getitem-name-)|Gets a TableStyle by name.|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.tablestylecollection#getitemornullobject-name-)|Gets a TableStyle by name. If the TableStyle does not exist, will return a null object.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.tablestylecollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[items](/javascript/api/excel/excel.tablestylecollection#items)|Gets the loaded child items in this collection.|
+||[setDefault(newDefaultStyle: TableStyle \| string)](/javascript/api/excel/excel.tablestylecollection#setdefault-newdefaultstyle-)|Sets the default TableStyle for use in the parent object's scope.|
 |[TextFrame](/javascript/api/excel/excel.textframe)|[autoSizeSetting](/javascript/api/excel/excel.textframe#autosizesetting)|Gets or sets the automatic sizing settings for the text frame. A text frame can be set to automatically fit the text to the text frame, to automatically fit the text frame to the text, or not perform any automatic sizing.|
 ||[bottomMargin](/javascript/api/excel/excel.textframe#bottommargin)|Represents the bottom margin, in points, of the text frame.|
 ||[deleteText()](/javascript/api/excel/excel.textframe#deletetext--)|Deletes all the text in the text frame.|
 ||[horizontalAlignment](/javascript/api/excel/excel.textframe#horizontalalignment)|Represents the horizontal alignment of the text frame. See Excel.ShapeTextHorizontalAlignment for details.|
 ||[horizontalOverflow](/javascript/api/excel/excel.textframe#horizontaloverflow)|Represents the horizontal overflow behavior of the text frame. See Excel.ShapeTextHorizontalOverflow for details.|
 ||[leftMargin](/javascript/api/excel/excel.textframe#leftmargin)|Represents the left margin, in points, of the text frame.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.textframe#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[orientation](/javascript/api/excel/excel.textframe#orientation)|Represents the text orientation of the text frame. See Excel.ShapeTextOrientation for details.|
 ||[readingOrder](/javascript/api/excel/excel.textframe#readingorder)|Represents the reading order of the text frame, either left-to-right or right-to-left. See Excel.ShapeTextReadingOrder for details.|
 ||[hasText](/javascript/api/excel/excel.textframe#hastext)|Specifies whether the text frame contains text.|
@@ -717,37 +626,69 @@ The following is a complete list of APIs in the ExcelApi 1.9 requirement set.
 ||[verticalAlignment](/javascript/api/excel/excel.textframe#verticalalignment)|Represents the vertical alignment of the text frame. See Excel.ShapeTextVerticalAlignment for details.|
 ||[verticalOverflow](/javascript/api/excel/excel.textframe#verticaloverflow)|Represents the vertical overflow behavior of the text frame. See Excel.ShapeTextVerticalOverflow for details.|
 |[TextRange](/javascript/api/excel/excel.textrange)|[getSubstring(start: number, length?: number)](/javascript/api/excel/excel.textrange#getsubstring-start--length-)|Returns a TextRange object for the substring in the given range.|
-||[load(propertyNames?: string \| string[])](/javascript/api/excel/excel.textrange#load-propertynames-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[font](/javascript/api/excel/excel.textrange#font)|Returns a ShapeFont object that represents the font attributes for the text range. Read-only.|
 ||[text](/javascript/api/excel/excel.textrange#text)|Represents the plain text content of the text range.|
+|[TimelineStyle](/javascript/api/excel/excel.timelinestyle)|[delete()](/javascript/api/excel/excel.timelinestyle#delete--)|Deletes the TableStyle.|
+||[duplicate()](/javascript/api/excel/excel.timelinestyle#duplicate--)|Creates a duplicate of this TimelineStyle with copies of all the style elements.|
+||[name](/javascript/api/excel/excel.timelinestyle#name)|Gets the name of the TimelineStyle.|
+||[readOnly](/javascript/api/excel/excel.timelinestyle#readonly)|True means that this TimelineStyle object is read-only. Read-only.|
+|[TimelineStyleCollection](/javascript/api/excel/excel.timelinestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.timelinestylecollection#add-name--makeuniquename-)|Creates a blank TimelineStyle with the specified name.|
+||[getCount()](/javascript/api/excel/excel.timelinestylecollection#getcount--)|Gets the number of timeline styles in the collection.|
+||[getDefault()](/javascript/api/excel/excel.timelinestylecollection#getdefault--)|Gets the default TimelineStyle for the parent object's scope.|
+||[getItem(name: string)](/javascript/api/excel/excel.timelinestylecollection#getitem-name-)|Gets a TimelineStyle by name.|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getitemornullobject-name-)|Gets a TimelineStyle by name. If the TimelineStyle does not exist, will return a null object.|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.timelinestylecollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
+||[items](/javascript/api/excel/excel.timelinestylecollection#items)|Gets the loaded child items in this collection.|
+||[setDefault(newDefaultStyle: TimelineStyle \| string)](/javascript/api/excel/excel.timelinestylecollection#setdefault-newdefaultstyle-)|Sets the default TimelineStyle for use in the parent object's scope.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[chartDataPointTrack](/javascript/api/excel/excel.workbook#chartdatapointtrack)|True if all charts in the workbook are tracking the actual data points to which they are attached.|
+||[close(closeBehavior?: "Save" \| "SkipSave")](/javascript/api/excel/excel.workbook#close-closebehavior-)|Close current workbook.|
+||[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close-closebehavior-)|Close current workbook.|
 ||[getActiveChart()](/javascript/api/excel/excel.workbook#getactivechart--)|Gets the currently active chart in the workbook. If there is no active chart, will throw exception when invoke this statement|
 ||[getActiveChartOrNullObject()](/javascript/api/excel/excel.workbook#getactivechartornullobject--)|Gets the currently active chart in the workbook. If there is no active chart, will return null object|
+||[getActiveSlicer()](/javascript/api/excel/excel.workbook#getactiveslicer--)|Gets the currently active slicer in the workbook. If there is no active slicer, will throw exception when invoke this statement.|
+||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getactiveslicerornullobject--)|Gets the currently active slicer in the workbook. If there is no active slicer, will return null object|
 ||[getIsActiveCollabSession()](/javascript/api/excel/excel.workbook#getisactivecollabsession--)|True if the workbook is being edited by multiple users (co-authoring).|
 ||[getSelectedRanges()](/javascript/api/excel/excel.workbook#getselectedranges--)|Gets the currently selected one or more ranges from the workbook. Unlike getSelectedRange(), this method returns a RangeAreas object that represents all the selected ranges.|
 ||[isDirty](/javascript/api/excel/excel.workbook#isdirty)|Specifies whether or not changes have been made since the workbook was last saved.|
 ||[autoSave](/javascript/api/excel/excel.workbook#autosave)|Specifies whether or not the workbook is in autosave mode. Read-Only.|
 ||[calculationEngineVersion](/javascript/api/excel/excel.workbook#calculationengineversion)|Returns a number about the version of Excel Calculation Engine. Read-Only.|
+||[comments](/javascript/api/excel/excel.workbook#comments)|Represents a collection of Comments associated with the workbook. Read-only.|
 ||[onAutoSaveSettingChanged](/javascript/api/excel/excel.workbook#onautosavesettingchanged)|Occurs when the autoSave setting is changed on the workbook.|
+||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivottablestyles)|Represents a collection of PivotTableStyles associated with the workbook. Read-only.|
 ||[previouslySaved](/javascript/api/excel/excel.workbook#previouslysaved)|Specifies whether or not the workbook has ever been saved locally or online. Read-Only.|
+||[slicerStyles](/javascript/api/excel/excel.workbook#slicerstyles)|Represents a collection of SlicerStyles associated with the workbook. Read-only.|
+||[slicers](/javascript/api/excel/excel.workbook#slicers)|Represents a collection of Slicers associated with the workbook. Read-only.|
+||[tableStyles](/javascript/api/excel/excel.workbook#tablestyles)|Represents a collection of TableStyles associated with the workbook. Read-only.|
+||[timelineStyles](/javascript/api/excel/excel.workbook#timelinestyles)|Represents a collection of TimelineStyles associated with the workbook. Read-only.|
+||[save(saveBehavior?: "Save" \| "Prompt")](/javascript/api/excel/excel.workbook#save-savebehavior-)|Save current workbook.|
+||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|Save current workbook.|
+||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True if the workbook uses the 1904 date system.|
 ||[usePrecisionAsDisplayed](/javascript/api/excel/excel.workbook#useprecisionasdisplayed)|True if calculations in this workbook will be done using only the precision of the numbers as they're displayed.|
-|[WorkbookAutoSaveSetting ChangedEventArgs](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)|[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
+|[WorkbookAutoSaveSetting[...]](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)|[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[enableCalculation](/javascript/api/excel/excel.worksheet#enablecalculation)|Gets or sets the enableCalculation property of the worksheet.|
 ||[findAll(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findall-text--criteria-)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|
 ||[findAllOrNullObject(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findallornullobject-text--criteria-)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|
 ||[getRanges(address?: string)](/javascript/api/excel/excel.worksheet#getranges-address-)|Gets the RangeAreas object, representing one or more blocks of rectangular ranges, specified by the address or name.|
 ||[autoFilter](/javascript/api/excel/excel.worksheet#autofilter)|Represents the AutoFilter object of the worksheet. Read-Only.|
+||[comments](/javascript/api/excel/excel.worksheet#comments)|Returns a collection of all the Comments objects on the worksheet. Read-only.|
 ||[horizontalPageBreaks](/javascript/api/excel/excel.worksheet#horizontalpagebreaks)|Gets the horizontal page break collection for the worksheet. This collection only contains manual page breaks.|
+||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Occurs when filter is applied on a specific worksheet.|
 ||[onFormatChanged](/javascript/api/excel/excel.worksheet#onformatchanged)|Occurs when format changed on a specific worksheet.|
 ||[pageLayout](/javascript/api/excel/excel.worksheet#pagelayout)|Gets the PageLayout object of the worksheet.|
 ||[shapes](/javascript/api/excel/excel.worksheet#shapes)|Returns the collection of all the Shape objects on the worksheet. Read-only.|
+||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Returns collection of slicers that are part of the worksheet. Read-only.|
 ||[verticalPageBreaks](/javascript/api/excel/excel.worksheet#verticalpagebreaks)|Gets the vertical page break collection for the worksheet. This collection only contains manual page breaks.|
 ||[replaceAll(text: string, replacement: string, criteria: Excel.ReplaceCriteria)](/javascript/api/excel/excel.worksheet#replaceall-text--replacement--criteria-)|Finds and replaces the given string based on the criteria specified within the current worksheet.|
 |[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[details](/javascript/api/excel/excel.worksheetchangedeventargs#details)|Represents the information about the change detail|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onChanged](/javascript/api/excel/excel.worksheetcollection#onchanged)|Occurs when any worksheet in the workbook is changed.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: "None" \| "Before" \| "After" \| "Beginning" \| "End", relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Inserts the specified worksheets of a workbook into the current workbook.|
+||[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Inserts the specified worksheets of a workbook into the current workbook.|
+||[onChanged](/javascript/api/excel/excel.worksheetcollection#onchanged)|Occurs when any worksheet in the workbook is changed.|
+||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Occurs when any worksheet's filter is applied in the workbook.|
 ||[onFormatChanged](/javascript/api/excel/excel.worksheetcollection#onformatchanged)|Occurs when any worksheet in the workbook has format changed.|
 ||[onSelectionChanged](/javascript/api/excel/excel.worksheetcollection#onselectionchanged)|Occurs when the selection changes on any worksheet.|
-|[WorksheetFormatChangedEventArgs](/javascript/api/excel/excel.worksheetformatchangedeventargs)|[address](/javascript/api/excel/excel.worksheetformatchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
+|[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
+||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|Represents the id of the worksheet in which the filter is applied.|
+|[WorksheetFormatChanged[...]](/javascript/api/excel/excel.worksheetformatchangedeventargs)|[address](/javascript/api/excel/excel.worksheetformatchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
 ||[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.worksheetformatchangedeventargs#getrange-ctx-)|Gets the range that represents the changed area of a specific worksheet.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.worksheetformatchangedeventargs#getrangeornullobject-ctx-)|Gets the range that represents the changed area of a specific worksheet. It might return null object.|
 ||[source](/javascript/api/excel/excel.worksheetformatchangedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|

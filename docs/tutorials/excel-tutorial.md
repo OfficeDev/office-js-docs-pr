@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 06/20/2019
+ms.date: 01/28/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
@@ -42,7 +42,7 @@ Complete the following steps to create the Excel add-in project that you'll use 
 
 3. Run the command `npm install` to install the tools and libraries listed in the package.json file. 
 
-4. Carry out the steps in [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
+4. Carry out the steps in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
 
 ## Create a table
 
@@ -161,7 +161,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 
 3. Run the command `npm start` to start a web server running on localhost.
 
@@ -169,7 +169,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
 
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -305,7 +305,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
      > [!NOTE]
      > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 
 3. Run the command `npm start` to start a web server running on localhost.
 
@@ -409,7 +409,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
      > [!NOTE]
      > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 
 3. Run the command `npm start` to start a web server running on localhost.
 
@@ -484,7 +484,7 @@ When a table is long enough that a user must scroll to see some rows, the header
      > [!NOTE]
      > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 
 3. Run the command `npm start` to start a web server running on localhost.
 
@@ -728,9 +728,7 @@ Open the /function-file/function-file.html file. This is a UI-less HTML file tha
 
     - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-    - For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
-    
-        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+    - For Mac: `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
 3. If for any reason, your server is not running, then in a Git Bash window, or Node.JS-enabled system prompt, navigate to the **Start** folder of the project and run the command `npm start`. You do not need to rebuild the project because the only JavaScript file you changed is not part of the built bundle.js.
 
@@ -738,7 +736,7 @@ Open the /function-file/function-file.html file. This is a UI-less HTML file tha
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
 
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -844,7 +842,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 8. Save the file.
 
    > [!NOTE]
-   > The popup.html file, and the popup.js file that it loads, run in an entirely separate Edge or Internet Explorer 11 process from the add-in's task pane. If the popup.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the popup.js file does not contain any JavaScript that is unsupported by Internet Explorer 11. For these two reasons, this add-in does not transpile the popup.js file at all.
+   > The popup.html file, and the popup.js file that it loads, run in an entirely separate Internet Explorer process from the add-in's task pane. If the popup.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the popup.js file does not contain any JavaScript that is unsupported by IE. For these two reasons, this add-in does not transpile the popup.js file at all.
 
 ### Open the dialog from the task pane
 
@@ -938,7 +936,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
      > [!NOTE]
      > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 
 3. Run the command `npm start` to start a web server running on localhost.
 

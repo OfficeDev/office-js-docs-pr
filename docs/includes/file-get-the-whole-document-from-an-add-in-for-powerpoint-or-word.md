@@ -212,7 +212,7 @@ Once you have converted the data to Base64, you can then transmit it to a web se
 Add the following code to send a slice to a web service.
 
 > [!NOTE]
-> This code sends a PowerPoint or Word file to the web server in multiple slices. The web server or service must append each individual slice into a single file, and then save it as a .pptx or .docx file, before you can perform any manipulations on it.
+> This code sends a PowerPoint or Word file to the web server in multiple slices. The web server or service must compile each individual slice into a single .pptx file before you can perform any manipulations on it.
 
 ```js
 function sendSlice(slice, state) {

@@ -1,9 +1,10 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 05/01/2019
+ms.date: 02/28/2019
 localization_priority: Priority
 ---
+
 
 # Work with workbooks using the Excel JavaScript API
 
@@ -67,10 +68,10 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### Insert a copy of an existing workbook into the current one (preview)
+### Insert a copy of an existing workbook into the current one
 
 > [!NOTE]
-> The `WorksheetCollection.addFromBase64` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> The `WorksheetCollection.addFromBase64` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A workbook's [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) has the `addFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as base64-encoded string, just like the `Excel.createWorkbook` call.
 
@@ -257,60 +258,12 @@ The Excel API also lets add-ins turn off calculations until `RequestContext.sync
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## Comments (preview)
+## Save the workbook
 
 > [!NOTE]
-> The comment APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> The `Workbook.save(saveBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
-All [comments](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) within a workbook are tracked by the `Workbook.comments` property. This includes comments created by users and also comments created by your add-in. The `Workbook.comments` property is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object that contains a collection of [Comment](/javascript/api/excel/excel.comment) objects.
-
-To add comments to a workbook, use the `CommentCollection.add` method, passing in the comment's text, as a string, and the cell where the comment will be added, as either a string or [Range](/javascript/api/excel/excel.range) object. The following code sample adds a comment to cell **A2**.
-
-```js
-Excel.run(function (context) {
-    var comments = context.workbook.comments;
-
-    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("TODO: add data.", "A2");
-    return context.sync();
-});
-```
-
-Each comment contains metadata about its creation, such as the author and creation date. Comments created by your add-in are considered to be authored by the current user. The following sample shows how to display the author's email, author's name, and creation date of a comment at **A2**.
-
-```js
-Excel.run(function (context) {
-    // Get the comment at cell A2.
-    var comment = context.workbook.comments.getItemByCell("Comments!A2");
-    comment.load(["authorEmail", "authorName", "creationDate"]);
-    return context.sync().then(function () {
-        console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
-    });
-});
-```
-
-Each comment contains zero or more replies. `Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply](/javascript/api/excel/excel.commentreply) objects. To add a reply to a comment, use the `CommentReplyCollection.add` method, passing in the text of the reply. Replies are displayed in the order they are added. The following code sample adds a reply to the first comment in the workbook.
-
-```js
-Excel.run(function (context) {
-    // Get the first comment added to the workbook.
-    var comment = context.workbook.comments.getItemAt(0);
-    comment.replies.add("Thanks for the reminder!");
-    return context.sync();
-});
-```
-
-To edit a comment or comment reply, set its `Comment.content` property or `CommentReply.content` property. To delete a comment or comment reply, use the `Comment.delete` method or `CommentReply.delete` method. Deleting a comment also deletes all the replies associated with that comment.
-
-> [!TIP]
-> Comments can also be managed at the [Worksheet](/javascript/api/excel/excel.worksheet) level using the same techniques.
-
-## Save the workbook (preview)
-
-> [!NOTE]
-> The `Workbook.save` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-`Workbook.save` saves the workbook to persistent storage. The `save` method takes a single, optional `saveBehavior` parameter that can be one of the following values:
+`Workbook.save(saveBehavior)` saves the workbook to persistent storage . The `save` method takes a single, optional parameter that can be one of the following values:
 
 - `Excel.SaveBehavior.save` (default): The file is saved without prompting the user to specify file name and save location. If the file has not been saved previously, it's saved to the default location. If the file has been saved previously, it's saved to the same location.
 - `Excel.SaveBehavior.prompt`: If file has not been saved previously, the user will be prompted to specify file name and save location. If the file has been saved previously, it will be saved to the same location and the user will not be prompted.
@@ -322,12 +275,12 @@ To edit a comment or comment reply, set its `Comment.content` property or `Comme
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## Close the workbook (preview)
+## Close the workbook
 
 > [!NOTE]
-> The `Workbook.close` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> The `Workbook.close(closeBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
-`Workbook.close` closes the workbook, along with add-ins that are associated with the workbook (the Excel application remains open). The `close` method takes a single, optional `closeBehavior` parameter that can be one of the following values:
+`Workbook.close(closeBehavior)` closes the workbook, along with add-ins that are associated with the workbook (the Excel application remains open). The `close` method takes a single, optional parameter that can be one of the following values:
 
 - `Excel.CloseBehavior.save` (default): The file is saved before closing. If the file has not been saved previously, the user will be prompted to specify file name and save location.
 - `Excel.CloseBehavior.skipSave`: The file is immediately closed, without saving. Any unsaved changes will be lost.

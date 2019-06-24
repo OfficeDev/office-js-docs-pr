@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.userProfile - requirement set 1.7
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -28,10 +28,10 @@ localization_priority: Normal
 
 ### Members
 
-#### accountType: String
+####  accountType :String
 
 > [!NOTE]
-> This member is currently only supported by Outlook 2016 or later on Mac (build 16.9.1212 or later).
+> This member is currently only supported by Outlook 2016 for Mac (build 16.9.1212 or later).
 
 Gets the account type of the user associated with the mailbox. The possible values are listed in the following table.
 
@@ -60,10 +60,7 @@ Gets the account type of the user associated with the mailbox. The possible valu
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
----
----
-
-#### displayName: String
+####  displayName :String
 
 Gets the user's display name.
 
@@ -86,10 +83,7 @@ Gets the user's display name.
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
----
----
-
-#### emailAddress: String
+####  emailAddress :String
 
 Gets the user's SMTP email address.
 
@@ -112,10 +106,7 @@ Gets the user's SMTP email address.
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
----
----
-
-#### timeZone: String
+####  timeZone :String
 
 Gets the user's default time zone.
 

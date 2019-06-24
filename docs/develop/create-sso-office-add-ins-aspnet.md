@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 
-ms.date: 04/15/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -64,7 +64,7 @@ The following instruction are written generically so they can be used in multipl
 
 ## Configure the add-in
 
-1. In the following string, replace the placeholder “{tenant_ID}” with your Office 365 tenancy ID. If you didn't copy the tenancy ID when you registered the add-in with AAD, use one of the methods in [Find your Office 365 tenant ID](/onedrive/find-your-office-365-tenant-id) to obtain it.
+1. In the following string, replace the placeholder “{tenant_ID}” with your Office 365 tenant ID. Use one of the methods in [Find your Office 365 tenant ID](/onedrive/find-your-office-365-tenant-id) to obtain it.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -148,7 +148,7 @@ The following instruction are written generically so they can be used in multipl
 
         2. Rename the existing file to `MailAppVersionOverridesV1_1.old`.
 
-        3. Copy this modified version of the file into the folder: [Modified MailAppVersionOverrides Schema](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/master/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
+        3. Copy this modified version of the file into the folder: [Modified MailAppVersionOverrides Schema](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/sso-conversion/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
 
 1. Save and close the main manifest file in Visual Studio.
 

@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: Use the Excel JavaScript API to create PivotTables and interact with their components. 
-ms.date: 05/01/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -9,13 +9,13 @@ localization_priority: Normal
 
 PivotTables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create PivotTables and interact with their components.
 
-If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user.
-See [Create a PivotTable to analyze worksheet data](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools.
+If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user. 
+See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools. 
 
-This article provides code samples for common scenarios. To further your understanding of the PivotTable API, see [**PivotTable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottablecollection).
+This article provides code samples for common scenarios. To further your understanding of the PivotTable API, see [**PivotTable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottable).
 
 > [!IMPORTANT]
-> PivotTables created with OLAP are not currently supported. There is also no support for Power Pivot.
+> PivotTables created with OLAP are not currently supported.
 
 ## Hierarchies
 
@@ -39,58 +39,57 @@ This PivotTable could be generated through the JavaScript API or through the Exc
 
 ## Create a PivotTable
 
-PivotTables need a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`).
+PivotTables need a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`). 
 The following samples show various PivotTable creation techniques.
 
 ### Create a PivotTable with range addresses
 
-```js
-Excel.run(function (context) {
-    // Create a PivotTable named "Farm Sales" on the current worksheet at cell
-    // A22 with data from the range A1:E21.
-    context.workbook.worksheets.getActiveWorksheet().pivotTables.add(
-      "Farm Sales", "A1:E21", "A22");
+```typescript
+await Excel.run(async (context) => {
+    // creating a PivotTable named "Farm Sales" on the current worksheet at cell A22 with data from the range A1:E21
+    context.workbook.worksheets.getActiveWorksheet().pivotTables.add("Farm Sales", "A1:E21", "A22");
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
 ### Create a PivotTable with Range objects
 
-```js
-Excel.run(function (context) {
-    // Create a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
-    // the data comes from the worksheet "DataWorksheet" across the range A1:E21.
-    var rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
-    var rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
+```typescript
+await Excel.run(async (context) => {
+    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
+    // the data comes from the worksheet "DataWorksheet" across the range A1:E21
+    const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
+    const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
     context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
-      "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
+        "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
 ### Create a PivotTable at the workbook level
 
-```js
-Excel.run(function (context) {
-    // Create a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
-    // the data is from the worksheet "DataWorksheet" across the range A1:E21.
-    context.workbook.pivotTables.add(
-        "Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
+```typescript
+await Excel.run(async (context) => {
+    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
+    // the data is from the worksheet "DataWorksheet" across the range A1:E21
+    context.workbook.pivotTables.add("Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
 ## Use an existing PivotTable
 
-Manually created PivotTables are also accessible through the PivotTable collection of the workbook or of individual worksheets. The following code gets a PivotTable named  **My Pivot** from the workbook.
+Manually created PivotTables are also accessible through the PivotTable collection of the workbook or of individual worksheets. 
 
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.pivotTables.getItem("My Pivot");
-    return context.sync();
+The following code gets the first PivotTable in the workbook. It then gives the table a name for easy future reference.
+
+```typescript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.pivotTables.getItem("My Pivot");
+    await context.sync();
 });
 ```
 
@@ -102,145 +101,54 @@ Adding the **Farm** column pivots all the sales around each farm. Adding the **T
 
 ![A PivotTable with a Farm column and Type and Classification rows.](../images/excel-pivots-table-rows-and-columns.png)
 
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```typescript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
 
     pivotTable.columnHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
 You can also have a PivotTable with only rows or columns.
 
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```typescript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
 ## Add data hierarchies to the PivotTable
 
-Data hierarchies fill the PivotTable with information to combine based on the rows and columns. Adding the data hierarchies of **Crates Sold at Farm** and **Crates Sold Wholesale** gives sums of those figures for each row and column.
+Data hierarchies fill the PivotTable with information to combine based on the rows and columns. Adding the data hierarchies of **Crates Sold at Farm** and **Crates Sold Wholesale** gives sums of those figures for each row and column. 
 
-In the example, both **Farm** and **Type** are rows, with the crate sales as the data.
+In the example, both **Farm** and **Type** are rows, with the crate sales as the data. 
 
 ![A PivotTable showing the total sales of different fruit based on the farm they came from.](../images/excel-pivots-data-hierarchy.png)
 
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```typescript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
-    // "Farm" and "Type" are the hierarchies on which the aggregation is based.
+    // "Farm" and "Type" are the hierarchies on which the aggregation is based
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
 
     // "Crates Sold at Farm" and "Crates Sold Wholesale" are the hierarchies
-    // that will have their data aggregated (summed in this case).
+    // that will have their data aggregated (summed in this case)
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
-    return context.sync();
-});
-```
-
-## Slicers (preview)
-
-> [!NOTE]
-> The slicer APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-[Slicers](/javascript/api/excel/excel.slicer) allow data to be filtered from an Excel PivotTable or table. A slicer uses values from a specified column or PivotField to filter corresponding rows. These values are stored as [SlicerItem](/javascript/api/excel/excel.sliceritem) objects in the `Slicer`. Your add-in can adjust these filters, as can users ([through the Excel UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). The slicer sits on top of the worksheet in the drawing layer, as shown in the following screenshot.
-
-![A slicer filtering data on a PivotTable.](../images/excel-slicer.png)
-
-> [!NOTE]
-> The techniques described in this section focus on how to use slicers connected to PivotTables. The same techniques also apply to using slicers connected to tables.
-
-### Create a slicer
-
-You can create a slicer in a workbook or worksheet by using the `Workbook.slicers.add` method or `Worksheet.slicers.add` method. Doing so adds a slicer to the [SlicerCollection](/javascript/api/excel/excel.slicercollection) of the specified `Workbook` or `Worksheet` object. The `SlicerCollection.add` method has three parameters:
-
-- `slicerSource`: The data source on which the new slicer is based. It can be a `PivotTable`, `Table`, or string representing the name or ID of a `PivotTable` or `Table`.
-- `sourceField`: The field in the data source by which to filter. It can be a `PivotField`, `TableColumn`, or string representing the name or ID of a `PivotField` or `TableColumn`.
-- `slicerDestination`: The worksheet where the new slicer will be created. It can be a `Worksheet` object or the name or ID of a `Worksheet`. This parameter is unnecessary when the `SlicerCollection` is accessed through `Worksheet.slicers`. In this case, the collection's worksheet is used as the destination.
-
-The following code sample adds a new slicer to the **Pivot** worksheet. The slicer's source is the **Farm Sales** PivotTable and filters using the **Type** data. The slicer is also named **Fruit Slicer** for future reference.
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Pivot");
-    var slicer = sheet.slicers.add(
-        "Farm Sales" /* The slicer data source. For PivotTables, this can be the PivotTable object reference or name. */,
-        "Type" /* The field in the data to filter by. For PivotTables, this can be a PivotField object reference or ID. */
-    );
-    slicer.name = "Fruit Slicer";
-    return context.sync();
-});
-```
-
-### Filter items with a slicer
-
-The slicer filters the PivotTable with items from the `sourceField`. The `Slicer.selectItems` method sets the items that remain in the slicer. These items are passed to the method as a `string[]`, representing the keys of the items. Any rows containing those items remain in the PivotTable's aggregation. Subsequent calls to `selectItems` set the list to the keys specified in those calls.
-
-> [!NOTE]
-> If `Slicer.selectItems` is passed an item that's not in the data source, an `InvalidArgument` error is thrown. The contents can be verified through the `Slicer.slicerItems` property, which is a [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
-
-The following code sample shows three items being selected for the slicer: **Lemon**, **Lime**, and **Orange**.
-
-```js
-Excel.run(function (context) {
-    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
-    // Anything other than the following three values will be filtered out of the PivotTable for display and aggregation.
-    slicer.selectItems(["Lemon", "Lime", "Orange"]);
-    return context.sync();
-});
-```
-
-To remove all filters from the slicer, use the `Slicer.clearFilters` method, as shown in the following sample.
-
-```js
-Excel.run(function (context) {
-    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
-    slicer.clearFilters();
-    return context.sync();
-});
-```
-
-### Style and format a slicer
-
-You add-in can adjust a slicer's display settings through `Slicer` properties. The following code sample sets the style to **SlicerStyleLight6**, sets the text at the top of the slicer to **Fruit Types**, places the slicer at the position **(395, 15)** on the drawing layer, and sets the slicer's size to **135x150** pixels.
-
-```js
-Excel.run(function (context) {
-    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
-    slicer.caption = "Fruit Types";
-    slicer.left = 395;
-    slicer.top = 15;
-    slicer.height = 135;
-    slicer.width = 150;
-    slicer.style = "SlicerStyleLight6";
-    return context.sync();
-});
-```
-
-### Delete a slicer
-
-To delete a slicer, call the `Slicer.delete` method. The following code sample deletes the first slicer from the current worksheet.
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    sheet.slicers.getItemAt(0).delete();
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -252,17 +160,16 @@ The currently supported aggregation function types are `Sum`, `Count`, `Average`
 
 The following code samples changes the aggregation to be averages of the data.
 
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```typescript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.dataHierarchies.load("no-properties-needed");
-    return context.sync().then(function() {
+    await context.sync();
 
-        // Change the aggregation from the default sum to an average of all the values in the hierarchy.
-        pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
-        pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
-        return context.sync();
-    });
+    // changing the aggregation from the default sum to an average of all the values in the hierarchy
+    pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
+    pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
+    await context.sync();
 });
 ```
 
@@ -272,9 +179,9 @@ PivotTables, by default, aggregate the data of their row and column hierarchies 
 
 The `ShowAsRule` object has three properties:
 
-- `calculation`: The type of relative calculation to apply to the data hierarchy (the default is `none`).
-- `baseField`: The field within the hierarchy containing the base data before the calculation is applied. The [PivotField](/javascript/api/excel/excel.pivotfield) usually has the same name as its parent hierarchy.
-- `baseItem`: The individual [PivotItem](/javascript/api/excel/excel.pivotitem) compared against the values of the base fields based on the calculation type. Not all calculations require this field.
+-	`calculation`: The type of relative calculation to apply to the data hierarchy (the default is `none`).
+-	`baseField`: The field within the hierarchy containing the base data before the calculation is applied. The [PivotField](/javascript/api/excel/excel.pivotfield) usually has the same name as its parent hierarchy.
+-	`baseItem`: The individual [PivotItem](/javascript/api/excel/excel.pivotitem) compared against the values of the base fields based on the calculation type. Not all calculations require this field.
 
 The following example sets the calculation on the **Sum of Crates Sold at Farm** data hierarchy to be a percentage of the column total. 
 We still want the granularity to extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field. 
@@ -282,21 +189,22 @@ The example also has **Farm** as the first row hierarchy, so the farm total entr
 
 ![A PivotTable showing the percentages of fruit sales relative to the grand total for both individual farms and individual fruit types within each farm.](../images/excel-pivots-showas-percentage.png)
 
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-    var farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+``` TypeScript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
 
     farmDataHierarchy.load("showAs");
-    return context.sync().then(function () {
+    await context.sync();
 
-        // Show the crates of each fruit type sold at the farm as a percentage of the column's total.
-        var farmShowAs = farmDataHierarchy.showAs;
-        farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
-        farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
-        farmDataHierarchy.showAs = farmShowAs;
-        farmDataHierarchy.name = "Percentage of Total Farm Sales";
-    });
+    // show the crates of each fruit type sold at the farm as a percentage of the column's total
+    let farmShowAs = farmDataHierarchy.showAs;
+    farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
+    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
+    farmDataHierarchy.showAs = farmShowAs; 
+    farmDataHierarchy.name = "Percentage of Total Farm Sales";
+
+    await context.sync();
 });
 ```
 
@@ -307,22 +215,23 @@ The `baseField` is **Farm**, so we see the differences between the other farms, 
 
 ![A PivotTable showing the differences of fruit sales between “A Farms” and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If “A Farms” did not sell a particular type of fruit, “#N/A” is displayed.](../images/excel-pivots-showas-differencefrom.png)
 
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-    var farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+``` TypeScript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
 
     farmDataHierarchy.load("showAs");
-    return context.sync().then(function () {
-        // Show the difference between crate sales of the "A Farms" and the other farms.
-        // This difference is both aggregated and shown for individual fruit types (where applicable).
-        var farmShowAs = farmDataHierarchy.showAs;
-        farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
-        farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
-        farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
-        farmDataHierarchy.showAs = farmShowAs;
-        farmDataHierarchy.name = "Difference from A Farms";
-    });
+    await context.sync();
+
+    // show the difference between crate sales of the "A Farms" and the other farms
+    // this difference is both aggregated and shown for individual fruit types (where applicable)
+    let farmShowAs = farmDataHierarchy.showAs;
+    farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
+    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
+    farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
+    farmDataHierarchy.showAs = farmShowAs;
+    farmDataHierarchy.name = "Difference from A Farms";
+    await context.sync();
 });
 ```
 
@@ -336,23 +245,24 @@ The following diagram shows which layout function calls correspond to which rang
 
 The following code demonstrates how to get the last row of the PivotTable data by going through the layout. Those values are then summed together for a grand total.
 
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```typescript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
-    // Get the totals for each data hierarchy from the layout.
-    var range = pivotTable.layout.getDataBodyRange();
-    var grandTotalRange = range.getLastRow();
+    // get the totals for each data hierarchy from the layout
+    const range = pivotTable.layout.getDataBodyRange();
+    const grandTotalRange = range.getLastRow();
     grandTotalRange.load("address");
-    return context.sync().then(function () {
-        // Sum the totals from the PivotTable data hierarchies and place them in a new range.
-        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-    });
+    await context.sync();
+
+    // sum the totals from the PivotTable data hierarchies and place them in a new range
+    const masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
+    masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
+    await context.sync();
 });
 ```
 
-PivotTables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples.
+PivotTables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples. 
 
 The following examples use the outline and tabular styles, respectively. The code sample shows how to cycle between the different layouts.
 
@@ -368,16 +278,17 @@ The following examples use the outline and tabular styles, respectively. The cod
 
 Hierarchy fields are editable. The following code demonstrates how to change the displayed names of two data hierarchies.
 
-```js
-Excel.run(function (context) {
-    var dataHierarchies = context.workbook.worksheets.getActiveWorksheet()
+```typescript
+await Excel.run(async (context) => {
+    const dataHierarchies = context.workbook.worksheets.getActiveWorksheet()
         .pivotTables.getItem("Farm Sales").dataHierarchies;
     dataHierarchies.load("no-properties-needed");
-    return context.sync().then(function () {
-        // changing the displayed names of these entries
-        dataHierarchies.items[0].name = "Farm Sales";
-        dataHierarchies.items[1].name = "Wholesale";
-    });
+    await context.sync();
+
+    // changing the displayed names of these entries
+    dataHierarchies.items[0].name = "Farm Sales";
+    dataHierarchies.items[1].name = "Wholesale";
+    await context.sync();
 });
 ```
 
@@ -385,10 +296,11 @@ Excel.run(function (context) {
 
 PivotTables are deleted by using their name.
 
-```js
-Excel.run(function (context) {
+```typescript
+await Excel.run(async (context) => {
     context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
-    return context.sync();
+
+    await context.sync();
 });
 ```
 

@@ -1,2 +1,0 @@
-> [!IMPORTANT]
-> COM add-in and XLL UDF compatibility is currently in preview and is subject to change. It is not currently supported for use in production environments. For more information see [COM add-in and XLL UDF compatibility requirements](../excel/xll-compatibility-requirements.md).

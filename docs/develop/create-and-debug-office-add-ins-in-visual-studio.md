@@ -1,7 +1,7 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
-description: 'Use Visual Studio to create and debug Office Add-ins in the Office desktop client on Windows'
-ms.date: 06/20/2019
+description: 'Use Visual Studio to create and debug Office Add-ins on the Office desktop client for Windows'
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -97,7 +97,7 @@ You can use Visual Studio to debug your add-in in the Office desktop client on W
 - [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
 
 > [!NOTE]
-> You cannot use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+> You cannot use Visual Studio to debug Office Add-ins in Office Online or Office for Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
 ### Review the build and debug properties
 
@@ -120,7 +120,7 @@ The following table describes the properties of the add-in project.
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
 |**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
 |**EWS Url**<br/>(Outlook add-ins only)|Exchange Web service URL (For example: `https://www.contoso.com/ews/exchange.aspx`). |
-|**OWA Url**<br/>(Outlook add-ins only)|Outlook on the web URL (For example: `https://www.contoso.com/owa`).|
+|**OWA Url**<br/>(Outlook add-ins only)|Outlook Web App URL (For example: `https://www.contoso.com/owa`).|
 |**Use multi-factor auth**<br/>(Outlook add-ins only)|Boolean value that indicates whether multi-factor authentication should be used.|
 |**User Name**<br/>(Outlook add-ins only)|Specifies the name of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
@@ -170,7 +170,7 @@ If you have a document that contains test data you want to use while debugging y
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar. Visual Studio will automatically build the solution and start Office to host your add-in.
 
 > [!NOTE]
-> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Office 365 tenant. In this case, try using a Microsoft account instead. You may also need to set the property "Use multi-factor auth" to True in the Outlook Web Add-in project properties dialog.
+> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly then Basic Auth may be disabled for accounts on your Office 365 tenant. In this case, try using a Microsoft account instead.
 
 When Visual Studio builds the project it performs the following tasks:
 
@@ -179,13 +179,6 @@ When Visual Studio builds the project it performs the following tasks:
 2. Creates a set of registry entries on your computer that enable the add-in to appear in the host application.
 
 3. Builds the web application project, and then deploys it to the local IIS web server (https://localhost).
-
-4. If this is the first add-in project that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
-
-
-> [!NOTE]
-> The latest version of Office may use a newer web control to display the add-in contents when running on Windows 10. If this is the case, Visual Studio may prompt you to add a local network loopback exemption. This is required for the web control, in the Office host application, to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**.
-
 
 Next, Visual Studio does the following:
 
@@ -205,7 +198,7 @@ If your add-in isn't visible within the document that's displayed in the host ap
 
 1. In Excel, PowerPoint, or Word, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
 
-    ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
 2. In the list of available add-ins, find the **Developer Add-ins** section and select the your add-in to register it.
 

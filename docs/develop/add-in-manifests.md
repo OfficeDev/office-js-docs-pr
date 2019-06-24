@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -105,9 +105,9 @@ Only use the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) ele
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
+When running in Office Online, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
 
-To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
+To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both desktop Office and Office Online. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
 > [!NOTE]
 > This behavior applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
@@ -199,7 +199,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                 <Label resid="Contoso.Tab1.GroupLabel" />
                 <Icon>
                   <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
-                  <!--Icons. Required sizes: 16, 32, 80; optional: 20, 24, 40, 48, 64. You should provide as many sizes as possible for a great user experience. -->
+                  <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
                   <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
                   <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
@@ -399,7 +399,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
     receive without leaving your email client.">
     <Override Locale="fr-fr" Value="Visualisez les vidéos
       YouTube références dans vos courriers électronique
-      directement depuis Outlook."/>
+      directement depuis Outlook et Outlook Web App."/>
   </Description>
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->

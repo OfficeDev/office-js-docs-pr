@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 05/21/2019
+ms.date: 11/02/2018
 localization_priority: Priority
 ---
 
@@ -25,7 +25,7 @@ To help ensure that the manifest file that describes your Office Add-in is corre
 
 2. Open a command prompt / terminal as an administrator, and install the Office Add-in Validator and its dependencies globally by using the following command:
 
-	```command&nbsp;line
+	```bash
 	npm install -g office-addin-validator
 	```
 	
@@ -34,7 +34,7 @@ To help ensure that the manifest file that describes your Office Add-in is corre
 
 3. Run the following command to validate your manifest. Replace MANIFEST.XML with the path to the manifest XML file.
 
-	```command&nbsp;line
+	```bash
 	validate-office-addin MANIFEST.XML
 	```
 
@@ -50,7 +50,7 @@ To help ensure that the manifest file follows the correct schema, including any 
 
 2.	Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
 	
-	```command&nbsp;line
+	```bash
 	xmllint --noout --schema XSD_FILE XML_FILE
 	```
 
@@ -58,7 +58,7 @@ To help ensure that the manifest file follows the correct schema, including any 
 
 If you've created your Office Add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office), you can ensure that the manifest file follows the correct schema by running the following command within the root directory of your project:
 
-```command&nbsp;line
+```bash
 npm run validate
 ```
 
@@ -129,15 +129,13 @@ You might see messages in the log file that are confusing or that are classified
 
 ## Clear the Office cache
 
-If changes you've made in the manifest, such as file names of ribbon button icons or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer. 
+If changes you've made in the manifest, such as file names of ribbon button icons, or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer. 
 
 #### For Windows:
-Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+Delete the content of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 #### For Mac:
-Delete the contents of the folder `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
 #### For iOS:
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.

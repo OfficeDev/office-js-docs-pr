@@ -1,7 +1,7 @@
 ---
 title: Supertip element in the manifest file
 description: ''
-ms.date: 05/07/2019
+ms.date: 10/09/2018
 localization_priority: Normal
 ---
 
@@ -13,8 +13,8 @@ Defines a rich tooltip (both Title and Description). It is used by both [Button]
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-| [Title](#title) | Yes | The text for the supertip. |
-| [Description](#description) | Yes | The description for the supertip.<br>**Note**: (Outlook) Only Windows and Mac clients are supported. |
+|  [Title](#title)        | Yes |   The text for the supertip.         |
+|  [Description](#description)  | Yes |  The description for the supertip.    |
 
 ### Title
 
@@ -23,9 +23,6 @@ Required. The text for the supertip. The  **resid** attribute must be set to the
 ### Description
 
 Required. The description for the supertip. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **LongStrings** element in the [Resources](resources.md) element.
-
-> [!NOTE]
-> For Outlook, only Windows and Mac clients support the **Description** element.
 
 ## Example
 

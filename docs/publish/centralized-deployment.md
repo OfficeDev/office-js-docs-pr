@@ -1,7 +1,7 @@
 ---
 title: Publish Office Add-ins using Centralized Deployment via the Office 365 admin center
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -13,7 +13,7 @@ The Office 365 admin center makes it easy for an administrator to deploy Office 
 The Office 365 admin center currently supports the following scenarios:
 
 - Centralized Deployment of new and updated add-ins to individuals, groups, or an organization.
-- Deployment to multiple platforms, including Windows, Mac, and on the web.
+- Deployment to multiple platforms, including Windows and Office Online, with Mac coming soon.
 - Deployment to English language and worldwide tenants.
 - Deployment of cloud-hosted add-ins.
 - Deployment of add-ins that are hosted within a firewall.
@@ -21,10 +21,10 @@ The Office 365 admin center currently supports the following scenarios:
 - Automatic installation of an add-in for users when they launch the Office application.
 - Automatic removal of an add-in for users if the admin turns off or deletes the add-in, or if users are removed from Azure Active Directory or from a group to which the add-in has been deployed.
 
-Centralized Deployment is the recommended way for an Office 365 admin to deploy Office Add-ins within an organization, provided that the organization meets all requirements for using Centralized Deployment. For information about how to determine if your organization can use Centralized Deployment, see [Determine if Centralized Deployment of add-ins works for your Office 365 organization](/office365/admin/manage/centralized-deployment-of-add-ins).
+Centralized Deployment is the recommended way for an Office 365 admin to deploy Office Add-ins within an organization, provided that the organization meets all requirements for using Centralized Deployment. For information about how to determine if your organization can use Centralized Deployment, see [Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
 
 > [!NOTE]
-> In an on-premises environment with no connection to Office 365, or to deploy SharePoint add-ins or Office Add-ins that target Office 2013, use a [SharePoint app catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer, as described in [Deploying an Office solution](/visualstudio/vsto/deploying-an-office-solution).
+> In an on-premises environment with no connection to Office 365, or to deploy SharePoint add-ins or Office Add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer, as described in [Deploying an Office solution](/visualstudio/vsto/deploying-an-office-solution).
 
 ## Recommended approach for deploying Office Add-ins
 
@@ -142,4 +142,4 @@ However, for Outlook 2016 or later, users can do the following:
 
 ## See also
 
-- [Determine if Centralized Deployment of add-ins works for your Office 365 organization](/office365/admin/manage/centralized-deployment-of-add-ins)
+- [Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)

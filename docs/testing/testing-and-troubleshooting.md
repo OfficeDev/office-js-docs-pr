@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: ''
-ms.date: 06/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -68,7 +68,7 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 |**Affected browsers**|**Affected platforms**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office on the web|
+|Internet Explorer, Microsoft Edge|Office Online|
 
 To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
 
@@ -85,27 +85,25 @@ To add a URL to your list of trusted sites:
 This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
+
 Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
 ```
 
 ## Changes to add-in commands including ribbon buttons and menu items do not take effect
-
-If changes you've made in the manifest, such as file names of ribbon button icons or text of menu items, do not seem to take effect, try clearing the Office cache on your computer. 
+Sometimes changes to add-in commands such as the icon for a ribbon button or the text of a menu item do not seem to take effect. Clear the Office cache of the old versions.
 
 #### For Windows:
-Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+Delete the content of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 #### For Mac:
-Delete the contents of the folder `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
 #### For iOS:
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
 ## See also
 
-- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md) 
+- [Debug add-ins in Office Online](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
