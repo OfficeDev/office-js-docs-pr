@@ -13,6 +13,7 @@ An Excel add-in allows you to extend Excel application functionality across mult
 - Interact with Excel objects, read and write Excel data.
 - Extend functionality using web based task pane or content pane
 - Add custom ribbon buttons or contextual menu items
+- Add custom functions
 - Provide richer interaction using dialog window
 
 The Office Add-ins platform provides the framework and Office.js JavaScript APIs that enable you to create and run Excel add-ins. By using the Office Add-ins platform to create your Excel add-in, you'll get the following benefits:
