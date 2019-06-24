@@ -38,7 +38,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td>
         - BindingEvents<br>
         - CompressedFile<br>
@@ -70,7 +72,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td>
         - BindingEvents<br>
         - CompressedFile<br>
@@ -98,12 +102,12 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
-        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
@@ -119,11 +123,11 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - Content</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
-        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
@@ -139,12 +143,12 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TaskPane<br>
         - Content</td>
     <td>  - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td>
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
-        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
@@ -168,11 +172,12 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
         - File<br>
-        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
@@ -197,12 +202,13 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
-        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - PdfFile<br>
@@ -226,12 +232,12 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
-        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - PdfFile<br>
@@ -248,11 +254,11 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - Content</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
-        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - PdfFile<br>
@@ -477,13 +483,14 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td> - BindingEvents<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -503,14 +510,15 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -531,14 +539,14 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -557,13 +565,13 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -581,13 +589,13 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2013 on Windows<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -607,6 +615,8 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -614,7 +624,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -636,6 +645,8 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -643,7 +654,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -665,6 +675,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -672,7 +683,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -691,13 +701,13 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
          - File<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
@@ -731,12 +741,13 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
@@ -747,12 +758,13 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
@@ -763,12 +775,12 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
@@ -779,6 +791,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - Content<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -795,11 +808,11 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TaskPane<br>
     </td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
@@ -809,7 +822,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office on iPad<br>(connected to Office 365 subscription)</td>
     <td> - Content<br>
          - TaskPane</td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -817,20 +832,20 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
-         - TextCoercion<br>
-         - ImageCoercion</td>
+         - TextCoercion</td>
   </tr>
   <tr>
     <td>Office on Mac<br>(connected to Office 365 subscription)</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.2</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
@@ -841,7 +856,8 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -857,11 +873,11 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - Content<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
@@ -888,10 +904,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
-         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - DocumentEvents<br>
          - HtmlCoercion<br>
-         - ImageCoercion<br>
          - Settings<br>
          - TextCoercion</td>
   </tr>
