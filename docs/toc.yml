@@ -488,10 +488,10 @@
       displayName: Excel, Custom Functions
     - name: Get started with Excel custom functions
       href: quickstarts/excel-custom-functions-quickstart.md
-      displayName: Excel
+      displayName: Excel, Custom Functions
     - name: Custom functions tutorial
       href: tutorials/excel-tutorial-create-custom-functions.md
-      displayName: Excel 
+      displayName: Excel, Custom Functions
     - name: Architecture
       href: excel/custom-functions-architecture.md
       displayName: Excel, Custom Functions
