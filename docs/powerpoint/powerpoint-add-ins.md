@@ -187,6 +187,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## See also
 
+- [About PowerPoint add-ins](index.md)
 - [PowerPoint Code Samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [How to save add-in state and settings per document for content and task pane add-ins](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

@@ -104,6 +104,7 @@ Get started by [creating your first Excel add-in](../quickstarts/excel-quickstar
 
 ## See also
 
+- [About Excel add-ins](index.md)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)

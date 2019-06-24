@@ -78,5 +78,6 @@ After you develop your add-in, you can [publish](../publish/publish.md) it to a 
 
 ## See also
 
+* [About Word add-ins](index.md)
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
 * [Word JavaScript API reference](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

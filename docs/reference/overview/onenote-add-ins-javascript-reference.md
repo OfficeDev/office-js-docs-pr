@@ -56,6 +56,7 @@ For detailed information about the OneNote JavaScript API, see the [OneNote Java
 
 ## See also
 
+- [About OneNote add-ins](../../onenote/index.md)
 - [OneNote JavaScript API programming overview](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
 - [Build your first OneNote add-in](../../quickstarts/onenote-quickstart.md)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

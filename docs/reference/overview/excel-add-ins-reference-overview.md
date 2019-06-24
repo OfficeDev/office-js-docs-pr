@@ -53,6 +53,7 @@ For detailed information about the Excel JavaScript API, see the [Excel JavaScri
 
 ## See also
 
+- [About Excel add-ins](../../excel/index.md)
 - [Excel add-ins overview](/office/dev/add-ins/excel/excel-add-ins-overview)
 - [Office Add-ins platform overview](/office/dev/add-ins/overview/office-add-ins)
 - [Excel add-in samples on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Excel)
