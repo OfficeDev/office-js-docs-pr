@@ -96,7 +96,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-project.svg" alt="Project add-ins documentation" />
+                            <img src="../images/index/logo-project-server.svg" alt="Project add-ins documentation" />
                         </div>
                     </div>
                     <div class="cardText">

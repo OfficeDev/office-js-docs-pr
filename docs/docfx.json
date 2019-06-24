@@ -62,6 +62,7 @@
         "project/*.md": "project",
         "publish/*.md": "non-product-specific",
         "reference/*.md": "non-product-specific",
+        "reference/openspec/*.md": "non-product-specific",
         "reference/manifest/*.md": "non-product-specific",
         "reference/objectmodel/**/*.md": "outlook",
         "resources/*.md": "non-product-specific",
