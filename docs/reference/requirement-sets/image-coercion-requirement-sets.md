@@ -1,4 +1,3 @@
-
 ---
 title: Image Coercion requirement sets
 description: ''
