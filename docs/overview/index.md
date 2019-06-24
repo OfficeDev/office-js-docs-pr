@@ -23,7 +23,6 @@ localization_priority: Priority
 
 <ul class="panelContent cardsF cols cols3">
     <li>
-        <a href="../excel/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -34,12 +33,11 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Excel add-ins documentation</h3>
-                        <p>Learn how to build Excel add-ins.</p>
+                        <p><a href="../excel/index.md">Learn how to build Excel add-ins.</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
         <div class="cardSize">
