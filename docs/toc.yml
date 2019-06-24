@@ -590,7 +590,7 @@
   - name: Build your first Outlook add-in
     href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
     displayName: Outlook
-  - name: Build a message compose add-in
+  - name: Outlook add-in tutorial
     href: /outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context
     displayName: Outlook
   - name: Outlook add-in concepts
