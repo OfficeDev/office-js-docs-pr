@@ -48,22 +48,22 @@
       items:
       - name: Accessibility
         href: design/accessibility-guidelines.md
-      - name: Voice
-        href: design/voice-guidelines.md
       - name: Data visualization
         href: design/data-visualization-guidelines.md
+      - name: Voice
+        href: design/voice-guidelines.md
     - name: Design language
       items:
       - name: Overview
         href: design/add-in-design-language.md
-      - name: Typography
-        href: design/add-in-typography.md
       - name: Color
         href: design/add-in-color.md
-      - name: Layout
-        href: design/add-in-layout.md
       - name: Icons
         href: design/add-in-icons.md
+      - name: Layout
+        href: design/add-in-layout.md
+      - name: Typography
+        href: design/add-in-typography.md
       - name: Using motion
         href: design/using-motion-office-addins.md
     - name: Interface elements
@@ -72,32 +72,32 @@
         href: design/interface-elements.md
       - name: Add-in commands
         href: design/add-in-commands.md
-      - name: Task panes
-        href: design/task-pane-add-ins.md
       - name: Dialog boxes
         href: design/dialog-boxes.md
       - name: Content add-ins
         href: design/content-add-ins.md
+      - name: Task panes
+        href: design/task-pane-add-ins.md
     - name: UX design templates
       items:
       - name: Overview
         href: design/ux-design-pattern-templates.md
       - name: Authentication
         href: design/authentication-patterns.md
+      - name: Branding
+        href: design/branding-patterns.md
       - name: First run experience
         href: design/first-run-experience-patterns.md
       - name: Navigation
         href: design/navigation-patterns.md
-      - name: Branding
-        href: design/branding-patterns.md
     - name: Resources
       items:
       - name: Design toolkits
         href: design/design-toolkits.md
-      - name: Office UI Fabric
-        href: design/office-ui-fabric.md
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
+      - name: Office UI Fabric
+        href: design/office-ui-fabric.md
   - name: Develop
     items:
     - name: Address same origin policy limitations
@@ -124,6 +124,10 @@
         href: develop/authorize-to-microsoft-graph.md
     - name: Automatically open a task pane with a document
       href: develop/automatically-open-a-task-pane-with-a-document.md
+    - name: Develop add-ins for the iPad
+      href: develop/develop-office-add-ins-for-the-ipad.md
+    - name: Develop add-ins with Angular
+      href: develop/add-ins-with-angular2.md
     - name: Develop add-ins with Visual Studio
       items:
       - name: Create and debug Office Add-ins in Visual Studio
@@ -132,11 +136,7 @@
         href: develop/get-javascript-intellisense-in-visual-studio.md
       - name: Convert JavaScript to TypeScript
         href: develop/convert-javascript-to-typescript.md
-    - name: Develop add-ins for the iPad
-      href: develop/develop-office-add-ins-for-the-ipad.md
-    - name: Develop add-ins with Angular
-      href: develop/add-ins-with-angular2.md
-    - name: Use the Dialog API
+    - name: Dialog API
       href: develop/dialog-api-in-office-add-ins.md
     - name: Localization
       href: develop/localization.md
@@ -146,16 +146,16 @@
         href: develop/add-in-manifests.md
       - name: Create add-in commands
         href: develop/create-addin-commands.md
-      - name: Specify Office hosts
-        href: develop/specify-office-hosts-and-api-requirements.md
-      - name: Request permissions for API use in content and task pane add-ins
-        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-      - name: Update API and manifest version
-        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+      - name: Find the proper order of manifest elements
+        href: develop/manifest-element-ordering.md
       - name: Identify an equivalent COM add-in
         href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-      - name: How to find the proper order of manifest elements
-        href: develop/manifest-element-ordering.md
+      - name: Request permissions for API use in content and task pane add-ins
+        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+      - name: Specify Office hosts
+        href: develop/specify-office-hosts-and-api-requirements.md
+      - name: Update API and manifest version
+        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
     - name: Office JavaScript API
       items:
       - name: Understanding the JavaScript API for Office
@@ -198,10 +198,10 @@
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
       - name: Debug on Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
-    - name: Usability testing
-      href: develop/usability-testing.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
+    - name: Usability testing
+      href: develop/usability-testing.md
     - name: Validate an add-in manifest and troubleshoot issues
       href: testing/troubleshoot-manifest.md  
   - name: Publish
@@ -212,14 +212,14 @@
       href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Package your add-in using Visual Studio
       href: publish/package-your-add-in-using-visual-studio.md
-    - name: Publish add-ins via Centralized Deployment
-      href: publish/centralized-deployment.md
-    - name: Publish add-ins to a SharePoint app catalog
-      href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Publish add-ins to AppSource
       href: /office/dev/store/submit-to-the-office-store
     - name: AppSource validation policies
       href: /office/dev/store/validation-policies
+    - name: Publish add-ins via Centralized Deployment
+      href: publish/centralized-deployment.md
+    - name: Publish add-ins to a SharePoint app catalog
+      href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
   - name: Reference
     items:
     - name: JavaScript API for Office overview
@@ -840,6 +840,9 @@
     - name: API reference
       href: /javascript/api/word
       displayName: Word
+    - name: Bind to regions in a document
+      href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+      displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
       displayName: Word
@@ -851,9 +854,6 @@
       displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
-      displayName: Word
-    - name: Bind to regions in a document
-      href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
       displayName: Word
     - name: Use search options to find text in your Word add-in 
       href: word/search-option-guidance.md
