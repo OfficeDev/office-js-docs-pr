@@ -16,7 +16,7 @@ localization_priority: Normal
         <h1>Office Add-ins documentation</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
         <h2>Get started</h2>
-        <p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running, then explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
+        <p>New to building Office Add-ins? Complete a quick start to build your first add-in in under 5 minutes, try a tutorial to learn more about the capabilities of an add-in, then explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
         <ul class="cardsK cols cols2">
             <li>
                 <div class="cardSize">
@@ -29,8 +29,6 @@ localization_priority: Normal
                             </div>
                             <div class="cardText">
                                 <h2>5-minute Quick Starts</h2>
-                                <p>Build your first Office Add-in in under 5 minutes!</p>
-                                <br/>
                                 <ul class="noBullet">
                                     <li><a class="barLink" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
                                     <li><a class="barLink" href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
@@ -56,8 +54,6 @@ localization_priority: Normal
                             </div>
                             <div class="cardText">
                                 <h2>Tutorials</h2>
-                                <p>Complete a tutorial to learn more about the capabilities of an add-in.</p>
-                                <br/>
                                 <ul class="noBullet">
                                     <li><a class="barLink" href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
                                     <li><a class="barLink" href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
