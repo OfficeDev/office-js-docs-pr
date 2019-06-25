@@ -1,5 +1,5 @@
 <p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
-<ul class="cardsK panelContent cols cols3">
+<ul class="cardsK panelContent cols cols2">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -11,15 +11,38 @@
                     </div>
                     <div class="cardText">
                         <h3>5-minute Quick Starts</h3>
-                        <p>Build your first Office Add-in in under 5 minutes.</p>
+                        <p>Complete a quick start to build your first Office Add-in in under 5 minutes!</p>
                         <br/>
                         <ul>
-                            <li><a href="../quickstarts/excel-quickstart-jquery.md">Quick Start: Excel add-in</a></li>
-                            <li><a href="../quickstarts/onenote-quickstart.md">Quick Start: OneNote add-in</a></li>
-                            <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Quick start: Outlook add-in</a></li>
-                            <li><a href="../quickstarts/powerpoint-quickstart.md">Quick start: PowerPoint add-in</a></li>
-                            <li><a href="../quickstarts/project-quickstart.md">Quick start: Project add-in</a></li>
-                            <li><a href="../quickstarts/word-quickstart.md">Quick start: Word add-in</a></li>
+                            <li><a href="../quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
+                            <li><a href="../quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
+                            <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
+                            <li><a href="../quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
+                            <li><a href="../quickstarts/project-quickstart.md">Project add-in quick start</a></li>
+                            <li><a href="../quickstarts/word-quickstart.md">Word add-in quick start</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="../images/index-landing-page/get-started-2.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Tutorials</h3>
+                        <p>After you've used a quick start to build your first add-in, complete a tutorial to build a more complex add-in.</p>
+                        <br/>
+                        <ul>
+                            <li><a href="../tutorial/excel-tutorial.md">Excel add-in tutorial</a></li>
+                            <li><a href="../tutorial/excel-tutorial-create-custom-functions.md">Excel Custom Functions tutorial</a></li>
+                            <li><a href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
+                            <li><a href="../tutorial/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
+                            <li><a href="../tutorial/word-tutorial.md">Word add-in tutorial </a></li>
                         </ul>
                     </div>
                 </div>
