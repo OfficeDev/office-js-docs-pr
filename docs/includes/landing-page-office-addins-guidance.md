@@ -1,6 +1,30 @@
 <p><b>Note</b>: For the complete list of articles about Office Add-ins concepts and development, see the <b>Office Add-ins guidance</b> section within the table of contents.</p>
-<ul class="cardsK panelContent cols cols2">
+<ul class="cardsK panelContent cols cols3">
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="../images/index-landing-page/get-started.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>5-minute Quick Starts</h3>
+                        <p>Build your first Office Add-in in under 5 minutes.</p>
+                        <br/>
+                        <ul>
+                            <li><a href="../quickstarts/excel-quickstart-jquery.md">Quick Start: Excel add-in</a></li>
+                            <li><a href="../quickstarts/onenote-quickstart.md">Quick Start: OneNote add-in</a></li>
+                            <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Quick start: Outlook add-in</a></li>
+                            <li><a href="../quickstarts/powerpoint-quickstart.md">Quick start: PowerPoint add-in</a></li>
+                            <li><a href="../quickstarts/project-quickstart.md">Quick start: Project add-in</a></li>
+                            <li><a href="../quickstarts/word-quickstart.md">Quick start: Word add-in</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
