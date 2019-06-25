@@ -131,12 +131,12 @@ localization_priority: Normal
                                 <br/>
                                 <ul class="noBullet">
                                     <li><a class="barLink" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
-                                    <li><a href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
-                                    <li><a href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
-                                    <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
-                                    <li><a href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
-                                    <li><a href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
-                                    <li><a href="quickstarts/word-quickstart.md">Word add-in quick start</a></li>
+                                    <li><a class="barLink" href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
+                                    <li><a class="barLink" href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
+                                    <li><a class="barLink" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
+                                    <li><a class="barLink" href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
+                                    <li><a class="barLink" href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
+                                    <li><a class="barLink" href="quickstarts/word-quickstart.md">Word add-in quick start</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -153,15 +153,15 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Tutorials</h3>
+                                <h2>Tutorials</h2>
                                 <p>Complete a tutorial to build a more complex add-in than the quick start produces.</p>
                                 <br/>
-                                <ul>
-                                    <li><a href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
-                                    <li><a href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
-                                    <li><a href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
-                                    <li><a href="tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
-                                    <li><a href="tutorials/word-tutorial.md">Word add-in tutorial </a></li>
+                                <ul class="noBullet">
+                                    <li><a class="barLink" href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
+                                    <li><a class="barLink" href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
+                                    <li><a class="barLink" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
+                                    <li><a class="barLink" href="tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
+                                    <li><a class="barLink" href="tutorials/word-tutorial.md">Word add-in tutorial </a></li>
                                 </ul>
                             </div>
                         </div>

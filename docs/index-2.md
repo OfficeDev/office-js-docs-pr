@@ -32,7 +32,7 @@ localization_priority: Normal
                                 <h3>5-minute Quick Starts</h3>
                                 <p>Build your first Office Add-in in under 5 minutes!</p>
                                 <br/>
-                                <ul>
+                                <ul class="noBullet">
                                     <li><a href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
                                     <li><a href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
                                     <li><a href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
@@ -59,7 +59,7 @@ localization_priority: Normal
                                 <h3>Tutorials</h3>
                                 <p>Complete a tutorial to build a more complex add-in than the quick start produces.</p>
                                 <br/>
-                                <ul>
+                                <ul class="noBullet">
                                     <li><a href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
                                     <li><a href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
                                     <li><a href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
