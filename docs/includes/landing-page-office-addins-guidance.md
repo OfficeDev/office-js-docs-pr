@@ -11,7 +11,7 @@
                     </div>
                     <div class="cardText">
                         <h3>5-minute Quick Starts</h3>
-                        <p>Complete a quick start to build your first Office Add-in in under 5 minutes!</p>
+                        <p>Build your first Office Add-in in under 5 minutes!</p>
                         <br/>
                         <ul>
                             <li><a href="../quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
@@ -26,6 +26,8 @@
                 </div>
             </div>
         </div>
+    </li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -36,7 +38,7 @@
                     </div>
                     <div class="cardText">
                         <h3>Tutorials</h3>
-                        <p>After you've used a quick start to build your first add-in, complete a tutorial to build a more complex add-in.</p>
+                        <p>After using a quick start to build a simple add-in, complete a tutorial to build a more complex add-in.</p>
                         <br/>
                         <ul>
                             <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
