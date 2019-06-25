@@ -58,7 +58,7 @@ CustomFunctions.associate("ADD", add);
 ---
 
 > [!NOTE]
-> Excel will pass optional parameters with a null value. This means default-initialized parameters in TypeScript will not work as expected. Therefore don't use `function add(first:number, second:number, third=0):number` syntax because it will not initialize third to 0. Do use `function add(first:number, second:number, third?:number):number` and then check if `third` is null as shown in the previous example.
+> Excel will pass optional parameters with a null value. This means default-initialized parameters in TypeScript will not work as expected. Therefore don't use `function add(first:number, second:number, third=0):number` syntax because it will not initialize third to 0. Instead use the TypeScript syntax as shown in the previous example.
 
 When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are null. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to `98052`. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
 
