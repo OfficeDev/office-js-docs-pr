@@ -54,7 +54,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Tutorials</h3>
-                        <p>Complete a tutorial to build a more complex add-in than the quick start produces.</p>
+                        <p>Complete a tutorial to build a more complex add-in than the quick start produces and learn more about the capabilities of an add-in.</p>
                         <br/>
                         <ul>
                             <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
@@ -73,8 +73,6 @@ localization_priority: Priority
 ---
 
 <h2>Learn about Office Add-ins</h2>
-
-<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. Explore the following articles to learn information that's relevant to any type of Office Add-in.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 

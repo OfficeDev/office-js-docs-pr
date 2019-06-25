@@ -1,3 +1,5 @@
+<p>All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. Explore the following articles to learn information that's relevant to any type of Office Add-in.</p>
+
 <ul class="cardsK panelContent cols cols2">
     <li>
         <div class="cardSize">

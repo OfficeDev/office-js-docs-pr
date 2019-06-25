@@ -103,8 +103,6 @@ With PowerPoint add-ins, you can use familiar web technologies such as HTML, CSS
 
 <h2>Learn about Office Add-ins</h2>
 
-<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in, including PowerPoint add-ins.</p>
-
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 
 ---
