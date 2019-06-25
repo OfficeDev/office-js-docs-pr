@@ -15,7 +15,7 @@ Custom functions are configurable with many different options for parameters.
 
 Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.
 
-## [JavaScript](#tab/javascript)
+#### [JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -35,7 +35,7 @@ function add(first, second, third) {
 CustomFunctions.associate("ADD", add);
 ```
 
-## [typeScript](#tab/typescript)
+#### [TypeScript](#tab/typescript)
 
 ```ts
 /**
@@ -55,12 +55,14 @@ function add(first:number, second:number, third?:number):number {
 CustomFunctions.associate("ADD", add);
 ```
 
+---
+
 > [!NOTE]
 > Excel will pass optional parameters with a null value. This means default-initialized parameters in TypeScript will not work as expected. Therefore don't use `function add(first:number, second:number, third=0):number` syntax because it will not initialize third to 0. Do use `function add(first:number, second:number, third?:number):number` and then check if `third` is null as shown in the previous example.
 
 When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are null. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to `98052`. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
 
-## [JavaScript](#tab/javascript)
+#### [JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -85,7 +87,7 @@ function getWeatherReport(zipCode, dayOfWeek)
 }
 ```
 
-## [typeScript](#tab/typescript)
+#### [TypeScript](#tab/typescript)
 
 ```ts
 /**
@@ -109,6 +111,8 @@ function getWeatherReport(zipCode?:number, dayOfWeek?:string):string
   // ...
 }
 ```
+
+---
 
 ## Range parameters
 
