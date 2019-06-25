@@ -13,7 +13,7 @@ localization_priority: Priority
 
 <h2>Get started</h2>
 
-<p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running. Also be sure to explore <a href="explore-with-script-lab.md">Script Lab</a>, if you're interested in building add-ins for Excel, Word, or PowerPoint.
+<p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running. Also be sure to try <a href="explore-with-script-lab.md">Script Lab</a>, if you're interested in building add-ins for Excel, Word, or PowerPoint.
 
 <ul class="cardsK panelContent cols cols2">
     <li>
@@ -82,7 +82,7 @@ localization_priority: Priority
 
 <h2>Learn about specific types of add-ins</h2>
 
-<p>After you're familiar with the core Office Add-ins concepts described in the previous section, learn more about building an add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word.</p>
+<p>Explore the following sections to learn about building an add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word.</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
