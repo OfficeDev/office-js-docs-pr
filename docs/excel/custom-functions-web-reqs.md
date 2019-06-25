@@ -1,5 +1,5 @@
 ---
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions
 localization_priority: Priority
@@ -19,52 +19,6 @@ If a custom function retrieves data from an external source such as the web, it 
 2. Resolve the Promise with the final value using the callback function.
 
 Web requests can be either be static, requesting data one time, or they can be streaming, requesting data at set intervals.
-
-### XHR example
-
-Within custom functions runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
-
-Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a Content-Type header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
-
-In the following code sample, the **getStarCount** function calls the Github API to discover the amount of stars given to a particular user's repository. You'll note that this is an asynchronous function which uses a JavaScript Promise. When data is returned, the Promise is resolved and you can perform `GET` and `SEND` operations.
-
-```js
-/**
- * Gets the star count for a given Github organization or user and repository.
- * @customfunction
- * @param userName string name of organization or user.
- * @param repoName string name of the repository.
- * @return number of stars.
- */
-
-async function getStarCount(userName: string, repoName: string) {
-  //You can change this URL to any web request you want to work with.
-
-  const url = "https://api.github.com/repos/" + userName + "/" + repoName;
-
-  let xhttp = new XMLHttpRequest();
-
-  return new Promise(function(resolve, reject) {
-    xhttp.onreadystatechange = function() {
-      if (xhttp.readyState !== 4) return;
-
-      if (xhttp.status == 200) {
-        resolve(JSON.parse(xhttp.responseText).watchers_count);
-      } else {
-        reject({
-          status: xhttp.status,
-
-          statusText: xhttp.statusText
-        });
-      }
-    };
-
-    xhttp.open("GET", url, true);
-
-    xhttp.send();
-  });
-}
-```
 
 ### Fetch example
 
@@ -117,6 +71,53 @@ function stockPriceStream(ticker, invocation) {
 
 CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
 ```
+
+### XHR example
+
+Within custom functions runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
+
+Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a Content-Type header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
+
+In the following code sample, the **getStarCount** function calls the Github API to discover the amount of stars given to a particular user's repository. You'll note that this is an asynchronous function which uses a JavaScript Promise. When data is returned, the Promise is resolved and you can perform `GET` and `SEND` operations.
+
+```js
+/**
+ * Gets the star count for a given Github organization or user and repository.
+ * @customfunction
+ * @param userName string name of organization or user.
+ * @param repoName string name of the repository.
+ * @return number of stars.
+ */
+
+async function getStarCount(userName: string, repoName: string) {
+  //You can change this URL to any web request you want to work with.
+
+  const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+
+  let xhttp = new XMLHttpRequest();
+
+  return new Promise(function(resolve, reject) {
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState !== 4) return;
+
+      if (xhttp.status == 200) {
+        resolve(JSON.parse(xhttp.responseText).watchers_count);
+      } else {
+        reject({
+          status: xhttp.status,
+
+          statusText: xhttp.statusText
+        });
+      }
+    };
+
+    xhttp.open("GET", url, true);
+
+    xhttp.send();
+  });
+}
+```
+
 
 ## Make a streaming function
 
