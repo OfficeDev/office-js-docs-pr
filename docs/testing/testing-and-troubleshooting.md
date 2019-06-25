@@ -24,6 +24,9 @@ The following table lists common error messages that users might encounter and s
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
+## When installing an add-in, you see "Error loading add-in" in the status bar
+
+Close Office, verify that the manifest is valid, restart the add-in, and then try installing again. Also, give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
 
 ## Outlook add-in doesn't work correctly
 
