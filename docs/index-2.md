@@ -25,7 +25,7 @@ localization_priority: Normal
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage bgdAccent1">
-                                    <img src="../images/index-landing-page/get-started.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
+                                    <img src="images/index-landing-page/get-started.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
                                 </div>
                             </div>
                             <div class="cardText">
@@ -33,13 +33,13 @@ localization_priority: Normal
                                 <p>Build your first Office Add-in in under 5 minutes!</p>
                                 <br/>
                                 <ul>
-                                    <li><a href="../quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
-                                    <li><a href="../quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
-                                    <li><a href="../quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
+                                    <li><a href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
+                                    <li><a href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
+                                    <li><a href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
                                     <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
-                                    <li><a href="../quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
-                                    <li><a href="../quickstarts/project-quickstart.md">Project add-in quick start</a></li>
-                                    <li><a href="../quickstarts/word-quickstart.md">Word add-in quick start</a></li>
+                                    <li><a href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
+                                    <li><a href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
+                                    <li><a href="quickstarts/word-quickstart.md">Word add-in quick start</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -52,7 +52,7 @@ localization_priority: Normal
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage bgdAccent1">
-                                    <img src="../images/index-landing-page/get-started-2.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
+                                    <img src="images/index-landing-page/get-started-2.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
                                 </div>
                             </div>
                             <div class="cardText">
@@ -60,11 +60,11 @@ localization_priority: Normal
                                 <p>Complete a tutorial to build a more complex add-in than the quick start produces.</p>
                                 <br/>
                                 <ul>
-                                    <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
-                                    <li><a href="../tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
+                                    <li><a href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
+                                    <li><a href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
                                     <li><a href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
-                                    <li><a href="../tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
-                                    <li><a href="../tutorials/word-tutorial.md">Word add-in tutorial </a></li>
+                                    <li><a href="tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
+                                    <li><a href="tutorials/word-tutorial.md">Word add-in tutorial </a></li>
                                 </ul>
                             </div>
                         </div>
