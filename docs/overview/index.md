@@ -7,13 +7,11 @@ ms.date: 06/30/2019
 localization_priority: Priority
 ---
 
-# Learn about Office Add-ins
+# Office Add-ins documentation
 
-<p>TO DO: lorem ipsum</p>
+<p>Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
 
-<h2>Getting started with Office Add-ins</h2>
-
-<p>TO DO: lorem ipsum</p>
+<h2>Get started</h2>
 
 <ul class="cardsK panelContent cols cols2">
     <li>
@@ -72,7 +70,7 @@ localization_priority: Priority
 
 ---
 
-<h2>Learn about Office Add-ins</h2>
+<h2>Learn more about Office Add-ins</h2>
 
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in.</p>
 
