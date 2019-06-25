@@ -29,9 +29,8 @@ localization_priority: Normal
                             <div class="cardText">
                                 <h2>5-minute Quick Starts</h2>
                                 <p style="font-size: 1.12rem;margin-bottom: 1rem;">Build your first Office Add-in in under 5 minutes!</p>
-                                <br/>
                                 <ul class="noBullet">
-                                    <li><a class="barLink" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
+                                    <li><a class="barLink font-size: 0.88rem;" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
                                     <li><a class="barLink" href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
                                     <li><a class="barLink" href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
                                     <li><a class="barLink" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
@@ -56,7 +55,6 @@ localization_priority: Normal
                             <div class="cardText">
                                 <h2>Tutorials</h2>
                                 <p style="font-size: 1.12rem;margin-bottom: 1rem;">Complete a tutorial to learn more about the capabilities of an add-in.</p>
-                                <br/>
                                 <ul class="noBullet">
                                     <li><a class="barLink" href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
                                     <li><a class="barLink" href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
