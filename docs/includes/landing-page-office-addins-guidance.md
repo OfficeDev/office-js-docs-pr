@@ -38,16 +38,20 @@
                         <p>After you've used a quick start to build your first add-in, complete a tutorial to build a more complex add-in.</p>
                         <br/>
                         <ul>
-                            <li><a href="../tutorial/excel-tutorial.md">Excel add-in tutorial</a></li>
-                            <li><a href="../tutorial/excel-tutorial-create-custom-functions.md">Excel Custom Functions tutorial</a></li>
+                            <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
+                            <li><a href="../tutorials/excel-tutorial-create-custom-functions.md">Excel Custom Functions tutorial</a></li>
                             <li><a href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
-                            <li><a href="../tutorial/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
-                            <li><a href="../tutorial/word-tutorial.md">Word add-in tutorial </a></li>
+                            <li><a href="../tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
+                            <li><a href="../tutorials/word-tutorial.md">Word add-in tutorial </a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </li>
+</ul>
+<ul class="cardsK panelContent cols cols2">
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
