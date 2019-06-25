@@ -13,6 +13,8 @@ localization_priority: Priority
 
 <h2>Get started</h2>
 
+<p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running. Also be sure to explore <a href="explore-with-script-lab.md">Script Lab</a>, if you're interested in building add-ins for Excel, Word, or PowerPoint.
+
 <ul class="cardsK panelContent cols cols2">
     <li>
         <div class="cardSize">
@@ -52,7 +54,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Tutorials</h3>
-                        <p>After using a quick start to build a simple add-in, complete a tutorial to build a more complex add-in.</p>
+                        <p>Complete a tutorial to build a more complex add-in than the quick start produces.</p>
                         <br/>
                         <ul>
                             <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
@@ -72,7 +74,7 @@ localization_priority: Priority
 
 <h2>Learn about Office Add-ins</h2>
 
-<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in.</p>
+<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. Explore the following articles for information that's relevant to any type of Office Add-in.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 
@@ -80,7 +82,7 @@ localization_priority: Priority
 
 <h2>Learn about specific types of add-ins</h2>
 
-<p>TO DO: Lorem ipsum. Although all Office Add-ins share a common framework through which certain capabilities can be implemented, each type of Office...In addition to the Office Add-in components and capabilities that all...each type of add-in...</p>
+<p>After you're familiar with the core Office Add-ins concepts described in the previous section, learn more about building an add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word.</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
