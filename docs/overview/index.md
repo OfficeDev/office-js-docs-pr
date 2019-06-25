@@ -54,7 +54,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Tutorials</h3>
-                        <p>Complete a tutorial to build a more complex add-in than the quick start produces and learn more about the capabilities of an add-in.</p>
+                        <p>Complete a tutorial to learn more about the capabilities of an add-in.</p>
                         <br/>
                         <ul>
                             <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>

@@ -57,7 +57,7 @@ localization_priority: Normal
                             </div>
                             <div class="cardText">
                                 <h3>Tutorials</h3>
-                                <p>Complete a tutorial to build a more complex add-in than the quick start produces.</p>
+                                <p>Complete a tutorial to learn more about the capabilities of an add-in.</p>
                                 <br/>
                                 <ul class="noBullet">
                                     <li><a href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
