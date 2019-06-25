@@ -9,17 +9,80 @@ localization_priority: Priority
 
 # Learn about Office Add-ins
 
+<p>TO DO: lorem ipsum</p>
+
+<h2>Getting started with Office Add-ins</h2>
+
+<p>TO DO: lorem ipsum</p>
+
+<ul class="cardsK panelContent cols cols2">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="../images/index-landing-page/get-started.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>5-minute Quick Starts</h3>
+                        <p>Build your first Office Add-in in under 5 minutes!</p>
+                        <br/>
+                        <ul>
+                            <li><a href="../quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
+                            <li><a href="../quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
+                            <li><a href="../quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
+                            <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
+                            <li><a href="../quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
+                            <li><a href="../quickstarts/project-quickstart.md">Project add-in quick start</a></li>
+                            <li><a href="../quickstarts/word-quickstart.md">Word add-in quick start</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="../images/index-landing-page/get-started-2.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Tutorials</h3>
+                        <p>After using a quick start to build a simple add-in, complete a tutorial to build a more complex add-in.</p>
+                        <br/>
+                        <ul>
+                            <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
+                            <li><a href="../tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
+                            <li><a href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
+                            <li><a href="../tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
+                            <li><a href="../tutorials/word-tutorial.md">Word add-in tutorial </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+---
+
+<h2>Learn about Office Add-ins</h2>
+
 <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. The following articles contain information that's relevant to any type of Office Add-in.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 
-<p>TODO: add tiles for Testing|Debugging and Publishing</p>
-
 ---
 
-<h2>Learn more about specific types of add-ins</h2>
+<h2>Learn about specific types of add-ins</h2>
 
-<p>Although all Office Add-ins share a common framework through which certain capabilities can be implemented, each type of Office...In addition to the Office Add-in components and capabilities that all...each type of add-in...</p>
+<p>TO DO: Lorem ipsum. Although all Office Add-ins share a common framework through which certain capabilities can be implemented, each type of Office...In addition to the Office Add-in components and capabilities that all...each type of add-in...</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
