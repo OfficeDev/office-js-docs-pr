@@ -74,7 +74,7 @@ localization_priority: Priority
 
 <h2>Learn about Office Add-ins</h2>
 
-<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. Explore the following articles for information that's relevant to any type of Office Add-in.</p>
+<p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. Explore the following articles to learn information that's relevant to any type of Office Add-in.</p>
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 
