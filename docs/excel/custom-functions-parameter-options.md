@@ -37,7 +37,7 @@ CustomFunctions.associate("ADD", add);
 
 #### [TypeScript](#tab/typescript)
 
-```ts
+```typescript
 /**
  * Add two numbers
  * @customfunction 
@@ -89,7 +89,7 @@ function getWeatherReport(zipCode, dayOfWeek)
 
 #### [TypeScript](#tab/typescript)
 
-```ts
+```typescript
 /**
  * Gets a weather report for a specified zipCode and dayOfWeek
  * @customfunction
