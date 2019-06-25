@@ -126,7 +126,7 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>5-minute Quick Starts</h3>
+                                <h3 class="likeAnH2">5-minute Quick Starts</h3>
                                 <p>Build your first Office Add-in in under 5 minutes!</p>
                                 <br/>
                                 <ul class="noBullet">
