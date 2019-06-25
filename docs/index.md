@@ -16,178 +16,170 @@ localization_priority: Normal
         <h1>Office Add-ins documentation</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
         <p></p>
-        <h2>Get started</h2>
-        <p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running. Also be sure to try <a href="explore-with-script-lab.md">Script Lab</a>, if you're interested in building add-ins for Excel, Word, or PowerPoint.
-        <ul class="cardsK panelContent cols cols2">
+        <ul class="cardsM cols cols1">
             <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage bgdAccent1">
-                                    <img src="../images/index-landing-page/get-started.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>5-minute Quick Starts</h3>
-                                <p>Build your first Office Add-in in under 5 minutes!</p>
-                                <br/>
-                                <ul>
-                                    <li><a href="../quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
-                                    <li><a href="../quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
-                                    <li><a href="../quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
-                                    <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
-                                    <li><a href="../quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
-                                    <li><a href="../quickstarts/project-quickstart.md">Project add-in quick start</a></li>
-                                    <li><a href="../quickstarts/word-quickstart.md">Word add-in quick start</a></li>
-                                </ul>
-                            </div>
+                <a class="card x-hidden-focus" href="overview/index.md" target="_blank">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="images/index/blocks.svg" alt="Office Add-ins platform" />
                         </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage bgdAccent1">
-                                    <img src="../images/index-landing-page/get-started-2.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Tutorials</h3>
-                                <p>Complete a tutorial to build a more complex add-in than the quick start produces.</p>
-                                <br/>
-                                <ul>
-                                    <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
-                                    <li><a href="../tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
-                                    <li><a href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
-                                    <li><a href="../tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
-                                    <li><a href="../tutorials/word-tutorial.md">Word add-in tutorial </a></li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="cardText">
+                        <h3>Office Add-ins guidance</h3>
+                        <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
                     </div>
-                </div>
+                </a>
             </li>
         </ul>
-        <br/>
-        <hr/>
-        <h2>Learn about Office Add-ins</h2>
-        <p>All Office Add-ins are built upon the Office Add-ins platform, and therefore share a common framework through which certain capabilities can be implemented. Explore the following articles to learn information that's relevant to any type of Office Add-in.</p>
-        [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
-        <br/>
-        <hr/>
-        <h2>Learn about specific types of add-ins</h2>
-        <p>Explore the following sections to learn about building an add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word.</p>
-        <ul class="panelContent cardsF cols cols3">
+        <ul class="cardsM cols cols3">
             <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img src="../images/index/logo-excel.svg" alt="Excel add-ins documentation" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Excel add-ins documentation</h3>
-                                <p><a href="../excel/index.md">Learn how to build Excel add-ins.</a></p>
-                            </div>
-                        </div>
+                <a class="card x-hidden-focus" href="excel/index.md" target="_blank">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="images/index/logo-excel.svg" alt="Excel add-ins" />
                     </div>
                 </div>
+                <div class="cardText">
+                    <h3>Excel add-ins</h3>
+                    <p>Build Excel add-ins.</p>
+                </div>
+                </a>
             </li>
             <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img src="../images/index/logo-onenote.svg" alt="OneNote add-ins documentation" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>OneNote add-ins documentation</h3>
-                                <p><a href="../onenote/index.md">Learn how to build OneNote add-ins.</a></p>
-                            </div>
-                        </div>
+                <a class="card x-hidden-focus" href="onenote/index.md" target="_blank">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="images/index/logo-onenote.svg" alt="OneNote add-ins" />
                     </div>
                 </div>
+                <div class="cardText">
+                    <h3>OneNote add-ins</h3>
+                    <p>Build OneNote add-ins.</p>
+                </div>
+                </a>
             </li>
             <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img src="../images/index/logo-outlook.svg" alt="Outlook add-ins documentation" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Outlook add-ins documentation</h3>
-                                <p><a href="../outlook/index.md">Learn how to build Outlook add-ins.</a></p>
-                            </div>
-                        </div>
+                <a class="card x-hidden-focus" href="outlook/index.md" target="_blank">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="images/index/logo-outlook.svg" alt="Outlook add-ins" />
                     </div>
                 </div>
+                <div class="cardText">
+                    <h3>Outlook add-ins</h3>
+                    <p>Build Outlook add-ins.</p>
+                </div>
+                </a>
             </li>
             <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img src="../images/index/logo-powerpoint.svg" alt="PowerPoint add-ins documentation" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>PowerPoint add-ins documentation</h3>
-                                <p><a href="../powerpoint/index.md">Learn how to build PowerPoint add-ins.</a></p>
-                            </div>
-                        </div>
+                <a class="card x-hidden-focus" href="powerpoint/index.md" target="_blank">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="images/index/logo-powerpoint.svg" alt="PowerPoint add-ins" />
                     </div>
                 </div>
+                <div class="cardText">
+                    <h3>PowerPoint add-ins</h3>
+                    <p>Build PowerPoint add-ins.</p>
+                </div>
+                </a>
             </li>
             <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img src="../images/index/logo-project-server.svg" alt="Project add-ins documentation" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Project add-ins documentation</h3>
-                                <p><a href="../project/index.md">Learn how to build Project add-ins.</a></p>
-                            </div>
-                        </div>
+                <a class="card x-hidden-focus" href="project/index.md" target="_blank">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="images/index/logo-project-server.svg" alt="Project add-ins" />
                     </div>
                 </div>
+                <div class="cardText">
+                    <h3>Project add-ins</h3>
+                    <p>Build Project add-ins.</p>
+                </div>
+                </a>
             </li>
             <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img src="../images/index/logo-word.svg" alt="Word add-ins documentation" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Word add-ins documentation</h3>
-                                <p><a href="../word/index.md">Learn how to build Word add-ins.</a></p>
-                            </div>
-                        </div>
+                <a class="card x-hidden-focus" href="word/index.md" target="_blank">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="images/index/logo-word.svg" alt="Word add-ins" />
                     </div>
                 </div>
+                <div class="cardText">
+                    <h3>Word add-ins</h3>
+                    <p>Build Word add-ins.</p>
+                </div>
+                </a>
             </li>
         </ul>
         <br/>
         <hr/>
         <h2>Resources</h2>
-        [!include[Office Add-ins resources](../includes/landing-page-resources.md)]
+        <ul class="cardsF cols cols4" style="display:flex!important;">
+            <li>
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <a href="overview/explore-with-script-lab.md" target="_blank"><img src="images/index/ScriptLabLogoColor.svg" alt="Script Lab" /></a>
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore APIs<br/>with Script Lab</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="images/index/i_support.svg" alt="API questions" /></a>
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Ask questions</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="images/index/i_bug.svg" alt="API issues" /></a>
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Report issues</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <a href="https://officespdev.uservoice.com/" target="_blank"><img src="images/index/i_feedback.svg" alt="API feature requests" /></a>
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Request features</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <p><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.</p>
     </div>
 </div>
