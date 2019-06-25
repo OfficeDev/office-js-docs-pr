@@ -26,7 +26,7 @@ Within custom functions runtime, XHR implements additional security measures by 
 
 Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a Content-Type header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
-In the following code sample, the **getStarCount** function calls the Github API to discover the amount of stars given to a particular user's repository. You'll note that this is an asynchronous function which uses a JavaScript Promise. When data is returned, the Promise is resolved and you can perform `GET` and `SEND` operations.
+In the following code sample, the **getStarCount** function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript Promise. When data is obtained from the web call, the Promise is resolved which returns the data to the cell.
 
 ```js
 /**
