@@ -15,6 +15,7 @@
                         <br/>
                         <ul>
                             <li><a href="../quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
+                            <li><a href="../quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
                             <li><a href="../quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
                             <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
                             <li><a href="../quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
@@ -39,7 +40,7 @@
                         <br/>
                         <ul>
                             <li><a href="../tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
-                            <li><a href="../tutorials/excel-tutorial-create-custom-functions.md">Excel Custom Functions tutorial</a></li>
+                            <li><a href="../tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
                             <li><a href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
                             <li><a href="../tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
                             <li><a href="../tutorials/word-tutorial.md">Word add-in tutorial </a></li>
@@ -65,7 +66,7 @@
                         <p>Learn fundamental concepts about Office Add-ins.</p>
                         <br/>
                         <ul>
-                            <li><a href="../overview/office-add-ins.md">About Office Add-ins</a></li>
+                            <li><a href="../overview/office-add-ins.md">Office Add-ins platform overview</a></li>
                             <li><a href="../concepts/requirements-for-running-office-add-ins.md">Requirements for running Office Add-ins</a></li>
                             <li><a href="../develop/office-versions-and-requirement-sets.md">Office versions and requirement sets</a></li>
                             <li><a href="../overview/office-add-in-availability.md">Host and platform availability</a></li>
