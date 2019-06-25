@@ -7,10 +7,7 @@ localization_priority: Normal
 
 # Custom functions parameter options
 
-Custom functions are configurable with many different options for parameters:
-- [Optional parameters](#custom-functions-optional-parameters)
-- [Range parameters](#range-parameters)
-- [Invocation context parameter](#invocation-parameter)
+Custom functions are configurable with many different options for parameters.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
