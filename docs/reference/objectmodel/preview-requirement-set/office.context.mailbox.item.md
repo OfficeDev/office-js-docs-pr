@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
 ---
 
@@ -525,7 +525,7 @@ function callback(asyncResult) {
 
 #### internetHeaders: [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Gets or sets the internet headers of a message.
+Gets or sets custom internet headers on a message.
 
 ##### Type
 

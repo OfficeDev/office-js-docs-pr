@@ -1,7 +1,7 @@
 ---
 title: Office.context - preview requirement set
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
 ---
 
@@ -78,7 +78,7 @@ function write(message){
 Provides access to the properties for Office theme colors.
 
 > [!NOTE]
-> This member is not supported in Outlook on iOS or Android.
+> This member is only supported in Outlook on Windows.
 
 Using Office theme colors let's you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.
 
