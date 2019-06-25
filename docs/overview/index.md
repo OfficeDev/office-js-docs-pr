@@ -13,7 +13,7 @@ localization_priority: Priority
 
 <h2>Get started</h2>
 
-<p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running. Also be sure to try <a href="explore-with-script-lab.md">Script Lab</a>, if you're interested in building add-ins for Excel, Word, or PowerPoint.</p>
+<p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running, then explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
 
 <ul class="cardsK panelContent cols cols2">
     <li>

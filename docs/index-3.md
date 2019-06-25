@@ -114,7 +114,7 @@ localization_priority: Normal
         <br/>
         <hr/>
         <h2>Get started</h2>
-        <p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running. Also be sure to try <a href="overview/explore-with-script-lab.md">Script Lab</a>, if you're interested in building add-ins for Excel, Word, or PowerPoint.</p>
+        <p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running, then explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
         <ul class="cardsK cols cols2">
             <li>
                 <div class="cardSize">
@@ -129,8 +129,8 @@ localization_priority: Normal
                                 <h3>5-minute Quick Starts</h3>
                                 <p>Build your first Office Add-in in under 5 minutes!</p>
                                 <br/>
-                                <ul>
-                                    <li><a href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
+                                <ul class="noBullet">
+                                    <li><a class="barLink" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
                                     <li><a href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
                                     <li><a href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
                                     <li><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>

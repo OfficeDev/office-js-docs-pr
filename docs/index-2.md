@@ -17,7 +17,7 @@ localization_priority: Normal
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
         <p></p>
         <h2>Get started</h2>
-        <p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running. Also be sure to try <a href="overview/explore-with-script-lab.md">Script Lab</a>, if you're interested in building add-ins for Excel, Word, or PowerPoint.</p>
+        <p>New to building Office Add-ins? Check out the following quick starts and tutorials to quickly get up and running, then explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
         <ul class="cardsK cols cols2">
             <li>
                 <div class="cardSize">
