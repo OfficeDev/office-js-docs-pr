@@ -11,8 +11,6 @@ At times your users might encounter issues with Office Add-ins that you develop.
 
 You can also use [Fiddler](https://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
-After you resolve the user's issue, you can [respond directly to customer reviews in AppSource](/office/dev/store/create-effective-office-store-listings).
-
 ## Common errors and troubleshooting steps
 
 The following table lists common error messages that users might encounter and steps that your users can take to resolve the errors.
