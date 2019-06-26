@@ -15,65 +15,7 @@ localization_priority: Normal
     <div class="container">
         <h1>Office Add-ins documentation</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
-        <h2>Get started</h2>
-        <p>New to building Office Add-ins? Use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
-        <ul class="cardsK cols cols2">
-            <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage bgdAccent1">
-                                    <img src="images/index-landing-page/get-started.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>5-minute Quick Starts</h3>
-                                <p>Build your first Office Add-in in under 5 minutes!</p>
-                                <br/>
-                                <ul class="noBullet">
-                                    <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word add-in quick start</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage bgdAccent1">
-                                    <img src="images/index-landing-page/get-started-2.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Tutorials</h3>
-                                <p>Complete a tutorial to learn more about the capabilities of an add-in.</p>
-                                <br/>
-                                <ul class="noBullet">
-                                    <li><a class="barLink" style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
-                                    <li><a class="barLink" style="font-size: 1rem;" href="tutorials/word-tutorial.md">Word add-in tutorial </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <br/>
-        <hr/>
-        <h2>Learn about Office Add-ins</h2>
+        <p></p>
         <ul class="cardsM cols cols1">
             <li>
                 <a class="card x-hidden-focus" href="overview/index.md" target="_blank">
