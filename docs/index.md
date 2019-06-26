@@ -28,7 +28,7 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>5-minute Quick Starts</h3>
+                                <h2>5-minute Quick Starts</h2>
                                 <p>Build your first Office Add-in in under 5 minutes!</p>
                                 <br/>
                                 <ul class="noBullet">
@@ -55,7 +55,7 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Tutorials</h3>
+                                <h2>Tutorials</h2>
                                 <p>Complete a tutorial to learn more about the capabilities of an add-in.</p>
                                 <br/>
                                 <ul class="noBullet">
@@ -64,6 +64,27 @@ localization_priority: Normal
                                     <li><a class="barLink" style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
                                     <li><a class="barLink" style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
                                     <li><a class="barLink" style="font-size: 1rem;" href="tutorials/word-tutorial.md">Word add-in tutorial </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage bgdAccent1">
+                                    <img src="images/index-landing-page/get-started.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h2>Script Lab</h2>
+                                <p>Learn about Office JavaScript APIs for Excel, Word, or PowerPoint by trying them out in Script Lab.</p>
+                                <br/>
+                                <ul class="noBullet">
+                                    <li><a class="barLink" style="font-size: 1rem;" href="overview/explore-with-script-lab.md">Script Lab</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -99,7 +120,7 @@ localization_priority: Normal
                 </div>
                 <div class="cardText">
                     <h3>Excel add-ins</h3>
-                    <p>Build Excel add-ins.</p>
+                    <p>Learn how to build Excel add-ins.</p>
                 </div>
                 </a>
             </li>
@@ -112,7 +133,7 @@ localization_priority: Normal
                 </div>
                 <div class="cardText">
                     <h3>OneNote add-ins</h3>
-                    <p>Build OneNote add-ins.</p>
+                    <p>Learn how to build OneNote add-ins.</p>
                 </div>
                 </a>
             </li>
@@ -125,7 +146,7 @@ localization_priority: Normal
                 </div>
                 <div class="cardText">
                     <h3>Outlook add-ins</h3>
-                    <p>Build Outlook add-ins.</p>
+                    <p>Learn how to build Outlook add-ins.</p>
                 </div>
                 </a>
             </li>
@@ -138,7 +159,7 @@ localization_priority: Normal
                 </div>
                 <div class="cardText">
                     <h3>PowerPoint add-ins</h3>
-                    <p>Build PowerPoint add-ins.</p>
+                    <p>Learn how to build PowerPoint add-ins.</p>
                 </div>
                 </a>
             </li>
@@ -151,7 +172,7 @@ localization_priority: Normal
                 </div>
                 <div class="cardText">
                     <h3>Project add-ins</h3>
-                    <p>Build Project add-ins.</p>
+                    <p>Learn how to build Project add-ins.</p>
                 </div>
                 </a>
             </li>
@@ -164,7 +185,7 @@ localization_priority: Normal
                 </div>
                 <div class="cardText">
                     <h3>Word add-ins</h3>
-                    <p>Build Word add-ins.</p>
+                    <p>Learn how to build Word add-ins.</p>
                 </div>
                 </a>
             </li>
