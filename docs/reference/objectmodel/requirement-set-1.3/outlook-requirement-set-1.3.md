@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.3
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/25/2019
 localization_priority: Normal
 ---
 
@@ -26,7 +26,6 @@ Requirement set 1.3 includes all of the features of [Requirement set 1.2](../req
 
 - Added [Body.getAsync](/javascript/api/outlook_1_3/office.body#getasync-coerciontype--options--callback-): Returns the current body in a specified format.
 - Added [Body.setAsync](/javascript/api/outlook_1_3/office.body#setasync-data--options--callback-): Replaces the entire body with the specified text.
-- Added [Office.context.officeTheme](office.context.md#officetheme-object): Provides access to the Office theme colors.
 - Added [Event](/javascript/api/office/office.addincommands.event) object: Passed as a parameter to UI-less command functions in an Outlook add-in. Used to signal completion of processing.
 - Added [Office.context.mailbox.item.close](office.context.mailbox.item.md#close): Closes the current item that is being composed.
 - Added [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback): Asynchronously saves an item.
