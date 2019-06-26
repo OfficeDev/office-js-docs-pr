@@ -812,7 +812,7 @@
 - name: Visio add-ins
   items:
   - name: About Visio add-ins
-    href: viso/index.md
+    href: visio/index.md
     displayName: Visio
   - name: Overview
     href: reference/overview/visio-javascript-reference-overview.md
