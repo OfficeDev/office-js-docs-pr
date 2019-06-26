@@ -67,4 +67,4 @@ You can use the Visio JavaScript APIs to embed Visio diagrams in SharePoint Onli
 
 ---
 
-[!include[Office Add-ins resources](../includes/landing-page-resources.md)]
+[!include[Office Add-ins resources](../includes/landing-page-resources-no-script-lab.md)]
