@@ -486,6 +486,9 @@
       displayName: Excel
   - name: Custom functions
     items:
+    - name: About custom functions
+      href: excel/about-custom-functions.md
+      displayName: Excel, Custom Functions
     - name: Overview
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
