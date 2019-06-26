@@ -17,7 +17,7 @@ localization_priority: Normal
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
         <h2>Get started</h2>
         <p>New to building Office Add-ins? Use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
-        <ul class="cardsK cols cols2">
+        <ul class="cardsK cols cols3">
             <li>
                 <div class="cardSize">
                     <div class="cardPadding">
@@ -28,7 +28,7 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h2>5-minute Quick Starts</h2>
+                                <h3>5-minute Quick Starts</h3>
                                 <p>Build your first Office Add-in in under 5 minutes!</p>
                                 <br/>
                                 <ul class="noBullet">
@@ -55,7 +55,7 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h2>Tutorials</h2>
+                                <h3>Tutorials</h3>
                                 <p>Complete a tutorial to learn more about the capabilities of an add-in.</p>
                                 <br/>
                                 <ul class="noBullet">
@@ -80,7 +80,7 @@ localization_priority: Normal
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h2>Script Lab</h2>
+                                <h3>Script Lab</h3>
                                 <p>Learn about Office JavaScript APIs for Excel, Word, or PowerPoint by trying them out in Script Lab.</p>
                                 <br/>
                                 <ul class="noBullet">

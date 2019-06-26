@@ -21,6 +21,7 @@ localization_priority: Priority
 
 <ul class="panelContent cardsF cols cols3">
     <li>
+        <a href="../excel/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -31,13 +32,15 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Excel add-ins documentation</h3>
-                        <p><a href="../excel/index.md">Learn how to build Excel add-ins.</a></p>
+                        <p>Learn how to build Excel add-ins.</p>
                     </div>
                 </div>
             </div>
         </div>
+        </a>
     </li>
     <li>
+        <a href="../onenote/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -48,13 +51,15 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>OneNote add-ins documentation</h3>
-                        <p><a href="../onenote/index.md">Learn how to build OneNote add-ins.</a></p>
+                        <p>Learn how to build OneNote add-ins.</p>
                     </div>
                 </div>
             </div>
         </div>
+        </a>
     </li>
     <li>
+        <a href="../outlook/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -65,13 +70,15 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Outlook add-ins documentation</h3>
-                        <p><a href="../outlook/index.md">Learn how to build Outlook add-ins.</a></p>
+                        <p>Learn how to build Outlook add-ins.</p>
                     </div>
                 </div>
             </div>
         </div>
+        </a>
     </li>
     <li>
+        <a href="../powerpoint/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -82,13 +89,15 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>PowerPoint add-ins documentation</h3>
-                        <p><a href="../powerpoint/index.md">Learn how to build PowerPoint add-ins.</a></p>
+                        <p>Learn how to build PowerPoint add-ins.</p>
                     </div>
                 </div>
             </div>
         </div>
+        </a>
     </li>
     <li>
+        <a href="../project/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -99,13 +108,15 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Project add-ins documentation</h3>
-                        <p><a href="../project/index.md">Learn how to build Project add-ins.</a></p>
+                        <p>Learn how to build Project add-ins.</p>
                     </div>
                 </div>
             </div>
         </div>
+        </a>
     </li>
     <li>
+        <a href="../word/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -116,16 +127,16 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Word add-ins documentation</h3>
-                        <p><a href="../word/index.md">Learn how to build Word add-ins.</a></p>
+                        <p>Learn how to build Word add-ins.</p>
                     </div>
                 </div>
             </div>
         </div>
+        </a>
     </li>
 </ul>
 
-<p>New to building Office Add-ins? <a href="../index.md">Use a quick start</a> to build your first add-in in under 5 minutes!</p>
-
+<p>New to building Office Add-ins? <a href="../index.md">Use a quick start</a> to build your first add-in in under 5 minutes and <a href="explore-with-script-lab.md">explore the Office JavaScript APIs with Script Lab</a>!</p>
 
 ---
 
