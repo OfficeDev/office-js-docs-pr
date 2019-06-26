@@ -13,7 +13,7 @@ localization_priority: Normal
 
 <div id="main" class="v2">
     <div class="container">
-        <h1>Office Add-ins documentation</h1>
+        <h1>Office Add-ins Documentation</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
         <h2>Get started</h2>
         <p>New to building Office Add-ins? Use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
@@ -76,7 +76,7 @@ localization_priority: Normal
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage bgdAccent1">
-                                    <img src="images/index-landing-page/get-started.svg" alt="Office Add-ins quick starts graphic" data-linktype="external" class="x-hidden-focus"/>
+                                    <img src="../images/index-landing-page/monitor-with-code.svg" alt="Office Add-ins development graphic" data-linktype="external" class="x-hidden-focus"/>
                                 </div>
                             </div>
                             <div class="cardText">
@@ -97,7 +97,7 @@ localization_priority: Normal
         <h2>Learn about Office Add-ins</h2>
         <ul class="cardsM cols cols1">
             <li>
-                <a class="card x-hidden-focus" href="overview/index.md" target="_blank">
+                <a class="card x-hidden-focus" href="overview/index.md">
                     <div class="cardImageOuter">
                         <div class="cardImage">
                             <img src="images/index/blocks.svg" alt="Office Add-ins platform" />
@@ -112,7 +112,7 @@ localization_priority: Normal
         </ul>
         <ul class="cardsM cols cols3">
             <li>
-                <a class="card x-hidden-focus" href="excel/index.md" target="_blank">
+                <a class="card x-hidden-focus" href="excel/index.md">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-excel.svg" alt="Excel add-ins" />
@@ -125,7 +125,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="onenote/index.md" target="_blank">
+                <a class="card x-hidden-focus" href="onenote/index.md">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-onenote.svg" alt="OneNote add-ins" />
@@ -138,7 +138,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="outlook/index.md" target="_blank">
+                <a class="card x-hidden-focus" href="outlook/index.md">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-outlook.svg" alt="Outlook add-ins" />
@@ -151,7 +151,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="powerpoint/index.md" target="_blank">
+                <a class="card x-hidden-focus" href="powerpoint/index.md">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-powerpoint.svg" alt="PowerPoint add-ins" />
@@ -164,7 +164,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="project/index.md" target="_blank">
+                <a class="card x-hidden-focus" href="project/index.md">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-project-server.svg" alt="Project add-ins" />
@@ -177,7 +177,7 @@ localization_priority: Normal
                 </a>
             </li>
             <li>
-                <a class="card x-hidden-focus" href="word/index.md" target="_blank">
+                <a class="card x-hidden-focus" href="word/index.md">
                 <div class="cardImageOuter">
                     <div class="cardImage">
                         <img src="images/index/logo-word.svg" alt="Word add-ins" />
@@ -200,11 +200,11 @@ localization_priority: Normal
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <a href="overview/explore-with-script-lab.md" target="_blank"><img src="images/index/ScriptLabLogoColor.svg" alt="Script Lab" /></a>
+                                    <a href="overview/explore-with-script-lab.md"><img src="images/index/ScriptLabLogoColor.svg" alt="Script Lab" /></a>
                                 </div>
                             </div>
                             <div class="cardText">
-                                <a href="overview/explore-with-script-lab.md" target="_blank"><h3>Explore APIs<br/>with Script Lab</h3></a>
+                                <a href="overview/explore-with-script-lab.md"><h3>Explore APIs<br/>with Script Lab</h3></a>
                             </div>
                         </div>
                     </div>
@@ -216,7 +216,7 @@ localization_priority: Normal
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="images/index/i_support.svg" alt="API questions" /></a>
+                                    <a href="https://stackoverflow.com/questions/tagged/office-js"><img src="images/index/i_support.svg" alt="API questions" /></a>
                                 </div>
                             </div>
                             <div class="cardText">

@@ -136,7 +136,7 @@ localization_priority: Priority
     </li>
 </ul>
 
-<p>New to building Office Add-ins? <a href="../index.md">Use a quick start</a> to build your first add-in in under 5 minutes and <a href="explore-with-script-lab.md">explore the Office JavaScript APIs with Script Lab</a>!</p>
+<p>New to building Office Add-ins? <a href="../index.md">Complete a quick start</a> to build your first add-in in under 5 minutes and <a href="explore-with-script-lab.md">explore the Office JavaScript APIs with Script Lab</a>!</p>
 
 ---
 
