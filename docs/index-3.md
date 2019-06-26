@@ -30,10 +30,11 @@ localization_priority: Normal
                             <div class="cardText">
                                 <h3>5-minute Quick Starts</h3>
                                 <p>Build your first Office Add-in in under 5 minutes!</p>
+                                <br/>
                                 <ul class="noBullet">
-                                    <li><a class="barLink" style="font-size: .95rem;" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
+                                    <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
                                     <li><a class="barLink" style="font-size: .95rem;" href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
-                                    <li><a class="barLink" href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
+                                    <li><a class="barLink" style="font-size: .95rem;" href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
                                     <li><a class="barLink" style="font-size: .95rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
                                     <li><a class="barLink" style="font-size: .95rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
                                     <li><a class="barLink" style="font-size: .95rem;" href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
