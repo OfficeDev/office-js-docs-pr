@@ -811,6 +811,9 @@
 
 - name: Visio add-ins
   items:
+  - name: About Visio add-ins
+    href: viso/index.md
+    displayName: Visio
   - name: Overview
     href: reference/overview/visio-javascript-reference-overview.md
     displayName: Visio
