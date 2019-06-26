@@ -122,6 +122,8 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
 
 [!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
 
+[!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance-note.md)]
+
 ---
 
 [!include[Office Add-ins resources](../includes/landing-page-resources.md)]
