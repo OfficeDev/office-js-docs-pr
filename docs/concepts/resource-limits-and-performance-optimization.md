@@ -1,14 +1,14 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
 
 # Resource limits and performance optimization for Office Add-ins
 
-To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running on Office clients for Windows and OS X, but not Office Online, Outlook Web App, or OWA for Devices. 
+To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running in Office clients on Windows and OS X, but not on mobile apps or in a browser.
 
 You can also optimize the performance of your add-ins on desktop and mobile devices by optimizing the use of resources in your add-in design and implementation.
 
@@ -37,7 +37,7 @@ Run-time resource usage limits apply to all types of Office Add-ins. These limit
 If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, Outlook disables the add-in. The Exchange Admin Center displays the disabled status of the app.
 
 > [!NOTE]
-> Even though only the Outlook rich clients and not Outlook Web App or OWA for Devices monitor resource usage, if a rich client disables an Outlook add-in, that add-in is also disabled for use in Outlook Web App and OWA for Devices.
+> Even though only the Outlook rich clients and not Outlook on the web or mobile devices monitor resource usage, if a rich client disables an Outlook add-in, that add-in is also disabled for use in Outlook on the web and mobile devices.
 
 In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation:
 
@@ -45,7 +45,7 @@ In addition to the CPU core, memory, and reliability rules, Outlook add-ins shou
 
     Using a group policy or application-specific setting in the Windows registry, administrators can adjust this default threshold value of 1,000 milliseconds in the  **OutlookActivationAlertThreshold** setting.
 
-- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by  **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook disables the Outlook add-in. The Exchange Admin Center displays the disabled status, and the add-in is disabled for use in the Outlook rich clients, Outlook Web App and OWA for Devices.
+- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by  **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook disables the Outlook add-in. The Exchange Admin Center displays the disabled status, and the add-in is disabled for use in the Outlook rich clients, and Outlook on the web and mobile devices.
 
     Using a group policy or application-specific setting in the Windows registry, administrators can adjust this number of times to retry evaluation in the  **OutlookActivationManagerRetryLimit** setting.
 

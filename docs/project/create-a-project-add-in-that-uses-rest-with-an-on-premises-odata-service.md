@@ -1,7 +1,7 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -24,7 +24,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 - Visual Studio 2015 with Office Developer Tools for Visual Studio includes templates for creating Office and SharePoint Add-ins. Ensure that you have installed the most recent version of Office Developer Tools; see the  _Tools_ section of the [Office Add-ins and SharePoint downloads](https://developer.microsoft.com/office/docs).
 
-- The procedures and code examples in this article access the  **ProjectData** service of Project Server 2013 in a local domain. The jQuery methods in this article do not work with Project Online.
+- The procedures and code examples in this article access the  **ProjectData** service of Project Server 2013 in a local domain. The jQuery methods in this article do not work with Project on the web.
 
     Verify that the  **ProjectData** service is accessible from your development computer.
 
@@ -364,7 +364,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
 3. Add the  **retrieveOData** function, which concatenates values for the REST query and then calls the **ajax** function in jQuery to get the requested data from the **ProjectData** service. The **support.cors** variable enables cross-origin resource sharing (CORS) with the **ajax** function. If the **support.cors** statement is missing or is set to **false**, the  **ajax** function returns a **No transport** error.
 
    > [!NOTE]
-   > The following code works with an on-premises installation of Project Server 2013. For Project Online, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
+   > The following code works with an on-premises installation of Project Server 2013. For Project on the web, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
    In the **ajax** call, you can use either the _headers_ parameter or the _beforeSend_ parameter. The _complete_ parameter is an anonymous function so that it is in the same scope as the variables in **retrieveOData**. The function for the  _complete_ parameter displays results in the **odataText** control and also calls the **parseODataResult** method to parse and display the JSON response. The _error_ parameter specifies the named **getProjectDataErrorHandler** function, which writes an error message to the **odataText** control and also uses the **throwError** method to display a pop-up message.
 
@@ -381,7 +381,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
         accept.toLocaleLowerCase();
 
         // Enable cross-origin scripting (required by jQuery 1.5 and later).
-        // This does not work with Project Online.
+        // This does not work with Project on the web.
         $.support.cors = true;
 
         $.ajax({
@@ -837,7 +837,7 @@ function retrieveOData() {
     accept.toLocaleLowerCase();
 
     // Enable cross-origin scripting (required by jQuery 1.5 and later).
-    // This does not work with Project Online.
+    // This does not work with Project on the web.
     $.support.cors = true;
 
     $.ajax({

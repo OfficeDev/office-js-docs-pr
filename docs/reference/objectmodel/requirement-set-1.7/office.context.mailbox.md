@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.7
 description: ''
-ms.date: 04/24/2019
+ms.date: 06/20/2019
 localization_priority: Normal
 ---
 
@@ -9,7 +9,7 @@ localization_priority: Normal
 
 ### [Office](Office.md)[.context](Office.context.md).mailbox
 
-Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
+Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ##### Requirements
 
@@ -55,7 +55,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 Gets the URL of the Exchange Web Services (EWS) endpoint for this email account. Read mode only.
 
 > [!NOTE]
-> This member is not supported in Outlook for iOS or Outlook for Android.
+> This member is not supported in Outlook on iOS or Android.
 
 The `ewsUrl` value can be used by a remote service to make EWS calls to the user's mailbox. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
@@ -153,7 +153,7 @@ function loadNewItem(eventArgs) {
 Converts an item ID formatted for REST into EWS format.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 Item IDs retrieved via a REST API (such as the [Outlook Mail API](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) or the [Microsoft Graph](https://graph.microsoft.io/)) use a different format than the format used by Exchange Web Services (EWS). The `convertToEwsId` method converts a REST-formatted ID into the proper format for EWS.
 
@@ -194,9 +194,9 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 
 Gets a dictionary containing time information in local client time.
 
-The dates and times used by a mail app for Outlook or Outlook Web App can use different time zones. Outlook uses the client computer time zone; Outlook Web App uses the time zone set on the Exchange Admin Center (EAC). You should handle date and time values so that the values you display on the user interface are always consistent with the time zone that the user expects.
+A mail app for Outlook on a desktop or on the web can use different time zones for the dates and times. Outlook on a desktop uses the client computer time zone; Outlook on the web uses the time zone set on the Exchange Admin Center (EAC). You should handle date and time values so that the values you display on the user interface are always consistent with the time zone that the user expects.
 
-If the mail app is running in Outlook, the `convertToLocalClientTime` method will return a dictionary object with the values set to the client computer time zone. If the mail app is running in Outlook Web App, the `convertToLocalClientTime` method will return a dictionary object with the values set to the time zone specified in the EAC.
+If the mail app is running in Outlook on a desktop client, the `convertToLocalClientTime` method will return a dictionary object with the values set to the client computer time zone. If the mail app is running in Outlook on the web, the `convertToLocalClientTime` method will return a dictionary object with the values set to the time zone specified in the EAC.
 
 ##### Parameters
 
@@ -225,7 +225,7 @@ Type:
 Converts an item ID formatted for EWS into REST format.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 Item IDs retrieved via EWS or via the `itemId` property use a different format than the format used by REST APIs (such as the [Outlook Mail API](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) or the [Microsoft Graph](https://graph.microsoft.io/)). The `convertToRestId` method converts an EWS-formatted ID into the proper format for REST.
 
@@ -302,13 +302,13 @@ A Date object with the time expressed in UTC.
 Displays an existing calendar appointment.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `displayAppointmentForm` method opens an existing calendar appointment in a new window on the desktop or in a dialog box on mobile devices.
 
-In Outlook for Mac, you can use this method to display a single appointment that is not part of a recurring series, or the master appointment of a recurring series, but you cannot display an instance of the series. This is because in Outlook for Mac, you cannot access the properties (including the item ID) of instances of a recurring series.
+In Outlook on Mac, you can use this method to display a single appointment that is not part of a recurring series, or the master appointment of a recurring series, but you cannot display an instance of the series. This is because in Outlook on Mac, you cannot access the properties (including the item ID) of instances of a recurring series.
 
-In Outlook Web App, this method opens the specified form only if the body of the form is less than or equal to 32KB number of characters.
+In Outlook on the web, this method opens the specified form only if the body of the form is less than or equal to 32KB number of characters.
 
 If the specified item identifier does not identify an existing appointment, a blank pane opens on the client computer or device, and no error message will be returned.
 
@@ -340,11 +340,11 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 Displays an existing message.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `displayMessageForm` method opens an existing message in a new window on the desktop or in a dialog box on mobile devices.
 
-In Outlook Web App, this method opens the specified form only if the body of the form is less than or equal to 32 KB number of characters.
+In Outlook on the web, this method opens the specified form only if the body of the form is less than or equal to 32 KB number of characters.
 
 If the specified item identifier does not identify an existing message, no message will be displayed on the client computer, and no error message will be returned.
 
@@ -378,11 +378,11 @@ Office.context.mailbox.displayMessageForm(messageId);
 Displays a form for creating a new calendar appointment.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `displayNewAppointmentForm` method opens a form that enables the user to create a new appointment or meeting. If parameters are specified, the appointment form fields are automatically populated with the contents of the parameters.
 
-In Outlook Web App and OWA for Devices, this method always displays a form with an attendees field. If you do not specify any attendees as input arguments, the method displays a form with a **Save** button. If you have specified attendees, the form would include the attendees and a **Send** button.
+In Outlook on the web and mobile devices, this method always displays a form with an attendees field. If you do not specify any attendees as input arguments, the method displays a form with a **Save** button. If you have specified attendees, the form would include the attendees and a **Send** button.
 
 In the Outlook rich client and Outlook RT, if you specify any attendees or resources in the `requiredAttendees`, `optionalAttendees`, or `resources` parameter, this method displays a meeting form with a **Send** button. If you don't specify any recipients, this method displays an appointment form with a **Save & Close** button.
 
@@ -639,7 +639,7 @@ Makes an asynchronous request to an Exchange Web Services (EWS) service on the E
 
 > [!NOTE]
 > This method is not supported in the following scenarios.
-> - In Outlook for iOS or Outlook for Android
+> - In Outlook on iOS or Android
 > - When the add-in is loaded in a Gmail mailbox
 > 
 > In these cases, add-ins should [use REST APIs](/outlook/add-ins/use-rest-api) to access the user's mailbox instead.

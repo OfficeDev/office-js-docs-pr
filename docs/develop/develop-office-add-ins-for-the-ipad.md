@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins for the iPad
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
 ---
 
@@ -9,12 +9,12 @@ localization_priority: Normal
 # Develop Office Add-ins for the iPad
 
 
-The following table lists the tasks to perform to develop an Office Add-in to run in Office for iPad.
+The following table lists the tasks to perform to develop an Office Add-in to run in Office on iPad.
 
 
 |**Task**|**Description**|**Resources**|
 |:-----|:-----|:-----|
-|Update your add-in to support Office.js version 1.1.|Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1.|[What's changed in the JavaScript API for Office](/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office)|
+|Update your add-in to support Office.js version 1.1.|Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1.|[Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)|
 |Apply UI design best practices.|Integrate your add-in UI seamlessly with the iOS experience.|[Designing for iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |Apply add-in design best practices.|Ensure that your add-in provides clear value, is engaging, and performs consistently.|[Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)|
 |Optimize your add-in for touch.|Make your UI responsive to touch inputs in addition to mouse and keyboard.|[Apply UX design principles](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
@@ -34,7 +34,7 @@ Apply the following best practices for developing add-ins that run on iOS:
 
 -  **Use Visual Studio to develop your add-in.**
 
-    If you develop your add-in with Visual Studio, you can [set breakpoints and debug its code](../develop/create-and-debug-office-add-ins-in-visual-studio.md) in an Office host application running on Windows, before sideloading your add-in on the iPad or Mac. Because an add-in that runs in Office for iOS or Office for Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on both platforms.
+    If you develop your add-in with Visual Studio, you can [set breakpoints and debug its code](../develop/create-and-debug-office-add-ins-in-visual-studio.md) in an Office host application running on Windows, before sideloading your add-in on the iPad or Mac. Because an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on both platforms.
 
 -  **Specify API requirements in your add-in's manifest or with runtime checks.**
 

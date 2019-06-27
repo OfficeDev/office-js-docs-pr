@@ -1,13 +1,13 @@
 ---
 title: DesktopFormFactor element in the manifest file
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
 ---
 
 # DesktopFormFactor element
 
-Specifies the settings for an add-in for the desktop form factor. The desktop form factor includes Office on Windows, Office for Mac, and Office Online. It contains all the add-in information for the desktop form factor except for the  **Resources** node.
+Specifies the settings for an add-in for the desktop form factor. The desktop form factor includes Office on the web, Windows, and Mac. It contains all the add-in information for the desktop form factor except for the  **Resources** node.
 
 Each DesktopFormFactor definition contains the  **FunctionFile** element and one or more **ExtensionPoint** elements. For more information, see [FunctionFile element](functionfile.md) and [ExtensionPoint element](extensionpoint.md).
 
