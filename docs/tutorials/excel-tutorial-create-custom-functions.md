@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 06/20/2019
+ms.date: 06/27/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -178,40 +178,40 @@ The `CustomFunctions.associate` code associates the `id` of the function with th
 
 The `getStarCount` function returns the number of stars a repository has at a specific moment in time. Custom functions can also return data that is continuously changing. These functions are called streaming functions. They must include an `invocation` parameter which refers to the cell where the function was called from. The `invocation` parameter is used to update the contents of the cell at any time.  
 
-In this new function, we will be making a spinner out of ASCII characters. The spinner will "spin" by displaying a different value every 300 milliseconds. In the event that spinning needs to be cancelled, the contents of the cell will change to display an error message.
+In the following code sample, you'll notice that there are two functions, `currentTime` and `clock`. The `currentTime` function is a static function that does not use streaming. It returns the date as a string. The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel. It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle what occurs when the function is canceled.
 
 1. In the **starcount** project, add the following code to **./src/functions/functions.js** and save the file.
 
 ```JS
 /**
- * Displays a spinner.
- * @customfunction
- * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom
-function invocation.
+ * Returns the current time
+ * @returns {string} String with the current time formatted for the current locale.
  */
-function spin(invocation) {
-    const spinIcons = "|/-\\";
-    var i;
-    if (i == undefined) {
-        i = 0;
-    }
-    const timer = setInterval(function () {
-        i++;
-        if (i >= spinIcons.length) {
-            i=0;
-        }
-        invocation.setResult(spinIcons[i]);
-    }, 300);
-
-    invocation.onCanceled = () => {
-        clearInterval(timer);
-    }
+function currentTime() {
+  return new Date().toLocaleTimeString();
 }
 
-CustomFunctions.associate("SPIN", spin);
+CustomFunctions.associate("CURRENTTIME", currentTime); 
+
+ /**
+ * Displays the current time once a second
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
+
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("CLOCK", clock);
 ```
 
-The `CustomFunctions.associate` code associates the `id` of the function with the function address of `spin` in JavaScript so that Excel can call your function.
+The `CustomFunctions.associate` code associates the `id` of the function with the function address of `CLOCK` in JavaScript so that Excel can call your function.
 
 2. Run the following command to rebuild the project.
 
@@ -245,16 +245,12 @@ The `CustomFunctions.associate` code associates the `id` of the function with th
 --- 
 
 <ol start="4">
-<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.SPIN())</strong> and press enter. You'll see a spinning line in your cell. While this spin function is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</li>
+<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.CLOCK())</strong> and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</li>
 </ol>
 
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
 
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
-
-### Legal information
-
-Data provided free by [IEX](https://iextrading.com/developer/). View [IEX's Terms of Use](https://iextrading.com/api-exhibit-a/). Microsoft's use of the IEX API in this tutorial is for educational purposes only.
