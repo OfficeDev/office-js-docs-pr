@@ -155,7 +155,7 @@ In the following example, the `helpurl` is www.contoso.com/weatherhelp.
 
 JavaScript Syntax: @param {type} name _description_
 
-* `{type}` should specify the type info within curly braces. See the [Types](##types) for more information about the types which may be used. Optional: if not specified, the type `any` will be used.
+* `{type}` should specify the type info within curly braces. See the [Types](#types) for more information about the types which may be used. Optional: if not specified, the type `any` will be used.
 * `name` specifies which parameter the @param tag applies to. Required.
 * `description` provides the description which appears in Excel for the function parameter. Optional.
 
@@ -185,7 +185,7 @@ TypeScript Syntax: @param name _description_
 * `name` specifies which parameter the @param tag applies to. Required.
 * `description` provides the description which appears in Excel for the function parameter. Optional.
 
-See the [Types](##types) for more information about the function parameter types which may be used.
+See the [Types](#types) for more information about the function parameter types which may be used.
 
 To denote a custom function parameter as optional, do one of the following:
 * Use an optional parameter. For example: `function f(text?: string)`
