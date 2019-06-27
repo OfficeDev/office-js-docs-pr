@@ -32,16 +32,16 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     - **Choose a project type:** `Excel Custom Functions Add-in project`
     - **Choose a script type:** `JavaScript`
-    - **What do you want to name your add-in?** `stock-ticker`
+    - **What do you want to name your add-in?** `starcount`
 
-    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/UpdatedYoOfficePrompt.png)
+    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/starcountPrompt.png)
 
     The Yeoman generator will create the project files and install supporting Node components.
 
 2. The Yeoman generator will give you some instructions in your command line about what to do with the project, but ignore them and continue to follow our instructions. Navigate to the root folder of the project.
 
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
 3. Build the project. 
