@@ -133,7 +133,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
       catch (error) {
         return error;
       }
-      
+      }
     CustomFunctions.associate("GETSTARCOUNT", getStarCount);
 ```
 
