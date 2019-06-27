@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins using the sideload command
 description: ''
-ms.date: 03/19/201907/24/2018
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -32,7 +32,7 @@ If your add-in project was created with Visual Studio or does not have the sidel
 
 If you're not testing a Word, Excel, or PowerPoint add-in on Windows, see one of the following topics for information about sideloading your add-in:
  
-- [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
+- [Sideload Office Add-ins in Office on the web for testing](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 

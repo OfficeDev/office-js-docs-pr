@@ -1,5 +1,5 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -53,7 +53,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run build`, accept the prompt to install the certificate that the Yeoman generator provides.
 
-4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on Windows or Excel Online. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
+4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on the web or Windows. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
 
 # [Excel on Windows](#tab/excel-windows)
 
@@ -63,19 +63,19 @@ To test your add-in in Excel on Windows, run the following command. When you run
 npm run start:desktop
 ```
 
-# [Excel Online](#tab/excel-online)
+# [Excel on the web](#tab/excel-online)
 
-To test your add-in in Excel Online, run the following command. When you run this command, the local web server will start.
+To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-To use your custom functions add-in, open a new workbook in Excel Online. In this workbook, complete the following steps to sideload your add-in.
+To use your custom functions add-in, open a new workbook in Excel on a browser. In this workbook, complete the following steps to sideload your add-in.
 
-1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
 
-   ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+   ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
    
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 

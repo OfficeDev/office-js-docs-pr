@@ -1,5 +1,5 @@
 ---
-ms.date: 06/25/2019
+ms.date: 06/27/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions
 localization_priority: Priority
@@ -67,7 +67,6 @@ In the following code sample, the **getStarCount** function calls the Github API
  */
 
 async function getStarCount(userName: string, repoName: string) {
-  //You can change this URL to any web request you want to work with.
 
   const url = "https://api.github.com/repos/" + userName + "/" + repoName;
 

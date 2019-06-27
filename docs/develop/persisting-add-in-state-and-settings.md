@@ -166,7 +166,7 @@ The following code shows how to retrieve the XML part by first getting its ID fr
 
  ```js
 function getReviewers() {
-    const reviewersXmlId = Office.context.document.settings.get('ReviewersID'));
+    const reviewersXmlId = Office.context.document.settings.get('ReviewersID');
     Office.context.document.customXmlParts.getByIdAsync(reviewersXmlId,
         (asyncResult) => {
             asyncResult.value.getXmlAsync(

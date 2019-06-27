@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API requirement sets
 description: ''
-ms.date: 05/29/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Normal
 ---
@@ -12,7 +12,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 The following table lists the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date.
 
-|  Requirement set  |  Office Online |
+|  Requirement set  |  Office on the web |
 |:-----|:-----|
 | OneNoteApi 1.1  | September 2016 |  
 

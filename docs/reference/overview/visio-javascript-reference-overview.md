@@ -1,7 +1,7 @@
 ---
 title: Visio JavaScript API overview
 description: ''
-ms.date: 05/13/2019
+ms.date: 06/20/2019
 ms.prod: visio
 localization_priority: Priority
 ---
@@ -20,11 +20,11 @@ You can use the Visio JavaScript APIs to:
 * Write custom handlers for mouse events within the drawing.
 * Expose diagram data, such as shape text, shape data, and hyperlinks, to your solution.
 
-This article describes how to use the Visio JavaScript APIs with Visio Online to build your solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as **EmbeddedSession**, **RequestContext**, and JavaScript proxy objects, and the **sync()**, **Visio.run()**, and **load()** methods. The code examples show you how to apply these concepts.
+This article describes how to use the Visio JavaScript APIs with Visio on the web to build your solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as **EmbeddedSession**, **RequestContext**, and JavaScript proxy objects, and the **sync()**, **Visio.run()**, and **load()** methods. The code examples show you how to apply these concepts.
 
 ## EmbeddedSession
 
-The EmbeddedSession object initializes communication between the developer frame and the Visio Online frame.
+The EmbeddedSession object initializes communication between the developer frame and the Visio frame in the browser.
 
 ```js
 var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
@@ -41,7 +41,7 @@ The run method takes in session and RequestContext object and returns a promise 
 
 ## RequestContext
 
-The RequestContext object facilitates requests to the Visio application. Because the developer frame and the Visio Online application run in two different iframes, the RequestContext object (context in next example) is required to get access to Visio and related objects such as pages and shapes, from the developer frame.
+The RequestContext object facilitates requests to the Visio application. Because the developer frame and the Visio web client run in two different iframes, the RequestContext object (context in next example) is required to get access to Visio and related objects such as pages and shapes, from the developer frame.
 
 ```js
 function hideToolbars() {
@@ -189,11 +189,11 @@ function getSelectedShapeText() {
 </script>
 ```
 
-After that, all you need is the URL of a Visio diagram that you want to work with. Just upload the Visio diagram to SharePoint Online and open it in Visio Online. From there, open the Embed dialog and use the Embed URL in the above example.
+After that, all you need is the URL of a Visio diagram that you want to work with. Just upload the Visio diagram to SharePoint Online and open it in Visio on the web. From there, open the Embed dialog and use the Embed URL in the above example.
 
 ![Copy Visio file URL from Embed dialog](../images/Visio-embed-url.png)
 
-If you are using Visio Online in Edit mode, open the Embed dialog by choosing **File** > **Share** > **Embed**. If you are using Visio Online in View mode, open the Embed dialog by choosing '...' and then **Embed**.
+If you are using Visio on the web in Edit mode, open the Embed dialog by choosing **File** > **Share** > **Embed**. If you are using Visio on the web in View mode, open the Embed dialog by choosing '...' and then **Embed**.
 
 ## Visio JavaScript API reference
 

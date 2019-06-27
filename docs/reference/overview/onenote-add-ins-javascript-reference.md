@@ -1,14 +1,14 @@
 ---
 title: OneNote JavaScript API overview
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Normal
 ---
 
 # OneNote JavaScript API overview
 
-Applies to: OneNote Online
+Applies to: OneNote on the web
 
 The following links show the high level OneNote objects available in the API. Each object page link contains a description of the properties, events, and methods available on the object. Explore these links to learn more. 
 	
