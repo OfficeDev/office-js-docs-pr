@@ -1,24 +1,24 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 05/28/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
 # Browsers used by Office Add-ins
 
-Office add-ins are web applications that are displayed using iFrames when running in Office Online and using embedded browser controls in Office for desktop and mobile clients. Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user’s computer.
+Office add-ins are web applications that are displayed using iFrames when running in Office on the web and using embedded browser controls in Office for desktop and mobile clients. Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user’s computer.
 
 Which browser is used depends on:
 
 - The computer’s operating system.
-- Whether the add-in is running in Office Online, Office 365, or non-subscription Office 2013 or later.
+- Whether the add-in is running in Office on the web, Office 365, or non-subscription Office 2013 or later.
 
 The following table shows which browser is used for the various platforms and operating systems.
 
 |**OS / Platform**|**Browser**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office Online|The browser in which Office Online is opened.|
+|Office on the web|The browser in which Office is opened.|
 |Mac|Safari|
 |iOS|Safari|
 |Android|Chrome|

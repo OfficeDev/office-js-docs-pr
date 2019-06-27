@@ -1,7 +1,7 @@
 ---
 title: Use the Dialog API in your Office Add-ins
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -63,22 +63,22 @@ Set both values to 100% to get what is effectively a full screen experience. (Th
 > [!NOTE]
 > You can open only one dialog box from a host window. An attempt to open another dialog box generates an error. For example, if a user opens a dialog box from a task pane, she cannot open a second dialog box, from a different page in the task pane. However, when a dialog box is opened from an [add-in command](../design/add-in-commands.md), the command opens a new (but unseen) HTML file each time it is selected. This creates a new (unseen) host window, so each such window can launch its own dialog box. For more information, see [Errors from displayDialogAsync](#errors-from-displaydialogasync).
 
-### Take advantage of a performance option in Office Online
+### Take advantage of a performance option in Office on the web
 
-The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office Online, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example:
+The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office on the web, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-The default value is `false`, which is the same as omitting the property entirely. If the add-in is not running in Office Online, the `displayInIframe` is ignored.
+The default value is `false`, which is the same as omitting the property entirely. If the add-in is not running in Office on the web, the `displayInIframe` is ignored.
 
 > [!NOTE]
 > You should **not** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
 
-### Handling pop-up blockers with Office Online
+### Handling pop-up blockers with Office on the web
 
-Attempting to display a dialog while using Office Online may cause the browser's pop-up blocker to block the dialog. The browser's pop-up blocker can be circumvented if the user of your add-in first agrees to a prompt from the add-in. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) has the `promptBeforeOpen` property to trigger such a pop-up. `promptBeforeOpen` is a boolean value which provides the following behavior:
+Attempting to display a dialog while using Office on the web may cause the browser's pop-up blocker to block the dialog. The browser's pop-up blocker can be circumvented if the user of your add-in first agrees to a prompt from the add-in. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) has the `promptBeforeOpen` property to trigger such a pop-up. `promptBeforeOpen` is a boolean value which provides the following behavior:
 
  - `true` - The framework displays a pop-up to trigger the navigation and avoid the browser's pop-up blocker. 
  - `false` - The dialog will not be shown and the developer must handle pop-ups (by providing a user interface artifact to trigger the navigation). 
@@ -383,7 +383,7 @@ For a sample that shows a video in a dialog box, see the [video placemat design 
 A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an Iframe, such as Microsoft Account, Office 365, Google, and Facebook.
 
 > [!NOTE]
-> When you are using the Dialog APIs for this scenario, do *not* use the `displayInIframe: true` option in the call to `displayDialogAsync`. See [Take advantage of a performance option in Office Online](#take-advantage-of-a-performance-option-in-office-online) previously in this article for details about this option.
+> When you are using the Dialog APIs for this scenario, do *not* use the `displayInIframe: true` option in the call to `displayDialogAsync`. See [Take advantage of a performance option in Office on the web](#take-advantage-of-a-performance-option-in-office-on-the-web) previously in this article for details about this option.
 
 The following is a simple and typical authentication flow:
 

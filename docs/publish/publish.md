@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish your Office Add-in | Microsoft Docs
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -11,7 +11,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 |**Method**|**Use...**|
 |:---------|:------------|
-|[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, Office Online, iPad, or Mac.|
+|[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser.|
 |[Centralized Deployment](centralized-deployment.md)|In a cloud or hybrid deployment, to distribute your add-in to users in your organization by using the Office 365 admin center.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[AppSource](/office/dev/store/submit-to-the-office-store)|To distribute your add-in publicly to users.|
@@ -33,7 +33,7 @@ The deployment options that are available depend on the Office host that you're 
 | Task pane       | X           | X                       | X          | X                    |
 | Command         | X           | X                       | X          |                      |
 
-&#42; SharePoint catalogs do not support Office for Mac.
+&#42; SharePoint catalogs do not support Office on Mac.
 
 ### Deployment options for Outlook add-ins
 
@@ -61,7 +61,7 @@ A SharePoint app catalog is a special site collection that you can create to hos
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> SharePoint catalogs do not support Office for Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
+> SharePoint catalogs do not support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ### Outlook add-in deployment
 

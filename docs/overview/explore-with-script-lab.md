@@ -2,7 +2,7 @@
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 06/20/2019
 localization_priority: Normal
 ---
 
@@ -16,7 +16,7 @@ Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins
 
 Sounds good so far? Take a look at this one-minute video to see Script Lab in action.
 
-[![Preview video showing Script Lab running in Excel, Word, and PowerPoint Online.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
 
 ## Key features
 
@@ -37,7 +37,7 @@ In addition to JavaScript or TypeScript code that calls the Office JS API, each 
 
 ### Save and share snippets
 
-By default, snippets that you open in Script Lab will be saved to your browser cache. To save a snippet permanently, you can export it to a [GitHub gist](https://gist.github.com). Create a secret gist to save a snippet exclusively for your own use, or create a shared gist if you plan to share it with others.
+By default, snippets that you open in Script Lab will be saved to your browser cache. To save a snippet permanently, you can export it to a [GitHub gist](https://gist.github.com). Create a secret gist to save a snippet exclusively for your own use, or create a public gist if you plan to share it with others.
 
 ![Sharing options](../images/script-lab-share.jpg)
 

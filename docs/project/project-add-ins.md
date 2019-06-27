@@ -1,7 +1,7 @@
 ---
 title: Task pane add-ins for Project
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -19,7 +19,7 @@ For an introduction to Office Add-ins, see [Office Add-ins platform overview](..
 Project managers can use Project task pane add-ins to help with project management activities. Instead of leaving Project and opening another application to search for frequently used information, project managers can directly access the information within Project. The content in a task pane add-in can be context-sensitive, based on the selected task, resource, view, or other data in a cell in a Gantt chart, task usage view, or resource usage view.
 
 > [!NOTE]
-> With Project Professional 2013, you can develop task pane add-ins that access on-premises installations of Project Server 2013, Project Online, and on-premises or online SharePoint 2013.Project Standard 2013 does not support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
+> With Project Professional 2013, you can develop task pane add-ins that access Project on the web, on-premises installations of Project Server 2013, and on-premises or online SharePoint 2013. Project Standard 2013 does not support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
 
 Add-in scenarios for Project include the following:
 

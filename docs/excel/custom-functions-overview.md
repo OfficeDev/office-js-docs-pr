@@ -1,5 +1,5 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel
 localization_priority: Priority
@@ -136,7 +136,7 @@ The following basic XML markup shows an example of the `<ExtensionPoint>` and `<
 
 ## Coauthoring
 
-Excel Online and Excel on Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
+Excel on the web and Windows connected to an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
