@@ -176,7 +176,7 @@ The `CustomFunctions.associate` code associates the `id` of the function with th
 
 ## Create a streaming asynchronous custom function
 
-The `getStarCount` function returns the number of stars a repository has at a specific moment in time, but custom functions can also retrieve or display data that is ever-changing. These functions are called streaming functions and they must include an `invocation` parameter which refers to the content inside of a given cell. This is so that the contents of the cell can be changed in real-time.  
+The `getStarCount` function returns the number of stars a repository has at a specific moment in time. Custom functions can also return data that is continuously changing. These functions are called streaming functions. They must include an `invocation` parameter which refers to the cell where the function was called from. The `invocation` parameter is used to update the contents of the cell at any time.  
 
 In this new function, we will be making a spinner out of ASCII characters. The spinner will "spin" by displaying a different value every 300 milliseconds. In the event that spinning needs to be cancelled, the contents of the cell will change to display an error message.
 
