@@ -1,5 +1,5 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/28/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -90,6 +90,47 @@ function secondHighest(values){
 }
 CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 ```
+
+## Repeating parameters 
+A repeating parameter allows a user to enter a series of optional of arguments to a function. When the function is called, the values are provided in an array for the parameter. If the parameter name ends with a number, each argument will increment the number, such as `ADD(number1, [number2], [number3],…)`. This matches the convention used for built-in Excel functions.
+
+The following function sums the total of numbers, cell addresses, as well as ranges, if entered.  
+
+```TS
+/**  
+* The sum of all of the numbers.  
+* @customfunction  
+* @param operands A number (such as 1 or 3.1415)  
+*/  
+
+function ADD(operands: number[][][]): number {  
+  let total: number = 0;  
+
+  operands.forEach(range => {  
+    range.forEach(row => {  
+      row.forEach(num => {  
+        total += num;  
+      });  
+    });  
+  });  
+
+  return total;  
+}
+```
+
+This function shows `=CONTOSO.ADD([operands], [operands]...)` in the Excel workbook.
+
+<img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
+
+### Declaring repeating parameters
+In Typescript, indicate that the parameter is multi-dimensional. For example,  `ADD(values: number[])` would indicate a one-dimensional array, `ADD(values:number[][])` would indicate a two-dimensional array, and so on.  
+
+In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.
+
+For hand-authored JSON, ensure your parameter is specified as `"repeating": true` in your JSON file, as well as check that your parameters are marked as `dimensionality”: matrix`.  
+
+>[!NOTE]
+>Functions containing repeating parameters automatically contain an invocation parameter as the last parameter. For more information on invocation parameters, see the following section.
 
 ## Invocation parameter
 

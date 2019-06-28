@@ -146,6 +146,7 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
 |  `optional`  | boolean | No | If `true`, the parameter is optional. |
+|`repeating`| boolean | No | If `true`, parameters will populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
 
 ## result
 
