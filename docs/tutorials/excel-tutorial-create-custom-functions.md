@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 06/20/2019
+ms.date: 06/27/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -37,16 +37,16 @@ In this tutorial, you will:
     
     * **Choose a project type:** `Excel Custom Functions Add-in project`
     * **Choose a script type:** `JavaScript`
-    * **What do you want to name your add-in?** `stock-ticker`
+    * **What do you want to name your add-in?** `starcount`
 
-    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/UpdatedYoOfficePrompt.png)
+    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/starcountPrompt.png)
     
     The Yeoman generator will create the project files and install supporting Node components.
 
 2. Navigate to the root folder of the project.
     
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
 3. Build the project.
@@ -104,40 +104,40 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 ## Create a custom function that requests data from the web
 
-Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet. 
+Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
 
-> [!NOTE]
-> The following code requests a stock quote using the IEX Trading API. Before you can run the code, you'll need to [create a free account with IEX Cloud](https://iexcloud.io/) so that you can get the API token that's required in the API request.  
+1. In the **starcount** project, find the file **./src/functions/functions.js** and open it in your code editor. 
 
-1. In the **stock-ticker** project, find the file **./src/functions/functions.js** and open it in your code editor.
+2. In **function.js**, add the following code: 
 
-2. In **functions.js**, locate the `increment` function and add the following code after that function.
+```JS
+ /**
+   * Gets the star count for a given Github repository.
+   * @customfunction 
+   * @param {string} userName string name of Github user or organization.
+   * @param {string} repoName string name of the Github repository.
+   * @return {number} number of stars given to a Github repository.
+   */
+    async function getStarCount(userName, repoName) {
+      try {
+        //You can change this URL to any web request you want to work with.
+        const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+        const response = await fetch(url);
+        //Expect that status code is in 200-299 range
+        if (!response.ok) {
+          throw new Error(response.statusText)
+        }
+          const jsonResponse = await response.json();
+          return jsonResponse.watchers_count;
+      }
+      catch (error) {
+        return error;
+      }
+      }
+    CustomFunctions.associate("GETSTARCOUNT", getStarCount);
+```
 
-    ```js
-    /**
-    * Fetches current stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @returns {number} The current stock price.
-    */
-    function stockPrice(ticker) {
-        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-        return fetch(url)
-            .then(function(response) {
-                return response.text();
-            })
-            .then(function(text) {
-                return parseFloat(text);
-            });
-
-        // Note: in case of an error, the returned rejected Promise
-        //    will be bubbled up to Excel to indicate an error.
-    }
-    CustomFunctions.associate("STOCKPRICE", stockPrice);
-    ```
-
-    The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPrice` in JavaScript so that Excel can call your function.
+The `CustomFunctions.associate` code associates the `id` of the function with the function address of `getStarCount` in JavaScript so that Excel can call your function.
 
 3. Run the following command to rebuild the project.
 
@@ -147,15 +147,16 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 4. Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel. You must complete these steps before the new function will be available.
 
-# [Excel on Windows](#tab/excel-windows)
+### [Excel on Windows](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
     ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
-3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
-    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
+3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
+    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)
+
 
 # [Excel on the web](#tab/excel-online)
 
@@ -171,61 +172,48 @@ Integrating data from the Web is a great way to extend Excel through custom func
 ---
 
 <ol start="5">
-<li> Try out the new function. In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter. You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</li>
+<li> Try out the new function. In cell <strong>B1</strong>, type the text <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong> and press enter. You should see that the result in cell <strong>B1</strong> is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
 </ol>
 
 ## Create a streaming asynchronous custom function
 
-The `stockPrice` function returns the price of a stock at a specific moment in time, but stock prices are always changing. 
-Next you’ll create a custom function named `stockPriceStream` that gets the price of a stock every 1000 milliseconds.
+The `getStarCount` function returns the number of stars a repository has at a specific moment in time. Custom functions can also return data that is continuously changing. These functions are called streaming functions. They must include an `invocation` parameter which refers to the cell where the function was called from. The `invocation` parameter is used to update the contents of the cell at any time.  
 
-1. In the **stock-ticker** project, add the following code to **./src/functions/functions.js** and save the file.
+In the following code sample, you'll notice that there are two functions, `currentTime` and `clock`. The `currentTime` function is a static function that does not use streaming. It returns the date as a string. The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel. It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle what occurs when the function is canceled.
 
-    ```js
-    /**
-    * Streams real time stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @param {CustomFunctions.StreamingInvocation<number>} invocation
-    */
-    function stockPriceStream(ticker, invocation) {
-        var updateFrequency = 1000 /* milliseconds*/;
-        var isPending = false;
+1. In the **starcount** project, add the following code to **./src/functions/functions.js** and save the file.
 
-        var timer = setInterval(function() {
-            // If there is already a pending request, skip this iteration:
-            if (isPending) {
-                return;
-            }
+```JS
+/**
+ * Returns the current time
+ * @returns {string} String with the current time formatted for the current locale.
+ */
+function currentTime() {
+  return new Date().toLocaleTimeString();
+}
 
-            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-            isPending = true;
+CustomFunctions.associate("CURRENTTIME", currentTime); 
 
-            fetch(url)
-                .then(function(response) {
-                    return response.text();
-                })
-                .then(function(text) {
-                    invocation.setResult(parseFloat(text));
-                })
-                .catch(function(error) {
-                    invocation.setResult(error);
-                })
-                .then(function() {
-                    isPending = false;
-                });
-        }, updateFrequency);
+ /**
+ * Displays the current time once a second
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
 
-        invocation.onCanceled = () => {
-            clearInterval(timer);
-        };
-    }
-    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
-    ```
-    
-    The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPriceStream` in JavaScript so that Excel can call your function.
-    
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("CLOCK", clock);
+```
+
+The `CustomFunctions.associate` code associates the `id` of the function with the function address of `CLOCK` in JavaScript so that Excel can call your function.
+
 2. Run the following command to rebuild the project.
 
     ```command&nbsp;line
@@ -241,8 +229,8 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
     ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
 
-3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
-    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)
+3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
+    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)
 
 # [Excel on the web](#tab/excel-online)
 
@@ -258,16 +246,12 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 --- 
 
 <ol start="4">
-<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter. Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</li>
+<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.CLOCK())</strong> and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</li>
 </ol>
 
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
 
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
-
-### Legal information
-
-Data provided free by [IEX](https://iextrading.com/developer/). View [IEX's Terms of Use](https://iextrading.com/api-exhibit-a/). Microsoft's use of the IEX API in this tutorial is for educational purposes only.

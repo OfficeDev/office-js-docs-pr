@@ -1,5 +1,5 @@
 ---
-ms.date: 06/21/2019
+ms.date: 06/27/2019
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Priority
@@ -13,7 +13,7 @@ When an Excel custom function is written in JavaScript or TypeScript, JSDoc tags
 
 Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.
 
-The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript. For more information, see the [@param](#param) tag and [Types](#types) section.
+The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript. For more information, see the [@param](#param) tag and [Types](#types) sections.
 
 ### Adding a description to a function
 
@@ -155,7 +155,7 @@ In the following example, the `helpurl` is www.contoso.com/weatherhelp.
 
 JavaScript Syntax: @param {type} name _description_
 
-* `{type}` should specify the type info within curly braces. See the [Types](##types) for more information about the types which may be used. Optional: if not specified, the type `any` will be used.
+* `{type}` should specify the type info within curly braces. See the [Types](#types) section for more information about the types which may be used. Optional: if not specified, the type `any` will be used.
 * `name` specifies which parameter the @param tag applies to. Required.
 * `description` provides the description which appears in Excel for the function parameter. Optional.
 
@@ -185,7 +185,7 @@ TypeScript Syntax: @param name _description_
 * `name` specifies which parameter the @param tag applies to. Required.
 * `description` provides the description which appears in Excel for the function parameter. Optional.
 
-See the [Types](##types) for more information about the function parameter types which may be used.
+See the [Types](#types) section for more information about the function parameter types which may be used.
 
 To denote a custom function parameter as optional, do one of the following:
 * Use an optional parameter. For example: `function f(text?: string)`
