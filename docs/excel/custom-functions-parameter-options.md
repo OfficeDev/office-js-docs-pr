@@ -27,8 +27,8 @@ Whereas regular parameters are required, optional parameters are not. When a use
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-   if (third === null) {
-    third=0;
+  if (third === null) {
+    third = 0;
   }
   return first + second + third;
 }
@@ -39,16 +39,16 @@ CustomFunctions.associate("ADD", add);
 
 ```typescript
 /**
- * Add two numbers
+ * Calculates the sum of the specified numbers
  * @customfunction 
  * @param first First number.
  * @param second Second number.
  * @param [third] Third number to add. If omitted, third = 0.
  * @returns The sum of the numbers.
  */
-function add(first:number, second:number, third?:number):number {
+function add(first: number, second: number, third?: number): number {
   if (third === null) {
-    third=0;
+    third = 0;
   }
   return first + second + third;
 }
@@ -58,9 +58,9 @@ CustomFunctions.associate("ADD", add);
 ---
 
 > [!NOTE]
-> Excel will pass optional parameters with a null value. This means default-initialized parameters in TypeScript will not work as expected. Therefore don't use `function add(first:number, second:number, third=0):number` syntax because it will not initialize third to 0. Instead use the TypeScript syntax as shown in the previous example.
+> When no value is specified for an optional parameter, Excel assigns it the value `null`. This means default-initialized parameters in TypeScript will not work as expected. Therefore, don't use the syntax `function add(first:number, second:number, third=0):number` because it will not initialize `third` to 0. Instead use the TypeScript syntax as shown in the previous example.
 
-When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are null. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to `98052`. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
+When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are null. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is null, the default value is set to `98052`. If the `dayOfWeek` parameter is null, it is set to Wednesday.
 
 #### [JavaScript](#tab/javascript)
 
@@ -75,7 +75,7 @@ When you define a function that contains one or more optional parameters, you sh
 function getWeatherReport(zipCode, dayOfWeek)
 {
   if (zipCode === null) {
-      zipCode = 98052;
+    zipCode = 98052;
   }
 
   if (dayOfWeek === null) {
@@ -97,10 +97,10 @@ function getWeatherReport(zipCode, dayOfWeek)
  * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns Weather report for the day of the week in that zip code.
  */
-function getWeatherReport(zipCode?:number, dayOfWeek?:string):string
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
 {
   if (zipCode === null) {
-      zipCode = 98052;
+    zipCode = 98052;
   }
 
   if (dayOfWeek === null) {
