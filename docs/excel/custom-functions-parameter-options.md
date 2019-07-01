@@ -19,7 +19,7 @@ Whereas regular parameters are required, optional parameters are not. When a use
 
 ```js
 /**
- * Add two numbers
+ * Calculates the sum of the specified numbers
  * @customfunction 
  * @param {number} first First number.
  * @param {number} second Second number.
