@@ -1,62 +1,17 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 05/21/2019
+ms.date: 07/01/2019
 localization_priority: Priority
 ---
 
 # Validate and troubleshoot issues with your manifest
 
-Use these methods to validate and troubleshoot issues in your Office Add-ins manifest: 
-
-- [Validate your manifest with the Office Add-in Validator](#validate-your-manifest-with-the-office-add-in-validator)	
-- [Validate your manifest against the XML schema](#validate-your-manifest-against-the-xml-schema)
-- [Validate your manifest with the Yeoman generator for Office Add-ins](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
-- [Use runtime logging to debug your add-in](#use-runtime-logging-to-debug-your-add-in)
-
-
-## Validate your manifest with the Office Add-in Validator
-
-To help ensure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [Office Add-in Validator](https://github.com/OfficeDev/office-addin-validator).
-
-### To use the Office Add-in Validator to validate your manifest
-
-1. Install [Node.js](https://nodejs.org/download/). 
-
-2. Open a command prompt / terminal as an administrator, and install the Office Add-in Validator and its dependencies globally by using the following command:
-
-	```command&nbsp;line
-	npm install -g office-addin-validator
-	```
-	
-	> [!NOTE]
-	> If you already have Yo Office installed, upgrade to the latest version, and the validator will be installed as a dependency.
-
-3. Run the following command to validate your manifest. Replace MANIFEST.XML with the path to the manifest XML file.
-
-	```command&nbsp;line
-	validate-office-addin MANIFEST.XML
-	```
-
-## Validate your manifest against the XML schema
-
-To help ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check you also **include the appropriate namespaces**. You can validate a manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool to perform this validation. 
-
-
-
-### To use a command-line XML schema validation tool to validate your manifest
-
-1.	Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.
-
-2.	Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
-	
-	```command&nbsp;line
-	xmllint --noout --schema XSD_FILE XML_FILE
-	```
+If you are getting the error "Your add-in manifest is not valid" when loading your add-in, you can use various validation tools and techniques to find and resolve issues in the manifest file.
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
-If you've created your Office Add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office), you can ensure that the manifest file follows the correct schema by running the following command within the root directory of your project:
+The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) provides a task to validate your project's manifest file. Run the following command in the root directory of your project:
 
 ```command&nbsp;line
 npm run validate
@@ -67,7 +22,33 @@ npm run validate
 > [!NOTE]
 > To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.
 
-## Use runtime logging to debug your add-in 
+## Validate your manifest in a custom project
+
+If your project was created without using yo office, you can still validate the manifest using the office-toolbox package. This is the same package used by yo office for validation.
+
+1. Install [Node.js](https://nodejs.org/download/).
+
+2. Open a command prompt / terminal as an administrator, and run the Office Add-in validator on your manifest file. The Office Add-in validator is in the office-toolbox package.
+
+	```command&nbsp;line
+	npx office-toolbox validate -m manifest.xml
+	```
+
+## Validate your manifest against the XML schema
+
+To help ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check you also **include the appropriate namespaces**. You can validate a manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool to perform this validation.
+
+### To use a command-line XML schema validation tool to validate your manifest
+
+1. Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.
+
+2. Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
+	
+	```command&nbsp;line
+	xmllint --noout --schema XSD_FILE XML_FILE
+	```
+
+## Use runtime logging to debug your add-in
 
 You can use runtime logging to debug your add-in's manifest as well as several installation errors. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.   
 
@@ -98,7 +79,6 @@ To turn on runtime logging:
 The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry. 
 
 ![Screenshot of the registry editor with a RuntimeLogging registry key](http://i.imgur.com/Sa9TyI6.png)
-
 
 ### To troubleshoot issues with your manifest
 
