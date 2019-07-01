@@ -74,7 +74,7 @@ With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and
                     </div>
                     <div class="cardText">
                         <h3>Custom functions</h3>
-                        <p><a href="about-custom-functions.md">Learn how to add custom functions to Excel.</a></p>
+                        <p><a href="custom-functions-overview.md">Learn how to add custom functions to Excel.</a></p>
                     </div>
                 </div>
             </div>

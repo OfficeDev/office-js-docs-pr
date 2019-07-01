@@ -14,8 +14,8 @@ PowerPoint and Project support add-ins made with the JavaScript API. However, th
 
 ## See also
 
-- [About PowerPoint add-ins](../../powerpoint/index.md)
-- [About Project add-ins](../../project/index.md)
+- [PowerPoint add-ins documentation](../../powerpoint/index.md)
+- [Project add-ins documentation](../../project/index.md)
 - [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Office Add-in host and platform availability](/office/dev/add-ins/overview/office-add-in-availability)
 - [Common API Reference](/javascript/api/overview/office)

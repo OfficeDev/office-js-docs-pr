@@ -3,7 +3,7 @@
 
 - name: Office Add-ins guidance
   items:
-  - name: About Office Add-ins
+  - name: Office Add-ins documentation
     href: overview/index.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: Overview
@@ -396,7 +396,7 @@
 
 - name: Excel add-ins
   items: 
-  - name: About Excel add-ins
+  - name: Excel add-ins documentation
     href: excel/index.md
     displayName: Excel
   - name: Overview
@@ -486,9 +486,6 @@
       displayName: Excel
   - name: Custom functions
     items:
-    - name: About custom functions
-      href: excel/about-custom-functions.md
-      displayName: Excel, Custom Functions
     - name: Overview
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
@@ -561,7 +558,7 @@
 
 - name: OneNote add-ins
   items:
-  - name: About OneNote add-ins
+  - name: OneNote add-ins documentation
     href: onenote/index.md
     displayName: OneNote
   - name: Overview
@@ -587,7 +584,7 @@
 
 - name: Outlook add-ins
   items:
-  - name: About Outlook add-ins
+  - name: Outlook add-ins documentation
     href: outlook/index.md
     displayName: Outlook
   - name: Overview
@@ -762,7 +759,7 @@
 
 - name: PowerPoint add-ins
   items:
-  - name: About PowerPoint add-ins
+  - name: PowerPoint add-ins documentation
     href: powerpoint/index.md
     displayName: PowerPoint
   - name: Overview
@@ -791,7 +788,7 @@
   
 - name: Project add-ins
   items:
-  - name: About Project add-ins
+  - name: Project add-ins documentation
     href: project/index.md
     displayName: Project
   - name: Overview
@@ -814,7 +811,7 @@
 
 - name: Visio add-ins
   items:
-  - name: About Visio add-ins
+  - name: Visio add-ins documentation
     href: visio/index.md
     displayName: Visio
   - name: Overview
@@ -826,7 +823,7 @@
 
 - name: Word add-ins
   items:
-  - name: About Word add-ins
+  - name: Word add-ins documentation
     href: word/index.md
     displayName: Word
   - name: Overview
