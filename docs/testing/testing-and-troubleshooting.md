@@ -26,7 +26,12 @@ The following table lists common error messages that users might encounter and s
 
 ## When installing an add-in, you see "Error loading add-in" in the status bar
 
-Close Office, verify that the manifest is valid, restart the add-in, and then try installing again. Also, give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
+1. Close Office.
+2. Verify that the manifest is valid
+3. Restart the add-in
+4. Install the add-in again.
+
+You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.
 
 ## Outlook add-in doesn't work correctly
 
