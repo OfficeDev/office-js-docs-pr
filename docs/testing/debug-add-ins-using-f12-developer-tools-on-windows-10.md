@@ -7,9 +7,9 @@ localization_priority: Priority
 
 # Debug add-ins using developer tools on Windows 10
 
-If you are not using an IDE like Visual Studio, or if you need to investigate a problem while running your add-in outside the IDE, there are developer tools available to help you debug the add-in on Windows 10. 
+There are developer tools outside of IDEs available to help you debug your add-ins on Windows 10. These are useful when you need to investigate a problem while running your add-in outside the IDE.
 
-The tool that you use depends on whether the add-in is running in Edge or Internet Explorer. This is determined by the version of Windows 10 and the version of Office that are installed on the computer. For more information about determining which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
+The tool that you use depends on whether the add-in is running in Edge or Internet Explorer. This is determined by the version of Windows 10 and the version of Office that are installed on the computer. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
 
 
 > [!NOTE]
@@ -17,7 +17,7 @@ The tool that you use depends on whether the add-in is running in Edge or Intern
 
 ## When the add-in is running in Edge
 
-When the add-in is running in you can use the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
+When the add-in is running in Edge, you can use the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
 
 1. Run the add-in. 
 
@@ -33,11 +33,11 @@ When the add-in is running in you can use the [Microsoft Edge DevTools](https://
 
 7. To set a breakpoint, select the line. You will see a red dot to the left of the line and a corresponding line in the **Call stack** (bottom right) pane.
 
-8. Run functions in the add-in as needed to trigger the breakpoint.
+8. Execute functions in the add-in as needed to trigger the breakpoint.
 
 ## When the add-in is running in Internet Explorer
 
-When the add-in is running in Internet Explorer, you can use the debugger from the F12 developer tools in Windows 10 to test your add-in (and also add-ins from AppSource or add-ins that you have added from other locations). You can start the F12 developer tools after the add-in is running. The F12 tools display in a separate window and do not use Visual Studio.
+When the add-in is running in Internet Explorer, you can use the debugger from the F12 developer tools in Windows 10 to test your add-in. You can start the F12 developer tools after the add-in is running. The F12 tools are displayed in a separate window and do not use Visual Studio.
 
 > [!NOTE]
 > The Debugger is part of the F12 developer tools in Windows 10 and Internet Explorer. Earlier versions of Windows do not include the Debugger. 
