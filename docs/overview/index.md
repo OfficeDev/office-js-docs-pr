@@ -3,11 +3,11 @@ layout: LandingPage
 ms.topic: landing-page
 title: Office add-ins documentation
 description: Resources for learning about Office Add-ins.
-ms.date: 06/30/2019
+ms.date: 07/05/2019
 localization_priority: Priority
 ---
 
-# About Office Add-ins
+# Office Add-ins documentation
 
 <p>Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
 

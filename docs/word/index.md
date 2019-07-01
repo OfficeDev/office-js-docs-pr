@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: Word add-ins documentation
 description: Resources for learning about Word add-ins.
-ms.date: 06/30/2019
+ms.date: 07/05/2019
 localization_priority: Priority
 ---
 

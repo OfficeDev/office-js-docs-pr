@@ -6,7 +6,7 @@ description: Learn how to build Office Add-ins.
 ms.topic: hub-page
 author: o365devx
 ms.prod: non-product-specific
-ms.date: 06/30/2019
+ms.date: 07/05/2019
 ms.author: o365devx
 localization_priority: Normal
 ---

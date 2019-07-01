@@ -1,7 +1,7 @@
 ---
 title: PowerPoint and Project in the JavaScript API
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/05/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
