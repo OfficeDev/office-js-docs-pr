@@ -1,5 +1,5 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/01/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions
 localization_priority: Normal
