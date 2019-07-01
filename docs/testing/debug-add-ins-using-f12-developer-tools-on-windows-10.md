@@ -9,7 +9,7 @@ localization_priority: Priority
 
 If you are not using an IDE like Visual Studio, or if you need to investigate a problem while running your add-in outside the IDE, there are developer tools available to help you debug the add-in on Windows 10. 
 
-The tool that you use depends on whether the add-in is running in Edge or Internet Explorer. This is determined by the version of Windows 10 and the version of Office that are installed on the computer. For more information about determining which browser is being used on your development computer, see [Debugger with results from the triggered breakpoint](../concepts/browsers-used-by-office-web-add-ins.md). 
+The tool that you use depends on whether the add-in is running in Edge or Internet Explorer. This is determined by the version of Windows 10 and the version of Office that are installed on the computer. For more information about determining which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
 
 
 > [!NOTE]
