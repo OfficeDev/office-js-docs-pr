@@ -3,7 +3,7 @@
 
 - name: Office Add-ins guidance
   items:
-  - name: Office Add-ins documentation
+  - name: About Office Add-ins
     href: overview/index.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: Overview

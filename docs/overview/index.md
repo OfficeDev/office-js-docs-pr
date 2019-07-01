@@ -7,7 +7,7 @@ ms.date: 07/05/2019
 localization_priority: Priority
 ---
 
-# Office Add-ins documentation
+# About Office Add-ins
 
 <p>Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.</p>
 
