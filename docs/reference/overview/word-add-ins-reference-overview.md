@@ -18,8 +18,6 @@ This section of the documentation focuses on the Word JavaScript API, which you'
 
 ## Learn programming concepts
 
-Learn important programming concepts by review
-
 Review [Fundamental programming concepts with the Word JavaScript API](../../word/word-add-ins-core-concepts.md) for information about important programming concepts.
  
 ## Learn about API capabilities
