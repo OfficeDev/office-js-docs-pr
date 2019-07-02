@@ -133,6 +133,10 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 </OfficeApp>
 ```
 
+## Specify domains from which you want to make Office.js API calls
+
+Your add-in can make Office.js API calls from the domain mentioned in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file. If you have other IFrame within your add-in that needs to access Office.js API, then add the domain of that source URL to the list specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If an IFrame whose source isn't in the `AppDomains` list attempts to make Office.js API call, then the add-in will receive permission denied error. 
+
 ## Manifest v1.1 XML file examples and schemas
 
 The following sections show examples of manifest v1.1 XML files for content, task pane, and Outlook add-ins.
