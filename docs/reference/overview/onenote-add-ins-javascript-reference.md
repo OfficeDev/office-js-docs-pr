@@ -20,7 +20,7 @@ This section of the documentation focuses on the OneNote JavaScript API, which y
 
 Review the following articles for information about important programming concepts:
 
-- [OneNote JavaScript API programming overview](onenote/onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API programming overview](../../onenote/onenote-add-ins-programming-overview.md)
 
 - [Work with OneNote page content](../../onenote/onenote-add-ins-page-content.md)
 

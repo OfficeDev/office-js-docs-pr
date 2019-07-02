@@ -84,7 +84,7 @@ You can find supported OneNote objects and operations in the [API reference](/of
 
 #### OneNote JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](../requirement-sets/onenote-api-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md).
 
 ### Accessing the Common API through the *Document* object
 
