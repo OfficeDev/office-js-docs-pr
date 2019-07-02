@@ -12,13 +12,13 @@ An Excel add-in interacts with objects in Excel by using the JavaScript API for 
 
 * **Excel JavaScript API**: Introduced with Office 2016, the Excel JavaScript API provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more. 
 
-* **Common APIs**: Introduced with Office 2013, the [Common API](../reference/javascript-api-for-office.md) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint.
+* **Common APIs**: Introduced with Office 2013, the [Common API](../javascript-api-for-office.md) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint.
 
 This section of the documentation focuses on the Excel JavaScript API, which you'll use to develop the majority of functionality in add-ins that target Excel 2016 or later. For information about the Common API, see [JavaScript API for Office](../javascript-api-for-office.md). 
 
 ## Learn programming concepts
 
-Review the following articles for information about important programming concepts with the Excel JavaScript API:
+Review the following articles for information about important programming concepts:
  
 - [Fundamental programming concepts with the Excel JavaScript API](../../excel/excel-add-ins-core-concepts.md)
 
@@ -26,7 +26,7 @@ Review the following articles for information about important programming concep
 
 ## Learn about API capabilities
 
-Review other articles in this section of the documentation for guidance about using the Excel JavaScript API to implement various types of functionality in your add-in. For example, learn about working with [events](../../excel/excel-add-ins-events.md), [charts](../../excel/excel-add-ins-charts.md), [ranges](../../excel/excel-add-ins-ranges.md), [tables](../../excel/excel-add-ins-tables.md), [worksheets](../../excel/excel-add-ins-worksheets.md), and more. You'll also find guidance about Excel JavaScript API concepts such as [coauthoring in Excel add-ins](../../excel/co-authoring-in-excel-add-ins.md), [data validation](../../excel/excel-add-ins-data-validation.md), [error handling](../../excel/excel-add-ins-error-handling.md), and [Performance optimization](../../excel/performance.md) in this section of the documentation. See the table of contents for the complete list of available articles.
+Review other articles in this section of the documentation for guidance about using the Excel JavaScript API to implement various types of functionality in your add-in. For example, learn about working with [events](../../excel/excel-add-ins-events.md), [charts](../../excel/excel-add-ins-charts.md), [ranges](../../excel/excel-add-ins-ranges.md), [tables](../../excel/excel-add-ins-tables.md), [worksheets](../../excel/excel-add-ins-worksheets.md), and more. Here in this section, you'll also find guidance about Excel JavaScript API concepts such as [coauthoring in Excel add-ins](../../excel/co-authoring-in-excel-add-ins.md), [data validation](../../excel/excel-add-ins-data-validation.md), [error handling](../../excel/excel-add-ins-error-handling.md), and [performance optimization](../../excel/performance.md). See the table of contents for the complete list of available articles.
 
 For detailed information about the Excel JavaScript API object model, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
 
