@@ -7,7 +7,7 @@ localization_priority: Priority
 
 # Validate and troubleshoot issues with your manifest
 
-If you are getting the error "Your add-in manifest is not valid" when loading your add-in, you can use various validation tools and techniques to find and resolve issues in the manifest file.
+If you are getting the error "Your add-in manifest is not valid" when loading your add-in, you can use the following validation tools and techniques to find and resolve issues in the manifest file.
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
