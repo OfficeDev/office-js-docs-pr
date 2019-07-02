@@ -38,5 +38,5 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 
 - [Excel add-ins documentation](../../excel/index.md)
 - [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
-- [Excel JavaScript API reference documentation](/javascript/api/excel)
+- [Excel JavaScript API reference](/javascript/api/excel)
 - [API open specifications](../openspec/openspec.md)

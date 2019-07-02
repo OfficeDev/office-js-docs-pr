@@ -846,6 +846,9 @@
     - name: API reference
       href: /javascript/api/word
       displayName: Word
+    - name: Fundamental programming concepts
+      href: word/word-add-ins-core-concepts.md
+      displayName: Word
     - name: Bind to regions in a document
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
       displayName: Word
