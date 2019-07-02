@@ -1,18 +1,18 @@
 ---
 title: Loading the DOM and runtime environment
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Priority
 ---
 
 
 # Loading the DOM and runtime environment
 
-An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic. 
+An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic.
 
 ## Startup of a content or task pane add-in
 
-The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, Word, or Access.
+The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, or Word.
 
 ![Flow of events when starting a content or task pane add-in](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 

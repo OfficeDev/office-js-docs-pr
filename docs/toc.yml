@@ -496,7 +496,7 @@
         href: testing/sideload-office-addin-using-sideload-command.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
-      - name: Debug using F12 developer tools
+      - name: Debug using developer tools
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Web browser
       items:

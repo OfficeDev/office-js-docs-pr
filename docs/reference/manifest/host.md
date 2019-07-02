@@ -1,7 +1,7 @@
 ---
 title: Host element in the manifest file
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Normal
 ---
 
@@ -23,7 +23,8 @@ When defined in the basic manifest (under [OfficeApp](officeapp.md)), the host t
 | [Name](#name) | string | required | The name of the type of Office host application. |
 
 ### Name
-Specifies the Host type targeted by this add-in. The value must be one of the following:
+
+Specifies the Host type targeted by this add-in. The value must be one of the following.
 
 - `Document` (Word)
 - `Database` (Access)
@@ -33,7 +34,11 @@ Specifies the Host type targeted by this add-in. The value must be one of the fo
 - `Project` (Project)
 - `Workbook` (Excel)
 
+> [!IMPORTANT]
+> We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
+
 ### Example
+
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -42,6 +47,7 @@ Specifies the Host type targeted by this add-in. The value must be one of the fo
 ```
 
 ## VersionOverrides node
+
 When defined in [VersionOverrides](versionoverrides.md), the host type is determined by the `xsi:type` attribute. 
 
 ### Attributes
@@ -69,6 +75,7 @@ Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) where the
 - `Workbook` (Excel)
 
 ## Host example 
+
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

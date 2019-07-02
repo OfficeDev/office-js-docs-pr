@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins development lifecycle
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
 ---
 
@@ -28,7 +28,7 @@ Decide the most important features and scenarios and focus your design around th
 
 ## 2. Identify the data and data source for the add-in
 
-- Is the data in a document, workbook, presentation, project, or an Access browser-based database?
+- Is the data in a document, workbook, presentation, or project?
 
 - Is the data about an item or items in an Exchange Server or Exchange Online mailbox?
 
@@ -39,11 +39,11 @@ Decide the most important features and scenarios and focus your design around th
 
 Consider the following to identify the scenarios:
 
-- Will customers use the add-in to enrich the content of a document or Access browser-based database? If so, you may want to consider creating a **content add-in**.
+- Will customers use the add-in to enrich the content of a document? If so, you may want to consider creating a **content add-in**.
 
 - Will customers use the add-in while viewing or composing an email message or appointment? Is being able to expose the add-in according to the current context important? Is making the add-in available on not just the desktop, but also on tablets and phones a priority?
 
-	If you answer yes to any of these questions, consider creating an **Outlook add-in**. Identify the context that will trigger your add-in (for example, the user being in a compose form, specific message types, the presence of an attachment, address, task suggestion, or meeting suggestion, or certain string patterns in the contents of an email or appointment). 
+	If you answer yes to any of these questions, consider creating an **Outlook add-in**. Identify the context that will trigger your add-in (for example, the user being in a compose form, specific message types, the presence of an attachment, address, task suggestion, or meeting suggestion, or certain string patterns in the contents of an email or appointment).
 
 	To find out how you can contextually activate the Outlook add-in, see [Activation rules for Outlook add-ins](/outlook/add-ins/activation-rules).
 

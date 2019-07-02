@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Priority
 ---
 
@@ -27,7 +27,7 @@ The following table lists core concepts discussed throughout this article.
 |Office application, Office host application, Office host, or host|The Office application used to run your add-in. For example, Word, Excel, and so on.|
 |Platform|Where the Office host runs, such as in a browser or on an iPad.|
 |Requirement set|A named group of related API members. Add-ins use requirement sets to determine whether the Office host supports API members used by your add-in. It's easier to test for the support of a requirement set than for the support of individual API members. Requirement set support varies by Office host and the version of the Office host. <br >Requirement sets are specified in the manifest file. When you specify requirement sets in the manifest, you set the minimum level of API support that the Office host must provide in order to run your add-in. Office hosts that don't support requirement sets specified in the manifest can't run your add-in, and your add-in won't display in <span class="ui">My Add-ins</span>. This restricts where your add-in is available. In code using runtime checks. For the complete list of requirement sets, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).|
-|Runtime check|A test that is performed at runtime to determine whether the Office host running your add-in supports requirement sets or methods used by your add-in. To perform a runtime check, you use an  **if** statement with the **isSetSupported** method, the requirement sets, or the method names that aren't part of a requirement set.Use runtime checks to ensure that your add-in reaches the broadest number of customers. Unlike requirement sets, runtime checks don't specify the minimum level of API support that the Office host must provide for your add-in to run. Instead, you use the  **if** statement to determine whether an API member is supported. If it is, you can provide additional functionality in your add-in. Your add-in will always display in **My Add-ins** when you use runtime checks.|
+|Runtime check|A test that is performed at runtime to determine whether the Office host running your add-in supports requirement sets or methods used by your add-in. To perform a runtime check, you use an  **if** statement with the **isSetSupported** method, the requirement sets, or the method names that aren't part of a requirement set. Use runtime checks to ensure that your add-in reaches the broadest number of customers. Unlike requirement sets, runtime checks don't specify the minimum level of API support that the Office host must provide for your add-in to run. Instead, you use the  **if** statement to determine whether an API member is supported. If it is, you can provide additional functionality in your add-in. Your add-in will always display in **My Add-ins** when you use runtime checks.|
 
 ## Before you begin
 
@@ -78,14 +78,17 @@ The  **Hosts** element can contain one or more **Host** elements. The **Host** e
 | Name          | Office host applications                                                                  |
 |:--------------|:------------------------------------------------------------------------------------------|
 | Database      | Access web apps                                                                           |
-| Document      | Word on Windows, Word on Mac, Word on iPad, and Word on the web                           |
+| Document      | Word on Windows, Word on Mac, Word on iPad, Word on the web                               |
 | Mailbox       | Outlook on Windows, Outlook on Mac, Outlook on the web, Outlook on Android, Outlook on iOS|
-| Presentation  | PowerPoint on Windows, PowerPoint on Mac, PowerPoint on iPad, and PowerPoint on the web   |
+| Presentation  | PowerPoint on Windows, PowerPoint on Mac, PowerPoint on iPad, PowerPoint on the web       |
 | Project       | Project on Windows                                                                        |
-| Workbook      | Excel on Windows, Excel on Mac, Excel on iPad, and Excel on the web                       |
+| Workbook      | Excel on Windows, Excel on Mac, Excel on iPad, Excel on the web                           |
 
 > [!NOTE]
 > The  `Name` attribute specifies the Office host application that can run your add-in. Office hosts are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on Windows and on the web can be used to run your add-in.
+
+> [!IMPORTANT]
+> We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
 
 
 ## Set the Requirements element in the manifest
