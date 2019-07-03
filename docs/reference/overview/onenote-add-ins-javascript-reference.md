@@ -26,6 +26,8 @@ Review the following articles for information about important programming concep
 
 ## Learn about API capabilities
 
+For hands-on experience using the OneNote JavaScript API to interact with content in OneNote on the web, complete the [OneNote add-in quick start](../../quickstarts/onenote-quickstart.md). 
+
 For detailed information about the OneNote JavaScript API object model, see the [OneNote JavaScript API reference documentation](/javascript/api/onenote).
 
 ## See also
