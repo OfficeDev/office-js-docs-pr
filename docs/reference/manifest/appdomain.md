@@ -1,13 +1,13 @@
 ---
 title: AppDomain element in the manifest file
 description: ''
-ms.date: 05/15/2019
+ms.date: 07/03/2019
 localization_priority: Normal
 ---
 
 # AppDomain element
 
-Specifies additional domains that will be used to load pages in the add-in window. It is also be used to list trusted domains from which Office.js API calls can be made from IFrames within the add-in.
+Specifies additional domains that load pages in the add-in window. It also lists trusted domains from which Office.js API calls can be made from IFrames within the add-in.
 
 **Add-in type:** Content, Task pane, Mail
 
