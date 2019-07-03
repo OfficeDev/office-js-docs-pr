@@ -13,19 +13,20 @@ The JavaScript API for Office enables you to create web applications that intera
 
   **Outlook** also uses the Common API syntax. Everything under the alias Office contains objects you can use to write scripts that interact with content in Office documents, worksheets, presentations, mail items, and projects from your Office Add-ins. You must use these Common APIs if your add-in will target Office 2013 and later. This object model uses callbacks.
 
-- **Host-specific APIs** - APIs that were introduced with **Office 2016**. This object model provides host-specific strongly-typed objects that correspond to familiar objects that you see when you use Office clients, and represents the future of Office JavaScript APIs. The host-specific APIs currently include the Word JavaScript API and the Excel JavaScript API.
+- **Host-specific APIs** - APIs that were introduced with **Office 2016**. This object model provides host-specific strongly-typed objects that correspond to familiar objects that you see when you use Office clients, and represents the future of Office JavaScript APIs. The host-specific APIs currently include the the Excel JavaScript API, the OneNote JavaScript API, the PowerPoint JavaScript API, and the Word JavaScript API.
 
 ## Supported host applications
 
 - [Excel](overview/excel-add-ins-reference-overview.md)
 - [OneNote](overview/onenote-add-ins-javascript-reference.md)
 - [Outlook](requirement-sets/outlook-api-requirement-sets.md)
+- [PowerPoint](overview/powerpoint-add-ins-reference-overview.md)
 - [Visio](overview/visio-javascript-reference-overview.md)
 - [Word](overview/word-add-ins-reference-overview.md)
 - [Common API](requirement-sets/office-add-in-requirement-sets.md)
 
 > [!NOTE] 
-> [PowerPoint and Project](requirement-sets/powerpoint-and-project-note.md) support add-ins made with the JavaScript API. However, they currently do not have host-specific APIs. You interact with these hosts through the Common API.
+> [Project](overview/project-add-ins-reference-overview.md) supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the Common API to interact with objects and data in Project.
 
 Learn more about [supported hosts and other requirements](../concepts/requirements-for-running-office-add-ins.md).
 

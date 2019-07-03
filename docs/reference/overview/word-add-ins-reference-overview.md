@@ -10,7 +10,7 @@ localization_priority: Priority
 
 An Word add-in interacts with objects in Word by using the JavaScript API for Office, which includes two JavaScript object models:
 
-* **Word JavaScript API**: Introduced with Office 2016, the Word JavaScript API provides strongly-typed objects that you can use to access objects and metadata in a Word document. 
+* **Word JavaScript API**: Introduced with Office 2016, the [Word JavaScript API](/javascript/api/word) provides strongly-typed objects that you can use to access objects and metadata in a Word document. 
 
 * **Common APIs**: Introduced with Office 2013, the [Common API](../javascript-api-for-office.md) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint.
 
@@ -24,6 +24,8 @@ Review [Fundamental programming concepts with the Word JavaScript API](../../wor
 
 Review other articles in this section of the documentation for guidance about using the Word JavaScript API to implement various types of functionality in your add-in. For example, learn how to [get the whole document from an add-in](../../word/get-the-whole-document-from-an-add-in-for-word.md), [use search options to find text in your Word add-in](../../word/search-option-guidance.md), and more. See the table of contents for the complete list of available articles.
 
+For hands-on experience using the Word JavaScript API to access objects in Word, complete the [Word add-in tutorial](../../tutorials/word-tutorial.md). 
+
 For detailed information about the Word JavaScript API object model, see the [Word JavaScript API reference documentation](/javascript/api/word).
 
 ## Try out code samples in Script Lab
@@ -35,4 +37,5 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 - [Word add-ins documentation](../../word/index.md)
 - [Word add-ins overview](../../word/word-add-ins-programming-overview.md)
 - [Word JavaScript API reference](/javascript/api/word)
+- [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
 - [API open specifications](../openspec/openspec.md)
