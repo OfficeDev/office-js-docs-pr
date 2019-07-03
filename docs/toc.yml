@@ -43,7 +43,7 @@
     - name: Privacy and security
       href: concepts/privacy-and-security.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-  - name: Design the User Interface
+  - name: User Interface
     items:
     - name: Overview
       href: design/add-in-design.md
@@ -416,13 +416,13 @@
     - name: Task pane (Vue)
       href: quickstarts/excel-quickstart-vue.md
       displayName: Excel
+  - name: Excel add-in tutorial
+    href: tutorials/excel-tutorial.md
+    displayName: Excel
   - name: Excel JavaScript API
     items:
     - name: Overview
       href: reference/overview/excel-add-ins-reference-overview.md
-      displayName: Excel
-    - name: Excel add-in tutorial
-      href: tutorials/excel-tutorial.md
       displayName: Excel
     - name: API requirement sets
       href: reference/requirement-sets/excel-api-requirement-sets.md
