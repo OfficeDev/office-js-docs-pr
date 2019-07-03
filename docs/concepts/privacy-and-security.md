@@ -244,7 +244,7 @@ Other than resource usage rules, developers for Outlook add-ins should also make
 
 In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to AppSource and any private catalogs.
 
-The management and enforcement of Office settings is done with group policy settings. These are configurable through the [Office Deployment Tool](https://docs.microsoft.com/deployoffice/overview-of-the-office-2016-deployment-tool), in conjunction with the [Office Customization Tool](https://docs.microsoft.com/DeployOffice/overview-of-the-office-customization-tool-for-click-to-run).
+The management and enforcement of Office settings is done with group policy settings. These are configurable through the [Office Deployment Tool](/deployoffice/overview-of-the-office-2016-deployment-tool), in conjunction with the [Office Customization Tool](/DeployOffice/overview-of-the-office-customization-tool-for-click-to-run).
 
 | Setting name | Description |
 |--------------|-------------|
@@ -253,7 +253,7 @@ The management and enforcement of Office settings is done with group policy sett
 | Block the Office Store |  Allows you to prevent users from using or inserting web add-ins that come from the Office Store. |
 
 > [!IMPORTANT]
-> If your working groups are using multiple releases of Office, group policy settings must be configured for each release. Please refer to the [Using Group Policy to manage how users can install and use apps for Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) of the [Overview of apps for Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) article for details on group policy settings for Office 2013.
+> If your working groups are using multiple releases of Office, group policy settings must be configured for each release. Please refer to the [Using Group Policy to manage how users can install and use apps for Office](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) of the [Overview of apps for Office 2013](/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) article for details on group policy settings for Office 2013.
 
 ## See also
 
