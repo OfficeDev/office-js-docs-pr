@@ -5,44 +5,44 @@
   items:
   - name: About Office Add-ins
     href: overview/index.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Overview
     items:
     - name: Office Add-ins platform overview
       href: overview/office-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Host and platform availability
       href: overview/office-add-in-availability.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Explore Office JS API using Script Lab
       href: overview/explore-with-script-lab.md
       displayName: Excel, Word, PowerPoint
     - name: Requirements for running add-ins
       href: concepts/requirements-for-running-office-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Concepts
     items:
     - name: Add-in development best practices
       href: concepts/add-in-development-best-practices.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Add-in development lifecycle
       href: concepts/add-in-development-lifecycle.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Browsers used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Office versions and requirement sets
       href: develop/office-versions-and-requirement-sets.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Performance
       href: concepts/resource-limits-and-performance-optimization.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Privacy and security
       href: concepts/privacy-and-security.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: User Interface
     items:
     - name: Overview
@@ -227,7 +227,7 @@
     items:
     - name: JavaScript API for Office overview
       href: reference/javascript-api-for-office.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: API requirement sets (Common)
       items:
       - name: Add-in commands requirement sets
@@ -774,7 +774,7 @@
   - name: JavaScript API for PowerPoint
     items:   
     - name: Overview
-      href: reference/requirement-sets/powerpoint-and-project-note.md
+      href: reference/overview/powerpoint-add-ins-reference-overview.md
       displayName: PowerPoint
     - name: API reference
       href: /javascript/api/powerpoint
@@ -800,7 +800,7 @@
   - name: JavaScript API for Project
     items:
     - name: Overview
-      href: reference/requirement-sets/powerpoint-and-project-note.md
+      href: reference/overview/project-add-ins-reference-overview.md
       displayName: Project
     - name: Create a Project add-in that uses REST with an on-premises OData service
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
@@ -845,6 +845,9 @@
       displayName: Word
     - name: API reference
       href: /javascript/api/word
+      displayName: Word
+    - name: Fundamental programming concepts
+      href: word/word-add-ins-core-concepts.md
       displayName: Word
     - name: Bind to regions in a document
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md

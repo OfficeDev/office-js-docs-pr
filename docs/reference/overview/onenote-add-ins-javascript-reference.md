@@ -8,59 +8,32 @@ localization_priority: Normal
 
 # OneNote JavaScript API overview
 
-> [!NOTE]
-> TO DO: Kim will be updating the structure and content of this article before the new TOC structure and landing pages are published to the live doc set.
+A OneNote add-in interacts with objects in OneNote on the web by using the JavaScript API for Office, which includes two JavaScript object models:
 
-Applies to: OneNote on the web
+* **OneNote JavaScript API**: Introduced with Office 2016, the [OneNote JavaScript API](/javascript/api/onenote) provides strongly-typed objects that you can use to access objects in OneNote on the web. 
 
-The following links show the high level OneNote objects available in the API. Each object page link contains a description of the properties, events, and methods available on the object. Explore these links to learn more. 
-	
-- [Application](/javascript/api/onenote/onenote.application): The top-level object used to access all globally addressable OneNote objects, such as the active notebook and the active section.
+* **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
 
-- [Notebook](/javascript/api/onenote/onenote.notebook): A notebook. Notebooks contain section groups and sections.
-    - [NotebookCollection](/javascript/api/onenote/onenote.notebookcollection): A collection of notebooks.
+This section of the documentation focuses on the OneNote JavaScript API, which you'll use to develop the majority of functionality in add-ins that target OneNote on the web. For information about the Common API, see [JavaScript API for Office](../javascript-api-for-office.md). 
 
-- [SectionGroup](/javascript/api/onenote/onenote.sectiongroup): A section group. Section groups contain section groups and sections.
-    - [SectionGroupCollection](/javascript/api/onenote/onenote.sectiongroupcollection): A collection of section groups.
+## Learn programming concepts
 
-- [Section](/javascript/api/onenote/onenote.section): A section. Sections contain pages.
-    - [SectionCollection](/javascript/api/onenote/onenote.sectioncollection): A collection of sections.
+See the following articles for information about important programming concepts:
 
-- [Page](/javascript/api/onenote/onenote.page): A page. Pages contain PageContent objects.
-    - [PageCollection](/javascript/api/onenote/onenote.pagecollection): A collection of pages.
+- [OneNote JavaScript API programming overview](../../onenote/onenote-add-ins-programming-overview.md)
 
-- [PageContent](/javascript/api/onenote/onenote.pagecontent): A top-level region on a page that contains content types such as Outline or Image. A PageContent object can be assigned a position on the page.
-    - [PageContentCollection](/javascript/api/onenote/onenote.pagecontentcollection): A collection of PageContent objects, which represents the contents of a page.
+- [Work with OneNote page content](../../onenote/onenote-add-ins-page-content.md)
 
-- [Outline](/javascript/api/onenote/onenote.outline): A container for Paragraph objects. An Outline is a direct child of a PageContent object.
+## Learn about API capabilities
 
-- [Image](/javascript/api/onenote/onenote.image): An Image object. An Image can be a direct child of a PageContent object or a Paragraph.
+For hands-on experience using the OneNote JavaScript API to interact with content in OneNote on the web, complete the [OneNote add-in quick start](../../quickstarts/onenote-quickstart.md). 
 
-- [Paragraph](/javascript/api/onenote/onenote.paragraph): A container for the visible content on a page. A Paragraph is a direct child of an Outline.
-    - [ParagraphCollection](/javascript/api/onenote/onenote.paragraphcollection): A collection of Paragraph objects in an Outline.
-
-- [RichText](/javascript/api/onenote/onenote.richtext): A RichText object.
-
-- [Table](/javascript/api/onenote/onenote.table): A container for TableRow objects.
-
-- [TableRow](/javascript/api/onenote/onenote.tablerow): A container for TableCell objects.
-    - [TableRowCollection](/javascript/api/onenote/onenote.tablerowcollection): A collection of TableRow objects in a Table.
- 
-- [TableCell](/javascript/api/onenote/onenote.tablecell): A container for Paragraph objects.
-    - [TableCellCollection](/javascript/api/onenote/onenote.tablecellcollection): A collection of TableCell objects in a TableRow.
-
-## OneNote JavaScript API requirement sets
-
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see the [OneNote JavaScript API requirement sets](../requirement-sets/onenote-api-requirement-sets.md) article.
-
-## OneNote JavaScript API reference
-
-For detailed information about the OneNote JavaScript API, see the [OneNote JavaScript API reference documentation](/javascript/api/onenote).
+For detailed information about the OneNote JavaScript API object model, see the [OneNote JavaScript API reference documentation](/javascript/api/onenote).
 
 ## See also
 
 - [OneNote add-ins documentation](../../onenote/index.md)
-- [OneNote JavaScript API programming overview](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
-- [Build your first OneNote add-in](../../quickstarts/onenote-quickstart.md)
-- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office Add-ins platform overview](/office/dev/add-ins/overview/office-add-ins)
+- [OneNote add-ins overview](../../onenote/onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API reference](/javascript/api/onenote)
+- [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
+
