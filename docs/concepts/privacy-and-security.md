@@ -244,7 +244,7 @@ Other than resource usage rules, developers for Outlook add-ins should also make
 
 In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to AppSource and any private catalogs.
 
-The management and enforcement of Office settings is done with group policy settings. These are configurable through the [Office Deployment Tool](/deployoffice/overview-of-the-office-2016-deployment-tool), in conjunction with the [Office Customization Tool](/DeployOffice/overview-of-the-office-customization-tool-for-click-to-run).
+The management and enforcement of Office settings is done with group policy settings. These are configurable through the [Office Deployment Tool](/deployoffice/overview-of-the-office-2016-deployment-tool), in conjunction with the [Office Customization Tool](/deployoffice/overview-of-the-office-customization-tool-for-click-to-run).
 
 | Setting name | Description |
 |--------------|-------------|

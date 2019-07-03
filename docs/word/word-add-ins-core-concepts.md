@@ -9,10 +9,6 @@ localization_priority: Priority
 
 This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins for Word 2016 or later.
 
-## Asynchronous nature of Word APIs
-
-The Word JavaScript API is loaded by Office.js. The Word JavaScript API changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the Word JavaScript API provides "proxy" JavaScript objects that correspond to the real objects running in Word. You can interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them. These interactions with proxy objects aren't immediately realized in the running script. The **context.sync** method synchronizes the state between your running JavaScript and the real objects in Office by executing queued instructions and retrieving properties of loaded Word objects for use in your script.
-
 ## Referencing Office.js
 
 You can reference Office.js from the following locations:
@@ -61,6 +57,10 @@ Add-ins that target Word 2016 or later run by passing a function into the **Word
 })();
 ```
 
+### Asynchronous nature of Word APIs
+
+The Word JavaScript API is loaded by Office.js. The Word JavaScript API changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the Word JavaScript API provides "proxy" JavaScript objects that correspond to the live objects running in Word. You can interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them. These interactions with proxy objects aren't immediately realized in the running script. The **context.sync** method synchronizes the state between your running JavaScript and the real objects in Office by executing queued instructions and retrieving properties of loaded Word objects for use in your script.
+
 ### Synchronizing Word documents with Word JavaScript API proxy objects
 
 The Word JavaScript API object model is loosely coupled with the objects in Word. Word JavaScript API objects are proxies for objects in a Word document. Actions taken on proxy objects are not realized in Word until the document state has been synchronized. Conversely, the state of the Word document is not realized in the proxy objects until the document state has been synchronized. To synchronize the document state, you run the **context.sync()** method. The following example creates a proxy body object and a queued command to load the text property on the proxy body object, and uses the **context.sync()** method to synchronize the body of the Word document with the body proxy object.
@@ -74,7 +74,7 @@ Word.run(function (context) {
     var body = context.document.body;
 
     // Queue a command to load the text property for the proxy document body object.
-    context.load(body, 'text');
+    body.load("text");
 
     // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
@@ -98,7 +98,7 @@ Word.run(function (context) {
     var body = context.document.body;
 
     // Queue a command to load the text property of the proxy body object.
-    context.load(body, 'text');
+    body.load("text");
 
     // Queue a command to insert text into the end of the Word document body.
     body.insertText('This is text inserted after loading the body.text property',

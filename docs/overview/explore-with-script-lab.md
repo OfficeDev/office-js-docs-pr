@@ -24,7 +24,7 @@ Script Lab offers a number of features to help you explore the Office JavaScript
 
 ### Explore samples
 
-Get started quickly with a collection of built-in sample snippets that show how to complete certain tasks with the API. You can run the samples to instantly see the result in the task pane or document, examine the samples to learn how the API works, and even use sample snippets as the basis for prototyping functionality of your own add-in.
+Get started quickly with a collection of built-in sample snippets that show how to complete tasks with the API. You can run the samples to instantly see the result in the task pane or document, examine the samples to learn how the API works, and even use samples to prototype your own add-in.
 
 ![Samples](../images/script-lab-samples.jpg)
 
