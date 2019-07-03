@@ -12,7 +12,7 @@ A PowerPoint add-in interacts with objects in PowerPoint by using the JavaScript
 
 * **PowerPoint JavaScript API**: Introduced with Office 2016, the [PowerPoint JavaScript API](/javascript/api/powerpoint) provides strongly-typed objects that you can use to access objects in PowerPoint. 
 
-* **Common APIs**: Introduced with Office 2013, the [Common API](../javascript-api-for-office.md) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint.
+* **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint.
 
 ## Learn programming concepts
 
@@ -35,4 +35,4 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 - [PowerPoint JavaScript API reference](/javascript/api/powerpoint)
 - [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
 - [JavaScript API for Office](../javascript-api-for-office.md)
-- [Common API reference](/javascript/api/overview/office)
+- [Common API reference](/javascript/api/office)

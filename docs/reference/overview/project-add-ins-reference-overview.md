@@ -16,4 +16,4 @@ Project supports add-ins made with the JavaScript API, but there's currently no 
 - [Project add-ins overview](../../project/project-add-ins.md)
 - [JavaScript API for Office](../javascript-api-for-office.md)
 - [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
-- [Common API reference](/javascript/api/overview/office)
+- [Common API reference](/javascript/api/office)
