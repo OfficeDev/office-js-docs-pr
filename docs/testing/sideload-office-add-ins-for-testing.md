@@ -45,7 +45,7 @@ The following video walks you through the process of sideloading your add-in in 
 >
 > - Enter “**about:flags**” in the Microsoft Edge search bar to bring up the Developer Settings options.  Check the “**Allow localhost loopback**” option and restart Microsoft Edge.
 
->    ![The Edge Allow localhost loopback option with the box checked.](../images/allow-localhost-loopback.png)
+>    ![The Microsoft Edge Allow localhost loopback option with the box checked.](../images/allow-localhost-loopback.png)
 
 
 ## Sideload an Office Add-in in Office 365
