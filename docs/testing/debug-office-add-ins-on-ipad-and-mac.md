@@ -38,7 +38,7 @@ Then, open the Office application and [sideload your add-in](sideload-an-office-
 
 Add-ins are often cached in Office for Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
 
-You can clear the cache using an existing add-in.
+You can clear the cache by using the personality menu of any task pane add-in.
 - Choose the personality menu. Then choose **Clear Web Cache**.
     > [!NOTE]
     > You must run macOS version 10.13.6 or later to see the personality menu.
