@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/03/2019
 localization_priority: Priority
 ---
 
@@ -132,6 +132,10 @@ The following XML manifest example hosts its main add-in page in the `https://ww
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
 ```
+
+## Specify domains from which Office.js API calls are made
+
+Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file. If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md). 
 
 ## Manifest v1.1 XML file examples and schemas
 
