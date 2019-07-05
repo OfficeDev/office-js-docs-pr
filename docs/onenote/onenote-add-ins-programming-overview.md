@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API programming overview
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
 ---
 
@@ -82,6 +82,10 @@ function getPagesInSection() {
 
 You can find supported OneNote objects and operations in the [API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference).
 
+#### OneNote JavaScript API requirement sets
+
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md).
+
 ### Accessing the Common API through the *Document* object
 
 Use the **Document** object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)
@@ -127,6 +131,7 @@ The following diagram represents what's currently available in the OneNote JavaS
 
 ## See also
 
+- [OneNote add-ins documentation](index.md)
 - [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
