@@ -7,11 +7,11 @@ localization_priority: Priority
 
 # Validate and troubleshoot issues with your manifest
 
-If you are getting the error "Your add-in manifest is not valid" when loading your add-in, you can use the following validation tools and techniques to find and resolve issues in the manifest file.
+You may want to validate your add-in's manifest file to ensure that it's correct and complete, or to identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file and troubleshoot problems with your add-in.
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
-The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) provides a task to validate your project's manifest file. Run the following command in the root directory of your project:
+If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file. Run the following command in the root directory of your project:
 
 ```command&nbsp;line
 npm run validate
@@ -22,16 +22,16 @@ npm run validate
 > [!NOTE]
 > To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.
 
-## Validate your manifest in a custom project
+## Validate your manifest with office-toolbox
 
-If your project was created without using yo office, you can still validate the manifest using the office-toolbox package. This is the same package used by yo office for validation.
+If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can validate the manifest by using [office-toolbox](https://www.npmjs.com/package/office-toolbox).
 
 1. Install [Node.js](https://nodejs.org/download/).
 
-2. Open a command prompt / terminal as an administrator, and run the Office Add-in validator on your manifest file. The Office Add-in validator is in the office-toolbox package.
+2. Run the following command in the root directory of your project. Replace `MANIFEST_FILE` with the name of the manifest file.
 
 	```command&nbsp;line
-	npx office-toolbox validate -m manifest.xml
+	npx office-toolbox validate -m MANIFEST_FILE
 	```
 
 ## Validate your manifest against the XML schema
