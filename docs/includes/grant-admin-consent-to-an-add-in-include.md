@@ -1,6 +1,6 @@
 
 > [!NOTE]
-> This procedure is only needed when you're developing the add-in. When your production add-in is deployed to AppSource or an add-in catalog, users will individually trust it or an admin will consent for the organization at installation.
+> This procedure is only needed when you're developing the add-in. When your production add-in is deployed to AppSource or an app catalog, users will individually trust it or an admin will consent for the organization at installation.
 
 Carry out this procedure *after* you have [registered the add-in](../develop/register-sso-add-in-aad-v2.md). (If you have just completed that procedure and the **API permissions** tab of the **$ADD-IN-NAME$** page is open in your browser, you can choose the **Grant admin consent for [tenant name]** button, and then select **Yes** for the confirmation that appears. Skip the rest of this procedure.)
 
@@ -13,4 +13,4 @@ Carry out this procedure *after* you have [registered the add-in](../develop/reg
 1. On the **$ADD-IN-NAME$** page, select **API permissions** then, under the **Grant consent** section, choose the **Grant admin consent for [tenant name]** button. Select **Yes** for the confirmation that appears.
 
 > [!NOTE]
-> We recommend this procedure as a best practice if you are using a Developer O365 tenant. However, if you prefer, it is possible to sideload an SSO add-in under development and prompt the user with a consent form. For more information, see [Sideload on Windows](/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) and [Sideload on Office Online](/office/dev/add-ins/testing/sideload-office-add-ins-for-testing).
+> We recommend this procedure as a best practice if you are using a Developer O365 tenant. However, if you prefer, it is possible to sideload an SSO add-in under development and prompt the user with a consent form. For more information, see [Sideload on Windows](/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) and [Sideload on Office on the web](/office/dev/add-ins/testing/sideload-office-add-ins-for-testing).

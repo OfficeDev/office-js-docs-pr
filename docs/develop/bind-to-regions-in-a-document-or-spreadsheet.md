@@ -1,7 +1,7 @@
 ---
 title: Bind to regions in a document or spreadsheet
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -332,7 +332,7 @@ In the example, the first parameter is the value to set on  `myBinding`. Because
 The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The function is called with a single parameter,  `asyncResult`, which contains the status of the result.
 
 > [!NOTE]
-> Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).
+> Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel on the web, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).
 
 
 ## Detect changes to data or the selection in a binding
@@ -390,30 +390,30 @@ function removeEventHandlerFromBinding() {
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 
-[Binding]: 				 https://docs.microsoft.com/javascript/api/office/office.binding
-[MatrixBinding]:		 https://docs.microsoft.com/javascript/api/office/office.matrixbinding
-[TableBinding]: 		 https://docs.microsoft.com/javascript/api/office/office.tablebinding
-[TextBinding]: 			 https://docs.microsoft.com/javascript/api/office/office.textbinding
-[getDataAsync]: 		 https://docs.microsoft.com/javascript/api/office/Office.Binding#getdataasync-options--callback-
-[setDataAsync]: 		 https://docs.microsoft.com/javascript/api/office/Office.Binding#setdataasync-data--options--callback-
-[SelectionChanged]: 	 https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs
-[addHandlerAsync]: 		 https://docs.microsoft.com/javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]: 	 https://docs.microsoft.com/javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
+[Binding]: 				 /javascript/api/office/office.binding
+[MatrixBinding]:		 /javascript/api/office/office.matrixbinding
+[TableBinding]: 		 /javascript/api/office/office.tablebinding
+[TextBinding]: 			 /javascript/api/office/office.textbinding
+[getDataAsync]: 		 /javascript/api/office/Office.Binding#getdataasync-options--callback-
+[setDataAsync]: 		 /javascript/api/office/Office.Binding#setdataasync-data--options--callback-
+[SelectionChanged]: 	 /javascript/api/office/office.bindingselectionchangedeventargs
+[addHandlerAsync]: 		 /javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
+[removeHandlerAsync]: 	 /javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
 
-[Bindings]:				 https://docs.microsoft.com/javascript/api/office/office.bindings
-[getByIdAsync]: 		 https://docs.microsoft.com/javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
-[getAllAsync]: 			 https://docs.microsoft.com/javascript/api/office/office.bindings#getallasync-options--callback-
-[addFromNamedItemAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
-[addFromSelectionAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
-[addFromPromptAsync]: 	 https://docs.microsoft.com/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
-[releaseByIdAsync]: 	 https://docs.microsoft.com/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
+[Bindings]:				 /javascript/api/office/office.bindings
+[getByIdAsync]: 		 /javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
+[getAllAsync]: 			 /javascript/api/office/office.bindings#getallasync-options--callback-
+[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
+[addFromSelectionAsync]: /javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
+[addFromPromptAsync]: 	 /javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
+[releaseByIdAsync]: 	 /javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
 
-[AsyncResult]: 			https://docs.microsoft.com/javascript/api/office/office.asyncresult
-[Office.BindingType]: 	https://docs.microsoft.com/javascript/api/office/office.bindingtype
-[Office.select]:		https://docs.microsoft.com/javascript/api/office 
-[Office.EventType]: 	https://docs.microsoft.com/javascript/api/office/office.eventtype 
-[Document.bindings]: 	https://docs.microsoft.com/javascript/api/office/office.document
+[AsyncResult]: 			/javascript/api/office/office.asyncresult
+[Office.BindingType]: 	/javascript/api/office/office.bindingtype
+[Office.select]:		/javascript/api/office 
+[Office.EventType]: 	/javascript/api/office/office.eventtype 
+[Document.bindings]: 	/javascript/api/office/office.document
 
 
-[TableBinding.rowCount]: https://docs.microsoft.com/javascript/api/office/office.tablebinding
-[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs
+[TableBinding.rowCount]: /javascript/api/office/office.tablebinding
+[BindingSelectionChangedEventArgs]: /javascript/api/office/office.bindingselectionchangedeventargs

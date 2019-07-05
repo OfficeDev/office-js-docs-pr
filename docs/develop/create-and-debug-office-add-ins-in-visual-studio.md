@@ -1,7 +1,7 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
 description: 'Use Visual Studio to create and debug Office Add-ins in the Office desktop client on Windows'
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -97,7 +97,7 @@ You can use Visual Studio to debug your add-in in the Office desktop client on W
 - [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
 
 > [!NOTE]
-> You cannot use Visual Studio to debug Office Add-ins in Office Online or Office for Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+> You cannot use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
 ### Review the build and debug properties
 
@@ -120,7 +120,7 @@ The following table describes the properties of the add-in project.
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
 |**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
 |**EWS Url**<br/>(Outlook add-ins only)|Exchange Web service URL (For example: `https://www.contoso.com/ews/exchange.aspx`). |
-|**OWA Url**<br/>(Outlook add-ins only)|Outlook Web App URL (For example: `https://www.contoso.com/owa`).|
+|**OWA Url**<br/>(Outlook add-ins only)|Outlook on the web URL (For example: `https://www.contoso.com/owa`).|
 |**Use multi-factor auth**<br/>(Outlook add-ins only)|Boolean value that indicates whether multi-factor authentication should be used.|
 |**User Name**<br/>(Outlook add-ins only)|Specifies the name of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|

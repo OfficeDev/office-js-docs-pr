@@ -1,7 +1,7 @@
 ---
 title: Host element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 07/01/2019
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ Specifies an individual Office application type where the add-in should activate
 
 ## Basic manifest
 
-When defined in the basic manifest (under [OfficeApp](officeapp.md)), the host type is determined by the `Name` attribute.   
+When defined in the basic manifest (under [OfficeApp](officeapp.md)), the host type is determined by the `Name` attribute.
 
 ### Attributes
 
@@ -23,7 +23,8 @@ When defined in the basic manifest (under [OfficeApp](officeapp.md)), the host t
 | [Name](#name) | string | required | The name of the type of Office host application. |
 
 ### Name
-Specifies the Host type targeted by this add-in. The value must be one of the following:
+
+Specifies the Host type targeted by this add-in. The value must be one of the following.
 
 - `Document` (Word)
 - `Database` (Access)
@@ -33,7 +34,11 @@ Specifies the Host type targeted by this add-in. The value must be one of the fo
 - `Project` (Project)
 - `Workbook` (Excel)
 
+> [!IMPORTANT]
+> We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
+
 ### Example
+
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -42,6 +47,7 @@ Specifies the Host type targeted by this add-in. The value must be one of the fo
 ```
 
 ## VersionOverrides node
+
 When defined in [VersionOverrides](versionoverrides.md), the host type is determined by the `xsi:type` attribute. 
 
 ### Attributes
@@ -55,7 +61,7 @@ When defined in [VersionOverrides](versionoverrides.md), the host type is determ
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Yes   |  Defines the settings for the desktop form factor. |
-|  [MobileFormFactor](mobileformfactor.md)    |  No   |  Defines the settings for the mobile form factor. **Note:** this element is only supported in Outlook for iOS. |
+|  [MobileFormFactor](mobileformfactor.md)    |  No   |  Defines the settings for the mobile form factor. **Note:** This element is only supported in Outlook on iOS. |
 |  [AllFormFactors](allformfactors.md)    |  No   |  Defines the settings for all form factors. Only used by custom functions in Excel. |
 
 ### xsi:type
@@ -63,12 +69,13 @@ When defined in [VersionOverrides](versionoverrides.md), the host type is determ
 Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) where the contained settings apply. The value must be one of the following:
 
 - `Document` (Word)
-- `MailHost` (Outlook)    
+- `MailHost` (Outlook)
 - `Notebook` (OneNote)
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
 ## Host example 
+
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

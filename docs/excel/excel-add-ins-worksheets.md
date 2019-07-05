@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 04/30/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -36,7 +36,7 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> The **id** property of a worksheet uniquely identifies the worksheet in a given workbook and its value will remain the same even when the worksheet is renamed or moved. When a worksheet is deleted from a workbook in Excel for Mac, the **id** of the deleted worksheet may be reassigned to a new worksheet that is subsequently created.
+> The **id** property of a worksheet uniquely identifies the worksheet in a given workbook and its value will remain the same even when the worksheet is renamed or moved. When a worksheet is deleted from a workbook in Excel on Mac, the **id** of the deleted worksheet may be reassigned to a new worksheet that is subsequently created.
 
 ## Get the active worksheet
 

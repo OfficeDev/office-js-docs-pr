@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
     xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
     xmlns:odoc="http://schemas.microsoft.com/internal/obd"
-    xmlns:xs="https://www.w3.org/2001/XMLSchema">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:import schemaLocation="OfficeAppBasicTypesV1_0.xsd" namespace="http://schemas.microsoft.com/office/officeappbasictypes/1.0" />
 
@@ -28,7 +28,7 @@
   <xs:complexType name="ExecuteFunction">
     <xs:annotation>
       <xs:documentation>
-        Specifies a callback to execute when a user interface extension point is invoked by the user.
+        Specifies a callback to run when a user interface extension point is invoked by the user.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -251,6 +251,41 @@
   </xs:complexType>
   <!-- End ribbon -->
 
+  <!-- Custom Function Types -->
+  <xs:complexType name="Script">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the location of the JS file.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SourceLocation" type="bt:URLResourceReference" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Page">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the location of the HTML file.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SourceLocation" type="bt:URLResourceReference" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Metadata">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the location of the JSON metadata file.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SourceLocation" type="bt:URLResourceReference" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- End Custom Function Types -->
+
   <!-- Extension points -->
   <xs:complexType name="ExtensionPoint" abstract="true">
     <xs:annotation>
@@ -301,6 +336,24 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <xs:complexType name="CustomFunctions" odoc:omit="true">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a JS file with custom functions that will be registered with and run on demand by the host.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ExtensionPoint">
+        <xs:sequence>
+          <xs:element name="Script" type="Script" minOccurs="1" maxOccurs="1" />
+          <xs:element name="Page" type="Page" minOccurs="1" maxOccurs="1" />
+          <xs:element name="Metadata" type="Metadata" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Namespace" type="bt:ShortResourceReference" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <!-- End extension points-->
 
   <!-- Hosts and form factors -->
@@ -341,6 +394,21 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+  
+  <xs:complexType name="AllFormFactors" odoc:omit="true">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the list of settings for the Office Add-in when activated with settings for all form factors.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ExtensionPoint" type="CustomFunctions" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies a JS file with custom functions that will be registered with and run on demand by the host.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="Host" abstract="true">
     <xs:annotation>
@@ -348,6 +416,13 @@
         Generic type for specifying Host node types under the Hosts element list
       </xs:documentation>
     </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AllFormFactors" type="FormFactor" minOccurs="0" maxOccurs="1" odoc:omit="true">
+        <xs:annotation>
+          <xs:documentation>Specifies the settings of the Office Add-in when running in a desktop version of PowerPoint.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="Workbook">
@@ -444,18 +519,137 @@
   </xs:complexType>
   <!-- End hosts and form factors -->
 
-  <xs:complexType name="WebApplicationScopes" odoc:omit="true">
+  <xs:complexType name="WebApplicationScopes">
     <xs:annotation>
       <xs:documentation>
         Specifies the scope strings for any permissions that your application needs to external resources.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="WebApplicationScope" type="bt:LongString">
+      <xs:element name="Scope" type="bt:LongString">
         <xs:annotation>
           <xs:documentation>
             Specifies the scope string for one permission that your application needs to external resources.
           </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="WebAppAuthorization" odoc:omit="true">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the scope permission that the application needs to access a particular resource.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="Resource" type="bt:LongString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies a particular resource (URL) used by the application's Web API.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Scopes" type="WebApplicationScopes" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies the scope strings for any permissions that the application needs for this particular resource.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="WebAppAuthorizations" odoc:omit="true">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the authorizations that the application needs to access external resources.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Authorization" type="WebAppAuthorization">
+        <xs:annotation>
+          <xs:documentation>
+            Specifies the scopes for permissions that the application needs for a particular resource.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="WebApplicationInfo">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the required information of your multi-tenant application as registered with Microsoft.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="Id" type="bt:UUID" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies the client ID of your multi-tenant application as registered with Microsoft.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MsaId" type="bt:LongString" minOccurs="0" maxOccurs="1" odoc:omit="true">
+        <xs:annotation>
+          <xs:documentation>Specifies the client ID of your application for MSA as registered in msm.live.com.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Resource" type="bt:LongString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies the resource for your application's Web API.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Scopes" type="WebApplicationScopes" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies the scope strings for any permissions that your application needs for external resources.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Authorizations" type="WebAppAuthorizations" minOccurs="0" maxOccurs="1" odoc:omit="true">
+        <xs:annotation>
+          <xs:documentation>Specifies the authorizations that the application needs to access external resources.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EquivalentAddins">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the list of native (COM/XLL) add-ins that are equivalent to the web add-in. These will take precedence over the web add-in if installed.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="EquivalentAddin" type="EquivalentAddin">
+        <xs:annotation>
+          <xs:documentation>
+            Specifies an equivalent add-in. This will take precedence over the web add-in if installed.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EquivalentAddin">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies an equivalent add-in. This will take precedence over the web add-in if installed.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="ProgId" type="bt:LongString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies the progID of the equivalent add-in.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DisplayName" type="bt:LongString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies the optional display name for the equivalent add-in.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FileName" type="bt:LongString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies the file name of the equivalent XLL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Type" type="bt:ShortString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies the equivalent add-in type (COM for UI, XLL for custom functions).</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -488,19 +682,14 @@
           <xs:documentation>Specifies a collection of resources referenced by other elements of the manifest where resource references are supported.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="WebApplicationId" type="bt:ShortString" minOccurs="0" maxOccurs="1" odoc:omit="true">
+      <xs:element name="WebApplicationInfo" type="WebApplicationInfo" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Specifies the client id of your multi-tenant application as registered with Microsoft.</xs:documentation>
+          <xs:documentation>Specifies the required information of your multi-tenant application as registered with Microsoft.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="WebApplicationResource" type="bt:LongString" minOccurs="0" maxOccurs="1" odoc:omit="true">
+      <xs:element name="EquivalentAddins" type="EquivalentAddins" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Specifies the resource for your application’s Web API.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="WebApplicationScopes" type="WebApplicationScopes" minOccurs="0" maxOccurs="1" odoc:omit="true">
-        <xs:annotation>
-          <xs:documentation>Specifies the scope strings for any permissions that your application needs to external resources.</xs:documentation>
+          <xs:documentation>Specifies the list of native (COM/XLL) add-ins that are equivalent to the web add-in. The web add-in will not be activated an equivalent native add-in is installed.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:any id="VersionOverrides" minOccurs="0" maxOccurs="1" namespace="http://schemas.microsoft.com/office/taskpaneappversionoverrides/1.1" processContents="lax">

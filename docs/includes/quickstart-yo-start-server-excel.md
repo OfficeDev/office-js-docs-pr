@@ -17,11 +17,11 @@ Complete the following steps to start the local web server and sideload your add
     npm start
     ```
 
-- To test your add-in in Excel Online, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+- To test your add-in in Excel on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
     ```command&nbsp;line
     npm run start:web
     ```
 
-    To use your add-in, open a new workbook in Excel Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
+    To use your add-in, open a new workbook in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 

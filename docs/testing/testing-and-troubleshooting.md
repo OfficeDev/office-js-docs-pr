@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -10,8 +10,6 @@ localization_priority: Priority
 At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
 
 You can also use [Fiddler](https://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
-
-After you resolve the user's issue, you can [respond directly to customer reviews in AppSource](/office/dev/store/create-effective-office-store-listings).
 
 ## Common errors and troubleshooting steps
 
@@ -26,6 +24,14 @@ The following table lists common error messages that users might encounter and s
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
+## When installing an add-in, you see "Error loading add-in" in the status bar
+
+1. Close Office.
+2. Verify that the manifest is valid
+3. Restart the add-in
+4. Install the add-in again.
+
+You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.
 
 ## Outlook add-in doesn't work correctly
 
@@ -68,7 +74,7 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 |**Affected browsers**|**Affected platforms**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office Online|
+|Internet Explorer, Microsoft Edge|Office on the web|
 
 To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
 
@@ -105,7 +111,7 @@ Call `window.location.reload(true)` from JavaScript in the add-in to force a rel
 
 ## See also
 
-- [Debug add-ins in Office Online](debug-add-ins-in-office-online.md) 
+- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)

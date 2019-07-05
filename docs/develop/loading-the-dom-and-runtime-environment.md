@@ -1,18 +1,18 @@
 ---
 title: Loading the DOM and runtime environment
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
 ---
 
 
 # Loading the DOM and runtime environment
 
-An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic. 
+An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic.
 
 ## Startup of a content or task pane add-in
 
-The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, Word, or Access.
+The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, or Word.
 
 ![Flow of events when starting a content or task pane add-in](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
@@ -20,7 +20,7 @@ The following events occur when a content or task pane add-in starts:
 
 1. The user opens a document that already contains an add-in or inserts an add-in in the document.
 
-2. The Office host application reads the add-in's XML manifest from AppSource, an add-in catalog on SharePoint, or the shared folder catalog it originates from.
+2. The Office host application reads the add-in's XML manifest from AppSource, an app catalog on SharePoint, or the shared folder catalog it originates from.
 
 3. The Office host application opens the add-in's HTML page in a browser control.
 
@@ -102,7 +102,7 @@ The phone dialer sample Outlook add-in shows a slightly different approach using
 >Office.initialize = function () {};
 >```
 >
-> If you do not call **Office.onReady** or assign an  **Office.initialize** event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run.
+> If you do not call **Office.onReady** or assign an  **Office.initialize** event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office web client, such as Excel, PowerPoint, or Outlook, it will fail to run.
 >
 > If your add-in includes more than one page, whenever it loads a new page that page must either call **Office.onReady** or assign an  **Office.initialize** event handler.
 

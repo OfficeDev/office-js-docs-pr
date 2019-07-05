@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/18/2019
 description: Handle errors in your Excel custom functions.
 title: Error handling for custom functions in Excel
 localization_priority: Priority

@@ -47,8 +47,8 @@
 1. In the **Authorized client applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized.
   
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office on the web)
 
     For each ID, take these steps:
 

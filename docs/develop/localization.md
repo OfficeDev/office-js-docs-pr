@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
 ---
 
@@ -93,7 +93,7 @@ The following example applies a locale override for the [Description] element. I
    without leaving your email client.">
    <Override Locale="fr-fr" Value=
    "Visualisez les vidéos YouTube référencées dans vos courriers 
-   électronique directement depuis Outlook et Outlook Web App."/>
+   électronique directement depuis Outlook."/>
 </Description>
 ```
 
@@ -402,17 +402,17 @@ Once running, the strings in the add-in UI change to match the language used by 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[Description]: 			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
-[DisplayName]: 			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
-[IconUrl]: 				https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
-[Resources]: 		    https://docs.microsoft.com/office/dev/add-ins/reference/manifest/resources
-[SourceLocation]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
-[Override]:  			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/override
-[DesktopSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/desktopsettings
-[TabletSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/tabletsettings
-[PhoneSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/phonesettings
-[displayLanguage]: 	https://docs.microsoft.com/javascript/api/office/office.context#displaylanguage 
-[contentLanguage]: 	https://docs.microsoft.com/javascript/api/office/office.context#contentlanguage 
+[DefaultLocale]: 		/office/dev/add-ins/reference/manifest/defaultlocale
+[Description]: 			/office/dev/add-ins/reference/manifest/description
+[DisplayName]: 			/office/dev/add-ins/reference/manifest/displayname
+[IconUrl]: 				/office/dev/add-ins/reference/manifest/iconurl
+[HighResolutionIconUrl]:/office/dev/add-ins/reference/manifest/highresolutioniconurl
+[Resources]: 		    /office/dev/add-ins/reference/manifest/resources
+[SourceLocation]: 		/office/dev/add-ins/reference/manifest/sourcelocation
+[Override]:  			/office/dev/add-ins/reference/manifest/override
+[DesktopSettings]: 		/office/dev/add-ins/reference/manifest/desktopsettings
+[TabletSettings]: 		/office/dev/add-ins/reference/manifest/tabletsettings
+[PhoneSettings]: 		/office/dev/add-ins/reference/manifest/phonesettings
+[displayLanguage]: 	/javascript/api/office/office.context#displaylanguage 
+[contentLanguage]: 	/javascript/api/office/office.context#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

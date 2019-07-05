@@ -1,13 +1,13 @@
 ---
 title: PowerPoint add-ins
 description: ''
-ms.date: 04/15/2019
+ms.date: 07/05/2019
 localization_priority: Priority
 ---
 
 # PowerPoint add-ins
 
-You can use PowerPoint add-ins to build engaging solutions for your users' presentations across platforms including Windows, iOS, Office Online, and Mac. You can create two types of PowerPoint add-ins:
+You can use PowerPoint add-ins to build engaging solutions for your users' presentations across platforms including Windows, iOS, Mac, and in a browser. You can create two types of PowerPoint add-ins:
 
 - Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/WA104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
@@ -29,7 +29,7 @@ The code examples in this article demonstrate some basic tasks for developing ad
 If you are building a content add-in, you will need to get the presentation's active view and handle the `ActiveViewChanged` event, as part of your `Office.Initialize` handler.
 
 > [!NOTE]
-> In PowerPoint Online, the [Document.ActiveViewChanged](/javascript/api/office/office.document) event will never fire as Slide Show mode is treated as a new session. In this case, the add-in must fetch the active view on load, as shown in the following code sample.
+> In PowerPoint on the web, the [Document.ActiveViewChanged](/javascript/api/office/office.document) event will never fire as Slide Show mode is treated as a new session. In this case, the add-in must fetch the active view on load, as shown in the following code sample.
 
 In the following code sample:
 
@@ -187,6 +187,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## See also
 
+- [PowerPoint add-ins documentation](index.md)
 - [PowerPoint Code Samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [How to save add-in state and settings per document for content and task pane add-ins](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

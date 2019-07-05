@@ -1,7 +1,7 @@
 ---
 title: Install the latest version of Office
 description: Information about how to opt in to getting the latest builds of Office.
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
@@ -16,7 +16,7 @@ To opt in to getting the latest builds of Office:
 - If you're an Office 365 Home, Personal, or University subscriber, see [Be an Office Insider](https://products.office.com/office-insider).
 - If you're an Office 365 for business customer, see [Install the First Release build for Office 365 for business customers](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).
 - If you're running Office on a Mac:
-	- Start an Office for Mac program.
+	- Start an Office application.
 	- Select **Check for Updates** on the Help menu.
 	- In the Microsoft AutoUpdate box, check the box to join the Office Insider program.
 
