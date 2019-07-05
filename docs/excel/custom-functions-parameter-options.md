@@ -1,5 +1,5 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/01/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -7,20 +7,19 @@ localization_priority: Normal
 
 # Custom functions parameter options
 
-Custom functions are configurable with many different options for parameters:
-- [Optional parameters](#custom-functions-optional-parameters)
-- [Range parameters](#range-parameters)
-- [Invocation context parameter](#invocation-parameter)
+Custom functions are configurable with many different options for parameters.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## Custom functions optional parameters
+## Optional parameters
 
 Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.
 
+#### [JavaScript](#tab/javascript)
+
 ```js
 /**
- * Add two numbers
+ * Calculates the sum of the specified numbers
  * @customfunction 
  * @param {number} first First number.
  * @param {number} second Second number.
@@ -28,31 +27,58 @@ Whereas regular parameters are required, optional parameters are not. When a use
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-  if (third !== undefined) {
-    return first + second + third;
+  if (third === null) {
+    third = 0;
   }
-  return first + second;
+  return first + second + third;
 }
 CustomFunctions.associate("ADD", add);
 ```
 
-When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to `98052`. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
+#### [TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Calculates the sum of the specified numbers
+ * @customfunction 
+ * @param first First number.
+ * @param second Second number.
+ * @param [third] Third number to add. If omitted, third = 0.
+ * @returns The sum of the numbers.
+ */
+function add(first: number, second: number, third?: number): number {
+  if (third === null) {
+    third = 0;
+  }
+  return first + second + third;
+}
+CustomFunctions.associate("ADD", add);
+```
+
+---
+
+> [!NOTE]
+> When no value is specified for an optional parameter, Excel assigns it the value `null`. This means default-initialized parameters in TypeScript will not work as expected. Therefore, don't use the syntax `function add(first:number, second:number, third=0):number` because it will not initialize `third` to 0. Instead use the TypeScript syntax as shown in the previous example.
+
+When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are null. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is null, the default value is set to `98052`. If the `dayOfWeek` parameter is null, it is set to Wednesday.
+
+#### [JavaScript](#tab/javascript)
 
 ```js
 /**
  * Gets a weather report for a specified zipCode and dayOfWeek
  * @customfunction
- * @param {number} zipCode Zip code. If omitted, zipCode = 98052.
- * @param {string} dayOfWeek Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @param {number} [zipCode] Zip code. If omitted, zipCode = 98052.
+ * @param {string} [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
 function getWeatherReport(zipCode, dayOfWeek)
 {
-  if (zipCode === undefined) {
-      zipCode = "98052";
+  if (zipCode === null) {
+    zipCode = 98052;
   }
 
-  if (dayOfWeek === undefined) {
+  if (dayOfWeek === null) {
     dayOfWeek = "Wednesday";
   }
 
@@ -60,6 +86,33 @@ function getWeatherReport(zipCode, dayOfWeek)
   // ...
 }
 ```
+
+#### [TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Gets a weather report for a specified zipCode and dayOfWeek
+ * @customfunction
+ * @param zipCode Zip code. If omitted, zipCode = 98052.
+ * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @returns Weather report for the day of the week in that zip code.
+ */
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
+{
+  if (zipCode === null) {
+    zipCode = 98052;
+  }
+
+  if (dayOfWeek === null) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek.
+  // ...
+}
+```
+
+---
 
 ## Range parameters
 
