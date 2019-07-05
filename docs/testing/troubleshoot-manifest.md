@@ -7,7 +7,7 @@ localization_priority: Priority
 
 # Validate and troubleshoot issues with your manifest
 
-You may want to validate your add-in's manifest file to ensure that it's correct and complete, or to identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file and troubleshoot problems with your add-in.
+You may want to validate your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file and troubleshoot problems with your add-in.
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
@@ -36,7 +36,7 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
 
 ## Validate your manifest against the XML schema
 
-To help ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check you also **include the appropriate namespaces**. You can validate a manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool to perform this validation.
+You can validate the manifest file against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files. This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**. You can use an XML schema validation tool to perform this validation.
 
 ### To use a command-line XML schema validation tool to validate your manifest
 
