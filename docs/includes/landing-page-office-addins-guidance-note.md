@@ -1,0 +1,1 @@
+<b>Note</b>: See the <a href="../overview/index.md">Office Add-ins guidance</a> section of this documentation for the full set of articles that apply to all types of Office Add-ins.

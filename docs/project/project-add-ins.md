@@ -1,7 +1,7 @@
 ---
 title: Task pane add-ins for Project
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
 ---
 
@@ -183,6 +183,7 @@ You can distribute add-ins through a file share, an app catalog in a SharePoint 
 
 ## See also
 
+- [Project add-ins documentation](index.md)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office)

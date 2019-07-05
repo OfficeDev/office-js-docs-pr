@@ -20,13 +20,13 @@ Complete the steps in one of the following sections to create an app catalog wit
 
 ### To create an app catalog for on-premises SharePoint Server
 
-To create the SharePoint app catalog, follow the instructions at [Configure the App Catalog site for a web application](https://docs.microsoft.com/en-us/sharepoint/administration/manage-the-app-catalog).
+To create the SharePoint app catalog, follow the instructions at [Configure the App Catalog site for a web application](/sharepoint/administration/manage-the-app-catalog).
 
 Once you have created the app catalog follow the steps to [publish an Office Add-in](#publish-an-office-add-in).
 
 ### To create an app catalog on Office 365
 
-1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
+1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](/office365/admin/admin-overview/about-the-admin-center).
 
 2. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
 
@@ -57,7 +57,7 @@ Complete the steps in one of the following sections to publish an Office Add-in 
 
 ### To publish an Office add-in to a SharePoint app catalog on Office 365
 
-1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
+1. Go to the Microsoft 365 admin center. For information on how to find the admin center, see [About the Microsoft 365 admin center](/office365/admin/admin-overview/about-the-admin-center).
 2. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
     > [!NOTE]
     > You need to use the Classic SharePoint admin center to create the catalog. If you are in the new SharePoint admin center, choose **Classic SharePoint admin center** in the left pane.

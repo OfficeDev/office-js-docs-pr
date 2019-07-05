@@ -62,32 +62,32 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 
 <!-- Links for above table -->
 
-[officeapp]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officeapp
-[id]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id
-[version]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/version
-[providername]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/providername
-[defaultlocale]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[displayname]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
-[description]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
-[iconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[defaultsettings (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
+[officeapp]: /office/dev/add-ins/reference/manifest/officeapp
+[id]: /office/dev/add-ins/reference/manifest/id
+[version]: /office/dev/add-ins/reference/manifest/version
+[providername]: /office/dev/add-ins/reference/manifest/providername
+[defaultlocale]: /office/dev/add-ins/reference/manifest/defaultlocale
+[displayname]: /office/dev/add-ins/reference/manifest/displayname
+[description]: /office/dev/add-ins/reference/manifest/description
+[iconurl]: /office/dev/add-ins/reference/manifest/iconurl
+[defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
+[sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: https://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissions (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissions (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[rule (rulecollection)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[rule (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[requirements (mailapp)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements
-[set*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/set
-[sets (mailapprequirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[form*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/form
-[formsettings*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/formsettings
-[sets (requirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[hosts*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts
+[permissions (contentapp)]: /office/dev/add-ins/reference/manifest/permissions
+[permissions (taskpaneapp)]: /office/dev/add-ins/reference/manifest/permissions
+[permissions (mailapp)]: /office/dev/add-ins/reference/manifest/permissions
+[rule (rulecollection)]: /office/dev/add-ins/reference/manifest/rule
+[rule (mailapp)]: /office/dev/add-ins/reference/manifest/rule
+[requirements (mailapp)*]: /office/dev/add-ins/reference/manifest/requirements
+[set*]: /office/dev/add-ins/reference/manifest/set
+[sets (mailapprequirements)*]: /office/dev/add-ins/reference/manifest/sets
+[form*]: /office/dev/add-ins/reference/manifest/form
+[formsettings*]: /office/dev/add-ins/reference/manifest/formsettings
+[sets (requirements)*]: /office/dev/add-ins/reference/manifest/sets
+[hosts*]: /office/dev/add-ins/reference/manifest/hosts
 
 ## Hosting requirements
 
