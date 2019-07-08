@@ -79,7 +79,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 	declare var fabric: any;
 	```
 
-12. In the **Home.ts** file, find the line `Office.initialize = function (reason) {` and add the following line immediately after that line:
+12. In the **Home.ts** file, find the line `Office.initialize = function (reason) {` and add the following line immediately after it, as the first line inside the function:
 
     ```typescript
     (window as any).Promise = OfficeExtension.Promise;
