@@ -26,9 +26,9 @@ To create your project, perform the following steps using **Windows PowerShell**
 4. Ensure you are in the directory with the project files, and then run `npm start`. A browser window showing a spinner opens automatically.
 5. [Sideload your manifest](../testing/test-debug-office-add-ins.md) to view the full UI of the add-in.
 
-## Step 2 - Add a Fabric React component
+## Step 2 - Create a React component that uses Fabric React
 
-Next, add Fabric React components to your add-in. Complete the following steps to create a new React component, named `ButtonPrimaryExample`, that consists of a `Label` and `PrimaryButton` from Fabric React:
+Next, complete the following steps to create a new React component, named `ButtonPrimaryExample`, that consists of a `Label` and `PrimaryButton` from Fabric React:
 
 1. Open the project folder created by the Yeoman generator, and go to **src\taskpane\components**.
 2. In that folder, create a new file named **Button.tsx**.
@@ -75,7 +75,7 @@ This code does the following:
 - References the Fabric components (`PrimaryButton`, `IButtonProps`, `Label`) that are used to create `ButtonPrimaryExample`.
 - Declares the new `ButtonPrimaryExample` component using `export class ButtonPrimaryExample extends React.Component`.
 - Declares the `insertText` function that will handle the button's `onClick` event.
-- Defines the HTML markup of the React component in the `render` function. The markup specifies that when the `onClick` event fires, the `insertText` function will run.
+- Defines the UI of the React component in the `render` function. The HTML markup specifies that when the `onClick` event fires, the `insertText` function will run.
 
 ## Step 3 - Add the React component to your add-in
 
