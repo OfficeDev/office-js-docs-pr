@@ -14,7 +14,7 @@ To get started using Fabric React components in your add-in, perform the followi
 > [!NOTE]
 > If you follow the steps in this article, Fabric Core is also available in your add-in.
 
-## Step 1 - Create your project with the Yeoman generator for Office
+## Step 1 - Create an add-in project
 
 To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office. The Yeoman generator for Office provides the project scaffolding and build management needed to develop an Office Add-in.
 
