@@ -1,5 +1,5 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/09/2019
 description: "Batch custom functions together to reduce network calls to a remote service."
 title: Batching custom function calls for a remote service
 localization_priority: Priority
@@ -51,8 +51,6 @@ function div2(dividend: number, divisor: number) {
     [dividend, divisor]
   );
 }
-
-CustomFunctions.associate("DIV2", div2);
 ```
 
 Next, you will define the batch array which will store all operations to be passed in one network call. The following code shows how to define an interface describing each batch entry in the array. The interface defines an operation, which is a string name of which operation to run. For example, if you had two custom functions named `multiply` and `divide`, you could reuse those as the operation names in your batch entries. `args` will hold the arguments that were passed to your custom function from Excel. And finally, `resolve` or `reject` will store a promise holding the information the remote service returns.

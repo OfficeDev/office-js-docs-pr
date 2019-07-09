@@ -1,5 +1,5 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/09/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -27,6 +27,13 @@ Server settings on the server that hosts the JSON file must have [CORS](https://
 ## Example metadata
 
 The following example shows the contents of a JSON metadata file for an add-in that defines custom functions. The sections that follow this example provide detailed information about the individual properties within this JSON example.
+
+>[!NOTE]
+> A few notes on the `id` and `name` properties to consider when hand-authoring JSON files:
+>
+> - No two function objects in a JSON metadata file should have the same `id` value.
+> - The `id` and `name` property values are in uppercase, which is a best practice when describing your custom functions.
+> - Do not change the value of an `id` property in the JSON metadata file after it's been set. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
 
 ```json
 {

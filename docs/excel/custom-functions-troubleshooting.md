@@ -1,5 +1,5 @@
 ---
-ms.date: 06/21/2019
+ms.date: 07/09/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions
 localization_priority: Priority
@@ -10,7 +10,7 @@ When developing custom functions, you may encounter errors in the product while 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return) and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
+To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
 
 ## Enable runtime logging
 
@@ -24,7 +24,6 @@ Generally, these errors correspond to the errors you might already be familiar w
 
 - A `#NAME` error generally means there has been an issue registering your functions.
 - A `#VALUE` error typically indicates an error in the functions' script file.
-- A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
 - A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
 
 ## Clear the Office cache
@@ -32,29 +31,6 @@ Generally, these errors correspond to the errors you might already be familiar w
 Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see the "Clear the Office cache" section in the article [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md#clear-the-office-cache).
 
 ## Common issues
-
-### My functions won't load: associate functions
-
-In your custom functions' script file, you need to associate each custom function with its ID specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` method. Typically this method call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
-
-The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
-
-```js
-/**
- * Add two numbers.
- * @customfunction
- * @param {number} first First number.
- * @param {number} second Second number.
- * @returns {number} The sum of the two numbers.
- */
-function add(first, second) {
-  return first + second;
-}
-
-CustomFunctions.associate("ADD", add);
-```
-
-For more information on this process, see [Associating function names with json metadata](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
 
 ### Can't open add-in from localhost: use a local loopback exception
 

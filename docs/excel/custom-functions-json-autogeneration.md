@@ -1,5 +1,5 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/09/2019
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Priority
@@ -61,11 +61,9 @@ A function can't have both `@cancelable` and `@streaming` tags.
 
 Syntax: @customfunction _id_ _name_
 
-Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function. 
+Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.
 
 This tag is required to create metadata for the custom function.
-
-There should also be a call to `CustomFunctions.associate("id", functionName);`
 
 The following example shows the simplest way to declare a custom function.
 

@@ -1,5 +1,5 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/09/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions
 localization_priority: Priority
@@ -42,8 +42,6 @@ function webRequest() {
       })
   })
 }
-
-CustomFunctions.associate("WEBREQUEST", webRequest);
 ```
 
 >[!NOTE]
@@ -125,7 +123,6 @@ function increment(incrementBy, invocation) {
     clearInterval(timer);
   };
 }
-CustomFunctions.associate("INC", increment);
 ```
 
 In addition to knowing about the `onCanceled` callback, you should also know that Excel cancels the execution of a function in the following situations:
