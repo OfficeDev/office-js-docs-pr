@@ -106,10 +106,10 @@ The following image shows the layout of base elements and modifiers in an Office
 - Place conceptual modifiers on the bottom right.
 - Limit the number of elements in your icons. At 32px, limit the number of modifiers to a maximum of two. At 16px, limit the number of modifiers to one.
 
-###Base element padding
+### Base element padding
 Place base elements consistently across sizes. If base elements can't be centered in the frame, align them to the top left, leaving the extra pixels on the bottom right. For best results, apply the padding guidelines listed in the following table.
 
-###Modifiers
+### Modifiers
 All modifiers should have a 1px transparent cutout between each element, including the background. Elements should not directly overlap. Create whitespace between rules and edges. Modifiers can vary slightly in size, but use these dimensions as a starting point.
 
 
