@@ -1,9 +1,10 @@
 ---
 title: Use Office UI Fabric React in Office Add-ins
-description: ''
-ms.date: 02/28/2019
+description: Learn how to use Office UI Fabric React in Office Add-ins.
+ms.date: 07/10/2019
 localization_priority: Priority
 ---
+
 # Use Office UI Fabric React in Office Add-ins
 
 Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in.
@@ -27,11 +28,11 @@ To create your project, perform the following steps using **Windows PowerShell**
 
 ## Step 2 - Add a Fabric React component
 
-Next, add Fabric React components to your add-in. Create a new React component, called `ButtonPrimaryExample`, that consists of a Label and PrimaryButton from Fabric React. To create `ButtonPrimaryExample`:
+Next, add Fabric React components to your add-in. Create a new React component, named `ButtonPrimaryExample`, that consists of a `Label` and `PrimaryButton` from Fabric React. To create `ButtonPrimaryExample`:
 
-1. Open the project folder created by the Yeoman generator, and go to **src\components**.
-2. Create **button.tsx**.
-3. In **button.tsx**, enter the following code to create the `ButtonPrimaryExample` component.
+1. Open the project folder created by the Yeoman generator, and go to **src\taskpane\components**.
+2. Create a new file named **Button.tsx**.
+3. In **Button.tsx**, add the following code to create the `ButtonPrimaryExample` component.
 
 ```typescript
 import * as React from 'react';
@@ -39,8 +40,8 @@ import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
-  public constructor() {
-    super();
+  public constructor(props) {
+    super(props);
   }
 
    insertText = async () => {
@@ -74,16 +75,24 @@ This code does the following:
 - References the Fabric components (PrimaryButton, IButtonProps, Label) that are used to create `ButtonPrimaryExample`.
 - Declares and make public the new `ButtonPrimaryExample` component using `export class ButtonPrimaryExample extends React.Component`.
 - Declares the `insertText` function to handle the `onClick` event.
-- Defines the UI of the React component in the `render` function. Render defines the structure of the component. Within `render`, you wire up the `onClick` event using `this.insertText`.
+- Defines the HTML markup for the React component in the `render` function. The markup specifies that when the `onClick` event fires, `this.insertText` will run.
 
 ## Step 3 - Add the React component to your add-in
 
-Add `ButtonPrimaryExample` to your add-in by opening **src\components\app.tsx** and doing the following:
+Add `ButtonPrimaryExample` to your add-in by opening **src\components\App.tsx** and doing the following:
 
-- Add the following import statement to reference `ButtonPrimaryExample` from **button.tsx** created in step 2 (no file extension is needed).
+- Add the following import statement to reference `ButtonPrimaryExample` from **Button.tsx** created in step 2 (no file extension is needed).
 
   ```typescript
-  import {ButtonPrimaryExample} from './button';
+  import {ButtonPrimaryExample} from './Button';
+  ```
+
+- Remove the following two import statements.
+
+  ```typescript
+  import { Button, ButtonType } from 'office-ui-fabric-react';
+  ...
+  import Progress from './Progress';
   ```
 
 - Replace the default `render()` function with the following code that uses `<ButtonPrimaryExample />`.
@@ -101,9 +110,9 @@ Add `ButtonPrimaryExample` to your add-in by opening **src\components\app.tsx** 
   }
   ```
 
-Save your changes. All open browser instances, including the add-in, update automatically and show the `ButtonPrimaryExample` React component. Notice that the default text and button is replaced with the text and primary button defined in `ButtonPrimaryExample`.
+Save your changes. The add-in task pane that's open in Word automatically updates to show the `ButtonPrimaryExample` React component. Notice that the default text and button at the bottom of the task pane contains the text and primary button that's defined within `ButtonPrimaryExample`.
 
-
+![Screenshot of the Word application with the Insert text... button and preceeding text highlighted](../images/word-task-pane-with-react-component.png)
 
 ## See also
 
