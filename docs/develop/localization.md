@@ -402,17 +402,17 @@ Once running, the strings in the add-in UI change to match the language used by 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[Description]: 			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
-[DisplayName]: 			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
-[IconUrl]: 				https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
-[Resources]: 		    https://docs.microsoft.com/office/dev/add-ins/reference/manifest/resources
-[SourceLocation]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
-[Override]:  			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/override
-[DesktopSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/desktopsettings
-[TabletSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/tabletsettings
-[PhoneSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/phonesettings
-[displayLanguage]: 	https://docs.microsoft.com/javascript/api/office/office.context#displaylanguage 
-[contentLanguage]: 	https://docs.microsoft.com/javascript/api/office/office.context#contentlanguage 
+[DefaultLocale]: 		/office/dev/add-ins/reference/manifest/defaultlocale
+[Description]: 			/office/dev/add-ins/reference/manifest/description
+[DisplayName]: 			/office/dev/add-ins/reference/manifest/displayname
+[IconUrl]: 				/office/dev/add-ins/reference/manifest/iconurl
+[HighResolutionIconUrl]:/office/dev/add-ins/reference/manifest/highresolutioniconurl
+[Resources]: 		    /office/dev/add-ins/reference/manifest/resources
+[SourceLocation]: 		/office/dev/add-ins/reference/manifest/sourcelocation
+[Override]:  			/office/dev/add-ins/reference/manifest/override
+[DesktopSettings]: 		/office/dev/add-ins/reference/manifest/desktopsettings
+[TabletSettings]: 		/office/dev/add-ins/reference/manifest/tabletsettings
+[PhoneSettings]: 		/office/dev/add-ins/reference/manifest/phonesettings
+[displayLanguage]: 	/javascript/api/office/office.context#displaylanguage 
+[contentLanguage]: 	/javascript/api/office/office.context#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

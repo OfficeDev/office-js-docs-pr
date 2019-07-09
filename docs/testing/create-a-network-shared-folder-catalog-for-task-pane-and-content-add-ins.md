@@ -77,7 +77,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 3. Choose **SHARED FOLDER** at the top of the **Office Add-ins** dialog box.
 
-4. Select the name of the add-in and choose **OK** to insert the add-in.
+4. Select the name of the add-in and choose **Add** to insert the add-in.
 
 ## See also
 

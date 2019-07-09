@@ -1,7 +1,7 @@
 ---
 title: Excel add-ins overview
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
 ---
 
@@ -13,6 +13,7 @@ An Excel add-in allows you to extend Excel application functionality across mult
 - Interact with Excel objects, read and write Excel data.
 - Extend functionality using web based task pane or content pane
 - Add custom ribbon buttons or contextual menu items
+- Add custom functions
 - Provide richer interaction using dialog window
 
 The Office Add-ins platform provides the framework and Office.js JavaScript APIs that enable you to create and run Excel add-ins. By using the Office Add-ins platform to create your Excel add-in, you'll get the following benefits:
@@ -48,7 +49,7 @@ To enable end users to install and use an Excel add-in, you must publish its man
 
 ## Capabilities of an Excel add-in
 
-In addition to interacting with the content in the workbook, Excel add-ins can add custom ribbon buttons or menu commands, insert task panes, open dialog boxes, and even embed rich, web-based objects such as charts or interactive visualizations within a worksheet.
+In addition to interacting with the content in the workbook, Excel add-ins can add custom ribbon buttons or menu commands, insert task panes, add custom functions, open dialog boxes, and even embed rich, web-based objects such as charts or interactive visualizations within a worksheet.
 
 ### Add-in commands
 
@@ -69,6 +70,16 @@ Task panes are interface surfaces that typically appear on the right side of the
 ![Task pane add-in in Excel](../images/excel-add-in-task-pane-insights.png)
 
 For more information about task panes, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md). For a sample that implements a task pane in Excel, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
+
+### Custom functions
+
+Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. 
+
+**Custom function**
+
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+
+For more information about custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
 
 ### Dialog boxes
 
@@ -96,14 +107,15 @@ An Excel add-in interacts with objects in Excel by using the [JavaScript API for
 
 * **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) provides strongly-typed Excel objects that you can use to access worksheets, ranges, tables, charts, and more. 
 
-* **Common API**: Introduced with Office 2013, the Common API enables you to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint. Because the Common API does provide limited functionality for Excel interaction, you can use it if your add-in needs to run on Excel 2013.
+* **Common API**: Introduced with Office 2013, the Common API enables you to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. Because the Common API does provide limited functionality for Excel interaction, you can use it if your add-in needs to run on Excel 2013.
 
 ## Next steps
 
-Get started by [creating your first Excel add-in](excel-add-ins-get-started-overview.md). Then, learn about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
+Get started by [creating your first Excel add-in](../quickstarts/excel-quickstart-jquery.md). Then, learn about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
 
 ## See also
 
+- [Excel add-ins documentation](index.md)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
