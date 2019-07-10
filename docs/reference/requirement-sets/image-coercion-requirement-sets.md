@@ -32,20 +32,17 @@ ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) w
 
 ## ImageCoercion 1.2
 
-ImageCoercion 1.2 enables conversion to an SVG (Office.CoercionType.XmlSvg) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/document#setselecteddataasync-data--options--callback-) method. The following hosts are supported:
+ImageCoercion 1.2 enables conversion to an SVG (`Office.CoercionType.XmlSvg`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/document#setselecteddataasync-data--options--callback-) method. The following hosts are supported:
 
 - Excel on Windows (connected to an Office 365 subscription)
 - Excel on Mac (connected to an Office 365 subscription)
 - Excel on the web
-- Excel on iPad
 - PowerPoint on Windows (connected to an Office 365 subscription)
 - PowerPoint on Mac (connected to an Office 365 subscription)
 - PowerPoint on the web
-- PowerPoint on iPad
 - Word on Windows (connected to an Office 365 subscription)
 - Word on Mac (connected to an Office 365 subscription)
 - Word on the web
-- Word on iPad
 
 ## Office Common API requirement sets
 
