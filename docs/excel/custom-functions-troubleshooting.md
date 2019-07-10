@@ -23,6 +23,7 @@ Excel has a number of built-in error messages which are returned to a cell if th
 Generally, these errors correspond to the errors you might already be familiar with in Excel. The are only a few exceptions specific to custom functions, listed here:
 
 - A `#NAME` error generally means there has been an issue registering your functions.
+- A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
 - A `#VALUE` error typically indicates an error in the functions' script file.
 - A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
 
@@ -47,6 +48,29 @@ When Excel is waiting for a custom function to complete, it displays #BUSY! in t
 ### Error: The dev server is already running on port 3000
 
 Sometimes when running `npm start` you may see an error that the dev server is already running on port 3000 (or whichever port your add-in uses). You can stop the dev server by running `npm stop` or by closing the Node.js window. But in some cases in can take a few minutes for the dev server to actually stop running.
+
+### My functions won't load: associate functions
+
+If you have written your JSON by hand instead of using JSDoc comments to autogenerate your JSON, you need to associate each custom function with its ID specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` method. Typically this method call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
+
+The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
+
+```js
+/**
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
+ * @returns {number} The sum of the two numbers.
+ */
+function add(first, second) {
+  return first + second;
+}
+
+CustomFunctions.associate("ADD", add);
+```
+
+For more information on this process, see [Associating function names with json metadata](/office/dev/add-ins/excel/custom-functions-json#associating-function-names-with-json-metadata).
 
 ## Reporting feedback
 
