@@ -33,7 +33,7 @@
   ],
   "JoinTOCPlugin": [
     {
-      "ReferenceTOC": "docs/docs-ref-autogen/toc.yml",
+      "ReferenceTOC": "/javascript/api/toc.json",
       "ConceptualTOCUrl": "docs/toc.yml"
     },
     {
