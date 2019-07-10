@@ -9,26 +9,76 @@ localization_priority: Priority
 
 Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in.
 
-To get started using Fabric React components in your add-in, perform the following steps.
+This article describes how to create an add-in that's built with React and uses Fabric React components. 
 
 > [!NOTE]
-> If you follow the steps in this article, Fabric Core is also available in your add-in.
+> [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) is included with Fabric React, which means your add-in will also have access to Fabric Core after you've completed the steps in this article.
 
-## Step 1 - Create an add-in project
+## Create an add-in project
 
-To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office. The Yeoman generator for Office provides the project scaffolding and build management needed to develop an Office Add-in.
+To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office Add-ins. The Yeoman generator for Office provides the project scaffolding and build management needed to develop an Office Add-in.
 
-To create your project, perform the following steps using **Windows PowerShell** (not the command prompt):
+### Install the prerequisites
 
-1. Install the prerequisites.
-2. Run `yo office` to create the project files for your add-in.
-3. When prompted to select an Office client application, choose **Word**.
-4. Ensure you are in the directory with the project files, and then run `npm start`. A browser window showing a spinner opens automatically.
-5. [Sideload your manifest](../testing/test-debug-office-add-ins.md) to view the full UI of the add-in.
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-## Step 2 - Create a React component that uses Fabric React
+### Create the project
 
-Next, complete the following steps to create a new React component, named `ButtonPrimaryExample`, that consists of a `Label` and `PrimaryButton` from Fabric React:
+1. Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
+
+    ```command&nbsp;line
+    yo office
+    ```
+
+    - **Choose a project type:** `Office Add-in Task Pane project using React framework`
+    - **Choose a script type:** `TypeScript`
+    - **What do you want to name your add-in?** `My Office Add-in`
+    - **Which Office client application would you like to support?** `Word`
+
+    After you complete the wizard, the generator will create the project and install supporting Node components.
+
+2. Navigate to the root folder of the project.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+### Try it out
+
+1. Complete the following steps to start the local web server and sideload your add-in.
+
+    > [!NOTE]
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+
+    > [!TIP]
+    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server will start.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - To test your add-in in Word, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and Word will open with your add-in loaded.
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+
+2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
+
+
+## Create a React component that uses Fabric React
+
+At this point, you've created a very basic task pane add-in that's built using React. Next, complete the following steps to create a new React component (`ButtonPrimaryExample`) within the add-in project. The component uses a `Label` and `PrimaryButton` from Fabric React.
 
 1. Open the project folder created by the Yeoman generator, and go to **src\taskpane\components**.
 2. In that folder, create a new file named **Button.tsx**.
@@ -77,47 +127,52 @@ This code does the following:
 - Declares the `insertText` function that will handle the button's `onClick` event.
 - Defines the UI of the React component in the `render` function. The HTML markup specifies that when the `onClick` event fires, the `insertText` function will run.
 
-## Step 3 - Add the React component to your add-in
+## Add the React component to your add-in
 
-Add `ButtonPrimaryExample` to your add-in by opening **src\components\App.tsx** and completing the following steps:
+Add the `ButtonPrimaryExample` component to your add-in by opening **src\components\App.tsx** and completing the following steps:
 
 1. Add the following import statement to reference `ButtonPrimaryExample` from **Button.tsx**.
 
-  ```typescript
-  import {ButtonPrimaryExample} from './Button';
-  ```
+    ```typescript
+    import {ButtonPrimaryExample} from './Button';
+    ```
 
 2. Remove the following two import statements.
 
-  ```typescript
-  import { Button, ButtonType } from 'office-ui-fabric-react';
-  ...
-  import Progress from './Progress';
-  ```
+    ```typescript
+    import { Button, ButtonType } from 'office-ui-fabric-react';
+    ...
+    import Progress from './Progress';
+    ```
 
 3. Replace the default `render()` function with the following code that uses `ButtonPrimaryExample`.
 
-  ```typescript
-  render() {
-      return (
-          <div className="ms-welcome">
-          <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
-          <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
-              <ButtonPrimaryExample />
-          </HeroList>
-          </div>
-      );
-  }
-  ```
+    ```typescript
+    render() {
+        return (
+            <div className="ms-welcome">
+            <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
+            <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
+                <ButtonPrimaryExample />
+            </HeroList>
+            </div>
+        );
+    }
+    ```
 
-Save your changes. In Word, notice that the default text and button at the bottom of the task pane automatically updates to show the UI that's defined by the `ButtonPrimaryExample` React component.
+  4. Save the changes you've made to **App.tsx**.
+
+## See the result
+
+In Word, the add-in task pane automatically updates when you save changes to **App.tsx**. The default text and button at the bottom of the task pane now shows the UI that's defined by the `ButtonPrimaryExample` component.
 
 ![Screenshot of the Word application with the Insert text... button and preceeding text highlighted](../images/word-task-pane-with-react-component.png)
 
+Congratulations, you've successfully created a task pane add-in using React and Office UI Fabric React! 
+
 ## See also
 
+- [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
 - [Office UI Fabric React](https://developer.microsoft.com/fabric)
-- [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)
+- [UX design patterns for Office Add-ins](ux-design-pattern-templates.md)
 - [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
-- [Office Add-in Fabric UI sample (uses Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
-- [Yeoman generator for Office](https://github.com/OfficeDev/generator-office)
