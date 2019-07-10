@@ -82,7 +82,10 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 12. In the **Home.ts** file, find the line `Office.initialize = function (reason) {` and add the following line immediately after it, as the first line inside the function:
 
     ```typescript
-    (window as any).Promise = OfficeExtension.Promise;
+    Office.initialize = function (reason) {
+        // add the following line
+        (window as any).Promise = OfficeExtension.Promise;
+        ...
     ```
 
 13. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
