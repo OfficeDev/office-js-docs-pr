@@ -245,7 +245,7 @@ When an API error occurs, the API returns an **error** object that contains a co
 ## See also
 
 - [Build your first Excel add-in](../quickstarts/excel-quickstart-jquery.md)
-- [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
 - [Excel JavaScript API performance optimization](/office/dev/add-ins/excel/performance)
 - [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
