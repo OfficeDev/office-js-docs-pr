@@ -80,11 +80,11 @@ To create an add-in that uses Fabric React, we recommend that you use the Yeoman
 
 ## Create a React component that uses Fabric React
 
-At this point, you've created a very basic task pane add-in that's built using React. Next, complete the following steps to create a new React component (`ButtonPrimaryExample`) within the add-in project. The component uses a `Label` and `PrimaryButton` from Fabric React.
+At this point, you've created a very basic task pane add-in that's built using React. Next, complete the following steps to create a new React component (`ButtonPrimaryExample`) within the add-in project. The component uses the `Label` and `PrimaryButton` components from Fabric React.
 
 1. Open the project folder created by the Yeoman generator, and go to **src\taskpane\components**.
 2. In that folder, create a new file named **Button.tsx**.
-3. Open **Button.tsx** and add the following code to define the `ButtonPrimaryExample` component.
+3. In **Button.tsx**, add the following code to define the `ButtonPrimaryExample` component.
 
 ```typescript
 import * as React from 'react';
@@ -127,7 +127,7 @@ This code does the following:
 - References the Fabric components (`PrimaryButton`, `IButtonProps`, `Label`) that are used to create `ButtonPrimaryExample`.
 - Declares the new `ButtonPrimaryExample` component using `export class ButtonPrimaryExample extends React.Component`.
 - Declares the `insertText` function that will handle the button's `onClick` event.
-- Defines the UI of the React component in the `render` function. The HTML markup specifies that when the `onClick` event fires, the `insertText` function will run.
+- Defines the UI of the React component in the `render` function. The HTML markup uses the `Label` and `PrimaryButton` components from Fabric React and specifies that when the `onClick` event fires, the `insertText` function will run.
 
 ## Add the React component to your add-in
 
@@ -166,7 +166,7 @@ Add the `ButtonPrimaryExample` component to your add-in by opening **src\compone
 
 ## See the result
 
-In Word, the add-in task pane automatically updates when you save changes to **App.tsx**. The default text and button at the bottom of the task pane now shows the UI that's defined by the `ButtonPrimaryExample` component.
+In Word, the add-in task pane automatically updates when you save changes to **App.tsx**. The default text and button at the bottom of the task pane now shows the UI that's defined by the `ButtonPrimaryExample` component. Choose the **Insert text...** button to insert text into the document.
 
 ![Screenshot of the Word application with the Insert text... button and preceeding text highlighted](../images/word-task-pane-with-react-component.png)
 
