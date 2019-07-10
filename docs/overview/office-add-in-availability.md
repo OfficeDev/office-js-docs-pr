@@ -122,7 +122,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>- TaskPane<br>
         - Content</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
@@ -142,7 +142,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>
         - TaskPane<br>
         - Content</td>
-    <td>  - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+    <td>  - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
           - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td>
         - BindingEvents<br>
@@ -252,7 +252,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>- TaskPane<br>
         - Content</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
@@ -563,7 +563,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2016 on Windows<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -587,7 +587,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2013 on Windows<br>(one-time purchase)</td>
     <td> - TaskPane</td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -613,7 +613,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
 </td>
     <td> - BindingEvents<br>
@@ -672,7 +672,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
 </td>
     <td> - BindingEvents<br>
@@ -698,7 +698,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2016 on Mac<br>(one-time purchase)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -788,7 +788,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2016 on Windows<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane</td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
@@ -805,7 +805,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> - Content<br>
          - TaskPane<br>
     </td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
@@ -869,7 +869,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2016 on Mac<br>(one-time purchase)</td>
     <td> - Content<br>
          - TaskPane</td>
-    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+    <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">ImageCoercion 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
