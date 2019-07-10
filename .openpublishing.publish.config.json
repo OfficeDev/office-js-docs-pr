@@ -33,8 +33,8 @@
   ],
   "JoinTOCPlugin": [
     {
-      "ReferenceTOC": "/javascript/api/office_ref_toc/toc.json",
-      "ConceptualTOCUrl": "docs/toc.yml"
+      "ConceptualTOC": "docs/toc.yml",
+      "ReferenceTOCUrl": "/javascript/api/office_ref_toc/toc.json"
     }
   ],
   "notification_subscribers": [],
