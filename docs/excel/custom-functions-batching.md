@@ -1,5 +1,5 @@
 ---
-ms.date: 07/09/2019
+ms.date: 07/10/2019
 description: "Batch custom functions together to reduce network calls to a remote service."
 title: Batching custom function calls for a remote service
 localization_priority: Priority
@@ -216,6 +216,5 @@ Learn about [the various parameters](custom-functions-parameter-options.md) you 
 ## See also
 
 * [Volatile values in functions](custom-functions-volatile.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

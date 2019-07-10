@@ -1,5 +1,5 @@
 ---
-ms.date: 07/09/2019
+ms.date: 07/10/2019
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Priority
@@ -312,5 +312,4 @@ Learn about [naming conventions for custom functions](custom-functions-naming.md
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

@@ -1,5 +1,5 @@
 ---
-ms.date: 07/09/2019
+ms.date: 07/10/2019
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -194,7 +194,6 @@ Learn how to [save state in your custom functions](custom-functions-save-state.m
 ## See also
 
 * [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

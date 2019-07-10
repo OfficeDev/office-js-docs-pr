@@ -1,5 +1,5 @@
 ---
-ms.date: 07/09/2019
+ms.date: 07/10/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel
 localization_priority: Priority
@@ -149,5 +149,4 @@ Ready to read more about the capabilities custom functions? Learn about an overv
 ## See also 
 * [Custom functions requirements](custom-functions-requirements.md)
 * [Naming guidelines](custom-functions-naming.md)
-* [Best practices](custom-functions-best-practices.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)

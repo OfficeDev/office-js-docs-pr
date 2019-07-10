@@ -1,5 +1,5 @@
 ---
-ms.date: 07/09/2019
+ms.date: 07/10/2019
 description: Define JSON metadata for custom functions in Excel and associate your function id and name properties.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -262,5 +262,4 @@ Learn the [best practices for naming your function](custom-functions-naming.md) 
 
 - [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 - [Custom functions parameter options](custom-functions-parameter-options.md)
-- [Custom functions best practices](custom-functions-best-practices.md)
 - [Create custom functions in Excel](custom-functions-overview.md)

@@ -1,5 +1,5 @@
 ---
-ms.date: 07/09/2019
+ms.date: 07/10/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions
 localization_priority: Priority
@@ -173,6 +173,5 @@ ws.onerror(error){
 - [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 - [Custom functions metadata](custom-functions-json.md)
 - [Runtime for Excel custom functions](custom-functions-runtime.md)
-- [Custom functions best practices](custom-functions-best-practices.md)
 - [Create custom functions in Excel](custom-functions-overview.md)
 - [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
