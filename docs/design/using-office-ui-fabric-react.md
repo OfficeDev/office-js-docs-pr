@@ -73,9 +73,9 @@ To create an add-in that uses Fabric React, we recommend that you use the Yeoman
 
         To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fabric React.
 
-    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
+    ![Screenshot of the Word application with the Show Taskpane ribbon button highlighted and the Run... button and preceeding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 
 
 ## Create a React component that uses Fabric React
