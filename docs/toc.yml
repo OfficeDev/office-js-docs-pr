@@ -504,9 +504,6 @@
     - name: Batching
       href: excel/custom-functions-batching.md
       displayName: Excel, Custom Functions
-    - name: Best practices
-      href: excel/custom-functions-best-practices.md
-      displayName: Excel, Custom Functions
     - name: COM add-in and XLL UDF compatibility requirements
       href: excel/xll-compatibility-requirements.md
       displayName: Excel, Custom Functions
