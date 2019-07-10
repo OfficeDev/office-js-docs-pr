@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview | Microsoft Docs
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
 ---
 
@@ -112,12 +112,12 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Next steps
 
-To learn more about how to start building your Office Add-in, try out our [5-minute Quick Starts](/office/dev/add-ins/). You can start building add-ins right away using Visual Studio or any other editor. 
+To build your first Office Add-in in less than 5 minutes, try out the quick start for [Excel](../quickstarts/excel-quickstart-jquery.md), [Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context), [Word](../quickstarts/word-quickstart.md), [OneNote](../quickstarts/onenote-quickstart.md), [PowerPoint](../quickstarts/powerpoint-quickstart.md), or [Project](../quickstarts/project-quickstart.md). You can start building add-ins right away using Visual Studio or any other editor. 
 
 To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](../concepts/add-in-development-best-practices.md) for Office Add-ins.
 
 ## See also
 
-- [Office Add-in samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Office Add-in samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)

@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Priority
 ---
 
@@ -207,13 +207,13 @@ Added a new function that returns initialization data passed when the add-in is 
 
 #### [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Added a new object that represents the internet headers of a message item.
+Added a new object that represents the custom internet headers of a message item.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
-Added a new property that represents the internet headers on a message item.
+Added a new property that represents the custom internet headers on a message item.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription)
 
@@ -221,7 +221,7 @@ Added a new property that represents the internet headers on a message item.
 
 ### Office theme
 
-#### [Office.context.mailbox.officeTheme](/javascript/api/office/office.officetheme)
+#### [Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
 
 Added ability to get Office theme.
 

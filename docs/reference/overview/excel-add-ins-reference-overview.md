@@ -1,59 +1,45 @@
 ---
 title: Excel JavaScript API overview
 description: ''
-ms.date: 06/10/2019
+ms.date: 07/05/2019
 ms.prod: excel
 localization_priority: Priority
 ---
 
 # Excel JavaScript API overview
 
-You can use the Excel JavaScript API to build add-ins for Excel 2016 or later. The following list shows the high-level Excel objects that are available in the API. Each object page link contains a description of the properties, events, and methods that are available on the object. Explore the links from the menu to learn more.
+An Excel add-in interacts with objects in Excel by using the JavaScript API for Office, which includes two JavaScript object models:
 
-Some of the core Excel objects are listed below for convenience:
+* **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](/javascript/api/excel) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more. 
 
-- [Workbook](/javascript/api/excel/excel.workbook): The top-level object that contains related workbook objects such as worksheets, tables, ranges, etc. It also can be used to list related references.
+* **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
 
-- [Worksheet](/javascript/api/excel/excel.worksheet): Represents a worksheet in a workbook.
-  - [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection): A collection of the **Worksheet** objects in a workbook.
-  - [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection): Represents the protection of a **Worksheet** object.
+This section of the documentation focuses on the Excel JavaScript API, which you'll use to develop the majority of functionality in add-ins that target Excel on the web or Excel 2016 or later. For information about the Common API, see [JavaScript API for Office](../javascript-api-for-office.md). 
 
-- [Range](/javascript/api/excel/excel.range): Represents a cell, a row, a column, or a selection of cells containing one or more contiguous blocks of cells.
-  - [ConditionalFormat](/javascript/api/excel/excel.conditionalformat): An object defining a rule and a format applied to the range when the rule's condition is met.
-  - [DataValidation](/javascript/api/excel/excel.datavalidation): An object that restricts user input to a range based on a variety of criteria.
-  - [RangeSort](/javascript/api/excel/excel.rangesort): Represents a object that manages sorting operations on a range.
+## Learn programming concepts
 
-- [Table](/javascript/api/excel/excel.table): Represents a collection of organized cells designed to make management of the data easy.
-  - [TableCollection](/javascript/api/excel/excel.tablecollection): A collection of tables in a workbook or worksheet.
-  - [TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection): A collection of all the columns in a table.
-  - [TableRowCollection](/javascript/api/excel/excel.tablerowcollection): A collection of all the rows in a table.
-  - [TableSort](/javascript/api/excel/excel.tablesort): Represents an object that manages sorting operations on a table.
+See the following articles for information about important programming concepts:
+ 
+- [Fundamental programming concepts with the Excel JavaScript API](../../excel/excel-add-ins-core-concepts.md)
 
-- [Chart](/javascript/api/excel/excel.chart): Represents a chart object in a worksheet, which is a visual representation of underlying data.
-  - [ChartCollection](/javascript/api/excel/excel.chartcollection): A collection of charts in a worksheet.
+- [Advanced programming concepts with the Excel JavaScript API](../../excel/excel-add-ins-advanced-concepts.md)
 
-- [PivotTable](/javascript/api/excel/excel.pivottable): Represents an Excel PivotTable, which is a hierarchical grouping and presentation of data.
-  - [PivotTableCollection](/javascript/api/excel/excel.pivottablecollection): A collection of PivotTables in a worksheet.
+## Learn about API capabilities
 
-- [Filter](/javascript/api/excel/excel.filter): Represents an object that manages the filtering of a table's column.
+Use other articles in this section of the documentation to learn about working with [events](../../excel/excel-add-ins-events.md), [charts](../../excel/excel-add-ins-charts.md), [ranges](../../excel/excel-add-ins-ranges.md), [tables](../../excel/excel-add-ins-tables.md), [worksheets](../../excel/excel-add-ins-worksheets.md), and more. Also in this section, you'll find guidance about Excel JavaScript API concepts such as [coauthoring in Excel add-ins](../../excel/co-authoring-in-excel-add-ins.md), [data validation](../../excel/excel-add-ins-data-validation.md), [error handling](../../excel/excel-add-ins-error-handling.md), and [performance optimization](../../excel/performance.md). See the table of contents for the complete list of available articles.
 
-- [NamedItem](/javascript/api/excel/excel.nameditem): Represents a defined name for a range of cells or a value.
-  - [NamedItemCollection](/javascript/api/excel/excel.nameditemcollection): A collection of the **NamedItem** objects in a workbook.
+For hands-on experience using the Excel JavaScript API to access objects in Excel, complete the [Excel add-in tutorial](../../tutorials/excel-tutorial.md). 
 
-- [Binding](/javascript/api/excel/excel.binding): An abstract class that represents a binding to a section of the workbook.
-  - [BindingCollection](/javascript/api/excel/excel.bindingcollection): A collection of the **Binding** objects in a workbook.
+For detailed information about the Excel JavaScript API object model, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
 
-## Excel JavaScript API requirement sets
+## Try out code samples in Script Lab
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about Excel JavaScript API requirement sets, see the [Excel JavaScript API requirement sets](../requirement-sets/excel-api-requirement-sets.md) article.
-
-## Excel JavaScript API reference
-
-For detailed information about the Excel JavaScript API, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
+Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quickly with a collection of built-in samples that show how to complete tasks with the API. You can run the samples in Script Lab to instantly see the result in the task pane or worksheet, examine the samples to learn how the API works, and even use samples to prototype your own add-in.
 
 ## See also
 
-- [Excel add-ins overview](/office/dev/add-ins/excel/excel-add-ins-overview)
-- [Office Add-ins platform overview](/office/dev/add-ins/overview/office-add-ins)
-- [Excel add-in samples on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Excel)
+- [Excel add-ins documentation](../../excel/index.md)
+- [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)
+- [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
 - [API open specifications](../openspec/openspec.md)

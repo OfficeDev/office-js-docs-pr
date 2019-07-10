@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.6
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
 ---
 
@@ -23,7 +23,6 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 | Member | Type |
 |--------|------|
 | [displayLanguage](#displaylanguage-string) | Member |
-| [officeTheme](#officetheme-object) | Member |
 | [roamingSettings](#roamingsettings-roamingsettings) | Member |
 
 ### Namespaces
@@ -67,50 +66,6 @@ function sayHelloWithDisplayLanguage() {
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
-}
-```
-
-#### officeTheme: Object
-
-Provides access to the properties for Office theme colors.
-
-> [!NOTE]
-> This member is not supported in Outlook on iOS or Android.
-
-Using Office theme colors let's you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.
-
-##### Type
-
-*   Object
-
-##### Properties:
-
-|Name| Type| Description|
-|---|---|---|
-|`bodyBackgroundColor`| String|Gets the Office theme body background color as a hexadecimal color triplet.|
-|`bodyForegroundColor`| String|Gets the Office theme body foreground color as a hexadecimal color triplet.|
-|`controlBackgroundColor`| String|Gets the Office theme control background color as a hexadecimal color triplet.|
-|`controlForegroundColor`| String|Gets the Office theme body control color as a hexadecimal color triplet.|
-
-##### Requirements
-
-|Requirement| Value|
-|---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
-
-##### Example
-
-```javascript
-function applyOfficeTheme(){
-  // Get office theme colors.
-  var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
-  var bodyForegroundColor = Office.context.officeTheme.bodyForegroundColor;
-  var controlBackgroundColor = Office.context.officeTheme.controlBackgroundColor
-  var controlForegroundColor = Office.context.officeTheme.controlForegroundColor;
-
-  // Apply body background color to a CSS class.
-  $('.body').css('background-color', bodyBackgroundColor);
 }
 ```
 

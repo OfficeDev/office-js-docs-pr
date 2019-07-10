@@ -11,8 +11,6 @@ At times your users might encounter issues with Office Add-ins that you develop.
 
 You can also use [Fiddler](https://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
-After you resolve the user's issue, you can [respond directly to customer reviews in AppSource](/office/dev/store/create-effective-office-store-listings).
-
 ## Common errors and troubleshooting steps
 
 The following table lists common error messages that users might encounter and steps that your users can take to resolve the errors.
@@ -26,6 +24,14 @@ The following table lists common error messages that users might encounter and s
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
+## When installing an add-in, you see "Error loading add-in" in the status bar
+
+1. Close Office.
+2. Verify that the manifest is valid
+3. Restart the add-in
+4. Install the add-in again.
+
+You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.
 
 ## Outlook add-in doesn't work correctly
 
