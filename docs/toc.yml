@@ -431,6 +431,9 @@
       - name: Excel Requirement Set Overview
         href: reference/requirement-sets/excel-api-requirement-sets.md
         displayName: Excel
+      - name: Preview Excel APIs
+        href: reference/requirement-sets/preview-excel-apis.md
+        displayName: Excel
       - name: ExcelApi 1.9 Requirement Set
         href: reference/requirement-sets/excel-api-1-9-requirement-set.md
         displayName: Excel
