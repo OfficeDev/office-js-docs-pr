@@ -16,7 +16,7 @@ This article describes how to create an add-in that's built with React and uses 
 
 ## Create an add-in project
 
-You'll use the Yeoman generator for Office Add-ins to create your add-in that uses Fabric React.
+You'll use the Yeoman generator for Office Add-ins to create an add-in project that uses React.
 
 ### Install the prerequisites
 
