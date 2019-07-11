@@ -236,6 +236,8 @@
         href: reference/requirement-sets/dialog-api-requirement-sets.md
       - name: Identity API requirement sets
         href: reference/requirement-sets/identity-api-requirement-sets.md
+      - name: Image Coercion requirement sets
+        href: reference/requirement-sets/image-coercion-requirement-sets.md
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
     - name: API reference (Common)
