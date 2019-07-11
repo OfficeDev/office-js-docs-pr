@@ -1,7 +1,7 @@
 ---
 title: Image Coercion requirement sets
-description: ''
-ms.date: 07/10/2019
+description: Support for Image Coercion requirement sets with Office Add-ins across Excel, PowerPoint, and Word.
+ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -32,7 +32,7 @@ ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) w
 
 ## ImageCoercion 1.2
 
-ImageCoercion 1.2 enables conversion to an SVG (`Office.CoercionType.XmlSvg`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/document#setselecteddataasync-data--options--callback-) method. The following hosts are supported:
+ImageCoercion 1.2 enables conversion to SVG format (`Office.CoercionType.XmlSvg`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/document#setselecteddataasync-data--options--callback-) method. The following hosts are supported:
 
 - Excel on Windows (connected to an Office 365 subscription)
 - Excel on Mac (connected to an Office 365 subscription)
