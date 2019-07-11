@@ -429,34 +429,34 @@
     - name: API requirement sets
       items:
       - name: Excel Requirement Set Overview
-        href: reference/requirement-sets/excel/excel-api-requirement-sets.md
+        href: reference/requirement-sets/excel-api-requirement-sets.md
         displayName: Excel
       - name: ExcelApi 1.9 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-9-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-9-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.8 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-8-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-8-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.7 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-7-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-7-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.6 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-6-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-6-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.5 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-5-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-5-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.4 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-4-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-4-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.3 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-3-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-3-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.2 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-2-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-2-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.1 Requirement Set
-        href: reference/requirement-sets/excel/excel-api-1-1-requirement-set.md
+        href: reference/requirement-sets/excel-api-1-1-requirement-set.md
         displayName: Excel
     - name: API reference
       href: /javascript/api/excel
