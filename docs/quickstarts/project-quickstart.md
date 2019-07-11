@@ -18,26 +18,20 @@ In this article, you'll walk through the process of building a Project task pane
 
 ## Create the add-in
 
-1. Use the Yeoman generator to create a Project add-in project. Run the following command and then answer the prompts as follows:
+Use the Yeoman generator to create a Project add-in project. Run the following command and then answer the prompts as follows:
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Choose a project type:** `Office Add-in Task Pane project`
-    - **Choose a script type:** `Javascript`
-    - **What do you want to name your add-in?** `My Office Add-in`
-    - **Which Office client application would you like to support?** `Project`
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `Javascript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Project`
 
-    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-project.png)
-    
-    After you complete the wizard, the generator will create the project and install supporting Node components.
-	
-2. Navigate to the root folder of the project.
+![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-project.png)
 
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
+After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 ## Explore the project
 
@@ -92,22 +86,30 @@ Office.context.document.getSelectedTaskAsync(
 
 ## Try it out
 
-> [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
-
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start.
+1. Navigate to the root folder of the project.
 
     ```command&nbsp;line
-    npm start
+    cd "My Office Add-in"
     ```
 
-2. In Project, create a simple project plan.
+2. Start the local web server.
 
-3. Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+    > [!NOTE]
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
 
-4. Select a single task within the project.
+    Run the following command in the root directory of your project. When you run this command, the local web server will start.
 
-5. At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.
+        ```command&nbsp;line
+        npm start
+        ```
+
+3. In Project, create a simple project plan.
+
+4. Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+
+5. Select a single task within the project.
+
+6. At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.
 
     ![Screenshot of the Project application with the task pane add-in loaded](../images/project-quickstart-addin-1.png)
 

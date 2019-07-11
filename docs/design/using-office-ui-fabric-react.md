@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric React in Office Add-ins
 description: Learn how to use Office UI Fabric React in Office Add-ins.
-ms.date: 07/10/2019
+ms.date: 07/11/2019
 localization_priority: Priority
 ---
 
@@ -16,7 +16,7 @@ This article describes how to create an add-in that's built with React and uses 
 
 ## Create an add-in project
 
-To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office Add-ins, as described in this section. 
+You'll use the Yeoman generator for Office Add-ins to create your add-in that uses Fabric React.
 
 ### Install the prerequisites
 
@@ -24,42 +24,42 @@ To create an add-in that uses Fabric React, we recommend that you use the Yeoman
 
 ### Create the project
 
-1. Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
+Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Choose a project type:** `Office Add-in Task Pane project using React framework`
-    - **Choose a script type:** `TypeScript`
-    - **What do you want to name your add-in?** `My Office Add-in`
-    - **Which Office client application would you like to support?** `Word`
+- **Choose a project type:** `Office Add-in Task Pane project using React framework`
+- **Choose a script type:** `TypeScript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Word`
 
-    ![Yeoman generator](../images/yo-office-word-react.png)
+![Yeoman generator](../images/yo-office-word-react.png)
 
-    After you complete the wizard, the generator will create the project and install supporting Node components.
+After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-2. Navigate to the root folder of the project.
+### Try it out
+
+1. Navigate to the root folder of the project.
 
     ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-### Try it out
-
-1. Complete the following steps to start the local web server and sideload your add-in.
+2. Complete the following steps to start the local web server and sideload your add-in.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
 
     > [!TIP]
-    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server will start.
+    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - To test your add-in in Word, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and Word will open with your add-in loaded.
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
 
         ```command&nbsp;line
         npm start
@@ -73,7 +73,7 @@ To create an add-in that uses Fabric React, we recommend that you use the Yeoman
 
         To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fabric React.
+3. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fabric React.
 
     ![Screenshot of the Word application with the Show Taskpane ribbon button highlighted and the Run... button and preceeding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 
@@ -151,14 +151,14 @@ Add the `ButtonPrimaryExample` component to your add-in by opening **src\compone
 
     ```typescript
     render() {
-        return (
-            <div className="ms-welcome">
-            <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
-            <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
-                <ButtonPrimaryExample />
-            </HeroList>
-            </div>
-        );
+      return (
+        <div className="ms-welcome">
+        <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
+        <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
+          <ButtonPrimaryExample />
+        </HeroList>
+        </div>
+      );
     }
     ```
 
