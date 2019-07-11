@@ -19,7 +19,7 @@ Currently, we have no APIs in the public open specification phase. We will updat
 ## See also
 
 - [Excel preview API reference](/javascript/api/excel)
-- [Excel JavaScript API preview requirement set](../requirement-sets/excel-api-requirement-sets.md#excel-javascript-preview-apis)
+- [Excel JavaScript API preview requirement set](../requirement-sets/excel/excel-api-requirement-sets.md#excel-javascript-preview-apis)
 - [Outlook preview API reference](/javascript/api/outlook)
 - [Outlook JavaScript API preview requirement set](..//objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 - [Word preview API reference](/javascript/api/word)
