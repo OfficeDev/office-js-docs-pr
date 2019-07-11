@@ -1,2 +1,2 @@
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
-For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](../reference/requirement-sets/excel/excel-api-requirement-sets.md#excel-javascript-preview-apis).
+For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](../reference/requirement-sets/excel/excel-preview-apis.md).
