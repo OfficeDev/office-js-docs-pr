@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
@@ -24,7 +24,7 @@ Looking for the *host-specific* API requirement sets? See the following API requ
 
 ## Common API requirement sets
 
-The following sections list the Common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1.
+The following sections list the Common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1, unless otherwise specified.
 
 ### ActiveView
 
@@ -92,7 +92,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| OneNote on the web<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports coercion to HTML (Office.CoercionType.Html) when reading and writing data using the Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
+| OneNote on the web<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports coercion to HTML (Office.CoercionType.Html) when reading and writing data using the Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
 
 ---
 
@@ -108,7 +108,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| Excel on Windows<br>Excel on iPad<br>Excel on Mac<br>OneNote on the web<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports conversion to an image (Office.CoercionType.Image) when writing data using the Document.setSelectedDataAsync method.|
+| See [Image Coercion requirement sets](image-coercion-requirement-sets.md). | Document.setSelectedDataAsync method|
 
 ---
 
