@@ -41,7 +41,7 @@ When the installation process finishes, you will have the latest Office applicat
 For information about the minimum product builds for each platform for the API requirement sets, see the following:
 
 - [Word JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
-- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
+- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel/excel-api-requirement-sets)
 - [OneNote JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
 - [Dialog API requirement sets](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
 - [Office Common API requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)

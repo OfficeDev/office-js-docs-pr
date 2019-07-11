@@ -19,10 +19,10 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| [Slicer](../../excel/excel-add-ins-pivottables.md#slicers-preview) | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/excel.slicer) |
-| [Comments](../../excel/excel-add-ins-workbooks.md#comments-preview) | Add, edit, and delete comments. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
-| Workbook [Save](../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview) and [Close](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
-| [Insert Workbook](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
+| [Slicer](../../../excel/excel-add-ins-pivottables.md#slicers-preview) | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/excel.slicer) |
+| [Comments](../../../excel/excel-add-ins-workbooks.md#comments-preview) | Add, edit, and delete comments. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| Workbook [Save](../../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview) and [Close](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
+| [Insert Workbook](../../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 
 ## API list
 
