@@ -1,6 +1,6 @@
 ---
-ms.date: 07/09/2019
-description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.
+ms.date: 07/10/2019
+description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions
 localization_priority: Normal
 ---
@@ -32,7 +32,6 @@ function add(first, second, third) {
   }
   return first + second + third;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 #### [TypeScript](#tab/typescript)
@@ -52,7 +51,6 @@ function add(first: number, second: number, third?: number): number {
   }
   return first + second + third;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 ---
@@ -139,7 +137,6 @@ function secondHighest(values) {
   }
   return secondHighest;
 }
-CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 ```
 
 ## Repeating parameters
@@ -233,8 +230,7 @@ In the following code sample, the `invocation` context is explicitly stated for 
 function add(first, second, invocation) {
   return first + second;
 }
-CustomFunctions.associate("ADD", add);
-````
+```
 
 The parameter allows you to get the context of the invoking cell, which can be helpful in some scenarios including [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).
 
@@ -260,7 +256,6 @@ To request an addressing cell's context in a function, you need to use a functio
 function getAddress(invocation) {
   return invocation.address;
 }
-CustomFunctions.associate("GETADDRESS", getAddress);
 ```
 
 By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
@@ -271,9 +266,9 @@ Learn how to [save state in your custom functions](custom-functions-save-state.m
 
 ## See also
 
-- [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-- [Custom functions best practices](custom-functions-best-practices.md)
-- [Custom functions metadata](custom-functions-json.md)
-- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-- [Create custom functions in Excel](custom-functions-overview.md)
-- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
+* [Custom functions metadata](custom-functions-json.md)
+* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
+* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+

@@ -236,6 +236,8 @@
         href: reference/requirement-sets/dialog-api-requirement-sets.md
       - name: Identity API requirement sets
         href: reference/requirement-sets/identity-api-requirement-sets.md
+      - name: Image Coercion requirement sets
+        href: reference/requirement-sets/image-coercion-requirement-sets.md
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
     - name: API reference (Common)
@@ -503,9 +505,6 @@
       displayName: Excel, Custom Functions
     - name: Batching
       href: excel/custom-functions-batching.md
-      displayName: Excel, Custom Functions
-    - name: Best practices
-      href: excel/custom-functions-best-practices.md
       displayName: Excel, Custom Functions
     - name: COM add-in and XLL UDF compatibility requirements
       href: excel/xll-compatibility-requirements.md

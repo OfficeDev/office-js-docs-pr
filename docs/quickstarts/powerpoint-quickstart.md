@@ -181,26 +181,20 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 ### Create the add-in project
 
-1. Use the Yeoman generator to create a PowerPoint add-in project. Run the following command and then answer the prompts as follows:
+Use the Yeoman generator to create a PowerPoint add-in project. Run the following command and then answer the prompts as follows:
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Choose a project type:** `Office Add-in Task Pane project`
-    - **Choose a script type:** `Javascript`
-    - **What do you want to name your add-in?** `My Office Add-in`
-    - **Which Office client application would you like to support?** `PowerPoint`
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `Javascript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `PowerPoint`
 
-    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint.png)
-    
-    After you complete the wizard, the generator will create the project and install supporting Node components.
-	
-2. Navigate to the root folder of the project.
+![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint.png)
 
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
+After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 ### Explore the project
 
@@ -208,19 +202,25 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 ### Try it out
 
-1. Complete the following steps to start the local web server and sideload your add-in.
+1. Navigate to the root folder of the project.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. Complete the following steps to start the local web server and sideload your add-in.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
 
     > [!TIP]
-    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server will start.
+    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - To test your add-in in PowerPoint, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and PowerPoint will open with your add-in loaded.
+    - To test your add-in in PowerPoint, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens PowerPoint with your add-in loaded.
 
         ```command&nbsp;line
         npm start
@@ -234,11 +234,11 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
         To use your add-in, open a new document in PowerPoint on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+3. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![A screenshot of PowerPoint with the Show Taskpane button highlighted](../images/powerpoint_quickstart_addin_1c.png)
 
-3. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
+4. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
 
     ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3c.png)
 
