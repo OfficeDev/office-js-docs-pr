@@ -180,16 +180,16 @@ A repeating single value parameter allows multiple single values to be passed. F
 
 ```JS
 /**
- * Sums the total of a set of numbers using repeating parameters.
  * @customfunction
- * @param singleValue A number or cell address
+ * @param {number[]} singleValue An array of numbers that are repeating parameters.
  */
-
-function ADD(singleValue) {
+function addRanges(singleValue) {
   let total = 0;
-  singleValue.forEach(item => {
-    total += item;
+  singleValue.forEach(value => {
+    total += value;
   })
+
+  return total;
 }
 ```
 
@@ -197,13 +197,25 @@ function ADD(singleValue) {
 
 A single range parameter is not technically a repeating parameter, but is included here because the declaration is very similar to repeating parameters. It would appear to the user as ADD(A2:B3) where a single range is passed from Excel. The following sample shows how to declare a single range parameter.
 
-````(code)
+```JS
+/**
+ * @customfunction
+ * @param {number[][]} singleRange
+ */
+function beep(singleRange) {
+  let total = 0; 
+  singleRange.forEach(array => {
+    array.forEach(value => {
+      total += value;
+    })
+  })
+  return total;
+}
+```
 
 ### Repeating range parameter
 
-A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter ADD(5,B2,C3,8,E5:E8). The following sample show how to declare a repeating range parameter.
-
-```(code)
+A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter ADD(5,B2,C3,8,E5:E8). Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices. For a sample, see the main sample listed for repeating parameters(#repeating-parameters).
 
 
 ### Declaring repeating parameters
