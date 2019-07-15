@@ -242,16 +242,7 @@ In the following code sample, the `invocation` context is explicitly stated for 
 function add(first, second, invocation) {
   return first + second;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-CustomFunctions.associate("ADD", add);
-````
-=======
 ```
->>>>>>> 1faf5bb197aad1bf710fc6d7e6d404b56d31e78a
-=======
-```
->>>>>>> 628df2d04cf6d3cc883548980123c290670b67df
 
 The parameter allows you to get the context of the invoking cell, which can be helpful in some scenarios including [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).
 
@@ -287,24 +278,8 @@ Learn how to [save state in your custom functions](custom-functions-save-state.m
 
 ## See also
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-- [Custom functions best practices](custom-functions-best-practices.md)
-- [Custom functions metadata](custom-functions-json.md)
-- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-- [Create custom functions in Excel](custom-functions-overview.md)
-- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-=======
-=======
->>>>>>> 628df2d04cf6d3cc883548980123c290670b67df
 * [Receive and handle data with custom functions](custom-functions-web-reqs.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-<<<<<<< HEAD
->>>>>>> 1faf5bb197aad1bf710fc6d7e6d404b56d31e78a
-=======
-
->>>>>>> 628df2d04cf6d3cc883548980123c290670b67df
