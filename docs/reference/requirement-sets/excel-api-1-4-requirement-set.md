@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.44
 description: 'Details about the ExcelApi 1.4 requirement set'
-ms.date: 07/11/2019
+ms.date: 07/15/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -15,31 +15,31 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 New properties:
 
 * `comment`
-* `scope` worksheet or workbook scoped items
-* `worksheet` returns the worksheet on which the named item is scoped to.
+* `scope` - Worksheet or workbook scoped items.
+* `worksheet` - Returns the worksheet on which the named item is scoped to.
 
 New methods:
 
-* `add(name: string, reference: Range or string, comment: string)`Adds a new name to the collection of the given scope.
-* `addFormulaLocal(name: string, formula: string, comment: string)` Adds a new name to the collection of the given scope using the user's locale for the formula.
+* `add(name: string, reference: Range or string, comment: string)` - Adds a new name to the collection of the given scope.
+* `addFormulaLocal(name: string, formula: string, comment: string)` - Adds a new name to the collection of the given scope using the user's locale for the formula.
 
 ## Settings API in the Excel namespace
 
 The [Setting](/javascript/api/excel/excel.setting) object represents a key:value pair for a setting persisted to the document. The functionality of `Excel.Setting` is equivalent to `Office.Settings`, but uses the batched API syntax, rather than the Common API's callback model.
 
-APIs include `getItem()` to get setting entry via the key, `add()` to add the specified key:value setting pair to the workbook.
+APIs include `getItem()` to get setting entry via the key and `add()` to add the specified key:value setting pair to the workbook.
 
 ## Others
 
-* Set table column name (prior version only allows reading).
-* Add table column to the end of the table (prior version only allows anywhere but last).
-* Add multiple rows to a table at a time (prior version only allows 1 row at a time).
+* Set the table column name.
+* Add a table column to the end of the table.
+* Add multiple rows to a table at a time.
 * `range.getColumnsAfter(count: number)` and `range.getColumnsBefore(count: number)` to get a certain number of columns to the right/left of the current Range object.
-* Get item or null object function: This functionality allows getting object using a key. If the object does not exist, the returned object's isNullObject property will be true. This alows developers to check if an object exists or not without having to handle it thorugh exception handling. Available on worksheet, named-item, binding, chart series, etc.
+* The [get item or null object function](../excel/excel-add-ins-advanced-concepts#ornullobject-methods): This functionality allows getting object using a key. If the object does not exist, the returned object's `isNullObject` property will be true. This allows developers to check if an object exists or not without having to handle it through exception handling. The `*OrNullObject` method is available on most collection objects.
 
-    ```javascript
-    worksheet.GetItemOrNullObject()
-    ```
+```javascript
+worksheet.getItemOrNullObject("itemName")
+```
 
 ## API list
 

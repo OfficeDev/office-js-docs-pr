@@ -1,26 +1,27 @@
 ---
 title: Excel JavaScript API requirement set 1.5
 description: 'Details about the ExcelApi 1.5 requirement set'
-ms.date: 07/11/2019
+ms.date: 07/15/2019
 ms.prod: excel
 localization_priority: Normal
 ---
 
 #  What's new in Excel JavaScript API 1.5
 
+ExcelApi 1.5 adds Custom XML parts. These are accessible through the [custom XML parts collection](/javascript/api/excel/excel.workbook#customxmlparts) in the workbook object.
+
 ## Custom XML part
 
-* Addition of custom XML parts collection to workbook object.
-* Get custom XML part using ID
+* Get custom XML parts using their ID.
 * Get a new scoped collection of custom XML parts whose namespaces match the given namespace.
-* Get XML string associated with a part.
-* Provide id and namespace of a part.
-* Adds a new custom XML part to the workbook.
-* Set entire XML part.
+* Get an XML string associated with a part.
+* Provide the ID and namespace of a part.
+* Add a new custom XML part to the workbook.
+* Set an entire XML part.
 * Delete a custom XML part.
 * Delete an attribute with the given name from the element identified by xpath.
 * Query the XML content by xpath.
-* Insert, update and delete attribute.
+* Insert, update, and delete attributes.
 
 ## API list
 

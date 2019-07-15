@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 07/10/2019
 description: Learn about Excel custom functions' runtime. 
 title: Custom functions architecture
 localization_priority: Priority
@@ -48,6 +48,5 @@ Learn more about how to [use the custom functions runtime](custom-functions-runt
 
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

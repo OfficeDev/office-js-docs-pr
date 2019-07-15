@@ -1,5 +1,5 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Debug your custom functions in Excel.
 title: Custom functions debugging
 localization_priority: Normal
@@ -166,6 +166,5 @@ Learn about [authentication practices in custom functions](custom-functions-auth
 ## See also
 
 * [Custom functions troubleshooting](custom-functions-troubleshooting.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
