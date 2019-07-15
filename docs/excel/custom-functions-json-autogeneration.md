@@ -1,5 +1,5 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/15/2019
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Priority
@@ -7,7 +7,7 @@ localization_priority: Priority
 
 # Autogenerate JSON metadata for custom functions
 
-When an Excel custom function is written in JavaScript or TypeScript, JSDoc tags are used to provide extra information about the custom function. The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md). Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.
+When an Excel custom function is written in JavaScript or TypeScript, [JSDoc tags](https://jsdoc.app/) are used to provide extra information about the custom function. The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md). Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -215,7 +215,7 @@ function add(first: number, second: number): number {
 
 Indicates that the address of the cell where the function is being evaluated should be provided.
 
-The last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `address` property will contain the address. For an example of a function that uses the `@requiresAddress` tag, see [Addressing cell's context parameter](./custom-functions-parameter-options.md#addressing-cells-context-parameter).
+The last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `address` property will contain the address. For an example of a function that uses the `@requiresAddress` tag, see [Addressing cell's context parameter](custom-functions-parameter-options.md#addressing-cells-context-parameter).
 
 ---
 ### @returns
@@ -290,7 +290,7 @@ A single value may be represented using one of the following types: `boolean`, `
 
 ### Matrix type
 
-Use a two-dimensional array type to have the parameter or return value be a matrix of values. For example, the type `number[][]` indicates a matrix of numbers. `string[][]` indicates a matrix of strings. 
+Use a two-dimensional array type to have the parameter or return value be a matrix of values. For example, the type `number[][]` indicates a matrix of numbers. `string[][]` indicates a matrix of strings.
 
 ### Error type
 

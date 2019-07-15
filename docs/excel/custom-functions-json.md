@@ -1,5 +1,5 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/15/2019
 description: Define JSON metadata for custom functions in Excel and associate your function id and name properties.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -160,13 +160,14 @@ The `options` object enables you to customize some aspects of how and when Excel
 
 The `parameters` property is an array of parameter objects. The following table lists the properties of each object.
 
-| Property         | Data type | Required | Description                                                                                                                                                                                                               |
-| :--------------- | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `description`    | string    | No       | A description of the parameter. This is displayed in Excel's intelliSense.                                                                                                                                                |
-| `dimensionality` | string    | No       | Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).                                                                                                                                      |
-| `name`           | string    | Yes      | The name of the parameter. This name is displayed in Excel's intelliSense.                                                                                                                                                |
-| `type`           | string    | No       | The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
-| `optional`       | boolean   | No       | If `true`, the parameter is optional.                                                                                                                                                                                     |
+|  Property  |  Data type  |  Required  |  Description  |
+|:-----|:-----|:-----|:-----|
+|  `description`  |  string  |  No |  A description of the parameter. This is displayed in Excel's intelliSense.  |
+|  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
+|  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
+|  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
+|  `optional`  | boolean | No | If `true`, the parameter is optional. |
+|`repeating`| boolean | No | If `true`, parameters will populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
 
 ### result
 
