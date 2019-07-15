@@ -20,9 +20,9 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 |  Requirement set  |   Office on Windows\*<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Preview](/javascript/api/word)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
-| WordApi 1.3 | Version 1612 (Build 7668.1000) or later| March 2017, 2.22 or later | March 2017, 15.32 or later| March 2017 | N/A |
-| WordApi 1.2  | December 2015 update, Version 1601 (Build 6568.1000) or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | N/A |
-| WordApi 1.1  | Version 1509 (Build 4266.1001) or later| January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | N/A |
+| [WordApi 1.3](javascript/api/word&view=word-js-1.3) | Version 1612 (Build 7668.1000) or later| March 2017, 2.22 or later | March 2017, 15.32 or later| March 2017 | N/A |
+| [WordApi 1.2](javascript/api/word&view=word-js-1.2)  | December 2015 update, Version 1601 (Build 6568.1000) or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | N/A |
+| [WordApi 1.1](javascript/api/word&view=word-js-1.1)  | Version 1509 (Build 4266.1001) or later| January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | N/A |
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the WordApi 1.1 requirement set.
