@@ -35,7 +35,7 @@ APIs include `getItem()` to get setting entry via the key and `add()` to add the
 * Add a table column to the end of the table.
 * Add multiple rows to a table at a time.
 * `range.getColumnsAfter(count: number)` and `range.getColumnsBefore(count: number)` to get a certain number of columns to the right/left of the current Range object.
-* The [get item or null object function](../excel/excel-add-ins-advanced-concepts#ornullobject-methods): This functionality allows getting object using a key. If the object does not exist, the returned object's `isNullObject` property will be true. This allows developers to check if an object exists or not without having to handle it through exception handling. The `*OrNullObject` method is available on most collection objects.
+* The [get item or null object function](../../excel/excel-add-ins-advanced-concepts#ornullobject-methods): This functionality allows getting object using a key. If the object does not exist, the returned object's `isNullObject` property will be true. This allows developers to check if an object exists or not without having to handle it through exception handling. The `*OrNullObject` method is available on most collection objects.
 
 ```javascript
 worksheet.getItemOrNullObject("itemName")
