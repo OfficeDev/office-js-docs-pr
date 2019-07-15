@@ -1,5 +1,5 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/15/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions
 localization_priority: Priority
@@ -43,7 +43,7 @@ If you see the error "TypeError: Network request failed" in your [runtime log](c
 
 ### Ensure promises return
 
-When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #BUSY!. Check your functions to make sure that any promises are properly returning a result to a cell.
+When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing `#BUSY!`. Check your functions to make sure that any promises are properly returning a result to a cell.
 
 ### Error: The dev server is already running on port 3000
 
@@ -51,7 +51,7 @@ Sometimes when running `npm start` you may see an error that the dev server is a
 
 ### My functions won't load: associate functions
 
-If you have written your JSON by hand instead of using JSDoc comments to autogenerate your JSON, you need to associate each custom function with its ID specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` method. Typically this method call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
+In cases where your JSON has not been registered and you have authored your own JSON metadata, you may see a `#VALUE!` error or receive a notification that your add-in cannot be loaded. This usually means you need to associate each custom function with its `id` property specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` method. Typically this method call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
 
 The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
 
