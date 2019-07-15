@@ -1,5 +1,5 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
 title: Naming guidelines for custom functions in Excel
 localization_priority: Normal
@@ -57,6 +57,5 @@ Learn about [error handling best practices](custom-functions-errors.md).
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
