@@ -14,7 +14,7 @@ The following table lists the OneNote requirement sets, the Office host applicat
 
 |  Requirement set  |  Office on the web |
 |:-----|:-----|
-| [OneNoteApi 1.1](javascript/api/onenote&view=onenote-js-1.1)  | September 2016 |  
+| [OneNoteApi 1.1](/javascript/api/onenote&view=onenote-js-1.1)  | September 2016 |  
 
 ## Office Common API requirement sets
 
