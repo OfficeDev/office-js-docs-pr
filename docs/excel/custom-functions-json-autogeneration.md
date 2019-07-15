@@ -61,11 +61,9 @@ A function can't have both `@cancelable` and `@streaming` tags.
 
 Syntax: @customfunction _id_ _name_
 
-Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function. 
+Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.
 
 This tag is required to create metadata for the custom function.
-
-There should also be a call to `CustomFunctions.associate("id", functionName);`
 
 The following example shows the simplest way to declare a custom function.
 
@@ -314,5 +312,4 @@ Learn about [naming conventions for custom functions](custom-functions-naming.md
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
