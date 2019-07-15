@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 06/27/2019
+ms.date: 07/09/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -111,33 +111,30 @@ Integrating data from the Web is a great way to extend Excel through custom func
 2. In **function.js**, add the following code: 
 
 ```JS
- /**
-   * Gets the star count for a given Github repository.
-   * @customfunction 
-   * @param {string} userName string name of Github user or organization.
-   * @param {string} repoName string name of the Github repository.
-   * @return {number} number of stars given to a Github repository.
-   */
-    async function getStarCount(userName, repoName) {
-      try {
-        //You can change this URL to any web request you want to work with.
-        const url = "https://api.github.com/repos/" + userName + "/" + repoName;
-        const response = await fetch(url);
-        //Expect that status code is in 200-299 range
-        if (!response.ok) {
-          throw new Error(response.statusText)
-        }
-          const jsonResponse = await response.json();
-          return jsonResponse.watchers_count;
+/**
+  * Gets the star count for a given Github repository.
+  * @customfunction 
+  * @param {string} userName string name of Github user or organization.
+  * @param {string} repoName string name of the Github repository.
+  * @return {number} number of stars given to a Github repository.
+  */
+  async function getStarCount(userName, repoName) {
+    try {
+      //You can change this URL to any web request you want to work with.
+      const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+      const response = await fetch(url);
+      //Expect that status code is in 200-299 range
+      if (!response.ok) {
+        throw new Error(response.statusText)
       }
-      catch (error) {
-        return error;
-      }
-      }
-    CustomFunctions.associate("GETSTARCOUNT", getStarCount);
+        const jsonResponse = await response.json();
+        return jsonResponse.watchers_count;
+    }
+    catch (error) {
+      return error;
+    }
+  }
 ```
-
-The `CustomFunctions.associate` code associates the `id` of the function with the function address of `getStarCount` in JavaScript so that Excel can call your function.
 
 3. Run the following command to rebuild the project.
 
@@ -192,8 +189,6 @@ function currentTime() {
   return new Date().toLocaleTimeString();
 }
 
-CustomFunctions.associate("CURRENTTIME", currentTime); 
-
  /**
  * Displays the current time once a second
  * @customfunction
@@ -209,10 +204,7 @@ function clock(invocation) {
     clearInterval(timer);
   };
 }
-CustomFunctions.associate("CLOCK", clock);
 ```
-
-The `CustomFunctions.associate` code associates the `id` of the function with the function address of `CLOCK` in JavaScript so that Excel can call your function.
 
 2. Run the following command to rebuild the project.
 

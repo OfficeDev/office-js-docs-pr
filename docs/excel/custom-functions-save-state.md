@@ -1,5 +1,5 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Use `OfficeRuntime.storage` to save state with custom functions. 
 title: Save and share state in custom functions
 localization_priority: Priority
@@ -32,9 +32,6 @@ function storeValue(key, value) {
 function GetValue(key) {
   return OfficeRuntime.storage.getItem(key);
 }
-
-CustomFunctions.associate("STOREVALUE", StoreValue);
-CustomFunctions.associate("GETVALUE", GetValue);
 ```
 
 [A more detailed code sample on GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) gives an example of passing this information to the task pane.
@@ -49,6 +46,5 @@ Learn how to [autogenerate the JSON metadata for your custom functions](custom-f
 
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Custom functions debugging](custom-functions-debugging.md)
