@@ -14,7 +14,7 @@ Intro...
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# [VS Code](#tab/windows)
+# [VS Code](#tab/vscode)
 
 ### Prerequisites
 
@@ -83,7 +83,7 @@ After you complete the wizard, the generator creates the project and installs su
 
     ![Screenshot of the Word application with the task pane add-in loaded](../images/word-quickstart-addin-1c.png)
 
-# [Visual Studio](#tab/unix)
+# [Visual Studio](#tab/vs)
 
 ### Prerequisites
 
