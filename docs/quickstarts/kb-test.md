@@ -83,22 +83,6 @@ After you complete the wizard, the generator creates the project and installs su
 
     ![Screenshot of the Word application with the task pane add-in loaded](../images/word-quickstart-addin-1c.png)
 
----
-
-## Next steps
-
-Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.
-
-> [!div class="nextstepaction"]
-> [Word add-in tutorial](../tutorials/word-tutorial.md)
-
-## See also
-
-* [Word add-ins overview](../word/word-add-ins-programming-overview.md)
-* [Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API reference](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
-
-
 # [Visual Studio](#tab/visual-studio)
 
 ### Prerequisites
@@ -310,4 +294,19 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 3. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
     ![Screenshot of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1b.png)
+
+---
+
+## Next steps
+
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.
+
+> [!div class="nextstepaction"]
+> [Word add-in tutorial](../tutorials/word-tutorial.md)
+
+## See also
+
+* [Word add-ins overview](../word/word-add-ins-programming-overview.md)
+* [Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+* [Word JavaScript API reference](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
 
