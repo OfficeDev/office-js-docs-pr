@@ -116,5 +116,5 @@ worksheet.getItemOrNullObject("itemName")
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel&view=excel-js-1.4)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

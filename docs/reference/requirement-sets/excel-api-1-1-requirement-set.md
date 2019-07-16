@@ -745,5 +745,5 @@ Excel JavaScript API 1.1 is the first version of the API. It is the only Excel-s
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel&view=excel-js-1.1)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

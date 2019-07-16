@@ -546,5 +546,5 @@ ExcelApi 1.2 added support for table filtering and access to built-in Excel func
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel&view=excel-js-1.2)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

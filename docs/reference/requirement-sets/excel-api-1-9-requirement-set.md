@@ -1317,5 +1317,5 @@ More than 500 new Excel APIs were introduced with the 1.9 requirement set. The f
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel&view=excel-js-1.9)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

@@ -73,5 +73,5 @@ ExcelApi 1.5 adds Custom XML parts. These are accessible through the [custom XML
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel&view=excel-js-1.5)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

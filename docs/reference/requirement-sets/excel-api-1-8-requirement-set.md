@@ -735,5 +735,5 @@ More [events](/office/dev/add-ins/excel/excel-add-ins-events) have been added fo
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel&view=excel-js-1.8)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

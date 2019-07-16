@@ -419,5 +419,5 @@ In addition:
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel&view=excel-js-1.6)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)
