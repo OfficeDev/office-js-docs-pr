@@ -147,6 +147,6 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 Ready to read more about the capabilities custom functions? Learn about an overview of [the custom functions architecture](custom-functions-architecture.md).
 
 ## See also 
-* [Custom functions requirements](custom-functions-requirements.md)
+* [Custom functions requirements](custom-functions-requirement-sets.md)
 * [Naming guidelines](custom-functions-naming.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
