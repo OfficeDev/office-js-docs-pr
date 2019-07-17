@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: ''
-ms.date: 07/11/2019
+ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
@@ -14,9 +14,10 @@ Need information about where add-ins are supported by Office host? See [Office A
 
 Looking for the *host-specific* API requirement sets? See the following API requirement sets:
 
-- [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md) (ExcelApi)
+- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
 - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
+- [PowerPoint JavaScript API requirement sets](powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md) (Mailbox)
 
 > [!IMPORTANT]
