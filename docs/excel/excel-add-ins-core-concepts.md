@@ -124,7 +124,7 @@ Excel.run(function (context) {
 
 In the previous example, because `format/font` is not specified in the call to **myRange.load()**, the `format.font.color` property cannot be read.
 
-To optimize performance, you should explicitly specify the properties and relationships to load when using the **load()** method on an object, as covered in [Excel JavaScript API performance optimizations](performance.md). For more information about the **load()** method, see [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md).
+To optimize performance, you should explicitly specify the properties to load when using the **load()** method on an object, as covered in [Excel JavaScript API performance optimizations](performance.md). For more information about the **load()** method, see [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md).
 
 ## null or blank property values
 
