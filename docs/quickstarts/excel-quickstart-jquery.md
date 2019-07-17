@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: 
-ms.date: 05/02/2019
+ms.date: 07/17/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -14,7 +14,54 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# [Visual Studio](#tab/visual-studio)
+# [Yeoman generator](#tab/yeomangenerator)
+
+### Prerequisites
+
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### Create the add-in project
+
+Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
+
+```command&nbsp;line
+yo office
+```
+
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `Javascript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
+
+![Yeoman generator](../images/yo-office-excel.png)
+
+After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+### Explore the project
+
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+
+### Try it out
+
+1. Navigate to the root folder of the project.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+
+3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
+
+4. Select any range of cells in the worksheet.
+
+5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
+
+    ![Excel add-in](../images/excel-quickstart-addin-3c.png)
+
+# [Visual Studio](#tab/visualstudio)
 
 ### Prerequisites
 
@@ -153,53 +200,6 @@ In this article, you'll walk through the process of building an Excel task pane 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
     ![Excel add-in](../images/excel-quickstart-addin-2c.png)
-
-# [Any editor](#tab/visual-studio-code)
-
-### Prerequisites
-
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-### Create the add-in project
-
-Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
-
-```command&nbsp;line
-yo office
-```
-
-- **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
-- **What do you want to name your add-in?** `My Office Add-in`
-- **Which Office client application would you like to support?** `Excel`
-
-![Yeoman generator](../images/yo-office-excel.png)
-
-After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-### Explore the project
-
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
-
-### Try it out
-
-1. Navigate to the root folder of the project.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
-
-3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
-
-    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
-
-4. Select any range of cells in the worksheet.
-
-5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
-
-    ![Excel add-in](../images/excel-quickstart-addin-3c.png)
 
 ---
 

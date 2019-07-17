@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: 
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 ms.prod: word
 localization_priority: Priority
 ---
@@ -16,7 +16,76 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# [Visual Studio](#tab/visual-studio)
+# [Yeoman generator](#tab/yeomangenerator)
+
+### Prerequisites
+
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### Create the add-in project
+
+Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
+
+```command&nbsp;line
+yo office
+```
+
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `Javascript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Word`
+
+![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-word.png)
+
+After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+### Explore the project
+
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+
+### Try it out
+
+1. Navigate to the root folder of the project.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. Complete the following steps to start the local web server and sideload your add-in.
+
+    > [!NOTE]
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+
+    > [!TIP]
+    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+
+3. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
+
+4. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
+
+    ![Screenshot of the Word application with the task pane add-in loaded](../images/word-quickstart-addin-1c.png)
+
+# [Visual Studio](#tab/visualstudio)
 
 ### Prerequisites
 
@@ -227,75 +296,6 @@ In this article, you'll walk through the process of building a Word task pane ad
 3. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
     ![Screenshot of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1b.png)
-
-# [Any editor](#tab/visual-studio-code)
-
-### Prerequisites
-
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-### Create the add-in project
-
-Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
-
-```command&nbsp;line
-yo office
-```
-
-- **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
-- **What do you want to name your add-in?** `My Office Add-in`
-- **Which Office client application would you like to support?** `Word`
-
-![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-word.png)
-
-After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-### Explore the project
-
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
-
-### Try it out
-
-1. Navigate to the root folder of the project.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-2. Complete the following steps to start the local web server and sideload your add-in.
-
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
-
-    > [!TIP]
-    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
-
-        ```command&nbsp;line
-        npm start
-        ```
-
-    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
-
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
-
-3. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
-
-    ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
-
-4. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
-
-    ![Screenshot of the Word application with the task pane add-in loaded](../images/word-quickstart-addin-1c.png)
 
 ---
 
