@@ -62,7 +62,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 5. Replace the `TODO1` with the following code. This code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
 
     ```js
-    if (!Office.context.requirements.isSetSupported('WordApi', 1.3)) {
+    if (!Office.context.requirements.isSetSupported('WordApi', '1.3')) {
         console.log('Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.');
     }
     ```

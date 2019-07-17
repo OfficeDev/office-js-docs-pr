@@ -76,7 +76,7 @@ In this article, you'll walk through the process of building a Word task pane ad
             $(document).ready(function () {
                 // The document is ready
                 // Use this to check whether the API is supported in the Word client.
-                if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
+                if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
                     // Do something that is only available via the new APIs
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
