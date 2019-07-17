@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API requirement sets
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 ms.prod: onenote
 localization_priority: Normal
 ---
@@ -16,9 +16,13 @@ The following table lists the OneNote requirement sets, the Office host applicat
 |:-----|:-----|
 | OneNoteApi 1.1  | September 2016 |  
 
-## Office Common API requirement sets
+## Office versions and build numbers
 
-For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
+For more information about Office versions and build numbers, see:
+
+- [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
+- [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 
 ## OneNote JavaScript API 1.1
 
@@ -26,7 +30,7 @@ OneNote JavaScript API 1.1 is the first version of the API. For details about th
 
 ## Runtime requirement support check
 
-During the runtime, add-ins can check if a particular host supports an API requirement set by doing the following.
+At runtime, add-ins can check if a particular host supports an API requirement set by doing the following.
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', 1.1) === true) {
@@ -39,7 +43,7 @@ else {
 
 ## Manifest-based requirement support check
 
-Use the Requirements element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the Requirements element, the add-in won't run in that host or platform, and won't display in My Add-ins.
+Use the `Requirements` element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the `Requirements` element, the add-in won't run in that host or platform, and won't display in My Add-ins.
 
 The following code example shows an add-in that loads in all Office host applications that support the OneNoteApi requirement set, version 1.1.
 
@@ -51,8 +55,13 @@ The following code example shows an add-in that loads in all Office host applica
 </Requirements>
 ```
 
+## Office Common API requirement sets
+
+For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
+
 ## See also
 
+- [OneNote JavaScript API reference documentation](/javascript/api/onenote)
 - [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 - [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)

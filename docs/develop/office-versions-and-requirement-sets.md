@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 localization_priority: Priority
 ---
 
@@ -13,7 +13,6 @@ There are many versions of Office on several platforms, and they don't all suppo
 > - Office runs across multiple platforms, including Windows, in a browser, Mac, and iPad.
 > - Examples of Office hosts are Office Products: Excel, Word, PowerPoint, Outlook, OneNote, and so forth.  
 > - A requirement set is a named group of API members e.g., `ExcelApi 1.5`, `WordApi 1.3`, and so on.  
-
 
 ## How to check your Office version
 
@@ -51,7 +50,6 @@ The JavaScript API for Office library (Office.js) includes all requirement sets 
 ## Specify Office hosts and requirement sets
 
 There are various ways to specify which Office hosts and requirement sets are required by an add-in.  For detailed information, see [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-
 
 ## See also
 
