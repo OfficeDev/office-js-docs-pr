@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Scopes element
 
-Contains permissions to Microsoft Graph that the add-in needs. The Office Store uses the Scopes element to create a consent dialog box. When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
+Contains permissions to Microsoft Graph that the add-in needs. AppSource uses the Scopes element to create a consent dialog box. When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
 
 ## Child elements
 

@@ -1,5 +1,5 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -110,4 +110,3 @@ Congratulations, you've successfully created a custom function in an Excel add-i
 * [Custom functions overview](../excel/custom-functions-overview.md)
 * [Custom functions metadata](../excel/custom-functions-json.md)
 * [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)
-* [Custom functions best practices](../excel/custom-functions-best-practices.md)

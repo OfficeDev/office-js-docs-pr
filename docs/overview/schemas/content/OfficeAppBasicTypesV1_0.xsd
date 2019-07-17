@@ -374,7 +374,7 @@
 
   <xs:simpleType name="AlternateId">
     <xs:annotation>
-      <xs:documentation>Defines an alternate ID type as defined by the Office Store.</xs:documentation>
+      <xs:documentation>Defines an alternate ID type as defined by AppSource.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value=".{5,12}\\WA[0-9]{9}"/>

@@ -1,5 +1,5 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel
 localization_priority: Priority
@@ -26,7 +26,6 @@ The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 function sphereVolume(radius) {
   return Math.pow(radius, 3) * 4 * Math.PI / 3;
 }
-CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 ```
 
 > [!NOTE]
@@ -44,11 +43,9 @@ If you use the [Yo Office generator](https://github.com/OfficeDev/generator-offi
 
 ### Script file
 
-The script file (**./src/functions/functions.js** or **./src/functions/functions.ts**) contains the code that defines custom functions, comments which define the function, and associates the names of the custom functions to objects in the JSON metadata file.
+The script file (**./src/functions/functions.js** or **./src/functions/functions.ts**) contains the code that defines custom functions and comments which define the function.
 
 The following code defines the custom function `add`. The code comments are used to generate a JSON metadata file that describes the custom function to Excel. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
-
-The following code also calls `CustomFunctions.associate("ADD", add)` to associate the function `add()` with its ID in the JSON metadata file `ADD`. For more information about associating functions, see [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
 
 ```js
 /**
@@ -62,9 +59,6 @@ The following code also calls `CustomFunctions.associate("ADD", add)` to associa
 function add(first, second){
   return first + second;
 }
-
-// associate `id` values in the JSON metadata file to the JavaScript function names
- CustomFunctions.associate("ADD", add);
 ```
 
 Note that the **functions.html** file, which governs the loading of the custom functions runtime, must link to the current CDN for custom functions. Projects prepared with the current version of the Yo Office generator reference the correct CDN. If you are retrofitting a previous custom function project from March 2019 or earlier, you need to copy in the code below to the **functions.html** page.
@@ -75,7 +69,7 @@ Note that the **functions.html** file, which governs the loading of the custom f
 
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. 
+The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files.
 
 The following basic XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions. If using the Yo Office generator, your generated custom function files will contain a more complex manifest file, which you can compare on [this Github repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml).
 
@@ -146,14 +140,13 @@ See known issues on our [Excel Custom Functions GitHub repo](https://github.com/
 
 ## Next steps
 
-Want to try out custom functions? Check out the simple [custom functions quick start](../quickstarts/excel-custom-functions-quickstart.md) or the more in-depth [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md) if you haven't already. 
+Want to try out custom functions? Check out the simple [custom functions quick start](../quickstarts/excel-custom-functions-quickstart.md) or the more in-depth [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md) if you haven't already.
 
 Another easy way to try out custom functions is to use [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), an add-in that allows you to experiment with custom functions right in Excel. You can try out creating your own custom function or play with the provided samples.
 
 Ready to read more about the capabilities custom functions? Learn about an overview of [the custom functions architecture](custom-functions-architecture.md).
 
 ## See also 
-* [Custom functions requirements](custom-functions-requirements.md)
+* [Custom functions requirements](custom-functions-requirement-sets.md)
 * [Naming guidelines](custom-functions-naming.md)
-* [Best practices](custom-functions-best-practices.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)

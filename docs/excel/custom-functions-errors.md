@@ -41,5 +41,5 @@ Learn how to [troubleshoot problems with your custom functions](custom-functions
 ## See also
 
 * [Custom functions debugging](custom-functions-debugging.md)
-* [Custom functions requirements](custom-functions-requirements.md)
+* [Custom functions requirements](custom-functions-requirement-sets.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
