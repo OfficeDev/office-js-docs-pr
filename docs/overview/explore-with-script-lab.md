@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # Explore Office JavaScript API using Script Lab
 
-The [Script Lab add-in](https://store.office.com/app.aspx?assetid=WA104380862), which is available free from the Office store, enables you to explore the Office JavaScript API while you're working in an Office program such as Excel or Word. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your add-in.
+The [Script Lab add-in](https://appsource.microsoft.com/en-us/product/office/WA104380862), which is available free from AppSource, enables you to explore the Office JavaScript API while you're working in an Office program such as Excel or Word. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your add-in.
 
 ## What is Script Lab?
 
@@ -57,7 +57,7 @@ Script Lab is supported for Excel, Word, and PowerPoint on the following clients
 
 ## Next steps
 
-To use Script Lab in Excel, Word, or PowerPoint, install the [Script Lab add-in](https://store.office.com/app.aspx?assetid=WA104380862) from the Office Store. 
+To use Script Lab in Excel, Word, or PowerPoint, install the [Script Lab add-in](https://appsource.microsoft.com/en-us/product/office/WA104380862) from AppSource. 
 
 You're welcome to expand the sample library in Script Lab by contributing new snippets to the [office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) GitHub repository.
 
@@ -65,6 +65,6 @@ When you're ready to create your first Office Add-in, try out the quick start fo
 
 ## See also
 
-- [Get Script Lab](https://store.office.com/app.aspx?assetid=WA104380862)
+- [Get Script Lab](https://appsource.microsoft.com/en-us/product/office/WA104380862)
 - [Learn more about Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Sign up for the dev program](https://developer.microsoft.com/office/dev-program)
