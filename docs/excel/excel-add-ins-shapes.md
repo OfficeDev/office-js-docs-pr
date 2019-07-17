@@ -1,7 +1,7 @@
 ---
 title: Work with shapes using the Excel JavaScript API
 description: ''
-ms.date: 04/30/2019
+ms.date: 07/19/2019
 localization_priority: Normal
 ---
 
