@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.
-ms.date: 07/11/2019
+ms.date: 07/18/2019
 localization_priority: Priority
 ---
 
@@ -320,7 +320,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office on the web<br>(new)</td>
+    <td>Office on the web<br>(modern)</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
