@@ -93,16 +93,16 @@ The  **Hosts** element can contain one or more **Host** elements. The **Host** e
 
 ## Set the Requirements element in the manifest
 
-The  **Requirements** element specifies the minimum requirement sets or API members that must be supported by the Office host to run your add-in. The **Requirements** element can specify both requirement sets and individual methods used in your add-in. In version 1.1 of the add-in manifest schema, the **Requirements** element is optional for all add-ins, except for Outlook add-ins.
+The  **Requirements** element specifies the minimum requirement sets or API members that must be supported by the Office host to run your add-in. The **Requirements** element can specify both requirement sets and individual methods used in your add-in. In version "1.1" of the add-in manifest schema, the **Requirements** element is optional for all add-ins, except for Outlook add-ins.
 
 > [!WARNING]
 > Only use the **Requirements** element to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the **Requirements** element, the add-in won't run in that host or platform, and won't display in **My Add-ins**. Instead, we recommend that you make your add-in available on all platforms of an Office host, such as Excel on the web, Windows, and iPad. To make your add-in available on  _all_ Office hosts and platforms, use runtime checks instead of the **Requirements** element.
 
 The following code example shows an add-in that loads in all Office host applications that support the following:
 
--  **TableBindings** requirement set, which has a minimum version of 1.1.
+-  **TableBindings** requirement set, which has a minimum version of "1.1".
 
--  **OOXML** requirement set, which has a minimum version of 1.1.
+-  **OOXML** requirement set, which has a minimum version of "1.1".
 
 -  **Document.getSelectedDataAsync** method.
 
@@ -161,7 +161,7 @@ The **isSetSupported** method and the requirement sets for these hosts are avail
 The following code example shows how an add-in can provide different functionality for different Office hosts that might support different requirement sets or API members.
 
 ```js
-if (Office.context.requirements.isSetSupported('WordApi', 1.1))
+if (Office.context.requirements.isSetSupported('WordApi', "1.1"))
 {
     // Run code that provides additional functionality using the Word JavaScript API when the add-in runs in Word 2016 or later.
 }
