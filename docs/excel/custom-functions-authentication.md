@@ -1,5 +1,5 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/09/2019
 description: Authenticate users using custom functions in Excel.
 title: Authentication for custom functions
 localization_priority: Priority
@@ -62,8 +62,6 @@ function storeValue(key, value) {
       return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
 }
-
-CustomFunctions.associate("STOREVALUE", storeValue);
 ```
 
 When the task pane needs the access token, it can retrieve the token from `storage`. The following code sample shows how to use the `storage.getItem` method to retrieve the token.
@@ -83,8 +81,6 @@ function receiveTokenFromCustomFunction() {
      tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from storage. " + error;
   });
 }
-CustomFunctions.associate("GETTOKEN", receiveTokenFromCustomFunction);
-
 ```
 
 ## General guidance

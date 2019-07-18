@@ -1,5 +1,5 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 description: Localize your Excel custom functions. 
 title: Localize custom functions
 localization_priority: Normal
@@ -100,5 +100,4 @@ Learn about [naming conventions for custom functions](custom-functions-naming.md
 
 * [Custom functions metadata](custom-functions-json.md)
 * [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

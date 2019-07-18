@@ -427,8 +427,40 @@
       href: reference/overview/excel-add-ins-reference-overview.md
       displayName: Excel
     - name: API requirement sets
-      href: reference/requirement-sets/excel-api-requirement-sets.md
-      displayName: Excel
+      items:
+      - name: Overview
+        href: reference/requirement-sets/excel-api-requirement-sets.md
+        displayName: Excel
+      - name: Excel preview APIs
+        href: reference/requirement-sets/excel-preview-apis.md
+        displayName: Excel
+      - name: ExcelApi 1.9 requirement et
+        href: reference/requirement-sets/excel-api-1-9-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.8 requirement set
+        href: reference/requirement-sets/excel-api-1-8-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.7 requirement set
+        href: reference/requirement-sets/excel-api-1-7-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.6 requirement set
+        href: reference/requirement-sets/excel-api-1-6-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.5 requirement set
+        href: reference/requirement-sets/excel-api-1-5-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.4 requirement set
+        href: reference/requirement-sets/excel-api-1-4-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.3 requirement set
+        href: reference/requirement-sets/excel-api-1-3-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.2 requirement set
+        href: reference/requirement-sets/excel-api-1-2-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.1 requirement set
+        href: reference/requirement-sets/excel-api-1-1-requirement-set.md
+        displayName: Excel
     - name: API reference
       href: /javascript/api/excel
       displayName: Excel
@@ -506,9 +538,6 @@
     - name: Batching
       href: excel/custom-functions-batching.md
       displayName: Excel, Custom Functions
-    - name: Best practices
-      href: excel/custom-functions-best-practices.md
-      displayName: Excel, Custom Functions
     - name: COM add-in and XLL UDF compatibility requirements
       href: excel/xll-compatibility-requirements.md
       displayName: Excel, Custom Functions
@@ -539,8 +568,8 @@
     - name: Parameter options
       href: excel/custom-functions-parameter-options.md
       displayName: Excel, Custom Functions
-    - name: Requirements
-      href: excel/custom-functions-requirements.md
+    - name: Requirement sets
+      href: excel/custom-functions-requirement-sets.md
       displayName: Excel, Custom Functions
     - name: Runtime
       href: excel/custom-functions-runtime.md
@@ -843,8 +872,22 @@
       href: reference/overview/word-add-ins-reference-overview.md
       displayName: Word
     - name: API requirement sets
-      href: reference/requirement-sets/word-api-requirement-sets.md
-      displayName: Word
+      items:
+      - name: Overview
+        href: reference/requirement-sets/word-api-requirement-sets.md
+        displayName: Word
+      - name: Word preview APIs
+        href: reference/requirement-sets/word-preview-apis.md
+        displayName: Word
+      - name: WordApi 1.3 requirement set
+        href: reference/requirement-sets/word-api-1-3-requirement-set.md
+        displayName: Word
+      - name: WordApi 1.2 requirement set
+        href: reference/requirement-sets/word-api-1-2-requirement-set.md
+        displayName: Word
+      - name: WordApi 1.1 requirement set
+        href: reference/requirement-sets/word-api-1-1-requirement-set.md
+        displayName: Word
     - name: API reference
       href: /javascript/api/word
       displayName: Word

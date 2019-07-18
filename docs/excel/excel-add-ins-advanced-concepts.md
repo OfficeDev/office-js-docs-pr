@@ -1,7 +1,7 @@
 ---
 title: Advanced programming concepts with the Excel JavaScript API
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 localization_priority: Priority
 ---
 
@@ -33,7 +33,7 @@ Requirement sets are named groups of API members. An Office Add-in can perform a
 The following code sample shows how to determine whether the host application where the add-in is running supports the specified API requirement set.
 
 ```js
-if (Office.context.requirements.isSetSupported('ExcelApi', 1.3) === true) {
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3') === true) {
   /// perform actions
 }
 else {
