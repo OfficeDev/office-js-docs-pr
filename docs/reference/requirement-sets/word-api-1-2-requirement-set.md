@@ -8,11 +8,11 @@ localization_priority: Normal
 
 # What's new in Word JavaScript API 1.2
 
-WordApi added support for inline pictures.
+WordApi 1.2 added support for inline pictures.
 
-## API List
+## API list
 
-The following is a complete list of APIs added as part of the WordApi 1.2 requirement set.
+The following table lists the APIs added as part of the WordApi 1.2 requirement set.
 
 | Class | Fields | Description |
 |:---|:---|:---|

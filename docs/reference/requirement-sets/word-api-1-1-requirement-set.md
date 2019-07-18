@@ -8,11 +8,11 @@ localization_priority: Normal
 
 # What's new in Word JavaScript API 1.1
 
-Word JavaScript API 1.1 is the first version of the API. It is the only Word-specific requirement set supported by Excel 2016.
+WordApi 1.1 is the first requirement set of the Word JavaScript API. It's the only Word API requirement set supported by Word 2016.
 
-## API List
+## API list
 
-The following is a complete list of APIs added as part of the WordApi 1.1 requirement set.
+The following table lists the APIs added as part of the WordApi 1.1 requirement set.
 
 | Class | Fields | Description |
 |:---|:---|:---|
@@ -39,15 +39,7 @@ The following is a complete list of APIs added as part of the WordApi 1.1 requir
 ||[paragraphs](/javascript/api/word/word.body#paragraphs)|Gets the collection of paragraph objects in the body. Read-only.|
 ||[parentContentControl](/javascript/api/word/word.body#parentcontentcontrol)|Gets the content control that contains the body. Throws if there isn't a parent content control. Read-only.|
 ||[text](/javascript/api/word/word.body#text)|Gets the text of the body. Use the insertText method to insert text. Read-only.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| {
-            ignorePunct?: boolean
-            ignoreSpace?: boolean
-            matchCase?: boolean
-            matchPrefix?: boolean
-            matchSuffix?: boolean
-            matchWholeWord?: boolean
-            matchWildcards?: boolean
-        })](/javascript/api/word/word.body#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the body object. The search results are a collection of range objects.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions)](/javascript/api/word/word.body#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the body object. The search results are a collection of range objects.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.body#select-selectionmode-)|Selects the body and navigates the Word UI to it.|
 ||[style](/javascript/api/word/word.body#style)|Gets or sets the style name for the body. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[appearance](/javascript/api/word/word.contentcontrol#appearance)|Gets or sets the appearance of the content control. The value can be 'BoundingBox', 'Tags', or 'Hidden'.|
@@ -81,15 +73,7 @@ The following is a complete list of APIs added as part of the WordApi 1.1 requir
 ||[text](/javascript/api/word/word.contentcontrol#text)|Gets the text of the content control. Read-only.|
 ||[type](/javascript/api/word/word.contentcontrol#type)|Gets the content control type. Only rich text content controls are supported currently. Read-only.|
 ||[removeWhenEdited](/javascript/api/word/word.contentcontrol#removewhenedited)|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| {
-            ignorePunct?: boolean
-            ignoreSpace?: boolean
-            matchCase?: boolean
-            matchPrefix?: boolean
-            matchSuffix?: boolean
-            matchWholeWord?: boolean
-            matchWildcards?: boolean
-        })](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the content control object. The search results are a collection of range objects.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions)](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the content control object. The search results are a collection of range objects.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.contentcontrol#select-selectionmode-)|Selects the content control. This causes Word to scroll to the selection.|
 ||[style](/javascript/api/word/word.contentcontrol#style)|Gets or sets the style name for the content control. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|
 ||[tag](/javascript/api/word/word.contentcontrol#tag)|Gets or sets a tag to identify a content control.|
@@ -158,15 +142,7 @@ The following is a complete list of APIs added as part of the WordApi 1.1 requir
 ||[parentContentControl](/javascript/api/word/word.paragraph#parentcontentcontrol)|Gets the content control that contains the paragraph. Throws if there isn't a parent content control. Read-only.|
 ||[text](/javascript/api/word/word.paragraph#text)|Gets the text of the paragraph. Read-only.|
 ||[rightIndent](/javascript/api/word/word.paragraph#rightindent)|Gets or sets the right indent value, in points, for the paragraph.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| {
-            ignorePunct?: boolean
-            ignoreSpace?: boolean
-            matchCase?: boolean
-            matchPrefix?: boolean
-            matchSuffix?: boolean
-            matchWholeWord?: boolean
-            matchWildcards?: boolean
-        })](/javascript/api/word/word.paragraph#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the paragraph object. The search results are a collection of range objects.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions})](/javascript/api/word/word.paragraph#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the paragraph object. The search results are a collection of range objects.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.paragraph#select-selectionmode-)|Selects and navigates the Word UI to the paragraph.|
 ||[spaceAfter](/javascript/api/word/word.paragraph#spaceafter)|Gets or sets the spacing, in points, after the paragraph.|
 ||[spaceBefore](/javascript/api/word/word.paragraph#spacebefore)|Gets or sets the spacing, in points, before the paragraph.|
@@ -195,15 +171,7 @@ The following is a complete list of APIs added as part of the WordApi 1.1 requir
 ||[paragraphs](/javascript/api/word/word.range#paragraphs)|Gets the collection of paragraph objects in the range. Read-only.|
 ||[parentContentControl](/javascript/api/word/word.range#parentcontentcontrol)|Gets the content control that contains the range. Throws if there isn't a parent content control. Read-only.|
 ||[text](/javascript/api/word/word.range#text)|Gets the text of the range. Read-only.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| {
-            ignorePunct?: boolean
-            ignoreSpace?: boolean
-            matchCase?: boolean
-            matchPrefix?: boolean
-            matchSuffix?: boolean
-            matchWholeWord?: boolean
-            matchWildcards?: boolean
-        })](/javascript/api/word/word.range#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the range object. The search results are a collection of range objects.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions)](/javascript/api/word/word.range#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the range object. The search results are a collection of range objects.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.range#select-selectionmode-)|Selects and navigates the Word UI to the range.|
 ||[style](/javascript/api/word/word.range#style)|Gets or sets the style name for the range. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[items](/javascript/api/word/word.rangecollection#items)|Gets the loaded child items in this collection.|

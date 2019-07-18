@@ -8,11 +8,11 @@ localization_priority: Normal
 
 # What's new in Word JavaScript API 1.3
 
-WordApi added more support for content controls, custom XML, and document-level settings.
+WordApi 1.3 added more support for content controls, custom XML, and document-level settings.
 
-## API List
+## API list
 
-The following is a complete list of APIs added as part of the WordApi 1.3 requirement set.
+The following table lists the APIs added as part of the WordApi 1.3 requirement set.
 
 | Class | Fields | Description |
 |:---|:---|:---|
@@ -219,15 +219,7 @@ The following is a complete list of APIs added as part of the WordApi 1.3 requir
 ||[rowCount](/javascript/api/word/word.table#rowcount)|Gets the number of rows in the table. Read-only.|
 ||[rows](/javascript/api/word/word.table#rows)|Gets all of the table rows. Read-only.|
 ||[tables](/javascript/api/word/word.table#tables)|Gets the child tables nested one level deeper. Read-only.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| {
-            ignorePunct?: boolean
-            ignoreSpace?: boolean
-            matchCase?: boolean
-            matchPrefix?: boolean
-            matchSuffix?: boolean
-            matchWholeWord?: boolean
-            matchWildcards?: boolean
-        })](/javascript/api/word/word.table#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the table object. The search results are a collection of range objects.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the table object. The search results are a collection of range objects.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.table#select-selectionmode-)|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|
 ||[setCellPadding(cellPaddingLocation: Word.CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.table#setcellpadding-cellpaddinglocation--cellpadding-)|Sets cell padding in points.|
 ||[shadingColor](/javascript/api/word/word.table#shadingcolor)|Gets and sets the shading color. Color is specified in "#RRGGBB" format or by using the color name.|
@@ -292,15 +284,7 @@ The following is a complete list of APIs added as part of the WordApi 1.3 requir
 ||[isHeader](/javascript/api/word/word.tablerow#isheader)|Checks whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object.|
 ||[parentTable](/javascript/api/word/word.tablerow#parenttable)|Gets parent table. Read-only.|
 ||[rowIndex](/javascript/api/word/word.tablerow#rowindex)|Gets the index of the row in its parent table. Read-only.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| {
-            ignorePunct?: boolean
-            ignoreSpace?: boolean
-            matchCase?: boolean
-            matchPrefix?: boolean
-            matchSuffix?: boolean
-            matchWholeWord?: boolean
-            matchWildcards?: boolean
-        })](/javascript/api/word/word.tablerow#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the row. The search results are a collection of range objects.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the row. The search results are a collection of range objects.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.tablerow#select-selectionmode-)|Selects the row and navigates the Word UI to it.|
 ||[setCellPadding(cellPaddingLocation: Word.CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.tablerow#setcellpadding-cellpaddinglocation--cellpadding-)|Sets cell padding in points.|
 ||[shadingColor](/javascript/api/word/word.tablerow#shadingcolor)|Gets and sets the shading color. Color is specified in "#RRGGBB" format or by using the color name.|

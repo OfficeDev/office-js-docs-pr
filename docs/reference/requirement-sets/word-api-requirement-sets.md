@@ -29,15 +29,17 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the WordApi 1.1 requirement set.
 
-To find out more about versions, build numbers, and Office Online Server, see:
+## Office versions and build numbers
+
+For more information about Office versions and build numbers, see:
 
 - [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server overview](/officeonlineserver/office-online-server-overview)
 
 ## See also
 
+- [Word JavaScript API Reference Documentation](/javascript/api/word)
 - [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 - [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)

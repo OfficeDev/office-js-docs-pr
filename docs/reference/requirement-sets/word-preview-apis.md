@@ -15,9 +15,9 @@ New Word JavaScript APIs are first introduced in "preview" and later become part
 >
 > To use preview APIs, you must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and you may also need to join the Office Insider program to get a recent Office build.
 
-## API List
+## API list
 
-The following is a complete list of APIs currently in preview.
+The following table lists the APIs currently in preview.
 
 | Class | Fields | Description |
 |:---|:---|:---|
