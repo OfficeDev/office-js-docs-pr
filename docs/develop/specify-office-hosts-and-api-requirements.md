@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
 description: ''
-ms.date: 07/01/2019
+ms.date: 07/18/2019
 localization_priority: Priority
 ---
 
@@ -161,7 +161,7 @@ The **isSetSupported** method and the requirement sets for these hosts are avail
 The following code example shows how an add-in can provide different functionality for different Office hosts that might support different requirement sets or API members.
 
 ```js
-if (Office.context.requirements.isSetSupported('WordApi', 1.1))
+if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 {
     // Run code that provides additional functionality using the Word JavaScript API when the add-in runs in Word 2016 or later.
 }
