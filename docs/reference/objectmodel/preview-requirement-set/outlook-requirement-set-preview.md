@@ -248,3 +248,4 @@ Added access to `getAccessTokenAsync`, which allows add-ins to [get an access to
 - [Outlook add-ins](/outlook/add-ins/)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
 - [Get started](/outlook/add-ins/quick-start)
+- [Requirement sets and supported clients](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)
