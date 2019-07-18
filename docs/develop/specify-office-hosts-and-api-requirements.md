@@ -100,9 +100,9 @@ The  **Requirements** element specifies the minimum requirement sets or API memb
 
 The following code example shows an add-in that loads in all Office host applications that support the following:
 
--  **TableBindings** requirement set, which has a minimum version of 1.1.
+-  **TableBindings** requirement set, which has a minimum version of "1.1".
 
--  **OOXML** requirement set, which has a minimum version of 1.1.
+-  **OOXML** requirement set, which has a minimum version of "1.1".
 
 -  **Document.getSelectedDataAsync** method.
 
