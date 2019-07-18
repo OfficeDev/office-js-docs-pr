@@ -31,7 +31,7 @@ Setting a requirement set does not limit the available APIs that the add-in can 
 To use a newer API, developers can check if a particular host supports the requirement set by doing the following.
 
 ```js
-if (Office.context.requirements.isSetSupported('Mailbox', '1.3') === true) {
+if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {
   // Perform actions.
 }
 else {
