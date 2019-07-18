@@ -80,11 +80,11 @@ The following clients support Outlook add-ins.
 >
 > **modern**
 >
-> ![partial screenshot of the modern Outlook toolbar](/outlook/add-ins/images/outlook-on-the-web-new-toolbar.png)
+> ![partial screenshot of the modern Outlook toolbar](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-new-toolbar.png)
 >
 > **classic**
 >
-> ![partial screenshot of the classic Outlook toolbar](/outlook/add-ins/images/outlook-on-the-web-classic-toolbar.png)
+> ![partial screenshot of the classic Outlook toolbar](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). Support for 1.4 in Outlook 2013 was added as part of the [September 13, 2016, update for Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). Support for 1.4 in Outlook 2016 (MSI) was added as part of the [July 3, 2018, update for Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
