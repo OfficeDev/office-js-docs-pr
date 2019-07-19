@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 ms.prod: word
 ms.topic: tutorial
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
