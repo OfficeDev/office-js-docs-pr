@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 07/18/2019
+ms.date: 07/22/2019
 localization_priority: Priority
 ---
 
@@ -24,43 +24,43 @@ The following features are in preview.
 
 Added a new object that represents the content of an attachment.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)
 
 Added a new method that allows you to attach a file represented as a base64 encoded string to a message or appointment.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
 
 Added a new method to get the content of a specific attachment.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
 
 Added a new method that gets an item's attachments in compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
 
 Added a new enum that specifies the formatting that applies to an attachment's content.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus)
 
 Added a new enum that specifies whether an attachment was added to or removed from an item.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.EventType.AttachmentsChanged](/javascript/api/office/office.eventtype)
 
 Added `AttachmentsChanged` event to `Item`.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 ---
 
@@ -70,7 +70,7 @@ Added `AttachmentsChanged` event to `Item`.
 
 Added a new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 
-**Available in**: Outlook on the web (classic)
+**Available in**: Outlook on the web (classic), Outlook on Mac (connected to Office 365 subscription)
 
 ---
 
@@ -85,37 +85,37 @@ In Outlook, a user can group messages and appointments by using a category to co
 
 Added a new object that represents an item's categories.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 #### [CategoryDetails](/javascript/api/outlook/office.categorydetails)
 
 Added a new object that represents a category's details (its name and associated color).
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 #### [MasterCategories](/javascript/api/outlook/office.mastercategories)
 
 Added a new object that represents the categories master list on a mailbox.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
 
 Added a new property that represents the categories master list on a mailbox.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
 
 Added a new property that represents the set of categories on an item.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
 
 Added a new enum that specifies the colors available to be associated with categories.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 ---
 
@@ -125,31 +125,31 @@ Added a new enum that specifies the colors available to be associated with categ
 
 Added a new object that represents the properties of an appointment or message item in a shared folder, calendar, or mailbox.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
 
 Added a new method that gets the ID of a saved appointment or message item.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
 
 Added a new method that gets an object which represents the sharedProperties of an appointment or message item.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)
 
 Added a new bit flag enum that specifies the delegate permissions.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md)
 
 Added a child element to the [DesktopFormFactor](../../manifest/desktopformfactor.md) manifest element. It defines whether the add-in is available in delegate scenarios.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 ---
 
@@ -159,37 +159,37 @@ Added a child element to the [DesktopFormFactor](../../manifest/desktopformfacto
 
 Added a new object that represents the set of locations on an appointment.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [LocationDetails](/javascript/api/outlook/office.locationdetails)
 
 Added a new object that represents a location. Read only.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [LocationIdentifier](/javascript/api/outlook/office.locationidentifier)
 
 Added a new object that represents the id of a location.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
 
 Added a new property that represents the set of locations on an appointment.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)
 
 Added a new enum that specifies an appointment location's type.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.EventType.EnhancedLocationsChanged](/javascript/api/office/office.eventtype)
 
 Added `EnhancedLocationsChanged` event to `Item`.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 ---
 
@@ -209,13 +209,13 @@ Added a new function that returns initialization data passed when the add-in is 
 
 Added a new object that represents the custom internet headers of a message item.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
 Added a new property that represents the custom internet headers on a message item.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 ---
 
