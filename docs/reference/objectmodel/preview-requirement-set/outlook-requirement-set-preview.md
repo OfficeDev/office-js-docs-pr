@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 07/22/2019
+ms.date: 07/24/2019
 localization_priority: Priority
 ---
 
@@ -70,7 +70,7 @@ Added `AttachmentsChanged` event to `Item`.
 
 Added a new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 
-**Available in**: Outlook on the web (classic), Outlook on Mac (connected to Office 365 subscription)
+**Available in**: Outlook on the web (classic), Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 ---
 
