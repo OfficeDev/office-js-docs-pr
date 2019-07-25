@@ -17,7 +17,7 @@ New Word JavaScript APIs are first introduced in "preview" and later become part
 
 ## API list
 
-To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/word?view=word-js-preview)).
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation](/javascript/api/word?view=word-js-preview).
 
 The following table lists the APIs currently in preview.
 

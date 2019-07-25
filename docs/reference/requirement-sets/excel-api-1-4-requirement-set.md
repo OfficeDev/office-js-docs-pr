@@ -43,7 +43,7 @@ worksheet.getItemOrNullObject("itemName")
 
 ## API list
 
-To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/excel?view=excel-js-1.4)).
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation](/javascript/api/excel?view=excel-js-1.4).
 
 | Class | Fields | Description |
 |:---|:---|:---|

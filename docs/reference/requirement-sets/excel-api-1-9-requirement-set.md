@@ -24,7 +24,7 @@ More than 500 new Excel APIs were introduced with the 1.9 requirement set. The f
 
 ## API list
 
-To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/excel?view=excel-js-1.9)).
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation](/javascript/api/excel?view=excel-js-1.9).
 
 | Class | Fields | Description |
 |:---|:---|:---|
