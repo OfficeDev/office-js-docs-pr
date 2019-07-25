@@ -1,7 +1,7 @@
 ---
-title: Excel JavaScript API requirement set 1.44
+title: Excel JavaScript API requirement set 1.4
 description: 'Details about the ExcelApi 1.4 requirement set'
-ms.date: 07/15/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -42,6 +42,8 @@ worksheet.getItemOrNullObject("itemName")
 ```
 
 ## API list
+
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/excel?view=excel-js-1.4)).
 
 | Class | Fields | Description |
 |:---|:---|:---|

@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript preview APIs
 description: 'Details about upcoming Word JavaScript APIs'
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
 ---
@@ -16,6 +16,8 @@ New Word JavaScript APIs are first introduced in "preview" and later become part
 > To use preview APIs, you must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and you may also need to join the Office Insider program to get a recent Office build.
 
 ## API list
+
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/word?view=word-js-preview)).
 
 The following table lists the APIs currently in preview.
 

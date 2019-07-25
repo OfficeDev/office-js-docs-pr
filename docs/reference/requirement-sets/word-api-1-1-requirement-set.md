@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API requirement set 1.1
 description: 'Details about the WordApi 1.1 requirement set'
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
 ---
@@ -11,6 +11,8 @@ localization_priority: Normal
 WordApi 1.1 is the first requirement set of the Word JavaScript API. It's the only Word API requirement set supported by Word 2016.
 
 ## API list
+
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/word?view=word-js-1.1)).
 
 The following table lists the APIs added as part of the WordApi 1.1 requirement set.
 

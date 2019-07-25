@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.6
 description: 'Details about the ExcelApi 1.6 requirement set'
-ms.date: 07/11/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -26,6 +26,8 @@ In addition:
 * Clears all conditional formats active on the current specified range.
 
 ## API list
+
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/excel?view=excel-js-1.6)).
 
 | Class | Fields | Description |
 |:---|:---|:---|

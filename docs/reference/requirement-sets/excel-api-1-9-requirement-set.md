@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.9
 description: 'Details about the ExcelApi 1.9 requirement set'
-ms.date: 07/11/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -23,6 +23,8 @@ More than 500 new Excel APIs were introduced with the 1.9 requirement set. The f
 | RangeFormat | New capabilities with range formats. | [Range](/javascript/api/excel/excel.rangeformat) |
 
 ## API list
+
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/excel?view=excel-js-1.9)).
 
 | Class | Fields | Description |
 |:---|:---|:---|

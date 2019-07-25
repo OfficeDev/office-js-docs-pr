@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.7
 description: 'Details about the ExcelApi 1.7 requirement set'
-ms.date: 07/11/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -59,6 +59,8 @@ In addition:
 * Get active cell  - use this API to get the active cell of a workbook.
 
 ## API list
+
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/excel?view=excel-js-1.7)).
 
 | Class | Fields | Description |
 |:---|:---|:---|

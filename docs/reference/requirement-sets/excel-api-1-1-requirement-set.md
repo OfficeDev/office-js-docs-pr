@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.1
 description: 'Details about the ExcelApi 1.1 requirement set'
-ms.date: 07/11/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -11,6 +11,8 @@ localization_priority: Normal
 Excel JavaScript API 1.1 is the first version of the API. It is the only Excel-specific requirement set supported by Excel 2016.
 
 ## API list
+
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/excel?view=excel-js-1.1)).
 
 | Class | Fields | Description |
 |:---|:---|:---|

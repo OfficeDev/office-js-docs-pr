@@ -1,12 +1,12 @@
 ---
 title: Excel JavaScript API requirement set 1.5
 description: 'Details about the ExcelApi 1.5 requirement set'
-ms.date: 07/15/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
 ---
 
-#  What's new in Excel JavaScript API 1.5
+# What's new in Excel JavaScript API 1.5
 
 ExcelApi 1.5 adds Custom XML parts. These are accessible through the [custom XML parts collection](/javascript/api/excel/excel.workbook#customxmlparts) in the workbook object.
 
@@ -24,6 +24,8 @@ ExcelApi 1.5 adds Custom XML parts. These are accessible through the [custom XML
 * Insert, update, and delete attributes.
 
 ## API list
+
+To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation]((/javascript/api/excel?view=excel-js-1.5)).
 
 | Class | Fields | Description |
 |:---|:---|:---|
