@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 ms.prod: word
 ms.topic: tutorial
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
@@ -62,7 +62,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 5. Replace the `TODO1` with the following code. This code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
 
     ```js
-    if (!Office.context.requirements.isSetSupported('WordApi', 1.3)) {
+    if (!Office.context.requirements.isSetSupported('WordApi', '1.3')) {
         console.log('Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.');
     }
     ```
