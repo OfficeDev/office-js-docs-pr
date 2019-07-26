@@ -807,6 +807,9 @@
     - name: Overview
       href: reference/overview/powerpoint-add-ins-reference-overview.md
       displayName: PowerPoint
+    - name: API requirement sets
+      href: reference/requirement-sets/powerpoint-api-requirement-sets.md
+      displayName: PowerPoint
     - name: API reference
       href: /javascript/api/powerpoint
       displayName: PowerPoint
