@@ -1,7 +1,7 @@
 ---
 title: API open specifications for the Office JavaScript API
 description: ''
-ms.date: 06/10/2019
+ms.date: 07/17/2019
 localization_priority: Normal
 ---
 
@@ -23,4 +23,4 @@ Currently, we have no APIs in the public open specification phase. We will updat
 - [Outlook preview API reference](/javascript/api/outlook)
 - [Outlook JavaScript API preview requirement set](..//objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 - [Word preview API reference](/javascript/api/word)
-- [Word JavaScript API preview requirement set](../requirement-sets/word-api-requirement-sets.md#word-javascript-preview-apis)
+- [Word JavaScript API preview requirement set](../requirement-sets/word-preview-apis.md)

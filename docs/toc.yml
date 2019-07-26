@@ -434,7 +434,7 @@
       - name: Excel preview APIs
         href: reference/requirement-sets/excel-preview-apis.md
         displayName: Excel
-      - name: ExcelApi 1.9 requirement et
+      - name: ExcelApi 1.9 requirement set
         href: reference/requirement-sets/excel-api-1-9-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.8 requirement set
@@ -875,8 +875,22 @@
       href: reference/overview/word-add-ins-reference-overview.md
       displayName: Word
     - name: API requirement sets
-      href: reference/requirement-sets/word-api-requirement-sets.md
-      displayName: Word
+      items:
+      - name: Overview
+        href: reference/requirement-sets/word-api-requirement-sets.md
+        displayName: Word
+      - name: Word preview APIs
+        href: reference/requirement-sets/word-preview-apis.md
+        displayName: Word
+      - name: WordApi 1.3 requirement set
+        href: reference/requirement-sets/word-api-1-3-requirement-set.md
+        displayName: Word
+      - name: WordApi 1.2 requirement set
+        href: reference/requirement-sets/word-api-1-2-requirement-set.md
+        displayName: Word
+      - name: WordApi 1.1 requirement set
+        href: reference/requirement-sets/word-api-1-1-requirement-set.md
+        displayName: Word
     - name: API reference
       href: /javascript/api/word
       displayName: Word

@@ -1,7 +1,7 @@
 ---
 title: PowerPoint JavaScript API requirement sets
 description: ''
-ms.date: 07/17/2019
+ms.date: 07/26/2019
 ms.prod: powerpoint
 localization_priority: Normal
 ---
@@ -14,7 +14,7 @@ The following table lists the PowerPoint requirement sets, the Office host appli
 
 |  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| PowerPointApi 1.1 | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019 |
+| PowerPointApi 1.1 | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | October 2018 |
 
 ## Office versions and build numbers
 
@@ -33,7 +33,7 @@ PowerPoint JavaScript API 1.1 contains a single API to create a new presentation
 At runtime, add-ins can check if a particular host supports an API requirement set by doing the following.
 
 ```js
-if (Office.context.requirements.isSetSupported('PowerPointApi', "1.1") === true) {
+if (Office.context.requirements.isSetSupported('PowerPointApi', "1.1")) {
   // Perform actions.
 }
 else {
