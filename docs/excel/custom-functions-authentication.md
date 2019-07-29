@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 07/09/2019
 description: Authenticate users using custom functions in Excel.
 title: Authentication for custom functions
 localization_priority: Priority
@@ -13,7 +13,7 @@ In some scenarios your custom function will need to authenticate the user in ord
 
 ## OfficeRuntime.storage object
 
-The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data.
+The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
 
 Additionally, there is a benefit to using the `storage` object; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.
 
@@ -62,8 +62,6 @@ function storeValue(key, value) {
       return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
 }
-
-CustomFunctions.associate("STOREVALUE", storeValue);
 ```
 
 When the task pane needs the access token, it can retrieve the token from `storage`. The following code sample shows how to use the `storage.getItem` method to retrieve the token.
@@ -83,8 +81,6 @@ function receiveTokenFromCustomFunction() {
      tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from storage. " + error;
   });
 }
-CustomFunctions.associate("GETTOKEN", receiveTokenFromCustomFunction);
-
 ```
 
 ## General guidance

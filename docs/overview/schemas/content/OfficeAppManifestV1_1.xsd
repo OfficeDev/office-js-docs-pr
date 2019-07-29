@@ -232,7 +232,7 @@
 
   <xs:simpleType name="AlternateId">
     <xs:annotation>
-      <xs:documentation>Defines an alternate ID type as defined by the Office Store.</xs:documentation>
+      <xs:documentation>Defines an alternate ID type as defined by AppSource.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value=".{5,12}\\WA[0-9]{9}"/>
@@ -840,7 +840,7 @@
       </xs:element>
       <xs:element name="AlternateId" type="AlternateId" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Specifies the alternate ID for the app as issued by the Office Store.</xs:documentation>
+          <xs:documentation>Specifies the alternate ID for the app as issued by AppSource.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Version" type="Version" minOccurs="1" maxOccurs="1">

@@ -137,7 +137,7 @@ function createCustomXmlPart() {
     const xmlString = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
     Office.context.document.customXmlParts.addAsync(xmlString,
         (asyncResult) => {
-            $("#xml-id").text("Your new XML part's ID: " + asyncResult.id);
+            $("#xml-id").text("Your new XML part's ID: " + asyncResult.value.id);
             asyncResult.value.getXmlAsync(
                 (asyncResult) => {
                     $("#xml-blob").text(asyncResult.value);
@@ -166,7 +166,7 @@ The following code shows how to retrieve the XML part by first getting its ID fr
 
  ```js
 function getReviewers() {
-    const reviewersXmlId = Office.context.document.settings.get('ReviewersID'));
+    const reviewersXmlId = Office.context.document.settings.get('ReviewersID');
     Office.context.document.customXmlParts.getByIdAsync(reviewersXmlId,
         (asyncResult) => {
             asyncResult.value.getXmlAsync(

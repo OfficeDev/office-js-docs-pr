@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/03/2019
 localization_priority: Priority
 ---
 
@@ -62,32 +62,32 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 
 <!-- Links for above table -->
 
-[officeapp]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officeapp
-[id]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id
-[version]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/version
-[providername]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/providername
-[defaultlocale]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[displayname]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
-[description]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
-[iconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[defaultsettings (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
+[officeapp]: /office/dev/add-ins/reference/manifest/officeapp
+[id]: /office/dev/add-ins/reference/manifest/id
+[version]: /office/dev/add-ins/reference/manifest/version
+[providername]: /office/dev/add-ins/reference/manifest/providername
+[defaultlocale]: /office/dev/add-ins/reference/manifest/defaultlocale
+[displayname]: /office/dev/add-ins/reference/manifest/displayname
+[description]: /office/dev/add-ins/reference/manifest/description
+[iconurl]: /office/dev/add-ins/reference/manifest/iconurl
+[defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
+[sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: https://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissions (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissions (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[rule (rulecollection)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[rule (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[requirements (mailapp)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements
-[set*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/set
-[sets (mailapprequirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[form*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/form
-[formsettings*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/formsettings
-[sets (requirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[hosts*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts
+[permissions (contentapp)]: /office/dev/add-ins/reference/manifest/permissions
+[permissions (taskpaneapp)]: /office/dev/add-ins/reference/manifest/permissions
+[permissions (mailapp)]: /office/dev/add-ins/reference/manifest/permissions
+[rule (rulecollection)]: /office/dev/add-ins/reference/manifest/rule
+[rule (mailapp)]: /office/dev/add-ins/reference/manifest/rule
+[requirements (mailapp)*]: /office/dev/add-ins/reference/manifest/requirements
+[set*]: /office/dev/add-ins/reference/manifest/set
+[sets (mailapprequirements)*]: /office/dev/add-ins/reference/manifest/sets
+[form*]: /office/dev/add-ins/reference/manifest/form
+[formsettings*]: /office/dev/add-ins/reference/manifest/formsettings
+[sets (requirements)*]: /office/dev/add-ins/reference/manifest/sets
+[hosts*]: /office/dev/add-ins/reference/manifest/hosts
 
 ## Hosting requirements
 
@@ -105,9 +105,9 @@ Only use the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) ele
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office Online, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
+When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
 
-To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both desktop Office and Office Online. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
+To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
 > [!NOTE]
 > This behavior applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
@@ -132,6 +132,10 @@ The following XML manifest example hosts its main add-in page in the `https://ww
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
 ```
+
+## Specify domains from which Office.js API calls are made
+
+Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file. If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md). 
 
 ## Manifest v1.1 XML file examples and schemas
 
@@ -399,7 +403,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
     receive without leaving your email client.">
     <Override Locale="fr-fr" Value="Visualisez les vidéos
       YouTube références dans vos courriers électronique
-      directement depuis Outlook et Outlook Web App."/>
+      directement depuis Outlook."/>
   </Description>
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->

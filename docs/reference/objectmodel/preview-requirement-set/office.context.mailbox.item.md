@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 05/30/2019
+ms.date: 06/25/2019
 localization_priority: Normal
 ---
 
@@ -64,6 +64,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
 | [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Method |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | Method |
 | [getRegExMatches](#getregexmatches--object) | Method |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
@@ -221,7 +222,7 @@ The following is an example of the result parameter passed to the callback funct
 Gets an object that provides methods for managing the item's categories.
 
 > [!NOTE]
-> This member is not supported in Outlook for iOS or Outlook for Android.
+> This member is not supported in Outlook on iOS or Android.
 
 ##### Type
 
@@ -354,7 +355,7 @@ console.log("Date and time created: " + dateTimeCreated);
 Gets the date and time that an item was last modified. Read mode only.
 
 > [!NOTE]
-> This member is not supported in Outlook for iOS or Outlook for Android.
+> This member is not supported in Outlook on iOS or Android.
 
 ##### Type
 
@@ -524,7 +525,7 @@ function callback(asyncResult) {
 
 #### internetHeaders: [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Gets or sets the internet headers of a message.
+Gets or sets custom internet headers on a message.
 
 ##### Type
 
@@ -1004,7 +1005,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 
 Gets the id of the series that an instance belongs to.
 
-In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to. However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.
+In Outlook on the web and desktop clients, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to. However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.
 
 > [!NOTE]
 > The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier. The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api).
@@ -1363,7 +1364,7 @@ The `addItemAttachmentAsync` method attaches the item with the specified Exchang
 
 You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.
 
-If your Office Add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.
+If your Office Add-in is running in Outlook on the web, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.
 
 ##### Parameters
 
@@ -1443,13 +1444,13 @@ In the Outlook desktop client, if the message is an inline reply, the `close` me
 Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
-In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
+In Outlook on the web, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
 
 If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.
 
-When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
+When attachments are specified in the `formData.attachments` parameter, Outlook on the web and desktop clients attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
 
 ##### Parameters
 
@@ -1565,13 +1566,13 @@ Office.context.mailbox.item.displayReplyAllForm(
 Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
-In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
+In Outlook on the web, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
 
 If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.
 
-When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
+When attachments are specified in the `formData.attachments` parameter, Outlook on the web and desktop clients attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
 
 ##### Parameters
 
@@ -1686,7 +1687,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 Gets the specified attachment from a message or appointment and returns it as an `AttachmentContent` object.
 
-The `getAttachmentContentAsync` method gets the attachment with the specified identifier from the item. As a best practice, you should use the identifier to retrieve an attachment in the same session that the attachmentIds were retrieved with the `getAttachmentsAsync` or `item.attachments` call. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing an inline form then subsequently pops out the form to continue in a separate window.
+The `getAttachmentContentAsync` method gets the attachment with the specified identifier from the item. As a best practice, you should use the identifier to retrieve an attachment in the same session that the attachmentIds were retrieved with the `getAttachmentsAsync` or `item.attachments` call. In Outlook on the web and mobile devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing an inline form then subsequently pops out the form to continue in a separate window.
 
 ##### Parameters
 
@@ -1715,26 +1716,26 @@ Type:
 ```javascript
 var item = Office.context.mailbox.item;
 var listOfAttachments = [];
-item.getAttachmentsAsync(callback);
+var options = {asyncContext: {currentItem: item}};
+item.getAttachmentsAsync(options, callback);
 
 function callback(result) {
   if (result.value.length > 0) {
     for (i = 0 ; i < result.value.length ; i++) {
-      var options = {asyncContext: {type: result.value[i].attachmentType}};
-      getAttachmentContentAsync(result.value[i].id, options, handleAttachmentsCallback);
+      result.asyncContext.currentItem.getAttachmentContentAsync(result.value[i].id, handleAttachmentsCallback);
     }
   }
 }
 
 function handleAttachmentsCallback(result) {
   // Parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file.
-  if (result.format === Office.MailboxEnums.AttachmentContentFormat.Base64) {
+  if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Base64) {
     // Handle file attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.Eml) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Eml) {
     // Handle email item attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
     // Handle .icalender attachment.
-  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.Url) {
+  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Url) {
     // Handle cloud attachment.
   } else {
     // Handle attachment formats that are not supported.
@@ -1803,7 +1804,7 @@ function callback(result) {
 Gets the entities found in the selected item's body.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 ##### Requirements
 
@@ -1834,7 +1835,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 Gets an array of all the entities of the specified entity type found in the selected item's body.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 ##### Parameters
 
@@ -1894,7 +1895,7 @@ Office.initialize = function () {
 Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.
 
@@ -1974,12 +1975,64 @@ Office.context.mailbox.item.getInitializationContextAsync(
 ---
 ---
 
+#### getItemIdAsync([options], callback)
+
+Asynchronously gets the ID of a saved item. Compose mode only.
+
+When invoked, this method returns the item ID via the callback method.
+
+> [!NOTE]
+> If your add-in calls `getItemIdAsync` on an item in compose mode (e.g., to get an `itemId` to use with EWS or the REST API), be aware that when Outlook is in cached mode, it may take some time before the item is synced to the server. Until the item is synced, the `itemId` is not recognized and using it returns an error.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>On success, the item identifier is provided in the `asyncResult.value` property.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`ItemNotSaved`|The id can't be retrieved until the item is saved.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
+
+##### Examples
+
+```javascript
+Office.context.mailbox.item.getItemIdAsync(
+  function callback(result) {
+    // Process the result.
+  });
+```
+
+The following example shows the structure of the `result` parameter that's passed to the callback function. The `value` property contains the item ID.
+
+```json
+{
+  "value":"AAMkADI5...AAA=",
+  "status":"succeeded"
+}
+```
+
+---
+---
+
 #### getRegExMatches() → {Object}
 
 Returns string values in the selected item that match the regular expressions defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.
 
@@ -2044,7 +2097,7 @@ var veggies = allMatches.veggies;
 Returns string values in the selected item that match the named regular expression defined in the manifest XML file.
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.
 
@@ -2149,7 +2202,7 @@ function setCallback(asyncResult) {
 Gets the entities found in a highlighted match a user has selected. Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 ##### Requirements
 
@@ -2180,7 +2233,7 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 Returns string values in a highlighted match that match the regular expressions defined in the manifest XML file. Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).
 
 > [!NOTE]
-> This method is not supported in Outlook for iOS or Outlook for Android.
+> This method is not supported in Outlook on iOS or Android.
 
 The `getSelectedRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.
 
@@ -2321,7 +2374,7 @@ function saveCallback(asyncResult) {
 
 Removes an attachment from a message or appointment.
 
-The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing an inline form then subsequently pops out the form to continue in a separate window.
+The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook on the web and mobile devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing an inline form then subsequently pops out the form to continue in a separate window.
 
 ##### Parameters
 
@@ -2394,7 +2447,7 @@ Currently the supported event types are `Office.EventType.AttachmentsChanged`, `
 
 Asynchronously saves an item.
 
-When invoked, this method saves the current message as a draft and returns the item id via the callback method. In Outlook Web App or Outlook in online mode, the item is saved to the server. In Outlook in cached mode, the item is saved to the local cache.
+When invoked, this method saves the current message as a draft and returns the item id via the callback method. In Outlook on the web or Outlook in online mode, the item is saved to the server. In Outlook in cached mode, the item is saved to the local cache.
 
 > [!NOTE]
 > If your add-in calls `saveAsync` on an item in compose mode in order to get an `itemId` to use with EWS or the REST API, be aware that when Outlook is in cached mode, it may take some time before the item is actually synced to the server. Until the item is synced, using the `itemId` will return an error.
@@ -2404,7 +2457,7 @@ Since appointments have no draft state, if `saveAsync` is called on an appointme
 > [!NOTE]
 > The following clients have different behavior for `saveAsync` on appointments in compose mode:
 >
-> - Outlook for Mac does not support saving a meeting. The `saveAsync` method fails when called from a meeting in compose mode. See [Cannot save a meeting as a draft in Outlook for Mac by using Office JS API](https://support.microsoft.com/help/4505745) for a workaround.
+> - Outlook on Mac does not support saving a meeting. The `saveAsync` method fails when called from a meeting in compose mode. See [Cannot save a meeting as a draft in Outlook for Mac by using Office JS API](https://support.microsoft.com/help/4505745) for a workaround.
 > - Outlook on the web always sends an invitation or update when `saveAsync` is called on an appointment in compose mode.
 
 ##### Parameters
@@ -2457,7 +2510,7 @@ The `setSelectedDataAsync` method inserts the specified string at the cursor loc
 |`data`|String||The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.|
 |`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
-|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
+|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|If `text`, the current style is applied in Outlook on the web and desktop clients. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook on the web and the default style is applied in Outlook desktop clients. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
 |`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|
 
 ##### Requirements

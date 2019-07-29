@@ -1,11 +1,11 @@
 ---
-title: Work with Charts using the Excel JavaScript API
+title: Work with charts using the Excel JavaScript API
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/17/2019
 localization_priority: Priority
 ---
 
-# Work with Charts using the Excel JavaScript API
+# Work with charts using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API.
 For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection).

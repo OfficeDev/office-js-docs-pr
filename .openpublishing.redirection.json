@@ -1,6 +1,14 @@
 { 
     "redirections": [ 
       {
+        "source_path": "docs/reference/requirement-sets/powerpoint-and-project-note.md",
+        "redirect_url": "/office/dev/add-ins/reference/javascript-api-for-office"
+      },
+      {
+        "source_path": "docs/excel/excel-add-ins-get-started-overview.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
+      },
+      {
         "source_path": "docs/excel/excel-add-ins-get-started-vue.md",
         "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-vue"
       },

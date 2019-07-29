@@ -1,5 +1,5 @@
 ---
-ms.date: 05/06/2019
+ms.date: 06/18/2019
 description: Create a dialog box through custom functions in Excel using JavaScript.
 title: Display a dialog box from a custom function
 localization_priority: Priority
@@ -41,7 +41,7 @@ function getTokenViaDialog(url) {
       }, 1000);
     } else {
       _dialogOpen = true;
-      Office.displayWebDialogOptions(url, {
+      OfficeRuntime.displayWebDialog(url, {
         height: '50%',
         width: '50%',
         onMessage: function (message, dialog) {

@@ -1,13 +1,13 @@
 ---
-ms.date: 05/08/2019
+ms.date: 07/10/2019
 description: Use `OfficeRuntime.storage` to save state with custom functions. 
 title: Save and share state in custom functions
 localization_priority: Priority
 ---
 
-## Save and share state in custom functions
+# Save and share state in custom functions
 
-Use the `OfficeRuntime.storage` object to save state related to custom functions or the task pane in your add-in. Storage is limited to 10 MB per domain (which may be shared across multiple add-ins). In Excel on Windows, the `storage` object is a separate location within the custom functions runtime, but for Excel Online and Excel for Mac, the `storage` object is the same as the browser's `localStorage`.
+Use the `OfficeRuntime.storage` object to save state related to custom functions or the task pane in your add-in. Storage is limited to 10 MB per domain (which may be shared across multiple add-ins). In Excel on Windows, the `storage` object is a separate location within the custom functions runtime, but for Excel on the web and Mac, the `storage` object is the same as the browser's `localStorage`.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -32,9 +32,6 @@ function storeValue(key, value) {
 function GetValue(key) {
   return OfficeRuntime.storage.getItem(key);
 }
-
-CustomFunctions.associate("STOREVALUE", StoreValue);
-CustomFunctions.associate("GETVALUE", GetValue);
 ```
 
 [A more detailed code sample on GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) gives an example of passing this information to the task pane.
@@ -49,6 +46,5 @@ Learn how to [autogenerate the JSON metadata for your custom functions](custom-f
 
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Custom functions debugging](custom-functions-debugging.md)

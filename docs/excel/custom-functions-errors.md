@@ -1,5 +1,5 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/18/2019
 description: Handle errors in your Excel custom functions.
 title: Error handling for custom functions in Excel
 localization_priority: Priority
@@ -41,5 +41,5 @@ Learn how to [troubleshoot problems with your custom functions](custom-functions
 ## See also
 
 * [Custom functions debugging](custom-functions-debugging.md)
-* [Custom functions requirements](custom-functions-requirements.md)
+* [Custom functions requirements](custom-functions-requirement-sets.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
