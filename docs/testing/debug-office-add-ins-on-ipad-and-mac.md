@@ -1,13 +1,13 @@
 ---
 title: Debug Office Add-ins on a Mac
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
 ---
 
 # Debug Office Add-ins on a Mac
 
-You can use Visual Studio to develop and debug add-ins on Windows, but you can't use it to debug add-ins on a Mac. Because add-ins are developed using HTML and JavaScript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.
+Because add-ins are developed using HTML and JavaScript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.
 
 ## Debugging with Safari Web Inspector on a Mac
 
@@ -35,9 +35,5 @@ Then, open the Office application and [sideload your add-in](sideload-an-office-
 > 4. Use the inspector as required.
 
 ## Clearing the Office application's cache on a Mac
-
-Add-ins are often cached in Office on Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
-
-On a Mac, you can clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
