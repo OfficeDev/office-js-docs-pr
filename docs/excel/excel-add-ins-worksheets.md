@@ -401,7 +401,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependant any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
+`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependent any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
 
 The following code sample centers the page (both vertically and horizontally), sets a title row that will be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
 
