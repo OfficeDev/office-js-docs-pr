@@ -70,7 +70,7 @@ Item IDs retrieved via a REST API (such as the [Outlook Mail API](/previous-vers
 |Name| Type| Description|
 |---|---|---|
 |`itemId`| String|An item ID formatted for the Outlook REST APIs|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|A value indicating the version of the Outlook REST API used to retrieve the item ID.|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion&view=outlook-1.3|A value indicating the version of the Outlook REST API used to retrieve the item ID.|
 
 ##### Requirements
 
@@ -95,7 +95,7 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-#### convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_3/office.LocalClientTime)}
+#### convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime&view=outlook-1.3}
 
 Gets a dictionary containing time information in local client time.
 
@@ -120,7 +120,7 @@ If the mail app is running in Outlook on a desktop client, the `convertToLocalCl
 ##### Returns:
 
 Type:
-[LocalClientTime](/javascript/api/outlook_1_3/office.LocalClientTime)
+[LocalClientTime](/javascript/api/outlook/office.LocalClientTime&view=outlook-1.3
 
 #### convertToRestId(itemId, restVersion) → {String}
 
@@ -136,7 +136,7 @@ Item IDs retrieved via EWS or via the `itemId` property use a different format t
 |Name| Type| Description|
 |---|---|---|
 |`itemId`| String|An item ID formatted for Exchange Web Services (EWS)|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|A value indicating the version of the Outlook REST API that the converted ID will be used with.|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion&view=outlook-1.3|A value indicating the version of the Outlook REST API that the converted ID will be used with.|
 
 ##### Requirements
 
@@ -171,7 +171,7 @@ The `convertToUtcClientTime` method converts a dictionary containing a local dat
 
 |Name| Type| Description|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_3/office.LocalClientTime)|The local time value to convert.|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime&view=outlook-1.3|The local time value to convert.|
 
 ##### Requirements
 
@@ -283,8 +283,8 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 |Name| Type| Description|
 |---|---|---|
 | `parameters` | Object | A dictionary of parameters describing the new appointment. |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the required attendees for the appointment. The array is limited to a maximum of 100 entries. |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the optional attendees for the appointment. The array is limited to a maximum of 100 entries. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails&view=outlook-1.3&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the required attendees for the appointment. The array is limited to a maximum of 100 entries. |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails&view=outlook-1.3&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the optional attendees for the appointment. The array is limited to a maximum of 100 entries. |
 | `parameters.start` | Date | A `Date` object specifying the start date and time of the appointment. |
 | `parameters.end` | Date | A `Date` object specifying the end date and time of the appointment. |
 | `parameters.location` | String | A string containing the location of the appointment. The string is limited to a maximum of 255 characters. |
