@@ -12,7 +12,7 @@ ExcelApi 1.3 added support for data binding and basic PivotTable access.
 
 ## API list
 
-To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation](/javascript/api/excel?view=excel-js-1.3).
+The following table lists the APIs in Excel JavaScript API requirement set 1.3. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.3 or earlier, see [Excel APIs in requirement set 1.3 or earlier](/javascript/api/excel?view=excel-js-1.3).
 
 | Class | Fields | Description |
 |:---|:---|:---|

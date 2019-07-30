@@ -28,7 +28,7 @@ More [events](/office/dev/add-ins/excel/excel-add-ins-events) have been added fo
 
 ## API list
 
-To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation](/javascript/api/excel?view=excel-js-1.8).
+The following table lists the APIs in Excel JavaScript API requirement set 1.8. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.8 or earlier, see [Excel APIs in requirement set 1.8 or earlier](/javascript/api/excel?view=excel-js-1.8).
 
 | Class | Fields | Description |
 |:---|:---|:---|
