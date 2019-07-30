@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
 ---
 
@@ -102,7 +102,6 @@ If changes you've made in the manifest, such as file names of ribbon button icon
 Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 #### For Mac:
-Delete the contents of the folder `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
