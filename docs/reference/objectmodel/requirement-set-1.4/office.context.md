@@ -62,7 +62,7 @@ function write(message){
 }
 ```
 
-#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.RoamingSettings&view=outlook-1.4
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.4)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
@@ -70,7 +70,7 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 ##### Type
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings&view=outlook-1.4
+*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.4)
 
 ##### Requirements
 
