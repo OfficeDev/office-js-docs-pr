@@ -1,5 +1,5 @@
 { 
-    "redirections": [ 
+    "redirections": [
       {
         "source_path": "docs/reference/excel-api-reference.md",
         "redirect_url": "/javascript/api/excel?view=excel-js-preview"
