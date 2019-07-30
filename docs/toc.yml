@@ -462,7 +462,7 @@
         href: reference/requirement-sets/excel-api-1-1-requirement-set.md
         displayName: Excel
     - name: API reference
-      href: /javascript/api/excel
+      href: reference/excel-api-reference.md
       displayName: Excel
     - name: Fundamental programming concepts
       href: excel/excel-add-ins-core-concepts.md
