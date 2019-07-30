@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.2
 description: 'Details about the ExcelApi 1.2 requirement set'
-ms.date: 07/25/2019
+ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -16,26 +16,18 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.2. 
 
 | Class | Fields | Description |
 |:---|:---|:---|
-|[Binding](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|Occurs when data or formatting within the binding is changed.|
-||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|Occurs when the selected content in the binding is changed.|
-|[BindingDataChangedEventArgs](/javascript/api/excel/excel.bindingdatachangedeventargs)|[binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding)|Gets the Binding object that represents the binding that raised the DataChanged event.|
 |[BindingSelectionChangedEventArgs](/javascript/api/excel/excel.bindingselectionchangedeventargs)|[binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)|Gets the Binding object that represents the binding that raised the SelectionChanged event.|
 ||[columnCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#columncount)|Gets the number of columns selected.|
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|Gets the number of rows selected.|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startcolumn)|Gets the index of the first column of the selection (zero-based).|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|Gets the index of the first row of the selection (zero-based).|
-|[Chart](/javascript/api/excel/excel.chart)|[getImage(width?: number, height?: number, fittingMode?: "Fit" \| "FitAndCenter" \| "Fill")](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|
-||[getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|
+|[Chart](/javascript/api/excel/excel.chart)|[getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|The worksheet containing the current chart. Read-only.|
-|[ChartCollectionLoadOptions](/javascript/api/excel/excel.chartcollectionloadoptions)|[worksheet](/javascript/api/excel/excel.chartcollectionloadoptions#worksheet)|For EACH ITEM in the collection: The worksheet containing the current chart.|
-|[ChartLoadOptions](/javascript/api/excel/excel.chartloadoptions)|[worksheet](/javascript/api/excel/excel.chartloadoptions#worksheet)|The worksheet containing the current chart.|
 |[Filter](/javascript/api/excel/excel.filter)|[apply(criteria: Excel.FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|Apply the given filter criteria on the given column.|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|Apply a "Bottom Item" filter to the column for the given number of elements.|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|Apply a "Bottom Percent" filter to the column for the given percentage of elements.|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|Apply a "Cell Color" filter to the column for the given color.|
-||[applyCustomFilter(criteria1: string, criteria2?: string, oper?: "And" \| "Or")](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|Apply an "Icon" filter to the column for the given criteria strings.|
 ||[applyCustomFilter(criteria1: string, criteria2?: string, oper?: Excel.FilterOperator)](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|Apply an "Icon" filter to the column for the given criteria strings.|
-||[applyDynamicFilter(criteria: "Unknown" \| "AboveAverage" \| "AllDatesInPeriodApril" \| "AllDatesInPeriodAugust" \| "AllDatesInPeriodDecember" \| "AllDatesInPeriodFebruray" \| "AllDatesInPeriodJanuary" \| "AllDatesInPeriodJuly" \| "AllDatesInPeriodJune" \| "AllDatesInPeriodMarch" \| "AllDatesInPeriodMay" \| "AllDatesInPeriodNovember" \| "AllDatesInPeriodOctober" \| "AllDatesInPeriodQuarter1" \| "AllDatesInPeriodQuarter2" \| "AllDatesInPeriodQuarter3" \| "AllDatesInPeriodQuarter4" \| "AllDatesInPeriodSeptember" \| "BelowAverage" \| "LastMonth" \| "LastQuarter" \| "LastWeek" \| "LastYear" \| "NextMonth" \| "NextQuarter" \| "NextWeek" \| "NextYear" \| "ThisMonth" \| "ThisQuarter" \| "ThisWeek" \| "ThisYear" \| "Today" \| "Tomorrow" \| "YearToDate" \| "Yesterday")](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|Apply a "Dynamic" filter to the column.|
 ||[applyDynamicFilter(criteria: Excel.DynamicFilterCriteria)](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|Apply a "Dynamic" filter to the column.|
 ||[applyFontColorFilter(color: string)](/javascript/api/excel/excel.filter#applyfontcolorfilter-color-)|Apply a "Font Color" filter to the column for the given color.|
 ||[applyIconFilter(icon: Excel.Icon)](/javascript/api/excel/excel.filter#applyiconfilter-icon-)|Apply an "Icon" filter to the column for the given icon.|
@@ -52,29 +44,12 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.2. 
 ||[icon](/javascript/api/excel/excel.filtercriteria#icon)|The icon used to filter cells. Used with "icon" filtering.|
 ||[operator](/javascript/api/excel/excel.filtercriteria#operator)|The operator used to combine criterion 1 and 2 when using "custom" filtering.|
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|The set of values to be used as part of "values" filtering.|
-|[FilterData](/javascript/api/excel/excel.filterdata)|[criteria](/javascript/api/excel/excel.filterdata#criteria)|The currently applied filter on the given column. Read-only.|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[date](/javascript/api/excel/excel.filterdatetime#date)|The date in ISO8601 format used to filter data.|
 ||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|How specific the date should be used to keep data. For example, if the date is 2005-04-02 and the specifity is set to "month", the filter operation will keep all rows with a date in the month of april 2009.|
-|[FilterLoadOptions](/javascript/api/excel/excel.filterloadoptions)|[$all](/javascript/api/excel/excel.filterloadoptions#$all)||
-||[criteria](/javascript/api/excel/excel.filterloadoptions#criteria)|The currently applied filter on the given column. Read-only.|
 |[FormatProtection](/javascript/api/excel/excel.formatprotection)|[formulaHidden](/javascript/api/excel/excel.formatprotection#formulahidden)|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|
 ||[locked](/javascript/api/excel/excel.formatprotection#locked)|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|
-||[set(properties: Excel.FormatProtection)](/javascript/api/excel/excel.formatprotection#set-properties-)|Sets multiple properties on the object at the same time, based on an existing loaded object.|
-||[set(properties: Interfaces.FormatProtectionUpdateData, options?: OfficeExtension.UpdateOptions)](/javascript/api/excel/excel.formatprotection#set-properties--options-)|Sets multiple properties of an object at the same time. You can pass either a plain object with the appropriate properties, or another API object of the same type.|
-|[FormatProtectionData](/javascript/api/excel/excel.formatprotectiondata)|[formulaHidden](/javascript/api/excel/excel.formatprotectiondata#formulahidden)|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|
-||[locked](/javascript/api/excel/excel.formatprotectiondata#locked)|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|
-|[FormatProtectionLoadOptions](/javascript/api/excel/excel.formatprotectionloadoptions)|[$all](/javascript/api/excel/excel.formatprotectionloadoptions#$all)||
-||[formulaHidden](/javascript/api/excel/excel.formatprotectionloadoptions#formulahidden)|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|
-||[locked](/javascript/api/excel/excel.formatprotectionloadoptions#locked)|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|
-|[FormatProtectionUpdateData](/javascript/api/excel/excel.formatprotectionupdatedata)|[formulaHidden](/javascript/api/excel/excel.formatprotectionupdatedata#formulahidden)|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|
-||[locked](/javascript/api/excel/excel.formatprotectionupdatedata#locked)|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|
 |[FunctionResult](/javascript/api/excel/excel.functionresult)|[error](/javascript/api/excel/excel.functionresult#error)|Error value (such as "#DIV/0") representing the error. If the error string is not set, then the function succeeded, and its result is written to the Value field. The error is always in the English locale.|
 ||[value](/javascript/api/excel/excel.functionresult#value)|The value of function evaluation. The value field will be populated only if no error has occurred (i.e., the Error property is not set).|
-|[FunctionResultData](/javascript/api/excel/excel.functionresultdata)|[error](/javascript/api/excel/excel.functionresultdata#error)|Error value (such as "#DIV/0") representing the error. If the error string is not set, then the function succeeded, and its result is written to the Value field. The error is always in the English locale.|
-||[value](/javascript/api/excel/excel.functionresultdata#value)|The value of function evaluation. The value field will be populated only if no error has occurred (i.e., the Error property is not set).|
-|[FunctionResultLoadOptions](/javascript/api/excel/excel.functionresultloadoptions)|[$all](/javascript/api/excel/excel.functionresultloadoptions#$all)||
-||[error](/javascript/api/excel/excel.functionresultloadoptions#error)|Error value (such as "#DIV/0") representing the error. If the error string is not set, then the function succeeded, and its result is written to the Value field. The error is always in the English locale.|
-||[value](/javascript/api/excel/excel.functionresultloadoptions#value)|The value of function evaluation. The value field will be populated only if no error has occurred (i.e., the Error property is not set).|
 |[Functions](/javascript/api/excel/excel.functions)|[abs(number: number \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>)](/javascript/api/excel/excel.functions#abs-number-)|Returns the absolute value of a number, a number without its sign.|
 ||[accrInt(issue: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, firstInterest: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, settlement: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, rate: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, par: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, frequency: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, basis?: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, calcMethod?: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>)](/javascript/api/excel/excel.functions#accrint-issue--firstinterest--settlement--rate--par--frequency--basis--calcmethod-)|Returns the accrued interest for a security that pays periodic interest.|
 ||[accrIntM(issue: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, settlement: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, rate: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, par: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, basis?: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>)](/javascript/api/excel/excel.functions#accrintm-issue--settlement--rate--par--basis-)|Returns the accrued interest for a security that pays interest at maturity.|
@@ -442,7 +417,6 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.2. 
 ||[yieldMat(settlement: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, maturity: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, issue: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, rate: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, pr: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, basis?: number \| string \| boolean \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>)](/javascript/api/excel/excel.functions#yieldmat-settlement--maturity--issue--rate--pr--basis-)|Returns the annual yield of a security that pays interest at maturity.|
 ||[z_Test(array: number \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, x: number \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>, sigma?: number \| Excel.Range \| Excel.RangeReference \| Excel.FunctionResult<any>)](/javascript/api/excel/excel.functions#z_test-array--x--sigma-)|Returns the one-tailed P-value of a z-test.|
 |[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|Represents the index of the icon in the given set.|
-||[set](/javascript/api/excel/excel.icon#set)|Represents the set that the icon is part of.|
 |[Range](/javascript/api/excel/excel.range)|[columnHidden](/javascript/api/excel/excel.range#columnhidden)|Represents if all columns of the current range are hidden.|
 ||[formulasR1C1](/javascript/api/excel/excel.range#formulasr1c1)|Represents the formula in R1C1-style notation.|
 ||[getColumnsAfter(count?: number)](/javascript/api/excel/excel.range#getcolumnsafter-count-)|Gets a certain number of columns to the right of the current Range object.|
@@ -456,34 +430,13 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.2. 
 ||[sort](/javascript/api/excel/excel.range#sort)|Represents the range sort of the current range. Read-only.|
 ||[rowHidden](/javascript/api/excel/excel.range#rowhidden)|Represents if all rows of the current range are hidden.|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge--)|Unmerge the range cells into separate cells.|
-|[RangeData](/javascript/api/excel/excel.rangedata)|[columnHidden](/javascript/api/excel/excel.rangedata#columnhidden)|Represents if all columns of the current range are hidden.|
-||[formulasR1C1](/javascript/api/excel/excel.rangedata#formulasr1c1)|Represents the formula in R1C1-style notation.|
-||[hidden](/javascript/api/excel/excel.rangedata#hidden)|Represents if all cells of the current range are hidden. Read-only.|
-||[rowHidden](/javascript/api/excel/excel.rangedata#rowhidden)|Represents if all rows of the current range are hidden.|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns()](/javascript/api/excel/excel.rangeformat#autofitcolumns--)|Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.|
 ||[autofitRows()](/javascript/api/excel/excel.rangeformat#autofitrows--)|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|
 ||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|
 ||[protection](/javascript/api/excel/excel.rangeformat#protection)|Returns the format protection object for a range. Read-only.|
 ||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|Gets or sets the height of all rows in the range. If the row heights are not uniform, null will be returned.|
-|[RangeFormatData](/javascript/api/excel/excel.rangeformatdata)|[columnWidth](/javascript/api/excel/excel.rangeformatdata#columnwidth)|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|
-||[protection](/javascript/api/excel/excel.rangeformatdata#protection)|Returns the format protection object for a range. Read-only.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatdata#rowheight)|Gets or sets the height of all rows in the range. If the row heights are not uniform, null will be returned.|
-|[RangeFormatLoadOptions](/javascript/api/excel/excel.rangeformatloadoptions)|[columnWidth](/javascript/api/excel/excel.rangeformatloadoptions#columnwidth)|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|
-||[protection](/javascript/api/excel/excel.rangeformatloadoptions#protection)|Returns the format protection object for a range.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatloadoptions#rowheight)|Gets or sets the height of all rows in the range. If the row heights are not uniform, null will be returned.|
-|[RangeFormatUpdateData](/javascript/api/excel/excel.rangeformatupdatedata)|[columnWidth](/javascript/api/excel/excel.rangeformatupdatedata#columnwidth)|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|
-||[protection](/javascript/api/excel/excel.rangeformatupdatedata#protection)|Returns the format protection object for a range.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatupdatedata#rowheight)|Gets or sets the height of all rows in the range. If the row heights are not uniform, null will be returned.|
-|[RangeLoadOptions](/javascript/api/excel/excel.rangeloadoptions)|[columnHidden](/javascript/api/excel/excel.rangeloadoptions#columnhidden)|Represents if all columns of the current range are hidden.|
-||[formulasR1C1](/javascript/api/excel/excel.rangeloadoptions#formulasr1c1)|Represents the formula in R1C1-style notation.|
-||[hidden](/javascript/api/excel/excel.rangeloadoptions#hidden)|Represents if all cells of the current range are hidden. Read-only.|
-||[rowHidden](/javascript/api/excel/excel.rangeloadoptions#rowhidden)|Represents if all rows of the current range are hidden.|
 |[RangeReference](/javascript/api/excel/excel.rangereference)|[address](/javascript/api/excel/excel.rangereference#address)|Gets or sets the address of the range; for example 'SheetName!A1:B5'.|
-|[RangeSort](/javascript/api/excel/excel.rangesort)|[apply(fields: Excel.SortField[], matchCase?: boolean, hasHeaders?: boolean, orientation?: "Rows" \| "Columns", method?: "PinYin" \| "StrokeCount")](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Perform a sort operation.|
-||[apply(fields: Excel.SortField[], matchCase?: boolean, hasHeaders?: boolean, orientation?: Excel.SortOrientation, method?: Excel.SortMethod)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Perform a sort operation.|
-|[RangeUpdateData](/javascript/api/excel/excel.rangeupdatedata)|[columnHidden](/javascript/api/excel/excel.rangeupdatedata#columnhidden)|Represents if all columns of the current range are hidden.|
-||[formulasR1C1](/javascript/api/excel/excel.rangeupdatedata#formulasr1c1)|Represents the formula in R1C1-style notation.|
-||[rowHidden](/javascript/api/excel/excel.rangeupdatedata#rowhidden)|Represents if all rows of the current range are hidden.|
+|[RangeSort](/javascript/api/excel/excel.rangesort)|[apply(fields: Excel.SortField[], matchCase?: boolean, hasHeaders?: boolean, orientation?: Excel.SortOrientation, method?: Excel.SortMethod)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Perform a sort operation.|
 |[SelectionChangedEventArgs](/javascript/api/excel/excel.selectionchangedeventargs)|[workbook](/javascript/api/excel/excel.selectionchangedeventargs#workbook)|Gets the workbook object that raised the SelectionChanged event.|
 |[SortField](/javascript/api/excel/excel.sortfield)|[ascending](/javascript/api/excel/excel.sortfield#ascending)|Represents whether the sorting is done in an ascending fashion.|
 ||[color](/javascript/api/excel/excel.sortfield#color)|Represents the color that is the target of the condition if the sorting is on font or cell color.|
@@ -496,44 +449,20 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.2. 
 ||[sort](/javascript/api/excel/excel.table#sort)|Represents the sorting for the table. Read-only.|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|The worksheet containing the current table. Read-only.|
 ||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyfilters--)|Reapplies all the filters currently on the table.|
-|[TableCollectionLoadOptions](/javascript/api/excel/excel.tablecollectionloadoptions)|[sort](/javascript/api/excel/excel.tablecollectionloadoptions#sort)|For EACH ITEM in the collection: Represents the sorting for the table.|
-||[worksheet](/javascript/api/excel/excel.tablecollectionloadoptions#worksheet)|For EACH ITEM in the collection: The worksheet containing the current table.|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|Retrieve the filter applied to the column. Read-only.|
-|[TableColumnCollectionLoadOptions](/javascript/api/excel/excel.tablecolumncollectionloadoptions)|[filter](/javascript/api/excel/excel.tablecolumncollectionloadoptions#filter)|For EACH ITEM in the collection: Retrieve the filter applied to the column.|
-|[TableColumnData](/javascript/api/excel/excel.tablecolumndata)|[filter](/javascript/api/excel/excel.tablecolumndata#filter)|Retrieve the filter applied to the column. Read-only.|
-|[TableColumnLoadOptions](/javascript/api/excel/excel.tablecolumnloadoptions)|[filter](/javascript/api/excel/excel.tablecolumnloadoptions#filter)|Retrieve the filter applied to the column.|
-|[TableData](/javascript/api/excel/excel.tabledata)|[sort](/javascript/api/excel/excel.tabledata#sort)|Represents the sorting for the table. Read-only.|
-|[TableLoadOptions](/javascript/api/excel/excel.tableloadoptions)|[sort](/javascript/api/excel/excel.tableloadoptions#sort)|Represents the sorting for the table.|
-||[worksheet](/javascript/api/excel/excel.tableloadoptions#worksheet)|The worksheet containing the current table.|
-|[TableSort](/javascript/api/excel/excel.tablesort)|[apply(fields: Excel.SortField[], matchCase?: boolean, method?: "PinYin" \| "StrokeCount")](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Perform a sort operation.|
-||[apply(fields: Excel.SortField[], matchCase?: boolean, method?: Excel.SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Perform a sort operation.|
+|[TableSort](/javascript/api/excel/excel.tablesort)|[apply(fields: Excel.SortField[], matchCase?: boolean, method?: Excel.SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Perform a sort operation.|
 ||[clear()](/javascript/api/excel/excel.tablesort#clear--)|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|
 ||[fields](/javascript/api/excel/excel.tablesort#fields)|Represents the current conditions used to last sort the table. Read-only.|
 ||[matchCase](/javascript/api/excel/excel.tablesort#matchcase)|Represents whether the casing impacted the last sort of the table. Read-only.|
 ||[method](/javascript/api/excel/excel.tablesort#method)|Represents Chinese character ordering method last used to sort the table. Read-only.|
 ||[reapply()](/javascript/api/excel/excel.tablesort#reapply--)|Reapplies the current sorting parameters to the table.|
-|[TableSortData](/javascript/api/excel/excel.tablesortdata)|[fields](/javascript/api/excel/excel.tablesortdata#fields)|Represents the current conditions used to last sort the table. Read-only.|
-||[matchCase](/javascript/api/excel/excel.tablesortdata#matchcase)|Represents whether the casing impacted the last sort of the table. Read-only.|
-||[method](/javascript/api/excel/excel.tablesortdata#method)|Represents Chinese character ordering method last used to sort the table. Read-only.|
-|[TableSortLoadOptions](/javascript/api/excel/excel.tablesortloadoptions)|[$all](/javascript/api/excel/excel.tablesortloadoptions#$all)||
-||[fields](/javascript/api/excel/excel.tablesortloadoptions#fields)|Represents the current conditions used to last sort the table. Read-only.|
-||[matchCase](/javascript/api/excel/excel.tablesortloadoptions#matchcase)|Represents whether the casing impacted the last sort of the table. Read-only.|
-||[method](/javascript/api/excel/excel.tablesortloadoptions#method)|Represents Chinese character ordering method last used to sort the table. Read-only.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[functions](/javascript/api/excel/excel.workbook#functions)|Represents a collection of worksheet functions that can be used for computation. Read-only.|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|Occurs when the selection in the document is changed.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e. it will *not* throw an error).|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|Returns sheet protection object for a worksheet. Read-only.|
-|[WorksheetCollectionLoadOptions](/javascript/api/excel/excel.worksheetcollectionloadoptions)|[protection](/javascript/api/excel/excel.worksheetcollectionloadoptions#protection)|For EACH ITEM in the collection: Returns sheet protection object for a worksheet.|
-|[WorksheetData](/javascript/api/excel/excel.worksheetdata)|[protection](/javascript/api/excel/excel.worksheetdata#protection)|Returns sheet protection object for a worksheet. Read-only.|
-|[WorksheetLoadOptions](/javascript/api/excel/excel.worksheetloadoptions)|[protection](/javascript/api/excel/excel.worksheetloadoptions#protection)|Returns sheet protection object for a worksheet.|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[protect(options?: Excel.WorksheetProtectionOptions, password?: string)](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|Protects a worksheet. Fails if the worksheet has already been protected.|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|Sheet protection options. Read-only.|
 ||[protected](/javascript/api/excel/excel.worksheetprotection#protected)|Indicates if the worksheet is protected. Read-only.|
-|[WorksheetProtectionData](/javascript/api/excel/excel.worksheetprotectiondata)|[options](/javascript/api/excel/excel.worksheetprotectiondata#options)|Sheet protection options. Read-only.|
-||[protected](/javascript/api/excel/excel.worksheetprotectiondata#protected)|Indicates if the worksheet is protected. Read-only.|
-|[WorksheetProtectionLoadOptions](/javascript/api/excel/excel.worksheetprotectionloadoptions)|[$all](/javascript/api/excel/excel.worksheetprotectionloadoptions#$all)||
-||[options](/javascript/api/excel/excel.worksheetprotectionloadoptions#options)|Sheet protection options. Read-only.|
-||[protected](/javascript/api/excel/excel.worksheetprotectionloadoptions#protected)|Indicates if the worksheet is protected. Read-only.|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowautofilter)|Represents the worksheet protection option of allowing using auto filter feature.|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeletecolumns)|Represents the worksheet protection option of allowing deleting columns.|
 ||[allowDeleteRows](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeleterows)|Represents the worksheet protection option of allowing deleting rows.|

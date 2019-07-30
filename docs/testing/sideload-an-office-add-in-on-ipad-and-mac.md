@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
 ---
 
@@ -81,10 +81,6 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
     ![Office Add-in displayed in Office on Mac](../images/lorem-ipsum-wikipedia.png)
     
 ### Clearing the Office application's cache on a Mac
-
-Add-ins are often cached in Office on Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If  more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
-
-On a Mac, you can clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 

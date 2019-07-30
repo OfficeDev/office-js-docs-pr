@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.5
 description: 'Details about the ExcelApi 1.5 requirement set'
-ms.date: 07/25/2019
+ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -40,32 +40,14 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.5. 
 ||[getItem(id: string)](/javascript/api/excel/excel.customxmlpartcollection#getitem-id-)|Gets a custom XML part based on its ID.|
 ||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.customxmlpartcollection#getitemornullobject-id-)|Gets a custom XML part based on its ID.|
 ||[items](/javascript/api/excel/excel.customxmlpartcollection#items)|Gets the loaded child items in this collection.|
-|[CustomXmlPartCollectionLoadOptions](/javascript/api/excel/excel.customxmlpartcollectionloadoptions)|[$all](/javascript/api/excel/excel.customxmlpartcollectionloadoptions#$all)||
-||[id](/javascript/api/excel/excel.customxmlpartcollectionloadoptions#id)|For EACH ITEM in the collection: The custom XML part's ID. Read-only.|
-||[namespaceUri](/javascript/api/excel/excel.customxmlpartcollectionloadoptions#namespaceuri)|For EACH ITEM in the collection: The custom XML part's namespace URI. Read-only.|
-|[CustomXmlPartData](/javascript/api/excel/excel.customxmlpartdata)|[id](/javascript/api/excel/excel.customxmlpartdata#id)|The custom XML part's ID. Read-only.|
-||[namespaceUri](/javascript/api/excel/excel.customxmlpartdata#namespaceuri)|The custom XML part's namespace URI. Read-only.|
-|[CustomXmlPartLoadOptions](/javascript/api/excel/excel.customxmlpartloadoptions)|[$all](/javascript/api/excel/excel.customxmlpartloadoptions#$all)||
-||[id](/javascript/api/excel/excel.customxmlpartloadoptions#id)|The custom XML part's ID. Read-only.|
-||[namespaceUri](/javascript/api/excel/excel.customxmlpartloadoptions#namespaceuri)|The custom XML part's namespace URI. Read-only.|
 |[CustomXmlPartScopedCollection](/javascript/api/excel/excel.customxmlpartscopedcollection)|[getCount()](/javascript/api/excel/excel.customxmlpartscopedcollection#getcount--)|Gets the number of CustomXML parts in this collection.|
 ||[getItem(id: string)](/javascript/api/excel/excel.customxmlpartscopedcollection#getitem-id-)|Gets a custom XML part based on its ID.|
 ||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.customxmlpartscopedcollection#getitemornullobject-id-)|Gets a custom XML part based on its ID.|
 ||[getOnlyItem()](/javascript/api/excel/excel.customxmlpartscopedcollection#getonlyitem--)|If the collection contains exactly one item, this method returns it.|
 ||[getOnlyItemOrNullObject()](/javascript/api/excel/excel.customxmlpartscopedcollection#getonlyitemornullobject--)|If the collection contains exactly one item, this method returns it.|
 ||[items](/javascript/api/excel/excel.customxmlpartscopedcollection#items)|Gets the loaded child items in this collection.|
-|[CustomXmlPartScopedCollectionLoadOptions](/javascript/api/excel/excel.customxmlpartscopedcollectionloadoptions)|[$all](/javascript/api/excel/excel.customxmlpartscopedcollectionloadoptions#$all)||
-||[id](/javascript/api/excel/excel.customxmlpartscopedcollectionloadoptions#id)|For EACH ITEM in the collection: The custom XML part's ID. Read-only.|
-||[namespaceUri](/javascript/api/excel/excel.customxmlpartscopedcollectionloadoptions#namespaceuri)|For EACH ITEM in the collection: The custom XML part's namespace URI. Read-only.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|Id of the PivotTable. Read-only.|
-|[PivotTableCollectionLoadOptions](/javascript/api/excel/excel.pivottablecollectionloadoptions)|[id](/javascript/api/excel/excel.pivottablecollectionloadoptions#id)|For EACH ITEM in the collection: Id of the PivotTable. Read-only.|
-|[PivotTableData](/javascript/api/excel/excel.pivottabledata)|[id](/javascript/api/excel/excel.pivottabledata#id)|Id of the PivotTable. Read-only.|
-|[PivotTableLoadOptions](/javascript/api/excel/excel.pivottableloadoptions)|[id](/javascript/api/excel/excel.pivottableloadoptions#id)|Id of the PivotTable. Read-only.|
-|[Runtime](/javascript/api/excel/excel.runtime)|[set(properties: Excel.Runtime)](/javascript/api/excel/excel.runtime#set-properties-)|Sets multiple properties on the object at the same time, based on an existing loaded object.|
-||[set(properties: Interfaces.RuntimeUpdateData, options?: OfficeExtension.UpdateOptions)](/javascript/api/excel/excel.runtime#set-properties--options-)|Sets multiple properties of an object at the same time. You can pass either a plain object with the appropriate properties, or another API object of the same type.|
-|[RuntimeLoadOptions](/javascript/api/excel/excel.runtimeloadoptions)|[$all](/javascript/api/excel/excel.runtimeloadoptions#$all)||
-|[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Represents the collection of custom XML parts contained by this workbook. Read-only.|
-|[WorkbookData](/javascript/api/excel/excel.workbookdata)|[customXmlParts](/javascript/api/excel/excel.workbookdata#customxmlparts)|Represents the collection of custom XML parts contained by this workbook. Read-only.|
+|[Runtime](/javascript/api/excel/excel.runtime)||[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Represents the collection of custom XML parts contained by this workbook. Read-only.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|
 ||[getNextOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnextornullobject-visibleonly-)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.|
 ||[getPrevious(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getprevious-visibleonly-)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|
