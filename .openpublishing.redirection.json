@@ -5,6 +5,31 @@
         "redirect_url": "/javascript/api/excel?view=excel-js-preview"
       },
       {
+        "source_path": "docs/reference/onenote-api-reference.md",
+        "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-preview"
+      },
+      {
+        "source_path": "docs/reference/powerpoint-api-reference.md",
+        "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"
+      },
+      {
+        "source_path": "docs/reference/visio-api-reference.md",
+        "redirect_url": "/javascript/api/visio?view=visio-js-1.1"
+      },
+      {
+        "source_path": "docs/reference/word-api-reference.md",
+        "redirect_url": "/javascript/api/word?view=word-js-preview"
+      },
+      {
+        "source_path": "docs/reference/common-api-reference.md",
+        "redirect_url": "/javascript/api/office?view=common-js"
+      },
+      
+      {
         "source_path": "docs/reference/requirement-sets/powerpoint-and-project-note.md",
         "redirect_url": "/office/dev/add-ins/reference/javascript-api-for-office"
       },
