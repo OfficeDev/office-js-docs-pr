@@ -9,9 +9,39 @@
         "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"
       },
       {
-        "source_path": "docs/reference/outlook-api-reference.md",
+        "source_path": "docs/reference/outlook-api-reference-preview.md",
         "redirect_url": "/javascript/api/outlook?view=outlook-js-preview"
       },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-1.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.1"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-2.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.2"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-3.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.3"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-4.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.4"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-5.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.5"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-6.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.6"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-7.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.7"
+      },
+
+
       {
         "source_path": "docs/reference/powerpoint-api-reference.md",
         "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"
