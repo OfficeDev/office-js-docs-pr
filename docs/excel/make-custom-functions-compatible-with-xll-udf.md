@@ -1,15 +1,21 @@
 ---
-title: 'Extend custom functions with XLL user-defined functions'
-description: 'Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions (preview)'
-ms.date: 06/19/2019
+title: Extend custom functions with XLL user-defined functions
+description: Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions
+ms.date: 07/31/2019
 localization_priority: Normal
 ---
 
-# Extend custom functions with XLL user-defined functions (preview)
+# Extend custom functions with XLL user-defined functions
 
 If you have existing Excel XLLs, you can build equivalent custom functions in an Excel add-in to extend your solution features to other platforms such as online or macOS. However, Excel add-ins don't have all of the functionality available in XLLs. Depending on the functionality your solution uses, the XLL may provide a better experience than the Excel add-in custom functions in Excel on Windows.
 
-[!include[COM add-in and XLL UDF compatibility note](../includes/xll-compatibility-note.md)]
+> [!NOTE]
+> COM add-in and XLL UDF compatibility is supported by the following platforms, when connected to an Office 365 subscription:
+> - Excel on the web
+> - Excel on Windows (version 1904 or later)
+> - Excel on Mac (version 13.329 or later)
+> 
+> To use COM add-in and XLL UDF compatibility within Excel on the web, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account). If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 ## Specify equivalent XLL in the manifest
 
