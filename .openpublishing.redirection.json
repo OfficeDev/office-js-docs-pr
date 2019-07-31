@@ -1,6 +1,10 @@
 { 
     "redirections": [ 
       {
+        "source_path": "docs/excel/xll-compatibility-requirements.md",
+        "redirect_url": "/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf"
+      },
+      {
         "source_path": "docs/reference/requirement-sets/powerpoint-and-project-note.md",
         "redirect_url": "/office/dev/add-ins/reference/javascript-api-for-office"
       },
