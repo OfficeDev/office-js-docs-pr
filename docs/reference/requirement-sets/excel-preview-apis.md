@@ -26,7 +26,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 ## API list
 
-To see a complete list of all APIs supported by this requirement set (including previously released APIs), [click here to see a version-specific of the API reference documentation](/javascript/api/excel?view=excel-js-preview).
+The following table lists the Excel JavaScript APIs currently in preview. To see a complete list of all Excel JavaScript APIs (including preview APIs and previously released APIs), see [all Excel JavaScript APIs](/javascript/api/excel?view=excel-js-preview).
 
 | Class | Fields | Description |
 |:---|:---|:---|
