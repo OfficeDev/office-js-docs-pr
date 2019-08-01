@@ -25,6 +25,8 @@ ExcelApi 1.5 adds Custom XML parts. These are accessible through the [custom XML
 
 ## API list
 
+The following table lists the APIs in Excel JavaScript API requirement set 1.5. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.5 or earlier, see [Excel APIs in requirement set 1.5 or earlier](/javascript/api/excel?view=excel-js-1.5).
+
 | Class | Fields | Description |
 |:---|:---|:---|
 |[CustomXmlPart](/javascript/api/excel/excel.customxmlpart)|[delete()](/javascript/api/excel/excel.customxmlpart#delete--)|Deletes the custom XML part.|
@@ -55,5 +57,5 @@ ExcelApi 1.5 adds Custom XML parts. These are accessible through the [custom XML
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.5)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

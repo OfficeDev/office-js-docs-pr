@@ -12,11 +12,10 @@ ExcelApi 1.2 added support for table filtering and access to built-in Excel func
 
 ## API list
 
-|| Class | Fields | Description |
+The following table lists the APIs in Excel JavaScript API requirement set 1.2. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.2 or earlier, see [Excel APIs in requirement set 1.2 or earlier](/javascript/api/excel?view=excel-js-1.2).
+
+| Class | Fields | Description |
 |:---|:---|:---|
-|[Binding](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|Occurs when data or formatting within the binding is changed.|
-||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|Occurs when the selected content in the binding is changed.|
-|[BindingDataChangedEventArgs](/javascript/api/excel/excel.bindingdatachangedeventargs)|[binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding)|Gets the Binding object that represents the binding that raised the DataChanged event.|
 |[BindingSelectionChangedEventArgs](/javascript/api/excel/excel.bindingselectionchangedeventargs)|[binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)|Gets the Binding object that represents the binding that raised the SelectionChanged event.|
 ||[columnCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#columncount)|Gets the number of columns selected.|
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|Gets the number of rows selected.|
@@ -478,5 +477,5 @@ ExcelApi 1.2 added support for table filtering and access to built-in Excel func
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.2)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

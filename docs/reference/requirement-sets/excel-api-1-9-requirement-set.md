@@ -24,6 +24,8 @@ More than 500 new Excel APIs were introduced with the 1.9 requirement set. The f
 
 ## API list
 
+The following table lists the APIs in Excel JavaScript API requirement set 1.9. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.9 or earlier, see [Excel APIs in requirement set 1.9 or earlier](/javascript/api/excel?view=excel-js-1.9).
+
 | Class | Fields | Description |
 |:---|:---|:---|
 |[Application](/javascript/api/excel/excel.application)|[calculationEngineVersion](/javascript/api/excel/excel.application#calculationengineversion)|Returns the Excel calculation engine version used for the last full recalculation. Read-only.|
@@ -481,5 +483,5 @@ More than 500 new Excel APIs were introduced with the 1.9 requirement set. The f
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.9)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)
