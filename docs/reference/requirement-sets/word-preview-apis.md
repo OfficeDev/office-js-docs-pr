@@ -19,8 +19,6 @@ New Word JavaScript APIs are first introduced in "preview" and later become part
 
 The following table lists the Word JavaScript APIs currently in preview. To see a complete list of all Word JavaScript APIs (including preview APIs and previously released APIs), see [all Word JavaScript APIs](/javascript/api/word?view=word-js-preview).
 
-The following table lists the APIs currently in preview.
-
 | Class | Fields | Description |
 |:---|:---|:---|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#ondatachanged)|Occurs when data within the content control are changed. To get the new text, load this content control in the handler. To get the old text, do not load it.|
