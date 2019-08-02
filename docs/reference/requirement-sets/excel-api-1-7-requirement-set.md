@@ -60,6 +60,8 @@ In addition:
 
 ## API list
 
+The following table lists the APIs in Excel JavaScript API requirement set 1.7. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.7 or earlier, see [Excel APIs in requirement set 1.7 or earlier](/javascript/api/excel?view=excel-js-1.7).
+
 | Class | Fields | Description |
 |:---|:---|:---|
 |[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|Represents the type of the chart. See Excel.ChartType for details.|
@@ -329,5 +331,5 @@ In addition:
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.7)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

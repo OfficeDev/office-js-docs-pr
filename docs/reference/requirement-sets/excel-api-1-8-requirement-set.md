@@ -28,6 +28,8 @@ More [events](/office/dev/add-ins/excel/excel-add-ins-events) have been added fo
 
 ## API list
 
+The following table lists the APIs in Excel JavaScript API requirement set 1.8. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.8 or earlier, see [Excel APIs in requirement set 1.8 or earlier](/javascript/api/excel?view=excel-js-1.8).
+
 | Class | Fields | Description |
 |:---|:---|:---|
 |[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|Specifies the right-hand operand when the operator property is set to a binary operator such as GreaterThan (the left-hand operand is the value the user tries to enter in the cell). With the ternary operators Between and NotBetween, specifies the lower bound operand.|
@@ -280,5 +282,5 @@ More [events](/office/dev/add-ins/excel/excel-add-ins-events) have been added fo
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.8)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)
