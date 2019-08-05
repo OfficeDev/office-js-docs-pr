@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - requirement set 1.7
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/05/2019
 localization_priority: Normal
 ---
 
@@ -33,7 +33,7 @@ Provides diagnostic information to an Outlook add-in.
 
 Gets a string that represents the name of the host application.
 
-A string that can be one of the following values: `Outlook`, `Mac Outlook`, `OutlookIOS`, or `OutlookWebApp`.
+A string that can be one of the following values: `Outlook`, `OutlookWebApp`, `OutlookIOS`, or `OutlookAndroid`.
 
 ##### Type
 
@@ -54,7 +54,7 @@ A string that can be one of the following values: `Outlook`, `Mac Outlook`, `Out
 
 Gets a string that represents the version of either the host application or the Exchange Server.
 
-If the mail add-in is running on the Outlook desktop client or iOS, the `hostVersion` property returns the version of the host application, Outlook. In Outlook on the web, the property returns the version of the Exchange Server. An example is the string `15.0.468.0`.
+If the mail add-in is running on the Outlook desktop client or iOS, the `hostVersion` property returns the version of the host application, Outlook. In Outlook on the web, the property returns the version of the Exchange Server. An example is the string "15.0.468.0".
 
 ##### Type
 
