@@ -1,7 +1,7 @@
 ---
 title: Attach a debugger from the task pane
 description: ''
-ms.date: 05/08/2019
+ms.date: 08/06/2019
 localization_priority: Priority
 ---
 
@@ -25,7 +25,7 @@ In Visual Studio, you will see the code files in **Solution Explorer**.   You ca
 
 > [!NOTE]
 > If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps:
-
+>
 > 1. In Visual Studio, choose **DEBUG** > **Attach to Process**.
 > 2. In **Attach to Process**, choose all of the available Iexplore.exe processes, and then choose the **Attach** button.
 

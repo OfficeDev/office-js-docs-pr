@@ -41,7 +41,7 @@ function getTokenViaDialog(url) {
       }, 1000);
     } else {
       _dialogOpen = true;
-      Office.displayWebDialogOptions(url, {
+      OfficeRuntime.displayWebDialog(url, {
         height: '50%',
         width: '50%',
         onMessage: function (message, dialog) {

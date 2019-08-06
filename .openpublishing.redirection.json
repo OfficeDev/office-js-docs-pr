@@ -1,5 +1,68 @@
 { 
-    "redirections": [ 
+    "redirections": [
+      {
+        "source_path": "docs/reference/excel-api-reference.md",
+        "redirect_url": "/javascript/api/excel?view=excel-js-preview"
+      },
+      {
+        "source_path": "docs/reference/onenote-api-reference.md",
+        "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-preview.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-preview"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-1.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.1"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-2.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.2"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-3.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.3"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-4.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.4"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-5.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.5"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-6.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.6"
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-7.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.7"
+      },
+
+
+      {
+        "source_path": "docs/reference/powerpoint-api-reference.md",
+        "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"
+      },
+      {
+        "source_path": "docs/reference/visio-api-reference.md",
+        "redirect_url": "/javascript/api/visio?view=visio-js-1.1"
+      },
+      {
+        "source_path": "docs/reference/word-api-reference.md",
+        "redirect_url": "/javascript/api/word?view=word-js-preview"
+      },
+      {
+        "source_path": "docs/reference/common-api-reference.md",
+        "redirect_url": "/javascript/api/office?view=common-js"
+      },
+      
+      {
+        "source_path": "docs/excel/xll-compatibility-requirements.md",
+        "redirect_url": "/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf"
+      },
       {
         "source_path": "docs/reference/requirement-sets/powerpoint-and-project-note.md",
         "redirect_url": "/office/dev/add-ins/reference/javascript-api-for-office"

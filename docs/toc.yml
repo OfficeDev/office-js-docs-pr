@@ -241,7 +241,7 @@
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
     - name: API reference (Common)
-      href: /javascript/api/office
+      href: reference/common-api-reference.md
     - name: Office Add-in manifest reference
       items:
       - name: AllowSnapshot
@@ -434,7 +434,7 @@
       - name: Excel preview APIs
         href: reference/requirement-sets/excel-preview-apis.md
         displayName: Excel
-      - name: ExcelApi 1.9 requirement et
+      - name: ExcelApi 1.9 requirement set
         href: reference/requirement-sets/excel-api-1-9-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.8 requirement set
@@ -462,7 +462,7 @@
         href: reference/requirement-sets/excel-api-1-1-requirement-set.md
         displayName: Excel
     - name: API reference
-      href: /javascript/api/excel
+      href: reference/excel-api-reference.md
       displayName: Excel
     - name: Fundamental programming concepts
       href: excel/excel-add-ins-core-concepts.md
@@ -538,9 +538,6 @@
     - name: Batching
       href: excel/custom-functions-batching.md
       displayName: Excel, Custom Functions
-    - name: COM add-in and XLL UDF compatibility requirements
-      href: excel/xll-compatibility-requirements.md
-      displayName: Excel, Custom Functions
     - name: Debugging
       href: excel/custom-functions-debugging.md
       displayName: Excel, Custom Functions
@@ -607,7 +604,7 @@
       href: reference/requirement-sets/onenote-api-requirement-sets.md
       displayName: OneNote
     - name: API reference
-      href: /javascript/api/onenote
+      href: reference/onenote-api-reference.md
       displayName: OneNote
     - name: Work with OneNote page content
       href: onenote/onenote-add-ins-page-content.md
@@ -639,7 +636,7 @@
       href: reference/requirement-sets/outlook-api-requirement-sets.md
       displayName: Outlook
     - name: API reference
-      href: /javascript/api/outlook
+      href: reference/outlook-api-reference-preview.md
       displayName: Outlook
     - name: API object model
       items:
@@ -660,7 +657,7 @@
         - name: Office.context.mailbox.userProfile
           href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
         - name: Outlook Preview API Reference
-          href: /javascript/api/outlook
+          href: reference/outlook-api-reference-preview.md
       - name: Requirement Set 1.7
         items:
         - name: Overview
@@ -678,7 +675,7 @@
         - name: Office.context.mailbox.userProfile
           href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
         - name: Outlook 1.7 API Reference
-          href: /javascript/api/outlook_1_7
+          href: reference/outlook-api-reference-1-7.md
       - name: Requirement Set 1.6
         items:
         - name: Overview
@@ -696,7 +693,7 @@
         - name: Office.context.mailbox.userProfile
           href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
         - name: Outlook 1.6 API Reference
-          href: /javascript/api/outlook_1_6
+          href: reference/outlook-api-reference-1-6.md
       - name: Requirement Set 1.5
         items:
         - name: Overview
@@ -714,7 +711,7 @@
         - name: Office.context.mailbox.userProfile
           href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
         - name: Outlook 1.5 API Reference
-          href: /javascript/api/outlook_1_5
+          href: reference/outlook-api-reference-1-5.md
       - name: Requirement Set 1.4
         items:
         - name: Overview
@@ -732,7 +729,7 @@
         - name: Office.context.mailbox.userProfile
           href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
         - name: Outlook 1.4 API Reference
-          href: /javascript/api/outlook_1_4
+          href: reference/outlook-api-reference-1-4.md
       - name: Requirement Set 1.3
         items:
         - name: Overview
@@ -750,7 +747,7 @@
         - name: Office.context.mailbox.userProfile
           href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
         - name: Outlook 1.3 API Reference
-          href: /javascript/api/outlook_1_3
+          href: reference/outlook-api-reference-1-3.md
       - name: Requirement Set 1.2
         items:
         - name: Overview
@@ -768,7 +765,7 @@
         - name: Office.context.mailbox.userProfile
           href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
         - name: Outlook 1.2 API Reference
-          href: /javascript/api/outlook_1_2
+          href: reference/outlook-api-reference-1-2.md
       - name: Requirement Set 1.1
         items:
         - name: Overview
@@ -786,7 +783,7 @@
         - name: Office.context.mailbox.userProfile
           href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
         - name: Outlook 1.1 API Reference
-          href: /javascript/api/outlook_1_1
+          href: reference/outlook-api-reference-1-1.md
 
 - name: PowerPoint add-ins
   items:
@@ -807,8 +804,11 @@
     - name: Overview
       href: reference/overview/powerpoint-add-ins-reference-overview.md
       displayName: PowerPoint
+    - name: API requirement sets
+      href: reference/requirement-sets/powerpoint-api-requirement-sets.md
+      displayName: PowerPoint
     - name: API reference
-      href: /javascript/api/powerpoint
+      href: reference/powerpoint-api-reference.md
       displayName: PowerPoint
     - name: Get the whole document from an add-in
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
@@ -849,7 +849,7 @@
     href: reference/overview/visio-javascript-reference-overview.md
     displayName: Visio
   - name: API reference
-    href: /javascript/api/visio
+    href: reference/visio-api-reference.md
     displayName: Visio
 
 - name: Word add-ins
@@ -872,10 +872,24 @@
       href: reference/overview/word-add-ins-reference-overview.md
       displayName: Word
     - name: API requirement sets
-      href: reference/requirement-sets/word-api-requirement-sets.md
-      displayName: Word
+      items:
+      - name: Overview
+        href: reference/requirement-sets/word-api-requirement-sets.md
+        displayName: Word
+      - name: Word preview APIs
+        href: reference/requirement-sets/word-preview-apis.md
+        displayName: Word
+      - name: WordApi 1.3 requirement set
+        href: reference/requirement-sets/word-api-1-3-requirement-set.md
+        displayName: Word
+      - name: WordApi 1.2 requirement set
+        href: reference/requirement-sets/word-api-1-2-requirement-set.md
+        displayName: Word
+      - name: WordApi 1.1 requirement set
+        href: reference/requirement-sets/word-api-1-1-requirement-set.md
+        displayName: Word
     - name: API reference
-      href: /javascript/api/word
+      href: reference/word-api-reference.md
       displayName: Word
     - name: Fundamental programming concepts
       href: word/word-add-ins-core-concepts.md
