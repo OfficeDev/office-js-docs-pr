@@ -1,7 +1,7 @@
 ---
 title: JavaScript API for Office error codes
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
 ---
 
