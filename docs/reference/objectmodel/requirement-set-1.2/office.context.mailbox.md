@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.2
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
 ---
 
@@ -252,8 +252,16 @@ Your app must have the **ReadItem** permission specified in its manifest to call
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The token is provided as a string in the `asyncResult.value` property.|
+|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The token is provided as a string in the `asyncResult.value` property.<br><br>If there was an error, the `asyncResult.error` and `asyncResult.diagnostics` properties may provide additional information.|
 |`userContext`| Object| &lt;optional&gt;|Any state data that is passed to the asynchronous method.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|The request has failed. Please look at the diagnostics object for the HTTP error code.|
+|`InternalServerError`|The Exchange server returned an error. Please look at the diagnostics object for more information.|
+|`NetworkError`|The user is no longer connected to the network. Please check your network connection and try again.|
 
 ##### Requirements
 
@@ -285,8 +293,16 @@ The `getUserIdentityTokenAsync` method returns a token that you can use to ident
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The token is provided as a string in the `asyncResult.value` property.|
+|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The token is provided as a string in the `asyncResult.value` property.<br><br>If there was an error, the `asyncResult.error` and `asyncResult.diagnostics` properties may provide additional information.|
 |`userContext`| Object| &lt;optional&gt;|Any state data that is passed to the asynchronous method.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|The request has failed. Please look at the diagnostics object for the HTTP error code.|
+|`InternalServerError`|The Exchange server returned an error. Please look at the diagnostics object for more information.|
+|`NetworkError`|The user is no longer connected to the network. Please check your network connection and try again.|
 
 ##### Requirements
 
