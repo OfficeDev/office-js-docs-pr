@@ -36,10 +36,6 @@ The best way to find out if an online service supports the Implicit flow is to c
 
 Many libraries are available for implementing the Authorization Code flow in various languages and frameworks. For more information about some of these libraries, see the **Libraries** section later in this article.
 
-The following sample provides an example of an add-in that implements the Authorization Code flow: [THE SAMPLE IS UNDER DEVELOPMENT.]
-
-- [Office Add-in GitHub ASP.NET](https://github.com/OfficeDev/...): An ASP.NET based add-in (Excel, Word, or PowerPoint) that uses the Passport library to login and get an access token for GitHub data.
-
 ## Libraries
 
 Libraries are available for many languages and platforms, for both the Implicit flow and the Authorization Code flow. Some libraries are general purpose, while others are for specific online services.
