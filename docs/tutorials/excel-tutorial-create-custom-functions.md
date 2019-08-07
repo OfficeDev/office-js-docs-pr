@@ -142,7 +142,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
     npm run build
     ```
 
-4. Complete the following steps (for either Excel on the web or Windows or Mac) to re-register the add-in in Excel. You must complete these steps before the new function will be available.
+4. Complete the following steps (for Excel on the web, Windows, or Mac) to re-register the add-in in Excel. You must complete these steps before the new function will be available.
 
 ### [Excel on Windows or Mac](#tab/excel-windows)
 
