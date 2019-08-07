@@ -1,7 +1,7 @@
 ---
 title: Authorize external services in your Office Add-in
 description: ''
-ms.date: 02/12/2019
+ms.date: 08/07/2019
 localization_priority: Priority
 ---
 
@@ -9,16 +9,19 @@ localization_priority: Priority
 
 Popular online services, including Office 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
 
+> [!NOTE]
+> The remainder of this article is about getting access to non-Microsoft services. For information about accessing Microsoft Graph (including Office 365), see [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and [Access to Microsoft Graph without SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
+
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
 A fundamental idea of OAuth is that an application can be a security principal unto itself, just like a user or a group, with its own identity and set of permissions. In the most typical scenarios, when the user takes an action in the Office Add-in that requires the online service, the add-in sends the service a request for a specific set of permissions to the user's account. The service then prompts the user to grant the add-in those permissions. After the permissions are granted, the service sends the add-in a small encoded *access token*. The add-in can use the service by including the token in all its requests to the service's APIs. But the add-in can act only within the permissions that the user granted it. The token also expires after a specified time.
 
 Several OAuth patterns, called *flows* or *grant types*, are designed for different scenarios. The following two patterns are the most commonly implemented:
 
-- **Implicit flow**: Communication between the add-in and the online service is implemented with client-side JavaScript.
+- **Implicit flow**: Communication between the add-in and the online service is implemented with client-side JavaScript. This flow is commonly used in single-page applications (SPA).
 - **Authorization Code flow**: Communication is *server-to-server* between your add-in's web application and the online service. So, it is implemented with server-side code.
 
-The purpose of an OAuth flow is to secure the identity and authorization of the application. In the Authorization Code flow, you're provided a *client secret* that needs to be kept hidden. A Single Page Application (SPA) has no way to protect the secret, so we recommend that you use the Implicit flow in SPAs.
+The purpose of an OAuth flow is to secure the identity and authorization of the application. In the Authorization Code flow, you're provided a *client secret* that needs to be kept hidden. An application that has no server-side backend, such as a Single Page Application (SPA), has no way to protect the secret, so we recommend that you use the Implicit flow in SPAs.
 
 You should be familiar with the pros and cons of the Implicit flow and the Authorization Code flow. For more infomation about these two flows, see [Authorization Code](https://tools.ietf.org/html/rfc6749#section-1.3.1) and [Implicit](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
@@ -26,33 +29,20 @@ You should be familiar with the pros and cons of the Implicit flow and the Autho
 > You also have the option of using a middleman service to perform authorization and pass the access token to your add-in. For details about this scenario, see the **Middleman services** section later in this article.
 
 ## Using the Implicit flow in Office Add-ins
-The best way to find out if an online service supports the Implicit flow is to consult the service's documentation. For services that support the Implicit flow, you can use the **Office-js-helpers** JavaScript library to do all the detailed work for you:
 
-- [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
-
-For information about other libraries that support the Implicit flow, see the **Libraries** section later in this article.
+The best way to find out if an online service supports the Implicit flow is to consult the service's documentation. For information about libraries that support the Implicit flow, see the **Libraries** section later in this article.
 
 ## Using the Authorization Code flow in Office Add-ins
 
 Many libraries are available for implementing the Authorization Code flow in various languages and frameworks. For more information about some of these libraries, see the **Libraries** section later in this article.
 
-The following samples provide examples of add-ins that implement the Authorization Code flow:
+The following sample provides an example of an add-in that implements the Authorization Code flow: [THE SAMPLE IS UNDER DEVELOPMENT.]
 
-- [Office-Add-in-Nodejs-ServerAuth](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth) (NodeJS)
-- [PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) (ASP.NET MVC)
-
-### Relay/Proxy functions
-
-You can use the Authorization Code flow even with a serverless web application by storing the **client ID** and **client secret** values in a simple function that is hosted in a service such as [Azure Functions](https://azure.microsoft.com/services/functions) or [Amazon Lambda](https://aws.amazon.com/lambda).
-The function exchanges a given code for an **access token** and relays it back to the client. The security of this approach depends on how well access to the function is guarded.
-
-To use this technique, your add-in displays a UI/popup to show the login screen for the online service (Google, Facebook, and so on). When the user signs in and grants the add-in permission to her resources in the online service, the add-in receives a code which can be then sent to the online function. The services described in the **Middleman services** section later in this article use a similar flow.
+- [Office Add-in GitHub ASP.NET](https://github.com/OfficeDev/...): An ASP.NET based add-in (Excel, Word, or PowerPoint) that uses the Passport library to login and get an access token for GitHub data.
 
 ## Libraries
 
 Libraries are available for many languages and platforms, for both the Implicit flow and the Authorization Code flow. Some libraries are general purpose, while others are for specific online services.
-
-**Office 365 and other services that use Azure Active Directory as the authorization provider**: [Azure Active Directory Authentication Libraries](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/). A preview is also available for the [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 **Google**: Search [GitHub.com/Google](https://github.com/google) for "auth" or the name of your language. Most of the relevant repos are named `google-auth-library-[name of language]`.
 
