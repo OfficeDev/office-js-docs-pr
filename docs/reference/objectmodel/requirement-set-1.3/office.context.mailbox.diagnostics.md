@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - requirement set 1.3
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
 ---
 
@@ -26,6 +26,9 @@ Provides diagnostic information to an Outlook add-in.
 Gets a string that represents the name of the host application.
 
 A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.
+
+> [!NOTE]
+> The `Outlook` value is returned for Outlook on desktop clients i.e., Windows and Mac.
 
 ##### Type
 
