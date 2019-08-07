@@ -5,8 +5,6 @@ ms.date: 12/04/2017
 localization_priority: Normal
 ---
 
-
-
 # Data visualization style guidelines for Office Add-ins
 
 Good data visualizations help users find insights in their data. They can use those insights to tell stories that inform and persuade. This article provides guidelines to help you design effective data visualizations in your add-ins for Excel and other Office apps.
@@ -56,10 +54,9 @@ Choose colors that follow operating system or application themes rather than har
 
 For best practices for use of color in data visualizations, see the following:
 
-
 - [Why rainbow colors aren't the best option for data visualizations](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
 - [Color Brewer 2.0: Color Advice for Cartography](http://colorbrewer2.org/)
-- [I Want Hue](http://tools.medialab.sciences-po.fr/iwanthue/)
+- [I Want Hue](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### Gridlines
 
