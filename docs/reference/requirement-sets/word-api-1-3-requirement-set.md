@@ -196,16 +196,9 @@ The following table lists the APIs in Word JavaScript API requirement set 1.3. T
 ||[getRange(rangeLocation?: Word.RangeLocation)](/javascript/api/word/word.table#getrange-rangelocation-)|Gets the range that contains this table, or the range at the start or end of the table.|
 ||[headerRowCount](/javascript/api/word/word.table#headerrowcount)|Gets and sets the number of header rows.|
 ||[horizontalAlignment](/javascript/api/word/word.table#horizontalalignment)|Gets and sets the horizontal alignment of every cell in the table. The value can be 'Left', 'Centered', 'Right', or 'Justified'.|
-||[ignorePunct](/javascript/api/word/word.table#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.table#ignorespace)||
 ||[insertContentControl()](/javascript/api/word/word.table#insertcontentcontrol--)|Inserts a content control on the table.|
 ||[insertParagraph(paragraphText: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.table#insertparagraph-paragraphtext--insertlocation-)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.table#inserttable-rowcount--columncount--insertlocation--values-)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|
-||[matchCase](/javascript/api/word/word.table#matchcase)||
-||[matchPrefix](/javascript/api/word/word.table#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.table#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.table#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.table#matchwildcards)||
 ||[font](/javascript/api/word/word.table#font)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|
 ||[isUniform](/javascript/api/word/word.table#isuniform)|Indicates whether all of the table rows are uniform. Read-only.|
 ||[nestingLevel](/javascript/api/word/word.table#nestinglevel)|Gets the nesting level of the table. Top-level tables have level 1. Read-only.|
@@ -219,7 +212,7 @@ The following table lists the APIs in Word JavaScript API requirement set 1.3. T
 ||[rowCount](/javascript/api/word/word.table#rowcount)|Gets the number of rows in the table. Read-only.|
 ||[rows](/javascript/api/word/word.table#rows)|Gets all of the table rows. Read-only.|
 ||[tables](/javascript/api/word/word.table#tables)|Gets the child tables nested one level deeper. Read-only.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the table object. The search results are a collection of range objects.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions--ignorepunct-)|Performs a search with the specified SearchOptions on the scope of the table object. The search results are a collection of range objects.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.table#select-selectionmode-)|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|
 ||[setCellPadding(cellPaddingLocation: Word.CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.table#setcellpadding-cellpaddinglocation--cellpadding-)|Sets cell padding in points.|
 ||[shadingColor](/javascript/api/word/word.table#shadingcolor)|Gets and sets the shading color. Color is specified in "#RRGGBB" format or by using the color name.|
@@ -269,14 +262,7 @@ The following table lists the APIs in Word JavaScript API requirement set 1.3. T
 ||[getNext()](/javascript/api/word/word.tablerow#getnext--)|Gets the next row. Throws if this row is the last one.|
 ||[getNextOrNullObject()](/javascript/api/word/word.tablerow#getnextornullobject--)|Gets the next row. Returns a null object if this row is the last one.|
 ||[horizontalAlignment](/javascript/api/word/word.tablerow#horizontalalignment)|Gets and sets the horizontal alignment of every cell in the row. The value can be 'Left', 'Centered', 'Right', or 'Justified'.|
-||[ignorePunct](/javascript/api/word/word.tablerow#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.tablerow#ignorespace)||
 ||[insertRows(insertLocation: Word.InsertLocation, rowCount: number, values?: string[][])](/javascript/api/word/word.tablerow#insertrows-insertlocation--rowcount--values-)|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|
-||[matchCase](/javascript/api/word/word.tablerow#matchcase)||
-||[matchPrefix](/javascript/api/word/word.tablerow#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.tablerow#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.tablerow#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.tablerow#matchwildcards)||
 ||[preferredHeight](/javascript/api/word/word.tablerow#preferredheight)|Gets and sets the preferred height of the row in points.|
 ||[cellCount](/javascript/api/word/word.tablerow#cellcount)|Gets the number of cells in the row. Read-only.|
 ||[cells](/javascript/api/word/word.tablerow#cells)|Gets cells. Read-only.|
@@ -284,7 +270,7 @@ The following table lists the APIs in Word JavaScript API requirement set 1.3. T
 ||[isHeader](/javascript/api/word/word.tablerow#isheader)|Checks whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object.|
 ||[parentTable](/javascript/api/word/word.tablerow#parenttable)|Gets parent table. Read-only.|
 ||[rowIndex](/javascript/api/word/word.tablerow#rowindex)|Gets the index of the row in its parent table. Read-only.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Performs a search with the specified SearchOptions on the scope of the row. The search results are a collection of range objects.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions--ignorepunct-)|Performs a search with the specified SearchOptions on the scope of the row. The search results are a collection of range objects.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.tablerow#select-selectionmode-)|Selects the row and navigates the Word UI to it.|
 ||[setCellPadding(cellPaddingLocation: Word.CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.tablerow#setcellpadding-cellpaddinglocation--cellpadding-)|Sets cell padding in points.|
 ||[shadingColor](/javascript/api/word/word.tablerow#shadingcolor)|Gets and sets the shading color. Color is specified in "#RRGGBB" format or by using the color name.|
