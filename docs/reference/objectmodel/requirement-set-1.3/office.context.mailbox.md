@@ -27,7 +27,6 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 | [displayAppointmentForm](#displayappointmentformitemid) | Method |
 | [displayMessageForm](#displaymessageformitemid) | Method |
 | [displayNewAppointmentForm](#displaynewappointmentformparameters) | Method |
-| [displayNewMessageForm](#displaynewmessageformparameters) | Method |
 | [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
 | [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
 | [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
