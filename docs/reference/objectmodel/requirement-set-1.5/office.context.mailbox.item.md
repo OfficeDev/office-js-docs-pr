@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.5
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Priority
 ---
 
