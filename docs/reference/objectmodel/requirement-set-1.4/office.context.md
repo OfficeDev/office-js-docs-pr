@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.4
 description: ''
-ms.date: 06/25/2019
+ms.date: 08/08/2019
 localization_priority: Normal
 ---
 
@@ -17,6 +17,14 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [displayLanguage](#displaylanguage-string) | Member |
+| [officeTheme](#officetheme-object) | Member |
+| [roamingSettings](#roamingsettings-roamingsettings) | Member |
 
 ### Namespaces
 
