@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.1
 description: ''
-ms.date: 08/06/2019
+ms.date: 08/08/2019
 localization_priority: Normal
 ---
 
@@ -18,6 +18,20 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | Member |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Method |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Method |
+| [displayAppointmentForm](#displayappointmentformitemid) | Method |
+| [displayMessageForm](#displaymessageformitemid) | Method |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Method |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
 
 ### Namespaces
 

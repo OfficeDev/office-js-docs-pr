@@ -1,7 +1,7 @@
 ---
 title: Office namespace - requirement set 1.3
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/08/2019
 localization_priority: Normal
 ---
 
@@ -15,6 +15,14 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [SourceProperty](#sourceproperty-string) | Member |
 
 ### Namespaces
 

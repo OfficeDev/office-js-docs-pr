@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.4
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
 ---
 
@@ -18,6 +18,49 @@ The `item` namespace is used to access the currently selected message, meeting r
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [attachments](#attachments-arrayattachmentdetails) | Member |
+| [bcc](#bcc-recipients) | Member |
+| [body](#body-body) | Member |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
+| [conversationId](#nullable-conversationid-string) | Member |
+| [dateTimeCreated](#datetimecreated-date) | Member |
+| [dateTimeModified](#datetimemodified-date) | Member |
+| [end](#end-datetime) | Member |
+| [from](#from-emailaddressdetails) | Member |
+| [internetMessageId](#internetmessageid-string) | Member |
+| [itemClass](#itemclass-string) | Member |
+| [itemId](#nullable-itemid-string) | Member |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
+| [location](#location-stringlocation) | Member |
+| [normalizedSubject](#normalizedsubject-string) | Member |
+| [notificationMessages](#notificationmessages-notificationmessages) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
+| [organizer](#organizer-emailaddressdetails) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
+| [sender](#sender-emailaddressdetails) | Member |
+| [start](#start-datetime) | Member |
+| [subject](#subject-stringsubject) | Member |
+| [to](#to-arrayemailaddressdetailsrecipients) | Member |
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Method |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Method |
+| [close](#close) | Method |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
+| [displayReplyForm](#displayreplyformformdata-callback) | Method |
+| [getEntities](#getentities--entities) | Method |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
+| [getRegExMatches](#getregexmatches--object) | Method |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
+| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Method |
+| [saveAsync](#saveasyncoptions-callback) | Method |
+| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Method |
 
 ### Example
 
@@ -150,7 +193,7 @@ The following is an example of the result parameter passed to the callback funct
 }
 ```
 
-#### cc: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+#### cc: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 Provides access to the Cc (carbon copy) recipients of a message. The type of object and level of access depends on the mode of the current item.
 
@@ -178,7 +221,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 ##### Requirements
 
@@ -550,7 +593,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 );
 ```
 
-#### optionalAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+#### optionalAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 Provides access to the optional attendees of an event. The type of object and level of access depends on the mode of the current item.
 
@@ -579,7 +622,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 ##### Requirements
 
@@ -613,7 +656,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
 
-#### requiredAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+#### requiredAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 Provides access to the required attendees of an event. The type of object and level of access depends on the mode of the current item.
 
@@ -643,7 +686,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 ##### Requirements
 
@@ -773,7 +816,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-#### to: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+#### to: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 Provides access to the recipients on the **To** line of a message. The type of object and level of access depends on the mode of the current item.
 
@@ -801,7 +844,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 ##### Requirements
 
@@ -1208,7 +1251,7 @@ The following example accesses the contacts entities in the current item's body.
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)?view=outlook-js-1.4)>}
+#### getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.4)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.4)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.4)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.4))>}
 
 Gets an array of all the entities of the specified entity type found in the selected item's body.
 
@@ -1245,7 +1288,7 @@ While the minimum permission level to use this method is **Restricted**, some en
 | `TaskSuggestion` | TaskSuggestion | **ReadItem** |
 | `URL` | String | **Restricted** |
 
-Type: Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)?view=outlook-js-1.4)>
+Type: Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.4)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.4)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.4)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.4))>
 
 ##### Example
 
@@ -1265,7 +1308,7 @@ Office.initialize = function () {
 }
 ```
 
-#### getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)?view=outlook-js-1.4)>}
+#### getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.4)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.4)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.4)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.4))>}
 
 Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.
 
@@ -1293,7 +1336,7 @@ The `getFilteredEntitiesByName` method returns the entities that match the regul
 If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.
 
 Type:
-Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)?view=outlook-js-1.4)>
+Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.4)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.4)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.4)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.4))>
 
 #### getRegExMatches() → {Object}
 

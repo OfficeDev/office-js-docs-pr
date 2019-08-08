@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.userProfile - requirement set 1.2
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/08/2019
 localization_priority: Normal
 ---
 
@@ -16,6 +16,14 @@ localization_priority: Normal
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [displayName](#displayname-string) | Member |
+| [emailAddress](#emailaddress-string) | Member |
+| [timeZone](#timezone-string) | Member |
 
 ### Members
 
