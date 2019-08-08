@@ -60,9 +60,9 @@ In this tutorial, you will:
 
 4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on the web or Windows.
 
-# [Excel on Windows](#tab/excel-windows)
+# [Excel on Windows or Mac](#tab/excel-windows)
 
-To test your add-in in Excel on Windows, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
+To test your add-in in Excel on Windows or Mac, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -142,9 +142,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
     npm run build
     ```
 
-4. Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel. You must complete these steps before the new function will be available.
+4. Complete the following steps (for Excel on the web, Windows, or Mac) to re-register the add-in in Excel. You must complete these steps before the new function will be available.
 
-### [Excel on Windows](#tab/excel-windows)
+### [Excel on Windows or Mac](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
 
@@ -212,9 +212,9 @@ function clock(invocation) {
     npm run build
     ```
 
-3. Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
+3. Complete the following steps (for Excel on the web, Windows, or Mac) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
-# [Excel on Windows](#tab/excel-windows)
+# [Excel on Windows or Mac](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
 

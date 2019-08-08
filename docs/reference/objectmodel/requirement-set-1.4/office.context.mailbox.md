@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.4
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
 ---
 
@@ -18,6 +18,22 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | Member |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Method |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Method |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Method |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Method |
+| [displayAppointmentForm](#displayappointmentformitemid) | Method |
+| [displayMessageForm](#displaymessageformitemid) | Method |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Method |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
 
 ### Namespaces
 
@@ -171,7 +187,7 @@ The `convertToUtcClientTime` method converts a dictionary containing a local dat
 
 |Name| Type| Description|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)|The local time value to convert.|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.4)|The local time value to convert.|
 
 ##### Requirements
 
@@ -336,14 +352,22 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. The token is provided as a string in the `asyncResult.value` property.|
+|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The token is provided as a string in the `asyncResult.value` property.<br><br>If there was an error, the `asyncResult.error` and `asyncResult.diagnostics` properties may provide additional information.|
 |`userContext`| Object| &lt;optional&gt;|Any state data that is passed to the asynchronous method.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|The request has failed. Please look at the diagnostics object for the HTTP error code.|
+|`InternalServerError`|The Exchange server returned an error. Please look at the diagnostics object for more information.|
+|`NetworkError`|The user is no longer connected to the network. Please check your network connection and try again.|
 
 ##### Requirements
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose and read|
 
@@ -369,8 +393,16 @@ The `getUserIdentityTokenAsync` method returns a token that you can use to ident
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The token is provided as a string in the `asyncResult.value` property.|
+|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The token is provided as a string in the `asyncResult.value` property.<br><br>If there was an error, the `asyncResult.error` and `asyncResult.diagnostics` properties may provide additional information.|
 |`userContext`| Object| &lt;optional&gt;|Any state data that is passed to the asynchronous method.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|The request has failed. Please look at the diagnostics object for the HTTP error code.|
+|`InternalServerError`|The Exchange server returned an error. Please look at the diagnostics object for more information.|
+|`NetworkError`|The user is no longer connected to the network. Please check your network connection and try again.|
 
 ##### Requirements
 

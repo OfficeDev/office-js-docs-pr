@@ -57,6 +57,7 @@
         "develop/*.md": "non-product-specific",
         "excel/*.md": "excel",
         "onenote/*.md": "onenote",
+        "outlook/*.md": "outlook",
         "overview/*.md": "non-product-specific",
         "powerpoint/*.md": "powerpoint",
         "project/*.md": "project",
@@ -67,6 +68,7 @@
         "reference/objectmodel/**/*.md": "outlook",
         "resources/*.md": "non-product-specific",
         "testing/*.md": "non-product-specific",
+        "visio/*.md": "visio",
         "word/*.md": "word"
       }
     },
