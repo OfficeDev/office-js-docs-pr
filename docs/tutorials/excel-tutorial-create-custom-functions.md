@@ -212,7 +212,7 @@ function clock(invocation) {
     npm run build
     ```
 
-3. Complete the following steps (for either Excel on the web, Windows, or Mac) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
+3. Complete the following steps (for Excel on the web, Windows, or Mac) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
