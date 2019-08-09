@@ -18,7 +18,7 @@ You have a choice of two ways to accomplish these authentications.
 
 The following flowchart shows you the decisions that you need to make as an add-in developer. Details are later in this article.
 
-![An image showing a decision flowchart for enabling authentication and authorization in Office add-ins](../images/auth-decisions-flowchart.jpg)
+![An image showing a decision flowchart for enabling authentication and authorization in Office add-ins](../images/auth-decisions-flowchart.gif)
 
 ## User authentication without SSO
 
