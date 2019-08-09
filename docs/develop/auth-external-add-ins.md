@@ -1,6 +1,6 @@
 ---
 title: Authorize external services in your Office Add-in
-description: ''
+description: 'Getting authorization to non-Microsoft data sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub using OAuth 2.0, the Authorization Code and Implicit flows.'
 ms.date: 08/07/2019
 localization_priority: Priority
 ---
@@ -10,7 +10,7 @@ localization_priority: Priority
 Popular online services, including Office 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
 
 > [!NOTE]
-> The remainder of this article is about getting access to non-Microsoft services. For information about accessing Microsoft Graph (including Office 365), see [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and [Access to Microsoft Graph without SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
+> The remainder of this article is about accessing non-Microsoft services. For information about accessing Microsoft Graph (including Office 365), see [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and [Access to Microsoft Graph without SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
@@ -18,10 +18,10 @@ A fundamental idea of OAuth is that an application can be a security principal u
 
 Several OAuth patterns, called *flows* or *grant types*, are designed for different scenarios. The following two patterns are the most commonly implemented:
 
-- **Implicit flow**: Communication between the add-in and the online service is implemented with client-side JavaScript. This flow is commonly used in single-page applications (SPA).
+- **Implicit flow**: Communication between the add-in and the online service is implemented with client-side JavaScript. This flow is commonly used in single-page applications (SPAs).
 - **Authorization Code flow**: Communication is *server-to-server* between your add-in's web application and the online service. So, it is implemented with server-side code.
 
-The purpose of an OAuth flow is to secure the identity and authorization of the application. In the Authorization Code flow, you're provided a *client secret* that needs to be kept hidden. An application that has no server-side backend, such as a Single Page Application (SPA), has no way to protect the secret, so we recommend that you use the Implicit flow in SPAs.
+The purpose of an OAuth flow is to secure the identity and authorization of the application. In the Authorization Code flow, you're provided a *client secret* that needs to be kept hidden. An application that has no server-side backend, such as an SPA, has no way to protect the secret, so we recommend that you use the Implicit flow in SPAs.
 
 You should be familiar with the pros and cons of the Implicit flow and the Authorization Code flow. For more infomation about these two flows, see [Authorization Code](https://tools.ietf.org/html/rfc6749#section-1.3.1) and [Implicit](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
@@ -30,7 +30,9 @@ You should be familiar with the pros and cons of the Implicit flow and the Autho
 
 ## Using the Implicit flow in Office Add-ins
 
-The best way to find out if an online service supports the Implicit flow is to consult the service's documentation. For information about libraries that support the Implicit flow, see the **Libraries** section later in this article.
+The best way to find out if an online service supports the Implicit flow is to consult the service's documentation.
+
+For information about libraries that support the Implicit flow, see the **Libraries** section later in this article.
 
 ## Using the Authorization Code flow in Office Add-ins
 
