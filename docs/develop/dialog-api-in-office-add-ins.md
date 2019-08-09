@@ -1,7 +1,7 @@
 ---
 title: Use the Dialog API in your Office Add-ins
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/07/2019
 localization_priority: Priority
 ---
 
@@ -12,7 +12,7 @@ You can use the [Dialog API](/javascript/api/office/office.ui) to open dialog bo
 > [!NOTE]
 > For information about where the Dialog API is currently supported, see [Dialog API requirement sets](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
 
-> A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google or Facebook.
+A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google, Facebook, or Microsoft Graph. For more information, see [Authenticate with the Office Dialog API](auth-with-office-dialog-api.md) *after* you are familiar with this article.
 
 Consider opening a dialog box from a task pane or content add-in or [add-in command](../design/add-in-commands.md) to do the following:
 
@@ -380,52 +380,12 @@ For a sample that shows a video in a dialog box, see the [video placemat design 
 
 ## Use the Dialog APIs in an authentication flow
 
-A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an Iframe, such as Microsoft Account, Office 365, Google, and Facebook.
+See [Authenticate with the Office Dialog API](auth-with-office-dialog-api.md).
 
-> [!NOTE]
-> When you are using the Dialog APIs for this scenario, do *not* use the `displayInIframe: true` option in the call to `displayDialogAsync`. See [Take advantage of a performance option in Office on the web](#take-advantage-of-a-performance-option-in-office-on-the-web) previously in this article for details about this option.
+## Using the Office Dialog API with single-page applications and client-side routing
 
-The following is a simple and typical authentication flow:
+If your add-in uses client-side routing, as single-page applications (SPAs) typically do, you have the option to pass the URL of a route to the [displayDialogAsync](/javascript/api/office/office.ui) method (*which we recommend against*), instead of the URL of a complete and separate HTML page.
 
-1. The first page that opens in the dialog box is a local page (or other resource) that is hosted in the add-in's domain; that is, the host window's domain. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." Code in this page constructs the URL of the identity provider's sign-in page by using information that is passed to the dialog box as described in [Pass information to the dialog box](#pass-information-to-the-dialog-box).
-2. The dialog window then redirects to the sign-in page. The URL includes a query parameter that tells the identity provider to redirect the dialog window, after the user signs in, to a specific page. In this article, we'll call this page "redirectPage.html". (*This must be a page in the same domain as the host window*, because the only way for the dialog window to pass the results of the sign-in attempt is with a call of `messageParent`, which can only be called on a page with the same domain as the host window.)
-2. The identity provider's service processes the incoming GET request from the dialog window. If the user is already logged on, it immediately redirects the window to redirectPage.html and includes user data as a query parameter. If the user is not already signed in, the provider's sign-in page appears in the window, and the user signs in. For most providers, if the user cannot sign in successfully, the provider shows an error page in the dialog window and does not redirect to redirectPage.html. The user must close the window by selecting the **X** in the corner. If the user successfully signs in, the dialog window is redirected to redirectPage.html and user data is included as a query parameter.
-3. When the redirectPage.html page opens, it calls `messageParent` to report the success or failure to the host page and optionally also report user data or error data.
-4. The `DialogMessageReceived` event fires in the host page and its handler closes the dialog window and optionally does other processing of the message.
+The dialog box is in a new window with its own execution context. If you pass a route, your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog window. So this technique downloads and launches a second instance of your application in the dialog window, which partially defeats the purpose of an SPA. In addition, code that changes variables in the dialog window does not change the task pane version of the same variables. Similarly, the dialog window has its own session storage, which is not accessible from code in the task pane.
 
-For a sample add-in that uses this pattern, see:
-
-- [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): The resource that is initially opened in the dialog window is a controller method that has no view of its own. It redirects to the Office 365 sign in page.
-
-#### Support multiple identity providers
-
-If your add-in gives the user a choice of providers, such as Microsoft Account, Google, or Facebook, you need a local first page (see preceding section) that provides a UI for the user to select a provider. Selection triggers the construction of the sign-in URL and redirection to it.
-
-#### Authorization of the add-in to an external resource
-
-In the modern web, web applications are security principals just as users are, and the application has its own identity and permissions to an online resource such as Office 365, Google Plus, Facebook, or LinkedIn. The application is registered with the resource provider before it is deployed. The registration includes:
-
-- A list of the permissions that the application needs to a user's resources.
-- A URL to which the resource service should return an access token when the application accesses the service.  
-
-When a user invokes a function in the application that accesses the user's data in the resource service, they are prompted to sign in to the service and then prompted to grant the application the permissions it needs to the user's resources. The service then redirects the sign-in window to the previously registered URL and passes the access token. The application uses the access token to access the user's resources.
-
-You can use the Dialog APIs to manage this process by using a flow that is similar to the one described for users to sign in. The only differences are:
-
-- If the user hasn't previously granted the application the permissions it needs, she is prompted to do so in the dialog box after signing in.
-- The dialog window sends the access token to the host window either by using `messageParent` to send the stringified access token or by storing the access token where the host window can retrieve it. The token has a time limit, but while it lasts, the host window can use it to directly access the user's resources without any further prompting.
-
-The following sample uses the Dialog APIs for this purpose:
-- [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - Stores the access token in a database.
-
-For more information about authentication and authorization in add-ins, see:
-- [Authorize external services in your Office Add-in](auth-external-add-ins.md)
-- [Office JavaScript API Helpers library](https://github.com/OfficeDev/office-js-helpers)
-
-
-## Use the Office Dialog API with single-page applications and client-side routing
-
-If your add-in uses client-side routing, as single-page applications typically do, you have the option to pass the URL of a route to the [displayDialogAsync](/javascript/api/office/office.ui) method, instead of the URL of a complete and separate HTML page.
-
-> [!IMPORTANT]
->The dialog box is in a new window with its own execution context. If you pass a route, your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog window. So this technique launches a second instance of your application in the dialog window. Code that changes variables in the dialog window does not change the task pane version of the same variables. Similarly, the dialog window has its own session storage, which is not accessible from code in the task pane.
+So, if you passed a route to the `displayDialogAsync` method, you wouldn't really have an SPA; you'd have two instances of the same SPA. Moreover, much of the code in the task pane instance would never be used in that instance and much of the code in the dialog instance would never be used in that instance. It would be like having two SPAs in the same bundle. If the code that you want to run in the dialog is sufficiently complex, you might want to do this explicitly; that is, have two SPAs in different folders of the same domain. But in most scenarios, only simple logic is needed in the dialog. In such cases, your project will be greatly simplified by simply hosting a simple HTML page, with embedded or referenced JavaScript, in the domain of your SPA. Pass the URL of the page to the `displayDialogAsync` method. This might mean that you are deviating from the literal idea of a single-page app; but as noted above you don't really have a single instance of an SPA anyway when you are using the dialog.
