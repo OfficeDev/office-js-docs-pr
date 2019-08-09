@@ -31,7 +31,7 @@ When the dialog is not an iframe (which is the default), it can open the login p
 
 The following is a simple and typical authentication flow. Details are after the diagram.
 
-![An image showing the relationship of the task pane and dialog browser processes.](../images/taskpane-dialog-processes.png)
+![An image showing the relationship of the task pane and dialog browser processes.](../images/taskpane-dialog-processes.gif)
 
 1. The first page that opens in the dialog box is a page (or other resource) that is hosted in the add-in's domain; that is, the same domain as the task pane window. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." The code in this page constructs the URL of the identity provider's sign-in page with information that is either passed to the dialog box as described in [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) or is hardcoded into a configuration file of the add-in, such as a web.config file.
 2. The dialog window then redirects to the sign-in page. The URL includes a query parameter that tells the identity provider to redirect the dialog window to a specific page after the user signs in. In this article, we'll call this page **redirectPage.html**. *This must be a page in the same domain as the host window*, so that the results of the sign-in attempt can be passed to the task pane with a call of `messageParent`.
