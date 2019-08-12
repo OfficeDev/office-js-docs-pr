@@ -22,13 +22,13 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ### Create the add-in project
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
 ```command&nbsp;line
 yo office
 ```
-
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`
