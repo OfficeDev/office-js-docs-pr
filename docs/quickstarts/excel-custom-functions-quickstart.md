@@ -24,6 +24,8 @@ With custom functions, developers can now add new functions to Excel by defining
 
 To start, you'll use the Yeoman generator to create the custom functions project. This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 1. In a folder of your choice, run the following command and then answer the prompts as follows.
 
     ```command&nbsp;line
