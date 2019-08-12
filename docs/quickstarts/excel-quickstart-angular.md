@@ -16,6 +16,8 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ## Create the add-in project
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
 ```command&nbsp;line
@@ -24,7 +26,7 @@ yo office
 
 - **Choose a project type:** `Office Add-in Task Pane project using Angular framework`
 - **Choose a script type:** `TypeScript`
-- **What do you want to name your add-in?** `My Office Add-in`
+- **What do you want to name your add-in?** `my-office-add-in`
 - **Which Office client application would you like to support?** `Excel`
 
 ![Yeoman generator](../images/yo-office-excel-angular-2.png)
@@ -45,7 +47,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Navigate to the root folder of the project.
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
