@@ -18,6 +18,9 @@ For example, in the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderNa
 
 The following sections show the manifest elements in the order in which they must appear. There are slight differences depending on whether the `type` attribute of the `<OfficeApp>` element is `TaskPaneApp`, `ContentApp`, or `MailApp`. To keep these sections from becoming too unwieldy, the highly complex `<VersionOverrides>` element is broken out into separate sections.
 
+> [!Note]
+> Not all of the elements show are mandatory. If the `minOccurs` value for a element is **0** in the [schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), the element is optional.
+
 ## Basic task pane add-in element ordering
 
 ```
@@ -58,7 +61,7 @@ The following sections show the manifest elements in the order in which they mus
     <VersionOverrides>*
 ```
 
-\*See [Taskpane add-in element ordering within VersionOverrides](#taskpane-add-in-element-ordering-within-versionoverrides) for the ordering of children elements of VersionOverrides.
+\*See [Taskpane add-in element ordering within VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) for the ordering of children elements of VersionOverrides.
 
 ## Basic mail add-in element ordering
 
