@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Spaces are not currently permitted in the add-in project name or anywhere in the folder path where you create your add-in project. If your add-in's project name or folder path contains spaces, the local web server won't start when you run `npm start` or `npm run start:web`. This limitation is temporary and will be eliminated when the underlying [issue](https://github.com/OfficeDev/generator-office/issues/476) is resolved in the Yeoman generator for Office Add-ins.
