@@ -48,7 +48,7 @@ After you complete the wizard, the generator creates the project and installs su
 1. Navigate to the root folder of the project.
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
