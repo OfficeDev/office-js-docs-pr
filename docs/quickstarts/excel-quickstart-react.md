@@ -29,8 +29,6 @@ yo office
 - **What do you want to name your add-in?** `my-office-add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![Yeoman generator](../images/yo-office-excel-react-2.png)
-
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 ## Explore the project

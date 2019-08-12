@@ -29,8 +29,6 @@ yo office
 - **What do you want to name your add-in?** `my-office-add-in`
 - **Which Office client application would you like to support?** `OneNote`
 
-![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-onenote.png)
-
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 	
 ## Explore the project

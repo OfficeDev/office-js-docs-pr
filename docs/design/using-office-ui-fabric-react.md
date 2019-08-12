@@ -37,8 +37,6 @@ yo office
 - **What do you want to name your add-in?** `my-office-add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![Yeoman generator](../images/yo-office-word-react.png)
-
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 ### Try it out
