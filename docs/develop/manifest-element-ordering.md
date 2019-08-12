@@ -58,12 +58,12 @@ The following sections show the manifest elements in the order in which they mus
     <VersionOverrides>\*
 ```
 
-\*See [Taskpane add-in element ordering within VersionOverrides](#taskpane-add-in-element-ordering-within-VersionOverrides) for the ordering of children elements of VersionOverrides.
+\*See [Taskpane add-in element ordering within VersionOverrides](#taskpane-add-in-element-ordering-within-versionoverrides) for the ordering of children elements of VersionOverrides.
 
 ## Basic mail add-in element ordering
 
 ```
-<OfficeApp  xsi:type="MailApp">
+<OfficeApp xsi:type="MailApp">
     <Id>
     <AlternateId>
     <Version>
@@ -98,15 +98,15 @@ The following sections show the manifest elements in the order in which they mus
     <Permissions>
     <Rule>
     <DisableEntityHighlighting>
-    <VersionOverrides>\*
+    <VersionOverrides>*
 ```
 
-\*See [Mail add-in element ordering within VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver_1_0) and [Mail add-in element ordering within VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver_1_1) for the ordering of children elements of VersionOverrides.
+\*See [Mail add-in element ordering within VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) and [Mail add-in element ordering within VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) for the ordering of children elements of VersionOverrides.
 
 ## Basic content add-in element ordering
 
 ```
-<OfficeApp  xsi:type="ContentApp">
+<OfficeApp xsi:type="ContentApp">
     <Id>
     <AlternateId>
     <Version>
@@ -370,10 +370,10 @@ The following sections show the manifest elements in the order in which they mus
         <LongStrings>
             <String>
                 <Override>
-    <VersionOverrides>\*
+    <VersionOverrides>*
 ```
 
-\* A VersionOverrides with `type` value `VersionOverridesV1_1`, instead of `VersionOverridesV1_0`, can be nested at the end of the outer VersionOverrides. See [Mail add-in element ordering within VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver_1_1) for the ordering of elements in `VersionOverridesV1_1`.
+\* A VersionOverrides with `type` value `VersionOverridesV1_1`, instead of `VersionOverridesV1_0`, can be nested at the end of the outer VersionOverrides. See [Mail add-in element ordering within VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) for the ordering of elements in `VersionOverridesV1_1`.
 
 ## Mail add-in element ordering within VersionOverrides Ver. 1.1
 
