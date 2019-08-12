@@ -30,8 +30,10 @@ yo office
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`
-- **What do you want to name your add-in?** `My Office Add-in`
+- **What do you want to name your add-in?** `my-office-add-in`
 - **Which Office client application would you like to support?** `Excel`
+
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
 
 ![Yeoman generator](../images/yo-office-excel.png)
 
