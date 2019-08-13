@@ -1,7 +1,7 @@
 ---
 title: Image Coercion requirement sets
 description: Support for Image Coercion requirement sets with Office Add-ins across Excel, PowerPoint, and Word.
-ms.date: 07/11/2019
+ms.date: 08/13/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -18,7 +18,6 @@ ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) w
 
 - Excel 2013 and later on Windows
 - Excel 2016 and later on Mac
-- Excel on the web
 - Excel on iPad
 - OneNote on the web
 - PowerPoint 2013 and later on Windows
@@ -36,7 +35,6 @@ ImageCoercion 1.2 enables conversion to SVG format (`Office.CoercionType.XmlSvg`
 
 - Excel on Windows (connected to an Office 365 subscription)
 - Excel on Mac (connected to an Office 365 subscription)
-- Excel on the web
 - PowerPoint on Windows (connected to an Office 365 subscription)
 - PowerPoint on Mac (connected to an Office 365 subscription)
 - PowerPoint on the web
