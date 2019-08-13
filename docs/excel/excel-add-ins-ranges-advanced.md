@@ -176,7 +176,7 @@ The following code sample copies the data from **A1:E1** into the range starting
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
+    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
     sheet.getRange("G1").copyFrom("A1:E1");
     return context.sync();
 }).catch(errorHandlerFunction);
