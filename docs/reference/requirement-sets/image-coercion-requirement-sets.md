@@ -1,7 +1,7 @@
 ---
 title: Image Coercion requirement sets
 description: Support for Image Coercion requirement sets with Office Add-ins across Excel, PowerPoint, and Word.
-ms.date: 07/11/2019
+ms.date: 08/13/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -10,15 +10,12 @@ localization_priority: Normal
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Office Add-ins run across multiple versions of Office. The following table lists the Image Coercion requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
-
 ## ImageCoercion 1.1
 
 ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method. The following hosts are supported:
 
 - Excel 2013 and later on Windows
 - Excel 2016 and later on Mac
-- Excel on the web
 - Excel on iPad
 - OneNote on the web
 - PowerPoint 2013 and later on Windows
@@ -36,7 +33,6 @@ ImageCoercion 1.2 enables conversion to SVG format (`Office.CoercionType.XmlSvg`
 
 - Excel on Windows (connected to an Office 365 subscription)
 - Excel on Mac (connected to an Office 365 subscription)
-- Excel on the web
 - PowerPoint on Windows (connected to an Office 365 subscription)
 - PowerPoint on Mac (connected to an Office 365 subscription)
 - PowerPoint on the web
