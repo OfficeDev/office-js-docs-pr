@@ -16,7 +16,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 - Install the [Vue CLI](https://cli.vuejs.org/) globally.
 
-  ```command&nbsp;line
+  ```command line
   npm install -g @vue/cli
   ```
 
@@ -24,13 +24,11 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 Use the Vue CLI to generate a new Vue app. From the terminal, run the following command.
 
-```command&nbsp;line
+```command line
 vue create my-add-in
 ```
 
 Then select the `default` preset.
-
-<!-- TODO -->
 
 ![Vue CLI prompts](../images/vue-cli-prompts.png)
 
@@ -40,13 +38,13 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 1. Navigate to your app folder.
 
-   ```command&nbsp;line
+   ```command line
    cd my-add-in
    ```
 
 2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.
 
-   ```command&nbsp;line
+   ```command line
    yo office
    ```
 
@@ -169,7 +167,7 @@ module.exports = {
 
 1. From the terminal, run the following command to start the dev server.
 
-   ```command&nbsp;line
+   ```command line
    npm run serve
    ```
 
