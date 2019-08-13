@@ -16,7 +16,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 - Install the [Vue CLI](https://cli.vuejs.org/) globally.
 
-  ```command line
+  ```command&nbsp;line
   npm install -g @vue/cli
   ```
 
@@ -24,7 +24,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 Use the Vue CLI to generate a new Vue app. From the terminal, run the following command.
 
-```command line
+```command&nbsp;line
 vue create my-add-in
 ```
 
@@ -38,13 +38,13 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 1. Navigate to your app folder.
 
-   ```command line
+   ```command&nbsp;line
    cd my-add-in
    ```
 
 2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.
 
-   ```command line
+   ```command&nbsp;line
    yo office
    ```
 
@@ -167,7 +167,7 @@ module.exports = {
 
 1. From the terminal, run the following command to start the dev server.
 
-   ```command line
+   ```command&nbsp;line
    npm run serve
    ```
 
@@ -197,11 +197,12 @@ module.exports = {
 
 Congratulations, you've successfully created an Excel task pane add-in using Vue! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
-> [!div class="nextstepaction"][excel add-in tutorial](../tutorials/excel-tutorial.md)
+> [!div class="nextstepaction"]
+> [Excel add-in tutorial](../tutorials/excel-tutorial.md)
 
 ## See also
 
-- [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
-- [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
-- [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-- [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
+* [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
+* [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
