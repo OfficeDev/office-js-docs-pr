@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/13/2019
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -23,6 +23,11 @@ For example, the following manifest snippet indicates a minimum requirement set 
 All Outlook APIs belong to the `Mailbox` [requirement set](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements). The `Mailbox` requirement set has versions, and each new set of APIs that we release belongs to a higher version of the set. Not all Outlook clients support the newest set of APIs, but if an Outlook client declares support for a requirement set, it supports all of the APIs in that requirement set.
 
 Setting a minimum requirement set version in the manifest controls which Outlook client the add-in will appear in. If a client does not support the minimum requirement set, it does not load the add-in. For example, if requirement set version 1.3 is specified, this means the add-in will not show up in any Outlook client that doesn't support at least 1.3.
+
+> [!NOTE]
+> To use APIs in any of the numbered requirement sets, you should reference the **production** library on the CDN (https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
+>
+> For information about using preview APIs, see the [Using preview APIs](#using-preview-apis) section later in this article.
 
 ## Using APIs from later requirement sets
 
