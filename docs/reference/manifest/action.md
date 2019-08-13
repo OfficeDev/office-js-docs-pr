@@ -99,7 +99,7 @@ The following examples show two actions that use a different **TaskpaneId**. To 
 
 Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action.
 
-The following example shows an action that uses the **Title** element. Note that you do not assign the **Title** a string directly. You assign it a resource ID (resid) which is itself defined in the **Resources** section of the manifest.
+The following example shows an action that uses the **Title** element. Note that you don't assign the **Title** to a string directly. Instead, you assign it a resource ID (resid), that is defined in the **Resources** section of the manifest.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
