@@ -30,7 +30,7 @@ The root element that contains information for the add-in commands implemented b
 |  [Resources](./resources.md)    |  Yes  | Defines a collection of resources (strings, URLs, and images) that other manifest elements reference.|
 |  [EquivalentAddins](./equivalentaddins.md)    |  No  | Specifies the native (COM/XLL) add-ins that are equivalent to the web add-in. The web add-in is not activated if an equivalent native add-in is installed.|
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing-multiple-versions) for details. |
-|  [WebApplicationInfo](./webapplicationinfo.md)    |  No  | Specifies details about the add-in's registration with secure token issues, such as Azure Active Directory V2.0. |
+|  [WebApplicationInfo](./webapplicationinfo.md)    |  No  | Specifies details about the add-in's registration with secure token issuers, such as Azure Active Directory V2.0. |
 
 ### VersionOverrides example
 
