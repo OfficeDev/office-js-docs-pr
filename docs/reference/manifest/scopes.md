@@ -1,19 +1,21 @@
 ---
 title: Scopes element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 08/12/2019
 localization_priority: Normal
 ---
 
 # Scopes element
 
-Contains permissions to Microsoft Graph that the add-in needs. AppSource uses the Scopes element to create a consent dialog box. When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
+Contains permissions that the add-in needs to an external resource, such as Microsoft Graph. When Microsoft Graph is the resource, AppSource uses the Scopes element to create a consent dialog box. When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
+
+**Scopes** is a child element of the [WebApplicationInfo](webapplicationinfo.md) and [Authorization](authorization.md) elements in the manifest.
 
 ## Child elements
 
-|  Element |  Type  |  Description  |
+|  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Scope**                |  string     |   The name of a permission to Microsoft Graph; for example, Files.Read.All. |
+|  **Scope**                |  Yes     |   The name of a permission; for example, Files.Read.All or profile. |
 
 ## Example
 
