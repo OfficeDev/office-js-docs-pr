@@ -352,10 +352,18 @@
           href: reference/manifest/action.md
         - name: AllFormFactors
           href: reference/manifest/allformfactors.md
+        - name: Authorization
+          href: reference/manifest/authorization.md
+        - name: Authorizations
+          href: reference/manifest/authorizations.md
         - name: Control
           href: reference/manifest/control.md
         - name: CustomTab
           href: reference/manifest/customtab.md
+        - name: EquivalentAddin
+          href: reference/manifest/equivalentaddin.md
+        - name: EquivalentAddins
+          href: reference/manifest/equivalentaddins.md
         - name: Event
           href: reference/manifest/event.md
         - name: ExtensionPoint

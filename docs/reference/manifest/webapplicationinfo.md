@@ -1,7 +1,7 @@
 ---
 title: WebApplicationInfo element in the manifest file
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/12/2019
 localization_priority: Normal
 ---
 
@@ -22,11 +22,10 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **Id**    |  Yes   |  The **Application Id** of the add-in's associated service as registered in the Azure Active Directory v 2.0 endpoint.|
+|  **MsaId**    |  No   |  The client ID of your add-in's web application for MSA as registered in msm.live.com.|
 |  **Resource**  |  Yes   |  Specifies the **Application ID URI** of the add-in as registered in the Azure Active Directory v 2.0 endpoint.|
-|  [Scopes](scopes.md)                |  No  |  Specifies the permissions that the add-in needs to Microsoft Graph.  |
-
-> [!NOTE] 
-> Currently, it's necessary that your add-in's Resource matches its Host. Office will not request a Token for an add-in unless it can prove ownership, and today this is done by hosting the add-in under the Resource's fully-qualified domain name.
+|  [Scopes](scopes.md)                |  Yes  |  Specifies the permissions that the add-in needs to a resource, such as Microsoft Graph.  |
+|  [Authorizations](authorizations.md)  |  No   | Specifies the external resources that the add-in's web application needs authorization to and the required permissions.|
 
 ## WebApplicationInfo example
 
@@ -42,8 +41,16 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
-        <Scope>profile</Scope>        
+        <Scope>profile</Scope>
       </Scopes>
+      <Authorizations>
+        <Authorization>
+          <Resource>https://api.contoso.com</Resource>
+            <Scopes>
+              <Scope>profile</Scope>
+          </Scopes>
+        </Authorization>
+      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...
