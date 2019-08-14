@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/14/2019
 localization_priority: Priority
 ---
 
@@ -128,24 +128,24 @@ The following code example shows an add-in that loads in all Office host applica
 
 - The  **Method** element specifies an individual method that must be supported in the Office host where your add-in runs. The **Name** attribute is required and specifies the name of the method qualified with its parent object.
 
-
 ## Use runtime checks in your JavaScript code
-
 
 You might want to provide additional functionality in your add-in if certain requirement sets are supported by the Office host. For example, you might want to use the Word JavaScript APIs in your existing add-in if your add-in runs in Word 2016. To do this, you use the [isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) method with the name of the requirement set. **isSetSupported** determines, at runtime, whether the Office host running the add-in supports the requirement set. If the requirement set is supported, **isSetSupported** returns **true** and runs the additional code that uses the API members from that requirement set. If the Office host doesn't support the requirement set, **isSetSupported** returns **false** and the additional code won't run. The following code shows the syntax to use with **isSetSupported**.
 
-
 ```js
-if (Office.context.requirements.isSetSupported(RequirementSetName, VersionNumber))
+if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))
 {
    // Code that uses API members from RequirementSetName.
 }
 
 ```
 
--  _RequirementSetName_ (required) is a string that represents the name of the requirement set. For more information about available requirement sets, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
-    
--  _VersionNumber_ (optional) is the version of the requirement set.
+- _RequirementSetName_ (required) is a string that represents the name of the requirement set. For more information about available requirement sets, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+- _MinimumVersion_ (optional) is the version of the requirement set.
+
+> [!WARNING]
+> Your add-in should always use a string when specifying the requirement set version for **isSetSupported**. If you use a number, the JavaScript parser cannot tell the difference between 1.1 and 1.10.
+> The `number` overload is deprecated.
 
 Use **isSetSupported** with the **RequirementSetName** associated with the Office host as follows.
 
@@ -175,7 +175,6 @@ else
 }
 
 ```
-
 
 ## Runtime checks using methods not in a requirement set
 
