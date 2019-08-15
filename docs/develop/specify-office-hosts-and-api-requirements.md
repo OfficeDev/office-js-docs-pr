@@ -140,11 +140,11 @@ if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersio
 
 ```
 
-- _RequirementSetName_ (required) is a string that represents the name of the requirement set. For more information about available requirement sets, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
-- _MinimumVersion_ (optional) is the version of the requirement set.
+- _RequirementSetName_ (required) is a string that represents the name of the requirement set (e.g., "**ExcelApi**", "**Mailbox**, etc.). For more information about available requirement sets, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+- _MinimumVersion_ (optional) is a string that specifies the minimum requirement set version that the host must support in order for the code within the `if` statement to run (e.g., "**1.9**").
 
 > [!WARNING]
-> Your add-in should always use a string when specifying the requirement set version for **isSetSupported**. If you use a number, the JavaScript parser cannot tell the difference between 1.1 and 1.10.
+> When calling the **isSetSupported** method, the value of the `MinimumVersion` parameter (if specified) should be a string. This is because the JavaScript parser cannot differentiate between numeric values such as 1.1 and 1.10, where as it can for string values such as "1.1" and "1.10".
 > The `number` overload is deprecated.
 
 Use **isSetSupported** with the **RequirementSetName** associated with the Office host as follows.
