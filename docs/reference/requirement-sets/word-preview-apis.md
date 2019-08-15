@@ -11,7 +11,7 @@ localization_priority: Normal
 New Word JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.
 
 > [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../../includes/preview-apis-conditions.md)]
+[!INCLUDE [Information about using preview APIs](../../includes/preview-apis-conditions.md)]
 
 ## API list
 
