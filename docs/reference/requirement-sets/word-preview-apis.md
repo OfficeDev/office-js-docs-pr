@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript preview APIs
 description: 'Details about upcoming Word JavaScript APIs'
-ms.date: 08/14/2019
+ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
 ---
@@ -10,8 +10,7 @@ localization_priority: Normal
 
 New Word JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.
 
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../../includes/preview-apis-conditions.md)]
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 ## API list
 
