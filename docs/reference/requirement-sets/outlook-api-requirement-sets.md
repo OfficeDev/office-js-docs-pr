@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: ''
-ms.date: 08/13/2019
+ms.date: 08/14/2019
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -31,7 +31,7 @@ Setting a minimum requirement set version in the manifest controls which Outlook
 
 ## Using APIs from later requirement sets
 
-Setting a requirement set does not limit the available APIs that the add-in can use. For example, if the add-in specifies requirement set 1.1, but it is running in an Outlook client which supports 1.3, the add-in can use APIs from requirement set 1.3.
+Setting a requirement set does not limit the available APIs that the add-in can use. For example, if the add-in specifies requirement set "Mailbox 1.1", but it is running in an Outlook client which supports "Mailbox 1.3", the add-in can use APIs from requirement set "Mailbox 1.3".
 
 To use a newer API, developers can check if a particular host supports the requirement set by doing the following.
 
