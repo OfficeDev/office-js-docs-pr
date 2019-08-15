@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript preview APIs
 description: 'Details about upcoming Word JavaScript APIs'
-ms.date: 07/25/2019
+ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
 ---
@@ -10,10 +10,7 @@ localization_priority: Normal
 
 New Word JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.
 
-> [!NOTE]
-> Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
->
-> To use preview APIs, you must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and you may also need to join the Office Insider program to get a recent Office build.
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 ## API list
 
