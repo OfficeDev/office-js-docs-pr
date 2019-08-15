@@ -12,7 +12,7 @@ The Outlook add-in API subset of the JavaScript API for Office includes objects,
 > [!NOTE]
 > This documentation is for a **preview** [requirement set](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets). This requirement set is not fully implemented yet, and clients will not accurately report support for it. You should not specify this requirement set in your add-in manifest. Methods and properties that are introduced in this requirement set should be individually tested for availability before using them.
 >
-[!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
+> [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 The Preview Requirement set includes all of the features of [Requirement set 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md).
 
