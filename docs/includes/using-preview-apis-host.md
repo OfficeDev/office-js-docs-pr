@@ -1,2 +1,2 @@
 To use preview APIs:<br>&ndash; You must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).<br>
-&ndash; You may need to join the [Office Insider program](https://products.office.com/office-insider) for access to more recent Office builds
+&ndash; You may need to join the [Office Insider program](https://products.office.com/office-insider) for access to more recent Office builds.
