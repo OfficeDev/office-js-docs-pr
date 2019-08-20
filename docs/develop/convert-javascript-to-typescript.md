@@ -1,7 +1,7 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: ''
-ms.date: 07/17/2019
+ms.date: 08/14/2019
 localization_priority: Priority
 ---
 
@@ -88,13 +88,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
         ...
     ```
 
-13. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
-
-	```typescript
-	if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
-	```
-
-14. In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
+13. In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
 
     ```typescript
     function displaySelectedCells() {
@@ -160,7 +154,7 @@ declare var fabric: any;
             loadSampleData();
 
             // Add a click event handler for the highlight button.
-            $('#highlight-button').click(hightlightHighestValue);
+            $('#highlight-button').click(highlightHighestValue);
         });
     };
 
@@ -184,7 +178,7 @@ declare var fabric: any;
         .catch(errorHandler);
     }
 
-    function hightlightHighestValue() {
+    function highlightHighestValue() {
         // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
             // Create a proxy object for the selected range and load its properties

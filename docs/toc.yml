@@ -189,8 +189,6 @@
       items:
       - name: Sideload Office Add-ins on Windows
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
-      - name: Sideload Office Add-ins using the sideload command
-        href: testing/sideload-office-addin-using-sideload-command.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
       - name: Debug using developer tools
@@ -352,10 +350,18 @@
           href: reference/manifest/action.md
         - name: AllFormFactors
           href: reference/manifest/allformfactors.md
+        - name: Authorization
+          href: reference/manifest/authorization.md
+        - name: Authorizations
+          href: reference/manifest/authorizations.md
         - name: Control
           href: reference/manifest/control.md
         - name: CustomTab
           href: reference/manifest/customtab.md
+        - name: EquivalentAddin
+          href: reference/manifest/equivalentaddin.md
+        - name: EquivalentAddins
+          href: reference/manifest/equivalentaddins.md
         - name: Event
           href: reference/manifest/event.md
         - name: ExtensionPoint

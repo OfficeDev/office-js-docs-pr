@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs'
-ms.date: 08/06/2019
+ms.date: 08/15/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -12,10 +12,7 @@ New Excel JavaScript APIs are first introduced in "preview" and later become par
 
 The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
 
-> [!NOTE]
-> Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
->
-> To use preview APIs, you must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) and you may also need to join the Office Insider program to get a recent Office build.
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
