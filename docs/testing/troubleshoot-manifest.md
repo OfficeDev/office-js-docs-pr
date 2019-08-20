@@ -34,6 +34,10 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
 	npx office-addin-manifest validate MANIFEST_FILE
 	```
 
+	> [!NOTE]
+	> If running this command returns the error message "The command syntax is not valid." (because the `validate` command is not recognized), run the following command instead: 
+	> `npx --ignore-existing office-addin-manifest validate`
+
 ## Validate your manifest against the XML schema
 
 You can validate the manifest file against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files. This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**. You can use an XML schema validation tool to perform this validation.
