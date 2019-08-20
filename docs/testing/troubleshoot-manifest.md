@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 07/29/2019
+ms.date: 08/15/2019
 localization_priority: Priority
 ---
 
@@ -22,17 +22,22 @@ npm run validate
 > [!NOTE]
 > To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.
 
-## Validate your manifest with office-toolbox
+## Validate your manifest with office-addin-manifest
 
-If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can validate the manifest by using [office-toolbox](https://www.npmjs.com/package/office-toolbox).
+If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Install [Node.js](https://nodejs.org/download/).
 
 2. Run the following command in the root directory of your project. Replace `MANIFEST_FILE` with the name of the manifest file.
 
 	```command&nbsp;line
-	npx office-toolbox validate -m MANIFEST_FILE
+	npx office-addin-manifest validate MANIFEST_FILE
 	```
+
+	> [!NOTE]
+	> If running this command results in the error message "The command syntax is not valid." (because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file): 
+	> 
+	> `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## Validate your manifest against the XML schema
 
