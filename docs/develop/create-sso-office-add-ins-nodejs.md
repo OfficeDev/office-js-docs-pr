@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: ''
-ms.date: 04/15/2019
+ms.date: 08/21/2019
 localization_priority: Priority
 ---
 
@@ -33,8 +33,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
     > * The **Completed** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
     > * The **Completed Multitenant** version is a completed sample that supports multitenancy. Explore this sample if you intend to support Microsoft accounts from different domains with SSO.
-    >
-    > _Regardless of which version you use, you will need to trust a certificate for the localhost. See the "IMPORTANT" note in the Readme of the repo._
+
+    > [!IMPORTANT]
+    > Regardless of which version you use, you will need to trust a certificate for the localhost. Follow [these instructions for installing self-signed certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md), except that the `certs` folders for each of the versions in this repo is in the `/src` folder, not the root folder.
 
 1. Open a Git bash console in the **Before** folder.
 
