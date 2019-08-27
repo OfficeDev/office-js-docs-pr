@@ -89,7 +89,7 @@ Make sure that you are running Office 2016 desktop build **16.27** (19071500) or
 
 Open **Terminal** and set a runtime logging preference by using the **defaults** command:
     
-```console
+```command line
 defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
 ```
 
@@ -104,7 +104,7 @@ You can enable runtime logging for the following bundles:
 
 The following example enables runtime logging for Word:
 
-```console
+```command line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
 open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
 ```
@@ -113,13 +113,13 @@ open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
 
 To turn off runtime logging, use the **defaults delete** command:
 
-```console
+```command line
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
 The following example will turn off runtime logging for Word:
 
-```console
+```command line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 ```
 
