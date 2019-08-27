@@ -1,7 +1,7 @@
 ---
 title: How to find the proper order of manifest elements
 description: Learn how to find the correct order in which to place child elements in a parent element.
-ms.date: 08/15/2019
+ms.date: 08/22/2019
 localization_priority: Normal
 ---
 
@@ -16,10 +16,10 @@ For example, in the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderNa
 > [!NOTE]
 > The [validator within office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) uses the same error message when an element is out-of-order as it does when an element is under the wrong parent. The error says the child element is not a valid child of the parent element. If you get such an error but the reference documentation for the child element indicates that it *is* valid for the parent, then the problem is likely that the child has been placed in the wrong order.
 
-The following sections show the manifest elements in the order in which they must appear. There are slight differences depending on whether the `type` attribute of the `<OfficeApp>` element is `TaskPaneApp`, `ContentApp`, or `MailApp`. To keep these sections from becoming too unwieldy, the highly complex `<VersionOverrides>` element is broken out into separate sections.
+The following sections show the manifest elements in the order in which they must appear. There are differences depending on whether the `type` attribute of the `<OfficeApp>` element is `TaskPaneApp`, `ContentApp`, or `MailApp`. To keep these sections from becoming too unwieldy, the highly complex `<VersionOverrides>` element is broken out into separate sections.
 
 > [!Note]
-> Not all of the elements show are mandatory. If the `minOccurs` value for a element is **0** in the [schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), the element is optional.
+> Not all of the elements shown are mandatory. If the `minOccurs` value for a element is **0** in the [schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), the element is optional.
 
 ## Basic task pane add-in element ordering
 
@@ -140,8 +140,10 @@ The following sections show the manifest elements in the order in which they mus
     <RequestedHeight>
     <Permissions>
     <AllowSnapshot>
-    <VersionOverrides>
+    <VersionOverrides>*
 ```
+
+\*See [Content add-in element ordering within VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) for the ordering of children elements of VersionOverrides.
 
 ## Task pane add-in element ordering within VersionOverrides
 
@@ -473,6 +475,17 @@ The following sections show the manifest elements in the order in which they mus
         <LongStrings>
             <String>
                 <Override>
+    <WebApplicationInfo>
+        <Id>
+        <Resource>
+        <Scopes>
+            <Scope>
+```
+
+## Content add-in element ordering within VersionOverrides
+
+```
+<VersionOverrides>
     <WebApplicationInfo>
         <Id>
         <Resource>
