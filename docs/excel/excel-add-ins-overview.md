@@ -2,6 +2,7 @@
 title: Excel add-ins overview
 description: ''
 ms.date: 07/05/2019
+ms.topic: overview
 localization_priority: Priority
 ---
 
