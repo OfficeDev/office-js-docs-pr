@@ -70,6 +70,10 @@
         "testing/*.md": "non-product-specific",
         "visio/*.md": "visio",
         "word/*.md": "word"
+      },
+      "ms.topic": {
+        "quickstarts/*.md": "quickstart",
+        "tutorials/*.md": "tutorial"
       }
     },
     "template": [],
