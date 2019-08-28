@@ -73,7 +73,13 @@
       },
       "ms.topic": {
         "quickstarts/*.md": "quickstart",
-        "tutorials/*.md": "tutorial"
+        "tutorials/*.md": "tutorial",
+        "reference/*.md": "reference",
+        "reference/manifest/*.md": "reference",
+        "reference/objectmodel/**/*.md": "reference",
+        "reference/openspec/*.md": "reference",
+        "reference/overview/*.md": "reference",
+        "reference/requirement-sets/*.md": "reference"
       }
     },
     "template": [],
