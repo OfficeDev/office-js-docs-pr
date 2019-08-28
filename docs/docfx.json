@@ -78,7 +78,6 @@
         "reference/manifest/*.md": "reference",
         "reference/objectmodel/**/*.md": "reference",
         "reference/openspec/*.md": "reference",
-        "reference/overview/*.md": "reference",
         "reference/requirement-sets/*.md": "reference"
       },
       "scenarios": {
