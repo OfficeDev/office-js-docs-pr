@@ -80,6 +80,10 @@
         "reference/openspec/*.md": "reference",
         "reference/overview/*.md": "reference",
         "reference/requirement-sets/*.md": "reference"
+      },
+      "scenarios": {
+        "quickstarts/*.md": "getting-started",
+        "tutorials/*.md": "getting-started"
       }
     },
     "template": [],
