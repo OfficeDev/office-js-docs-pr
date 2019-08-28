@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: ''
-ms.date: 03/11/2018
+ms.date: 08/23/2019
 localization_priority: Priority
 ---
 
@@ -267,7 +267,7 @@ This extension point adds a contextual add-in activation on a specified entity t
 The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
 
 > [!NOTE]
-> This element type is only supported by Outlook on the web in Office 365.
+> This element type is available to [Outlook clients that support requirement sets 1.6 and later](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients).
 
 |  Element |  Description  |
 |:-----|:-----|
