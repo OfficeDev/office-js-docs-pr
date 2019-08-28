@@ -70,6 +70,19 @@
         "testing/*.md": "non-product-specific",
         "visio/*.md": "visio",
         "word/*.md": "word"
+      },
+      "ms.topic": {
+        "quickstarts/*.md": "quickstart",
+        "tutorials/*.md": "tutorial",
+        "reference/*.md": "reference",
+        "reference/manifest/*.md": "reference",
+        "reference/objectmodel/**/*.md": "reference",
+        "reference/openspec/*.md": "reference",
+        "reference/requirement-sets/*.md": "reference"
+      },
+      "scenarios": {
+        "quickstarts/*.md": "getting-started",
+        "tutorials/*.md": "getting-started"
       }
     },
     "template": [],

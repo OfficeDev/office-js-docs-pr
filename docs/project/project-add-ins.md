@@ -2,6 +2,8 @@
 title: Task pane add-ins for Project
 description: ''
 ms.date: 07/05/2019
+ms.topic: overview
+scenarios: getting-started
 localization_priority: Priority
 ---
 
