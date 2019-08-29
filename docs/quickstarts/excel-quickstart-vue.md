@@ -30,8 +30,6 @@ vue create my-add-in
 
 Then select the `default` preset.
 
-![Vue CLI prompts](../images/vue-cli-prompts.png)
-
 ## Generate the manifest file
 
 Each add-in requires a manifest file to define its settings and capabilities.
@@ -51,10 +49,12 @@ Each add-in requires a manifest file to define its settings and capabilities.
    ![Yeoman generator](../images/yo-office-manifest-only-vue.png)
 
    - **Choose a project type:** `Office Add-in project containing the manifest only`
-   - **What do you want to name your add-in?** `My Office Add-in`
+   - **What do you want to name your add-in?** `my-office-add-in`
    - **Which Office client application would you like to support?** `Excel`
 
-After you complete the wizard, it creates a `My Office Add-in` folder, which contains a `manifest.xml` file as well as some other stuff. The `manifest.xml` file will be important later.
+If you are prompted to use either Yarn or NPM as a package you can choose either one.
+
+After you complete the wizard, it creates a `my-office-add-in` folder, which contains a `manifest.xml` file. The `manifest.xml` file will be important later.
 
 ## Secure the app
 
@@ -66,35 +66,35 @@ To enable HTTPS for your app, create a `vue.config.js` file in the root folder o
 module.exports = {
   devServer: {
     port: 3000,
-    https: true,
-  },
-}
+    https: true
+  }
+};
 ```
 
 ## Update the app
 
-1. Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag.
+1. Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag:
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-2. Replace the contents of `src/main.js` with the following code:
+2. Open `src/main.js` and replace the contents with the following code:
 
    ```js
-   import Vue from 'vue'
-   import App from './App.vue'
+   import Vue from 'vue';
+   import App from './App.vue';
 
-   Vue.config.productionTip = false
+   Vue.config.productionTip = false;
 
    window.Office.initialize = () => {
      new Vue({
-       render: h => h(App),
-     }).$mount('#app')
-   }
+       render: h => h(App)
+     }).$mount('#app');
+   };
    ```
 
-3. Open `src/App.vue`, replace file contents with the following code.
+3. Open `src/App.vue` and replace the file contents with the following code:
 
    ```html
    <template>
@@ -126,13 +126,13 @@ module.exports = {
        methods: {
          onSetColor() {
            window.Excel.run(async context => {
-             const range = context.workbook.getSelectedRange()
-             range.format.fill.color = 'green'
-             await context.sync()
-           })
-         },
-       },
-     }
+             const range = context.workbook.getSelectedRange();
+             range.format.fill.color = 'green';
+             await context.sync();
+           });
+         }
+       }
+     };
    </script>
 
    <style>
@@ -173,7 +173,7 @@ module.exports = {
 
 2. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If your browser indicates that the site's certificate is not trusted, you will need to configure your computer to trust the certificate.
 
-3. When the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working. We are mounting the Vue App only after Office is initialized, so it will only show something inside an Excel environment.
+3. When the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
 
 ## Try it out
 
