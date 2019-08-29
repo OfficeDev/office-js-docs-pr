@@ -93,6 +93,8 @@ If the mail app is running in Outlook on a desktop client, the `convertToLocalCl
 Type:
 [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)
 
+<br>
+
 ---
 ---
 
@@ -145,6 +147,8 @@ Date
     console.log(result.toISOString());
 ```
 
+<br>
+
 ---
 ---
 
@@ -183,6 +187,8 @@ If the specified item identifier does not identify an existing appointment, a bl
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
+<br>
+
 ---
 ---
 
@@ -220,6 +226,8 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 ```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
 
 ---
 ---
@@ -281,6 +289,8 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
+<br>
+
 ---
 ---
 
@@ -329,6 +339,11 @@ function cb(asyncResult) {
 }
 ```
 
+<br>
+
+---
+---
+
 #### getUserIdentityTokenAsync(callback, [userContext])
 
 Gets a token identifying the user and the Office Add-in.
@@ -369,6 +384,8 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---

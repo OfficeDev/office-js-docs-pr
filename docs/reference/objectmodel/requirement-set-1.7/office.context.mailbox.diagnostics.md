@@ -50,6 +50,8 @@ A string that can be one of the following values: `Outlook`, `OutlookWebApp`, `O
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
+<br>
+
 ---
 ---
 
@@ -70,6 +72,8 @@ If the mail add-in is running on the Outlook desktop client or iOS, the `hostVer
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+<br>
 
 ---
 ---

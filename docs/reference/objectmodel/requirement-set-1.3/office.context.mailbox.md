@@ -107,6 +107,8 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
+<br>
+
 ---
 ---
 
@@ -136,6 +138,8 @@ If the mail app is running in Outlook on a desktop client, the `convertToLocalCl
 
 Type:
 [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.3)
+
+<br>
 
 ---
 ---
@@ -178,6 +182,8 @@ var ewsId = Office.context.mailbox.item.itemId;
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
 
 ---
 ---
@@ -231,6 +237,8 @@ Date
     console.log(result.toISOString());
 ```
 
+<br>
+
 ---
 ---
 
@@ -269,6 +277,8 @@ If the specified item identifier does not identify an existing appointment, a bl
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
+<br>
+
 ---
 ---
 
@@ -306,6 +316,8 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 ```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
 
 ---
 ---
@@ -367,6 +379,8 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
+<br>
+
 ---
 ---
 
@@ -417,6 +431,8 @@ function cb(asyncResult) {
 }
 ```
 
+<br>
+
 ---
 ---
 
@@ -460,6 +476,8 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---

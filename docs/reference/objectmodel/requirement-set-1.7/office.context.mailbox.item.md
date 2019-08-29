@@ -131,6 +131,8 @@ if (item.attachments.length > 0) {
 console.log(outputString);
 ```
 
+<br>
+
 ---
 ---
 
@@ -161,6 +163,8 @@ function callback(asyncResult) {
   var arrayOfBccRecipients = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -205,6 +209,8 @@ The following is an example of the result parameter passed to the callback funct
 }
 ```
 
+<br>
+
 ---
 ---
 
@@ -246,6 +252,8 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+<br>
+
 ---
 ---
 
@@ -276,6 +284,8 @@ var conversationId = Office.context.mailbox.item.conversationId;
 console.log("conversationId: " + conversationId);
 ```
 
+<br>
+
 ---
 ---
 
@@ -301,6 +311,8 @@ Gets the date and time that an item was created. Read mode only.
 var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
+
+<br>
 
 ---
 ---
@@ -330,6 +342,8 @@ Gets the date and time that an item was last modified. Read mode only.
 var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
+
+<br>
 
 ---
 ---
@@ -385,6 +399,8 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+<br>
+
 ---
 ---
 
@@ -430,6 +446,8 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
+<br>
+
 ---
 ---
 
@@ -454,6 +472,8 @@ Gets the Internet message identifier for an email message. Read mode only.
 ```js
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
+
+<br>
 
 ---
 ---
@@ -489,6 +509,8 @@ You can create custom message classes that extends a default message class, for 
 var itemClass = Office.context.mailbox.item.itemClass;
 console.log("Item class: " + itemClass);
 ```
+
+<br>
 
 ---
 ---
@@ -527,6 +549,8 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
+<br>
+
 ---
 ---
 
@@ -557,6 +581,8 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
   // Do something else.
 }
 ```
+
+<br>
 
 ---
 ---
@@ -600,6 +626,8 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+<br>
+
 ---
 ---
 
@@ -627,6 +655,8 @@ The normalizedSubject property gets the subject of the item, with any standard p
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
+
+<br>
 
 ---
 ---
@@ -657,6 +687,8 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
   }
 );
 ```
+
+<br>
 
 ---
 ---
@@ -700,6 +732,8 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+<br>
+
 ---
 ---
 
@@ -740,6 +774,8 @@ Office.context.mailbox.item.organizer.getAsync(
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|1.7|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
+
+<br>
 
 ---
 ---
@@ -802,6 +838,8 @@ Recurrence = {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+<br>
+
 ---
 ---
 
@@ -845,6 +883,8 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+<br>
+
 ---
 ---
 
@@ -876,6 +916,8 @@ var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
+
+<br>
 
 ---
 ---
@@ -915,6 +957,8 @@ var seriesId = Office.context.mailbox.item.seriesId;
 var isSeriesInstance = (seriesId != null);
 console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesInstance);
 ```
+
+<br>
 
 ---
 ---
@@ -970,6 +1014,8 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+<br>
+
 ---
 ---
 
@@ -1014,6 +1060,8 @@ function callback(asyncResult) {
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+
+<br>
 
 ---
 ---
@@ -1133,6 +1181,8 @@ Office.context.mailbox.item.addFileAttachmentAsync(
   });
 ```
 
+<br>
+
 ---
 ---
 
@@ -1173,6 +1223,8 @@ function myHandlerFunction(eventarg) {
 
 Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged, myHandlerFunction, myCallback);
 ```
+
+<br>
 
 ---
 ---
@@ -1235,6 +1287,8 @@ function addAttachment() {
 }
 ```
 
+<br>
+
 ---
 ---
 
@@ -1256,6 +1310,8 @@ In the Outlook desktop client, if the message is an inline reply, the `close` me
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.3|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
+
+<br>
 
 ---
 ---
@@ -1379,6 +1435,8 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
+<br>
+
 ---
 ---
 
@@ -1501,6 +1559,8 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
+<br>
+
 ---
 ---
 
@@ -1531,6 +1591,8 @@ The following example accesses the contacts entities in the current item's body.
 ```js
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
+
+<br>
 
 ---
 ---
@@ -1592,6 +1654,8 @@ Office.initialize = function () {
 }
 ```
 
+<br>
+
 ---
 ---
 
@@ -1624,6 +1688,8 @@ If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` 
 
 Type:
 Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.7)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.7)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.7)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.7))>
+
+<br>
 
 ---
 ---
@@ -1672,13 +1738,8 @@ If you specify an `ItemHasRegularExpressionMatch` rule on the body property of a
 
 An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
-<dd>Object</dd>
-
-</dl>
+Type:
+Object
 
 ##### Example
 
@@ -1689,6 +1750,8 @@ var allMatches = Office.context.mailbox.item.getRegExMatches();
 var fruits = allMatches.fruits;
 var veggies = allMatches.veggies;
 ```
+
+<br>
 
 ---
 ---
@@ -1722,13 +1785,8 @@ If you specify an `ItemHasRegularExpressionMatch` rule on the body property of a
 
 An array that contains the strings that match the regular expression defined in the manifest XML file.
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
-<dd>Array.< String ></dd>
-
-</dl>
+Type:
+Array.< String >
 
 ##### Example
 
@@ -1736,6 +1794,8 @@ An array that contains the strings that match the regular expression defined in 
 var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
+
+<br>
 
 ---
 ---
@@ -1767,13 +1827,8 @@ If there is no selection but the cursor is in the body or subject, the method re
 
 The selected data as a string with format determined by `coercionType`.
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
-<dd>String</dd>
-
-</dl>
+Type:
+String
 
 ##### Example
 
@@ -1794,6 +1849,8 @@ function setCallback(asyncResult) {
   // Check for errors.
 }
 ```
+
+<br>
 
 ---
 ---
@@ -1825,6 +1882,8 @@ The following example accesses the addresses entities in the highlighted match s
 ```js
 var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 ```
+
+<br>
 
 ---
 ---
@@ -1883,6 +1942,8 @@ var fruits = selectedMatches.fruits;
 var veggies = selectedMatches.veggies;
 ```
 
+<br>
+
 ---
 ---
 
@@ -1934,6 +1995,8 @@ function saveCallback(asyncResult) {
 }
 ```
 
+<br>
+
 ---
 ---
 
@@ -1981,6 +2044,8 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
+<br>
+
 ---
 ---
 
@@ -2020,6 +2085,8 @@ Office.initialize = function (reason) {
   });
 };
 ```
+
+<br>
 
 ---
 ---
@@ -2074,6 +2141,8 @@ The following is an example of the `result` parameter passed to the callback fun
   "status":"succeeded"
 }
 ```
+
+<br>
 
 ---
 ---

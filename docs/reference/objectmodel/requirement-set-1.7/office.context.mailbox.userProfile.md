@@ -60,6 +60,8 @@ Gets the account type of the user associated with the mailbox. The possible valu
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
+<br>
+
 ---
 ---
 
@@ -86,6 +88,8 @@ Gets the user's display name.
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
+<br>
+
 ---
 ---
 
@@ -111,6 +115,8 @@ Gets the user's SMTP email address.
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+<br>
 
 ---
 ---

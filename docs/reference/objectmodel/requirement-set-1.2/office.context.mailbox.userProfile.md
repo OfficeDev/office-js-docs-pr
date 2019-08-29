@@ -50,6 +50,11 @@ Gets the user's display name.
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
+<br>
+
+---
+---
+
 #### emailAddress: String
 
 Gets the user's SMTP email address.
@@ -72,6 +77,11 @@ Gets the user's SMTP email address.
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+<br>
+
+---
+---
 
 #### timeZone: String
 
