@@ -28,7 +28,7 @@ Use the Vue CLI to generate a new Vue app. From the terminal, run the following 
 vue create my-add-in
 ```
 
-Then select the `default` preset.
+Then select the `default` preset. If you are prompted to use either Yarn or NPM as a package you can choose either one.
 
 ## Generate the manifest file
 
@@ -51,8 +51,6 @@ Each add-in requires a manifest file to define its settings and capabilities.
    - **Choose a project type:** `Office Add-in project containing the manifest only`
    - **What do you want to name your add-in?** `my-office-add-in`
    - **Which Office client application would you like to support?** `Excel`
-
-If you are prompted to use either Yarn or NPM as a package you can choose either one.
 
 After you complete the wizard, it creates a `my-office-add-in` folder, which contains a `manifest.xml` file. The `manifest.xml` file will be important later.
 
