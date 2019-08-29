@@ -141,6 +141,7 @@ console.log(outputString);
 ```
 
 <br>
+
 ---
 ---
 
@@ -173,6 +174,7 @@ function callback(asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -217,6 +219,7 @@ The following is an example of the result parameter passed to the callback funct
 ```
 
 <br>
+
 ---
 ---
 
@@ -254,6 +257,7 @@ Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -296,6 +300,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -327,6 +332,7 @@ console.log("conversationId: " + conversationId);
 ```
 
 <br>
+
 ---
 ---
 
@@ -354,6 +360,7 @@ console.log("Date and time created: " + dateTimeCreated);
 ```
 
 <br>
+
 ---
 ---
 
@@ -384,6 +391,7 @@ console.log("Date and time modified: " + dateTimeModified);
 ```
 
 <br>
+
 ---
 ---
 
@@ -439,6 +447,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -485,6 +494,7 @@ function callbackFunction(asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -531,6 +541,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
 <br>
+
 ---
 ---
 
@@ -562,6 +573,7 @@ function callback(asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -589,6 +601,7 @@ console.log("internetMessageId: " + internetMessageId);
 ```
 
 <br>
+
 ---
 ---
 
@@ -625,6 +638,7 @@ console.log("Item class: " + itemClass);
 ```
 
 <br>
+
 ---
 ---
 
@@ -663,6 +677,7 @@ if (itemId === null || itemId == undefined) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -695,6 +710,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 ```
 
 <br>
+
 ---
 ---
 
@@ -738,6 +754,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -767,6 +784,7 @@ console.log("Normalized subject: " + normalizedSubject);
 ```
 
 <br>
+
 ---
 ---
 
@@ -798,6 +816,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ```
 
 <br>
+
 ---
 ---
 
@@ -841,6 +860,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -883,6 +903,7 @@ Office.context.mailbox.item.organizer.getAsync(
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
 <br>
+
 ---
 ---
 
@@ -945,6 +966,7 @@ Recurrence = {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -989,6 +1011,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -1022,6 +1045,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
 <br>
+
 ---
 ---
 
@@ -1062,6 +1086,7 @@ console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesIn
 ```
 
 <br>
+
 ---
 ---
 
@@ -1117,6 +1142,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -1162,6 +1188,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -1281,6 +1308,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 ```
 
 <br>
+
 ---
 ---
 
@@ -1341,6 +1369,7 @@ Office.context.mailbox.item.addFileAttachmentFromBase64Async(
 ```
 
 <br>
+
 ---
 ---
 
@@ -1383,6 +1412,7 @@ Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged,
 ```
 
 <br>
+
 ---
 ---
 
@@ -1445,6 +1475,7 @@ function addAttachment() {
 ```
 
 <br>
+
 ---
 ---
 
@@ -1468,6 +1499,7 @@ In the Outlook desktop client, if the message is an inline reply, the `close` me
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
 <br>
+
 ---
 ---
 
@@ -1591,6 +1623,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 ```
 
 <br>
+
 ---
 ---
 
@@ -1714,6 +1747,7 @@ Office.context.mailbox.item.displayReplyForm(
 ```
 
 <br>
+
 ---
 ---
 
@@ -1778,6 +1812,7 @@ function handleAttachmentsCallback(result) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -1832,6 +1867,7 @@ function callback(result) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -1864,6 +1900,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
 <br>
+
 ---
 ---
 
@@ -1925,6 +1962,7 @@ Office.initialize = function () {
 ```
 
 <br>
+
 ---
 ---
 
@@ -1959,6 +1997,7 @@ Type:
 Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion))>
 
 <br>
+
 ---
 ---
 
@@ -2012,6 +2051,7 @@ Office.context.mailbox.item.getInitializationContextAsync(
 ```
 
 <br>
+
 ---
 ---
 
@@ -2065,6 +2105,7 @@ The following example shows the structure of the `result` parameter that's passe
 ```
 
 <br>
+
 ---
 ---
 
@@ -2131,6 +2172,7 @@ var veggies = allMatches.veggies;
 ```
 
 <br>
+
 ---
 ---
 
@@ -2174,6 +2216,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
 <br>
+
 ---
 ---
 
@@ -2228,6 +2271,7 @@ function setCallback(asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -2260,6 +2304,7 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 ```
 
 <br>
+
 ---
 ---
 
@@ -2318,6 +2363,7 @@ var veggies = selectedMatches.veggies;
 ```
 
 <br>
+
 ---
 ---
 
@@ -2353,6 +2399,7 @@ function callback (asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -2405,6 +2452,7 @@ function saveCallback(asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -2453,6 +2501,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 ```
 
 <br>
+
 ---
 ---
 
@@ -2480,6 +2529,7 @@ Currently the supported event types are `Office.EventType.AttachmentsChanged`, `
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
 <br>
+
 ---
 ---
 
@@ -2535,6 +2585,7 @@ The following is an example of the `result` parameter passed to the callback fun
 ```
 
 <br>
+
 ---
 ---
 

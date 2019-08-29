@@ -71,6 +71,7 @@ function write(message){
 ```
 
 <br>
+
 ---
 ---
 
@@ -119,6 +120,7 @@ function applyOfficeTheme(){
 ```
 
 <br>
+
 ---
 ---
 

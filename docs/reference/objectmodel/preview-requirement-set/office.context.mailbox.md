@@ -77,6 +77,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -114,6 +115,7 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -185,6 +187,7 @@ function loadNewItem(eventArgs) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -228,6 +231,7 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ```
 
 <br>
+
 ---
 ---
 
@@ -259,6 +263,7 @@ Type:
 [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
 
 <br>
+
 ---
 ---
 
@@ -302,6 +307,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 ```
 
 <br>
+
 ---
 ---
 
@@ -355,6 +361,7 @@ Date
 ```
 
 <br>
+
 ---
 ---
 
@@ -394,6 +401,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
 <br>
+
 ---
 ---
 
@@ -433,6 +441,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 ```
 
 <br>
+
 ---
 ---
 
@@ -497,6 +506,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 ```
 
 <br>
+
 ---
 ---
 
@@ -559,6 +569,7 @@ Office.context.mailbox.displayNewMessageForm(
 ```
 
 <br>
+
 ---
 ---
 
@@ -626,6 +637,7 @@ function cb(asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -677,6 +689,7 @@ function cb(asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -722,6 +735,7 @@ function cb(asyncResult) {
 ```
 
 <br>
+
 ---
 ---
 
@@ -824,6 +838,7 @@ function callback(asyncResult)  {
 ```
 
 <br>
+
 ---
 ---
 

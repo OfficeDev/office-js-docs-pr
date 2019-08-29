@@ -56,6 +56,7 @@ Specifies the result of an asynchronous call.
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -82,6 +83,7 @@ Specifies how to coerce data returned or set by the invoked method.
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 <br>
+
 ---
 ---
 
@@ -113,6 +115,7 @@ Specifies the event associated with an event handler.
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
 <br>
+
 ---
 ---
 

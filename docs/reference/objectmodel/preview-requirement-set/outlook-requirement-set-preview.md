@@ -65,6 +65,7 @@ Added `AttachmentsChanged` event to `Item`.
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 <br>
+
 ---
 
 ### Block on send
@@ -76,6 +77,7 @@ Added a new optional parameter `options`, which is a dictionary with one valid v
 **Available in**: Outlook on the web (classic), Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 <br>
+
 ---
 
 ### Categories
@@ -122,6 +124,7 @@ Added a new enum that specifies the colors available to be associated with categ
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 <br>
+
 ---
 
 ### Delegate access
@@ -157,6 +160,7 @@ Added a child element to the [DesktopFormFactor](../../manifest/desktopformfacto
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 <br>
+
 ---
 
 ### Enhanced location
@@ -198,6 +202,7 @@ Added `EnhancedLocationsChanged` event to `Item`.
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription)
 
 <br>
+
 ---
 
 ### Integration with actionable messages
@@ -209,6 +214,7 @@ Added a new function that returns initialization data passed when the add-in is 
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (classic)
 
 <br>
+
 ---
 
 ### Internet headers
@@ -226,6 +232,7 @@ Added a new property that represents the custom internet headers on a message it
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
 <br>
+
 ---
 
 ### Office theme
@@ -243,6 +250,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 **Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 <br>
+
 ---
 
 ### SSO

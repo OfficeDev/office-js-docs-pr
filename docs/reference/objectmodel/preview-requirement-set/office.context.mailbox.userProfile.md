@@ -61,6 +61,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
 <br>
+
 ---
 ---
 
@@ -88,6 +89,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
 <br>
+
 ---
 ---
 
@@ -115,6 +117,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
 <br>
+
 ---
 ---
 

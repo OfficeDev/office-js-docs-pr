@@ -122,6 +122,11 @@ if (item.attachments.length > 0) {
 console.log(outputString);
 ```
 
+<br>
+
+---
+---
+
 #### bcc: [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
@@ -149,6 +154,11 @@ function callback(asyncResult) {
   var arrayOfBccRecipients = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### body: [Body](/javascript/api/outlook/office.body?view=outlook-js-1.2)
 
@@ -190,6 +200,11 @@ The following is an example of the result parameter passed to the callback funct
 }
 ```
 
+<br>
+
+---
+---
+
 #### cc: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 Provides access to the Cc (carbon copy) recipients of a message. The type of object and level of access depends on the mode of the current item.
@@ -228,6 +243,11 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
+<br>
+
+---
+---
+
 #### (nullable) conversationId: String
 
 Gets an identifier for the email conversation that contains a particular message.
@@ -255,6 +275,11 @@ var conversationId = Office.context.mailbox.item.conversationId;
 console.log("conversationId: " + conversationId);
 ```
 
+<br>
+
+---
+---
+
 #### dateTimeCreated: Date
 
 Gets the date and time that an item was created. Read mode only.
@@ -277,6 +302,11 @@ Gets the date and time that an item was created. Read mode only.
 var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
+
+<br>
+
+---
+---
 
 #### dateTimeModified: Date
 
@@ -303,6 +333,11 @@ Gets the date and time that an item was last modified. Read mode only.
 var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
+
+<br>
+
+---
+---
 
 #### end: Date|[Time](/javascript/api/outlook/office.time?view=outlook-js-1.2)
 
@@ -354,6 +389,11 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+<br>
+
+---
+---
 
 #### from: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)
 
