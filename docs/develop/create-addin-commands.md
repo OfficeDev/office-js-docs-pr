@@ -163,7 +163,7 @@ The JavaScript in the HTML file referenced by the **FunctionFile** element must 
 
 The following code shows how to implement the function used by **FunctionName**.
 
-```javascript
+```js
 
 <script>
     // The initialize function must be run each time a new page is loaded.

@@ -51,7 +51,7 @@ The `displayLanguage` value reflects the current **Display Language** setting sp
 
 ##### Example
 
-```javascript
+```js
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -70,6 +70,7 @@ function write(message){
 }
 ```
 
+<br>
 ---
 ---
 
@@ -104,7 +105,7 @@ Using Office theme colors lets you coordinate the color scheme of your add-in wi
 
 ##### Example
 
-```javascript
+```js
 function applyOfficeTheme(){
   // Get office theme colors.
   var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
@@ -117,6 +118,7 @@ function applyOfficeTheme(){
 }
 ```
 
+<br>
 ---
 ---
 

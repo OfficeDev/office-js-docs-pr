@@ -72,7 +72,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 
 The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.
 
-```javascript
+```js
 // The initialize function is required for all apps.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -111,7 +111,7 @@ Gets an array of attachments for the item. Read mode only.
 
 The following code builds an HTML string with details of all attachments on the current item.
 
-```javascript
+```js
 var item = Office.context.mailbox.item;
 var outputString = "";
 
@@ -152,7 +152,7 @@ Gets an object that provides methods to get or update the recipients on the Bcc 
 
 ##### Example
 
-```javascript
+```js
 Office.context.mailbox.item.bcc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.bcc.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.bcc.getAsync(callback);
@@ -185,7 +185,7 @@ Gets an object that provides methods for manipulating the body of an item.
 
 This example gets the body of the message in plain text.
 
-```javascript
+```js
 Office.context.mailbox.item.body.getAsync(
   "text",
   { asyncContext: "This is passed to the callback" },
@@ -216,7 +216,7 @@ Provides access to the Cc (carbon copy) recipients of a message. The type of obj
 
 The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.
 
-```javascript
+```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
 ```
 
@@ -224,7 +224,7 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.
 
-```javascript
+```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.cc.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.cc.getAsync(callback);
@@ -271,7 +271,7 @@ You get null for this property for a new item in a compose form. If the user set
 
 ##### Example
 
-```javascript
+```js
 var conversationId = Office.context.mailbox.item.conversationId;
 console.log("conversationId: " + conversationId);
 ```
@@ -297,7 +297,7 @@ Gets the date and time that an item was created. Read mode only.
 
 ##### Example
 
-```javascript
+```js
 var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
@@ -326,7 +326,7 @@ Gets the date and time that an item was last modified. Read mode only.
 
 ##### Example
 
-```javascript
+```js
 var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
@@ -344,7 +344,7 @@ The `end` property is expressed as a Coordinated Universal Time (UTC) date and t
 
 The `end` property returns a `Date` object.
 
-```javascript
+```js
 var end = Office.context.mailbox.item.end;
 console.log("Appointment end: " + end);
 ```
@@ -357,7 +357,7 @@ When you use the [`Time.setAsync`](/javascript/api/outlook/office.time?view=outl
 
 The following example sets the end time of an appointment by using the [`setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.7#setasync-datetime--options--callback-) method of the `Time` object.
 
-```javascript
+```js
 var endTime = new Date("3/14/2015");
 var options = {
   // Pass information that can be used in the callback.
@@ -401,7 +401,7 @@ The `from` and [`sender`](#sender-emailaddressdetails) properties represent the 
 
 The `from` property returns an `EmailAddressDetails` object.
 
-```javascript
+```js
 var from = Office.context.mailbox.item.from;
 console.log("From " + from);
 ```
@@ -410,7 +410,7 @@ console.log("From " + from);
 
 The `from` property returns a `From` object that provides a method to get the from value.
 
-```javascript
+```js
 Office.context.mailbox.item.from.getAsync(callback);
 
 function callback(asyncResult) {
@@ -451,7 +451,7 @@ Gets the Internet message identifier for an email message. Read mode only.
 
 ##### Example
 
-```javascript
+```js
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
@@ -485,7 +485,7 @@ You can create custom message classes that extends a default message class, for 
 
 ##### Example
 
-```javascript
+```js
 var itemClass = Office.context.mailbox.item.itemClass;
 console.log("Item class: " + itemClass);
 ```
@@ -518,7 +518,7 @@ The `itemId` property is not available in compose mode. If an item identifier is
 
 The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.
 
-```javascript
+```js
 var itemId = Office.context.mailbox.item.itemId;
 if (itemId === null || itemId == undefined) {
   Office.context.mailbox.item.saveAsync(function(result) {
@@ -550,7 +550,7 @@ The `itemType` property returns one of the `ItemType` enumeration values, indica
 
 ##### Example
 
-```javascript
+```js
 if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Message) {
   // Do something.
 } else {
@@ -569,7 +569,7 @@ Gets or sets the location of an appointment.
 
 The `location` property returns a string that contains the location of the appointment.
 
-```javascript
+```js
 var location = Office.context.mailbox.item.location;
 console.log("location: " + location);
 ```
@@ -578,7 +578,7 @@ console.log("location: " + location);
 
 The `location` property returns a `Location` object that provides methods that are used to get and set the location of the appointment.
 
-```javascript
+```js
 var userContext = { value : 1 };
 Office.context.mailbox.item.location.getAsync( { context: userContext}, callback);
 
@@ -623,7 +623,7 @@ The normalizedSubject property gets the subject of the item, with any standard p
 
 ##### Example
 
-```javascript
+```js
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
@@ -649,7 +649,7 @@ Gets the notification messages for an item.
 
 ##### Example
 
-```javascript
+```js
 // Get all notifications.
 Office.context.mailbox.item.notificationMessages.getAllAsync(
   function (asyncResult) {
@@ -669,7 +669,7 @@ Provides access to the optional attendees of an event. The type of object and le
 
 The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.
 
-```javascript
+```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
 console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 ```
@@ -678,7 +678,7 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.
 
-```javascript
+```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.optionalAttendees.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.optionalAttendees.getAsync(callback);
@@ -711,7 +711,7 @@ Gets the email address of the organizer for a specified meeting.
 
 The `organizer` property returns an [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7) object that represents the meeting organizer.
 
-```javascript
+```js
 var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
@@ -721,7 +721,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 The `organizer` property returns an [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7) object that provides a method to get the organizer value.
 
-```javascript
+```js
 Office.context.mailbox.item.organizer.getAsync(
   function(asyncResult) {
     console.log(JSON.stringify(asyncResult));
@@ -758,7 +758,7 @@ The `recurrence` property returns a [recurrence](/javascript/api/outlook/office.
 
 The `recurrence` property returns a [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) object that represents the appointment recurrence. This is available for appointments and meeting requests.
 
-```javascript
+```js
 var recurrence = Office.context.mailbox.item.recurrence;
 console.log("Recurrence: " + JSON.stringify(recurrence));
 ```
@@ -767,7 +767,7 @@ console.log("Recurrence: " + JSON.stringify(recurrence));
 
 The `recurrence` property returns a [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) object that provides methods to manage the appointment recurrence. This is available for appointments.
 
-```javascript
+```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
 
 function callback(asyncResult) {
@@ -813,7 +813,7 @@ Provides access to the required attendees of an event. The type of object and le
 
 The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.
 
-```javascript
+```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
 console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 ```
@@ -822,7 +822,7 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.
 
-```javascript
+```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.requiredAttendees.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.requiredAttendees.getAsync(callback);
@@ -871,7 +871,7 @@ The [`from`](#from-emailaddressdetailsfrom) and `sender` properties represent th
 
 ##### Example
 
-```javascript
+```js
 var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
@@ -905,7 +905,7 @@ The `seriesId` property returns `null` for items that do not have parent items s
 
 ##### Example
 
-```javascript
+```js
 var seriesId = Office.context.mailbox.item.seriesId;
 
 // The seriesId property returns null for items that do
@@ -929,7 +929,7 @@ The `start` property is expressed as a Coordinated Universal Time (UTC) date and
 
 The `start` property returns a `Date` object.
 
-```javascript
+```js
 var start = Office.context.mailbox.item.start;
 console.log("Appointment start: " + JSON.stringify(start));
 ```
@@ -942,7 +942,7 @@ When you use the [`Time.setAsync`](/javascript/api/outlook/office.time?view=outl
 
 The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.7#setasync-datetime--options--callback-) method of the `Time` object.
 
-```javascript
+```js
 var startTime = new Date("3/14/2015");
 var options = {
   // Pass information that can be used in the callback.
@@ -985,7 +985,7 @@ The `subject` property returns a string. Use the [`normalizedSubject`](#normaliz
 
 The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.
 
-```javascript
+```js
 var subject = Office.context.mailbox.item.subject;
 console.log(subject);
 ```
@@ -994,7 +994,7 @@ console.log(subject);
 
 The `subject` property returns a `Subject` object that provides methods to get and set the subject.
 
-```javascript
+```js
 Office.context.mailbox.item.subject.getAsync(callback);
 
 function callback(asyncResult) {
@@ -1026,7 +1026,7 @@ Provides access to the recipients on the **To** line of a message. The type of o
 
 The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.
 
-```javascript
+```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
 ```
 
@@ -1034,7 +1034,7 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.
 
-```javascript
+```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.to.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.to.getAsync(callback);
@@ -1094,7 +1094,7 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](#remo
 
 ##### Examples
 
-```javascript
+```js
 function callback(result) {
   if (result.error) {
     console.log(result.error);
@@ -1114,7 +1114,7 @@ function addAttachment() {
 
 The following example adds an image file as an inline attachment and references the attachment in the message body.
 
-```javascript
+```js
 Office.context.mailbox.item.addFileAttachmentAsync(
   "http://i.imgur.com/WJXklif.png",
   "cute_bird.png",
@@ -1162,7 +1162,7 @@ Currently the supported event types are `Office.EventType.AppointmentTimeChanged
 
 ##### Example
 
-```javascript
+```js
 function myHandlerFunction(eventarg) {
   if (eventarg.attachmentStatus === Office.MailboxEnums.AttachmentStatus.Added) {
     var attachment = eventarg.attachmentDetails;
@@ -1215,7 +1215,7 @@ If your Office Add-in is running in Outlook on the web, the `addItemAttachmentAs
 
 The following example adds an existing Outlook item as an attachment with the name `My Attachment`.
 
-```javascript
+```js
 function callback(result) {
   if (result.error) {
     console.log(result.error);
@@ -1299,20 +1299,20 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 
 The following code passes a string to the `displayReplyAllForm` function.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm('hello there');
 Office.context.mailbox.item.displayReplyAllForm('<b>hello there</b>');
 ```
 
 Reply with an empty body.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm({});
 ```
 
 Reply with just a body.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi'
@@ -1321,7 +1321,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 Reply with a body and a file attachment.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -1338,7 +1338,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 Reply with a body and an item attachment.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -1355,7 +1355,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 Reply with a body, file attachment, item attachment, and a callback.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -1421,20 +1421,20 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 
 The following code passes a string to the `displayReplyForm` function.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm('hello there');
 Office.context.mailbox.item.displayReplyForm('<b>hello there</b>');
 ```
 
 Reply with an empty body.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm({});
 ```
 
 Reply with just a body.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi'
@@ -1443,7 +1443,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 Reply with a body and a file attachment.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1460,7 +1460,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 Reply with a body and an item attachment.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1477,7 +1477,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 Reply with a body, file attachment, item attachment, and a callback.
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1528,7 +1528,7 @@ Type:
 
 The following example accesses the contacts entities in the current item's body.
 
-```javascript
+```js
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
@@ -1578,7 +1578,7 @@ Type: Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlo
 
 The following example shows how to access an array of strings that represent postal addresses in the current item's body.
 
-```javascript
+```js
 // The initialize function is required for all apps.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -1684,7 +1684,7 @@ An object that contains arrays of strings that match the regular expressions def
 
 The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.
 
-```javascript
+```js
 var allMatches = Office.context.mailbox.item.getRegExMatches();
 var fruits = allMatches.fruits;
 var veggies = allMatches.veggies;
@@ -1732,7 +1732,7 @@ An array that contains the strings that match the regular expression defined in 
 
 ##### Example
 
-```javascript
+```js
 var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
@@ -1777,7 +1777,7 @@ The selected data as a string with format determined by `coercionType`.
 
 ##### Example
 
-```javascript
+```js
 // Get selected data.
 Office.initialize = function () {
   Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
@@ -1822,7 +1822,7 @@ Type:
 
 The following example accesses the addresses entities in the highlighted match selected by the user.
 
-```javascript
+```js
 var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 ```
 
@@ -1877,7 +1877,7 @@ An object that contains arrays of strings that match the regular expressions def
 
 The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.
 
-```javascript
+```js
 var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
 var fruits = selectedMatches.fruits;
 var veggies = selectedMatches.veggies;
@@ -1911,7 +1911,7 @@ Custom properties are stored as key/value pairs on a per-app, per-item basis. Th
 
 The following code example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the `CustomProperties.saveAsync` method to save these properties back to the server. After loading the custom properties, the code sample uses the `CustomProperties.get` method to read the custom property `myProp`, the `CustomProperties.set` method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.
 
-```javascript
+```js
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -1970,7 +1970,7 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 
 The following code removes an attachment with an identifier of '0'.
 
-```javascript
+```js
 Office.context.mailbox.item.removeAttachmentAsync(
   '0',
   { asyncContext : null },
@@ -2009,7 +2009,7 @@ Currently the supported event types are `Office.EventType.AppointmentTimeChanged
 
 ##### Example
 
-```javascript
+```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.item.removeHandlerAsync(Office.EventType.RecurrenceChanged, function (result) {
@@ -2059,7 +2059,7 @@ Since appointments have no draft state, if `saveAsync` is called on an appointme
 
 ##### Examples
 
-```javascript
+```js
 Office.context.mailbox.item.saveAsync(
   function callback(result) {
     // Process the result.
@@ -2104,7 +2104,7 @@ The `setSelectedDataAsync` method inserts the specified string at the cursor loc
 
 ##### Example
 
-```javascript
+```js
 Office.context.mailbox.item.setSelectedDataAsync("Hello World!");
 Office.context.mailbox.item.setSelectedDataAsync("<b>Hello World!</b>", { coercionType : "html" });
 ```

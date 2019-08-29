@@ -62,7 +62,7 @@ Within a custom function, you can use [WebSockets](https://developer.mozilla.org
 
 The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server.
 
-```JavaScript
+```js
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
@@ -97,7 +97,7 @@ The following methods are available on the `storage` object:
 
 The following code sample calls the `OfficeRuntime.storage.setItem` function to set a key and value into `storage`.
 
-```JavaScript
+```js
 function StoreValue(key, value) {
 
   return OfficeRuntime.storage.setItem(key, value).then(function (result) {

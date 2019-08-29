@@ -56,7 +56,7 @@ Gets the account type of the user associated with the mailbox. The possible valu
 
 ##### Example
 
-```javascript
+```js
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
@@ -78,7 +78,7 @@ Gets the user's display name.
 
 ##### Example
 
-```javascript
+```js
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
@@ -101,7 +101,7 @@ Gets the user's SMTP email address.
 
 ##### Example
 
-```javascript
+```js
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
@@ -124,7 +124,7 @@ Gets the user's default time zone.
 
 ##### Example
 
-```javascript
+```js
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```
