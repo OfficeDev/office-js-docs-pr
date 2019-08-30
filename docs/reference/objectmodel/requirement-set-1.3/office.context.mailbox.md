@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.3
 description: ''
-ms.date: 08/29/2019
+ms.date: 08/30/2019
 localization_priority: Normal
 ---
 
@@ -218,23 +218,23 @@ Date
 ##### Example
 
 ```js
-    // Represents 3:37 PM PDT on Monday, August 26, 2019.
-    var input = {
-        date: 26,
-        hours: 15,
-        milliseconds: 2,
-        minutes: 37,
-        month: 7,
-        seconds: 2,
-        timezoneOffset: -420,
-        year: 2019
-    };
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-    // result should be a Date object.
-    var result = Office.context.mailbox.convertToUtcClientTime(input);
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
 
-    // Output should be "2019-08-26T22:37:02.002Z".
-    console.log(result.toISOString());
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
 ```
 
 <br>
