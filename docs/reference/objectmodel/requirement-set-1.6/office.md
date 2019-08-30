@@ -55,6 +55,9 @@ Specifies the result of an asynchronous call.
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
+<br>
+
+---
 ---
 
 #### CoercionType: String
@@ -79,6 +82,9 @@ Specifies how to coerce data returned or set by the invoked method.
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
+<br>
+
+---
 ---
 
 #### EventType: String
@@ -102,6 +108,9 @@ Specifies the event associated with an event handler.
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
+<br>
+
+---
 ---
 
 #### SourceProperty: String

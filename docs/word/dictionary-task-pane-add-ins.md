@@ -541,7 +541,7 @@ The primary members of the JavaScript API for Office (Office.js) that are called
 
 
 
-```javascript
+```js
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.

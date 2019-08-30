@@ -50,7 +50,7 @@ The `displayLanguage` value reflects the current **Display Language** setting sp
 
 ##### Example
 
-```javascript
+```js
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -68,6 +68,11 @@ function write(message){
   document.getElementById('message').innerText += message;
 }
 ```
+
+<br>
+
+---
+---
 
 #### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.6)
 
