@@ -52,7 +52,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
    - **What do you want to name your add-in?** `my-office-add-in`
    - **Which Office client application would you like to support?** `Excel`
 
-After you complete the wizard, it creates a `my-office-add-in` folder, which contains a `manifest.xml` file. The `manifest.xml` file will be important later.
+After you complete the wizard, it creates a `my-office-add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
 
 ## Secure the app
 
