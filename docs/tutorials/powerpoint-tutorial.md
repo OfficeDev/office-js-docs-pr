@@ -61,7 +61,7 @@ Edit the add-in code as follows to create the framework that you'll use to imple
 
 2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
-    ```javascript
+    ```js
     (function () {
         "use strict";
 
@@ -175,13 +175,13 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 7. In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.
 
-    ```javascript
+    ```js
     $('#insert-image').click(insertImage);
     ```
 
 8. In the **Home.js** file, replace `TODO2` with the following code to define the **insertImage** function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
 
-    ```javascript
+    ```js
     function insertImage() {
         // Get image from from web service (as a Base64 encoded string).
         $.ajax({
@@ -200,7 +200,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
     - The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.
 
-    ```javascript
+    ```js
     function insertImageFromBase64String(image) {
         // Call Office.js to insert the image into the document.
         Office.context.document.setSelectedDataAsync(image, {
@@ -287,13 +287,13 @@ Complete the following steps to add code that inserts text into the title slide 
 
 2. In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
 
-    ```javascript
+    ```js
     $('#insert-text').click(insertText);
     ```
 
 3. In the **Home.js** file, replace `TODO5` with the following code to define the **insertText** function. This function inserts text into the current slide.
 
-    ```javascript
+    ```js
     function insertText() {
         Office.context.document.setSelectedDataAsync('Hello World!',
             function (asyncResult) {
@@ -344,13 +344,13 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
 2. In the **Home.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
 
-    ```javascript
+    ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
 3. In the **Home.js** file, replace `TODO7` with the following code to define the **getSlideMetadata** function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
 
-    ```javascript
+    ```js
     function getSlideMetadata() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
             function (asyncResult) {
@@ -417,7 +417,7 @@ Complete the following steps to add code that navigates between the slides of a 
 
 2. In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the four navigation buttons.
 
-    ```javascript
+    ```js
     $('#go-to-first-slide').click(goToFirstSlide);
     $('#go-to-next-slide').click(goToNextSlide);
     $('#go-to-previous-slide').click(goToPreviousSlide);
@@ -426,7 +426,7 @@ Complete the following steps to add code that navigates between the slides of a 
 
 3. In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions. Each of these functions uses the `goToByIdAsync` function to select a slide based upon its position in the document (first, last, previous, and next).
 
-    ```javascript
+    ```js
     function goToFirstSlide() {
         Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
             function (asyncResult) {

@@ -117,7 +117,7 @@ The following instruction are written generically so they can be used in multipl
     * The error-handling in the add-in will sometimes automatically attempt a second time to get an access token, using a different set of options. The counter variable `timesGetOneDriveFilesHasRun`, and the flag variables `triedWithoutForceConsent` and `timesMSGraphErrorReceived` are used to ensure that the user isn't cycled repeatedly through failed attempts to get a token.
     * You create the `getDataWithToken` method in the next step, but note that it sets an option called `forceConsent` to `false`. More about that in the next step.
 
-    ```javascript
+    ```js
     var timesGetOneDriveFilesHasRun = 0;
     var triedWithoutForceConsent = false;
     var timesMSGraphErrorReceived = false;
@@ -136,7 +136,7 @@ The following instruction are written generically so they can be used in multipl
     * The options parameter sets `forceConsent` to `false`, so the user will not be prompted to consent to giving the Office host access to your add-in every time she or he uses the add-in. The first time the user runs the add-in, the call of `getAccessTokenAsync` will fail, but error-handling logic that you add in a later step will automatically re-call with the `forceConsent` option set to `true` and the user will be prompted to consent, but only that first time.
     * You will create the `handleClientSideErrors` method in a later step.
 
-    ```javascript
+    ```js
     function getDataWithToken(options) {
     Office.context.auth.getAccessTokenAsync(options,
         function (result) {
@@ -152,7 +152,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/values” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
-    ```javascript
+    ```js
     accessToken = result.value;
     getData("/api/values", accessToken);
     ```
@@ -162,7 +162,7 @@ The following instruction are written generically so they can be used in multipl
     * This method calls a specified Web API endpoint and passes it the same access token that the Office host application used to get access to your add-in. On the server-side, this access token will be used in the “on behalf of” flow to obtain an access token to Microsoft Graph.
     * You will create the `handleServerSideErrors` method in a later step.
 
-    ```javascript
+    ```js
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
@@ -182,7 +182,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Below the `getData` method, add the following method. This method will handle errors in the add-in's client when the Office host is unable to obtain an access token to the add-in's web service. These errors are reported with an error code, so the method uses a `switch` statement to distinguish them.
 
-    ```javascript
+    ```js
     function handleClientSideErrors(result) {
 
         switch (result.error.code) {
@@ -215,7 +215,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO2` with the following code. Error 13001 occurs when the user is not logged in, or the user cancelled, without responding, a prompt to provide a 2nd authentication factor. In either case, the code re-runs the `getDataWithToken` method and sets an option to force a sign-in prompt.
 
-    ```javascript
+    ```js
     case 13001:
         getDataWithToken({ forceAddAccount: true });
         break;
@@ -223,7 +223,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO3` with the following code. Error 13002 occurs when user's sign-in or consent was aborted. Ask the user to try again but no more than once again.
 
-    ```javascript
+    ```js
     case 13002:
         if (timesGetOneDriveFilesHasRun < 2) {
             showResult(['Your sign-in or consent was aborted before completion. Please try that operation again.']);
@@ -235,7 +235,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO4` with the following code. Error 13003 occurs when user is logged in with an account that is neither work or school, nor Microsoft Account. Ask the user to sign-out and then in again with a supported account type.
 
-    ```javascript
+    ```js
     case 13003:
         showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;
@@ -246,7 +246,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO5` with the following code. Error 13005 occurs when Office has not been authorized to the add-in's web service or the user has not granted the service permission to their `profile`.
 
-    ```javascript
+    ```js
     case 13005:
         getDataWithToken({ forceConsent: true });
         break;
@@ -254,7 +254,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO6` with the following code. Error 13006 occurs when there has been an unspecified error in the Office host that may indicate that the host is in an unstable state. Ask the user to restart Office.
 
-    ```javascript
+    ```js
     case 13006:
         showResult(['Please save your work, sign out of Office, close all Office applications, and restart this Office application.']);
         break;
@@ -262,7 +262,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO7` with the following code. Error 13007 occurs when something has gone wrong with the Office host's interaction with AAD so the host cannot get an access token to the add-ins web service/application. This may be a temporary network issue. Ask the user to try again later.
 
-    ```javascript
+    ```js
     case 13007:
         showResult(['That operation cannot be done at this time. Please try again later.']);
         break;
@@ -270,7 +270,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO8` with the following code. Error 13008 occurs when the user triggered an operation that calls `getAccessTokenAsync` before a previous call of it completed.
 
-    ```javascript
+    ```js
     case 13008:
         showResult(['Please try that operation again after the current operation has finished.']);
         break;
@@ -278,7 +278,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO9` with the following code. Error 13009 occurs when the add-in does not support forcing consent, but `getAccessTokenAsync` was called with the `forceConsent` option set to `true`. In the usual case when this happens the code should automatically re-run `getAccessTokenAsync` with the consent option set to `false`. However, in some cases, calling the method with `forceConsent` set to `true` was itself an automatic response to an error in a call to the method with the option set to `false`. In that case, the code should not try again, but instead it should advise the user to sign out and sign in again.
 
-    ```javascript
+    ```js
     case 13009:
         if (triedWithoutForceConsent) {
             showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
@@ -290,7 +290,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO10` with the following code.
 
-    ```javascript
+    ```js
     default:
         logError(result);
         break;
@@ -298,7 +298,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Below the `handleClientSideErrors` method, add the following method. This method will handle errors in the add-in's web service when something goes wrong in executing the on-behalf-of flow or in getting data from Microsoft Graph.
 
-    ```javascript
+    ```js
     function handleServerSideErrors(result) {
 
         // TODO11: Handle the case where AAD asks for an additional form of authentication.
@@ -322,7 +322,7 @@ The following instruction are written generically so they can be used in multipl
     * There are configurations of Azure Active Directory in which the user is required to provide additional authentication factor(s) to access some Microsoft Graph targets (e.g., OneDrive), even if the user can sign on to Office with just a password. In that case, AAD will send a response, with error 50076, that has a `Claims` property.
     * The Office host should get a new token with the **Claims** value as the `authChallenge` option. This tells AAD to prompt the user for all required forms of authentication.
 
-    ```javascript
+    ```js
     if (result.responseJSON.error.innerError
             && result.responseJSON.error.innerError.error_codes
             && result.responseJSON.error.innerError.error_codes[0] === 50076){
@@ -335,7 +335,7 @@ The following instruction are written generically so they can be used in multipl
     * Error 65001 means that consent to access Microsoft Graph was not granted (or was revoked) for one or more permissions.
     * The add-in should get a new token with the `forceConsent` option set to `true`.
 
-    ```javascript
+    ```js
     else if (result.responseJSON.error.innerError
             && result.responseJSON.error.innerError.error_codes
             && result.responseJSON.error.innerError.error_codes[0] === 65001){
@@ -348,7 +348,7 @@ The following instruction are written generically so they can be used in multipl
     * Error 70011 means that an invalid scope (permission) has been requested. The add-in should report the error.
     * The code logs any other error with an AAD error number.
 
-    ```javascript
+    ```js
     else if (result.responseJSON.error.innerError
             && result.responseJSON.error.innerError.error_codes
             && result.responseJSON.error.innerError.error_codes[0] === 70011){
@@ -361,7 +361,7 @@ The following instruction are written generically so they can be used in multipl
     * Server-side code that you create in a later step will send the message that ends with `... expected access_as_user` if the `access_as_user` scope (permission) is not in the access token that the add-in's client sends to AAD to be used in the on-behalf-of flow.
     * The add-in should report the error.
 
-    ```javascript
+    ```js
     else if (result.responseJSON.error.name
             && result.responseJSON.error.name.indexOf('expected access_as_user') !== -1){
         showResult(['Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user.']);
@@ -374,7 +374,7 @@ The following instruction are written generically so they can be used in multipl
     * In this case, the add-in should start the entire authentication process over by resetting the `timesGetOneDriveFilesHasRun` counter and `timesGetOneDriveFilesHasRun` flag variables, and then re-calling the button handler method. But it should do this only once. If it happens again, it should just log the error.
     * The code logs the error if it happens twice in succession.
 
-    ```javascript
+    ```js
     else if (result.responseJSON.error.name
             && result.responseJSON.error.name.indexOf('Microsoft Graph error') !== -1) {
         if (!timesMSGraphErrorReceived) {
@@ -390,7 +390,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Replace `TODO16` with the following code *just below the last closing brace of the code you added in the previous step*.
 
-    ```javascript
+    ```js
     else {
         logError(result);
     }

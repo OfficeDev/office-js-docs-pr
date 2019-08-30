@@ -104,7 +104,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
    The **\_projDoc** variable is initialized with a **ProjectDocument** object. The code includes some simple error handling functions, and the **getContextValues** function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office).
 
-    ```javascript
+    ```js
     /*
     * JavaScript functions for the Project OM Test example app
     * in the Project 2013 SDK.
@@ -188,7 +188,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
    Each of the functions in the following code includes an anonymous function that is specified by  `function (asyncResult)`, which is a callback that gets the asynchronous result. Instead of anonymous functions, you could use named functions, which can help with maintainability of complex add-ins.
 
-    ```javascript
+    ```js
     // Get the data in the selected cells of the grid in the active view.
     function getSelectedDataAsync() {
         _projDoc.getSelectedDataAsync(
@@ -545,7 +545,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
    The **manageTaskEventHandler**, **manageResourceEventHandler**, and **manageViewEventHandler** functions can add or remove an event handler, as specified by the _docMethod_ parameter.
 
-    ```javascript
+    ```js
     // Task selection changed event handler.
     function onTaskSelectionChanged(eventArgs) {
         text.value = "In task selection change event handler";
@@ -899,7 +899,7 @@ The  **Project OM Test** add-in is an example that shows the use of some JavaScr
 
 For a simple example, the error output in the following code includes the  **actionMessage** variable that specifies the action to take to avoid an error in the **getSelectedResourceAsync** function.
 
-```javascript
+```js
 function logError(errorText) {
     text.value = "Error in " + errorText;
 }
@@ -930,7 +930,7 @@ The **HelloProject_OData** sample in the Project 2013 SDK download includes the 
 
 The following code in the SurfaceErrors.js file includes the  **throwError** function that creates a **Toast** object.
 
-```javascript
+```js
 /*
  * Show error messages in a "toast" notification.
  */
@@ -1067,7 +1067,7 @@ To use the  **throwError** function, include the JQuery library and the SurfaceE
 
 <br/>
 
-```javascript
+```js
 function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     logError(methodName + " method.\nError name: " + errorName
         + "\nMessage: " + errorMessage
