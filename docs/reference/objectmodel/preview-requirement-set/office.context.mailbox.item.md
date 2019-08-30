@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 06/25/2019
+ms.date: 08/30/2019
 localization_priority: Normal
 ---
 
