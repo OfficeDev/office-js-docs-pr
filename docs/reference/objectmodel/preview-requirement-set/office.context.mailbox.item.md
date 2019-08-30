@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 06/25/2019
+ms.date: 08/30/2019
 localization_priority: Normal
 ---
 
@@ -1797,16 +1797,21 @@ function callback(result) {
 
 function handleAttachmentsCallback(result) {
   // Parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file.
-  if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Base64) {
-    // Handle file attachment.
-  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Eml) {
-    // Handle email item attachment.
-  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
-    // Handle .icalender attachment.
-  } else if (result.value.format === Office.MailboxEnums.AttachmentContentFormat.Url) {
-    // Handle cloud attachment.
-  } else {
-    // Handle attachment formats that are not supported.
+  switch (result.value.format) {
+    case Office.MailboxEnums.AttachmentContentFormat.Base64:
+      // Handle file attachment.
+      break;
+    case Office.MailboxEnums.AttachmentContentFormat.Eml:
+      // Handle email item attachment.
+      break;
+    case Office.MailboxEnums.AttachmentContentFormat.ICalendar:
+      // Handle .icalender attachment.
+      break;
+    case Office.MailboxEnums.AttachmentContentFormat.Url:
+      // Handle cloud attachment.
+      break;
+    default:
+      // Handle attachment formats that are not supported.
   }
 }
 ```
