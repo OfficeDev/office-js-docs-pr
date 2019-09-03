@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-ins
 description: ''
-ms.date: 07/05/2019
+ms.date: 09/03/2019
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
@@ -177,8 +177,8 @@ var reader = new FileReader();
 
 reader.onload = function (event) {
     // strip off the metadata before the base64-encoded string
-    var startIndex = event.target.result.indexOf("base64,");
-    var copyBase64 = event.target.result.substr(startIndex + 7);
+    var startIndex = reader.result.toString().indexOf("base64,");
+    var copyBase64 = reader.result.toString().substr(startIndex + 7);
 
     PowerPoint.createPresentation(copyBase64);
 };

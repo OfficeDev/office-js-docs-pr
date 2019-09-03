@@ -1,7 +1,7 @@
 ---
 title: Work with shapes using the Excel JavaScript API
 description: ''
-ms.date: 07/19/2019
+ms.date: 09/03/2019
 localization_priority: Normal
 ---
 
@@ -57,8 +57,8 @@ var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run(function (context) {
-        var startIndex = event.target.result.indexOf("base64,");
-        var myBase64 = event.target.result.substr(startIndex + 7);
+        var startIndex = reader.result.toString().indexOf("base64,");
+        var myBase64 = reader.result.toString().substr(startIndex + 7);
         var sheet = context.workbook.worksheets.getItem("MyWorksheet");
         var image = sheet.shapes.addImage(myBase64);
         image.name = "Image";

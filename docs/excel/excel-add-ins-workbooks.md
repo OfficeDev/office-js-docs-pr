@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 05/01/2019
+ms.date: 09/03/2019
 localization_priority: Priority
 ---
 
@@ -55,8 +55,8 @@ var reader = new FileReader();
 reader.onload = (function (event) {
     Excel.run(function (context) {
         // strip off the metadata before the base64-encoded string
-        var startIndex = event.target.result.indexOf("base64,");
-        var workbookContents = event.target.result.substr(startIndex + 7);
+        var startIndex = reader.result.toString().indexOf("base64,");
+        var workbookContents = reader.result.toString().substr(startIndex + 7);
 
         Excel.createWorkbook(workbookContents);
         return context.sync();
@@ -87,8 +87,8 @@ var reader = new FileReader();
 reader.onload = (event) => {
     Excel.run((context) => {
         // strip off the metadata before the base64-encoded string
-        var startIndex = event.target.result.indexOf("base64,");
-        var workbookContents = event.target.result.substr(startIndex + 7);
+        var startIndex = reader.result.toString().indexOf("base64,");
+        var workbookContents = reader.result.toString().substr(startIndex + 7);
 
         var sheets = context.workbook.worksheets;
         sheets.addFromBase64(
