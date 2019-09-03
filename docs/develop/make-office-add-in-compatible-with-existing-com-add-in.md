@@ -31,7 +31,7 @@ The following example shows the portion of the manifest that specifies a COM add
       <ProgId>ContosoCOMAddin</ProgId>
       <Type>COM</Type>
     </EquivalentAddin>
-  <EquivalentAddins>
+  </EquivalentAddins>
 </VersionOverrides>
 ```
 
