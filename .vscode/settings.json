@@ -1,3 +1,4 @@
 {
-    "workbench.colorCustomizations": {}
+  "workbench.colorCustomizations": {},
+  "editor.formatOnSave": false
 }
