@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins with Angular
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/04/2019
 localization_priority: Priority
 ---
 
@@ -74,7 +74,10 @@ export class AppRoutingModule { }
 
 ## Consider wrapping Fabric components with Angular components
 
-We recommend using [Office UI Fabric](https://developer.microsoft.com/fabric#/fabric-js) styling in your add-in. Fabric includes components that come in several versions, including a version [based on TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Consider using Fabric components in your add-in by wrapping them in Angular components. For an example that shows you how to do this, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Note, for example, how the Angular component defined in [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) imports the Fabric file TextField.ts, where the Fabric component is defined. 
+We recommend using [UI Fabric](https://developer.microsoft.com/fabric#) styling in your add-in. UI Fabric for the web is available in two flavors: 
+- [Fabric React](https://developer.microsoft.com/fabric#/controls/web) provides robust, up-to-date, accessible components that are highly customizable.
+- [Fabric Core](https://developer.microsoft.com/fabric#/styles/web) is a collection of CSS classes and Sass mixins that give you access to Fabric's colors, animations, fonts, icons and grid.
+Consider using Fabric components in your add-in by wrapping them in Angular components. For an example that shows you how to do this, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Note, for example, how the Angular component defined in [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) imports the Fabric file TextField.ts, where the Fabric component is defined. 
 
 
 ## Using the Office Dialog API with Angular
