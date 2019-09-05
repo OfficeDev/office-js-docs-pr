@@ -44,7 +44,7 @@ The basic technique is to precede the variable (or parameter, and so on) with a 
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![Intellisense for variable](../images/intellisense-vs17-var.png)
+![IntelliSense for variable](../images/intellisense-vs17-var.png)
 
 ### Parameter
 
@@ -54,7 +54,7 @@ function myFunc(paragraphs){
 
 }
 ```
-![Intellisense for parameter](../images/intellisense-vs17-param.png)
+![IntelliSense for parameter](../images/intellisense-vs17-param.png)
 
 ### Return value
 
@@ -64,7 +64,7 @@ function myFunc() {
 
 }
 ```
-![Intellisense for return value](../images/intellisense-vs17-return.png)
+![IntelliSense for return value](../images/intellisense-vs17-return.png)
 
 ### Complex types
 
@@ -76,7 +76,7 @@ function myFunc() {
 
 }
 ```
-![Intellisense for complex type](../images/intellisense-vs17-complex-type.png)
+![IntelliSense for complex type](../images/intellisense-vs17-complex-type.png)
 
 ## See also
 
