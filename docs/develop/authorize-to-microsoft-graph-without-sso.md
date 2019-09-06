@@ -21,7 +21,7 @@ We recommend that you use the following libraries when accessing Microsoft Graph
 - For add-ins using a NodeJS-based server-side, use [Passport Azure AD](https://github.com/AzureAD/passport-azure-ad).
 - For add-ins using the Implicit flow, use [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki).
 
-For more information about recommended libraries for working with Microsoft Identity Platform (formerly AAD v.2.0), see [Microsoft identity platform authentication libraries](/azure/active-directory/develop/reference-v2-libraries.md).
+For more information about recommended libraries for working with Microsoft Identity Platform (formerly AAD v.2.0), see [Microsoft identity platform authentication libraries](/azure/active-directory/develop/reference-v2-libraries).
 
 The following samples get Microsoft Graph data from an Office Add-in:
 
