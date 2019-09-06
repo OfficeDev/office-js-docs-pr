@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API.
-ms.date: 07/17/2019
+ms.date: 09/06/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -22,8 +22,6 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ### Create the add-in project
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
 ```command&nbsp;line
@@ -32,8 +30,10 @@ yo office
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`
-- **What do you want to name your add-in?** `my-office-add-in`
+- **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
+
+![Yeoman generator](../images/yo-office-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -46,7 +46,7 @@ After you complete the wizard, the generator creates the project and installs su
 1. Navigate to the root folder of the project.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
