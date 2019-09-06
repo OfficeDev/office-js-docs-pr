@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/06/2019
 localization_priority: Priority
 ---
 
@@ -34,7 +34,11 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
+| `onColumnSorted` | Occurs when one or more columns have been sorted. This happens as the result of a left-to-right sort operation. | [**Worksheet**](/javascript/api/excel/excel.worksheet) |
 | `onFiltered` | Occurs when a filter is applied to an object. | [**Table**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onRowHiddenChanged` | Occurs when the row-hidden state changes on a specific worksheet. | [**Worksheet**](/javascript/api/excel/excel.worksheet) |
+| `onRowSorted` | Occurs when one or more rows have been sorted. This happens as the result of a top-to-bottom sort operation. | [**Worksheet**](/javascript/api/excel/excel.worksheet) |
+| `onSingleClicked` | Occurs when left-clicked/tapped operation happens in the worksheet. | [**Worksheet**](/javascript/api/excel/excel.worksheet) |
 
 ### Event triggers
 

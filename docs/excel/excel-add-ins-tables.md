@@ -280,6 +280,13 @@ Excel.run(function (context) {
 
 ![Table data in Excel](../images/excel-tables-sort.png)
 
+### Sorting events (preview)
+
+> [!NOTE]
+> The APIs for these sort-related events are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+
+
 ## Apply filters to a table
 
 The following code sample applies filters to the **Amount** column and the **Category** column within a table. As a result of the filters, only rows where **Category** is one of the specified values and **Amount** is below the average value for all rows is shown.
