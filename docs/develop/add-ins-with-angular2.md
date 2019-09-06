@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins with Angular
 description: ''
-ms.date: 09/04/2019
+ms.date: 09/06/2019
 localization_priority: Priority
 ---
 
