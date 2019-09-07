@@ -1,7 +1,7 @@
 ---
 title: Attach a debugger from the task pane
 description: ''
-ms.date: 08/06/2019
+ms.date: 09/09/2019
 localization_priority: Priority
 ---
 
@@ -27,13 +27,14 @@ In Visual Studio, you will see the code files in **Solution Explorer**.   You ca
 > If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps:
 >
 > 1. In Visual Studio, choose **DEBUG** > **Attach to Process**.
-> 2. In **Attach to Process**, choose all of the available Iexplore.exe processes, and then choose the **Attach** button.
+> 2. In the **Available processes**, choose *either* all of the available `Iexplore.exe` processes *or* all of the available `MicrosoftEdge*.exe` process, depending on [whether your add-in is using IE or Edge](../concepts/browsers-used-by-office-web-add-ins.md), and then choose the **Attach** button.
 
 For more information about debugging in Visual Studio, see the following:
 
 -	To launch and use the DOM Explorer in Visual Studio, see Tip 4 in the [Tips and Tricks](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) section of the [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates) blog post.
 -	To set breakpoints, see [Using Breakpoints](/visualstudio/debugger/using-breakpoints?view=vs-2015).
 -	To use F12, see [Using the F12 developer tools](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+-   To use the Edge Developer Tools, see [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
 
 ## See also
 
