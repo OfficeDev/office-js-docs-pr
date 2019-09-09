@@ -35,7 +35,7 @@ You can also give us feedback: if using Excel on Windows or Mac, you can report 
 
 ## Outlook add-in doesn't work correctly
 
-If an Outlook add-in running on Windows, and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md), is not working correctly, try turning on script debugging in Internet Explorer. 
+If an Outlook add-in running on Windows and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) is not working correctly, try turning on script debugging in Internet Explorer. 
 
 
 - Go to Tools >  **Internet Options** > **Advanced**.
