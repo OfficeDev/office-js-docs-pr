@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
 ---
 
@@ -293,6 +293,56 @@ function onWorksheetChanged(eventArgs) {
         return context.sync();
     });
 }
+```
+
+## Sorting events (preview)
+
+> [!NOTE]
+> The APIs for these sort-related events are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+The `onColumnSorted` and `onRowSorted` events indicate when any table or worksheet data is sorted. These events fire whether the sorting is done through UI controls (like table drop-downs) or programmatically. These events are connected to individual `Worksheet` objects and the workbook's `WorkbookCollection`.
+
+> [!NOTE]
+> `onColumnSorted` fires when columns are sorted as the result of a left-to-right sort operation. `onRowSorted` fires when rows are sorted as the result of a top-to-bottom sort operation. Sorting a table using the drop-down on a column header results in an `onRowSorted` event. The event corresponds with what is moving, not what is being considered as the sorting criteria.
+
+The `onColumnSorted` and `onRowSorted` events provides their callbacks with [WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs) or [WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs), respectively. These provide more details about the event. In particular, both `EventArgs` have an `address` property representing the rows or columns moved as a result of the sorting operation. Any cell with sorted content is included, even if that cell's value was not part of the sorting criteria.
+
+The following images show the ranges returned by the `address` property after sort events. First, here is the sample data before sorting:
+
+![Table data in Excel before being sorted](../images/excel-sort-event-before.png)
+
+If a top-to-bottom sort is performed on "**Q1**" (the values in "**C**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`:
+
+![Table data in Excel after a top-to-bottom sort. The rows that have moved are highlighted.](../images/excel-sort-event-after-row.png)
+
+If a left-to-right sort is performed on "**Quinces**" (the values in "**5**") on the original data, the following highlighted columns are returned by `WorksheetColumnsSortedEventArgs.address`:
+
+![Table data in Excel after a left-to-right sort. The columns that have moved are highlighted.](../images/excel-sort-event-after-column.png)
+
+The following code sample shows how to add an event handler to `Worksheet.onRowSorted`. The handler's callback clears the fill color for the range, then fills the cells of the moved rows.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // This will fire whenever a row has been moved as the result of a sort action.
+    sheet.onRowSorted.add((event) => {
+        return Excel.run((context) => {
+            console.log("Row sorted: " + event.address);
+            var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+            // Clear formatting for section, then highlight the sorted area.
+            sheet.getRange("A1:E5").format.fill.clear();
+            if (event.address !== "") {
+                sheet.getRanges(event.address).format.fill.color = "yellow";
+            }
+
+            return context.sync();
+        });
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
 ```
 
 ## Find all cells with matching text

@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: ''
-ms.date: 07/18/2019
+ms.date: 09/09/2019
 localization_priority: Priority
 ---
 
@@ -280,12 +280,7 @@ Excel.run(function (context) {
 
 ![Table data in Excel](../images/excel-tables-sort.png)
 
-### Sorting events (preview)
-
-> [!NOTE]
-> The APIs for these sort-related events are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-
+The worksheet provides events to notify your add-in when data has been sorted. To learn more about these events, see [Sorting events (preview) in Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#sorting-events-preview).
 
 ## Apply filters to a table
 
