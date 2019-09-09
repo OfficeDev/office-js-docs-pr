@@ -14,7 +14,7 @@ Popular online services, including Office 365, Google, Facebook, LinkedIn, Sales
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
-A fundamental idea of OAuth is that an application can be a security principal unto itself, just like a user or a group, with its own identity and set of permissions. In the most typical scenarios, when the user takes an action in the Office Add-in that requires the online service, the add-in sends the service a request for a specific set of permissions to the user's account. The service then prompts the user to grant the add-in those permissions. After the permissions are granted, the service sends the add-in a small encoded *access token*. The add-in can use the service by including the token in all its requests to the service's APIs. But the add-in can act only within the permissions that the user granted it. The token also expires after a specified time.
+A fundamental idea of OAuth is that an application can be a [security principal](/windows/security/identity-protection/access-control/security-principals) unto itself, just like a user or a group, with its own identity and set of permissions. In the most typical scenarios, when the user takes an action in the Office Add-in that requires the online service, the add-in sends the service a request for a specific set of permissions to the user's account. The service then prompts the user to grant the add-in those permissions. After the permissions are granted, the service sends the add-in a small encoded *access token*. The add-in can use the service by including the token in all its requests to the service's APIs. But the add-in can act only within the permissions that the user granted it. The token also expires after a specified time.
 
 Several OAuth patterns, called *flows* or *grant types*, are designed for different scenarios. The following two patterns are the most commonly implemented:
 
@@ -23,7 +23,7 @@ Several OAuth patterns, called *flows* or *grant types*, are designed for differ
 
 The purpose of an OAuth flow is to secure the identity and authorization of the application. In the Authorization Code flow, you're provided a *client secret* that needs to be kept hidden. An application that has no server-side backend, such as an SPA, has no way to protect the secret, so we recommend that you use the Implicit flow in SPAs.
 
-You should be familiar with the pros and cons of the Implicit flow and the Authorization Code flow. For more infomation about these two flows, see [Authorization Code](https://tools.ietf.org/html/rfc6749#section-1.3.1) and [Implicit](https://tools.ietf.org/html/rfc6749#section-1.3.2).
+You should be familiar with the pros and cons of the Implicit flow and the Authorization Code flow. For more information about these two flows, see [Authorization Code](https://tools.ietf.org/html/rfc6749#section-1.3.1) and [Implicit](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
 > [!NOTE]
 > You also have the option of using a middleman service to perform authorization and pass the access token to your add-in. For details about this scenario, see the **Middleman services** section later in this article.
