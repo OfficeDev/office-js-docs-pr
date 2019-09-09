@@ -300,22 +300,22 @@ function onWorksheetChanged(eventArgs) {
 > [!NOTE]
 > The APIs for these sort-related events are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-The `onColumnSorted` and `onRowSorted` events indicate when any table or worksheet data is sorted. These events fire whether the sorting is done through UI controls (like table drop-downs) or programmatically. These events are connected to individual `Worksheet` objects and the workbook's `WorkbookCollection`.
+The `onColumnSorted` and `onRowSorted` events indicate when any worksheet data is sorted. These events fire whether the sorting is done through UI controls (like table drop-downs) or programmatically. These events are connected to individual `Worksheet` objects and the workbook's `WorkbookCollection`.
 
 > [!NOTE]
 > `onColumnSorted` fires when columns are sorted as the result of a left-to-right sort operation. `onRowSorted` fires when rows are sorted as the result of a top-to-bottom sort operation. Sorting a table using the drop-down on a column header results in an `onRowSorted` event. The event corresponds with what is moving, not what is being considered as the sorting criteria.
 
-The `onColumnSorted` and `onRowSorted` events provides their callbacks with [WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs) or [WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs), respectively. These provide more details about the event. In particular, both `EventArgs` have an `address` property representing the rows or columns moved as a result of the sorting operation. Any cell with sorted content is included, even if that cell's value was not part of the sorting criteria.
+The `onColumnSorted` and `onRowSorted` events provide their callbacks with [WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs) or [WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs), respectively. These give more details about the event. In particular, both `EventArgs` have an `address` property that represents the rows or columns moved as a result of the sort operation. Any cell with sorted content is included, even if that cell's value was not part of the sorting criteria.
 
-The following images show the ranges returned by the `address` property after sort events. First, here is the sample data before sorting:
+The following images show what ranges are returned by the `address` property for sort events. First, here is the sample data before sorting:
 
 ![Table data in Excel before being sorted](../images/excel-sort-event-before.png)
 
-If a top-to-bottom sort is performed on "**Q1**" (the values in "**C**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`:
+If a top-to-bottom sort is performed on "**Q1**" (the values in "**B**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`:
 
 ![Table data in Excel after a top-to-bottom sort. The rows that have moved are highlighted.](../images/excel-sort-event-after-row.png)
 
-If a left-to-right sort is performed on "**Quinces**" (the values in "**5**") on the original data, the following highlighted columns are returned by `WorksheetColumnsSortedEventArgs.address`:
+If a left-to-right sort is performed on "**Quinces**" (the values in "**4**") on the original data, the following highlighted columns are returned by `WorksheetColumnsSortedEventArgs.address`:
 
 ![Table data in Excel after a left-to-right sort. The columns that have moved are highlighted.](../images/excel-sort-event-after-column.png)
 
