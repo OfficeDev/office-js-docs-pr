@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: ''
-ms.date: 07/29/2019
+ms.date: 09/09/2019
 localization_priority: Priority
 ---
 
@@ -35,7 +35,7 @@ You can also give us feedback: if using Excel on Windows or Mac, you can report 
 
 ## Outlook add-in doesn't work correctly
 
-If an Outlook add-in running on Windows is not working correctly, try turning on script debugging in Internet Explorer. 
+If an Outlook add-in running on Windows and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) is not working correctly, try turning on script debugging in Internet Explorer. 
 
 
 - Go to Tools >  **Internet Options** > **Advanced**.
@@ -83,7 +83,7 @@ To resolve the issue, end users or administrators can add the domain of the add-
 
 To add a URL to your list of trusted sites:
 
-1. In Internet Explorer, choose the Tools button, and go to **Internet options** > **Security**.
+1. In **Control Panel**, go to **Internet options** > **Security**.
 2. Select the **Trusted sites** zone, and choose **Sites**.
 3. Enter the URL that appears in the error message, and choose **Add**.
 4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
