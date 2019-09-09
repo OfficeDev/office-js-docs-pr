@@ -27,7 +27,7 @@ In Visual Studio, you will see the code files in **Solution Explorer**.   You ca
 > If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps:
 >
 > 1. In Visual Studio, choose **DEBUG** > **Attach to Process**.
-> 2. In the **Available processes**, choose *either* all of the available `Iexplore.exe` processes *or* all of the available `MicrosoftEdge*.exe` process, depending on [whether your add-in is using IE or Edge](../concepts/browsers-used-by-office-web-add-ins.md), and then choose the **Attach** button.
+> 2. In **Available processes**, choose *either* all of the available `Iexplore.exe` processes *or* all of the available `MicrosoftEdge*.exe` processes, depending on [whether your add-in is using Internet Explorer or Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), and then choose the **Attach** button.
 
 For more information about debugging in Visual Studio, see the following:
 
