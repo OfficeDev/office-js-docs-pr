@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: ''
-ms.date: 08/23/2019
+ms.date: 09/05/2019
 localization_priority: Priority
 ---
 
@@ -246,7 +246,7 @@ This extension point puts buttons in the command surface for the mail read view 
 This extension point adds an event handler for a specified event.
 
 > [!NOTE]
-> This element type is only supported by Outlook on the web in Office 365.
+> This element type is supported by classic Outlook on the web, and in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Windows, Mac, and modern Outlook on the web. An Office 365 subscription is also required.
 
 | Element | Description  |
 |:-----|:-----|
@@ -255,9 +255,9 @@ This extension point adds an event handler for a specified event.
 #### ItemSend event example
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events">
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
+</ExtensionPoint>
 ```
 
 ### DetectedEntity
@@ -267,7 +267,7 @@ This extension point adds a contextual add-in activation on a specified entity t
 The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
 
 > [!NOTE]
-> This element type is available to [Outlook clients that support requirement sets 1.6 and later](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients).
+> This element type is available to [Outlook clients that support requirement sets 1.6 and later](../requirement-sets/outlook-api-requirement-sets.md#clients).
 
 |  Element |  Description  |
 |:-----|:-----|

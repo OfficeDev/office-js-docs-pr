@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: ''
-ms.date: 07/18/2019
+ms.date: 09/09/2019
 localization_priority: Priority
 ---
 
@@ -279,6 +279,8 @@ Excel.run(function (context) {
 **Table data sorted by Amount (descending)**
 
 ![Table data in Excel](../images/excel-tables-sort.png)
+
+When data is sorted in a worksheet, an event notification fires. To learn more about sort-related events and how your add-in can register event handlers to respond to such events, see [Handle sorting events (preview)](excel-add-ins-worksheets.md#handle-sorting-events-preview).
 
 ## Apply filters to a table
 

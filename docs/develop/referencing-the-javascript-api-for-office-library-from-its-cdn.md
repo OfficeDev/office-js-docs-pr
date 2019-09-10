@@ -9,7 +9,7 @@ localization_priority: Priority
 # Referencing the JavaScript API for Office library from its content delivery network (CDN)
 
 > [!NOTE]
-> In addition to the steps described in this article, if you want to use TypeScript, then to get Intellisense you will need run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
+> In addition to the steps described in this article, if you want to use TypeScript, then to get IntelliSense you will need run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
 > 
 > ```command&nbsp;line
 > npm install --save-dev @types/office-js
