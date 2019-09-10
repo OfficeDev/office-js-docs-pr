@@ -23,7 +23,7 @@ The following sections show the manifest elements in the order in which they mus
 
 ## Basic task pane add-in element ordering
 
-```
+```xml
 <OfficeApp xsi:type="TaskPaneApp">
     <Id>
     <AlternateID>
@@ -65,7 +65,7 @@ The following sections show the manifest elements in the order in which they mus
 
 ## Basic mail add-in element ordering
 
-```
+```xml
 <OfficeApp xsi:type="MailApp">
     <Id>
     <AlternateId>
@@ -108,7 +108,7 @@ The following sections show the manifest elements in the order in which they mus
 
 ## Basic content add-in element ordering
 
-```
+```xml
 <OfficeApp xsi:type="ContentApp">
     <Id>
     <AlternateId>
@@ -147,7 +147,7 @@ The following sections show the manifest elements in the order in which they mus
 
 ## Task pane add-in element ordering within VersionOverrides
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -286,7 +286,7 @@ The following sections show the manifest elements in the order in which they mus
 
 ## Mail add-in element ordering within VersionOverrides Ver. 1.0
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -382,7 +382,7 @@ The following sections show the manifest elements in the order in which they mus
 
 ## Mail add-in element ordering within VersionOverrides Ver. 1.1
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -484,7 +484,7 @@ The following sections show the manifest elements in the order in which they mus
 
 ## Content add-in element ordering within VersionOverrides
 
-```
+```xml
 <VersionOverrides>
     <WebApplicationInfo>
         <Id>
