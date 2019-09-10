@@ -280,7 +280,7 @@ Excel.run(function (context) {
 
 ![Table data in Excel](../images/excel-tables-sort.png)
 
-The worksheet provides events to notify your add-in when data has been sorted. To learn more about these events, see [Sorting events (preview) in Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#sorting-events-preview).
+When data is sorted in a worksheet, an event notification fires. To learn more about sort-related events and how your add-in can register event handlers to respond to such events, see [Handle sort-related events (preview)](excel-add-ins-worksheets.md#handle-sort-related-events).
 
 ## Apply filters to a table
 
