@@ -421,7 +421,7 @@ function insertTextIntoRange() {
         originalRange.load("text");
         return context.sync()
             .then(function() {
-                    doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
+                doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
             })
             .then(context.sync);
     })
@@ -496,7 +496,6 @@ function insertTextIntoRange() {
         .then(function() {
             // TODO3: Queue commands to insert the original range as a
             //        paragraph at the end of the document.
-
         })
         // TODO4: Make a final call of context.sync here and ensure
         //        that it does not run until the insertParagraph has
