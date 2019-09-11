@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 07/17/2019
+ms.date: 09/16/2019
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 localization_priority: Normal
@@ -20,25 +20,24 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 ## Prerequisites
 
-To use this tutorial, you need to have the following installed.
-
-- Word 2016, version 1711 (Build 8730.1000 Click-to-Run) or later. You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1).
-
-- [Node](https://nodejs.org/en/) 
-
-- [Git Bash](https://git-scm.com/downloads) (or another Git client)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## Create your add-in project
 
-Complete the following steps to create the Word add-in project that you'll use as the basis for this tutorial.
+Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
 
-1. Clone the GitHub repository [Word add-in tutorial](https://github.com/OfficeDev/Word-Add-in-Tutorial).
+```command&nbsp;line
+yo office
+```
 
-2. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `Javascript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Word`
 
-3. Run the command `npm install` to install the tools and libraries listed in the package.json file. 
+![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-word.png)
 
-4. Carry out the steps in [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
+After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 ## Insert a range of text
 
@@ -48,17 +47,36 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Open the project in your code editor.
 
-2. Open the file index.html.
+2. Open the file **./src/taskpane/taskpane.html**. This file contains the HTML markup for the task pane.
 
-3. Replace the `TODO1` with the following markup:
+3. Locate the `<main>` element and delete all lines that appear after the opening `<main>` tag and before the closing `</main>` tag.
+
+4. Add the following markup immediately after the opening `<main>` tag:
 
     ```html
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button>
     ```
 
-4. Open the app.js file.
+5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
 
-5. Replace the `TODO1` with the following code. This code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
+6. Remove all references to the `run` button and the `run()` function:
+
+    - Locate and delete the line `document.getElementById("run").onclick = run;`.
+
+    - Locate and delete the `run()` function.
+
+7. Locate the `Office.onReady` method call and add the following code immediately after the `if` statement within that method call.
+
+    ```js
+    $(document).ready(function () {
+        // TODO1: Determine if the user's version of Office supports all the 
+        //        Office.js APIs that are used in the tutorial.
+
+        // TODO2: Assign event handlers and other initializaton logic.
+    });
+    ```
+
+6. Replace the `TODO1` with the following code. This code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
 
     ```js
     if (!Office.context.requirements.isSetSupported('WordApi', '1.3')) {
@@ -66,13 +84,13 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     }
     ```
 
-6. Replace the `TODO2` with the following code:
+7. Replace the `TODO2` with the following code:
 
     ```js
-    $('#insert-paragraph').click(insertParagraph);
+    document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-7. Replace the `TODO3` with the following code. Note:
+8. Add the following function to the end of the file (after the `Office.onReady` method call). Note:
 
    - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 
@@ -84,7 +102,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     function insertParagraph() {
         Word.run(function (context) {
 
-            // TODO4: Queue commands to insert a paragraph into the document.
+            // TODO3: Queue commands to insert a paragraph into the document.
 
             return context.sync();
         })
@@ -97,7 +115,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     }
     ```
 
-8. Replace `TODO4` with the following code. Note:
+8. Within the `insertParagraph()` function, replace `TODO3` with the following code. Note:
 
    - The first parameter to the `insertParagraph` method is the text for the new paragraph.
 
@@ -111,27 +129,47 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 ### Test the add-in
 
-1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. Navigate to the root folder of the project.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
 
-3. Run the command `npm start` to start a web server running on localhost.
+2. Complete the following steps to start the local web server and sideload your add-in.
 
-4. Sideload the add-in by using one of the following methods:
+    > [!NOTE]
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
 
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    > [!TIP]
+    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
 
-    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
 
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+        ```command&nbsp;line
+        npm start
+        ```
 
-5. On the **Home** menu of Word, select **Show Taskpane**.
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
-6. In the task pane, choose **Insert Paragraph**.
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-7. Make a change in the paragraph.
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-8. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
+3. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
+
+4. In the task pane, choose **Insert Paragraph**.
+
+5. Make a change in the paragraph.
+
+6. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
     ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph.png)
 
