@@ -18,6 +18,9 @@ In this tutorial, you'll create a Word task pane add-in that:
 > * Inserts images, HTML, and tables
 > * Creates and updates content controls 
 
+> ![TIP]
+> If you've already completed the [Build your first Word task pane add-in](../quickstarts/word-quickstart.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Insert a range of text](#insert-a-range-of-text) section to start this tutorial.
+
 ## Prerequisites
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
