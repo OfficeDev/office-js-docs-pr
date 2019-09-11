@@ -323,10 +323,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
         To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-2. In Word, close the task pane if it's already open. Then on the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
-
-    ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
-
+2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
 3. Be sure there are at least three paragraphs in the document. You can choose **Insert Paragraph** three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
 
@@ -348,23 +345,20 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-3. Below the `div` that contains the `change-font` button, add the following markup:
+2. Locate the `<button>` element for the `change-font` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button>
-    </div>
+    <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
     ```
 
-4. Open the file **./src/taskpane/taskpane.js**.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-5. Below the line that assigns a click handler to the `change-font` button, add the following code:
+4. Locate the line that assigns a click handler to the `change-font` button, and add the following code after that line:
 
     ```js
-    $('#insert-text-into-range').click(insertTextIntoRange);
+    document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
     ```
-
-6. Below the `changeFont` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function insertTextIntoRange() {
@@ -389,7 +383,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     }
     ``` 
 
-7. Replace `TODO1` with the following code. Note:
+6. Replace `TODO1` with the following code. Note:
 
    - The method is intended to insert the abbreviation ["(C2R)"] into the end of the Range whose text is "Click-to-Run". It makes a simplifying assumption that the string is present and the user has selected it.
 
@@ -407,7 +401,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     originalRange.insertText(" (C2R)", "End");
     ```
 
-8. We'll skip over `TODO2` until the next section. Replace `TODO3` with the following code. This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start. This new paragraph will demonstrate that the new text is now part of the original range.
+7. We'll skip over `TODO2` until the next section. Replace `TODO3` with the following code. This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start. This new paragraph will demonstrate that the new text is now part of the original range.
 
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text, "End");
@@ -431,14 +425,11 @@ These steps must be completed whenever your code needs to *read* information fro
     originalRange.load("text");
     return context.sync()
         .then(function() {
-
-                // TODO4: Move the doc.body.insertParagraph line here.
-
-            }
-        )
-            // TODO5: Move the final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has
-            //        been queued.
+            // TODO4: Move the doc.body.insertParagraph line here.
+        })
+        // TODO5: Move the final call of context.sync here and ensure
+        //        that it does not run until the insertParagraph has
+        //        been queued.
     ```
 
 2. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial.
@@ -468,10 +459,8 @@ function insertTextIntoRange() {
         originalRange.load("text");
         return context.sync()
             .then(function() {
-                        doc.body.insertParagraph("Current text of original range: " + originalRange.text,
-                                                "End");
-                }
-            )
+                    doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
+            })
             .then(context.sync);
     })
     .catch(function (error) {
@@ -487,23 +476,21 @@ function insertTextIntoRange() {
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Below the `div` that contains the `insert-text-into-range` button, add the following markup:
+2. Locate the `<button>` element for the `insert-text-into-range` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button>
-    </div>
+    <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
     ```
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Below the line that assigns a click handler to the `insert-text-into-range` button, add the following code:
+4. Locate the line that assigns a click handler to the `insert-text-into-range` button, and add the following code after that line:
 
     ```js
-    $('#insert-text-outside-range').click(insertTextBeforeRange);
+    document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
     ```
 
-5. Below the `insertTextIntoRange` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function insertTextBeforeRange() {
@@ -545,23 +532,19 @@ function insertTextIntoRange() {
     originalRange.load("text");
     return context.sync()
         .then(function() {
+            // TODO3: Queue commands to insert the original range as a
+            //        paragraph at the end of the document.
 
-                // TODO3: Queue commands to insert the original range as a
-                //        paragraph at the end of the document.
-
-                }
-            )
-
-            // TODO4: Make a final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has
-            //        been queued.
+        })
+        // TODO4: Make a final call of context.sync here and ensure
+        //        that it does not run until the insertParagraph has
+        //        been queued.
     ```
 
 8. Replace `TODO3` with the following code. This new paragraph will demonstrate the fact that the new text is ***not*** part of the original selected range. The original range still has only the text it had when it was selected.
 
     ```js
-    doc.body.insertParagraph("Current text of original range: " + originalRange.text,
-                             "End");
+    doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
     ```
 
 9. Replace `TODO4` with the following code:
@@ -574,23 +557,21 @@ function insertTextIntoRange() {
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Below the `div` that contains the `insert-text-outside-range` button, add the following markup:
+2. Locate the `<button>` element for the `insert-text-outside-range` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="replace-text">Change Quantity Term</button>
-    </div>
+    <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
     ```
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Below the line that assigns a click handler to the `insert-text-outside-range` button, add the following code:
+4. Locate the line that assigns a click handler to the `insert-text-outside-range` button, and add the following code after that line:
 
     ```js
-    $('#replace-text').click(replaceText);
+    document.getElementById("replace-text").onclick = replaceText;
     ```
 
-5. Below the `insertTextBeforeRange` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function replaceText() {
@@ -619,30 +600,37 @@ function insertTextIntoRange() {
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. Complete the following steps to start the local web server and sideload your add-in.
 
-     > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that the prompt appears and you can enter the build command. After the build, restart the server. The next few steps carry out this process.
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
+        ```command&nbsp;line
+        npm start
+        ```
 
-3. Run the command `npm start` to start a web server running on localhost.
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
-4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-5. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph at the start of the document.
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-6. Select some text. Selecting the phrase "Click-to-Run" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
+2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-7. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
+3. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph at the start of the document.
 
-8. Select some text. Selecting the phrase "Office 365" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
+4. Select some text. Selecting the phrase "Click-to-Run" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
 
-9. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
+5. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
 
-10. Select some text. Selecting the word "several" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
+6. Select some text. Selecting the phrase "Office 365" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
 
-11. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
+7. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
+
+8. Select some text. Selecting the word "several" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
+
+9. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
 
     ![Word tutorial - Text Added and Replaced](../images/word-tutorial-text-replace.png)
 
