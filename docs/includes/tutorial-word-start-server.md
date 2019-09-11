@@ -1,4 +1,4 @@
-Complete the following steps to start the local web server and sideload your add-in.
+Complete the following steps to start the local web server and sideload your add-in. 
 
 - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
 
@@ -6,7 +6,7 @@ Complete the following steps to start the local web server and sideload your add
     npm start
     ```
 
-- To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+- To test your add-in in Word on the web, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
     ```command&nbsp;line
     npm run start:web

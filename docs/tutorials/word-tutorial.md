@@ -567,15 +567,15 @@ function insertTextIntoRange() {
 
 3. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph at the start of the document.
 
-4. Select some text. Selecting the phrase "Click-to-Run" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
+4. Within the document, select the phrase "Click-to-Run". *Be careful not to include the preceding or following space in the selection.*
 
 5. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
 
-6. Select some text. Selecting the phrase "Office 365" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
+6. Within the document, select the phrase "Office 365". *Be careful not to include the preceding or following space in the selection.*
 
 7. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
 
-8. Select some text. Selecting the word "several" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
+8. Within the document, select the word "several". *Be careful not to include the preceding or following space in the selection.*
 
 9. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
 
