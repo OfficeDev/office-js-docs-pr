@@ -163,7 +163,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 6. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
-    ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph.png)
+    ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph-2.png)
 
 ## Format text
 
@@ -321,7 +321,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 7. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
 
-    ![Word tutorial - Apply Styles and Font](../images/word-tutorial-apply-styles-and-font.png)
+    ![Word tutorial - Apply Styles and Font](../images/word-tutorial-apply-styles-and-font-2.png)
 
 ## Replace text and insert text
 
@@ -603,7 +603,7 @@ function insertTextIntoRange() {
 
 9. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
 
-    ![Word tutorial - Text Added and Replaced](../images/word-tutorial-text-replace.png)
+    ![Word tutorial - Text Added and Replaced](../images/word-tutorial-text-replace-2.png)
 
 ## Insert images, HTML, and tables
 
@@ -797,7 +797,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 6. Choose the **Insert Table** button and note that a table is inserted after the second paragraph.
 
-    ![Word tutorial - Insert Image, HTML, and Table](../images/word-tutorial-insert-image-html-table.png)
+    ![Word tutorial - Insert Image, HTML, and Table](../images/word-tutorial-insert-image-html-table-2.png)
 
 ## Create and update content controls
 
@@ -924,7 +924,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 7. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
 
-    ![Word tutorial - Create Content Control and Change its Text](../images/word-tutorial-content-control.png)
+    ![Word tutorial - Create Content Control and Change its Text](../images/word-tutorial-content-control-2.png)
 
 ## Next steps
 
