@@ -93,7 +93,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     function insertParagraph() {
         Word.run(function (context) {
 
-            // TODO3: Queue commands to insert a paragraph into the document.
+            // TODO1: Queue commands to insert a paragraph into the document.
 
             return context.sync();
         })
@@ -106,7 +106,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     }
     ```
 
-9. Within the `insertParagraph()` function, replace `TODO3` with the following code. Note:
+9. Within the `insertParagraph()` function, replace `TODO1` with the following code. Note:
 
    - The first parameter to the `insertParagraph` method is the text for the new paragraph.
 
