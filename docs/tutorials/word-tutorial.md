@@ -127,7 +127,31 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
+2. Complete the following steps to start the local web server and sideload your add-in.
+
+    > [!NOTE]
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+
+    > [!TIP]
+    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
 3. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 

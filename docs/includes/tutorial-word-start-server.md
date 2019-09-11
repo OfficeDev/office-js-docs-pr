@@ -1,4 +1,4 @@
-Complete the following steps to start the local web server and sideload your add-in. 
+If the local web server is already running and your add-in is already loaded in Word, proceed to the next step. Otherwise, start the local web server and sideload your add-in: 
 
 - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
 
