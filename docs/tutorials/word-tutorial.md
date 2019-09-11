@@ -615,7 +615,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. In the root of the project, create a new file named **base64Image.js**.
 
-2. Open the file **base64Image.js** and add the following code to specify the base64-encoded string that represents the image.
+2. Open the file **base64Image.js** and add the following code to specify the base64-encoded string that represents an image.
 
     ```js
     export const base64Image =
@@ -634,10 +634,10 @@ Complete the following steps to define the image that you'll insert into the doc
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the `Office.onReady` method call near the top of the file and add the following code immediately before that line. This code imports the variable (a base64-encoded string representing an image) that you defined previously in the file **./base64Image.js**.
+4. Locate the `Office.onReady` method call near the top of the file and add the following code immediately before that line. This code imports the variable that you defined previously in the file **./base64Image.js**.
 
     ```js
-    import { base64Image } from "./base64Image";
+    import { base64Image } from "../../base64Image";
     ```
 
 5. Locate the line that assigns a click handler to the `replace-text` button, and add the following code after that line:
@@ -804,31 +804,28 @@ Complete the following steps to define the image that you'll insert into the doc
 In this step of the tutorial, you'll learn how to create Rich Text content controls in the document, and then how to insert and replace content in the controls.
 
 > [!NOTE]
-> There are several types of content controls that can be added to a Word document through the UI; but currently only Rich Text content controls are supported by Word.js.
+> There are several types of content controls that can be added to a Word document through the UI, but currently only Rich Text content controls are supported by Word.js.
 >
 > Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 ### Create a content control
 
-2. Open the file **./src/taskpane/taskpane.html**.
+1. Open the file **./src/taskpane/taskpane.html**.
 
-3. Below the `div` that contains the `replace-text` button, add the following markup:
+2. Locate the `<button>` element for the `replace-text` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="create-content-control">Create Content Control</button>
-    </div>
+    <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
     ```
 
-4. Open the file **./src/taskpane/taskpane.js**.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-5. Below the line that assigns a click handler to the `insert-table` button, add the following code:
+4. Locate the line that assigns a click handler to the `insert-table` button, and add the following code after that line:
 
     ```js
-    $('#create-content-control').click(createContentControl);
+    document.getElementById("create-content-control").onclick = createContentControl;
     ```
-
-6. Below the `insertTable` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function createContentControl() {
@@ -847,7 +844,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     }
     ```
 
-7. Replace `TODO1` with the following code. Note:
+6. Replace `TODO1` with the following code. Note:
 
    - This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
 
@@ -872,23 +869,21 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Below the `div` that contains the `create-content-control` button, add the following markup:
+2. Locate the `<button>` element for the `create-content-control` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="replace-content-in-control">Rename Service</button>
-    </div>
+    <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
     ```
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Below the line that assigns a click handler to the `create-content-control` button, add the following code:
+4. Locate the line that assigns a click handler to the `create-content-control` button, and add the following code after that line:
 
     ```js
-    $('#replace-content-in-control').click(replaceContentInControl);
+    document.getElementById("replace-content-in-control").onclick = replaceContentInControl;
     ```
 
-5. Below the `createContentControl` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function replaceContentInControl() {
@@ -919,20 +914,13 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl+C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-     > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that the prompt appears and you can enter the build command. After the build, restart the server. The next few steps carry out this process.
+2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
+3. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph with "Office 365" at the top of the document.
 
-3. Run the command `npm start` to start a web server running on localhost.
-
-4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
-
-5. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph with "Office 365" at the top of the document.
-
-6. Select the phrase "Office 365" in the paragraph you just added, and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
+4. In the document, select the text "Office 365" and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
 
 7. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
 
