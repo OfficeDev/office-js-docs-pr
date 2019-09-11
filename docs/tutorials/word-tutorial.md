@@ -59,38 +59,29 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
 
-6. Remove all references to the `run` button and the `run()` function:
+6. Remove all references to the `run` button and the `run()` function by doing the following:
 
     - Locate and delete the line `document.getElementById("run").onclick = run;`.
 
     - Locate and delete the `run()` function.
 
-7. Locate the `Office.onReady` method call and add the following code immediately after the `if` statement within that method call.
+7. Locate the line `if (info.host === Office.HostType.Word) {` within the `Office.onReady` method call and add the following code immediately after that line. Note:
+
+    - The first part of this code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
+    - The second part of this code adds an event handler for the `insert-paragraph` button.
 
     ```js
-    $(document).ready(function () {
-        // TODO1: Determine if the user's version of Office supports all the 
-        //        Office.js APIs that are used in the tutorial.
-
-        // TODO2: Assign event handlers and other initializaton logic.
-    });
-    ```
-
-6. Replace the `TODO1` with the following code. This code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
-
-    ```js
+    // Determine if the user's version of Office supports all the 
+    //        Office.js APIs that are used in the tutorial.
     if (!Office.context.requirements.isSetSupported('WordApi', '1.3')) {
         console.log('Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.');
     }
-    ```
 
-7. Replace the `TODO2` with the following code:
-
-    ```js
+    // Assign event handlers and other initializaton logic.
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-8. Add the following function to the end of the file (after the `Office.onReady` method call). Note:
+8. Add the following function to the end of the file. Note:
 
    - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 
@@ -115,7 +106,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     }
     ```
 
-8. Within the `insertParagraph()` function, replace `TODO3` with the following code. Note:
+9. Within the `insertParagraph()` function, replace `TODO3` with the following code. Note:
 
    - The first parameter to the `insertParagraph` method is the text for the new paragraph.
 
