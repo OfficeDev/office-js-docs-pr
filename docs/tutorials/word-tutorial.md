@@ -812,7 +812,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `replace-text` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `insert-table` button, and add the following markup after that line: 
 
     ```html
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
