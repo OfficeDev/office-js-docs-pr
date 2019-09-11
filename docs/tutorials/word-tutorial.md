@@ -45,16 +45,14 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 ### Code the add-in
 
-1. Open the project in your code editor.
-
-2. Open the file **./src/taskpane/taskpane.html**. This file contains the HTML markup for the task pane.
+1. Open the file **./src/taskpane/taskpane.html**. This file contains the HTML markup for the task pane.
 
 3. Locate the `<main>` element and delete all lines that appear after the opening `<main>` tag and before the closing `</main>` tag.
 
 4. Add the following markup immediately after the opening `<main>` tag:
 
     ```html
-    <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button>
+    <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
 5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
@@ -170,27 +168,23 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 ### Apply a built-in style to text
 
-1. Open the project in your code editor. 
+1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Open the file index.html.
-
-3. Just below the `div` that contains the `insert-paragraph` button, add the following markup:
+2. Locate the `<button>` element for the `insert-paragraph` button, and add the following markup after that line:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="apply-style">Apply Style</button>            
-    </div>
+    <button class="ms-Button" id="apply-style">Apply Style</button><br/><br/>
     ```
 
-4. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-5. Just below the line that assigns a click handler to the `insert-paragraph` button, add the following code:
+4. Locate the line that assigns a click handler to the `insert-paragraph` button, and add the following code after that line:
 
     ```js
-    $('#apply-style').click(applyStyle);
+    document.getElementById("apply-style").onclick = applyStyle;
     ```
 
-6. Just below the `insertParagraph` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function applyStyle() {
@@ -209,7 +203,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     }
     ``` 
 
-7. Replace `TODO1` with the following code. Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.
+6. Replace `TODO1` with the following code. Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
@@ -218,25 +212,23 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 ### Apply a custom style to text
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Below the `div` that contains the `apply-style` button, add the following markup:
+2. Locate the `<button>` element for the `apply-style` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button>            
-    </div>
+    <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
     ```
 
-3. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Below the line that assigns a click handler to the `apply-style` button, add the following code:
+4. Locate the line that assigns a click handler to the `apply-style` button, and add the following code after that line:
 
     ```js
-    $('#apply-custom-style').click(applyCustomStyle);
+    document.getElementById("apply-custom-style").onclick = applyCustomStyle;
     ```
 
-5. Below the `applyStyle` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function applyCustomStyle() {
@@ -264,25 +256,23 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 ### Change the font of text
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Below the `div` that contains the `apply-custom-style` button, add the following markup:
+2. Locate the `<button>` element for the `apply-custom-style` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="change-font">Change Font</button>            
-    </div>
+    <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
     ```
 
-3. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Below the line that assigns a click handler to the `apply-custom-style` button, add the following code:
+4. Locate the line that assigns a click handler to the `apply-custom-style` button, and add the following code after that line:
 
     ```js
-    $('#change-font').click(changeFont);
+    document.getElementById("change-font").onclick = changeFont;
     ```
 
-5. Below the `applyCustomStyle` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function changeFont() {
@@ -314,26 +304,36 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 ### Test the add-in
 
-1. In the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl+C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. Complete the following steps to start the local web server and sideload your add-in.
 
-     > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that the prompt appears and you can enter the build command. After the build, you restart the server. The next few steps carry out this process.
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
+        ```command&nbsp;line
+        npm start
+        ```
 
-3. Run the command `npm start` to start a web server running on localhost.   
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
-4. Reload the task pane by closing it, and then on the **Home** menu select **Show Taskpane** to reopen the add-in.
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-5. Be sure there are at least three paragraphs in the document. You can choose **Insert Paragraph** three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-6. In Word, create a custom style named "MyCustomStyle". It can have any formatting that you want.
+2. In Word, close the task pane if it's already open. Then on the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-7. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
+    ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
 
-8. Choose the **Apply Custom Style** button. The last paragraph will be styled with your custom style. (If nothing seems to happen, the last paragraph might be blank. If so, add some text to it.)
 
-9. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
+3. Be sure there are at least three paragraphs in the document. You can choose **Insert Paragraph** three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
+
+4. In Word, create a custom style named "MyCustomStyle". It can have any formatting that you want.
+
+5. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
+
+6. Choose the **Apply Custom Style** button. The last paragraph will be styled with your custom style. (If nothing seems to happen, the last paragraph might be blank. If so, add some text to it.)
+
+7. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
 
     ![Word tutorial - Apply Styles and Font](../images/word-tutorial-apply-styles-and-font.png)
 
@@ -343,9 +343,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 ### Add text inside a range
 
-1. Open the project in your code editor.
-
-2. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
 3. Below the `div` that contains the `change-font` button, add the following markup:
 
@@ -355,7 +353,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     </div>
     ```
 
-4. Open the app.js file.
+4. Open the file **./src/taskpane/taskpane.js**.
 
 5. Below the line that assigns a click handler to the `change-font` button, add the following code:
 
@@ -484,7 +482,7 @@ function insertTextIntoRange() {
 
 ### Add text between ranges
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
 2. Below the `div` that contains the `insert-text-into-range` button, add the following markup:
 
@@ -494,7 +492,7 @@ function insertTextIntoRange() {
     </div>
     ```
 
-3. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
 4. Below the line that assigns a click handler to the `insert-text-into-range` button, add the following code:
 
@@ -571,7 +569,7 @@ function insertTextIntoRange() {
 
 ### Replace the text of a range
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
 2. Below the `div` that contains the `insert-text-outside-range` button, add the following markup:
 
@@ -581,7 +579,7 @@ function insertTextIntoRange() {
     </div>
     ```
 
-3. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
 4. Below the line that assigns a click handler to the `insert-text-outside-range` button, add the following code:
 
@@ -651,9 +649,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
 ### Insert an image
 
-1. Open the project in your code editor.
-
-2. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
 3. Below the `div` that contains the `replace-text` button, add the following markup:
 
@@ -663,7 +659,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     </div>
     ```
 
-4. Open the app.js file.
+4. Open the file **./src/taskpane/taskpane.js**.
 
 5. Near the top of the file, just below the use-strict line, add the following line. This line imports a variable from another file. The variable is a base 64 string that encodes an image. To see the encoded string, open the base64Image.js file in the root of the project.
 
@@ -704,7 +700,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
 ### Insert HTML
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
 2. Below the `div` that contains the `insert-image` button, add the following markup:
 
@@ -714,7 +710,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     </div>
     ```
 
-3. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
 4. Below the line that assigns a click handler to the `insert-image` button, add the following code:
 
@@ -754,7 +750,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
 ### Insert a table
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
 2. Below the `div` that contains the `insert-html` button, add the following markup:
 
@@ -764,7 +760,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     </div>
     ```
 
-3. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
 4. Below the line that assigns a click handler to the `insert-html` button, add the following code:
 
@@ -853,9 +849,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 ### Create a content control
 
-1. Open the project in your code editor.
-
-2. Open the file index.html.
+2. Open the file **./src/taskpane/taskpane.html**.
 
 3. Below the `div` that contains the `replace-text` button, add the following markup:
 
@@ -865,7 +859,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     </div>
     ```
 
-4. Open the app.js file.
+4. Open the file **./src/taskpane/taskpane.js**.
 
 5. Below the line that assigns a click handler to the `insert-table` button, add the following code:
 
@@ -915,7 +909,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 ### Replace the content of the content control
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
 2. Below the `div` that contains the `create-content-control` button, add the following markup:
 
@@ -925,7 +919,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     </div>
     ```
 
-3. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
 4. Below the line that assigns a click handler to the `create-content-control` button, add the following code:
 
