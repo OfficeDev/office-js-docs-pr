@@ -121,19 +121,13 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 ### Test the add-in
 
-1. Navigate to the root folder of the project.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-2. Complete the following steps to start the local web server and sideload your add-in.
+1. Complete the following steps to start the local web server and sideload your add-in.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
 
     > [!TIP]
-    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
+    > If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding. When you run this command, the local web server starts.
     >
     > ```command&nbsp;line
     > npm run dev-server
@@ -153,15 +147,15 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
         To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
 
-4. In the task pane, choose **Insert Paragraph**.
+3. In the task pane, choose **Insert Paragraph**.
 
-5. Make a change in the paragraph.
+4. Make a change in the paragraph.
 
-6. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
+5. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
     ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph-2.png)
 
