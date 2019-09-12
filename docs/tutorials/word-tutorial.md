@@ -175,7 +175,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `insert-paragraph` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-paragraph` button, and add the following code after that line:
 
     ```js
     document.getElementById("apply-style").onclick = applyStyle;
@@ -219,7 +219,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `apply-style` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `apply-style` button, and add the following code after that line:
 
     ```js
     document.getElementById("apply-custom-style").onclick = applyCustomStyle;
@@ -263,7 +263,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `apply-custom-style` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `apply-custom-style` button, and add the following code after that line:
 
     ```js
     document.getElementById("change-font").onclick = changeFont;
@@ -333,7 +333,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `change-font` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `change-font` button, and add the following code after that line:
 
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
@@ -464,7 +464,7 @@ function insertTextIntoRange() {
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `insert-text-into-range` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-text-into-range` button, and add the following code after that line:
 
     ```js
     document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
@@ -544,7 +544,7 @@ function insertTextIntoRange() {
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `insert-text-outside-range` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-text-outside-range` button, and add the following code after that line:
 
     ```js
     document.getElementById("replace-text").onclick = replaceText;
@@ -634,7 +634,7 @@ Complete the following steps to define the image that you'll insert into the doc
     import { base64Image } from "../../base64Image";
     ```
 
-5. Locate the line that assigns a click handler to the `replace-text` button, and add the following code after that line:
+5. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `replace-text` button, and add the following code after that line:
 
     ```js
     document.getElementById("insert-image").onclick = insertImage;
@@ -677,7 +677,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `insert-image` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-image` button, and add the following code after that line:
 
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
@@ -724,7 +724,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `insert-html` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-html` button, and add the following code after that line:
 
     ```js
     document.getElementById("insert-table").onclick = insertTable;
@@ -814,7 +814,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `insert-table` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-table` button, and add the following code after that line:
 
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
@@ -871,7 +871,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Locate the line that assigns a click handler to the `create-content-control` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-content-control` button, and add the following code after that line:
 
     ```js
     document.getElementById("replace-content-in-control").onclick = replaceContentInControl;
