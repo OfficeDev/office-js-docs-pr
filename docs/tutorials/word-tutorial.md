@@ -155,7 +155,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 4. Make a change in the paragraph.
 
-5. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
+5. Choose **Insert Paragraph** again. Note that the new paragraph appears above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
     ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph-2.png)
 
@@ -200,7 +200,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     }
     ``` 
 
-6. Replace `TODO1` with the following code. Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.
+6. Within the `applyStyle()` function, replace `TODO1` with the following code. Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
@@ -244,7 +244,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     }
     ``` 
 
-6. Replace `TODO1` with the following code. Note that the code applies a custom style that does not exist yet. You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in) step.
+6. Within the `applyCustomStyle()` function, replace `TODO1` with the following code. Note that the code applies a custom style that does not exist yet. You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in) step.
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
@@ -288,7 +288,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     }
     ``` 
 
-6. Replace `TODO1` with the following code. Note that the code gets a reference to the second paragraph by using the `ParagraphCollection.getFirst` method chained to the `Paragraph.getNext` method.
+6. Within the `changeFont()` function, replace `TODO1` with the following code. Note that the code gets a reference to the second paragraph by using the `ParagraphCollection.getFirst` method chained to the `Paragraph.getNext` method.
 
     ```js
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
@@ -363,7 +363,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     }
     ``` 
 
-6. Replace `TODO1` with the following code. Note:
+6. Within the `insertTextIntoRange()` function, replace `TODO1` with the following code. Note:
 
    - The method is intended to insert the abbreviation ["(C2R)"] into the end of the Range whose text is "Click-to-Run". It makes a simplifying assumption that the string is present and the user has selected it.
 
@@ -381,7 +381,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     originalRange.insertText(" (C2R)", "End");
     ```
 
-7. We'll skip over `TODO2` until the next section. Replace `TODO3` with the following code. This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start. This new paragraph will demonstrate that the new text is now part of the original range.
+7. We'll skip over `TODO2` until the next section. Within the `insertTextIntoRange()` function, replace `TODO3` with the following code. This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start. This new paragraph will demonstrate that the new text is now part of the original range.
 
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text, "End");
@@ -399,7 +399,7 @@ In all the previous functions in this series of tutorials, you queued commands t
 
 These steps must be completed whenever your code needs to *read* information from the Office document.
 
-1. Replace `TODO2` with the following code.
+1. Within the `insertTextIntoRange()` function, replace `TODO2` with the following code.
   
     ```js
     originalRange.load("text");
@@ -492,7 +492,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. Replace `TODO1` with the following code. Note:
+6. Within the `insertTextBeforeRange()` function, replace `TODO1` with the following code. Note:
 
    - The method is intended to add a range whose text is "Office 2019, " before the range with text "Office 365". It makes a simplifying assumption that the string is present and the user has selected it.
 
@@ -506,7 +506,7 @@ function insertTextIntoRange() {
     originalRange.insertText("Office 2019, ", "Before");
     ```
 
-7. Replace `TODO2` with the following code.
+7. Within the `insertTextBeforeRange()` function, replace `TODO2` with the following code.
 
      ```js
     originalRange.load("text");
@@ -569,7 +569,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. Replace `TODO1` with the following code. Note that the method is intended to replace the string "several" with the string "many". It makes a simplifying assumption that the string is present and the user has selected it.
+6. Within the `replaceText()` function, replace `TODO1` with the following code. Note that the method is intended to replace the string "several" with the string "many". It makes a simplifying assumption that the string is present and the user has selected it.
 
     ```js
     var doc = context.document;
@@ -659,7 +659,7 @@ Complete the following steps to define the image that you'll insert into the doc
     }
     ```
 
-7. Replace `TODO1` with the following code. Note that this line inserts the base 64 encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)
+7. Within the `insertImage()` function, replace `TODO1` with the following code. Note that this line inserts the base 64 encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
@@ -701,7 +701,7 @@ Complete the following steps to define the image that you'll insert into the doc
     }
     ```
 
-6. Replace `TODO1` with the following code. Note:
+6. Within the `insertHTML()` function, replace `TODO1` with the following code. Note:
 
    - The first line adds a blank paragraph to the end of the document. 
 
@@ -752,13 +752,13 @@ Complete the following steps to define the image that you'll insert into the doc
     }
     ```
 
-6. Replace `TODO1` with the following code. Note that this line uses the `ParagraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.
+6. Within the `insertTable()` function, replace `TODO1` with the following code. Note that this line uses the `ParagraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.
 
     ```js
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
-7. Replace `TODO2` with the following code. Note:
+7. Within the `insertTable()` function, replace `TODO2` with the following code. Note:
 
    - The first two parameters of the `insertTable` method specify the number of rows and columns.
 
@@ -838,7 +838,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     }
     ```
 
-6. Replace `TODO1` with the following code. Note:
+6. Within the `createContentControl()` function, replace `TODO1` with the following code. Note:
 
    - This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
 
@@ -897,7 +897,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     }
     ```
 
-6. Replace `TODO1` with the following code. Note:
+6. Within the `replaceContentInControl()` function, replace `TODO1` with the following code. Note:
 
     - The `ContentControlCollection.getByTag` method returns a `ContentControlCollection` of all content controls of the specified tag. We use `getFirst` to get a reference to the desired control.
 
