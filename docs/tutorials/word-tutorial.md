@@ -50,23 +50,23 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Open the file **./src/taskpane/taskpane.html**. This file contains the HTML markup for the task pane.
 
-3. Locate the `<main>` element and delete all lines that appear after the opening `<main>` tag and before the closing `</main>` tag.
+2. Locate the `<main>` element and delete all lines that appear after the opening `<main>` tag and before the closing `</main>` tag.
 
-4. Add the following markup immediately after the opening `<main>` tag:
+3. Add the following markup immediately after the opening `<main>` tag:
 
     ```html
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
+4. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
 
-6. Remove all references to the `run` button and the `run()` function by doing the following:
+5. Remove all references to the `run` button and the `run()` function by doing the following:
 
     - Locate and delete the line `document.getElementById("run").onclick = run;`.
 
     - Locate and delete the `run()` function.
 
-7. Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Word) {` and add the following code immediately after that line. Note:
+6. Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Word) {` and add the following code immediately after that line. Note:
 
     - The first part of this code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
     - The second part of this code adds an event handler for the `insert-paragraph` button.
@@ -82,7 +82,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-8. Add the following function to the end of the file. Note:
+7. Add the following function to the end of the file. Note:
 
    - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 
@@ -107,7 +107,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     }
     ```
 
-9. Within the `insertParagraph()` function, replace `TODO1` with the following code. Note:
+8. Within the `insertParagraph()` function, replace `TODO1` with the following code. Note:
 
    - The first parameter to the `insertParagraph` method is the text for the new paragraph.
 

@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 07/17/2019
+ms.date: 09/16/2019
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Normal
@@ -19,29 +19,29 @@ In this tutorial, you'll create an Excel task pane add-in that:
 > * Protects a worksheet
 > * Opens a dialog
 
+> [!TIP]
+> If you've already completed the [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Create a table](#create-a-table) section to start this tutorial.
+
 ## Prerequisites
 
-To use this tutorial, you need to have the following installed. 
-
-- Excel 2016, version 1711 (Build 8730.1000 Click-to-Run) or later. You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1).
-
-- [Node](https://nodejs.org/en/) 
-
-- [Git Bash](https://git-scm.com/downloads) (or another Git client)
-
-- You need to have an Internet connection to test the add-in in this tutorial.
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## Create your add-in project
 
-Complete the following steps to create the Excel add-in project that you'll use as the basis for this tutorial.
+Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
-1. Clone the GitHub repository [Excel add-in tutorial](https://github.com/OfficeDev/Excel-Add-in-Tutorial).
+```command&nbsp;line
+yo office
+```
 
-2. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `Javascript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
 
-3. Run the command `npm install` to install the tools and libraries listed in the package.json file. 
+![Yeoman generator](../images/yo-office-excel.png)
 
-4. Carry out the steps in [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
+After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 ## Create a table
 
