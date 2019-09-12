@@ -743,7 +743,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 5. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in screenshot below. 
 
-7. Choose a cell as you would if you wanted to change its content. Excel displays an error message saying that the worksheet is protected.
+7. Choose a cell as you would if you wanted to change its content. Excel displays an error message indicating that the worksheet is protected.
 
 8. Choose the **Toggle Worksheet Protection** button again, and the controls are reenabled, and you can change cell values again.
 
