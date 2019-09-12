@@ -141,7 +141,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
         npm start
         ```
 
-    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+    - To test your add-in in Word on the web, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
         ```command&nbsp;line
         npm run start:web
