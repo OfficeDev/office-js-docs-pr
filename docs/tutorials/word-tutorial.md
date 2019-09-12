@@ -244,7 +244,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     }
     ``` 
 
-6. Within the `applyCustomStyle()` function, replace `TODO1` with the following code. Note that the code applies a custom style that does not exist yet. You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in) step.
+6. Within the `applyCustomStyle()` function, replace `TODO1` with the following code. Note that the code applies a custom style that does not exist yet. You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in-1) step.
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
