@@ -58,7 +58,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 4. Add the following markup immediately after the opening `<main>` tag:
 
     ```html
-    <button class="ms-Button" id="create-table">Create Table</button>
+    <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
 5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
