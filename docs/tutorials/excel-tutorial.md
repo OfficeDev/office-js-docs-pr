@@ -507,9 +507,9 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
             <Description resid="<!-- TODO4: Button tool tip description -->" />
         </Supertip>
         <Icon>
-            <bt:Image size="16" resid="Contoso.tpicon_16x16" />
-            <bt:Image size="32" resid="Contoso.tpicon_32x32" />
-            <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+            <bt:Image size="16" resid="Icon.16x16"/>
+            <bt:Image size="32" resid="Icon.32x32"/>
+            <bt:Image size="80" resid="Icon.80x80"/>
         </Icon>
         <Action xsi:type="<!-- TODO5: Specify the type of action-->">
             <!-- TODO6: Identify the function.-->
@@ -563,9 +563,9 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
             <Description resid="ProtectionButtonToolTip" />
         </Supertip>
         <Icon>
-            <bt:Image size="16" resid="Contoso.tpicon_16x16" />
-            <bt:Image size="32" resid="Contoso.tpicon_32x32" />
-            <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+            <bt:Image size="16" resid="Icon.16x16"/>
+            <bt:Image size="32" resid="Icon.32x32"/>
+            <bt:Image size="80" resid="Icon.80x80"/>
         </Icon>
         <Action xsi:type="ExecuteFunction">
            <FunctionName>toggleProtection</FunctionName>
