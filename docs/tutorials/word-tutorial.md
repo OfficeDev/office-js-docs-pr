@@ -66,7 +66,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - Locate and delete the `run()` function.
 
-7. Locate the line `if (info.host === Office.HostType.Word) {` within the `Office.onReady` method call and add the following code immediately after that line. Note:
+7. Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Word) {` and add the following code immediately after that line. Note:
 
     - The first part of this code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
     - The second part of this code adds an event handler for the `insert-paragraph` button.
