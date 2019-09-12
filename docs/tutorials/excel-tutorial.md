@@ -51,31 +51,42 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Open the project in your code editor.
 
-2. Open the file index.html.
+2. Open the file **./src/taskpane/taskpane.html**.  This file contains the HTML markup for the task pane.
 
-3. Replace the `TODO1` with the following markup:
+3. Locate the `<main>` element and delete all lines that appear after the opening `<main>` tag and before the closing `</main>` tag.
+
+4. Add the following markup immediately after the opening `<main>` tag:
 
     ```html
     <button class="ms-Button" id="create-table">Create Table</button>
     ```
 
-4. Open the app.js file.
+5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
 
-5. Replace the `TODO1` with the following code. This code determines whether the user's version of Excel supports a version of Excel.js that includes all the APIs that this series of tutorials will use. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still make use of the parts of the add-in that are supported by their version of Excel.
+6. Remove all references to the `run` button and the `run()` function by doing the following:
+
+    - Locate and delete the line `document.getElementById("run").onclick = run;`.
+
+    - Locate and delete the `run()` function.
+
+7. Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Word) {` and add the following code immediately after that line. Note:
+
+    - The first part of this code determines whether the user's version of Excel supports a version of Excel.js that includes all the APIs that this series of tutorials will use. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still make use of the parts of the add-in that are supported by their version of Excel.
+
+    - The second part of this code adds an event handler for the `create-table` button.
 
     ```js
+    // Determine if the user's version of Office supports all the 
+    //        Office.js APIs that are used in the tutorial.
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
         console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
     }
-    ```
 
-6. Replace the `TODO2` with the following code:
-
-    ```js
+    // Assign event handlers and other initializaton logic.
     $('#create-table').click(createTable);
     ```
 
-7. Replace the `TODO3` with the following code. Note:
+8. Add the following function to the end of the file. Note:
 
    - Your Excel.js business logic will be added to the function that is passed to `Excel.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 
@@ -87,11 +98,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     function createTable() {
         Excel.run(function (context) {
 
-            // TODO4: Queue table creation logic here.
+            // TODO1: Queue table creation logic here.
 
-            // TODO5: Queue commands to populate the table with data.
+            // TODO2: Queue commands to populate the table with data.
 
-            // TODO6: Queue commands to format the table.
+            // TODO3: Queue commands to format the table.
 
             return context.sync();
         })
@@ -104,7 +115,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     }
     ```
 
-8. Replace `TODO4` with the following code. Note:
+9. Within the `createTable()` function, replace `TODO1` with the following code. Note:
 
    - The code creates a table by using `add` method of a worksheet's table collection, which always exists even if it is empty. This is the standard way that Excel.js objects are created. There are no class constructor APIs, and you never use a `new` operator to create an Excel object. Instead, you add to a parent collection object.
 
@@ -118,7 +129,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     expensesTable.name = "ExpensesTable";
     ```
 
-9. Replace `TODO5` with the following code. Note:
+10. Within the `createTable()` function, replace `TODO2` with the following code. Note:
 
    - The cell values of a range are set with an array of arrays.
 
@@ -139,7 +150,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     ]);
     ```
 
-10. Replace `TODO6` with the following code. Note:
+11. Within the `createTable()` function, replace `TODO3` with the following code. Note:
 
    - The code gets a reference to the **Amount** column by passing its zero-based index to the `getItemAt` method of the table's column collection.
 
@@ -158,23 +169,37 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 ### Test the add-in
 
-1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. Complete the following steps to start the local web server and sideload your add-in.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+    > [!NOTE]
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
 
-3. Run the command `npm start` to start a web server running on localhost.
+    > [!TIP]
+    > If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding. When you run this command, the local web server starts.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
 
-4. Sideload the add-in by using one of the following methods:
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
 
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+        ```command&nbsp;line
+        npm start
+        ```
 
-    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-5. On the **Home** menu, choose **Show Taskpane**.
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-6. In the task pane, choose **Create Table**.
+2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
+
+3. In the task pane, choose the **Create Table** button.
 
     ![Excel tutorial - Create Table](../images/excel-tutorial-create-table.png)
 
@@ -184,27 +209,23 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 ### Filter the table
 
-1. Open the project in your code editor.
+1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Open the file index.html.
-
-3. Just below the `div` that contains the `create-table` button, add the following markup:
+2. Locate the `<button>` element for the `create-table` button, and add the following markup after that line:
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="filter-table">Filter Table</button>
-    </div>
+    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
-4. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-5. Just below the line that assigns a click handler to the `create-table` button, add the following code:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line:
 
     ```js
-    $('#filter-table').click(filterTable);
+    document.getElementById("filter-table").onclick = filterTable;
     ```
 
-6. Just below the `createTable` function, add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function filterTable() {
@@ -224,7 +245,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     }
     ```
 
-7. Replace `TODO1` with the following code. Note:
+6. Within the `filterTable()` function, replace `TODO1` with the following code. Note:
 
    - The code first gets a reference to the column that needs filtering by passing the column name to the `getItem` method, instead of passing its index to the `getItemAt` method as the `createTable` method does. Since users can move table columns, the column at a given index might change after the table is created. Hence, it is safer to use the column name to get a reference to the column. We used `getItemAt` safely in the preceding tutorial, because we used it in the very same method that creates the table, so there is no chance that a user has moved the column.
 
@@ -239,25 +260,23 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 ### Sort the table
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Below the `div` that contains the `filter-table` button, add the following markup:
+2. Locate the `<button>` element for the `filter-table` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="sort-table">Sort Table</button>
-    </div>
+    <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-3. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Below the line that assigns a click handler to the `filter-table` button, add the following code:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line:
 
     ```js
-    $('#sort-table').click(sortTable);
+    document.getElementById("sort-table").onclick = sortTable;
     ```
 
-5. Below the `filterTable` function add the following function.
+5. Add the following function to the end of the file:
 
     ```js
     function sortTable() {
@@ -276,7 +295,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     }
     ```
 
-6. Replace `TODO1` with the following code. Note:
+6. Within the `sortTable()` function, replace `TODO1` with the following code. Note:
 
    - The code creates an array of `SortField` objects which has just one member since the add-in only sorts on the Merchant column.
 
@@ -299,20 +318,13 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter **Ctrl+C** twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
+2. In Excel, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+3. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button in the task pane.
 
-3. Run the command `npm start` to start a web server running on localhost.
-
-4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
-
-5. If for any reason the table is not in the open worksheet, in the task pane, choose **Create Table**.
-
-6. Choose the **Filter Table** and **Sort Table** buttons, in either order.
+4. Choose the **Filter Table** button and the **Sort Table** button, in either order.
 
     ![Excel tutorial - Filter and Sort Table](../images/excel-tutorial-filter-and-sort-table.png)
 
@@ -322,27 +334,23 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 ### Chart a chart using table data
 
-1. Open the project in your code editor.
+1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Open the file index.html.
-
-3. Below the `div` that contains the `sort-table` button, add the following markup:
+2. Locate the `<button>` element for the `sort-table` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="create-chart">Create Chart</button>
-    </div>
+    <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
-4. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-5. Below the line that assigns a click handler to the `sort-chart` button, add the following code:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `sort-chart` button, and add the following code after that line:
 
     ```js
-    $('#create-chart').click(createChart);
+    document.getElementById("create-chart").onclick = createChart;
     ```
 
-6. Below the `sortTable` function add the following function.
+5. Add the following function to the end of the file:
 
     ```js
     function createChart() {
@@ -365,7 +373,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
     }
     ```
 
-7. Replace `TODO1` with the following code. Note that in order to exclude the header row, the code uses the `Table.getDataBodyRange` method to get the range of data you want to chart instead of the `getRange` method.
+6. Within the `createChart()` function, replace `TODO1` with the following code. Note that in order to exclude the header row, the code uses the `Table.getDataBodyRange` method to get the range of data you want to chart instead of the `getRange` method.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -373,7 +381,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
     var dataRange = expensesTable.getDataBodyRange();
     ```
 
-8. Replace `TODO2` with the following code. Note the following parameters:
+7. Within the `createChart()` function, replace `TODO2` with the following code. Note the following parameters:
 
    - The first parameter to the `add` method specifies the type of chart. There are several dozen types.
 
@@ -385,7 +393,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
     ```
 
-9. Replace `TODO3` with the following code. Most of this code is self-explanatory. Note:
+8. Within the `createChart()` function, replace `TODO3` with the following code. Most of this code is self-explanatory. Note:
    
    - The parameters to the `setPosition` method specify the upper left and lower right cells of the worksheet area that should contain the chart. Excel can adjust things like line width to make the chart look good in the space it has been given.
    
@@ -403,20 +411,13 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter **Ctrl+C** twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
+2. In Excel, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+3. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button, and then the **Filter Table** button and the **Sort Table** button, in either order.
 
-3. Run the command `npm start` to start a web server running on localhost.
-
-4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
-
-5. If for any reason the table is not in the open worksheet, in the task pane, choose **Create Table** and then **Filter Table** and **Sort Table** buttons, in either order.
-
-6. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
+4. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
     ![Excel tutorial - Create Chart](../images/excel-tutorial-create-chart.png)
 
@@ -426,27 +427,23 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 ### Freeze the table's header row
 
-1. Open the project in your code editor.
+1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Open the file index.html.
-
-3. Below the `div` that contains the `create-chart` button, add the following markup:
+2. Locate the `<button>` element for the `create-chart` button, and add the following markup after that line: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="freeze-header">Freeze Header</button>
-    </div>
+    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
-4. Open the app.js file.
+3. Open the file **./src/taskpane/taskpane.js**.
 
-5. Below the line that assigns a click handler to the `create-chart` button, add the following code:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line:
 
     ```js
-    $('#freeze-header').click(freezeHeader);
+    document.getElementById("freeze-header").onclick = freezeHeader;
     ```
 
-6. Below the `createChart` function add the following function:
+5. Add the following function to the end of the file:
 
     ```js
     function freezeHeader() {
@@ -465,7 +462,7 @@ When a table is long enough that a user must scroll to see some rows, the header
     }
     ```
 
-7. Replace `TODO1` with the following code. Note:
+6. Within the `freezeHeader()` function, replace `TODO1` with the following code. Note:
 
    - The `Worksheet.freezePanes` collection is a set of panes in the worksheet that are pinned, or frozen, in place when the worksheet is scrolled.
 
@@ -478,24 +475,17 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter **Ctrl+C** twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
+2. In Excel, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+3. If the table you added previously in this tutorial is present in the worksheet, delete it.
 
-3. Run the command `npm start` to start a web server running on localhost.
+4. In the task pane, choose the **Create Table** button.
 
-4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
+5. In the task pane, choose the **Freeze Header** button.
 
-5. If the table is in the worksheet, delete it.
-
-6. In the task pane, choose **Create Table**.
-
-7. Choose the **Freeze Header** button.
-
-8. Scroll down the worksheet enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
+6. Scroll down the worksheet far enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
     ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header.png)
 
@@ -505,9 +495,9 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 
 ### Configure the manifest to add a second ribbon button
 
-1. Open the manifest file my-office-add-in-manifest.xml.
+1. Open the manifest file **./manifest.xml**.
 
-2. Find the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the end Control tag (`</Control>`) and the end Group tag (`</Group>`), add the following markup.
+2. Locate the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the end Control tag (`</Control>`) and the end Group tag (`</Group>`), add the following markup.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -527,7 +517,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
     </Control>
     ```
 
-3. Replace `TODO1` with a string that gives the button an ID that is unique within this manifest file. Since our button is going to toggle protection of the worksheet on and off, use "ToggleProtection". When you are done, the entire start Control tag should look like the following:
+3. Within the XML you just added to the manifest file, replace `TODO1` with a string that gives the button an ID that is unique within this manifest file. Since our button is going to toggle protection of the worksheet on and off, use "ToggleProtection". When you are done, the entire start Control tag should look like the following:
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
@@ -847,7 +837,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 ### Open the dialog from the task pane
 
-1. Open the file index.html.
+1. Open the file **./src/taskpane/taskpane.html**.
 
 2. Below the `div` that contains the `freeze-header` button, add the following markup:
 
@@ -865,7 +855,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     </div>
     ```
 
-4. Open the app.js file.
+4. Open the file **./src/taskpane/taskpane.js**.
 
 5. Below the line that assigns a click handler to the `freeze-header` button, add the following code. You'll create the `openDialog` method in a later step.
 
