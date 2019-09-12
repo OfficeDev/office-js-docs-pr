@@ -151,11 +151,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
 
-3. In the task pane, choose **Insert Paragraph**.
+3. In the task pane, choose the **Insert Paragraph** button.
 
 4. Make a change in the paragraph.
 
-5. Choose **Insert Paragraph** again. Note that the new paragraph appears above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
+5. Choose the **Insert Paragraph** button again. Note that the new paragraph appears above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
     ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph-2.png)
 
@@ -305,7 +305,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-3. Be sure there are at least three paragraphs in the document. You can choose **Insert Paragraph** three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
+3. Be sure there are at least three paragraphs in the document. You can choose the **Insert Paragraph** button three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
 
 4. In Word, create a custom style named "MyCustomStyle". It can have any formatting that you want.
 
@@ -583,9 +583,9 @@ function insertTextIntoRange() {
 
 2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-3. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph at the start of the document.
+3. In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph at the start of the document.
 
-4. Within the document, select the phrase "Click-to-Run". *Be careful not to include the preceding or following space in the selection.*
+4. Within the document, select the phrase "Click-to-Run". *Be careful not to include the preceding space or following comma in the selection.*
 
 5. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
 
@@ -783,7 +783,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-3. In the task pane, choose **Insert Paragraph** at least three times to ensure that there are a few paragraphs in the document.
+3. In the task pane, choose the **Insert Paragraph** button at least three times to ensure that there are a few paragraphs in the document.
 
 4. Choose the **Insert Image** button and note that an image is inserted at the end of the document.
 
@@ -912,7 +912,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-3. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph with "Office 365" at the top of the document.
+3. In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph with "Office 365" at the top of the document.
 
 4. In the document, select the text "Office 365" and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
 
