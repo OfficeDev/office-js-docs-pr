@@ -755,17 +755,17 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 ### Create the dialog page
 
-1. Open the project in your code editor.
+1. In the **./src** folder that's located at the root of the project, create a new folder named **dialogs**.
 
-2. Create a file in the root of the project (where index.html is) called popup.html.
+2. In the **./src/dialogs** folder, create new file named **popup.html**.
 
-3. Add the following markup to popup.html. Note:
+3. Add the following markup to **popup.html**. Note:
 
    - The page has a `<input>` where the user will enter their name and a button that will send the name to the page in the task pane where it will be displayed.
 
-   - The markup loads a script called popup.js that you will create in a later step.
+   - The markup loads a script named **popup.js** that you will create in a later step.
 
-   - It also loads the Office.JS library and jQuery because they will be used in popup.js.
+   - It also loads the Office.js library and jQuery because they will be used in **popup.js**.
 
     ```html
     <!DOCTYPE html>
@@ -775,9 +775,8 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
-            <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
-            <link rel="stylesheet" href="app.css" />
+            <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+            <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
             <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
@@ -785,22 +784,16 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
         </head>
         <body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-            <div class="padding">
-                <p class="ms-font-xl">ENTER YOUR NAME</p>
-            </div>
-            <div class="padding">
-                <input id="name-box" type="text"/>
-            </div>
-            <div class="padding">
-                <button id="ok-button" class="ms-Button">OK</button>
-            </div>
+            <p class="ms-font-xl">ENTER YOUR NAME</p>
+            <input id="name-box" type="text"/><br/><br/>
+            <button id="ok-button" class="ms-Button">OK</button>
         </body>
     </html>
     ```
 
-4. Create a file in the root of the project called popup.js.
+4. In the **./src/dialogs** folder, create new file named **popup.js**.
 
-5. Add the following code to popup.js. Note the following about this code:
+5. Add the following code to **popup.js**. Note the following about this code:
 
    - *Every page that calls APIs in the Office.JS library must first ensure that the library is fully initialized.* The best way to do that is to call the `Office.onReady()` method. If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`. For an example, see the app.js file in the project root. The call of `Office.onReady()` must run before any calls to Office.JS; hence the assignment is in a script file that is loaded by the page, as it is in this case.
    - The jQuery `ready` function is called inside the `then()` method. In most cases, the loading, initializing, or bootstrapping code of other JavaScript libraries should be inside the `then()` method that is chained to the call of `Office.onReady()`.
@@ -841,43 +834,39 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 8. Save the file.
 
    > [!NOTE]
-   > The popup.html file, and the popup.js file that it loads, run in an entirely separate Microsoft Edge or Internet Explorer 11 process from the add-in's task pane. If the popup.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the popup.js file does not contain any JavaScript that is unsupported by Internet Explorer 11. For these two reasons, this add-in does not transpile the popup.js file at all.
+   > The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate Microsoft Edge or Internet Explorer 11 process from the add-in's task pane. If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling. Therefore, this add-in does not transpile the **popup.js** file at all.
 
 ### Open the dialog from the task pane
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Below the `div` that contains the `freeze-header` button, add the following markup:
+2. Locate the `<button>` element for the `freeze-header` button, and add the following markup after that line:
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="open-dialog">Open Dialog</button>
-    </div>
+    <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-3. The dialog will prompt the user to enter a name and pass the user's name to the task pane. The task pane will display it in a label. Immediately below the `div` that you just added, add the following markup:
+3. The dialog will prompt the user to enter a name and pass the user's name to the task pane. The task pane will display it in a label. Immediately below the `button` that you just added, add the following markup:
 
     ```html
-    <div class="padding">
-        <label id="user-name"></label>
-    </div>
+    <label id="user-name"></label><br/><br/>
     ```
 
 4. Open the file **./src/taskpane/taskpane.js**.
 
-5. Below the line that assigns a click handler to the `freeze-header` button, add the following code. You'll create the `openDialog` method in a later step.
+5. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `freeze-header` button, and add the following code after that line. You'll create the `openDialog` method in a later step.
 
     ```js
-    $('#open-dialog').click(openDialog);
+    document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. Below the `freezeHeader` function add the following declaration. This variable is used to hold an object in the parent page's execution context that acts as an intermediator to the dialog page's execution context.
+6. Add the following declaration to the end of the file. This variable is used to hold an object in the parent page's execution context that acts as an intermediator to the dialog page's execution context.
 
     ```js
     var dialog = null;
     ```
 
-7. Below the declaration of `dialog`, add the following function. The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`. This is because the API to open a dialog is shared among all Office hosts, so it is part of the Office JavaScript Common API, not the Excel-specific API.
+7. Add the following function to the end of the file (after the declaration of `dialog`). The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`. This is because the API to open a dialog is shared among all Office hosts, so it is part of the Office JavaScript Common API, not the Excel-specific API.
 
     ```js
     function openDialog() {
@@ -904,7 +893,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 ### Process the message from the dialog and close the dialog
 
-1. Continue in the app.js file, and replace `TODO2` with the following code. Note:
+1. Within the `openDialog` function in the file **./src/taskpane/taskpane.js**, replace `TODO2` with the following code. Note:
 
    - The callback is executed immediately after the dialog successfully opens and before the user has taken any action in the dialog.
 
@@ -919,7 +908,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     }
     ```
 
-2. Below the `openDialog` function, add the following function.
+2. Add the following function after the `openDialog` function.
 
     ```js
     function processMessage(arg) {
@@ -930,24 +919,17 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter **Ctrl+C** twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
+2. In Excel, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by some versions of Excel to run Excel add-ins).
+3. Choose the **Open Dialog** button in the task pane.
 
-3. Run the command `npm start` to start a web server running on localhost.
+4. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the task pane, but you cannot launch a second dialog from the same task pane page.
 
-4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
+5. In the dialog, enter a name and choose the **OK** button. The name appears on the task pane and the dialog closes.
 
-5. Choose the **Open Dialog** button in the task pane.
-
-6. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the task pane, but you cannot launch a second dialog from the same task pane page.
-
-7. In the dialog, enter a name and choose **OK**. The name appears on the task pane and the dialog closes.
-
-8. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
+6. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
     ![Excel tutorial - Dialog](../images/excel-tutorial-dialog-open.png)
 
