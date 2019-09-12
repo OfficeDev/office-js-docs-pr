@@ -344,7 +344,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `sort-chart` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line:
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
