@@ -718,25 +718,34 @@ These steps must be completed whenever your code needs to *read* information fro
 
     - For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
     
-        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+        > [!NOTE]
+        > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office host (e.g., `Excel`)
+        >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
-3. If for any reason, your server is not running, then in a Git Bash window, or Node.JS-enabled system prompt, navigate to the **Start** folder of the project and run the command `npm start`. You do not need to rebuild the project because the only JavaScript file you changed is not part of the built bundle.js.
+3. If the local web server is already running, stop it.
 
-4. Using the new version of the changed manifest file, repeat the sideloading process by using one of the following methods. *You should overwrite the previous copy of the manifest file.*
+4. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in: 
 
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - To test your add-in in Excel, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.
 
-    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+        ```command&nbsp;line
+        npm start
+        ```
 
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - To test your add-in in Excel on the web, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
-5. Open any worksheet in Excel.
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-6. On the **Home** ribbon, choose **Toggle Worksheet Protection**. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in screenshot below. 
+        To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-7. Choose a cell as you would if you wanted to change its content. You get an error telling you that the worksheet is protected.
+5. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in screenshot below. 
 
-8. Choose **Toggle Worksheet Protection** again, and the controls are reenabled, and you can change cell values again.
+7. Choose a cell as you would if you wanted to change its content. Excel displays an error message saying that the worksheet is protected.
+
+8. Choose the **Toggle Worksheet Protection** button again, and the controls are reenabled, and you can change cell values again.
 
     ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on.png)
 
