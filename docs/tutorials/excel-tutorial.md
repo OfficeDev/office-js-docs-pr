@@ -133,7 +133,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
    - The cell values of a range are set with an array of arrays.
 
-   - New rows are created in a table by calling the `add` method of the table's row collection. You can add multiple rows in a single call of `add` by including multiple cell value arrays in the parent array that is passed as the second parameter.
+   - New rows are created in a table by calling the `add` method of the table's row collection. You can add multiple rows in a single call of `add` by including multiple cell value arrays in the parent array that is passed as the second parameter. 
 
     ```js
     expensesTable.getHeaderRowRange().values =
@@ -161,11 +161,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
    - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
 
-        ```js
-        expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
-        expensesTable.getRange().format.autofitColumns();
-        expensesTable.getRange().format.autofitRows();
-        ```
+    ```js
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+    expensesTable.getRange().format.autofitColumns();
+    expensesTable.getRange().format.autofitRows();
+    ```
 
 ### Test the add-in
 
