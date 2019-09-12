@@ -88,11 +88,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 8. Add the following function to the end of the file. Note:
 
-   - Your Excel.js business logic will be added to the function that is passed to `Excel.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
+    - Your Excel.js business logic will be added to the function that is passed to `Excel.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 
-   - The `context.sync` method sends all queued commands to Excel for execution.
+    - The `context.sync` method sends all queued commands to Excel for execution.
 
-   - The `Excel.run` is followed by a `catch` block. This is a best practice that you should always follow. 
+    - The `Excel.run` is followed by a `catch` block. This is a best practice that you should always follow. 
 
     ```js
     function createTable() {
@@ -117,11 +117,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 9. Within the `createTable()` function, replace `TODO1` with the following code. Note:
 
-   - The code creates a table by using `add` method of a worksheet's table collection, which always exists even if it is empty. This is the standard way that Excel.js objects are created. There are no class constructor APIs, and you never use a `new` operator to create an Excel object. Instead, you add to a parent collection object.
+    - The code creates a table by using `add` method of a worksheet's table collection, which always exists even if it is empty. This is the standard way that Excel.js objects are created. There are no class constructor APIs, and you never use a `new` operator to create an Excel object. Instead, you add to a parent collection object.
 
-   - The first parameter of the `add` method is the range of only the top row of the table, not the entire range the table will ultimately use. This is because when the add-in populates the data rows (in the next step), it will add new rows to the table instead of writing values to the cells of existing rows. This is a more common pattern because the number of rows that a table will have is often not known when the table is created.
+    - The first parameter of the `add` method is the range of only the top row of the table, not the entire range the table will ultimately use. This is because when the add-in populates the data rows (in the next step), it will add new rows to the table instead of writing values to the cells of existing rows. This is a more common pattern because the number of rows that a table will have is often not known when the table is created.
 
-   - Table names must be unique across the entire workbook, not just the worksheet.
+    - Table names must be unique across the entire workbook, not just the worksheet.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -131,9 +131,9 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 10. Within the `createTable()` function, replace `TODO2` with the following code. Note:
 
-   - The cell values of a range are set with an array of arrays.
+    - The cell values of a range are set with an array of arrays.
 
-   - New rows are created in a table by calling the `add` method of the table's row collection. You can add multiple rows in a single call of `add` by including multiple cell value arrays in the parent array that is passed as the second parameter. 
+    - New rows are created in a table by calling the `add` method of the table's row collection. You can add multiple rows in a single call of `add` by including multiple cell value arrays in the parent array that is passed as the second parameter.
 
     ```js
     expensesTable.getHeaderRowRange().values =
@@ -152,14 +152,14 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 11. Within the `createTable()` function, replace `TODO3` with the following code. Note:
 
-   - The code gets a reference to the **Amount** column by passing its zero-based index to the `getItemAt` method of the table's column collection.
+    - The code gets a reference to the **Amount** column by passing its zero-based index to the `getItemAt` method of the table's column collection.
 
-     > [!NOTE]
-     > Excel.js collection objects, such as `TableCollection`, `WorksheetCollection`, and `TableColumnCollection` have an `items` property that is an array of the child object types, such as `Table` or `Worksheet` or `TableColumn`; but a `*Collection` object is not itself an array.
+        > [!NOTE]
+        > Excel.js collection objects, such as `TableCollection`, `WorksheetCollection`, and `TableColumnCollection` have an `items` property that is an array of the child object types, such as `Table` or `Worksheet` or `TableColumn`; but a `*Collection` object is not itself an array.
 
-   - The code then formats the range of the **Amount** column as Euros to the second decimal. 
+    - The code then formats the range of the **Amount** column as Euros to the second decimal. 
 
-   - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
+    - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
 
     ```js
     expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
