@@ -591,9 +591,9 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 
 ### Create the function that protects the sheet
 
-1. Open the file \function-file\function-file.js.
+1. Open the file **.\commands\commands.js**.
 
-2. The file already has an Immediately Invoked Function Expression (IFFE). *Outside of the IIFE*, add the following code. Note that we specify an `args` parameter to the method and the very last line of the method calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office host application that the function has finished and the UI can become responsive again.
+2. Add the following function immediately after the `action` function. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office host application that the function has finished and the UI can become responsive again.
 
     ```js
     function toggleProtection(args) {
@@ -613,7 +613,13 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
     }
     ```
 
-3. Replace `TODO1` with the following code. This code uses the worksheet object's protection property in a standard toggle pattern. The `TODO2` will be explained in the next section.
+3. Add the following line to the end of the file:
+
+    ```js
+    g.toggleProtection = toggleProtection;
+    ```
+
+4. Within the `toggleProtection` function, replace `TODO1` with the following code. This code uses the worksheet object's protection property in a standard toggle pattern. The `TODO2` will be explained in the next section.
 
     ```js
     var sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -640,7 +646,7 @@ In all the earlier functions in this series of tutorials, you queued commands to
 
 These steps must be completed whenever your code needs to *read* information from the Office document.
 
-1. In the `toggleProtection` function, replace `TODO2` with the following code. Note:
+1. Within the `toggleProtection` function, replace `TODO2` with the following code. Note:
    
    - Every Excel object has a `load` method. You specify the properties of the object that you want to read in the parameter as a string of comma-delimited names. In this case, the property you need to read is a subproperty of the `protection` property. You reference the subproperty almost exactly as you would anywhere else in your code, with the exception that you use a forward slash ('/') character instead of a "." character.
 
@@ -701,13 +707,6 @@ These steps must be completed whenever your code needs to *read* information fro
         args.completed();
     }
     ```
-
-### Configure the script-loading HTML file
-
-Open the /function-file/function-file.html file. This is a UI-less HTML file that is called when the user presses the **Toggle Worksheet Protection** button. Its purpose is to load the JavaScript method that should run when the button is pushed. You are not going to change this file. Simply note that the second `<script>` tag loads the functionfile.js.
-
-   > [!NOTE]
-   > The function-file.html file and the function-file.js file that it loads run in an entirely separate IE process from the add-in's task pane. If the function-file.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the function-file.js file does not contain any JavaScript that is unsupported by IE. For these two reasons, this add-in does not transpile the function-file.js at all. 
 
 ### Test the add-in
 
