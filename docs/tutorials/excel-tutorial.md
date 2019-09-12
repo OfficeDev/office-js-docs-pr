@@ -741,13 +741,13 @@ These steps must be completed whenever your code needs to *read* information fro
 
         To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-5. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in screenshot below. 
-
-7. Choose a cell as you would if you wanted to change its content. Excel displays an error message indicating that the worksheet is protected.
-
-8. Choose the **Toggle Worksheet Protection** button again, and the controls are reenabled, and you can change cell values again.
+5. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot. 
 
     ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on.png)
+
+6. Choose a cell as you would if you wanted to change its content. Excel displays an error message indicating that the worksheet is protected.
+
+7. Choose the **Toggle Worksheet Protection** button again, and the controls are reenabled, and you can change cell values again.
 
 ## Open a dialog
 
