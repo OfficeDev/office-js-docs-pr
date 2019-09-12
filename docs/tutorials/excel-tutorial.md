@@ -83,7 +83,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     }
 
     // Assign event handlers and other initializaton logic.
-    $('#create-table').click(createTable);
+    document.getElementById("create-table").onclick = createTable;
     ```
 
 8. Add the following function to the end of the file. Note:
