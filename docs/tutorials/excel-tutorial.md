@@ -485,7 +485,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 5. In the task pane, choose the **Freeze Header** button.
 
-6. Scroll down the worksheet far enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
+6. Scroll down the worksheet far enough to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
     ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header.png)
 
