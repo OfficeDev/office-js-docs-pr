@@ -627,7 +627,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
 
-     if (sheet.protection.protected) {
+    if (sheet.protection.protected) {
         sheet.protection.unprotect();
     } else {
         sheet.protection.protect();
