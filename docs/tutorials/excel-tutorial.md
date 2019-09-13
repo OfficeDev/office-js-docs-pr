@@ -908,7 +908,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-3. The dialog will prompt the user to enter a name and pass the user's name to the task pane. The task pane will display it in a label. Immediately below the `button` that you just added, add the following markup:
+3. The dialog will prompt the user to enter a name and pass the user's name to the task pane. The task pane will display it in a label. Immediately after the `button` that you just added, add the following markup:
 
     ```html
     <label id="user-name"></label><br/><br/>
