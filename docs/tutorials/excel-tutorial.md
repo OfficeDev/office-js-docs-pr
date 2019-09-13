@@ -723,7 +723,7 @@ These steps must be completed whenever your code needs to *read* information fro
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office host (e.g., `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
-3. If the local web server is already running, stop it.
+3. If the local web server is already running, stop it by closing the node command window.
 
 4. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in: 
 
@@ -765,7 +765,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
    - The markup loads a script named **popup.js** that you will create in a later step.
 
-   - It also loads the Office.js library and jQuery because they will be used in **popup.js**.
+   - It also loads the Office.js library because it will be used in **popup.js**.
 
     ```html
     <!DOCTYPE html>
@@ -779,7 +779,6 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-            <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
             <script type="text/javascript" src="popup.js"></script>
 
         </head>
@@ -795,8 +794,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 5. Add the following code to **popup.js**. Note the following about this code:
 
-   - *Every page that calls APIs in the Office.JS library must first ensure that the library is fully initialized.* The best way to do that is to call the `Office.onReady()` method. If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`. For an example, see the app.js file in the project root. The call of `Office.onReady()` must run before any calls to Office.JS; hence the assignment is in a script file that is loaded by the page, as it is in this case.
-   - The jQuery `ready` function is called inside the `then()` method. In most cases, the loading, initializing, or bootstrapping code of other JavaScript libraries should be inside the `then()` method that is chained to the call of `Office.onReady()`.
+   - *Every page that calls APIs in the Office.js library must first ensure that the library is fully initialized.* The best way to do that is to call the `Office.onReady()` method. If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`. The call of `Office.onReady()` must run before any calls to Office.js; hence the assignment is in a script file that is loaded by the page, as it is in this case.
 
     ```js
     (function () {
@@ -804,11 +802,9 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
         Office.onReady()
             .then(function() {
-                $(document).ready(function () {  
 
-                    // TODO1: Assign handler to the OK button.
+                // TODO1: Assign handler to the OK button.
 
-                });
             });
 
         // TODO2: Create the OK button handler
@@ -819,22 +815,88 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 6. Replace `TODO1` with the following code. You'll create the `sendStringToParentPage` function in the next step.
 
     ```js
-    $('#ok-button').click(sendStringToParentPage);
+    document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
 7. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter can be a boolean or a string, which includes anything that can be serialized as a string, such as XML or JSON.
 
     ```js
     function sendStringToParentPage() {
-        var userName = $('#name-box').val();
+        var userName = document.getElementById("name-box").value;
         Office.context.ui.messageParent(userName);
     }
     ```
 
-8. Save the file.
+> [!NOTE]
+> The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate Microsoft Edge or Internet Explorer 11 process from the add-in's task pane. If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling. Therefore, this add-in does not transpile the **popup.js** file at all.
 
-   > [!NOTE]
-   > The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate Microsoft Edge or Internet Explorer 11 process from the add-in's task pane. If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling. Therefore, this add-in does not transpile the **popup.js** file at all.
+### Update webpack config settings
+
+Open the file **webpack.config.js** in the root directory of the project and complete the following steps.
+
+1. Locate the `entry` object within the `config` object and add a new entry for `popup`.
+
+    ```js
+    dialog: "./src/dialogs/popup.js"
+    ```
+
+    After you've done this, the new `entry` object will look like this:
+
+    ```js
+    entry: {
+      polyfill: "@babel/polyfill",
+      taskpane: "./src/taskpane/taskpane.js",
+      commands: "./src/commands/commands.js",
+      popup: "./src/dialogs/popup.js",
+    },
+    ```
+  
+2. Locate the `plugins` array within the `config` object and add the following object to the end of that array.
+
+    ```js
+    new HtmlWebpackPlugin({
+      filename: "popup.html",
+      template: "./src/dialogs/popup.html",
+      chunks: ["polyfill", "popup"]
+    })
+    ```
+
+    After you've done this, the new `plugins` array will look like this:
+
+    ```js
+    plugins: [
+      new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        filename: "taskpane.html",
+        template: "./src/taskpane/taskpane.html",
+        chunks: ['polyfill', 'taskpane']
+      }),
+      new CopyWebpackPlugin([
+      {
+        to: "taskpane.css",
+        from: "./src/taskpane/taskpane.css"
+      }
+      ]),
+      new HtmlWebpackPlugin({
+        filename: "commands.html",
+        template: "./src/commands/commands.html",
+        chunks: ["polyfill", "commands"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "popup.html",
+        template: "./src/dialogs/popup.html",
+        chunks: ["polyfill", "popup"]
+      })
+    ],
+    ```
+
+3. If the local web server is running, stop it by closing the node command window.
+
+4. Run the following command to rebuild the project.
+
+    ```command&nbsp;line
+    npm run build
+    ```
 
 ### Open the dialog from the task pane
 
@@ -912,7 +974,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
     ```js
     function processMessage(arg) {
-        $('#user-name').text(arg.message);
+        document.getElementById("user-name").innerHTML = arg.message;
         dialog.close();
     }
     ```
