@@ -305,7 +305,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
 3. Be sure there are at least three paragraphs in the document. You can choose the **Insert Paragraph** button three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
 
@@ -583,7 +583,7 @@ function insertTextIntoRange() {
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
 3. In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph at the start of the document.
 
@@ -783,7 +783,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
 3. In the task pane, choose the **Insert Paragraph** button at least three times to ensure that there are a few paragraphs in the document.
 
@@ -912,7 +912,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. In Word, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
 3. In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph with "Office 365" at the top of the document.
 

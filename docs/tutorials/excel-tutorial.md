@@ -320,7 +320,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. In Excel, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
 3. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button in the task pane.
 
@@ -413,7 +413,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. In Excel, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
 3. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button, and then the **Filter Table** button and the **Sort Table** button, in either order.
 
@@ -477,7 +477,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. In Excel, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
 3. If the table you added previously in this tutorial is present in the worksheet, delete it.
 
@@ -983,7 +983,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. In Excel, close the task pane if it's already open. On the **Home** tab, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
 3. Choose the **Open Dialog** button in the task pane.
 
