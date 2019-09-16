@@ -201,7 +201,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 3. In the task pane, choose the **Create Table** button.
 
-    ![Excel tutorial - Create Table](../images/excel-tutorial-create-table.png)
+    ![Excel tutorial - Create Table](../images/excel-tutorial-create-table-2.png)
 
 ## Filter and sort a table
 
@@ -326,7 +326,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 4. Choose the **Filter Table** button and the **Sort Table** button, in either order.
 
-    ![Excel tutorial - Filter and Sort Table](../images/excel-tutorial-filter-and-sort-table.png)
+    ![Excel tutorial - Filter and Sort Table](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## Create a chart
 
@@ -419,7 +419,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 4. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
-    ![Excel tutorial - Create Chart](../images/excel-tutorial-create-chart.png)
+    ![Excel tutorial - Create Chart](../images/excel-tutorial-create-chart-2.png)
 
 ## Freeze a table header
 
@@ -487,7 +487,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 6. Scroll down the worksheet far enough to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
-    ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header.png)
+    ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header-2.png)
 
 ## Protect a worksheet
 
@@ -743,7 +743,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 5. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot. 
 
-    ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on.png)
+    ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
 6. Choose a cell as you would if you wanted to change its content. Excel displays an error message indicating that the worksheet is protected.
 
@@ -993,7 +993,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 6. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
-    ![Excel tutorial - Dialog](../images/excel-tutorial-dialog-open.png)
+    ![Excel tutorial - Dialog](../images/excel-tutorial-dialog-open-2.png)
 
 ## Next steps
 
