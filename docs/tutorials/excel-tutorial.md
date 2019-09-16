@@ -837,7 +837,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 1. Locate the `entry` object within the `config` object and add a new entry for `popup`.
 
     ```js
-    dialog: "./src/dialogs/popup.js"
+    popup: "./src/dialogs/popup.js"
     ```
 
     After you've done this, the new `entry` object will look like this:
@@ -847,7 +847,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
       polyfill: "@babel/polyfill",
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js",
-      popup: "./src/dialogs/popup.js",
+      popup: "./src/dialogs/popup.js"
     },
     ```
   
