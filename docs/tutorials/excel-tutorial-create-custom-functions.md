@@ -38,6 +38,8 @@ In this tutorial, you will:
     
     The Yeoman generator will create the project files and install supporting Node components.
 
+    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
+
 2. Navigate to the root folder of the project.
     
     ```command&nbsp;line

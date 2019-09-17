@@ -35,6 +35,8 @@ You'll use the Yeoman generator for Office Add-ins to create an add-in project t
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
+
 ### Try it out
 
 1. Navigate to the root folder of the project.

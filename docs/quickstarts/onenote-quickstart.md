@@ -26,7 +26,9 @@ In this article, you'll walk through the process of building a OneNote task pane
 ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-onenote.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
-	
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
+
 ## Explore the project
 
 The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. 

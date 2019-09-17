@@ -39,6 +39,8 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
+
 ## Create a table
 
 In this step of the tutorial, you'll programmatically test that your add-in supports the user's current version of Excel, add a table to a worksheet, populate the table with data, and format it.
