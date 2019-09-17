@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 09/16/2019
+ms.date: 09/18/2019
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 localization_priority: Normal
@@ -27,11 +27,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 ## Create your add-in project
 
-Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator telemetry-related prompts](../includes/yo-telemetry-prompts.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`

@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 09/16/2019
+ms.date: 09/18/2019
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Normal
@@ -28,11 +28,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 ## Create your add-in project
 
-Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator telemetry-related prompts](../includes/yo-telemetry-prompts.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`
