@@ -24,7 +24,7 @@ You'll use the Yeoman generator for Office Add-ins to create an add-in project t
 
 ### Create the project
 
-[!include[Yeoman generator telemetry-related prompts](../includes/yo-office-command-guidance.md)]
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project using React framework`
 - **Choose a script type:** `TypeScript`

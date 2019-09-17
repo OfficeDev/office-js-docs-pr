@@ -27,7 +27,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 ## Create your add-in project
 
-[!include[Yeoman generator telemetry-related prompts](../includes/yo-office-command-guidance.md)]
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`

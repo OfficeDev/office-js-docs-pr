@@ -16,7 +16,7 @@ In this article, you'll walk through the process of building a OneNote task pane
 
 ## Create the add-in project
 
-[!include[Yeoman generator telemetry-related prompts](../includes/yo-office-command-guidance.md)]
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`
