@@ -24,11 +24,7 @@ You'll use the Yeoman generator for Office Add-ins to create an add-in project t
 
 ### Create the project
 
-Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator telemetry-related prompts](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project using React framework`
 - **Choose a script type:** `TypeScript`

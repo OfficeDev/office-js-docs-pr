@@ -18,11 +18,7 @@ In this article, you'll walk through the process of building a Project task pane
 
 ## Create the add-in
 
-Use the Yeoman generator to create a Project add-in project. Run the following command and then answer the prompts as follows:
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator telemetry-related prompts](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`

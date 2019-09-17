@@ -28,11 +28,7 @@ In this tutorial, you will:
 
  To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
 
-1. Run the following command and then answer the prompts as follows.
-    
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator telemetry-related prompts](../includes/yo-office-command-guidance.md)]
     
     * **Choose a project type:** `Excel Custom Functions Add-in project`
     * **Choose a script type:** `JavaScript`

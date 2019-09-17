@@ -28,7 +28,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 ## Create your add-in project
 
-[!include[Yeoman generator telemetry-related prompts](../includes/yo-telemetry-prompts.md)]
+[!include[Yeoman generator telemetry-related prompts](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`
