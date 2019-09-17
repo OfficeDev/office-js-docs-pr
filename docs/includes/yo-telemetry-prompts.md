@@ -1,4 +1,4 @@
-Run the following command to use the Yeoman generator to create add-in project: 
+Run the following command to create an add-in project using the Yeoman generator: 
 
 ```command&nbsp;line
 yo office
