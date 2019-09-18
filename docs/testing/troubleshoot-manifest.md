@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 08/15/2019
+ms.date: 09/18/2019
 localization_priority: Priority
 ---
 
@@ -17,7 +17,7 @@ If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/pack
 npm run validate
 ```
 
-![Animated gif that shows the Yo Office validator being run at the command line and generating results that show Validation Passed](../images/yo-office-validator.gif)
+![Animated gif that shows the Yo Office validator being run at the command&nbsp;line and generating results that show Validation Passed](../images/yo-office-validator.gif)
 
 > [!NOTE]
 > To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.
@@ -63,7 +63,7 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 > [!IMPORTANT]
 > Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
 
-### To turn on runtime logging for Windows
+### Runtime logging on Windows
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 
@@ -83,43 +83,44 @@ The following image shows what the registry should look like. To turn the featur
 
 ![Screenshot of the registry editor with a RuntimeLogging registry key](http://i.imgur.com/Sa9TyI6.png)
 
-### To turn on runtime logging for Mac
+### Runtime logging on Mac
 
-Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.
+1. Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.
 
-Open **Terminal** and set a runtime logging preference by using the **defaults** command:
+2. Open **Terminal** and set a runtime logging preference by using the `defaults` command:
     
-```command line
-defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
-```
+	```command&nbsp;line
+	defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
+	```
 
-`<bundle id>` identifies which host to enable runtime logging for. `<file_name>` is the name of the text file to write the log to.
+	`<bundle id>` identifies which the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log will be written.
 
-You can enable runtime logging for the following bundles:
+	You can enable runtime logging for the following bundles:
 
-- com.microsoft.Word
-- com.microsoft.Excel
-- com.microsoft.Powerpoint
-- com.microsoft.Outlook
+	- `com.microsoft.Word`
+	- `com.microsoft.Excel`
+	- `com.microsoft.Powerpoint`
+	- `com.microsoft.Outlook`
 
-The following example enables runtime logging for Word:
+The following example enables runtime logging for Word and then opens the log file:
 
-```command line
+```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
 open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
 ```
 
-> [!NOTE] You will need to restart Office after changing the preferences.
+> [!NOTE] 
+> You'll need to restart Office after running the `defaults` command to enable runtime logging.
 
-To turn off runtime logging, use the **defaults delete** command:
+To turn off runtime logging, use the `defaults delete` command:
 
-```command line
+```command&nbsp;line
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
 The following example will turn off runtime logging for Word:
 
-```command line
+```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 ```
 
