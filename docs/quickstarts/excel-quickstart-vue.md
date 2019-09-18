@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using Vue
 description:
-ms.date: 09/04/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
 ---

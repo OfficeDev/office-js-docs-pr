@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric React in Office Add-ins
 description: Learn how to use Office UI Fabric React in Office Add-ins.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 localization_priority: Priority
 ---
 
