@@ -269,11 +269,11 @@ Excel.run(function (context) {
 > [!NOTE]
 > The outline APIs for grouping rows and columns are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-The rows and columns of a range can be grouped together to create an [outline](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). These groups can be collapsed and expanded to hide and show the corresponding cells. This makes quick analysis of top-line data easier. Use [Range.group](/javascript/api/excel/excel.range#group-groupoption-) to make these groups.
+Rows or columns of a range can be grouped together to create an [outline](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). These groups can be collapsed and expanded to hide and show the corresponding cells. This makes quick analysis of top-line data easier. Use [Range.group](/javascript/api/excel/excel.range#group-groupoption-) to make these outline groups.
 
 An outline has a hierarchy. Smaller groups nest under larger groups. This allows the outline to be viewed at different levels. Changing the visible outline level can be done programmatically through the [Range.showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-) method. Note that Excel only supports eight levels of outline groups.
 
-The following code sample shows how to create an outline with two levels of groups for both the rows and columns. The subsequent image shows the groupings for that outline. Note that in the code sample, the range being grouped is does not include the row or column of the outline control (the "Totals" for this example). A group defines what will be collapsed, not the row or column with the control.
+The following code sample shows how to create an outline with two levels of groups for both the rows and columns. The subsequent image shows the groupings of that outline. Note that in the code sample, the ranges being grouped do not include the row or column of the outline control (the "Totals" for this example). A group defines what will be collapsed, not the row or column with the control.
 
 ```js
 Excel.run(function (context) {
@@ -304,7 +304,7 @@ Excel.run(function (context) {
 
 ![A range with a two-level, two-dimension outline](../images/excel-outline.png)
 
-To ungroup a row or column group, use the [Range.upgroup] method. This will remove the outer-most level from the outline. If multiple groups of the same row or column type are at the same level within the specified range, all those groups will be ungrouped.
+To ungroup a row or column group, use the [Range.upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-) method. This removes the outer-most level from the outline. If multiple groups of the same row or column type are at the same level within the specified range, all those groups are ungrouped.
 
 ## See also
 
