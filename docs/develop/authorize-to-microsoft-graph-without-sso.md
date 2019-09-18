@@ -23,8 +23,5 @@ We recommend that you use the following libraries when accessing Microsoft Graph
 
 For more information about recommended libraries for working with Microsoft Identity Platform (formerly AAD v.2.0), see [Microsoft identity platform authentication libraries](/azure/active-directory/develop/reference-v2-libraries).
 
-The following samples get Microsoft Graph data from an Office Add-in:
-
-- [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/office-add-in-microsoft-graph-aspnet)
-- [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/outlook-add-in-microsoft-graph-aspnet)
+For more information how to get Microsoft Graph data from an Office Add-in, see [Get started with Microsoft Graph and ASP.NET](https://developer.microsoft.com/en-us/graph/get-started/asp.net).
 
