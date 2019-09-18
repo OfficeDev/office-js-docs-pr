@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using Vue
 description:
-ms.date: 09/04/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -36,23 +36,31 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 1. Navigate to your app folder.
 
-   ```command&nbsp;line
-   cd my-add-in
-   ```
+    ```command&nbsp;line
+    cd my-add-in
+    ```
 
-2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.
+2. Use the Yeoman generator to generate the manifest file for your add-in by running the following command:
 
-   ```command&nbsp;line
-   yo office
-   ```
+    ```command&nbsp;line
+    yo office
+    ```
 
-   ![Yeoman generator](../images/yo-office-manifest-only-vue.png)
+    > [!NOTE]
+    > When you run the `yo office` command, you may receive prompts about the data collection policies of Yeoman and the Office Add-in CLI tools. Use the information that's provided to respond to the prompts as you see fit. If you choose **Exit** in response to the second prompt, you'll need to run the `yo office` command again when you're ready to create your add-in project.
 
-   - **Choose a project type:** `Office Add-in project containing the manifest only`
-   - **What do you want to name your add-in?** `my-office-add-in`
-   - **Which Office client application would you like to support?** `Excel`
+    When prompted, provide the following information to create your add-in project:
+
+    - **Choose a project type:** `Office Add-in project containing the manifest only`
+    - **What do you want to name your add-in?** `my-office-add-in`
+    - **Which Office client application would you like to support?** `Excel`
+
+    ![Yeoman generator](../images/yo-office-manifest-only-vue.png)
 
 After you complete the wizard, it creates a `my-office-add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
+
+> [!TIP]
+> You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created. The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.
 
 ## Secure the app
 

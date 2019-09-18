@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric React in Office Add-ins
 description: Learn how to use Office UI Fabric React in Office Add-ins.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 localization_priority: Priority
 ---
 
@@ -24,11 +24,7 @@ You'll use the Yeoman generator for Office Add-ins to create an add-in project t
 
 ### Create the project
 
-Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project using React framework`
 - **Choose a script type:** `TypeScript`
@@ -38,6 +34,8 @@ yo office
 ![Yeoman generator](../images/yo-office-word-react.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### Try it out
 

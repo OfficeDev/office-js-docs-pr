@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: powerpoint
 localization_priority: Priority
 ---
@@ -22,11 +22,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 ### Create the add-in project
 
-Use the Yeoman generator to create a PowerPoint add-in project. Run the following command and then answer the prompts as follows:
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `Javascript`
@@ -36,6 +32,8 @@ yo office
 ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### Explore the project
 
