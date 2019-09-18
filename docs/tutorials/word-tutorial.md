@@ -64,7 +64,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - Locate and delete the line `document.getElementById("run").onclick = run;`.
 
-    - Locate and delete the `run()` function.
+    - Locate and delete the entire `run()` function.
 
 7. Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Word) {` and add the following code immediately after that line. Note:
 
@@ -72,13 +72,12 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     - The second part of this code adds an event handler for the `insert-paragraph` button.
 
     ```js
-    // Determine if the user's version of Office supports all the 
-    //        Office.js APIs that are used in the tutorial.
+    // Determine if the user's version of Office supports all the Office.js APIs that are used in the tutorial.
     if (!Office.context.requirements.isSetSupported('WordApi', '1.3')) {
         console.log('Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.');
     }
 
-    // Assign event handlers and other initializaton logic.
+    // Assign event handlers and other initialization logic.
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
@@ -118,6 +117,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office on the web.",
                             "Start");
     ```
+
+10. Verify that you've saved all of the changes you've made to the project.
 
 ### Test the add-in
 
@@ -251,6 +252,8 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     lastParagraph.style = "MyCustomStyle";
     ``` 
 
+7. Verify that you've saved all of the changes you've made to the project.
+
 ### Change the font of text
 
 1. Open the file **./src/taskpane/taskpane.html**.
@@ -299,6 +302,8 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
         });
     ``` 
 
+7. Verify that you've saved all of the changes you've made to the project.
+
 ### Test the add-in
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
@@ -307,7 +312,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 3. Be sure there are at least three paragraphs in the document. You can choose the **Insert Paragraph** button three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
 
-4. In Word, create a custom style named "MyCustomStyle". It can have any formatting that you want.
+4. In Word, create a [custom style](https://support.office.com/article/Customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) named "MyCustomStyle". It can have any formatting that you want.
 
 5. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
 
@@ -577,6 +582,8 @@ function insertTextIntoRange() {
     originalRange.insertText("many", "Replace");
     ```
 
+7. Verify that you've saved all of the changes you've made to the project.
+
 ### Test the add-in
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
@@ -777,6 +784,8 @@ Complete the following steps to define the image that you'll insert into the doc
     secondParagraph.insertTable(3, 3, "After", tableData);
     ```
 
+8. Verify that you've saved all of the changes you've made to the project.
+
 ### Test the add-in
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
@@ -905,6 +914,8 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     var serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ```
+
+7. Verify that you've saved all of the changes you've made to the project.
 
 ### Test the add-in
 

@@ -65,7 +65,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - Locate and delete the line `document.getElementById("run").onclick = run;`.
 
-    - Locate and delete the `run()` function.
+    - Locate and delete the entire `run()` function.
 
 7. Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Excel) {` and add the following code immediately after that line. Note:
 
@@ -74,13 +74,12 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     - The second part of this code adds an event handler for the `create-table` button.
 
     ```js
-    // Determine if the user's version of Office supports all the 
-    //        Office.js APIs that are used in the tutorial.
+    // Determine if the user's version of Office supports all the Office.js APIs that are used in the tutorial.
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
         console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
     }
 
-    // Assign event handlers and other initializaton logic.
+    // Assign event handlers and other initialization logic.
     document.getElementById("create-table").onclick = createTable;
     ```
 
@@ -164,6 +163,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     expensesTable.getRange().format.autofitColumns();
     expensesTable.getRange().format.autofitRows();
     ```
+
+12. Verify that you've saved all of the changes you've made to the project.
 
 ### Test the add-in
 
@@ -253,7 +254,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     var categoryFilter = expensesTable.columns.getItem('Category').filter;
-    categoryFilter.applyValuesFilter(["Education", "Groceries"]);
+    categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ``` 
 
 ### Sort the table
@@ -313,6 +314,8 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
     expensesTable.sort.apply(sortFields);
     ```
+
+7. Verify that you've saved all of the changes you've made to the project.
 
 ### Test the add-in
 
@@ -407,6 +410,8 @@ In this step of the tutorial, you'll create a chart using data from the table th
     chart.series.getItemAt(0).name = 'Value in €';
     ```
 
+9. Verify that you've saved all of the changes you've made to the project.
+
 ### Test the add-in
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
@@ -470,6 +475,8 @@ When a table is long enough that a user must scroll to see some rows, the header
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
     ```
+
+7. Verify that you've saved all of the changes you've made to the project.
 
 ### Test the add-in
 
@@ -705,6 +712,8 @@ These steps must be completed whenever your code needs to *read* information fro
         args.completed();
     }
     ```
+
+5. Verify that you've saved all of the changes you've made to the project.
 
 ### Test the add-in
 
@@ -976,6 +985,8 @@ Open the file **webpack.config.js** in the root directory of the project and com
         dialog.close();
     }
     ```
+
+3. Verify that you've saved all of the changes you've made to the project.
 
 ### Test the add-in
 
