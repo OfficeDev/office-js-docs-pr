@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 localization_priority: Normal
@@ -28,11 +28,7 @@ In this tutorial, you will:
 
  To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
 
-1. Run the following command and then answer the prompts as follows.
-    
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
     * **Choose a project type:** `Excel Custom Functions Add-in project`
     * **Choose a script type:** `JavaScript`
@@ -41,6 +37,8 @@ In this tutorial, you will:
     ![Yeoman generator for Office Add-ins prompts for custom functions](../images/starcountPrompt.png)
     
     The Yeoman generator will create the project files and install supporting Node components.
+
+    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 2. Navigate to the root folder of the project.
     
