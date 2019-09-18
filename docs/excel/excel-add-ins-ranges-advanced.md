@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 04/30/2019
+ms.date: 09/18/2019
 localization_priority: Normal
 ---
 
@@ -59,11 +59,11 @@ Your add-in will have to format the ranges to display the dates in a more human-
 
 ## Work with multiple ranges simultaneously
 
-The `RangeAreas` object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+The [RangeAreas](/javascript/api/excel/excel.rangeareas) object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 ## Find special cells within a range
 
-The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
+The [Range.getSpecialCells](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-) and [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-) methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -89,7 +89,7 @@ Excel.run(function (context) {
 })
 ```
 
-If no cells with the targeted characteristic exist in the range, `getSpecialCells` throws an **ItemNotFound** error. This diverts the flow of control to a `catch` block, if there is one. If there isn't a `catch` block, the error halts the function.
+If no cells with the targeted characteristic exist in the range, `getSpecialCells` throws an **ItemNotFound** error. This diverts the flow of control to a `catch` block, if there is one. If there isn't a `catch` block, the error halts the method.
 
 If you expect that cells with the targeted characteristic should always exist, you'll likely want your code to throw an error if those cells aren't there. If it's a valid scenario that there aren't any matching cells, your code should check for this possibility and handle it gracefully without throwing an error. You can achieve this behavior with the `getSpecialCellsOrNullObject` method and its returned `isNullObject` property. The following example uses this pattern. About this code, note:
 
@@ -169,8 +169,8 @@ Excel.run(function (context) {
 
 ## Copy and paste
 
-Range’s `copyFrom` function replicates the copy-and-paste behavior of the Excel UI. The range object that `copyFrom` is called on is the destination.
-The source to be copied is passed as a range or a string address representing a range.
+The [Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) method replicates the copy-and-paste behavior of the Excel UI. The range object that `copyFrom` is called on is the destination. The source to be copied is passed as a range or a string address representing a range.
+
 The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
 ```js
@@ -230,11 +230,11 @@ Excel.run(function (context) {
 
 ## Remove duplicates
 
-The Range object's `removeDuplicates` function removes rows with duplicate entries in the specified columns. The function goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
+The [Range.removeDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-) method removes rows with duplicate entries in the specified columns. The method goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
 
-`removeDuplicates` takes in a `number[]` representing the column indices which are checked for duplicates. This array is zero-based and relative to the range, not the worksheet. The function also takes in a boolean parameter that specifies whether the first row is a header. When **true**, the top row is ignored when considering duplicates. The `removeDuplicates` function returns a `RemoveDuplicatesResult` object that specifies the number of rows removed and the number of unique rows remaining.
+`removeDuplicates` takes in a `number[]` representing the column indices which are checked for duplicates. This array is zero-based and relative to the range, not the worksheet. The method also takes in a boolean parameter that specifies whether the first row is a header. When **true**, the top row is ignored when considering duplicates. The `removeDuplicates` method returns a `RemoveDuplicatesResult` object that specifies the number of rows removed and the number of unique rows remaining.
 
-When using a range's `removeDuplicates` function, keep the following in mind:
+When using a range's `removeDuplicates` method, keep the following in mind:
 
 - `removeDuplicates` considers cell values, not function results. If two different functions evaluate to the same result, the cell values are not considered duplicates.
 - Empty cells are not ignored by `removeDuplicates`. The value of an empty cell is treated like any other value. This means empty rows contained within in the range will be included in the `RemoveDuplicatesResult`.
@@ -242,7 +242,7 @@ When using a range's `removeDuplicates` function, keep the following in mind:
 The following sample shows the removal of entries with duplicate values in the first column.
 
 ```js
-Excel.run(async (context) => {
+Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:D11");
 
@@ -263,6 +263,48 @@ Excel.run(async (context) => {
 *After the preceding function has been run.*
 
 ![Data in Excel after range’s remove duplicates method has been run](../images/excel-ranges-remove-duplicates-after.png)
+
+## Group data for an outline
+
+> [!NOTE]
+> The outline APIs for grouping rows and columns are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+The rows and columns of a range can be grouped together to create an [outline](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). These groups can be collapsed and expanded to hide and show the corresponding cells. This makes quick analysis of top-line data easier. Use [Range.group](/javascript/api/excel/excel.range#group-groupoption-) to make these groups.
+
+An outline has a hierarchy. Smaller groups nest under larger groups. This allows the outline to be viewed at different levels. Changing the visible outline level can be done programmatically through the [Range.showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-) method. Note that Excel only supports eight levels of outline groups.
+
+The following code sample shows how to create an outline with two levels of groups for both the rows and columns. The subsequent image shows the groupings for that outline. Note that in the code sample, the range being grouped is does not include the row or column of the outline control (the "Totals" for this example). A group defines what will be collapsed, not the row or column with the control.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on row 10, meaning 4-9 will collapse and expand.
+    sheet.getRange("4:9").group(Excel.GroupOption.byRows);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on rows 6 and 9, meaning 4-5 and 7-8 will collapse and expand.
+    sheet.getRange("4:5").group(Excel.GroupOption.byRows);
+    sheet.getRange("7:8").group(Excel.GroupOption.byRows);
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on column R, meaning C-Q will collapse and expand.
+    sheet.getRange("C:Q").group(Excel.GroupOption.byColumns);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on columns G, L, and R, meaning C-F, H-K, and M-P will collapse and expand.
+    sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
+    sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
+    sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+```
+
+![A range with a two-level, two-dimension outline](../images/excel-outline.png)
+
+To ungroup a row or column group, use the [Range.upgroup] method. This will remove the outer-most level from the outline. If multiple groups of the same row or column type are at the same level within the specified range, all those groups will be ungrouped.
 
 ## See also
 
