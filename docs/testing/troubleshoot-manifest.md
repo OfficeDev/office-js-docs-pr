@@ -60,12 +60,10 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 > [!NOTE]
 > The runtime logging feature is currently available for Office 2016 desktop.
 
-### To turn on runtime logging
-
 > [!IMPORTANT]
 > Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
 
-To turn on runtime logging:
+### To turn on runtime logging for Windows
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 
@@ -84,6 +82,46 @@ To turn on runtime logging:
 The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry. 
 
 ![Screenshot of the registry editor with a RuntimeLogging registry key](http://i.imgur.com/Sa9TyI6.png)
+
+### To turn on runtime logging for Mac
+
+Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.
+
+Open **Terminal** and set a runtime logging preference by using the **defaults** command:
+    
+```command line
+defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
+```
+
+`<bundle id>` identifies which host to enable runtime logging for. `<file_name>` is the name of the text file to write the log to.
+
+You can enable runtime logging for the following bundles:
+
+- com.microsoft.Word
+- com.microsoft.Excel
+- com.microsoft.Powerpoint
+- com.microsoft.Outlook
+
+The following example enables runtime logging for Word:
+
+```command line
+defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
+open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
+```
+
+> [!NOTE] You will need to restart Office after changing the preferences.
+
+To turn off runtime logging, use the **defaults delete** command:
+
+```command line
+defaults delete <bundle id> CEFRuntimeLoggingFile
+```
+
+The following example will turn off runtime logging for Word:
+
+```command line
+defaults delete com.microsoft.Word CEFRuntimeLoggingFile
+```
 
 ### To troubleshoot issues with your manifest
 
