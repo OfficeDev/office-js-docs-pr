@@ -95,7 +95,7 @@ The following image shows what the registry should look like. To turn the featur
 
 	`<bundle id>` identifies which the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log will be written.
 
-	You can enable runtime logging for the following bundles:
+	Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding host:
 
 	- `com.microsoft.Word`
 	- `com.microsoft.Excel`
