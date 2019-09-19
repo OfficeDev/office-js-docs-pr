@@ -25,6 +25,6 @@ For more information about recommended libraries for working with Microsoft Iden
 
 The following samples get Microsoft Graph data from an Office Add-in:
 
-- [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/office-add-in-microsoft-graph-aspnet)
-- [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/outlook-add-in-microsoft-graph-aspnet)
+- [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
 
