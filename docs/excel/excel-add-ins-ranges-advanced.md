@@ -304,7 +304,7 @@ Excel.run(function (context) {
 
 ![A range with a two-level, two-dimension outline](../images/excel-outline.png)
 
-To ungroup a row or column group, use the [Range.upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-) method. This removes the outer-most level from the outline. If multiple groups of the same row or column type are at the same level within the specified range, all those groups are ungrouped.
+To ungroup a row or column group, use the [Range.upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-) method. This removes the outermost level from the outline. If multiple groups of the same row or column type are at the same level within the specified range, all of those groups are ungrouped.
 
 ## See also
 
