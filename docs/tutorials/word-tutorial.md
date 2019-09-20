@@ -106,7 +106,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     ```js
     var docBody = context.document.body;
-    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office Online.",
+    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office.",
                             "Start");
     ```
 
@@ -122,7 +122,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Word web versions: [Sideload Office Add-ins in Office](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
 
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 

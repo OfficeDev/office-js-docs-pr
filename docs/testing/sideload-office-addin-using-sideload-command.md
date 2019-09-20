@@ -11,7 +11,7 @@ localization_priority: Priority
 >
 > If you're not testing a Word, Excel, or PowerPoint add-in on Windows, see one of the following topics to sideload your add-in:
 > 
-> - [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
+> - [Sideload Office Add-ins in Office for testing](sideload-office-add-ins-for-testing.md)
 > - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
 > - [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 

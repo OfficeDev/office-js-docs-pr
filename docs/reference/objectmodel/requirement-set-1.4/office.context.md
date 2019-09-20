@@ -20,7 +20,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 ### Namespaces
 
-[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
+[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model.
 
 ### Members
 

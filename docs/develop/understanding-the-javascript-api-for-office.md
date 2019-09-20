@@ -10,7 +10,7 @@ localization_priority: Priority
 This article provides information about the JavaScript API for Office and how to use it. For reference information, see [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office). For information about updating Visual Studio project files to the most current version of the JavaScript API for Office, see [Update the version of your JavaScript API for Office and manifest schema files](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 > [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
+> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 ## Referencing the JavaScript API for Office library in your add-in
 
@@ -40,14 +40,14 @@ Office Add-ins often have start-up logic to do things such as:
 
 - Use the Office dialog API to prompt the user for default add-in settings values.
 
-But your start-up code must not call any Office.js APIs until the library is loaded. There are two ways that your code can ensure that the library is loaded. They are described in the following sections: 
+But your start-up code must not call any Office.js APIs until the library is loaded. There are two ways that your code can ensure that the library is loaded. They are described in the following sections:
 
 - [Initialize with Office.onReady()](#initialize-with-officeonready)
 - [Initialize with Office.initialize](#initialize-with-officeinitialize)
 
 > [!TIP]
 > We recommend that you use `Office.onReady()` instead of `Office.initialize`. Although `Office.initialize` is still supported, using `Office.onReady()` provides more flexibility. You can assign only one handler to `Office.initialize` and it's called only once by the Office infrastructure, but you can call `Office.onReady()` in different places in your code and use different callbacks.
-> 
+>
 > For information about the differences in these techniques, see [Major differences between Office.initialize and Office.onReady()](#major-differences-between-officeinitialize-and-officeonready).
 
 For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
@@ -104,7 +104,7 @@ Office.onReady(function() {
 });
 ```
 
-However, there are exceptions to this practice. For example, suppose you want to open your add-in in a browser (instead of sideload it in an Office host) in order to debug your UI with browser tools. Since Office.js won't load in the browser, `onReady` won't run and the `$(document).ready` won't run if it's called inside the Office `onReady`. Another exception: you want a progress indicator to appear in the task pane while the add-in is loading. In this scenario, your code should call the jQuery `ready` and use it's callback to render the progress indicator. Then the Office `onReady`'s callback can replace the progress indicator with the final UI. 
+However, there are exceptions to this practice. For example, suppose you want to open your add-in in a browser (instead of sideload it in an Office host) in order to debug your UI with browser tools. Since Office.js won't load in the browser, `onReady` won't run and the `$(document).ready` won't run if it's called inside the Office `onReady`. Another exception: you want a progress indicator to appear in the task pane while the add-in is loading. In this scenario, your code should call the jQuery `ready` and use it's callback to render the progress indicator. Then the Office `onReady`'s callback can replace the progress indicator with the final UI.
 
 ### Initialize with Office.initialize
 
@@ -153,7 +153,7 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 > [!NOTE]
 > Even if you have no start-up logic, you should either call `Office.onReady()` or assign an empty function to `Office.initialize` when your add-in JavaScript loads. Some Office host and platform combinations won't load the task pane until one of these happens. The following examples show these two approaches.
 >
->```js	
+>```js
 >Office.onReady();
 >```
 >
@@ -174,7 +174,7 @@ This table summarizes the API and features supported across add-in types (conten
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**Host name**|Database|Workbook|Mailbox|Presentation|Document|Project|
-||**Supported** **Host applications**|Access web apps|Excel,<br/>Excel Online|Outlook,<br/>Outlook Web App,<br/>OWA for Devices|PowerPoint,<br/>PowerPoint Online|Word|Project|
+||**Supported** **Host applications**|Access web apps|Excel|Outlook,<br/>Outlook Web App,<br/>OWA for Devices|PowerPoint|Word|Project|
 |**Supported add-in types**|Content|Y|Y||Y|||
 ||Task pane||Y||Y|Y|Y|
 ||Outlook|||Y||||

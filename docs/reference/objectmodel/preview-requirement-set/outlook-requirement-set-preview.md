@@ -24,7 +24,7 @@ The following features are in preview.
 
 Added a new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 
-**Available in**: Outlook on the web (Classic)
+**Available in**: Outlook (Classic)
 
 ### Attachments
 
@@ -140,7 +140,7 @@ Added `EnhancedLocationsChanged` event to `Item`.
 
 Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Available in**: Outlook for Windows (Office 365), Outlook on the web (Classic)
+**Available in**: Outlook for Windows (Office 365), Outlook (Classic)
 
 ### Internet headers
 
@@ -176,7 +176,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 Added access to `getAccessTokenAsync`, which allows add-ins to [get an access token](/outlook/add-ins/authenticate-a-user-with-an-sso-token) for the Microsoft Graph API.
 
-**Available in**: Outlook for Windows (Office 365), Outlook for Mac (Office 365), Outlook on the web (Office 365 and Outlook.com), Outlook on the web (Classic)
+**Available in**: Outlook for Windows (Office 365), Outlook for Mac (Office 365), Outlook
 
 ## See also
 

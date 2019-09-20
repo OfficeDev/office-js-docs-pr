@@ -10,14 +10,14 @@ localization_priority: Priority
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Word add-ins run across multiple versions of Office, including Office 2016 or later for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications.
+Word add-ins run across multiple versions of Office, including Office 2016 or later for Windows, Office for iPad, Office for Mac, and Office web clients. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications.
 
 > [!NOTE]
 > For the requirement sets that are marked as Beta, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> 
+>
 > Entries not listed as Beta are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  Requirement set  |   Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | Office Online Server  |
+|  Requirement set  |   Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office web clients |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | WordApi 1.3 | Version 1612 (Build 7668.1000) or later| March 2017, 2.22 or later | March 2017, 15.32 or later| March 2017 ||
 | WordApi 1.2  | December 2015 update, Version 1601 (Build 6568.1000) or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | |
@@ -26,23 +26,23 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the WordApi 1.1 requirement set.
 
-To find out more about versions, build numbers, and Office Online Server, see:
+To find out more about versions, build numbers, and Office web clients, see:
 
 - [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server overview](/officeonlineserver/office-online-server-overview)
+- [Office web clients overview](/officeonlineserver/office-online-server-overview)
 
 ## Office Common API requirement sets
 
 For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
 
-## What's new in Word JavaScript API 1.3 
+## What's new in Word JavaScript API 1.3
 
-The following are the new additions to the Word JavaScript APIs in requirement set 1.3. 
+The following are the new additions to the Word JavaScript APIs in requirement set 1.3.
 
-|Object| What's new| Description|Requirement set| 
-|:-----|-----|:----|:----| 
+|Object| What's new| Description|Requirement set|
+|:-----|-----|:----|:----|
 |[application](/javascript/api/word/word.application)|_Method_ > createDocument(base64File: string) | Creates a new document by using a base64 encoded .docx file. Read-only.|1.3|
 |[body](/javascript/api/word/word.body)|_Relationship_ > lists|Gets the collection of list objects in the body. Read-only.|1.3|
 |[body](/javascript/api/word/word.body)|_Relationship_ > parentBody|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3|
@@ -267,7 +267,7 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 
 ## What's new in Word JavaScript API 1.2
 
-The following are the new additions to the Word JavaScript APIs in requirement set 1.2. 
+The following are the new additions to the Word JavaScript APIs in requirement set 1.2.
 
 |Object| What's new| Description|Requirement set|
 |:-----|-----|:----|:----|
@@ -287,7 +287,7 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 
 ## Word JavaScript API 1.1
 
-Word JavaScript API 1.1 is the first version of the API. For details about the API,  see the [Word JavaScript API](/javascript/api/word) reference topics. 
+Word JavaScript API 1.1 is the first version of the API. For details about the API,  see the [Word JavaScript API](/javascript/api/word) reference topics.
 
 ## See also
 

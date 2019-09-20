@@ -9,7 +9,7 @@ localization_priority: Normal
 
 ### [Office](Office.md)[.context](Office.context.md).mailbox
 
-Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
+Provides access to the Outlook add-in object model.
 
 ##### Requirements
 
@@ -627,7 +627,7 @@ When you use the `makeEwsRequestAsync` method in mail apps running in Outlook ve
 <?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
-You do not need to set the encoding value when your mail app is running in Outlook on the web. You can determine whether your mail app is running in Outlook or Outlook on the web by using the mailbox.diagnostics.hostName property. You can determine what version of Outlook is running by using the mailbox.diagnostics.hostVersion property.
+You do not need to set the encoding value when your mail app is running in Outlook. You can determine whether your mail app is running in Outlook or Outlook by using the mailbox.diagnostics.hostName property. You can determine what version of Outlook is running by using the mailbox.diagnostics.hostVersion property.
 
 ##### Parameters
 

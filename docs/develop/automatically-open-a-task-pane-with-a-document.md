@@ -25,7 +25,7 @@ The autoopen feature is currently <!-- in **developer preview** and it is only -
 
 |**Products**|**Platforms**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Supported platforms for all products:<ul><li>Office for Windows Desktop. Build 16.0.8121.1000+</li><li>Office for Mac. Build 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Supported platforms for all products:<ul><li>Office for Windows Desktop. Build 16.0.8121.1000+</li><li>Office for Mac. Build 15.34.17051500+</li><li>Office running on the web</li></ul>|
 
 
 ## Best practices

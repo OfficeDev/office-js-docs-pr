@@ -10,14 +10,14 @@ localization_priority: Priority
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Excel add-ins run across multiple versions of Office, including Office 2016 or later for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
+Excel add-ins run across multiple versions of Office, including Office 2016 or later for Windows, Office for iPad, Office for Mac, and Office web versions. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > For information about using preview APIs, see the [Excel JavaScript preview APIs](#excel-javascript-preview-apis) section within this article.
 
-|  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
+|  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office web versions  |  Office Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | Preview  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
 | ExcelApi1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | Coming soon |
@@ -32,12 +32,12 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
 
-For more information about versions, build numbers, and Office Online Server, see:
+For more information about versions, build numbers, and Office Server, see:
 
 - [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server overview](/officeonlineserver/office-online-server-overview)
+- [Office Server overview](/officeonlineserver/office-online-server-overview)
 
 ## Excel JavaScript preview APIs
 
@@ -1250,7 +1250,7 @@ In addition:
 |[worksheetSelectionChangedEventArgs](/javascript/api/excel/excel.worksheetselectionchangedeventargs)|_Property_ > worksheetId|Gets the id of the worksheet in which the selection changed.|1.7|
 
 
-## What's new in Excel JavaScript API 1.6 
+## What's new in Excel JavaScript API 1.6
 
 ### Conditional formatting
 
@@ -1263,11 +1263,11 @@ Introduces conditional formating of a range. Allows the following types of condi
 
 In addition:
 
-* Returns the range the conditional format is applied to. 
-* Removal of conditional formatting. 
-* Provides priority and stopifTrue capability. 
-* Get collection of all conditional formatting on a given range. 
-* Clears all conditional formats active on the current specified range. 
+* Returns the range the conditional format is applied to.
+* Removal of conditional formatting.
+* Provides priority and stopifTrue capability.
+* Get collection of all conditional formatting on a given range.
+* Clears all conditional formats active on the current specified range.
 
 |Object| What is new| Description|Requirement set|
 |:----|:----|:----|:----|

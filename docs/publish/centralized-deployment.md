@@ -13,7 +13,7 @@ The Office 365 admin center makes it easy for an administrator to deploy Office 
 The Office 365 admin center currently supports the following scenarios:
 
 - Centralized Deployment of new and updated add-ins to individuals, groups, or an organization.
-- Deployment to multiple platforms, including Windows and Office Online, with Mac coming soon.
+- Deployment to multiple platforms, including Windows and Office web clients, with Mac coming soon.
 - Deployment to English language and worldwide tenants.
 - Deployment of cloud-hosted add-ins.
 - Deployment of add-ins that are hosted within a firewall.
@@ -96,7 +96,7 @@ Admins can assign an add-in to everyone in the organization or to specific users
 
 - **Groups**: If you assign an add-in to a group, users who are added to the group will automatically be assigned the add-in. Likewise, when a user is removed from a group, the user automatically loses access to the add-in. In either case, no additional action is required from the Office 365 admin.
 
-In general, for ease of maintenance, we recommend assigning add-ins by using groups whenever possible. However, in situations where you want to restrict add-in access to a very small number of users, it may be more practical to assign the add-in to specific users. 
+In general, for ease of maintenance, we recommend assigning add-ins by using groups whenever possible. However, in situations where you want to restrict add-in access to a very small number of users, it may be more practical to assign the add-in to specific users.
 
 ## Add-in states
 
@@ -118,9 +118,9 @@ After an Office Add-in has been published via Centralized Deployment, any change
 
 ## End user experience with add-ins
 
-After an add-in has been published via Centralized Deployment, end users may start using it on any platform that the add-in supports. 
+After an add-in has been published via Centralized Deployment, end users may start using it on any platform that the add-in supports.
 
-If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. In the following example, the command **Search Citation** appears in the ribbon for the **Citations** add-in. 
+If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. In the following example, the command **Search Citation** appears in the ribbon for the **Citations** add-in.
 
 ![Screenshot shows a section of the Office ribbon with the Search Citation command highlighted in the Citations add-in](../images/search-citation.png)
 

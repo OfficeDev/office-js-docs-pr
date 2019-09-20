@@ -999,7 +999,7 @@ Closes the current item that is being composed.
 The behavior of the `close` method depends on the current state of the item being composed. If the item has unsaved changes, the client prompts the user to save, discard, or cancel the close action.
 
 > [!NOTE]
-> In Outlook on the web, if the item is an appointment and it has previously been saved using `saveAsync`, the user is prompted to save, discard, or cancel even if no changes have occurred since the item was last saved.
+> In Outlook, if the item is an appointment and it has previously been saved using `saveAsync`, the user is prompted to save, discard, or cancel even if no changes have occurred since the item was last saved.
 
 In the Outlook desktop client, if the message is an inline reply, the `close` method has no effect.
 
@@ -1714,7 +1714,7 @@ Since appointments have no draft state, if `saveAsync` is called on an appointme
 > The following clients have different behavior for `saveAsync` on appointments in compose mode:
 >
 > - Mac Outlook does not support `saveAsync` on a meeting in compose mode. Calling `saveAsync` on a meeting in Mac Outlook will return an error.
-> - Outlook on the web always sends an invitation or update when `saveAsync` is called on an appointment in compose mode.
+> - Outlook always sends an invitation or update when `saveAsync` is called on an appointment in compose mode.
 
 ##### Parameters
 

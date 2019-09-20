@@ -14,12 +14,12 @@ You can install an Office Add-in for testing in an Office client running on Wind
 
 This article applies only to testing a Word, Excel, or PowerPoint add-ins on Windows. If you want to test on another platform or want to test an Outlook add-in, see one of the following topics to sideload your add-in:
 
-- [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
+- [Sideload Office Add-ins in Office for testing](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 
-The following video walks you through the process of sideloading your add-in on Office desktop or Office Online using a shared folder catalog.  
+The following video walks you through the process of sideloading your add-in on Office using a shared folder catalog.  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
@@ -44,29 +44,29 @@ The following video walks you through the process of sideloading your add-in on 
 6. Choose the **Close** button to close the **Properties** dialog window.
 
 ## Specify the shared folder as a trusted catalog
-      
+
 1. Open a new document in Excel, Word, or PowerPoint.
-    
+
 2. Choose the **File** tab, and then choose **Options**.
-    
+
 3. Choose **Trust Center**, and then choose the **Trust Center Settings** button.
-    
+
 4. Choose **Trusted Add-in Catalogs**.
-    
-5. In the **Catalog Url** box, enter the full network path to the folder that you [shared](#share-a-folder) previously. If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot. 
+
+5. In the **Catalog Url** box, enter the full network path to the folder that you [shared](#share-a-folder) previously. If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot.
 
     ![folder Properties dialog with the Sharing tab and network path highlighted](../images/sideload-windows-properties-dialog-2.png)
-    
+
 6. After you've entered the full network path of the folder into the **Catalog Url** box, choose the **Add catalog** button.
 
-7. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window. 
+7. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window.
 
     ![Trust Center dialog with catalog selected](../images/sideload-windows-trust-center-dialog.png)
 
 8. Choose the **OK** button to close the **Word Options** dialog window.
 
 9. Close and reopen the Office application so your changes will take effect.
-    
+
 
 ## Sideload your add-in
 
@@ -87,4 +87,3 @@ The following video walks you through the process of sideloading your add-in on 
 
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
 - [Publish your Office Add-in](../publish/publish.md)
-    

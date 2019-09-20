@@ -11,11 +11,11 @@ localization_priority: Priority
 
 Use **[VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
 - Create UI elements or entry points that make your add-in's functionality easier to use.  
-  
+
 - Add buttons or a drop-down list of buttons to the ribbon.
-  
+
 - Add individual menu items — each containing optional submenus — to specific context (shortcut) menus.
-  
+
 - Perform actions when your add-in command is chosen. You can:
 
   - Show one or more task pane add-ins for users to interact with. Inside your task pane add-in, you can display HTML that uses Office UI Fabric to create a custom UI.
@@ -24,7 +24,7 @@ Use **[VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides
 
   - Run JavaScript code, which normally runs without displaying any UI.
 
-This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article. 
+This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
 
 The following image is an overview of add-in commands elements in the manifest.
 ![Overview of add-in commands elements in the manifest](../images/version-overrides.png)
@@ -38,7 +38,7 @@ We strongly recommend that you start from one of the samples we provide in  [Off
 To start using add-in commands, you must first create a task pane add-in, and then modify the add-in's manifest as described in this article. You can't use add-in commands with content add-ins. If you're updating an existing manifest, you must add the appropiate **XML namespaces** as well as add the **VersionOverrides** element to the manifest as described in [Step 3: Add VersionOverrides element](#step-3-add-versionoverrides-element).
 
 The following example shows an Office 2013 add-in's manifest. There are no add-in commands in this manifest because there is no **VersionOverrides** element. Office 2013 doesn't support add-in commands, but by adding **VersionOverrides** to this manifest, your add-in will run in both Office 2013 and Office 2016. In Office 2013, your add-in won't display add-in commands, and uses the value of **SourceLocation** to run your add-in as a single task pane add-in. In Office 2016, if no **VersionOverrides** element is included, **SourceLocation** is used to run your add-in. If you include **VersionOverrides**, however, your add-in displays the add-in commands only, and doesn't display your add-in as a single task pane add-in.
-  
+
 ```xml
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>657a32a9-ab8a-4579-ac9f-df1a11a64e52</Id>
@@ -48,7 +48,7 @@ The following example shows an Office 2013 add-in's manifest. There are no add-i
   <DisplayName DefaultValue="Contoso Add-in Commands" />
   <Description DefaultValue="Contoso Add-in Commands"/>
   <IconUrl DefaultValue="~remoteAppUrl/Images/Icon_32.png" />
- 
+
   <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
@@ -77,7 +77,7 @@ The **VersionOverrides** element is the root element that contains the definitio
 |**xsi:type** <br/> |Required. The schema version. The version described in this article is "VersionOverridesV1_0".  <br/> |
 
 The following table identifies the child elements of **VersionOverrides**.
-  
+
 |**Element**|**Description**|
 |:-----|:-----|
 |**Description** <br/> |Optional. Describes the add-in. This child **Description** element overrides a previous **Description** element in the parent portion of the manifest. The **resid** attribute for this **Description** element is set to the **id** of a **String** element. The **String** element contains the text for **Description**. <br/> |
@@ -103,7 +103,7 @@ The following example shows how to use the **VersionOverrides** element and its 
         <!-- add information about form factors -->
       </Host>
     </Hosts>
-    <Resources> 
+    <Resources>
       <!-- add information about resources -->
     </Resources>
   </VersionOverrides>
@@ -115,7 +115,7 @@ The following example shows how to use the **VersionOverrides** element and its 
 
 The **Hosts** element contains one or more **Host** elements. A **Host** element specifies a particular Office host. The **Host** element contains child elements that specify the add-in commands to display after your add-in is installed in that Office host. To show the same add-in commands in two or more different Office hosts, you must duplicate the child elements in each **Host**.
 
-The **DesktopFormFactor** element specifies the settings for an add-in that runs in Office on Windows desktop, and Office Online (in browser).
+The **DesktopFormFactor** element specifies the settings for an add-in that runs in Office on Windows desktop, and Office in browser.
 
 The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** elements.
 
@@ -144,13 +144,13 @@ The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** el
 The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](/office/dev/add-ins/reference/manifest/control#Button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
 
 The following is an example of the **FunctionFile** element.
-  
+
 ```xml
 <DesktopFormFactor>
     <FunctionFile resid="residDesktopFuncUrl" />
     <ExtensionPoint xsi:type="PrimaryCommandSurface">
       <!-- information about this extension point -->
-    </ExtensionPoint> 
+    </ExtensionPoint>
 
     <!-- You can define more than one ExtensionPoint element as needed -->
 </DesktopFormFactor>
@@ -188,7 +188,7 @@ The following code shows how to implement the function used by **FunctionName**.
                 }
             });
 
-        // Calling event.completed is required. event.completed lets the platform know that processing has completed. 
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
 </script>
@@ -208,8 +208,8 @@ The **ExtensionPoint** element defines where add-in commands should appear in th
 The following examples show how to use the **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
 
 > [!IMPORTANT]
-> For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format: `<CustomTab id="mycompanyname.mygroupname">`. 
-  
+> For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format: `<CustomTab id="mycompanyname.mygroupname">`.
+
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso Tab">
@@ -310,17 +310,17 @@ A button performs a single action when the user selects it. It can either execut
 
 ### Menu controls
 A **Menu** control can be used with either **PrimaryCommandSurface** or **ContextMenu**, and defines:
-  
+
 - A root-level menu item.
 
 - A list of submenu items.
- 
+
 When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
 
 The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function. In the **Control** element:
 
 - The **xsi:type** attribute is required, and must be set to **Menu**.
-  
+
 - The **id** attribute is a string with a maximum of 125 characters.
 
 ```xml
@@ -380,11 +380,11 @@ The following example shows how to define a menu item with two submenu items. Th
 |**SuperTip** <br/> | Required. The supertip for the menu, which is defined by the following: <br/> **Title** <br/>  Required. The text of the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> **Description** <br/>  Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
 |**Icon** <br/> | Required. Contains the **Image** elements for the menu. Image files must be .png format. <br/> **Image** <br/>  An image for the menu. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute indicates the size in pixels of the image. Three image sizes, in pixels, are required: 16, 32, and 80. Five optional sizes, in pixels, are also supported: 20, 24, 40, 48, and 64. <br/> |
 |**Items** <br/> |Required. Contains the **Item** elements for each submenu item. Each **Item** element contains the same child elements as [Button controls](/office/dev/add-ins/reference/manifest/control#Button-control).  <br/> |
-   
+
 ## Step 7: Add the Resources element
 
 The **Resources** element contains resources used by the different child elements of the **VersionOverrides** element. Resources include icons, strings, and URLs. An element in the manifest can use a resource by referencing the **id** of the resource. Using the **id** helps organize the manifest, especially when there are different versions of the resource for different locales. An **id** has a maximum of 32 characters.
-  
+
 The following shows an example of how to use the **Resources** element. Each resource can have one or more **Override** child elements to define a different resource for a specific locale.
 
 

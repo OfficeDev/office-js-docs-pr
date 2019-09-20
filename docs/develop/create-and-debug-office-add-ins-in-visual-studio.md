@@ -29,21 +29,21 @@ This article describes how to use Visual Studio 2017 to create an Office Add-in 
 
 ## Create the add-in project in Visual Studio
 
-Start by completing these three steps, and then complete the steps in the following section that corresponds to the type of add-in you're creating. 
+Start by completing these three steps, and then complete the steps in the following section that corresponds to the type of add-in you're creating.
 
 1. Open Visual Studio and from the Visual Studio menu bar, choose  **File** > **New** > **Project**.
 
-2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose the type of add-in project you want to create. 
+2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose the type of add-in project you want to create.
 
 3. Name the project, and then choose **OK**.
 
 ### Word Web Add-in or Outlook Web Add-in
 
-If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution). 
+If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution).
 
 ### PowerPoint Web Add-in
 
-If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears. 
+If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears.
 
 - To create a task pane add-in, select **Add new functionalities to PowerPoint** and then choose the **Finish** button to create the Visual Studio solution.
 
@@ -53,7 +53,7 @@ Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-so
 
 ### Excel Web Add-in
 
-If you've chosen to create an **Excel Web Add-in**, the **Create Office Add-in** dialog appears. 
+If you've chosen to create an **Excel Web Add-in**, the **Create Office Add-in** dialog appears.
 
 - To create a task pane add-in, select **Add new functionalities to Excel** and then choose the **Finish** button to create the Visual Studio solution.
 
@@ -73,7 +73,7 @@ To modify the settings of your add-in, edit the XML manifest file in the add-in 
 
 ## Develop the contents of your add-in
 
-While the add-in project lets you modify the settings that describe your add-in, the web application provides the content that appears in the add-in. 
+While the add-in project lets you modify the settings that describe your add-in, the web application provides the content that appears in the add-in.
 
 The web application project contains a default HTML file, JavaScript file, and CSS file that you can use to get started. Some of these files contain references to other JavaScript libraries including the JavaScript API for Office. You can develop your add-in by updating these files and/or adding more HTML and JavaScript files. The following table describes the default files that the web application project contains when the Visual Studio solution is created.
 
@@ -97,7 +97,7 @@ You can use Visual Studio to debug your add-in in the Office desktop client on W
 - [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
 
 > [!NOTE]
-> You cannot use Visual Studio to debug Office Add-ins in Office Online or Office for Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+> You cannot use Visual Studio to debug Office Add-ins in Office on the Web or Office for Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
 ### Review the build and debug properties
 
@@ -212,7 +212,7 @@ You can change your code and review the effects of those changes in your add-in 
 
 ### Debug the code for an Outlook add-in
 
-After you've [started the project](#start-the-project) and Visual Studio launches Outlook to host your add-in, open an email message or appointment item. 
+After you've [started the project](#start-the-project) and Visual Studio launches Outlook to host your add-in, open an email message or appointment item.
 
 Outlook activates the add-in for the item as long as the activation criteria are met. The add-in bar appears at the top of the Inspector window or Reading Pane, and your Outlook add-in appears as a button in the add-in bar. If your add-in has an add-in command, a button will appear in the ribbon, either in the default tab or a specified custom tab, and the add-in will not appear in the add-in bar.
 

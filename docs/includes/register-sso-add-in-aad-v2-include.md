@@ -29,8 +29,8 @@
 
 1. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office web client)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office web client)
 
 1. Open the **Scope** drop-down beside each **Application ID** and check the box for `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$/access_as_user`.
 

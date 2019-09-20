@@ -8,7 +8,7 @@ localization_priority: Priority
 
 # Loading the DOM and runtime environment
 
-An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic. 
+An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic.
 
 ## Startup of a content or task pane add-in
 
@@ -89,7 +89,7 @@ Office.initialize = function () {
 
 This same technique can be used in the **onReady** or **initialize** handlers of any Office Add-in.
 
-The phone dialer sample Outlook add-in shows a slightly different approach using only JavaScript to check these same conditions. 
+The phone dialer sample Outlook add-in shows a slightly different approach using only JavaScript to check these same conditions.
 
 > [!IMPORTANT]
 > Even if your add-in has no initialization tasks to perform, you must include at least a call of **Office.onReady** or assign minimal **Office.initialize** event handler function as shown in the following examples.
@@ -102,7 +102,7 @@ The phone dialer sample Outlook add-in shows a slightly different approach using
 >Office.initialize = function () {};
 >```
 >
-> If you do not call **Office.onReady** or assign an  **Office.initialize** event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run.
+> If you do not call **Office.onReady** or assign an  **Office.initialize** event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office web client, such as Excel, PowerPoint, or Outlook Web App, it will fail to run.
 >
 > If your add-in includes more than one page, whenever it loads a new page that page must either call **Office.onReady** or assign an  **Office.initialize** event handler.
 

@@ -11,7 +11,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 |**Method**|**Use...**|
 |:---------|:------------|
-|[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, Office Online, iPad, or Mac.|
+|[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, Office web clients, iPad, or Mac.|
 |[Centralized Deployment](centralized-deployment.md)|In a cloud or hybrid deployment, to distribute your add-in to users in your organization by using the Office 365 admin center.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[AppSource](/office/dev/store/submit-to-the-office-store)|To distribute your add-in publicly to users.|
@@ -48,7 +48,7 @@ The following sections provide additional information about the deployment metho
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
-### Centralized Deployment via the Office 365 admin center 
+### Centralized Deployment via the Office 365 admin center
 
 The Office 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups in their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.
 

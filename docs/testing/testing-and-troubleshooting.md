@@ -68,7 +68,7 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 |**Affected browsers**|**Affected platforms**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office Online|
+|Internet Explorer, Microsoft Edge|Office|
 
 To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
 
@@ -103,7 +103,7 @@ Call `window.location.reload(true)` from JavaScript in the add-in to force a rel
 
 ## See also
 
-- [Debug add-ins in Office Online](debug-add-ins-in-office-online.md) 
+- [Debug add-ins in Office](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)

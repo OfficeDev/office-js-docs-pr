@@ -246,7 +246,7 @@ This extension point puts buttons in the command surface for the mail read view 
 This extension point adds an event handler for a specified event.
 
 > [!NOTE]
-> This element type is only supported by Outlook on the web in Office 365.
+> This element type is only supported by Outlook in Office 365.
 
 | Element | Description  |
 |:-----|:-----|
@@ -267,7 +267,7 @@ This extension point adds a contextual add-in activation on a specified entity t
 The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
 
 > [!NOTE]
-> This element type is only supported by Outlook on the web in Office 365.
+> This element type is only supported by Outlook in Office 365.
 
 |  Element |  Description  |
 |:-----|:-----|

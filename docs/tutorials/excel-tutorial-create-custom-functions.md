@@ -36,7 +36,7 @@ In this tutorial, you will:
     > [!NOTE]
     > Even if you have previously installed the Yeoman generator, we recommend updating your package to the latest version from npm.
 
-* Excel for Windows (64-bit version 1810 or later) or Excel Online
+* Excel for Windows (64-bit version 1810 or later) or Excel
 
 * Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
 
@@ -72,7 +72,7 @@ In this tutorial, you will:
     npm run build
     ```
 
-5. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel Online.
+5. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel.
 
 # [Excel for Windows](#tab/excel-windows)
 
@@ -87,7 +87,7 @@ This command starts the web server, and sideloads your custom function add-in in
 > [!NOTE]
 > If your add-in does not load, check that you have completed step 3 properly. You can also enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as any installation or runtime problems. Runtime logging writes `console.log` statements to a log file to help you find and fix issues.
 
-# [Excel Online](#tab/excel-online)
+# [Excel](#tab/excel-online)
 
 Run the following command.
 
@@ -98,8 +98,8 @@ npm start web
 This command starts the web server. Use the following steps to sideload your add-in.
 
 <ol type="a">
-   <li>In Excel Online, choose the <strong>Insert</strong> tab and then choose <strong>Add-ins</strong>.<br/>
-   <img src="../images/excel-cf-online-register-add-in-1.png" alt="Insert ribbon in Excel Online with the My Add-ins icon highlighted"></li>
+   <li>In Excel, choose the <strong>Insert</strong> tab and then choose <strong>Add-ins</strong>.<br/>
+   <img src="../images/excel-cf-online-register-add-in-1.png" alt="Insert ribbon in Excel with the My Add-ins icon highlighted"></li>
    <li>Choose <strong>Manage My Add-ins</strong> and select <strong>Upload My Add-in</strong>.</li> 
    <li>Choose <strong>Browse...</strong> and navigate to the root directory of the project that the Yeoman generator created.</li> 
    <li>Select the file <strong>manifest.xml</strong> and choose <strong>Open</strong>, then choose <strong>Upload</strong>.</li>
@@ -197,10 +197,10 @@ Integrating data from the Web is a great way to extend Excel through custom func
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
     ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
-# [Excel Online](#tab/excel-online)
+# [Excel](#tab/excel-online)
 
-1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
-    ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
+    ![Insert ribbon in Excel with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
 
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
 
@@ -301,10 +301,10 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
     ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
-# [Excel Online](#tab/excel-online)
+# [Excel](#tab/excel-online)
 
-1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
-    ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
+    ![Insert ribbon in Excel with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
 
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 

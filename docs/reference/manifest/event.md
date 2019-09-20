@@ -10,7 +10,7 @@ localization_priority: Normal
 Defines an event handler in an add-in.
 
 > [!NOTE] 
-> The `Event` element is currently only supported by Outlook on the web in Office 365.
+> The `Event` element is currently only supported by Outlook in Office 365.
 
 ## Attributes
 

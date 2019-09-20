@@ -8,7 +8,7 @@ localization_priority: Priority
 
 # Resource limits and performance optimization for Office Add-ins
 
-To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running on Office clients for Windows and OS X, but not Office Online, Outlook Web App, or OWA for Devices. 
+To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running on Office clients for Windows and OS X, but not Office on the web or running on devices. 
 
 You can also optimize the performance of your add-ins on desktop and mobile devices by optimizing the use of resources in your add-in design and implementation.
 
@@ -62,7 +62,7 @@ Office provides a Telemetry Log that maintains a record of certain events (loadi
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
-For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log. 
+For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
 |**Date/Time**|**Event ID**|**Severity**|**Title**|**File**|**ID**|**Application**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
@@ -89,7 +89,7 @@ For more information, see [Deploying Telemetry Dashboard](/previous-versions/off
 
 While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the host application can remain responsive:
 
-- In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation. 
+- In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation.
 
    For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
 

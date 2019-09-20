@@ -71,13 +71,13 @@ To start, you'll use the Yeoman generator to create the custom functions project
         ```
         After running this command, your command prompt will show details about starting the web server. Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.
 
-    - If you use Excel Online to test your custom functions, run the following command to start the local web server:
+    - If you use Excel to test your custom functions, run the following command to start the local web server:
 
         ```
         npm run start-web
         ```
 
-         After running this command, your command prompt will show details about starting the web server. To use your functions, open a new workbook in Excel Online. In this workbook, you'll need to load your add-in. 
+         After running this command, your command prompt will show details about starting the web server. To use your functions, open a new workbook in Excel. In this workbook, you'll need to load your add-in. 
 
         To do this, select the **Insert** tab on the ribbon and select **Get Add-ins**. In the resulting new window, ensure you are on the **My Add-ins** tab. Next, select **Manage My Add-ins > Upload My Add-in**. Browse for your manifest file and upload it. If your add-in does not load, check you've completed step 3 correctly.
 

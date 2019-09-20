@@ -28,7 +28,7 @@ function add42(a, b) {
 
 ## Components of a custom functions add-in project
 
-If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions: 
+If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions:
 
 | File | File format | Description |
 |------|-------------|-------------|
@@ -47,7 +47,7 @@ The following code also provides code comments which define the function. The re
 ```js
 /**
  * Adds two numbers.
- * @customfunction 
+ * @customfunction
  * @param first First number
  * @param second Second number
  * @returns The sum of the two numbers.
@@ -63,11 +63,11 @@ function add(first, second){
 
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. 
+The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files.
 
 The following basic XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions. If using the Yo Office generator, your generated custom function files will contain a more complex manifest file, which you can compare on [this Github repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml).
 
-> [!NOTE] 
+> [!NOTE]
 > The URLs specified in the manifest file for the custom functions JavaScript, JSON, and HTML files must be publicly accessible and have the same subdomain.
 
 ```xml
@@ -158,7 +158,7 @@ The following code sample shows an implementation of a temperature-streaming fun
 
 - Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.
 
-- If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs. 
+- If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs.
 
 - The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable. Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
 
@@ -194,7 +194,7 @@ function refreshTemperature(thermometerID){
 
 ## Coauthoring
 
-Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
+Excel web versions and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 

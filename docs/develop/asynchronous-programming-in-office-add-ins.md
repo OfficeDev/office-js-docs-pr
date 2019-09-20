@@ -12,13 +12,13 @@ Why does the Office Add-ins API use asynchronous programming? Because JavaScript
 
 The names of all asynchronous methods in the API end with "Async", such as the  [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [Binding.getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-), or [Item.loadCustomPropertiesAsync](/javascript/api/outlook/office.item#loadcustompropertiesasync-callback--usercontext-) methods. When an "Async" method is called, it executes immediately and any subsequent script execution can continue. The optional callback function you pass to an "Async" method executes as soon as the data or requested operation is ready. This generally occurs promptly, but there can be a slight delay before it returns.
 
-The following diagram shows the flow of execution for a call to an "Async" method that reads the data the user selected in a document open in the server-based Word Online or Excel Online. At the point when the "Async" call is made, the JavaScript execution thread is free to perform any additional client-side processing. (Although none are shown in the diagram.) When the "Async" method returns, the callback resumes execution on the thread, and the add-in can the access data, do something with it, and display the result. The same asynchronous execution pattern holds when working with the Office rich client host applications, such as Word 2013 or Excel 2013.
+The following diagram shows the flow of execution for a call to an "Async" method that reads the data the user selected in a document open in the server-based Word or Excel. At the point when the "Async" call is made, the JavaScript execution thread is free to perform any additional client-side processing. (Although none are shown in the diagram.) When the "Async" method returns, the callback resumes execution on the thread, and the add-in can the access data, do something with it, and display the result. The same asynchronous execution pattern holds when working with the Office rich client host applications, such as Word 2013 or Excel 2013.
 
 *Figure 1. Asynchronous programing execution flow*
 
 ![Asynchronous programming thread execution flow](../images/office15-app-async-prog-fig01.png)
 
-Support for this asynchronous design in both rich and web clients is part of the "write once-run cross-platform" design goals of the Office Add-ins development model. For example, you can create a content or task pane add-in with a single code base that will run in both Excel 2013 and Excel Online.
+Support for this asynchronous design in both rich and web clients is part of the "write once-run cross-platform" design goals of the Office Add-ins development model. For example, you can create a content or task pane add-in with a single code base that will run in both Excel 2013 and Excel web versions.
 
 ## Writing the callback function for an "Async" method
 
@@ -53,7 +53,7 @@ The following example shows how to pass this anonymous callback function in line
 
 
 ```js
-Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, 
+Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
     function (result) {
         write('Selected data: ' + result.value);
     }
@@ -61,13 +61,13 @@ Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
 You can also use the parameter of your callback function to access other properties of the  **AsyncResult** object. Use the [AsyncResult.status](/javascript/api/office/office.asyncresult#status) property to determine if the call succeeded or failed. If your call fails you can use the [AsyncResult.error](/javascript/api/office/office.asyncresult#error) property to access an [Error](/javascript/api/office/office.error) object for error information.
 
-For more information about using the  **getSelectedDataAsync** method, see [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
+For more information about using the  **getSelectedDataAsync** method, see [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
 
 ### Writing a named callback function
@@ -76,7 +76,7 @@ Alternatively, you can write a named function and pass its name to the  _callbac
 
 
 ```js
-Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, 
+Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
     writeDataCallback);
 
 // Callback to write the selected data to the add-in UI.
@@ -86,7 +86,7 @@ function writeDataCallback(result) {
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -110,9 +110,9 @@ The JavaScript API for Office supports two kinds of asynchronous programming pat
 
 
 - Using nested callbacks
-    
+
 - Using the promises pattern
-    
+
 Asynchronous programming with callback functions frequently requires you to nest the returned result of one callback within two or more callbacks. If you need to do so, you can use nested callbacks from all "Async" methods of the API.
 
 Using nested callbacks is a programming pattern familiar to most JavaScript developers, but code with deeply nested callbacks can be difficult to read and understand. As an alternative to nested callbacks, the JavaScript API for Office also supports an implementation of the promises pattern. However, in the current version of the JavaScript API for Office, the promises pattern only works with code for [bindings in Excel spreadsheets and Word documents](bind-to-regions-in-a-document-or-spreadsheet.md).
@@ -144,7 +144,7 @@ function readData() {
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -228,7 +228,7 @@ function onError(result){
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -293,7 +293,7 @@ Office.context.document.setSelectedDataAsync(
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -380,7 +380,7 @@ document.setSelectedDataAsync(
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 

@@ -9,7 +9,7 @@ localization_priority: Priority
 
 ## Understanding the add-in runtime
 
-Office Add-ins are secured by an add-in runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways: 
+Office Add-ins are secured by an add-in runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways:
 
 - Access to the host application's UI frame is managed.
 
@@ -25,9 +25,9 @@ Further, the runtime framework provides the following benefits to ensure that an
 
 - Makes add-ins easy to install and uninstall.
 
-Also, the use of memory, CPU, and network resources by Office Add-ins is governable to ensure that good performance and reliability are maintained. 
+Also, the use of memory, CPU, and network resources by Office Add-ins is governable to ensure that good performance and reliability are maintained.
 
-The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on OS X Mac devices, and in Office Online clients on the web.
+The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on OS X Mac devices, and in Office clients on the web.
 
 > [!NOTE]
 > To learn about using WIP and Intune with Office Add-ins, see [Use WIP and Intune to protect enterprise data in documents running Office Add-ins](/microsoft-365/enterprise/office-add-ins-wip).
@@ -42,7 +42,7 @@ On Windows desktops, Protect Mode in Internet Explorer must be enabled for the R
 
 ![Rich-client infrastructure](../images/dk2-agave-overview-02.png)
 
-As shown in the following figure, on an OS X Mac desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection. 
+As shown in the following figure, on an OS X Mac desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection.
 
 *Figure 2. Office Add-ins runtime environment in OS X Mac clients*
 
@@ -52,7 +52,7 @@ The Office Add-ins runtime manages interprocess communication, the translation o
 
 ### Web clients
 
-In supported Web clients, such as Excel Online and Outlook Web App, Office Add-ins are hosted in an  **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. The following figure shows the infrastructure that supports Office Add-ins in Office Online (running in the browser), and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
+In supported Web clients, such as Excel and Outlook Web App, Office Add-ins are hosted in an  **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. The following figure shows the infrastructure that supports Office Add-ins in Office running in the browser, and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
 
 *Figure 3. Infrastructure that supports Office Add-ins in Office web clients*
 
@@ -126,7 +126,7 @@ The following example shows how a task pane add-in specifies the  **ReadDocument
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-           xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
            xmlns:ver="http://schemas.microsoft.com/office/appforoffice/1.0"
            xsi:type="TaskPaneApp">
 
@@ -150,7 +150,7 @@ Because Office Add-ins are webpages that run in a web browser control, they must
 
 One way to overcome this limitation is to use JSON/P -- provide a proxy for the web service by including a  **script** tag with a **src** attribute that points to some script hosted on another domain. You can programmatically create the **script** tags, dynamically creating the URL to which to point the **src** attribute, and passing parameters to the URL via URI query parameters. Web service providers create and host JavaScript code at specific URLs, and return different scripts depending on the URI query parameters. These scripts then execute where they are inserted and work as expected.
 
-The following is an example of JSON/P in the Outlook add-in example. 
+The following is an example of JSON/P in the Outlook add-in example.
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
@@ -158,8 +158,8 @@ function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.
     var script = document.createElement("script");
     // Specify the URL to retrieve the indicated video from a feed of a current list of videos,
-    // as the value of the src attribute of the SCRIPT element. 
-    script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" + 
+    // as the value of the src attribute of the SCRIPT element.
+    script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" +
         videos[videoIndex].Id + "?alt=json-in-script&amp;callback=videoDetailsLoaded");
     // Insert the SCRIPT element at the end of the HEAD section.
     document.getElementsByTagName('head')[0].appendChild(script);
@@ -193,7 +193,7 @@ An ill-intentioned user could attack the origin of an add-in by entering malicio
 
 ### Tips to prevent "Clickjacking"
 
-Because Office Add-ins are rendered in an iframe when running in a browser with Office Online host applications, use the following tips to minimize the risk of [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) -- a technique used by hackers to fool users into revealing confidential information.
+Because Office Add-ins are rendered in an iframe when running in a browser with Office host applications, use the following tips to minimize the risk of [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) -- a technique used by hackers to fool users into revealing confidential information.
 
 First, identify sensitive actions that your add-in can perform. These include any actions that an unauthorized user could use with malicious intent, such as initiating a financial transaction or publishing sensitive data. For example, your add-in might let the user send a payment to a user-defined recipient.
 

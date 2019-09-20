@@ -1,6 +1,6 @@
 ---
 title: Build your first Word add-in
-description: 
+description:
 ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
@@ -26,7 +26,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
 
-2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type. 
+2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.
 
 3. Name the project, and then choose **OK**.
 
@@ -175,7 +175,7 @@ In this article, you'll walk through the process of building a Word add-in by us
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -406,7 +406,7 @@ In this article, you'll walk through the process of building a Word add-in by us
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -447,14 +447,14 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ### Start the dev server
 
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+[!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
 ### Try it out
 
 1. To sideload the add-in within Word, follow the instructions for the platform you'll use to run your add-in.
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Word web versions: [Sideload Office Add-ins in Office](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.

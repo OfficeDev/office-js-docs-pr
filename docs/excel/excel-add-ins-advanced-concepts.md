@@ -56,7 +56,7 @@ The following code sample shows the **Requirements** element in an add-in manife
 ```
 
 > [!NOTE]
-> To make your add-in available on all platforms of an Office host, such as Excel for Windows, Excel Online, and Excel for iPad, we recommend that you check for requirement support at runtime instead of defining requirement set support in the manifest.
+> To make your add-in available on all platforms of an Office host, such as Excel for Windows, Excel, and Excel for iPad, we recommend that you check for requirement support at runtime instead of defining requirement set support in the manifest.
 
 ### Requirement sets for the Office.js Common API
 

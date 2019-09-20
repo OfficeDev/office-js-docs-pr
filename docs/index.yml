@@ -10,13 +10,13 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
+  description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office running on the web, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
   aside:
     image:
-      alt: 
+      alt:
       height: 130
       src: https://docs.microsoft.com/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
-      width: 250  
+      width: 250
     title: Get started with Office Add-ins. (14:10)
     href: https://channel9.msdn.com/Events/Connect/2017/T192
     width: 250
@@ -27,33 +27,33 @@ sections:
     text: 'Learn how to create your first Office Add-in:'
   - type: list
     style: icon48
-    items: 
-    - image: 
+    items:
+    - image:
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/ExcelLogoColor.svg
         alt: 'Excel logo'
       text: Excel
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery
-    - image: 
+    - image:
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/WordLogoColor.svg
         alt: 'Word logo'
       text: Word
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/word-quickstart
-    - image: 
+    - image:
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/OneNoteLogoColor.svg
         alt: 'OneNote logo'
       text: OneNote
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/onenote-quickstart
-    - image: 
+    - image:
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/OutlookLogoColor.svg
         alt: 'Outlook logo'
       text: Outlook
       href: https://docs.microsoft.com/outlook/add-ins/quick-start
-    - image: 
+    - image:
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/PowerPointLogoColor.svg
         alt: 'PowerPoint logo'
       text: PowerPoint
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart
-    - image: 
+    - image:
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
         alt: 'Project logo'
       text: Project

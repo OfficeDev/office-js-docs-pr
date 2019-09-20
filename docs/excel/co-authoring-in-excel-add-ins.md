@@ -15,7 +15,7 @@ With [coauthoring](https://support.office.com/article/Collaborate-on-Excel-workb
 
 Coauthoring is available on the following platforms:
 
-- Excel Online
+- Excel web clients
 - Excel for Android
 - Excel for iOS
 - Excel Mobile for Windows 10
@@ -28,7 +28,7 @@ When you change a workbook's content, Excel automatically synchronizes those cha
 ```js
 range.values = [['Contoso']];
 ```
-After 'Contoso' synchronizes across all coauthors, any user or add-in running in the same workbook will see the new value of the range. 
+After 'Contoso' synchronizes across all coauthors, any user or add-in running in the same workbook will see the new value of the range.
 
 Coauthoring only synchronizes the content within the shared workbook. Values copied from the workbook to JavaScript variables in an Excel add-in are not synchronized. For example, if your add-in stores the value of a cell (such as 'Contoso') in a JavaScript variable, and then a coauthor changes the value of the cell to 'Example', after synchronization all coauthors see 'Example' in the cell. However, the value of the JavaScript variable is still set to 'Contoso'. Furthermore, when multiple coauthors use the same add-in, each coauthor has their own copy of the variable, which is not synchronized. When you use variables that use workbook content, be sure you check for updated values in the workbook before you use the variable.
 
@@ -47,7 +47,7 @@ If you want User A's custom visualizations to respond to changes made by coautho
 
 ## Caveats to using events with coauthoring
 
-As described earlier, in some scenarios, triggering events for all coauthors provides an improved user experience. However, be aware that in some scenarios this behavior can produce poor user experiences. 
+As described earlier, in some scenarios, triggering events for all coauthors provides an improved user experience. However, be aware that in some scenarios this behavior can produce poor user experiences.
 
 For example, in data validation scenarios, it is common to display UI in response to events. The [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event described in the previous section runs when either a local user or coauthor (remote) changes the workbook content within the binding. If the event handler of the **BindingDataChanged** event displays UI, users will see UI that is unrelated to changes they were working on in the workbook, leading to a poor user experience. Avoid displaying UI when using events in your add-in.
 

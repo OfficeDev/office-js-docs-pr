@@ -9,7 +9,7 @@ localization_priority: Normal
 
 ### [Office](Office.md)[.context](Office.context.md).mailbox
 
-Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
+Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ##### Requirements
 
@@ -316,7 +316,7 @@ Makes an asynchronous request to an Exchange Web Services (EWS) service on the E
 > This method is not supported in the following scenarios.
 > - In Outlook for iOS or Outlook for Android
 > - When the add-in is loaded in a Gmail mailbox
-> 
+>
 > In these cases, add-ins should [use REST APIs](/outlook/add-ins/use-rest-api) to access the user's mailbox instead.
 
 The `makeEwsRequestAsync` method sends an EWS request on behalf of the add-in to Exchange. See [Call web services from an Outlook add-in](/outlook/add-ins/web-services#ews-operations-that-add-ins-support) for a list of the supported EWS operations.
@@ -342,7 +342,7 @@ When you use the `makeEwsRequestAsync` method in mail apps running in Outlook ve
 <?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
-You do not need to set the encoding value when your mail app is running in Outlook on the web. You can determine whether your mail app is running in Outlook or Outlook on the web by using the mailbox.diagnostics.hostName property. You can determine what version of Outlook is running by using the mailbox.diagnostics.hostVersion property.
+You do not need to set the encoding value when your mail app is running in Outlook. You can determine whether your mail app is running in Outlook or Outlook by using the mailbox.diagnostics.hostName property. You can determine what version of Outlook is running by using the mailbox.diagnostics.hostVersion property.
 
 ##### Parameters
 

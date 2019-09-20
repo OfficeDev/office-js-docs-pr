@@ -332,7 +332,7 @@ In the example, the first parameter is the value to set on  `myBinding`. Because
 The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The function is called with a single parameter,  `asyncResult`, which contains the status of the result.
 
 > [!NOTE]
-> Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).
+> Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).
 
 
 ## Detect changes to data or the selection in a binding

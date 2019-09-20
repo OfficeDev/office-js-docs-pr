@@ -169,7 +169,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Excel: [Sideload Office Add-ins in Office](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
 
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -736,7 +736,7 @@ Open the /function-file/function-file.html file. This is a UI-less HTML file tha
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Excel: [Sideload Office Add-ins in Office](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
 
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 

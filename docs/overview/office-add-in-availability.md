@@ -22,7 +22,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office web client</td>
     <td> - TaskPane<br>
         - Content<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
@@ -272,7 +272,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office web client</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -414,7 +414,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office web client</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -670,7 +670,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office web client</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -826,7 +826,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office web client</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>

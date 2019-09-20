@@ -23,7 +23,7 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 > [!TIP]
-> When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server. 
+> When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server.
 
 For content and task pane add-ins, in the supported Office host applications - Access web apps, Word, Excel, PowerPoint, or Project - you also need an [add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
 
@@ -61,7 +61,7 @@ The following are the minimum client versions of Office for Mac that support Off
 - Excel for Mac version 15.19 (160206)
 - PowerPoint for Mac version 15.24 (160614)
 
-## Client requirements: Browser support for Office Online web clients and SharePoint
+## Client requirements: Browser support for Office web clients and SharePoint
 
 Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11 or later, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
