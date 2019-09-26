@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs'
-ms.date: 08/15/2019
+ms.date: 09/24/2019
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -28,21 +28,27 @@ The following table lists the Excel JavaScript APIs currently in preview. To see
 | Class | Fields | Description |
 |:---|:---|:---|
 |[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|Gets or sets the comment's content. The string is plain text.|
-||[delete()](/javascript/api/excel/excel.comment#delete--)|Deletes the comment thread.|
+||[delete()](/javascript/api/excel/excel.comment#delete--)|Deletes the comment and all the connected replies.|
 ||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Gets the cell where this comment is located.|
 ||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Gets the email of the comment's author.|
 ||[authorName](/javascript/api/excel/excel.comment#authorname)|Gets the name of the comment's author.|
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Gets the creation time of the comment. Returns null if the comment was converted from a note, since the comment does not have a creation date.|
 ||[id](/javascript/api/excel/excel.comment#id)|Represents the comment identifier. Read-only.|
+||[mentions](/javascript/api/excel/excel.comment#mentions)|Gets the entities (e.g. people) that are mentioned in comments.|
 ||[replies](/javascript/api/excel/excel.comment#replies)|Represents a collection of reply objects associated with the comment. Read-only.|
+||[richContent](/javascript/api/excel/excel.comment#richcontent)|Gets the rich comment content (e.g. mentions in comments). This string is not meant to be displayed to end-users. Your add-in should only use this to parse rich comment content.|
 ||[resolved](/javascript/api/excel/excel.comment#resolved)|Gets or sets the comment thread status. A value of "true" means the comment thread is in the resolved state.|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(content: string, cellAddress: Range \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|Creates a new comment (comment thread) with the given content on the given cell. An `InvalidArgument` error is thrown if the provided range is larger than one cell.|
+||[updateMentions(contentWithMentions: Excel.CommentRichContent)](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|Updates the comment content with a specially formatted string and a list of mentions.|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(cellAddress: Range \| string, content: CommentRichContent \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|Creates a new comment with the given content on the given cell. An `InvalidArgument` error is thrown if the provided range is larger than one cell.|
 ||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|Gets the number of comments in the collection.|
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|Gets a comment from the collection based on its ID. Read-only.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|Gets a comment from the collection based on its position.|
 ||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getitembycell-celladdress-)|Gets the comment from the specified cell.|
-||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|Gets a comment related to its reply ID in the collection.|
+||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|Gets the comment to which the given reply is connected.|
 ||[items](/javascript/api/excel/excel.commentcollection#items)|Gets the loaded child items in this collection.|
+|[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|Gets or sets the email address of the entity that is mentioned in comment.|
+||[id](/javascript/api/excel/excel.commentmention#id)|Gets or sets the id of the entity. This is aligned with the id information in `CommentRichContent.richContent`.|
+||[name](/javascript/api/excel/excel.commentmention#name)|Gets or sets the name of the entity that is mentioned in comment.|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|Gets or sets the comment reply's content. The string is plain text.|
 ||[delete()](/javascript/api/excel/excel.commentreply#delete--)|Deletes the comment reply.|
 ||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Gets the cell where this comment reply is located.|
@@ -51,12 +57,17 @@ The following table lists the Excel JavaScript APIs currently in preview. To see
 ||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Gets the name of the comment reply's author.|
 ||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|Gets the creation time of the comment reply.|
 ||[id](/javascript/api/excel/excel.commentreply#id)|Represents the comment reply identifier. Read-only.|
+||[mentions](/javascript/api/excel/excel.commentreply#mentions)|Gets the entities (e.g. people) that are mentioned in comments.|
 ||[resolved](/javascript/api/excel/excel.commentreply#resolved)|Gets or sets the comment reply status. A value of "true" means the comment reply is in the resolved state.|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Creates a comment reply for comment.|
+||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|Gets the rich comment content (e.g. mentions in comments). This string is not meant to be displayed to end-users. Your add-in should only use this to parse rich comment content.|
+||[updateMentions(contentWithMentions: Excel.CommentRichContent)](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|Updates the comment content with a specially formatted string and a list of mentions.|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: CommentRichContent \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Creates a comment reply for comment.|
 ||[getCount()](/javascript/api/excel/excel.commentreplycollection#getcount--)|Gets the number of comment replies in the collection.|
 ||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|Returns a comment reply identified by its ID. Read-only.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|Gets a comment reply based on its position in the collection.|
 ||[items](/javascript/api/excel/excel.commentreplycollection#items)|Gets the loaded child items in this collection.|
+|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[mentions](/javascript/api/excel/excel.commentrichcontent#mentions)|An array containing all the entities (e.g. people) mentioned within the comment.|
+||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|Specifies whether the field list can be shown in the UI.|
 ||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Gets a unique cell in the PivotTable based on a data hierarchy and the row and column items of their respective hierarchies. The returned cell is the intersection of the given row and column that contains the data from the given hierarchy. This method is the inverse of calling getPivotItems and getDataHierarchy on a particular cell.|
 |[PivotTableStyle](/javascript/api/excel/excel.pivottablestyle)|[delete()](/javascript/api/excel/excel.pivottablestyle#delete--)|Deletes the PivotTableStyle.|
@@ -84,6 +95,7 @@ The following table lists the Excel JavaScript APIs currently in preview. To see
 ||[width](/javascript/api/excel/excel.range#width)|Returns the distance in points, for 100% zoom, from left edge of the range to right edge of the range. Read-only.|
 ||[showGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#showgroupdetails-groupoption-)|Show details of the row or column group.|
 ||[ungroup(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#ungroup-groupoption-)|Ungroups columns and rows for an outline.|
+|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent(amount: number)](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|Adjusts the indentation of the range formatting. The indent value ranges from 0 to 250.|
 |[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyto-destinationsheet-)|Copies and pastes a Shape object.|
 ||[placement](/javascript/api/excel/excel.shape#placement)|Represents how the object is attached to the cells below it.|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addsvg-xml-)|Creates a scalable vector graphic (SVG) from an XML string and adds it to the worksheet. Returns a Shape object that represents the new image.|
@@ -99,8 +111,8 @@ The following table lists the Excel JavaScript APIs currently in preview. To see
 ||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|True if all filters currently applied on the slicer are cleared.|
 ||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|Represents the collection of SlicerItems that are part of the slicer. Read-only.|
 ||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|Represents the worksheet containing the slicer. Read-only.|
-||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|Select slicer items based on their keys. Previous selection will be cleared.|
-||[sortBy](/javascript/api/excel/excel.slicer#sortby)|Represents the sort order of the items in the slicer. Possible values are: DataSourceOrder, Ascending, Descending.|
+||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|Selects slicer items based on their keys. The previous selections are cleared.|
+||[sortBy](/javascript/api/excel/excel.slicer#sortby)|Represents the sort order of the items in the slicer. Possible values are: "DataSourceOrder", "Ascending", "Descending".|
 ||[style](/javascript/api/excel/excel.slicer#style)|Constant value that represents the Slicer style. Possible values are: "SlicerStyleLight1" through "SlicerStyleLight6", "TableStyleOther1" through "TableStyleOther2", "SlicerStyleDark1" through "SlicerStyleDark6". A custom user-defined style present in the workbook can also be specified.|
 ||[top](/javascript/api/excel/excel.slicer#top)|Represents the distance, in points, from the top edge of the slicer to the top of the worksheet.|
 ||[width](/javascript/api/excel/excel.slicer#width)|Represents the width, in points, of the slicer.|
@@ -133,7 +145,7 @@ The following table lists the Excel JavaScript APIs currently in preview. To see
 |[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|Changes the table to use the default table style.|
 ||[onFiltered](/javascript/api/excel/excel.table#onfiltered)|Occurs when filter is applied on a specific table.|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|Occurs when filter is applied on any table in a workbook, or a worksheet.|
-|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Represents the id of the table in which the filter is applied..|
+|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Represents the id of the table in which the filter is applied.|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Represents the id of the worksheet which contains the table.|
 |[TableStyle](/javascript/api/excel/excel.tablestyle)|[delete()](/javascript/api/excel/excel.tablestyle#delete--)|Deletes the TableStyle.|
@@ -170,31 +182,31 @@ The following table lists the Excel JavaScript APIs currently in preview. To see
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|Save current workbook.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True if the workbook uses the 1904 date system.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|Returns a collection of all the Comments objects on the worksheet. Read-only.|
-||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Occurs when sorting on columns.|
+||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Occurs when one or more columns have been sorted. This happens as the result of a left-to-right sort operation.|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Occurs when filter is applied on a specific worksheet.|
-||[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|Occurs when row hidden state changed on a specific worksheet.|
-||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Occurs when sorting on rows.|
-||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Occurs when left-clicked/tapped operation happens in the worksheet. This event will not be fired when clicking in the following cases: [...]|
+||[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|Occurs when the hidden state of one or more rows has changed on a specific worksheet.|
+||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Occurs when one or more rows have been sorted. This happens as the result of a top-to-bottom sort operation.|
+||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Occurs when left-clicked/tapped operation happens in the worksheet. This event will not be fired when clicking in the following cases:|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Returns collection of slicers that are part of the worksheet. Read-only.|
 ||[showOutlineLevels(rowLevels: number, columnLevels: number)](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|Shows row or column groups by their outline levels.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Inserts the specified worksheets of a workbook into the current workbook.|
-||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Occurs when sorting on columns.|
+||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Occurs when one or more columns have been sorted. This happens as the result of a left-to-right sort operation.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Occurs when any worksheet's filter is applied in the workbook.|
-||[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|Occurs when any worksheet in the workbook has row hidden state changed.|
-||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Occurs when sorting on rows.|
-||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|Occurs when left-clicked/tapped operation happens in the worksheet collection. This event will not be fired when clicking in the following cases: [...]|
-|[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet.|
+||[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|Occurs when the hidden state of one or more rows has changed on a specific worksheet.|
+||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Occurs when one or more rows have been sorted. This happens as the result of a top-to-bottom sort operation.|
+||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|Occurs when left-clicked/tapped operation happens in the worksheet collection. This event will not be fired when clicking in the following cases:|
+|[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet. Only columns changed as a result of the sort operation are returned.|
 ||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
 ||[type](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#worksheetid)|Gets the id of the worksheet where the sorting happened.|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|Represents the id of the worksheet in which the filter is applied.|
 |[WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs)|[address](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
-||[changeType](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#changetype)|Gets the change type that represents how the RowHiddenChanged event is triggered. See Excel.RowHiddenChangeType for details.|
+||[changeType](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#changetype)|Gets the type of change that represents how the event was triggered. See `Excel.RowHiddenChangeType` for details.|
 ||[source](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
 ||[type](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#worksheetid)|Gets the id of the worksheet in which the data changed.|
-|[WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs)|[address](/javascript/api/excel/excel.worksheetrowsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet.|
+|[WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs)|[address](/javascript/api/excel/excel.worksheetrowsortedeventargs#address)|Gets the range address that represents the sorted areas of a specific worksheet. Only rows changed as a result of the sort operation are returned.|
 ||[source](/javascript/api/excel/excel.worksheetrowsortedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
 ||[type](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetid)|Gets the id of the worksheet where the sorting happened.|
