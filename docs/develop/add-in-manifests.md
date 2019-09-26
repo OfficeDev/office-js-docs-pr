@@ -124,7 +124,7 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
   <Version>1.0</Version>
   <ProviderName>Contoso, Ltd</ProviderName>
@@ -162,7 +162,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
   <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided -->
 
-  <!--IMPORTANT! Id must be unique for your add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+  <!--IMPORTANT! Id must be unique for your add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
@@ -358,7 +358,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
-  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
   <Version>1.0.0.0</Version>
@@ -398,7 +398,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   "http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
-  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
   <Version>1.0</Version>
   <ProviderName>Microsoft</ProviderName>

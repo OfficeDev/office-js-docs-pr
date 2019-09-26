@@ -126,7 +126,7 @@ The following steps show how to add an icon file to the Visual Studio solution:
     <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-        <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+        <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
         <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82</Id>
         <Version>1.0</Version>
         <ProviderName> [Provider name]</ProviderName>

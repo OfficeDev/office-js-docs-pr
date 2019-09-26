@@ -70,7 +70,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:type="TaskPaneApp">
-      <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+      <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
       <Id>01234567-89ab-cedf-0123-456789abcdef</Id>
       <Version>15.0</Version>
       <ProviderName>Microsoft</ProviderName>
@@ -110,7 +110,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
                 xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
               xsi:type="TaskPaneApp">
-      <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+      <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
       <Id>01234567-89ab-cedf-0123-456789abcdef</Id>
       <Version>15.0</Version>
       <ProviderName>Microsoft</ProviderName>
