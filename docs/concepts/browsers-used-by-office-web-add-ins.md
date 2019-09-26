@@ -49,7 +49,7 @@ The following table shows which browser is used for the various platforms and op
 
 ### Scroll bar does not appear in task pane
 
-By default, scroll bars in Microsoft Edge are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style) property and it should be set to `scrollbar`. 
+By default, scroll bars in Microsoft Edge are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://developer.mozilla.org/docs/Web/CSS/-ms-overflow-style) property and it should be set to `scrollbar`. 
 
 ### When debugging with the Microsoft Edge DevTools, the add-in crashes or reloads
 
