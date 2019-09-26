@@ -46,7 +46,7 @@ The following table specifies the elements that are required for the three types
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
 | [Description][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [SupportUrl\*\*][]                                                                               |    X    |     X     |    X    |
+| [SupportUrl\*\*][]                                                                           |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
