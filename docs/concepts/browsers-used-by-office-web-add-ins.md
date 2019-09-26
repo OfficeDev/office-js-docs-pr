@@ -57,7 +57,7 @@ Setting breakpoints in the [Microsoft Edge DevTools](https://www.microsoft.com/p
 
 ### When the add-in tries to open, get "ADD-IN ERROR We can't open this add-in from the localhost" error
 
-One known cause is that Microsoft Edge requires that localhost be given a loopback exemption on the development computer. Follow the instructions at [Cannot open add-in from localhost](../../../troubleshoot/error-messages/cannot-open-add-in-from-localhost).
+One known cause is that Microsoft Edge requires that localhost be given a loopback exemption on the development computer. Follow the instructions at [Cannot open add-in from localhost](/office/troubleshoot/error-messages/cannot-open-add-in-from-localhost).
 
 
 ## See also
