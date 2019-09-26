@@ -1,7 +1,7 @@
 ---
 title: Task pane add-ins for Project
 description: ''
-ms.date: 09/09/2019
+ms.date: 09/26/2019
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
@@ -68,9 +68,10 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-              xsi:type="TaskPaneApp">
-      <Id>1234-5678</Id>
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:type="TaskPaneApp">
+      <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+      <Id>01234567-89ab-cedf-0123-456789abcdef</Id>
       <Version>15.0</Version>
       <ProviderName>Microsoft</ProviderName>
       <DefaultLocale>en-us</DefaultLocale>
@@ -80,6 +81,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
       </Description>
       <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
       </IconUrl>
+      <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
       <Capabilities>
         <Capability Name="Project"/>
       </Capabilities>
@@ -108,7 +110,8 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
                 xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
               xsi:type="TaskPaneApp">
-      <Id>1234-5678</Id>
+      <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
+      <Id>01234567-89ab-cedf-0123-456789abcdef</Id>
       <Version>15.0</Version>
       <ProviderName>Microsoft</ProviderName>
       <DefaultLocale>en-us</DefaultLocale>
@@ -121,6 +124,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
       <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
         <Override Locale="fr-fr" Value="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
       </IconUrl>
+      <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
       <Capabilities>
         <Capability Name="Project"/>
       </Capabilities>

@@ -1,7 +1,7 @@
 ---
 title: Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
 description: Update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
 ---
 
@@ -63,7 +63,7 @@ In your add-in's manifest file, update the **xmlns** attribute of the **OfficeAp
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp"
-	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->
@@ -106,7 +106,7 @@ In your add-in's manifest file, update the **xmlns** attribute of the **OfficeAp
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp"
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->

@@ -1,7 +1,7 @@
 ---
 title: Create your first task pane add-in for Microsoft Project by using a text editor
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
 ---
 
@@ -26,8 +26,9 @@ Create an XML file in a local directory. The XML file includes the **OfficeApp**
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-              xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:type="TaskPaneApp">
+     <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID -->
      <Id>93A26520-9414-492F-994B-4983A1C7A607</Id>
      <Version>15.0</Version>
      <ProviderName>Microsoft</ProviderName>
@@ -38,6 +39,7 @@ Create an XML file in a local directory. The XML file includes the **OfficeApp**
      <Description DefaultValue="Test the task pane add-in object model for Project - English (US)">
        <Override Locale="fr-fr" Value="Test the task pane add-in object model for Project - French (France)"/>
      </Description>
+     <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
      <Hosts>
        <Host Name="Project"/>
        <Host Name="Workbook"/>

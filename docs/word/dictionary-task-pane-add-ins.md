@@ -1,7 +1,7 @@
 ---
 title: Create a dictionary task pane add-in
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
 ---
 
@@ -66,7 +66,7 @@ The following code shows the XSD for the OfficeDefinitions XML Schema.
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xs="https://www.w3.org/2001/XMLSchema"
   targetNamespace="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions"
   xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
@@ -200,7 +200,7 @@ The following is an example manifest file for a dictionary add-in.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
   <Version>15.0</Version>
   <ProviderName>Microsoft Office Demo Dictionary</ProviderName>
@@ -211,6 +211,7 @@ The following is an example manifest file for a dictionary add-in.
   <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It does not return real definitions." />
   <!--IconUrl is the URI for the icon that will appear in the user's list of applications.-->
   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
   <!--Capabilities specifies the kind of host application your dictionary add-in will support. You shouldn't have to modify this area.-->
   <Capabilities>
     <Capability Name="Workbook"/>
