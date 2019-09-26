@@ -490,7 +490,7 @@ Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
 
     var range = sheet.getRange("B2:E2");
-    range.format.fill.color = "#4472C4";;
+    range.format.fill.color = "#4472C4";
     range.format.font.color = "white";
 
     return context.sync();
