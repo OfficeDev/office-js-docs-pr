@@ -45,6 +45,21 @@ The following table shows which browser is used for the various platforms and op
 > 1. Go to [Get started as an Office Insider](https://insider.office.com/join).
 > 2. Follow the instruction on that page to join. When asked to specify a channel, select Insider.
 
+## Troubleshooting Microsoft Edge Issues
+
+### Scroll bar does not appear in task pane
+
+By default, scroll bars in Microsoft Edge are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style) property and it should be set to `scrollbar`. 
+
+### When debugging with the Microsoft Edge DevTools, the add-in crashes or reloads
+
+Setting breakpoints in the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?rtc=1&activetab=pivot%3Aoverviewtab) can cause Office to think that the add-in is hung. It will automatically reload the add-in when this happens. To prevent this, add the following Registry key and value to the development computer: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\16.0\Wef]"AlertInterval"=dword:00000000`.
+
+### When the add-in tries to open, get "ADD-IN ERROR We can't open this add-in from the localhost" error
+
+One known cause is that Microsoft Edge requires that localhost be given a loopback exemption on the development computer. Follow the instructions at [Cannot open add-in from localhost](../../troubleshoot/error-messages/cannot-open-add-in-from-localhost).
+
+
 ## See also
 
 - [Requirements for Running Office Add-ins](requirements-for-running-office-add-ins.md)
