@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 09/03/2019
+ms.date: 09/26/2019
 localization_priority: Priority
 ---
 
@@ -264,14 +264,14 @@ context.application.suspendApiCalculationUntilNextSync();
 
 All [comments](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) within a workbook are tracked by the `Workbook.comments` property. This includes comments created by users and also comments created by your add-in. The `Workbook.comments` property is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object that contains a collection of [Comment](/javascript/api/excel/excel.comment) objects.
 
-To add comments to a workbook, use the `CommentCollection.add` method, passing in the comment's text, as a string, and the cell where the comment will be added, as either a string or [Range](/javascript/api/excel/excel.range) object. The following code sample adds a comment to cell **A2**.
+To add comments to a workbook, use the `CommentCollection.add` method, passing in the cell where the comment will be added, as either a string or [Range](/javascript/api/excel/excel.range) object, and the comment's text, as a string. The following code sample adds a comment to cell **A2**.
 
 ```js
 Excel.run(function (context) {
     var comments = context.workbook.comments;
 
     // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("TODO: add data.", "A2");
+    comments.add("A2", "TODO: add data.");
     return context.sync();
 });
 ```
