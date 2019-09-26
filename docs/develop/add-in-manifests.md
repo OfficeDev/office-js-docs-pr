@@ -46,7 +46,7 @@ The following table specifies the elements that are required for the three types
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
 | [Description][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [SupportUrl\*\*][]                                                                           |    X    |     X     |    X    |
+| [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
@@ -73,7 +73,7 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 [displayname]: /office/dev/add-ins/reference/manifest/displayname
 [description]: /office/dev/add-ins/reference/manifest/description
 [iconurl]: /office/dev/add-ins/reference/manifest/iconurl
-[supporturl\*\*]: /office/dev/add-ins/reference/manifest/supporturl
+[supporturl]: /office/dev/add-ins/reference/manifest/supporturl
 [defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
 [sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
