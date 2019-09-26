@@ -60,6 +60,7 @@ The following table specifies the elements that are required for the three types
 | [Hosts*][]                                                                                   |    X    |     X     |         |
 
 _\*Added in the Office Add-in Manifest Schema version 1.1._
+
 _\*\* SupportUrl is only required for add-ins that are distributed through AppSource._
 
 <!-- Links for above table -->
@@ -72,7 +73,7 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 [displayname]: /office/dev/add-ins/reference/manifest/displayname
 [description]: /office/dev/add-ins/reference/manifest/description
 [iconurl]: /office/dev/add-ins/reference/manifest/iconurl
-[supporturl]: /office/dev/add-ins/reference/manifest/supporturl
+[supporturl\*\*]: /office/dev/add-ins/reference/manifest/supporturl
 [defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
 [sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
