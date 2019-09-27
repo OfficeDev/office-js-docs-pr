@@ -1,14 +1,14 @@
 ---
 title: Use search options to find text in your Word add-in 
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/27/2019
 localization_priority: Priority
 ---
 
 # Use search options to find text in your Word add-in
 
 Add-ins frequently need to act based on the text of a document.
-A search function is exposed by every content control (this includes [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow), and the base [ContentControl](/javascript/api/word/word.contentcontrol) object). This function takes in a string (or wldcard expression) representing the text you are searching for and a [SearchOptions](/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
+A search function is exposed by every content control (this includes [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow), and the base [ContentControl](/javascript/api/word/word.contentcontrol) object). This function takes in a string (or wildcard expression) representing the text you are searching for and a [SearchOptions](/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
 
 ## Search options
 
@@ -26,7 +26,7 @@ The search options are a collection of boolean values defining how the search pa
 
 ## Wildcard guidance
 
-The following table provides guidance around the Word JavaScript API’s search wildcards.
+The following table provides guidance around the Word JavaScript API's search wildcards.
 
 | To find:         | Wildcard |  Sample |
 |:-----------------|:--------|:----------|
@@ -99,7 +99,7 @@ Word.run(function (context) {
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
 
-    // Synchronize the document state by executing the queued commands, 
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -174,7 +174,7 @@ Word.run(function (context) {
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
 
-    // Synchronize the document state by executing the queued commands, 
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
