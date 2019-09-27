@@ -31,7 +31,7 @@ The XML manifest file for the add-in for PowerPoint provides important informati
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:type="TaskPaneApp">
         <Id>[Replace_With_Your_GUID]</Id>
         <Version>1.0</Version>
@@ -40,6 +40,7 @@ The XML manifest file for the add-in for PowerPoint provides important informati
         <DisplayName DefaultValue="Get Doc add-in" />
         <Description DefaultValue="My get PowerPoint or Word document add-in." />
         <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+        <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
         <Hosts>
         <Host Name="Document" />
         <Host Name="Presentation" />

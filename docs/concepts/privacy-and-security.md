@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: ''
-ms.date: 09/09/2019
+ms.date: 09/26/2019
 localization_priority: Priority
 ---
 
@@ -126,7 +126,7 @@ The following example shows how a task pane add-in specifies the  **ReadDocument
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-           xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
            xmlns:ver="http://schemas.microsoft.com/office/appforoffice/1.0"
            xsi:type="TaskPaneApp">
 
