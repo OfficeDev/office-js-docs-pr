@@ -57,7 +57,7 @@ The following table compares features across XLL user-defined functions, XLL com
 
 |         |XLL user-defined function |XLL compatible custom functions |Excel add-in custom function |
 |---------|---------|---------|---------|
-| Supported platforms | Windows | Windows, macOS, Excel on the web | Windows, macOS, Excel on the web |
+| Supported platforms | Windows | Windows, macOS, web browser | Windows, macOS, web browser |
 | Supported file formats | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | Formula autocomplete | No | Yes | Yes |
 | Streaming | Possible via xlfRTD and XLL callback. | No | Yes |
