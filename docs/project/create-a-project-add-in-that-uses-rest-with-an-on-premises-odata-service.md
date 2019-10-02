@@ -1,7 +1,7 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/26/2019
 localization_priority: Priority
 ---
 
@@ -125,15 +125,16 @@ The following steps show how to add an icon file to the Visual Studio solution:
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-            xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-        <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82 </Id>
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+        <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
+        <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82</Id>
         <Version>1.0</Version>
         <ProviderName> [Provider name]</ProviderName>
         <DefaultLocale>en-US</DefaultLocale>
         <DisplayName DefaultValue="Hello ProjectData" />
         <Description DefaultValue="Test REST queries of the ProjectData service"/>
         <IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />
-
+        <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
         <Hosts>
             <Host Name="Project" />
         </Hosts>
