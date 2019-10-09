@@ -80,9 +80,9 @@
         "reference/openspec/*.md": "reference",
         "reference/requirement-sets/*.md": "reference"
       },
-      "scenarios": {
-        "quickstarts/*.md": "getting-started",
-        "tutorials/*.md": "getting-started"
+      "ms.custom": {
+        "quickstarts/*.md": "scenarios:getting-started; languages:JavaScript,TypeScript",
+        "tutorials/*.md": "scenarios:getting-started; languages:JavaScript,TypeScript"
       }
     },
     "template": [],
