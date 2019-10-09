@@ -2,7 +2,7 @@
 title: Excel add-ins overview
 description: ''
 ms.date: 07/05/2019
-ms.topic: overview
+ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
