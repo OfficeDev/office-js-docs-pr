@@ -3,7 +3,7 @@ title: Excel add-ins overview
 description: ''
 ms.date: 07/05/2019
 ms.topic: overview
-ms.custom: scenarios:getting-started, languages:JavaScript,TypeScript
+ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
 
