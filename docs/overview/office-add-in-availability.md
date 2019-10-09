@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.
-ms.date: 08/13/2019
+ms.date: 10/09/2019
 localization_priority: Priority
 ---
 
@@ -460,6 +460,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 </table>
 
 *&ast; - Added with post-release updates.*
+
+> [!IMPORTANT]
+> Client support for a requirement set may be restricted by Exchange server support. See the full range of [client-server support](../reference/requirement-sets/outlook-api-requirement-sets.md#clients) for more details.
 
 <br/>
 
@@ -948,10 +951,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 ## See also
 
 - [Office Add-ins platform overview](office-add-ins.md)
-- [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Common API requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [Add-in Commands requirement sets](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [JavaScript API for Office reference](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md)
+- [Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Add-in Commands requirement sets](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [JavaScript API for Office reference](../reference/javascript-api-for-office.md)
 - [Update history for Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016 and 2019 update history (Click-To-Run)](/officeupdates/update-history-office-2019)
 - [Office 2013 update history (Click-To-Run)](/officeupdates/update-history-office-2013)
