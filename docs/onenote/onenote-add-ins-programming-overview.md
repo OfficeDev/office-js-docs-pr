@@ -3,7 +3,7 @@ title: OneNote JavaScript API programming overview
 description: ''
 ms.date: 07/05/2019
 ms.topic: conceptual
-ms.custom: scenarios: getting-started
+ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
 
