@@ -462,7 +462,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 *&ast; - Added with post-release updates.*
 
 > [!IMPORTANT]
-> Client support for a requirement set may be restricted by Exchange server support. See [Outlook JavaScript API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md#clients) for details about the range of requirement sets supported by Exchange server and Outlook clients.
+> Client support for a requirement set may be restricted by Exchange server support. See [Outlook JavaScript API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details about the range of requirement sets supported by Exchange server and Outlook clients.
 
 <br/>
 

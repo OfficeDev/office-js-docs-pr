@@ -59,7 +59,7 @@ No such checks are necessary for any APIs which are present in the requirement s
 
 Developers should use the earliest requirement set that contains the critical set of APIs for their scenario, without which the add-in won't work.
 
-## Clients
+## Requirement sets supported by Exchange servers and Outlook clients
 
 In this section, we note the range of requirement sets supported by Exchange server and Outlook clients.
 
