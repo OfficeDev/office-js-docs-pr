@@ -64,7 +64,7 @@ Developers should use the earliest requirement set that contains the critical se
 In this section, we note the range of requirement sets supported by Exchange server and Outlook clients.
 
 > [!IMPORTANT]
-> If your target Exchange server and Outlook client support different requirement sets, then you're restricted to the lower requirement set range. For example, if an add-in is running in Outlook 2016 on Mac (highest requirement set: 1.6) against Exchange 2013 (highest requirement set: 1.1), your add-in is limited to requirement 1.1.
+> If your target Exchange server and Outlook client support different requirement sets, then you're restricted to the lower requirement set range. For example, if an add-in is running in Outlook 2016 on Mac (highest requirement set: 1.6) against Exchange 2013 (highest requirement set: 1.1), your add-in is limited to requirement set 1.1.
 
 ### Exchange server support
 
