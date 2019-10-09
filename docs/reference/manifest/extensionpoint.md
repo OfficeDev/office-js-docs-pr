@@ -267,7 +267,7 @@ This extension point adds a contextual add-in activation on a specified entity t
 The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
 
 > [!NOTE]
-> This element type is available to [Outlook clients that support requirement sets 1.6 and later](../requirement-sets/outlook-api-requirement-sets.md#clients).
+> This element type is available to [Outlook clients that support requirement sets 1.6 and later](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 
 |  Element |  Description  |
 |:-----|:-----|
