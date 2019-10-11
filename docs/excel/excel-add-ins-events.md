@@ -28,7 +28,7 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | `onSettingsChanged` | Occurs when the Settings in the document are changed. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
 
 > [!WARNING]
-> `onSelectionChanged` is currently unstable. There is a workaround to reliably use `onSelectionChanged`. Add the following code to the `<head>` section of your home page ("main.html"):
+> `onSelectionChanged` is currently unstable. There is a workaround to reliably use `onSelectionChanged`. Add the following code to the `<head>` section of your HTML home page:
 >
 > ```HTML
 > <script> MutationObserver=null; </script>
