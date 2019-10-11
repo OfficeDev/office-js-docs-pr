@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/11/2019
 localization_priority: Priority
 ---
 
@@ -26,6 +26,15 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | `onFormatChanged` | Occurs when the format is changed on a worksheet. | [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSelectionChanged` | Occurs when the active cell or selected range is changed. | [**Binding**](/javascript/api/excel/excel.binding), [**Table**](/javascript/api/excel/excel.table),  [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSettingsChanged` | Occurs when the Settings in the document are changed. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
+
+> [!WARNING]
+> `onSelectionChanged` is currently unstable. There is a workaround to reliably use `onSelectionChanged`. Add the following code to the `<head>` section of your home page ("main.html"):
+>
+> ```HTML
+> <script> MutationObserver=null; </script>
+> ```
+>
+> A full discussion of the issue can be found on the [office-js GitHub repo](https://github.com/OfficeDev/office-js/issues/533).
 
 ### Events in preview
 
