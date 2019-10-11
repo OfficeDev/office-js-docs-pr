@@ -167,7 +167,7 @@ You can include localized resource strings directly in standalone JavaScript fil
 This section provides examples that show you how to localize an Office Add-in description, display name, and UI. 
 
 > [!NOTE]
-> To download Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
+> To download Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
 
 ### Configure Office to use additional languages for display or editing
 
@@ -179,15 +179,16 @@ After you install the Language Accessory Pack, you can configure Office to use t
 
 ### Create an Office Add-in project
 
-You'll need to create a Visual Studio 2017 Office Add-in project.
+You'll need to create a Visual Studio 2019 Office Add-in project.
 
 > [!NOTE]
-> If you haven't installed Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
+> If you haven't installed Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
 
 
-1. In Visual Studio, choose **File** > **New Project**.
-2. In the **New Project** dialog box, expand **Visual Basic** or **Visual C#**, expand **Office/SharePoint**, and then choose  **Add-ins**.
-3. Choose **Word Add-in**, and then name your add-in **WorldReadyAddIn**. Choose **OK**.
+1. In Visual Studio, choose **Create a new project**.
+2. Using the search box, enter **add-in**.
+3. Choose **Word Web Add-in** as your project type and choose **Next**. 
+4. Name your add-in **WorldReadyAddIn**. Choose **OK**.
 
 ### Localize the text used in your add-in
 

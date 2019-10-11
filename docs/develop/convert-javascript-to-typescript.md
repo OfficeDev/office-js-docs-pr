@@ -14,25 +14,25 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 ## Prerequisites
 
-- [Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
 
     > [!TIP]
-    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).
 
-- TypeScript SDK version 2.3 or later (for Visual Studio 2017)
+- TypeScript SDK version 2.3 or later (for Visual Studio 2019)
 
     > [!TIP]
-    > In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components). 
+    > In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components). 
 
 - Excel 2016 or later
 
 ## Create the add-in project
 
-1. Open Visual Studio and on the Visual Studio menu bar, choose  **File** > **New** > **Project**.
+1. Open Visual Studio and on the Visual Studio menu bar, choose  **Create a new project**.
 
-2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type. 
+2. Using the search box, enter **add-in**. The choose **Excel Web Add-in** as the project type. Choose next.
 
-3. Name the project, and then choose **OK**.
+3. Name the project, and then choose **Create**.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
 

@@ -16,7 +16,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Prerequisites
 
-* The latest available version of Visual Studio 2017.
+* The latest available version of Visual Studio 2019.
 
 * Office 365 (the subscription version of Office). Latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
 
@@ -120,7 +120,7 @@ The following instruction are written generically so they can be used in multipl
     > * The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
     > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
-1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2017 Preview does not recognize the SSO markup. As a workaround, do the following for a Word, Excel, or PowerPoint add-in. (If you are working with an Outlook add-in see the workaround below.)
+1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2019 Preview does not recognize the SSO markup. As a workaround, do the following for a Word, Excel, or PowerPoint add-in. (If you are working with an Outlook add-in see the workaround below.)
 
    - **Workaround for Word, Excel, and PowerPoint**
 

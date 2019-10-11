@@ -1,7 +1,7 @@
 ---
 title: Create better add-ins for Word with Office Open XML
 description: ''
-ms.date: 03/19/2019
+ms.date: 11/10/2019
 localization_priority: Priority
 ---
 
@@ -838,13 +838,10 @@ After you've taken the preceding seven steps, you've likely cut between about 90
 
 Regardless of whether you leave it here or choose to delve further into your content to find every last line of markup you can cut, remember that you can use the previously-referenced code sample [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) as a scratch pad to quickly and easily test your edited markup.
 
-
 > [!TIP]
-> If you update an Office Open XML snippet in an existing solution while developing, clear temporary Internet files before you run the solution again to update the Office Open XML used by your code. Markup that's included in your solution in XML files is cached on your computer. You can, of course, clear temporary Internet files from your default web browser. To access Internet options and delete these settings from inside Visual Studio 2017, on the  **Debug** menu, choose **Options**. Then, under  **Environment**, choose  **Web Browser** and then choose **Internet Explorer Options**.
-
+> If you update an Office Open XML snippet in an existing solution while developing, clear temporary Internet files before you run the solution again to update the Office Open XML used by your code. Markup that's included in your solution in XML files is cached on your computer. You can, of course, clear temporary Internet files from your default web browser. To access Internet options and delete these settings from inside Visual Studio 2019, on the  **Debug** menu, choose **Options**. Then, under  **Environment**, choose  **Web Browser** and then choose **Internet Explorer Options**.
 
 ## Creating an add-in for both template and stand-alone use
-
 
 In this topic, you've seen several examples of what you can do with Office Open XML in your add-ins for . We've looked at a wide range of rich content type examples that you can insert into documents by using the Office Open XML coercion type, together with the JavaScript methods for inserting that content at the selection or to a specified (bound) location.
 

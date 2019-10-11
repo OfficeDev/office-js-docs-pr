@@ -1,7 +1,7 @@
 ---
 title: Host an Office Add-in on Microsoft Azure | Microsoft Docs
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application.
-ms.date: 03/19/2019
+ms.date: 10/11/2019
 localization_priority: Priority
 ---
 
@@ -15,10 +15,10 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 
 ## Prerequisites 
 
-1. Install [Visual Studio 2017](https://www.visualstudio.com/downloads) and choose to include the **Azure development** workload.
+1. Install [Visual Studio 2019](https://www.visualstudio.com/downloads) and choose to include the **Azure development** workload.
 
     > [!NOTE]
-    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed. 
+    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed. 
 
 2. Install Office.
 
@@ -67,11 +67,11 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 
 ## Step 3: Create a web app in Azure
 
-Create an empty web app in Azure either by using [Visual Studio 2017](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2017) or by using the [Azure portal](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-portal).
+Create an empty web app in Azure either by using [Visual Studio 2019](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2019) or by using the [Azure portal](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-portal).
 
-### Using Visual Studio 2017
+### Using Visual Studio 2019
 
-To create the web app using Visual Studio 2017, complete the following steps.
+To create the web app using Visual Studio 2019, complete the following steps.
 
 1. In Visual Studio, in the **View** menu, choose **Server Explorer**. Right-click **Azure** and choose **Connect to Microsoft Azure subscription**. Follow the instructions for connecting to your Azure subscription.
 
@@ -136,11 +136,11 @@ To create the web app using the Azure portal, complete the following steps.
 
 1. Start Visual Studio as an administrator.
 
-2. Choose **File** > **New** > **Project**.
+2. Choose **Create a new project**.
 
-3. Under **Templates**, expand **Visual C#** (or **Visual Basic**), expand **Office/SharePoint**, and then choose **Add-ins**.
+3. Using the search box, enter **add-in**.
 
-4. Choose **Word Web Add-in**, and then choose **OK** to accept the default settings.
+4. Choose **Word Web Add-in** as the project type, and then choose **Next** to accept the default settings.
 
 Visual Studio creates a basic Word add-in that you'll be able to publish as-is, without making any changes to its web project.
 
