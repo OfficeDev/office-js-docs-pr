@@ -6,4 +6,6 @@ ROBOTS: NOINDEX
 localization_priority: Normal
 ---
 
+# Get the whole document from an add-in for PowerPoint or Word
+
 [!include[Get the whole document from an add-in for PowerPoint](../includes/file-get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)]
