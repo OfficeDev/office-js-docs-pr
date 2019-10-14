@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.7
 description: ''
-ms.date: 09/23/2019
+ms.date: 10/14/2019
 localization_priority: Normal
 ---
 
@@ -138,7 +138,7 @@ console.log(outputString);
 
 #### bcc: [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
 
-Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
+Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. The collection is limited to a maximum of 100 members. Compose mode only.
 
 ##### Type
 
@@ -228,7 +228,7 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### Compose mode
 
-The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.
+The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message. The collection is limited to a maximum of 100 members.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -699,7 +699,7 @@ Provides access to the optional attendees of an event. The type of object and le
 
 ##### Read mode
 
-The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.
+The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting. The collection is limited to a maximum of 100 members.
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -708,7 +708,7 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### Compose mode
 
-The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.
+The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting. The collection is limited to a maximum of 100 members.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -849,7 +849,7 @@ Provides access to the required attendees of an event. The type of object and le
 
 ##### Read mode
 
-The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.
+The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting. The collection is limited to a maximum of 100 members.
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -858,7 +858,7 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### Compose mode
 
-The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.
+The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting. The collection is limited to a maximum of 100 members.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1080,7 +1080,7 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### Compose mode
 
-The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.
+The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message. The collection is limited to a maximum of 100 members.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
