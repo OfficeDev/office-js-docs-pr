@@ -47,6 +47,7 @@
     items:
     - name: Overview
       href: design/add-in-design.md
+      displayName: design, user interface, UI
     - name: Guidelines
       items:
       - name: Accessibility
@@ -103,6 +104,9 @@
         href: design/office-ui-fabric.md
   - name: Develop
     items:
+    - name: Overview
+      href: develop/develop-overview.md
+      displayName: develop
     - name: Address same origin policy limitations
       href: develop/addressing-same-origin-policy-limitations.md
     - name: Authentication and authorization
@@ -185,6 +189,7 @@
     items:
     - name: Overview
       href: testing/test-debug-office-add-ins.md
+      displayName: test, debug
     - name: Windows
       items:
       - name: Sideload Office Add-ins on Windows
@@ -215,6 +220,7 @@
     items:
     - name: Overview
       href: publish/publish.md
+      displayName: publish, deploy
     - name: Host an Office Add-in on Microsoft Azure
       href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Package your add-in using Visual Studio
