@@ -25,11 +25,11 @@ In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add
 
 Complete the following steps to create a PowerPoint add-in project using Visual Studio.
 
-1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
-    
-2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type. 
+1. Choose **Create a new project**.
 
-3. Name the project **HelloWorld**, and then choose the **OK** button.
+2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
+
+3. Name your project and select **Create**.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 

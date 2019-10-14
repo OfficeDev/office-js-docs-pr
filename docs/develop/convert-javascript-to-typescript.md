@@ -28,15 +28,15 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 ## Create the add-in project
 
-1. Open Visual Studio and on the Visual Studio menu bar, choose  **Create a new project**.
+1. Choose **Create a new project**.
 
-2. Using the search box, enter **add-in**. The choose **Excel Web Add-in** as the project type. Choose next.
+2. Using the search box, enter **add-in**. Choose **Excel Web Add-in**, then select **Next**.
 
-3. Name the project, and then choose **Create**.
+3. Name your project and select **Create**.
 
-4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
+3. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
 
-5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ## Convert the add-in project to TypeScript
 

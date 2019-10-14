@@ -1,7 +1,7 @@
 ---
 title: Use document themes in your PowerPoint add-ins
 description: ''
-ms.date: 10/11/2018
+ms.date: 10/14/2018
 localization_priority: Normal
 ---
 
@@ -138,11 +138,11 @@ To do this in Visual Studio, follow these steps.
 
 #### To reference OfficeThemes.css in your add-in for PowerPoint
 
-1. In Visual Studio 2019, open or create a new **PowerPoint Web Add-in** project. Give your project a name and choose **Create**.
+1. In Visual Studio 2019, open or create a new **PowerPoint Web Add-in** project. 
 
-2. Give your project a name and choose **Create**. 
+2. If you are creating a project, use the search box, and enter **add-in**. Choose add-in type **Add new functionalities to PowerPoint**. 
 
-3. Choose add-in type **Add new functionalities to PowerPoint** and choose **Finish**. 
+3. Give your project a name and choose **Finish**.
     
 4. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the OfficeThemes.css file:
     

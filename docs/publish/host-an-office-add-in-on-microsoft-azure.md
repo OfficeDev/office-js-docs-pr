@@ -89,7 +89,7 @@ To create the web app using Visual Studio 2019, complete the following steps.
 
       - Choose **Create**.
 
-    The new web app appears in **Server Explorer** under **Azure** >> **App Service** >> (the chosen resouce group).
+    The new web app appears in **Server Explorer** under **Azure** >> **App Service** >> (the chosen resource group).
 
 4. Right-click the new web app and then choose **View in Browser**. Your browser opens and displays a webpage with the message "Your App Service app has been created."
 
@@ -142,7 +142,7 @@ To create the web app using the Azure portal, complete the following steps.
 
 4. Choose **Word Web Add-in** as the project type, and then choose **Next** to accept the default settings.
 
-Visual Studio creates a basic Word add-in that you'll be able to publish as-is, without making any changes to its web project.
+Visual Studio creates a basic Word add-in that you'll be able to publish as-is, without making any changes to its web project. In order to make an add-in of a different Office host type, such as Excel, repeat the steps and choose another project type with your desired Office host.
 
 ## Step 5: Publish your Office Add-in web app to Azure
 

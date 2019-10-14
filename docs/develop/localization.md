@@ -184,11 +184,14 @@ You'll need to create a Visual Studio 2019 Office Add-in project.
 > [!NOTE]
 > If you haven't installed Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
 
+1. Choose **Create a new project**.
 
-1. In Visual Studio, choose **Create a new project**.
-2. Using the search box, enter **add-in**.
-3. Choose **Word Web Add-in** as your project type and choose **Next**. 
-4. Name your add-in **WorldReadyAddIn**. Choose **OK**.
+2. Using the search box, enter **add-in**. Choose **Word Web Add-in**, then select **Next**.
+
+3. Name your project **WorldReadyAddIn** and select **Create**.
+
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+
 
 ### Localize the text used in your add-in
 

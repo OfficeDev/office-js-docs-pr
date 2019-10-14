@@ -1,7 +1,7 @@
 ---
 title: Package your add-in using Visual Studio to prepare for publishing | Microsoft Docs
 description: How to deploy your web project and package your add-in by using Visual Studio 2019.
-ms.date: 11/10/2019
+ms.date: 10/14/2019
 localization_priority: Priority
 ---
 
@@ -16,9 +16,7 @@ Complete the following steps to deploy your web project using Visual Studio 2019
 
 1. From the **Build** tab, choose **Publish [Name of your add-in]**.
 
-    The  **Publish** page appears. Choose **Start**.
-
-2. In the  **Pick a publish target** window, import a profile or choose one of the options to publish to another target.
+2. In the  **Pick a publish target** window, choose one of the options to publish to your preferred target. Each publish target requires you to include more information to get started, such as an Azure Virtual Machine or folder location. Once you have specified a publish location and filled in all of the information required, select **Publish**
 
     > [!NOTE]
     > Picking a publish target specifies the server you are deploying to, the credentials needed to log on to the server, the databases to deploy, and other deployment options.
@@ -29,9 +27,9 @@ Complete the following steps to deploy your web project using Visual Studio 2019
 
 Complete the following steps to package your add-in using Visual Studio 2019.
 
-1. From the **Build** tab, choose **Publish [Name of your add-in**. 
-2. In the  **Pick a publish target** window, choose **IIS, FTP, etc**, and select **Configure**. Next, select **Publish**. 
-3. A wizard appears that will help guide you through the process. Ensure the publish method is your preferred method, such as Web Deploy. 
+1. From the **Build** tab, choose **Publish [Name of your add-in**.
+2. In the  **Pick a publish target** window, choose **IIS, FTP, etc**, and select **Configure**. Next, select **Publish**.
+3. A wizard appears that will help guide you through the process. Ensure the publish method is your preferred method, such as Web Deploy.
 4. In the **Destination URL** box, enter the URL of the website that will host the content files of your add-in, and then select **Next**. If you plan to submit your add-in to AppSource, you can choose the **Validate Connection** button to identify any issues that will prevent your add-in from being accepted. You should address all issues before you submit your add-in to the store.
 5. Confirm any settings desired including **File Publish Options** and select **Save**.
 
