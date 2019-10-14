@@ -2,8 +2,8 @@
 title: PowerPoint add-ins
 description: ''
 ms.date: 09/03/2019
-ms.topic: overview
-scenarios: getting-started
+ms.topic: conceptual
+ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
 

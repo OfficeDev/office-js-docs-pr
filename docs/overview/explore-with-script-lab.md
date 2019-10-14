@@ -2,8 +2,8 @@
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
 ms.date: 07/05/2019
-ms.topic: overview
-scenarios: getting-started
+ms.topic: conceptual
+ms.custom: scenarios:getting-started
 localization_priority: Normal
 ---
 
