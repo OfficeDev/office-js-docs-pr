@@ -1,11 +1,11 @@
 ---
-title: TODO
-description: 'TODO'
-ms.date: 09/26/2019
+title: Develop Office Add-ins
+description: An introduction to developing Office Add-ins.
+ms.date: 10/18/2019
 localization_priority: Priority
 ---
 
-# TO DO
+# Develop Office Add-ins
 
 ...
 
