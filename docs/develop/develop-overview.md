@@ -87,7 +87,7 @@ For additional information about the Office JavaScript APIs, see [Understanding 
 (Tools & Tech stacks)
 ...
 
-## Exploring the APIs with Script Lab
+## Exploring APIs with Script Lab
 
 ...
 [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
