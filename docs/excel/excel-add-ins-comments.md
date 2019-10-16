@@ -1,7 +1,7 @@
 ---
 title: Work with comments using the Excel JavaScript API (preview)
 description: ''
-ms.date: 10/15/2019
+ms.date: 10/16/2019
 localization_priority: Normal
 ---
 
@@ -20,7 +20,11 @@ Comments within a workbook are tracked by the `Workbook.comments` property. This
 
 ## Add comments
 
-To add comments to a workbook, use the `CommentCollection.add` method, passing in the cell where the comment will be added, as either a string or [Range](/javascript/api/excel/excel.range) object, and the comment's text, as a string. Comments added by an add-in are attributed to the current user of that add-in.
+Use the `CommentCollection.add` method to add comments to a workbook. This method takes up to three parameters:
+
+- `cellAddress`: The cell where the comment is added. This can either be a string or [Range](/javascript/api/excel/excel.range) object. The range must be a single cell.
+- `content`: The comment's content. Use a string for plain text comments. Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments with [mentions](#mentions).
+- `contentType`: A [ContentType](/javascript/api/excel/excel.contenttype) enum specifying type of content. The default value is `ContentType.plain`. 
 
 The following code sample adds a comment to cell **A2**.
 
@@ -34,6 +38,9 @@ Excel.run(function (context) {
     return context.sync();
 });
 ```
+
+> [!NOTE]
+> Comments added by an add-in are attributed to the current user of that add-in.
 
 ### Add comment replies
 
@@ -79,7 +86,7 @@ Excel.run(function (context) {
 
 ## Delete comments
 
-To delete a comment use the `Comment.delete` method. Deleting a comment also deletes all the replies associated with that comment.
+To delete a comment use the `Comment.delete` method. Deleting a comment also deletes the replies associated with that comment.
 
 ```js
 Excel.run(function (context) {
@@ -104,7 +111,7 @@ Excel.run(function (context) {
 
 ## Resolve comment threads
 
-A comment thread has a settable boolean value, `resolved`, to indicate if it is resolved. A value of `true` means the comment thread is resolved. A value of `false` means the comment thread is either new or reopened.
+A comment thread has a configurable boolean value, `resolved`, to indicate if it is resolved. A value of `true` means the comment thread is resolved. A value of `false` means the comment thread is either new or reopened.
 
 ```js
 Excel.run(function (context) {
