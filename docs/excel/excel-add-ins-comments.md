@@ -144,7 +144,7 @@ Excel.run(function (context) {
 
 ### Comment reply metadata
 
-Comment replies store the same types of metadata as the base comment.
+Comment replies store the same types of metadata as the initial comment.
 
 The following sample shows how to display the author's email, author's name, and creation date of the latest comment reply at **A2**.
 
