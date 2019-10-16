@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 08/30/2019
+ms.date: 10/16/2019
 localization_priority: Normal
 ---
 
@@ -582,6 +582,10 @@ The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque t
 > [!NOTE]
 > It is recommended that add-ins use the REST APIs instead of Exchange Web Services whenever possible.
 
+Your app must have the **ReadItem** permission specified in its manifest to call the `getCallbackTokenAsync` method in read mode.
+
+If the item has not been saved yet in compose mode, you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before calling the `getCallbackTokenAsync` method. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
+
 **REST Tokens**
 
 When a REST token is requested (`options.isRest = true`), the resulting token will not work to authenticate Exchange Web Services calls. The token will be limited in scope to read-only access to the current item and its attachments, unless the add-in has specified the [`ReadWriteMailbox`](/outlook/add-ins/understanding-outlook-add-in-permissions#readwritemailbox-permission) permission in its manifest. If the `ReadWriteMailbox` permission is specified, the resulting token will grant read/write access to mail, calendar, and contacts, including the ability to send mail.
@@ -593,6 +597,8 @@ The add-in should use the `restUrl` property to determine the correct URL to use
 When an EWS token is requested (`options.isRest = false`), the resulting token will not work to authenticate REST API calls. The token will be limited in scope to accessing the current item.
 
 The add-in should use the `ewsUrl` property to determine the correct URL to use when making EWS calls.
+
+You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
 ##### Parameters
 
@@ -651,7 +657,7 @@ You can pass the token and an attachment identifier or item identifier to a thir
 
 Your app must have the **ReadItem** permission specified in its manifest to call the `getCallbackTokenAsync` method in read mode.
 
-In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method to get an item identifier to pass to the `getCallbackTokenAsync` method. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
+If the item has not been saved yet in compose mode, you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before calling the `getCallbackTokenAsync` method. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
 
 ##### Parameters
 
