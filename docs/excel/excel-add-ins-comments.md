@@ -12,7 +12,7 @@ localization_priority: Normal
 
 This article describes how to add, read, modify, and remove comments in a workbook with the Excel JavaScript API. You can learn more about the comment feature from the [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article.
 
-In the Excel JavaScript API, a comment is both the initial note and the connected threaded discussion. It is tied to an individual cell. Every comment can be replied to by people viewing the workbook (that have sufficient permissions). A [Comment](/javascript/api/excel/excel.comment) object stores those replies as [CommentReply](/javascript/api/excel/excel.commentreply) objects. You should consider a comment to be a thread and that a thread must have a special entry as the starting point.
+In the Excel JavaScript API, a comment is both the initial note and the connected threaded discussion. It is tied to an individual cell. Anyone viewing the workbook with sufficient permissions can reply to a comment. A [Comment](/javascript/api/excel/excel.comment) object stores those replies as [CommentReply](/javascript/api/excel/excel.commentreply) objects. You should consider a comment to be a thread and that a thread must have a special entry as the starting point.
 
 ![An Excel comment, labelled "Comment" with two replies, labelled "Comment.replies[0]" and "Comment.replies[1].](../images/excel-comments.png)
 
