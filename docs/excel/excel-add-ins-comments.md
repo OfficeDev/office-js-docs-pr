@@ -5,7 +5,7 @@ ms.date: 10/15/2019
 localization_priority: Normal
 ---
 
-# Work with comments using the Excel JavaScript API
+# Work with comments using the Excel JavaScript API (preview)
 
 > [!NOTE]
 > The comment APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
