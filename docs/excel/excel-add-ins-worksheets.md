@@ -164,7 +164,7 @@ Excel.run(function (context) {
 `Worksheet.copy` adds a new worksheet that is a copy of an existing worksheet. The new worksheet's name will have a number appended to the end, in a manner consistent with copying a worksheet through the Excel UI (for example, **MySheet (2)**). `Worksheet.copy` can take two parameters, both of which are optional:
 
 - `positionType` - A [WorksheetPositionType](/javascript/api/excel/excel.worksheetpositiontype) enum specifying where in the workbook the new worksheet is added.
-- `relativeTo` - If the `positionType` is `Before` or `After`, you need to specify a worksheet relative to which the new sheet is added (this parameter answers the question "Before or after what?").
+- `relativeTo` - If the `positionType` is `Before` or `After`, you need to specify a worksheet relative to which the new sheet is to be added (this parameter answers the question "Before or after what?").
 
 The following code sample copies the current worksheet and inserts the new sheet directly after the current worksheet.
 
