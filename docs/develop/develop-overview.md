@@ -7,18 +7,22 @@ localization_priority: Priority
 
 # Develop Office Add-ins
 
-Office Add-ins can extend the functionality of Office applications and interact with content in Office documents. You can use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook, and your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article provides an introduction to developing Office Add-ins.
+Office Add-ins can extend the UI and functionality of Office applications and interact with content in Office documents. You can use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook, and your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article provides an introduction to developing Office Add-ins.
 
 > [!TIP]
 > If you haven't already done so, please review [Office Add-ins platform overview](../overview/office-add-ins.md) for information that sets context for the topics covered in this article.
 
 ## Core development concepts 
 
-...
+As described in [Office Add-ins platform overview](../overview/office-add-ins.md), an Office Add-in consists of two parts:
 
-See: [Components of an Office Add-in](../overview/office-add-ins.md#components-of-an-office-add-in)
+- The add-in manifest (an XML file) that defines the settings and capabilities of the add-in.
 
-### Office Add-ins manifest
+- The web application that defines the UI and functionality of add-in components such as task panes, content add-ins, and dialog boxes.
+
+The web application can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
+
+### Defining an add-in's settings and capabilities
 
 An Office Add-in's XML manifest file defines the settings and capabilities of the add-in. You can configure the manifest to specify things such as:
 
@@ -34,7 +38,7 @@ For detailed information about the manifest, see [Office Add-ins XML manifest](a
 
 ### Extending the Office UI
 
-Your Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
+An Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
 
 - [Add-in commands](../design/add-in-commands.md) can be used to add custom tabs, buttons, or menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
 
