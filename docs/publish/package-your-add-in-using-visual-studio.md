@@ -27,7 +27,7 @@ Complete the following steps to deploy your web project using Visual Studio 2019
 
 Complete the following steps to package your add-in using Visual Studio 2019.
 
-1. From the **Build** tab, choose **Publish [Name of your add-in**.
+1. From the **Build** tab, choose **Publish [Name of your add-in]**.
 2. In the  **Pick a publish target** window, choose **IIS, FTP, etc**, and select **Configure**. Next, select **Publish**.
 3. A wizard appears that will help guide you through the process. Ensure the publish method is your preferred method, such as Web Deploy.
 4. In the **Destination URL** box, enter the URL of the website that will host the content files of your add-in, and then select **Next**. If you plan to submit your add-in to AppSource, you can choose the **Validate Connection** button to identify any issues that will prevent your add-in from being accepted. You should address all issues before you submit your add-in to the store.

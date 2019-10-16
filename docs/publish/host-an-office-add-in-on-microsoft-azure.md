@@ -1,7 +1,7 @@
 ---
 title: Host an Office Add-in on Microsoft Azure | Microsoft Docs
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application.
-ms.date: 10/11/2019
+ms.date: 10/16/2019
 localization_priority: Priority
 ---
 
@@ -65,69 +65,37 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 
 6. Close Word.
 
-## Step 3: Create a web app in Azure
-
-Create an empty web app in Azure either by using [Visual Studio 2019](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2019) or by using the [Azure portal](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-portal).
-
-### Using Visual Studio 2019
-
-To create the web app using Visual Studio 2019, complete the following steps.
-
-1. In Visual Studio, in the **View** menu, choose **Server Explorer**. Right-click **Azure** and choose **Connect to Microsoft Azure subscription**. Follow the instructions for connecting to your Azure subscription.
-
-2. In Visual Studio, in **Server Explorer**, expand **Azure**, right-click **App Service**, and then choose **Create New App Service**.
-
-3. In the **Create App Service** dialog box, provide this information:
-
-      - Enter a unique **Web App Name** for your site. Azure verifies that the site name is unique across the azurewebsites.net domain.
-
-      - Choose the **Subscription** to use for creating this site.
-
-      - Choose the **Resource Group** for your site. If you create a new group, you also need to name it.
-
-      - Choose the **App Service Plan** to use for creating this site. If you create a new plan, you also need to name it.
-
-      - Choose **Create**.
-
-    The new web app appears in **Server Explorer** under **Azure** >> **App Service** >> (the chosen resource group).
-
-4. Right-click the new web app and then choose **View in Browser**. Your browser opens and displays a webpage with the message "Your App Service app has been created."
-
-5. In the browser address bar, change the URL for the web app so that it uses HTTPS and press **Enter** to confirm that the HTTPS protocol is enabled. 
-
-    > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
-
-### Using the Azure portal
+## Step 3: Create a web app in Azure using the Azure portal
 
 To create the web app using the Azure portal, complete the following steps.
 
 1. Log on to the [Azure portal](https://portal.azure.com/) using your Azure credentials.
 
-2. Choose **New** > **Web + Mobile** > **Web App**.
+2. Under **Azure Services** select **Web Apps**.
 
-3. In the **Web App Create** dialog box, provide this information:
-
-      - Enter a unique **App name** for your site. Azure verifies that the site name is unique across the azureweb apps.net domain.
+3. On the **App Service** page, select **Add**. Provide this information:
 
       - Choose the **Subscription** to use for creating this site.
-
+      
       - Choose the **Resource Group** for your site. If you create a new group, you also need to name it.
+      
+      - Enter a unique **App name** for your site. Azure verifies that the site name is unique across the azureweb apps.net domain.
+
+      - Choose whether to publish using code or a docker container.
+
+      - Specify a **Runtime stack**.
 
       - Choose the **OS** for your site.
 
-      - Choose the **App Service plan** to use for creating this site. If you create a new plan, you also need to name it.
+      - Choose a **Region**.
+
+      - Choose the **App Service plan** to use for creating this site.
 
       - Choose **Create**.
 
-4. Choose **Notifications** (the bell icon that is located along the top edge of the Azure portal) and then choose the **Deployments succeeded** notification to open the site's **Overview** page in the Azure portal.
+4. The next page will let you know that your deployment is underway and when it completes. When it is completed, select **Go to resource**.  
 
-    > [!NOTE]
-    > The notification will change from **Deployment in progress** to **Deployments succeeded** when the site deployment completes.
-
-5. In the **Essentials** section of the site's **Overview** page in the Azure portal, choose the URL that is displayed under **URL**. Your browser opens and displays a webpage with the message "Your App Service app has been created." 
-
-6. In the browser address bar, change the URL for the web app so that it uses HTTPS and press **Enter** to confirm that the HTTPS protocol is enabled. 
+5. In the **Overview** section, choose the URL that is displayed under **URL**. Your browser opens and displays a webpage with the message "Your App Service app is up and running."
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
@@ -146,7 +114,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 ## Step 5: Publish your Office Add-in web app to Azure
 
-1. With your add-in project open in Visual Studio, expand the solution node in **Solution Explorer** so that you see both projects for the solution.
+1. With your add-in project open in Visual Studio, expand the solution node in **Solution Explorer**, then select **App Service**.
 
 2. Right-click the web project and then choose **Publish**. The web project contains Office Add-in web app files so this is the project that you publish to Azure.
 
@@ -158,11 +126,9 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
       - Choose **Publish**.
 
-4. In the **App Service** dialog box, find and choose the web app that you created in [Step 3: Create a web app in Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#step-3-create-a-web-app-in-azure) and then choose **OK**. 
+4. Visual Studio publishes the web project for your Office Add-in to your Azure web app. When Visual Studio finishes publishing the web project, your browser opens and shows a webpage with the text "Your App Service app has been created." This is the current default page for the web app.
 
-    Visual Studio publishes the web project for your Office Add-in to your Azure web app. When Visual Studio finishes publishing the web project, your browser opens and shows a webpage with the text "Your App Service app has been created." This is the current default page for the web app.
-
- To see the webpage for your add-in, change the URL so that it uses HTTPS and specifies the path of your add-in's HTML page (for example: https://YourDomain.azurewebsites.net/Home.html). This confirms that your add-in's web app is now hosted on Azure. Copy the root URL (for example: https://YourDomain.azurewebsites.net); you'll need it when you edit the add-in manifest file later in this article.
+5. Copy the root URL (for example: https://YourDomain.azurewebsites.net); you'll need it when you edit the add-in manifest file later in this article.
 
 ## Step 6: Edit and deploy the add-in XML manifest file
 
@@ -172,13 +138,9 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 3. In the XML manifest file, find and replace all instances of "~remoteAppUrl" with the root URL of the add-in web app on Azure. This is the URL that you copied earlier after you published the add-in web app to Azure (for example: https://YourDomain.azurewebsites.net). 
 
-4. Choose **File** and then choose **Save All**. Close the add-in XML manifest file.
+4. Choose **File** and then choose **Save All**. Next, Copy the add-in XML manifest file (for example, WordWebAddIn.xml).
 
-5. Back in **Solution Explorer**, right-click the manifest folder and choose **Open Folder In File Explorer**.
-
-6. Copy the add-in XML manifest file (for example, WordWebAddIn.xml). 
-
-7. Browse to the network file share that you created in [Step 1: Create a shared folder](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) and paste the manifest file into the folder.
+5. Using the separate program **File Explorer**, browse to the network file share that you created in [Step 1: Create a shared folder](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) and paste the manifest file into the folder.
 
 ## Step 7: Insert and run the add-in in the Office client application
 
