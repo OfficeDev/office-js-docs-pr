@@ -50,6 +50,8 @@ For detailed information about extending the Office UI, see [Design Office Add-i
 
 An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running. 
 
+#### Accessing the Office JavaScript API library
+
 The CDN for the Office JavaScript API library resides at `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. To use Office JavaScript APIs within any of your add-in's web pages, you must reference the CDN in a `<script>` tag in the `<head>` tag of the page.
 
 ```html
@@ -59,11 +61,13 @@ The CDN for the Office JavaScript API library resides at `https://appsforoffice.
 </head>
 ```
 
-The Office JavaScript APIs include two distict object models:
+#### Understanding the API object models
+
+The Office JavaScript APIs include two distinct object models:
 
 - **Host-specific** APIs (introduced with Office 2016) provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Host-specific APIs are currently available for [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md), [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md), and [PowerPoint](..//reference/overview/powerpoint-add-ins-reference-overview.md). This object model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function). For details about the Common APIs, which include APIs for accessing Outlook, see [Office JavaScript API object model](office-javascript-api-object-model.md)
+- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function). For details about the Common APIs, which include APIs for interacting with Outlook, see [Office JavaScript API object model](office-javascript-api-object-model.md)
 
 > [!NOTE]
 > Please note the following:
@@ -72,7 +76,7 @@ The Office JavaScript APIs include two distict object models:
 > 
 > - Excel Custom functions run within a unique runtime that prioritizes execution of calculations, and therefore uses a slightly different programming model. For details, see [Custom functions architecture](../excel/custom-functions-architecture.md).
 
-For additional information the Office JavaScript APIs, see [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md).
+For additional information about the Office JavaScript APIs, see [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md).
 
 ### API requirement sets
 
