@@ -24,7 +24,7 @@ The web application can use the Office JavaScript API to interact with content i
 
 ### Defining an add-in's settings and capabilities
 
-An Office Add-in's XML manifest file defines the settings and capabilities of the add-in. You can configure the manifest to specify things such as:
+An Office Add-in's manifest (an XML file) defines the settings and capabilities of the add-in. You can configure the manifest to specify things such as:
 
 - Metadata that describes the add-in (for example, ID, version, description, display name, default locale)
 - The Office applications where the add-in will run
@@ -48,28 +48,31 @@ For detailed information about extending the Office UI, see [Design Office Add-i
 
 ### Office JavaScript APIs
 
-An Office Add-in can use the Office JavaScript API to interact with content in the Office document where the add-in is running. 
+An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running. 
 
-..
-Excel JavaScript API: Introduced with Office 2016, the Excel JavaScript API provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.
+The CDN for the Office JavaScript API library resides at `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. To use Office JavaScript APIs within any of your add-in's web pages, you must reference the CDN in a `<script>` tag in the `<head>` tag of the page.
 
-Common APIs: Introduced with Office 2013, the Common API can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
-...
+```html
+<head>
+    ...
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+</head>
+```
 
-The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There is a common object model that is shared by Excel, Outlook, Word, PowerPoint, OneNote and Project. There are also more extensive host-specific object models for Excel and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.  
+The Office JavaScript APIs include two distict object models:
 
-(How to use these docs - host-specific guidance vs common guidance)
+- **Host-specific** APIs (introduced with Office 2016) provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Host-specific APIs are currently available for [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md), [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md), and [PowerPoint](..//reference/overview/powerpoint-add-ins-reference-overview.md). This object model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
+- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function). For details about the Common APIs, which include APIs for accessing Outlook, see [Office JavaScript API object model](office-javascript-api-object-model.md)
 
---
+> [!NOTE]
+> Please note the following:
+> 
+> - [Outlook APIs](/outlook/add-ins/apis) are accessed by using the Common API syntax.
+> 
+> - Excel Custom functions run within a unique runtime that prioritizes execution of calculations, and therefore uses a slightly different programming model. For details, see [Custom functions architecture](../excel/custom-functions-architecture.md).
 
-Host-specific JavaScript API - Host-specific APIs for Excel and Word provide strongly-typed objects that you can use to access specific elements in the host application. For example, the Excel API contains objects that represent worksheets, ranges, tables, charts, and more.
-Common API - Introduced with Office 2013, the Common API enables you to access features such as:
--UI
--Dialogs
--Client settings that are common across multiple types of Office applications
-
-Custom functions use a slightly different programming model and will be covered in a later unit.
+For additional information the Office JavaScript APIs, see [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md).
 
 ### API requirement sets
 
@@ -89,7 +92,8 @@ Custom functions use a slightly different programming model and will be covered 
 
 ...
 
-(How to use these docs - host-specific guidance vs common guidance)
+> [!TIP]
+> (How to use these docs - host-specific guidance vs common guidance)
 
 Explore content in this section of the docs to learn more about scenarios that apply to building any type of add-in
 
@@ -116,6 +120,7 @@ Learn more about [testing and debugging Office Add-ins](../testing/test-debug-of
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
 * [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
+* [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
 * [Design Office Add-ins](../design/add-in-design.md)
 * [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 * [Publish Office Add-ins](../publish/publish.md)
