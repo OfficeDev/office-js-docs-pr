@@ -9,7 +9,19 @@ localization_priority: Priority
 
 ...
 
-## H2 A
+## How to use these docs - host-specific guidance vs common guidance
+
+...
+
+## API design patterns
+
+...
+
+## Tools | Tech stacks (for creating add-ins)
+
+...
+
+## Script Lab
 
 ...
 
