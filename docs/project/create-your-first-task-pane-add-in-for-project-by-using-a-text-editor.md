@@ -79,8 +79,8 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
             <script type="text/javascript" src="MicrosoftAjax.js"></script>
 
             <!-- Use the CDN reference to office.js when deploying your add-in. -->
-            <!-- <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script> -->
-            <script type="text/javascript" src="Office.js"></script>
+            <!-- <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script> -->
+            <script type="text/javascript" src="office.js"></script>
             <script type="text/javascript" src="JSOM_Sample.js"></script>
         </head>
         <body>
@@ -825,8 +825,8 @@ The Project 2013 SDK download contains the complete code in the JSOMCall.html fi
         <script type="text/javascript" src="MicrosoftAjax.js"></script>
 
         <!-- Use the CDN reference to office.js when deploying your add-in. -->
-        <!-- <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script> -->
-        <script type="text/javascript" src="Office.js"></script>
+        <!-- <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script> -->
+        <script type="text/javascript" src="office.js"></script>
         <script type="text/javascript" src="JSOM_Sample.js"></script>
 
         <style type="text/css">
@@ -1055,8 +1055,8 @@ To use the  **throwError** function, include the JQuery library and the SurfaceE
     <script type="text/javascript" src="MicrosoftAjax.js"></script>
 
     <!-- Use the CDN reference to Office.js and jQuery when deploying your add-in. -->
-    <!-- <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script> -->
-    <script type="text/javascript" src="Office.js"></script>
+    <!-- <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script> -->
+    <script type="text/javascript" src="office.js"></script>
     <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.9.0.min.js"></script>
 
     <script type="text/javascript" src="JSOM_Sample.js"></script>
