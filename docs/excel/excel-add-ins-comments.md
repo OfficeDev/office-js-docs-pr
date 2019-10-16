@@ -1,5 +1,5 @@
 ---
-title: Work with comments using the Excel JavaScript API
+title: Work with comments using the Excel JavaScript API (preview)
 description: ''
 ms.date: 10/15/2019
 localization_priority: Normal
@@ -167,7 +167,7 @@ Excel.run(function (context) {
 
 [Mentions](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) are used to tag colleagues in a comment. This sends them notifications with your comment's content. Your add-in can create these mentions on your behalf.
 
-Comments with mentions need to be created with [CommentRichContent](javascript/api/excel/excel.commentrichcontent) objects. Call `CommentCollection.add` with a `CommentRichContent` containing one or more mentions and specify `ContentType.mention` as the `contentType` parameter. The `content` string also needs to be formatted to insert the mention into the text. The format for a mention is: `<at id="{replyIndex}">{mentionName}</at>`.
+Comments with mentions need to be created with [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) objects. Call `CommentCollection.add` with a `CommentRichContent` containing one or more mentions and specify `ContentType.mention` as the `contentType` parameter. The `content` string also needs to be formatted to insert the mention into the text. The format for a mention is: `<at id="{replyIndex}">{mentionName}</at>`.
 
 > [NOTE]
 > Currently, only the mention's exact name can be used as the text of the mention link. Support for shortened versions of a name will be added later.
