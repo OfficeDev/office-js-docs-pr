@@ -16,15 +16,31 @@ Office Add-ins can extend the functionality of Office applications and interact 
 
 ...
 
-See: [Components of an Office Add-ins](../overview/office-add-ins.md#components-of-an-office-add-in)
+See: [Components of an Office Add-in](../overview/office-add-ins.md#components-of-an-office-add-in)
 
 ### Office Add-ins manifest
 
-...
+An Office Add-in's XML manifest file defines the settings and capabilities of the add-in. You can configure the manifest to specify things such as:
+
+- Metadata that describes the add-in (for example, ID, version, description, display name, default locale)
+- The Office applications where the add-in will run
+- Permissions that the add-in requires
+- How the add-in integrates with Office, including any custom UI that the add-in creates (for example, custom tabs, ribbon buttons)
+- Location of images that the add-in uses for branding and command iconography
+- Dimensions of the add-in (for example, dimensions for content add-ins, requested height for Outlook add-ins)
+- Rules that specify when the add-in activates in the context of a message or appointment (for Outlook add-ins only)
+
+For detailed information about the manifest, see [Office Add-ins XML manifest](add-in-manifests.md).
 
 ### Extending the Office UI
 
-[Design Office Add-ins](../design/add-in-design.md)
+Your Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
+
+- **Add-in commands** can be used to add custom tabs, buttons, or menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. Users can select add-in commands to initiate specified tasks such as running JavaScript code, opening a task pane, or launching a dialog box.
+
+- **HTML containers** like task panes, content add-ins, and dialog boxes can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can do other things that web applications typically do like call external web services, facilitate user authentication, and more.
+
+For detailed information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
 
 ### Office JavaScript APIs
 

@@ -161,6 +161,7 @@
         href: develop/automatically-open-a-task-pane-with-a-document.md
       - name: Create add-in commands
         href: develop/create-addin-commands.md
+        displayName: manifest
       - name: Develop add-ins for the iPad
         href: develop/develop-office-add-ins-for-the-ipad.md
       - name: Develop add-ins with Angular
@@ -177,14 +178,18 @@
         href: develop/manifest-element-ordering.md
       - name: Identify an equivalent COM add-in
         href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+        displayName: manifest
       - name: Localization
         href: develop/localization.md
       - name: Request permissions for API use in content and task pane add-ins
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+        displayName: manifest
       - name: Specify Office hosts and API requirements
         href: develop/specify-office-hosts-and-api-requirements.md
+        displayName: manifest
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+        displayName: manifest
   - name: Test and debug
     items:
     - name: Overview
