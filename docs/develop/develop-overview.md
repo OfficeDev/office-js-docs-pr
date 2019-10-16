@@ -38,17 +38,34 @@ Your Office Add-in can extend the Office UI by using add-in commands and HTML co
 
 - [Add-in commands](../design/add-in-commands.md) can be used to add custom tabs, buttons, or menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
 
-- HTML containers like [task panes](../add-ins/design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
+- HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
 
 For detailed information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
 
 ### Office JavaScript APIs
 
+An Office Add-in can use the Office JavaScript API to interact with content in the Office document where the add-in is running. 
+
+..
+Excel JavaScript API: Introduced with Office 2016, the Excel JavaScript API provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.
+
+Common APIs: Introduced with Office 2013, the Common API can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
 ...
 
 The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There is a common object model that is shared by Excel, Outlook, Word, PowerPoint, OneNote and Project. There are also more extensive host-specific object models for Excel and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.  
 
 (How to use these docs - host-specific guidance vs common guidance)
+
+
+--
+
+Host-specific JavaScript API - Host-specific APIs for Excel and Word provide strongly-typed objects that you can use to access specific elements in the host application. For example, the Excel API contains objects that represent worksheets, ranges, tables, charts, and more.
+Common API - Introduced with Office 2013, the Common API enables you to access features such as:
+-UI
+-Dialogs
+-Client settings that are common across multiple types of Office applications
+
+Custom functions use a slightly different programming model and will be covered in a later unit.
 
 ### API requirement sets
 
