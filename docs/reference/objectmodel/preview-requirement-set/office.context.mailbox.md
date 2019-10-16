@@ -676,11 +676,11 @@ If the item has not been saved yet in compose mode, you must call the [`saveAsyn
 
 ##### Requirements
 
-|Requirement| Value|
-|---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose and read|
+|Requirement|||
+|---|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0 | 1.3 |
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem | ReadItem |
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read | Compose |
 
 ##### Example
 
