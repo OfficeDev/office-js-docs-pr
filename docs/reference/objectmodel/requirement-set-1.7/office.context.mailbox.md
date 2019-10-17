@@ -543,9 +543,9 @@ The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque t
 > [!NOTE]
 > It is recommended that add-ins use the REST APIs instead of Exchange Web Services whenever possible.
 
-To call `getCallbackTokenAsync` in read mode, **ReadItem** is the minimum permission level your app can specify in its manifest.
+To call the `getCallbackTokenAsync` method in read mode, **ReadItem** is the minimum permission level your app can specify in its manifest.
 
-If the item has not been saved yet in compose mode, you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before calling the `getCallbackTokenAsync` method. To call the `saveAsync` method, **ReadWriteItem** is the minimum permission level your app can specify.
+If the item has not yet been saved in compose mode, you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before calling the `getCallbackTokenAsync` method. To call the `saveAsync` method, **ReadWriteItem** is the minimum permission level your app can specify in its manifest.
 
 **REST Tokens**
 
@@ -559,7 +559,7 @@ When an EWS token is requested (`options.isRest = false`), the resulting token w
 
 The add-in should use the `ewsUrl` property to determine the correct URL to use when making EWS calls.
 
-You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
+You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) operation or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
 ##### Parameters
 
@@ -616,9 +616,9 @@ The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque t
 
 You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-To call `getCallbackTokenAsync` in read mode, **ReadItem** is the minimum permission level your app can specify in its manifest.
+To call the `getCallbackTokenAsync` method in read mode, **ReadItem** is the minimum permission level your app can specify in its manifest.
 
-If the item has not been saved yet in compose mode, you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before calling the `getCallbackTokenAsync` method. To call the `saveAsync` method, **ReadWriteItem** is the minimum permission level your app can specify.
+If the item has not yet been saved in compose mode, you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before calling the `getCallbackTokenAsync` method. To call the `saveAsync` method, **ReadWriteItem** is the minimum permission level your app can specify in its manifest.
 
 ##### Parameters
 

@@ -302,7 +302,7 @@ The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque t
 
 You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-To call `getCallbackTokenAsync`, **ReadItem** is the minimum permission level your app can specify in its manifest.
+To call the `getCallbackTokenAsync` method, **ReadItem** is the minimum permission level your app can specify in its manifest.
 
 ##### Parameters
 
