@@ -76,7 +76,8 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 ```TypeScript
 function displaySelectedCells() {
-    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+    Office.context.document.getSelectedDataAsync(
+        Office.CoercionType.Text,
         null,
         function (result) {
             if (result.status === Office.AsyncResultStatus.Succeeded) {
