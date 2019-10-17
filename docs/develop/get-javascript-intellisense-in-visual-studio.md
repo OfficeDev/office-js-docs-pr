@@ -1,14 +1,14 @@
 ---
-title: Get JavaScript IntelliSense in Visual Studio 2017
+title: Get JavaScript IntelliSense in Visual Studio 2019
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/11/2019
 localization_priority: Priority
 ---
 
 
-# Get JavaScript IntelliSense in Visual Studio 2017
+# Get JavaScript IntelliSense in Visual Studio 2019
 
-When you use Visual Studio 2017 to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+When you use Visual Studio 2019 to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
 
 ## Office.js type definitions
 
