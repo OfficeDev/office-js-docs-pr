@@ -70,25 +70,55 @@ The Office JavaScript APIs include two distinct object models:
 
 - **Host-specific** APIs (introduced with Office 2016) provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Host-specific APIs are currently available for [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md), [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md), and [PowerPoint](..//reference/overview/powerpoint-add-ins-reference-overview.md). This object model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function). For details about the Common APIs, which include APIs for interacting with Outlook, see [Office JavaScript API object model](office-javascript-api-object-model.md)
+- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function). For details about the Common API object model, which includes APIs for interacting with Outlook, see [Office JavaScript API object model](office-javascript-api-object-model.md).
 
 > [!NOTE]
-> Please note the following:
-> 
-> - [Outlook APIs](/outlook/add-ins/apis) are accessed by using the Common API syntax.
-> 
-> - Excel Custom functions run within a unique runtime that prioritizes execution of calculations, and therefore uses a slightly different programming model. For details, see [Custom functions architecture](../excel/custom-functions-architecture.md).
+> Excel Custom functions run within a unique runtime that prioritizes execution of calculations, and therefore uses a slightly different programming model. For details, see [Custom functions architecture](../excel/custom-functions-architecture.md).
 
 For additional information about the Office JavaScript APIs, see [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md).
 
 #### API requirement sets
 
-...
+Requirement sets are named groups of API members. Requirement sets can be specific to Office hosts, such as the `ExcelApi 1.7` requirement set (a set of APIs that can only be used in Excel), or common to multiple hosts, such as the `DialogApi 1.1` requirement set (a set of APIs that can be used in any Office application that supports the Dialog API).
+
+Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](../overview/office-add-in-availability).
 
 ## Creating an Office Add-in 
 
-(Tools & Tech stacks)
-...
+You can create an Office Add-in by using the Yeoman generator for Office Add-ins or Visual Studio.
+
+[!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
+
+### Yeoman generator for Office Add-ins
+
+The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator-office) can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
+
+- Excel
+- OneNote
+- Outlook
+- PowerPoint
+- Project
+- Word
+- Excel custom functions
+
+You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React, and can choose between JavaScript and Typescript as well.
+
+Each [5-minute quick start](../index.md) contains step-by-step instructions that describe how to create an Office Add-in using the Yeoman generator. Within a quick start, select the `Yeoman generator` tab to display the proper set of instructions.
+
+![A screenshot that shows quick start instructions with the Yeoman generator tab selected](../images/quick-start-tab-yeoman.png)
+
+### Visual Studio
+
+Visual Studio can be used to create Office Add-ins for Excel, Word, PowerPoint, or Outlook. An Office Add-in project gets created as part of a Visual Studio solution, which means you can use Visual Studio features like selecting **Start** or choosing **F5** to automatically run your add-in locally on IIS. Office Add-in projects that you create with Visual Studio use HTML, CSS, and JavaScript. Visual Studio can create Office Add-ins for any of the following:
+
+- Excel
+- Outlook
+- PowerPoint
+- Word
+
+The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. Within a quick start, select the `Visual Studio` tab to display the proper set of instructions.
+
+![A screenshot that shows quick start instructions with the Visual Studio tab selected](../images/quick-start-tab-vs.png)
 
 ## Exploring APIs with Script Lab
 
