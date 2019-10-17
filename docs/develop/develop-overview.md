@@ -103,9 +103,9 @@ The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator
 
 You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React, and can choose between JavaScript and Typescript as well.
 
-Each [5-minute quick start](../index.md) contains step-by-step instructions that describe how to create an Office Add-in using the Yeoman generator. Within a quick start, select the `Yeoman generator` tab to display the proper set of instructions.
+Each [5-minute quick start](../index.md) contains step-by-step instructions that describe how to create an Office Add-in using the Yeoman generator. Within a quick start, select the `Yeoman generator` tab to display the proper set of instructions, as shown in the following screenshot.
 
-![A screenshot that shows quick start instructions with the Yeoman generator tab selected](../images/quick-start-tab-yeoman.png)
+    ![A screenshot that shows quick start instructions with the Yeoman generator tab selected](../images/quick-start-tab-yeoman.png)
 
 ### Visual Studio
 
@@ -116,9 +116,9 @@ Visual Studio can be used to create Office Add-ins for Excel, Word, PowerPoint, 
 - PowerPoint
 - Word
 
-The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. Within a quick start, select the `Visual Studio` tab to display the proper set of instructions.
+The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. Within a quick start, select the `Visual Studio` tab to display the proper set of instructions, as shown in the following screenshot.
 
-![A screenshot that shows quick start instructions with the Visual Studio tab selected](../images/quick-start-tab-vs.png)
+    ![A screenshot that shows quick start instructions with the Visual Studio tab selected](../images/quick-start-tab-vs.png)
 
 ## Exploring APIs with Script Lab
 
