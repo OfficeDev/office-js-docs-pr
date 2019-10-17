@@ -46,7 +46,7 @@ An Office Add-in can extend the Office UI by using add-in commands and HTML cont
 
 For detailed information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
 
-### Office JavaScript APIs
+### Interacting with content in an Office document
 
 An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running. 
 
@@ -61,7 +61,7 @@ The CDN for the Office JavaScript API library resides at `https://appsforoffice.
 </head>
 ```
 
-#### Understanding the API object models
+#### API object models
 
 The Office JavaScript APIs include two distinct object models:
 
@@ -78,7 +78,7 @@ The Office JavaScript APIs include two distinct object models:
 
 For additional information about the Office JavaScript APIs, see [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md).
 
-### API requirement sets
+#### API requirement sets
 
 ...
 
