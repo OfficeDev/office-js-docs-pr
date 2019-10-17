@@ -44,7 +44,11 @@ An Office Add-in can extend the Office UI by using add-in commands and HTML cont
 
 - HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
 
-For detailed information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
+The following image shows an add-in command in the ribbon, a task pane to the right of the document, and a dialog box overlayed on top of the document.
+
+![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/overview-with-app-interface-elements.png)
+
+For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
 
 ### Interacting with content in an Office document
 
@@ -122,7 +126,13 @@ The [5-minute quick start](../index.md) for each of these four applications cont
 
 ## Exploring APIs with Script Lab
 
-Script Lab is an add-in that enables you to explore the Office JavaScript API and run code snippets while you're working in an Office program such as Excel or Word. It's available for free via [AppSource]() and is a useful tool to include in your development toolkit as you prototype and verify the functionality you want in your add-in. In Script Lab, you can access a library of built-in samples to quickly try out APIs or even use a sample as the starting point for your own code. For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
+Script Lab is an add-in that enables you to explore the Office JavaScript API and run code snippets while you're working in an Office program such as Excel or Word. It's available for free via [AppSource]() and is a useful tool to include in your development toolkit as you prototype and verify the functionality you want in your add-in. In Script Lab, you can access a library of built-in samples to quickly try out APIs or even use a sample as the starting point for your own code. 
+
+The following video shows Script Lab in action.
+
+[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+
+For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
 ## Next steps
 
