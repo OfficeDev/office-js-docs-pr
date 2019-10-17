@@ -33,7 +33,7 @@ Start by completing these three steps, and then complete the steps in the follow
 
 1. Open Visual Studio and from the Visual Studio menu bar, choose  **Create a new project**.
 
-2. Using the search box, enter **Add-ins**. Then choose the type of add-in project you want to create.
+2. Using the search box, enter **Add-ins**, then choose the type of add-in project you want to create.
 
 3. Name the project, and then choose **OK**.
 
