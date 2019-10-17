@@ -136,27 +136,34 @@ For more information about Script Lab, see [Explore Office JavaScript APIs using
 
 ## Next steps
 
-...
+This article has described important concepts about developing Office Add-ins, outlined the different ways to create Office Add-ins, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality.
 
-> [!TIP]
-> (How to use these docs - host-specific guidance vs common guidance)
+If you haven't already done so, complete a quick start and/or try Script Lab and/or complete a tutorial.
 
-Explore content in this section of the docs to learn more about scenarios that apply to building any type of add-in
+Then continue exploring these docs to learn more about Office Add-ins development.  
 
-* ...
-* ...
+Suggested learning path ->
 
-Explore content in the host-specific section of the docs for the type of add-in you're building.
+1. Develop: 
 
-* [Excel add-ins documentation](../excel/index.md)
-* [OneNote add-ins documentation](../onenote/index.md)
-* [Outlook add-ins documentation](../outlook/index.md)
-* [PowerPoint add-ins documentation](../powerpoint/index.md)
-* [Project add-ins documentation](../project/index.md)
-* [Visio add-ins documentation](../visio/index.md)
-* [Word add-ins documentation](../word/index.md)
+    > [!TIP]
+    > (How to use these docs - host-specific guidance vs common guidance)
 
-Complete a quick start | Complete a tutorial
+    Explore content in this section of the docs to learn more about scenarios that apply to building any type of add-in
+
+    * ...
+    * ...
+
+    Explore content in the host-specific section of the docs for the type of add-in you're building.
+
+    * [Excel add-ins documentation](../excel/index.md)
+    * [OneNote add-ins documentation](../onenote/index.md)
+    * [Outlook add-ins documentation](../outlook/index.md)
+    * [PowerPoint add-ins documentation](../powerpoint/index.md)
+    * [Project add-ins documentation](../project/index.md)
+    * [Visio add-ins documentation](../visio/index.md)
+    * [Word add-ins documentation](../word/index.md)
+
 
 Learn more about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md) and [Publishing Office Add-ins](../publish/publish.md).
 
