@@ -92,7 +92,7 @@ After you complete the wizard, the generator creates the project and installs su
 ### Create the add-in project
 
 
-1. Choose **Create a new project**.
+1. In Visual Studio, choose **Create a new project**.
 
 2. Using the search box, enter **add-in**. Choose **Word Web Add-in**, then select **Next**.
 
