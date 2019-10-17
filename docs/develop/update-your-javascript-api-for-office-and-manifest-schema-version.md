@@ -37,7 +37,7 @@ Note that the update process is applied on a  _per-project basis_ - you'll need 
 
 
 ### Update the JavaScript API for Office library files in your project to the newest release
-The following steps will update your Office library files to the latest version. The steps use Visual Studio 2019, but they are similar for Visual Studio 2017.
+The following steps will update your Office.js library files to the latest version. The steps use Visual Studio 2019, but they are similar for previous versions of Visual Studio.
 
 1. In Visual Studio 2019, open or create a new  **Office Add-in** project.
 2. Choose  **Tools** > **NuGet Package Manager** > **Manage Nuget Packages for Solution**.

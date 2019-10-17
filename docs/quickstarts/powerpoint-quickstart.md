@@ -89,15 +89,15 @@ After you complete the wizard, the generator creates the project and installs su
 
 ### Create the add-in project
 
-1. Choose **Create a new project**.
+1. In Visual Studio, choose **Create a new project**.
 
 2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
 
 3. Name your project and select **Create**.
 
-3. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
+4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
-4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
     
 ### Explore the Visual Studio solution
 

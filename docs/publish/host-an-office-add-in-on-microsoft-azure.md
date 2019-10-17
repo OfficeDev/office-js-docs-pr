@@ -110,7 +110,7 @@ To create the web app using the Azure portal, complete the following steps.
 
 4. Choose **Word Web Add-in** as the project type, and then choose **Next** to accept the default settings.
 
-Visual Studio creates a basic Word add-in that you'll be able to publish as-is, without making any changes to its web project. In order to make an add-in of a different Office host type, such as Excel, repeat the steps and choose another project type with your desired Office host.
+Visual Studio creates a basic Word add-in that you'll be able to publish as-is, without making any changes to its web project. To make an add-in for a different Office host type, such as Excel, repeat the steps and choose a project type with your desired Office host.
 
 ## Step 5: Publish your Office Add-in web app to Azure
 
@@ -140,7 +140,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 4. Choose **File** and then choose **Save All**. Next, Copy the add-in XML manifest file (for example, WordWebAddIn.xml).
 
-5. Using the separate program **File Explorer**, browse to the network file share that you created in [Step 1: Create a shared folder](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) and paste the manifest file into the folder.
+5. Using the **File Explorer** program, browse to the network file share that you created in [Step 1: Create a shared folder](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) and paste the manifest file into the folder.
 
 ## Step 7: Insert and run the add-in in the Office client application
 
