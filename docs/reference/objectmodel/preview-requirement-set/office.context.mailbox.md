@@ -48,10 +48,10 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ##### Events
 
-| Name | Type | Description | Minimum<br>requirement set |
-|---|---|---|---|
-|`ItemChanged`| String | A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
-|`OfficeThemeChanged`| String | The Office theme on the mailbox has changed. | Preview |
+| Name | Description | Minimum<br>requirement set |
+|---|---|---|
+|`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
+|`OfficeThemeChanged`| The Office theme on the mailbox has changed. | Preview |
 
 ### Namespaces
 
