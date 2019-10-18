@@ -269,7 +269,7 @@ Provides access to the Cc (carbon copy) recipients of a message. The type of obj
 
 ##### Read mode
 
-The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. However, on Windows and Mac, you can get 500 members maximum.
+The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -277,7 +277,7 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### Compose mode
 
-The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message. However, on Windows and Mac, you can set up to 100 members per call to 500 total, and get 500 members maximum.
+The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can set up to 100 members per call to 500 total, and get 500 members maximum.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
