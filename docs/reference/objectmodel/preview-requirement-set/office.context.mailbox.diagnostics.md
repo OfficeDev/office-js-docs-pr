@@ -19,15 +19,15 @@ Provides diagnostic information to an Outlook add-in.
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-##### Members and methods
+##### Properties
 
-| Member | Type |
-|--------|------|
-| [hostName](#hostname-string) | Member |
-| [hostVersion](#hostversion-string) | Member |
-| [OWAView](#owaview-string) | Member |
+| Name | Minimum permission level | Modes | Minimum requirement set |
+|---|---|---|---|
+| [hostName](#hostname-string) | ReadItem | Compose<br>Read | 1.0 |
+| [hostVersion](#hostversion-string) | ReadItem | Compose<br>Read | 1.0 |
+| [OWAView](#owaview-string) | ReadItem | Compose<br>Read | 1.0 |
 
-### Members
+### Property details
 
 #### hostName: String
 

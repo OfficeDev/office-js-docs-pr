@@ -17,16 +17,16 @@ localization_priority: Normal
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-##### Members and methods
+##### Properties
 
-| Member | Type |
-|--------|------|
-| [accountType](#accounttype-string) | Member |
-| [displayName](#displayname-string) | Member |
-| [emailAddress](#emailaddress-string) | Member |
-| [timeZone](#timezone-string) | Member |
+| Name | Minimum permission level | Modes | Minimum requirement set |
+|---|---|---|---|
+| [accountType](#accounttype-string) | ReadItem | Compose<br>Read | 1.6 |
+| [displayName](#displayname-string) | ReadItem | Compose<br>Read | 1.0 |
+| [emailAddress](#emailaddress-string) | ReadItem | Compose<br>Read | 1.0 |
+| [timeZone](#timezone-string) | ReadItem | Compose<br>Read | 1.0 |
 
-### Members
+### Property details
 
 #### accountType: String
 

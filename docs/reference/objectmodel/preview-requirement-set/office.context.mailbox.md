@@ -19,27 +19,39 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-##### Members and methods
+##### Properties
 
-| Member | Type |
-|--------|------|
-| [ewsUrl](#ewsurl-string) | Member |
-| [masterCategories](#mastercategories-mastercategories) | Member |
-| [restUrl](#resturl-string) | Member |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | Method |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Method |
-| [convertToRestId](#converttorestiditemid-restversion--string) | Method |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Method |
-| [displayAppointmentForm](#displayappointmentformitemid) | Method |
-| [displayMessageForm](#displaymessageformitemid) | Method |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Method |
-| [displayNewMessageForm](#displaynewmessageformparameters) | Method |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | Method |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Method |
+| Name | Minimum permission level | Modes | Minimum requirement set |
+|---|---|---|---|
+| [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | 1.0 |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | Preview |
+| [restUrl](#resturl-string) | ReadItem | Compose<br>Read | 1.5 |
+
+##### Methods
+
+| Name | Minimum permission level | Modes | Minimum requirement set |
+|---|---|---|---|
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.5 |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Compose<br>Read | 1.0 |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Compose<br>Read | 1.0 |
+| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Compose<br>Read | 1.0 |
+| [displayMessageForm](#displaymessageformitemid) | ReadItem | Compose<br>Read | 1.0 |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Read | 1.0 |
+| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Compose<br>Read | 1.6 |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Compose<br>Read | 1.5 |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.3<br>1.0 |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.0 |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Compose<br>Read | 1.0 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Compose<br>Read | 1.5 |
+
+##### Events
+
+| Name | Type | Description | Minimum requirement set |
+|---|---|---|---|
+|`ItemChanged`| String | A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
+|`OfficeThemeChanged`| String | The Office theme on the mailbox has changed. | Preview |
 
 ### Namespaces
 
@@ -49,7 +61,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 [userProfile](Office.context.mailbox.userProfile.md): Provides information about the user in an Outlook add-in.
 
-### Members
+### Property details
 
 #### ewsUrl: String
 
@@ -141,7 +153,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-### Methods
+### Method details
 
 #### addHandlerAsync(eventType, handler, [options], [callback])
 
