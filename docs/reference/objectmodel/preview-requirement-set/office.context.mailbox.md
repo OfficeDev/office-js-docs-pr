@@ -21,7 +21,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ##### Properties
 
-| Name | Minimum permission level | Modes | Minimum requirement set |
+| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
 |---|---|---|---|
 | [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | 1.0 |
 | [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | Preview |
@@ -29,7 +29,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ##### Methods
 
-| Name | Minimum permission level | Modes | Minimum requirement set |
+| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
 |---|---|---|---|
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.5 |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
@@ -48,7 +48,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ##### Events
 
-| Name | Type | Description | Minimum requirement set |
+| Name | Type | Description | Minimum<br>requirement set |
 |---|---|---|---|
 |`ItemChanged`| String | A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
 |`OfficeThemeChanged`| String | The Office theme on the mailbox has changed. | Preview |

@@ -21,7 +21,7 @@ Provides diagnostic information to an Outlook add-in.
 
 ##### Properties
 
-| Name | Minimum permission level | Modes | Minimum requirement set |
+| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
 |---|---|---|---|
 | [hostName](#hostname-string) | ReadItem | Compose<br>Read | 1.0 |
 | [hostVersion](#hostversion-string) | ReadItem | Compose<br>Read | 1.0 |

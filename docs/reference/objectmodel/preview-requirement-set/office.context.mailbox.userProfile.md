@@ -19,7 +19,7 @@ localization_priority: Normal
 
 ##### Properties
 
-| Name | Minimum permission level | Modes | Minimum requirement set |
+| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
 |---|---|---|---|
 | [accountType](#accounttype-string) | ReadItem | Compose<br>Read | 1.6 |
 | [displayName](#displayname-string) | ReadItem | Compose<br>Read | 1.0 |
