@@ -48,6 +48,8 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ##### Events
 
+You can subscribe to and unsubscribe from the following events using [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) and [removeHandlerAsync](#removehandlerasynceventtype-options-callback) respectively.
+
 | Name | Description | Minimum<br>requirement set |
 |---|---|---|
 |`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
