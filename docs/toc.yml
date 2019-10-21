@@ -491,6 +491,9 @@
     - name: Coauthoring in Excel add-ins
       href: excel/co-authoring-in-excel-add-ins.md
       displayName: Excel
+    - name: Comments
+      href: excel/excel-add-ins-comments.md
+      displayName: Excel
     - name: Conditional formatting of ranges
       href: excel/excel-add-ins-conditional-formatting.md
       displayName: Excel

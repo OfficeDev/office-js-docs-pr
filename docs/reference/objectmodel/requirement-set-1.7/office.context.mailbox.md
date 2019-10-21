@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.7
 description: ''
-ms.date: 08/30/2019
+ms.date: 10/21/2019
 localization_priority: Normal
 ---
 
@@ -543,6 +543,10 @@ The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque t
 > [!NOTE]
 > It is recommended that add-ins use the REST APIs instead of Exchange Web Services whenever possible.
 
+Calling the `getCallbackTokenAsync` method in read mode requires a minimum permission level of **ReadItem**.
+
+Calling `getCallbackTokenAsync` in compose mode requires you to have saved the item. The [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method requires a minimum permission level of **ReadWriteItem**.
+
 **REST Tokens**
 
 When a REST token is requested (`options.isRest = true`), the resulting token will not work to authenticate Exchange Web Services calls. The token will be limited in scope to read-only access to the current item and its attachments, unless the add-in has specified the [`ReadWriteMailbox`](/outlook/add-ins/understanding-outlook-add-in-permissions#readwritemailbox-permission) permission in its manifest. If the `ReadWriteMailbox` permission is specified, the resulting token will grant read/write access to mail, calendar, and contacts, including the ability to send mail.
@@ -554,6 +558,8 @@ The add-in should use the `restUrl` property to determine the correct URL to use
 When an EWS token is requested (`options.isRest = false`), the resulting token will not work to authenticate REST API calls. The token will be limited in scope to accessing the current item.
 
 The add-in should use the `ewsUrl` property to determine the correct URL to use when making EWS calls.
+
+You can pass both the token and either an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) operation or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
 ##### Parameters
 
@@ -608,11 +614,11 @@ Gets a string that contains a token used to get an attachment or item from an Ex
 
 The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque token from the Exchange Server that hosts the user's mailbox. The lifetime of the callback token is 5 minutes.
 
-You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
+You can pass both the token and either an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) operation or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-Your app must have the **ReadItem** permission specified in its manifest to call the `getCallbackTokenAsync` method in read mode.
+Calling the `getCallbackTokenAsync` method in read mode requires a minimum permission level of **ReadItem**.
 
-In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method to get an item identifier to pass to the `getCallbackTokenAsync` method. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
+Calling `getCallbackTokenAsync` in compose mode requires you to have saved the item. The [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method requires a minimum permission level of **ReadWriteItem**.
 
 ##### Parameters
 
@@ -631,11 +637,11 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 
 ##### Requirements
 
-|Requirement| Value|
-|---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose and read|
+|Requirement|||
+|---|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0 | 1.3 |
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem | ReadItem |
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read | Compose |
 
 ##### Example
 

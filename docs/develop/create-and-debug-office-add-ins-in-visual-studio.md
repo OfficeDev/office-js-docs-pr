@@ -1,13 +1,13 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
 description: 'Use Visual Studio to create and debug Office Add-ins in the Office desktop client on Windows'
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Priority
 ---
 
 # Create and debug Office Add-ins in Visual Studio
 
-This article describes how to use Visual Studio 2017 to create an Office Add-in for Excel, Word, PowerPoint, or Outlook and debug the add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly.
+This article describes how to use Visual Studio 2019 to create an Office Add-in for Excel, Word, PowerPoint, or Outlook and debug the add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly.
 
 > [!NOTE]
 > Visual Studio does not support creating Office Add-ins for OneNote or Project, but you can use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create these types of add-ins.
@@ -17,10 +17,10 @@ This article describes how to use Visual Studio 2017 to create an Office Add-in 
 
 ## Prerequisites
 
-- [Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
 
     > [!TIP]
-    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).
 
 - Office 2013 or later
 
@@ -31,19 +31,19 @@ This article describes how to use Visual Studio 2017 to create an Office Add-in 
 
 Start by completing these three steps, and then complete the steps in the following section that corresponds to the type of add-in you're creating. 
 
-1. Open Visual Studio and from the Visual Studio menu bar, choose  **File** > **New** > **Project**.
+1. Open Visual Studio and from the Visual Studio menu bar, choose  **Create a new project**.
 
-2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose the type of add-in project you want to create. 
+2. Using the search box, enter **Add-ins**, then choose the type of add-in project you want to create.
 
 3. Name the project, and then choose **OK**.
 
 ### Word Web Add-in or Outlook Web Add-in
 
-If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution). 
+If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution).
 
 ### PowerPoint Web Add-in
 
-If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears. 
+If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears.
 
 - To create a task pane add-in, select **Add new functionalities to PowerPoint** and then choose the **Finish** button to create the Visual Studio solution.
 
@@ -195,7 +195,7 @@ Next, Visual Studio does the following:
 
 3. Opens the host application.
 
-Visual Studio doesn't show validation errors in the  **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information, see [Code and Text Editor](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). For more information about how to enable or disable validation, see [Options, Text Editor, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017).
+Visual Studio doesn't show validation errors in the  **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information about how to enable or disable validation, see [Options, Text Editor, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
 To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 
