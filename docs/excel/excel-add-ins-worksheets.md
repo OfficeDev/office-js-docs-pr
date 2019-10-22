@@ -313,10 +313,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## Handle sorting events (preview)
-
-> [!NOTE]
-> The APIs for these sort-related events are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Handle sorting events
 
 The `onColumnSorted` and `onRowSorted` events indicate when any worksheet data is sorted. These events are connected to individual `Worksheet` objects and to the workbook's `WorkbookCollection`. They fire whether the sorting is done programmatically or manually through the Excel user interface.
 

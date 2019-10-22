@@ -1,14 +1,11 @@
 ---
-title: Work with comments using the Excel JavaScript API (preview)
+title: Work with comments using the Excel JavaScript API
 description: ''
-ms.date: 10/16/2019
+ms.date: 10/22/2019
 localization_priority: Normal
 ---
 
-# Work with comments using the Excel JavaScript API (preview)
-
-> [!NOTE]
-> The comment APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+# Work with comments using the Excel JavaScript API
 
 This article describes how to add, read, modify, and remove comments in a workbook with the Excel JavaScript API. You can learn more about the comment feature from the [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article.
 
@@ -168,6 +165,9 @@ Excel.run(function (context) {
 ```
 
 ## Mentions
+
+> [!NOTE]
+> The comment mention APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 > [!IMPORTANT]
 > Comment mentions are currently only supported for Excel on the web.
