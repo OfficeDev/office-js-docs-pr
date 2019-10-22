@@ -16,9 +16,9 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| [Comment Mentions](../../excel/excel-add-ins-comments.md#mentions) | Mention others in comments to send notifications. | [Comment](/javascript/api/excel/excel.comment), [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
+| [Comment Mentions](../../excel/excel-add-ins-comments.md#mentions-preview) | Mention others in comments to send notifications. | [Comment](/javascript/api/excel/excel.comment), [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
 | [Insert Workbook](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
-| Workbook [Save](../../excel/excel-add-ins-workbooks.md#save-the-workbook) and [Close](../../excel/excel-add-ins-workbooks.md#close-the-workbook) | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
+| Workbook [Save](../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview) and [Close](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
 
 ## API list
 

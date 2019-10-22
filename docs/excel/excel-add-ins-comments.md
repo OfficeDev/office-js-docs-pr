@@ -164,7 +164,7 @@ Excel.run(function (context) {
 });
 ```
 
-## Mentions
+## Mentions (preview)
 
 > [!NOTE]
 > The comment mention APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
