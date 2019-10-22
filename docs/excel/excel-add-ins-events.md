@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: ''
-ms.date: 10/11/2019
+ms.date: 10/22/2019
 localization_priority: Priority
 ---
 

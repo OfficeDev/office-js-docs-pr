@@ -20,8 +20,8 @@ Comments within a workbook are tracked by the `Workbook.comments` property. This
 Use the `CommentCollection.add` method to add comments to a workbook. This method takes up to three parameters:
 
 - `cellAddress`: The cell where the comment is added. This can either be a string or [Range](/javascript/api/excel/excel.range) object. The range must be a single cell.
-- `content`: The comment's content. Use a string for plain text comments. Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments with [mentions](#mentions).
-- `contentType`: A [ContentType](/javascript/api/excel/excel.contenttype) enum specifying type of content. The default value is `ContentType.plain`. 
+- `content`: The comment's content. Use a string for plain text comments. Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments with [mentions](#mentions-preview).
+- `contentType`: A [ContentType](/javascript/api/excel/excel.contenttype) enum specifying type of content. The default value is `ContentType.plain`.
 
 The following code sample adds a comment to cell **A2**.
 

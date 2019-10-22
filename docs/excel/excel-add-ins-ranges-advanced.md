@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 09/18/2019
+ms.date: 10/22/2019
 localization_priority: Normal
 ---
 
