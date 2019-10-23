@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 09/23/2019
+ms.date: 10/18/2019
 localization_priority: Normal
 ---
 
@@ -58,6 +58,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [close](#close) | Method |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
 | [displayReplyForm](#displayreplyformformdata-callback) | Method |
+| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | Method |
 | [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | Method |
 | [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | Method |
 | [getEntities](#getentities--entities) | Method |
@@ -547,7 +548,7 @@ function callback(asyncResult) {
 
 #### internetHeaders: [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Gets or sets custom internet headers on a message.
+Gets or sets custom internet headers on a message. Compose mode only.
 
 ##### Type
 
@@ -559,7 +560,7 @@ Gets or sets custom internet headers on a message.
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
 ##### Example
 
@@ -1744,6 +1745,58 @@ Office.context.mailbox.item.displayReplyForm(
     console.log(asyncResult.value);
   }
 });
+```
+
+<br>
+
+---
+---
+
+#### getAllInternetHeadersAsync([options], [callback])
+
+Gets all the internet headers for the message as a string. Read mode only.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. On success, the internet headers data is provided in the asyncResult.value property as a string. Refer to [RFC 2183](https://tools.ietf.org/html/rfc2183) for the formatting information of the returned string value. If the call fails, the asyncResult.error property will contain an error code with the reason for the failure.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
+
+##### Returns:
+
+The internet headers data as a string formatted according to [RFC 2183](https://tools.ietf.org/html/rfc2183).
+
+Type:
+String
+
+##### Example
+
+```js
+// Get the internet headers related to the mail.
+Office.context.mailbox.item.getAllInternetHeadersAsync(
+  function(asyncResult) {
+    if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+      console.log(asyncResult.value);
+    } else {
+      if (asyncResult.error.code == 9020) {
+        // GenericResponseError returned when there is no context.
+        // Treat as no context.
+      } else {
+        // Handle the error.
+      }
+    }
+  }
+);
 ```
 
 <br>
