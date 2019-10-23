@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.5
 description: ''
-ms.date: 10/18/2019
+ms.date: 10/23/2019
 localization_priority: Priority
 ---
 
@@ -134,7 +134,10 @@ console.log(outputString);
 
 Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
 
-By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can set up to 100 members per call to 500 total, and get 500 members maximum.
+By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ##### Type
 
@@ -224,7 +227,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### Compose mode
 
-The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can set up to 100 members per call to 500 total, and get 500 members maximum.
+The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -690,7 +696,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### Compose mode
 
-The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can set up to 100 members per call to 500 total, and get 500 members maximum.
+The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -763,7 +772,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### Compose mode
 
-The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can set up to 100 members per call to 500 total, and get 500 members maximum.
+The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -942,7 +954,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### Compose mode
 
-The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can set up to 100 members per call to 500 total, and get 500 members maximum.
+The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
