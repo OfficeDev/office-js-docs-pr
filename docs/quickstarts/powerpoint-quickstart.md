@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
 ---
@@ -89,11 +89,11 @@ After you complete the wizard, the generator creates the project and installs su
 
 ### Create the add-in project
 
-1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
-    
-2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type. 
+1. In Visual Studio, choose **Create a new project**.
 
-3. Name the project, and then choose **OK**.
+2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
+
+3. Name your project and select **Create**.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 

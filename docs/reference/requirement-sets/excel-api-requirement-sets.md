@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: 'Office Add-in requirement set information for Excel builds'
-ms.date: 07/11/2019
+ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -22,6 +22,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 |  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Preview](excel-preview-apis.md)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
+| [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | Version 1907 (Build 11929.20306) or later | 2.30 or later | 16.30 or later | October 2019 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | Version 1903 (Build 11425.20204) or later | 2.24 or later | 16.24 or later | May 2019 |
 | [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 |
 | [ExcelApi 1.7](excel-api-1-7-requirement-set.md)  | Version 1801 (Build 9001.2171) or later   | 2.9 or later  | 16.9 or later  | April 2018 |

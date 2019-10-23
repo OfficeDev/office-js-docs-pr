@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Normal
 ---
 
@@ -167,7 +167,7 @@ You can include localized resource strings directly in standalone JavaScript fil
 This section provides examples that show you how to localize an Office Add-in description, display name, and UI. 
 
 > [!NOTE]
-> To download Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
+> To download Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
 
 ### Configure Office to use additional languages for display or editing
 
@@ -179,15 +179,19 @@ After you install the Language Accessory Pack, you can configure Office to use t
 
 ### Create an Office Add-in project
 
-You'll need to create a Visual Studio 2017 Office Add-in project.
+You'll need to create a Visual Studio 2019 Office Add-in project.
 
 > [!NOTE]
-> If you haven't installed Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
+> If you haven't installed Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
 
+1. Choose **Create a new project**.
 
-1. In Visual Studio, choose **File** > **New Project**.
-2. In the **New Project** dialog box, expand **Visual Basic** or **Visual C#**, expand **Office/SharePoint**, and then choose  **Add-ins**.
-3. Choose **Word Add-in**, and then name your add-in **WorldReadyAddIn**. Choose **OK**.
+2. Using the search box, enter **add-in**. Choose **Word Web Add-in**, then select **Next**.
+
+3. Name your project **WorldReadyAddIn** and select **Create**.
+
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+
 
 ### Localize the text used in your add-in
 

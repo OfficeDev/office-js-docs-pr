@@ -1,20 +1,20 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/22/2019
 localization_priority: Priority
 ---
 
 # Work with worksheets using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API. For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheetcollection).
+This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API. For the complete list of properties and methods that the `Worksheet` and `WorksheetCollection` objects support, see [Worksheet Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheetcollection).
 
 > [!NOTE]
 > The information in this article applies only to regular worksheets; it does not apply to "chart" sheets or "macro" sheets.
 
 ## Get worksheets
 
-The following code sample gets the collection of worksheets, loads the **name** property of each worksheet, and writes a message to the console.
+The following code sample gets the collection of worksheets, loads the `name` property of each worksheet, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -36,11 +36,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> The **id** property of a worksheet uniquely identifies the worksheet in a given workbook and its value will remain the same even when the worksheet is renamed or moved. When a worksheet is deleted from a workbook in Excel on Mac, the **id** of the deleted worksheet may be reassigned to a new worksheet that is subsequently created.
+> The `id` property of a worksheet uniquely identifies the worksheet in a given workbook and its value will remain the same even when the worksheet is renamed or moved. When a worksheet is deleted from a workbook in Excel on Mac, the `id` of the deleted worksheet may be reassigned to a new worksheet that is subsequently created.
 
 ## Get the active worksheet
 
-The following code sample gets the active worksheet, loads its **name** property, and writes a message to the console.
+The following code sample gets the active worksheet, loads its `name` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -56,7 +56,7 @@ Excel.run(function (context) {
 
 ## Set the active worksheet
 
-The following code sample sets the active worksheet to the worksheet named **Sample**, loads its **name** property, and writes a message to the console. If there is no worksheet with that name, the **activate()** method throws an **ItemNotFound** error.
+The following code sample sets the active worksheet to the worksheet named **Sample**, loads its `name` property, and writes a message to the console. If there is no worksheet with that name, the `activate()` method throws an `ItemNotFound` error.
 
 ```js
 Excel.run(function (context) {
@@ -77,7 +77,7 @@ These examples show how to reference a worksheet by its relative position.
 
 ### Get the first worksheet
 
-The following code sample gets the first worksheet in the workbook, loads its **name** property, and writes a message to the console.
+The following code sample gets the first worksheet in the workbook, loads its `name` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -93,7 +93,7 @@ Excel.run(function (context) {
 
 ### Get the last worksheet
 
-The following code sample gets the last worksheet in the workbook, loads its **name** property, and writes a message to the console.
+The following code sample gets the last worksheet in the workbook, loads its `name` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -109,7 +109,7 @@ Excel.run(function (context) {
 
 ### Get the next worksheet
 
-The following code sample gets the worksheet that follows the active worksheet in the workbook, loads its **name** property, and writes a message to the console. If there is no worksheet after the active worksheet, the **getNext()** method throws an **ItemNotFound** error.
+The following code sample gets the worksheet that follows the active worksheet in the workbook, loads its `name` property, and writes a message to the console. If there is no worksheet after the active worksheet, the `getNext()` method throws an `ItemNotFound` error.
 
 ```js
  Excel.run(function (context) {
@@ -126,7 +126,7 @@ The following code sample gets the worksheet that follows the active worksheet i
 
 ### Get the previous worksheet
 
-The following code sample gets the worksheet that precedes the active worksheet in the workbook, loads its **name** property, and writes a message to the console. If there is no worksheet before the active worksheet, the **getPrevious()** method throws an **ItemNotFound** error.
+The following code sample gets the worksheet that precedes the active worksheet in the workbook, loads its `name` property, and writes a message to the console. If there is no worksheet before the active worksheet, the `getPrevious()` method throws an `ItemNotFound` error.
 
 ```js
 Excel.run(function (context) {
@@ -143,7 +143,7 @@ Excel.run(function (context) {
 
 ## Add a worksheet
 
-The following code sample adds a new worksheet named **Sample** to the workbook, loads its **name** and **position** properties, and writes a message to the console. The new worksheet is added after all existing worksheets.
+The following code sample adds a new worksheet named **Sample** to the workbook, loads its `name` and `position` properties, and writes a message to the console. The new worksheet is added after all existing worksheets.
 
 ```js
 Excel.run(function (context) {
@@ -157,6 +157,24 @@ Excel.run(function (context) {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
         });
 }).catch(errorHandlerFunction);
+```
+
+### Copy an existing worksheet
+
+`Worksheet.copy` adds a new worksheet that is a copy of an existing worksheet. The new worksheet's name will have a number appended to the end, in a manner consistent with copying a worksheet through the Excel UI (for example, **MySheet (2)**). `Worksheet.copy` can take two parameters, both of which are optional:
+
+- `positionType` - A [WorksheetPositionType](/javascript/api/excel/excel.worksheetpositiontype) enum specifying where in the workbook the new worksheet is to be added.
+- `relativeTo` - If the `positionType` is `Before` or `After`, you need to specify a worksheet relative to which the new sheet is to be added (this parameter answers the question "Before or after what?").
+
+The following code sample copies the current worksheet and inserts the new sheet directly after the current worksheet.
+
+```js
+Excel.run(function (context) {
+    var myWorkbook = context.workbook;
+    var sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
+    var copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
+    return context.sync();
+});
 ```
 
 ## Delete a worksheet
@@ -225,7 +243,7 @@ These examples show how to set the visibility of a worksheet.
 
 ### Hide a worksheet
 
-The following code sample sets the visibility of worksheet named **Sample** to hidden, loads its **name** property, and writes a message to the console.
+The following code sample sets the visibility of worksheet named **Sample** to hidden, loads its `name` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -242,7 +260,7 @@ Excel.run(function (context) {
 
 ### Unhide a worksheet
 
-The following code sample sets the visibility of worksheet named **Sample** to visible, loads its **name** property, and writes a message to the console.
+The following code sample sets the visibility of worksheet named **Sample** to visible, loads its `name` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -259,7 +277,7 @@ Excel.run(function (context) {
 
 ## Get a single cell within a worksheet
 
-The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its **address** and **values** properties, and writes a message to the console. The values that are passed into the `getCell(row: number, column:number)` method are the zero-indexed row number and column number for the cell that is being retrieved.
+The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its `address` and `values` properties, and writes a message to the console. The values that are passed into the `getCell(row: number, column:number)` method are the zero-indexed row number and column number for the cell that is being retrieved.
 
 ```js
 Excel.run(function (context) {
@@ -295,10 +313,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## Handle sorting events (preview)
-
-> [!NOTE]
-> The APIs for these sort-related events are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Handle sorting events
 
 The `onColumnSorted` and `onRowSorted` events indicate when any worksheet data is sorted. These events are connected to individual `Worksheet` objects and to the workbook's `WorkbookCollection`. They fire whether the sorting is done programmatically or manually through the Excel user interface.
 
