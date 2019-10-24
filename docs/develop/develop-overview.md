@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
-ms.date: 10/22/2019
+ms.date: 10/28/2019
 localization_priority: Priority
 ---
 
