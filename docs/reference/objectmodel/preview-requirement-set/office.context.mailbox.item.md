@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 09/23/2019
+ms.date: 10/23/2019
 localization_priority: Normal
 ---
 
@@ -58,6 +58,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [close](#close) | Method |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
 | [displayReplyForm](#displayreplyformformdata-callback) | Method |
+| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | Method |
 | [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | Method |
 | [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | Method |
 | [getEntities](#getentities--entities) | Method |
@@ -148,6 +149,11 @@ console.log(outputString);
 #### bcc: [Recipients](/javascript/api/outlook/office.recipients)
 
 Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
+
+By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ##### Type
 
@@ -267,7 +273,7 @@ Provides access to the Cc (carbon copy) recipients of a message. The type of obj
 
 ##### Read mode
 
-The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.
+The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -275,7 +281,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### Compose mode
 
-The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.
+The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -547,7 +556,7 @@ function callback(asyncResult) {
 
 #### internetHeaders: [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Gets or sets custom internet headers on a message.
+Gets or sets custom internet headers on a message. Compose mode only.
 
 ##### Type
 
@@ -559,7 +568,7 @@ Gets or sets custom internet headers on a message.
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
 ##### Example
 
@@ -826,7 +835,7 @@ Provides access to the optional attendees of an event. The type of object and le
 
 ##### Read mode
 
-The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.
+The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -835,7 +844,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### Compose mode
 
-The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.
+The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -976,7 +988,7 @@ Provides access to the required attendees of an event. The type of object and le
 
 ##### Read mode
 
-The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.
+The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -985,7 +997,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### Compose mode
 
-The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.
+The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1198,7 +1213,7 @@ Provides access to the recipients on the **To** line of a message. The type of o
 
 ##### Read mode
 
-The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.
+The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -1206,7 +1221,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### Compose mode
 
-The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.
+The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1744,6 +1762,58 @@ Office.context.mailbox.item.displayReplyForm(
     console.log(asyncResult.value);
   }
 });
+```
+
+<br>
+
+---
+---
+
+#### getAllInternetHeadersAsync([options], [callback])
+
+Gets all the internet headers for the message as a string. Read mode only.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. On success, the internet headers data is provided in the asyncResult.value property as a string. Refer to [RFC 2183](https://tools.ietf.org/html/rfc2183) for the formatting information of the returned string value. If the call fails, the asyncResult.error property will contain an error code with the reason for the failure.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
+
+##### Returns:
+
+The internet headers data as a string formatted according to [RFC 2183](https://tools.ietf.org/html/rfc2183).
+
+Type:
+String
+
+##### Example
+
+```js
+// Get the internet headers related to the mail.
+Office.context.mailbox.item.getAllInternetHeadersAsync(
+  function(asyncResult) {
+    if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+      console.log(asyncResult.value);
+    } else {
+      if (asyncResult.error.code == 9020) {
+        // GenericResponseError returned when there is no context.
+        // Treat as no context.
+      } else {
+        // Handle the error.
+      }
+    }
+  }
+);
 ```
 
 <br>

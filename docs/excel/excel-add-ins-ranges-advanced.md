@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 09/18/2019
+ms.date: 10/22/2019
 localization_priority: Normal
 ---
 
@@ -265,9 +265,6 @@ Excel.run(function (context) {
 ![Data in Excel after range’s remove duplicates method has been run](../images/excel-ranges-remove-duplicates-after.png)
 
 ## Group data for an outline
-
-> [!NOTE]
-> The outline APIs for grouping rows and columns are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Rows or columns of a range can be grouped together to create an [outline](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). These groups can be collapsed and expanded to hide and show the corresponding cells. This makes quick analysis of top-line data easier. Use [Range.group](/javascript/api/excel/excel.range#group-groupoption-) to make these outline groups.
 

@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 08/15/2019
+ms.date: 10/18/2019
 localization_priority: Priority
 ---
 
@@ -221,15 +221,21 @@ Added a new function that returns initialization data passed when the add-in is 
 
 #### [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Added a new object that represents the custom internet headers of a message item.
+Added a new object that represents the custom internet headers of a message item. Compose mode only.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
 
-#### [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
+#### [Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetheaders)
 
-Added a new property that represents the custom internet headers on a message item.
+Added a new property that represents the custom internet headers on a message item. Compose mode only.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription)
+
+#### [Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getallinternetheadersasync-options--callback-)
+
+Added a new method that gets all the internet headers for a message item. Read mode only.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 <br>
 
