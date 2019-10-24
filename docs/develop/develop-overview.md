@@ -128,33 +128,48 @@ The [5-minute quick start](../index.md) for each of these four applications cont
 
 Script Lab is an add-in that enables you to explore the Office JavaScript API and run code snippets while you're working in an Office program such as Excel or Word. It's available for free via [AppSource](https://appsource.microsoft.com/product/office/WA104380862) and is a useful tool to include in your development toolkit as you prototype and verify the functionality you want in your add-in. In Script Lab, you can access a library of built-in samples to quickly try out APIs or even use a sample as the starting point for your own code. 
 
-The following video shows Script Lab in action.
-
-[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
-
 For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
 ## Next steps
 
-This article has described important concepts about developing Office Add-ins, outlined the different ways to create Office Add-ins, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality.
+This article has described important Office Add-ins development concepts, outlined the different ways to create Office Add-ins, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality. Now that you've explored this introductory information, consider continuing your Office Add-ins journey as described in the remainder of this section.
 
-If you haven't already done so, complete a quick start and/or try Script Lab and/or complete a tutorial.
+### Create an Office add-in
 
-Then continue exploring these docs to learn more about Office Add-ins development.  
+You can quickly create a very basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.md). If you've previously completed a quick start and want to create a slightly more complex add-in, you can do so by completing a [tutorial](../index.md).
 
-Suggested learning path ->
+### Explore teh APIs with Script Lab
 
-1. Develop: 
+Explore the library of built-in samples in [Script Lab](../overview/explore-with-script-lab.md) to get a sense for the capabilities of the Office JavaScript APIs.
 
-    > [!TIP]
-    > (How to use these docs - host-specific guidance vs common guidance)
+### Learn more about Office Add-ins development
 
-    Explore content in this section of the docs to learn more about scenarios that apply to building any type of add-in
+When you're ready to learn more about Office Add-ins development, continue exploring articles in this section of the documentation (**Office Add-ins guidance**) as well articles in the section that corresponds to the Office application where your add-in will run (for example, **Excel add-ins** or **Outlook add-ins**).
 
-    * ...
-    * ...
+> [!IMPORTANT]
+> The table of contents (TOC) within this documentation is organized according to whether topics are relevant to multiple Office applications or relevant to only one Office application. 
+> 
+> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](../overview/index.md) in the TOC.
+> 
+> - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md).
 
-    Explore content in the host-specific section of the docs for the type of add-in you're building.
+#### Common guidance
+
+Explore the **Office Add-ins guidance** section of this documentation for topics that can apply to add-ins within more than one Office application. This includes:
+
+- Foundational information about Office Add-ins such as [host and platform availability](../overview/overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/concepts/requirements-for-running-office-add-ins.md)
+
+- Information about [user interface design and extensibility](../design/add-in-design.md)
+
+- Information about development topics that can be relevant to add-ins in more than one type of Office application, such as the [Office JavaScript API](understanding-the-javascript-api-for-office.md), the [Office Add-ins XML manifest](add-in-manifests.md), [authentication and authorization](overview-authn-authz.md), [creating add-in commands](create-addin-commands.md), and more.
+
+- Information about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md) 
+
+- Information about [publishing Office Add-ins](../publish/publish.md)
+
+#### Host-specific guidance
+
+Explore the host-specific section of this documentation for topics that apply to the type of add-in you're building.
 
     * [Excel add-ins documentation](../excel/index.md)
     * [OneNote add-ins documentation](../onenote/index.md)
@@ -163,11 +178,6 @@ Suggested learning path ->
     * [Project add-ins documentation](../project/index.md)
     * [Visio add-ins documentation](../visio/index.md)
     * [Word add-ins documentation](../word/index.md)
-
-
-Learn more about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md) and [Publishing Office Add-ins](../publish/publish.md).
-
-...
 
 ## See also
 
