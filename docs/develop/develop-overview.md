@@ -142,12 +142,10 @@ You can quickly create a very basic add-in for Excel, OneNote, Outlook, PowerPoi
 
 Explore the library of built-in samples in [Script Lab](../overview/explore-with-script-lab.md) to get a sense for the capabilities of the Office JavaScript APIs.
 
-### Learn more about Office Add-ins development
-
-When you're ready to learn more about Office Add-ins development, continue exploring articles in this section of the documentation ([Office Add-ins guidance](../overview/index.md)) as well articles in the section that corresponds to the Office application where your add-in will run (for example, [Excel add-ins](../excel/index.md) or [Outlook add-ins](../outlook/index.md), etc.).
+### Learn more about developing, testing, and publishing Office Add-ins
 
 > [!IMPORTANT]
-> Some topics in this documentation apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.), while other topics apply to only one type of Office Add-in. 
+> The table of contents (TOC) within this documentation is organized according to whether articles are relevant to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.), or relevant to just one type of Office Add-in (for example, Excel).
 > 
 > - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](../overview/index.md) in the table of contents (TOC).
 > 
@@ -155,13 +153,13 @@ When you're ready to learn more about Office Add-ins development, continue explo
 
 #### Common guidance
 
-Explore the [Office Add-ins guidance](../overview/index.md) section of this documentation for topics that apply to more than one type of Office Add-in. This includes:
+Explore the [Office Add-ins guidance](../overview/index.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
 
 - Foundational information about Office Add-ins such as [host and platform availability](../overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md)
 
-- Information about [user interface design and extensibility](../design/add-in-design.md)
+- Information about [UI design and extensibility](../design/add-in-design.md)
 
-- Information about development topics that can be relevant to add-ins in more than one type of Office application, such as the [Office JavaScript API](understanding-the-javascript-api-for-office.md), the [Office Add-ins XML manifest](add-in-manifests.md), [authentication and authorization](overview-authn-authz.md), [creating add-in commands](create-addin-commands.md), and more.
+- Information about development topics that are relevant to more than one type of Office Add-in, such as the [Office JavaScript API](understanding-the-javascript-api-for-office.md), the [Office Add-ins XML manifest](add-in-manifests.md), [authentication and authorization](overview-authn-authz.md), [creating add-in commands](create-addin-commands.md), and more.
 
 - Information about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md) 
 
@@ -169,7 +167,7 @@ Explore the [Office Add-ins guidance](../overview/index.md) section of this docu
 
 #### Host-specific guidance
 
-Explore the host-specific section of this documentation for topics that apply to the type of add-in you're building.
+Explore the host-specific section of this documentation for information that applies specifically to the type of add-in you're building.
 
 - [Excel add-ins documentation](../excel/index.md)
 - [OneNote add-ins documentation](../onenote/index.md)
