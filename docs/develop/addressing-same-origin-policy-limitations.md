@@ -1,7 +1,7 @@
 ---
 title: Addressing same-origin policy limitations in Office Add-ins
 description: ''
-ms.date: 02/08/2019
+ms.date: 10/17/2019
 localization_priority: Priority
 ---
 
@@ -14,11 +14,11 @@ Because Office Add-ins are hosted in a browser control, the same-origin policy a
 
 The same-origin policy can be an unnecessary handicap in many situations, such as when a web application hosts content and APIs across multiple subdomains. There are a few common techniques for securely overcoming same-origin policy enforcement. This article can only provide the briefest introduction to some of them. Please use the links provided to get started in your research of these techniques.
 
-## Use JSON/P for anonymous access
+## Use JSONP for anonymous access
 
-One way to overcome same-origin policy limitations is to use [JSON/P](https://www.w3schools.com/js/js_json_jsonp.asp) to provide a proxy for the web service. You do this by including a `script` tag with a `src` attribute that points to some script hosted on any domain. You can programmatically create the `script` tags, dynamically create the URL to point the `src` attribute to, and then pass parameters to the URL via URI query parameters. Web service providers create and host JavaScript code at specific URLs, and return different scripts depending on the URI query parameters. These scripts then execute where they are inserted and work as expected.
+One way to overcome same-origin policy limitations is to use [JSONP](https://www.w3schools.com/js/js_json_jsonp.asp) to provide a proxy for the web service. You do this by including a `script` tag with a `src` attribute that points to some script hosted on any domain. You can programmatically create the `script` tags, dynamically create the URL to point the `src` attribute to, and then pass parameters to the URL via URI query parameters. Web service providers create and host JavaScript code at specific URLs, and return different scripts depending on the URI query parameters. These scripts then execute where they are inserted and work as expected.
 
-The following is an example of JSON/P that uses a technique that will work in any Office Add-in.
+The following is an example of JSONP that uses a technique that will work in any Office Add-in.
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
