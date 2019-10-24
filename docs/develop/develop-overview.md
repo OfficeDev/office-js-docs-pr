@@ -157,7 +157,7 @@ When you're ready to learn more about Office Add-ins development, continue explo
 
 Explore the **Office Add-ins guidance** section of this documentation for topics that can apply to add-ins within more than one Office application. This includes:
 
-- Foundational information about Office Add-ins such as [host and platform availability](../overview/overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/concepts/requirements-for-running-office-add-ins.md)
+- Foundational information about Office Add-ins such as [host and platform availability](../overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md)
 
 - Information about [user interface design and extensibility](../design/add-in-design.md)
 
