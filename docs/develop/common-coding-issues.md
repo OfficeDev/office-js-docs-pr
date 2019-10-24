@@ -1,15 +1,18 @@
 ---
 title: Common coding issues and platform quirks
 description: ''
-ms.date: 10/23/2019
+ms.date: 10/24/2019
 localization_priority: Normal
 ---
 
 # Common coding issues and platform quirks
 
-TODO: Add intro
+This articles highlights subtle discrepancies and unexpected behaviors with the Office JavaScript API. If you encounter an issue that belongs in this list, please let us know by using the GitHub feedback form at the bottom of the article.
 
 ## Some properties cannot be treated as navigational properties
+
+> [!NOTE]
+> This section only applies to the host-specific APIs for Excel and Word.
 
 Some properties must be set as JSON structs, instead of setting their individual subproperties. One example of this is found in [PageLayout](/javascript/api/excel/excel.pagelayout). The `zoom` property must be set with a single [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) object, as shown here:
 
@@ -18,7 +21,7 @@ Some properties must be set as JSON structs, instead of setting their individual
 sheet.pageLayout.zoom = { scale: 200 };
 
 // The following code does throws an error because `zoom` is not loaded.
-// sheet.pageLayout.zoom.scale = 200;
+sheet.pageLayout.zoom.scale = 200;
 // Note that even if `zoom` is loaded, the set of scale will not take effect.
 // All context operations will happen on `zoom`, refreshing the proxy object in the add-in.
 ```
@@ -42,4 +45,25 @@ The [TypeScript definitions](https://github.com/DefinitelyTyped/DefinitelyTyped/
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
+```
+
+## Tracking event handlers
+
+> [!NOTE]
+> This section only applies to the host-specific APIs for Excel, OneNote, and Word.
+
+Event handlers are tied to individual, client-side, proxy objects. The event handler will attach to the related workbook object when synced. Removing an event handler requires a reference to the original proxy object.
+
+```js
+Excel.run(function (context) {
+    const pieChart = context.workbook.worksheets.getActiveWorksheet().charts.getItem("Pie");
+    pieChart.onActivated.add(chartActivated);
+    return context.sync().then (function() {
+        // This following code will not remove the event handler.
+        // It is using a different proxy object for the chart.
+        var sameChart = context.workbook.worksheets.getActiveWorksheet().charts.getItem("Pie");
+        sameChart.onActivated.remove(chartActivated);
+        return context.sync();
+    });
+});
 ```
