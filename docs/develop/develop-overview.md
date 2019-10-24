@@ -138,24 +138,24 @@ This article has described important Office Add-ins development concepts, outlin
 
 You can quickly create a very basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.md). If you've previously completed a quick start and want to create a slightly more complex add-in, you can do so by completing a [tutorial](../index.md).
 
-### Explore teh APIs with Script Lab
+### Explore the APIs with Script Lab
 
 Explore the library of built-in samples in [Script Lab](../overview/explore-with-script-lab.md) to get a sense for the capabilities of the Office JavaScript APIs.
 
 ### Learn more about Office Add-ins development
 
-When you're ready to learn more about Office Add-ins development, continue exploring articles in this section of the documentation (**Office Add-ins guidance**) as well articles in the section that corresponds to the Office application where your add-in will run (for example, **Excel add-ins** or **Outlook add-ins**).
+When you're ready to learn more about Office Add-ins development, continue exploring articles in this section of the documentation ([Office Add-ins guidance](../overview/index.md)) as well articles in the section that corresponds to the Office application where your add-in will run (for example, [Excel add-ins](../excel/index.md) or [Outlook add-ins](../outlook/index.md), etc.).
 
 > [!IMPORTANT]
-> The table of contents (TOC) within this documentation is organized according to whether topics are relevant to multiple Office applications or relevant to only one Office application. 
+> Some topics in this documentation apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.), while other topics apply to only one type of Office Add-in. 
 > 
-> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](../overview/index.md) in the TOC.
+> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](../overview/index.md) in the table of contents (TOC).
 > 
-> - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md).
+> - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md)).
 
 #### Common guidance
 
-Explore the **Office Add-ins guidance** section of this documentation for topics that can apply to add-ins within more than one Office application. This includes:
+Explore the [Office Add-ins guidance](../overview/index.md) section of this documentation for topics that apply to more than one type of Office Add-in. This includes:
 
 - Foundational information about Office Add-ins such as [host and platform availability](../overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md)
 
@@ -171,19 +171,19 @@ Explore the **Office Add-ins guidance** section of this documentation for topics
 
 Explore the host-specific section of this documentation for topics that apply to the type of add-in you're building.
 
-    * [Excel add-ins documentation](../excel/index.md)
-    * [OneNote add-ins documentation](../onenote/index.md)
-    * [Outlook add-ins documentation](../outlook/index.md)
-    * [PowerPoint add-ins documentation](../powerpoint/index.md)
-    * [Project add-ins documentation](../project/index.md)
-    * [Visio add-ins documentation](../visio/index.md)
-    * [Word add-ins documentation](../word/index.md)
+- [Excel add-ins documentation](../excel/index.md)
+- [OneNote add-ins documentation](../onenote/index.md)
+- [Outlook add-ins documentation](../outlook/index.md)
+- [PowerPoint add-ins documentation](../powerpoint/index.md)
+- [Project add-ins documentation](../project/index.md)
+- [Visio add-ins documentation](../visio/index.md)
+- [Word add-ins documentation](../word/index.md)
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
-* [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
-* [Design Office Add-ins](../design/add-in-design.md)
-* [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
-* [Publish Office Add-ins](../publish/publish.md)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
+- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
+- [Design Office Add-ins](../design/add-in-design.md)
+- [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
+- [Publish Office Add-ins](../publish/publish.md)
