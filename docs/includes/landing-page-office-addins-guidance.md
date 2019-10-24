@@ -46,6 +46,7 @@
                         <p>Explore key aspects of Office Add-ins development.</p>
                         <br/>
                         <ul>
+                            <li><a href="../develop/develop-overview.md">Develop Office Add-ins</a></li>
                             <li><a href="../develop/specify-office-hosts-and-api-requirements.md">Specify Office hosts and API requirements</a></li>
                             <li><a href="../reference/javascript-api-for-office.md">JavaScript API for Office</a></li>
                             <li><a href="/javascript/api/office">Common API reference</a></li>
@@ -55,7 +56,6 @@
                             <li><a href="../develop/automatically-open-a-task-pane-with-a-document.md">Automatically open a task pane</a></li>
                             <li><a href="../develop/dialog-api-in-office-add-ins.md">Use the Dialog API</a></li>
                             <li><a href="../develop/understanding-the-javascript-api-for-office.md">Understanding the Office JavaScript API</a></li>
-                            <li><a href="../design/using-office-ui-fabric-react.md">Get started with Fabric React</a></li>
                             <li><a href="../develop/addressing-same-origin-policy-limitations.md">Explore all Office Add-in development topics<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
                         </ul>
                     </div>
