@@ -1,15 +1,15 @@
 ---
-title: Common coding issues and platform quirks
+title: Common coding issues and unexpected platform behaviors
 description: ''
 ms.date: 10/24/2019
 localization_priority: Normal
 ---
 
-# Common coding issues and platform quirks
+# Common coding issues and unexpected platform behaviors
 
 This articles highlights subtle discrepancies and unexpected behaviors with the Office JavaScript API. If you encounter an issue that belongs in this list, please let us know by using the GitHub feedback form at the bottom of the article.
 
-## Some properties cannot be treated as navigational properties
+## Some properties cannot be set as navigational properties
 
 > [!NOTE]
 > This section only applies to the host-specific APIs for Excel and Word.
@@ -40,7 +40,7 @@ You can identify a property that must have its subproperties set with a JSON str
 
 ## Setting read-only properties
 
-The [TypeScript definitions](https://github.com/DefinitelyTyped/DefinitelyTyped/) for Office-JS specify which object properties are read-only. However, JavaScript developers are able to write code ignoring the `readonly` field. In that case, Office-JS silently ignores the write operation. The following example shows the read-only property [Chart.id](/javascript/api/excel/excel.chart#id) erroneously attempting to be set.
+The [TypeScript definitions](https://github.com/DefinitelyTyped/DefinitelyTyped/) for Office-JS specify which object properties are read-only. However, JavaScript developers are able to write code ignoring the `readonly` modifier. In that case, Office-JS silently ignores the write operation. The following example shows the read-only property [Chart.id](/javascript/api/excel/excel.chart#id) erroneously attempting to be set.
 
 ```js
 // This will do nothing, since `id` is a read-only property.
@@ -67,3 +67,9 @@ Excel.run(function (context) {
     });
 });
 ```
+
+## See also
+
+- [The office-js GitHub repo](https://github.com/OfficeDev/office-js/issues): The issues page is a complete list of known product issues.
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js): A question and answer site for professional and enthusiast programmers. Use the "office-js" tag when asking a Stack Overflow question so the community can find it and help.
+- [User Voice](https://officespdev.uservoice.com/): A place to suggest new features for the Office platform.
