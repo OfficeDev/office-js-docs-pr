@@ -150,8 +150,8 @@ Explore the library of built-in samples in [Script Lab](../overview/explore-with
 > - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](../overview/index.md) in the TOC.
 > 
 > - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md)).
-
-For any type of add-in that you build, you'll use information in the [Office Add-ins guidance](../overview/index.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building.
+> 
+> For any type of add-in that you build, you'll use information in the [Office Add-ins guidance](../overview/index.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 
 #### Common guidance
 
@@ -169,7 +169,7 @@ Explore the [Office Add-ins guidance](../overview/index.md) section of this docu
 
 #### Host-specific guidance
 
-Explore the host-specific section of this documentation for information that applies specifically to the type of add-in you're building.
+Explore the host-specific documentation for the type of add-in you're building.
 
 - [Excel add-ins documentation](../excel/index.md)
 - [OneNote add-ins documentation](../onenote/index.md)
