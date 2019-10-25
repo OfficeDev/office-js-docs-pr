@@ -45,7 +45,37 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
 Edit the add-in code as follows to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.
 
-1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the **div** with `id="content-main"`, replace that entire **div** with the following markup, and save the file.
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the **<head>**, replace that entire **head** with the following markup, and save the file.
+
+    ```html
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+        <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="Scripts/MessageBanner.js" type="text/javascript"></script>
+        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+
+        <!-- To enable offline debugging using a local reference to Office.js, use:  -->
+        <script src="Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  
+        <!--<script src="Scripts/Office/1/office.js" type="text/javascript"></script>-->  
+
+        <script src="Home.js" type="text/javascript"></script>
+        <link href="Home.css" rel="stylesheet" type="text/css" />
+        <link href="../Content/Button.css" rel="stylesheet" type="text/css" />
+        <link href="../Content/MessageBanner.css" rel="stylesheet" type="text/css" />
+
+
+        <!-- For Office UI Fabric Core, go to https://aka.ms/office-ui-fabric to learn more. -->
+        <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.0/css/fabric.min.css">
+
+        <!-- To enable the offline use of Office UI Fabric Core, use: -->
+        <link rel="stylesheet" href="Content/fabric.min.css">
+        <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css"> 
+    </head>
+    ```
+
+1. In **Home.html**, find the **div** with `id="content-main"`, replace that entire **div** with the following markup, and save the file.
 
     ```html
     <!-- TODO2: Create the content-header div. -->
@@ -70,8 +100,8 @@ Edit the add-in code as follows to create the framework that you'll use to imple
         Office.initialize = function (reason) {
             $(document).ready(function () {
                 // Initialize the FabricUI notification mechanism and hide it
-                var element = document.querySelector('.ms-MessageBanner');
-                messageBanner = new fabric.MessageBanner(element);
+                var element = document.querySelector('.MessageBanner');
+                messageBanner = new components.MessageBanner(element);
                 messageBanner.hideBanner();
 
                 // TODO1: Assign event handler for insert-image button.
