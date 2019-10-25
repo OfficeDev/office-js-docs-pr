@@ -40,20 +40,6 @@ For detailed information about the manifest, see [Office Add-ins XML manifest](a
 
 An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running. 
 
-### Extending the Office UI
-
-An Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
-
-- [Add-in commands](../design/add-in-commands.md) can be used to add custom tabs, buttons, and menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
-
-- HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web pages typically do, like call external web services, facilitate user authentication, and more.
-
-The following image shows an add-in command in the ribbon, a task pane to the right of the document, and a dialog box floating over the document.
-
-![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/overview-with-app-interface-elements.png)
-
-For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
-
 #### Accessing the Office JavaScript library
 
 The Office JavaScript library can be accessed via the Office.js content delivery network (CDN) at: `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. To use Office JavaScript APIs within any of your add-in's web pages, you must reference the CDN in a `<script>` tag in the `<head>` tag of the page.
@@ -90,6 +76,20 @@ For additional information about the Office JavaScript APIs, see [Understanding 
 Your add-in can use requirement sets to determine whether the Office host supports the API members that it needs to use. For more information about this, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
 
 Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
+
+### Extending the Office UI
+
+An Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
+
+- [Add-in commands](../design/add-in-commands.md) can be used to add custom tabs, buttons, and menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
+
+- HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web pages typically do, like call external web services, facilitate user authentication, and more.
+
+The following image shows an add-in command in the ribbon, a task pane to the right of the document, and a dialog box floating over the document.
+
+![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/overview-with-app-interface-elements.png)
+
+For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
 
 ## Creating an Office Add-in 
 
