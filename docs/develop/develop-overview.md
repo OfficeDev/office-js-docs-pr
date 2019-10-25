@@ -190,7 +190,7 @@ Explore the host-specific documentation for the type of add-in you're building.
 > [!TIP]
 > When viewing the [API reference documentation](/javascript/api/overview.md), select an API (and requirement set, where applicable) from the **Version** dropdown list to filter the documentation accordingly.
 > 
-> ![screenshot of API reference docs with the moniker selector highlighted]()../images/ref-docs-moniker-selector.png)
+> ![screenshot of API reference docs with the moniker selector highlighted](../images/ref-docs-moniker-selector.png)
 
 ## See also
 
