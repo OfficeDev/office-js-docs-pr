@@ -192,7 +192,7 @@ Explore the host-specific documentation for the type of add-in you're building.
 > 
 > ![screenshot of API reference docs with the moniker selector highlighted](../images/ref-docs-moniker-selector.png)
 
-## See also
+## See also 
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
