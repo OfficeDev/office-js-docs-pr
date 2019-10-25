@@ -7,42 +7,46 @@ localization_priority: Priority
 
 # Develop Office Add-ins
 
-Office Add-ins can extend the UI and functionality of Office applications and interact with content in Office documents. You can use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook, and your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article provides an introduction to developing Office Add-ins.
+Office Add-ins extend the UI and functionality of Office applications and interact with content in Office documents. You'll use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook. The add-ins you build can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article is an introduction to developing Office Add-ins.
 
 > [!TIP]
-> If you haven't already done so, please review [Office Add-ins platform overview](../overview/office-add-ins.md) for information that sets context for the topics covered in this article.
+> Please review [Office Add-ins platform overview](../overview/office-add-ins.md) for information that sets context for the topics covered in this article.
 
 ## Core development concepts 
 
-As described in [Office Add-ins platform overview](../overview/office-add-ins.md), an Office Add-in consists of two parts:
+An Office Add-in consists of two parts:
 
 - The add-in manifest (an XML file) that defines the settings and capabilities of the add-in.
 
 - The web application that defines the UI and functionality of add-in components such as task panes, content add-ins, and dialog boxes.
 
-The web application can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
+The web application uses the Office JavaScript API to interact with content in the Office document where the add-in is running. Your add-in can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
 
 ### Defining an add-in's settings and capabilities
 
-An Office Add-in's manifest (an XML file) defines the settings and capabilities of the add-in. You can configure the manifest to specify things such as:
+An Office Add-in's manifest (an XML file) defines the settings and capabilities of the add-in. You'll configure the manifest to specify things such as:
 
-- Metadata that describes the add-in (for example, ID, version, description, display name, default locale)
-- The Office applications where the add-in will run
-- Permissions that the add-in requires
-- How the add-in integrates with Office, including any custom UI that the add-in creates (for example, custom tabs, ribbon buttons)
-- Location of images that the add-in uses for branding and command iconography
-- Dimensions of the add-in (for example, dimensions for content add-ins, requested height for Outlook add-ins)
-- Rules that specify when the add-in activates in the context of a message or appointment (for Outlook add-ins only)
+- Metadata that describes the add-in (for example, ID, version, description, display name, default locale).
+- Office applications where the add-in will run.
+- Permissions that the add-in requires.
+- How the add-in integrates with Office, including any custom UI that the add-in creates (for example, custom tabs, ribbon buttons).
+- Location of images that the add-in uses for branding and command iconography.
+- Dimensions of the add-in (for example, dimensions for content add-ins, requested height for Outlook add-ins).
+- Rules that specify when the add-in activates in the context of a message or appointment (for Outlook add-ins only).
 
 For detailed information about the manifest, see [Office Add-ins XML manifest](add-in-manifests.md).
+
+### Interacting with content in an Office document
+
+An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running. 
 
 ### Extending the Office UI
 
 An Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
 
-- [Add-in commands](../design/add-in-commands.md) can be used to add custom tabs, buttons, or menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
+- [Add-in commands](../design/add-in-commands.md) can be used to add custom tabs, buttons, and menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
 
-- HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
+- HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web pages typically do, like call external web services, facilitate user authentication, and more.
 
 The following image shows an add-in command in the ribbon, a task pane to the right of the document, and a dialog box floating over the document.
 
@@ -50,13 +54,9 @@ The following image shows an add-in command in the ribbon, a task pane to the ri
 
 For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
 
-### Interacting with content in an Office document
+#### Accessing the Office JavaScript library
 
-An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running. 
-
-#### Accessing the Office JavaScript API library
-
-The Office JavaScript API library can be accessed via the Office.js content delivery network (CDN) at: `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. To use Office JavaScript APIs within any of your add-in's web pages, you must reference the CDN in a `<script>` tag in the `<head>` tag of the page.
+The Office JavaScript library can be accessed via the Office.js content delivery network (CDN) at: `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. To use Office JavaScript APIs within any of your add-in's web pages, you must reference the CDN in a `<script>` tag in the `<head>` tag of the page.
 
 ```html
 <head>
@@ -68,13 +68,15 @@ The Office JavaScript API library can be accessed via the Office.js content deli
 > [!NOTE]
 > To use preview APIs, reference the preview version of the Office JavaScript library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
+For more information about accessing the Office JavaScript library, including how to get IntelliSense if you're using TypeScript, see [Referencing the JavaScript API for Office library from its content delivery network (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+
 #### API object models
 
 The Office JavaScript APIs include two distinct object models:
 
-- **Host-specific** APIs (introduced with Office 2016) provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Host-specific APIs are currently available for [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md), [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md), and [PowerPoint](..//reference/overview/powerpoint-add-ins-reference-overview.md). This object model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+- **Host-specific** APIs (introduced with Office 2016) provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Host-specific APIs are currently available for [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md), and [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md). This object model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function). For details about the Common API object model, which includes APIs for interacting with Outlook, see [Office JavaScript API object model](office-javascript-api-object-model.md).
+- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function). For details about the Common API object model, which includes APIs for interacting with Outlook and PowerPoint, see [Office JavaScript API object model](office-javascript-api-object-model.md).
 
 > [!NOTE]
 > Excel Custom functions run within a unique runtime that prioritizes execution of calculations, and therefore uses a slightly different programming model. For details, see [Custom functions architecture](../excel/custom-functions-architecture.md).
@@ -83,7 +85,9 @@ For additional information about the Office JavaScript APIs, see [Understanding 
 
 #### API requirement sets
 
-Requirement sets are named groups of API members. Requirement sets can be specific to Office hosts, such as the `ExcelApi 1.7` requirement set (a set of APIs that can only be used in Excel), or common to multiple hosts, such as the `DialogApi 1.1` requirement set (a set of APIs that can be used in any Office application that supports the Dialog API).
+[Requirement sets](Office versions and requirement sets.md) are named groups of API members. Requirement sets can be specific to Office hosts, such as the `ExcelApi 1.7` requirement set (a set of APIs that can only be used in Excel), or common to multiple hosts, such as the `DialogApi 1.1` requirement set (a set of APIs that can be used in any Office application that supports the Dialog API).
+
+Your add-in can use requirement sets to determine whether the Office host supports the API members that it needs to use. For more information about this, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
 
 Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
 
@@ -105,7 +109,7 @@ The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator
 - Word
 - Excel custom functions
 
-You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React, and can choose between JavaScript and Typescript as well.
+You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React. For whichever framework you choose, you can choose between JavaScript and Typescript as well.
 
 Each [5-minute quick start](../index.md) contains step-by-step instructions that describe how to create an Office Add-in using the Yeoman generator. Within a quick start, select the `Yeoman generator` tab to display the proper set of instructions, as shown in the following screenshot.
 
@@ -128,15 +132,19 @@ The [5-minute quick start](../index.md) for each of these four applications cont
 
 Script Lab is an add-in that enables you to explore the Office JavaScript API and run code snippets while you're working in an Office program such as Excel or Word. It's available for free via [AppSource](https://appsource.microsoft.com/product/office/WA104380862) and is a useful tool to include in your development toolkit as you prototype and verify the functionality you want in your add-in. In Script Lab, you can access a library of built-in samples to quickly try out APIs or even use a sample as the starting point for your own code. 
 
+The following one-minute video shows Script Lab in action.
+
+[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+
 For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
 ## Next steps
 
-This article has described important Office Add-ins development concepts, outlined the different ways to create Office Add-ins, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality. Now that you've explored this introductory information, consider continuing your Office Add-ins journey as described in the remainder of this section.
+This article has described important Office Add-ins development concepts, outlined the different ways to create Office Add-ins, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality. Now that you've explored this introductory information, consider continuing your Office Add-ins journey along the following paths.
 
 ### Create an Office add-in
 
-You can quickly create a very basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.md). If you've previously completed a quick start and want to create a slightly more complex add-in, you can do so by completing a [tutorial](../index.md).
+You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.md). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try the [tutorial](../index.md).
 
 ### Explore the APIs with Script Lab
 
@@ -157,15 +165,15 @@ Explore the library of built-in samples in [Script Lab](../overview/explore-with
 
 Explore the [Office Add-ins guidance](../overview/index.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
 
-- Foundational information about Office Add-ins such as [host and platform availability](../overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md)
+- Foundational information about Office Add-ins such as [host and platform availability](../overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
 
-- Information about [UI design and extensibility](../design/add-in-design.md)
+- Information about [UI design and extensibility](../design/add-in-design.md).
 
 - Information about development topics that are relevant to more than one type of Office Add-in, such as the [Office JavaScript API](understanding-the-javascript-api-for-office.md), the [Office Add-ins XML manifest](add-in-manifests.md), [authentication and authorization](overview-authn-authz.md), [creating add-in commands](create-addin-commands.md), and more.
 
-- Information about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md) 
+- Information about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md).
 
-- Information about [publishing Office Add-ins](../publish/publish.md)
+- Information about [publishing Office Add-ins](../publish/publish.md).
 
 #### Host-specific guidance
 
@@ -178,6 +186,11 @@ Explore the host-specific documentation for the type of add-in you're building.
 - [Project add-ins documentation](../project/index.md)
 - [Visio add-ins documentation](../visio/index.md)
 - [Word add-ins documentation](../word/index.md)
+
+> [!TIP]
+> When viewing the [API reference documentation](/javascript/api/overview.md), select an API (and requirement set, where applicable) from the **Version** dropdown list to filter the documentation accordingly.
+> 
+> ![screenshot of API reference docs with the moniker selector highlighted]()../images/ref-docs-moniker-selector.png)
 
 ## See also
 

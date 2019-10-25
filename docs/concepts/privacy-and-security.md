@@ -136,7 +136,7 @@ The following example shows how a task pane add-in specifies the  **ReadDocument
 </OfficeApp>
 ```
 
-For more information about permissions for task pane and content add-ins, see [Requesting permissions for API use in content and task pane add-ins](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+For more information about permissions for task pane and content add-ins, see [Requesting permissions for API use in add-ins](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
 
 For more information about permissions for Outlook add-ins, see the following topics:
 
@@ -257,7 +257,7 @@ The management and enforcement of Office settings is done with group policy sett
 
 ## See also
 
-- [Requesting permissions for API use in content and task pane add-ins](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Requesting permissions for API use in add-ins](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
 - [Privacy, permissions, and security for Outlook add-ins](/outlook/add-ins/privacy-and-security)
 - [Understanding Outlook add-in permissions](/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Limits for activation and JavaScript API for Outlook add-ins](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)

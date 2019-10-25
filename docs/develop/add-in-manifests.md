@@ -494,7 +494,7 @@ For troubleshooting issues with your manifest, see [Validate and troubleshoot is
 * [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
 * [Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
-* [Requesting permissions for API use in content and task pane add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+* [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md)
 
 [add-in commands]: create-addin-commands.md
