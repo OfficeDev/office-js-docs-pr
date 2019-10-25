@@ -67,14 +67,14 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 
-2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`. 
+2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\`. 
 
     > [!NOTE]
-    > If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer`, complete the following steps to create it: 
-	> 1. Right-click the **Developer** key (folder) and select **New** > **Key**.
-	> 2. Name the new key **RuntimeLogging**.
+    > If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer`, complete the following steps to create it: 
+	> 1. Right-click the **Wef** key (folder) and select **New** > **Key**.
+	> 2. Name the new key **Developer**.
 
-3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
+3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
     > [!NOTE]
     > The directory in which the log file will be written must already exist, and you must have write permissions to it. 
