@@ -67,6 +67,6 @@ Excel.run(function (context) {
 
 ## See also
 
-- [[OfficeDev/office-js](https://github.com/OfficeDev/Office JS/issues): The place to report and view issues with the Office Add-ins platform and JavaScript APIs.
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/Office JS): The place to ask and view programming questions about the Office JavaScript APIs. Be sure to apply the "office-js" tag to your question when posting to Stack Overflow.
+- [[OfficeDev/office-js](https://github.com/OfficeDev/office-js/issues): The place to report and view issues with the Office Add-ins platform and JavaScript APIs.
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js): The place to ask and view programming questions about the Office JavaScript APIs. Be sure to apply the "office-js" tag to your question when posting to Stack Overflow.
 - [User Voice](https://officespdev.uservoice.com/): The place to suggest new features for the Office Add-ins platform and Office JavaScript APIs.
