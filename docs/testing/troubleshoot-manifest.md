@@ -71,7 +71,7 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 
     > [!NOTE]
     > If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer`, complete the following steps to create it: 
-	> 1. Right-click the **WEF** key (folder) and select **New** > **Key**.
+	> 1. Right-click the **Developer** key (folder) and select **New** > **Key**.
 	> 2. Name the new key **RuntimeLogging**.
 
 3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
