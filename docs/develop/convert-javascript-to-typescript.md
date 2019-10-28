@@ -1,7 +1,7 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: ''
-ms.date: 10/11/2019
+ms.date: 10/28/2019
 localization_priority: Priority
 ---
 
@@ -53,17 +53,11 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 5. Open the **Home.ts** file and add the following declaration at the top of the file:
 
-	```TypeScript
-	declare var fabric: any;
-	```
-
-6. In **Home.ts**, delete the line `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` and replace with the following:
-
     ```TypeScript
-    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
+    declare var fabric: any;
     ```
 
-7. In the **Home.ts** file, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:
+6. In the **Home.ts** file, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -72,7 +66,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
         ...
     ```
 
-8. In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
+7. In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
 
 ```TypeScript
 function displaySelectedCells() {
@@ -234,5 +228,5 @@ declare var fabric: any;
 
 ## See also
 
-* [Promise implementation discussion on StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-* [Office Add-in samples on GitHub](https://github.com/officedev)
+- [Promise implementation discussion on StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+- [Office Add-in samples on GitHub](https://github.com/officedev)
