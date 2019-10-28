@@ -29,7 +29,7 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
 2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
 
-3. Name your project and select **Create**.
+3. Name the project **HelloWorld**, and select **Create**.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
