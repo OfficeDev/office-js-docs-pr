@@ -143,7 +143,7 @@ For your reference, the following code snippet shows the contents of the **Home.
             loadSampleData();
 
             // Add a click event handler for the highlight button.
-            $('#highlight-button').click(hightlightHighestValue);
+            $('#highlight-button').click(highlightHighestValue);
         });
     };
 
@@ -167,7 +167,7 @@ For your reference, the following code snippet shows the contents of the **Home.
         .catch(errorHandler);
     }
 
-    function hightlightHighestValue() {
+    function highlightHighestValue() {
         // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
             // Create a proxy object for the selected range and load its properties
