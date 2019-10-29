@@ -61,7 +61,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
     if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
     ```
 
-    > [!NOTE]
+    > [!WARNING]
     > Currently, for the project to compile successfully after it's converted to TypeScript, you must specify the requirement set number as a numeric value as shown in the previous code snippet. Unfortunately this means you'll be unable to use `isSetSupported` to test for requirement set `1.10` support, as the numeric value `1.10` evaluates to `1.1` at runtime. This article will be updated when this issue is resolved.
 
 8. In **Home.ts**, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:
@@ -90,7 +90,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
     }
     ```
 
-10. In **./Scripts/MessageBanner.js**, find the line `_onResize(null);` and replace it with the following:
+10. In **./Scripts/MessageBanner.ts**, find the line `_onResize(null);` and replace it with the following:
 
     ```TypeScript
     _onResize();
