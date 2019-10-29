@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 09/18/2019
+ms.date: 10/29/2019
 localization_priority: Priority
 ---
 
@@ -62,6 +62,35 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 
 > [!IMPORTANT]
 > Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
+
+### Use runtime logging from the command line
+
+Enabling runtime logging from the command line is the fastest way to use this logging tool. The below commands use npx, which is provided by default as part of npm@5.2.0+. If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).
+
+To enable runtime logging, run the following:
+    ```command&nbsp;line
+	npx office-addin-dev-settings runtime-log --enable
+	```
+
+To enable runtime logging only for a specific file, use the same command with a filename. Use your own file name in the following sample, instead of filename.txt:
+    ```command&nbsp;line
+	npx office-addin-dev-settings runtime-log --enable filename.txt
+	```
+
+To disable runtime logging, run the following:
+    ```command&nbsp;line
+	npx office-addin-dev-settings runtime-log --disable
+	```
+
+To display whether or not runtime logging is enabled, run the following:
+    ```command&nbsp;line
+	npx office-addin-dev-settings runtime-log
+	```
+
+To pull up help within the command line for runtime logging, use the following:
+    ```command&nbsp;line
+	npx office-addin-dev-settings runtime-log --help
+	```
 
 ### Runtime logging on Windows
 
