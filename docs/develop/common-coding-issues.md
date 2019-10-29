@@ -1,7 +1,7 @@
 ---
 title: Common coding issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 10/25/2019
+ms.date: 10/29/2019
 localization_priority: Normal
 ---
 
@@ -42,27 +42,6 @@ The [TypeScript definitions](/referencing-the-javascript-api-for-office-library-
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
-```
-
-## Tracking event handlers
-
-> [!NOTE]
-> This section only applies to the host-specific APIs for Excel, OneNote, and Word.
-
-Event handlers are tied to individual, client-side, proxy objects. The event handler will attach to the related document object when synced. Removing an event handler requires a reference to the original proxy object.
-
-```js
-Excel.run(function (context) {
-    const pieChart = context.workbook.worksheets.getActiveWorksheet().charts.getItem("Pie");
-    pieChart.onActivated.add(chartActivated);
-    return context.sync().then (function() {
-        // This following code will not remove the event handler.
-        // It is using a different proxy object for the chart.
-        var sameChart = context.workbook.worksheets.getActiveWorksheet().charts.getItem("Pie");
-        sameChart.onActivated.remove(chartActivated);
-        return context.sync();
-    });
-});
 ```
 
 ## See also
