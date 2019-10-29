@@ -55,16 +55,16 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
     > [!NOTE]
     > In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.
 
-7. In **Home.ts**, delete the line `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` and replace with the following:
+7. In **Home.ts**, find the line `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` and replace it with the following:
 
     ```TypeScript
-    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
+    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
     ```
 
     > [!NOTE]
-    > Currently, for the project to compile successfully after it's converted to TypeScript, you must specify the requirement set number as a numeric value as shown in the previous code snippet. Unfortunately this means you'll be unable to use `isSetSupported` to test for requirement set `1.10` support, as the numeric value `1.10` will evaluate to `1.1` at runtime. This article will be updated when this issue is resolved.
+    > Currently, for the project to compile successfully after it's converted to TypeScript, you must specify the requirement set number as a numeric value as shown in the previous code snippet. Unfortunately this means you'll be unable to use `isSetSupported` to test for requirement set `1.10` support, as the numeric value `1.10` evaluates to `1.1` at runtime. This article will be updated when this issue is resolved.
 
-8. In the **Home.ts** file, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:
+8. In **Home.ts**, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -73,22 +73,28 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
         ...
     ```
 
-9. In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
+9. In **Home.ts**, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
 
-```TypeScript
-function displaySelectedCells() {
-    Office.context.document.getSelectedDataAsync(
-        Office.CoercionType.Text,
-        null,
-        function (result) {
-            if (result.status === Office.AsyncResultStatus.Succeeded) {
-                showNotification('The selected text is:', '"' + result.value + '"');
-            } else {
-                showNotification('Error', result.error.message);
-            }
-        });
-}
-```
+    ```TypeScript
+    function displaySelectedCells() {
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
+            null,
+            function (result) {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    showNotification('The selected text is:', '"' + result.value + '"');
+                } else {
+                    showNotification('Error', result.error.message);
+                }
+            });
+    }
+    ```
+
+10. In **./Scripts/MessageBanner.js**, find the line `_onResize(null);` and replace it with the following:
+
+    ```TypeScript
+    _onResize();
+    ```
 
 ## Run the converted add-in project
 
