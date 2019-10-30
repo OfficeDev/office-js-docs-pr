@@ -9,11 +9,11 @@ localization_priority: Normal
 
 This article highlights aspects of the Office JavaScript API that may result in unexpected behavior or require specific coding patterns to achieve the desired outcome. If you encounter an issue that belongs in this list, please let us know by using the feedback form at the bottom of the article.
 
-## Common and Outlook APIs are not promise-based
+## Common APIs and Outlook APIs are not promise-based
 
-The [Common APIs](/javascript/api/office) (those that are not tied to a particular host) and [Outlook APIs](/javascript/api/outlook) use a callback-based programming model. Interacting with the underlying Office document requires an asynchronous read or write call that includes a callback to be ran when the operation completes. For an example of this pattern, see [AppointmentCompose.getAttachmentAsync](/javascript/api/office/office.file?view=common-js#getsliceasync-sliceindex--callback-).
+The [Common APIs](/javascript/api/office) (those that are not tied to a particular Office host) and [Outlook APIs](/javascript/api/outlook) use a callback-based programming model. Interacting with the underlying Office document requires an asynchronous read or write call that specifies a callback to be ran when the operation completes. For an example of this pattern, see [AppointmentCompose.getAttachmentAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#getattachmentsasync-callback-).
 
-These Common and Outlook methods do not return [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). As such, you cannot use [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) to pause the execution until the async operation completes. If you need `await` behavior, you can wrap the method call in an explicitly created Promise.
+These Common API and Outlook API methods do not return [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Therefore, you cannot use [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) to pause the execution until the asynchronous operation completes. If you need `await` behavior, you can wrap the method call in an explicitly created Promise.
 
 ## Some properties must be set with JSON structs
 
@@ -43,12 +43,12 @@ You can identify a property that must have its subproperties set with a JSON str
 
 ## Excel Range limits
 
-Excel developers need to be aware of two data size limitations:
+If you're building an Excel add-in that uses ranges, be aware of the following size limitations:
 
 - Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
 - A range is limited to five million cells for set operations.
 
-If you expect user input to exceed those amounts, be sure to check the data and split the ranges into multiple objects. You'll also need separate `context.sync()` calls to avoid overwhelming the Excel cloud service.
+If you expect user input to exceed these limits, be sure to check the data and split the ranges into multiple objects. You'll also need to submit multiple `context.sync()` calls to avoid the smaller range operations getting batched together again.
 
 Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
 
