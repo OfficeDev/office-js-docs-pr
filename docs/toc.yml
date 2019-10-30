@@ -678,6 +678,24 @@
           href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
         - name: Outlook Preview API Reference
           href: reference/outlook-api-reference-preview.md
+      - name: Requirement Set 1.8
+        items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md
+        - name: Office
+          href: reference/objectmodel/requirement-set-1.8/office.md
+        - name: Office.context
+          href: reference/objectmodel/requirement-set-1.8/Office.context.md
+        - name: Office.context.mailbox
+          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.md
+        - name: Office.context.mailbox.diagnostics
+          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.diagnostics.md
+        - name: Office.context.mailbox.item
+          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
+        - name: Office.context.mailbox.userProfile
+          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.userProfile.md
+        - name: Outlook 1.8 API Reference
+          href: reference/outlook-api-reference-1-8.md
       - name: Requirement Set 1.7
         items:
         - name: Overview
