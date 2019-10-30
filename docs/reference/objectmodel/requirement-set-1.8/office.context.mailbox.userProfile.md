@@ -1,7 +1,7 @@
 ---
-title: Office.context.mailbox.userProfile - preview requirement set
+title: Office.context.mailbox.userProfile - requirement set 1.8
 description: ''
-ms.date: 06/20/2019
+ms.date: 10/30/2019
 localization_priority: Normal
 ---
 
