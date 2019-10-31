@@ -74,7 +74,7 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 	> 1. Right-click the **WEF** key (folder) and select **New** > **Key**.
 	> 2. Name the new key **Developer**.
 
-3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
+3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
     > [!NOTE]
     > The directory in which the log file will be written must already exist, and you must have write permissions to it. 
