@@ -22,10 +22,10 @@ The following is an example of the  **SupportsSharedFolders** element.
           <SupportsSharedFolders>true</SupportsSharedFolders>
           <FunctionFile resid="residDesktopFuncUrl" />
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <!-- configure selected extension point -->
+            <!-- Configure selected extension point. -->
           </ExtensionPoint>
 
-          <!-- You can define more than one ExtensionPoint element as needed -->
+          <!-- You can define more than one ExtensionPoint element as needed. -->
 
         </DesktopFormFactor>
       </Host>
