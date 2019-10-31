@@ -206,8 +206,7 @@ range.values = 'Due Date';
 
 If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.
 
-> [!IMPORTANT]
-> Excel on the web has a payload size limit for requests and responses of **5MB**. `RichAPI.Error` will be thrown if that limit is exceeded.
+For details on the system limitations, see [Excel Range limits](../develop/common-coding-issues.md#excel-range-limits).
 
 ## Update all cells in a range
 
@@ -249,3 +248,4 @@ When an API error occurs, the API returns an **error** object that contains a co
 - [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
 - [Excel JavaScript API performance optimization](/office/dev/add-ins/excel/performance)
 - [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Common coding issues and unexpected platform behaviors](../develop/common-coding-issues.md).
