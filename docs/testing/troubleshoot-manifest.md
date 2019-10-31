@@ -65,29 +65,32 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 
 ### Use runtime logging from the command line
 
-Enabling runtime logging from the command line is the fastest way to use this logging tool. The below commands use npx, which is provided by default as part of npm@5.2.0+. If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).
+Enabling runtime logging from the command line is the fastest way to use this logging tool. These use npx, which is provided by default as part of npm@5.2.0+. If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).
 
-To enable runtime logging, run the following:
+- To enable runtime logging:
     ```command&nbsp;line
 	npx office-addin-dev-settings runtime-log --enable
 	```
+- To enable runtime logging only for a specific file, use the same command with a filename:
 
-To enable runtime logging only for a specific file, use the same command with a filename. Use your own file name in the following sample, instead of filename.txt:
     ```command&nbsp;line
-	npx office-addin-dev-settings runtime-log --enable filename.txt
+	npx office-addin-dev-settings runtime-log --enable [filename.txt]
 	```
 
-To disable runtime logging, run the following:
+- To disable runtime logging:
+
     ```command&nbsp;line
 	npx office-addin-dev-settings runtime-log --disable
 	```
 
-To display whether or not runtime logging is enabled, run the following:
+- To display whether runtime logging is enabled:
+
     ```command&nbsp;line
 	npx office-addin-dev-settings runtime-log
 	```
 
-To pull up help within the command line for runtime logging, use the following:
+- To display help within the command line for runtime logging:
+
     ```command&nbsp;line
 	npx office-addin-dev-settings runtime-log --help
 	```
