@@ -45,7 +45,7 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: User Interface
     items:
-    - name: Overview
+    - name: UX design in Office Add-ins
       href: design/add-in-design.md
       displayName: design, user interface, UI
     - name: Guidelines
