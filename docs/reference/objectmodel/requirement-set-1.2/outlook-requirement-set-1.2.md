@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.2
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/30/2019
 localization_priority: Normal
 ---
 
@@ -28,3 +28,4 @@ Requirement set 1.2 includes all of the features of [Requirement set 1.1](../req
 - [Outlook add-ins](/outlook/add-ins/)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
 - [Get started](/outlook/add-ins/quick-start)
+- [Requirement sets and supported clients](../../requirement-sets/outlook-api-requirement-sets.md)
