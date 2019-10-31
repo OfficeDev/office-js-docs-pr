@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.8
 description: ''
-ms.date: 10/30/2019
+ms.date: 10/31/2019
 localization_priority: Normal
 ---
 
@@ -75,56 +75,7 @@ function write(message){
 ---
 ---
 
-#### officeTheme: Object
-
-Provides access to the properties for Office theme colors.
-
-> [!NOTE]
-> This member is only supported in Outlook on Windows.
-
-Using Office theme colors lets you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.
-
-##### Type
-
-*   Object
-
-##### Properties:
-
-|Name| Type| Description|
-|---|---|---|
-|`bodyBackgroundColor`| String|Gets the Office theme body background color as a hexadecimal color triplet.|
-|`bodyForegroundColor`| String|Gets the Office theme body foreground color as a hexadecimal color triplet.|
-|`controlBackgroundColor`| String|Gets the Office theme control background color as a hexadecimal color triplet.|
-|`controlForegroundColor`| String|Gets the Office theme body control color as a hexadecimal color triplet.|
-
-##### Requirements
-
-|Requirement| Value|
-|---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| Preview|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
-
-##### Example
-
-```js
-function applyOfficeTheme(){
-  // Get office theme colors.
-  var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
-  var bodyForegroundColor = Office.context.officeTheme.bodyForegroundColor;
-  var controlBackgroundColor = Office.context.officeTheme.controlBackgroundColor
-  var controlForegroundColor = Office.context.officeTheme.controlForegroundColor;
-
-  // Apply body background color to a CSS class.
-  $('.body').css('background-color', bodyBackgroundColor);
-}
-```
-
-<br>
-
----
----
-
-#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.8)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
@@ -132,7 +83,7 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 ##### Type
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.8)
 
 ##### Requirements
 

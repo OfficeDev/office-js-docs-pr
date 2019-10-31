@@ -1,7 +1,7 @@
 ---
 title: Office namespace - requirement set 1.8
 description: ''
-ms.date: 10/30/2019
+ms.date: 10/31/2019
 localization_priority: Normal
 ---
 
@@ -29,7 +29,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 [context](office.context.md): Provides shared interfaces from the Office Add-ins API's context namespace for use in the Outlook add-in API.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): Includes a number of enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8): Includes a number of enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
 
 ### Members
 
@@ -103,7 +103,6 @@ Specifies the event associated with an event handler.
 |`AttachmentsChanged`| String | An attachment has been added to or removed from the item. | 1.8 |
 |`EnhancedLocationsChanged`| String | The location of the selected appointment has changed. | 1.8 |
 |`ItemChanged`| String | A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
-|`OfficeThemeChanged`| String | The Office theme on the mailbox has changed. | Preview |
 |`RecipientsChanged`| String | The recipient list of the selected item or appointment location has changed. | 1.7 |
 |`RecurrenceChanged`| String | The recurrence pattern of the selected series has changed. | 1.7 |
 
