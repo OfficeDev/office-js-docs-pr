@@ -104,7 +104,7 @@
         href: design/office-ui-fabric.md
   - name: Develop
     items:
-    - name: Overview
+    - name: Develop Office Add-ins
       href: develop/develop-overview.md
       displayName: develop
     - name: Office JavaScript API
@@ -192,7 +192,7 @@
         displayName: manifest
   - name: Test and debug
     items:
-    - name: Overview
+    - name: Test and debug Office Add-ins
       href: testing/test-debug-office-add-ins.md
       displayName: test, debug
     - name: Windows
@@ -223,7 +223,7 @@
       href: testing/troubleshoot-manifest.md  
   - name: Publish
     items:
-    - name: Overview
+    - name: Publish Office Add-ins
       href: publish/publish.md
       displayName: publish, deploy
     - name: Host an Office Add-in on Microsoft Azure
