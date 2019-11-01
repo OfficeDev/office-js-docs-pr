@@ -4,50 +4,50 @@
 - name: Office Add-ins guidance
   items:
   - name: About Office Add-ins
-    href: overview/index.md
+    href: overview/office-add-ins.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-  - name: Overview
+
+  - name: Getting started
     items:
-    - name: Office Add-ins platform overview
-      href: overview/office-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Host and platform availability
-      href: overview/office-add-in-availability.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Explore Office JS API using Script Lab
+    - name: Building Office Add-ins
+      href: develop/develop-overview.md
+      displayName: develop
+    - name: Explore Office JS APIs using Script Lab
       href: overview/explore-with-script-lab.md
       displayName: Excel, Word, PowerPoint
     - name: Requirements for running add-ins
       href: concepts/requirements-for-running-office-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-  - name: Concepts
-    items:
-    - name: Add-in development best practices
-      href: concepts/add-in-development-best-practices.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Add-in development lifecycle
-      href: concepts/add-in-development-lifecycle.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Browsers used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Office versions and requirement sets
-      href: develop/office-versions-and-requirement-sets.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Performance
-      href: concepts/resource-limits-and-performance-optimization.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Privacy and security
-      href: concepts/privacy-and-security.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-  - name: User Interface
+
+  - name: UX design
     items:
     - name: UX design in Office Add-ins
       href: design/add-in-design.md
       displayName: design, user interface, UI
+    - name: Extend the Office UI
+      items:
+      - name: Office UI elements for Office Add-ins
+        href: design/interface-elements.md
+      - name: Interface elements
+        items:
+        - name: Add-in commands
+          href: design/add-in-commands.md
+        - name: Dialog boxes
+          href: design/dialog-boxes.md
+        - name: Content add-ins
+          href: design/content-add-ins.md
+        - name: Task panes
+          href: design/task-pane-add-ins.md
+      - name: Office UI Fabric
+        href: design/office-ui-fabric.md
+      - name: Get started using Fabric React
+        href: design/using-office-ui-fabric-react.md
     - name: Guidelines
       items:
       - name: Accessibility
@@ -56,36 +56,26 @@
         href: design/data-visualization-guidelines.md
       - name: Voice
         href: design/voice-guidelines.md
-    - name: Design language
-      items:
-      - name: Overview
-        href: design/add-in-design-language.md
-      - name: Color
-        href: design/add-in-color.md
-      - name: Icons
-        href: design/add-in-icons.md
-      - name: Layout
-        href: design/add-in-layout.md
-      - name: Typography
-        href: design/add-in-typography.md
-      - name: Using motion
-        href: design/using-motion-office-addins.md
-    - name: Interface elements
-      items:
-      - name: Overview
-        href: design/interface-elements.md
-      - name: Add-in commands
-        href: design/add-in-commands.md
-      - name: Dialog boxes
-        href: design/dialog-boxes.md
-      - name: Content add-ins
-        href: design/content-add-ins.md
-      - name: Task panes
-        href: design/task-pane-add-ins.md
-    - name: UX design templates
+      - name: Design language
+        items:
+        - name: Overview
+          href: design/add-in-design-language.md
+        - name: Color
+          href: design/add-in-color.md
+        - name: Icons
+          href: design/add-in-icons.md
+        - name: Layout
+          href: design/add-in-layout.md
+        - name: Motion
+          href: design/using-motion-office-addins.md
+        - name: Typography
+          href: design/add-in-typography.md
+    - name: UX design patterns
       items:
       - name: Overview
         href: design/ux-design-pattern-templates.md
+      - name: Design toolkits
+        href: design/design-toolkits.md
       - name: Authentication
         href: design/authentication-patterns.md
       - name: Branding
@@ -94,19 +84,16 @@
         href: design/first-run-experience-patterns.md
       - name: Navigation
         href: design/navigation-patterns.md
-    - name: Resources
-      items:
-      - name: Design toolkits
-        href: design/design-toolkits.md
-      - name: Get started using Fabric React
-        href: design/using-office-ui-fabric-react.md
-      - name: Office UI Fabric
-        href: design/office-ui-fabric.md
+
   - name: Develop
     items:
-    - name: Develop Office Add-ins
-      href: develop/develop-overview.md
-      displayName: develop
+    - name: Office versions and requirement sets
+      href: develop/office-versions-and-requirement-sets.md
+    - name: Host and platform availability
+      href: overview/office-add-in-availability.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+
+
     - name: Office JavaScript API
       items:
       - name: Understanding the JavaScript API for Office
@@ -155,6 +142,12 @@
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
+    - name: Performance
+      href: concepts/resource-limits-and-performance-optimization.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Privacy and security
+      href: concepts/privacy-and-security.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: How to
       items: 
       - name: Address same origin policy limitations
@@ -192,6 +185,7 @@
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
         displayName: manifest
+  
   - name: Test and debug
     items:
     - name: Test and debug Office Add-ins
@@ -222,7 +216,8 @@
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in manifest and troubleshoot issues
-      href: testing/troubleshoot-manifest.md  
+      href: testing/troubleshoot-manifest.md
+
   - name: Publish
     items:
     - name: Publish Office Add-ins
@@ -240,6 +235,7 @@
       href: publish/centralized-deployment.md
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+
   - name: Reference
     items:
     - name: JavaScript API for Office overview
@@ -417,6 +413,7 @@
       href: reference/openspec/openspec.md
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
+
   - name: Resources
     href: resources/resources-links-help.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
