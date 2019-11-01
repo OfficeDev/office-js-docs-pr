@@ -16,7 +16,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
 
 Common concepts like these are covered in this section of the documentation: **Common guidance** > **Develop**. Review information in this section of the documentation before exploring information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 
-## Information that applies to only one Office host
+## Host-specific concepts
 
 After you're familiar with the common concepts that apply to multiple types of add-ins, explore the host-specific documentation for the type of add-in you're building. Each of these sections contains documentation specifically tailored to building add-ins for a specific Office host.
 
