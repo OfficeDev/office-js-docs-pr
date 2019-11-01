@@ -54,7 +54,7 @@ The Office JavaScript library can be accessed via the Office JS content delivery
 > [!NOTE]
 > To use preview APIs, reference the preview version of the Office JavaScript library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
-For more information about accessing the Office JavaScript library, including how to get IntelliSense, see [Referencing the JavaScript API for Office library from its content delivery network (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+For more information about accessing the Office JavaScript library, including how to get IntelliSense, see [Referencing the JavaScript API for Office library from its content delivery network (CDN)](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 #### API object models
 
@@ -196,7 +196,7 @@ Explore the host-specific documentation for the type of add-in you're building.
 
 - [Office Add-ins platform overview](office-add-ins.md)
 - [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md)
-- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
+- [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
