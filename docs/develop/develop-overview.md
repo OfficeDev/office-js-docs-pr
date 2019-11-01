@@ -18,7 +18,7 @@ Common concepts like these are covered in this section of the documentation: **C
 
 ## Host-specific concepts
 
-After you're familiar with the common concepts that apply to multiple types of add-ins, explore the host-specific documentation for the type of add-in you're building. Each of these sections contains documentation specifically tailored to building add-ins for a specific Office host.
+After you're familiar with the common concepts that apply to all types of add-ins, explore the host-specific documentation for the type of add-in you're building. Each of these sections contains documentation specifically tailored to building add-ins for a specific Office host.
 
 - [Excel add-ins documentation](../excel/index.md)
 - [OneNote add-ins documentation](../onenote/index.md)
@@ -27,14 +27,3 @@ After you're familiar with the common concepts that apply to multiple types of a
 - [Project add-ins documentation](../project/index.md)
 - [Visio add-ins documentation](../visio/index.md)
 - [Word add-ins documentation](../word/index.md)
-
-## See also 
-
-- [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-- [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
-- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
-- [Office Add-ins XML manifest](add-in-manifests.md)
-- [Design Office Add-ins](../design/add-in-design.md)
-- [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
-- [Publish Office Add-ins](../publish/publish.md)
