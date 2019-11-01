@@ -1,29 +1,33 @@
 - name: Office Add-ins Documentation
   href: index.md
 
-- name: Office Add-ins guidance
+- name: About Office Add-ins
+  href: overview/office-add-ins.md
+  displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+
+- name: Getting started
   items:
-  - name: About Office Add-ins
-    href: overview/office-add-ins.md
+  - name: Building Office Add-ins
+    href: develop/develop-overview.md
+    displayName: develop
+  - name: Add-in development best practices
+    href: concepts/add-in-development-best-practices.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+  - name: Explore Office JS APIs using Script Lab
+    href: overview/explore-with-script-lab.md
+    displayName: Excel, Word, PowerPoint
+  - name: Requirements for running add-ins
+    href: concepts/requirements-for-running-office-add-ins.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+  - name: Browsers used by Office Add-ins
+    href: concepts/browsers-used-by-office-web-add-ins.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+  - name: Install the latest Office version
+    href: develop/install-latest-office-version.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-  - name: Getting started
-    items:
-    - name: Building Office Add-ins
-      href: develop/develop-overview.md
-      displayName: develop
-    - name: Explore Office JS APIs using Script Lab
-      href: overview/explore-with-script-lab.md
-      displayName: Excel, Word, PowerPoint
-    - name: Requirements for running add-ins
-      href: concepts/requirements-for-running-office-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Browsers used by Office Add-ins
-      href: concepts/browsers-used-by-office-web-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Install the latest Office version
-      href: develop/install-latest-office-version.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+- name: Office Add-ins guidance
+  items:
 
   - name: UX design
     items:

@@ -28,7 +28,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 3. Obtain an Azure subscription.
 
     > [!NOTE]
-    > If don't already have an Azure subscription, you can [get one as part of your Visual Studio subscription](https://azure.microsoft.com/en-us/pricing/member-offers/visual-studio-subscriptions/) or [register for a free trial](https://azure.microsoft.com/pricing/free-trial). 
+    > If don't already have an Azure subscription, you can [get one as part of your Visual Studio subscription](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) or [register for a free trial](https://azure.microsoft.com/pricing/free-trial). 
 
 ## Step 1: Create a shared folder to host your add-in XML manifest file
 
