@@ -12,7 +12,7 @@ localization_priority: Priority
 
 ## Common concepts
 
-All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. This means that regardless of whether you're creating an add-in for Excel, Outlook, or another Office host, you can incorporate features such as dialog boxes, add-in commands, task panes, single sign on (SSO), and more. Likewise, regardless of the type of Office Add-in you're building, you'll need to understand topics like Office JavaScript API programming patterns, the Office Add-in manifest file, localization, performance, privacy, and more.
+All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. This means that regardless of whether you're creating an add-in for Excel, Outlook, or another Office host, you can implement features such as dialog boxes, add-in commands, task panes, and single sign on (SSO). Likewise, regardless of the type of Office Add-in you're building, you'll need to understand things like Office JavaScript API programming patterns, the Office Add-in manifest file, localization, performance, privacy, and more.
 
 Common concepts like these are covered in this section of the documentation: **Common guidance** > **Develop**. Review information in this section of the documentation before exploring information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 
