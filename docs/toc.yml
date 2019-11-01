@@ -148,12 +148,6 @@
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
-    - name: Performance
-      href: concepts/resource-limits-and-performance-optimization.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Privacy and security
-      href: concepts/privacy-and-security.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: How to
       items: 
       - name: Address same origin policy limitations
@@ -182,6 +176,10 @@
         displayName: manifest
       - name: Localization
         href: develop/localization.md
+      - name: Performance
+        href: concepts/resource-limits-and-performance-optimization.md
+      - name: Privacy and security
+        href: concepts/privacy-and-security.md
       - name: Request permissions for API use in content and task pane add-ins
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
         displayName: manifest
