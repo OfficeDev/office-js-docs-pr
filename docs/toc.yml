@@ -95,17 +95,15 @@
 
   - name: Develop
     items:
-    - name: Office versions and requirement sets
-      href: develop/office-versions-and-requirement-sets.md
     - name: Host and platform availability
       href: overview/office-add-in-availability.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-
-
     - name: Office JavaScript API
       items:
       - name: Understanding the JavaScript API for Office
         href: develop/understanding-the-javascript-api-for-office.md
+      - name: Office versions and requirement sets
+        href: develop/office-versions-and-requirement-sets.md
       - name: Support for content and task pane add-ins
         href: develop/support-for-task-pane-and-content-add-ins.md
       - name: Reference Office.js
