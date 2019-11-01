@@ -97,7 +97,7 @@ localization_priority: Normal
         <h2>Learn about Office Add-ins</h2>
         <ul class="cardsM cols cols1">
             <li>
-                <a class="card x-hidden-focus" href="overview/index.md">
+                <a class="card x-hidden-focus" href="overview/common-guidance.md">
                     <div class="cardImageOuter">
                         <div class="cardImage">
                             <img src="images/index/blocks.svg" alt="Office Add-ins platform" />

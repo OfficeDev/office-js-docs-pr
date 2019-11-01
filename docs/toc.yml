@@ -30,7 +30,7 @@
   items:
 
   - name: Common guidance for Office Add-ins
-    href: overview/index.md
+    href: overview/common-guidance.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
   - name: UX design

@@ -1,1 +1,1 @@
-<b>Note</b>: See the <a href="../overview/index.md">Common guidance</a> section of this documentation for the full set of articles that apply to all types of Office Add-ins.
+<b>Note</b>: See the <a href="../overview/common-guidance.md">Common guidance</a> section of this documentation for the full set of articles that apply to all types of Office Add-ins.
