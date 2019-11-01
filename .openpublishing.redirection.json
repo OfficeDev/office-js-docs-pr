@@ -1,9 +1,5 @@
 { 
     "redirections": [      
-      {
-        "source_path": "docs/overview/index.md",
-        "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
-      },
       {   
         "source_path": "docs/concepts/add-in-development-lifecycle.md", 
         "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
