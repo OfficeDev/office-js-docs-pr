@@ -122,7 +122,7 @@ To build your first Office Add-in in less than 5 minutes, try out the quick star
 
 ## See also
 
-- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Building Office Add-ins](../develop/develop-overview.md)
 - [Office Add-in samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)

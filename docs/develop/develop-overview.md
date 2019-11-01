@@ -155,15 +155,15 @@ Explore the library of built-in samples in [Script Lab](../overview/explore-with
 > [!IMPORTANT]
 > The table of contents (TOC) within this documentation is organized as follows:
 > 
-> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](../overview/index.md) in the TOC.
+> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Common guidance](../overview/index.md) in the TOC.
 > 
 > - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md)).
 > 
-> For any type of add-in that you build, you'll use information in the [Office Add-ins guidance](../overview/index.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+> For any type of add-in that you build, you'll use information in the [Common guidance](../overview/index.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 
 #### Common guidance
 
-Explore the [Office Add-ins guidance](../overview/index.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
+Explore the [Common guidance](../overview/index.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
 
 - Foundational information about Office Add-ins such as [host and platform availability](../overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
 

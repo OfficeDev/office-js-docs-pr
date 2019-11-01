@@ -961,4 +961,4 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 - [Office 2010, 2013, and 2016 update history (MSI)](/officeupdates/office-updates-msi)
 - [Outlook 2010, 2013, and 2016 update history (MSI)](/officeupdates/outlook-updates-msi)
 - [Update history for Office for Mac](/officeupdates/update-history-office-for-mac)
-- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Building Office Add-ins](../develop/develop-overview.md)
