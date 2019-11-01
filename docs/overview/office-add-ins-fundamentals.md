@@ -1,49 +1,16 @@
 ---
-title: Develop Office Add-ins
+title: Building Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.date: 11/01/2019
 localization_priority: Priority
 ---
 
-# Develop Office Add-ins
-
-> [!TIP]
-> Please review [Building Office Add-ins](../overview/office-add-ins-fundamentals.md) before reading this article.
-
-## Common guidance 
-
-All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. 
-
-In this section of the documentation (**Common guidance** > **Develop**), you'll find information that's relevant to building any type of Office Add-in. For example:
-
-- Information about the [platforms and Office hosts](../overview/office-add-in-availability.md) that support Office Add-ins. 
-
-- Foundational information about the [Office JavaScript API](understanding-the-javascript-api-for-office.md).
-
-
-This section of the documentation (**Common guidance**) describes important concepts that apply to building any type of Office Add-in. For example, you'll find the following types of information under **Common guidance** in the table of contents (TOC):
-
-- Foundational information about Office Add-ins such as [host and platform availability](../overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
-
-- Information about [UI design and extensibility](../design/add-in-design.md).
-
-- Information about development topics that are relevant to more than one type of Office Add-in, such as the [Office JavaScript API](understanding-the-javascript-api-for-office.md), the [Office Add-ins XML manifest](add-in-manifests.md), [authentication and authorization](overview-authn-authz.md), [creating add-in commands](create-addin-commands.md), and more.
-
-- Information about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md).
-
-- Information about [publishing Office Add-ins](../publish/publish.md).
-
-## Host-specific guidance
-
-
-
-
-
-
-For any type of add-in that you build, you'll use information in the [Common guidance](../overview/common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+# Building Office Add-ins
 
 Office Add-ins extend the UI and functionality of Office applications and interact with content in Office documents. You'll use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook. The add-ins you build can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article is an introduction to developing Office Add-ins.
 
+> [!TIP]
+> Please review [Office Add-ins platform overview](office-add-ins.md) for information that sets context for the topics covered in this article.
 
 ## Core development concepts 
 
@@ -95,20 +62,20 @@ The Office JavaScript APIs include two distinct object models:
 
 - **Host-specific** APIs (introduced with Office 2016) provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Host-specific APIs are currently available for [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md), and [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md). This object model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function). For details about the Common API object model, which includes APIs for interacting with Outlook and PowerPoint, see [Office JavaScript API object model](office-javascript-api-object-model.md).
+- **Common** APIs (introduced with Office 2013) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This object model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function). For details about the Common API object model, which includes APIs for interacting with Outlook and PowerPoint, see [Office JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 > [!NOTE]
 > Excel Custom functions run within a unique runtime that prioritizes execution of calculations, and therefore uses a slightly different programming model. For details, see [Custom functions architecture](../excel/custom-functions-architecture.md).
 
-For additional information about the Office JavaScript APIs, see [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md).
+For additional information about the Office JavaScript APIs, see [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md).
 
 #### API requirement sets
 
-[Requirement sets](office-versions-and-requirement-sets.md) are named groups of API members. Requirement sets can be specific to Office hosts, such as the `ExcelApi 1.7` requirement set (a set of APIs that can only be used in Excel), or common to multiple hosts, such as the `DialogApi 1.1` requirement set (a set of APIs that can be used in any Office application that supports the Dialog API).
+[Requirement sets](../develop/office-versions-and-requirement-sets.md) are named groups of API members. Requirement sets can be specific to Office hosts, such as the `ExcelApi 1.7` requirement set (a set of APIs that can only be used in Excel), or common to multiple hosts, such as the `DialogApi 1.1` requirement set (a set of APIs that can be used in any Office application that supports the Dialog API).
 
-Your add-in can use requirement sets to determine whether the Office host supports the API members that it needs to use. For more information about this, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
+Your add-in can use requirement sets to determine whether the Office host supports the API members that it needs to use. For more information about this, see [Specify Office hosts and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 
-Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
+Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](office-add-in-availability.md).
 
 ### Extending the Office UI
 
@@ -181,28 +148,28 @@ You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, P
 
 ### Explore the APIs with Script Lab
 
-Explore the library of built-in samples in [Script Lab](../overview/explore-with-script-lab.md) to get a sense for the capabilities of the Office JavaScript APIs.
+Explore the library of built-in samples in [Script Lab](explore-with-script-lab.md) to get a sense for the capabilities of the Office JavaScript APIs.
 
 ### Learn more about developing, testing, and publishing Office Add-ins
 
 > [!IMPORTANT]
 > The table of contents (TOC) within this documentation is organized as follows:
 > 
-> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Common guidance](../overview/common-guidance.md) in the TOC.
+> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Common guidance](common-guidance.md) in the TOC.
 > 
 > - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md)).
 > 
-> For any type of add-in that you build, you'll use information in the [Common guidance](../overview/common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+> For any type of add-in that you build, you'll use information in the [Common guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 
 #### Common guidance
 
-Explore the [Common guidance](../overview/common-guidance.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
+Explore the [Common guidance](common-guidance.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
 
-- Foundational information about Office Add-ins such as [host and platform availability](../overview/office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
+- Foundational information about Office Add-ins such as [host and platform availability](office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
 
 - Information about [UI design and extensibility](../design/add-in-design.md).
 
-- Information about development topics that are relevant to more than one type of Office Add-in, such as the [Office JavaScript API](understanding-the-javascript-api-for-office.md), the [Office Add-ins XML manifest](add-in-manifests.md), [authentication and authorization](overview-authn-authz.md), [creating add-in commands](create-addin-commands.md), and more.
+- Information about development topics that are relevant to more than one type of Office Add-in, such as the [Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md), the [Office Add-ins XML manifest](../develop/add-in-manifests.md), [authentication and authorization](../develop/overview-authn-authz.md), [creating add-in commands](../develop/create-addin-commands.md), and more.
 
 - Information about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md).
 
@@ -227,8 +194,8 @@ Explore the host-specific documentation for the type of add-in you're building.
 
 ## See also 
 
-- [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
+- [Office Add-ins platform overview](office-add-ins.md)
+- [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md)
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)

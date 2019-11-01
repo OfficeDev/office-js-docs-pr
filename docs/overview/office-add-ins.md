@@ -114,7 +114,7 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Next steps
 
-For a more detailed introduction to developing Office Add-ins, see [Develop Office Add-ins](../develop/develop-overview.md).
+For a more detailed introduction to developing Office Add-ins, see [Buliding Office Add-ins](../overview/office-add-ins-fundamentals.md).
 
 To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](../concepts/add-in-development-best-practices.md) for Office Add-ins.
 
@@ -122,7 +122,7 @@ To build your first Office Add-in in less than 5 minutes, try out the quick star
 
 ## See also
 
-- [Building Office Add-ins](../develop/develop-overview.md)
+- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
 - [Office Add-in samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)

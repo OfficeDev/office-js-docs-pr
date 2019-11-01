@@ -8,7 +8,7 @@
 - name: Getting started
   items:
   - name: Building Office Add-ins
-    href: develop/develop-overview.md
+    href: overview/office-add-ins-fundamentals.md
     displayName: develop
   - name: Add-in development best practices
     href: concepts/add-in-development-best-practices.md
@@ -95,6 +95,9 @@
 
   - name: Develop
     items:
+    - name: Develop Office Add-ins
+      href: develop/develop-overview.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Host and platform availability
       href: overview/office-add-in-availability.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook

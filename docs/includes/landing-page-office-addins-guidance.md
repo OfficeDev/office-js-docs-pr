@@ -46,7 +46,7 @@
                         <p>Explore key aspects of Office Add-ins development.</p>
                         <br/>
                         <ul>
-                            <li><a href="../develop/develop-overview.md">Building Office Add-ins</a></li>
+                            <li><a href="../overview/office-add-ins-fundamentals.md">Building Office Add-ins</a></li>
                             <li><a href="../develop/specify-office-hosts-and-api-requirements.md">Specify Office hosts and API requirements</a></li>
                             <li><a href="../reference/javascript-api-for-office.md">JavaScript API for Office</a></li>
                             <li><a href="/javascript/api/office">Common API reference</a></li>

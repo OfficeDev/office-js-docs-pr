@@ -1,7 +1,7 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Office add-ins documentation
+title: Common guidance for Office Add-ins
 description: Resources for learning about Office Add-ins.
 ms.date: 07/05/2019
 localization_priority: Priority
