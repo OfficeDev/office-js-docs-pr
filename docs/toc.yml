@@ -29,6 +29,10 @@
 - name: Common guidance
   items:
 
+  - name: Common guidance for Office Add-ins
+    href: overview/index.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+
   - name: UX design
     items:
     - name: UX design in Office Add-ins
