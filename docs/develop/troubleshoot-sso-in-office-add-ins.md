@@ -65,7 +65,7 @@ Invalid Resource. (This error should only be seen in development.) The add-in ma
 
 Invalid Grant. This usually means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](sso-in-office-add-ins.md#create-the-service-application) and [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md). This also may happen if the user has not granted your service application permissions to their `profile`, or has revoked consent. Your code should fall back to an alternate system of user authentication.
 
-Another possible cause, during development, is that your add-in using Internet Explorer, and you are using a self-signed certificate. (To determine which browser is being used by the add-in, see [Browsers used by Office Add-ins](office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins.md).)
+Another possible cause, during development, is that your add-in using Internet Explorer, and you are using a self-signed certificate. (To determine which browser is being used by the add-in, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
 
 ### 13006
 
