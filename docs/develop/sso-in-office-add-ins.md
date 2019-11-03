@@ -98,8 +98,8 @@ Add JavaScript to the add-in to:
 Here's a simple example of a call to `getAccessToken`.
 
 > [!NOTE]
-> This example handles only one kind of error explicitly. For examples of more elaborate error handling, see[Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
- 
+> This example handles only one kind of error explicitly. For examples of more elaborate error handling, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
+
 
 ```js
 sync function getGraphData() {
