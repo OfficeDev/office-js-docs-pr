@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you'll build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 10/17/2019
+ms.date: 10/29/2019
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 localization_priority: Normal
@@ -29,7 +29,7 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
 2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
 
-3. Name your project and select **Create**.
+3. Name the project `HelloWorld`, and select **Create**.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
@@ -67,11 +67,11 @@ Edit the add-in code as follows to create the framework that you'll use to imple
 
         var messageBanner;
 
-        Office.initialize = function (reason) {
+        Office.onReady(function () {
             $(document).ready(function () {
                 // Initialize the FabricUI notification mechanism and hide it
-                var element = document.querySelector('.ms-MessageBanner');
-                messageBanner = new fabric.MessageBanner(element);
+                var element = document.querySelector('.MessageBanner');
+                messageBanner = new components.MessageBanner(element);
                 messageBanner.hideBanner();
 
                 // TODO1: Assign event handler for insert-image button.
@@ -79,7 +79,7 @@ Edit the add-in code as follows to create the framework that you'll use to imple
                 // TODO6: Assign event handler for get-slide-metadata button.
                 // TODO8: Assign event handlers for the four navigation buttons.
             });
-        };
+        });
 
         // TODO2: Define the insertImage function. 
 
@@ -166,10 +166,10 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 6. In the **Home.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.
 
     ```html
-    <button class="ms-Button ms-Button--primary" id="insert-image">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Insert Image</span>
-        <span class="ms-Button-description">Gets the photo of the day that shows on the Bing home page and adds it to the slide.</span>
+    <button class="Button Button--primary" id="insert-image">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Insert Image</span>
+        <span class="Button-description">Gets the photo of the day that shows on the Bing home page and adds it to the slide.</span>
     </button>
     ```
 
@@ -278,10 +278,10 @@ Complete the following steps to add code that inserts text into the title slide 
 
     ```html
         <br /><br />
-        <button class="ms-Button ms-Button--primary" id="insert-text">
-            <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-            <span class="ms-Button-label">Insert Text</span>
-            <span class="ms-Button-description">Inserts text into the slide.</span>
+        <button class="Button Button--primary" id="insert-text">
+            <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+            <span class="Button-label">Insert Text</span>
+            <span class="Button-description">Inserts text into the slide.</span>
         </button>
     ```
 
@@ -335,10 +335,10 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
     ```html
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="get-slide-metadata">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Get Slide Metadata</span>
-        <span class="ms-Button-description">Gets metadata for the selected slide(s).</span>
+    <button class="Button Button--primary" id="get-slide-metadata">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Get Slide Metadata</span>
+        <span class="Button-description">Gets metadata for the selected slide(s).</span>
     </button>
     ```
 
@@ -390,28 +390,28 @@ Complete the following steps to add code that navigates between the slides of a 
 
     ```html
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="go-to-first-slide">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Go to First Slide</span>
-        <span class="ms-Button-description">Go to the first slide.</span>
+    <button class="Button Button--primary" id="go-to-first-slide">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Go to First Slide</span>
+        <span class="Button-description">Go to the first slide.</span>
     </button>
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="go-to-next-slide">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Go to Next Slide</span>
-        <span class="ms-Button-description">Go to the next slide.</span>
+    <button class="Button Button--primary" id="go-to-next-slide">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Go to Next Slide</span>
+        <span class="Button-description">Go to the next slide.</span>
     </button>
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="go-to-previous-slide">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Go to Previous Slide</span>
-        <span class="ms-Button-description">Go to the previous slide.</span>
+    <button class="Button Button--primary" id="go-to-previous-slide">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Go to Previous Slide</span>
+        <span class="Button-description">Go to the previous slide.</span>
     </button>
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="go-to-last-slide">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Go to Last Slide</span>
-        <span class="ms-Button-description">Go to the last slide.</span>
+    <button class="Button Button--primary" id="go-to-last-slide">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Go to Last Slide</span>
+        <span class="Button-description">Go to the last slide.</span>
     </button>
     ```
 
