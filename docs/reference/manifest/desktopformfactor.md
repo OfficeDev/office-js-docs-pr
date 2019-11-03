@@ -1,7 +1,7 @@
 ---
 title: DesktopFormFactor element in the manifest file
 description: ''
-ms.date: 06/20/2019
+ms.date: 10/31/2019
 localization_priority: Normal
 ---
 
@@ -18,7 +18,7 @@ Each DesktopFormFactor definition contains the  **FunctionFile** element and one
 | [ExtensionPoint](extensionpoint.md)   | Yes      | Defines where an add-in exposes functionality. |
 | [FunctionFile](functionfile.md)       | Yes      | A URL to a file that contains JavaScript functions.|
 | [GetStarted](getstarted.md)           | No       | Defines the callout that appears when installing the add-in in Word, Excel, or PowerPoint hosts. |
-| [SupportsSharedFolders](supportssharedfolders.md) | No | Defines whether the Outlook add-in is available in delegate scenarios and is set to *false* by default.<br><br>**Important**: Because delegate access for Outlook add-ins is currently in preview, add-ins that use the `SupportSharedFolders` element cannot be published to AppSource or deployed via centralized deployment. |
+| [SupportsSharedFolders](supportssharedfolders.md) | No | Defines whether the Outlook add-in is available in delegate scenarios and is set to *false* by default. |
 
 ## DesktopFormFactor example
 
@@ -32,9 +32,9 @@ Each DesktopFormFactor definition contains the  **FunctionFile** element and one
         <!-- GetStarted callout -->
       </GetStarted>
       <ExtensionPoint xsi:type="PrimaryCommandSurface">
-        <!-- information on this extension point -->
+        <!-- Information on this extension point. -->
       </ExtensionPoint>
-      <!-- possibly more ExtensionPoint elements -->
+      <!-- Possibly more ExtensionPoint elements. -->
     </DesktopFormFactor>
   </Host>
 </Hosts>
