@@ -1,6 +1,7 @@
 ---
 ms.date: 11/04/2019
 title: "Tutorial: Share data and events between Excel custom functions and the task pane (preview)"
+ms.prod: excel
 description: In Excel, share data and events between custom functions and the task pane.
 localization_priority: Priority
 ---
@@ -31,8 +32,8 @@ After you complete the wizard, the generator creates the project and installs su
 ## Configure the manifest
 
 1. Start Visual Studio Code and open the **My Office Add-in** project.
-2. Open the manifest.xml file.
-3. Change the `<Requirements>` section to use CustomFunctionsRuntime version 1.2 as shown in the following code.
+2. Open the **manifest.xml** file.
+3. Change the `<Requirements>` section to use **CustomFunctionsRuntime** version **1.2** as shown in the following code.
     
     ```xml
     <Requirements> 
@@ -42,7 +43,7 @@ After you complete the wizard, the generator creates the project and installs su
     </Requirements>
     ```
     
-4. Under the `<Host>` element for the workbook, add the following `<Runtimes>` section. The lifetime needs to be “long” so that the custom functions can still work even when the task pane is closed.
+4. Under the `<Host>` element for the workbook, add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.
     
     ```xml
     <Hosts>
@@ -82,7 +83,7 @@ After you complete the wizard, the generator creates the project and installs su
     </Action>
     ```
     
-8. Add a new Url id for **TaskPaneAndCustomFunction.Url** that points to **taskpane.html**.
+8. Add a new **Url id** for **TaskPaneAndCustomFunction.Url** that points to **taskpane.html**.
      
     ```xml
     <bt:Urls>
@@ -143,8 +144,8 @@ Now that custom functions run in the same context as your task pane code, they c
 
 ### Create task pane controls to work with global data 
 
-1. Open the file src/taskpane/taskpane.html.
-2. After the closing </main> element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
+1. Open the file**src/taskpane/taskpane.html**.
+2. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
 
     ```html
     <ol>
@@ -166,7 +167,7 @@ Now that custom functions run in the same context as your task pane code, they c
     </div>
     ```
     
-3. Before the <body> element add the following script. This code will handle the button click events when the user wants to store or get global data.
+3. Before the `<body>` element add the following script. This code will handle the button click events when the user wants to store or get global data.
     
     ```js
     <script>
@@ -195,7 +196,7 @@ Now that custom functions run in the same context as your task pane code, they c
     npm run start
     ```
 
-Once Excel starts, you can use the task pane buttons to store or get shared data. Enter =CONTOSO.GETVALUE() into a cell for the custom function to retrieve the same shared data. Or use =CONTOSO.STOREVALUE(“new value”) to change the shared data to a new value.
+Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE(“new value”)` to change the shared data to a new value.
 
 > [!NOTE]
 > Configuring your project as shown in this article will share context between custom functions and the task pane. Calling Office APIs from custom functions is not supported. If you need to interact with the document, implement calls to the Office APIs in the [onCalculated event](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=excel-js-preview#event-details).
