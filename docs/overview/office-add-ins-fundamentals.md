@@ -1,7 +1,7 @@
 ---
 title: Building Office Add-ins
 description: An introduction to developing Office Add-ins.
-ms.date: 11/01/2019
+ms.date: 11/15/2019
 localization_priority: Priority
 ---
 
@@ -11,6 +11,53 @@ Office Add-ins extend the UI and functionality of Office applications and intera
 
 > [!TIP]
 > Please review [Office Add-ins platform overview](office-add-ins.md) before reading this article.
+
+## Creating an Office Add-in 
+
+You can create an Office Add-in by using the Yeoman generator for Office Add-ins or Visual Studio.
+
+[!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
+
+### Yeoman generator for Office Add-ins
+
+The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator-office) can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
+
+- Excel
+- OneNote
+- Outlook
+- PowerPoint
+- Project
+- Word
+- Excel custom functions
+
+You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React. For whichever framework you choose, you can choose between JavaScript and Typescript as well.
+
+Each [5-minute quick start](../index.md) contains step-by-step instructions that describe how to create an Office Add-in using the Yeoman generator. Within a quick start, select the `Yeoman generator` tab to display the proper set of instructions, as shown in the following screenshot.
+
+![A screenshot that shows quick start instructions with the Yeoman generator tab selected](../images/quick-start-tab-yeoman.png)
+
+### Visual Studio
+
+Visual Studio can be used to create Office Add-ins for Excel, Word, PowerPoint, or Outlook. An Office Add-in project gets created as part of a Visual Studio solution, which means you can use Visual Studio features like selecting **Start** or choosing **F5** to automatically run your add-in locally on IIS. Office Add-in projects that you create with Visual Studio use HTML, CSS, and JavaScript. Visual Studio can create Office Add-ins for any of the following:
+
+- Excel
+- Outlook
+- PowerPoint
+- Word
+
+The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. Within a quick start, select the `Visual Studio` tab to display the proper set of instructions, as shown in the following screenshot.
+
+![A screenshot that shows quick start instructions with the Visual Studio tab selected](../images/quick-start-tab-vs.png)
+
+## Exploring APIs with Script Lab
+
+Script Lab is an add-in that enables you to explore the Office JavaScript API and run code snippets while you're working in an Office program such as Excel or Word. It's available for free via [AppSource](https://appsource.microsoft.com/product/office/WA104380862) and is a useful tool to include in your development toolkit as you prototype and verify the functionality you want in your add-in. In Script Lab, you can access a library of built-in samples to quickly try out APIs or even use a sample as the starting point for your own code. 
+
+The following one-minute video shows Script Lab in action.
+
+[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+
+For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
 ## Core development concepts 
 
@@ -91,56 +138,17 @@ The following image shows an add-in command in the ribbon, a task pane to the ri
 
 For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
 
-## Creating an Office Add-in 
+## Testing and debugging an Office Add-in
 
-You can create an Office Add-in by using the Yeoman generator for Office Add-ins or Visual Studio.
+As you develop your add-in, you can test it locally by using a technique known as _sideloading_. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. Likewise, the procedure for debugging an add-in can also vary by platform and product. For more information about testing and debugging, see [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md).
 
-[!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
+## Publishing an Office Add-in
 
-### Yeoman generator for Office Add-ins
-
-The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator-office) can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
-
-- Excel
-- OneNote
-- Outlook
-- PowerPoint
-- Project
-- Word
-- Excel custom functions
-
-You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React. For whichever framework you choose, you can choose between JavaScript and Typescript as well.
-
-Each [5-minute quick start](../index.md) contains step-by-step instructions that describe how to create an Office Add-in using the Yeoman generator. Within a quick start, select the `Yeoman generator` tab to display the proper set of instructions, as shown in the following screenshot.
-
-![A screenshot that shows quick start instructions with the Yeoman generator tab selected](../images/quick-start-tab-yeoman.png)
-
-### Visual Studio
-
-Visual Studio can be used to create Office Add-ins for Excel, Word, PowerPoint, or Outlook. An Office Add-in project gets created as part of a Visual Studio solution, which means you can use Visual Studio features like selecting **Start** or choosing **F5** to automatically run your add-in locally on IIS. Office Add-in projects that you create with Visual Studio use HTML, CSS, and JavaScript. Visual Studio can create Office Add-ins for any of the following:
-
-- Excel
-- Outlook
-- PowerPoint
-- Word
-
-The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. Within a quick start, select the `Visual Studio` tab to display the proper set of instructions, as shown in the following screenshot.
-
-![A screenshot that shows quick start instructions with the Visual Studio tab selected](../images/quick-start-tab-vs.png)
-
-## Exploring APIs with Script Lab
-
-Script Lab is an add-in that enables you to explore the Office JavaScript API and run code snippets while you're working in an Office program such as Excel or Word. It's available for free via [AppSource](https://appsource.microsoft.com/product/office/WA104380862) and is a useful tool to include in your development toolkit as you prototype and verify the functionality you want in your add-in. In Script Lab, you can access a library of built-in samples to quickly try out APIs or even use a sample as the starting point for your own code. 
-
-The following one-minute video shows Script Lab in action.
-
-[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
-
-For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
+When you're ready to share your add-in with others, you'll do so by using the deployment method that best meets your objectives. For example, to deploy an add-in to users within your organization, you might use centralized deployment or publish the add-in to a SharePoint app catalog. If you want to share your add-in publicly for anyone to obtain, you can publish the add-in to AppSource. For more information about publishing, see [Deploy and publish Office Add-ins](../publish/publish.md).
 
 ## Next steps
 
-This article has described important Office Add-ins development concepts, outlined the different ways to create Office Add-ins, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality. Now that you've explored this introductory information, consider continuing your Office Add-ins journey along the following paths.
+This article has outlined the different ways to create Office Add-ins, introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality, and described important Office Add-ins development, testing, and publishing concepts. Now that you've explored this introductory information, consider continuing your Office Add-ins journey along the following paths.
 
 ### Create an Office add-in
 
