@@ -1,5 +1,5 @@
 ---
-ms.date: 10/31/2019
+ms.date: 11/04/2019
 description: 'Handle and return errors like #NULL! from your custom function'
 title: Handle and return errors from your custom function (preview)
 localization_priority: Priority
