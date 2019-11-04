@@ -8,7 +8,7 @@ localization_priority: Priority
 # Handle and return errors from your custom function (preview)
 
 > [!NOTE]
-> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to [join the Office Insider for PC](https://insider.office.com/en-us/join) to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to [Office Insider](https://insider.office.com/en-us/join) to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 If something goes wrong while your custom function runs, you will need to return an error to inform the user. If you have specific parameter requirements, such as only positive numbers, you will need to test the parameters and throw an error if they are not correct. You can also use a try catch block to catch any errors that occur while your custom function runs.
 
@@ -18,7 +18,7 @@ Let’s look at a case where you need to ensure that a zip code parameter is in 
 
 ```typescript
 /**
-* Gets a city name for the given zip code.
+* Gets a city name for the given U.S. zip code.
 * @customfunction
 * @param {string} zipCode
 * @returns The city of the zip code.
@@ -26,7 +26,7 @@ Let’s look at a case where you need to ensure that a zip code parameter is in 
 function getCity(zipCode: string): string {
   let isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
   if (isValidZip) return cityLookup(zipCode);
-  let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "Please provide a valid zip code.");
+  let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "Please provide a valid U.S. zip code.");
   throw error;
 }
 ```
