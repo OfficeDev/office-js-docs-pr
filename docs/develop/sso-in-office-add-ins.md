@@ -102,7 +102,7 @@ Here's a simple example of a call to `getAccessToken`.
 
 
 ```js
-sync function getGraphData() {
+async function getGraphData() {
     try {
         let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true });
 
@@ -143,7 +143,7 @@ $.ajax({
 
 #### When to call the method
 
-If your add-in cannot be used when no user is logged into Office, then you should call `getAccessToken` *when the add-in launches* and pass `{ allowSignInPrompt: true }` in the `options` parameter of `getAccessToken`.
+If your add-in cannot be used when no user is logged into Office, then you should call `getAccessToken` *when the add-in launches* and pass `allowSignInPrompt: true` in the `options` parameter of `getAccessToken`.
 
 If the add-in has some functionality that doesn't require a logged in user, then you call `getAccessToken` *when the user takes an action that requires a logged in user*. There is no significant performance degradation with redundant calls of `getAccessToken` because Office caches the bootstrap token and will reuse it, until it expires, without making another call to the AAD v. 2.0 endpoint whenever `getAccessToken` is called. So you can add calls of `getAccessToken` to all functions and handlers that initiate an action where the token is needed.
 
@@ -154,10 +154,10 @@ In most scenarios, there would be little point to obtaining the access token, if
 * Create one or more Web API methods that use information about the user that is extracted from the token; for example, a method that looks up the user's preferences in your hosted data base. (See **Using the SSO token as an identity** below.) Depending on your language and framework, libraries might be available that will simplify the code you have to write.
 * Get Microsoft Graph data. Your server-side code should do the following:
 
-    * Optionally, validate the access token (see **Validate the access token** below).
     * Initiate the “on behalf of” flow with a call to the Azure AD v2.0 endpoint that includes the access token, some metadata about the user, and the credentials of the add-in (its ID and secret). In this context, the access token is called the bootstrap token.
     * Get data from Microsoft Graph by using the new token.
-    * Optionally, cache the new access token that is returned from the on-behalf-of flow so that it an be reused in other calls to Microsoft Graph until it expires.
+    * Optionally, before initiating the flow, validate the access token (see **Validate the access token** below).
+    * Optionally, after the on-behalf-of flow completes, cache the new access token that is returned from the flow so that it an be reused in other calls to Microsoft Graph until it expires.
 
  For more details about getting authorized access to the user's Microsoft Graph data, see [Authorize to Microsoft Graph in your Office Add-in](authorize-to-microsoft-graph.md).
 

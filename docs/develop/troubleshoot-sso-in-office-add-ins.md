@@ -19,7 +19,7 @@ This article provides some guidance about how to troubleshoot problems with sing
 We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
 
 - [Fiddler](https://www.telerik.com/fiddler): Free ([Documentation](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
-- [Charles](https://www.charlesproxy.com/): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation/))
+- [Charles](https://www.charlesproxy.com): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation/))
 
 ## Causes and handling of errors from getAccessToken
 
@@ -77,18 +77,14 @@ The Office host was unable to get an access token to the add-in's web service.
 
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 - In production, there are several things that can cause this error. Some of them are:
-    - The user is has an Microsoft Account (MSA) identity.
-    - Some situations that would cause one of the other 13nnn errors with a Work or School account, will cause a 13007 when a MSA is used.
+    - The user has an Microsoft Account (MSA) identity.
+    - Some situations that would cause one of the other 13xxx errors with a Work or School account, will cause a 13007 when a MSA is used.
 
   For all of these cases, your code should fall back to an alternate system of user authentication.
 
 ### 13008
 
 The user triggered an operation that calls `getAccessToken` before a previous call of `getAccessToken` completed. This error is only seen on **Office on the web**. Your code should ask the user to repeat the operation after the previous operation has completed.
-
-### 13009
-
-For future use.
 
 ### 13010
 
