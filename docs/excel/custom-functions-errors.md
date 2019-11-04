@@ -10,7 +10,7 @@ localization_priority: Priority
 > [!NOTE]
 > The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to [join the Office Insider for PC](https://insider.office.com/en-us/join) to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
-If something goes wrong while your custom function runs, you will need to return an error to inform the user. If you have specific parameter requirements, such as only positive numbers, you will need to test the parameters and throw an error if they are not correct. You can also use a try catch block to catch any errors that occur while your custom function runs.
+If something goes wrong while your custom function runs, you will need to return an error to inform the user. If you have specific parameter requirements, such as only positive numbers, you will need to test the parameters and throw an error if they are not correct. You can also use a `try`-`catch` block to catch any errors that occur while your custom function runs.
 
 ## Detect and throw an error
 
@@ -33,10 +33,10 @@ function getCity(zipCode: string): string {
 
 ## The CustomFunctions.Error object
 
-The **CustomFunctions.Error** object is used to return an error back to the cell. When you create the object, specify which error you want to use by using one of the **ErrorCode** enum values. The following **ErrorCode** enum values can be used.
+The `CustomFunctions.Error` object is used to return an error back to the cell. When you create the object, specify which error you want to use by using one of the following `ErrorCode` enum values.
 
 
-|ErrorCode enum value  |Excel cell value  |Usage meaning  |
+|ErrorCode enum value  |Excel cell value  |Meaning  |
 |---------------|---------|---------|
 |invalidValue   | #VALUE! | A value used in the formula is the wrong type. |
 |notAvailable   | #N/A    | The function or service is not available. |
@@ -44,14 +44,14 @@ The **CustomFunctions.Error** object is used to return an error back to the cell
 |invalidNumber  | #NUM!   | There is a problem with the number used in the formula |
 |nullReference  | #NULL!  | The ranges in the formula do not intersect. |
 
-The following code sample shows how to create and return an error for an invalid number (#NUM!).
+The following code sample shows how to create and return an error for an invalid number (`#NUM!`).
 
 ```typescript
 let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-When you return a #VALUE! error you can also include a custom message that will be shown in a popup when the user hovers over the cell. The following example shows how to return a custom error message.
+When you return a `#VALUE!` error you can also include a custom message that will be shown in a popup when the user hovers over the cell. The following example shows how to return a custom error message.
 
 ```typescript
 // You can only return a custom error message with the #VALUE! error
@@ -59,11 +59,11 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, â€
 throw error;
 ```
 
-## Use try catch blocks
+## Use try-catch blocks
 
-In general you should use try catch blocks in your custom function to catch any potential errors that occur. If you do not handle exceptions in your code, they will be returned to Excel. Excel will default to return #VALUE! for all unhandled exceptions.
+In general, you should use `try`-`catch` blocks in your custom function to catch any potential errors that occur. If you do not handle exceptions in your code, they will be returned to Excel. By default, Excel returns `#VALUE!` for an unhandled exception.
 
-In the following code sample, the custom function makes a fetch call to a REST service. It is possible the REST service returns an error, or the network goes down. If this happens the custom function will return #N/A to indicate the web call was not available.
+In the following code sample, the custom function makes a fetch call to a REST service. It's possible that the call will fail, for example, if the REST service returns an error or the network goes down. If this happens, the custom function will return `#N/A` to indicate the web call failed.
 
 
 ```typescript
