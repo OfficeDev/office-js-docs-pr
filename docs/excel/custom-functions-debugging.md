@@ -166,5 +166,6 @@ Learn about [authentication practices in custom functions](custom-functions-auth
 ## See also
 
 * [Custom functions troubleshooting](custom-functions-troubleshooting.md)
+* [Error handling for custom functions in Excel](custom-functions-errors.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
