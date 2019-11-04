@@ -47,9 +47,9 @@ You develop an add-in that accesses Microsoft Graph just as you would any other 
 Depending on your language and framework, libraries might be available that will simplify the server-side code you have to write. Your code should do the following:
 
 * Initiate the “on behalf of” flow with a call to the Azure AD v2.0 endpoint that includes the bootstrap access token, some metadata about the user, and the credentials of the add-in (its ID and secret).
+* Create one or more Web API methods that get Microsoft Graph data by passing the (possibly cached) access token to Microsoft Graph.
 * Optionally, before initiating the flow, validate the add-in bootstrap access token that is received from the token handler you created earlier. For more information, see [Validate the access token](sso-in-office-add-ins.md#validate-the-access-token). 
 * Optionally, after the flow completes, cache the returned access token to Microsoft Graph. You'll want to do this if the add-in makes more than one call to Microsoft Graph. For more information about this flow see [Azure Active Directory v2.0 and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
-* Create one or more Web API methods that get Microsoft Graph data by passing the (possibly cached) access token to Microsoft Graph.
 
 > [!NOTE]
 > For examples of decoded access tokens for Microsoft Graph that have been obtained by the "on-behalf-of" flow, see [Azure Active Directory v2.0 and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
