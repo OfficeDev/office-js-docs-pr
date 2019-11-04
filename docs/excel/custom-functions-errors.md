@@ -14,7 +14,7 @@ If something goes wrong while your custom function runs, you will need to return
 
 ## Detect and throw an error
 
-Let’s look at a case where you need to ensure that a zip code parameter is in the correct format for the custom function to work. The following custom function uses a regular expression to check the zip code. If it is correct, then it will look up the city (in another function) and return the value. If it is not correct, it returns a #VALUE! error to the cell.
+Let’s look at a case where you need to ensure that a zip code parameter is in the correct format for the custom function to work. The following custom function uses a regular expression to check the zip code. If it is correct, then it will look up the city (in another function) and return the value. If it is not correct, it returns a `#VALUE!` error to the cell.
 
 ```typescript
 /**
@@ -38,11 +38,11 @@ The `CustomFunctions.Error` object is used to return an error back to the cell. 
 
 |ErrorCode enum value  |Excel cell value  |Meaning  |
 |---------------|---------|---------|
-|invalidValue   | #VALUE! | A value used in the formula is the wrong type. |
-|notAvailable   | #N/A    | The function or service is not available. |
-|divisionByZero | #DIV/0  | Be aware that JavaScript allows division by zero so you need to write an error handler carefully to detect this condition. |
-|invalidNumber  | #NUM!   | There is a problem with the number used in the formula |
-|nullReference  | #NULL!  | The ranges in the formula do not intersect. |
+|`invalidValue`   | `#VALUE!` | A value used in the formula is the wrong type. |
+|`notAvailable`   | `#N/A`    | The function or service is not available. |
+|`divisionByZero` | `#DIV/0`  | Be aware that JavaScript allows division by zero so you need to write an error handler carefully to detect this condition. |
+|`invalidNumber`  | `#NUM!`   | There is a problem with the number used in the formula |
+|`nullReference`  | `#NULL!`  | The ranges in the formula do not intersect. |
 
 The following code sample shows how to create and return an error for an invalid number (`#NUM!`).
 
