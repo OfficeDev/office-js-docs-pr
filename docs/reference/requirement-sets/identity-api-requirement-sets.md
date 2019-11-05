@@ -14,7 +14,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Office 365 subscription) |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.2  | N/A | Preview<b>*</b> | Coming soon | Preview<b>*</b> | Preview<b>*</b> | Preview<b>*</b>| Coming soon | Coming soon |
+| IdentityAPI 1.1  | N/A | Preview<b>*</b> | Coming soon | Preview<b>*</b> | Preview<b>*</b> | Preview<b>*</b>| Coming soon | Coming soon |
 
 > **&#42;** During the preview phase, the Identity API requires Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
 
@@ -29,9 +29,9 @@ To find out more about versions, build numbers, and Office Online Server, see:
 
 For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
 
-## IdentityAPI 1.2
+## IdentityAPI 1.1
 
-The Single Sign On IdentityAPI 1.2 is the first version of the API. For details about this API, see the [SSO API reference](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) section of [Enable SSO in an add-in](/office/dev/add-ins/develop/sso-in-office-add-ins).
+The Single Sign On IdentityAPI 1.1 is the first version of the API. For details about this API, see the [SSO API reference](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) section of [Enable SSO in an add-in](/office/dev/add-ins/develop/sso-in-office-add-ins).
 
 ## See also
 
