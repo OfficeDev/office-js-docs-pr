@@ -32,14 +32,7 @@ You can choose to create the project using HTML, CSS and JavaScript, or using An
 
 ### Visual Studio
 
-Visual Studio can be used to create Office Add-ins for Excel, Word, PowerPoint, or Outlook. An Office Add-in project gets created as part of a Visual Studio solution, which means you can use Visual Studio features like selecting **Start** or choosing **F5** to automatically run your add-in locally on IIS. Office Add-in projects that you create with Visual Studio use HTML, CSS, and JavaScript. Visual Studio can create Office Add-ins for any of the following:
-
-- Excel
-- Outlook
-- PowerPoint
-- Word
-
-Visual Studio creates the project using HTML, CSS, and JavaScript. The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. 
+Visual Studio can be used to create Office Add-ins for Excel, Word, PowerPoint, or Outlook. An Office Add-in project gets created as part of a Visual Studio solution and uses HTML, CSS, and JavaScript. The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. 
 
 [!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
 
