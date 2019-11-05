@@ -16,8 +16,6 @@ Office Add-ins extend the UI and functionality of Office applications and intera
 
 You can create an Office Add-in by using the Yeoman generator for Office Add-ins or Visual Studio.
 
-[!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
-
 ### Yeoman generator for Office Add-ins
 
 The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator-office) can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
@@ -30,11 +28,7 @@ The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator
 - Word
 - Excel custom functions
 
-You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React. For whichever framework you choose, you can choose between JavaScript and Typescript as well.
-
-Each [5-minute quick start](../index.md) contains step-by-step instructions that describe how to create an Office Add-in using the Yeoman generator. Within a quick start, select the `Yeoman generator` tab to display the proper set of instructions, as shown in the following screenshot.
-
-![A screenshot that shows quick start instructions with the Yeoman generator tab selected](../images/quick-start-tab-yeoman.png)
+You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React. For whichever framework you choose, you can choose between JavaScript and Typescript as well. Each [5-minute quick start](../index.md) contains step-by-step instructions that describe how to create an Office Add-in using the Yeoman generator.
 
 ### Visual Studio
 
@@ -45,9 +39,7 @@ Visual Studio can be used to create Office Add-ins for Excel, Word, PowerPoint, 
 - PowerPoint
 - Word
 
-The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. Within a quick start, select the `Visual Studio` tab to display the proper set of instructions, as shown in the following screenshot.
-
-![A screenshot that shows quick start instructions with the Visual Studio tab selected](../images/quick-start-tab-vs.png)
+The [5-minute quick start](../index.md) for each of these four applications contains step-by-step instructions that describe how to create an Office Add-in using Visual Studio. 
 
 ## Exploring APIs with Script Lab
 
