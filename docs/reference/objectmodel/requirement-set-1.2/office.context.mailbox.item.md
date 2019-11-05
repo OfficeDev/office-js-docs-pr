@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.2
 description: ''
-ms.date: 10/23/2019
+ms.date: 11/05/2019
 localization_priority: Normal
 ---
 
@@ -502,10 +502,10 @@ console.log("Item class: " + itemClass);
 
 #### (nullable) itemId: String
 
-Gets the Exchange Web Services item identifier for the current item. Read mode only.
+Gets the [Exchange Web Services item identifier](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) for the current item. Read mode only.
 
 > [!NOTE]
-> The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier. The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API. Before making REST API calls using this value, it should be converted using `Office.context.mailbox.convertToRestId`, which is available starting in requirement set 1.3. For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api#get-the-item-id).
+> The identifier returned by the `itemId` property is the same as the [Exchange Web Services item identifier](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API. Before making REST API calls using this value, it should be converted using `Office.context.mailbox.convertToRestId`, which is available starting in requirement set 1.3. For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 ##### Type
 
@@ -1556,6 +1556,11 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 Asynchronously returns selected data from the subject or body of a message.
 
 If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.
+
+> [!NOTE]
+> In Outlook on the web, the method returns the string "null" if no text is selected but the cursor is in the body. To check for this situation, include code similar to the following:
+>
+> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
 
 ##### Parameters
 

@@ -52,6 +52,10 @@
         "source_path": "docs/reference/outlook-api-reference-1-7.md",
         "redirect_url": "/javascript/api/outlook?view=outlook-js-1.7"
       },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-8.md",
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.8"
+      },
 
 
       {
