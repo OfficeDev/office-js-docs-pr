@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: Common guidance for Office Add-ins
 description: Resources for learning about Office Add-ins.
-ms.date: 07/05/2019
+ms.date: 11/15/2019
 localization_priority: Priority
 ---
 
