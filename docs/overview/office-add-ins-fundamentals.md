@@ -190,8 +190,7 @@ Explore the host-specific documentation for the type of add-in you're building.
 ## See also 
 
 - [Office Add-ins platform overview](office-add-ins.md)
-- [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md)
-- [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)

@@ -32,3 +32,11 @@ After you're familiar with the common concepts that apply to multiple types of a
 - [Project add-ins documentation](../project/index.md)
 - [Visio add-ins documentation](../visio/index.md)
 - [Word add-ins documentation](../word/index.md)
+
+## See also
+
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Design Office Add-ins](../design/add-in-design.md)
+- [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
+- [Publish Office Add-ins](../publish/publish.md)
