@@ -1,7 +1,7 @@
 ---
 title: Office UI elements for Office Add-ins
 description: ''
-ms.date: 12/04/2017
+ms.date: 11/15/2019
 localization_priority: Priority
 ---
 

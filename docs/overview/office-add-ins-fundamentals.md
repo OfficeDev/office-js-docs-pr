@@ -46,6 +46,20 @@ The following one-minute video shows Script Lab in action.
 
 For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
+## Extending the Office UI
+
+An Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
+
+- [Add-in commands](../design/add-in-commands.md) can be used to add custom tabs, buttons, and menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
+
+- HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web pages typically do, like call external web services, facilitate user authentication, and more.
+
+The following image shows an add-in command in the ribbon, a task pane to the right of the document, and a dialog box floating over the document.
+
+![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/add-in-ui-elements.png)
+
+For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
+
 ## Core development concepts 
 
 An Office Add-in consists of two parts:
@@ -111,20 +125,6 @@ Your add-in can use requirement sets to determine whether the Office host suppor
 
 Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](office-add-in-availability.md).
 
-### Extending the Office UI
-
-An Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
-
-- [Add-in commands](../design/add-in-commands.md) can be used to add custom tabs, buttons, and menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
-
-- HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../design/dialog-boxes.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web pages typically do, like call external web services, facilitate user authentication, and more.
-
-The following image shows an add-in command in the ribbon, a task pane to the right of the document, and a dialog box floating over the document.
-
-![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/add-in-ui-elements.png)
-
-For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
-
 ## Testing and debugging an Office Add-in
 
 As you develop your add-in, you can test it locally by using a technique known as _sideloading_. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. Likewise, the procedure for debugging an add-in can also vary by platform and product. For more information about testing and debugging, see [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md).
@@ -150,15 +150,15 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 > [!IMPORTANT]
 > The table of contents (TOC) within this documentation is organized as follows:
 > 
-> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Common guidance](common-guidance.md) in the TOC.
+> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](common-guidance.md) in the TOC.
 > 
 > - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md)).
 > 
-> For any type of add-in that you build, you'll use information in the [Common guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+> For any type of add-in that you build, you'll use information in the [Office Add-ins guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 
 #### Common guidance
 
-Explore the [Common guidance](common-guidance.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
+Explore the [Office Add-ins guidance](common-guidance.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
 
 - Foundational information about Office Add-ins such as [host and platform availability](office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
 
