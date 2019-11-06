@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: ''
-ms.date: 09/09/2019
+ms.date: 11/05/2019
 localization_priority: Priority
 ---
 
@@ -108,10 +108,34 @@ Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 #### For iOS:
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
+## Changes to static files, such as JavaScript, HTML, and CSS do not take effect
+
+The browser may be caching these files. To prevent this, turn off client-side caching when developing. The details will depend on what kind of server you are using. In most cases, it involves adding certain headers to the HTTP Responses. We suggest the following set:
+
+- Cache-Control: "private, no-cache, no-store"
+- Pragma: "no-cache"
+- Expires: "-1"
+
+For an example of doing this in an Node.JS Express server, see [this app.js file](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). For an example in an ASP.NET project, see [this cshtml file](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/src/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
+
+If your add-in is hosted in Internet Information Server (IIS), you could also add the following to the web.config.
+
+```xml
+<system.webServer>
+  <staticContent>
+    <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="0.00:00:00" cacheControlCustom="must-revalidate" />
+  </staticContent>
+```
+
+If these steps don't seem to work at first, you may need to clear the browser's cache. Do this through the UI of the browser. Sometimes the Edge cache is not successfully cleared when you try to clear it in the Edge UI. If that happens, run the following command in a Windows Command Prompt.
+
+```bash
+del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
+```
+
 ## See also
 
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
-    
