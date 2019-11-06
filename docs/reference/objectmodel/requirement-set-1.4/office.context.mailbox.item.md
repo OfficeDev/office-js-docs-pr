@@ -1615,7 +1615,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 Asynchronously returns selected data from the subject or body of a message.
 
-If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.
+If there is no selection but the cursor is in the body or subject, the method returns an empty string for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.
 
 > [!NOTE]
 > In Outlook on the web, the method returns the string "null" if no text is selected but the cursor is in the body. To check for this situation, see the example later in this section.
