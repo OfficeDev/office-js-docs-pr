@@ -1,6 +1,30 @@
 { 
     "redirections": [      
       {   
+        "source_path": "quickstarts/excel-quickstart-jquery-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
+      },
+      {   
+        "source_path": "quickstarts/excel-custom-functions-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-custom-functions-quickstart"
+      },
+      {   
+        "source_path": "quickstarts/onenote-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/onenote-quickstart"
+      },
+      {   
+        "source_path": "quickstarts/powerpoint-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart"
+      },
+      {   
+        "source_path": "quickstarts/project-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
+      },
+      {   
+        "source_path": "quickstarts/word-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
+      },
+      {   
         "source_path": "overview/index.md", 
         "redirect_url": "/office/dev/add-ins/overview/common-guidance"
       },

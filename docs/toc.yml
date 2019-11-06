@@ -5,35 +5,54 @@
   href: overview/office-add-ins.md
   displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-- name: Getting started
+- name: Get started
   items:
   - name: Building Office Add-ins
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
+  - name: Quick starts
+    items:
+    - name: Excel add-in
+      href: quickstarts/excel-quickstart-jquery-redirect.md
+    - name: Excel custom functions
+      href: quickstarts/excel-custom-functions-quickstart-redirect.md
+    - name: OneNote add-in
+      href: quickstarts/onenote-quickstart-redirect.md
+    - name: Outlook add-in
+      href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
+    - name: PowerPoint add-in
+      href: quickstarts/powerpoint-quickstart-redirect.md
+    - name: Project add-in
+      href: quickstarts/project-quickstart-redirect.md
+    - name: Word add-in
+      href: quickstarts/word-quickstart-redirect.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
-  - name: Requirements for running add-ins
-    href: concepts/requirements-for-running-office-add-ins.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-  - name: Browsers used by Office Add-ins
-    href: concepts/browsers-used-by-office-web-add-ins.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Install the latest Office version
     href: develop/install-latest-office-version.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-- name: Common guidance
+- name: Office Add-ins guidance
   items:
 
   - name: Common guidance for Office Add-ins
     href: overview/common-guidance.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-  - name: Add-in development best practices
-    href: concepts/add-in-development-best-practices.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-  - name: UX design
+  - name: Concepts
+    items:
+    - name: Add-in development best practices
+      href: concepts/add-in-development-best-practices.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Requirements for running add-ins
+      href: concepts/requirements-for-running-office-add-ins.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Browsers used by Office Add-ins
+      href: concepts/browsers-used-by-office-web-add-ins.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+
+  - name: Design
     items:
     - name: UX design in Office Add-ins
       href: design/add-in-design.md
@@ -419,10 +438,6 @@
       href: reference/openspec/openspec.md
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
-
-  - name: Resources
-    href: resources/resources-links-help.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
 
 - name: Excel add-ins
   items: 
@@ -968,5 +983,6 @@
       href: word/search-option-guidance.md
       displayName: Word
 
-
-
+- name: Resources
+  href: resources/resources-links-help.md
+  displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
