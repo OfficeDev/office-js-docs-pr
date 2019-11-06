@@ -10,9 +10,6 @@
   - name: Building Office Add-ins
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
-  - name: Add-in development best practices
-    href: concepts/add-in-development-best-practices.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
@@ -32,6 +29,9 @@
   - name: Common guidance for Office Add-ins
     href: overview/common-guidance.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+  - name: Add-in development best practices
+    href: concepts/add-in-development-best-practices.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
   - name: UX design
     items:
@@ -42,7 +42,6 @@
       items:
       - name: Office UI elements for Office Add-ins
         href: design/interface-elements.md
-      - name: Interface elements
         items:
         - name: Add-in commands
           href: design/add-in-commands.md
