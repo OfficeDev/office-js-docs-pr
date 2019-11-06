@@ -59,9 +59,10 @@
       displayName: design, user interface, UI
     - name: Extend the Office UI
       items:
-      - name: Office UI elements for Office Add-ins
-        href: design/interface-elements.md
+      - name: Interface elements
         items:
+        - name: Office UI elements for Office Add-ins
+          href: design/interface-elements.md
         - name: Add-in commands
           href: design/add-in-commands.md
         - name: Dialog boxes

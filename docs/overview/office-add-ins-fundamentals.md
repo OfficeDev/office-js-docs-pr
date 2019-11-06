@@ -121,7 +121,7 @@ An Office Add-in can extend the Office UI by using add-in commands and HTML cont
 
 The following image shows an add-in command in the ribbon, a task pane to the right of the document, and a dialog box floating over the document.
 
-![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/overview-with-app-interface-elements.png)
+![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/add-in-ui-elements.png)
 
 For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
 
