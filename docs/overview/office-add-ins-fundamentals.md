@@ -156,9 +156,9 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 
 #### Common guidance
 
-Explore the [Office Add-ins guidance](common-guidance.md) section of this documentation for information that applies to more than one type of Office Add-in. This includes:
+Explore the [Office Add-ins guidance](common-guidance.md) section of this documentation for information that applies to more than one type of Office Add-in, such as:
 
-- Foundational information about Office Add-ins such as [host and platform availability](office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
+- Foundational information about Office Add-ins like [host and platform availability](office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
 
 - Information about [UI design and extensibility](../design/add-in-design.md).
 
