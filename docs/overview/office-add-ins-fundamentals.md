@@ -148,13 +148,11 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 ### Learn more about developing, testing, and publishing Office Add-ins
 
 > [!IMPORTANT]
-> The table of contents (TOC) within this documentation is organized as follows:
+> For any type of add-in that you build, you'll use information in the [Office Add-ins guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 > 
-> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](common-guidance.md) in the TOC.
+> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](common-guidance.md) in the table of contents (TOC).
 > 
 > - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md)).
-> 
-> For any type of add-in that you build, you'll use information in the [Office Add-ins guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 
 #### Common guidance
 
