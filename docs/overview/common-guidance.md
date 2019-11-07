@@ -35,7 +35,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_get-started.svg" alt="Design" />
+                            <img src="../images/index-landing-page/i_design.svg" alt="Design" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -69,7 +69,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="Reference" />
+                            <img src="../images/index-landing-page/i_reference.svg" alt="Reference" />
                         </div>
                     </div>
                     <div class="cardText">
