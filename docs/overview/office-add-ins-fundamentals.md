@@ -58,7 +58,7 @@ The following image shows an add-in command in the ribbon, a task pane to the ri
 
 ![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/add-in-ui-elements.png)
 
-For more information about extending the Office UI, see [Design Office Add-ins](../design/add-in-design.md).
+For more information about extending the Office UI, see [Office UI elements for Office Add-ins](../design/interface-elements.md).
 
 ## Core development concepts 
 
@@ -153,37 +153,6 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 > - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](common-guidance.md) in the table of contents (TOC).
 > 
 > - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md)).
-
-#### Common guidance
-
-Explore the [Office Add-ins guidance](common-guidance.md) section of this documentation for information that applies to more than one type of Office Add-in, such as:
-
-- Foundational information about Office Add-ins like [host and platform availability](office-add-in-availability.md) and [requirements for running Office add-ins](../concepts/requirements-for-running-office-add-ins.md).
-
-- Information about [UI design and extensibility](../design/add-in-design.md).
-
-- Information about development topics that are relevant to more than one type of Office Add-in, such as the [Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md), the [Office Add-ins XML manifest](../develop/add-in-manifests.md), [authentication and authorization](../develop/overview-authn-authz.md), [creating add-in commands](../develop/create-addin-commands.md), and more.
-
-- Information about [testing and debugging Office Add-ins](../testing/test-debug-office-add-ins.md).
-
-- Information about [publishing Office Add-ins](../publish/publish.md).
-
-#### Host-specific guidance
-
-Explore the host-specific documentation for the type of add-in you're building.
-
-- [Excel add-ins documentation](../excel/index.md)
-- [OneNote add-ins documentation](../onenote/index.md)
-- [Outlook add-ins documentation](../outlook/index.md)
-- [PowerPoint add-ins documentation](../powerpoint/index.md)
-- [Project add-ins documentation](../project/index.md)
-- [Visio add-ins documentation](../visio/index.md)
-- [Word add-ins documentation](../word/index.md)
-
-> [!TIP]
-> When viewing the [API reference documentation](/javascript/api/overview.md), select an API (and requirement set, where applicable) from the **Version** dropdown list to filter the documentation accordingly.
-> 
-> ![screenshot of API reference docs with the moniker selector highlighted](../images/ref-docs-moniker-selector.png)
 
 ## See also 
 

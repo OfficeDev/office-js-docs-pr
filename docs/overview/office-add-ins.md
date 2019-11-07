@@ -113,11 +113,7 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Next steps
 
-For a more detailed introduction to developing Office Add-ins, see [Buliding Office Add-ins](../overview/office-add-ins-fundamentals.md).
-
-To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](../concepts/add-in-development-best-practices.md) for Office Add-ins.
-
-To build your first Office Add-in in less than 5 minutes, try out the quick start for [Excel](../quickstarts/excel-quickstart-jquery.md), [Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context), [Word](../quickstarts/word-quickstart.md), [OneNote](../quickstarts/onenote-quickstart.md), [PowerPoint](../quickstarts/powerpoint-quickstart.md), or [Project](../quickstarts/project-quickstart.md). You can start building add-ins right away using Visual Studio or any other editor. 
+For a more detailed introduction to developing Office Add-ins, see [Building Office Add-ins](../overview/office-add-ins-fundamentals.md).
 
 ## See also
 

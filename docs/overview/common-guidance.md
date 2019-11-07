@@ -2,140 +2,118 @@
 layout: LandingPage
 ms.topic: landing-page
 title: Common guidance for Office Add-ins
-description: Resources for learning about Office Add-ins.
+description: Guidance that applies to all types of Office Add-ins.
 ms.date: 11/15/2019
 localization_priority: Priority
 ---
 
 # Common guidance for Office Add-ins
 
-[!include[Office Add-ins guidance](../includes/landing-page-office-addins-guidance.md)]
-
----
-
-<h2>Learn about specific types of add-ins</h2>
-
-<p>Explore the following sections to learn about building an add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word.</p>
+All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. This means that regardless of whether you're creating an add-in for Excel, Outlook, or another Office host, you'll need to understand foundational information about the Office Add-ins platform and Office JavaScript APIs, UI design and extensibility concepts, development tasks such as [creating add-in commands](../develop/create-addin-commands.md) or [opening a dialog box](../develop/dialog-api-in-office-add-ins.md), and how to test, debug, and publish an Office Add-in. The documentation in this section provides information like this that can apply to any type of Office Add-in.
 
 <ul class="panelContent cardsF cols cols3">
     <li>
-        <a href="../excel/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-excel.svg" alt="Excel add-ins documentation" />
+                            <img src="../images/index-landing-page/i_article.svg" alt="Concepts" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Excel add-ins documentation</h3>
-                        <p>Learn how to build Excel add-ins.</p>
+                        <h3>Concepts</h3>
+                        <p><a href="../concepts/add-in-development-best-practices.md">Learn about Office Add-in development best practices and other important concepts.</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="../onenote/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-onenote.svg" alt="OneNote add-ins documentation" />
+                            <img src="../images/index-landing-page/i_get-started.svg" alt="Design" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>OneNote add-ins documentation</h3>
-                        <p>Learn how to build OneNote add-ins.</p>
+                        <h3>Design</h3>
+                        <p><a href="../design/add-in-design.md">Learn about Office UI elements for Office Add-ins.</p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="../outlook/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-outlook.svg" alt="Outlook add-ins documentation" />
+                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="Develop" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Outlook add-ins documentation</h3>
-                        <p>Learn how to build Outlook add-ins.</p>
+                        <h3>Develop</h3>
+                        <p><a href="../develop/develop-overview.md">Learn about common development concepts that apply to any type of Office Add-in.</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="../powerpoint/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-powerpoint.svg" alt="PowerPoint add-ins documentation" />
+                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="Reference" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>PowerPoint add-ins documentation</h3>
-                        <p>Learn how to build PowerPoint add-ins.</p>
+                        <h3>Reference</h3>
+                        <p><a href="../reference/javascript-api-for-office.md">Review reference documentation for Common APIs, the Office Add-ins manifest, and error codes.</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="../project/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-project-server.svg" alt="Project add-ins documentation" />
+                            <img src="../images/index-landing-page/i_recommended-testing.svg" alt="Testing and debugging" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Project add-ins documentation</h3>
-                        <p>Learn how to build Project add-ins.</p>
+                        <h3>Testing and debugging</h3>
+                        <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug an Office Add-in.</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
     <li>
-        <a href="../word/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-word.svg" alt="Word add-ins documentation" />
+                            <img src="../images/index-landing-page/i_deploy.svg" alt="Publishing" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Word add-ins documentation</h3>
-                        <p>Learn how to build Word add-ins.</p>
+                        <h3>Publishing</h3>
+                        <p><a href="../publish/publish.md">Learn how to deploy and publish an Office Add-in.</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
     </li>
 </ul>
 
-<p>New to building Office Add-ins? <a href="../index.md">Complete a quick start</a> to build your first add-in in under 5 minutes and <a href="explore-with-script-lab.md">explore the Office JavaScript APIs with Script Lab</a>!</p>
-
----
-
-[!include[Office Add-ins resources](../includes/landing-page-resources.md)]
+<b>Note</b>: For information that applies only to specific type of add-in, see the host-specific documentation that corresponds to the type of add-in you're building (for example, <a href="../excel/index.md">Excel add-ins</a>).
