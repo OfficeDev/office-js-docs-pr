@@ -23,7 +23,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                     </div>
                     <div class="cardText">
                         <h3>Concepts</h3>
-                        <p><a href="../concepts/add-in-development-best-practices.md">Learn about Office Add-in development best practices and other important concepts.</a></p>
+                        <p><a href="../concepts/add-in-development-best-practices.md">Learn Office Add-in development best practices and other important concepts.</a></p>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                     </div>
                     <div class="cardText">
                         <h3>Design</h3>
-                        <p><a href="../design/add-in-design.md">Learn about UI design and extensibility concepts for Office Add-ins.</p>
+                        <p><a href="../design/add-in-design.md">Learn UI design and extensibility concepts for Office Add-ins.</p>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                     </div>
                     <div class="cardText">
                         <h3>Develop</h3>
-                        <p><a href="../develop/develop-overview.md">Learn about development concepts that apply to any type of Office Add-in.</a></p>
+                        <p><a href="../develop/develop-overview.md">Learn development concepts that apply to any type of Office Add-in.</a></p>
                     </div>
                 </div>
             </div>
