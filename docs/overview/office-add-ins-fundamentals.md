@@ -157,6 +157,7 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 ## See also 
 
 - [Office Add-ins platform overview](office-add-ins.md)
+- [Common guidance for Office Add-ins](../overview/common-guidance.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)

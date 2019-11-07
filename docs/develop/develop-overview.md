@@ -31,6 +31,7 @@ After you're familiar with the common concepts that apply to multiple types of a
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Common guidance for Office Add-ins](../overview/common-guidance.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
