@@ -9,7 +9,7 @@ localization_priority: Priority
 
 # Common guidance for Office Add-ins
 
-All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. This means that regardless of whether you're creating an add-in for Excel, Outlook, or another Office host, you'll need to understand foundational information about the Office Add-ins platform and Office JavaScript APIs, UI design and extensibility concepts, development tasks such as [creating add-in commands](../develop/create-addin-commands.md) or [opening a dialog box](../develop/dialog-api-in-office-add-ins.md), and how to test, debug, and publish an Office Add-in. The documentation in this section provides information like this that can apply to any type of Office Add-in.
+All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. Learn foundational information about the Office Add-ins platform and Office JavaScript APIs, and core concepts that are relevant to designing, developing, testing, and publishing any type of Office Add-in.
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -40,7 +40,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                     </div>
                     <div class="cardText">
                         <h3>Design</h3>
-                        <p><a href="../design/add-in-design.md">Learn about Office UI elements for Office Add-ins.</p>
+                        <p><a href="../design/add-in-design.md">Learn about UI design and extensibility concepts for Office Add-ins.</p>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                     </div>
                     <div class="cardText">
                         <h3>Develop</h3>
-                        <p><a href="../develop/develop-overview.md">Learn about common development concepts that apply to any type of Office Add-in.</a></p>
+                        <p><a href="../develop/develop-overview.md">Learn about development concepts that apply to any type of Office Add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -116,4 +116,4 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
     </li>
 </ul>
 
-<b>Note</b>: For information that applies only to specific type of add-in, see the host-specific documentation that corresponds to the type of add-in you're building (for example, <a href="../excel/index.md">Excel add-ins</a>).
+<b>Note</b>: For information that applies only to a specific type of add-in, see the corresponding host-specific documentation (for example, <a href="../excel/index.md">Excel add-ins</a>).
