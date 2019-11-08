@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - preview requirement set
 description: ''
-ms.date: 08/08/2019
+ms.date: 11/05/2019
 localization_priority: Normal
 ---
 
@@ -59,7 +59,7 @@ A string that can be one of the following values: `Outlook`, `OutlookWebApp`, `O
 
 Gets a string that represents the version of either the host application or the Exchange Server (e.g., "15.0.468.0").
 
-If the mail add-in is running on the Outlook desktop client or on iOS, the `hostVersion` property returns the version of the host application, Outlook. In Outlook on the web, the property returns the version of the Exchange Server.
+If the mail add-in is running on an Outlook desktop or mobile client, the `hostVersion` property returns the version of the host application, Outlook. In Outlook on the web, the property returns the version of the Exchange Server.
 
 ##### Type
 
