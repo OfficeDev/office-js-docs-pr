@@ -127,7 +127,7 @@ If your add-in is hosted in Internet Information Server (IIS), you could also ad
   </staticContent>
 ```
 
-If these steps don't seem to work at first, you may need to clear the browser's cache. Do this through the UI of the browser. Sometimes the Edge cache is not successfully cleared when you try to clear it in the Edge UI. If that happens, run the following command in a Windows Command Prompt.
+If these steps don't seem to work at first, you may need to clear the browser's cache. Do this through the UI of the browser. Sometimes the Edge cache isn't successfully cleared when you try to clear it in the Edge UI. If that happens, run the following command in a Windows Command Prompt.
 
 ```bash
 del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
