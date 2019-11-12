@@ -222,7 +222,7 @@ There are some small, but important differences in using SSO in an Outlook add-i
 
 ### getAccessToken
 
-The OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) namespace, `OfficeRuntime.auth`, provides a method, `getAccessToken` that enables the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
+The OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) namespace, `OfficeRuntime.Auth`, provides a method, `getAccessToken` that enables the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
 
 ```typescript
 getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;
