@@ -34,7 +34,7 @@ The following diagram shows how the SSO process works.
 
 ![A diagram that shows the SSO process](../images/sso-overview-diagram.png)
 
-1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken-options-). This tells the Office host application to obtain an access token to the add-in. See [Example access token](#example-access-token).
+1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office host application to obtain an access token to the add-in. See [Example access token](#example-access-token).
 2. If the user is not signed in, the Office host application opens a pop-up window for the user to sign in.
 3. If this is the first time the current user has used your add-in, he or she is prompted to consent.
 4. The Office host application requests the **add-in token** from the Azure AD v2.0 endpoint for the current user.
@@ -91,7 +91,7 @@ The following is an example of the markup:
 
 Add JavaScript to the add-in to:
 
-* Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken-options-).
+* Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-).
 
 * Parse the access token or pass it to the add-in’s server-side code.
 
