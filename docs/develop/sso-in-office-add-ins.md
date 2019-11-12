@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on for Office Add-ins
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/11/2019
 localization_priority: Priority
 ---
 
@@ -34,7 +34,7 @@ The following diagram shows how the SSO process works.
 
 ![A diagram that shows the SSO process](../images/sso-overview-diagram.png)
 
-1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-). This tells the Office host application to obtain an access token to the add-in. See [Example access token](#example-access-token).
+1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken-options-). This tells the Office host application to obtain an access token to the add-in. See [Example access token](#example-access-token).
 2. If the user is not signed in, the Office host application opens a pop-up window for the user to sign in.
 3. If this is the first time the current user has used your add-in, he or she is prompted to consent.
 4. The Office host application requests the **add-in token** from the Azure AD v2.0 endpoint for the current user.
@@ -91,7 +91,7 @@ The following is an example of the markup:
 
 Add JavaScript to the add-in to:
 
-* Call [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-).
+* Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken-options-).
 
 * Parse the access token or pass it to the add-in’s server-side code.
 
@@ -222,10 +222,10 @@ There are some small, but important differences in using SSO in an Outlook add-i
 
 ### getAccessToken
 
-The OfficeRuntime [Auth](/javascript/api/office/officeruntime.auth) namespace, `OfficeRuntime.auth`, provides a method, `getAccessToken` that enables the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
+The OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) namespace, `OfficeRuntime.auth`, provides a method, `getAccessToken` that enables the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
 
 ```typescript
-getAccessToken(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
+getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;
 ```
 
 The method calls the Azure Active Directory V 2.0 endpoint to get an access token to your add-in's web application. This enables add-ins to identify users. Server side code can use this token to access Microsoft Graph for the add-in's web application by using the ["on behalf of" OAuth flow](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
@@ -239,8 +239,8 @@ The method calls the Azure Active Directory V 2.0 endpoint to get an access toke
 
 #### Parameters
 
-`options` - Optional. Accepts an [AuthOptions](/javascript/api/office/officeruntime.authoptions) object (see below) to define sign-on behaviors.
+`options` - Optional. Accepts an [AuthOptions](/javascript/api/office-runtime/officeruntime.authoptions) object (see below) to define sign-on behaviors.
 
 `callback` - Optional. Accepts a callback method that can parse the token for the user's ID or use the token in the "on behalf of" flow to get access to Microsoft Graph. If [AsyncResult](/javascript/api/office/office.asyncresult)`.status` is "succeeded", then `AsyncResult.value` is the raw AAD v. 2.0-formatted access token.
 
-The [AuthOptions](/javascript/api/office/officeruntime.authoptions) interface provides options for the user experience when Office obtains an access token to the add-in from AAD v. 2.0 with the `getAccessToken` method.
+The [AuthOptions](/javascript/api/office-runtime/officeruntime.authoptions) interface provides options for the user experience when Office obtains an access token to the add-in from AAD v. 2.0 with the `getAccessToken` method.
