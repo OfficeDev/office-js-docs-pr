@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph with SSO
 description: ''
-ms.date: 08/09/2019
+ms.date: 11/11/2019
 localization_priority: Priority
 ---
 
@@ -25,12 +25,12 @@ The following diagram shows how the process of signing in and getting access to 
 
 ![A diagram that shows the SSO process](../images/sso-access-to-microsoft-graph.png)
 
-1. In the add-in, JavaScript calls a new Office.js API [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference). This tells the Office host application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
+1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office host application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
 1. If the user is not signed in, the Office host application opens a pop-up window for the user to sign in.
 1. If this is the first time the current user has used your add-in, he or she is prompted to consent.
 1. The Office host application requests the **bootstrap access token** from the Azure AD v2.0 endpoint for the current user.
 1. Azure AD sends the bootstrap token to the Office host application.
-1. The Office host application sends the **bootstrap access token** to the add-in as part of the result object returned by the `getAccessTokenAsync` call.
+1. The Office host application sends the **bootstrap access token** to the add-in as part of the result object returned by the `getAccessToken` call.
 1. JavaScript in the add-in makes an HTTP request to a web API that is hosted at the same fully-qualified domain as the add-in, and it includes the **bootstrap access token** as authorization proof.  
 1. Server-side code validates the incoming **bootstrap access token**.
 1. Server-side code uses the “on behalf of” flow (defined at [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) and the [daemon or server application to web API Azure scenario](/azure/active-directory/develop/active-directory-authentication-scenarios)) to obtain an access token for Microsoft Graph in exchange for the bootstrap access token.
@@ -42,14 +42,14 @@ The following diagram shows how the process of signing in and getting access to 
 
 ## Develop an SSO add-in that accesses Microsoft Graph
 
-You develop an add-in that accesses Microsoft Graph just as you would any other add-in that uses SSO. For a thorough description, see [Enable single sign-on for Office Add-ins](/office/dev/add-ins/develop/sso-in-office-add-ins). The difference is that it is mandatory that the add-in have a server-side Web API, and what's called the access token in that article is called the "bootstrap access token." 
+You develop an add-in that accesses Microsoft Graph just as you would any other add-in that uses SSO. For a thorough description, see [Enable single sign-on for Office Add-ins](/office/dev/add-ins/develop/sso-in-office-add-ins). The difference is that it is mandatory that the add-in have a server-side Web API, and what's called the access token in that article is called the "bootstrap access token."
 
 Depending on your language and framework, libraries might be available that will simplify the server-side code you have to write. Your code should do the following:
 
-* Validate the add-in bootstrap access token that is received from the token handler you created earlier. For more information, see [Validate the access token](sso-in-office-add-ins.md#validate-the-access-token). 
 * Initiate the “on behalf of” flow with a call to the Azure AD v2.0 endpoint that includes the bootstrap access token, some metadata about the user, and the credentials of the add-in (its ID and secret).
-* Cache the returned access token to Microsoft Graph. For more information about this flow see [Azure Active Directory v2.0 and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
-* Create one or more Web API methods that get Microsoft Graph data by passing the cached access token to Microsoft Graph.
+* Create one or more Web API methods that get Microsoft Graph data by passing the (possibly cached) access token to Microsoft Graph.
+* Optionally, before initiating the flow, validate the add-in bootstrap access token that is received from the token handler you created earlier. For more information, see [Validate the access token](sso-in-office-add-ins.md#validate-the-access-token). 
+* Optionally, after the flow completes, cache the returned access token to Microsoft Graph. You'll want to do this if the add-in makes more than one call to Microsoft Graph. For more information about this flow see [Azure Active Directory v2.0 and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
 
 > [!NOTE]
 > For examples of decoded access tokens for Microsoft Graph that have been obtained by the "on-behalf-of" flow, see [Azure Active Directory v2.0 and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).

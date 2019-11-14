@@ -1,7 +1,7 @@
 ---
 title: Common coding issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 10/31/2019
+ms.date: 11/06/2019
 localization_priority: Normal
 ---
 
@@ -68,16 +68,16 @@ You can identify a property that must have its subproperties set with a JSON str
 - Read-only property: Subproperties can be set through navigation.
 - Writable property: Subproperties must be set with a JSON struct (and cannot be set through navigation).
 
-## Excel Range limits
+## Excel data transfer limits
 
-If you're building an Excel add-in that uses ranges, be aware of the following size limitations:
+If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook:
 
 - Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
-- A range is limited to five million cells for set operations.
+- A range is limited to five million cells for get operations.
 
-If you expect user input to exceed these limits, be sure to check the data and split the ranges into multiple objects. You'll also need to submit multiple `context.sync()` calls to avoid the smaller range operations getting batched together again.
+If you expect user input to exceed these limits, be sure to check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Be sure to call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
 
-Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
+These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
 
 ## Setting read-only properties
 

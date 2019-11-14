@@ -1,7 +1,7 @@
 ---
 title: Host element in the manifest file
 description: ''
-ms.date: 07/01/2019
+ms.date: 11/05/2019
 localization_priority: Normal
 ---
 
@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Specifies an individual Office application type where the add-in should activate.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > The **Host** element syntax varies depending on whether the element is defined within the [basic manifest](#basic-manifest) or within the [VersionOverrides](#versionoverrides-node) node. However, the functionality is the same.  
 
 ## Basic manifest
@@ -48,7 +48,7 @@ Specifies the Host type targeted by this add-in. The value must be one of the fo
 
 ## VersionOverrides node
 
-When defined in [VersionOverrides](versionoverrides.md), the host type is determined by the `xsi:type` attribute. 
+When defined in [VersionOverrides](versionoverrides.md), the host type is determined by the `xsi:type` attribute.
 
 ### Attributes
 
@@ -61,7 +61,7 @@ When defined in [VersionOverrides](versionoverrides.md), the host type is determ
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Yes   |  Defines the settings for the desktop form factor. |
-|  [MobileFormFactor](mobileformfactor.md)    |  No   |  Defines the settings for the mobile form factor. **Note:** This element is only supported in Outlook on iOS. |
+|  [MobileFormFactor](mobileformfactor.md)    |  No   |  Defines the settings for the mobile form factor. **Note:** This element is only supported in Outlook on iOS and Android. |
 |  [AllFormFactors](allformfactors.md)    |  No   |  Defines the settings for all form factors. Only used by custom functions in Excel. |
 
 ### xsi:type
@@ -74,7 +74,7 @@ Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) where the
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
-## Host example 
+## Host example
 
 ```xml
 <Hosts>

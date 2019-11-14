@@ -206,7 +206,7 @@ range.values = 'Due Date';
 
 If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.
 
-For details on the system limitations, see [Excel Range limits](../develop/common-coding-issues.md#excel-range-limits).
+For details on the system limitations, see [Excel data transfer limits](../develop/common-coding-issues.md#excel-data-transfer-limits).
 
 ## Update all cells in a range
 

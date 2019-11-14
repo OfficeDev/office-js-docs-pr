@@ -101,7 +101,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| See [Identity API requirement sets](identity-api-requirement-sets.md). | Auth.getAccessTokenAsync |
+| See [Identity API requirement sets](identity-api-requirement-sets.md). | Auth.getAccessToken |
 
 ---
 

@@ -84,7 +84,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |12006|||The dialog box was closed, usually because the user chooses the **X** button. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
 |12007|||A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time. Thrown by call of `displayDialogAsync`.|
 |12009|||The user chose to ignore the dialog box. This error can occur in online versions of Office, where users may choose not to allow an add-in to present a dialog. Thrown by call of `displayDialogAsync`.|
-|13000 - 13010|||See [Causes and handling of errors from getAccessTokenAsync](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
+|13000 - 13010|||See [Causes and handling of errors from getAccessToken](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getAccessToken).|
 
 ## Binding creation error conditions
 
