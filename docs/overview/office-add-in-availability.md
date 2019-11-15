@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.
-ms.date: 10/30/2019
+ms.date: 11/15/2019
 localization_priority: Priority
 ---
 
