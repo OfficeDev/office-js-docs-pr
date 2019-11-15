@@ -8,7 +8,7 @@ localization_priority: Priority
 
 # Package your add-in using Visual Studio to prepare for publishing
 
-Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2019.
+Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2019 or Visual Studio Code.
 
 ## To deploy your web project using Visual Studio 2019
 
@@ -39,6 +39,16 @@ Complete the following steps to package your add-in using Visual Studio 2019.
 You can now upload your XML manifest to the appropriate location to [publish your add-in](../publish/publish.md). You can find the XML manifest in `OfficeAppManifests` in the `app.publish` folder. For example:
 
  `%UserProfile%\Documents\Visual Studio 2019\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
+
+## To package and publish your add-in using Visual Studio Code
+
+If you are using Visual Studio Code to build your Office Add-in, you can follow these steps to prepare it for deployment:
+
+1. From the command line in the root of your solution folder, run `npm run build`. This will compile all files using WebPack and make them ready for a production deployment, so without having the websocket hooks for detecting changes to the code while developing.
+2. In the subfolder **dist** located under your project folder you will find all of the compiled files
+3. Copy or upload these to any kind of webserver, such as an Azure Website using i.e. FTP. There are no special requirements whatsoever to the webhosting. In the end it will just be hosting static HTML, JS and CSS files.
+4. Ensure you have updated your manifest.xml file to point to the proper URL of where your files will be hosted
+5. Follow one of the methods listed on [Deploy and publish your Office Add-in](/office/dev/add-ins/publish/publish) to deploy your appmanifest.xml to make your Add-in available to your users
 
 ## See also
 
