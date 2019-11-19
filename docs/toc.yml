@@ -181,6 +181,8 @@
         href: develop/asynchronous-programming-in-office-add-ins.md
       - name: Persist state and settings
         href: develop/persisting-add-in-state-and-settings.md
+      - name: Common coding issues
+        href: develop/common-coding-issues.md
   - name: Test and debug
     items:
     - name: Overview
@@ -446,6 +448,9 @@
       - name: Excel preview APIs
         href: reference/requirement-sets/excel-preview-apis.md
         displayName: Excel
+      - name: ExcelApi 1.10 requirement set
+        href: reference/requirement-sets/excel-api-1-10-requirement-set.md
+        displayName: Excel
       - name: ExcelApi 1.9 requirement set
         href: reference/requirement-sets/excel-api-1-9-requirement-set.md
         displayName: Excel
@@ -543,6 +548,9 @@
       displayName: Excel, Custom Functions
     - name: Custom functions tutorial
       href: tutorials/excel-tutorial-create-custom-functions.md
+      displayName: Excel, Custom Functions
+    - name: Custom functions share data to task pane tutorial
+      href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
       displayName: Excel, Custom Functions
     - name: Architecture
       href: excel/custom-functions-architecture.md
@@ -673,6 +681,24 @@
           href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
         - name: Outlook Preview API Reference
           href: reference/outlook-api-reference-preview.md
+      - name: Requirement Set 1.8
+        items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md
+        - name: Office
+          href: reference/objectmodel/requirement-set-1.8/office.md
+        - name: Office.context
+          href: reference/objectmodel/requirement-set-1.8/Office.context.md
+        - name: Office.context.mailbox
+          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.md
+        - name: Office.context.mailbox.diagnostics
+          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.diagnostics.md
+        - name: Office.context.mailbox.item
+          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
+        - name: Office.context.mailbox.userProfile
+          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.userProfile.md
+        - name: Outlook 1.8 API Reference
+          href: reference/outlook-api-reference-1-8.md
       - name: Requirement Set 1.7
         items:
         - name: Overview

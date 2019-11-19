@@ -310,7 +310,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
               </Group>
 
               <!-- Label of your tab -->
-              <!-- If validating with XSD it needs to be at the end, we might change this before release -->
+              <!-- If validating with XSD it needs to be at the end -->
               <Label resid="Contoso.Tab1.TabLabel" />
             </CustomTab>
           </ExtensionPoint>

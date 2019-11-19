@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 09/26/2019
+ms.date: 10/21/2019
 localization_priority: Priority
 ---
 
@@ -70,7 +70,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### Insert a copy of an existing workbook into the current one (preview)
 
 > [!NOTE]
-> The `WorksheetCollection.addFromBase64` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> The `WorksheetCollection.addFromBase64` method is currently only available in public preview and only for Office on Windows and Mac. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A workbook's [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) has the `addFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as base64-encoded string, just like the `Excel.createWorkbook` call.
 

@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-ins
 description: ''
-ms.date: 09/03/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -9,17 +9,17 @@ localization_priority: Priority
 
 # PowerPoint add-ins
 
-You can use PowerPoint add-ins to build engaging solutions for your users' presentations across platforms including Windows, iOS, Mac, and in a browser. You can create two types of PowerPoint add-ins:
+You can use PowerPoint add-ins to build engaging solutions for your users' presentations across platforms including Windows, iPad, Mac, and in a browser. You can create two types of PowerPoint add-ins:
 
 - Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/WA104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
-- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907) add-in, which you can use to add professional photos to your presentation. 
+- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907) add-in, which you can use to add professional photos to your presentation.
 
 ## PowerPoint add-in scenarios
 
 The code examples in this article demonstrate some basic tasks for developing add-ins for PowerPoint. Please note the following:
 
-- To display information, these examples use the `app.showNotification` function, which is included in the Visual Studio Office Add-ins project templates. If you aren't using Visual Studio to develop your add-in, you'll need replace the `showNotification` function with your own code. 
+- To display information, these examples use the `app.showNotification` function, which is included in the Visual Studio Office Add-ins project templates. If you aren't using Visual Studio to develop your add-in, you'll need replace the `showNotification` function with your own code.
 
 - Several of these examples also use a `Globals` object that is declared beyond the scope of these functions as:
     `var Globals = {activeViewHandler:0, firstSlideId:0};`

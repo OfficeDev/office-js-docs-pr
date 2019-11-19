@@ -1,5 +1,5 @@
 ---
-title: Office.context.mailbox.item - requirement set 1.7
+title: Office.context.mailbox.item - requirement set 1.8
 description: ''
 ms.date: 11/06/2019
 localization_priority: Normal
@@ -26,12 +26,15 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [attachments](#attachments-arrayattachmentdetails) | Member |
 | [bcc](#bcc-recipients) | Member |
 | [body](#body-body) | Member |
+| [categories](#categories-categories) | Member |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
 | [conversationId](#nullable-conversationid-string) | Member |
 | [dateTimeCreated](#datetimecreated-date) | Member |
 | [dateTimeModified](#datetimemodified-date) | Member |
 | [end](#end-datetime) | Member |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | Member |
 | [from](#from-emailaddressdetailsfrom) | Member |
+| [internetHeaders](#internetheaders-internetheaders) | Member |
 | [internetMessageId](#internetmessageid-string) | Member |
 | [itemClass](#itemclass-string) | Member |
 | [itemId](#nullable-itemid-string) | Member |
@@ -49,19 +52,25 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [subject](#subject-stringsubject) | Member |
 | [to](#to-arrayemailaddressdetailsrecipients) | Member |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Method |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | Method |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Method |
 | [close](#close) | Method |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
 | [displayReplyForm](#displayreplyformformdata-callback) | Method |
+| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | Method |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | Method |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | Method |
 | [getEntities](#getentities--entities) | Method |
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | Method |
 | [getRegExMatches](#getregexmatches--object) | Method |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
 | [getSelectedEntities](#getselectedentities--entities) | Method |
 | [getSelectedRegExMatches](#getselectedregexmatches--object) | Method |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Method |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Method |
 | [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Method |
@@ -88,16 +97,16 @@ Office.initialize = function () {
 
 ### Members
 
-#### attachments: Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.7)>
+#### attachments: Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.8)>
 
-Gets an array of attachments for the item. Read mode only.
+Gets the item's attachments as an array. Read mode only.
 
 > [!NOTE]
 > Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned. For more information, see [Blocked attachments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).
 
 ##### Type
 
-*   Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.7)>
+*   Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.8)>
 
 ##### Requirements
 
@@ -136,7 +145,7 @@ console.log(outputString);
 ---
 ---
 
-#### bcc: [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+#### bcc: [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
 
@@ -147,7 +156,7 @@ By default, the collection is limited to a maximum of 100 members. However, on W
 
 ##### Type
 
-*   [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+*   [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -174,13 +183,13 @@ function callback(asyncResult) {
 ---
 ---
 
-#### body: [Body](/javascript/api/outlook/office.body?view=outlook-js-1.7)
+#### body: [Body](/javascript/api/outlook/office.body?view=outlook-js-1.8)
 
 Gets an object that provides methods for manipulating the body of an item.
 
 ##### Type
 
-*   [Body](/javascript/api/outlook/office.body?view=outlook-js-1.7)
+*   [Body](/javascript/api/outlook/office.body?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -219,7 +228,45 @@ The following is an example of the result parameter passed to the callback funct
 ---
 ---
 
-#### cc: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+#### categories: [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8)
+
+Gets an object that provides methods for managing the item's categories.
+
+> [!NOTE]
+> This member is not supported in Outlook on iOS or Android.
+
+##### Type
+
+*   [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8)
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+
+##### Example
+
+This example gets the item's categories.
+
+```js
+Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  } else {
+    console.log("Categories: " + JSON.stringify(asyncResult.value));
+  }
+});
+```
+
+<br>
+
+---
+---
+
+#### cc: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 Provides access to the Cc (carbon copy) recipients of a message. The type of object and level of access depends on the mode of the current item.
 
@@ -250,7 +297,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -356,7 +403,7 @@ console.log("Date and time modified: " + dateTimeModified);
 ---
 ---
 
-#### end: Date|[Time](/javascript/api/outlook/office.time?view=outlook-js-1.7)
+#### end: Date|[Time](/javascript/api/outlook/office.time?view=outlook-js-1.8)
 
 Gets or sets the date and time that the appointment is to end.
 
@@ -375,9 +422,9 @@ console.log("Appointment end: " + end);
 
 The `end` property returns a `Time` object.
 
-When you use the [`Time.setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.7#setasync-datetime--options--callback-) method to set the end time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.
+When you use the [`Time.setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.8#setasync-datetime--options--callback-) method to set the end time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.
 
-The following example sets the end time of an appointment by using the [`setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.7#setasync-datetime--options--callback-) method of the `Time` object.
+The following example sets the end time of an appointment by using the [`setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.8#setasync-datetime--options--callback-) method of the `Time` object.
 
 ```js
 var endTime = new Date("3/14/2015");
@@ -397,7 +444,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 ##### Type
 
-*   Date | [Time](/javascript/api/outlook/office.time?view=outlook-js-1.7)
+*   Date | [Time](/javascript/api/outlook/office.time?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -412,7 +459,54 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 ---
 ---
 
-#### from: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)|[From](/javascript/api/outlook/office.from?view=outlook-js-1.7)
+#### enhancedLocation: [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8)
+
+Gets or sets the locations of an appointment.
+
+##### Read mode
+
+The `enhancedLocation` property returns an [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8) object that allows you to get the set of locations (each represented by a [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8) object) associated with the appointment.
+
+##### Compose mode
+
+The `enhancedLocation` property returns an [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8) object that provides methods to get, remove, or add locations on an appointment.
+
+##### Type
+
+*   [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8)
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+
+##### Example
+
+The following example gets the current locations associated with the appointment.
+
+```js
+Office.context.mailbox.item.enhancedLocation.getAsync(callbackFunction);
+
+function callbackFunction(asyncResult) {
+  asyncResult.value.forEach(function (place) {
+    console.log("Display name: " + place.displayName);
+    console.log("Type: " + place.locationIdentifier.type);
+    if (place.locationIdentifier.type === Office.MailboxEnums.LocationType.Room) {
+      console.log("Email address: " + place.emailAddress);
+    }
+  });
+}
+```
+
+<br>
+
+---
+---
+
+#### from: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)|[From](/javascript/api/outlook/office.from?view=outlook-js-1.8)
 
 Gets the email address of the sender of a message.
 
@@ -444,7 +538,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7) | [From](/javascript/api/outlook/office.from?view=outlook-js-1.7)
+*   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8) | [From](/javascript/api/outlook/office.from?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -453,6 +547,38 @@ function callback(asyncResult) {
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|1.7|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
+
+<br>
+
+---
+---
+
+#### internetHeaders: [InternetHeaders](/javascript/api/outlook/office.internetheaders?view=outlook-js-1.8)
+
+Gets or sets custom internet headers on a message. Compose mode only.
+
+##### Type
+
+*   [InternetHeaders](/javascript/api/outlook/office.internetheaders?view=outlook-js-1.8)
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
+
+##### Example
+
+```js
+Office.context.mailbox.item.internetHeaders.getAsync(["header1", "header2"], callback);
+
+function callback(asyncResult) {
+  var dictionary = asyncResult.value;
+  var header1_value = dictionary["header1"];
+}
+```
 
 <br>
 
@@ -479,6 +605,7 @@ Gets the Internet message identifier for an email message. Read mode only.
 
 ```js
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
+console.log("internetMessageId: " + internetMessageId);
 ```
 
 <br>
@@ -562,7 +689,7 @@ if (itemId === null || itemId == undefined) {
 ---
 ---
 
-#### itemType: [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.7)
+#### itemType: [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.8)
 
 Gets the type of item that an instance represents.
 
@@ -570,7 +697,7 @@ The `itemType` property returns one of the `ItemType` enumeration values, indica
 
 ##### Type
 
-*   [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.7)
+*   [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -595,7 +722,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 ---
 ---
 
-#### location: String|[Location](/javascript/api/outlook/office.location?view=outlook-js-1.7)
+#### location: String|[Location](/javascript/api/outlook/office.location?view=outlook-js-1.8)
 
 Gets or sets the location of an appointment.
 
@@ -624,7 +751,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   String | [Location](/javascript/api/outlook/office.location?view=outlook-js-1.7)
+*   String | [Location](/javascript/api/outlook/office.location?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -669,13 +796,13 @@ console.log("Normalized subject: " + normalizedSubject);
 ---
 ---
 
-#### notificationMessages: [NotificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-1.7)
+#### notificationMessages: [NotificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-1.8)
 
 Gets the notification messages for an item.
 
 ##### Type
 
-*   [NotificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-1.7)
+*   [NotificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -701,7 +828,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ---
 ---
 
-#### optionalAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+#### optionalAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 Provides access to the optional attendees of an event. The type of object and level of access depends on the mode of the current item.
 
@@ -733,7 +860,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -748,13 +875,13 @@ function callback(asyncResult) {
 ---
 ---
 
-#### organizer: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)|[Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7)
+#### organizer: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)|[Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.8)
 
 Gets the email address of the organizer for a specified meeting.
 
 ##### Read mode
 
-The `organizer` property returns an [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7) object that represents the meeting organizer.
+The `organizer` property returns an [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8) object that represents the meeting organizer.
 
 ```js
 var organizerName = Office.context.mailbox.item.organizer.displayName;
@@ -764,7 +891,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### Compose mode
 
-The `organizer` property returns an [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7) object that provides a method to get the organizer value.
+The `organizer` property returns an [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.8) object that provides a method to get the organizer value.
 
 ```js
 Office.context.mailbox.item.organizer.getAsync(
@@ -776,7 +903,7 @@ Office.context.mailbox.item.organizer.getAsync(
 
 ##### Type
 
-*   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7) | [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7)
+*   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8) | [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -791,11 +918,11 @@ Office.context.mailbox.item.organizer.getAsync(
 ---
 ---
 
-#### (nullable) recurrence: [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)
+#### (nullable) recurrence: [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.8)
 
 Gets or sets the recurrence pattern of an appointment. Gets the recurrence pattern of a meeting request. Read and compose modes for appointment items. Read mode for meeting request items.
 
-The `recurrence` property returns a [recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) object for recurring appointments or meetings requests if an item is a series or an instance in a series. `null` is returned for single appointments and meeting requests of single appointments. `undefined` is returned for messages that are not meeting requests.
+The `recurrence` property returns a [recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.8) object for recurring appointments or meetings requests if an item is a series or an instance in a series. `null` is returned for single appointments and meeting requests of single appointments. `undefined` is returned for messages that are not meeting requests.
 
 > Note: Meeting requests have an `itemClass` value of IPM.Schedule.Meeting.Request.
 
@@ -803,7 +930,7 @@ The `recurrence` property returns a [recurrence](/javascript/api/outlook/office.
 
 ##### Read mode
 
-The `recurrence` property returns a [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) object that represents the appointment recurrence. This is available for appointments and meeting requests.
+The `recurrence` property returns a [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.8) object that represents the appointment recurrence. This is available for appointments and meeting requests.
 
 ```js
 var recurrence = Office.context.mailbox.item.recurrence;
@@ -812,7 +939,7 @@ console.log("Recurrence: " + JSON.stringify(recurrence));
 
 ##### Compose mode
 
-The `recurrence` property returns a [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) object that provides methods to manage the appointment recurrence. This is available for appointments.
+The `recurrence` property returns a [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.8) object that provides methods to manage the appointment recurrence. This is available for appointments.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -841,7 +968,7 @@ Recurrence = {
 
 ##### Type
 
-* [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)
+* [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.8)
 
 |Requirement|Value|
 |---|---|
@@ -854,7 +981,7 @@ Recurrence = {
 ---
 ---
 
-#### requiredAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+#### requiredAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 Provides access to the required attendees of an event. The type of object and level of access depends on the mode of the current item.
 
@@ -887,7 +1014,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -902,7 +1029,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### sender: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)
+#### sender: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)
 
 Gets the email address of the sender of an email message. Read mode only.
 
@@ -913,7 +1040,7 @@ The [`from`](#from-emailaddressdetailsfrom) and `sender` properties represent th
 
 ##### Type
 
-*   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)
+*   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -977,7 +1104,7 @@ console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesIn
 ---
 ---
 
-#### start: Date|[Time](/javascript/api/outlook/office.time?view=outlook-js-1.7)
+#### start: Date|[Time](/javascript/api/outlook/office.time?view=outlook-js-1.8)
 
 Gets or sets the date and time that the appointment is to begin.
 
@@ -996,9 +1123,9 @@ console.log("Appointment start: " + JSON.stringify(start));
 
 The `start` property returns a `Time` object.
 
-When you use the [`Time.setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.7#setasync-datetime--options--callback-) method to set the start time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.
+When you use the [`Time.setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.8#setasync-datetime--options--callback-) method to set the start time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.
 
-The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.7#setasync-datetime--options--callback-) method of the `Time` object.
+The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.8#setasync-datetime--options--callback-) method of the `Time` object.
 
 ```js
 var startTime = new Date("3/14/2015");
@@ -1018,7 +1145,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 
 ##### Type
 
-*   Date | [Time](/javascript/api/outlook/office.time?view=outlook-js-1.7)
+*   Date | [Time](/javascript/api/outlook/office.time?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -1033,7 +1160,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 ---
 ---
 
-#### subject: String|[Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.7)
+#### subject: String|[Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.8)
 
 Gets or sets the description that appears in the subject field of an item.
 
@@ -1051,7 +1178,6 @@ console.log(subject);
 ```
 
 ##### Compose mode
-
 The `subject` property returns a `Subject` object that provides methods to get and set the subject.
 
 ```js
@@ -1065,7 +1191,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   String | [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.7)
+*   String | [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -1080,7 +1206,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### to: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+#### to: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 Provides access to the recipients on the **To** line of a message. The type of object and level of access depends on the mode of the current item.
 
@@ -1111,7 +1237,7 @@ function callback(asyncResult) {
 
 ##### Type
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -1203,11 +1329,72 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 ---
 ---
 
+#### addFileAttachmentFromBase64Async(base64File, attachmentName, [options], [callback])
+
+Adds a file from the base64 encoding to a message or appointment as an attachment.
+
+The `addFileAttachmentFromBase64Async` method uploads the file from the base64 encoding and attaches it to the item in the compose form. This method returns the attachment identifier in the AsyncResult.value object.
+
+You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`base64File`|String||The base64 encoded content of an image or file to be added to an email or event.|
+|`attachmentName`|String||The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`options.isInline`|Boolean|&lt;optional&gt;|If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`AttachmentSizeExceeded`|The attachment is larger than allowed.|
+|`FileTypeNotSupported`|The attachment has an extension that is not allowed.|
+|`NumberOfAttachmentsExceeded`|The message or appointment has too many attachments.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
+
+##### Examples
+
+```js
+Office.context.mailbox.item.addFileAttachmentFromBase64Async(
+  base64String,
+  "cute_bird.png",
+  {
+    isInline: true
+  },
+  function (asyncResult) {
+    Office.context.mailbox.item.body.setAsync(
+      "<p>Here's a cute bird!</p><img src='cid:cute_bird.png'>",
+      {
+        "coercionType": "html"
+      },
+      function (asyncResult) {
+        // Do something here.
+      });
+  });
+```
+
+<br>
+
+---
+---
+
 #### addHandlerAsync(eventType, handler, [options], [callback])
 
 Adds an event handler for a supported event.
 
-Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`
+Currently the supported event types are `Office.EventType.AttachmentsChanged`, `Office.EventType.AppointmentTimeChanged`, `Office.EventType.EnhancedLocationsChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`.
 
 ##### Parameters
 
@@ -1581,7 +1768,184 @@ Office.context.mailbox.item.displayReplyForm(
 ---
 ---
 
-#### getEntities() → {[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.7)}
+#### getAllInternetHeadersAsync([options], [callback])
+
+Gets all the internet headers for the message as a string. Read mode only.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. On success, the internet headers data is provided in the asyncResult.value property as a string. Refer to [RFC 2183](https://tools.ietf.org/html/rfc2183) for the formatting information of the returned string value. If the call fails, the asyncResult.error property will contain an error code with the reason for the failure.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
+
+##### Returns:
+
+The internet headers data as a string formatted according to [RFC 2183](https://tools.ietf.org/html/rfc2183).
+
+Type:
+String
+
+##### Example
+
+```js
+// Get the internet headers related to the mail.
+Office.context.mailbox.item.getAllInternetHeadersAsync(
+  function(asyncResult) {
+    if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+      console.log(asyncResult.value);
+    } else {
+      if (asyncResult.error.code == 9020) {
+        // GenericResponseError returned when there is no context.
+        // Treat as no context.
+      } else {
+        // Handle the error.
+      }
+    }
+  }
+);
+```
+
+<br>
+
+---
+---
+
+#### getAttachmentContentAsync(attachmentId, [options], [callback]) → [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8)
+
+Gets the specified attachment from a message or appointment and returns it as an `AttachmentContent` object.
+
+The `getAttachmentContentAsync` method gets the attachment with the specified identifier from the item. As a best practice, you should use the identifier to retrieve an attachment in the same session that the attachmentIds were retrieved with the `getAttachmentsAsync` or `item.attachments` call. In Outlook on the web and mobile devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing an inline form then subsequently pops out the form to continue in a separate window.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`attachmentId`|String||The identifier of the attachment you want to get.|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+
+##### Returns:
+
+Type:
+[AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8)
+
+##### Example
+
+```js
+var item = Office.context.mailbox.item;
+var listOfAttachments = [];
+var options = {asyncContext: {currentItem: item}};
+item.getAttachmentsAsync(options, callback);
+
+function callback(result) {
+  if (result.value.length > 0) {
+    for (i = 0 ; i < result.value.length ; i++) {
+      result.asyncContext.currentItem.getAttachmentContentAsync(result.value[i].id, handleAttachmentsCallback);
+    }
+  }
+}
+
+function handleAttachmentsCallback(result) {
+  // Parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file.
+  switch (result.value.format) {
+    case Office.MailboxEnums.AttachmentContentFormat.Base64:
+      // Handle file attachment.
+      break;
+    case Office.MailboxEnums.AttachmentContentFormat.Eml:
+      // Handle email item attachment.
+      break;
+    case Office.MailboxEnums.AttachmentContentFormat.ICalendar:
+      // Handle .icalender attachment.
+      break;
+    case Office.MailboxEnums.AttachmentContentFormat.Url:
+      // Handle cloud attachment.
+      break;
+    default:
+      // Handle attachment formats that are not supported.
+  }
+}
+```
+
+<br>
+
+---
+---
+
+#### getAttachmentsAsync([options], [callback]) → Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.8)>
+
+Gets the item's attachments as an array. Compose mode only.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
+
+##### Returns:
+
+Type:
+Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.8)>
+
+##### Example
+
+The following example builds an HTML string with details of all attachments on the current item.
+
+```js
+var item = Office.context.mailbox.item;
+var outputString = "";
+item.getAttachmentsAsync(callback);
+
+function callback(result) {
+  if (result.value.length > 0) {
+    for (i = 0 ; i < result.value.length ; i++) {
+      var attachment = result.value [i];
+      outputString += "<BR>" + i + ". Name: ";
+      outputString += attachment.name;
+      outputString += "<BR>ID: " + attachment.id;
+      outputString += "<BR>contentType: " + attachment.contentType;
+      outputString += "<BR>size: " + attachment.size;
+      outputString += "<BR>attachmentType: " + attachment.attachmentType;
+      outputString += "<BR>isInline: " + attachment.isInline;
+    }
+  }
+}
+```
+
+<br>
+
+---
+---
+
+#### getEntities() → {[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.8)}
 
 Gets the entities found in the selected item's body.
 
@@ -1599,7 +1963,7 @@ Gets the entities found in the selected item's body.
 ##### Returns:
 
 Type:
-[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.7)
+[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.8)
 
 ##### Example
 
@@ -1614,7 +1978,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 ---
 ---
 
-#### getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.7)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.7)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.7)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.7))>}
+#### getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.8)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.8)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.8)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.8))>}
 
 Gets an array of all the entities of the specified entity type found in the selected item's body.
 
@@ -1625,7 +1989,7 @@ Gets an array of all the entities of the specified entity type found in the sele
 
 |Name|Type|Description|
 |---|---|---|
-|`entityType`|[Office.MailboxEnums.EntityType](/javascript/api/outlook/office.mailboxenums.entitytype?view=outlook-js-1.7)|One of the EntityType enumeration values.|
+|`entityType`|[Office.MailboxEnums.EntityType](/javascript/api/outlook/office.mailboxenums.entitytype?view=outlook-js-1.8)|One of the EntityType enumeration values.|
 
 ##### Requirements
 
@@ -1651,7 +2015,7 @@ While the minimum permission level to use this method is **Restricted**, some en
 |`TaskSuggestion`|TaskSuggestion|**ReadItem**|
 |`URL`|String|**Restricted**|
 
-Type: Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.7)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.7)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.7)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.7))>
+Type: Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.8)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.8)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.8)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.8))>
 
 ##### Example
 
@@ -1668,7 +2032,7 @@ Office.initialize = function () {
     var addresses = item.getEntitiesByType(Office.MailboxEnums.EntityType.Address);
     // Continue processing the array of addresses.
   });
-}
+};
 ```
 
 <br>
@@ -1676,7 +2040,7 @@ Office.initialize = function () {
 ---
 ---
 
-#### getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.7)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.7)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.7)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.7))>}
+#### getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.8)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.8)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.8)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.8))>}
 
 Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.
 
@@ -1704,7 +2068,61 @@ The `getFilteredEntitiesByName` method returns the entities that match the regul
 If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.
 
 Type:
-Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.7)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.7)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.7)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.7))>
+Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.8)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.8)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.8)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.8))>
+
+<br>
+
+---
+---
+
+#### getItemIdAsync([options], callback)
+
+Asynchronously gets the ID of a saved item. Compose mode only.
+
+When invoked, this method returns the item ID via the callback method.
+
+> [!NOTE]
+> If your add-in calls `getItemIdAsync` on an item in compose mode (e.g., to get an `itemId` to use with EWS or the REST API), be aware that when Outlook is in cached mode, it may take some time before the item is synced to the server. Until the item is synced, the `itemId` is not recognized and using it returns an error.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>On success, the item identifier is provided in the `asyncResult.value` property.|
+
+##### Errors
+
+|Error code|Description|
+|------------|-------------|
+|`ItemNotSaved`|The id can't be retrieved until the item is saved.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
+
+##### Examples
+
+```js
+Office.context.mailbox.item.getItemIdAsync(
+  function callback(result) {
+    // Process the result.
+  });
+```
+
+The following example shows the structure of the `result` parameter that's passed to the callback function. The `value` property contains the item ID.
+
+```json
+{
+  "value":"AAMkADI5...AAA=",
+  "status":"succeeded"
+}
+```
 
 <br>
 
@@ -1741,7 +2159,7 @@ The object returned from `getRegExMatches` would have two properties: `fruits` a
 }
 ```
 
-If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook/office.body?view=outlook-js-1.7#getasync-coerciontype--options--callback-) method to retrieve the entire body.
+If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook/office.body?view=outlook-js-1.8#getasync-coerciontype--options--callback-) method to retrieve the entire body.
 
 ##### Requirements
 
@@ -1755,8 +2173,13 @@ If you specify an `ItemHasRegularExpressionMatch` rule on the body property of a
 
 An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.
 
-Type:
-Object
+<dl class="param-type">
+
+<dt>Type</dt>
+
+<dd>Object</dd>
+
+</dl>
 
 ##### Example
 
@@ -1877,7 +2300,7 @@ function getCallback(asyncResult) {
 ---
 ---
 
-#### getSelectedEntities() → {[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.7)}
+#### getSelectedEntities() → {[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.8)}
 
 Gets the entities found in a highlighted match a user has selected. Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).
 
@@ -1895,7 +2318,7 @@ Gets the entities found in a highlighted match a user has selected. Highlighted 
 ##### Returns:
 
 Type:
-[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.7)
+[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.8)
 
 ##### Example
 
@@ -1940,7 +2363,7 @@ The object returned from `getRegExMatches` would have two properties: `fruits` a
 }
 ```
 
-If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook/office.body?view=outlook-js-1.7#getasync-coerciontype--options--callback-) method to retrieve the entire body.
+If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook/office.body?view=outlook-js-1.8#getasync-coerciontype--options--callback-) method to retrieve the entire body.
 
 ##### Requirements
 
@@ -1969,6 +2392,42 @@ var veggies = selectedMatches.veggies;
 ---
 ---
 
+#### getSharedPropertiesAsync([options], callback)
+
+Gets the properties of the selected appointment or message in a shared folder, calendar, or mailbox.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The shared properties are provided as a [`SharedProperties`](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8) object in the `asyncResult.value` property. This object can be used to get the item's shared properties.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+
+##### Example
+
+```js
+Office.context.mailbox.item.getSharedPropertiesAsync(callback);
+
+function callback (asyncResult) {
+  var context = asyncResult.context;
+  var sharedProperties = asyncResult.value;
+}
+```
+
+<br>
+
+---
+---
+
 #### loadCustomPropertiesAsync(callback, [userContext])
 
 Asynchronously loads custom properties for this add-in on the selected item.
@@ -1979,7 +2438,7 @@ Custom properties are stored as key/value pairs on a per-app, per-item basis. Th
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The custom properties are provided as a [`CustomProperties`](/javascript/api/outlook/office.customproperties?view=outlook-js-1.7) object in the `asyncResult.value` property. This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.|
+|`callback`|function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The custom properties are provided as a [`CustomProperties`](/javascript/api/outlook/office.customproperties?view=outlook-js-1.8) object in the `asyncResult.value` property. This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.|
 |`userContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback function. This object can be accessed by the `asyncResult.asyncContext` property in the callback function.|
 
 ##### Requirements
@@ -2026,7 +2485,7 @@ function saveCallback(asyncResult) {
 
 Removes an attachment from a message or appointment.
 
-The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook on the web and mobile devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.
+The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook on the web and mobile devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing an inline form then subsequently pops out the form to continue in a separate window.
 
 ##### Parameters
 
@@ -2075,13 +2534,13 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 Removes the event handlers for a supported event type.
 
-Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`
+Currently the supported event types are `Office.EventType.AttachmentsChanged`, `Office.EventType.AppointmentTimeChanged`, `Office.EventType.EnhancedLocationsChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`.
 
 ##### Parameters
 
 | Name | Type | Attributes | Description |
 |---|---|---|---|
-| `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should invoke the handler. |
+| `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should revoke the handler. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
 | `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
 | `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|
@@ -2093,20 +2552,6 @@ Currently the supported event types are `Office.EventType.AppointmentTimeChanged
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.7 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
-
-##### Example
-
-```js
-Office.initialize = function (reason) {
-  $(document).ready(function () {
-    Office.context.mailbox.item.removeHandlerAsync(Office.EventType.RecurrenceChanged, function (result) {
-      if (result.status === Office.AsyncResultStatus.Failed) {
-        // Handle error
-      }
-    });
-  });
-};
-```
 
 <br>
 

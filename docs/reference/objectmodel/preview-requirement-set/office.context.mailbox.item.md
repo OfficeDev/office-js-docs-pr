@@ -34,7 +34,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [end](#end-datetime) | ReadItem | Appointment Organizer<br>Appointment Attendee | [Time](/javascript/api/outlook/office.time)<br>Date | 1.0 |
 | [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Appointment Organizer<br>Appointment Attendee | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Preview |
 | [from](#from-emailaddressdetailsfrom) | ReadWriteItem<br>ReadItem | Message Compose<br>Message Read | [From](/javascript/api/outlook/office.from)<br>[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.7<br>1.0 |
-| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Message Compose<br>Message Read | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Preview |
+| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Message Compose | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Preview |
 | [internetMessageId](#internetmessageid-string) | ReadItem | Message Read | String | 1.0 |
 | [itemClass](#itemclass-string) | ReadItem | Read | String | 1.0 |
 | [itemId](#nullable-itemid-string) | ReadItem | Read | String | 1.0 |
@@ -63,6 +63,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [close](#close) | Restricted | Compose | 1.3 |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Read | 1.0 |
 | [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Read | 1.0 |
+| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | Message Read | 1.8 |
 | [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Compose<br>Read | Preview |
 | [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Compose | Preview |
 | [getEntities](#getentities--entities) | ReadItem | Read | 1.0 |
@@ -166,6 +167,11 @@ console.log(outputString);
 
 Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
 
+By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
+
 ##### Type
 
 *   [Recipients](/javascript/api/outlook/office.recipients)
@@ -255,7 +261,7 @@ Gets an object that provides methods for managing the item's categories.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -284,7 +290,7 @@ Provides access to the Cc (carbon copy) recipients of a message. The type of obj
 
 ##### Read mode
 
-The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.
+The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -292,7 +298,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### Compose mode
 
-The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.
+The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -488,7 +497,7 @@ The `enhancedLocation` property returns an [EnhancedLocation](/javascript/api/ou
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -564,7 +573,7 @@ function callback(asyncResult) {
 
 #### internetHeaders: [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Gets or sets custom internet headers on a message.
+Gets or sets custom internet headers on a message. Compose mode only.
 
 ##### Type
 
@@ -574,9 +583,9 @@ Gets or sets custom internet headers on a message.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
 ##### Example
 
@@ -661,10 +670,10 @@ console.log("Item class: " + itemClass);
 
 #### (nullable) itemId: String
 
-Gets the Exchange Web Services item identifier for the current item. Read mode only.
+Gets the [Exchange Web Services item identifier](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) for the current item. Read mode only.
 
 > [!NOTE]
-> The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier. The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api#get-the-item-id).
+> The identifier returned by the `itemId` property is the same as the [Exchange Web Services item identifier](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 The `itemId` property is not available in compose mode. If an item identifier is required, the [`saveAsync`](#saveasyncoptions-callback) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](/javascript/api/office/office.asyncresult) parameter in the callback function.
 
@@ -843,7 +852,7 @@ Provides access to the optional attendees of an event. The type of object and le
 
 ##### Read mode
 
-The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.
+The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -852,7 +861,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### Compose mode
 
-The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.
+The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -993,7 +1005,7 @@ Provides access to the required attendees of an event. The type of object and le
 
 ##### Read mode
 
-The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.
+The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -1002,7 +1014,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### Compose mode
 
-The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.
+The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1215,7 +1230,7 @@ Provides access to the recipients on the **To** line of a message. The type of o
 
 ##### Read mode
 
-The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.
+The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -1223,7 +1238,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### Compose mode
 
-The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.
+The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1360,7 +1378,7 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](#remo
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -1768,6 +1786,58 @@ Office.context.mailbox.item.displayReplyForm(
 ---
 ---
 
+#### getAllInternetHeadersAsync([options], [callback])
+
+Gets all the internet headers for the message as a string. Read mode only.
+
+##### Parameters
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. On success, the internet headers data is provided in the asyncResult.value property as a string. Refer to [RFC 2183](https://tools.ietf.org/html/rfc2183) for the formatting information of the returned string value. If the call fails, the asyncResult.error property will contain an error code with the reason for the failure.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
+
+##### Returns:
+
+The internet headers data as a string formatted according to [RFC 2183](https://tools.ietf.org/html/rfc2183).
+
+Type:
+String
+
+##### Example
+
+```js
+// Get the internet headers related to the mail.
+Office.context.mailbox.item.getAllInternetHeadersAsync(
+  function(asyncResult) {
+    if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+      console.log(asyncResult.value);
+    } else {
+      if (asyncResult.error.code == 9020) {
+        // GenericResponseError returned when there is no context.
+        // Treat as no context.
+      } else {
+        // Handle the error.
+      }
+    }
+  }
+);
+```
+
+<br>
+
+---
+---
+
 #### getAttachmentContentAsync(attachmentId, [options], [callback]) → [AttachmentContent](/javascript/api/outlook/office.attachmentcontent)
 
 Gets the specified attachment from a message or appointment and returns it as an `AttachmentContent` object.
@@ -1787,7 +1857,7 @@ The `getAttachmentContentAsync` method gets the attachment with the specified id
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -1854,7 +1924,7 @@ Gets the item's attachments as an array. Compose mode only.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -2104,7 +2174,7 @@ When invoked, this method returns the item ID via the callback method.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -2246,7 +2316,10 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 Asynchronously returns selected data from the subject or body of a message.
 
-If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.
+If there is no selection but the cursor is in the body or subject, the method returns an empty string for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.
+
+> [!NOTE]
+> In Outlook on the web, the method returns the string "null" if no text is selected but the cursor is in the body. To check for this situation, see the example later in this section.
 
 ##### Parameters
 
@@ -2284,11 +2357,13 @@ function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
 
-  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
-}
+  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
+  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
+      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
+    text = "";
+  }
 
-function setCallback(asyncResult) {
-  // Check for errors.
+  console.log("Selected text in " + prop + ": " + text);
 }
 ```
 
@@ -2405,7 +2480,7 @@ Gets the properties of the selected appointment or message in a shared folder, c
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 

@@ -1,7 +1,7 @@
 ---
-title: Office.context.mailbox - preview requirement set
+title: Office.context.mailbox - requirement set 1.8
 description: ''
-ms.date: 10/30/2019
+ms.date: 10/31/2019
 localization_priority: Normal
 ---
 
@@ -19,41 +19,27 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-##### Properties
+##### Members and methods
 
-| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
-|---|---|---|---|
-| [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | 1.0 |
-| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | Preview |
-| [restUrl](#resturl-string) | ReadItem | Compose<br>Read | 1.5 |
-
-##### Methods
-
-| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
-|---|---|---|---|
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.5 |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Compose<br>Read | 1.0 |
-| [convertToRestId](#converttorestiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Compose<br>Read | 1.0 |
-| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Compose<br>Read | 1.0 |
-| [displayMessageForm](#displaymessageformitemid) | ReadItem | Compose<br>Read | 1.0 |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Read | 1.0 |
-| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Compose<br>Read | 1.6 |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Compose<br>Read | 1.5 |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.3<br>1.0 |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.0 |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Compose<br>Read | 1.0 |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Compose<br>Read | 1.5 |
-
-##### Events
-
-You can subscribe to and unsubscribe from the following events using [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) and [removeHandlerAsync](#removehandlerasynceventtype-options-callback) respectively.
-
-| Name | Description | Minimum<br>requirement set |
-|---|---|---|
-|`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
-|`OfficeThemeChanged`| The Office theme on the mailbox has changed. | Preview |
+| Member | Type |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | Member |
+| [masterCategories](#mastercategories-mastercategories) | Member |
+| [restUrl](#resturl-string) | Member |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Method |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Method |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Method |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Method |
+| [displayAppointmentForm](#displayappointmentformitemid) | Method |
+| [displayMessageForm](#displaymessageformitemid) | Method |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Method |
+| [displayNewMessageForm](#displaynewmessageformparameters) | Method |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | Method |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Method |
 
 ### Namespaces
 
@@ -63,7 +49,7 @@ You can subscribe to and unsubscribe from the following events using [addHandler
 
 [userProfile](Office.context.mailbox.userProfile.md): Provides information about the user in an Outlook add-in.
 
-### Property details
+### Members
 
 #### ewsUrl: String
 
@@ -95,7 +81,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 ---
 ---
 
-#### masterCategories: [MasterCategories](/javascript/api/outlook/office.mastercategories)
+#### masterCategories: [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8)
 
 Gets an object that provides methods to manage the categories master list on this mailbox.
 
@@ -104,7 +90,7 @@ Gets an object that provides methods to manage the categories master list on thi
 
 ##### Type
 
-*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
+*   [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8)
 
 ##### Requirements
 
@@ -155,7 +141,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-### Method details
+### Methods
 
 #### addHandlerAsync(eventType, handler, [options], [callback])
 
@@ -219,7 +205,7 @@ Item IDs retrieved via a REST API (such as the [Outlook Mail API](/previous-vers
 |Name| Type| Description|
 |---|---|---|
 |`itemId`| String|An item ID formatted for the Outlook REST APIs|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|A value indicating the version of the Outlook REST API used to retrieve the item ID.|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.8)|A value indicating the version of the Outlook REST API used to retrieve the item ID.|
 
 ##### Requirements
 
@@ -249,7 +235,7 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ---
 ---
 
-#### convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
+#### convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)}
 
 Gets a dictionary containing time information in local client time.
 
@@ -274,7 +260,7 @@ If the mail app is running in Outlook on a desktop client, the `convertToLocalCl
 ##### Returns:
 
 Type:
-[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
+[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)
 
 <br>
 
@@ -295,7 +281,7 @@ Item IDs retrieved via EWS or via the `itemId` property use a different format t
 |Name| Type| Description|
 |---|---|---|
 |`itemId`| String|An item ID formatted for Exchange Web Services (EWS)|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|A value indicating the version of the Outlook REST API that the converted ID will be used with.|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.8)|A value indicating the version of the Outlook REST API that the converted ID will be used with.|
 
 ##### Requirements
 
@@ -335,7 +321,7 @@ The `convertToUtcClientTime` method converts a dictionary containing a local dat
 
 |Name| Type| Description|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)|The local time value to convert.|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)|The local time value to convert.|
 
 ##### Requirements
 
@@ -482,8 +468,8 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 |Name| Type| Description|
 |---|---|---|
 | `parameters` | Object | A dictionary of parameters describing the new appointment. |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the required attendees for the appointment. The array is limited to a maximum of 100 entries. |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the optional attendees for the appointment. The array is limited to a maximum of 100 entries. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the required attendees for the appointment. The array is limited to a maximum of 100 entries. |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the optional attendees for the appointment. The array is limited to a maximum of 100 entries. |
 | `parameters.start` | Date | A `Date` object specifying the start date and time of the appointment. |
 | `parameters.end` | Date | A `Date` object specifying the end date and time of the appointment. |
 | `parameters.location` | String | A string containing the location of the appointment. The string is limited to a maximum of 255 characters. |
@@ -540,9 +526,9 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 |Name| Type| Description|
 |---|---|---|
 | `parameters` | Object | A dictionary of parameters describing the new message. |
-| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the To line. The array is limited to a maximum of 100 entries. |
-| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Cc line. The array is limited to a maximum of 100 entries. |
-| `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Bcc line. The array is limited to a maximum of 100 entries. |
+| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the To line. The array is limited to a maximum of 100 entries. |
+| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Cc line. The array is limited to a maximum of 100 entries. |
+| `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Bcc line. The array is limited to a maximum of 100 entries. |
 | `parameters.subject` | String | A string containing the subject of the message. The string is limited to a maximum of 255 characters. |
 | `parameters.htmlBody` | String | The HTML body of the message. The body content is limited to a maximum size of 32 KB. |
 | `parameters.attachments` | Array.&lt;Object&gt; | An array of JSON objects that are either file or item attachments. |

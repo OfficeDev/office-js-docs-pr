@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.4
 description: ''
-ms.date: 09/23/2019
+ms.date: 11/06/2019
 localization_priority: Normal
 ---
 
@@ -134,6 +134,11 @@ console.log(outputString);
 
 Gets an object that provides methods to get or update the Bcc (blind carbon copy) line of a message. Compose mode only.
 
+By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
+
 ##### Type
 
 *   [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
@@ -214,7 +219,7 @@ Provides access to the Cc (carbon copy) recipients of a message. The type of obj
 
 ##### Read mode
 
-The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.
+The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -222,7 +227,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### Compose mode
 
-The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.
+The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -497,10 +505,10 @@ console.log("Item class: " + itemClass);
 
 #### (nullable) itemId: String
 
-Gets the Exchange Web Services item identifier for the current item. Read mode only.
+Gets the [Exchange Web Services item identifier](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) for the current item. Read mode only.
 
 > [!NOTE]
-> The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier. The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api#get-the-item-id).
+> The identifier returned by the `itemId` property is the same as the [Exchange Web Services item identifier](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 The `itemId` property is not available in compose mode. If an item identifier is required, the [`saveAsync`](#saveasyncoptions-callback) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](/javascript/api/office/office.asyncresult) parameter in the callback function.
 
@@ -679,7 +687,7 @@ Provides access to the optional attendees of an event. The type of object and le
 
 ##### Read mode
 
-The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.
+The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -688,7 +696,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### Compose mode
 
-The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.
+The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -752,7 +763,7 @@ Provides access to the required attendees of an event. The type of object and le
 
 ##### Read mode
 
-The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.
+The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -761,7 +772,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### Compose mode
 
-The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.
+The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -932,7 +946,7 @@ Provides access to the recipients on the **To** line of a message. The type of o
 
 ##### Read mode
 
-The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.
+The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, you can get 500 members maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -940,7 +954,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### Compose mode
 
-The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.
+The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message. By default, the collection is limited to a maximum of 100 members. However, on Windows and Mac, the following limits apply.
+
+- Get 500 members maximum.
+- Set a maximum of 100 members per call, up to 500 members total.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1598,7 +1615,10 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 Asynchronously returns selected data from the subject or body of a message.
 
-If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.
+If there is no selection but the cursor is in the body or subject, the method returns an empty string for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.
+
+> [!NOTE]
+> In Outlook on the web, the method returns the string "null" if no text is selected but the cursor is in the body. To check for this situation, see the example later in this section.
 
 ##### Parameters
 
@@ -1636,11 +1656,13 @@ function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
 
-  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
-}
+  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
+  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
+      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
+    text = "";
+  }
 
-function setCallback(asyncResult) {
-  // Check for errors.
+  console.log("Selected text in " + prop + ": " + text);
 }
 ```
 
