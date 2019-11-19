@@ -37,6 +37,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [dateTimeModified](#datetimemodified-date) | ReadItem | Read | Date | 1.0 |
 | [end](#end-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
 | | | Appointment Attendee | Date | |
+| | | Message Read | Date | |
 | [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Appointment Organizer | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Preview |
 | | | Appointment Attendee | | |
 | [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Message Compose | [From](/javascript/api/outlook/office.from) | 1.7 |
@@ -49,6 +50,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | | | Read | | |
 | [location](#location-stringlocation) | ReadItem | Appointment Organizer | [Location](/javascript/api/outlook/office.location) | 1.0 |
 | | | Appointment Attendee | String | |
+| | | Message Read | String | |
 | [normalizedSubject](#normalizedsubject-string) | ReadItem | Read | String | 1.0 |
 | [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | Message Compose | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
 | | ReadItem | Message Read | | |
@@ -66,6 +68,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | | | Read | | |
 | [start](#start-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
 | | | Appointment Attendee | Date | |
+| | | Message Read | Date | |
 | [subject](#subject-stringsubject) | ReadItem | Compose | [Subject](/javascript/api/outlook/office.subject) | 1.0 |
 | | | Read | String | |
 | [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
