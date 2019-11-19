@@ -43,7 +43,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [itemId](#nullable-itemid-string) | ReadItem | Read | String | 1.0 |
 | [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | Compose<br>Read | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | 1.0 |
 | [location](#location-stringlocation) | ReadItem | Appointment Organizer | [Location](/javascript/api/outlook/office.location) | 1.0 |
-| | | Appointment Attendee | String | 1.0 |
+| | | Appointment Attendee | String | |
 | [normalizedSubject](#normalizedsubject-string) | ReadItem | Read | String | 1.0 |
 | [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | Message Compose<br>Message Read | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
 | [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
