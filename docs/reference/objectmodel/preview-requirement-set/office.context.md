@@ -20,7 +20,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 ##### Properties
 
-| Property | Return type |
+| Name | Return type |
 |--------|------|
 | [contentLanguage](#contentlanguage-string) | String |
 | [diagnostics](#diagnostics-contextinformation) | [ContextInformation](/javascript/api/office/office.contextinformation) |
