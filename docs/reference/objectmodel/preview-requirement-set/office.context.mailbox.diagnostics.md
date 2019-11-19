@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - preview requirement set
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/19/2019
 localization_priority: Normal
 ---
 
@@ -21,11 +21,11 @@ Provides diagnostic information to an Outlook add-in.
 
 ##### Properties
 
-| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
-|---|---|---|---|
-| [hostName](#hostname-string) | ReadItem | Compose<br>Read | 1.0 |
-| [hostVersion](#hostversion-string) | ReadItem | Compose<br>Read | 1.0 |
-| [OWAView](#owaview-string) | ReadItem | Compose<br>Read | 1.0 |
+| Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|---|---|
+| [hostName](#hostname-string) | ReadItem | Compose<br>Read | String | 1.0 |
+| [hostVersion](#hostversion-string) | ReadItem | Compose<br>Read | String | 1.0 |
+| [OWAView](#owaview-string) | ReadItem | Compose<br>Read | String | 1.0 |
 
 ### Property details
 

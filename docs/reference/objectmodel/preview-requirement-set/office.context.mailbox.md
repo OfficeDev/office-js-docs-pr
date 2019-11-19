@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/19/2019
 localization_priority: Normal
 ---
 
@@ -21,15 +21,15 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ##### Properties
 
-| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
-|---|---|---|---|
-| [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | 1.0 |
-| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | Preview |
-| [restUrl](#resturl-string) | ReadItem | Compose<br>Read | 1.5 |
+| Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|---|---|
+| [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | String | 1.0 |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | [MasterCategories](/javascript/api/outlook/office.mastercategories) | Preview |
+| [restUrl](#resturl-string) | ReadItem | Compose<br>Read | String | 1.5 |
 
 ##### Methods
 
-| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
+| Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
 |---|---|---|---|
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.5 |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
@@ -50,7 +50,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 You can subscribe to and unsubscribe from the following events using [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) and [removeHandlerAsync](#removehandlerasynceventtype-options-callback) respectively.
 
-| Name | Description | Minimum<br>requirement set |
+| Event | Description | Minimum<br>requirement set |
 |---|---|---|
 |`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
 |`OfficeThemeChanged`| The Office theme on the mailbox has changed. | Preview |

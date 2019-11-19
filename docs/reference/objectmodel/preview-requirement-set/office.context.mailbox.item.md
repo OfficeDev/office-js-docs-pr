@@ -21,7 +21,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 
 ##### Properties
 
-| Name | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
+| Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|---|---|
 | [attachments](#attachments-arrayattachmentdetails) | ReadItem | Read | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
 | [bcc](#bcc-recipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.1 |
@@ -54,7 +54,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 
 ##### Methods
 
-| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
+| Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
 |---|---|---|---|
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | Compose | 1.1 |
 | [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Compose | Preview |
@@ -87,7 +87,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 
 You can subscribe to and unsubscribe from the following events using [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) and [removeHandlerAsync](#removehandlerasynceventtype-options-callback) respectively.
 
-| Name | Description | Minimum<br>requirement set |
+| Event | Description | Minimum<br>requirement set |
 |---|---|---|
 |`AppointmentTimeChanged`| The date or time of the selected appointment or series has changed. | 1.7 |
 |`AttachmentsChanged`| An attachment has been added to or removed from the item. | Preview |

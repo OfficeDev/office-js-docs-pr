@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.userProfile - preview requirement set
 description: ''
-ms.date: 06/20/2019
+ms.date: 11/19/2019
 localization_priority: Normal
 ---
 
@@ -19,12 +19,12 @@ localization_priority: Normal
 
 ##### Properties
 
-| Name | Minimum<br>permission level | Modes | Minimum<br>requirement set |
-|---|---|---|---|
-| [accountType](#accounttype-string) | ReadItem | Compose<br>Read | 1.6 |
-| [displayName](#displayname-string) | ReadItem | Compose<br>Read | 1.0 |
-| [emailAddress](#emailaddress-string) | ReadItem | Compose<br>Read | 1.0 |
-| [timeZone](#timezone-string) | ReadItem | Compose<br>Read | 1.0 |
+| Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|---|---|
+| [accountType](#accounttype-string) | ReadItem | Compose<br>Read | String | 1.6 |
+| [displayName](#displayname-string) | ReadItem | Compose<br>Read | String | 1.0 |
+| [emailAddress](#emailaddress-string) | ReadItem | Compose<br>Read | String | 1.0 |
+| [timeZone](#timezone-string) | ReadItem | Compose<br>Read | String | 1.0 |
 
 ### Property details
 
