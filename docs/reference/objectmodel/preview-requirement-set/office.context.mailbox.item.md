@@ -27,30 +27,40 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [bcc](#bcc-recipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.1 |
 | [body](#body-body) | ReadItem | Compose<br>Read | [Body](/javascript/api/outlook/office.body) | 1.1 |
 | [categories](#categories-categories) | ReadItem | Compose<br>Read | [Categories](/javascript/api/outlook/office.categories) | Preview |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose<br>Message Read | [Recipients](/javascript/api/outlook/office.recipients)<br>Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | 1.0 |
-| [conversationId](#nullable-conversationid-string) | ReadItem | Message Compose<br>MessageRead | String | 1.0 |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Message Read | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+| [conversationId](#nullable-conversationid-string) | ReadItem | Message Compose<br>Message Read | String | 1.0 |
 | [dateTimeCreated](#datetimecreated-date) | ReadItem | Read | Date | 1.0 |
 | [dateTimeModified](#datetimemodified-date) | ReadItem | Read | Date | 1.0 |
-| [end](#end-datetime) | ReadItem | Appointment Organizer<br>Appointment Attendee | [Time](/javascript/api/outlook/office.time)<br>Date | 1.0 |
+| [end](#end-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
+| | | Appointment Attendee | Date | |
 | [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Appointment Organizer<br>Appointment Attendee | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Preview |
-| [from](#from-emailaddressdetailsfrom) | ReadWriteItem<br>ReadItem | Message Compose<br>Message Read | [From](/javascript/api/outlook/office.from)<br>[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.7<br>1.0 |
+| [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Message Compose | [From](/javascript/api/outlook/office.from) | 1.7 |
+| | ReadItem | Message Read | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
 | [internetHeaders](#internetheaders-internetheaders) | ReadItem | Message Compose | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Preview |
 | [internetMessageId](#internetmessageid-string) | ReadItem | Message Read | String | 1.0 |
 | [itemClass](#itemclass-string) | ReadItem | Read | String | 1.0 |
 | [itemId](#nullable-itemid-string) | ReadItem | Read | String | 1.0 |
 | [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | Compose<br>Read | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | 1.0 |
-| [location](#location-stringlocation) | ReadItem | Appointment Organizer<br>Appointment Attendee | [Location](/javascript/api/outlook/office.location)<br>String | 1.0 |
+| [location](#location-stringlocation) | ReadItem | Appointment Organizer | [Location](/javascript/api/outlook/office.location) | 1.0 |
+| | | Appointment Attendee | String | 1.0 |
 | [normalizedSubject](#normalizedsubject-string) | ReadItem | Read | String | 1.0 |
 | [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | Message Compose<br>Message Read | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer<br>Appointment Attendee | [Recipients](/javascript/api/outlook/office.recipients)<br>Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | 1.0 |
-| [organizer](#organizer-emailaddressdetailsorganizer) | ReadWriteItem<br>ReadItem | Appointment Organizer<br>Appointment Attendee | [Organizer](/javascript/api/outlook/office.organizer)<br>[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.7<br>1.0 |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Appointment Attendee | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+| [organizer](#organizer-emailaddressdetailsorganizer) | ReadWriteItem | Appointment Organizer | [Organizer](/javascript/api/outlook/office.organizer) | 1.7 |
+| | ReadItem | Appointment Attendee | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
 | [recurrence](#nullable-recurrence-recurrence) | ReadItem | Appointment Organizer<br>Appointment Attendee<br>Message Read | [Recurrence](/javascript/api/outlook/office.recurrence) | 1.7 |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer<br>Appointment Attendee | [Recipients](/javascript/api/outlook/office.recipients)<br>Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | 1.0 |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Appointment Attendee | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
 | [sender](#sender-emailaddressdetails) | ReadItem | Message Read | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
 | [seriesId](#nullable-seriesid-string) | ReadItem | Compose<br>Read | String | 1.7 |
-| [start](#start-datetime) | ReadItem | Appointment Organizer<br>Appointment Attendee | [Time](/javascript/api/outlook/office.time)<br>Date | 1.0 |
-| [subject](#subject-stringsubject) | ReadItem | Compose<br>Read | [Subject](/javascript/api/outlook/office.subject)<br>String | 1.0 |
-| [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose<br>Message Read | [Recipients](/javascript/api/outlook/office.recipients)<br>Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | 1.0 |
+| [start](#start-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
+| | | Appointment Attendee | Date | |
+| [subject](#subject-stringsubject) | ReadItem | Compose | [Subject](/javascript/api/outlook/office.subject) | 1.0 |
+| | | Read | String | |
+| [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Message Read | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
 
 ##### Methods
 
