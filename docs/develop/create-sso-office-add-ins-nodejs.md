@@ -88,8 +88,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Select **Add scope** .
 
-  > [!NOTE]
-  > The domain part of the **Scope** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > [!NOTE]
+    > The domain part of the **Scope** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. In the **Authorized client applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized.
 
@@ -124,7 +124,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the `.ENV` file and use the values that you copied in earlier. Set both the **CLIENT_ID** and to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following: 
 
-    ```
+    ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
     CLIENT_SECRET=X7szTuPwKNts41:-/fa3p.p@l6zsyI/p
     NODE_ENV=development
@@ -134,7 +134,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the add-in manifest file “manifest\manifest_local.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup:
 
-    ```
+    ```xml
     <WebApplicationInfo>
       <Id>$application_GUID here$</Id>
       <Resource>api://localhost:44355/$application_GUID here$</Resource>
@@ -188,9 +188,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace `TODO 1` with the following code. About this code, note:
 
- - `OfficeRuntime.auth.getAccessToken` instructs Office to get a bootstrap token from Azure AD. A bootstrap token is similar to an ID token, but it has a `scp` (scope) property with the value `access-as-user`. This kind of token can be exchanged by a web application for an access token to Microsoft Graph.
- - Setting the `allowSignInPrompt`option to true means that if no user is currently signed in to Office, then Office will open a popup signin prompt.
- - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an access token to Micrsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `OfficeRuntime.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign-in again and the user *can* be prompted to consent to Micrsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
+    - `OfficeRuntime.auth.getAccessToken` instructs Office to get a bootstrap token from Azure AD. A bootstrap token is similar to an ID token, but it has a `scp` (scope) property with the value `access-as-user`. This kind of token can be exchanged by a web application for an access token to Microsoft Graph.
+    - Setting the `allowSignInPrompt`option to true means that if no user is currently signed in to Office, then Office will open a popup signin prompt.
+    - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an access token to Micrsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `OfficeRuntime.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign-in again and the user *can* be prompted to consent to Micrsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
 
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true }); 
@@ -204,7 +204,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace `TODO 3` with the following. About this code, note: 
 
- - If the Office 365 tenant has been configured to require multifactor authentication, then the `exchangeResponse` will include a `claims` property with information about the additional required factors. In that case, `OfficeRuntime.auth.getAccessToken` should be recalled with the `authChallenge` option set to the value of the claims property. This tells AAD to prompt the user for all required forms of authentication.
+    - If the Office 365 tenant has been configured to require multifactor authentication, then the `exchangeResponse` will include a `claims` property with information about the additional required factors. In that case, `OfficeRuntime.auth.getAccessToken` should be recalled with the `authChallenge` option set to the value of the claims property. This tells AAD to prompt the user for all required forms of authentication.
 
     ```javascript
     if (exchangeResponse.claims) {
@@ -215,8 +215,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace `TODO 4` with the following. About this code,note: 
 
- - You'll create the `handleAADErrors` method in a later step. Azure AD errors are returned to the client as HTTP code 200 Responses. They do not throw errors, so they do not trigger the catch block of the `getGraphData` method.
- - You'll create the `makeGraphApiCall` method in a later step. It makes an AJAX call to the MS Graph endpoint. Errors are caught in the `.fail` callback of that call, not in the catch block of the `getGraphData` method.
+    - You'll create the `handleAADErrors` method in a later step. Azure AD errors are returned to the client as HTTP code 200 Responses. They do not throw errors, so they do not trigger the catch block of the `getGraphData` method.
+    - You'll create the `makeGraphApiCall` method in a later step. It makes an AJAX call to the MS Graph endpoint. Errors are caught in the `.fail` callback of that call, not in the catch block of the `getGraphData` method.
 
     ```javascript
     if (exchangeResponse.error) {
@@ -230,8 +230,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace `TODO 5` with the following
 
- - Errors from the call of `getAccessToken` will have a `code` property with an error number, typically in the 13xxx range. You'll create the `handleClientSideErrors` method in a later step.
- - The `showMessage` method displays text on the task pane.
+    - Errors from the call of `getAccessToken` will have a `code` property with an error number, typically in the 13xxx range. You'll create the `handleClientSideErrors` method in a later step.
+    - The `showMessage` method displays text on the task pane.
 
     ```javascript
     if (exception.code) { 
@@ -242,9 +242,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Below the `getGraphData` method, add the following function. About this code, note:
-
- -`/auth` is a server-side Express route that exhanges the bootstrap token with Azure AD for an access token to Microsoft Graph.
+1. Below the `getGraphData` method, add the following function. Note that `/auth` is a server-side Express route that exhanges the bootstrap token with Azure AD for an access token to Microsoft Graph.
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -258,7 +256,6 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     ```
 
 1. Below the `getGraphToken` method, add the following function. Note that `error.code` is a number, usually in the range 13xxx.
-
 
     ```javascript
     function handleClientSideErrors(error) {
@@ -343,8 +340,8 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Change the `if` structure in the `handleAADErrors` method so that it:
 
- - Increments the counter just before it calls `getGraphData`.
- - Tests to ensure that `getGraphData` has not already been called a second time. 
+    - Increments the counter just before it calls `getGraphData`.
+    - Tests to ensure that `getGraphData` has not already been called a second time. 
 
     So the final version of the `if` structure should look like the following:
 
@@ -397,8 +394,8 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO 10` woth the following. About this code, note: 
 
- - This object is the parameter to the `$.ajax` method.
- - `/getuserdata` is an Express route on the add-in's server that you create in a later step. It will call a Microsoft Graph endpoint and include the access token in it's call. 
+    - This object is the parameter to the `$.ajax` method.
+    - The `/getuserdata` is an Express route on the add-in's server that you create in a later step. It will call a Microsoft Graph endpoint and include the access token in it's call. 
 
     ```javascript
     {
@@ -411,8 +408,8 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO11` with the following. About this code, note:
 
- - The `writeFileNamesToOfficeDocument` will insert the data from graph into the Office document. It is defined in the `public\javascripts\document.js` file. 
- - If `writeFileNamesToOfficeDocument` returns an error, it will begin "Unable to add filenames to document."
+    - The `writeFileNamesToOfficeDocument` will insert the data from graph into the Office document. It is defined in the `public\javascripts\document.js` file. 
+    - If `writeFileNamesToOfficeDocument` returns an error, it will begin "Unable to add filenames to document."
 
     ```javascript
     writeFileNamesToOfficeDocument(response)
@@ -459,11 +456,11 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO 13` with the following code. About this code, note: 
 
- - This is the beginning of a long `else` block, but the closing `}` is not at the end yet because you will be adding more code to it. 
- - The `authorization` string is "Bearer " followed by the bootstrap token, so the first line of the `else` block is assigning the token to the `jwt`. ("JWT" stands for "JSON Web Token".)
- - The two `process.env.*` values are the constants that you assigned when you configured the add-in. 
- - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of Flow. Azure will respond by validating that the bootstrap token, which is assigned to`assertion` form parameter, has a `scp` property that is set to `access-as-user`.
- - The `scope` form parameter is set to 'Files.Read.All' which is the only Microsoft Graph scope that the add-in needs.
+    - This is the beginning of a long `else` block, but the closing `}` is not at the end yet because you will be adding more code to it. 
+    - The `authorization` string is "Bearer " followed by the bootstrap token, so the first line of the `else` block is assigning the token to the `jwt`. ("JWT" stands for "JSON Web Token".)
+    - The two `process.env.*` values are the constants that you assigned when you configured the add-in. 
+    - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of Flow. Azure will respond by validating that the bootstrap token, which is assigned to`assertion` form parameter, has a `scp` property that is set to `access-as-user`.
+    - The `scope` form parameter is set to 'Files.Read.All' which is the only Microsoft Graph scope that the add-in needs.
 
     ```javascript
      else {
@@ -480,8 +477,8 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO 14` with the following code, which completes the `else` block. About this code, note:
 
- - The const `tenant` is set to 'common' because you configured the add-in as multitenant when you registered it with Azure AD; specifically when you set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**. If you had instead chosen to support only accounts in the same Office 365 tenancy where the add-in is registered, then in this code `tenant` would be set to the GUID of the tenant. 
- - If the POST request does not error, then the response from Azure AD is converted to JSON and sent to the client. This JSON object has an `access_token` property to which Azure AD has assigned the access token to Microsoft Graph.
+    - The const `tenant` is set to 'common' because you configured the add-in as multitenant when you registered it with Azure AD; specifically when you set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**. If you had instead chosen to support only accounts in the same Office 365 tenancy where the add-in is registered, then in this code `tenant` would be set to the GUID of the tenant. 
+    - If the POST request does not error, then the response from Azure AD is converted to JSON and sent to the client. This JSON object has an `access_token` property to which Azure AD has assigned the access token to Microsoft Graph.
 
     ```javascript
         const stsDomain = 'https://login.microsoftonline.com';
@@ -526,10 +523,10 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO 15` with the following. About this code, note:
 
- - The caller of this route, `makeGraphApiCall`, added the access token to Microsoft Graph to the HTTP Request as a header named "access_token".
- - The `getGraphData` function is defined in the `msgraph-helper.js` file. (This is not the same function as the client-side `getGraphData` function that you defined in the `ssoAuthES6.js` file.)
- - The last parameter, for `queryParamsSegment`, is hardcoded. If you reuse this code in a production add-in and any part of `queryParamsSegment` comes from user input, be sure that it is sanitized so that it cannot be used in a Response header injection attack.
- - The code minimizes the data that must come from Microsoft Graph by specifying only the property we need ("name") and only the top 10 folder or file names.
+    - The caller of this route, `makeGraphApiCall`, added the access token to Microsoft Graph to the HTTP Request as a header named "access_token".
+    - The `getGraphData` function is defined in the `msgraph-helper.js` file. (This is not the same function as the client-side `getGraphData` function that you defined in the `ssoAuthES6.js` file.)
+    - The last parameter, for `queryParamsSegment`, is hardcoded. If you reuse this code in a production add-in and any part of `queryParamsSegment` comes from user input, be sure that it is sanitized so that it cannot be used in a Response header injection attack.
+    - The code minimizes the data that must come from Microsoft Graph by specifying only the property we need ("name") and only the top 10 folder or file names.
 
     ```javascript
     const graphToken = req.get('access_token');    
@@ -538,8 +535,8 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO 16` with the following. About this code, note:
 
- - If Microsoft Graph returns an error, such as invalid or expired token, there will be a code property in the returned object set to a HTTP status (e.g. 401). The code relays the error to the client. It will br caught in the `.fail` callback of `makeGraphApiCall`.
- - Microsoft Graph data includes OData metadata and eTags that the add-in does not need, so the code constructs a new array containing only the file names to send to the client.
+    - If Microsoft Graph returns an error, such as invalid or expired token, there will be a code property in the returned object set to a HTTP status (e.g. 401). The code relays the error to the client. It will br caught in the `.fail` callback of `makeGraphApiCall`.
+    - Microsoft Graph data includes OData metadata and eTags that the add-in does not need, so the code constructs a new array containing only the file names to send to the client.
 
     ```javascript
     if (graphData.code) {
