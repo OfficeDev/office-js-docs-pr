@@ -535,7 +535,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO 16` with the following. About this code, note:
 
-    - If Microsoft Graph returns an error, such as invalid or expired token, there will be a code property in the returned object set to a HTTP status (e.g. 401). The code relays the error to the client. It will br caught in the `.fail` callback of `makeGraphApiCall`.
+    - If Microsoft Graph returns an error, such as invalid or expired token, there will be a code property in the returned object set to a HTTP status (e.g., 401). The code relays the error to the client. It will be caught in the `.fail` callback of `makeGraphApiCall`.
     - Microsoft Graph data includes OData metadata and eTags that the add-in does not need, so the code constructs a new array containing only the file names to send to the client.
 
     ```javascript
