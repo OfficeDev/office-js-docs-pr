@@ -179,7 +179,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
         }
         catch(exception) {
 
-            // TODO 5: Respond to exceptions thrown by the call of 
+            // TODO 5: Respond to exceptions thrown by the
             //         OfficeRuntime.auth.getAccessToken.
 
         }
