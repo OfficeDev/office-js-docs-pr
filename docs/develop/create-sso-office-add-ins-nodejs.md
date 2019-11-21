@@ -122,7 +122,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the `\Begin` folder in the cloned project in your code editor.
 
-1. Open the `.ENV` file and use the values that you copied in earlier. Set both the **CLIENT_ID** and to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following: 
+1. Open the `.ENV` file and use the values that you copied earlier. Set the **CLIENT_ID** to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following: 
 
     ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
