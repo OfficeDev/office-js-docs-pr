@@ -296,7 +296,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
         showMessage("Office is still working on the last operation. When it completes, try this operation again."); 
         break;
     case 13010:
-        // Only seen in Office on the Web.
+        // Only seen in Office on the web.
         showMessage("Follow the instructions to change your browser's zone configuration.");
         break;
     ```
