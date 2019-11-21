@@ -292,7 +292,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
         break;
     case 13008:
         // The OfficeRuntime.auth.getAccessToken method has already been called and 
-        // that call has not completed yet. Only seen in Office on the Web.
+        // that call has not completed yet. Only seen in Office on the web.
         showMessage("Office is still working on the last operation. When it completes, try this operation again."); 
         break;
     case 13010:
