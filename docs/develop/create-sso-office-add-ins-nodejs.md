@@ -332,7 +332,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     }
     ```
 
-1. To ensure that the add-in doesn't enter an infinite loop of calls to `getGraphData`, the add-in should keep track of how many times `getGraphData` has been called and be sure that is not called recursively called more than once. So, create a counter variable in a scope that is global to the `handleAADErrors` and `getGraphData` functions. A good place for global variables is just below the call of the `Office.onReady` method. 
+1. To ensure that the add-in doesn't enter an infinite loop of calls to `getGraphData`, the add-in should keep track of how many times `getGraphData` has been called and be sure that is not called recursively called more than once. So, create a counter variable in a scope that is global to the `handleAADErrors` and `getGraphData` functions. A good place for global variables is just below the `Office.onReady` method call.
 
     ```javascript
     let retryGetAccessToken = 0;
