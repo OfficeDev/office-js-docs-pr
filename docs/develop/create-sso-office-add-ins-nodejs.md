@@ -459,7 +459,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     - This is the beginning of a long `else` block, but the closing `}` is not at the end yet because you will be adding more code to it. 
     - The `authorization` string is "Bearer " followed by the bootstrap token, so the first line of the `else` block is assigning the token to the `jwt`. ("JWT" stands for "JSON Web Token".)
     - The two `process.env.*` values are the constants that you assigned when you configured the add-in. 
-    - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of Flow. Azure will respond by validating that the bootstrap token, which is assigned to`assertion` form parameter, has a `scp` property that is set to `access-as-user`.
+    - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of Flow. Azure will respond by validating that the bootstrap token, which is assigned to `assertion` form parameter, has a `scp` property that is set to `access-as-user`.
     - The `scope` form parameter is set to 'Files.Read.All' which is the only Microsoft Graph scope that the add-in needs.
 
     ```javascript
