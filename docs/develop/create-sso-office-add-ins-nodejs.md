@@ -395,7 +395,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 1. Replace `TODO 10` with the following. About this code, note: 
 
     - This object is the parameter to the `$.ajax` method.
-    - The `/getuserdata` is an Express route on the add-in's server that you create in a later step. It will call a Microsoft Graph endpoint and include the access token in it's call. 
+    - The `/getuserdata` is an Express route on the add-in's server that you create in a later step. It will call a Microsoft Graph endpoint and include the access token in its call. 
 
     ```javascript
     {
