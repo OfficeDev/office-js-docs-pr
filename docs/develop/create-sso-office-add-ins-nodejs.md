@@ -38,7 +38,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > There are three versions of the sample:  
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
     > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
-    > * The **SSOAutoSetup** version is a completed sample that automates most of the steps to register the add-in with Azure AD and configure it. Use this version if you want to see a working add-in with SSO quickly. Just follow the steps in the Readme of the folder. We recommend that at some point you go through the manual registration and setup steps in this article to better understand how the relationship between Azure AD and an add-in. 
+    > * The **SSOAutoSetup** version is a completed sample that automates most of the steps to register the add-in with Azure AD and configure it. Use this version if you want to see a working add-in with SSO quickly. Just follow the steps in the Readme of the folder. We recommend that at some point you go through the manual registration and setup steps in this article to better understand the relationship between Azure AD and an add-in. 
 
 
 1. Open a command prompt in the **Before** folder.
