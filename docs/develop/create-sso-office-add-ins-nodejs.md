@@ -560,7 +560,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Ensure that you have some files in your OneDrive so that you can verify the results.
 
-1. Open a command prompt in the root of the root of the `\Complete` folder. 
+1. Open a command prompt in the root of the `\Complete` folder. 
 
 1. Run the command `npm start`. 
 
