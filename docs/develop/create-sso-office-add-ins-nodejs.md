@@ -132,7 +132,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the `\public\javascripts\fallbackAuthDialog.js` file. In the `msalConfig` declaration, replace the placeholder $application_GUID here$ with the Application ID that you copied when you registered your add-in. The value should be in quotation marks.
 
-1. Open the add-in manifest file “manifest\manifest_local.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup:
+1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup:
 
     ```xml
     <WebApplicationInfo>
