@@ -204,7 +204,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace `TODO 3` with the following. About this code, note: 
 
-    - If the Office 365 tenant has been configured to require multifactor authentication, then the `exchangeResponse` will include a `claims` property with information about the additional required factors. In that case, `OfficeRuntime.auth.getAccessToken` should be recalled with the `authChallenge` option set to the value of the claims property. This tells AAD to prompt the user for all required forms of authentication.
+    - If the Office 365 tenant has been configured to require multifactor authentication, then the `exchangeResponse` will include a `claims` property with information about the additional required factors. In that case, `OfficeRuntime.auth.getAccessToken` should be called again with the `authChallenge` option set to the value of the claims property. This tells AAD to prompt the user for all required forms of authentication.
 
     ```javascript
     if (exchangeResponse.claims) {
