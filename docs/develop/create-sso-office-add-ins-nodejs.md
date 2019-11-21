@@ -213,7 +213,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Replace `TODO 4` with the following. About this code,note: 
+1. Replace `TODO 4` with the following. About this code, note: 
 
     - You'll create the `handleAADErrors` method in a later step. Azure AD errors are returned to the client as HTTP code 200 Responses. They do not throw errors, so they do not trigger the catch block of the `getGraphData` method.
     - You'll create the `makeGraphApiCall` method in a later step. It makes an AJAX call to the MS Graph endpoint. Errors are caught in the `.fail` callback of that call, not in the catch block of the `getGraphData` method.
