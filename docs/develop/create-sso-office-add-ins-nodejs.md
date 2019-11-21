@@ -408,7 +408,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO11` with the following. About this code, note:
 
-    - The `writeFileNamesToOfficeDocument` will insert the data from graph into the Office document. It is defined in the `public\javascripts\document.js` file. 
+    - The `writeFileNamesToOfficeDocument` will insert the data from Graph into the Office document. It is defined in the `public\javascripts\document.js` file. 
     - If `writeFileNamesToOfficeDocument` returns an error, it will begin "Unable to add filenames to document."
 
     ```javascript
