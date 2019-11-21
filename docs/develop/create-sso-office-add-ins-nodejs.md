@@ -318,7 +318,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
     // TODO 8: Handle case where the bootstrap token is expired.
 
-    // TODO 9: Handle all other AAD errors.
+    // TODO 9: Handle all other Azure AD errors.
     
     }
     ```
