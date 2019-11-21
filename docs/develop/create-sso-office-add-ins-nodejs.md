@@ -154,7 +154,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ### Create the SSO logic
 
-1. In your code editor, open the file `public\javascripts\ssoAuthES6.js`. It already has code that ensures that Promises are supported, even in Internet Explorer 11, and a call of Office.onReady to assign a handler to the add-in's only button.
+1. In your code editor, open the file `public\javascripts\ssoAuthES6.js`. It already has code that ensures that Promises are supported, even in Internet Explorer 11, and an `Office.onReady` call to assign a handler to the add-in's only button.
 
 	> [!NOTE]
     > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will run in Internet Explorer 11. 
