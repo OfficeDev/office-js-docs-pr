@@ -45,7 +45,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
 
-1. Run the command npm run `install-dev-certs`. Select **Yes** to the prompt to install the certificate.
+1. Run the command `npm run install-dev-certs`. Select **Yes** to the prompt to install the certificate.
 
 ## Register the add-in with Azure AD v2.0 endpoint
 
