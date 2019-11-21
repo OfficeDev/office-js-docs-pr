@@ -540,7 +540,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
     ```javascript
     if (graphData.code) {
-        next(createError(graphData.code, "Microsoft Graph error " + JSON.stringify(graphData)));
+        next(createError(graphData.code, "Microsoft Graph error: " + JSON.stringify(graphData)));
     }
     else 
     {
