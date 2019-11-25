@@ -1,7 +1,7 @@
 ---
 title: Office.context - preview requirement set
 description: ''
-ms.date: 11/19/2019
+ms.date: 11/25/2019
 localization_priority: Normal
 ---
 
@@ -38,7 +38,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 [mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook.
 
-### Property details
+## Property details
 
 #### contentLanguage: String
 

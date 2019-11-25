@@ -135,7 +135,7 @@ Office.initialize = function () {
 };
 ```
 
-### Property details
+## Property details
 
 #### attachments: Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
@@ -1287,7 +1287,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
-### Method details
+## Method details
 
 #### addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 

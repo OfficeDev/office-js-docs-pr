@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - preview requirement set
 description: ''
-ms.date: 11/19/2019
+ms.date: 11/25/2019
 localization_priority: Normal
 ---
 
@@ -27,7 +27,7 @@ Provides diagnostic information to an Outlook add-in.
 | [hostVersion](#hostversion-string) | ReadItem | Compose<br>Read | String | 1.0 |
 | [OWAView](#owaview-string) | ReadItem | Compose<br>Read | String | 1.0 |
 
-### Property details
+## Property details
 
 #### hostName: String
 

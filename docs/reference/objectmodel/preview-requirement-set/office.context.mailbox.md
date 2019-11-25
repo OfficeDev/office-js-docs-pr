@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 11/19/2019
+ms.date: 11/25/2019
 localization_priority: Normal
 ---
 
@@ -63,7 +63,7 @@ You can subscribe to and unsubscribe from the following events using [addHandler
 
 [userProfile](Office.context.mailbox.userProfile.md): Provides information about the user in an Outlook add-in.
 
-### Property details
+## Property details
 
 #### ewsUrl: String
 
@@ -155,7 +155,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-### Method details
+## Method details
 
 #### addHandlerAsync(eventType, handler, [options], [callback])
 

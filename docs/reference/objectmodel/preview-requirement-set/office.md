@@ -1,7 +1,7 @@
 ---
 title: Office namespace - preview requirement set
 description: ''
-ms.date: 11/19/2019
+ms.date: 11/25/2019
 localization_priority: Normal
 ---
 
@@ -31,7 +31,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 [MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): Includes a number of enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
 
-### Property details
+## Property details
 
 #### AsyncResultStatus: String
 
