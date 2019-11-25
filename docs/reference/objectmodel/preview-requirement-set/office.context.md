@@ -1,7 +1,7 @@
 ---
 title: Office.context - preview requirement set
 description: ''
-ms.date: 11/19/2019
+ms.date: 11/25/2019
 localization_priority: Normal
 ---
 
@@ -20,17 +20,17 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 ##### Properties
 
-| Property | Return type |
-|--------|------|
-| [contentLanguage](#contentlanguage-string) | String |
-| [diagnostics](#diagnostics-contextinformation) | [ContextInformation](/javascript/api/office/office.contextinformation) |
-| [displayLanguage](#displaylanguage-string) | String |
-| [host](#host-hosttype) | [HostType](/javascript/api/office/office.hosttype) |
-| [officeTheme](#officetheme-officetheme) | [OfficeTheme](/javascript/api/office/office.officetheme) |
-| [platform](#platform-platformtype) | [PlatformType](/javascript/api/office/office.platformtype) |
-| [requirements](#requirements-requirementsetsupport) | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) |
-| [roamingSettings](#roamingsettings-roamingsettings) | [RoamingSettings](/javascript/api/outlook/office.roamingsettings) |
-| [ui](#ui-ui) | [UI](/javascript/api/office/office.ui) |
+| Property | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|---|
+| [contentLanguage](#contentlanguage-string) | Compose<br>Read | String | 1.0 |
+| [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation) | 1.0 |
+| [displayLanguage](#displaylanguage-string) | Compose<br>Read | String | 1.0 |
+| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype) | 1.0 |
+| [officeTheme](#officetheme-officetheme) | Compose<br>Read | [OfficeTheme](/javascript/api/office/office.officetheme) | Preview |
+| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype) | 1.0 |
+| [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) | 1.0 |
+| [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings) | 1.0 |
+| [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui) | 1.0 |
 
 ### Namespaces
 
@@ -38,7 +38,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 [mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook.
 
-### Property details
+## Property details
 
 #### contentLanguage: String
 

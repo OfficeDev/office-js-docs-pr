@@ -1,7 +1,7 @@
 ---
 title: Office namespace - preview requirement set
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
 ---
 
@@ -16,14 +16,14 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-##### Members and methods
+##### Properties
 
-| Member | Type |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Member |
-| [CoercionType](#coerciontype-string) | Member |
-| [EventType](#eventtype-string) | Member |
-| [SourceProperty](#sourceproperty-string) | Member |
+| Property | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|---|
+| [AsyncResultStatus](#asyncresultstatus-string) | Compose<br>Read | String | 1.0 |
+| [CoercionType](#coerciontype-string) | Compose<br>Read | String | 1.0 |
+| [EventType](#eventtype-string) | Compose<br>Read | String | 1.5 |
+| [SourceProperty](#sourceproperty-string) | Compose<br>Read | String | 1.0 |
 
 ### Namespaces
 
@@ -31,7 +31,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 [MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): Includes a number of enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
 
-### Members
+## Property details
 
 #### AsyncResultStatus: String
 
