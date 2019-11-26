@@ -728,7 +728,7 @@ These steps must be completed whenever your code needs to *read* information fro
         > [!NOTE]
         > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office host (e.g., `Excel`)
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef` where `{host}` is the Office host (e.g., `Excel`)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office host (e.g., `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
 3. If the local web server is already running, stop it by closing the node command window.
