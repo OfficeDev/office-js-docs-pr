@@ -1,20 +1,20 @@
 ---
 title: Outlook add-in API requirement set 1.1
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/26/2019
 localization_priority: Normal
 ---
 
 # Outlook add-in API requirement set 1.1
 
-The Outlook add-in API subset of the JavaScript API for Office includes objects, methods, properties, and events that you can use in an Outlook add-in.
+The Outlook add-in API subset of the JavaScript API for Office includes objects, methods, properties, and events that you can use in an Outlook add-in. Outlook JavaScript API 1.1 (Mailbox 1.1) is the first version of the API.
 
 > [!NOTE]
-> This documentation is for a [requirement set](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) other than the latest requirement set. 
+> This documentation is for a [requirement set](../../requirement-sets/outlook-api-requirement-sets.md) other than the latest requirement set.
 
 ## What's new in 1.1?
 
-Requirement set 1.1 includes all of the features of Requirement set 1.0. It added the ability for add-ins to access the body of messages and appointments and the ability to modify the current item.
+Requirement set 1.1 includes all of the [Common API requirement sets supported in Outlook](../../requirement-sets/office-add-in-requirement-sets.md). It added the ability for add-ins to access the body of messages and appointments and the ability to modify the current item.
 
 ### Change log
 
