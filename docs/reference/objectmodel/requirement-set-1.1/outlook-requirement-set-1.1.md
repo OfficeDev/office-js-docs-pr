@@ -14,7 +14,7 @@ The Outlook add-in API subset of the JavaScript API for Office includes objects,
 
 ## What's new in 1.1?
 
-Requirement set 1.1 includes all of the [Common API requirement sets supported in Outlook](../../requirement-sets/office-add-in-requirement-sets.md). It added the ability for add-ins to access the body of messages and appointments and the ability to modify the current item.
+Requirement set 1.1 includes all of the [Common API requirement sets](../../requirement-sets/office-add-in-requirement-sets.md) supported in Outlook. It added the ability for add-ins to access the body of messages and appointments and the ability to modify the current item.
 
 ### Change log
 
