@@ -998,7 +998,7 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](#remo
 |`uri`| String||The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.|
 |`attachmentName`| String||The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|&gt;`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.|
 
 ##### Errors
@@ -1059,7 +1059,7 @@ If your Office Add-in is running in Outlook on the web, the `addItemAttachmentAs
 |`itemId`| String||The Exchange identifier of the item to attach. The maximum length is 100 characters.|
 |`attachmentName`| String||The subject of the item to be attached. The maximum length is 255 characters.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|&gt;`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.|
 
 ##### Errors
@@ -1147,12 +1147,12 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 |Name| Type| Description|
 |---|---|---|
 |`formData`| String &#124; Object| |A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
-| - `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
-| - `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
-| - `formData.attachments.type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
-| - `formData.attachments.name` | String | | A string that contains the name of the attachment, up to 255 characters in length.|
-| - `formData.attachments.url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
-| - `formData.attachments.itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
+| &gt;`formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
+| &gt;`formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
+|  &gt;&gt;`formData.attachments.type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
+|  &gt;&gt;`formData.attachments.name` | String | | A string that contains the name of the attachment, up to 255 characters in length.|
+|  &gt;&gt;`formData.attachments.url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
+|  &gt;&gt;`formData.attachments.itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
 |`callback`| function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. |
 
 ##### Requirements
@@ -1270,12 +1270,12 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 |Name| Type| Description|
 |---|---|---|
 |`formData`| String &#124; Object| | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
-| - `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
-| - `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
-| - `formData.attachments.type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
-| - `formData.attachments.name` | String | | A string that contains the name of the attachment, up to 255 characters in length.|
-| - `formData.attachments.url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
-| - `formData.attachments.itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
+| &gt;`formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
+| &gt;`formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
+|  &gt;&gt;`formData.attachments.type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
+|  &gt;&gt;`formData.attachments.name` | String | | A string that contains the name of the attachment, up to 255 characters in length.|
+|  &gt;&gt;`formData.attachments.url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
+|  &gt;&gt;`formData.attachments.itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
 |`callback`| function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. |
 
 ##### Requirements
@@ -1623,7 +1623,7 @@ If there is no selection but the cursor is in the body or subject, the method re
 |---|---|---|---|
 |`coercionType`| [Office.CoercionType](office.md#coerciontype-string)||Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|&gt;`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>To access the selected data from the callback method, call `asyncResult.value.data`. To access the source property that the selection comes from, call `asyncResult.value.sourceProperty`, which will be either `body` or `subject`.|
 
 ##### Requirements
@@ -1727,7 +1727,7 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 |---|---|---|---|
 |`attachmentId`| String||The identifier of the attachment to remove.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|&gt;`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.|
 
 ##### Errors
@@ -1786,7 +1786,7 @@ Since appointments have no draft state, if `saveAsync` is called on an appointme
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.||
+|&gt;`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.||
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>On success, the item identifier is provided in the `asyncResult.value` property.|
 
 ##### Requirements
@@ -1832,8 +1832,8 @@ The `setSelectedDataAsync` method inserts the specified string at the cursor loc
 |---|---|---|---|
 |`data`| String||The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
-|- `options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|If `text`, the current style is applied in Outlook on the web and desktop clients. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook on the web and the default style is applied in Outlook desktop clients. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
+|&gt;`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|&gt;`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|If `text`, the current style is applied in Outlook on the web and desktop clients. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook on the web and the default style is applied in Outlook desktop clients. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. |
 
 ##### Requirements

@@ -115,7 +115,7 @@ Currently the only supported event type is `Office.EventType.ItemChanged`, which
 | `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should invoke the handler. |
 | `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
-| - `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
+| &gt;`options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
 | `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|
 
 ##### Requirements
@@ -498,8 +498,8 @@ You can pass both the token and either an attachment identifier or item identifi
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`options`| Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
-| - `options.isRest` | Boolean |  &lt;optional&gt; | Determines if the token provided will be used for the Outlook REST APIs or Exchange Web Services. Default value is `false`. |
-| - `options.asyncContext` | Object |  &lt;optional&gt; | Any state data that is passed to the asynchronous method. |
+| &gt;`options.isRest` | Boolean |  &lt;optional&gt; | Determines if the token provided will be used for the Outlook REST APIs or Exchange Web Services. Default value is `false`. |
+| &gt;`options.asyncContext` | Object |  &lt;optional&gt; | Any state data that is passed to the asynchronous method. |
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.<br/><br/>The token is provided as a string in the `asyncResult.value` property.<br><br>If there was an error, the `asyncResult.error` and `asyncResult.diagnostics` properties may provide additional information.|
 
 ##### Errors
@@ -753,7 +753,7 @@ Currently, the only supported event type is `Office.EventType.ItemChanged`.
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should revoke the handler. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
-| - `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
+| &gt;`options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
 | `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|
 
 ##### Requirements
