@@ -139,10 +139,6 @@ Gets the URL of the REST endpoint for this email account.
 
 The `restUrl` value can be used to make [REST API](/outlook/rest/) calls to the user's mailbox.
 
-Your app must have the **ReadItem** permission specified in its manifest to call the `restUrl` member in read mode.
-
-In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before you can use the `restUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
-
 ##### Type
 
 *   String
