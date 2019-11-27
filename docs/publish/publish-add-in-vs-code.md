@@ -19,3 +19,4 @@ This article describes how to publish an Office Add-in that you created using th
 ## See also
 
 - [Develop Office Add-ins with Visual Studio Code](../develop/develop-add-ins-vscode.md)
+- [Deploy and publish your Office Add-in](../publish/publish.md)
