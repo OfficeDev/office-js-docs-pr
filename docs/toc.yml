@@ -219,10 +219,14 @@
     items:
     - name: Overview
       href: publish/publish.md
-    - name: Host an Office Add-in on Microsoft Azure
-      href: publish/host-an-office-add-in-on-microsoft-azure.md
-    - name: Package your add-in using Visual Studio
-      href: publish/package-your-add-in-using-visual-studio.md
+    - name: Publish your add-in (VS Code)
+      href: publish/publish-add-in-vs-code.md
+    - name: Visual Studio
+      items:
+      - name: Publish your add-in (Visual Studio)
+        href: publish/package-your-add-in-using-visual-studio.md
+      - name: Host an Office Add-in on Microsoft Azure
+        href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Publish add-ins to AppSource
       href: /office/dev/store/submit-to-the-office-store
     - name: AppSource validation policies

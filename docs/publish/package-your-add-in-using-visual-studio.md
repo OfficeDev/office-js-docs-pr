@@ -1,14 +1,16 @@
 ---
-title: Package your add-in using Visual Studio to prepare for publishing
+title: Publish your add-in using Visual Studio
 description: How to deploy your web project and package your add-in by using Visual Studio 2019.
-ms.date: 10/14/2019
+ms.date: 11/27/2019
 localization_priority: Priority
 ---
 
-
-# Package your add-in using Visual Studio to prepare for publishing
+# Publish your add-in using Visual Studio
 
 Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2019.
+
+> [!NOTE]
+> For information about publishing an Office Add-in that you created using the Yeoman generator and developed with Visual Studio Code or any other editor, see [Publish an add-in developed with Visual Studio Code](publish-add-in-vs-code.md).
 
 ## To deploy your web project using Visual Studio 2019
 
