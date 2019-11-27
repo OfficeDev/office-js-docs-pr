@@ -43,6 +43,10 @@
     - name: Privacy and security
       href: concepts/privacy-and-security.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+  - name: Patterns and practices
+    items:
+    - name: Migrate VSTO add-in using shared library
+      href: pnp/migrate-vsto-to-office-web-add-in-shared-code-library-tutorial.md
   - name: User Interface
     items:
     - name: Overview
