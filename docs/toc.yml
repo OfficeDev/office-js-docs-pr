@@ -138,7 +138,7 @@
     - name: Develop add-ins with Angular
       href: develop/add-ins-with-angular2.md
     - name: Develop add-ins with Visual Studio Code
-      href: develop/create-add-ins-vscode.md
+      href: develop/develop-add-ins-vscode.md
     - name: Develop add-ins with Visual Studio
       items:
       - name: Create and debug Office Add-ins in Visual Studio
