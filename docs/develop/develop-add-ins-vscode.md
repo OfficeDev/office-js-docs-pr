@@ -33,7 +33,7 @@ When the Yeoman generator finishes creating the add-in project, open the root fo
 
 The Yeoman generator creates a basic add-in with limited functionality. You can customize the add-in by editing the [manifest](add-in-manifests.md), HTML, JavaScript or TypeScript, and CSS files in VS Code. For a high-level description of the project structure and files in the add-in project that the Yeoman generator creates, see the the Yeoman generator guidance within the [5-minute quick start](../index.md) that corresponds to the type of add-in you've created.
 
-## Test and debug 
+## Test and debug the add-in
 
 Methods for testing, debugging, and troubleshooting Office Add-ins vary by platform. For more information, see [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md).
 
