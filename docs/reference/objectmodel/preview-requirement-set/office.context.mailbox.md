@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
 ---
 
@@ -19,27 +19,41 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-##### Members and methods
+##### Properties
 
-| Member | Type |
-|--------|------|
-| [ewsUrl](#ewsurl-string) | Member |
-| [masterCategories](#mastercategories-mastercategories) | Member |
-| [restUrl](#resturl-string) | Member |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | Method |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Method |
-| [convertToRestId](#converttorestiditemid-restversion--string) | Method |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Method |
-| [displayAppointmentForm](#displayappointmentformitemid) | Method |
-| [displayMessageForm](#displaymessageformitemid) | Method |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Method |
-| [displayNewMessageForm](#displaynewmessageformparameters) | Method |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | Method |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Method |
+| Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|---|---|
+| [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | String | 1.0 |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | [MasterCategories](/javascript/api/outlook/office.mastercategories) | Preview |
+| [restUrl](#resturl-string) | ReadItem | Compose<br>Read | String | 1.5 |
+
+##### Methods
+
+| Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
+|---|---|---|---|
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.5 |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Compose<br>Read | 1.0 |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Compose<br>Read | 1.0 |
+| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Compose<br>Read | 1.0 |
+| [displayMessageForm](#displaymessageformitemid) | ReadItem | Compose<br>Read | 1.0 |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Read | 1.0 |
+| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Compose<br>Read | 1.6 |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Compose<br>Read | 1.5 |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.3<br>1.0 |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.0 |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Compose<br>Read | 1.0 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Compose<br>Read | 1.5 |
+
+##### Events
+
+You can subscribe to and unsubscribe from the following events using [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) and [removeHandlerAsync](#removehandlerasynceventtype-options-callback) respectively.
+
+| Event | Description | Minimum<br>requirement set |
+|---|---|---|
+|`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
+|`OfficeThemeChanged`| The Office theme on the mailbox has changed. | Preview |
 
 ### Namespaces
 
@@ -49,7 +63,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 [userProfile](Office.context.mailbox.userProfile.md): Provides information about the user in an Outlook add-in.
 
-### Members
+## Property details
 
 #### ewsUrl: String
 
@@ -125,10 +139,6 @@ Gets the URL of the REST endpoint for this email account.
 
 The `restUrl` value can be used to make [REST API](/outlook/rest/) calls to the user's mailbox.
 
-Your app must have the **ReadItem** permission specified in its manifest to call the `restUrl` member in read mode.
-
-In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before you can use the `restUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
-
 ##### Type
 
 *   String
@@ -141,7 +151,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-### Methods
+## Method details
 
 #### addHandlerAsync(eventType, handler, [options], [callback])
 
