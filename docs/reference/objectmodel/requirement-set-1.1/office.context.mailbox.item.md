@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.1
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/27/2019
 localization_priority: Normal
 ---
 
@@ -959,7 +959,7 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](#remo
 |`uri`| String||The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.|
 |`attachmentName`| String||The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.|
 
 ##### Errors
@@ -1020,7 +1020,7 @@ If your Office Add-in is running in Outlook on the web, the `addItemAttachmentAs
 |`itemId`| String||The Exchange identifier of the item to attach. The maximum length is 100 characters.|
 |`attachmentName`| String||The subject of the item to be attached. The maximum length is 255 characters.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.|
 
 ##### Errors
@@ -1085,8 +1085,8 @@ If any of the string parameters exceed their limits, `displayReplyAllForm` throw
 |Name| Type| Description|
 |---|---|---|
 |`formData`| String &#124; Object| |A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
-| `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
-| `callback` | function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. |
+| - `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
+|`callback`| function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. |
 
 ##### Requirements
 
@@ -1157,8 +1157,8 @@ If any of the string parameters exceed their limits, `displayReplyForm` throws a
 |Name| Type| Description|
 |---|---|---|
 |`formData`| String &#124; Object| | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
-| `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
-| `callback` | function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. |
+| - `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
+|`callback`| function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. |
 
 ##### Requirements
 
@@ -1514,7 +1514,7 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 |---|---|---|---|
 |`attachmentId`| String||The identifier of the attachment to remove.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
-|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|- `options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.|
 
 ##### Errors
