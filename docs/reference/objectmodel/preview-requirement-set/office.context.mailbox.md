@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
 ---
 
@@ -24,7 +24,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 | Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|---|---|
 | [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | String | 1.0 |
-| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | [MasterCategories](/javascript/api/outlook/office.mastercategories) | Preview |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | [MasterCategories](/javascript/api/outlook/office.mastercategories) | 1.8 |
 | [restUrl](#resturl-string) | ReadItem | Compose<br>Read | String | 1.5 |
 
 ##### Methods
