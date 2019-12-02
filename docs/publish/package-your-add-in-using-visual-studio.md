@@ -1,7 +1,7 @@
 ---
 title: Publish your add-in using Visual Studio
 description: How to deploy your web project and package your add-in by using Visual Studio 2019.
-ms.date: 11/27/2019
+ms.date: 12/02/2019
 localization_priority: Priority
 ---
 

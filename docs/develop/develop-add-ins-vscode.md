@@ -1,13 +1,13 @@
 ---
 title: Develop Office Add-ins with Visual Studio Code
-description: Develop Office Add-ins with Visual Studio Code
-ms.date: 11/27/2019
+description: How to develop Office Add-ins with Visual Studio Code
+ms.date: 12/02/2019
 localization_priority: Priority
 ---
 
 # Develop Office Add-ins with Visual Studio Code
 
-This article describes how to use [Visual Studio Code (VS Code)](https://code.visualstudio.com) to develop an Office Add-in. 
+This article describes how to use [Visual Studio Code (VS Code)](https://code.visualstudio.com) to develop an Office Add-in.
 
 > [!NOTE]
 > For information about using Visual Studio to create an Office Add-in, see [Create and debug Office Add-ins in Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md).
@@ -31,7 +31,7 @@ When the Yeoman generator finishes creating the add-in project, open the root fo
 > [!TIP]
 > On Windows, you can navigate to the root directory of the project via the command line and then enter `code .` to open that folder in VS Code. On Mac, you'll need to [add the `code` command to the path](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) before you can use that command to open the project folder in VS Code.
 
-The Yeoman generator creates a basic add-in with limited functionality. You can customize the add-in by editing the [manifest](add-in-manifests.md), HTML, JavaScript or TypeScript, and CSS files in VS Code. For a high-level description of the project structure and files in the add-in project that the Yeoman generator creates, see the the Yeoman generator guidance within the [5-minute quick start](../index.md) that corresponds to the type of add-in you've created.
+The Yeoman generator creates a basic add-in with limited functionality. You can customize the add-in by editing the [manifest](add-in-manifests.md), HTML, JavaScript or TypeScript, and CSS files in VS Code. For a high-level description of the project structure and files in the add-in project that the Yeoman generator creates, see the Yeoman generator guidance within the [5-minute quick start](../index.md) that corresponds to the type of add-in you've created.
 
 ## Test and debug the add-in
 

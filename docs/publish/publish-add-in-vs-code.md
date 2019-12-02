@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in developed with Visual Studio Code
-description: Publish an add-in developed with Visual Studio Code
-ms.date: 11/27/2019
+description: How to publish an add-in developed with Visual Studio Code
+ms.date: 12/02/2019
 localization_priority: Priority
 ---
 
