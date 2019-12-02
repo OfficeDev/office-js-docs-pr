@@ -1,7 +1,7 @@
 ---
 title: Group element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 12/02/2019
 localization_priority: Normal
 ---
 
@@ -30,7 +30,7 @@ Required. Unique identifier for the group. It is a string with a maximum of 125 
 Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
 
 ### Control
-A group requires at least one control.
+A group requires at least one control. For details about the types of controls that are supported, see the [Control](control.md) element.
 
 ```xml
 <Group id="msgreadCustomTab.grp1">
