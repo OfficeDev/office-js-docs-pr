@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
 ---
 
@@ -27,7 +27,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [bcc](#bcc-recipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.1 |
 | [body](#body-body) | ReadItem | Compose | [Body](/javascript/api/outlook/office.body) | 1.1 |
 | | | Read | | |
-| [categories](#categories-categories) | ReadItem | Compose | [Categories](/javascript/api/outlook/office.categories) | Preview |
+| [categories](#categories-categories) | ReadItem | Compose | [Categories](/javascript/api/outlook/office.categories) | 1.8 |
 | | | Read | | |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
 | | | Message Read | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
@@ -38,11 +38,11 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [end](#end-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
 | | | Appointment Attendee | Date | |
 | | | Message Read<br>(Meeting Request) | Date | |
-| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Appointment Organizer | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Preview |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Appointment Organizer | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | 1.8 |
 | | | Appointment Attendee | | |
 | [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Message Compose | [From](/javascript/api/outlook/office.from) | 1.7 |
 | | ReadItem | Message Read | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Message Compose | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Preview |
+| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Message Compose | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | 1.8 |
 | [internetMessageId](#internetmessageid-string) | ReadItem | Message Read | String | 1.0 |
 | [itemClass](#itemclass-string) | ReadItem | Read | String | 1.0 |
 | [itemId](#nullable-itemid-string) | ReadItem | Read | String | 1.0 |
@@ -79,26 +79,26 @@ The `item` namespace is used to access the currently selected message, meeting r
 | Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
 |---|---|---|---|
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | Compose | 1.1 |
-| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Compose | Preview |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Compose | 1.8 |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.7 |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | Compose | 1.1 |
 | [close](#close) | Restricted | Compose | 1.3 |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Read | 1.0 |
 | [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Read | 1.0 |
 | [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | Message Read | 1.8 |
-| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Compose<br>Read | Preview |
-| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Compose | Preview |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Compose<br>Read | 1.8 |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Compose | 1.8 |
 | [getEntities](#getentities--entities) | ReadItem | Read | 1.0 |
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restricted | Read | 1.0 |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | Read | 1.0 |
 | [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | Read | Preview |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Compose | Preview |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Compose | 1.8 |
 | [getRegExMatches](#getregexmatches--object) | ReadItem | Read | 1.0 |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | Read | 1.0 |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | Compose | 1.2 |
 | [getSelectedEntities](#getselectedentities--entities) | ReadItem | Read | 1.6 |
 | [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | Read | 1.6 |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Compose<br>Read | Preview |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Compose<br>Read | 1.8 |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.0 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | Compose | 1.1 |
 | [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Compose<br>Read | 1.7 |
@@ -112,8 +112,8 @@ You can subscribe to and unsubscribe from the following events using [addHandler
 | Event | Description | Minimum<br>requirement set |
 |---|---|---|
 |`AppointmentTimeChanged`| The date or time of the selected appointment or series has changed. | 1.7 |
-|`AttachmentsChanged`| An attachment has been added to or removed from the item. | Preview |
-|`EnhancedLocationsChanged`| The location of the selected appointment has changed. | Preview |
+|`AttachmentsChanged`| An attachment has been added to or removed from the item. | 1.8 |
+|`EnhancedLocationsChanged`| The location of the selected appointment has changed. | 1.8 |
 |`RecipientsChanged`| The recipient list of the selected item or appointment location has changed. | 1.7 |
 |`RecurrenceChanged`| The recurrence pattern of the selected series has changed. | 1.7 |
 
