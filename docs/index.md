@@ -1,13 +1,12 @@
 ---
-layout: HubPage
-hide_bc: true
+layout: LandingPage
+ms.topic: landing-page
 title: Office Add-ins documentation
 description: Learn how to build Office Add-ins.
-ms.topic: landing-page
 author: o365devx
+ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 11/15/2019
-ms.author: o365devx
 localization_priority: Normal
 ---
 
