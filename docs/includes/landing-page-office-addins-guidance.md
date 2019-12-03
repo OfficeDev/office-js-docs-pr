@@ -11,7 +11,7 @@
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get started with Office Add-ins</h3>
+                        <h3>Fundamental concepts</h3>
                         <p>Learn fundamental concepts about Office Add-ins.</p>
                         <br/>
                         <ul>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Develop Office Add-ins</h3>
+                        <h3>Advanced concepts</h3>
                         <p>Explore key aspects of Office Add-ins development.</p>
                         <br/>
                         <ul>
