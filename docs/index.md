@@ -84,7 +84,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         <h3>Script Lab</h3>
                         <p>Learn about Office JavaScript APIs for Excel, Word, or PowerPoint by trying them out in Script Lab.</p>
                         <br/>
-                        <ul style="list-style: none">
+                        <ul style="list-style: none!important;">
                             <li><a class="barLink" style="font-size: 1rem;" href="overview/explore-with-script-lab.md">Script Lab</a></li>
                         </ul>
                     </div>
