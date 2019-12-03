@@ -23,7 +23,7 @@ Required. Unique identifier for the group. It is a string with a maximum of 125 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [Label](#label)      | Yes |  The label for the CustomTab or a group.  |
-|  [Icon](icon.md)      | Yes |  An image for the group.  |
+|  [Icon](icon.md)      | Yes |  An image for a group.  |
 |  [Control](#control)    | Yes |  Collection of one or more Control objects.  |
 
 ### Label 
