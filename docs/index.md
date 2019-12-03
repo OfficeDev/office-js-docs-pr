@@ -59,7 +59,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         <h3>Tutorials</h3>
                         <p>Complete a tutorial to learn more about the capabilities of an add-in.</p>
                         <br/>
-                        <ul class="noBullet">
+                        <ul style="list-style-type: none!important;">
                             <li><a class="barLink" style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
                             <li><a class="barLink" style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
                             <li><a class="barLink" style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
