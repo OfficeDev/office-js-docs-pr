@@ -16,7 +16,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 
 <h2>Get started</h2>
 
-<p>New to building Office Add-ins? [Learn about the Office Add-ins platform](overview/office-add-ins.md) and then review [Building Office Add-ins](overview/office-add-ins-fundamentals.md) for an introduction to developing Office Add-ins.</p>
+<p>New to building Office Add-ins? <a href="overview/office-add-ins.md">Learn about the Office Add-ins platform</a> and review <a href="overview/office-add-ins-fundamentals.md">Building Office Add-ins</a> for an introduction to developing Office Add-ins.</p>
 
 <p>Use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
 
