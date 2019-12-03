@@ -3,10 +3,10 @@ layout: HubPage
 hide_bc: true
 title: Office Add-ins documentation
 description: Learn how to build Office Add-ins.
-ms.topic: hub-page
+ms.topic: landing-page
 author: o365devx
 ms.prod: non-product-specific
-ms.date: 07/05/2019
+ms.date: 11/15/2019
 ms.author: o365devx
 localization_priority: Normal
 ---
