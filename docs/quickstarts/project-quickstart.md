@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: 
-ms.date: 09/18/2019
+ms.date: 11/15/2019
 ms.prod: project
 localization_priority: Priority
 ---
@@ -118,3 +118,8 @@ Congratulations, you've successfully created a Project task pane add-in! Next, l
 > [!div class="nextstepaction"]
 > [Project add-ins](../project/project-add-ins.md)
 
+## See also
+
+- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Common guidance for Office Add-ins](../overview/common-guidance.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
