@@ -988,3 +988,7 @@
     - name: Use search options to find text in your Word add-in 
       href: word/search-option-guidance.md
       displayName: Word
+
+- name: Reference
+  href: reference/index.md
+  displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
