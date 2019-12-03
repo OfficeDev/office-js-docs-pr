@@ -18,7 +18,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index/logo-excel.svg" alt="Excel API reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -35,7 +35,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index/logo-outlook.svg" alt="Outlook API reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -52,7 +52,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index/logo-excel.svg" alt="Word API reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -69,7 +69,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index/logo-powerpoint.svg" alt="PowerPoint API reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -86,7 +86,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index/logo-onenote.svg" alt="OneNote API reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -103,7 +103,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index/logo-project-server.svg" alt="Project API reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
