@@ -18,8 +18,10 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 
 <p>New to building Office Add-ins? Use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
 
-<ul class="cardsK cols cols3">
+<ul class="cardsK panelContent cols cols3">
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
@@ -41,8 +43,12 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
     </li>
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
@@ -62,8 +68,12 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
     </li>
     <li>
+        <div class="cardSize">
+            <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
@@ -79,6 +89,8 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
     </li>
 </ul>
 
@@ -184,7 +196,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 ---
 
 <h2>Resources</h2>
-<ul class="cardsF cols cols4" style="display:flex!important;">
+<ul class="panelContent cardsF cols cols4" style="display:flex!important;">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
