@@ -159,7 +159,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="reference/manifest/allowsnapshot">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
                     </div>
                 </div>
             </div>
