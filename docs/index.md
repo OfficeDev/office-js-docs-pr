@@ -20,8 +20,6 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 
 <ul class="cardsK cols cols3">
     <li>
-        <div class="cardSize">
-            <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
@@ -43,12 +41,8 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
     </li>
     <li>
-        <div class="cardSize">
-            <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
@@ -68,12 +62,8 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
     </li>
     <li>
-        <div class="cardSize">
-            <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
@@ -89,8 +79,6 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
     </li>
 </ul>
 
