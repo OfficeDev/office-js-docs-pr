@@ -11,18 +11,13 @@
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Office Add-ins concepts</h3>
+                        <h3>Get started with Office Add-ins</h3>
                         <p>Learn fundamental concepts about Office Add-ins.</p>
                         <br/>
                         <ul>
                             <li><a href="../overview/office-add-ins.md">Office Add-ins platform overview</a></li>
                             <li><a href="../overview/office-add-ins-fundamentals.md">Building Office Add-ins</a></li>
-                            <li><a href="../concepts/add-in-development-best-practices.md">Best practices for developing Office Add-ins</a></li>
                             <li><a href="../overview/explore-with-script-lab.md">Explore Office JavaScript API using Script Lab</a></li>
-                            <li><a href="../concepts/requirements-for-running-office-add-ins.md">Requirements for running Office Add-ins</a></li>
-                            <li><a href="../concepts/browsers-used-by-office-web-add-ins.md">Browsers used by Office Add-ins</a></li>
-                            <li><a href="../develop/install-latest-office-version.md">Install the latest version of Office</a></li>
-                            <li><a href="../overview/common-guidance.md">Explore all Office Add-in concepts<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,18 +34,13 @@
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Office Add-ins development</h3>
+                        <h3>Develop Office Add-ins</h3>
                         <p>Explore key aspects of Office Add-ins development.</p>
                         <br/>
                         <ul>
+                            <li><a href="../overview/common-guidance.md">Common guidance for Office Add-ins</a></li>
                             <li><a href="../design/add-in-design.md">Design Office Add-ins</a></li>
-                            <li><a href="../develop/develop-overview.md">Develop Office Add-ins</a></li>
-                            <li><a href="../overview/office-add-in-availability.md">Office Add-in host and platform availability</a></li>
-                            <li><a href="../develop/understanding-the-javascript-api-for-office.md">Understanding the Office JavaScript API</a></li>
-                            <li><a href="../develop/add-in-manifests.md">Office Add-ins XML manifest</a></li>
-                            <li><a href="../testing/test-debug-office-add-ins.md">Test and debug Office Add-ins</a></li>
-                            <li><a href="../publish/publish.md">Deploy and publish Office Add-ins</a></li>
-                            <li><a href="../develop/develop-overview.md">Explore all Office Add-in development topics<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span></a></li>
+                            <li><a href="../develop/develop-overview.md">Develop Office Add-ins</a></li>                            
                         </ul>
                     </div>
                 </div>
