@@ -32,14 +32,14 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         <h3>5-minute Quick Starts</h3>
                         <p>Build your first Office Add-in in under 5 minutes!</p>
                         <br/>
-                        <ul class="noBullet">
-                            <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word add-in quick start</a></li>
+                        <ul>
+                            <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
+                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word add-in quick start</a></li>
                         </ul>
                     </div>
                 </div>
@@ -59,12 +59,12 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         <h3>Tutorials</h3>
                         <p>Complete a tutorial to learn more about the capabilities of an add-in.</p>
                         <br/>
-                        <ul style="list-style-type: none!important;">
-                            <li><a class="barLink" style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
-                            <li><a class="barLink" style="font-size: 1rem;" href="tutorials/word-tutorial.md">Word add-in tutorial </a></li>
+                        <ul>
+                            <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
+                            <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
+                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
+                            <li><a style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
+                            <li><a style="font-size: 1rem;" href="tutorials/word-tutorial.md">Word add-in tutorial </a></li>
                         </ul>
                     </div>
                 </div>
@@ -85,7 +85,8 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         <p>Learn about Office JavaScript APIs for Excel, Word, or PowerPoint by trying them out in Script Lab.</p>
                         <br/>
                         <ul style="list-style: none!important;">
-                            <li><a class="barLink" style="font-size: 1rem;" href="overview/explore-with-script-lab.md">Script Lab</a></li>
+                        
+                            <li><a style="font-size: 1rem;" href="overview/explore-with-script-lab.md">Script Lab</a></li>
                         </ul>
                     </div>
                 </div>
