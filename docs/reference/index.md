@@ -59,7 +59,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -171,7 +171,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -227,7 +227,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -283,7 +283,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -322,7 +322,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
