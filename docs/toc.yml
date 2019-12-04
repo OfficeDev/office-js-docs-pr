@@ -52,11 +52,8 @@
       href: develop/install-latest-office-version.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-  - name: UX and UI design
+  - name: UI and UX design
     items:
-    - name: UX design in Office Add-ins
-      href: design/add-in-design.md
-      displayName: design, user interface, UI
     - name: Extend the Office UI
       items:
       - name: Office UI elements for Office Add-ins
@@ -75,6 +72,22 @@
         href: design/office-ui-fabric.md
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
+    - name: UX design
+      items:
+      - name: UX design in Office Add-ins
+        href: design/add-in-design.md
+      - name: UX design patterns
+        href: design/ux-design-pattern-templates.md
+      - name: Design toolkits
+        href: design/design-toolkits.md
+      - name: Authentication
+        href: design/authentication-patterns.md
+      - name: Branding
+        href: design/branding-patterns.md
+      - name: First run experience
+        href: design/first-run-experience-patterns.md
+      - name: Navigation
+        href: design/navigation-patterns.md
     - name: Guidelines
       items:
       - name: Accessibility
@@ -97,20 +110,6 @@
           href: design/using-motion-office-addins.md
         - name: Typography
           href: design/add-in-typography.md
-    - name: UX design patterns
-      items:
-      - name: Overview
-        href: design/ux-design-pattern-templates.md
-      - name: Design toolkits
-        href: design/design-toolkits.md
-      - name: Authentication
-        href: design/authentication-patterns.md
-      - name: Branding
-        href: design/branding-patterns.md
-      - name: First run experience
-        href: design/first-run-experience-patterns.md
-      - name: Navigation
-        href: design/navigation-patterns.md
 
   - name: Develop
     items:
