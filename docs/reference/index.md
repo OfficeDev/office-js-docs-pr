@@ -59,7 +59,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements of the Office Add-in's XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -171,7 +171,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -227,7 +227,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -283,7 +283,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -322,7 +322,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
+                        <p><a href="manifest/allowsnapshot.md">Elements in the XML manifest file.</a></p>
                     </div>
                 </div>
             </div>
@@ -339,46 +339,12 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/Visio_128x128.png" alt="reference docs" />
+                            <img src="../images/index/Visio_256x256.png" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Visio API reference</h3>
                         <p><a href="/javascript/api/visio">JavaScript APIs for embedding Visio diagrams in SharePoint Online.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Learn about the structure and contents of the Office Add-ins manifest XML file.</a></p>
                     </div>
                 </div>
             </div>
