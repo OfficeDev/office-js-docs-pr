@@ -74,20 +74,22 @@
         href: design/using-office-ui-fabric-react.md
     - name: UX design
       items:
-      - name: UX design in Office Add-ins
+      - name: UX design for Office Add-ins
         href: design/add-in-design.md
-      - name: UX design patterns
-        href: design/ux-design-pattern-templates.md
+      - name: Design patterns
+        items:
+        - name: Overview
+          href: design/ux-design-pattern-templates.md
+        - name: Authentication
+          href: design/authentication-patterns.md
+        - name: Branding
+          href: design/branding-patterns.md
+        - name: First run experience
+          href: design/first-run-experience-patterns.md
+        - name: Navigation
+          href: design/navigation-patterns.md
       - name: Design toolkits
         href: design/design-toolkits.md
-      - name: Authentication
-        href: design/authentication-patterns.md
-      - name: Branding
-        href: design/branding-patterns.md
-      - name: First run experience
-        href: design/first-run-experience-patterns.md
-      - name: Navigation
-        href: design/navigation-patterns.md
     - name: Guidelines
       items:
       - name: Accessibility
