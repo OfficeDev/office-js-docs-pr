@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 11/06/2019
+ms.date: 12/02/2019
 localization_priority: Normal
 ---
 
@@ -9,7 +9,7 @@ localization_priority: Normal
 
 ### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtype) property.
+The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-mailboxenumsitemtype) property.
 
 ##### Requirements
 
@@ -19,64 +19,103 @@ The `item` namespace is used to access the currently selected message, meeting r
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
-##### Members and methods
+##### Properties
 
-| Member | Type |
-|--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | Member |
-| [bcc](#bcc-recipients) | Member |
-| [body](#body-body) | Member |
-| [categories](#categories-categories) | Member |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
-| [conversationId](#nullable-conversationid-string) | Member |
-| [dateTimeCreated](#datetimecreated-date) | Member |
-| [dateTimeModified](#datetimemodified-date) | Member |
-| [end](#end-datetime) | Member |
-| [enhancedLocation](#enhancedlocation-enhancedlocation) | Member |
-| [from](#from-emailaddressdetailsfrom) | Member |
-| [internetHeaders](#internetheaders-internetheaders) | Member |
-| [internetMessageId](#internetmessageid-string) | Member |
-| [itemClass](#itemclass-string) | Member |
-| [itemId](#nullable-itemid-string) | Member |
-| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
-| [location](#location-stringlocation) | Member |
-| [normalizedSubject](#normalizedsubject-string) | Member |
-| [notificationMessages](#notificationmessages-notificationmessages) | Member |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
-| [organizer](#organizer-emailaddressdetailsorganizer) | Member |
-| [recurrence](#nullable-recurrence-recurrence) | Member |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
-| [sender](#sender-emailaddressdetails) | Member |
-| [seriesId](#nullable-seriesid-string) | Member |
-| [start](#start-datetime) | Member |
-| [subject](#subject-stringsubject) | Member |
-| [to](#to-arrayemailaddressdetailsrecipients) | Member |
-| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Method |
-| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | Method |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
-| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Method |
-| [close](#close) | Method |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
-| [displayReplyForm](#displayreplyformformdata-callback) | Method |
-| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | Method |
-| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | Method |
-| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | Method |
-| [getEntities](#getentities--entities) | Method |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
-| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Method |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | Method |
-| [getRegExMatches](#getregexmatches--object) | Method |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
-| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
-| [getSelectedEntities](#getselectedentities--entities) | Method |
-| [getSelectedRegExMatches](#getselectedregexmatches--object) | Method |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Method |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
-| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Method |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Method |
-| [saveAsync](#saveasyncoptions-callback) | Method |
-| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Method |
+| Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|---|---|
+| [attachments](#attachments-arrayattachmentdetails) | ReadItem | Read | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
+| [bcc](#bcc-recipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.1 |
+| [body](#body-body) | ReadItem | Compose | [Body](/javascript/api/outlook/office.body) | 1.1 |
+| | | Read | | |
+| [categories](#categories-categories) | ReadItem | Compose | [Categories](/javascript/api/outlook/office.categories) | 1.8 |
+| | | Read | | |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Message Read | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+| [conversationId](#nullable-conversationid-string) | ReadItem | Message Compose | String | 1.0 |
+| | | Message Read | | |
+| [dateTimeCreated](#datetimecreated-date) | ReadItem | Read | Date | 1.0 |
+| [dateTimeModified](#datetimemodified-date) | ReadItem | Read | Date | 1.0 |
+| [end](#end-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
+| | | Appointment Attendee | Date | |
+| | | Message Read<br>(Meeting Request) | Date | |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Appointment Organizer | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | 1.8 |
+| | | Appointment Attendee | | |
+| [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Message Compose | [From](/javascript/api/outlook/office.from) | 1.7 |
+| | ReadItem | Message Read | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Message Compose | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | 1.8 |
+| [internetMessageId](#internetmessageid-string) | ReadItem | Message Read | String | 1.0 |
+| [itemClass](#itemclass-string) | ReadItem | Read | String | 1.0 |
+| [itemId](#nullable-itemid-string) | ReadItem | Read | String | 1.0 |
+| [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | Compose | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | 1.0 |
+| | | Read | | |
+| [location](#location-stringlocation) | ReadItem | Appointment Organizer | [Location](/javascript/api/outlook/office.location) | 1.0 |
+| | | Appointment Attendee | String | |
+| | | Message Read<br>(Meeting Request) | String | |
+| [normalizedSubject](#normalizedsubject-string) | ReadItem | Read | String | 1.0 |
+| [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | Message Compose | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
+| | ReadItem | Message Read | | |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Appointment Attendee | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+| [organizer](#organizer-emailaddressdetailsorganizer) | ReadWriteItem | Appointment Organizer | [Organizer](/javascript/api/outlook/office.organizer) | 1.7 |
+| | ReadItem | Appointment Attendee | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [recurrence](#nullable-recurrence-recurrence) | ReadItem | Appointment Organizer | [Recurrence](/javascript/api/outlook/office.recurrence) | 1.7 |
+| | | Appointment Attendee | | |
+| | | Message Read<br>(Meeting Request) | | |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Appointment Attendee | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+| [sender](#sender-emailaddressdetails) | ReadItem | Message Read | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [seriesId](#nullable-seriesid-string) | ReadItem | Compose | String | 1.7 |
+| | | Read | | |
+| [start](#start-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
+| | | Appointment Attendee | Date | |
+| | | Message Read<br>(Meeting Request) | Date | |
+| [subject](#subject-stringsubject) | ReadItem | Compose | [Subject](/javascript/api/outlook/office.subject) | 1.0 |
+| | | Read | String | |
+| [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Message Read | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+
+##### Methods
+
+| Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
+|---|---|---|---|
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | Compose | 1.1 |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Compose | 1.8 |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.7 |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | Compose | 1.1 |
+| [close](#close) | Restricted | Compose | 1.3 |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Read | 1.0 |
+| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Read | 1.0 |
+| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | Message Read | 1.8 |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Compose<br>Read | 1.8 |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Compose | 1.8 |
+| [getEntities](#getentities--entities) | ReadItem | Read | 1.0 |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restricted | Read | 1.0 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | Read | 1.0 |
+| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | Read | Preview |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Compose | 1.8 |
+| [getRegExMatches](#getregexmatches--object) | ReadItem | Read | 1.0 |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | Read | 1.0 |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | Compose | 1.2 |
+| [getSelectedEntities](#getselectedentities--entities) | ReadItem | Read | 1.6 |
+| [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | Read | 1.6 |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Compose<br>Read | 1.8 |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.0 |
+| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | Compose | 1.1 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Compose<br>Read | 1.7 |
+| [saveAsync](#saveasyncoptions-callback) | ReadWriteItem | Compose | 1.3 |
+| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | ReadWriteItem | Compose | 1.2 |
+
+##### Events
+
+You can subscribe to and unsubscribe from the following events using [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) and [removeHandlerAsync](#removehandlerasynceventtype-options-callback) respectively.
+
+| Event | Description | Minimum<br>requirement set |
+|---|---|---|
+|`AppointmentTimeChanged`| The date or time of the selected appointment or series has changed. | 1.7 |
+|`AttachmentsChanged`| An attachment has been added to or removed from the item. | 1.8 |
+|`EnhancedLocationsChanged`| The location of the selected appointment has changed. | 1.8 |
+|`RecipientsChanged`| The recipient list of the selected item or appointment location has changed. | 1.7 |
+|`RecurrenceChanged`| The recurrence pattern of the selected series has changed. | 1.7 |
 
 ### Example
 
@@ -96,7 +135,7 @@ Office.initialize = function () {
 };
 ```
 
-### Members
+## Property details
 
 #### attachments: Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
@@ -690,7 +729,7 @@ if (itemId === null || itemId == undefined) {
 ---
 ---
 
-#### itemType: [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
+#### itemType: [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
 
 Gets the type of item that an instance represents.
 
@@ -698,7 +737,7 @@ The `itemType` property returns one of the `ItemType` enumeration values, indica
 
 ##### Type
 
-*   [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
+*   [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
 
 ##### Requirements
 
@@ -1248,7 +1287,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
-### Methods
+## Method details
 
 #### addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
@@ -2301,9 +2340,6 @@ Asynchronously returns selected data from the subject or body of a message.
 
 If there is no selection but the cursor is in the body or subject, the method returns an empty string for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.
 
-> [!NOTE]
-> In Outlook on the web, the method returns the string "null" if no text is selected but the cursor is in the body. To check for this situation, see the example later in this section.
-
 ##### Parameters
 
 |Name|Type|Attributes|Description|
@@ -2339,12 +2375,6 @@ Office.initialize = function () {
 function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
-
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
 
   console.log("Selected text in " + prop + ": " + text);
 }
