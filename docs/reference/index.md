@@ -339,7 +339,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/Visio_64x64.svg" alt="reference docs" />
+                            <img src="../images/index/Visio_128x128.png" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
