@@ -52,7 +52,7 @@
       href: develop/install-latest-office-version.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-  - name: UI and UX design
+  - name: UI and UX
     items:
     - name: Extend the Office UI
       items:
