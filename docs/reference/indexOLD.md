@@ -122,7 +122,7 @@ localization_priority: Priority
 
 \TODO: Intro sentence here.\
 
-<ul>
+<ul class="panelContent cardsF cols cols1">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
