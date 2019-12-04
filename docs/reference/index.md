@@ -9,9 +9,9 @@ localization_priority: Priority
 
 # Reference documentation
 
-\TODO: Intro sentence here.\
+<h2>API reference</h2>
 
-<h2>Excel</h2>
+\TODO: Intro sentence here.\
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -37,45 +37,6 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-<h2>Outlook</h2>
-
-<ul class="panelContent cardsF cols cols3">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
                             <img src="../images/index/logo-outlook.svg" alt="Outlook API reference docs" />
                         </div>
                     </div>
@@ -87,45 +48,6 @@ localization_priority: Priority
             </div>
         </div>
     </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements of the Office Add-in's XML manifest file.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-<h2>Word</h2>
-
-<ul class="panelContent cardsF cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -149,45 +71,6 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-<h2>PowerPoint</h2>
-
-<ul class="panelContent cardsF cols cols3">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
                             <img src="../images/index/logo-powerpoint.svg" alt="PowerPoint API reference docs" />
                         </div>
                     </div>
@@ -199,45 +82,6 @@ localization_priority: Priority
             </div>
         </div>
     </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-<h2>OneNote</h2>
-
-<ul class="panelContent cardsF cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -272,6 +116,13 @@ localization_priority: Priority
             </div>
         </div>
     </li>
+</ul>
+
+<h2>Manifest reference</h2>
+
+\TODO: Intro sentence here.\
+
+<ul class="panelContent cardsF cols cols1">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -284,84 +135,6 @@ localization_priority: Priority
                     <div class="cardText">
                         <h3>Office Add-in manifest reference</h3>
                         <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-<h2>Project</h2>
-
-<ul class="panelContent cardsF cols cols3">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Office Add-in manifest reference</h3>
-                        <p><a href="manifest/allowsnapshot.md">Elements of the XML manifest file.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-<h2>Visio</h2>
-
-<ul class="panelContent cardsF cols cols3">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Visio API reference</h3>
-                        <p><a href="/javascript/api/visio">JavaScript APIs for embedding Visio diagrams in SharePoint Online.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
                     </div>
                 </div>
             </div>
