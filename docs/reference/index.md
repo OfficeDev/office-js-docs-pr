@@ -2,7 +2,7 @@
 layout: LandingPage
 ms.topic: landing-page
 title: Office Add-ins reference documentation
-description: Links to the Office JavaScript API and manifest reference documentation.
+description: Office JavaScript API and manifest reference documentation.
 ms.date: 11/15/2019
 localization_priority: Priority
 ---
@@ -117,6 +117,8 @@ localization_priority: Priority
         </div>
     </li>
 </ul>
+
+<b>Note</b>: <a href="../overview/project-add-ins-reference-overview.md">Project</a> supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the Common API to create Project add-ins.
 
 <h2>Manifest reference</h2>
 

@@ -270,9 +270,9 @@
 
   - name: Reference
     items:
-    - name: JavaScript API for Office overview
+    - name: API Reference documentation
       href: reference/javascript-api-for-office.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     - name: API requirement sets (Common)
       items:
       - name: Add-in commands requirement sets
@@ -446,7 +446,11 @@
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
 
-- name: Excel add-ins
+  - name: Resources
+    href: resources/resources-links-help.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+
+- name: Excel
   items: 
   - name: Excel add-ins documentation
     href: excel/index.md
@@ -646,7 +650,7 @@
       href: excel/custom-functions-web-reqs.md
       displayName: Excel, Custom Functions
 
-- name: OneNote add-ins
+- name: OneNote
   items:
   - name: OneNote add-ins documentation
     href: onenote/index.md
@@ -672,7 +676,7 @@
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
 
-- name: Outlook add-ins
+- name: Outlook
   items:
   - name: Outlook add-ins documentation
     href: outlook/index.md
@@ -865,7 +869,7 @@
         - name: Outlook 1.1 API Reference
           href: reference/outlook-api-reference-1-1.md
 
-- name: PowerPoint add-ins
+- name: PowerPoint
   items:
   - name: PowerPoint add-ins documentation
     href: powerpoint/index.md
@@ -897,7 +901,7 @@
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
   
-- name: Project add-ins
+- name: Project
   items:
   - name: Project add-ins documentation
     href: project/index.md
@@ -920,7 +924,7 @@
       href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
       displayName: Project
 
-- name: Visio add-ins
+- name: Visio
   items:
   - name: Visio add-ins documentation
     href: visio/index.md
@@ -932,7 +936,7 @@
     href: reference/visio-api-reference.md
     displayName: Visio
 
-- name: Word add-ins
+- name: Word
   items:
   - name: Word add-ins documentation
     href: word/index.md
@@ -992,11 +996,3 @@
     - name: Use search options to find text in your Word add-in 
       href: word/search-option-guidance.md
       displayName: Word
-
-- name: Reference
-  href: reference/index.md
-  displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
-
-- name: Resources
-  href: resources/resources-links-help.md
-  displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook

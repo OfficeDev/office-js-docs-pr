@@ -1,40 +1,132 @@
 ---
-title: JavaScript API for Office
-description: ''
-ms.date: 05/13/2019
+layout: LandingPage
+ms.topic: landing-page
+title: Office JavaScript API reference documentation
+description: Learn about the Office JavaScript APIs.s
+ms.date: 11/15/2019
 localization_priority: Priority
 ---
 
-# JavaScript API for Office
+# API Reference documentation
 
-The JavaScript API for Office enables you to create web applications that interact with the object models in Office host applications. Your application will reference the office.js library, which is a script loader. The office.js library loads the object models that are applicable to the Office application that is running the add-in. You can use the following JavaScript object models:
+The Office JavaScript API enables you to create web applications that interact with the object models in Office host applications. 
 
-- **Common APIs** - APIs that were introduced with **Office 2013**. This is loaded for **all Office host applications** and connects your add-in application with the Office client application. The object model contains APIs that are specific to Office clients, and APIs that are applicable to multiple Office client host applications. All of this content is under **Common API**. This object model uses callbacks. 
+<ul>
+    <li>**Host-specific** APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application.</li>
+    <li>**Common APIs** can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</li>
+</ul>
 
-  **Outlook** also uses the Common API syntax. Everything under the alias Office contains objects you can use to write scripts that interact with content in Office documents, worksheets, presentations, mail items, and projects from your Office Add-ins. You must use these Common APIs if your add-in will target Office 2013 and later. This object model uses callbacks.
+You should use host-specific APIs whenever feasible, and use Common APIs only for scenarios that aren't supported by host-specific APIs. For more detailed information about these two API models, see the <a href="../overview/office-add-ins-fundamentals.md#api-models">Building Office Add-ins</a>.
 
-- **Host-specific APIs** - APIs that were introduced with **Office 2016**. This object model provides host-specific strongly-typed objects that correspond to familiar objects that you see when you use Office clients, and represents the future of Office JavaScript APIs. Host-specific JavaScript APIs are currently available for Excel, OneNote, PowerPoint, and Word.
+<h2>JavaScript API reference</h2>
 
-## Supported host applications
+<ul class="panelContent cardsF cols cols3">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/logo-excel.svg" alt="Excel API reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Excel API reference</h3>
+                        <p><a href="/javascript/api/excel">JavaScript APIs for building Excel add-ins.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/logo-outlook.svg" alt="Outlook API reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Outlook API reference</h3>
+                        <p><a href="/javascript/api/outlook">JavaScript APIs for building Outlook add-ins.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/logo-word.svg" alt="Word API reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Word API reference</h3>
+                        <p><a href="/javascript/api/word">JavaScript APIs for building Word add-ins.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/logo-powerpoint.svg" alt="PowerPoint API reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>PowerPoint API reference</h3>
+                        <p><a href="/javascript/api/powerpoint">JavaScript APIs for building PowerPoint add-ins.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/logo-onenote.svg" alt="OneNote API reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>OneNote API reference</h3>
+                        <p><a href="/javascript/api/onenote">JavaScript APIs for building OneNote add-ins.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Common API reference</h3>
+                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
 
-- [Excel](overview/excel-add-ins-reference-overview.md)
-- [OneNote](overview/onenote-add-ins-javascript-reference.md)
-- [Outlook](requirement-sets/outlook-api-requirement-sets.md)
-- [PowerPoint](overview/powerpoint-add-ins-reference-overview.md)
-- [Project](overview/project-add-ins-reference-overview.md)
-- [Visio](overview/visio-javascript-reference-overview.md)
-- [Word](overview/word-add-ins-reference-overview.md)
-- [Common API](requirement-sets/office-add-in-requirement-sets.md)
+<b>Note</b>: <a href="../overview/project-add-ins-reference-overview.md">Project</a> supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the Common API to create Project add-ins.
 
-> [!NOTE] 
-> [Project](overview/project-add-ins-reference-overview.md) supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the Common API to create Project add-ins.
-
-Learn more about [supported hosts and other requirements](../concepts/requirements-for-running-office-add-ins.md).
-
-## Open API specifications
+<h2>Open API specifications</h2>
 
 As we design and develop new APIs for Office Add-ins, we'll make them available for your feedback on our [Open API specifications](openspec/openspec.md) page. Find out what new features are in the pipeline, and provide your input on our design specifications.
-
-## See also
-
-- [Office JavaScript API reference](/javascript/api/overview/office)
