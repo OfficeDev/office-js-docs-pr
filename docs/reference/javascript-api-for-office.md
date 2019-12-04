@@ -7,13 +7,13 @@ ms.date: 11/15/2019
 localization_priority: Priority
 ---
 
-# API Reference documentation
+# API reference documentation
 
 An add-in can use the Office JavaScript APIs to interact with objects in Office host applications. 
 
 <ul>
     <li><b>Host-specific</b> APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application.</li>
-    <li><b>Common APIs</b> can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</li>
+    <li><b>Common</b> APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</li>
 </ul>
 
 You should use host-specific APIs whenever feasible, and use Common APIs only for scenarios that aren't supported by host-specific APIs. For more detailed information about these two API models, see the <a href="../overview/office-add-ins-fundamentals.md#api-models">Building Office Add-ins</a>.
@@ -125,7 +125,7 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
     </li>
 </ul>
 
-<b>Note</b>: <a href="../overview/project-add-ins-reference-overview.md">Project</a> supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the Common API to create Project add-ins.
+<b>Note</b>: <a href="../reference/overview/project-add-ins-reference-overview.md">Project</a> supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the Common API to create Project add-ins.
 
 <h2>Open API specifications</h2>
 

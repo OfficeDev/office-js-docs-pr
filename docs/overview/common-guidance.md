@@ -73,8 +73,8 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Reference</h3>
-                        <p><a href="../reference/javascript-api-for-office.md">Review reference documentation for Common APIs, the Office Add-ins manifest, and error codes.</a></p>
+                        <h3>API Reference</h3>
+                        <p><a href="../reference/javascript-api-for-office.md">Learn about the Office JavaScript APIs.</a></p>
                     </div>
                 </div>
             </div>

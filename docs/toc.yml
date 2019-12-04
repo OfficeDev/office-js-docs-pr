@@ -270,7 +270,7 @@
 
   - name: Reference
     items:
-    - name: API Reference documentation
+    - name: API reference documentation
       href: reference/javascript-api-for-office.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     - name: API requirement sets (Common)

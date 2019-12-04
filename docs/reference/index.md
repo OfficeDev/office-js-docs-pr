@@ -118,7 +118,7 @@ localization_priority: Priority
     </li>
 </ul>
 
-<b>Note</b>: <a href="../overview/project-add-ins-reference-overview.md">Project</a> supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the Common API to create Project add-ins.
+<b>Note</b>: <a href="../reference/overview/project-add-ins-reference-overview.md">Project</a> supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the Common API to create Project add-ins.
 
 <h2>Manifest reference</h2>
 
