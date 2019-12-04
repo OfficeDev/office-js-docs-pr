@@ -8,7 +8,7 @@ localization_priority: Priority
 
 # JavaScript API for Project
 
-Project supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the [Common API](/javascript/api/office) to create Project add-ins. For information about the Common API, see [JavaScript API for Office](../javascript-api-for-office.md). 
+Project supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the [Common API](/javascript/api/office) to create Project add-ins. For information about the Common API, see [Office JavaScript API object model](../develop/office-javascript-api-object-model.md). 
 
 ## Learn about API capabilities
 
@@ -18,6 +18,5 @@ For hands-on experience using the Common API to interact with content in Project
 
 - [Project add-ins documentation](../../project/index.md)
 - [Project add-ins overview](../../project/project-add-ins.md)
-- [JavaScript API for Office](../javascript-api-for-office.md)
+- [API Reference documentation](../javascript-api-for-office.md)
 - [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
-- [Common API reference](/javascript/api/office)

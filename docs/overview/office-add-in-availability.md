@@ -962,7 +962,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 - [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md)
 - [Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Add-in Commands requirement sets](../reference/requirement-sets/add-in-commands-requirement-sets.md)
-- [JavaScript API for Office reference](../reference/javascript-api-for-office.md)
+- [API Reference documentation](../reference/javascript-api-for-office.md)
 - [Update history for Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016 and 2019 update history (Click-To-Run)](/officeupdates/update-history-office-2019)
 - [Office 2013 update history (Click-To-Run)](/officeupdates/update-history-office-2013)

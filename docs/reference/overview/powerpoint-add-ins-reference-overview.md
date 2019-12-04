@@ -34,5 +34,4 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 - [PowerPoint add-ins overview](../../powerpoint/powerpoint-add-ins.md)
 - [PowerPoint JavaScript API reference](/javascript/api/powerpoint)
 - [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
-- [JavaScript API for Office](../javascript-api-for-office.md)
-- [Common API reference](/javascript/api/office)
+- [API Reference documentation](../javascript-api-for-office.md)
