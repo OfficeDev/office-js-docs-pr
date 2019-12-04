@@ -27,7 +27,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Set up the starter project
 
-1. Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso).
+Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso).
 
     > [!NOTE]
     > There are two versions of the sample:
@@ -114,8 +114,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In web.config, use the values that you copied in earlier. Set both the **ida:ClientID** and the **ida:Audience** to your **Application (client) ID**, and set **ida:Password** to your client secret.
 
-  > [!NOTE]
-  > The **Application (client) ID** is the "audience" value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
+    > [!NOTE]
+    > The **Application (client) ID** is the "audience" value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
 1. In the add-in project, open the add-in manifest file “Office-Add-in-ASPNET-SSO.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup:
 
@@ -142,13 +142,13 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 If you chose "Accounts in this organizational directory only" for **SUPPORTED ACCOUNT TYPES** when you registered the add-in, you need to take these additional setup steps:
 
 1. Go back to the Azure Portal and open the **Overview** blade of the add-in's registration. Copy the **Directory (tenant) ID**.
-1. In the web.config, replace the "commmon" in the value of **ida:Authority** with the GUID you copied in the preceding step. When you are finished the value should look similar to this: `<add key="ida:Authority" value="https://login.microsoftonline.com/12345678-91ab-cdef-0123-456789abcdef/oauth2/v2.0" />`.
+1. In the web.config, replace the "common" in the value of **ida:Authority** with the GUID you copied in the preceding step. When you are finished the value should look similar to this: `<add key="ida:Authority" value="https://login.microsoftonline.com/12345678-91ab-cdef-0123-456789abcdef/oauth2/v2.0" />`.
 
 ## Code the client side
 
 1. Open the HomeES6.js file in the **Scripts** folder. It already has some code in it:
 
-    * A polyfill that assigns the Office.Promise object to the global window object so that the add-in can run when Office is using Internet Explorer for the UI. (For more information, see [Browsers used by Office Add-ins](./concepts/browsers-used-by-office-web-add-ins.md).)
+    * A polyfill that assigns the Office.Promise object to the global window object so that the add-in can run when Office is using Internet Explorer for the UI. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
     * An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
     * A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
     * A `logErrors` method that will log to console errors that are not intended for the end user.
@@ -402,6 +402,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     public void ConfigureAuth(IAppBuilder app)
     {
         // TODO 1: Configure the validation settings
+
         // TODO 2: Specify the type of authorization and the discovery endpoint
         //        of the secure token service.
     }
@@ -469,9 +470,12 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     public async Task<HttpResponseMessage> Get()
     {
         // TODO 1: Validate the scopes of the bootstrap token.
+
         // TODO 2: Assemble all the information that is needed to get a
         //        token for Microsoft Graph using the on-behalf-of flow.
+
         // TODO 3: Get the access token for Microsoft Graph.
+        
         // TODO 4: Use the token to call Microsoft Graph.
     }
     ```
