@@ -54,7 +54,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -110,7 +110,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -166,7 +166,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -222,7 +222,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -278,7 +278,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -317,7 +317,7 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <img src="../images/index-landing-page/i_article.svg" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -339,12 +339,29 @@ localization_priority: Priority
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/Visio_256x256.png" alt="reference docs" />
+                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Visio API reference</h3>
                         <p><a href="/javascript/api/visio">JavaScript APIs for embedding Visio diagrams in SharePoint Online.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Common API reference</h3>
+                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
                     </div>
                 </div>
             </div>
