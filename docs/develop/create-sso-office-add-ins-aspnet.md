@@ -45,8 +45,8 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
     * Set **Name** to `Office-Add-in-ASPNET-SSO`.
-    * Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**. (If you want the add-in to be usable only by users in the tenancy where you are registering it, you can choose "Accounts in this organizational directory only" instead, but you will need to go through some additional setup steps. See **Setup for single-tenant** below.)
-    * Set **Redirect URI** to` https://localhost:44355/AzureADAuth/Authorize`.
+    * Set **Supported account types** to **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. (If you want the add-in to be usable only by users in the tenancy where you are registering it, you can choose **Accounts in this organizational directory only ...** instead, but you will need to go through some additional setup steps. See **Setup for single-tenant** below.)
+    * In the **Redirect URI** section, ensure that **Web** is selected in the drop down and then set the URI to` https://localhost:44355/AzureADAuth/Authorize`.
     * Choose **Register**.
 
 1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
@@ -54,9 +54,9 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     > [!NOTE]
     > This ID is the "audience" value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
-1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**. *Copy the client secret value immediately and save it with the application ID* before proceeding as you'll need it in a later procedure.
+1. Under **Manage**, select **Certificates & secrets**. Select the **New client secret** button. Enter a value for **Description**, then select an appropriate option for **Expires** and choose **Add**. *Copy the client secret value immediately and save it with the application ID* before proceeding as you'll need it in a later procedure.
 
-1. Select **Expose an API** under **Manage**. Select the **Set** link to generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**. Insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. The entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+1. Under **Manage**, select **Expose an API**. Select the **Set** link to generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**. Insert `localhost:44355/` (note the forward slash "/" appended to the end) after the `//` and before the GUID. The entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
 1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope** name.
 
@@ -118,7 +118,9 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     > [!NOTE]
     > The **Application (client) ID** is the "audience" value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
-1. In the add-in project, open the add-in manifest file “Office-Add-in-ASPNET-SSO.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup:
+1. If you didn't choose "Accounts in this organizational directory only" for **SUPPORTED ACCOUNT TYPES** when you registered the add-in, save and close the web.config. Otherwise, save but leave it open.
+
+1. Still in **Solution Explorer**, choose the **Office-Add-in-Microsoft-Graph-ASPNET** project and open the add-in manifest file “Office-Add-in-ASPNET-SSO.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup:
 
     ```xml
     <WebApplicationInfo>
@@ -138,12 +140,17 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
   > [!NOTE]
   > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
+1. Save and close the file.
+
 ### Setup for single-tenant
 
 If you chose "Accounts in this organizational directory only" for **SUPPORTED ACCOUNT TYPES** when you registered the add-in, you need to take these additional setup steps:
 
 1. Go back to the Azure Portal and open the **Overview** blade of the add-in's registration. Copy the **Directory (tenant) ID**.
+
 1. In the web.config, replace the "common" in the value of **ida:Authority** with the GUID you copied in the preceding step. When you are finished the value should look similar to this: `<add key="ida:Authority" value="https://login.microsoftonline.com/12345678-91ab-cdef-0123-456789abcdef/oauth2/v2.0" />`.
+
+1. Save and close the web.config.
 
 ## Code the client side
 
@@ -343,8 +350,8 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
     ```javascript
     if ((exceptionMessage.indexOf("AADSTS500133") !== -1)
-        && (retryGetAccessToken <= 0))
-    {
+        && (retryGetAccessToken <= 0)) {
+
         retryGetAccessToken++;
         getGraphData();
     }
@@ -353,8 +360,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Replace `TODO 8` with the following.
 
     ```javascript
-    else
-    {
+    else {
         dialogFallback();
     }
     ```
@@ -386,7 +392,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
     ```csharp
     using Owin;
-    using System.IdentityModel.Tokens;
+    using Microsoft.IdentityModel.Tokens;
     using System.Configuration;
     using Microsoft.Owin.Security.OAuth;
     using Microsoft.Owin.Security.Jwt;
