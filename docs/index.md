@@ -149,7 +149,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                 </div>
             </div>
             <div class="cardText">
-                <h3>Office Add-ins guidance</h3>
+                <h3>General guidance</h3>
                 <p>Learn about the Office Add-ins platform and important concepts that apply to building any Office Add-in.</p>
             </div>
         </a>
