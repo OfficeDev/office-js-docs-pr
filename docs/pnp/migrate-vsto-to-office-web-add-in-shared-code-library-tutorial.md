@@ -1,7 +1,7 @@
 ---
 ms.date: 12/02/2019
-description: Guide to sharing code between VSTO Add-in and Office web add-in.
-title: Tutorial: Migrate your VSTO Add-in to an Office web add-in with a shared code library
+description: 'Guide to sharing code between VSTO Add-in and Office web add-in.'
+title: Tutorial: 'Migrate your VSTO Add-in to an Office web add-in with a shared code library'
 ms.prod: excel
 localization_priority: Normal
 ---
