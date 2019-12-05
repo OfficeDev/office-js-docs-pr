@@ -285,8 +285,6 @@
         href: reference/requirement-sets/image-coercion-requirement-sets.md
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
-    - name: API reference (Common)
-      href: reference/common-api-reference.md
     - name: Office Add-in manifest reference
       items:
       - name: AllowSnapshot
