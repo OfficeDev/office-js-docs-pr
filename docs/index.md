@@ -18,7 +18,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 
 <p>New to building Office Add-ins? Start by reviewing the following two articles:</p>
 
-<ul class="panelContent cardsF cols cols2">
+<ul class="panelContent cardsF cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
