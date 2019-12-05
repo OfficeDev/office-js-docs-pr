@@ -16,7 +16,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 
 <h2>Get started</h2>
 
-<p>New to building Office Add-ins? Start by reviewing the following two articles:</p>
+<p>New to building Office Add-ins? Start by learning basic concepts about the Office Add-ins platform and building Office Add-ins:</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -47,7 +47,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                     </div>
                     <div class="cardText">
                         <h3>Building Office Add-ins</h3>
-                        <p><a href="overview/office-add-ins-fundamentals.md">Learn core concepts about building Office Add-ins.</a></p>
+                        <p><a href="overview/office-add-ins-fundamentals.md">Learn core concepts for building Office Add-ins.</a></p>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
     </li>
 </ul>
 
-<p>Then use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
+<p>Next, use quick starts, tutorials, and Script Lab to get some hands-on experience building Office Add-ins and using the Office JavaScript APIs.</p>
 
 <ul class="cardsK panelContent cols cols3">
     <li>
@@ -137,6 +137,9 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 ---
 
 <h2>Learn about Office Add-ins</h2>
+
+<p>Explore this documentation to learn more about developing, testing, and publishing Office Add-ins.</p>
+
 <ul class="cardsM cols cols1">
     <li>
         <a class="card x-hidden-focus" href="overview/office-add-ins.md">
