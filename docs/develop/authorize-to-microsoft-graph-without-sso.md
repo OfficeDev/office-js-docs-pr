@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph without SSO
 description: ''
-ms.date: 08/07/2019
+ms.date: 12/06/2019
 localization_priority: Priority
 ---
 
