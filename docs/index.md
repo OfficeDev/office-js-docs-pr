@@ -16,16 +16,16 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 
 <h2>Get started</h2>
 
-<p>New to building Office Add-ins? Build some basic context by reviewing the following two articles:</p>
+<p>New to building Office Add-ins? Start by reviewing the following two articles:</p>
 
-<ul class="panelContent cardsF cols cols3">
+<ul class="panelContent cardsF cols cols2">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-excel.svg" alt="Excel API reference docs" />
+                            <img src="images/index-landing-page/i_article.svg" alt="article" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -42,7 +42,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-excel.svg" alt="Excel API reference docs" />
+                            <img src="images/index-landing-page/i_article.svg" alt="article" />
                         </div>
                     </div>
                     <div class="cardText">
