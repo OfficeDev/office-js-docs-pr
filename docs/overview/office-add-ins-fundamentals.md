@@ -7,7 +7,7 @@ localization_priority: Priority
 
 # Building Office Add-ins
 
-Office Add-ins extend the UI and functionality of Office applications and interact with content in Office documents. You'll use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook. The add-ins you build can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article is an introduction to developing Office Add-ins.
+Office Add-ins extend the UI and functionality of Office applications and interact with content in Office documents. You'll use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook. The add-ins you build can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article provides an introduction to developing Office Add-ins.
 
 > [!TIP]
 > Please review [Office Add-ins platform overview](office-add-ins.md) before reading this article.
@@ -147,12 +147,10 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 
 ### Learn more about developing, testing, and publishing Office Add-ins
 
-> [!IMPORTANT]
-> For any add-in you build, you'll use information in the [Office Add-ins guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the Office host where your add-in will run (for example, [Excel add-ins](../excel/index.md)).
-> 
-> - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](common-guidance.md) in the table of contents (TOC).
-> 
-> - Articles that apply to only one type of Office Add-in appear within the corresponding host-specific section of the TOC (for example, [Excel add-ins](../excel/index.md)).
+> [!TIP]
+> For any type of add-in that you build, you'll use information in the [Office Add-ins guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+>
+> ![An image that shows the table of contents](../images/top-level-toc.png)
 
 ## See also 
 
