@@ -1,15 +1,15 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Common guidance for Office Add-ins
-description: Guidance that applies to all types of Office Add-ins.
+title: General guidance for Office Add-ins
+description: Information that applies to all Office Add-ins.
 ms.date: 11/15/2019
 localization_priority: Priority
 ---
 
-# Common guidance for Office Add-ins
+# General guidance
 
-All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. Learn foundational information about the Office Add-ins platform and Office JavaScript APIs, and core concepts that are relevant to designing, developing, testing, and publishing any type of Office Add-in.
+All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. Learn foundational information about the Office Add-ins platform and Office JavaScript APIs, and concepts that are relevant to designing, developing, testing, and publishing any Office Add-in.
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -39,8 +39,8 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Design</h3>
-                        <p><a href="../design/add-in-design.md">Learn UI design and extensibility concepts for Office Add-ins.</p>
+                        <h3>UI and UX</h3>
+                        <p><a href="../design/add-in-design.md">Learn about designing the user interface and user experience for Office Add-ins.</p>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
                     </div>
                     <div class="cardText">
                         <h3>Develop</h3>
-                        <p><a href="../develop/develop-overview.md">Learn development concepts that apply to any type of Office Add-in.</a></p>
+                        <p><a href="../develop/develop-overview.md">Learn important development concepts that apply to any Office Add-in.</a></p>
                     </div>
                 </div>
             </div>

@@ -121,5 +121,5 @@ Congratulations, you've successfully created a Project task pane add-in! Next, l
 ## See also
 
 - [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-- [Common guidance for Office Add-ins](../overview/common-guidance.md)
+- [General guidance for Office Add-ins](../overview/general-guidance.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)

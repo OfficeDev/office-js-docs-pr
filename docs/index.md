@@ -47,7 +47,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                     </div>
                     <div class="cardText">
                         <h3>Building Office Add-ins</h3>
-                        <p><a href="overview/office-add-ins-fundamentals.md">Learn core concepts for building Office Add-ins.</a></p>
+                        <p><a href="overview/office-add-ins-fundamentals.md">Learn about building Office Add-ins.</a></p>
                     </div>
                 </div>
             </div>
@@ -150,7 +150,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
             </div>
             <div class="cardText">
                 <h3>Office Add-ins guidance</h3>
-                <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
+                <p>Learn about the Office Add-ins platform and important concepts that apply to building any Office Add-in.</p>
             </div>
         </a>
     </li>
