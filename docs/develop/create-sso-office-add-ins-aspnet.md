@@ -31,6 +31,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
     > [!NOTE]
     > There are two versions of the sample:
+    
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
     > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
 
@@ -475,7 +476,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         //        token for Microsoft Graph using the on-behalf-of flow.
 
         // TODO 3: Get the access token for Microsoft Graph.
-        
+
         // TODO 4: Use the token to call Microsoft Graph.
     }
     ```
