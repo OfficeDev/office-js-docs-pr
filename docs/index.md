@@ -16,7 +16,44 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 
 <h2>Get started</h2>
 
-<p>New to building Office Add-ins? <a href="overview/office-add-ins.md">Learn about the Office Add-ins platform</a> and review <a href="overview/office-add-ins-fundamentals.md">Building Office Add-ins</a> for an introduction to developing Office Add-ins.</p>
+<p>New to building Office Add-ins? Build some basic context by reviewing the following two articles:</p>
+
+<ul class="panelContent cardsF cols cols3">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/logo-excel.svg" alt="Excel API reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Office Add-ins platform overview</h3>
+                        <p><a href="overview/office-add-ins.md">Learn about the Office Add-ins platform.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../images/index/logo-excel.svg" alt="Excel API reference docs" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Building Office Add-ins</h3>
+                        <p><a href="overview/office-add-ins-fundamentals.md">Learn core concepts about building Office Add-ins.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
 
 <p>Use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
 
