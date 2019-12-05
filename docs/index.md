@@ -55,7 +55,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
     </li>
 </ul>
 
-<p>Use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
+<p>Then use a quick start to quickly get up and running, complete a tutorial to learn more about the capabilities of an add-in, and explore Office JavaScript APIs with <a href="overview/explore-with-script-lab.md">Script Lab</a>.</p>
 
 <ul class="cardsK panelContent cols cols3">
     <li>
