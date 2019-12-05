@@ -148,7 +148,7 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 ### Learn more about developing, testing, and publishing Office Add-ins
 
 > [!IMPORTANT]
-> For any type of add-in that you build, you'll use information in the [Office Add-ins guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+> For any add-in you build, you'll use information in the [Office Add-ins guidance](common-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the Office host where your add-in will run (for example, [Excel add-ins](../excel/index.md)).
 > 
 > - Articles that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) appear under [Office Add-ins guidance](common-guidance.md) in the table of contents (TOC).
 > 

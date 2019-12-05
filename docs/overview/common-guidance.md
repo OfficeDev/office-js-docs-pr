@@ -116,4 +116,4 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
     </li>
 </ul>
 
-<b>Note</b>: For information that applies only to a specific type of add-in, see the corresponding host-specific documentation (for example, <a href="../excel/index.md">Excel add-ins</a>).
+<b>Note</b>: For information about building add-ins for a specific Office host, also see the corresponding host-specific documentation (for example, <a href="../excel/index.md">Excel add-ins</a>).
