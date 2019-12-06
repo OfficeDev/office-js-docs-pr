@@ -31,7 +31,7 @@ After you're familiar with the concepts that apply to multiple types of add-ins,
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-- [Core concepts for Office Add-ins](../overview/general-guidance.md)
+- [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)

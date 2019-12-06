@@ -34,7 +34,7 @@
   items:
 
   - name: Overview
-    href: overview/general-guidance.md
+    href: overview/core-concepts-office-add-ins.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
   - name: Develop

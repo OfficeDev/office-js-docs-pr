@@ -38,7 +38,7 @@
                         <p>Explore key aspects of Office Add-ins development.</p>
                         <br/>
                         <ul>
-                            <li><a href="../overview/general-guidance.md">Core concepts for Office Add-ins</a></li>
+                            <li><a href="../overview/core-concepts-office-add-ins.md">Core concepts for Office Add-ins</a></li>
                             <li><a href="../design/add-in-design.md">Design Office Add-ins</a></li>
                             <li><a href="../develop/develop-overview.md">Develop Office Add-ins</a></li>                            
                         </ul>
