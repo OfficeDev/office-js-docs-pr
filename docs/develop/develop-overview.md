@@ -14,14 +14,14 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
 
 ## General concepts
 
-Development concepts that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) are covered here in the **General guidance** > **Develop** section of the documentation. Review the information here before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+Development concepts that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) are covered here in the **Core concepts** > **Develop** section of the documentation. Review the information here before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel add-ins](../excel/index.md)).
 
 - [Host and platform availability](../overview/office-add-in-availability.md)
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
 - [Office Add-ins XML manifest](add-in-manifests.md)
 - [Authentication and authorization in Office Add-ins](overview-authn-authz.md)
 
-The **General guidance** > **Develop** > **How to** section of the documentation contains articles focused on specific development concepts or tasks. For example, you'll find information about tasks such as [automatically opening a task pane with a document](automatically-open-a-task-pane-with-a-document.md), [creating add-in commands](create-addin-commands.md), and [opening a dialog box](dialog-api-in-office-add-ins.md) in the **How to** section.
+The **Core concepts** > **Develop** > **How to** section of the documentation contains articles focused on specific development concepts or tasks. For example, you'll find information about tasks such as [automatically opening a task pane with a document](automatically-open-a-task-pane-with-a-document.md), [creating add-in commands](create-addin-commands.md), and [opening a dialog box](dialog-api-in-office-add-ins.md) in the **How to** section.
 
 ## Host-specific concepts
 
@@ -31,7 +31,7 @@ After you're familiar with the concepts that apply to multiple types of add-ins,
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-- [General guidance for Office Add-ins](../overview/general-guidance.md)
+- [Core concepts for Office Add-ins](../overview/general-guidance.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)

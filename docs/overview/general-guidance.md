@@ -1,13 +1,13 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: General guidance for Office Add-ins
+title: Core concepts for Office Add-ins
 description: Information that applies to all Office Add-ins.
 ms.date: 11/15/2019
 localization_priority: Priority
 ---
 
-# General guidance
+# Core concepts
 
 All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. Learn foundational information about the Office Add-ins platform and Office JavaScript APIs, and concepts that are relevant to designing, developing, testing, and publishing any Office Add-in.
 
