@@ -42,7 +42,7 @@ localization_priority: Priority
                     </div>
                     <div class="cardText">
                         <h3>UI and UX</h3>
-                        <p><a href="../design/add-in-design.md">Learn about designing the user interface and user experience for Office Add-ins.</p>
+                        <p><a href="../design/interface-elements.md">Learn about designing the user interface and user experience for Office Add-ins.</p>
                     </div>
                 </div>
             </div>

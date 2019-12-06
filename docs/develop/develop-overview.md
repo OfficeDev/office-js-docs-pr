@@ -10,22 +10,14 @@ localization_priority: Priority
 > [!TIP]
 > Please review [Building Office Add-ins](../overview/office-add-ins-fundamentals.md) before reading this article.
 
-All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. This means that regardless of whether you're creating an add-in for Excel, Outlook, or another Office application, you can implement features such as dialog boxes, add-in commands, task panes, and single sign on (SSO). Likewise, for any add-in you build, you'll need to understand things like host and platform availability, Office JavaScript API programming patterns, the Office Add-in manifest file, and more.
+All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. For any add-in you build, you'll need to understand important concepts like host and platform availability, Office JavaScript API programming patterns, how to specify an add-in's settings and capabilities in the manifest file, and more. Core development concepts like these are covered here in the **Core concepts** > **Develop** section of the documentation. Review the information here before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)).
 
-## General concepts
+> [!TIP]
+> The **Core concepts** > **Develop** > **How to** section of this documentation contains articles focused on specific development concepts or tasks. For example, you'll find how to information about things like [developing add-ins with Visual Studio code](develop-add-ins-vscode.md), [automatically opening a task pane with a document](automatically-open-a-task-pane-with-a-document.md), [creating add-in commands](create-addin-commands.md), and [opening a dialog box](dialog-api-in-office-add-ins.md) in the **How to** section.
 
-Development concepts that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) are covered here in the **Core concepts** > **Develop** section of the documentation. Review the information here before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)).
+## Next steps
 
-- [Host and platform availability](../overview/office-add-in-availability.md)
-- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
-- [Office Add-ins XML manifest](add-in-manifests.md)
-- [Authentication and authorization in Office Add-ins](overview-authn-authz.md)
-
-The **Core concepts** > **Develop** > **How to** section of the documentation contains articles focused on specific development concepts or tasks. For example, you'll find information about tasks such as [automatically opening a task pane with a document](automatically-open-a-task-pane-with-a-document.md), [creating add-in commands](create-addin-commands.md), and [opening a dialog box](dialog-api-in-office-add-ins.md) in the **How to** section.
-
-## Host-specific concepts
-
-After you're familiar with the concepts that apply to multiple types of add-ins, explore the host-specific documentation for [Excel](../excel/index.md), [OneNote](../onenote/index.md), [Outlook](../outlook/index.md), [PowerPoint](../powerpoint/index.md), [Project](../project/index.md), [Visio](../visio/index.md), or [Word](../word/index.md). Each of these sections contains documentation specifically tailored to building add-ins for a certain Office host.
+After you're familiar with the core concepts covered here, explore the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)). Each host-specific section of the documentation contains information specifically about building add-ins for a certain Office host.
 
 ## See also
 
