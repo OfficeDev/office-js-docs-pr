@@ -37,21 +37,6 @@
     href: overview/general-guidance.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-  - name: Concepts
-    items:
-    - name: Add-in development best practices
-      href: concepts/add-in-development-best-practices.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Requirements for running add-ins
-      href: concepts/requirements-for-running-office-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Browsers used by Office Add-ins
-      href: concepts/browsers-used-by-office-web-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Install the latest Office version
-      href: develop/install-latest-office-version.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-
   - name: UI and UX
     items:
     - name: Extend the Office UI
@@ -169,6 +154,20 @@
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
+    - name: Concepts
+      items:
+      - name: Add-in development best practices
+        href: concepts/add-in-development-best-practices.md
+        displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+      - name: Requirements for running add-ins
+        href: concepts/requirements-for-running-office-add-ins.md
+        displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+      - name: Browsers used by Office Add-ins
+        href: concepts/browsers-used-by-office-web-add-ins.md
+        displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+      - name: Install the latest Office version
+        href: develop/install-latest-office-version.md
+        displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: How to
       items: 
       - name: Address same origin policy limitations
