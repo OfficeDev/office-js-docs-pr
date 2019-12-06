@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing
 description: ''
-ms.date: 08/15/2019
+ms.date: 12/06/2019
 localization_priority: Priority
 ---
 
@@ -40,7 +40,9 @@ The following video walks you through the process of sideloading your add-in in 
 
 6. Choose the **Close** button to close the **Properties** dialog window.
 
-## Specify the shared folder as a trusted catalog
+## Specify the shared folder as a trusted catalog 
+
+### Configure the trust manually
       
 1. Open a new document in Excel, Word, PowerPoint, or Project.
     
@@ -63,10 +65,43 @@ The following video walks you through the process of sideloading your add-in in 
 8. Choose the **OK** button to close the **Word Options** dialog window.
 
 9. Close and reopen the Office application so your changes will take effect.
-    
+
+### Configure the trust with a Registry script
+
+1. In a text editor, create a file named TrustNetworkShareCatalog.reg. 
+
+2. Add the following content to the file:
+
+	```
+	Windows Registry Editor Version 5.00
+	
+	[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
+	"Id"="{-random-GUID-here-}"
+	"Url"="\\\\-share-\\-folder-"
+	"Flags"=dword:00000001
+	```
+3. Use one of the many online GUID generation tools to generate a random GUID, and replace "-random-GUID-here-" *in both places* with the GUID. (The enclosing `{}` symbols should remain.)
+
+4. Replace the `Url` value with the full network path to the folder that you [shared](#share-a-folder) previously. (Note that the `\` characters must be doubled.) If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot. 
+
+    ![folder Properties dialog with the Sharing tab and network path highlighted](../images/sideload-windows-properties-dialog-2.png)
+	
+5. The file should look like the following. Save it.
+
+	```
+	Windows Registry Editor Version 5.00
+	
+	[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
+	"Id"="{01234567-89ab-cedf-0123-456789abcedf}"
+	"Url"="\\\\TestServer\\OfficeAddinManifests"
+	"Flags"=dword:00000001
+	```
+
+5. Close *all* Office applications.
+
+6. Run the TrustNetworkShareCatalog.reg just as you would any executable, such as double-clicking it.
 
 ## Sideload your add-in
-
 
 1. Put the manifest XML file of any add-in that you are testing in the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **SourceLocation** element of the manifest file.
 
