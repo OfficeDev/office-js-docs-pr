@@ -5,6 +5,8 @@ ms.date: 12/09/2019
 localization_priority: Priority
 ---
 
+# Fresh style icon guidelines for Office Add-ins
+
 The Office 2013+ (non-subscription) versions of Office use Microsoft's Fresh style iconography. If you would prefer that your icons match the Monoline style of Office 365, see [Monoline style icon guidelines for Office Add-ins](add-in-icons-monoline.md).
 
 ## Office Fresh visual style

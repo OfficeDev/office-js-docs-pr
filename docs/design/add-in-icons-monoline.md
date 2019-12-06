@@ -5,6 +5,8 @@ ms.date: 12/09/2019
 localization_priority: Priority
 ---
 
+# Monoline style icon guidelines for Office Add-ins
+
 Monoline style iconography are used in Office 365. If you would prefer that your icons match the Fresh style of non-subscription Office 2013+, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
 
 ## Office Monoline visual style
@@ -65,7 +67,7 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 
 The following is an example of icon layout with a modifier. On the right is the same icon with a background grid showing the
 
-![Example of icon with modifier](../images/MonolineIcon1.png)![The same example with a grid background callouts for the base, modifier, padding and modifier cutout](../images/MonolineIcon2.png)
+![Example of icon with modifier](../images/monolineicon1.png)![The same example with a grid background callouts for the base, modifier, padding and modifier cutout](../images/monolineicon2.png)
 
   ----------------------------------------------------------------------------------- -----------------------------------------------------------------------------------
   ![](media/image2.png){width="1.6770833333333333in" height="1.6770833333333333in"}   ![](media/image3.png){width="3.6770833333333335in" height="1.6770833333333333in"}
@@ -77,7 +79,7 @@ The following is an example of icon layout with a modifier. On the right is the 
 
 -   Modifier -- Any element that overlays the base; a modifier, action or status. It modifies the base element by acting as an addition, alteration, or a descriptor.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon3.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon3.png)
   ------------------------------------------------------------------------
   ![](media/image4.png){width="3.53125in" height="1.6770833333333333in"}
   ------------------------------------------------------------------------
@@ -88,8 +90,8 @@ The following is an example of icon layout with a modifier. On the right is the 
 
 Base elements are placed in the center of the icon with in the padding. If it cannot place perfectly centered, then the base should err to the top right.
 
-  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon4.png)
-  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon5.png)
+  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon4.png)
+  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon5.png)
 
   Perfectly centered                                                                  Erring to Left
   ----------------------------------------------------------------------------------- -----------------------------------------------------------
@@ -97,7 +99,7 @@ Base elements are placed in the center of the icon with in the padding. If it ca
 
 Modifiers are almost always placed in the bottom right corner of the icon canvas. In some rare cases, modifiers are placed in a different corner. One example would be if the base element would be unrecognizable with the modifier in the bottom right corner. In that case would consider placing the modifier in the upper left corner.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon6.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon6.png)
   ----------------------------------------------------------------------------------
   ![](media/image7.png){width="4.158333333333333in" height="0.6666666666666666in"}
   ----------------------------------------------------------------------------------
@@ -106,15 +108,15 @@ Modifiers are almost always placed in the bottom right corner of the icon canvas
 
 Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should but up to the edge of the canvas, extending outside of the padding---to the edge of the icon border.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon7.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon8.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon9.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon10.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon11.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon12.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon13.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon14.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon15.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon7.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon8.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon9.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon10.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon11.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon12.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon13.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon14.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon15.png)
 
 
   Size      16x                                                                                   20x                                                                                   24x                                                      32x                                                                                  40x                                                                                  48x                                                    64x                                                                                  80x                                                                                  96x
@@ -126,15 +128,15 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 
 Monoline is a style dominated by line and outlined shapes. Depending on what size you are producing the icon should use the following line weights.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon16.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon17.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon18.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon19.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon20.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon21.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon22.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon23.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon24.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon16.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon17.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon18.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon19.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon20.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon21.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon22.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon23.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon24.png)
 
 
 
@@ -151,7 +153,7 @@ sometimes referred to as a \"gap\".
 The size of the gap should be the same width as the line weight used on that size. If making a 16x, the gap width would be 1px and if it is a 48x then the gap should be 2px.
 
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon25.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon25.png)
 
   --------------------------------------------------------------
   ![](media/image26.png){width="1.90625in" height="1.84375in"}
@@ -162,8 +164,8 @@ In some cases, the gap can be increase by a 1/2px if the modifier has a diagonal
 
 Most icons in the Monoline icon set require background fills. However, there are cases where the object would not naturally have a fill, so no fill should be applied.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon26.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon27.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon26.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon27.png)
 
   White Fill
   -----------------------------------------------------------------------------------
@@ -290,7 +292,7 @@ In the Monoline color pallet, all colors have a Standalone, Outline and Fill var
 -   If the element has no fill, then the Standalone color is used
 
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon28.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon28.png)
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   ![C:\\Users\\Suzanne Alphin\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Word\\Guildlines\_ColorLable.png](media/image29.png){width="5.0in" height="1.3541666666666667in"}
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -310,20 +312,20 @@ When using a colored Fill, it should always be with its corresponding Outline co
 Color should be used to convey the meaning of the icon rather than for embellishment. It should **highlight the action** to the user. When a modifier is added to a base element that has color, the base element is typically turned into Dark gray and Background Fill so that the modifier can be the element of color, such as the case below with the \"X\"
 modifier being added to the picture base.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon29.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon29.png)
   -----------------------------------------------------------------------------------
   ![](media/image30.png){width="4.166666666666667in" height="0.6666666666666666in"}
   -----------------------------------------------------------------------------------
 
 Color is generally **limited to 1 additional color** other than the Outline and Fill mentioned above. However, more colors can be used if it is vital for its metaphor, with a limit to 2 additional colors other than gray. In rare cases, there are exceptions when more colors are needed.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon30.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon30.png)
 
   ✔
   -----------------------------------------------------------------------------------
   ![](media/image31.png){width="4.166666666666667in" height="0.6666666666666666in"}
 
-  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon31.png)
+  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon31.png)
 
   ❌
   -----------------------------------------------------------------------------------
@@ -331,7 +333,7 @@ Color is generally **limited to 1 additional color** other than the Outline and 
 
 Use **Medium Gray** for interior \"content\", grid lines and dashes. Additional interior colors are used when the content needs to show the behavior of the control
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/MonolineIcon32.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon32.png)
 
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   ![C:\\Users\\Suzanne Alphin\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Word\\Guildlines\_MediumGray.png](media/image33.png){width="4.166666666666667in" height="0.6666666666666666in"}
