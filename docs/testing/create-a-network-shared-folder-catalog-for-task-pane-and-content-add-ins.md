@@ -86,7 +86,7 @@ The following video walks you through the process of sideloading your add-in in 
 
     ![folder Properties dialog with the Sharing tab and network path highlighted](../images/sideload-windows-properties-dialog-2.png)
 	
-5. The file should look like the following. Save it.
+5. The file should now look like the following. Save it.
 
 	```
 	Windows Registry Editor Version 5.00
