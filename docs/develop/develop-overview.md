@@ -14,7 +14,7 @@ All Office Add-ins are built upon the Office Add-ins platform and share a common
 
 ## General concepts
 
-Development concepts that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) are covered here in the **Core concepts** > **Develop** section of the documentation. Review the information here before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+Development concepts that apply to multiple types of Office Add-ins (i.e., Excel, Word, Outlook, etc.) are covered here in the **Core concepts** > **Develop** section of the documentation. Review the information here before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)).
 
 - [Host and platform availability](../overview/office-add-in-availability.md)
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)

@@ -150,7 +150,7 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 Explore this documentation to learn more about developing, testing, and publishing Office Add-ins.
 
 > [!TIP]
-> For any add-in that you build, you'll use information in the [Core concepts](general-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel add-ins](../excel/index.md)).
+> For any add-in that you build, you'll use information in the [Core concepts](general-guidance.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel](../excel/index.md)).
 >
 > ![An image that shows the table of contents](../images/top-level-toc.png)
 
