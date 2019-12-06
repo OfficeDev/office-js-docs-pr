@@ -13,7 +13,7 @@ localization_priority: Priority
 
 <p>For any add-in you build, you'll need to understand important concepts like host and platform availability, Office JavaScript API programming patterns, how to specify an add-in's settings and capabilities in the manifest file, how to test, debug, and publish an add-in, and more. You'll find this information here in the **Core concepts** section of the documentation. Review this section before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)).</p>
 
-<ul class="panelContent cardsF cols cols3">
+<ul class="panelContent cardsF cols cols2">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
