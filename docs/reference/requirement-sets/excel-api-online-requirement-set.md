@@ -43,7 +43,7 @@ The following APIs are currently available for Excel on the web as part of the `
 ||[richContent](/javascript/api/excel/excel.comment#richcontent)|Gets the rich comment content (e.g. mentions in comments). This string is not meant to be displayed to end-users. Your add-in should only use this to parse rich comment content.|
 ||[updateMentions(contentWithMentions: Excel.CommentRichContent)](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|Updates the comment content with a specially formatted string and a list of mentions.|
 |[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|Gets or sets the email address of the entity that is mentioned in comment.|
-||[id](/javascript/api/excel/excel.commentmention#id)|Gets or sets the id of the entity. This matches one of the the ids in `CommentRichContent.richContent`.|
+||[id](/javascript/api/excel/excel.commentmention#id)|Gets or sets the id of the entity. This matches one of the ids in `CommentRichContent.richContent`.|
 ||[name](/javascript/api/excel/excel.commentmention#name)|Gets or sets the name of the entity that is mentioned in comment.|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[mentions](/javascript/api/excel/excel.commentreply#mentions)|Gets the entities (e.g. people) that are mentioned in comments.|
 ||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|Gets the rich comment content (e.g. mentions in comments). This string is not meant to be displayed to end-users. Your add-in should only use this to parse rich comment content.|
