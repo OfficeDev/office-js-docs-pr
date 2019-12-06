@@ -145,9 +145,9 @@ You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, P
 
 Explore the library of built-in samples in [Script Lab](explore-with-script-lab.md) to get a sense for the capabilities of the Office JavaScript APIs.
 
-### Learn more about developing, testing, and publishing Office Add-ins
+### Learn more
 
-Explore this documentation to learn more about developing, testing, and publishing Office Add-ins.
+Learn more about developing, testing, and publishing Office Add-ins by exploring this documentation.
 
 > [!TIP]
 > For any add-in that you build, you'll use information in the [Core concepts](core-concepts-office-add-ins.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel](../excel/index.md)).
