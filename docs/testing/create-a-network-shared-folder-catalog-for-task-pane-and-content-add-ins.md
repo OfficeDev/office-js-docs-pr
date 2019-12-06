@@ -97,9 +97,9 @@ The following video walks you through the process of sideloading your add-in in 
 	"Flags"=dword:00000001
 	```
 
-5. Close *all* Office applications.
+6. Close *all* Office applications.
 
-6. Run the TrustNetworkShareCatalog.reg just as you would any executable, such as double-clicking it.
+7. Run the TrustNetworkShareCatalog.reg just as you would any executable, such as double-clicking it.
 
 ## Sideload your add-in
 
