@@ -80,7 +80,7 @@ The following video walks you through the process of sideloading your add-in in 
 	"Url"="\\\\-share-\\-folder-"
 	"Flags"=dword:00000001
 	```
-3. Use one of the many online GUID generation tools, such as [GUID Generator](https://guidgenerator.com/), to generate a random GUID, and replace "-random-GUID-here-" *in both places* with the GUID. (The enclosing `{}` symbols should remain.)
+3. Use one of the many online GUID generation tools, such as [GUID Generator](https://guidgenerator.com/), to generate a random GUID, and within the TrustNetworkShareCatalog.reg file, replace the string "-random-GUID-here-" *in both places* with the GUID. (The enclosing `{}` symbols should remain.)
 
 4. Replace the `Url` value with the full network path to the folder that you [shared](#share-a-folder) previously. (Note that the `\` characters must be doubled.) If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot. 
 
