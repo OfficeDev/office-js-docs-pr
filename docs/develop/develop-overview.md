@@ -12,8 +12,8 @@ localization_priority: Priority
 
 All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. For any add-in you build, you'll need to understand important concepts like host and platform availability, Office JavaScript API programming patterns, how to specify an add-in's settings and capabilities in the manifest file, and more. Core development concepts like these are covered here in the **Core concepts** > **Develop** section of the documentation. Review the information here before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)).
 
-> [!TIP]
-> The **Core concepts** > **Develop** > **How to** section of this documentation contains articles focused on specific development concepts or tasks. For example, you'll find how to information about things like [developing add-ins with Visual Studio code](develop-add-ins-vscode.md), [automatically opening a task pane with a document](automatically-open-a-task-pane-with-a-document.md), [creating add-in commands](create-addin-commands.md), and [opening a dialog box](dialog-api-in-office-add-ins.md) in the **How to** section.
+> [!NOTE]
+> The **Core concepts** > **Develop** > **How to** section of this documentation contains articles focused on specific development concepts or tasks. For example, you'll find information there about tasks like [developing add-ins with Visual Studio Code](develop-add-ins-vscode.md), [automatically opening a task pane with a document](automatically-open-a-task-pane-with-a-document.md), [creating add-in commands](create-addin-commands.md), and [opening a dialog box](dialog-api-in-office-add-ins.md).
 
 ## Next steps
 
