@@ -60,15 +60,15 @@
       - name: Overview
         href: design/add-in-design-language.md
       - name: Color
-        href: design/add-in-color.md		
+        href: design/add-in-color.md
       - name: Icons
-	    items:
-		- name: Icon guidelines
+	      items:
+		    - name: Icon guidelines
           href: design/add-in-icons.md
-		- name: Fresh style
+		    - name: Fresh style
           href: design/add-in-icons-fresh.md
-		- name: Monoline style
-          href: design/add-in-icons-monoline.md		  
+		    - name: Monoline style
+          href: design/add-in-icons-monoline.md
       - name: Layout
         href: design/add-in-layout.md
       - name: Typography
@@ -220,7 +220,7 @@
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in manifest and troubleshoot issues
-      href: testing/troubleshoot-manifest.md  
+      href: testing/troubleshoot-manifest.md
   - name: Publish
     items:
     - name: Overview
@@ -357,7 +357,7 @@
       - name: Version
         href: reference/manifest/version.md
       - name: VersionOverrides
-        items: 
+        items:
         - name: VersionOverrides
           href: reference/manifest/versionoverrides.md
         - name: Action
@@ -423,7 +423,7 @@
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
 
 - name: Excel add-ins
-  items: 
+  items:
   - name: Excel add-ins documentation
     href: excel/index.md
     displayName: Excel
@@ -431,7 +431,7 @@
     href: excel/excel-add-ins-overview.md
     displayName: Excel
   - name: Build your first Excel add-in
-    items: 
+    items:
     - name: Task pane
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
@@ -634,7 +634,7 @@
     href: quickstarts/onenote-quickstart.md
     displayName: OneNote
   - name: OneNote JavaScript API
-    items: 
+    items:
     - name: Overview
       href: reference/overview/onenote-add-ins-javascript-reference.md
       displayName: OneNote
@@ -856,7 +856,7 @@
     href: tutorials/powerpoint-tutorial.md
     displayName: PowerPoint
   - name: JavaScript API for PowerPoint
-    items:   
+    items:
     - name: Overview
       href: reference/overview/powerpoint-add-ins-reference-overview.md
       displayName: PowerPoint
@@ -872,7 +872,7 @@
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
-  
+
 - name: Project add-ins
   items:
   - name: Project add-ins documentation
@@ -965,7 +965,7 @@
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Use search options to find text in your Word add-in 
+    - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
 
