@@ -95,16 +95,16 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 
 |**16x**|**20x**|**24x**|**32x**|**40x**|**48x**|**64x**|**80x**|**96x**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon7.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon8.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon9.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon10.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon11.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon12.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon13.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon14.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon15.png)|
+|![16 px icon](../images/monolineicon7.png)|![20 px icon](../images/monolineicon8.png)|![24 px icon](../images/monolineicon9.png)|![32 px icon](../images/monolineicon10.png)|![40 px icon](../images/monolineicon11.png)|![48 px icon](../images/monolineicon12.png)|![64 px icon](../images/monolineicon13.png)|![80 px icon](../images/monolineicon14.png)|![96 px icon](../images/monolineicon15.png)|
 
 #### Line weights
 
 Monoline is a style dominated by line and outlined shapes. Depending on what size you are producing the icon should use the following line weights.
 
 |**Icon Size:**|**16x**|**20x**|**24x**|**32x**|**40x**|**48x**|**64x**|**80x**|**96x**|
-|Line Weight:|1px|1px|1px|1px|2px|2px|2px|2px|3px|
+|**Line Weight:**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-||![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon16.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon17.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon18.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon19.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon20.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon21.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon22.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon23.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon24.png)|
+||![16 px icon](../images/monolineicon16.png)|![20 px icon](../images/monolineicon17.png)|![24 px icon](../images/monolineicon18.png)|![32 px icon](../images/monolineicon19.png)|![40 px icon](../images/monolineicon20.png)|![48 px icon](../images/monolineicon21.png)|![64 px icon](../images/monolineicon22.png)|![80 px icon](../images/monolineicon23.png)|![96 px icon](../images/monolineicon24.png)|
 
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon16.png)
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon17.png)
