@@ -62,12 +62,12 @@
       - name: Color
         href: design/add-in-color.md
       - name: Icons
-	      items:
-		    - name: Icon guidelines
+        items:
+        - name: Icon guidelines
           href: design/add-in-icons.md
-		    - name: Fresh style
+        - name: Fresh style
           href: design/add-in-icons-fresh.md
-		    - name: Monoline style
+        - name: Monoline style
           href: design/add-in-icons-monoline.md
       - name: Layout
         href: design/add-in-layout.md
