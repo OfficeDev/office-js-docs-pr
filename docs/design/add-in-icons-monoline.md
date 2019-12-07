@@ -18,25 +18,19 @@ The following guidelines are for 3rd party developers who want to create icons f
 ### Design principles
 
 -   Simple, clean, clear.
-
 -   Contain only necessary elements.
-
 -   Inspired by Windows icon style.
-
 -   Accessible to all users.
 
 #### Conveying meaning
 
 -   Use descriptive elements such as a page to represent a document or an envelope to represent mail.
-
 -   Use the same element to represent the same concept, i.e. mail is always represented by an envelope, not a stamp.
-
 -   Use a core metaphor during concept development.
 
 #### Reduction of Elements
 
 -   Reduction of the icon to its core meaning, using only elements that are essential to the metaphor.
-
 -   Limiting the number of elements in an icon to two, regardless of icon size.
 
 #### Consistency
