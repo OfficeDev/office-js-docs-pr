@@ -150,6 +150,8 @@ The color palette has been designed for simplicity and accessibility. It contain
 
 ![The four shades of gray in monoline](../images/monoline-grayshades.png)
 
+![The color palette in monoline](../images/monoline-colors.png)
+
 |**Sample**|**Description**|
 |:---|:---|
 |<div style="background-color:#3A3A38">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;</div>|Dark Gray -- Standalone/Outline<br>58,58,56<br>#3A3A38|
