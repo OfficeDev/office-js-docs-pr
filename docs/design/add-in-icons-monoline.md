@@ -95,7 +95,6 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 
 |**16x**|**20x**|**24x**|**32x**|**40x**|**48x**|**64x**|**80x**|**96x**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-
 |![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon7.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon8.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon9.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon10.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon11.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon12.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon13.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon14.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon15.png)|
 
 
