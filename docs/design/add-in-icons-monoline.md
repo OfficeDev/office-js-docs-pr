@@ -152,183 +152,47 @@ The color palette has been designed for simplicity and accessibility. It contain
 
 ![The color palette in monoline](../images/monoline-colors.png)
 
-|**Sample**|**Description**|
-|:---|:---|
-|<div style="background-color:#3A3A38">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;</div>|Dark Gray -- Standalone/Outline<br>58,58,56<br>#3A3A38|
-|x|Medium Gray -- Outline/Content<br>121,119,116<br>#797774|
-|x|Background Fill<br>250,250,250<br>#FAFAFA|
-|x|Light Gray - Fill<br>200,198,196<br>#C8C6C4|
+#### How to use color
 
+In the Monoline color pallet, all colors have Standalone, Outline, and Fill variations. Generally, elements are constructed with a fill and a border. The colors are applied in one of the following patterns:
 
+- The Standalone color alone for objects that have no fill.
+- The border uses the Outline color and the fill uses the Fill color.
+- The border uses the Standalone color and the fill uses the Background Fill color.
 
-<table style="width:100%">
-  <tr>
-    <th><b>Sample</b></th>
-    <th><b>Description</b></th>
-  </tr>
-  <tr>
-    <td style="background-color:#3A3A38">xxxxx</td>
-    <td>Dark Gray -- Standalone/Outline<br>58,58,56<br>#3A3A38</td>
-  </tr>
-  <tr>
-    <td>ddd</td>
-    <td>Medium Gray -- Outline/Content<br>121,119,116<br>#797774</td>
-  </tr>
-  <tr>
-    <td>eee</td>
-    <td>Background Fill<br>250,250,250<br>#FAFAFA</td>
-  </tr>
-   <tr>
-    <td>ccc</td>
-    <td>Light Gray - Fill<br>200,198,196<br>#C8C6C4</td>
-  </tr>
-</table>
+The following are examples of using color.
 
-
-
-  -------------------------------------
-     Dark Gray -- Standalone/Outline\
-     58,58,56\
-     \#3A3A38
-  -- ----------------------------------
-     Medium Gray -- Outline/Content\
-     121,119,116\
-     \#797774
-
-     Background Fill\
-     250,250,250\
-     \#FAFAFA
-
-     Light Gray - Fill\
-     200,198,196\
-     \#C8C6C4
-  -------------------------------------
-
-###
-
-  -------------------------
-     Blue -- Standalone\
-     30,139,205\
-     \# 1E8BCD
-  -- ----------------------
-     Green - Standalone\
-     24,171,80\
-     \#18AB50
-
-     Yellow - Standalone\
-     251,152,59\
-     \#FB983B
-
-     Red - Standalone\
-     237,61,59\
-     \#ED3D3B
-
-     Purple - Standalone\
-     168,70,178\
-     \#A846B2
-
-     Blue -- Outline\
-     0,99,177\
-     \#0063B1
-
-     Green - Outline\
-     48,144,72\
-     \#309048
-
-     Yellow - Outline\
-     237, 135, 51\
-     \#ED8733
-
-     Red - Outline\
-     212, 35, 20\
-     \#D42314
-
-     Purple - Outline\
-     146, 46, 155\
-     \#922E9B
-
-     Blue - Fill\
-     131, 190, 236\
-     \#83BEEC
-
-     Green - Fill\
-     161, 221, 170\
-     \#A1DDAA
-
-     Yellow - Fill\
-     248, 219, 143\
-     \#F8DB8F
-
-     Red - Fill\
-     255, 145, 152\
-     \#FF9198
-
-     Purple - Fill\
-     212, 146, 216\
-     \#D492D8
-  -------------------------
-
-#### How To Use Color
-
-In the Monoline color pallet, all colors have a Standalone, Outline and Fill variations. Generally, elements are constructed with a fill and a border. Color is applied either:
-
--   With the border using the Outline color and the fill using the Fill color
-
--   With the border using the Standalone color and the fill using the Background Fill color
-
--   If the element has no fill, then the Standalone color is used
-
-
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon28.png)
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ![C:\\Users\\Suzanne Alphin\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Word\\Guildlines\_ColorLable.png](media/image29.png){width="5.0in" height="1.3541666666666667in"}
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+![Three icons with color in a border or fill or both](../images/monolineicon28.png)
 
 The most common situation will be to have an element use Dark Gray Standalone with Background Fill.
 
-When using a colored Fill, it should always be with its corresponding Outline color. Example, Blue Fill should only be used with Blue Outline.
-
-##### Exceptions:
+When using a colored Fill, it should always be with its corresponding Outline color. Example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule:
 
 - Background Fill can be used with any color Standalone.
+- Light Gray Fill can be used with 2 different Outline colors: Dark Gray or Medium Gray.
 
-- Light Gray Fill can be used with 2 different Outline colors: Dark Gray or Medium Gray
+#### When to use color
 
-#### When To Use Color
+Color should be used to convey the meaning of the icon rather than for embellishment. It should **highlight the action** to the user. When a modifier is added to a base element that has color, the base element is typically turned into Dark gray and Background Fill so that the modifier can be the element of color, such as the case below with the "X" modifier being added to the picture base in the leftmost icon of the following set.
 
-Color should be used to convey the meaning of the icon rather than for embellishment. It should **highlight the action** to the user. When a modifier is added to a base element that has color, the base element is typically turned into Dark gray and Background Fill so that the modifier can be the element of color, such as the case below with the \"X\"
-modifier being added to the picture base.
+![Five icons that use color](../images/monolineicon29.png)
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon29.png)
-  -----------------------------------------------------------------------------------
-  ![](media/image30.png){width="4.166666666666667in" height="0.6666666666666666in"}
-  -----------------------------------------------------------------------------------
-
-Color is generally **limited to 1 additional color** other than the Outline and Fill mentioned above. However, more colors can be used if it is vital for its metaphor, with a limit to 2 additional colors other than gray. In rare cases, there are exceptions when more colors are needed.
-
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon30.png)
+You should limit your icons to **one** additional color, other than the Outline and Fill mentioned above. However, more colors can be used if it is vital for its metaphor, with a limit to two additional colors other than gray. In rare cases, there are exceptions when more colors are needed.
 
   ✔
-  -----------------------------------------------------------------------------------
-  ![](media/image31.png){width="4.166666666666667in" height="0.6666666666666666in"}
-
-  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon31.png)
+  ![A green check mark of approval by an image of five icons with one color each](../images/monolineicon30.png)
 
   ❌
-  -----------------------------------------------------------------------------------
-  ![](media/image32.png){width="4.166666666666667in" height="0.6666666666666666in"}
+  ![A red X mark of disapproval by an image of five icons with multiple colors](../images/monolineicon31.png)
 
-Use **Medium Gray** for interior \"content\", grid lines and dashes. Additional interior colors are used when the content needs to show the behavior of the control
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon32.png)
+Use **Medium Gray** for interior "content", such as grid lines in an icon of a spreadsheet. Additional interior colors are used when the content needs to show the behavior of the control.
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ![C:\\Users\\Suzanne Alphin\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Word\\Guildlines\_MediumGray.png](media/image33.png){width="4.166666666666667in" height="0.6666666666666666in"}
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+![Five icons with medium gray interior elements](../images/monolineicon32.png)
 
-#### Text Lines
+#### Text lines
 
-When text lines are in a \"container\" (text on a document), use medium grey. Text lines not in a container should be dark grey.
+When text lines are in a "container" (for example, text on a document), use medium gray. Text lines that not in a container should be dark gray.
 
 ### Text
 
