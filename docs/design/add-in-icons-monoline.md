@@ -57,11 +57,9 @@ Monoline is a clean minimalistic style. Everything uses flat color, which means 
 
 ### Sizes
 
-Multiple sizes will be needed. It is recommended to produces the following sizes:
+We recommend that you produce each icon in all these sizes to support high DPI devices. The absolutely *required* sizes are 16x, 20x, and 32x, as those are the 100% sizes.
 
 **16x, 20x, 24x, 32x, 40x, 48x, 64x, 80x, 96x**
-
-We recommend that you produce each icon in all these sizes to support high DPI devices. The absolutely *required* sizes are 16x, 20x, and 32x, as those are the 100% sizes.
 
 ### Layout
 
@@ -204,10 +202,3 @@ Avoid using text characters in icons. Since Office products are used around the 
 
 The final icons should be saved out as .png image files. Use PNG format with a transparent background and have 32-bit depth.
 
-### Sizes
-
-As stated earlier the final recommended sizes are:
-
-**16x, 20x, 24x, 32x, 40x, 48x, 64x, 80x, 96x**
-
-However, the absolutely required sizes are 16x, 20x, and 32x.
