@@ -73,9 +73,13 @@ The following is an example of icon layout with a modifier.
 
 #### Element placement
 
-Base elements are placed in the center of the icon with in the padding. If it cannot place perfectly centered, then the base should err to the top right. In the following examples, the icon on the left is perfectly centered, and the one on the right is erring to the left.
+Base elements are placed in the center of the icon with in the padding. If it cannot place perfectly centered, then the base should err to the top right. In the following example, the icon is perfectly centered:
 
-![Image showing perfectly centered icon](../images/monolineicon4.png)![Image showing icon that errs to the left](../images/monolineicon5.png)
+![Image showing perfectly centered icon](../images/monolineicon4.png)
+
+In the following example, the icon is erring to the left.
+
+![Image showing icon that errs to the left](../images/monolineicon5.png)
 
 Modifiers are almost always placed in the bottom right corner of the icon canvas. In some rare cases, modifiers are placed in a different corner. For example, if the base element would be unrecognizable with the modifier in the bottom right corner, then consider placing it in the upper left corner.
 
