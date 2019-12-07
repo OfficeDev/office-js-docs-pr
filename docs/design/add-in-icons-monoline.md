@@ -106,69 +106,65 @@ Monoline is a style dominated by line and outlined shapes. Depending on what siz
 |**Line Weight:**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
 ||![16 px icon](../images/monolineicon16.png)|![20 px icon](../images/monolineicon17.png)|![24 px icon](../images/monolineicon18.png)|![32 px icon](../images/monolineicon19.png)|![40 px icon](../images/monolineicon20.png)|![48 px icon](../images/monolineicon21.png)|![64 px icon](../images/monolineicon22.png)|![80 px icon](../images/monolineicon23.png)|![96 px icon](../images/monolineicon24.png)|
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon16.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon17.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon18.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon19.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon20.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon21.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon22.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon23.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon24.png)
-
 #### Cutouts
 
 When an icon element is placed on top of another element, a cutout (of the bottom element) is used to provide space between the two elements, mainly for readability purposes. This usually happens when a modifier is placed on top of a base element, but there are also cases where neither of the elements is a modifier. These cutouts between the two elements is
-sometimes referred to as a \"gap\".
+sometimes referred to as a "gap".
 
-The size of the gap should be the same width as the line weight used on that size. If making a 16x, the gap width would be 1px and if it is a 48x then the gap should be 2px.
+The size of the gap should be the same width as the line weight used on that size. If making a 16x icon, the gap width would be 1px and if it is a 48x icon then the gap should be 2px. The following example shows a 32x icon with a gap of 1px between the modifier and the underlying base.
 
+![32x icon with a gap of 1px between the modifier and the underlying base](../images/monolineicon25.png)
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon25.png)
+In some cases, the gap can be increase by a 1/2px if the modifier has a diagonal or curved edge and the standard gap doesn't provide enough separation. This will likely only affect the icons with 1px line weight; 16x, 20x, 24x, and 32x.
 
-  --------------------------------------------------------------
-  ![](media/image26.png){width="1.90625in" height="1.84375in"}
+#### Background fills
 
-In some cases, the gap can be increase by a 1/2px if the modifier has a diagonal or curved edge and the standard gap doesn't provide enough separation. This will likely only affect the icons with 1px line weight 16x, 20x, 24x, and 32x.
+Most icons in the Monoline icon set require background fills. However, there are cases where the object would not naturally have a fill, so no fill should be applied. The following icons have a white fill:
 
-#### Background Fills
+![Five icons have a white fill](../images/monolineicon26.png)
 
-Most icons in the Monoline icon set require background fills. However, there are cases where the object would not naturally have a fill, so no fill should be applied.
+The following icons have no fill. (The gear icon is included to show that the center hole is not filled.)
+![Five icons with no fill](../images/monolineicon27.png)
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon26.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon27.png)
+##### Best practices for fills
 
-  White Fill
-  -----------------------------------------------------------------------------------
-  ![](media/image27.png){width="4.166666666666667in" height="0.6666666666666666in"}
-  No White Fill
-  ![](media/image28.png){width="4.166666666666667in" height="0.6666666666666666in"}
+Dos:
 
-##### When to fill
+- Any element that has a defined boundary, and would naturally have a fill.
+- Use a separate shape to create the background fill.
+- Use **Background Fill** from the Universal color palette.
+- Maintain the pixel separation between overlapping elements.
+- Fill between multiple objects.
 
--   Any element that has a defined boundary, and would naturally have a fill
+Don'ts:
 
--   Use a separate shape to create the background fill
-
--   Use **Background Fill** from the Universal color palette
-
--   Maintain the pixel separation between overlapping elements
-
--   Fill between multiples
-
-##### When not to Fill
-
--   Do not fill objects that would not naturally be filled (paperclip).
-
--   Do not fill brackets.
-
--   Do not fill behind numbers or alpha characters.
+- Don't fill objects that would not naturally be filled; for example, a paperclip.
+- Don't fill brackets.
+- Don't fill behind numbers or alpha characters.
 
 ### Color
 
 The color palette has been designed for simplicity and accessibility. It contains 4 neutral colors and two variations for blue, green, yellow, red, and purple. Orange is intentionally not included in the Office icon color palette. Each color is intended to be used in specific ways as outlined in this section.
 
 #### Palette
+
+
+
+  ||Dark Gray -- Standalone/Outline<br>
+     58,58,56<br>
+     #3A3A38|
+  ||Medium Gray -- Outline/Content<br>
+     121,119,116<br>
+     #797774|
+  ||Background Fill<br>
+     250,250,250<br>
+     #FAFAFA|
+  ||Light Gray - Fill<br>
+     200,198,196<br>
+     #C8C6C4|
+
+
+
 
   -------------------------------------
      Dark Gray -- Standalone/Outline\
