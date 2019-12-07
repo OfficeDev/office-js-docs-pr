@@ -30,8 +30,8 @@ The following guidelines are for 3rd party developers who want to create icons f
 
 #### Reduction of Elements
 
--   Reduction of the icon to its core meaning, using only elements that are essential to the metaphor.
--   Limiting the number of elements in an icon to two, regardless of icon size.
+-   Reduce the icon to its core meaning, using only elements that are essential to the metaphor.
+-   Limit the number of elements in an icon to two, regardless of icon size.
 
 #### Consistency
 
@@ -41,11 +41,11 @@ Sizes, arrangement, and color of icons should be consistent.
 
 ##### Perspective
 
-Monoline icons are forward-facing by default. Certain elements that require perspective and/or rotation, such as a cube are allowed, but exceptiosn should be kept to a minimum.
+Monoline icons are forward-facing by default. Certain elements that require perspective and/or rotation, such as a cube are allowed, but exceptions should be kept to a minimum.
 
 ##### Embellishment
 
-Monoline is a clean minimalistic style. Everything uses flat color, which means there are no gradients, textures, or light sources.
+Monoline is a clean minimal style. Everything uses flat color, which means there are no gradients, textures, or light sources.
 
 ## Designing
 
@@ -59,7 +59,7 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 
 The following is an example of icon layout with a modifier.
 
-![Example of icon with modifier](../images/monolineicon1.png)!  [The same example with a grid background callouts for the base, modifier, padding and modifier cutout](../images/monolineicon2.png)
+![Example of icon with modifier](../images/monolineicon1.png)  ![The same example with a grid background callouts for the base, modifier, padding and modifier cutout](../images/monolineicon2.png)
 
 #### Elements
 
@@ -75,7 +75,7 @@ The following is an example of icon layout with a modifier.
 
 Base elements are placed in the center of the icon with in the padding. If it cannot place perfectly centered, then the base should err to the top right. In the following examples, the icon on the left is perfectly centered, and the one on the right is erring to the left.
 
-![Image showing perfectly centered icon](../images/monolineicon4.png)   ![Image showing icon that errs to the left](../images/monolineicon5.png)
+![Image showing perfectly centered icon](../images/monolineicon4.png)![Image showing icon that errs to the left](../images/monolineicon5.png)
 
 Modifiers are almost always placed in the bottom right corner of the icon canvas. In some rare cases, modifiers are placed in a different corner. For example, if the base element would be unrecognizable with the modifier in the bottom right corner, then consider placing it in the upper left corner.
 
@@ -120,15 +120,15 @@ The following icons have no fill. (The gear icon is included to show that the ce
 
 ##### Best practices for fills
 
-Dos:
+###### Dos:
 
-- Any element that has a defined boundary, and would naturally have a fill.
+- Fill any element that has a defined boundary, and would naturally have a fill.
 - Use a separate shape to create the background fill.
-- Use **Background Fill** from the Universal color palette.
+- Use **Background Fill** from the [color palette](#color).
 - Maintain the pixel separation between overlapping elements.
 - Fill between multiple objects.
 
-Don'ts:
+###### Don'ts:
 
 - Don't fill objects that would not naturally be filled; for example, a paperclip.
 - Don't fill brackets.
@@ -136,7 +136,7 @@ Don'ts:
 
 ### Color
 
-The color palette has been designed for simplicity and accessibility. It contains 4 neutral colors and two variations for blue, green, yellow, red, and purple. Orange is intentionally not included in the Office icon color palette. Each color is intended to be used in specific ways as outlined in this section.
+The color palette has been designed for simplicity and accessibility. It contains 4 neutral colors and two variations for blue, green, yellow, red, and purple. Orange is intentionally not included in the Monoline icon color palette. Each color is intended to be used in specific ways as outlined in this section.
 
 #### Palette
 
@@ -161,7 +161,7 @@ The most common situation will be to have an element use Dark Gray Standalone wi
 When using a colored Fill, it should always be with its corresponding Outline color. Example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule:
 
 - Background Fill can be used with any color Standalone.
-- Light Gray Fill can be used with 2 different Outline colors: Dark Gray or Medium Gray.
+- Light Gray Fill can be used with two different Outline colors: Dark Gray or Medium Gray.
 
 #### When to use color
 
@@ -169,12 +169,12 @@ Color should be used to convey the meaning of the icon rather than for embellish
 
 ![Five icons that use color](../images/monolineicon29.png)
 
-You should limit your icons to **one** additional color, other than the Outline and Fill mentioned above. However, more colors can be used if it is vital for its metaphor, with a limit to two additional colors other than gray. In rare cases, there are exceptions when more colors are needed.
+You should limit your icons to **one** additional color, other than the Outline and Fill mentioned above. However, more colors can be used if it is vital for its metaphor, with a limit of two additional colors other than gray. In rare cases, there are exceptions when more colors are needed. The following are good examples of icons that use just one color.
 
-  ✔
   ![A green check mark of approval by an image of five icons with one color each](../images/monolineicon30.png)
 
-  ❌
+But the following icons use too many colors.
+
   ![A red X mark of disapproval by an image of five icons with multiple colors](../images/monolineicon31.png)
 
 
