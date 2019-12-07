@@ -93,7 +93,7 @@ Modifiers are almost always placed in the bottom right corner of the icon canvas
 
 Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should but up to the edge of the canvas, extending outside of the padding---to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
 
-16x	20x	24x	32x	40x 	48x	64x	80x	       96x
+16x	20x	24x	32x &nbsp;&nbsp;40x&nbsp;&nbsp;48x	64x	80x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;96x
 
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon7.png)
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon8.png)
