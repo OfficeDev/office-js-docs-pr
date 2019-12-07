@@ -60,9 +60,12 @@
       - name: Overview
         href: design/add-in-design-language.md
       - name: Color
-        href: design/add-in-color.md
+        href: design/add-in-color.md		
       - name: Icons
-        href: design/add-in-icons.md
+	    items:
+		- name: Icon guidelines for Office Add-ins
+          href: design/add-in-icons.md
+		
       - name: Layout
         href: design/add-in-layout.md
       - name: Typography
