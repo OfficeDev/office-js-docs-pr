@@ -148,6 +148,7 @@ The color palette has been designed for simplicity and accessibility. It contain
 
 #### Palette
 
+![The four shades of gray in monoline](../images/monoline-grayshades.png)
 
 |**Sample**|**Description**|
 |:---|:---|
