@@ -158,6 +158,30 @@ The color palette has been designed for simplicity and accessibility. It contain
 
 
 
+<table style="width:100%">
+  <tr>
+    <th><b>Sample</b></th>
+    <th><b>Description</b></th>
+  </tr>
+  <tr>
+    <td style="background-color:#3A3A38">xxxxx</td>
+    <td>Dark Gray -- Standalone/Outline<br>58,58,56<br>#3A3A38</td>
+  </tr>
+  <tr>
+    <td>ddd</td>
+    <td>Medium Gray -- Outline/Content<br>121,119,116<br>#797774</td>
+  </tr>
+  <tr>
+    <td>eee</td>
+    <td>Background Fill<br>250,250,250<br>#FAFAFA</td>
+  </tr>
+   <tr>
+    <td>ccc</td>
+    <td>Light Gray - Fill<br>200,198,196<br>#C8C6C4</td>
+  </tr>
+</table>
+
+
 
   -------------------------------------
      Dark Gray -- Standalone/Outline\
