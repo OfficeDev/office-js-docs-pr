@@ -97,22 +97,14 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon7.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon8.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon9.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon10.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon11.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon12.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon13.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon14.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon15.png)|
 
-
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon7.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon8.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon9.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon10.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon11.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon12.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon13.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon14.png)
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon15.png)
-
-16x&nbsp;&nbsp;&nbsp;&nbsp;20x&nbsp;&nbsp;&nbsp;&nbsp;24x&nbsp;&nbsp;&nbsp;32x&nbsp;&nbsp;&nbsp;&nbsp;40x&nbsp;&nbsp;&nbsp;&nbsp;48x&nbsp;&nbsp;&nbsp;&nbsp;64x&nbsp;&nbsp;&nbsp;&nbsp;80x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;96x
-
 #### Line weights
 
 Monoline is a style dominated by line and outlined shapes. Depending on what size you are producing the icon should use the following line weights.
+
+|**Icon Size:**|**16x**|**20x**|**24x**|**32x**|**40x**|**48x**|**64x**|**80x**|**96x**|
+|Line Weight:|1px|1px|1px|1px|2px|2px|2px|2px|3px|
+|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
+|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon16.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon17.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon18.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon19.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon20.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon21.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon22.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon23.png)|![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon24.png)|
 
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon16.png)
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon17.png)
