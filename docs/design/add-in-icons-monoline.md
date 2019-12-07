@@ -149,7 +149,8 @@ The color palette has been designed for simplicity and accessibility. It contain
 #### Palette
 
 
-
+|**Sample**|**Description**|
+|:---|:---|
 |x|Dark Gray -- Standalone/Outline<br>58,58,56<br>#3A3A38|
 |x|Medium Gray -- Outline/Content<br>121,119,116<br>#797774|
 |x|Background Fill<br>250,250,250<br>#FAFAFA|
