@@ -65,48 +65,35 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 
 ### Layout
 
-The following is an example of icon layout with a modifier. On the right is the same icon with a background grid showing the
+The following is an example of icon layout with a modifier.
 
-![Example of icon with modifier](../images/monolineicon1.png)![The same example with a grid background callouts for the base, modifier, padding and modifier cutout](../images/monolineicon2.png)
-
-  ----------------------------------------------------------------------------------- -----------------------------------------------------------------------------------
-  ![](media/image2.png){width="1.6770833333333333in" height="1.6770833333333333in"}   ![](media/image3.png){width="3.6770833333333335in" height="1.6770833333333333in"}
-  ----------------------------------------------------------------------------------- -----------------------------------------------------------------------------------
+![Example of icon with modifier](../images/monolineicon1.png)!  [The same example with a grid background callouts for the base, modifier, padding and modifier cutout](../images/monolineicon2.png)
 
 #### Elements
 
--   Base -- The main concept the icon is to represent. This is usually the only visual needed for the icon, but sometimes the main concept can be enhanced with a secondary element, a modifier.
+- **Base**: The main concept that the icon represents. This is usually the only visual needed for the icon, but sometimes the main concept can be enhanced with a secondary element, a modifier.
 
--   Modifier -- Any element that overlays the base; a modifier, action or status. It modifies the base element by acting as an addition, alteration, or a descriptor.
+- **Modifier** Any element that overlays the base; that is, a modifier that typically represents an action or a status. It modifies the base element by acting as an addition, alteration, or a descriptor.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon3.png)
-  ------------------------------------------------------------------------
-  ![](media/image4.png){width="3.53125in" height="1.6770833333333333in"}
-  ------------------------------------------------------------------------
+![Grid with the base area and modifier areas on it.](../images/monolineicon3.png)
 
 ### Construction
 
-#### Element Placement
+#### Element placement
 
-Base elements are placed in the center of the icon with in the padding. If it cannot place perfectly centered, then the base should err to the top right.
+Base elements are placed in the center of the icon with in the padding. If it cannot place perfectly centered, then the base should err to the top right. In the following examples, the icon on the left is perfectly centered, and the one on the right is erring to the left.
 
-  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon4.png)
-  ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon5.png)
+![Image showing perfectly centered icon](../images/monolineicon4.png)   ![Image showing icon that errs to the left](../images/monolineicon5.png)
 
-  Perfectly centered                                                                  Erring to Left
-  ----------------------------------------------------------------------------------- -----------------------------------------------------------
-  ![](media/image5.png){width="2.1041666666666665in" height="1.9479166666666667in"}   ![](media/image6.png){width="1.6875in" height="1.6875in"}
+Modifiers are almost always placed in the bottom right corner of the icon canvas. In some rare cases, modifiers are placed in a different corner. For example, if the base element would be unrecognizable with the modifier in the bottom right corner, then consider placing it in the upper left corner.
 
-Modifiers are almost always placed in the bottom right corner of the icon canvas. In some rare cases, modifiers are placed in a different corner. One example would be if the base element would be unrecognizable with the modifier in the bottom right corner. In that case would consider placing the modifier in the upper left corner.
-
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon6.png)
-  ----------------------------------------------------------------------------------
-  ![](media/image7.png){width="4.158333333333333in" height="0.6666666666666666in"}
-  ----------------------------------------------------------------------------------
+![Image showing a few icons with the modifier in the lower right, but one with the modifier in the upper left](../images/monolineicon6.png)
 
 #### Padding
 
-Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should but up to the edge of the canvas, extending outside of the padding---to the edge of the icon border.
+Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should but up to the edge of the canvas, extending outside of the padding---to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
+
+16x	20x	24x	32x	40x 	48x	64x	80x	       96x
 
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon7.png)
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon8.png)
@@ -118,13 +105,7 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon14.png)
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon15.png)
 
-
-  Size      16x                                                                                   20x                                                                                   24x                                                      32x                                                                                  40x                                                                                  48x                                                    64x                                                                                  80x                                                                                  96x
-  --------- ------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------- -------------------------------------------------------- ------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------ ------------------------------------------------------ ------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------ ------------------------------------------------------
-  Padding   0px                                                                                   1px                                                                                   1px                                                      2px                                                                                  2px                                                                                  3px                                                    4px                                                                                  5px                                                                                  6px
-            ![](media/image8.png){width="0.16666666666666666in" height="0.16666666666666666in"}   ![](media/image9.png){width="0.20833333333333334in" height="0.20833333333333334in"}   ![](media/image10.png){width="0.25in" height="0.25in"}   ![](media/image11.png){width="0.3333333333333333in" height="0.3333333333333333in"}   ![](media/image12.png){width="0.4166666666666667in" height="0.4166666666666667in"}   ![](media/image13.png){width="0.5in" height="0.5in"}   ![](media/image14.png){width="0.6666666666666666in" height="0.6666666666666666in"}   ![](media/image15.png){width="0.8333333333333334in" height="0.8333333333333334in"}   ![](media/image16.png){width="1.0in" height="1.0in"}
-
-#### Line Weights
+#### Line weights
 
 Monoline is a style dominated by line and outlined shapes. Depending on what size you are producing the icon should use the following line weights.
 
@@ -137,13 +118,6 @@ Monoline is a style dominated by line and outlined shapes. Depending on what siz
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon22.png)
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon23.png)
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/monolineicon24.png)
-
-
-
-  Size          16x                                                                                    20x                                                                                    24x                                                      32x                                                                                  40x                                                                                  48x                                                    64x                                                                                  80x                                                                                  96x
-  ------------- -------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------- -------------------------------------------------------- ------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------ ------------------------------------------------------ ------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------ ------------------------------------------------------
-  Line Weight   1px                                                                                    1px                                                                                    1px                                                      1px                                                                                  2px                                                                                  2px                                                    2px                                                                                  2px                                                                                  3px
-                ![](media/image17.png){width="0.16666666666666666in" height="0.16666666666666666in"}   ![](media/image18.png){width="0.20833333333333334in" height="0.20833333333333334in"}   ![](media/image19.png){width="0.25in" height="0.25in"}   ![](media/image20.png){width="0.3333333333333333in" height="0.3333333333333333in"}   ![](media/image21.png){width="0.4166666666666667in" height="0.4166666666666667in"}   ![](media/image22.png){width="0.5in" height="0.5in"}   ![](media/image23.png){width="0.6666666666666666in" height="0.6666666666666666in"}   ![](media/image24.png){width="0.8333333333333334in" height="0.8333333333333334in"}   ![](media/image25.png){width="1.0in" height="1.0in"}
 
 #### Cutouts
 
