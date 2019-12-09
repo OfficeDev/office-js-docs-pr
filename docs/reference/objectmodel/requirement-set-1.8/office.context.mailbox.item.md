@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.8
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/09/2019
 localization_priority: Normal
 ---
 
@@ -1257,7 +1257,11 @@ The `addFileAttachmentAsync` method uploads the file at the specified URI and at
 
 You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.
 
+> [!IMPORTANT]
+> In recent builds of Outlook on Windows, a bug was introduced that incorrectly appends an `Authorization: Bearer` header to this action (whether using this API or the Outlook UI). To work around this issue, you can try using the [`addFileAttachmentFromBase64`](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) API instead.
+
 ##### Parameters
+
 |Name|Type|Attributes|Description|
 |---|---|---|---|
 |`uri`|String||The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.|

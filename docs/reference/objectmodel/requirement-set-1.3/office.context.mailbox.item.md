@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.3
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/09/2019
 localization_priority: Normal
 ---
 
@@ -995,6 +995,9 @@ Adds a file to a message or appointment as an attachment.
 The `addFileAttachmentAsync` method uploads the file at the specified URI and attaches it to the item in the compose form.
 
 You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.
+
+> [!IMPORTANT]
+> In recent builds of Outlook on Windows, a bug was introduced that incorrectly appends an `Authorization: Bearer` header to this action (whether using this API or the Outlook UI). To work around this issue, you can try using the [`addFileAttachmentFromBase64`](/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/office.context.mailbox.item?view=outlook-js-1.8#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) API introduced with requirement set 1.8.
 
 ##### Parameters
 
