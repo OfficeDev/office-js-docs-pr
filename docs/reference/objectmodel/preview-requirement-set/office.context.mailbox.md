@@ -773,7 +773,7 @@ You cannot request Folder Associated Items with the `makeEwsRequestAsync` method
 The XML request must specify UTF-8 encoding.
 
 ```xml
-<?xml version="1.1" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 ```
 
 Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsRequestAsync` method. For information about using the **ReadWriteMailbox** permission and the EWS operations that you can call with the `makeEwsRequestAsync` method, see [Specify permissions for mail add-in access to the user's mailbox](/outlook/add-ins/understanding-outlook-add-in-permissions).
@@ -786,7 +786,7 @@ Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsReq
 When you use the `makeEwsRequestAsync` method in mail apps running in Outlook versions earlier than version 15.0.4535.1004, you should set the encoding value to `ISO-8859-1`.
 
 ```xml
-<?xml version="1.1" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
 You do not need to set the encoding value when your mail app is running in Outlook on the web. You can determine whether your mail app is running in Outlook on the web or a desktop client by using the mailbox.diagnostics.hostName property. You can determine what version of Outlook is running by using the mailbox.diagnostics.hostVersion property.
@@ -815,7 +815,7 @@ The following example calls `makeEwsRequestAsync` to use the `GetItem` operation
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =
-    '<?xml version="1.1" encoding="utf-8"?>' +
+    '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
     '               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"' +
