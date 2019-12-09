@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 12/02/2019
+ms.date: 12/09/2019
 localization_priority: Normal
 ---
 
@@ -15,45 +15,45 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Properties
 
 | Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
-|---|---|---|---|---|
-| [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | String | 1.0 |
-| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | [MasterCategories](/javascript/api/outlook/office.mastercategories) | 1.8 |
-| [restUrl](#resturl-string) | ReadItem | Compose<br>Read | String | 1.5 |
+|---|---|---|---|:---:|
+| [ewsUrl](#ewsurl-string) | ReadItem | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Compose<br>Read | [MasterCategories](/javascript/api/outlook/office.mastercategories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [restUrl](#resturl-string) | ReadItem | Compose<br>Read | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 
 ##### Methods
 
 | Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
-|---|---|---|---|
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.5 |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Compose<br>Read | 1.0 |
-| [convertToRestId](#converttorestiditemid-restversion--string) | Restricted | Compose<br>Read | 1.3 |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Compose<br>Read | 1.0 |
-| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Compose<br>Read | 1.0 |
-| [displayMessageForm](#displaymessageformitemid) | ReadItem | Compose<br>Read | 1.0 |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Read | 1.0 |
-| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Compose<br>Read | 1.6 |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Compose<br>Read | 1.5 |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.3<br>1.0 |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.0 |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Compose<br>Read | 1.0 |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Compose<br>Read | 1.5 |
+|---|---|---|:---:|
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restricted | Compose<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Compose<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Restricted | Compose<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Compose<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Compose<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayMessageForm](#displaymessageformitemid) | ReadItem | Compose<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Compose<br>Read | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Compose<br>Read | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Compose<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md)<br>[1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Compose<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Compose<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Compose<br>Read | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 
 ##### Events
 
 You can subscribe to and unsubscribe from the following events using [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) and [removeHandlerAsync](#removehandlerasynceventtype-options-callback) respectively.
 
 | Event | Description | Minimum<br>requirement set |
-|---|---|---|
-|`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
-|`OfficeThemeChanged`| The Office theme on the mailbox has changed. | Preview |
+|---|---|:---:|
+|`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+|`OfficeThemeChanged`| The Office theme on the mailbox has changed. | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
 
 ### Namespaces
 
@@ -86,7 +86,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -110,7 +110,7 @@ Gets an object that provides methods to manage the categories master list on thi
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.8 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.8 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
@@ -147,7 +147,7 @@ The `restUrl` value can be used to make [REST API](/outlook/rest/) calls to the 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -173,7 +173,7 @@ Currently, the supported event types are `Office.EventType.ItemChanged` and `Off
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -221,7 +221,7 @@ Item IDs retrieved via a REST API (such as the [Outlook Mail API](/previous-vers
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -263,7 +263,7 @@ If the mail app is running in Outlook on a desktop client, the `convertToLocalCl
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -297,7 +297,7 @@ Item IDs retrieved via EWS or via the `itemId` property use a different format t
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -337,7 +337,7 @@ The `convertToUtcClientTime` method converts a dictionary containing a local dat
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -400,7 +400,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -440,7 +440,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -491,7 +491,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read|
 
@@ -553,7 +553,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.6 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read|
 
@@ -631,7 +631,7 @@ You can pass both the token and either an attachment identifier or item identifi
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose and read|
 
@@ -688,7 +688,7 @@ Calling `getCallbackTokenAsync` in compose mode requires you to have saved the i
 
 |Requirement|||
 |---|---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0 | 1.3 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1 | 1.3 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem | ReadItem |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read | Compose |
 
@@ -734,7 +734,7 @@ The `getUserIdentityTokenAsync` method returns a token that you can use to ident
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -773,7 +773,7 @@ You cannot request Folder Associated Items with the `makeEwsRequestAsync` method
 The XML request must specify UTF-8 encoding.
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.1" encoding="utf-8"?>
 ```
 
 Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsRequestAsync` method. For information about using the **ReadWriteMailbox** permission and the EWS operations that you can call with the `makeEwsRequestAsync` method, see [Specify permissions for mail add-in access to the user's mailbox](/outlook/add-ins/understanding-outlook-add-in-permissions).
@@ -786,7 +786,7 @@ Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsReq
 When you use the `makeEwsRequestAsync` method in mail apps running in Outlook versions earlier than version 15.0.4535.1004, you should set the encoding value to `ISO-8859-1`.
 
 ```xml
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.1" encoding="iso-8859-1"?>
 ```
 
 You do not need to set the encoding value when your mail app is running in Outlook on the web. You can determine whether your mail app is running in Outlook on the web or a desktop client by using the mailbox.diagnostics.hostName property. You can determine what version of Outlook is running by using the mailbox.diagnostics.hostVersion property.
@@ -803,7 +803,7 @@ You do not need to set the encoding value when your mail app is running in Outlo
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -815,7 +815,7 @@ The following example calls `makeEwsRequestAsync` to use the `GetItem` operation
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =
-    '<?xml version="1.0" encoding="utf-8"?>' +
+    '<?xml version="1.1" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
     '               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"' +
@@ -877,6 +877,6 @@ Currently, the supported event types are `Office.EventType.ItemChanged` and `Off
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
