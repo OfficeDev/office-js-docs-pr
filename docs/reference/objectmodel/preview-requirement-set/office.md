@@ -1,7 +1,7 @@
 ---
 title: Office namespace - preview requirement set
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/09/2019
 localization_priority: Normal
 ---
 
@@ -13,17 +13,17 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Properties
 
 | Property | Modes | Return type | Minimum<br>requirement set |
-|---|---|---|---|
-| [AsyncResultStatus](#asyncresultstatus-string) | Compose<br>Read | String | 1.0 |
-| [CoercionType](#coerciontype-string) | Compose<br>Read | String | 1.0 |
-| [EventType](#eventtype-string) | Compose<br>Read | String | 1.5 |
-| [SourceProperty](#sourceproperty-string) | Compose<br>Read | String | 1.0 |
+|---|---|---|:---:|
+| [AsyncResultStatus](#asyncresultstatus-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Compose<br>Read | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### Namespaces
 
@@ -52,7 +52,7 @@ Specifies the result of an asynchronous call.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 <br>
@@ -79,7 +79,7 @@ Specifies how to coerce data returned or set by the invoked method.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 <br>
@@ -98,7 +98,7 @@ Specifies the event associated with an event handler.
 ##### Properties:
 
 | Name | Type | Description | Minimum requirement set |
-|---|---|---|---|
+|---|---|---|:---:|
 |`AppointmentTimeChanged`| String | The date or time of the selected appointment or series has changed. | 1.7 |
 |`AttachmentsChanged`| String | An attachment has been added to or removed from the item. | 1.8 |
 |`EnhancedLocationsChanged`| String | The location of the selected appointment has changed. | 1.8 |
@@ -111,7 +111,7 @@ Specifies the event associated with an event handler.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
 <br>
@@ -138,5 +138,5 @@ Specifies the source of the data returned by the invoked method.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

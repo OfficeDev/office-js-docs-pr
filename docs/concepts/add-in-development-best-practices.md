@@ -122,7 +122,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 ## Market your add-in
 
-- Publish your add-in to [AppSource](/office/dev/store/submit-to-the-office-store) and [promote it](/office/dev/store/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings).
+- Publish your add-in to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) and [promote it](/office/dev/store/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings).
 
 - Use succinct and descriptive add-in titles. Include no more than 128 characters.
 
