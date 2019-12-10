@@ -2,7 +2,7 @@
 title: Fresh style icon guidelines for Office Add-ins
 description: ''
 ms.date: 12/09/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Fresh style icon guidelines for Office Add-ins
@@ -12,10 +12,6 @@ The Office 2013+ (non-subscription) versions of Office use Microsoft's Fresh sty
 ## Office Fresh visual style
 
 The Fresh icons include only essential communicative elements. Non-essential elements including perspective, gradients, and light source are removed. The simplified icons support faster parsing of commands and controls. Follow this style to best fit with Office non-subscription clients.
-
-The following image shows icons that apply the modern design principles.
-
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/icons-images.png)
 
 ## Best practices
 

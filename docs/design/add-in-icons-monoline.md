@@ -2,7 +2,7 @@
 title: Monoline style icon guidelines for Office Add-ins
 description: ''
 ms.date: 12/09/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Monoline style icon guidelines for Office Add-ins
