@@ -23,7 +23,7 @@ Follow these guidelines when you create your icons:
 
 |Do|Don't|
 |:---|:---|
-|Keep visuals simple and clear, focusing on the key element(s) of the communication.| Don't use artifacts that make your icon look messy.|
+|Keep visuals simple and clear, focusing on the key elements of the communication.| Don't use artifacts that make your icon look messy.|
 |Use the Office icon language to represent behaviors or concepts.|Don’t repurpose Office UI Fabric glyphs for add-in commands in the Office ribbon or contextual menus. Fabric icons are stylistically different and will not match.|
 |Reuse common Office visual metaphors such as paintbrush for format or magnifying glass for find.|Don't reuse visual metaphors for different commands. Using the same icon for different behaviors and concepts can cause confusion. |
 |Redraw your icons to make them small or larger. Take the time to redraw cutouts, corners, and rounded edges to maximize line clarity. |Don't resize your icons by shrinking or enlarging in size. This can lead to poor visual quality and unclear actions. Complex icons created at a larger size may lose clarity if resized to be smaller without redraw. |
