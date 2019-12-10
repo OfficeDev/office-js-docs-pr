@@ -87,7 +87,7 @@ Modifiers are almost always placed in the bottom right corner of the icon canvas
 
 #### Padding
 
-Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should but up to the edge of the canvas, extending outside of the padding---to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
+Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should butt up to the edge of the canvas, extending outside of the padding---to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
 
 |**16x**|**20x**|**24x**|**32x**|**40x**|**48x**|**64x**|**80x**|**96x**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
