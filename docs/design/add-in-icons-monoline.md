@@ -150,7 +150,7 @@ The color palette has been designed for simplicity and accessibility. It contain
 
 #### How to use color
 
-In the Monoline color pallet, all colors have Standalone, Outline, and Fill variations. Generally, elements are constructed with a fill and a border. The colors are applied in one of the following patterns:
+In the Monoline color palette, all colors have Standalone, Outline, and Fill variations. Generally, elements are constructed with a fill and a border. The colors are applied in one of the following patterns:
 
 - The Standalone color alone for objects that have no fill.
 - The border uses the Outline color and the fill uses the Fill color.
