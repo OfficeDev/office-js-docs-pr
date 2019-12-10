@@ -25,7 +25,7 @@ The following guidelines are for 3rd party developers who want to create icons f
 #### Conveying meaning
 
 -   Use descriptive elements such as a page to represent a document or an envelope to represent mail.
--   Use the same element to represent the same concept, i.e. mail is always represented by an envelope, not a stamp.
+-   Use the same element to represent the same concept, i.e., mail is always represented by an envelope, not a stamp.
 -   Use a core metaphor during concept development.
 
 #### Reduction of Elements
@@ -41,7 +41,7 @@ Sizes, arrangement, and color of icons should be consistent.
 
 ##### Perspective
 
-Monoline icons are forward-facing by default. Certain elements that require perspective and/or rotation, such as a cube are allowed, but exceptions should be kept to a minimum.
+Monoline icons are forward-facing by default. Certain elements that require perspective and/or rotation, such as a cube, are allowed, but exceptions should be kept to a minimum.
 
 ##### Embellishment
 
@@ -59,7 +59,7 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 
 The following is an example of icon layout with a modifier.
 
-![Example of icon with modifier](../images/monolineicon1.png)  ![The same example with a grid background callouts for the base, modifier, padding and modifier cutout](../images/monolineicon2.png)
+![Example of icon with modifier](../images/monolineicon1.png)  ![The same example with a grid background callouts for the base, modifier, padding, and cutout.](../images/monolineicon2.png)
 
 #### Elements
 
@@ -73,7 +73,7 @@ The following is an example of icon layout with a modifier.
 
 #### Element placement
 
-Base elements are placed in the center of the icon with in the padding. If it cannot place perfectly centered, then the base should err to the top right. In the following example, the icon is perfectly centered:
+Base elements are placed in the center of the icon within the padding. If it can't be placed perfectly centered, then the base should err to the top right. In the following example, the icon is perfectly centered:
 
 ![Image showing perfectly centered icon](../images/monolineicon4.png)
 
@@ -87,7 +87,7 @@ Modifiers are almost always placed in the bottom right corner of the icon canvas
 
 #### Padding
 
-Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should but up to the edge of the canvas, extending outside of the padding---to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
+Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should butt up to the edge of the canvas, extending outside of the padding---to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
 
 |**16x**|**20x**|**24x**|**32x**|**40x**|**48x**|**64x**|**80x**|**96x**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
@@ -150,7 +150,7 @@ The color palette has been designed for simplicity and accessibility. It contain
 
 #### How to use color
 
-In the Monoline color pallet, all colors have Standalone, Outline, and Fill variations. Generally, elements are constructed with a fill and a border. The colors are applied in one of the following patterns:
+In the Monoline color palette, all colors have Standalone, Outline, and Fill variations. Generally, elements are constructed with a fill and a border. The colors are applied in one of the following patterns:
 
 - The Standalone color alone for objects that have no fill.
 - The border uses the Outline color and the fill uses the Fill color.
@@ -162,24 +162,24 @@ The following are examples of using color.
 
 The most common situation will be to have an element use Dark Gray Standalone with Background Fill.
 
-When using a colored Fill, it should always be with its corresponding Outline color. Example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule:
+When using a colored Fill, it should always be with its corresponding Outline color. For example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule:
 
 - Background Fill can be used with any color Standalone.
 - Light Gray Fill can be used with two different Outline colors: Dark Gray or Medium Gray.
 
 #### When to use color
 
-Color should be used to convey the meaning of the icon rather than for embellishment. It should **highlight the action** to the user. When a modifier is added to a base element that has color, the base element is typically turned into Dark gray and Background Fill so that the modifier can be the element of color, such as the case below with the "X" modifier being added to the picture base in the leftmost icon of the following set.
+Color should be used to convey the meaning of the icon rather than for embellishment. It should **highlight the action** to the user. When a modifier is added to a base element that has color, the base element is typically turned into Dark Gray and Background Fill so that the modifier can be the element of color, such as the case below with the "X" modifier being added to the picture base in the leftmost icon of the following set.
 
 ![Five icons that use color](../images/monolineicon29.png)
 
 You should limit your icons to **one** additional color, other than the Outline and Fill mentioned above. However, more colors can be used if it is vital for its metaphor, with a limit of two additional colors other than gray. In rare cases, there are exceptions when more colors are needed. The following are good examples of icons that use just one color.
 
-  ![A green check mark of approval by an image of five icons with one color each](../images/monolineicon30.png)
+  ![An image of five icons with one color each](../images/monolineicon30.png)
 
 But the following icons use too many colors.
 
-  ![A red X mark of disapproval by an image of five icons with multiple colors](../images/monolineicon31.png)
+  ![An image of five icons with multiple colors](../images/monolineicon31.png)
 
 
 Use **Medium Gray** for interior "content", such as grid lines in an icon of a spreadsheet. Additional interior colors are used when the content needs to show the behavior of the control.
@@ -188,7 +188,7 @@ Use **Medium Gray** for interior "content", such as grid lines in an icon of a s
 
 #### Text lines
 
-When text lines are in a "container" (for example, text on a document), use medium gray. Text lines that not in a container should be dark gray.
+When text lines are in a "container" (for example, text on a document), use medium gray. Text lines not in a container should be **Dark Gray**.
 
 ### Text
 
@@ -198,5 +198,4 @@ Avoid using text characters in icons. Since Office products are used around the 
 
 ### Icon file format
 
-The final icons should be saved out as .png image files. Use PNG format with a transparent background and have 32-bit depth.
-
+The final icons should be saved as .png image files. Use PNG format with a transparent background and have 32-bit depth.
