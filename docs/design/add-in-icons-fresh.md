@@ -92,7 +92,7 @@ The following image shows the layout of base elements and modifiers in an Office
 
 ### Base element padding
 
-Place base elements consistently across sizes. If base elements can't be centered in the frame, align them to the top left, leaving the extra pixels on the bottom right. For best results, apply the padding guidelines listed in the following table.
+Place base elements consistently across sizes. If base elements can't be centered in the frame, align them to the top left, leaving the extra pixels on the bottom right. For best results, apply the padding guidelines listed in the table in the following section.
 
 ### Modifiers
 
