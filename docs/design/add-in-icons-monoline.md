@@ -25,7 +25,7 @@ The following guidelines are for 3rd party developers who want to create icons f
 #### Conveying meaning
 
 -   Use descriptive elements such as a page to represent a document or an envelope to represent mail.
--   Use the same element to represent the same concept, i.e. mail is always represented by an envelope, not a stamp.
+-   Use the same element to represent the same concept, i.e., mail is always represented by an envelope, not a stamp.
 -   Use a core metaphor during concept development.
 
 #### Reduction of Elements
@@ -199,4 +199,3 @@ Avoid using text characters in icons. Since Office products are used around the 
 ### Icon file format
 
 The final icons should be saved out as .png image files. Use PNG format with a transparent background and have 32-bit depth.
-
