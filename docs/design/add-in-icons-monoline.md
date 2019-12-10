@@ -73,7 +73,7 @@ The following is an example of icon layout with a modifier.
 
 #### Element placement
 
-Base elements are placed in the center of the icon with in the padding. If it cannot place perfectly centered, then the base should err to the top right. In the following example, the icon is perfectly centered:
+Base elements are placed in the center of the icon within the padding. If it can't be placed perfectly centered, then the base should err to the top right. In the following example, the icon is perfectly centered:
 
 ![Image showing perfectly centered icon](../images/monolineicon4.png)
 
