@@ -41,7 +41,7 @@ Sizes, arrangement, and color of icons should be consistent.
 
 ##### Perspective
 
-Monoline icons are forward-facing by default. Certain elements that require perspective and/or rotation, such as a cube are allowed, but exceptions should be kept to a minimum.
+Monoline icons are forward-facing by default. Certain elements that require perspective and/or rotation, such as a cube, are allowed, but exceptions should be kept to a minimum.
 
 ##### Embellishment
 
