@@ -188,7 +188,7 @@ Use **Medium Gray** for interior "content", such as grid lines in an icon of a s
 
 #### Text lines
 
-When text lines are in a "container" (for example, text on a document), use medium gray. Text lines that not in a container should be dark gray.
+When text lines are in a "container" (for example, text on a document), use medium gray. Text lines not in a container should be **Dark Gray**.
 
 ### Text
 
