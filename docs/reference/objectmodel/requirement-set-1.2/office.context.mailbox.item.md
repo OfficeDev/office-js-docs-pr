@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.2
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/10/2019
 localization_priority: Normal
 ---
 
@@ -521,14 +521,12 @@ Gets the [Exchange Web Services item identifier](/exchange/client-developer/exch
 
 ##### Example
 
-The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.
+The following code checks for the presence of an item identifier.
 
 ```js
 var itemId = Office.context.mailbox.item.itemId;
 if (itemId === null || itemId == undefined) {
-  Office.context.mailbox.item.saveAsync(function(result) {
-    itemId = result.value;
-  });
+  // The item has not been saved yet.
 }
 ```
 
