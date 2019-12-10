@@ -524,7 +524,7 @@ The following code checks for the presence of an item identifier.
 ```js
 var itemId = Office.context.mailbox.item.itemId;
 if (itemId === null || itemId == undefined) {
-  // The item has not been saved yet.
+  // The itemId property is not available in Compose mode.
 }
 ```
 
