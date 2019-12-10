@@ -179,7 +179,7 @@ You should limit your icons to **one** additional color, other than the Outline 
 
 But the following icons use too many colors.
 
-  ![A red X mark of disapproval by an image of five icons with multiple colors](../images/monolineicon31.png)
+  ![An image of five icons with multiple colors](../images/monolineicon31.png)
 
 
 Use **Medium Gray** for interior "content", such as grid lines in an icon of a spreadsheet. Additional interior colors are used when the content needs to show the behavior of the control.
