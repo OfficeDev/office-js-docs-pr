@@ -162,7 +162,7 @@ The following are examples of using color.
 
 The most common situation will be to have an element use Dark Gray Standalone with Background Fill.
 
-When using a colored Fill, it should always be with its corresponding Outline color. Example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule:
+When using a colored Fill, it should always be with its corresponding Outline color. For example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule:
 
 - Background Fill can be used with any color Standalone.
 - Light Gray Fill can be used with two different Outline colors: Dark Gray or Medium Gray.
