@@ -51,9 +51,9 @@ Monoline is a clean minimal style. Everything uses flat color, which means there
 
 ### Sizes
 
-We recommend that you produce each icon in all these sizes to support high DPI devices. The absolutely *required* sizes are 16x, 20x, and 32x, as those are the 100% sizes.
+We recommend that you produce each icon in all these sizes to support high DPI devices. The absolutely *required* sizes are 16px, 20px, and 32px, as those are the 100% sizes.
 
-**16x, 20x, 24x, 32x, 40x, 48x, 64x, 80x, 96x**
+**16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px**
 
 ### Layout
 
@@ -89,7 +89,7 @@ Modifiers are almost always placed in the bottom right corner of the icon canvas
 
 Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should butt up to the edge of the canvas, extending outside of the padding---to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
 
-|**16x**|**20x**|**24x**|**32x**|**40x**|**48x**|**64x**|**80x**|**96x**|
+|**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |![16 px icon](../images/monolineicon7.png)|![20 px icon](../images/monolineicon8.png)|![24 px icon](../images/monolineicon9.png)|![32 px icon](../images/monolineicon10.png)|![40 px icon](../images/monolineicon11.png)|![48 px icon](../images/monolineicon12.png)|![64 px icon](../images/monolineicon13.png)|![80 px icon](../images/monolineicon14.png)|![96 px icon](../images/monolineicon15.png)|
 
@@ -97,7 +97,7 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 
 Monoline is a style dominated by line and outlined shapes. Depending on what size you are producing the icon should use the following line weights.
 
-|**Icon Size:**|**16x**|**20x**|**24x**|**32x**|**40x**|**48x**|**64x**|**80x**|**96x**|
+|**Icon Size:**|**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |**Line Weight:**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
 ||![16 px icon](../images/monolineicon16.png)|![20 px icon](../images/monolineicon17.png)|![24 px icon](../images/monolineicon18.png)|![32 px icon](../images/monolineicon19.png)|![40 px icon](../images/monolineicon20.png)|![48 px icon](../images/monolineicon21.png)|![64 px icon](../images/monolineicon22.png)|![80 px icon](../images/monolineicon23.png)|![96 px icon](../images/monolineicon24.png)|
@@ -107,11 +107,11 @@ Monoline is a style dominated by line and outlined shapes. Depending on what siz
 When an icon element is placed on top of another element, a cutout (of the bottom element) is used to provide space between the two elements, mainly for readability purposes. This usually happens when a modifier is placed on top of a base element, but there are also cases where neither of the elements is a modifier. These cutouts between the two elements is
 sometimes referred to as a "gap".
 
-The size of the gap should be the same width as the line weight used on that size. If making a 16x icon, the gap width would be 1px and if it is a 48x icon then the gap should be 2px. The following example shows a 32x icon with a gap of 1px between the modifier and the underlying base.
+The size of the gap should be the same width as the line weight used on that size. If making a 16px icon, the gap width would be 1px and if it is a 48px icon then the gap should be 2px. The following example shows a 32px icon with a gap of 1px between the modifier and the underlying base.
 
-![32x icon with a gap of 1px between the modifier and the underlying base](../images/monolineicon25.png)
+![32px icon with a gap of 1px between the modifier and the underlying base](../images/monolineicon25.png)
 
-In some cases, the gap can be increase by a 1/2px if the modifier has a diagonal or curved edge and the standard gap doesn't provide enough separation. This will likely only affect the icons with 1px line weight; 16x, 20x, 24x, and 32x.
+In some cases, the gap can be increase by a 1/2px if the modifier has a diagonal or curved edge and the standard gap doesn't provide enough separation. This will likely only affect the icons with 1px line weight; 16px, 20px, 24px, and 32px.
 
 #### Background fills
 
