@@ -175,7 +175,7 @@ Color should be used to convey the meaning of the icon rather than for embellish
 
 You should limit your icons to **one** additional color, other than the Outline and Fill mentioned above. However, more colors can be used if it is vital for its metaphor, with a limit of two additional colors other than gray. In rare cases, there are exceptions when more colors are needed. The following are good examples of icons that use just one color.
 
-  ![A green check mark of approval by an image of five icons with one color each](../images/monolineicon30.png)
+  ![An image of five icons with one color each](../images/monolineicon30.png)
 
 But the following icons use too many colors.
 
