@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - preview requirement set
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/09/2019
 localization_priority: Normal
 ---
 
@@ -15,17 +15,17 @@ Provides diagnostic information to an Outlook add-in.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Properties
 
 | Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
-|---|---|---|---|---|
-| [hostName](#hostname-string) | ReadItem | Compose<br>Read | String | 1.0 |
-| [hostVersion](#hostversion-string) | ReadItem | Compose<br>Read | String | 1.0 |
-| [OWAView](#owaview-string) | ReadItem | Compose<br>Read | String | 1.0 |
+|---|---|---|---|:---:|
+| [hostName](#hostname-string) | ReadItem | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [hostVersion](#hostversion-string) | ReadItem | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [OWAView](#owaview-string) | ReadItem | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## Property details
 
@@ -46,7 +46,7 @@ A string that can be one of the following values: `Outlook`, `OutlookWebApp`, `O
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -69,7 +69,7 @@ If the mail add-in is running on an Outlook desktop or mobile client, the `hostV
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -100,6 +100,6 @@ Outlook on the web has three views that correspond to the width of the screen an
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

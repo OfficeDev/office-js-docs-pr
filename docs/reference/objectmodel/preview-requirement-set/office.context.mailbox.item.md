@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 11/27/2019
+ms.date: 12/09/2019
 localization_priority: Normal
 ---
 
@@ -15,107 +15,107 @@ The `item` namespace is used to access the currently selected message, meeting r
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 ##### Properties
 
 | Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
-|---|---|---|---|---|
-| [attachments](#attachments-arrayattachmentdetails) | ReadItem | Read | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
-| [bcc](#bcc-recipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.1 |
-| [body](#body-body) | ReadItem | Compose | [Body](/javascript/api/outlook/office.body) | 1.1 |
-| | | Read | | |
-| [categories](#categories-categories) | ReadItem | Compose | [Categories](/javascript/api/outlook/office.categories) | Preview |
-| | | Read | | |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
-| | | Message Read | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
-| [conversationId](#nullable-conversationid-string) | ReadItem | Message Compose | String | 1.0 |
-| | | Message Read | | |
-| [dateTimeCreated](#datetimecreated-date) | ReadItem | Read | Date | 1.0 |
-| [dateTimeModified](#datetimemodified-date) | ReadItem | Read | Date | 1.0 |
-| [end](#end-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
-| | | Appointment Attendee | Date | |
-| | | Message Read<br>(Meeting Request) | Date | |
-| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Appointment Organizer | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Preview |
-| | | Appointment Attendee | | |
-| [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Message Compose | [From](/javascript/api/outlook/office.from) | 1.7 |
-| | ReadItem | Message Read | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Message Compose | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Preview |
-| [internetMessageId](#internetmessageid-string) | ReadItem | Message Read | String | 1.0 |
-| [itemClass](#itemclass-string) | ReadItem | Read | String | 1.0 |
-| [itemId](#nullable-itemid-string) | ReadItem | Read | String | 1.0 |
-| [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | Compose | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | 1.0 |
-| | | Read | | |
-| [location](#location-stringlocation) | ReadItem | Appointment Organizer | [Location](/javascript/api/outlook/office.location) | 1.0 |
-| | | Appointment Attendee | String | |
-| | | Message Read<br>(Meeting Request) | String | |
-| [normalizedSubject](#normalizedsubject-string) | ReadItem | Read | String | 1.0 |
-| [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | Message Compose | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
-| | ReadItem | Message Read | | |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
-| | | Appointment Attendee | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
-| [organizer](#organizer-emailaddressdetailsorganizer) | ReadWriteItem | Appointment Organizer | [Organizer](/javascript/api/outlook/office.organizer) | 1.7 |
-| | ReadItem | Appointment Attendee | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [recurrence](#nullable-recurrence-recurrence) | ReadItem | Appointment Organizer | [Recurrence](/javascript/api/outlook/office.recurrence) | 1.7 |
-| | | Appointment Attendee | | |
-| | | Message Read<br>(Meeting Request) | | |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | Appointment Organizer | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
-| | | Appointment Attendee | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
-| [sender](#sender-emailaddressdetails) | ReadItem | Message Read | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [seriesId](#nullable-seriesid-string) | ReadItem | Compose | String | 1.7 |
-| | | Read | | |
-| [start](#start-datetime) | ReadItem | Appointment Organizer | [Time](/javascript/api/outlook/office.time) | 1.0 |
-| | | Appointment Attendee | Date | |
-| | | Message Read<br>(Meeting Request) | Date | |
-| [subject](#subject-stringsubject) | ReadItem | Compose | [Subject](/javascript/api/outlook/office.subject) | 1.0 |
-| | | Read | String | |
-| [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | Message Compose | [Recipients](/javascript/api/outlook/office.recipients) | 1.0 |
-| | | Message Read | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+|---|---|---|---|:---:|
+| [attachments](#attachments-arrayattachmentdetails) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [bcc](#bcc-recipients) | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [body](#body-body) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Read](/javascript/api/outlook/office.itemread) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [categories](#categories-categories) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Read](/javascript/api/outlook/office.itemread) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [conversationId](#nullable-conversationid-string) | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [dateTimeCreated](#datetimecreated-date) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [dateTimeModified](#datetimemodified-date) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [end](#end-datetime) | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread)<br>(Meeting Request) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [from](#from-emailaddressdetailsfrom) | ReadWriteItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [From](/javascript/api/outlook/office.from) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [internetHeaders](#internetheaders-internetheaders) | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [internetMessageId](#internetmessageid-string) | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [itemClass](#itemclass-string) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [itemId](#nullable-itemid-string) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Read](/javascript/api/outlook/office.itemread) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [location](#location-stringlocation) | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Location](/javascript/api/outlook/office.location) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread)<br>(Meeting Request) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [normalizedSubject](#normalizedsubject-string) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [organizer](#organizer-emailaddressdetailsorganizer) | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Organizer](/javascript/api/outlook/office.organizer) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [recurrence](#nullable-recurrence-recurrence) | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread)<br>(Meeting Request) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [sender](#sender-emailaddressdetails) | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [seriesId](#nullable-seriesid-string) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Read](/javascript/api/outlook/office.itemread) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| [start](#start-datetime) | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread)<br>(Meeting Request) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [subject](#subject-stringsubject) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Read](/javascript/api/outlook/office.itemread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ##### Methods
 
 | Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
-|---|---|---|---|
-| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | Compose | 1.1 |
-| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Compose | Preview |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Compose<br>Read | 1.7 |
-| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | Compose | 1.1 |
-| [close](#close) | Restricted | Compose | 1.3 |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Read | 1.0 |
-| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Read | 1.0 |
-| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | Message Read | 1.8 |
-| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Compose<br>Read | Preview |
-| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Compose | Preview |
-| [getEntities](#getentities--entities) | ReadItem | Read | 1.0 |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restricted | Read | 1.0 |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | Read | 1.0 |
-| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | Read | Preview |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Compose | Preview |
-| [getRegExMatches](#getregexmatches--object) | ReadItem | Read | 1.0 |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | Read | 1.0 |
-| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | Compose | 1.2 |
-| [getSelectedEntities](#getselectedentities--entities) | ReadItem | Read | 1.6 |
-| [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | Read | 1.6 |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Compose<br>Read | Preview |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | Compose<br>Read | 1.0 |
-| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | Compose | 1.1 |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Compose<br>Read | 1.7 |
-| [saveAsync](#saveasyncoptions-callback) | ReadWriteItem | Compose | 1.3 |
-| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | ReadWriteItem | Compose | 1.2 |
+|---|---|---|:---:|
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose)<br>[Read](/javascript/api/outlook/office.itemread) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [close](#close) | Restricted | [Compose](/javascript/api/outlook/office.itemcompose) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose)<br>[Read](/javascript/api/outlook/office.itemread) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [getEntities](#getentities--entities) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restricted | [Read](/javascript/api/outlook/office.itemread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [getRegExMatches](#getregexmatches--object) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
+| [getSelectedEntities](#getselectedentities--entities) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
+| [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | [Read](/javascript/api/outlook/office.itemread) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose)<br>[Read](/javascript/api/outlook/office.itemread) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose)<br>[Read](/javascript/api/outlook/office.itemread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | [Compose](/javascript/api/outlook/office.itemcompose)<br>[Read](/javascript/api/outlook/office.itemread) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| [saveAsync](#saveasyncoptions-callback) | ReadWriteItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | ReadWriteItem | [Compose](/javascript/api/outlook/office.itemcompose) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
 
 ##### Events
 
 You can subscribe to and unsubscribe from the following events using [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) and [removeHandlerAsync](#removehandlerasynceventtype-options-callback) respectively.
 
 | Event | Description | Minimum<br>requirement set |
-|---|---|---|
-|`AppointmentTimeChanged`| The date or time of the selected appointment or series has changed. | 1.7 |
-|`AttachmentsChanged`| An attachment has been added to or removed from the item. | Preview |
-|`EnhancedLocationsChanged`| The location of the selected appointment has changed. | Preview |
-|`RecipientsChanged`| The recipient list of the selected item or appointment location has changed. | 1.7 |
-|`RecurrenceChanged`| The recurrence pattern of the selected series has changed. | 1.7 |
+|---|---|:---:|
+|`AppointmentTimeChanged`| The date or time of the selected appointment or series has changed. | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+|`AttachmentsChanged`| An attachment has been added to or removed from the item. | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+|`EnhancedLocationsChanged`| The location of the selected appointment has changed. | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+|`RecipientsChanged`| The recipient list of the selected item or appointment location has changed. | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+|`RecurrenceChanged`| The recurrence pattern of the selected series has changed. | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 
 ### Example
 
@@ -152,7 +152,7 @@ Gets the item's attachments as an array. Read mode only.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -202,7 +202,7 @@ By default, the collection is limited to a maximum of 100 members. However, on W
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.1|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -235,7 +235,7 @@ Gets an object that provides methods for manipulating the body of an item.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.1|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -283,7 +283,7 @@ Gets an object that provides methods for managing the item's categories.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -343,7 +343,7 @@ function callback(asyncResult) {
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -368,7 +368,7 @@ You get null for this property for a new item in a compose form. If the user set
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -396,7 +396,7 @@ Gets the date and time that an item was created. Read mode only.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -427,7 +427,7 @@ Gets the date and time that an item was last modified. Read mode only.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -490,7 +490,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -519,7 +519,7 @@ The `enhancedLocation` property returns an [EnhancedLocation](/javascript/api/ou
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -584,7 +584,7 @@ function callback(asyncResult) {
 
 |Requirement|||
 |---|---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|1.7|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|1.7|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
@@ -605,7 +605,7 @@ Gets or sets custom internet headers on a message. Compose mode only.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -637,7 +637,7 @@ Gets the Internet message identifier for an email message. Read mode only.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -674,7 +674,7 @@ You can create custom message classes that extends a default message class, for 
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -707,7 +707,7 @@ The `itemId` property is not available in compose mode. If an item identifier is
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -743,7 +743,7 @@ The `itemType` property returns one of the `ItemType` enumeration values, indica
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -797,7 +797,7 @@ function callback(asyncResult) {
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -820,7 +820,7 @@ The normalizedSubject property gets the subject of the item, with any standard p
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -848,7 +848,7 @@ Gets the notification messages for an item.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.3|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.3|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -906,7 +906,7 @@ function callback(asyncResult) {
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -949,7 +949,7 @@ Office.context.mailbox.item.organizer.getAsync(
 
 |Requirement|||
 |---|---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|1.7|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|1.7|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
@@ -1012,7 +1012,7 @@ Recurrence = {
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.7|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.7|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -1060,7 +1060,7 @@ function callback(asyncResult) {
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -1086,7 +1086,7 @@ The [`from`](#from-emailaddressdetailsfrom) and `sender` properties represent th
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -1122,7 +1122,7 @@ The `seriesId` property returns `null` for items that do not have parent items s
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.7|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.7|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -1191,7 +1191,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -1237,7 +1237,7 @@ function callback(asyncResult) {
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -1283,7 +1283,7 @@ function callback(asyncResult) {
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -1319,7 +1319,7 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](#remo
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.1|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -1400,7 +1400,7 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](#remo
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -1450,7 +1450,7 @@ Currently the supported event types are `Office.EventType.AttachmentsChanged`, `
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.7 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.7 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
@@ -1503,7 +1503,7 @@ If your Office Add-in is running in Outlook on the web, the `addItemAttachmentAs
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.1|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -1551,7 +1551,7 @@ In the Outlook desktop client, if the message is an inline reply, the `close` me
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.3|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.3|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -1591,7 +1591,7 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -1715,7 +1715,7 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -1824,7 +1824,7 @@ Gets all the internet headers for the message as a string. Read mode only.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -1879,7 +1879,7 @@ The `getAttachmentContentAsync` method gets the attachment with the specified id
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -1946,7 +1946,7 @@ Gets the item's attachments as an array. Compose mode only.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -1996,7 +1996,7 @@ Gets the entities found in the selected item's body.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -2035,7 +2035,7 @@ Gets an array of all the entities of the specified entity type found in the sele
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -2099,7 +2099,7 @@ The `getFilteredEntitiesByName` method returns the entities that match the regul
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -2134,7 +2134,7 @@ Gets initialization data passed when the add-in is [activated by an actionable m
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|Preview|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -2196,7 +2196,7 @@ When invoked, this method returns the item ID via the callback method.
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -2259,7 +2259,7 @@ If you specify an `ItemHasRegularExpressionMatch` rule on the body property of a
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -2311,7 +2311,7 @@ If you specify an `ItemHasRegularExpressionMatch` rule on the body property of a
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -2353,7 +2353,7 @@ If there is no selection but the cursor is in the body or subject, the method re
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.2|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.2|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -2396,7 +2396,7 @@ Gets the entities found in a highlighted match a user has selected. Highlighted 
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.6|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.6|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -2454,7 +2454,7 @@ If you specify an `ItemHasRegularExpressionMatch` rule on the body property of a
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.6|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.6|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|
 
@@ -2493,7 +2493,7 @@ Gets the properties of the selected appointment or message in a shared folder, c
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.8|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.8|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -2530,7 +2530,7 @@ Custom properties are stored as key/value pairs on a per-app, per-item basis. Th
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
@@ -2591,7 +2591,7 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.1|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -2634,7 +2634,7 @@ Currently the supported event types are `Office.EventType.AttachmentsChanged`, `
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.7 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.7 |
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
@@ -2672,7 +2672,7 @@ Since appointments have no draft state, if `saveAsync` is called on an appointme
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.3|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.3|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
@@ -2719,7 +2719,7 @@ The `setSelectedDataAsync` method inserts the specified string at the cursor loc
 
 |Requirement|Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.2|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.2|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
