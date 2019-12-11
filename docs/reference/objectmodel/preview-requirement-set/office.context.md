@@ -1,7 +1,7 @@
 ---
 title: Office.context - preview requirement set
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/09/2019
 localization_priority: Normal
 ---
 
@@ -15,22 +15,22 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Properties
 
 | Property | Modes | Return type | Minimum<br>requirement set |
-|---|---|---|---|
-| [contentLanguage](#contentlanguage-string) | Compose<br>Read | String | 1.0 |
-| [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation) | 1.0 |
-| [displayLanguage](#displaylanguage-string) | Compose<br>Read | String | 1.0 |
-| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype) | 1.0 |
-| [officeTheme](#officetheme-officetheme) | Compose<br>Read | [OfficeTheme](/javascript/api/office/office.officetheme) | Preview |
-| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype) | 1.0 |
-| [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) | 1.0 |
-| [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings) | 1.0 |
-| [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui) | 1.0 |
+|---|---|---|:---:|
+| [contentLanguage](#contentlanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [officeTheme](#officetheme-officetheme) | Compose<br>Read | [OfficeTheme](/javascript/api/office/office.officetheme) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### Namespaces
 
@@ -54,7 +54,7 @@ The `contentLanguage` value reflects the current **Editing Language** setting sp
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
@@ -95,7 +95,7 @@ Gets information about the environment in which the add-in is running.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
@@ -123,7 +123,7 @@ The `displayLanguage` value reflects the current **Display Language** setting sp
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
@@ -164,7 +164,7 @@ Gets the Office application host in which the add-in is running.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
@@ -204,7 +204,7 @@ Using Office theme colors lets you coordinate the color scheme of your add-in wi
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| Preview|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| Preview|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
@@ -239,7 +239,7 @@ Provides the platform on which the add-in is running.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
@@ -265,7 +265,7 @@ Provides a method for determining what requirement sets are supported on the cur
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
@@ -293,7 +293,7 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
@@ -314,5 +314,5 @@ Provides objects and methods that you can use to create and manipulate UI compon
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
