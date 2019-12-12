@@ -23,138 +23,142 @@ The `item` namespace is used to access the currently selected message, meeting r
 
 | Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|---|:---:|
-| attachments | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| bcc | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| body | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| categories | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| cc | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| conversationId | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| dateTimeCreated | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| dateTimeModified | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| end | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread)<br>(Meeting Request) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| enhancedLocation | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| from | ReadWriteItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [From](/javascript/api/outlook/office.from) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| internetHeaders | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| internetMessageId | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemClass | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemId | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemType | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| location | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Location](/javascript/api/outlook/office.location) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread)<br>(Meeting Request) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| normalizedSubject | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| notificationMessages | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| optionalAttendees | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| organizer | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Organizer](/javascript/api/outlook/office.organizer) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| recurrence | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread)<br>(Meeting Request) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| requiredAttendees | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| sender | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| seriesId | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| start | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread)<br>(Meeting Request) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| subject | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| to | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| attachments | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#attachments) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#attachments) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| bcc | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#bcc) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| body | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#body) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#body) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#body) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| categories | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| cc | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#cc) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#cc) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| conversationId | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#conversationid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#conversationid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| dateTimeCreated | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#datetimecreated) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#datetimecreated) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| dateTimeModified | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#datetimemodified) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#datetimemodified) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| end | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#end) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#end) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#end)<br>(Meeting Request) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| enhancedLocation | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#enhancedlocation) | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#enhancedlocation) | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| from | ReadWriteItem | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#from) | [From](/javascript/api/outlook/office.from) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | ReadItem | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#from) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| internetHeaders | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#internetheaders) | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| internetMessageId | ReadItem | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#internetmessageid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemClass | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#itemclass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#itemclass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemId | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#itemid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#itemid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemType | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| location | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#location) | [Location](/javascript/api/outlook/office.location) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#location) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#location)<br>(Meeting Request) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| normalizedSubject | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#normalizedsubject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#normalizedsubject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| notificationMessages | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#notificationmessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#notificationmessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#notificationmessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#notificationmessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| optionalAttendees | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#optionalattendees) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#optionalattendees) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| organizer | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#organizer) | [Organizer](/javascript/api/outlook/office.organizer) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#organizer) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| recurrence | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#recurrence) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#recurrence) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#recurrence)<br>(Meeting Request) | [Recurrence](/javascript/api/outlook/office.recurrence) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| requiredAttendees | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#requiredattendees) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#requiredattendees) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| sender | ReadItem | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#sender) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| seriesId | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| start | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#start) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#start) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#start)<br>(Meeting Request) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| subject | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#subject) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#subject) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| to | ReadItem | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#to) | [Recipients](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#to) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## Methods
 
 | Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
 |---|---|---|:---:|
-| addFileAttachmentAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| addFileAttachmentFromBase64Async | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| addHandlerAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.apppointmentcompose) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| addItemAttachmentAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| close | Restricted | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| displayReplyAllForm | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| displayReplyForm | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getAllInternetHeadersAsync | ReadItem | [Message Read](/javascript/api/outlook/office.messageread) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| getAttachmentContentAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| getAttachmentsAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| getEntities | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getEntitiesByType | Restricted | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getFilteredEntitiesByName | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getInitializationContextAsync | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| getItemIdAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| getRegExMatches | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getRegExMatchesByName | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getSelectedDataAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
-| getSelectedEntities | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
-| getSelectedRegExMatches | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
-| getSharedPropertiesAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| loadCustomPropertiesAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| removeAttachmentAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-|  |  | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| removeHandlerAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Message Read](/javascript/api/outlook/office.messageread) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| saveAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| setSelectedDataAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
-| | | [Message Compose](/javascript/api/outlook/office.messagecompose) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
+| addFileAttachmentAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#addfileattachmentasync-uri--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#addfileattachmentasync-uri--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| addFileAttachmentFromBase64Async | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#addfileattachmentfrombase64async-base64file--attachmentname--options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#addfileattachmentfrombase64async-base64file--attachmentname--options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| addHandlerAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.apppointmentcompose?view=outlook-js-preview#addhandlerasync-eventtype--handler--options--callback-) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#addhandlerasync-eventtype--handler--options--callback-) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#addhandlerasync-eventtype--handler--options--callback-) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#addhandlerasync-eventtype--handler--options--callback-) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| addItemAttachmentAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#additemattachmentasync-itemid--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#additemattachmentasync-itemid--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| close | Restricted | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#close--) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#close--) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| displayReplyAllForm | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#displayreplyallform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#displayreplyallform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| displayReplyForm | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#displayreplyform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#displayreplyform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getAllInternetHeadersAsync | ReadItem | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getallinternetheadersasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| getAttachmentContentAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#getattachmentcontentasync-attachmentid--options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getattachmentcontentasync-attachmentid--options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getattachmentcontentasync-attachmentid--options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getattachmentcontentasync-attachmentid--options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| getAttachmentsAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#getattachmentsasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getattachmentsasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| getEntities | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getentities--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getentities--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getEntitiesByType | Restricted | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getentitiesbytype-entitytype-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getentitiesbytype-entitytype-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getFilteredEntitiesByName | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getfilteredentitiesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getfilteredentitiesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getInitializationContextAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#getinitializationcontextasync-options--callback-) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getinitializationcontextasync-options--callback-) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getinitializationcontextasync-options--callback-) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getinitializationcontextasync-options--callback-) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| getItemIdAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#getitemidasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getitemidasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| getRegExMatches | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getregexmatches--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getregexmatches--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getRegExMatchesByName | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getregexmatchesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getregexmatchesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getSelectedDataAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#getselecteddataasync-coerciontype--options--callback-) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getselecteddataasync-coerciontype--options--callback-) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
+| getSelectedEntities | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getselectedentities--) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getselectedentities--) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
+| getSelectedRegExMatches | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getselectedregexmatches--) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getselectedregexmatches--) | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
+| getSharedPropertiesAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#getsharedpropertiesasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#getsharedpropertiesasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getsharedpropertiesasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#getsharedpropertiesasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| loadCustomPropertiesAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| removeAttachmentAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#removeattachmentasync-attachmentid--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+|  |  | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#removeattachmentasync-attachmentid--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| removeHandlerAsync | ReadItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#removehandlerasync-eventtype--options--callback-) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#removehandlerasync-eventtype--options--callback-) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#removehandlerasync-eventtype--options--callback-) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-preview#removehandlerasync-eventtype--options--callback-) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| saveAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#saveasync-options--callback-) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#saveasync-options--callback-) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| setSelectedDataAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#setselecteddataasync-data--options--callback-) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
+| | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#setselecteddataasync-data--options--callback-) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
 
 ## Events
 
