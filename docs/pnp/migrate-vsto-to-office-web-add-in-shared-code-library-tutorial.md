@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # Tutorial: Migrate your VSTO Add-in to an Office web add-in with a shared code library
 
-VSTO Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO Add-ins on Mac, online, or mobile platforms.
+Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO Add-ins on Mac, online, or mobile platforms.
 
 Office web add-ins use HTML, JavaScript, and additional web technologies to build Office solutions on all platforms. Migrating your existing VSTO Add-in to an Office web add-in is a great way to make your solution available across all platforms.
 
@@ -18,7 +18,7 @@ However there are a number of reasons you may not want to migrate an entire VSTO
 - Your existing customers might want to continue using your current VSTO Add-in, requiring you to continue supporting the existing codebase with bug fixes and new updates.
 - There may be missing functionality in the Office.js library for Office web add-ins that prevents you from completely migrating to an Office web add-in.
 
-If any of the previous factors applies, then the best strategy to be available across all platforms is to maintain both a VSTO Add-in, and an Office web add-in. However it can be costly to maintain two codebases. One way to simplify this is to create a shared code library.
+If any of the previous factors applies, then the best strategy for your add-in to be available across all platforms is to maintain both a VSTO Add-in, and an Office web add-in. However it can be costly to maintain two codebases. One way to simplify this is to create a shared code library.
 
 ## Shared code library
 
@@ -45,7 +45,7 @@ To set up your development environment:
     c. Office/SharePoint development
     d. Visual Studio Tools for Office (VSTO) Note that this is an Individual component.
 
-You will also need the following:
+You also need the following:
 
 - An Office 365 account. You can join the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365.
 - A Microsoft Azure Tenant. This add-in requires Azure Active Directiory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
@@ -59,7 +59,7 @@ This guide uses the [VSTO Add-in shared library for Office web add-in](https://g
 
 1. Download the [VSTO Add-in shared library for Office web add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/vstoshared/Samples/VSTO-shared-code-start) PnP solution to a working folder on your computer.
 2. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
-3. From the **Debug** menu choose **Start Debugging**.
+3. On the **Debug** menu, choose **Start Debugging**.
 
 The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show Unicode** button. The add-in will display a list of each character in the text along with its corresponding Unicode number.
 
@@ -134,7 +134,7 @@ VSTO Add-ins are created in Visual Studio as .NET projects, so we'll reuse .NET 
 
 1. If you haven't already, start Visual Studio 2019 and open the **\start\Cell-Analyzer.sln** solution.
 2. Right-click the solution in **Solution Explorer** and choose **Add > New Project**.
-3. In the **Add a new project dialog**, choose **Class Library (.NET Framework)** and choose **Next**.
+3. In the **Add a new project dialog**, choose **Class Library (.NET Framework)**, and choose **Next**.
     > [!NOTE]
     > Don't use the .NET Core class library because it will not work with your VSTO project.
 5. In the **Configure your new project** dialog, set the following fields.
@@ -142,7 +142,7 @@ VSTO Add-ins are created in Visual Studio as .NET projects, so we'll reuse .NET 
     - Leave the **Location** at it's default value.
     - Set the **Framework** to **4.7.2**.
 6. Choose **Create**.
-7. After the project is created, rename the **Class1.cs** file to **CellOperations.cs**. You will be prompted to rename the class as well. Do that so the class name matches the file name.
+7. After the project is created, rename the **Class1.cs** file to **CellOperations.cs**. A prompt to rename the class appears. Rename the class name so that it matches the file name.
 8. Add the following code to the `CellOperations` class to create a method named `GetUnicodeFromText`.
 
 ```csharp
@@ -186,25 +186,25 @@ Now you need to update the VSTO Add-in to use the class library. This is importa
 txtResult.Text = CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(cellValue);
 ```
 
-6. From the **Debug** menu, choose **Start Debugging**. The custom task pane should still work as expected. Enter some text in a cell, and then test that you can convert it to a Unicode list with the add-in.
+6. On the **Debug** menu, choose **Start Debugging**. The custom task pane should work as expected. Enter some text in a cell, and then test that you can convert it to a Unicode list with the add-in.
 
 ## Create a REST API wrapper
 
 The VSTO Add-in can use the shared class library directly since they are both .NET projects. However the Office web add-in won't be able to use .NET since it uses JavaScript. Next you will need to create a REST API wrapper. This enables the Office web add-in to call a REST API, which then passes the call along to the shared class library.
 
-1. If you haven't already, start Visual Studio 2019 and open the **\start\Cell-Analyzer.sln** solution.
+1. If you haven't already, start Visual Studio 2019, and open the **\start\Cell-Analyzer.sln** solution.
 2. Right-click the solution in **Solution Explorer** and choose **Add > New Project**.
-3. In the **Add a new project dialog**, choose **ASP.NET Core Web Application** and choose **Next**.
-4. In the **Configure your new project** dialog, set the following fields.
-    - Set the  **Project name** to **CellAnalyzerRESTAPI**.
-    - Leave the **Location** at it's default value.
+3. In the **Add a new project dialog**, choose **ASP.NET Core Web Application**, and choose **Next**.
+4. In the **Configure your new project** dialog, set the following fields:
+    - Set the **Project name** to **CellAnalyzerRESTAPI**.
+    - In the **Location** field, leave the default value.
 5. Choose **Create**.
 6. After the project is created, expand the **CellAnalyzerRESTAPI** project in **Solution Explorer**.
-7. Right-click **Dependencies** and choose **Add Reference**.
-8. Select **CellAnalyzerSharedLibrary** and choose **OK**.
+7. Right-click **Dependencies**, and choose **Add Reference**.
+8. Select **CellAnalyzerSharedLibrary**, and choose **OK**.
 9. Right-click the **Controllers** folder, and choose **Add > Controller**.
 10. In the **Add New Scaffolded Item** dialog, choose **API Controller - Empty** and then **Add**.
-11. In the **Add Empty API Controller** dialog, name the controller **AnalyzeUnicodeController** and then choose **Add**.
+11. In the **Add Empty API Controller** dialog, name the controller **AnalyzeUnicodeController**, and then choose **Add**.
 12. Open the **AnalyzeUnicodeController.cs** file and add the following code as a method to the `AnalyzeUnicodeController` class.
 
 ```csharp
@@ -219,37 +219,37 @@ public ActionResult<string> AnalyzeUnicode(string value)
 }
 ```
 
-11. Right-click the CellAnalyzerRESTAPI project and choose **Set as Startup Project**.
-12. From the **Debug** menu, choose **Start Debugging**.
+11. Right-click the **CellAnalyzerRESTAPI** project, and choose **Set as Startup Project**.
+12. On the **Debug** menu, choose **Start Debugging**.
 13. A browser will launch. Enter the following URL to test that the REST API is working: **https://localhost:44323/api/analyzeunicode?value=test**. You should see a string returned with Unicode values for each character.
 
 ## Create the Office web add-in
 
-When you create the Office web add-in, it will need to call the REST API. First you need to get the port number of the REST API server and save it.
+When you create the Office web add-in, it will make a call to the REST API. But first, you need to get the port number of the REST API server and save it for later.
 
 ### Save the SSL port number
 
-1. If you haven't already, start Visual Studio 2019 and open the **\start\Cell-Analyzer.sln** solution.
+1. If you haven't already, start Visual Studio 2019, and open the **\start\Cell-Analyzer.sln** solution.
 2. In the **CellAnalyzerRESTAPI** project, expand **Properties**, and open the **launchSettings.json** file.
-3. Find the line of code with the **sslPort** value, copy the port number and save it somewhere.
+3. Find the line of code with the **sslPort** value, copy the port number, and save it somewhere.
 
 ### Add the Office web add-in project
 
-To keep things simple, you'll keep all the code in one solution. You'll add the Office web add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
+To keep things simple, keep all the code in one solution. Add the Office web add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
 
-1. If you haven't already, start Visual Studio 2019 and open the **\start\Cell-Analyzer.sln** solution.
+1. If you haven't already, start Visual Studio 2019, and open the **\start\Cell-Analyzer.sln** solution.
 2. Right-click the solution in **Solution Explorer** and choose **Add > New Project**.
-3. In the **Add a new project dialog**, choose **Excel Web Add-in** and choose **Next**.
-5. In the **Configure your new project** dialog, set the following fields.
-    - Set the  **Project name** to **CellAnalyzerWebAddin**.
+3. In the **Add a new project dialog**, choose **Excel Web Add-in**, and choose **Next**.
+5. In the **Configure your new project** dialog, set the following fields:
+    - Set the **Project name** to **CellAnalyzerWebAddin**.
     - Leave the **Location** at it's default value.
     - Set the **Framework** to **4.7.2** or later.
 2. Choose **Create**.
-3. In the **Choose the add-in type** dialog, select **Add new functionalities to Excel** and choose **Finish**.
+3. In the **Choose the add-in type** dialog, select **Add new functionalities to Excel**, and choose **Finish**.
 
 ### Add UI and functionality to the Office web add-in
 
-1. Open the **Home.html** file and replace the `<body>` contents with the following HTML.
+1. Open the **Home.html** file, and replace the `<body>` contents with the following HTML.
 
 ```html
 <button id="btnShowUnicode" onclick="showUnicode()">Show Unicode</button>
@@ -257,7 +257,7 @@ To keep things simple, you'll keep all the code in one solution. You'll add the 
 <div id="txtResult"></div>
 ```
 
-2. Open the **Home.js** file and replace the entire contents with the following code. Substitute the **sslPort** number you saved previously from the **launchSettings.json** file.
+2. Open the **Home.js** file, and replace the entire contents with the following code. Substitute the **sslPort** number you saved previously from the **launchSettings.json** file.
 
 ```js
 (function () {
@@ -294,10 +294,10 @@ It's worth noting that in the previous code the returned string will be processe
 
 The Office.js library requires CORS on outgoing calls, such as the one made from the `ajax` call to the REST API server. Use the following steps to allow calls from the Office web add-in to the REST API.
 
-1. In **Solution Explorer** select the **CellAnalyzerWebAddinWeb** project.
+1. In **Solution Explorer**, select the **CellAnalyzerWebAddinWeb** project.
 2. From the **View** menu, choose **Properties Window** (if the window is not already displayed).
-3. In the properties window, copy the value of the **SSL URL** and save it somewhere. This is the URL that you need to allow through CORS.
-4. In the **CellAnalyzerRESTAPI** project open the **Startup.cs** file.
+3. In the properties window, copy the value of the **SSL URL**, and save it somewhere. This is the URL that you need to allow through CORS.
+4. In the **CellAnalyzerRESTAPI** project, open the **Startup.cs** file.
 5. Add the following code to the top of the `ConfigureServices` method. Be sure to substitute the URL SSL you copied previously for the `builder.WithOrigins` call.
 
 ```csharp
@@ -377,7 +377,7 @@ When done, your `Startup` class should look similar to the following code:
 
 ### Run the add-in
 
-1. In **Solution Explorer** right-click the top node **Solution 'Cell-Analyzer'** and choose **Set Startup Projects**.
+1. In **Solution Explorer**, right-click the top node **Solution 'Cell-Analyzer'**, and choose **Set Startup Projects**.
 2. In the **Solution 'Cell-Analyzer' Property Pages** dialog, select **Multiple startup projects**.
 3. Enable the Start action for each of the following projects.
     - CellAnalyzerRESTAPI
@@ -391,37 +391,36 @@ Excel will run and sideload the Office web add-in. You can test that the localho
 
 ## Publish to an Azure App Service
 
-You eventually want to publish the REST API project to the cloud. In the following steps you'll see how to publish the CellAnalyzerRESTAPI project to a Microsoft Azure App Service. See [Prerequisites](#prerequisites) for information on how to get an Azure account.
+You eventually want to publish the REST API project to the cloud. In the following steps you'll see how to publish the **CellAnalyzerRESTAPI** project to a Microsoft Azure App Service. See [Prerequisites](#prerequisites) for information on how to get an Azure account.
 
-1. In **Solution Explorer** right-click the **CellAnalyzerRESTAPI** project and choose **Publish**.
-2. In the **Pick a publish target** dialog, select **Create New** and choose **Create Profile**.
+1. In **Solution Explorer**, right-click the **CellAnalyzerRESTAPI** project, and choose **Publish**.
+2. In the **Pick a publish target** dialog, select **Create New**, and choose **Create Profile**.
 3. In the **App Service** dialog, select the correct account, if it is not already selected.
-4. The fields for the **App Service** dialog will be set to defaults for your account. Generally the defaults work fine, but you can change them at this point if you want any different settings.
-5. Choose **Create** in the **App Service** dialog.
+4. The fields for the **App Service** dialog will be set to defaults for your account. Generally the defaults work fine, but you can change them if you prefer different settings.
+5. In the **App Service** dialog, choose **Create**.
 6. The new profile will be displayed in a **Publish** page. Choose **Publish** to build and deploy the code to the App Service.
 
-You can test the service at this point by opening a browser and entering a URL that goes directly to the new service. For example use `https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=test` where *myappservice* is the unique name you created for the new App Service.
+You can now test the service. Open a browser and enter a URL that goes directly to the new service. For example, use `https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=test` where *myappservice* is the unique name you created for the new App Service.
 
 ### Use the Azure App Service from the Office web add-in
 
 The final step is to update the code in the Office web add-in to use the Azure App Service instead of localhost.
 
-1. In **Solution Explorer** expand the **CellAnalyzerWebAddinWeb** project and open the **Home.js** file.
+1. In **Solution Explorer**, expand the **CellAnalyzerWebAddinWeb** project, and open the **Home.js** file.
 2. Change the `url` constant to use the URL for your Azure App Service as shown in the following line of code. Replace `<myappservice>` with the unique name you created for the new App Service.
     ```JavaScript
     const url = "https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=" + range.values[0][0];
     ```
-3. In **Solution Explorer** right-click the top node **Solution 'Cell-Analyzer'** and choose **Set Startup Projects**.
+3. In **Solution Explorer**, right-click the top node **Solution 'Cell-Analyzer'**, and choose **Set Startup Projects**.
 4. In the **Solution 'Cell-Analyzer' Property Pages** dialog, select **Multiple startup projects**.
-5. Enable the Start action for each of the following projects.
+5. Enable the **Start** action for each of the following projects:
     - CellAnalyzerWebAddinWeb
     - CellAnalyzerWebAddin
 6. Choose **OK**.
 7. From the **Debug** menu, choose **Start Debugging**.
 
-Excel will run and sideload the Office web add-in. You can test that the App Service is working correctly by entering a text value into a cell, and choosing the **Show Unicode** button in the Office web add-in. It should call the service and display the unicode values for the text characters.
+Excel will run and sideload the Office web add-in. To test that the App Service is working correctly, enter a text value into a cell, and choose **Show Unicode** in the Office web add-in. It should call the service and display the unicode values for the text characters.
 
 ## Conclusion
 
-In this tutorial you've seen how to create an Office web add-in that uses shared code with the original VSTO add-in. You've seen how you can maintain both VSTO code for Office on Windows, and an Office web add-in for Office on other platforms. You've refactored VSTO C# code into a shared library and deployed it to an Azure App Service. You've created an Office web add-in that uses the shared library so that you don't have to rewrite the code in JavaScript.
-
+In this tutorial you learned how to create an Office web add-in that uses shared code with the original VSTO add-in. You learned how to maintain both VSTO code for Office on Windows, and an Office web add-in for Office on other platforms. You refactored VSTO C# code into a shared library and deployed it to an Azure App Service. You created an Office web add-in that uses the shared library so that you don't have to rewrite the code in JavaScript.
