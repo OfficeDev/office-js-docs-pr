@@ -99,6 +99,10 @@ You can use Visual Studio to debug your add-in in the Office desktop client on W
 > [!NOTE]
 > You cannot use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
+### Enable debugging for add-in commands and UI-less code
+
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
+
 ### Review the build and debug properties
 
 Before you start debugging, review the properties of each project to confirm that Visual Studio will open the desired host application and that other build and debug properties are set appropriately.
