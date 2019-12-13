@@ -32,19 +32,6 @@ The following table shows which browser is used for the various platforms and op
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
-> [!NOTE]
-> Until they are generally available, you need to be a Windows Insider to get a Windows version 1903 or greater, and you need to be an Office Insider to get Office version 16.0.11629 or greater.
->
-> To join Windows Insiders:
-> 
-> 1. Go to [Windows Insider](https://insider.windows.com) and click the link to join Windows Insiders.
-> 2. You will be taken to a page with instructions about how to use Windows Settings to enable preview builds of Windows. Follow the instructions. When you select the pace of updates, choose the fastest option.
->
-> To join Office Insiders:
-> 
-> 1. Go to [Get started as an Office Insider](https://insider.office.com/join).
-> 2. Follow the instruction on that page to join. When asked to specify a channel, select Insider.
-
 ## Troubleshooting Microsoft Edge Issues
 
 ### Scroll bar does not appear in task pane
