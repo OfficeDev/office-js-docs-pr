@@ -90,6 +90,7 @@ The web application project contains a default HTML file, JavaScript file, and C
 
 You can use Visual Studio to debug your add-in in the Office desktop client on Windows, as described in the following sections:
 
+- [Enable debugging for add-in commands and UI-less code](#enable-debugging-for-add-in-commands-and-ui-less-code)
 - [Review the build and debug properties](#review-the-build-and-debug-properties)
 - [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in)
 - [Start the project](#start-the-project)
