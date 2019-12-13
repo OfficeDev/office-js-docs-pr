@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 09/25/2019
+ms.date: 12/13/2019
 localization_priority: Priority
 ---
 
