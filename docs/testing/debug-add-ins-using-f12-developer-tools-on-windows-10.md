@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools on Windows 10
-description: ''
-ms.date: 07/01/2019
+description: 'Debug add-ins using Microsoft Edge developer tools on Windows 10'
+ms.date: 12/13/2019
 localization_priority: Priority
 ---
 
@@ -11,15 +11,52 @@ There are developer tools outside of IDEs available to help you debug your add-i
 
 The tool that you use depends on whether the add-in is running in Microsoft Edge or Internet Explorer. This is determined by the version of Windows 10 and the version of Office that are installed on the computer. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
 
-
 > [!NOTE]
 > The instructions in this article cannot be used to debug an Outlook add-in that uses Execute Functions. To debug an Outlook add-in that uses Execute Functions, we recommend that you attach to Visual Studio in script mode or to some other script debugger.
+
+## Enable debugging for add-in commands and UI-less code
+
+UI-less code, such as add-in commands, or code running while the task pane is not visible, will not be able to attach to a debugger by default. You'll need to use [Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell) to run a couple commands to enable debugging.
+
+1. Run the following command to get information for the **Microsoft.Win32WebViewHost** app package.
+    
+    ```powershell
+    Get-AppxPackage Microsoft.Win32WebViewHost
+    ```
+    
+    The command lists app package information similar to the following output.
+    
+    ```powershell
+    Name              : Microsoft.Win32WebViewHost
+    Publisher         : CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US
+    Architecture      : Neutral
+    ResourceId        : neutral
+    Version           : 10.0.18362.449
+    PackageFullName   : Microsoft.Win32WebViewHost_10.0.18362.449_neutral_neutral_cw5n1h2txyewy
+    InstallLocation   : C:\Windows\SystemApps\Microsoft.Win32WebViewHost_cw5n1h2txyewy
+    IsFramework       : False
+    PackageFamilyName : Microsoft.Win32WebViewHost_cw5n1h2txyewy
+    PublisherId       : cw5n1h2txyewy
+    IsResourcePackage : False
+    IsBundle          : False
+    IsDevelopmentMode : False
+    NonRemovable      : True
+    IsPartiallyStaged : False
+    SignatureKind     : System
+    Status            : Ok
+    ```
+    
+2. Run the following command to enabled debugging. Use the value for the **PackageFullName** listed from the previous command.
+    
+    ```powershell
+    setx JS_DEBUG <PackageFullName>
+    ```
 
 ## When the add-in is running in Microsoft Edge
 
 When the add-in is running in Microsoft Edge, you can use the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
 
-1. Run the add-in. 
+1. Run the add-in.
 
 2. Run the Microsoft Edge DevTools.
 
