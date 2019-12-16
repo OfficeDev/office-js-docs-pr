@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # mailbox
 
-### [Office](Office.md)[.context](Office.context.md).mailbox
+### [Office](office.md)[.context](office.context.md).mailbox
 
 Provides access to the Outlook add-in object model for Microsoft Outlook.
 
@@ -42,11 +42,11 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ### Namespaces
 
-[diagnostics](Office.context.mailbox.diagnostics.md): Provides diagnostic information to an Outlook add-in.
+[diagnostics](office.context.mailbox.diagnostics.md): Provides diagnostic information to an Outlook add-in.
 
-[item](Office.context.mailbox.item.md): Provides methods and properties for accessing a message or appointment in an Outlook add-in.
+[item](office.context.mailbox.item.md): Provides methods and properties for accessing a message or appointment in an Outlook add-in.
 
-[userProfile](Office.context.mailbox.userProfile.md): Provides information about the user in an Outlook add-in.
+[userProfile](office.context.mailbox.userProfile.md): Provides information about the user in an Outlook add-in.
 
 ### Members
 
@@ -61,7 +61,7 @@ The `ewsUrl` value can be used by a remote service to make EWS calls to the user
 
 Your app must have the **ReadItem** permission specified in its manifest to call the `ewsUrl` member in read mode.
 
-In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before you can use the `ewsUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
+In compose mode you must call the [`saveAsync`](office.context.mailbox.item.md#saveasyncoptions-callback) method before you can use the `ewsUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
 
 ##### Type
 
@@ -541,7 +541,7 @@ The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque t
 
 Calling the `getCallbackTokenAsync` method in read mode requires a minimum permission level of **ReadItem**.
 
-Calling `getCallbackTokenAsync` in compose mode requires you to have saved the item. The [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method requires a minimum permission level of **ReadWriteItem**.
+Calling `getCallbackTokenAsync` in compose mode requires you to have saved the item. The [`saveAsync`](office.context.mailbox.item.md#saveasyncoptions-callback) method requires a minimum permission level of **ReadWriteItem**.
 
 **REST Tokens**
 
@@ -614,7 +614,7 @@ You can pass both the token and either an attachment identifier or item identifi
 
 Calling the `getCallbackTokenAsync` method in read mode requires a minimum permission level of **ReadItem**.
 
-Calling `getCallbackTokenAsync` in compose mode requires you to have saved the item. The [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method requires a minimum permission level of **ReadWriteItem**.
+Calling `getCallbackTokenAsync` in compose mode requires you to have saved the item. The [`saveAsync`](office.context.mailbox.item.md#saveasyncoptions-callback) method requires a minimum permission level of **ReadWriteItem**.
 
 ##### Parameters
 

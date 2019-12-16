@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # mailbox
 
-### [Office](Office.md)[.context](Office.context.md).mailbox
+### [Office](office.md)[.context](office.context.md).mailbox
 
 Provides access to the Outlook add-in object model for Microsoft Outlook.
 

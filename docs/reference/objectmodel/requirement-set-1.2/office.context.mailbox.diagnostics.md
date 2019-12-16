@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # diagnostics
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics
+### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).diagnostics
 
 Provides diagnostic information to an Outlook add-in.
 

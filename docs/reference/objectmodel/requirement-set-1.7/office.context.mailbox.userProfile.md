@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
+### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).userProfile
 
 ##### Requirements
 

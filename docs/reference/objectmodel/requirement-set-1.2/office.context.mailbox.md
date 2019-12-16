@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # mailbox
 
-### [Office](Office.md)[.context](Office.context.md).mailbox
+### [Office](office.md)[.context](office.context.md).mailbox
 
 Provides access to the Outlook add-in object model for Microsoft Outlook.
 
@@ -35,11 +35,11 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ### Namespaces
 
-[diagnostics](Office.context.mailbox.diagnostics.md): Provides diagnostic information to an Outlook add-in.
+[diagnostics](office.context.mailbox.diagnostics.md): Provides diagnostic information to an Outlook add-in.
 
-[item](Office.context.mailbox.item.md): Provides methods and properties for accessing a message or appointment in an Outlook add-in.
+[item](office.context.mailbox.item.md): Provides methods and properties for accessing a message or appointment in an Outlook add-in.
 
-[userProfile](Office.context.mailbox.userProfile.md): Provides information about the user in an Outlook add-in.
+[userProfile](office.context.mailbox.userProfile.md): Provides information about the user in an Outlook add-in.
 
 ### Members
 
