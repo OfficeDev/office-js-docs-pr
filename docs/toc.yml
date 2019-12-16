@@ -540,6 +540,9 @@
     - name: Requirements
       href: excel/custom-functions-requirements.md
       displayName: Excel, Custom Functions
+    - name: Return a dynamic array
+      href: excel/custom-functions-dynamic-arrays.md
+      displayName: Excel, Custom Functions
     - name: Runtime
       href: excel/custom-functions-runtime.md
       displayName: Excel, Custom Functions
