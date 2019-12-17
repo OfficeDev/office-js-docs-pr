@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.8
 description: ''
-ms.date: 10/31/2019
+ms.date: 12/17/2019
 localization_priority: Priority
 ---
 
@@ -29,16 +29,16 @@ Requirement set 1.8 includes all of the features of [Requirement set 1.7](../req
 - Added [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8): Adds a new object that represents the categories master list on a mailbox.
 - Added [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8): Adds a new object that represents the properties of an appointment or message item in a shared folder, calendar, or mailbox.
 - Added [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md): Adds a child element to the [DesktopFormFactor](../../manifest/desktopformfactor.md) manifest element. It defines whether the add-in is available in delegate scenarios.
-- Added [Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#mastercategories): Adds a new property that represents the categories master list on a mailbox.
-- Added [Office.context.mailbox.item.categories](/javascript/api/outlook/office.item?view=outlook-js-1.8#categories): Adds a new property that represents the set of categories on an item.
-- Added [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback): Adds a new method that allows you to attach a file represented as a base64 encoded string to a message or appointment.
-- Added [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation): Adds a new property that represents the set of locations on an appointment.
-- Added [Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#getallinternetheadersasync-options--callback-): Adds a new method that gets all the internet headers for a message item. Read mode only.
-- Added [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent): Adds a new method to get the content of a specific attachment.
-- Added [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails): Adds a new method that gets an item's attachments in compose mode.
-- Added [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback): Adds a new method that gets the ID of a saved appointment or message item.
-- Added [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback): Adds a new method that gets an object which represents the sharedProperties of an appointment or message item.
-- Added [Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#internetheaders): Adds a new property that represents the custom internet headers on a message item. Compose mode only.
+- Added [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties): Adds a new property that represents the categories master list on a mailbox.
+- Added [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties): Adds a new property that represents the set of categories on an item.
+- Added [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#methods): Adds a new method that allows you to attach a file represented as a base64 encoded string to a message or appointment.
+- Added [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#properties): Adds a new property that represents the set of locations on an appointment.
+- Added [Office.context.mailbox.item.getAllInternetHeadersAsync](office.context.mailbox.item.md#methods): Adds a new method that gets all the internet headers for a message item. Read mode only.
+- Added [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#methods): Adds a new method to get the content of a specific attachment.
+- Added [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#methods): Adds a new method that gets an item's attachments in compose mode.
+- Added [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#methods): Adds a new method that gets the ID of a saved appointment or message item.
+- Added [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods): Adds a new method that gets an object which represents the sharedProperties of an appointment or message item.
+- Added [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties): Adds a new property that represents the custom internet headers on a message item. Compose mode only.
 - Modified [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-): Adds a new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 - Added [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8): Adds a new enum that specifies the formatting that applies to an attachment's content.
 - Added [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8): Adds a new enum that specifies whether an attachment was added to or removed from an item.
