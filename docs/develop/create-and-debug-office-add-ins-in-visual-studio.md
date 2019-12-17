@@ -1,7 +1,7 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
 description: 'Use Visual Studio to create and debug Office Add-ins in the Office desktop client on Windows'
-ms.date: 10/11/2019
+ms.date: 12/16/2019
 localization_priority: Priority
 ---
 
@@ -90,6 +90,7 @@ The web application project contains a default HTML file, JavaScript file, and C
 
 You can use Visual Studio to debug your add-in in the Office desktop client on Windows, as described in the following sections:
 
+- [Enable debugging for add-in commands and UI-less code](#enable-debugging-for-add-in-commands-and-ui-less-code)
 - [Review the build and debug properties](#review-the-build-and-debug-properties)
 - [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in)
 - [Start the project](#start-the-project)
@@ -98,6 +99,12 @@ You can use Visual Studio to debug your add-in in the Office desktop client on W
 
 > [!NOTE]
 > You cannot use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+
+### Enable debugging for add-in commands and UI-less code
+
+When Visual Studio debugs Office on Windows, the add-in is hosted in either a Microsoft Internet Explorer or Microsoft Edge browser instance. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
 ### Review the build and debug properties
 
