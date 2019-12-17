@@ -16,13 +16,11 @@ The tool that you use depends on whether the add-in is running in Microsoft Edge
 
 ## When the add-in is running in Microsoft Edge
 
-When the add-in is running in Microsoft Edge, you can use the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
-
-### Enable debugging for add-in commands and UI-less code
-
 [!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
 ### Debug using Microsoft Edge DevTools
+
+When the add-in is running in Microsoft Edge, you can use the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
 
 1. Run the add-in.
 
