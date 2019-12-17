@@ -102,7 +102,7 @@ You can use Visual Studio to debug your add-in in the Office desktop client on W
 
 ### Enable debugging for add-in commands and UI-less code
 
-When Visual Studio debugs Excel on Windows, the add-in is hosted in either a Microsoft Internet Explorer or Microsoft Edge browser instance. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+When Visual Studio debugs Office on Windows, the add-in is hosted in either a Microsoft Internet Explorer or Microsoft Edge browser instance. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 [!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
