@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 12/11/2019
+ms.date: 12/16/2019
 localization_priority: Normal
 ---
 
@@ -9,7 +9,7 @@ localization_priority: Normal
 
 ### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the `itemType` property.
+`item` is used to access the currently selected message, meeting request, or appointment. You can determine the type of the item by using the `itemType` property.
 
 ## Requirements
 

@@ -9,27 +9,99 @@ localization_priority: Normal
 
 ### [Office](office.md).context
 
-Office.context provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).
+Office.context provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context?view=outlook-js-1.8).
 
 ##### Requirements
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
-##### Members and methods
+##### Properties
 
-| Member | Type |
-|--------|------|
-| [displayLanguage](#displaylanguage-string) | Member |
-| [roamingSettings](#roamingsettings-roamingsettings) | Member |
+| Property | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|:---:|
+| [contentLanguage](#contentlanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | Compose<br>Read | [Mailbox](/javascript/api/office/office.mailbox?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-### Namespaces
+## Property details
 
-[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook.
+#### contentLanguage: String
 
-### Members
+Gets the locale (language) specified by the user for editing the item.
+
+The `contentLanguage` value reflects the current **Editing Language** setting specified with **File > Options > Language** in the Office host application.
+
+##### Type
+
+*   String
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Example
+
+```js
+function sayHelloWithContentLanguage() {
+  var myContentLanguage = Office.context.contentLanguage;
+  switch (myContentLanguage) {
+    case 'en-US':
+      write('Hello!');
+      break;
+    case 'en-NZ':
+      write('G\'day mate!');
+      break;
+  }
+}
+
+// Function that writes to a div with id='message' on the page.
+function write(message){
+  document.getElementById('message').innerText += message;
+}
+```
+
+<br>
+
+---
+---
+
+#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation)
+
+Gets information about the environment in which the add-in is running.
+
+##### Type
+
+*   [ContextInformation](/javascript/api/office/office.contextinformation)
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Example
+
+```js
+console.log(JSON.stringify(Office.context.diagnostics));
+```
+
+<br>
+
+---
+---
 
 #### displayLanguage: String
 
@@ -45,7 +117,7 @@ The `displayLanguage` value reflects the current **Display Language** setting sp
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
@@ -74,7 +146,85 @@ function write(message){
 ---
 ---
 
-#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.8)
+#### host: [HostType](/javascript/api/office/office.hosttype)
+
+Gets the Office application host in which the add-in is running.
+
+##### Type
+
+*   [HostType](/javascript/api/office/office.hosttype)
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Example
+
+```js
+console.log(JSON.stringify(Office.context.host));
+```
+
+<br>
+
+---
+---
+
+#### platform: [PlatformType](/javascript/api/office/office.platformtype)
+
+Provides the platform on which the add-in is running.
+
+##### Type
+
+*   [PlatformType](/javascript/api/office/office.platformtype)
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Example
+
+```js
+console.log(JSON.stringify(Office.context.platform));
+```
+
+<br>
+
+---
+---
+
+#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+
+Provides a method for determining what requirement sets are supported on the current host and platform.
+
+##### Type
+
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Example
+
+```js
+console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
+```
+
+<br>
+
+---
+---
+
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
@@ -82,12 +232,32 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 ##### Type
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.8)
+*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
 ##### Requirements
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+<br>
+
+---
+---
+
+#### ui: [UI](/javascript/api/office/office.ui)
+
+Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.
+
+##### Type
+
+*   [UI](/javascript/api/office/office.ui)
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

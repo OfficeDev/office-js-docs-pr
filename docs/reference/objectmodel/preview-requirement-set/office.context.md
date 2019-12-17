@@ -300,7 +300,7 @@ Provides a method for determining what requirement sets are supported on the cur
 ##### Example
 
 ```js
-console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.8")));
+console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
 ```
 
 <br>
