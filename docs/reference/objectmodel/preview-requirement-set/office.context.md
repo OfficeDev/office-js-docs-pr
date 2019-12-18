@@ -1,15 +1,15 @@
 ---
 title: Office.context - preview requirement set
 description: ''
-ms.date: 12/09/2019
+ms.date: 12/16/2019
 localization_priority: Normal
 ---
 
 # context
 
-### [Office](Office.md).context
+### [Office](office.md).context
 
-The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).
+Office.context provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context?view=outlook-js-preview).
 
 ##### Requirements
 
@@ -22,23 +22,52 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 | Property | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|:---:|
+| [auth](#auth-auth) | Compose<br>Read | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
 | [contentLanguage](#contentlanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [officeTheme](#officetheme-officetheme) | Compose<br>Read | [OfficeTheme](/javascript/api/office/office.officetheme) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-
-### Namespaces
-
-[auth](/javascript/api/office/office.auth): Provides support for [single sign-on (SSO)](/outlook/add-ins/authenticate-a-user-with-an-sso-token).
-
-[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook.
+| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | Compose<br>Read | [Mailbox](/javascript/api/office/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [officeTheme](#officetheme-officetheme) | Compose<br>Read | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## Property details
+
+#### auth: [Auth](/javascript/api/office/office.auth)
+
+Supports [single sign-on (SSO)](/outlook/add-ins/authenticate-a-user-with-an-sso-token) by providing a method that allows the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
+
+##### Type
+
+*   [Auth](/javascript/api/office/office.auth)
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| Preview|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+##### Example
+
+```js
+Office.context.auth.getAccessTokenAsync(function(result) {
+    if (result.status === "succeeded") {
+        var token = result.value;
+        // ...
+    } else {
+        console.log("Error obtaining token", result.error);
+    }
+});
+```
+
+<br>
+
+---
+---
 
 #### contentLanguage: String
 
@@ -271,7 +300,7 @@ Provides a method for determining what requirement sets are supported on the cur
 ##### Example
 
 ```js
-console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.8")));
+console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
 ```
 
 <br>
