@@ -1,7 +1,7 @@
 ---
 title: Office namespace - preview requirement set
 description: ''
-ms.date: 12/09/2019
+ms.date: 12/16/2019
 localization_priority: Normal
 ---
 
@@ -20,6 +20,12 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 | Property | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|:---:|
+| [context](office.context.md) | Compose<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+
+##### Enumerations
+
+| Enumeration | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|:---:|
 | [AsyncResultStatus](#asyncresultstatus-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [CoercionType](#coerciontype-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [EventType](#eventtype-string) | Compose<br>Read | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
@@ -27,11 +33,9 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 ### Namespaces
 
-[context](office.context.md): Provides shared interfaces from the Office Add-ins API's context namespace for use in the Outlook add-in API.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-preview): Includes a number of Outlook-specific enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): Includes a number of enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
-
-## Property details
+## Enumeration details
 
 #### AsyncResultStatus: String
 
