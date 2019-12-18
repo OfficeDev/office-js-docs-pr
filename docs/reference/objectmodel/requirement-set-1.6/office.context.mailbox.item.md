@@ -11,7 +11,7 @@ localization_priority: Normal
 
 `item` is used to access the currently selected message, meeting request, or appointment. You can determine the type of the item by using the `itemType` property.
 
-## Requirements
+##### Requirements
 
 |Requirement|Value|
 |---|---|

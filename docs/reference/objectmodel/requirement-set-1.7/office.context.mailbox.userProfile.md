@@ -11,7 +11,7 @@ localization_priority: Normal
 
 Provides information about the user in an Outlook add-in.
 
-## Requirements
+##### Requirements
 
 |Requirement| Value|
 |---|---|
