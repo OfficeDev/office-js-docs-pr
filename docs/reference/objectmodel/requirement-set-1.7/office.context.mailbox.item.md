@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.7
 description: ''
-ms.date: 12/16/2019
+ms.date: 12/19/2019
 localization_priority: Normal
 ---
 
@@ -21,7 +21,7 @@ localization_priority: Normal
 
 ## Properties
 
-| Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
+| Property | Minimum<br>permission level | Details by mode | Return type | Minimum<br>requirement set |
 |---|---|---|---|:---:|
 | attachments | ReadItem | [Appointment Attendee](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.7#attachments) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message Read](/javascript/api/outlook/office.messageread?view=outlook-js-1.7#attachments) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -87,7 +87,7 @@ localization_priority: Normal
 
 ## Methods
 
-| Method | Minimum<br>permission level | Modes | Minimum<br>requirement set |
+| Method | Minimum<br>permission level | Details by mode | Minimum<br>requirement set |
 |---|---|---|:---:|
 | addFileAttachmentAsync | ReadWriteItem | [Appointment Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.7#addfileattachmentasync-uri--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message Compose](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.7#addfileattachmentasync-uri--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
