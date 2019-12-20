@@ -155,42 +155,8 @@
   
   - name: UI and UX
     items:
-    - name: Extend the Office UI
-      items:
-      - name: Office UI elements for Office Add-ins
-        href: design/interface-elements.md
-      - name: Interface elements
-        items:
-        - name: Add-in commands
-          href: design/add-in-commands.md
-        - name: Dialog boxes
-          href: design/dialog-boxes.md
-        - name: Content add-ins
-          href: design/content-add-ins.md
-        - name: Task panes
-          href: design/task-pane-add-ins.md
-      - name: Office UI Fabric
-        href: design/office-ui-fabric.md
-      - name: Get started using Fabric React
-        href: design/using-office-ui-fabric-react.md
-    - name: UX design
-      items:
-      - name: UX design for Office Add-ins
-        href: design/add-in-design.md
-      - name: Design patterns
-        items:
-        - name: Overview
-          href: design/ux-design-pattern-templates.md
-        - name: Authentication
-          href: design/authentication-patterns.md
-        - name: Branding
-          href: design/branding-patterns.md
-        - name: First run experience
-          href: design/first-run-experience-patterns.md
-        - name: Navigation
-          href: design/navigation-patterns.md
-      - name: Design toolkits
-        href: design/design-toolkits.md
+    - name: Overview
+      href: design/add-in-design.md
     - name: Guidelines
       items:
       - name: Accessibility
@@ -199,26 +165,58 @@
         href: design/data-visualization-guidelines.md
       - name: Voice
         href: design/voice-guidelines.md
-      - name: Design language
+    - name: Design language
+      items:
+      - name: Overview
+        href: design/add-in-design-language.md
+      - name: Color
+        href: design/add-in-color.md
+      - name: Icons
         items:
-        - name: Overview
-          href: design/add-in-design-language.md
-        - name: Color
-          href: design/add-in-color.md
-        - name: Icons
-          items:
-          - name: Icon guidelines
-            href: design/add-in-icons.md
-          - name: Fresh style
-            href: design/add-in-icons-fresh.md
-          - name: Monoline style
-            href: design/add-in-icons-monoline.md
-        - name: Layout
-          href: design/add-in-layout.md
-        - name: Motion
-          href: design/using-motion-office-addins.md
-        - name: Typography
-          href: design/add-in-typography.md
+        - name: Icon guidelines
+          href: design/add-in-icons.md
+        - name: Fresh style
+          href: design/add-in-icons-fresh.md
+        - name: Monoline style
+          href: design/add-in-icons-monoline.md
+      - name: Layout
+        href: design/add-in-layout.md
+      - name: Motion
+        href: design/using-motion-office-addins.md
+      - name: Typography
+        href: design/add-in-typography.md
+    - name: Interface elements
+      items:
+      - name: Overview
+        href: design/interface-elements.md
+      - name: Add-in commands
+        href: design/add-in-commands.md
+      - name: Dialog boxes
+        href: design/dialog-boxes.md
+      - name: Content add-ins
+        href: design/content-add-ins.md
+      - name: Task panes
+        href: design/task-pane-add-ins.md
+    - name: UX design patterns
+      items:
+      - name: Overview
+        href: design/ux-design-pattern-templates.md
+      - name: Authentication
+        href: design/authentication-patterns.md
+      - name: Branding
+        href: design/branding-patterns.md
+      - name: First run experience
+        href: design/first-run-experience-patterns.md
+      - name: Navigation
+        href: design/navigation-patterns.md
+    - name: Resources
+      items: 
+      - name: Design toolkits
+        href: design/design-toolkits.md
+      - name: Get started using Fabric React
+        href: design/using-office-ui-fabric-react.md
+      - name: Office UI Fabric
+        href: design/office-ui-fabric.md
 
   - name: Test and debug
     items:
