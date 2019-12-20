@@ -1,7 +1,7 @@
 ---
 title: Form element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 12/20/2019
 localization_priority: Normal
 ---
 
@@ -9,13 +9,29 @@ localization_priority: Normal
 
 UX settings for the forms that your mail add-in will use when running on a particular device (desktop, tablet, or phone).
 
+> [!IMPORTANT]
+> The `DesktopSettings`, `TabletSettings`, and `PhoneSettings` elements are available only in classic Outlook on the web (usually connected to older versions of on-premises Exchange server) and Outlook 2013 on Windows.
+
 **Add-in type:** Mail
 
 ## Syntax
 
 ```XML
-<Form>
-   ...
+<Form xsi:type="ItemRead">
+   <!--website.html is a placeholder for your own add-in website.-->
+   <DesktopSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </DesktopSettings>
+   <TabletSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </TabletSettings>
+   <PhoneSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+   </PhoneSettings>
 </Form>
 ```
 
