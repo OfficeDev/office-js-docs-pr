@@ -324,7 +324,10 @@ For a sample add-in that handles errors in this way, see [Office Add-in Dialog A
 Sometimes the host page needs to pass information to the dialog box. You can do this in two primary ways:
 
 - Add query parameters to the URL that is passed to `displayDialogAsync`.
-- Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage, but *if they have the same domain* (including port number, if any),  they share a common [local storage](https://www.w3schools.com/html/html5_webstorage.asp).
+- Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage, but *if they have the same domain* (including port number, if any),  they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*
+
+> [!NOTE]
+> \* There is a bug that will effect your strategy for token handling. If the add-in is running in **Office on the web** in either the Safari or Edge browser, the dialog and task pane do not share the same Local Storage, so it cannot be used to communicate between them.
 
 ### Use local storage
 

@@ -1,7 +1,7 @@
 ---
 title: Office namespace - preview requirement set
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/16/2019
 localization_priority: Normal
 ---
 
@@ -13,25 +13,29 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Properties
 
 | Property | Modes | Return type | Minimum<br>requirement set |
-|---|---|---|---|
-| [AsyncResultStatus](#asyncresultstatus-string) | Compose<br>Read | String | 1.0 |
-| [CoercionType](#coerciontype-string) | Compose<br>Read | String | 1.0 |
-| [EventType](#eventtype-string) | Compose<br>Read | String | 1.5 |
-| [SourceProperty](#sourceproperty-string) | Compose<br>Read | String | 1.0 |
+|---|---|---|:---:|
+| [context](office.context.md) | Compose<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+
+##### Enumerations
+
+| Enumeration | Modes | Return type | Minimum<br>requirement set |
+|---|---|---|:---:|
+| [AsyncResultStatus](#asyncresultstatus-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Compose<br>Read | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### Namespaces
 
-[context](office.context.md): Provides shared interfaces from the Office Add-ins API's context namespace for use in the Outlook add-in API.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-preview): Includes a number of Outlook-specific enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): Includes a number of enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
-
-## Property details
+## Enumeration details
 
 #### AsyncResultStatus: String
 
@@ -52,7 +56,7 @@ Specifies the result of an asynchronous call.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 <br>
@@ -79,7 +83,7 @@ Specifies how to coerce data returned or set by the invoked method.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 <br>
@@ -98,7 +102,7 @@ Specifies the event associated with an event handler.
 ##### Properties:
 
 | Name | Type | Description | Minimum requirement set |
-|---|---|---|---|
+|---|---|---|:---:|
 |`AppointmentTimeChanged`| String | The date or time of the selected appointment or series has changed. | 1.7 |
 |`AttachmentsChanged`| String | An attachment has been added to or removed from the item. | 1.8 |
 |`EnhancedLocationsChanged`| String | The location of the selected appointment has changed. | 1.8 |
@@ -111,7 +115,7 @@ Specifies the event associated with an event handler.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
 <br>
@@ -138,5 +142,5 @@ Specifies the source of the data returned by the invoked method.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

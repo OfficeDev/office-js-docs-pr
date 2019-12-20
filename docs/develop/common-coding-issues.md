@@ -1,7 +1,7 @@
 ---
 title: Common coding issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 11/06/2019
+ms.date: 12/05/2019
 localization_priority: Normal
 ---
 
@@ -81,11 +81,27 @@ These limitations are typically exceeded by large ranges. Your add-in might be a
 
 ## Setting read-only properties
 
-The [TypeScript definitions](/referencing-the-javascript-api-for-office-library-from-its-cdn.md) for Office JS specify which object properties are read-only. If you attempt to set a read-only property, the write operation will fail silently, with no error thrown. The following example erroneously attempts to set the read-only property [Chart.id](/javascript/api/excel/excel.chart#id).
+The [TypeScript definitions](referencing-the-javascript-api-for-office-library-from-its-cdn.md) for Office JS specify which object properties are read-only. If you attempt to set a read-only property, the write operation will fail silently, with no error thrown. The following example erroneously attempts to set the read-only property [Chart.id](/javascript/api/excel/excel.chart#id).
 
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
+```
+
+## Removing event handlers
+
+Event handlers must be removed using the same `RequestContext` in which they were added. If you need your add-in to remove an event handler while running, you'll need to store the context object used to add the handler.
+
+```js
+Excel.run(async (context) => {
+    [...]
+
+    // To later remove an event handler, store the context somewhere accessible to the handler removal function.
+    // You may find it helpful to also store the event handler object and associate it with the context.
+    selectionChangedHandler = myWorksheet.onSelectionChanged.add(callback);
+    savedContext = currentContext;
+    return context.sync();
+}
 ```
 
 ## See also

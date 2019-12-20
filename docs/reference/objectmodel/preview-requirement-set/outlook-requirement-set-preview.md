@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 11/05/2019
+ms.date: 12/17/2019
 localization_priority: Priority
 ---
 
@@ -22,7 +22,7 @@ The following features are in preview.
 
 ### Integration with actionable messages
 
-#### [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback)
+#### [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#methods)
 
 Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 

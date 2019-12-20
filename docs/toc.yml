@@ -45,7 +45,96 @@
     - name: Host and platform availability
       href: overview/office-add-in-availability.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+<<<<<<< HEAD
     - name: Office JavaScript API
+=======
+    - name: Explore Office JS API using Script Lab
+      href: overview/explore-with-script-lab.md
+      displayName: Excel, Word, PowerPoint
+    - name: Requirements for running add-ins
+      href: concepts/requirements-for-running-office-add-ins.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+  - name: Concepts
+    items:
+    - name: Add-in development best practices
+      href: concepts/add-in-development-best-practices.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Add-in development lifecycle
+      href: concepts/add-in-development-lifecycle.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Browsers used by Office Add-ins
+      href: concepts/browsers-used-by-office-web-add-ins.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Office versions and requirement sets
+      href: develop/office-versions-and-requirement-sets.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Install the latest Office version
+      href: develop/install-latest-office-version.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Performance
+      href: concepts/resource-limits-and-performance-optimization.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Privacy and security
+      href: concepts/privacy-and-security.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+  - name: User Interface
+    items:
+    - name: Overview
+      href: design/add-in-design.md
+    - name: Guidelines
+      items:
+      - name: Accessibility
+        href: design/accessibility-guidelines.md
+      - name: Data visualization
+        href: design/data-visualization-guidelines.md
+      - name: Voice
+        href: design/voice-guidelines.md
+    - name: Design language
+      items:
+      - name: Overview
+        href: design/add-in-design-language.md
+      - name: Color
+        href: design/add-in-color.md
+      - name: Icons
+        items:
+        - name: Icon guidelines
+          href: design/add-in-icons.md
+        - name: Fresh style
+          href: design/add-in-icons-fresh.md
+        - name: Monoline style
+          href: design/add-in-icons-monoline.md
+      - name: Layout
+        href: design/add-in-layout.md
+      - name: Typography
+        href: design/add-in-typography.md
+      - name: Using motion
+        href: design/using-motion-office-addins.md
+    - name: Interface elements
+      items:
+      - name: Overview
+        href: design/interface-elements.md
+      - name: Add-in commands
+        href: design/add-in-commands.md
+      - name: Dialog boxes
+        href: design/dialog-boxes.md
+      - name: Content add-ins
+        href: design/content-add-ins.md
+      - name: Task panes
+        href: design/task-pane-add-ins.md
+    - name: UX design templates
+      items:
+      - name: Overview
+        href: design/ux-design-pattern-templates.md
+      - name: Authentication
+        href: design/authentication-patterns.md
+      - name: Branding
+        href: design/branding-patterns.md
+      - name: First run experience
+        href: design/first-run-experience-patterns.md
+      - name: Navigation
+        href: design/navigation-patterns.md
+    - name: Resources
+>>>>>>> master
       items:
       - name: Understanding the JavaScript API for Office
         href: develop/understanding-the-javascript-api-for-office.md
@@ -381,7 +470,7 @@
       - name: Version
         href: reference/manifest/version.md
       - name: VersionOverrides
-        items: 
+        items:
         - name: VersionOverrides
           href: reference/manifest/versionoverrides.md
         - name: Action
@@ -456,7 +545,7 @@
     href: excel/excel-add-ins-overview.md
     displayName: Excel
   - name: Build your first Excel add-in
-    items: 
+    items:
     - name: Task pane
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
@@ -659,7 +748,7 @@
     href: quickstarts/onenote-quickstart.md
     displayName: OneNote
   - name: OneNote JavaScript API
-    items: 
+    items:
     - name: Overview
       href: reference/overview/onenote-add-ins-javascript-reference.md
       displayName: OneNote
@@ -881,7 +970,7 @@
     href: tutorials/powerpoint-tutorial.md
     displayName: PowerPoint
   - name: JavaScript API for PowerPoint
-    items:   
+    items:
     - name: Overview
       href: reference/overview/powerpoint-add-ins-reference-overview.md
       displayName: PowerPoint
@@ -990,6 +1079,6 @@
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Use search options to find text in your Word add-in 
+    - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
