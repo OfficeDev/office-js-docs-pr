@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: Office Add-ins reference documentation
 description: Office JavaScript API and manifest reference documentation.
-ms.date: 11/15/2019
+ms.date: 12/31/2019
 localization_priority: Priority
 ---
 
