@@ -7,10 +7,10 @@ localization_priority: Priority
 
 # Building Office Add-ins
 
-Office Add-ins extend the UI and functionality of Office applications and interact with content in Office documents. You'll use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook. The add-ins you build can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article provides an introduction to developing Office Add-ins.
-
 > [!TIP]
 > Please review [Office Add-ins platform overview](office-add-ins.md) before reading this article.
+
+Office Add-ins extend the UI and functionality of Office applications and interact with content in Office documents. You'll use familiar web technologies to create Office Add-ins that extend and interact with Word, Excel, PowerPoint, OneNote, Project, or Outlook. The add-ins you build can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. This article provides an introduction to developing Office Add-ins.
 
 ## Creating an Office Add-in 
 

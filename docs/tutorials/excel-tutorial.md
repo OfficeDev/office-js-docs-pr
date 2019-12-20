@@ -1017,3 +1017,4 @@ In this tutorial, you've created an Excel task pane add-in that interacts with t
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
 * [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
 * [Develop Office Add-ins](../develop/develop-overview.md)
+* [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)

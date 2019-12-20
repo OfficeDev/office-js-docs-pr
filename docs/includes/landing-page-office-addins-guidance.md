@@ -1,4 +1,4 @@
-<p>All Office Add-ins are built upon the Office Add-ins platform and share a common framework through which certain capabilities can be implemented. Explore the following articles for information that's relevant to building any Office Add-in.</p>
+<p>All Office Add-ins are built upon the Office Add-ins platform. They share a common framework through which certain capabilities can be implemented. Explore the following articles for information that's relevant to building any Office Add-in.</p>
 
 <ul class="cardsK panelContent cols cols2">
     <li>
@@ -12,7 +12,7 @@
                     </div>
                     <div class="cardText">
                         <h3>Fundamental concepts</h3>
-                        <p>Learn fundamental concepts about Office Add-ins.</p>
+                        <p>Learn basic concepts about Office Add-ins.</p>
                         <br/>
                         <ul>
                             <li><a href="../overview/office-add-ins.md">Office Add-ins platform overview</a></li>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="cardText">
                         <h3>Advanced concepts</h3>
-                        <p>Explore key aspects of Office Add-ins development.</p>
+                        <p>Explore key concepts of Office Add-ins development.</p>
                         <br/>
                         <ul>
                             <li><a href="../overview/core-concepts-office-add-ins.md">Core concepts for Office Add-ins</a></li>

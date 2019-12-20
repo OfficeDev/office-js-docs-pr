@@ -12,11 +12,11 @@ localization_priority: Normal
 
 # Office Add-ins documentation
 
-Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including on Windows, Mac, iPad, and in a web browser.
+Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on Windows, Mac, iPad, and on the web.
 
 <h2>Get started</h2>
 
-<p>New to building Office Add-ins? Start by learning basic concepts about the Office Add-ins platform and building Office Add-ins:</p>
+<p>New to building Office Add-ins? Start by learning about the Office Add-ins platform and building Office Add-ins:</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -55,7 +55,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
     </li>
 </ul>
 
-<p>Next, use quick starts, tutorials, and Script Lab to get some hands-on experience building Office Add-ins and using the Office JavaScript APIs.</p>
+<p>Next, use quick starts, tutorials, and Script Lab to gain experience building Office Add-ins.</p>
 
 <ul class="cardsK panelContent cols cols3">
     <li>
@@ -121,7 +121,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                     </div>
                     <div class="cardText">
                         <h3>Script Lab</h3>
-                        <p>Learn about Office JavaScript APIs for Excel, Word, or PowerPoint by trying them out in Script Lab.</p>
+                        <p>Try the Office JavaScript APIs for Excel, Word, and PowerPoint in Script Lab.</p>
                         <br/>
                         <ul style="list-style: none!important;">
                         
@@ -138,8 +138,6 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
 
 <h2>Learn about Office Add-ins</h2>
 
-<p>Explore this documentation to learn more about developing, testing, and publishing Office Add-ins.</p>
-
 <ul class="cardsM cols cols1">
     <li>
         <a class="card x-hidden-focus" href="overview/office-add-ins.md">
@@ -150,7 +148,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
             </div>
             <div class="cardText">
                 <h3>Core concepts</h3>
-                <p>Learn about the Office Add-ins platform and important concepts that apply to building any Office Add-in.</p>
+                <p>Learn about the platform and important concepts that apply to building any Office Add-in.</p>
             </div>
         </a>
     </li>

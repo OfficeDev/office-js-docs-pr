@@ -189,7 +189,6 @@ You can distribute add-ins through a file share, an app catalog in a SharePoint 
 
 ## See also
 
-- [Project add-ins documentation](index.md)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)

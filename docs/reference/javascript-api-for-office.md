@@ -2,7 +2,7 @@
 layout: LandingPage
 ms.topic: landing-page
 title: Office JavaScript API reference documentation
-description: Learn about the Office JavaScript APIs.s
+description: Learn about the Office JavaScript APIs.
 ms.date: 12/31/2019
 localization_priority: Priority
 ---
@@ -27,7 +27,7 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-excel.svg" alt="Excel API reference docs" />
+                            <a href="/javascript/api/excel"><img src="../images/index/logo-excel.svg" alt="Excel API reference docs" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -44,7 +44,7 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-outlook.svg" alt="Outlook API reference docs" />
+                            <a href="/javascript/api/outlook"><img src="../images/index/logo-outlook.svg" alt="Outlook API reference docs" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -61,7 +61,7 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-word.svg" alt="Word API reference docs" />
+                            <a href="/javascript/api/word"><img src="../images/index/logo-word.svg" alt="Word API reference docs" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -78,7 +78,7 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-powerpoint.svg" alt="PowerPoint API reference docs" />
+                            <a href="/javascript/api/powerpoint"><img src="../images/index/logo-powerpoint.svg" alt="PowerPoint API reference docs" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -95,7 +95,7 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index/logo-onenote.svg" alt="OneNote API reference docs" />
+                            <a href="/javascript/api/onenote"><img src="../images/index/logo-onenote.svg" alt="OneNote API reference docs" /></a>
                         </div>
                     </div>
                     <div class="cardText">
@@ -112,7 +112,7 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" />
+                            <a href="/javascript/api/office"><img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" /></a>
                         </div>
                     </div>
                     <div class="cardText">
