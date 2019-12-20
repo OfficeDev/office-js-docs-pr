@@ -35,7 +35,7 @@
                     </div>
                     <div class="cardText">
                         <h3>Advanced concepts</h3>
-                        <p>Explore key concepts of Office Add-ins development.</p>
+                        <p>Explore key aspects of Office Add-ins development.</p>
                         <br/>
                         <ul>
                             <li><a href="../overview/core-concepts-office-add-ins.md">Core concepts for Office Add-ins</a></li>
