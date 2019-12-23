@@ -156,7 +156,7 @@ Your add-in uses the  **Permissions** element in its manifest to request permiss
 
 ```
 
-For more information, see [Requesting permissions for API use in content and task pane add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
+For more information, see [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 
 ## See also

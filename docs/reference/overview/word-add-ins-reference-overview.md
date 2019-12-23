@@ -14,7 +14,7 @@ An Word add-in interacts with objects in Word by using the JavaScript API for Of
 
 * **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
 
-This section of the documentation focuses on the Word JavaScript API, which you'll use to develop the majority of functionality in add-ins that target Word on the web or Word 2016 or later. For information about the Common API, see [JavaScript API for Office](../javascript-api-for-office.md). 
+This section of the documentation focuses on the Word JavaScript API, which you'll use to develop the majority of functionality in add-ins that target Word on the web or Word 2016 or later. For information about the Common API, see [Office JavaScript API object model](../../develop/office-javascript-api-object-model.md). 
 
 ## Learn programming concepts
 

@@ -69,3 +69,4 @@ When you're ready to create your first Office Add-in, try out the quick start fo
 - [Get Script Lab](https://appsource.microsoft.com/product/office/WA104380862)
 - [Learn more about Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Sign up for the dev program](https://developer.microsoft.com/office/dev-program)
+- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
