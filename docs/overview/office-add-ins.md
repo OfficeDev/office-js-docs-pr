@@ -1,12 +1,11 @@
 ---
 title: Office Add-ins platform overview | Microsoft Docs
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 07/05/2019
+ms.date: 12/24/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
-
 
 # Office Add-ins platform overview
 
@@ -114,12 +113,13 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Next steps
 
-To build your first Office Add-in in less than 5 minutes, try out the quick start for [Excel](../quickstarts/excel-quickstart-jquery.md), [Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context), [Word](../quickstarts/word-quickstart.md), [OneNote](../quickstarts/onenote-quickstart.md), [PowerPoint](../quickstarts/powerpoint-quickstart.md), or [Project](../quickstarts/project-quickstart.md). You can start building add-ins right away using Visual Studio or any other editor. 
-
-To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](../concepts/add-in-development-best-practices.md) for Office Add-ins.
+For a more detailed introduction to developing Office Add-ins, see [Building Office Add-ins](../overview/office-add-ins-fundamentals.md).
 
 ## See also
 
-- [Office Add-in samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
-- [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
-- [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
+- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Design Office Add-ins](../design/add-in-design.md)
+- [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
+- [Publish Office Add-ins](../publish/publish.md)

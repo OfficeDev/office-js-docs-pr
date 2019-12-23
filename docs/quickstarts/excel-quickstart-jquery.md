@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API.
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -211,7 +211,9 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 ## See also
 
-* [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
+* [Office Add-ins platform overview](../overview/office-add-ins.md)
+* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+* [Develop Office Add-ins](../develop/develop-overview.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

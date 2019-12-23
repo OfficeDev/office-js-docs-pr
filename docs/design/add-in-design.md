@@ -1,12 +1,12 @@
 ---
-title: Design your Office Add-ins
+title: Design Office Add-ins
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
 
-# Design your Office Add-ins
+# Design Office Add-ins
 
 Office Add-ins extend the Office experience by providing contextual functionality that users can access within Office clients. Add-ins empower users to get more done by enabling them to access third-party functionality within Office, without costly context switches. 
 
