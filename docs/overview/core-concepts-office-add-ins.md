@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: Core concepts for Office Add-ins
 description: Information that applies to all Office Add-ins.
-ms.date: 12/31/2019
+ms.date: 12/24/2019
 localization_priority: Priority
 ---
 

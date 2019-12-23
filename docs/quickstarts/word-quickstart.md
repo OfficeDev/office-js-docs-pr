@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JS API.
-ms.date: 12/31/2019
+ms.date: 12/24/2019
 ms.prod: word
 localization_priority: Priority
 ---

@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: Office JavaScript API reference documentation
 description: Learn about the Office JavaScript APIs.
-ms.date: 12/31/2019
+ms.date: 12/24/2019
 localization_priority: Priority
 ---
 
