@@ -58,7 +58,7 @@ localization_priority: Priority
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Testing and debugging</h3>
+                        <h3>Test and debug</h3>
                         <p><a href="../testing/test-debug-office-add-ins.md">Learn how to test and debug Office Add-ins.</a></p>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ localization_priority: Priority
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Publishing</h3>
+                        <h3>Publish</h3>
                         <p><a href="../publish/publish.md">Learn how to deploy and publish Office Add-ins.</a></p>
                     </div>
                 </div>
