@@ -7,19 +7,10 @@ localization_priority: Priority
 
 # Debug Office Add-ins in Visual Studio
 
+This article describes how to use Visual Studio 2019 to debug an Office Add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly. 
+
 > [!NOTE]
-> This article describes how to use Visual Studio 2019 to debug an Office Add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly. For information about using Visual Studio to create an Office Add-in, see [Create Office Add-ins in Visual Studio](create-office-add-ins-in-visual-studio.md).
-> 
-> You cannot use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
-
-You can use Visual Studio to debug your add-in in the Office desktop client on Windows, as described in the following sections:
-
-- [Enable debugging for add-in commands and UI-less code](#enable-debugging-for-add-in-commands-and-ui-less-code)
-- [Review the build and debug properties](#review-the-build-and-debug-properties)
-- [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in)
-- [Start the project](#start-the-project)
-- [Debug the code for an Excel, PowerPoint, or Word add-in](#debug-the-code-for-an-excel-powerpoint-or-word-add-in)
-- [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
+> You cannot use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
 
 ## Enable debugging for add-in commands and UI-less code
 

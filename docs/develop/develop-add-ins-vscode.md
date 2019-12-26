@@ -10,7 +10,7 @@ localization_priority: Priority
 This article describes how to use [Visual Studio Code (VS Code)](https://code.visualstudio.com) to develop an Office Add-in.
 
 > [!NOTE]
-> For information about using Visual Studio to create an Office Add-in, see [Create Office Add-ins in Visual Studio](create-office-add-ins-in-visual-studio.md).
+> For information about using Visual Studio to create an Office Add-in, see [Develop Office Add-ins with Visual Studio](develop-add-ins-visual-studio.md).
 
 ## Prerequisites
 

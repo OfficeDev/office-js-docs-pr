@@ -5,12 +5,12 @@ ms.date: 12/28/2019
 localization_priority: Priority
 ---
 
+# Create Office Add-ins in Visual Studio
+
 - Pointer to quick starts for instructions about creating an add-in using VS
 - Overview of content in this section; remainder of docs apply regardless of whether you've used Yo Office or Visual Studio to create your add-in (e.g., manifest docs, Office JavaScript API docs, etc.)
 - Note: recommend using Yo Office instead of Visual Studio (templates are more actively maintained, supports more types of add-ins, etc.)
 - Resources for getting started with web development (perhaps model after Office Scripts docs verbiage)
-
-# Create Office Add-ins in Visual Studio
 
 This article describes how to use Visual Studio to develop an Office Add-in.
 
