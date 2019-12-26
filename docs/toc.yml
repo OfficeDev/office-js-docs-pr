@@ -125,7 +125,8 @@
       - name: Develop add-ins with Visual Studio
         items:
         - name: Overview
-          href: develop/devleop-add-ins-visual-studio.md
+          href: develop/develop-add-ins-visual-studio.md
+          displayName: Visual Studio
         - name: Debug Office Add-ins in Visual Studio
           href: develop/debug-office-add-ins-in-visual-studio.md
         - name: Get JavaScript IntelliSense in Visual Studio
