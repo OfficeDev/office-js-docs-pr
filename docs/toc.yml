@@ -124,8 +124,10 @@
         href: develop/develop-add-ins-vscode.md
       - name: Develop add-ins with Visual Studio
         items:
-        - name: Create and debug Office Add-ins in Visual Studio
-          href: develop/create-and-debug-office-add-ins-in-visual-studio.md
+        - name: Create Office Add-ins in Visual Studio
+          href: develop/create-office-add-ins-in-visual-studio.md
+        - name: Debug Office Add-ins in Visual Studio
+          href: develop/debug-office-add-ins-in-visual-studio.md
         - name: Get JavaScript IntelliSense in Visual Studio
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript to TypeScript

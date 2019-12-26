@@ -1,5 +1,9 @@
 { 
-    "redirections": [      
+    "redirections": [
+      {
+        "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md", 
+        "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
+      },
       {   
         "source_path": "docs/quickstarts/excel-quickstart-jquery-redirect.md", 
         "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
