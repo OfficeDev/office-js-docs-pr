@@ -5,7 +5,7 @@ ms.date: 12/28/2019
 localization_priority: Priority
 ---
 
-# Create Office Add-ins in Visual Studio
+# Develop Office Add-ins with Visual Studio
 
 - Pointer to quick starts for instructions about creating an add-in using VS
 - Overview of content in this section; remainder of docs apply regardless of whether you've used Yo Office or Visual Studio to create your add-in (e.g., manifest docs, Office JavaScript API docs, etc.)

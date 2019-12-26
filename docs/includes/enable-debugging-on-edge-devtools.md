@@ -29,7 +29,7 @@ UI-less code is any code running while the task pane is not visible, such as add
     Status            : Ok
     ```
     
-2. Run the following command to enabled debugging. Use the value for the **PackageFullName** listed from the previous command.
+2. Run the following command to enable debugging. Use the value for the **PackageFullName** listed from the previous command.
     
     ```powershell
     setx JS_DEBUG <PackageFullName>
