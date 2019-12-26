@@ -16,4 +16,4 @@ When your add-in is working as desired and you're ready to publish it for other 
 
 3. In VS Code, open the add-in's manifest file, located in the root directory of the project (`manifest.xml`). Replace all occurrences of `https://localhost:3000` with the URL of the web application that you deployed to a web server in the previous step.
 
-4. Choose the method you'd like to use to [deploy and publish your Office Add-in](../publish/publish.md) your add-in, and follow the instructions to publish the manifest file.
+4. Choose the method you'd like to use to [deploy and publish your Office Add-in](../publish/publish.md), and follow the instructions to publish the manifest file.
