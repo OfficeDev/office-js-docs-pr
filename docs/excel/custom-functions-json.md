@@ -1,5 +1,5 @@
 ---
-ms.date: 12/28/2019
+ms.date: 07/15/2019
 description: Define JSON metadata for custom functions in Excel and associate your function id and name properties.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -42,8 +42,6 @@ You also need to make sure your XML manifest file references your JSON file in t
     </bt:ShortStrings>
 </Resources>
 ```
-
-[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## JSON metadata example
 
