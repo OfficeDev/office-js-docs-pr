@@ -1,13 +1,16 @@
 ---
 title: Work with shapes using the Excel JavaScript API
 description: ''
-ms.date: 09/03/2019
+ms.date: 12/26/2019
 localization_priority: Normal
 ---
 
 # Work with shapes using the Excel JavaScript API
 
 Excel defines shapes as any object that sits on the drawing layer of Excel. That means anything outside of a cell is a shape. This article describes how to use geometric shapes, lines, and images in conjunction with the [Shape](/javascript/api/excel/excel.shape) and [ShapeCollection](/javascript/api/excel/excel.shapecollection) APIs. [Charts](/javascript/api/excel/excel.chart) are covered in their own article, [Work with charts using the Excel JavaScript API](excel-add-ins-charts.md).
+
+The following image shows shapes which form a thermometer.
+![Image of a thermometer made as an Excel shape](../images/SOC_MichelleBatch3_image2.png)
 
 ## Create shapes
 

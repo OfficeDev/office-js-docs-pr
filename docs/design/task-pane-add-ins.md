@@ -1,7 +1,7 @@
 ---
 title: Task panes in Office Add-ins
 description: Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.
-ms.date: 06/20/2019
+ms.date: 12/26/2019
 localization_priority: Priority
 ---
 
@@ -30,7 +30,7 @@ The following images show the various task pane sizes with the Office ribbon at 
 
 *Figure 2. Office 2016 desktop task pane sizes*
 
-![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-desktop.png)
+![Image displaying the desktop task pane sizes at 1366x768](../images/SOC_MichelleBatch1_image3.2.png)
 
 - Excel - 320x455
 - PowerPoint - 320x531
@@ -41,7 +41,7 @@ The following images show the various task pane sizes with the Office ribbon at 
 
 *Figure 3. Office 365 task pane sizes*
 
-![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-online.png)
+![Image displaying the desktop task pane sizes at 1366x768](../images/SOC_MichelleBatch1_image3.png)
 
 - Excel - 350x378
 - PowerPoint - 348x391

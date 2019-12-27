@@ -1,7 +1,7 @@
 ---
 title: Asynchronous programming in Office Add-ins
 description: ''
-ms.date: 06/20/2019
+ms.date: 12/26/2019
 localization_priority: Priority
 ---
 
@@ -16,7 +16,7 @@ The following diagram shows the flow of execution for a call to an "Async" metho
 
 *Figure 1. Asynchronous programming execution flow*
 
-![Asynchronous programming thread execution flow](../images/office15-app-async-prog-fig01.png)
+![Asynchronous programming thread execution flow](../images/SOC_MichelleBatch1_image8.png)
 
 Support for this asynchronous design in both rich and web clients is part of the "write once-run cross-platform" design goals of the Office Add-ins development model. For example, you can create a content or task pane add-in with a single code base that will run in both Excel 2013 and Excel on the web.
 

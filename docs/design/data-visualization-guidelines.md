@@ -1,7 +1,7 @@
 ---
 title: Data visualization style guidelines for Office Add-ins
 description: ''
-ms.date: 12/04/2017
+ms.date: 12/26/2019
 localization_priority: Normal
 ---
 
@@ -19,10 +19,9 @@ We recommend that you use [Office UI Fabric](https://developer.microsoft.com/fab
 
 ## Data visualization elements
 
-Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figures.
+Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figure.
 
-![Image of a line chart with title, axes, legend, and plot area labeled](../images/data-visualization-line-chart.png)
-![Image of a column chart with axes, gridlines, legend, and data plot labeled](../images/data-visualization-column-chart.png)
+![Image of a line chart with title, axes, legend, and plot area labeled](../images/SOC_MichelleBatch1_image9.png)
 
 ### Chart titles
 
@@ -32,11 +31,6 @@ Follow these guidelines for chart titles:
 - In general, use sentence capitalization (capitalize the first word). To create contrast or to reinforce hierarchies, you can use all caps, but all caps should be used sparingly.
 - Incorporate the [Office UI Fabric type ramp](https://developer.microsoft.com/fabric#/styles/typography) to make your charts consistent with the Office UI, which uses Segoe. You can also use a different typeface to differentiate chart content from the UI.
 - Use sans-serif typefaces with large counters.
-
-The following examples show serif and sans-serif typefaces used in chart titles. Notice how the scale contrast and effective use of white space create a strong visual hierarchy.
-
-![Image of a data visualization with serif font](../images/data-visualization-serif.png)
-![Image of a data visualization with sans-serif font](../images/data-visualization-sans-serif.png)
 
 ### Axis labels
 
@@ -66,7 +60,7 @@ Light grays are most effective for gridlines. If you’re using Fabric, see the 
 
 The following image shows a data visualization with gridlines.
 
-![Image of a data visualization with gridlines](../images/data-visualization-gridlines.png)
+![Image of a data visualization with gridlines](../images/SOC_MichelleBatch1_image10.png)
 
 ### Legends
 
