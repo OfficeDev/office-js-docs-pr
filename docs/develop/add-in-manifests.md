@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 09/26/2019
+ms.date: 12/28/2019
 localization_priority: Priority
 ---
 
@@ -25,6 +25,8 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 > [!NOTE]
 > If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## Required elements
 
