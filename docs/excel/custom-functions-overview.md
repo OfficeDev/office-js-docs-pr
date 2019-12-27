@@ -73,8 +73,6 @@ Note that the **functions.html** file, which governs the loading of the custom f
 
 The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files.
 
-[!include[manifest guidance](../includes/manifest-guidance.md)]
-
 The following basic XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions. If using the Yo Office generator, your generated custom function files will contain a more complex manifest file, which you can compare on [this Github repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml).
 
 > [!NOTE] 
@@ -133,6 +131,8 @@ The following basic XML markup shows an example of the `<ExtensionPoint>` and `<
 
 > [!NOTE]
 > Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## Coauthoring
 
