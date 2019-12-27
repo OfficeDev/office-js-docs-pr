@@ -1,13 +1,15 @@
 ---
 title: Office Add-ins platform overview | Microsoft Docs
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 12/24/2019
+ms.date: 12/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
 
 # Office Add-ins platform overview
+
+![Image of Office Add-ins extensibility](../images/SOC_MichelleBatch3_image10-A.png)
 
 You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
 
@@ -20,6 +22,8 @@ Office Add-ins can do almost anything a webpage can do inside a browser. Use the
 ## How are Office Add-ins different from COM and VSTO add-ins?
 
 COM or VSTO add-ins are earlier Office integration solutions that run only on Office on Windows. Unlike COM add-ins, Office Add-ins don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the host application, for example Excel, reads the add-in manifest and hooks up the add-in’s custom ribbon buttons and menu commands in the UI. When needed, it loads the add-in's JavaScript and HTML code, which executes in the context of a browser in a sandbox.
+
+![Image of reasons to use Office Add-ins](../images/SOC_MichelleBatch3_image9.png)
 
 Office Add-ins provide the following advantages over add-ins built using VBA, COM, or VSTO:
 
@@ -34,10 +38,6 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 ## Components of an Office Add-in
 
 An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
-
-*Figure 1. Add-in manifest (XML) + webpage (HTML, JS) = an Office Add-in*
-
-![Manifest plus webpage equals Office Add-in](../images/about-addins-manifestwebpage.png)
 
 ### Manifest
 
