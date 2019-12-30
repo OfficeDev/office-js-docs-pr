@@ -1,9 +1,9 @@
 ---
-ms.date: 12/02/2019
+ms.date: 12/30/2019
 description: 'Guide to sharing code between VSTO Add-in and Office web add-in.'
 title: Tutorial: 'Migrate your VSTO Add-in to an Office web add-in with a shared code library'
 ms.prod: excel
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Tutorial: Migrate your VSTO Add-in to an Office web add-in with a shared code library
@@ -40,10 +40,10 @@ To set up your development environment:
 
 1. Install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
 2. Install the following workloads:
-    a. ASP.NET and web development
-    b. .NET Core cross-platform development
-    c. Office/SharePoint development
-    d. Visual Studio Tools for Office (VSTO) Note that this is an Individual component.
+    - ASP.NET and web development
+    - .NET Core cross-platform development. You need at least .NET Core version 2.2 or later to run the completed sample.
+    - Office/SharePoint development
+    - Visual Studio Tools for Office (VSTO). This is an individual component.
 
 You also need the following:
 
@@ -67,7 +67,7 @@ The add-in is a custom task pane for Excel. You can select any cell with text, a
 
 ## Analyze types of code in the VSTO Add-in
 
-The first technique to apply is to analyze the add-in for which parts of code can be shared. In general there are three types of code to deal with when migrating.
+The first technique to apply is to analyze the add-in for which parts of code can be shared. In general, project will break down into three types of code.
 
 ### UI code
 
@@ -379,7 +379,7 @@ When done, your `Startup` class should look similar to the following code:
 
 1. In **Solution Explorer**, right-click the top node **Solution 'Cell-Analyzer'**, and choose **Set Startup Projects**.
 2. In the **Solution 'Cell-Analyzer' Property Pages** dialog, select **Multiple startup projects**.
-3. Enable the Start action for each of the following projects.
+3. Set the **Action** property to **Start** for each of the following projects.
     - CellAnalyzerRESTAPI
     - CellAnalyzerWebAddinWeb
     - CellAnalyzerWebAddin
