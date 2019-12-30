@@ -1,5 +1,5 @@
 ---
-ms.date: 07/15/2019
+ms.date: 12/19/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions
 localization_priority: Priority

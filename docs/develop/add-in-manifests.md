@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 09/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
 ---
 
