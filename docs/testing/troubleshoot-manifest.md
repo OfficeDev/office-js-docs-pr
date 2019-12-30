@@ -9,6 +9,9 @@ localization_priority: Priority
 
 You may want to validate your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file.
 
+> [!NOTE]
+> For details about using runtime logging to troubleshoot issues with your add-in's manifest, see [Debug your add-in with runtime logging](runtime-logging.md).
+
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
 If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file. Run the following command in the root directory of your project:

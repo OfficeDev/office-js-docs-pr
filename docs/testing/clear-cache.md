@@ -9,7 +9,7 @@ localization_priority: Priority
 
 You can remove an add-in that you've previously sideloaded on Windows, Mac, or iOS by clearing the Office cache on your computer. 
 
-If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you should clear the Office cache and then sideload the updated manifest. Doing so will allow Office to correctly render the changes you've made to the add-in.
+Additionally, if you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you should clear the Office cache and then re-sideload the add-in using updated manifest. Doing so will allow Office to render the add-in as it's described by the updated manifest.
 
 ## Clear the Office cache on Windows
 
@@ -19,7 +19,7 @@ To clear the Office cache on Windows, delete the contents of the folder `%LOCALA
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
-##  Clear the Office cache on iOS:
+##  Clear the Office cache on iOS
 
 To clear the Office cache on iOS, call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
