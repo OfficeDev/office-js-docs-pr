@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing
 description: ''
-ms.date: 12/06/2019
+ms.date: 12/31/2019
 localization_priority: Priority
 ---
 
@@ -116,6 +116,6 @@ The following video walks you through the process of sideloading your add-in in 
 
 ## See also
 
-- [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
+- [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
+- [Clear the Office cache](clear-cache.md)
 - [Publish your Office Add-in](../publish/publish.md)
-    
