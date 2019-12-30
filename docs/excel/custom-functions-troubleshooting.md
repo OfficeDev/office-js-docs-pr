@@ -29,7 +29,7 @@ Generally, these errors correspond to the errors you might already be familiar w
 
 ## Clear the Office cache
 
-Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see [Clear the Office cache](../testing/clear-cache).
+Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see [Clear the Office cache](../testing/clear-cache.md).
 
 ## Common issues
 
