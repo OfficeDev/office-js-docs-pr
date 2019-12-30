@@ -1,5 +1,37 @@
 { 
     "redirections": [      
+      {   
+        "source_path": "docs/quickstarts/excel-quickstart-jquery-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
+      },
+      {   
+        "source_path": "docs/quickstarts/excel-custom-functions-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-custom-functions-quickstart"
+      },
+      {   
+        "source_path": "docs/quickstarts/onenote-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/onenote-quickstart"
+      },
+      {   
+        "source_path": "docs/quickstarts/powerpoint-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart"
+      },
+      {   
+        "source_path": "docs/quickstarts/project-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
+      },
+      {   
+        "source_path": "docs/quickstarts/word-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
+      },
+      {   
+        "source_path": "docs/overview/index.md", 
+        "redirect_url": "/office/dev/add-ins/overview/core-concepts-office-add-ins"
+      },
+      {   
+        "source_path": "docs/concepts/add-in-development-lifecycle.md", 
+        "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
+      },
       {
         "source_path": "docs/testing/sideload-office-addin-using-sideload-command.md",
         "redirect_url": "/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins"

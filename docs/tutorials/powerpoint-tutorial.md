@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you'll build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 10/29/2019
+ms.date: 12/24/2019
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 localization_priority: Normal
@@ -503,3 +503,9 @@ In this tutorial, you've created a PowerPoint add-in that inserts an image, inse
 
 > [!div class="nextstepaction"]
 > [PowerPoint add-ins overview](../powerpoint/powerpoint-add-ins.md)
+
+## See also
+
+* [Office Add-ins platform overview](../overview/office-add-ins.md)
+* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+* [Develop Office Add-ins](../develop/develop-overview.md)

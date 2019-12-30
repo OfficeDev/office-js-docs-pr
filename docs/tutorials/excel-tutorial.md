@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 09/18/2019
+ms.date: 11/26/2019
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Normal
@@ -728,6 +728,7 @@ These steps must be completed whenever your code needs to *read* information fro
         > [!NOTE]
         > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office host (e.g., `Excel`)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office host (e.g., `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
 3. If the local web server is already running, stop it by closing the node command window.
@@ -785,7 +786,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
             <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
-            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
             <script type="text/javascript" src="popup.js"></script>
 
         </head>
@@ -1010,3 +1011,10 @@ In this tutorial, you've created an Excel task pane add-in that interacts with t
 
 > [!div class="nextstepaction"]
 > [Excel add-ins overview](../excel/excel-add-ins-overview.md)
+
+## See also
+
+* [Office Add-ins platform overview](../overview/office-add-ins.md)
+* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+* [Develop Office Add-ins](../develop/develop-overview.md)
+* [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)

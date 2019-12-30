@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: 
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: onenote
 localization_priority: Priority
 ---
@@ -119,8 +119,10 @@ Congratulations, you've successfully created a OneNote task pane add-in! Next, l
 
 ## See also
 
+* [Office Add-ins platform overview](../overview/office-add-ins.md)
+* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+* [Develop Office Add-ins](../develop/develop-overview.md)
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office Add-ins platform overview](../overview/office-add-ins.md)
 

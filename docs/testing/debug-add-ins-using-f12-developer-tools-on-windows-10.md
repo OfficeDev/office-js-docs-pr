@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools on Windows 10
-description: ''
-ms.date: 07/01/2019
+description: 'Debug add-ins using Microsoft Edge developer tools on Windows 10'
+ms.date: 12/16/2019
 localization_priority: Priority
 ---
 
@@ -9,17 +9,20 @@ localization_priority: Priority
 
 There are developer tools outside of IDEs available to help you debug your add-ins on Windows 10. These are useful when you need to investigate a problem while running your add-in outside the IDE.
 
-The tool that you use depends on whether the add-in is running in Microsoft Edge or Internet Explorer. This is determined by the version of Windows 10 and the version of Office that are installed on the computer. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
-
+The tool that you use depends on whether the add-in is running in Microsoft Edge or Internet Explorer. This is determined by the version of Windows 10 and the version of Office that are installed on the computer. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!NOTE]
 > The instructions in this article cannot be used to debug an Outlook add-in that uses Execute Functions. To debug an Outlook add-in that uses Execute Functions, we recommend that you attach to Visual Studio in script mode or to some other script debugger.
 
 ## When the add-in is running in Microsoft Edge
 
-When the add-in is running in Microsoft Edge, you can use the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
-1. Run the add-in. 
+### Debug using Microsoft Edge DevTools
+
+When the add-in is running in Microsoft Edge, you can use the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
+
+1. Run the add-in.
 
 2. Run the Microsoft Edge DevTools.
 

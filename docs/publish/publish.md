@@ -1,11 +1,11 @@
 ---
-title: Deploy and publish your Office Add-in | Microsoft Docs
+title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
 ms.date: 09/05/2019
 localization_priority: Priority
 ---
 
-# Deploy and publish your Office Add-in
+# Deploy and publish Office Add-ins
 
 You can use one of several methods to deploy your Office Add-in for testing or distribution to users.
 
@@ -14,7 +14,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser.|
 |[Centralized Deployment](centralized-deployment.md)|In a cloud or hybrid deployment, to distribute your add-in to users in your organization by using the Office 365 admin center.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
-|[AppSource](/office/dev/store/submit-to-the-office-store)|To distribute your add-in publicly to users.|
+|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|On a Windows computer on a network where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.|
 
@@ -82,5 +82,5 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 - [Create effective AppSource listings](/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: /office/dev/store/submit-to-the-office-store
+[AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability

@@ -1,12 +1,12 @@
 ---
-title: Design your Office Add-ins
+title: Design Office Add-ins
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
 ---
 
 
-# Design your Office Add-ins
+# Design Office Add-ins
 
 Office Add-ins extend the Office experience by providing contextual functionality that users can access within Office clients. Add-ins empower users to get more done by enabling them to access third-party functionality within Office, without costly context switches. 
 
@@ -29,6 +29,6 @@ Follow the Office design principles to create positive add-in experiences:
 - **Design for all platforms and input methods**. Add-ins are designed to work on all the platforms that Office supports, and your add-in UX should be optimized to work across platforms and form factors. Support mouse/keyboard and touch input devices, and ensure that your custom HTML UI is responsive to adapt to different form factors. For more information, see [Touch](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
 ## See also
-- [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/fabric) 
 - [Add-in development best practices](../concepts/add-in-development-best-practices.md)
 

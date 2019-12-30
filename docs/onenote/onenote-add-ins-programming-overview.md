@@ -121,7 +121,7 @@ OneNote add-ins support only the following Common APIs:
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | Settings are supported by content add-ins only | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-In general, you only use the Common API to do something that isn't supported in the host-specific API. To learn more about using the Common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](../reference/javascript-api-for-office.md).
+In general, you use the Common API to do something that isn't supported in the host-specific API. To learn more about using the Common API, see [Office JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 
 <a name="om-diagram"></a>
@@ -133,7 +133,7 @@ The following diagram represents what's currently available in the OneNote JavaS
 
 ## See also
 
-- [OneNote add-ins documentation](index.md)
+- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
 - [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

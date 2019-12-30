@@ -11,7 +11,7 @@ localization_priority: Priority
 Excel custom functions and the task pane share global data, and can make function calls into each other. To configure your project so that custom functions can work with the task pane, follow the instructions in this article.
 
 > [!NOTE]
-> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. The preview features in this article are only available on Excel on Windows. To try the preview features, you will need to [join Office Insider](https://insider.office.com/en-us/join).  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. The preview features in this article are only available on Excel on Windows. To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 ## Create the add-in project
 
@@ -199,5 +199,5 @@ Now that custom functions run in the same context as your task pane code, they c
 Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE(“new value”)` to change the shared data to a new value.
 
 > [!NOTE]
-> Configuring your project as shown in this article will share context between custom functions and the task pane. Calling Office APIs from custom functions is not supported. If you need to interact with the document, implement calls to the Office APIs in the [onCalculated event](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=excel-js-preview#event-details).
+> Configuring your project as shown in this article will share context between custom functions and the task pane. Calling Office APIs from custom functions is not supported in the preview.
 
