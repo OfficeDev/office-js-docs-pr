@@ -159,6 +159,8 @@ Learn more about developing, testing, and publishing Office Add-ins by exploring
 - [Office Add-ins platform overview](office-add-ins.md)
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
+- [Develop Office Add-ins with Visual Studio Code](../develop/develop-add-ins-vscode.md)
+- [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
