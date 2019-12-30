@@ -61,7 +61,7 @@ Verify that the latest Office updates are installed, or download the [update for
 
 ## Add-in doesn't load in task pane or other issues with the add-in manifest
 
-See [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md) and [Debug your add-in with runtime logging](runtime-logging.md) to debug add-in manifest issues.
+See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug your add-in with runtime logging](runtime-logging.md) to debug add-in manifest issues.
 
 
 ## Add-in dialog box cannot be displayed
@@ -138,5 +138,5 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
+- [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)

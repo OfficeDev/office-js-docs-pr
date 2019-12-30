@@ -1,11 +1,11 @@
 ---
-title: Validate and troubleshoot issues with your manifest
+title: Validate an Office Add-in's manifest
 description: Learn how to validate an Office Add-in's manifest.
 ms.date: 12/31/2019
 localization_priority: Priority
 ---
 
-# Validate and troubleshoot issues with your manifest
+# Validate an Office Add-in's manifest
 
 You may want to validate your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file.
 
