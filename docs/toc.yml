@@ -275,6 +275,11 @@
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
 
+  - name: Patterns and practices
+    items:
+    - name: Migrate VSTO add-in using shared library
+      href: pnp/migrate-vsto-to-office-web-add-in-shared-code-library-tutorial.md
+
   - name: Reference
     items:
     - name: API reference documentation
