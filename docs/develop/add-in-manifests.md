@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 09/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
 ---
 
@@ -481,9 +481,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 ---
 
-## Validate and troubleshoot issues with your manifest
+## Validate an Office Add-in's manifest
 
-For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
+For information about validating a manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).
 
 ## See also
 
@@ -495,6 +495,6 @@ For troubleshooting issues with your manifest, see [Validate and troubleshoot is
 * [Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md)
+* [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md)
 
 [add-in commands]: create-addin-commands.md
