@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins with Visual Studio Code
 description: How to develop Office Add-ins with Visual Studio Code
-ms.date: 12/02/2019
+ms.date: 12/31/2019
 localization_priority: Priority
 ---
 
@@ -10,7 +10,7 @@ localization_priority: Priority
 This article describes how to use [Visual Studio Code (VS Code)](https://code.visualstudio.com) to develop an Office Add-in.
 
 > [!NOTE]
-> For information about using Visual Studio to create an Office Add-in, see [Create and debug Office Add-ins in Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md).
+> For information about using Visual Studio to create an Office Add-in, see [Develop Office Add-ins with Visual Studio](develop-add-ins-visual-studio.md).
 
 ## Prerequisites
 
@@ -43,7 +43,9 @@ Methods for testing, debugging, and troubleshooting Office Add-ins vary by platf
 
 ## See also
 
-- [5-minute quick starts](../index.md)
-- [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
+- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
-- [Deploy and publish your Office Add-in](../publish/publish.md)
+- [Publish Office Add-ins](../publish/publish.md)

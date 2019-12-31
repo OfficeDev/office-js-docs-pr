@@ -1,116 +1,28 @@
 ---
-title: Create and debug Office Add-ins in Visual Studio
-description: 'Use Visual Studio to create and debug Office Add-ins in the Office desktop client on Windows'
-ms.date: 12/16/2019
+title: Debug Office Add-ins in Visual Studio
+description: 'Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows'
+ms.date: 12/31/2019
 localization_priority: Priority
 ---
 
-# Create and debug Office Add-ins in Visual Studio
+# Debug Office Add-ins in Visual Studio
 
-This article describes how to use Visual Studio 2019 to create an Office Add-in for Excel, Word, PowerPoint, or Outlook and debug the add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly.
-
-> [!NOTE]
-> Visual Studio does not support creating Office Add-ins for OneNote or Project, but you can use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create these types of add-ins.
-> - To get started with an add-in for OneNote, see [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md).
->
-> - To get started with an add-in for Project, see [Build your first Project add-in](../quickstarts/project-quickstart.md).
-
-## Prerequisites
-
-- [Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
-
-    > [!TIP]
-    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).
-
-- Office 2013 or later
-
-    > [!TIP]
-    > If you don't already have Office, you can join the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program) to get an Office 365 subscription, or you can [register for a free 1-month trial](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
-
-## Create the add-in project in Visual Studio
-
-Start by completing these three steps, and then complete the steps in the following section that corresponds to the type of add-in you're creating. 
-
-1. Open Visual Studio and from the Visual Studio menu bar, choose  **Create a new project**.
-
-2. Using the search box, enter **Add-ins**, then choose the type of add-in project you want to create.
-
-3. Name the project, and then choose **OK**.
-
-### Word Web Add-in or Outlook Web Add-in
-
-If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution).
-
-### PowerPoint Web Add-in
-
-If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears.
-
-- To create a task pane add-in, select **Add new functionalities to PowerPoint** and then choose the **Finish** button to create the Visual Studio solution.
-
-- To create a content add-in, select **Insert content into PowerPoint slides** and then choose the **Finish** button to create the Visual Studio solution.
-
-Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution).
-
-### Excel Web Add-in
-
-If you've chosen to create an **Excel Web Add-in**, the **Create Office Add-in** dialog appears. 
-
-- To create a task pane add-in, select **Add new functionalities to Excel** and then choose the **Finish** button to create the Visual Studio solution.
-
-- To create a content add-in, select **Insert content into Excel spreadsheets**, choose the **Next** button, select one of the following options, and then choose the **Finish** button to create the Visual Studio solution:
-
-    - **Basic Add-in** - to create a content add-in project with minimal starter code
-
-    - **Document Visualization Add-in** - to create a content add-in project with starter code to visualize and bind to data  
-
-### Explore the Visual Studio solution
-
-[!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
-
-## Modify your add-in settings
-
-To modify the settings of your add-in, edit the XML manifest file in the add-in project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
-
-## Develop the contents of your add-in
-
-While the add-in project lets you modify the settings that describe your add-in, the web application provides the content that appears in the add-in. 
-
-The web application project contains a default HTML file, JavaScript file, and CSS file that you can use to get started. Some of these files contain references to other JavaScript libraries including the JavaScript API for Office. You can develop your add-in by updating these files and/or adding more HTML and JavaScript files. The following table describes the default files that the web application project contains when the Visual Studio solution is created.
-
-|**File name**|**Description**|
-|:-----|:-----|
-|**Home.html**<br/>(Excel, PowerPoint, Word)<br/><br/>**MessageRead.html**<br/>(Outlook)|The default HTML page of the add-in. This page appears as the first page inside of the add-in when it is activated in a document, email message, or appointment item. This file contains all of the file references that you need to get started. You can start developing your add-in by adding your HTML code to this file.|
-|**Home.js**<br/>(Excel, PowerPoint, Word)<br/><br/>**MessageRead.js**<br/>(Outlook)|The JavaScript file associated with the **Home.html** page (Excel, PowerPoint, Word) or the **MessageRead.html** page (Outlook). This file should contain any code that is specific to the behavior of the **Home.html** page (Excel, PowerPoint, Word) or the **MessageRead.html** page (Outlook). This file contains some example code to get you started.|
-|**Home.css**<br/>(Excel, PowerPoint, Word)<br/><br/>**MessageRead.css**<br/>(Outlook)|Defines the default styles to apply to your add-in. We recommend using the Office UI Fabric for design and styles. For more information see [Office UI Fabric in Office Add-ins](../design/office-ui-fabric.md).|
+This article describes how to use Visual Studio 2019 to debug an Office Add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly. 
 
 > [!NOTE]
-> You don't have to use these files. Feel free to add other files to the project and use those instead. If you want another HTML file to appear as the initial page of the add-in, open the manifest editor, and then set the  **SourceLocation** property to the name of the file.
+> You can't use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
 
-## Debug your add-in
-
-You can use Visual Studio to debug your add-in in the Office desktop client on Windows, as described in the following sections:
-
-- [Enable debugging for add-in commands and UI-less code](#enable-debugging-for-add-in-commands-and-ui-less-code)
-- [Review the build and debug properties](#review-the-build-and-debug-properties)
-- [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in)
-- [Start the project](#start-the-project)
-- [Debug the code for an Excel, PowerPoint, or Word add-in](#debug-the-code-for-an-excel-powerpoint-or-word-add-in)
-- [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
-
-> [!NOTE]
-> You cannot use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
-
-### Enable debugging for add-in commands and UI-less code
+## Enable debugging for add-in commands and UI-less code
 
 When Visual Studio debugs Office on Windows, the add-in is hosted in either a Microsoft Internet Explorer or Microsoft Edge browser instance. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 [!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
-### Review the build and debug properties
+## Review the build and debug properties
 
 Before you start debugging, review the properties of each project to confirm that Visual Studio will open the desired host application and that other build and debug properties are set appropriately.
 
-#### Add-in project properties
+### Add-in project properties
 
 Open the **Properties** window for the add-in project to review project properties:
 
@@ -136,7 +48,7 @@ The following table describes the properties of the add-in project.
 > [!NOTE]
 > For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-in only* properties in the **Properties** window, but doing so is not required.
 
-#### Web application project properties
+### Web application project properties
 
 Open the **Properties** window for the web application project to review project properties:
 
@@ -154,7 +66,7 @@ The following table describes the properties of the web application project that
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
 |**Project Folder**|Specifies the location of the project file. Read-only. The manifest file that Visual Studio generates at runtime is written to the `bin\Debug\OfficeAppManifests` folder in this location.|
 
-### Use an existing document to debug the add-in
+## Use an existing document to debug the add-in
 
 If you have a document that contains test data you want to use while debugging your Excel, PowerPoint, or Word add-in, Visual Studio can be configured to open that document when you start the project. To specify an existing document to use while debugging the add-in, complete the following steps.
 
@@ -172,7 +84,7 @@ If you have a document that contains test data you want to use while debugging y
 
 7. In the **Properties** window, choose the **Start Document** list, and then select the document that you added to the project. The project is now configured to start the add-in in that document.
 
-### Start the project
+## Start the project
 
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar. Visual Studio will automatically build the solution and start Office to host your add-in.
 
@@ -189,10 +101,8 @@ When Visual Studio builds the project it performs the following tasks:
 
 4. If this is the first add-in project that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
 
-
 > [!NOTE]
 > The latest version of Office may use a newer web control to display the add-in contents when running on Windows 10. If this is the case, Visual Studio may prompt you to add a local network loopback exemption. This is required for the web control, in the Office host application, to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**.
-
 
 Next, Visual Studio does the following:
 
@@ -206,7 +116,7 @@ Visual Studio doesn't show validation errors in the  **OUTPUT** window when you 
 
 To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 
-### Debug the code for an Excel, PowerPoint, or Word add-in
+## Debug the code for an Excel, PowerPoint, or Word add-in
 
 If your add-in isn't visible within the document that's displayed in the host application (Excel, PowerPoint, or Word) after you've [started the project](#start-the-project), manually launch the add-in in the host application. For example, launch your task pane add-in by choosing the **Show Taskpane** button in the ribbon of the **Home** tab. After your add-in is displayed in Excel, PowerPoint, or Word, you can debug your code by doing the following:
 
@@ -224,7 +134,7 @@ If your add-in isn't visible within the document that's displayed in the host ap
 
 You can change your code and review the effects of those changes in your add-in without having to close the host application and restart the project. After you save changes to your code, simply reload the add-in in the host application. For example, reload a task pane add-in by choosing the top-right corner of the task pane to activate the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Reload**.
 
-### Debug the code for an Outlook add-in
+## Debug the code for an Outlook add-in
 
 After you've [started the project](#start-the-project) and Visual Studio launches Outlook to host your add-in, open an email message or appointment item. 
 
