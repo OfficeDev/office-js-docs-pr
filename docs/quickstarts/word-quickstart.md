@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JS API.
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: word
 localization_priority: Priority
 ---
@@ -82,6 +82,10 @@ After you complete the wizard, the generator creates the project and installs su
 4. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
 
     ![Screenshot of the Word application with the task pane add-in loaded](../images/word-quickstart-addin-1c.png)
+
+### Next steps
+
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the [Word add-in tutorial](../tutorials/word-tutorial.md).
 
 # [Visual Studio](#tab/visualstudio)
 
@@ -296,14 +300,11 @@ After you complete the wizard, the generator creates the project and installs su
 
     ![Screenshot of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1b.png)
 
+### Next steps
+
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## Next steps
-
-Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.
-
-> [!div class="nextstepaction"]
-> [Word add-in tutorial](../tutorials/word-tutorial.md)
 
 ## See also
 
