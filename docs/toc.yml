@@ -79,6 +79,8 @@
         href: develop/authorize-to-microsoft-graph-without-sso.md
       - name: Enable SSO in an add-in
         items:
+        - name: SSO quick start
+          href: develop/sso-quickstart.md
         - name: Enable single sign-on
           href: develop/sso-in-office-add-ins.md
         - name: Authorize to Microsoft Graph with SSO
