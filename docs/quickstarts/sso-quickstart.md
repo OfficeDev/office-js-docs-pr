@@ -18,7 +18,7 @@ TODO: finish intro
 
 ## Prerequisites
 
-TODO: update prereqs -- copy from https://docs.microsoft.com/en-us/office/dev/add-ins/develop/create-sso-office-add-ins-nodejs ?
+TODO: update prereqs -- copy from https://docs.microsoft.com/office/dev/add-ins/develop/create-sso-office-add-ins-nodejs ?
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
