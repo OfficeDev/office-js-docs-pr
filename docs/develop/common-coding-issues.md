@@ -1,7 +1,7 @@
 ---
 title: Common coding issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 12/05/2019
+ms.date: 01/02/2020
 localization_priority: Normal
 ---
 
