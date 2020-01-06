@@ -78,9 +78,9 @@ The add-in project that you've created with the Yeoman generator contains sample
     npm run configure-sso
     ```
 
-3. Enter your Azure credentials when prompted. These credentials will be used to register a new application in Azure and configure the settings required by SSO. Additionally, files within the add-in project that the Yeoman generator created will automatically be updated with the required data (i.e., application ID and port).
+3. A web browser window will open and prompt you to enter your Azure credentials. Enter your Azure credentials when prompted. These credentials will be used to register a new application in Azure and configure the settings required by SSO. Additionally, files within the add-in project that the Yeoman generator created will automatically be updated with the required data (i.e., application ID and port). 
 
-4. Run the following command to start the local web server and sideload your add-in in the Office client application.
+4. Return to the command prompt and run the following command to start the local web server and sideload your add-in.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
