@@ -23,7 +23,7 @@ This feature is in preview. Specifies the runtime of your add-in and allows cust
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Runtime**     | No |  The Runtime for your add-in, often used with Excel custom functions.
+|  **Runtime**     | Yes |  The Runtime for your add-in, often used with Excel custom functions.
 
 ## See also
 

@@ -28,7 +28,7 @@ This feature is in preview. Child element of the [`<Runtimes>`](runtime.md) elem
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **lifetime="long"**  |  Yes  | Should always be listed as long if you want Excel custom functions to work while the task pane of your add-in is closed. |
-|  **resid**  |  Yes  | If used for Excel custom functions, the resid should point to "TaskPaneAndCustomFunction.Url". |
+|  **resid**  |  Yes  | If used for Excel custom functions, the `resid` should point to `TaskPaneAndCustomFunction.Url`. |
 
 ## See also
 
