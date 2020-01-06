@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: 'Office Add-in requirement set information for Excel builds'
-ms.date: 12/24/2019
+ms.date: 01/06/2020
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -35,7 +35,10 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 | [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | Version 1509 (Build 4266.1001) or later   | 1.19 or later | 15.20 or later | January 2016 |
 
 > [!NOTE]
-> The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
+> Perpetual versions of Office support requirement sets as follows:
+>
+> - Office 2019 supports ExcelApi 1.8 and earlier.
+> - Office 2016 only supports the ExcelApi 1.1 requirement set.
 
 ## Office versions and build numbers
 
