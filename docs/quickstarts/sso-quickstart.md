@@ -1,37 +1,51 @@
 ---
 title: Use the Yeoman generator to create an Office Add-in that uses SSO
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on (preview).
-ms.date: 01/07/2020
+ms.date: 01/08/2020
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
 
 # Use the Yeoman generator to create an Office Add-in that uses SSO
 
-In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in that uses single sign-on (SSO). 
-TODO: finish intro
+In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Word, or PowerPoint that uses single sign-on (SSO). 
 
-> [!NOTE]
-> > TODO: finish note | add corresponding note to detailed walkthrough
-> To learn more about the details...see [detailed walkthrough].
-> To learn basic concepts about SSO in Office Add-ins...see [overview article].
+> [!TIP]
+> Before you attempt to complete this quick start, review [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md) to learn basic concepts about SSO in Office Add-ins. 
+ 
+The Yeoman generator simplifies the process of creating an SSO add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For detailed information about how to manually complete the steps that the Yeoman generator automates, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
 ## Prerequisites
 
-TODO: update prereqs -- copy from https://docs.microsoft.com/office/dev/add-ins/develop/create-sso-office-add-ins-nodejs ?
+- A code editor. We recommend [Visual Studio Code](https://code.visualstudio.com).
 
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+- [Node.js](https://nodejs.org) (version 10.15.0 or later)
+
+- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:
+
+    ```command&nbsp;line
+    npm install -g yo generator-office
+    ```
+
+    [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
+
+- Office 365 (the subscription version of Office) account which you can get by joining the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365. You should use the latest monthly version and build from the Insiders channel but you need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+
+- A Microsoft Azure Tenant. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Create the add-in project
 
+> [!TIP]
+> The Yeoman generator can create an SSO-enabled Office Add-in for Excel, Word, or PowerPoint, and can be created with script type of JavaScript or TypeScript. The following instructions specify `JavaScript` and `Excel`, but you should choose the script type and Office client application that best suits your scenario.
+
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a project type:** `Office Add-in Task Pane project supporting single sign-on`
 - **Choose a script type:** `Javascript`
-- **What do you want to name your add-in?** `My Office Add-in`
-- **Which Office client application would you like to support?** `OneNote`
+- **What do you want to name your add-in?** `My SSO Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
 
-![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-onenote.png)
+![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-sso-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
