@@ -6,7 +6,7 @@ ms.prod: non-product-specific
 localization_priority: Priority
 ---
 
-# Use the Yeoman generator to create an Office Add-in that uses SSO
+# Use the Yeoman generator to create an Office Add-in that uses single sign-on (SSO)
 
 In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Word, or PowerPoint that uses single sign-on (SSO). 
 
