@@ -1,12 +1,12 @@
 ---
-title: Use the Yeoman generator to create an Office Add-in that uses SSO
+title: Use the Yeoman generator to create an Office Add-in that uses SSO (preview)
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on (preview).
 ms.date: 01/08/2020
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
 
-# Use the Yeoman generator to create an Office Add-in that uses single sign-on (SSO)
+# Use the Yeoman generator to create an Office Add-in that uses single sign-on (preview)
 
 In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Word, or PowerPoint that uses single sign-on (SSO). 
 
