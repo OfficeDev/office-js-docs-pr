@@ -7,6 +7,8 @@ localization_priority: Priority
 
 # Overview: run custom functions in the browser runtime (preview)
 
+[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
+
 Currently custom functions run in a JavaScript-only runtime that is separate from the browser runtime used by the task pane. Now you can configure custom functions to run with task pane code in the same browser runtime. This allows your custom functions to take full advantage of the browser runtime to get full CORS support, use the DOM, and enable additional web scenarios. You can also call Excel JS APIs from your custom functions to read spreadsheet document data, or modify it.
 
 When you run custom functions in the same browser runtime as the task pane, it will run in a browser instance on different platforms as follows:
