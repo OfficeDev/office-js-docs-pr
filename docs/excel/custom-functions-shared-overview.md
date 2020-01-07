@@ -43,11 +43,19 @@ Debugging custom functions in Excel on Windows from VS Code is not supported any
 
 ## Get Started
 
-To configure your Excel add-in project to run custom functions in the browser runtime, see [](../tutorial/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+To configure your Excel add-in project to run custom functions in the browser runtime, see [Tutorial: Share data and events between Excel custom functions and the task pane (preview)](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
 
 ## Give us feedback
 
+We'd love to hear your feedback on this feature. If you find any bugs, issues, or have requests on this feature, please let us know by creating a GitHub issue in the [office-js repo](https://github.com/OfficeDev/office-js).
 
 ## See also
 
 List of related articles for shared runtime
+- [Tutorial: Share data and events between Excel custom functions and the task pane (preview)](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Call Excel APIs from your custom function (preview)](custom-functions-call-excel-api.md)
+- [Run code when the task pane is closed or not visible (preview)](run-code-when-the-task-pane-is-closed-or-not-visible.md)
+- [Configure your task pane for display on document open (preview)](configure-your-task-pane-for-display-on-document-open.md)
+- [Authenticate on document open (preview)](authenticate-on-document-open.md)
+- [Manage UI state for your Excel add-in (preview)](manage-ui-state-for-your-excel-add-in.md)
+- [Preload data before showing the task pane (preview)](preload-data-before-showing-the-task-pane.md)
