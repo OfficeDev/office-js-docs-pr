@@ -1,7 +1,7 @@
 { 
     "redirections": [
       {
-        "source_path": "docs/quickstarts/sso-quickstart-redirect.md.md", 
+        "source_path": "docs/quickstarts/sso-quickstart-redirect.md", 
         "redirect_url": "/office/dev/add-ins/quickstarts/sso-quickstart"
       },{
         "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md", 
