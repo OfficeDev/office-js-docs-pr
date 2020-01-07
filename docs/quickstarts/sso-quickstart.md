@@ -80,7 +80,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 3. A web browser window will open and prompt you to enter your Azure credentials. Enter your Azure credentials when prompted. These credentials will be used to register a new application in Azure and configure the settings required by SSO.  
 
-4. After you enter your Azure credentials, close the browser window and return to the command prompt. As the SSO configuration process continues, you'll see status messages being written to the console. As described in the console messages, files within the add-in project that the Yeoman generator created are automatically be updated with data that's required by the SSO process.
+4. After you enter your Azure credentials, close the browser window and return to the command prompt. As the SSO configuration process continues, you'll see status messages being written to the console. As described in the console messages, files within the add-in project that the Yeoman generator created are automatically updated with data that's required by the SSO process.
 
 5. When the SSO configuration process completes, run the following command to start the local web server and sideload your add-in.
 
