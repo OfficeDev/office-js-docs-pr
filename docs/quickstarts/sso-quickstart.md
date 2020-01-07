@@ -97,7 +97,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 7. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
 
-8. If you are not signed in to Office, sign in when prompted. The add-in will use the signed-in user's account to facilitate SSO.
+8. If you're not alredy signed in to Office, you'll be prompted to sign in. Sign in with the credentials that you want the add-in to use to facilitate SSO.
 
 9. A dialog window appears to inform you about the permissions that the add-in is requesting. Because this add-in will write the signed-in user's profile information to the document, it needs permsissions to sign you in and read your profile and to maintain access to data you've given it access to. Choose the **Accept** button to grant those permissions to the add-in.
 
@@ -109,11 +109,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel task pane add-in that uses SSO. 
-
-To learn more about the SSO configuration steps that the Yeoman generator completed automatically, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
-
-The Yeoman generator simplifies the process of creating an SSO add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For detailed information about how to manually complete the steps that the Yeoman generator automates, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
+Congratulations, you've successfully created an Excel task pane add-in that uses SSO. To learn more about the SSO configuration steps that the Yeoman generator completed automatically, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
 ## See also
 
