@@ -39,7 +39,7 @@ You no longer need to use the **OfficeRuntime.Dialog** API to display a dialog f
 
 ### Debugging
 
-Debugging custom functions in Excel on Windows from VS Code is not supported anymore. You'll need to attach a debugger.
+You can't use VS Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools. For more information, see [Debug add-ins using developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
 
 ## Get Started
 
