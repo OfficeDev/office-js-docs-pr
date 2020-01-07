@@ -1,5 +1,5 @@
 ---
-ms.date: 12/31/2019
+ms.date: 01/07/2020
 description: Learn to implement volatile and offline streaming custom functions.
 title: Volatile values in functions
 localization_priority: Normal

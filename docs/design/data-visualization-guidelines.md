@@ -1,7 +1,7 @@
 ---
 title: Data visualization style guidelines for Office Add-ins
 description: ''
-ms.date: 12/26/2019
+ms.date: 01/07/2019
 localization_priority: Normal
 ---
 
@@ -21,7 +21,7 @@ We recommend that you use [Office UI Fabric](https://developer.microsoft.com/fab
 
 Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figure.
 
-![Image of a line chart with title, axes, legend, and plot area labeled](../images/SOC_MichelleBatch1_image9.png)
+![Image of a line chart with title, axes, legend, and plot area labeled](../images/excelcharts.png)
 
 ### Chart titles
 
@@ -60,7 +60,7 @@ Light grays are most effective for gridlines. If you’re using Fabric, see the 
 
 The following image shows a data visualization with gridlines.
 
-![Image of a data visualization with gridlines](../images/SOC_MichelleBatch1_image10.png)
+![Image of a data visualization with gridlines](../images/datavis.png)
 
 ### Legends
 
