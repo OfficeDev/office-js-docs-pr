@@ -19,7 +19,7 @@ If choosing to autogenerate your JSON file, declare a volatile function with the
 
 An example of a volatile custom function follows, which simulates rolling a six-sided dice.
 
-![A gif showing a custom function returning a random value to simulate rolling a six-sided dice](../images/SixSidedDice.gif)
+![A gif showing a custom function returning a random value to simulate rolling a six-sided dice](../images/SixSideDice.gif)
 
 ```JS
 /**

@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: ''
-ms.date: 12/26/2019
+ms.date: 01/07/2020
 localization_priority: Priority
 ---
 
@@ -18,7 +18,7 @@ You have a choice of two ways to accomplish these authentications.
 
 The following flowchart shows you the decisions that you need to make as an add-in developer. Details are later in this article.
 
-![An image showing a decision flowchart for enabling authentication and authorization in Office add-ins](../images/SOC_MichelleBatch1_image4.gif)
+![An image showing a decision flowchart for enabling authentication and authorization in Office add-ins](../images/SOC_MichelleBatch1_image4.png)
 
 ## User authentication without SSO
 
