@@ -91,19 +91,32 @@ The add-in project that you've created with the Yeoman generator contains sample
     npm start
     ```
 
-5. 
+6. In the Office client application that you chose when creating the add-in project with the Yeoman generator (i.e., Excel, Word or PowerPoint), choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
 
+    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
+
+7. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
+
+8. If you are not signed in to Office, sign in when prompted. The add-in will use the signed-in user's account to facilitate SSO.
+
+9. A dialog window appears to inform you about the permissions that the add-in is requesting. Because this add-in will write the signed-in user's profile information to the document, it needs permsissions to sign you in and read your profile and to maintain access to data you've given it access to. Choose the **Accept** button to grant those permissions to the add-in.
+
+    ![Permissions request dialog](../images/sso-permissions-request.png)
+
+10. The add-in retrieves profile information for the signed-in user and writes it to the document. The following image shows an example of profile information written to an Excel worksheet.
+
+    ![User profile information in Excel worksheet](../images/sso-user-profile-info-excel.png)
 
 ## Next steps
 
-Congratulations, you've successfully created a OneNote task pane add-in! Next, learn more about the [core concepts of building OneNote add-ins](../onenote/onenote-add-ins-programming-overview.md).
+Congratulations, you've successfully created an Excel task pane add-in that uses SSO. 
+
+To learn more about the SSO configuration steps that the Yeoman generator completed automatically, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
+
+The Yeoman generator simplifies the process of creating an SSO add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For detailed information about how to manually complete the steps that the Yeoman generator automates, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
-- [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
-- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-
+- [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
+- [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md)
+- [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
