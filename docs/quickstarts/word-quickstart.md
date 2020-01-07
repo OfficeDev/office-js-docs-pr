@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JS API.
-ms.date: 12/31/2019
+ms.date: 01/08/2020
 ms.prod: word
 localization_priority: Priority
 ---
@@ -17,6 +17,8 @@ In this article, you'll walk through the process of building a Word task pane ad
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # [Yeoman generator](#tab/yeomangenerator)
+
+[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
 ### Prerequisites
 

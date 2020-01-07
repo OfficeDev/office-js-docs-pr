@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on for Office Add-ins
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/08/2020
 localization_priority: Priority
 ---
 
@@ -49,6 +49,9 @@ This section describes the tasks involved in creating an Office Add-in that uses
 
 * [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
 * [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
+
+> [!NOTE]
+> You can use the Yeoman generator to create an SSO-enabled, Node.js Office Add-in. The Yeoman generator simplifies the process of creating an SSO-enabled add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
 ### Create the service application
 

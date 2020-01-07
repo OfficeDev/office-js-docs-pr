@@ -79,6 +79,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word add-in quick start</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">Single sign-on (SSO) quick start</a></li>
                         </ul>
                     </div>
                 </div>
