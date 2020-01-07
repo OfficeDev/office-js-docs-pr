@@ -252,6 +252,8 @@ The following sections show the manifest elements in the order in which they mus
                                     <SourceLocation>
                                     <Title>
                                     <FunctionName>
+        <Runtimes>
+            <Runtime>
         <Resources>
             <Images>
                 <Image>
