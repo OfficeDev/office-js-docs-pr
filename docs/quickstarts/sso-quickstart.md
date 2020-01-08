@@ -58,7 +58,7 @@ The add-in project that you've created with the Yeoman generator contains code f
 - The **./src/helpers/documentHelper.js** file uses the Office JavaScript library to add the data from Microsoft Graph to the Office document.
 - The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the fallback authentication system's JavaScript.
 - The **./src/helpers/fallbackauthdialog.js** file contains the fallback authentication system's JavaScript that signs on the user with msal.js.
-- The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication system in scenarios when the SSO system is not supported.
+- The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication system in scenarios when SSO authentication is not supported.
 - The **./src/helpers/ssoauthhelper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the bootstrap token, initiates the swap of the bootstrap token for an access token to Microsoft Graph, and calls to Microsoft Graph for the data.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
@@ -89,7 +89,7 @@ At this point, your add-in project has been created and contains the code that's
 
 ## Try it out
 
-1. When the SSO configuration process completes, run the following command to start the local web server and sideload your add-in.
+1. When the SSO configuration process completes, run the following command to start the local web server and sideload your add-in in the previously selected Office client application.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
@@ -98,7 +98,7 @@ At this point, your add-in project has been created and contains the code that's
     npm start
     ```
 
-2. In the Office client application that you chose when creating the add-in project with the Yeoman generator (i.e., Excel, Word or PowerPoint), choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
+2. In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
 
     ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
 
@@ -106,7 +106,7 @@ At this point, your add-in project has been created and contains the code that's
 
 4. If you're not already signed in to Office, you'll be prompted to sign in. Sign in with the credentials that you want the add-in to use for SSO.
 
-5. If a dialog window appears to inform you about the permissions that the add-in is requesting, choose the **Accept** button to grant those permissions to the add-in.
+5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternative system of user authentication. This may occur when the the tenant administrator hasn't granted consent to the add-in's access to Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
 
