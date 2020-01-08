@@ -51,7 +51,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 ## Explore the project
 
-The add-in project that you've created with the Yeoman generator contains sample code for an SSO-enabled task pane add-in. 
+The add-in project that you've created with the Yeoman generator contains code for an SSO-enabled task pane add-in.
 
 - The **./ENV** file in the root directory of the project defines constants that are used by the add-in project.
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
@@ -81,7 +81,7 @@ At this point, your add-in project has been created and contains the code that's
     ```
 
     > [!WARNING]
-    > This command will fail if your Office 365 tenant is configured to require two-factor authentication. In this scenario, you'll need to manually complete the Azure app registration and SSO configuration steps manually, as described in the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
+    > This command will fail if your tenant is configured to require two-factor authentication. In this scenario, you'll need to manually complete the Azure app registration and SSO configuration steps manually, as described in the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
 3. A web browser window will open and prompt you to enter your Azure credentials. Enter your Azure credentials when prompted. These credentials will be used to register a new application in Azure and configure the settings required by SSO.
 
