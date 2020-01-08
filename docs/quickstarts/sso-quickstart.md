@@ -1,7 +1,7 @@
 ---
 title: Use the Yeoman generator to create an Office Add-in that uses SSO (preview)
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on (preview).
-ms.date: 01/08/2020
+ms.date: 01/13/2020
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
@@ -64,7 +64,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
 - The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
 
-## Try it out
+## Configure SSO
+
+At this point, your add-in project has been created and contains the code that's necessary to facilitate the SSO process. Next, complete the following steps to configure SSO for your add-in.
 
 1. Navigate to the root folder of the project.
 
@@ -78,11 +80,16 @@ The add-in project that you've created with the Yeoman generator contains sample
     npm run configure-sso
     ```
 
-3. A web browser window will open and prompt you to enter your Azure credentials. Enter your Azure credentials when prompted. These credentials will be used to register a new application in Azure and configure the settings required by SSO.  
+    > [!WARNING]
+    > This command will fail if your Office 365 tenant is configured to require two-factor authentication. In this scenario, you'll need to manually complete the Azure app registration and SSO configuration steps manually, as described in the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
+
+3. A web browser window will open and prompt you to enter your Azure credentials. Enter your Azure credentials when prompted. These credentials will be used to register a new application in Azure and configure the settings required by SSO.
 
 4. After you enter your Azure credentials, close the browser window and return to the command prompt. As the SSO configuration process continues, you'll see status messages being written to the console. As described in the console messages, files within the add-in project that the Yeoman generator created are automatically updated with data that's required by the SSO process.
 
-5. When the SSO configuration process completes, run the following command to start the local web server and sideload your add-in.
+## Try it out
+
+1. When the SSO configuration process completes, run the following command to start the local web server and sideload your add-in.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
@@ -91,19 +98,19 @@ The add-in project that you've created with the Yeoman generator contains sample
     npm start
     ```
 
-6. In the Office client application that you chose when creating the add-in project with the Yeoman generator (i.e., Excel, Word or PowerPoint), choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
+2. In the Office client application that you chose when creating the add-in project with the Yeoman generator (i.e., Excel, Word or PowerPoint), choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
 
     ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
 
-7. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
+3. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
 
-8. If you're not already signed in to Office, you'll be prompted to sign in. Sign in with the credentials that you want the add-in to use for SSO.
+4. If you're not already signed in to Office, you'll be prompted to sign in. Sign in with the credentials that you want the add-in to use for SSO.
 
-9. A dialog window appears to inform you about the permissions that the add-in is requesting. Because this add-in will write the signed-in user's profile information to the document, it needs permsissions to sign you in and read your profile and to maintain access to data you've given it access to. Choose the **Accept** button to grant those permissions to the add-in.
+5. If a dialog window appears to inform you about the permissions that the add-in is requesting, choose the **Accept** button to grant those permissions to the add-in.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
 
-10. The add-in retrieves profile information for the signed-in user and writes it to the document. The following image shows an example of profile information written to an Excel worksheet.
+6. The add-in retrieves profile information for the signed-in user and writes it to the document. The following image shows an example of profile information written to an Excel worksheet.
 
     ![User profile information in Excel worksheet](../images/sso-user-profile-info-excel.png)
 
