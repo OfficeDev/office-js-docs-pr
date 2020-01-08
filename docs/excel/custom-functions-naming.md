@@ -1,5 +1,5 @@
 ---
-ms.date: 07/10/2019
+ms.date: 12/28/2019
 description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
 title: Naming guidelines for custom functions in Excel
 localization_priority: Normal
@@ -44,6 +44,8 @@ To fix a naming conflict, change the `name` in your add-in and try the function 
 - Avoid ambiguous abbreviations in function names. Clarity is more important than brevity. Choose a name like `=INCREASETIME` rather than `=INC`.
 - Consistently use the same verbs for functions which perform similar actions. For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.
 - When naming a streaming function, consider adding a note to that effect in the description of the function or adding `STREAM` to the end of the function's name.
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## Localizing function names
 

@@ -1,7 +1,7 @@
 ---
 title: Common coding issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 12/05/2019
+ms.date: 01/02/2020
 localization_priority: Normal
 ---
 
@@ -42,15 +42,15 @@ readDocumentFileAsync(): Promise<any> {
 > [!NOTE]
 > The reference documentation contains the Promise-wrapped implementation of [File.getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-).
 
-## Some properties must be set with JSON structs
+## Some properties cannot be set directly
 
 > [!NOTE]
 > This section only applies to the host-specific APIs for Excel and Word.
 
-Some properties must be set as JSON structs, instead of setting their individual subproperties. One example of this is found in [PageLayout](/javascript/api/excel/excel.pagelayout). The `zoom` property must be set with a single [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) object, as shown here:
+Some properties cannot be set, despite being writable. These properties are part of a parent property that must be set as a single object. This is because that parent property relies on the subproperties having specific, logical relationships. These parent properties must be set using object literal notation to set the entire object, instead of setting that object's individual subproperties. One example of this is found in [PageLayout](/javascript/api/excel/excel.pagelayout). The `zoom` property must be set with a single [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) object, as shown here:
 
 ```js
-// PageLayout.zoom must be set with JSON struct representing the PageLayoutZoomOptions object.
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
 sheet.pageLayout.zoom = { scale: 200 };
 ```
 
@@ -63,10 +63,10 @@ This behavior differs from [navigational properties](../excel/excel-add-ins-adva
 range.format.font.size = 10;
 ```
 
-You can identify a property that must have its subproperties set with a JSON struct by checking its read-only modifier. All read-only properties can have their non-read-only subproperties directly set. Writeable properties like `PageLayout.zoom` must be set with a JSON struct. In summary:
+You can identify a property that cannot have its subproperties directly set by checking its read-only modifier. All read-only properties can have their non-read-only subproperties directly set. Writeable properties like `PageLayout.zoom` must be set with an object at that level. In summary:
 
 - Read-only property: Subproperties can be set through navigation.
-- Writable property: Subproperties must be set with a JSON struct (and cannot be set through navigation).
+- Writable property: Subproperties cannot be set through navigation (must be set as part of the initial parent object assignment).
 
 ## Excel data transfer limits
 
