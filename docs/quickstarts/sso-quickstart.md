@@ -56,9 +56,9 @@ The add-in project that you've created with the Yeoman generator contains code f
 - The **./ENV** file in the root directory of the project defines constants that are used by the add-in project.
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/helpers/documentHelper.js** file uses the Office JavaScript library to add the data from Microsoft Graph to the Office document.
-- The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the fallback authentication system's JavaScript.
-- The **./src/helpers/fallbackauthdialog.js** file contains the fallback authentication system's JavaScript that signs on the user with msal.js.
-- The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication system in scenarios when SSO authentication is not supported.
+- The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the fallback authentication method's JavaScript.
+- The **./src/helpers/fallbackauthdialog.js** file contains the fallback authentication method's JavaScript that signs on the user with msal.js.
+- The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication method in scenarios when SSO authentication is not supported.
 - The **./src/helpers/ssoauthhelper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the bootstrap token, initiates the swap of the bootstrap token for an access token to Microsoft Graph, and calls to Microsoft Graph for the data.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
@@ -106,7 +106,7 @@ At this point, your add-in project has been created and contains the code that's
 
 4. If you're not already signed in to Office, you'll be prompted to sign in. Sign in with the credentials that you want the add-in to use for SSO.
 
-5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternative system of user authentication. This may occur when the the tenant administrator hasn't granted consent to the add-in's access to Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
+5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternative method of user authentication. This may occur when the the tenant administrator hasn't granted consent to the add-in's access to Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
 
