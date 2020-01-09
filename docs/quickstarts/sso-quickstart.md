@@ -70,7 +70,7 @@ The add-in project that you've created with the Yeoman generator contains code f
 
 - The **./ENV** file in the root directory of the project defines constants that are used by the add-in project.
     > [!NOTE]
-    > Some of the constants defined in this file are used to facilitate the SSO process. You may want to update values in this file to match your specific scenario. For example, you can update this file to specify a different port and scope.
+    > Some of the constants defined in this file are used to facilitate the SSO process. You may want to update values in this file to match your specific scenario. For example, you can update this file to specify a different scope, if your add-in requires something other than `User.Read`.
 
 ## Configure SSO
 
