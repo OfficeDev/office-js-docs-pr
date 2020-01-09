@@ -27,9 +27,12 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
-- An Office 365 (the subscription version of Office) account, which you can get by joining the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365. You should use the latest monthly version and build from the Insiders channel but you need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+- An Office 365 (the subscription version of Office) account. If you don't already have an Office 365 account, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://aka.ms/devprogramsignup). 
 
-- A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+- An Insider's build of Office 365. You should use the latest monthly version and build from the Insiders channel but you need to [be an Office Insider](https://products.office.com/office-insider?tab=tab-1) to get this version. 
+
+    > [!NOTE]
+    > When a build graduates to the production semi-annual channel, support for preview features, including SSO, is disabled for that build.
 
 ## Create the add-in project
 
@@ -53,16 +56,21 @@ After you complete the wizard, the generator creates the project and installs su
 
 The add-in project that you've created with the Yeoman generator contains code for an SSO-enabled task pane add-in.
 
-- The **./ENV** file in the root directory of the project defines constants that are used by the add-in project.
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
+
+- The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
+- The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
+- The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
+
 - The **./src/helpers/documentHelper.js** file uses the Office JavaScript library to add the data from Microsoft Graph to the Office document.
 - The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the fallback authentication method's JavaScript.
 - The **./src/helpers/fallbackauthdialog.js** file contains the fallback authentication method's JavaScript that signs on the user with msal.js.
 - The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication method in scenarios when SSO authentication is not supported.
 - The **./src/helpers/ssoauthhelper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the bootstrap token, initiates the swap of the bootstrap token for an access token to Microsoft Graph, and calls to Microsoft Graph for the data.
-- The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
-- The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
-- The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
+
+- The **./ENV** file in the root directory of the project defines constants that are used by the add-in project.
+    > [!NOTE]
+    > Some of the constants defined in this file are used to facilitate the SSO process. You may want to update values in this file to match your specific scenario. For example, you can update this file to specify a different port and scope.
 
 ## Configure SSO
 
@@ -81,15 +89,18 @@ At this point, your add-in project has been created and contains the code that's
     ```
 
     > [!WARNING]
-    > This command will fail if your tenant is configured to require two-factor authentication. In this scenario, you'll need to manually complete the Azure app registration and SSO configuration steps manually, as described in the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
+    > This command will fail if your tenant is configured to require two-factor authentication. In this scenario, you'll need to manually complete the Azure app registration and SSO configuration steps, as described in the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
 3. A web browser window will open and prompt you to sign in to Azure. Sign in to Azure using your Office 365 administrator credentials. These credentials will be used to register a new application in Azure and configure the settings required by SSO.
+
+    > [!NOTE]
+    > If you sign in to Azure using non-administrator credentials during this step, the `configure-sso` script won't be able to provide administrator consent for the add-in to users within your organization. SSO will therefore not be available to users of the add-in and they'll be prompted to sign-in.
 
 4. After you enter your credentials, close the browser window and return to the command prompt. As the SSO configuration process continues, you'll see status messages being written to the console. As described in the console messages, files within the add-in project that the Yeoman generator created are automatically updated with data that's required by the SSO process.
 
 ## Try it out
 
-1. When the SSO configuration process completes, run the following command to start the local web server and sideload your add-in in the previously selected Office client application.
+1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
@@ -112,6 +123,9 @@ At this point, your add-in project has been created and contains the code that's
 5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
+
+    > [!NOTE]
+    > After a user accepts this permissions request, they won't be prompted again in the future.
 
 6. The add-in retrieves profile information for the signed-in user and writes it to the document. The following image shows an example of profile information written to an Excel worksheet.
 
