@@ -83,9 +83,9 @@ At this point, your add-in project has been created and contains the code that's
     > [!WARNING]
     > This command will fail if your tenant is configured to require two-factor authentication. In this scenario, you'll need to manually complete the Azure app registration and SSO configuration steps manually, as described in the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
-3. A web browser window will open and prompt you to enter your Azure credentials. Enter your Azure credentials when prompted. These credentials will be used to register a new application in Azure and configure the settings required by SSO.
+3. A web browser window will open and prompt you to sign into Azure. Sign into Azure using your Office 365 administrator credentials. These credentials will be used to register a new application in Azure and configure the settings required by SSO.
 
-4. After you enter your Azure credentials, close the browser window and return to the command prompt. As the SSO configuration process continues, you'll see status messages being written to the console. As described in the console messages, files within the add-in project that the Yeoman generator created are automatically updated with data that's required by the SSO process.
+4. After you enter your credentials, close the browser window and return to the command prompt. As the SSO configuration process continues, you'll see status messages being written to the console. As described in the console messages, files within the add-in project that the Yeoman generator created are automatically updated with data that's required by the SSO process.
 
 ## Try it out
 
@@ -98,13 +98,16 @@ At this point, your add-in project has been created and contains the code that's
     npm start
     ```
 
-2. In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
+2. In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), make sure that you're signed in with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso)). Doing so establishes the appropriate conditions for SSO to succeed. 
+
+3. In the Office client application, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
 
     ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
 
-3. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
+4. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process. 
 
-4. If you're not already signed in to Office, you'll be prompted to sign in. Sign in with the credentials that you want the add-in to use for SSO.
+    > [!NOTE] 
+    > If you're not already signed in to Office at this point, you'll be prompted to sign in. Sign in with the credentials that you want the add-in to use for SSO. As described previously, you should sign in with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso)), if you want SSO to succeed.
 
 5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
 
