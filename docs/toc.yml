@@ -277,8 +277,8 @@
 
   - name: Patterns and practices
     items:
-    - name: Migrate VSTO add-in using shared library
-      href: pnp/migrate-vsto-to-office-web-add-in-shared-code-library-tutorial.md
+    - name: Share code from VSTO add-in to Office web add-in
+      href: tutorials/migrate-vsto-to-office-web-add-in-shared-code-library-tutorial.md
 
   - name: Reference
     items:
