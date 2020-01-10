@@ -373,6 +373,10 @@
         href: reference/manifest/requirements.md
       - name: Rule
         href: reference/manifest/rule.md
+      - name: Runtime
+        href: reference/manifest/runtime.md
+      - name: Runtimes
+        href: reference/manifest/runtimes.md
       - name: Set
         href: reference/manifest/set.md
       - name: Sets
