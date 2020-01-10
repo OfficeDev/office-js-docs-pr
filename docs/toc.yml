@@ -377,6 +377,10 @@
         href: reference/manifest/requirements.md
       - name: Rule
         href: reference/manifest/rule.md
+      - name: Runtime
+        href: reference/manifest/runtime.md
+      - name: Runtimes
+        href: reference/manifest/runtimes.md
       - name: Set
         href: reference/manifest/set.md
       - name: Sets
@@ -645,6 +649,9 @@
       displayName: Excel, Custom Functions
     - name: Requirement sets
       href: excel/custom-functions-requirement-sets.md
+      displayName: Excel, Custom Functions
+    - name: Return a dynamic array
+      href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
     - name: Runtime
       href: excel/custom-functions-runtime.md
