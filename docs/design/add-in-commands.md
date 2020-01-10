@@ -1,6 +1,6 @@
 ---
 title: Basic concepts for add-in commands
-description: ''
+description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Web Add-in.'
 ms.date: 01/10/2020
 localization_priority: Priority
 ---
@@ -13,8 +13,6 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 For an overview of the feature, see the video [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Add-in commands are currently only supported in Excel, Word, and PowerPoint.
-> 
 > SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing. 
 
 *Figure 1. Add-in with commands running in Excel Desktop*
@@ -32,24 +30,27 @@ The following command capabilities are currently supported.
 > [!NOTE]
 > Content add-ins do not currently support add-in commands.
 
-**Extension points**
+### Extension points
 
 - Ribbon tabs - Extend built-in tabs or create a new custom tab.
 - Context menus - Extend selected context menus.
 
-**Control types**
+### Control types
 
 - Simple buttons - trigger specific actions.
 - Menus - simple menu dropdown with buttons that trigger actions.
 
-**Actions**
+### Actions
 
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](/javascript/api/office/office.ui) API.  
 
-**Default Enabled or Disabled Status (preview)**
+### Default Enabled or Disabled Status (preview)
 
-You can also specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting. (This feature is in preview and is not supported in all hosts or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).)
+You can specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting. 
+
+> [!NOTE]
+> This feature is in preview and is not supported in all hosts or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
 
 ## Supported platforms
 

@@ -1,6 +1,6 @@
 ---
 title: Enable and Disable Add-in Commands
-description: ''
+description: 'Learn how to change the enabled/disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
 ms.date: 01/10/2020
 localization_priority: Priority
 ---
@@ -157,12 +157,9 @@ function disableChartFormat() {
             chartFormatButtonEnabled = false;
         });
 }
-
 ```
 
-The following example shows how the button's handler tests for an incorrect state of the button. About this code, note:
-
-- `reportError` is a function that shows or logs an error.
+The following example shows how the button's handler tests for an incorrect state of the button. Note that `reportError` is a function that shows or logs an error.
 
 ```javascript
 function chartFormatButtonHandler() {

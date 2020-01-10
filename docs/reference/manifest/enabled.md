@@ -1,6 +1,6 @@
 ---
 title: Enabled element in the manifest file
-description: ''
+description: 'Learn how to specify that an Add-in Command is disabled when the add-in launches.'
 ms.date: 01/10/2020
 localization_priority: Normal
 ---
