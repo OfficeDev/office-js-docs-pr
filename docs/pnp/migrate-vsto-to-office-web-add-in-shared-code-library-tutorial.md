@@ -1,34 +1,29 @@
 ---
-ms.date: 12/30/2019
-description: 'Guide to sharing code between VSTO Add-in and Office web add-in.'
-title: Tutorial: 'Migrate your VSTO Add-in to an Office web add-in with a shared code library'
-ms.prod: excel
+ms.date: 01/10/2020
+description: 'Tutorial on how to share code between a VSTO Add-in and an Office web add-in.'
+title: 'Tutorial: Share code between both a VSTO Add-in and an Office web add-in by using a shared code library'
 localization_priority: Priority
 ---
 
-# Tutorial: Migrate your VSTO Add-in to an Office web add-in with a shared code library
+# Tutorial: Share code between both a VSTO Add-in and an Office web add-in with a shared code library
 
 Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO Add-ins on Mac, online, or mobile platforms.
 
 Office web add-ins use HTML, JavaScript, and additional web technologies to build Office solutions on all platforms. Migrating your existing VSTO Add-in to an Office web add-in is a great way to make your solution available across all platforms.
 
-However there are a number of reasons you may not want to migrate an entire VSTO Add-in codebase from .NET to JavaScript.
+You may want to maintain both your VSTO Add-in and a new Office web add-in that both have the same functionality. This enables you to continue servicing your customers that use the VSTO Add-in on Office on Windows. This also enables you to provide the same functionality in an Office web add-in for customers across all platforms. You can also [Make your Office web add-in compatible with the existing VSTO Add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
-- It might be costly or just to big of a task to migrate all at once. You may prefer to build out the Office web add-in in phases while maintaining the current VSTO Add-in.
-- Your existing customers might want to continue using your current VSTO Add-in, requiring you to continue supporting the existing codebase with bug fixes and new updates.
-- There may be missing functionality in the Office.js library for Office web add-ins that prevents you from completely migrating to an Office web add-in.
-
-If any of the previous factors applies, then the best strategy for your add-in to be available across all platforms is to maintain both a VSTO Add-in, and an Office web add-in. However it can be costly to maintain two codebases. One way to simplify this is to create a shared code library.
+However it is best to avoid rewriting all the code from your VSTO Add-in for the Office web add-in. This tutorial shows how to avoid rewriting code by using a shared code library for both add-ins.
 
 ## Shared code library
 
-This guide will walk you through the steps of identifying and sharing common code between your VSTO Add-in and a modern Office web add-in. It uses a very simple VSTO Add-in example for the steps so that you can focus on the skills and techniques you will need for working with your own VSTO Add-ins.
+This tutorial will walk you through the steps of identifying and sharing common code between your VSTO Add-in and a modern Office web add-in. It uses a very simple VSTO Add-in example for the steps so that you can focus on the skills and techniques you will need for working with your own VSTO Add-ins.
 
 The following diagram shows how the shared code library works for migration. Common code is refactored into a new shared code library. The code can remain written in its original language, such as C# or VB. This means you can continue using the code in the existing VSTO Add-in by creating a project reference. When you create the Office web add-in, it will also use the shared code library by calling into it through REST APIs.
 
 ![Diagram of VSTO Add-in and Office web add-in using a shared code library](../images/vsto-migration-shared-code-library.png)
 
-Skills and techniques in this guide:
+Skills and techniques in this tutorial:
 
 - Create a shared class library by refactoring code into a .NET class library.
 - Create a REST API wrapper using ASP.NET Core for the shared class library.
@@ -41,21 +36,21 @@ To set up your development environment:
 1. Install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
 2. Install the following workloads:
     - ASP.NET and web development
-    - .NET Core cross-platform development. You need at least .NET Core version 2.2 or later to run the completed sample.
+    - .NET Core cross-platform development. **Note:** You need at least .NET Core version 2.2 or later to run the completed sample.
     - Office/SharePoint development
-    - Visual Studio Tools for Office (VSTO). This is an individual component.
+    - Visual Studio Tools for Office (VSTO). **Note:** This is an **Individual** component.
 
 You also need the following:
 
 - An Office 365 account. You can join the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365.
-- A Microsoft Azure Tenant. This add-in requires Azure Active Directiory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
+- A Microsoft Azure Tenant. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## The Cell analyzer VSTO Add-in
 
-This guide uses the [VSTO Add-in shared library for Office web add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/vstoshared/Samples/VSTO-shared-code-start) PnP solution. The **/start** folder contains the VSTO Add-in solution that you will migrate. Your goal is to migrate the VSTO Add-in to a modern Office web add-in by sharing code when possible.
+This tutorial uses the [VSTO Add-in shared library for Office web add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/vstoshared/Samples/VSTO-shared-code-start) PnP solution. The **/start** folder contains the VSTO Add-in solution that you will migrate. Your goal is to migrate the VSTO Add-in to a modern Office web add-in by sharing code when possible.
 
 > [!NOTE]
-> The sample uses C# but you can apply the techniques in this guide to a VSTO Add-in written in any .NET language.
+> The sample uses C# but you can apply the techniques in this tutorial to a VSTO Add-in written in any .NET language.
 
 1. Download the [VSTO Add-in shared library for Office web add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/vstoshared/Samples/VSTO-shared-code-start) PnP solution to a working folder on your computer.
 2. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
