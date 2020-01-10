@@ -35,7 +35,7 @@ A button performs a single action when the user selects it. It can either execut
 
 ### ExecuteFunction button example
 
-In the following example, the button is disabled when the add-in launches. It can be programmatically enabled. For more information, see [Enable and Disable Add-in Commands](../design/disable-add-in-commands.md).
+In the following example, the button is disabled when the add-in launches. It can be programmatically enabled. For more information, see [Enable and Disable Add-in Commands](/office/dev/add-ins/design/disable-add-in-commands).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
