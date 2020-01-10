@@ -193,7 +193,11 @@
       - name: Overview
         href: design/interface-elements.md
       - name: Add-in commands
-        href: design/add-in-commands.md
+        items: 
+        - name: Basic concepts for Add-in Commands
+          href: design/add-in-commands.md
+        - name: Enable and Disable Add-in Commands
+          href: design/disable-add-in-commands.md
       - name: Dialog boxes
         href: design/dialog-boxes.md
       - name: Content add-ins
@@ -407,6 +411,8 @@
           href: reference/manifest/control.md
         - name: CustomTab
           href: reference/manifest/customtab.md
+        - name: Enabled
+          href: reference/manifest/enabled.md
         - name: EquivalentAddin
           href: reference/manifest/equivalentaddin.md
         - name: EquivalentAddins

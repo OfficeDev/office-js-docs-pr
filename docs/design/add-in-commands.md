@@ -1,7 +1,7 @@
 ---
-title: Add-in commands for Excel, Word, and PowerPoint
+title: Basic concepts for add-in commands
 description: ''
-ms.date: 06/20/2019
+ms.date: 01/10/2020
 localization_priority: Priority
 ---
 
@@ -13,6 +13,8 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 For an overview of the feature, see the video [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
+> Add-in commands are currently only supported in Excel, Word, and PowerPoint.
+> 
 > SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing. 
 
 *Figure 1. Add-in with commands running in Excel Desktop*
@@ -44,6 +46,11 @@ The following command capabilities are currently supported.
 
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](/javascript/api/office/office.ui) API.  
+
+**Default Enabled or Disabled Status**
+
+You can also specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting. (This feature is not supported in all hosts or scenarios.)
+
 
 ## Supported platforms
 
