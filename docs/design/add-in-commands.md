@@ -47,10 +47,9 @@ The following command capabilities are currently supported.
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](/javascript/api/office/office.ui) API.  
 
-**Default Enabled or Disabled Status**
+**Default Enabled or Disabled Status (preview)**
 
-You can also specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting. (This feature is not supported in all hosts or scenarios.)
-
+You can also specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting. (This feature is in preview and is not supported in all hosts or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).)
 
 ## Supported platforms
 
@@ -62,8 +61,6 @@ Add-in commands are currently supported on the following platforms.
 - Office on Mac (build 15.33+, connected to Office 365 subscription)
 - Office 2019 on Mac
 - Office on the web
-
-More platforms are coming soon.
 
 ## Debugging
 

@@ -83,7 +83,7 @@ function enableButton() {
 }
 ```
 
-We also provide several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the equivalent example in TypeScript and it makes use of these types. All of the types are in the **OfficeRuntime** namespace. See the 
+We also provide several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the equivalent example in TypeScript and it makes use of these types. All of the types are in the **OfficeRuntime** namespace.
 
 ```javascript
 const enableButton = async () => { 
@@ -138,8 +138,8 @@ Fourth, define the `disableChartFormat` handler. It would be identical to `enabl
 
 In some circumstances, the ribbon does not repaint after `requestUpdate` is called, so the control's clickable status does not change. For this reason it is a best practice for the add-in to keep track of the status of its controls. The add-in should conform to these rules:
 
-1. Whenever `requestUpdate` is called, the code should record the intended state of the buttons.
-2. When a button is clicked, the first code in the handler that runs, should check to see if the button should have been clickable. If shouldn't have been, the code should report or log an error and try again to set the buttons to the intended state.
+1. Whenever `requestUpdate` is called, the code should record the intended state of the custom buttons and menu items.
+2. When a custom control is clicked, the first code in the handler that runs, should check to see if the button should have been clickable. If shouldn't have been, the code should report or log an error and try again to set the buttons to the intended state.
 
 The following example shows an example of a function that disables a button and records the button's status. About this code, note:
 
