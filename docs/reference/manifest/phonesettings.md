@@ -1,7 +1,7 @@
 ---
 title: PhoneSettings element in the manifest file
 description: ''
-ms.date: 12/20/2019
+ms.date: 1/13/2020
 localization_priority: Normal
 ---
 
