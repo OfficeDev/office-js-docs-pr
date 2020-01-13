@@ -1,7 +1,7 @@
 ---
 title: DesktopSettings element in the manifest file
 description: ''
-ms.date: 1/13/2020
+ms.date: 01/13/2020
 localization_priority: Normal
 ---
 
