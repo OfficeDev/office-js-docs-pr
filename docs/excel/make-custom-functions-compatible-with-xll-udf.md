@@ -45,10 +45,6 @@ The following example shows how to specify both a COM add-in and an XLL as equiv
 > [!NOTE]
 > If an add-in declares its custom functions to be XLL compatible, changing the manifest at a later time could break a user’s workbook because it will change the file format.
 
-## Excel add-in updates
-
-Once you specify an equivalent XLL for your Excel add-in, Excel stops processing updates for your Excel add-in. The user must uninstall the XLL in order to get the latest updates for the Excel add-in.
-
 ## Custom function behavior for XLL compatible functions
 
 When a spreadsheet is opened that contains XLL functions for which there is also an equivalent add-in, the XLL's functions are converted to XLL compatible custom functions. On the next save, they are written to the file in a compatible mode so that they work with both the XLL and Excel add-in custom functions (when on other platforms).
