@@ -85,13 +85,13 @@ function enableButton() {
 
 We also provide several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the equivalent example in TypeScript and it makes use of these types. All of the types are in the **OfficeRuntime** namespace.
 
-```javascript
-const enableButton = async () => { 
-    const button: Control = {id: "MyButton", enabled: true}; 
-    const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]}; 
-    const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};  
-    const ribbon: Ribbon = await OfficeRuntime.ui.getRibbon(); 
-    await ribbon.requestUpdate(ribbonUpdater); 
+```typescript
+const enableButton = async () => {
+    const button: Control = {id: "MyButton", enabled: true};
+    const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
+    const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
+    const ribbon: Ribbon = await OfficeRuntime.ui.getRibbon();
+    await ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
