@@ -1,7 +1,7 @@
 ---
 title: JavaScript API for Office error codes
 description: ''
-ms.date: 12/20/2019
+ms.date: 01/14/2020
 localization_priority: Normal
 ---
 
@@ -76,7 +76,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |8021|Out of range|The column index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of columns.|The column index is more than the biggest column index of the table or less than 0.|
 |8022|Out of range|The value is out of the allowed range.|Some of the values in the format are out of the supported ranges.|
 |9016|Permission denied|Permission denied|Access is denied.|
-|9022|Message In Different Store Error|The EWS ID cannot be retrieved because the message is saved in another store.|The EWS ID for the current message couldn't be retrieved as the message may have been moved.|
+|9022|Message In Different Store Error|The EWS ID cannot be retrieved because the message is saved in another store.|The EWS ID for the current message couldn't be retrieved as the message may have been moved or the sending mailbox may have changed.|
 |9041|Network error|The user is no longer connected to the network. Please check your network connection and try again.|The user no longer has network or internet access.|
 |12002|||One of the following:<br> - No page exists at the URL that was passed to `displayDialogAsync`.<br> - The page that was passed to `displayDialogAsync` loaded, but the dialog box was directed to a page that it cannot find or load, or it has been directed to a URL with invalid syntax. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
 |12003|||The dialog box was directed to a URL with the HTTP protocol. HTTPS is required. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
