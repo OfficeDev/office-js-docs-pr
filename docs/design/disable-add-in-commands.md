@@ -141,7 +141,7 @@ In some circumstances, the ribbon does not repaint after `requestUpdate` is call
 1. Whenever `requestUpdate` is called, the code should record the intended state of the custom buttons and menu items.
 2. When a custom control is clicked, the first code in the handler that runs, should check to see if the button should have been clickable. If shouldn't have been, the code should report or log an error and try again to set the buttons to the intended state.
 
-The following example shows an example of a function that disables a button and records the button's status. About this code, note:
+The following example shows a function that disables a button and records the button's status. About this code, note:
 
 - `chartFormatButtonEnabled` is a global boolean variable that is initialized to the same value as the [Enabled](/office/dev/add-ins/reference/manifest/enabled) element for the button in the manifest.
 
