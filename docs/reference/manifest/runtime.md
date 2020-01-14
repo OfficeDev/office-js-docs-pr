@@ -1,17 +1,13 @@
 ---
 title: Runtime in the manifest file
 description: ''
-ms.date: 01/06/2020
+ms.date: 01/14/2020
 localization_priority: Normal
 ---
 
 # Runtime element
 
-This feature is in preview. Child element of the [`<Runtimes>`](runtime.md) element. This element facilitates sharing of global data and function calls between Excel custom functions and the task pane of your add-in. 
-
-## Contained in
-
--[Runtimes](runtimes.md)
+This feature is in preview. Child element of the [`<Runtimes>`](runtime.md) element. This element facilitates sharing of global data and function calls between Excel custom functions and the task pane of your add-in.
 
 **Add-in type:** Task pane
 
@@ -22,6 +18,10 @@ This feature is in preview. Child element of the [`<Runtimes>`](runtime.md) elem
     <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
 </Runtimes>
 ```
+
+## Contained in
+
+-[Runtimes](runtimes.md)
 
 ## Attributes
 
