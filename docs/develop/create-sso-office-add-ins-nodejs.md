@@ -22,7 +22,12 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * TypeScript, version 3.6.2 or later
 
-* Office 365 (the subscription version of Office) account which you can get by joining the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free, 90-day renewable subscription to Office 365. You should use the latest monthly version and build from the Insiders channel but you need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+* An Office 365 (the subscription version of Office) account. If you don't already have an Office 365 account, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://aka.ms/devprogramsignup). 
+
+* An Insider's build of Office 365. You should use the latest monthly version and build from the Insiders channel but you need to [be an Office Insider](https://products.office.com/office-insider?tab=tab-1) to get this version. 
+
+    > [!NOTE]
+    > When a build graduates to the production semi-annual channel, support for preview features, including SSO, is disabled for that build.
 
 * A code editor. We recommend Visual Studio Code.
 
