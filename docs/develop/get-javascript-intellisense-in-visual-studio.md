@@ -80,4 +80,5 @@ function myFunc() {
 
 ## See also
 
-- [Create and debug add-ins in Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md)
+- [Develop Office Add-ins with Visual Studio](develop-add-ins-visual-studio.md)
+- [Debug Office Add-ins in Visual Studio](debug-office-add-ins-in-visual-studio.md)
