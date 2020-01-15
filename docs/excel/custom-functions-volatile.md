@@ -1,5 +1,5 @@
 ---
-ms.date: 01/07/2020
+ms.date: 01/14/2020
 description: Learn to implement volatile and offline streaming custom functions.
 title: Volatile values in functions
 localization_priority: Normal
@@ -19,7 +19,7 @@ If choosing to autogenerate your JSON file, declare a volatile function with the
 
 An example of a volatile custom function follows, which simulates rolling a six-sided dice.
 
-![A gif showing a custom function returning a random value to simulate rolling a six-sided dice](../images/SixSideDice.gif)
+![A gif showing a custom function returning a random value to simulate rolling a six-sided dice](../images/six-sided-die.gif)
 
 ```JS
 /**

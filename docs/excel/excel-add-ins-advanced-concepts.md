@@ -1,7 +1,7 @@
 ---
 title: Advanced programming concepts with the Excel JavaScript API
 description: ''
-ms.date: 01/07/2020
+ms.date: 01/14/2020
 localization_priority: Priority
 ---
 
@@ -25,7 +25,7 @@ While you'll likely use the Excel JavaScript API to develop the majority of func
 
 The following image illustrates when you might use the Excel JavaScript API or the Common APIs.
 
-![Image of the differences between the Excel JS API and Common APIs](../images/excelvscommon.png)
+![Image of the differences between the Excel JS API and Common APIs](../images/excel-js-api-common-api.png)
 
 ## Requirement sets
 

@@ -1,7 +1,7 @@
 ---
 title: Install the latest version of Office
 description: Information about how to opt in to getting the latest builds of Office.
-ms.date: 01/07/2020
+ms.date: 01/14/2020
 localization_priority: Priority
 ---
 
@@ -34,7 +34,7 @@ To get the latest build of Office:
 
 When the installation process finishes, you will have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under Office Updates, you'll see the (Office Insiders) label above the version number.
 
-![A screenshot that shows product information with the Office Insiders label](../images/officeinsiderslabel.png)
+![A screenshot that shows product information with the Office Insiders label](../images/office-insiders-label.png)
 
 ## Minimum Office builds for Office JavaScript API requirement sets
 

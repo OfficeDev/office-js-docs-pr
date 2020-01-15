@@ -1,5 +1,5 @@
 ---
-ms.date: 12/31/2019
+ms.date: 01/14/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions
 localization_priority: Priority
@@ -11,7 +11,7 @@ One of the ways that custom functions enhances Excel's power is by receiving dat
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-![A gif of a custom function which streams the time from an API](../images/WebApi2.gif)
+![A gif of a custom function which streams the time from an API](../images/custom-functions-web-api.gif)
 
 ## Functions that return data from external sources
 
