@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 11/20/2019
+ms.date: 01/13/2020
 localization_priority: Priority
 ---
 
@@ -9,10 +9,10 @@ localization_priority: Priority
 
 Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 
-This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and Express.
+This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and Express. For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md).
 
 > [!NOTE]
-> For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md).
+> As an alternative to completing the steps described in this article, you can use the Yeoman generator to create an SSO-enabled, Node.js Office Add-in. The Yeoman generator simplifies the process of creating an SSO-enabled add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
 
-* A Microsoft Azure Tenant. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Set up the starter project
 

@@ -1,5 +1,5 @@
 ---
-ms.date: 07/15/2019
+ms.date: 12/31/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions
 localization_priority: Priority
@@ -14,7 +14,7 @@ To resolve issues, you can [enable runtime logging to capture errors](#enable-ru
 
 ## Enable runtime logging
 
-If you are testing your add-in in Office on Windows, you should [enable runtime logging](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). Runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's XML manifest file, runtime conditions, or installation of your custom functions.  For more information about runtime logging, see [Use runtime logging to debug your add-in](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
+If you're testing your add-in in Office on Windows, you should [enable runtime logging](../testing/runtime-logging.md). Runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's XML manifest file, runtime conditions, or installation of your custom functions. For more information about runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 
 ### Check for Excel error messages
 
@@ -29,7 +29,7 @@ Generally, these errors correspond to the errors you might already be familiar w
 
 ## Clear the Office cache
 
-Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see the "Clear the Office cache" section in the article [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md#clear-the-office-cache).
+Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see [Clear the Office cache](../testing/clear-cache.md).
 
 ## Common issues
 
