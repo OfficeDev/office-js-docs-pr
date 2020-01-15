@@ -23,7 +23,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
 
-* A Microsoft Azure Tenant. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Set up the starter project
 

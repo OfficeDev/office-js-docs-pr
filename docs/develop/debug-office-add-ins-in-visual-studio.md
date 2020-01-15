@@ -15,6 +15,8 @@ This article describes how to use Visual Studio 2019 to debug an Office Add-in i
 ## Enable debugging for add-in commands and UI-less code
 
 When Visual Studio debugs Office on Windows, the add-in is hosted in either a Microsoft Internet Explorer or Microsoft Edge browser instance. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> [!NOTE]
+> The JS_Debug environment variable is no longer needed in the following procedure. For more information, see [Debugging behaviors in Office web add-ins](https://developercommunity.visualstudio.com/content/problem/740413/office-development-inconsistent-script-debugging-b.html) on the Microsoft Developer Community support forum.
 
 [!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 

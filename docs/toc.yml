@@ -26,6 +26,8 @@
       href: quickstarts/project-quickstart.md
     - name: Word add-in
       href: quickstarts/word-quickstart.md
+    - name: Single sign-on (SSO)
+      href: quickstarts/sso-quickstart-redirect.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
@@ -81,6 +83,8 @@
         items:
         - name: Enable single sign-on
           href: develop/sso-in-office-add-ins.md
+        - name: SSO quick start
+          href: quickstarts/sso-quickstart.md
         - name: Authorize to Microsoft Graph with SSO
           href: develop/authorize-to-microsoft-graph.md
         - name: Create an SSO add-in using ASP.NET
@@ -373,6 +377,10 @@
         href: reference/manifest/requirements.md
       - name: Rule
         href: reference/manifest/rule.md
+      - name: Runtime
+        href: reference/manifest/runtime.md
+      - name: Runtimes
+        href: reference/manifest/runtimes.md
       - name: Set
         href: reference/manifest/set.md
       - name: Sets
@@ -641,6 +649,9 @@
       displayName: Excel, Custom Functions
     - name: Requirement sets
       href: excel/custom-functions-requirement-sets.md
+      displayName: Excel, Custom Functions
+    - name: Return a dynamic array
+      href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
     - name: Runtime
       href: excel/custom-functions-runtime.md
