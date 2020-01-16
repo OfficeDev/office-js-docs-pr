@@ -144,7 +144,7 @@
         displayName: manifest
       - name: Localization
         href: develop/localization.md
-        name: Dialog boxes
+      - name: Dialog boxes
         items: 
         - name: Fundamentals of the Office Dialog API
           href: develop/dialog-api-in-office-add-ins.md

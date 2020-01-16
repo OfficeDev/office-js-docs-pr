@@ -281,7 +281,7 @@ See [Authenticate with the Office Dialog API](auth-with-office-dialog-api.md).
 
 ## Using the Office Dialog API with single-page applications and client-side routing
 
-SPAs and client-side routing need to be handled with care when you are using the Office Dialog. Please see [Best practices for using the Office Dialog in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-in-an-spa.md).
+SPAs and client-side routing need to be handled with care when you are using the Office Dialog. Please see [Best practices for using the Office Dialog in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-in-an-spa).
 
 ## Error and event handling
 

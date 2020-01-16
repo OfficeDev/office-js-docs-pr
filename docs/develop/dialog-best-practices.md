@@ -26,7 +26,7 @@ Because overlapping UI elements are discouraged, avoid opening a dialog from a t
 
 ### Designing a dialog UI
 
-For best practices in dialog design, see [Dialog boxes in Office Add-ins](/design/dialog-boxes.md).
+For best practices in dialog design, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md).
 
 ### Handling pop-up blockers with Office on the web
 
