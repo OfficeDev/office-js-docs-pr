@@ -144,8 +144,16 @@
         displayName: manifest
       - name: Localization
         href: develop/localization.md
-      - name: Open a dialog box
-        href: develop/dialog-api-in-office-add-ins.md
+        name: Dialog boxes
+        items: 
+        - name: Fundamentals of the Office Dialog API
+          href: develop/dialog-api-in-office-add-ins.md
+        - name: Best practices and Rules for the Office Dialog
+          href: develop/dialog-best-practices.md
+        - name: Handling errors and events in the Office Dialog
+          href: develop/dialog-handle-errors-events.md
+        - name: Use the Office Dialog to show a video
+          href: develop/dialog-video.md
       - name: Performance
         href: concepts/resource-limits-and-performance-optimization.md
       - name: Privacy and security

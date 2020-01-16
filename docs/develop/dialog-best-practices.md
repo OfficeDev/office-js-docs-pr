@@ -24,6 +24,10 @@ localization_priority: Normal
 
 Because overlapping UI elements are discouraged, avoid opening a dialog from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
 
+### Designing a dialog UI
+
+For best practices in dialog design, see [Dialog boxes in Office Add-ins](/design/dialog-boxes.md).
+
 ### Handling pop-up blockers with Office on the web
 
 Attempting to display a dialog while using Office on the web may cause the browser's pop-up blocker to block the dialog. The browser's pop-up blocker can be circumvented if the user of your add-in first agrees to a prompt from the add-in. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) has the `promptBeforeOpen` property to trigger such a pop-up. `promptBeforeOpen` is a boolean value with the following meaning:
