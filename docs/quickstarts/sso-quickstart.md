@@ -17,7 +17,7 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
 
 ## Prerequisites
 
-* [Node.js](https://nodejs.org) (the latest [Long Term Support (LTS)](https://nodejs.org/en/about/releases) version)
+* [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/en/about/releases) version)
 
 * The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:
 
