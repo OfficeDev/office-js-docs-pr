@@ -16,7 +16,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Prerequisites
 
-* [Node and npm](https://nodejs.org/), version 10.15.0 or later.
+* [Node](https://nodejs.org/) (the latest [Long Term Support (LTS)](https://nodejs.org/en/about/releases) version)
 
 * [Git Bash](https://git-scm.com/downloads) (or another git client)
 
