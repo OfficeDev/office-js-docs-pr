@@ -36,21 +36,23 @@ After you complete the wizard, the generator creates the project and installs su
 3. Change the `<Requirements>` section to use **CustomFunctionsRuntime** version **1.2** as shown in the following code.
     
     ```xml
-    <Requirements> 
+    <Requirements>
     <Sets DefaultMinVersion="1.1">
     <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
     </Sets>
     </Requirements>
     ```
     
-4. Under the `<Host>` element for the workbook, add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.
+4. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.
     
     ```xml
-    <Hosts>
-    <Host xsi:type="Workbook">
-    <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-    </Runtimes>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <Hosts>
+        <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+        </Runtimes>
+        <AllFormFactors>
     ```
     
 5. In the `<Page>` element, change the source location from **Functions.Page.Url** to **TaskPaneAndCustomFunction.Url**.
@@ -144,8 +146,14 @@ Now that custom functions run in the same context as your task pane code, they c
 
 ### Create task pane controls to work with global data 
 
-1. Open the file**src/taskpane/taskpane.html**.
-2. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
+1. Open the file **src/taskpane/taskpane.html**.
+2. Add the following script element just before the `</head>` element.
+
+    ```html
+    <script src="functions.js"></script>
+    ```
+
+3. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
 
     ```html
     <ol>
@@ -167,7 +175,7 @@ Now that custom functions run in the same context as your task pane code, they c
     </div>
     ```
     
-3. Before the `<body>` element add the following script. This code will handle the button click events when the user wants to store or get global data.
+4. Before the `<body>` element add the following script. This code will handle the button click events when the user wants to store or get global data.
     
     ```js
     <script>
@@ -181,8 +189,8 @@ Now that custom functions run in the same context as your task pane code, they c
     }</script>
     ```
     
-4. Save the file.
-5. Build the project
+5. Save the file.
+6. Build the project
     
     ```command&nbsp;line
     npm run build 
