@@ -269,11 +269,7 @@ function processMessage(arg) {
 }
 ```
 
-Even when you don't have your own close dialog UI, an end user can close the dialog box by choosing the **X** in the upper-right corner. This action triggers the `DialogEventReceived` event. If your host pane needs to know when this happens, it should declare a handler for this event. See the section [Errors and events in the dialog window](dialog-handl-errors-events.md#errors-and-events-in-the-dialog-window) for details.
-
-## Error and event handling
-
-See [Handling errors and events in the Office Dialog](dialog-handle-errors-events.md).
+Even when you don't have your own close dialog UI, an end user can close the dialog box by choosing the **X** in the upper-right corner. This action triggers the `DialogEventReceived` event. If your host pane needs to know when this happens, it should declare a handler for this event. See the section [Errors and events in the dialog window](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-window) for details.
 
 ## Use the Dialog APIs to show a video
 
@@ -285,7 +281,11 @@ See [Authenticate with the Office Dialog API](auth-with-office-dialog-api.md).
 
 ## Using the Office Dialog API with single-page applications and client-side routing
 
-SPAs and client-side routing need to be handled with care when you are using the Office Dialog. Please see [Best practices for using the Office Dialog in an SPA](dialog-spa#best-practices-for-using-the-office-dialog-in-an-spa.md).
+SPAs and client-side routing need to be handled with care when you are using the Office Dialog. Please see [Best practices for using the Office Dialog in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-in-an-spa.md).
+
+## Error and event handling
+
+See [Handling errors and events in the Office Dialog](dialog-handle-errors-events.md).
 
 ## Next steps
 

@@ -13,11 +13,10 @@ localization_priority: Normal
 ## Rules and gotchas
 
 - The dialog can only navigate to HTTP**S** URLs, not HTTP.
-- The URL passed to the [displayDialogAsync](/javascript/api/office/office.ui) method must be in the exact same domain as the add-in itself. It cannot be a subdomain. But that page can redirect to a page in another domain.
-- A host window, which can be a task pane or the UI-less [function file](/office/dev/add-ins/reference/manifest/functionfile) of an add-in command, can have only one dialog can be open at a time.
-- Only two Office APIs that can be called in the dialog box: the `messageParent` function  and `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
+- The URL passed to the [displayDialogAsync](/javascript/api/office/office.ui) method must be in the exact same domain as the add-in itself. It cannot be a subdomain. But the page that is passed to it can redirect to a page in another domain.
+- A host window, which can be a task pane or the UI-less [function file](/office/dev/add-ins/reference/manifest/functionfile) of an add-in command, can have only one dialog open at a time.
+- Only two Office APIs that can be called in the dialog box: the [messageParent](/javascript/api/office/office.ui#messageparent-message-) function  and `Office.context.requirements.isSetSupported`. For information about the second, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
 - The [messageParent](/javascript/api/office/office.ui#messageparent-message-) function can only be called from a page in the exact same domain as the add-in itself.
-
 
 ## Best practices
 
@@ -27,7 +26,7 @@ Because overlapping UI elements are discouraged, avoid opening a dialog from a t
 
 ### Handling pop-up blockers with Office on the web
 
-Attempting to display a dialog while using Office on the web may cause the browser's pop-up blocker to block the dialog. The browser's pop-up blocker can be circumvented if the user of your add-in first agrees to a prompt from the add-in. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) has the `promptBeforeOpen` property to trigger such a pop-up. `promptBeforeOpen` is a boolean value which provides the following behavior:
+Attempting to display a dialog while using Office on the web may cause the browser's pop-up blocker to block the dialog. The browser's pop-up blocker can be circumvented if the user of your add-in first agrees to a prompt from the add-in. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) has the `promptBeforeOpen` property to trigger such a pop-up. `promptBeforeOpen` is a boolean value with the following meaning:
 
  - `true` - The framework displays a pop-up to trigger the navigation and avoid the browser's pop-up blocker. 
  - `false` - The dialog will not be shown and the developer must handle pop-ups (by providing a user interface artifact to trigger the navigation). 

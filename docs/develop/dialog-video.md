@@ -12,7 +12,7 @@ localization_priority: Normal
 
 To show a video in a dialog box with the Office Dialog API take these steps:
 
-1. Create a page whose only content is an iframe. The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTP**S**. In this article we'll call this page "video.dialogbox.html". The following is an example of the markup:
+1. Create a page whose only content is an iframe. (The page must be in the same domain as the host page.) The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTP**S**. In this article we'll call this page "video.dialogbox.html". The following is an example of the markup:
 
     ```HTML
     <iframe class="ms-firstrun-video__player"  width="640" height="360"
@@ -21,9 +21,8 @@ To show a video in a dialog box with the Office Dialog API take these steps:
     </iframe>
     ```
 
-2. The video.dialogbox.html page must be in the same domain as the host page.
-3. Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
-4. If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog](errors-and-events-in-the-dialog-window.md).
+2. Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
+3. If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog](dialog-handle-errors-events.md).
 
 For a sample that shows a video in a dialog box, see the [video placemat design pattern](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
 
