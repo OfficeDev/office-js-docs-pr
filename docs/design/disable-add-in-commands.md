@@ -19,7 +19,7 @@ The APIs described in this article are in preview and are currently limited in t
 
 - This feature is only available in Excel.
 - These APIs and manifest markup only affect the single-line ribbon. They have no effect on the multiline ribbon.
-- These APIs and manifest markup only work when the add-in's manifest specifies that it should use a shared runtime. To do this, add the following [Set](/office/dev/add-ins/reference/manifest/set) to the [Requirements](/office/dev/add-ins/reference/manifest/requirements).[Sets](/office/dev/add-ins/reference/manifest/sets) section of the manifest: `<Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>`.
+- These APIs and manifest markup only work when the add-in's manifest specifies that it should use a shared runtime. To do this, add the following [Set](/office/dev/add-ins/reference/manifest/set) to the [Requirements](/office/dev/add-ins/reference/manifest/requirements).[Sets](/office/dev/add-ins/reference/manifest/sets) section of the manifest: `<Set Name="SharedRuntime" MinVersion="1.1"/>`.
 
 > [!NOTE]
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
