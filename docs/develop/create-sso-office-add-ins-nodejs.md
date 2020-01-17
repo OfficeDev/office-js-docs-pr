@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 01/13/2020
+ms.date: 01/16/2020
 localization_priority: Priority
 ---
 
@@ -16,7 +16,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Prerequisites
 
-* [Node and npm](https://nodejs.org/), version 10.15.0 or later.
+* [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
 
 * [Git Bash](https://git-scm.com/downloads) (or another git client)
 
