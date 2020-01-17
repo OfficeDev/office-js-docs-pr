@@ -146,7 +146,7 @@
         href: develop/localization.md
       - name: Dialog boxes
         items: 
-        - name: Fundamentals of the Office Dialog API
+        - name: Use the Office Dialog in your Office Add-ins
           href: develop/dialog-api-in-office-add-ins.md
         - name: Best practices and Rules for the Office Dialog
           href: develop/dialog-best-practices.md
