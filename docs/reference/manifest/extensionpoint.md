@@ -1,13 +1,13 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: ''
-ms.date: 09/05/2019
+ms.date: 01/31/2020
 localization_priority: Priority
 ---
 
 # ExtensionPoint element
 
- Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md). 
+ Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md).
 
 ## Attributes
 
@@ -28,7 +28,7 @@ localization_priority: Priority
 
 The following examples show how to use the  **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format. <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
@@ -81,16 +81,18 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 
 ## Extension points for Outlook
 
-- [MessageReadCommandSurface](#messagereadcommandsurface) 
-- [MessageComposeCommandSurface](#messagecomposecommandsurface) 
-- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
+- [MessageReadCommandSurface](#messagereadcommandsurface)
+- [MessageComposeCommandSurface](#messagecomposecommandsurface)
+- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface)
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
 ### MessageReadCommandSurface
+
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
 
 #### Child elements
@@ -101,6 +103,7 @@ This extension point puts buttons in the command surface for the mail read view.
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 #### OfficeTab example
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -110,6 +113,7 @@ This extension point puts buttons in the command surface for the mail read view.
 ```
 
 #### CustomTab example
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -119,6 +123,7 @@ This extension point puts buttons in the command surface for the mail read view.
 ```
 
 ### MessageComposeCommandSurface
+
 This extension point puts buttons on the ribbon for add-ins using mail compose form. 
 
 #### Child elements
@@ -129,6 +134,7 @@ This extension point puts buttons on the ribbon for add-ins using mail compose f
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 #### OfficeTab example
+
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -159,6 +165,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 #### OfficeTab example
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <OfficeTab id="TabDefault">
@@ -168,6 +175,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 ```
 
 #### CustomTab example
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <CustomTab id="TabCustom1">
@@ -188,6 +196,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 #### OfficeTab example
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -197,6 +206,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 ```
 
 #### CustomTab example
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <CustomTab id="TabCustom1">
@@ -207,7 +217,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 
 ### Module
 
-This extension point puts buttons on the ribbon for the module extension. 
+This extension point puts buttons on the ribbon for the module extension.
 
 #### Child elements
 
@@ -217,6 +227,7 @@ This extension point puts buttons on the ribbon for the module extension.
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 ### MobileMessageReadCommandSurface
+
 This extension point puts buttons in the command surface for the mail read view in the mobile form factor.
 
 #### Child elements
@@ -230,6 +241,7 @@ This extension point puts buttons in the command surface for the mail read view 
 **Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.
 
 #### Example
+
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
   <Group id="mobileGroupID">
@@ -241,12 +253,53 @@ This extension point puts buttons in the command surface for the mail read view 
 </ExtensionPoint>
 ```
 
+### MobileOnlineMeetingCommandSurface (preview)
+
+> [!NOTE]
+> This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Android with an Office 365 subscription.
+
+This extension point puts a mode-appropriate button in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting.
+
+#### Child elements
+
+|  Element |  Description  |
+|:-----|:-----|
+|  [Control](control.md) |  Adds a button to the command surface.  |
+
+**ExtensionPoint** elements of this type can only have one child element: a **Control** element.
+
+The **Control** element contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.
+
+#### Example
+
+```xml
+<ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
+  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+    <Label resid="residUILessButton0Name" />
+    <Icon>
+      <bt:Image resid="UiLessIcon" size="25" scale="1" />
+      <bt:Image resid="UiLessIcon" size="25" scale="2" />
+      <bt:Image resid="UiLessIcon" size="25" scale="3" />
+      <bt:Image resid="UiLessIcon" size="32" scale="1" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="1" />
+      <bt:Image resid="UiLessIcon" size="48" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="3" />
+    </Icon>
+    <Action xsi:type="ExecuteFunction">
+      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+    </Action>
+  </Control>
+</ExtensionPoint>
+```
+
 ### Events
 
 This extension point adds an event handler for a specified event.
 
 > [!NOTE]
-> This element type is supported by classic Outlook on the web, and in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Windows, Mac, and modern Outlook on the web. An Office 365 subscription is also required.
+> This extension point is supported by classic Outlook on the web, and in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Windows, Mac, and modern Outlook on the web. An Office 365 subscription is also required.
 
 | Element | Description  |
 |:-----|:-----|
@@ -301,5 +354,5 @@ However, there are some limitations to be aware of. These limitations are in pla
     <Rule xsi:type="ItemHasKnownEntity" EntityType="MeetingSuggestion" Highlight="all" />
     <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" Highlight="none" />
   </Rule>
-</ExtensionPoint> 
+</ExtensionPoint>
 ```
