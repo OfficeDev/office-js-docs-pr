@@ -25,7 +25,7 @@ To clear the Outlook cache on Windows 10 when the add-in is running in Microsoft
 > If you're just wanting the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to use the following steps to clear the cache. Instead, just put focus in the add-in's task pane (by clicking or pressing an element within the task pane) and then press **F5** to reload the add-in. 
 
 > [!NOTE]
-> To clear the Outlook cache using the following steps, your add-in must have a task pane. If your add-in is a UI-less add-in -- for example, one that uses the [on-send](/outlook/add-ins/outlook-on-send-addins) feature -- you'll need to add a task pane to your add-in that uses the same domain and [SourceLocation](../reference/manifest/sourcelocation.md), before you can use the following steps to clear the cache.
+> To clear the Outlook cache using the following steps, your add-in must have a task pane. If your add-in is a UI-less add-in -- for example, one that uses the [on-send](/outlook/add-ins/outlook-on-send-addins) feature -- you'll need to add a task pane to your add-in that uses the same domain for [SourceLocation](../reference/manifest/sourcelocation.md), before you can use the following steps to clear the cache.
 
 1. Install the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj).
 
@@ -37,12 +37,13 @@ To clear the Outlook cache on Windows 10 when the add-in is running in Microsoft
 
 5. Select the add-in name to attach the debugger to your add-in. A new Microsoft Edge DevTools will open when the debugger attaches to your add-in.
 
-6. Open the **Network** tab and select the **Clear cache** button.
+6. On the **Network** tab of the new window, select the **Clear cache** button.
 
     ![Microsoft Edge DevTools screenshot with the Clear cache button highlighted](../images/edge-devtools-clear-cache.png)
 
+If completing these steps doesn't lead to the desired result, you can also select the **Always refresh from server** button.
 
-
+    ![Microsoft Edge DevTools screenshot with the Always refresh from server button highlighted](../images/edge-devtools-refresh-from-server.png)
 
 ## Clear the Office cache on Mac
 
