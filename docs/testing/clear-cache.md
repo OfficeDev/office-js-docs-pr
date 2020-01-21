@@ -41,7 +41,7 @@ To clear the Outlook cache on Windows 10 when the add-in is running in Microsoft
 
     ![Microsoft Edge DevTools screenshot with the Clear cache button highlighted](../images/edge-devtools-clear-cache.png)
 
-If completing these steps doesn't lead to the desired result, you can also select the **Always refresh from server** button.
+If completing these steps doesn't produce the desired result, you can also select the **Always refresh from server** button.
 
 ![Microsoft Edge DevTools screenshot with the Always refresh from server button highlighted](../images/edge-devtools-refresh-from-server.png)
 
