@@ -37,9 +37,11 @@ To set up your development environment:
 1. Install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
 2. Install the following workloads:
     - ASP.NET and web development
-    - .NET Core cross-platform development. **Note:** You need at least .NET Core version 2.2 or later to run the completed sample.
+    - .NET Core cross-platform development.
     - Office/SharePoint development
-    - Visual Studio Tools for Office (VSTO). **Note:** This is an **Individual** component.
+    - The following **Individual** components.
+        - Visual Studio Tools for Office (VSTO).
+        - .NET Core 3.0 Runtime.
 
 You also need the following:
 
@@ -195,6 +197,8 @@ The VSTO Add-in can use the shared class library directly since they are both .N
     - Set the **Project name** to **CellAnalyzerRESTAPI**.
     - In the **Location** field, leave the default value.
 5. Choose **Create**.
+6. In the **Create a new ASP.NET Core web application** dialog, select **ASP.NET Core 3.1** for the version, and select **API** in the list of projects.
+7. Leave all other fields at default values and choose the **Create** button.
 6. After the project is created, expand the **CellAnalyzerRESTAPI** project in **Solution Explorer**.
 7. Right-click **Dependencies**, and choose **Add Reference**.
 8. Select **CellAnalyzerSharedLibrary**, and choose **OK**.
@@ -217,7 +221,9 @@ public ActionResult<string> AnalyzeUnicode(string value)
 
 11. Right-click the **CellAnalyzerRESTAPI** project, and choose **Set as Startup Project**.
 12. On the **Debug** menu, choose **Start Debugging**.
-13. A browser will launch. Enter the following URL to test that the REST API is working: **https://localhost:44323/api/analyzeunicode?value=test**. You should see a string returned with Unicode values for each character.
+13. A browser will launch. Enter the following URL to test that the REST API is working: `https://localhost:<ssl port number>/api/analyzeunicode?value=test`. You can reuse the port number from the URL in the browser that Visual Studio launched. You should see a string returned with Unicode values for each character.
+
+
 
 ## Create the Office web add-in
 
