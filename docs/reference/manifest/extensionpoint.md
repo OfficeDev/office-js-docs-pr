@@ -87,7 +87,7 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
-- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
@@ -297,9 +297,6 @@ The **Control** element contained in this extension point must have the **xsi:ty
 ### Events
 
 This extension point adds an event handler for a specified event.
-
-> [!NOTE]
-> This extension point is supported by classic Outlook on the web, and in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Windows, Mac, and modern Outlook on the web. An Office 365 subscription is also required.
 
 | Element | Description  |
 |:-----|:-----|
