@@ -35,7 +35,7 @@ To clear the Outlook cache on Windows 10 when the add-in is running in Microsoft
 
 4. In the Microsoft Edge DevTools, open the **Local** tab. Your add-in will be listed by its name.
 
-5. Select the add-in name to attach the debugger to your add-in. A new Microsoft Edge DevTools will open when the debugger attaches to your add-in.
+5. Select the add-in name to attach the debugger to your add-in. A new Microsoft Edge DevTools window will open when the debugger attaches to your add-in.
 
 6. On the **Network** tab of the new window, select the **Clear cache** button.
 
