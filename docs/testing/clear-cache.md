@@ -22,7 +22,7 @@ To clear the Office cache on Windows for Excel, Word, and PowerPoint, delete the
 To clear the Outlook cache on Windows 10 when the add-in is running in Microsoft Edge, you can use the Microsoft Edge DevTools.
 
 > [!TIP]
-> If you're just wanting the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to use the following steps to clear the cache. Instead, just put focus in the add-in's task pane (by clicking or pressing an element within the task pane) and then press **F5** to reload the add-in. 
+> If you're just wanting the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to use the following steps to clear the cache. Instead, just put focus in the add-in's task pane (by clicking anywhere within the task pane) and then press **F5** to reload the add-in. 
 
 > [!NOTE]
 > To clear the Outlook cache using the following steps, your add-in must have a task pane. If your add-in is a UI-less add-in -- for example, one that uses the [on-send](/outlook/add-ins/outlook-on-send-addins) feature -- you'll need to add a task pane to your add-in that uses the same domain for [SourceLocation](../reference/manifest/sourcelocation.md), before you can use the following steps to clear the cache.
