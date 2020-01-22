@@ -25,7 +25,7 @@ The [PivotTable](/javascript/api/excel/excel.pivottable) is the central object f
 - A [PivotField](/javascript/api/excel/excel.pivotfield) contains a [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) that has multiple [PivotItems](/javascript/api/excel/excel.pivotitem).
 - A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotLayout](/javascript/api/excel/excel.pivotlayout) that defines where the [PivotFields](/javascript/api/excel/excel.pivotfield) and [PivotItems](/javascript/api/excel/excel.pivotitem) are displayed in the worksheet.
 
-Let's look at how these relationships apply to a data set. The following data describing fruit sales from various farms will be used throughout this article.
+Let's look at how these relationships apply to some example data. The following data describes fruit sales from various farms. It will be the example throughout this article.
 
 ![A collection of fruit sales of different types from different farms.](../images/excel-pivots-raw-data.png)
 
