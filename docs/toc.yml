@@ -1004,5 +1004,5 @@
 
 - name: Patterns and practices
   items:
-  - name: Share code from VSTO add-in to Office web add-in
-    href: tutorials/migrate-vsto-to-office-web-add-in-shared-code-library-tutorial.md
+  - name: Share code from VSTO Add-in to Office add-in
+    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
