@@ -1002,7 +1002,7 @@
       href: word/search-option-guidance.md
       displayName: Word
 
-  - name: Patterns and practices
-    items:
-    - name: Share code from VSTO add-in to Office web add-in
-      href: tutorials/migrate-vsto-to-office-web-add-in-shared-code-library-tutorial.md
+- name: Patterns and practices
+  items:
+  - name: Share code from VSTO add-in to Office web add-in
+    href: tutorials/migrate-vsto-to-office-web-add-in-shared-code-library-tutorial.md

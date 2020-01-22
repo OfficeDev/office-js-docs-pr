@@ -56,6 +56,10 @@ This tutorial uses the [VSTO Add-in shared library for Office web add-in](https:
 1. Download the [VSTO Add-in shared library for Office web add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/vstoshared/Samples/VSTO-shared-code-start) PnP solution to a working folder on your computer.
 2. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
 3. On the **Debug** menu, choose **Start Debugging**.
+3. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Properties**.
+4. Choose the **Signing** category in the properties.
+5. Choose **Sign the ClickOnce manifests**, and then chose **Create Test Certificate**.
+6. In the **Create Test Certificate** dialog, enter and confirm a password. Then choose **OK**.
 
 The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show Unicode** button. The add-in will display a list of each character in the text along with its corresponding Unicode number.
 
@@ -162,8 +166,10 @@ public class CellOperations
 
 Now you need to update the VSTO Add-in to use the class library. This is important that both the VSTO Add-in and Office web add-in use the same shared class library so that future bug fixes or features are made in one location.
 
-1. In **Solution Explorer** expand the **Cell-Analyzer** project, right-click the **CellAnalyzerPane.cs** file, and choose **View Code**.
-2. In the `btnUnicode_Click` method, delete the following lines of code.
+1. In **Solution Explorer** right-click the **Cell-Analyzer** project, and choose **Add Reference**.
+2. Select **CellAnalyzerSharedLibrary**, and choose **OK**.
+3. In **Solution Explorer** expand the **Cell-Analyzer** project, right-click the **CellAnalyzerPane.cs** file, and choose **View Code**.
+4. In the `btnUnicode_Click` method, delete the following lines of code.
 
 ```csharp
 //Convert to Unicode listing
@@ -188,20 +194,20 @@ txtResult.Text = CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(cel
 
 The VSTO Add-in can use the shared class library directly since they are both .NET projects. However the Office web add-in won't be able to use .NET since it uses JavaScript. Next you will need to create a REST API wrapper. This enables the Office web add-in to call a REST API, which then passes the call along to the shared class library.
 
-1. If you haven't already, start Visual Studio 2019, and open the **\start\Cell-Analyzer.sln** solution.
-2. Right-click the solution in **Solution Explorer** and choose **Add > New Project**.
+2. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Add > New Project**.
 3. In the **Add a new project dialog**, choose **ASP.NET Core Web Application**, and choose **Next**.
 4. In the **Configure your new project** dialog, set the following fields:
     - Set the **Project name** to **CellAnalyzerRESTAPI**.
     - In the **Location** field, leave the default value.
 5. Choose **Create**.
-6. After the project is created, expand the **CellAnalyzerRESTAPI** project in **Solution Explorer**.
-7. Right-click **Dependencies**, and choose **Add Reference**.
-8. Select **CellAnalyzerSharedLibrary**, and choose **OK**.
-9. Right-click the **Controllers** folder, and choose **Add > Controller**.
-10. In the **Add New Scaffolded Item** dialog, choose **API Controller - Empty** and then **Add**.
-11. In the **Add Empty API Controller** dialog, name the controller **AnalyzeUnicodeController**, and then choose **Add**.
-12. Open the **AnalyzeUnicodeController.cs** file and add the following code as a method to the `AnalyzeUnicodeController` class.
+6. In the **Create a new ASP.NET Core web application** dialog, choose the **API** project template, and then choose **Create**. You can leave all other fields at default values.
+7. After the project is created, expand the **CellAnalyzerRESTAPI** project in **Solution Explorer**.
+8. Right-click **Dependencies**, and choose **Add Reference**.
+9. Select **CellAnalyzerSharedLibrary**, and choose **OK**.
+10. Right-click the **Controllers** folder, and choose **Add > Controller**.
+11. In the **Add New Scaffolded Item** dialog, choose **API Controller - Empty** and then **Add**.
+12. In the **Add Empty API Controller** dialog, name the controller **AnalyzeUnicodeController**, and then choose **Add**.
+13. Open the **AnalyzeUnicodeController.cs** file and add the following code as a method to the `AnalyzeUnicodeController` class.
 
 ```csharp
 [HttpGet]
@@ -233,8 +239,7 @@ When you create the Office web add-in, it will make a call to the REST API. But 
 
 To keep things simple, keep all the code in one solution. Add the Office web add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
 
-1. If you haven't already, start Visual Studio 2019, and open the **\start\Cell-Analyzer.sln** solution.
-2. Right-click the solution in **Solution Explorer** and choose **Add > New Project**.
+2. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Add > New Project**.
 3. In the **Add a new project dialog**, choose **Excel Web Add-in**, and choose **Next**.
 5. In the **Configure your new project** dialog, set the following fields:
     - Set the **Project name** to **CellAnalyzerWebAddin**.
