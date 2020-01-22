@@ -25,7 +25,7 @@ The [single sign-on (SSO) quick start](sso-quickstart.md) creates an SSO-enabled
 
 Let's begin with a quick review of the add-in project that you've created with the Yeoman generator.
 
-[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-quickstart-customize.md)]
+[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## Configure SSO
 

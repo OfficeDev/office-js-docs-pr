@@ -51,7 +51,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 The add-in project that you've created with the Yeoman generator contains code for an SSO-enabled task pane add-in.
 
-[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-quickstart-customize.md)]
+[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## Configure SSO
 
