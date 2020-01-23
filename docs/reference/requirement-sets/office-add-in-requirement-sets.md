@@ -177,6 +177,14 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ---
 
+### SharedRuntime
+
+|**Office hosts**|**Methods in set**|
+|:-----|:-----|
+| See [Shared runtime requirement sets](shared-runtime-requirement-sets.md). | Dialog.close<br>Office.createWebDialog<br>Storage.getItem<br>Storage.setItem<br>Storage.removeItems<br>Storage.getItems<br>Storage.setItems<br>Storage.removeItems |
+
+---
+
 ### TableBindings
 
 |**Office hosts**|**Methods in set**|
