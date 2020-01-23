@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.
-ms.date: 11/15/2019
+ms.date: 01/23/2020
 localization_priority: Priority
 ---
 
@@ -284,29 +284,29 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office on the web</td>
+    <td>Excel on the web</td>
     <td>
         - Custom Functions</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
+    <td>Excel on Windows<br>(connected to Office 365 subscription)</td>
     <td>
         - Custom Functions</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(connected to Office 365)</td>
+    <td>Excel for Mac<br>(connected to Office 365)</td>
     <td>
         - Custom Functions</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
