@@ -18,7 +18,7 @@ The following files define the add-in's task pane UI and functionality.
 
 ### Authentication
 
-The following files facilitate the SSO process and obtain the data from Microsoft Graph that's written to the Office document.
+The following files facilitate the SSO process and write data to the Office document.
 
 - The **./src/helpers/documentHelper.js** file uses the Office JavaScript library to add the data from Microsoft Graph to the Office document.
 - The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the fallback authentication method's JavaScript.

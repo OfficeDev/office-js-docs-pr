@@ -8,10 +8,10 @@ localization_priority: Normal
 
 # Customize the SSO-enabled add-in you that created with the Yeoman generator
 
-The [single sign-on (SSO) quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets the signed-in user's profile information and writes it to the document. In this article, you'll walk through the process of customizing the SSO-enabled add-in that you created with the quick start, adding support for two-factor authentication and adding new functionality that requires different access scopes.
-
 > [!IMPORTANT]
-> This article builds upon the SSO-enabled add-in that's created by completing the [SSO quick start](sso-quickstart.md). Please complete the quick start before proceeding any further with this article.
+> This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md). Please complete the quick start before reading this article.
+
+The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets the signed-in user's profile information and writes it to the document. In this article, you'll walk through the process of customizing the SSO-enabled add-in that you created with the quick start, to add new functionality that requires different permissions.
 
 ## Prerequisites
 
@@ -21,41 +21,55 @@ The [single sign-on (SSO) quick start](sso-quickstart.md) creates an SSO-enabled
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-## Review contents of the project - TODO: add more contextual info for the files that we'll modify throughout this process
+* At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
+
+## Review contents of the project
 
 Let's begin with a quick review of the add-in project that you've created with the Yeoman generator.
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
-## Configure SSO
+## Add new functionality 
 
-At this point, your add-in project has been created and contains the code that's necessary to facilitate the SSO process. Next, complete the following steps to configure SSO for your add-in.
+The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document. Let's add new functionality to get the first 10 file and folder names from the signed-in user's OneDrive for Business and write that information to the document. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
 
-1. Navigate to the root folder of the project.
+### Update the code
 
-    ```command&nbsp;line
-    cd "My SSO Office Add-in"
-    ```
+...TO DO...
 
-2. Run the following command to configure SSO for the add-in.
 
-    ```command&nbsp;line
-    npm run configure-sso
-    ```
 
-    > [!WARNING]
-    > This command will fail if your tenant is configured to require two-factor authentication. In this scenario, you'll need to manually complete the Azure app registration and SSO configuration steps, as described in the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
+### Update app permissions in Azure
 
-3. A web browser window will open and prompt you to sign in to Azure. Sign in to Azure using your Office 365 administrator credentials. These credentials will be used to register a new application in Azure and configure the settings required by SSO.
+Before the add-in can successfully implement the new functionality we've added to read the user's files from OneDrive, the app must be granted the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission.
 
-    > [!NOTE]
-    > If you sign in to Azure using non-administrator credentials during this step, the `configure-sso` script won't be able to provide administrator consent for the add-in to users within your organization. SSO will therefore not be available to users of the add-in and they'll be prompted to sign-in.
+1. Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and sign in using your Office 365 administrator credentials. 
 
-4. After you enter your credentials, close the browser window and return to the command prompt. As the SSO configuration process continues, you'll see status messages being written to the console. As described in the console messages, files within the add-in project that the Yeoman generator created are automatically updated with data that's required by the SSO process.
+2. Navigate to the **App registrations** page, by doing either of the following:
+    - Choose the **App registrations** tile on the Azure home page.
+    - Use the search box on the home page to find and choose **App registrations**.
+
+3. On the **App registrations** page, choose the app that you created during the quick start. 
+    > [!TIP]
+    > The **Display name** of the app will match the add-in name that you specified when you created the project with the Yeoman generator.
+
+4. From the app overview page, choose **API permissions** under the **Manage** heading on the left side of the page.
+
+5. Select **Add a permission**.
+
+6. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
+
+7. On the **Request API permissions** panel, under **Files**, select **Files.Read.All** and then select the **Add permissions** button at the bottom of the panel.
+
+
+
+
 
 ## Try it out
 
-1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
+...TO DO...
+
+1. In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
@@ -88,10 +102,13 @@ At this point, your add-in project has been created and contains the code that's
 
 ## Next steps
 
+...TO DO...
+
 Congratulations, you've successfully created a task pane add-in that uses SSO when possible, and uses an alternate method of user authentication when SSO is not supported. To learn more about SSO configuration steps that the Yeoman generator completed automatically, and the code that facilitates the SSO process, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
 ## See also
 
+- ...TO DO...
 - [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
 - [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
