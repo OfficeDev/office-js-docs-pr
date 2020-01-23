@@ -16,7 +16,7 @@ The following table lists the SharedRuntime 1.1 requirement set, the Office host
 
 |  Requirement set  |  Office 2013 (or later) on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Office 365 subscription)   |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | N/A | Version 2001 (Build nnnnn.nnnnn) or later | N/A | nn.nn or later | January 2020 | N/A |
+| SharedRuntime 1.1  | N/A | Version 2001 (Build 12527.20000) or later | N/A | 16.34 or later | January 2020 | N/A |
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
