@@ -258,7 +258,7 @@ This extension point puts buttons in the command surface for the mail read view 
 > [!NOTE]
 > This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Android with an Office 365 subscription.
 
-This extension point puts a mode-appropriate button in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting.
+This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting.
 
 #### Child elements
 
