@@ -1,6 +1,10 @@
 { 
     "redirections": [   
       {
+        "source_path": "docs/develop/dynamic-dpi.md",
+        "redirect_url": "https://docs.microsoft.com/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
+      },
+      {
         "source_path": "docs/excel/custom-functions-save-state-redirect.md",
         "redirect_url": "/office/dev/add-ins/excel/custom-functions-save-state"
       },

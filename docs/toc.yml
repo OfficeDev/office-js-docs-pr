@@ -1022,5 +1022,7 @@
     displayName: Excel, Custom Functions
   - name: Authentication
     href: develop/authentication-pnp.md
-  - name: Share data between custom functions and task pane
+  - name: Save and share state in custom functions
     href: excel/custom-functions-save-state-redirect.md
+  - name: Handle high DPI and DPI scaling in your Office solution
+    href: docs/develop/dynamic-dpi.md
