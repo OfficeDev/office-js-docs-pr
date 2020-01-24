@@ -21,7 +21,7 @@ This feature is in preview. Child element of the [`<Runtimes>`](runtimes.md) ele
 
 ## Contained in
 
--[Runtimes](runtimes.md)
+- [Runtimes](runtimes.md)
 
 ## Attributes
 
@@ -32,4 +32,4 @@ This feature is in preview. Child element of the [`<Runtimes>`](runtimes.md) ele
 
 ## See also
 
--[Runtimes](runtimes.md)
+- [Runtimes](runtimes.md)
