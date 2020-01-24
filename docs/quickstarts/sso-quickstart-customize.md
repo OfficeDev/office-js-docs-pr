@@ -90,45 +90,45 @@ Complete the following steps to make these updates.
 
     a. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
-        ```javascript
-        export function writeDataToOfficeDocument(result) {
-          return new OfficeExtension.Promise(function(resolve, reject) {
-            try {
-              writeDataToWord(result);
-              resolve();
-            } catch (error) {
-              reject(Error("Unable to write data to document. " + error.toString()));
-            }
-          });
+    ```javascript
+    export function writeDataToOfficeDocument(result) {
+      return new OfficeExtension.Promise(function(resolve, reject) {
+        try {
+          writeDataToWord(result);
+          resolve();
+        } catch (error) {
+          reject(Error("Unable to write data to document. " + error.toString()));
         }
-        ```
+      });
+    }
+    ```
 
     b. Find the `writeDataToExcel` function and replace it with the following function:
 
-        ```javascript
-        function writeDataToExcel(result) {
-          return Excel.run(function (context) {
-            var sheet = context.workbook.worksheets.getActiveWorksheet();
-            let data = [];
-            let oneDriveInfo = filterOneDriveInfo(result);
+    ```javascript
+    function writeDataToExcel(result) {
+      return Excel.run(function (context) {
+        var sheet = context.workbook.worksheets.getActiveWorksheet();
+        let data = [];
+        let oneDriveInfo = filterOneDriveInfo(result);
 
-            for (let i = 0; i < oneDriveInfo.length; i++) {
-              if (oneDriveInfo[i] !== null) {
-                let innerArray = [];
-                innerArray.push(oneDriveInfo[i]);
-                data.push(innerArray);
-              }
-            }
-
-            const rangeAddress = `B5:B${5 + (data.length - 1)}`;
-            const range = sheet.getRange(rangeAddress);
-            range.values = data;
-            range.format.autofitColumns();
-
-            return context.sync();
-          });
+        for (let i = 0; i < oneDriveInfo.length; i++) {
+          if (oneDriveInfo[i] !== null) {
+            let innerArray = [];
+            innerArray.push(oneDriveInfo[i]);
+            data.push(innerArray);
+          }
         }
-        ```
+
+        const rangeAddress = `B5:B${5 + (data.length - 1)}`;
+        const range = sheet.getRange(rangeAddress);
+        range.values = data;
+        range.format.autofitColumns();
+
+        return context.sync();
+      });
+    }
+    ```
 
     c. Delete the `writeDataToPowerPoint` function.
 
@@ -138,46 +138,46 @@ Complete the following steps to make these updates.
 
     a. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
-        ```javascript
-        export function writeDataToOfficeDocument(result) {
-          return new OfficeExtension.Promise(function(resolve, reject) {
-            try {
-              writeDataToPowerPoint(result);
-              resolve();
-            } catch (error) {
-              reject(Error("Unable to write data to document. " + error.toString()));
-            }
-          });
+    ```javascript
+    export function writeDataToOfficeDocument(result) {
+      return new OfficeExtension.Promise(function(resolve, reject) {
+        try {
+          writeDataToPowerPoint(result);
+          resolve();
+        } catch (error) {
+          reject(Error("Unable to write data to document. " + error.toString()));
         }
-        ```
+      });
+    }
+    ```
 
     b. Find the `writeDataToPowerPoint` function and replace it with the following function:
 
-        ```javascript
-        function writeDataToPowerPoint(result) {
-          let data = [];
-          let oneDriveInfo = filterOneDriveInfo(result);
+    ```javascript
+    function writeDataToPowerPoint(result) {
+      let data = [];
+      let oneDriveInfo = filterOneDriveInfo(result);
 
-          for (let i = 0; i < oneDriveInfo.length; i++) {
-            if (oneDriveInfo[i] !== null) {
-            data.push(oneDriveInfo[i]);
-            }
-          }
-
-          let objectNames = "";
-          for (let i = 0; i < data.length; i++) {
-            objectNames += data[i] + "\n";
-          }
-
-          Office.context.document.setSelectedDataAsync(
-            objectNames, 
-            function(asyncResult) {
-              if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                throw asyncResult.error.message;
-              }
-          });
+      for (let i = 0; i < oneDriveInfo.length; i++) {
+        if (oneDriveInfo[i] !== null) {
+          data.push(oneDriveInfo[i]);
         }
-        ```
+      }
+
+      let objectNames = "";
+      for (let i = 0; i < data.length; i++) {
+        objectNames += data[i] + "\n";
+      }
+
+      Office.context.document.setSelectedDataAsync(
+        objectNames, 
+        function(asyncResult) {
+          if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            throw asyncResult.error.message;
+          }
+      });
+    }
+    ```
 
     c. Delete the `writeDataToExcel` function.
 
@@ -187,45 +187,45 @@ Complete the following steps to make these updates.
 
     a. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
-        ```javascript
-        export function writeDataToOfficeDocument(result) {
-          return new OfficeExtension.Promise(function(resolve, reject) {
-            try {
-              writeDataToWord(result);
-              resolve();
-            } catch (error) {
-              reject(Error("Unable to write data to document. " + error.toString()));
-            }
-          });
+    ```javascript
+    export function writeDataToOfficeDocument(result) {
+      return new OfficeExtension.Promise(function(resolve, reject) {
+        try {
+          writeDataToWord(result);
+          resolve();
+        } catch (error) {
+          reject(Error("Unable to write data to document. " + error.toString()));
         }
-        ```
+      });
+    }
+    ```
 
     b. Find the `writeDataToWord` function and replace it with the following function:
 
-        ```javascript
-        function writeDataToWord(result) {
+    ```javascript
+    function writeDataToWord(result) {
 
-          return Word.run(function (context) {
-            let data = [];
-            let oneDriveInfo = filterOneDriveInfo(result);
+      return Word.run(function (context) {
+        let data = [];
+        let oneDriveInfo = filterOneDriveInfo(result);
 
-            for (let i = 0; i < oneDriveInfo.length; i++) {
-              if (oneDriveInfo[i] !== null) {
-                data.push(oneDriveInfo[i]);
-              }
-            }
-
-            const documentBody = context.document.body;
-            for (let i = 0; i < data.length; i++) {
-              if (data[i] !== null) {
-                documentBody.insertParagraph(data[i], "End");
-              }
-            }
-
-            return context.sync();
-          });
+        for (let i = 0; i < oneDriveInfo.length; i++) {
+          if (oneDriveInfo[i] !== null) {
+            data.push(oneDriveInfo[i]);
+          }
         }
-        ```
+
+        const documentBody = context.document.body;
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] !== null) {
+            documentBody.insertParagraph(data[i], "End");
+          }
+        }
+
+        return context.sync();
+      });
+    }
+    ```
 
     c. Delete the `writeDataToExcel` function.
 
