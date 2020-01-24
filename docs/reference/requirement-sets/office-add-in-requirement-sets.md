@@ -161,7 +161,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ---
 
-### RibbonAPI
+### RibbonApi
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
