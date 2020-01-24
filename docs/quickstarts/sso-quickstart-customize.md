@@ -35,7 +35,13 @@ The add-in that you created with the SSO quick start uses Microsoft Graph to get
 
 ### Update the code
 
-...TO DO...
+To enable the add-in to read contents of the signed-in user's OneDrive for Business, you'll need to:
+
+- Update any code that references the Microsoft Graph URL, parameters, and required access scope.
+
+- Update the code that parses the response from Microsoft Graph and writes it to the document
+
+You'll also update the task pane UI so that it accurately describes the new functionality. Complete the following steps to make these updates.
 
 1. In the **.\ENV** file:
 
@@ -57,7 +63,7 @@ The add-in that you created with the SSO quick start uses Microsoft Graph to get
     </WebApplicationInfo> 
     ```
 
-3. In the **.\helpers\fallbackauthdialog.js** file, search for the string `https://graph.microsoft.com/User.Read` and replace that string with the value `https://graph.microsoft.com/Files.Read.All`, such that that `requestObj` is defined as follows:
+3. In the **.\src\helpers\fallbackauthdialog.js** file, search for the string `https://graph.microsoft.com/User.Read` and replace that string with the value `https://graph.microsoft.com/Files.Read.All`, such that `requestObj` is defined as follows:
 
     ```javascript
     var requestObj = {
@@ -65,94 +71,118 @@ The add-in that you created with the SSO quick start uses Microsoft Graph to get
     };
     ```
 
-4. In **.\helpers\documentHelper.js**, replace the entire `filterUserProfileInfo` function with the following function:
+4. In **.\src\helpers\documentHelper.js**, replace the entire `filterUserProfileInfo` function with the following function:
 
-   ```javascript
+    ```javascript
     function filterOneDriveInfo(result) {
-        let itemNames = [];
-        let oneDriveItems = graphData['value'];
-        for (let item of oneDriveItems) {
-            itemNames.push(item['name']);
-        }
+      let itemNames = [];
+      let oneDriveItems = result['value'];
+      for (let item of oneDriveItems) {
+        itemNames.push(item['name']);
+      }
+      return itemNames;
     }
     ```
 
-5. In **.\helpers\documentHelper.js**, replace the entire `writeDataToExcel` function with the following function:
+5. In **.\src\helpers\documentHelper.js**, replace the entire `writeDataToExcel` function with the following function:
 
-    ...TO DO...
     ```javascript
     function writeDataToExcel(result) {
+      return Excel.run(function (context) {
+        var sheet = context.workbook.worksheets.getActiveWorksheet();
+        let data = [];
+        let oneDriveInfo = filterOneDriveInfo(result);
 
-        return Excel.run(function (context) {
-            var sheet = context.workbook.worksheets.getActiveWorksheet();
-
-            var filenames = [];
-            var i;
-            for (i = 0; i < result.length; i++) {
-                var innerArray = [];
-                innerArray.push(result[i]);
-                filenames.push(innerArray);
-            }
-
-            var rangeAddress = "B5:B" + (5 + (result.length - 1)).toString();
-            var range = sheet.getRange(rangeAddress);
-            range.values = filenames;
-            range.format.autofitColumns();
-
-            return context.sync();
-        });
-    }
-    ```
-
-6. In **.\helpers\documentHelper.js**, replace the entire `writeDataToPowerPoint` function with the following function:
-
-    ...TO DO...
-    ```javascript
-    function writeDataToPowerPoint(result) {
-
-        var fileNames = "";
-        for (var i = 0; i < result.length; i++) {
-            fileNames += result[i] + '\n';
+        for (let i = 0; i < oneDriveInfo.length; i++) {
+          if (oneDriveInfo[i] !== null) {
+            let innerArray = [];
+            innerArray.push(oneDriveInfo[i]);
+            data.push(innerArray);
+          }
         }
 
-        Office.context.document.setSelectedDataAsync(
-            fileNames,
-            function (asyncResult) {
-                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                    throw asyncResult.error.message;
-                }
-            }
-        );
+        const rangeAddress = `B5:B${5 + (data.length - 1)}`;
+        const range = sheet.getRange(rangeAddress);
+        range.values = data;
+        range.format.autofitColumns();
+
+        return context.sync();
+      });
     }
     ```
 
-7. In **.\helpers\documentHelper.js**, replace the entire `writeDataToWord` function with the following function:
+6. In **.\src\helpers\documentHelper.js**, replace the entire `writeDataToPowerPoint` function with the following function:
 
-    ...TO DO...
+    ```javascript
+    function writeDataToPowerPoint(result) {
+      let data = [];
+      let oneDriveInfo = filterOneDriveInfo(result);
+
+      for (let i = 0; i < oneDriveInfo.length; i++) {
+        if (oneDriveInfo[i] !== null) {
+        data.push(oneDriveInfo[i]);
+        }
+      }
+
+      let objectNames = "";
+      for (let i = 0; i < data.length; i++) {
+        objectNames += data[i] + "\n";
+      }
+
+      Office.context.document.setSelectedDataAsync(
+        objectNames, 
+        function(asyncResult) {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          throw asyncResult.error.message;
+        }
+      });
+    }
+    ```
+
+7. In **.\src\helpers\documentHelper.js**, replace the entire `writeDataToWord` function with the following function:
 
     ```javascript
     function writeDataToWord(result) {
 
-        return Word.run(function (context) {
+      return Word.run(function (context) {
+        let data = [];
+        let oneDriveInfo = filterOneDriveInfo(result);
 
-            var documentBody = context.document.body;
-            for (var i = 0; i < result.length; i++) {
-                documentBody.insertParagraph(result[i], "End");
-            }
+        for (let i = 0; i < oneDriveInfo.length; i++) {
+          if (oneDriveInfo[i] !== null) {
+            data.push(oneDriveInfo[i]);
+          }
+        }
 
-            return context.sync();
-        });
+        const documentBody = context.document.body;
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] !== null) {
+            documentBody.insertParagraph(data[i], "End");
+          }
+        }
+
+        return context.sync();
+      });
     }
     ```
 
-...TO DO...
+8. In **.\src\taskpane\taskpane.html**, find the section with `<section class="ms-firstrun-instructionstep__header">` and update the text string within that element to describe the add-in's new functionality.
 
-- update taskpane.html -> button name/label/etc. + instructions
-- update taskpane.js -> function name, etc.
+    ```html
+    <section class="ms-firstrun-instructionstep__header">
+        <h2 class="ms-font-m"> This add-in demonstrates how to use single sign-on by making a call to Microsoft
+            Graph to read content from OneDrive for Business.</h2>
+        <div class="ms-firstrun-instructionstep__header--image"></div>
+    </section>
+    ```
+
+9. In **.\src\taskpane\taskpane.html**, find both occurrences of the string `Get My User Profile Information` and replace it with `Read my OneDrive for Business`.
+
+10. In **.\src\taskpane\taskpane.html**, find the string `Your user profile information will be displayed in the document.` and replace it with `The names of objects in your OneDrive for Business will be displayed in the document.`.
 
 ### Update app permissions in Azure
 
-Before the add-in can successfully read the user's files from OneDrive, the app must be granted the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission.
+Before the add-in can successfully read the contents of the user's OneDrive for Business, the app must be granted the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission and remove the **User.Read** permission, which is no longer needed.
 
 1. Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and sign in using your Office 365 administrator credentials. 
 
@@ -170,11 +200,12 @@ Before the add-in can successfully read the user's files from OneDrive, the app 
 
 6. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
 
-7. On the **Request API permissions** panel, under **Files**, select **Files.Read.All** and then select the **Add permissions** button at the bottom of the panel.
+7. On the **Request API permissions** panel:
 
+   a. Under **Files**, select **Files.Read.All**.
+   b. Under **User**, deselect **User.Read**.
 
-
-
+8. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
 
 ## Try it out
 
