@@ -11,7 +11,7 @@ localization_priority: Normal
 > [!IMPORTANT]
 > This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md). Please complete the quick start before reading this article.
 
-The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets the signed-in user's profile information and writes it to the document. In this article, you'll walk through the process of customizing the SSO-enabled add-in that you created with the quick start, to add new functionality that requires different permissions.
+The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets the signed-in user's profile information and writes it to the document. In this article, you'll walk through the process of updating the SSO-enabled add-in that you created with the quick start, to add new functionality that requires different permissions.
 
 ## Prerequisites
 
@@ -31,23 +31,134 @@ Let's begin with a quick review of the add-in project that you've created with t
 
 ## Add new functionality 
 
-The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document. Let's add new functionality to get the first 10 file and folder names from the signed-in user's OneDrive for Business and write that information to the document. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
+The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document. Let's change the add-in's functionality such that it gets the first 10 file and folder names from the signed-in user's OneDrive for Business and writes that information to the document. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
 
 ### Update the code
 
 ...TO DO...
 
+1. In the **.\ENV** file:
 
+    a. Replace `GRAPH_URL_SEGMENT=/me` with the following: `GRAPH_URL_SEGMENT=/me/drive/root/children`
+
+    b. Replace `GRAPH_PARAM_SEGMENT=` with the following: `GRAPH_PARAM_SEGMENT=?$select=name&$top=10`
+
+    c. Replace `SCOPE=User.Read` with the following: `SCOPE=Files.Read.All`
+
+2. In the **.\manifest.xml** file, find the line `<Scope>User.Read</Scope>` within the `<WebApplicationInfo>` element near the end of the file. Replace that line with `<Scope>Files.Read.All</Scope>`, such that the following scopes are specified:
+
+    ```xml
+    <WebApplicationInfo>  
+        ...
+        <Scopes>  
+          <Scope>Files.Read.All</Scope>
+          <Scope>profile</Scope>
+        </Scopes>  
+    </WebApplicationInfo> 
+    ```
+
+3. In the **.\helpers\fallbackauthdialog.js** file, search for the string `https://graph.microsoft.com/User.Read` and replace that string with the value `https://graph.microsoft.com/Files.Read.All`, such that that `requestObj` is defined as follows:
+
+    ```javascript
+    var requestObj = {
+        scopes: [`https://graph.microsoft.com/Files.Read.All`]
+    };
+    ```
+
+4. In **.\helpers\documentHelper.js**, replace the entire `filterUserProfileInfo` function with the following function:
+
+   ```javascript
+    function filterOneDriveInfo(result) {
+        let itemNames = [];
+        let oneDriveItems = graphData['value'];
+        for (let item of oneDriveItems) {
+            itemNames.push(item['name']);
+        }
+    }
+    ```
+
+5. In **.\helpers\documentHelper.js**, replace the entire `writeDataToExcel` function with the following function:
+
+    ...TO DO...
+    ```javascript
+    function writeDataToExcel(result) {
+
+        return Excel.run(function (context) {
+            var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+            var filenames = [];
+            var i;
+            for (i = 0; i < result.length; i++) {
+                var innerArray = [];
+                innerArray.push(result[i]);
+                filenames.push(innerArray);
+            }
+
+            var rangeAddress = "B5:B" + (5 + (result.length - 1)).toString();
+            var range = sheet.getRange(rangeAddress);
+            range.values = filenames;
+            range.format.autofitColumns();
+
+            return context.sync();
+        });
+    }
+    ```
+
+6. In **.\helpers\documentHelper.js**, replace the entire `writeDataToPowerPoint` function with the following function:
+
+    ...TO DO...
+    ```javascript
+    function writeDataToPowerPoint(result) {
+
+        var fileNames = "";
+        for (var i = 0; i < result.length; i++) {
+            fileNames += result[i] + '\n';
+        }
+
+        Office.context.document.setSelectedDataAsync(
+            fileNames,
+            function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                    throw asyncResult.error.message;
+                }
+            }
+        );
+    }
+    ```
+
+7. In **.\helpers\documentHelper.js**, replace the entire `writeDataToWord` function with the following function:
+
+    ...TO DO...
+
+    ```javascript
+    function writeDataToWord(result) {
+
+        return Word.run(function (context) {
+
+            var documentBody = context.document.body;
+            for (var i = 0; i < result.length; i++) {
+                documentBody.insertParagraph(result[i], "End");
+            }
+
+            return context.sync();
+        });
+    }
+    ```
+
+...TO DO...
+
+- update taskpane.html -> button name/label/etc. + instructions
+- update taskpane.js -> function name, etc.
 
 ### Update app permissions in Azure
 
-Before the add-in can successfully implement the new functionality we've added to read the user's files from OneDrive, the app must be granted the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission.
+Before the add-in can successfully read the user's files from OneDrive, the app must be granted the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission.
 
 1. Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and sign in using your Office 365 administrator credentials. 
 
-2. Navigate to the **App registrations** page, by doing either of the following:
-    - Choose the **App registrations** tile on the Azure home page.
-    - Use the search box on the home page to find and choose **App registrations**.
+2. Navigate to the **App registrations** page. 
+    > [!TIP]
+    > You can do this either by choosing the **App registrations** tile on the Azure home page or by using the search box on the home page to find and choose **App registrations**.
 
 3. On the **App registrations** page, choose the app that you created during the quick start. 
     > [!TIP]
