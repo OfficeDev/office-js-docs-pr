@@ -31,7 +31,7 @@ Let's begin with a quick review of the add-in project that you previously [creat
 
 ## Add new functionality 
 
-The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document. Let's change the add-in's functionality such that it gets the first 10 file and folder names from the signed-in user's OneDrive for Business and writes that information to the document. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
+The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document. Let's change the add-in's functionality such that it gets file and folder names from the signed-in user's OneDrive for Business and writes that information to the document. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
 
 ### Update code in the add-in project
 
