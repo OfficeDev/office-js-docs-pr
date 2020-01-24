@@ -27,4 +27,4 @@ This feature is in preview. Specifies the runtime of your add-in and allows cust
 
 ## See also
 
--[Runtime](runtime.md)
+- [Runtime](runtime.md)
