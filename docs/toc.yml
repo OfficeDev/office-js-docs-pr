@@ -1025,4 +1025,4 @@
   - name: Save and share state in custom functions
     href: excel/custom-functions-save-state-redirect.md
   - name: Handle high DPI and DPI scaling in your Office solution
-    href: docs/develop/dynamic-dpi.md
+    href: develop/dynamic-dpi.md
