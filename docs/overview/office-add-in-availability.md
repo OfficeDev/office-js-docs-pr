@@ -274,7 +274,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 
 *&ast; - Added with post-release updates.*
 
-## Custom Functions
+## Custom Functions (Excel only)
 
 <table style="width:80%">
   <tr>
@@ -284,7 +284,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Excel on the web</td>
+    <td>Office on the web</td>
     <td>
         - Custom Functions</td>
     <td>
@@ -293,7 +293,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Excel on Windows<br>(connected to Office 365 subscription)</td>
+    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
     <td>
         - Custom Functions</td>
     <td>
@@ -302,7 +302,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Excel for Mac<br>(connected to Office 365)</td>
+    <td>Office for Mac<br>(connected to Office 365)</td>
     <td>
         - Custom Functions</td>
     <td>
