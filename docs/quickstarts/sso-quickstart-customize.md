@@ -45,7 +45,7 @@ To enable the add-in to read contents of the signed-in user's OneDrive for Busin
 
 Complete the following steps to make these updates.
 
-1. In the **.\ENV** file:
+1. In the **.\.ENV** file:
 
     a. Replace `GRAPH_URL_SEGMENT=/me` with the following: `GRAPH_URL_SEGMENT=/me/drive/root/children`
 
@@ -53,7 +53,7 @@ Complete the following steps to make these updates.
 
     c. Replace `SCOPE=User.Read` with the following: `SCOPE=Files.Read.All`
 
-2. In **.\manifest.xml**, find the line `<Scope>User.Read</Scope>` within the `<WebApplicationInfo>` element near the end of the file. Replace that line with `<Scope>Files.Read.All</Scope>`, such that the scopes within `</WebApplicationInfo>` are defined as follows:
+2. In **.\manifest.xml**, find the line `<Scope>User.Read</Scope>` within the `<WebApplicationInfo>` element near the end of the file. Replace that line with `<Scope>Files.Read.All</Scope>`, such that the scopes within `<WebApplicationInfo>` are defined as follows:
 
     ```xml
     <WebApplicationInfo>  
@@ -168,7 +168,7 @@ Complete the following steps to make these updates.
     }
     ```
 
-8. In **.\src\taskpane\taskpane.html**, find the section with `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.
+8. In **.\src\taskpane\taskpane.html**, find the element `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -226,10 +226,11 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
 7. On the **Request API permissions** panel:
 
-   a. Under **Files**, select **Files.Read.All**.
-   b. Under **User**, deselect **User.Read**.
+    a. Under **Files**, select **Files.Read.All**.
 
-8. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
+    b. Under **User**, deselect **User.Read**.
+
+    c. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
 
 ## Try it out
 

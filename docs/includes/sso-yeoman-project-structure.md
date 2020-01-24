@@ -4,7 +4,7 @@ The following files specify configuration settings for the add-in.
 
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 
-- The **./ENV** file in the root directory of the project defines constants that are used by the add-in project.
+- The **./.ENV** file in the root directory of the project defines constants that are used by the add-in project.
     > [!NOTE]
     > Some of the constants defined in this file are used to facilitate the SSO process. 
 
