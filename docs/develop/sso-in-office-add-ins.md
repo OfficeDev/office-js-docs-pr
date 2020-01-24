@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on for Office Add-ins
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/14/2020
 localization_priority: Priority
 ---
 
@@ -9,9 +9,9 @@ localization_priority: Priority
 
 Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their work or school (Office 365) account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
 
-![An image showing the sign-in process for an add-in](../images/office-host-title-bar-sign-in.png)
+![An image showing the sign-in process for an add-in](../images/sso-for-office-addins.png)
 
-### Preview Status
+## Preview Status
 
 The Single Sign-on API is currently supported in preview only. It is available to developers for experimentation; but it should not be used in a production add-in. In addition, add-ins that use SSO are not accepted in [AppSource](https://appsource.microsoft.com).
 
@@ -19,7 +19,7 @@ SSO requires Office 365 (the subscription version of Office). You should use the
 
 Not all Office applications support the SSO preview. It is available in Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 
-### Requirements and Best Practices
+## Requirements and Best Practices
 
 > [!NOTE]
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
@@ -28,7 +28,7 @@ If you are working with an **Outlook** add-in, be sure to enable Modern Authenti
 
 You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. You can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office add-in, see [Authorize external services in your Office Add-in](/office/dev/add-ins/develop/auth-external-add-ins). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](/outlook/add-ins/implement-sso-in-outlook-add-in). For samples that use Azure Active Directory as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
-### How SSO works at runtime
+## How SSO works at runtime
 
 The following diagram shows how the SSO process works.
 
@@ -49,6 +49,9 @@ This section describes the tasks involved in creating an Office Add-in that uses
 
 * [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
 * [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
+
+> [!NOTE]
+> You can use the Yeoman generator to create an SSO-enabled, Node.js Office Add-in. The Yeoman generator simplifies the process of creating an SSO-enabled add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
 ### Create the service application
 

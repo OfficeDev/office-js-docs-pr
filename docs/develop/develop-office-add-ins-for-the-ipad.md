@@ -34,7 +34,7 @@ Apply the following best practices for developing add-ins that run on iOS:
 
 -  **Use Visual Studio to develop your add-in.**
 
-    If you develop your add-in with Visual Studio, you can [set breakpoints and debug its code](../develop/create-and-debug-office-add-ins-in-visual-studio.md) in an Office host application running on Windows, before sideloading your add-in on the iPad or Mac. Because an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on both platforms.
+    If you develop your add-in with Visual Studio, you can [set breakpoints and debug its code](../develop/debug-office-add-ins-in-visual-studio.md) in an Office host application running on Windows, before sideloading your add-in on the iPad or Mac. Because an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on both platforms.
 
 -  **Specify API requirements in your add-in's manifest or with runtime checks.**
 

@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 11/20/2019
+ms.date: 01/16/2020
 localization_priority: Priority
 ---
 
@@ -9,26 +9,26 @@ localization_priority: Priority
 
 Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 
-This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and Express.
+This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and Express. For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md).
 
 > [!NOTE]
-> For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md).
+> As an alternative to completing the steps described in this article, you can use the Yeoman generator to create an SSO-enabled, Node.js Office Add-in. The Yeoman generator simplifies the process of creating an SSO-enabled add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
 ## Prerequisites
 
-* [Node and npm](https://nodejs.org/), version 10.15.0 or later.
+* [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
 
 * [Git Bash](https://git-scm.com/downloads) (or another git client)
 
 * TypeScript, version 3.6.2 or later
 
-* Office 365 (the subscription version of Office) account which you can get by joining the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365. You should use the latest monthly version and build from the Insiders channel but you need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * A code editor. We recommend Visual Studio Code.
 
 * At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
 
-* A Microsoft Azure Tenant. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Set up the starter project
 

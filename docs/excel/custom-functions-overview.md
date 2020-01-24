@@ -1,5 +1,5 @@
 ---
-ms.date: 09/26/2019
+ms.date: 12/28/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel
 ms.topic: conceptual
@@ -131,6 +131,8 @@ The following basic XML markup shows an example of the `<ExtensionPoint>` and `<
 
 > [!NOTE]
 > Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## Coauthoring
 

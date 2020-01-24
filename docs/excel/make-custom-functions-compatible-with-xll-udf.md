@@ -15,7 +15,7 @@ If you have existing Excel XLLs, you can build equivalent custom functions in an
 > - Excel on Windows (version 1904 or later)
 > - Excel on Mac (version 13.329 or later)
 > 
-> To use COM add-in and XLL UDF compatibility within Excel on the web, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account). If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> To use COM add-in and XLL UDF compatibility within Excel on the web, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account). If you don't already have an Office 365 subscription, you can a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 ## Specify equivalent XLL in the manifest
 
@@ -44,10 +44,6 @@ The following example shows how to specify both a COM add-in and an XLL as equiv
 
 > [!NOTE]
 > If an add-in declares its custom functions to be XLL compatible, changing the manifest at a later time could break a user’s workbook because it will change the file format.
-
-## Excel add-in updates
-
-Once you specify an equivalent XLL for your Excel add-in, Excel stops processing updates for your Excel add-in. The user must uninstall the XLL in order to get the latest updates for the Excel add-in.
 
 ## Custom function behavior for XLL compatible functions
 

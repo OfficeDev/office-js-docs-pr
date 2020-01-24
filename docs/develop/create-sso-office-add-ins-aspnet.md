@@ -19,11 +19,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
-* Office 365 (the subscription version of Office) account which you can get by joining the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365. You should use the latest monthly version and build from the Insiders channel but you need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
 
-* A Microsoft Azure Tenant. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Set up the starter project
 

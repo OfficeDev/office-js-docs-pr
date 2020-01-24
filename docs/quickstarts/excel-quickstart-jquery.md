@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API.
-ms.date: 12/24/2019
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -15,6 +15,8 @@ In this article, you'll walk through the process of building an Excel task pane 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # [Yeoman generator](#tab/yeomangenerator)
+
+[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
 ### Prerequisites
 
@@ -59,6 +61,10 @@ After you complete the wizard, the generator creates the project and installs su
 
     ![Excel add-in](../images/excel-quickstart-addin-3c.png)
 
+### Next steps
+
+Congratulations, you've successfully created an Excel task pane add-in! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the [Excel add-in tutorial](../tutorials/excel-tutorial.md).
+
 # [Visual Studio](#tab/visualstudio)
 
 ### Prerequisites
@@ -66,7 +72,6 @@ After you complete the wizard, the generator creates the project and installs su
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### Create the add-in project
-
 
 1. In Visual Studio, choose **Create a new project**.
 
@@ -200,14 +205,11 @@ After you complete the wizard, the generator creates the project and installs su
 
     ![Excel add-in](../images/excel-quickstart-addin-2c.png)
 
+### Next steps
+
+Congratulations, you've successfully created an Excel task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## Next steps
-
-Congratulations, you've successfully created an Excel task pane add-in! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
-
-> [!div class="nextstepaction"]
-> [Excel add-in tutorial](../tutorials/excel-tutorial.md)
 
 ## See also
 

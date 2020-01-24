@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 12/24/2019
+ms.date: 01/16/2020
 ms.prod: powerpoint
 localization_priority: Priority
 ---
@@ -15,6 +15,8 @@ In this article, you'll walk through the process of building a PowerPoint task p
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # [Yeoman generator](#tab/yeomangenerator)
+
+[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
 ### Prerequisites
 
@@ -80,6 +82,10 @@ After you complete the wizard, the generator creates the project and installs su
 4. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
 
     ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3c.png)
+
+### Next steps
+
+Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.md).
 
 # [Visual Studio](#tab/visualstudio)
 
@@ -240,14 +246,11 @@ After you complete the wizard, the generator creates the project and installs su
 
     ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3.png)
 
+### Next steps
+
+Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## Next steps
-
-Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the PowerPoint add-in tutorial.
-
-> [!div class="nextstepaction"]
-> [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.md)
 
 ## See also
 
