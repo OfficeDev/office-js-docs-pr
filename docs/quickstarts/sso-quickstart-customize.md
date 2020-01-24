@@ -43,7 +43,7 @@ To enable the add-in to read contents of the signed-in user's OneDrive for Busin
 
 - Update the task pane UI so that it accurately describes the new functionality. 
 
-Complete the following steps to make these updates.
+The following steps describe these updates.
 
 > [!TIP]
 > Start with the [Changes required for any type of add-in](#changes-required-for-any-type-of-add-in) section to complete steps that are required regardless of which Office host your add-in targets. Then complete steps in the subsequent section that corresponds to the Office host your add-in targets ([Excel](#changes-required-for-an-excel-add-in), [PowerPoint](#changes-required-for-a-powerpoint-add-in), or [Word](#changes-required-for-a-word-add-in)).
