@@ -33,9 +33,9 @@ This fruit farm sales data will be used to make a PivotTable. Each column, such 
 
 ### Hierarchies
 
-PivotTables are organized based on four hierarchy categories: row, column, data, and filter.
+PivotTables are organized based on four hierarchy categories: [row](/javascript/api/excel/excel.rowcolumnpivothierarchy), [column](/javascript/api/excel/excel.rowcolumnpivothierarchy), [data](/javascript/api/excel/excel.datapivothierarchy), and [filter](/javascript/api/excel/excel.filterpivothierarchy).
 
-The farm data shown earlier has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies and then added to row hierarchies, it only remains in the latter.
+The farm data shown earlier has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies, it cannot also be in the row, data, or filter hierarchies. If **Type** is subsequently added to row hierarchies, it is removed from the column hierarchies. This behavior is the same whether hierarchy assignment is done through the Excel UI or the Excel JavaScript APIs.
 
 Row and column hierarchies define how data will be grouped. For example, a row hierarchy of **Farms** will group together all the data sets from the same farm. The choice between row and column hierarchy defines the orientation of the PivotTable.
 
