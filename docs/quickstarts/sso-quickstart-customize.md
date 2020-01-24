@@ -129,7 +129,7 @@ If your add-in is an Excel add-in, make the following changes in **./src/helpers
           writeDataToExcel(result);
           resolve();
         } catch (error) {
-           reject(Error("Unable to write data to document. " + error.toString()));
+          reject(Error("Unable to write data to document. " + error.toString()));
         }
       });
     }
@@ -279,7 +279,6 @@ If your add-in is a Word add-in, make the following changes in **./src/helpers/d
 
     ```javascript
     function writeDataToWord(result) {
-
       return Word.run(function (context) {
         let data = [];
         let oneDriveInfo = filterOneDriveInfo(result);
