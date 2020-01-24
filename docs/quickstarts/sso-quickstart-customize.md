@@ -86,87 +86,150 @@ Complete the following steps to make these updates.
     }
     ```
 
-5. In **./src/helpers/documentHelper.js**, find the `writeDataToExcel` function and replace it with the following function:
+5. If your add-in is an Excel add-in, make the following changes in **./src/helpers/documentHelper.js**:
 
-    ```javascript
-    function writeDataToExcel(result) {
-      return Excel.run(function (context) {
-        var sheet = context.workbook.worksheets.getActiveWorksheet();
-        let data = [];
-        let oneDriveInfo = filterOneDriveInfo(result);
+    a. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
-        for (let i = 0; i < oneDriveInfo.length; i++) {
-          if (oneDriveInfo[i] !== null) {
-            let innerArray = [];
-            innerArray.push(oneDriveInfo[i]);
-            data.push(innerArray);
-          }
+        ```javascript
+        export function writeDataToOfficeDocument(result) {
+          return new OfficeExtension.Promise(function(resolve, reject) {
+            try {
+              writeDataToWord(result);
+              resolve();
+            } catch (error) {
+              reject(Error("Unable to write data to document. " + error.toString()));
+            }
+          });
         }
+        ```
 
-        const rangeAddress = `B5:B${5 + (data.length - 1)}`;
-        const range = sheet.getRange(rangeAddress);
-        range.values = data;
-        range.format.autofitColumns();
+    b. Find the `writeDataToExcel` function and replace it with the following function:
 
-        return context.sync();
-      });
-    }
-    ```
+        ```javascript
+        function writeDataToExcel(result) {
+          return Excel.run(function (context) {
+            var sheet = context.workbook.worksheets.getActiveWorksheet();
+            let data = [];
+            let oneDriveInfo = filterOneDriveInfo(result);
 
-6. In **./src/helpers/documentHelper.js**, find the `writeDataToPowerPoint` function and replace it with the following function:
+            for (let i = 0; i < oneDriveInfo.length; i++) {
+              if (oneDriveInfo[i] !== null) {
+                let innerArray = [];
+                innerArray.push(oneDriveInfo[i]);
+                data.push(innerArray);
+              }
+            }
 
-    ```javascript
-    function writeDataToPowerPoint(result) {
-      let data = [];
-      let oneDriveInfo = filterOneDriveInfo(result);
+            const rangeAddress = `B5:B${5 + (data.length - 1)}`;
+            const range = sheet.getRange(rangeAddress);
+            range.values = data;
+            range.format.autofitColumns();
 
-      for (let i = 0; i < oneDriveInfo.length; i++) {
-        if (oneDriveInfo[i] !== null) {
-        data.push(oneDriveInfo[i]);
+            return context.sync();
+          });
         }
-      }
+        ```
 
-      let objectNames = "";
-      for (let i = 0; i < data.length; i++) {
-        objectNames += data[i] + "\n";
-      }
+    c. Delete the `writeDataToPowerPoint` function.
 
-      Office.context.document.setSelectedDataAsync(
-        objectNames, 
-        function(asyncResult) {
-        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-          throw asyncResult.error.message;
+    d. Delete the `writeDataToWord` function.
+
+6. If your add-in is a PowerPoint add-in, make the following changes in **./src/helpers/documentHelper.js**:
+
+    a. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+
+        ```javascript
+        export function writeDataToOfficeDocument(result) {
+          return new OfficeExtension.Promise(function(resolve, reject) {
+            try {
+              writeDataToPowerPoint(result);
+              resolve();
+            } catch (error) {
+              reject(Error("Unable to write data to document. " + error.toString()));
+            }
+          });
         }
-      });
-    }
-    ```
+        ```
 
-7. In **./src/helpers/documentHelper.js**, find the `writeDataToWord` function and replace it with the following function:
+    b. Find the `writeDataToPowerPoint` function and replace it with the following function:
 
-    ```javascript
-    function writeDataToWord(result) {
+        ```javascript
+        function writeDataToPowerPoint(result) {
+          let data = [];
+          let oneDriveInfo = filterOneDriveInfo(result);
 
-      return Word.run(function (context) {
-        let data = [];
-        let oneDriveInfo = filterOneDriveInfo(result);
-
-        for (let i = 0; i < oneDriveInfo.length; i++) {
-          if (oneDriveInfo[i] !== null) {
+          for (let i = 0; i < oneDriveInfo.length; i++) {
+            if (oneDriveInfo[i] !== null) {
             data.push(oneDriveInfo[i]);
+            }
           }
-        }
 
-        const documentBody = context.document.body;
-        for (let i = 0; i < data.length; i++) {
-          if (data[i] !== null) {
-            documentBody.insertParagraph(data[i], "End");
+          let objectNames = "";
+          for (let i = 0; i < data.length; i++) {
+            objectNames += data[i] + "\n";
           }
-        }
 
-        return context.sync();
-      });
-    }
-    ```
+          Office.context.document.setSelectedDataAsync(
+            objectNames, 
+            function(asyncResult) {
+              if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                throw asyncResult.error.message;
+              }
+          });
+        }
+        ```
+
+    c. Delete the `writeDataToExcel` function.
+
+    d. Delete the `writeDataToWord` function.
+
+6. If your add-in is a Word add-in, make the following changes in **./src/helpers/documentHelper.js**:
+
+    a. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+
+        ```javascript
+        export function writeDataToOfficeDocument(result) {
+          return new OfficeExtension.Promise(function(resolve, reject) {
+            try {
+              writeDataToWord(result);
+              resolve();
+            } catch (error) {
+              reject(Error("Unable to write data to document. " + error.toString()));
+            }
+          });
+        }
+        ```
+
+    b. Find the `writeDataToWord` function and replace it with the following function:
+
+        ```javascript
+        function writeDataToWord(result) {
+
+          return Word.run(function (context) {
+            let data = [];
+            let oneDriveInfo = filterOneDriveInfo(result);
+
+            for (let i = 0; i < oneDriveInfo.length; i++) {
+              if (oneDriveInfo[i] !== null) {
+                data.push(oneDriveInfo[i]);
+              }
+            }
+
+            const documentBody = context.document.body;
+            for (let i = 0; i < data.length; i++) {
+              if (data[i] !== null) {
+                documentBody.insertParagraph(data[i], "End");
+              }
+            }
+
+            return context.sync();
+          });
+        }
+        ```
+
+    c. Delete the `writeDataToExcel` function.
+
+    d. Delete the `writeDataToPowerPoint` function.
 
 8. In **./src/taskpane/taskpane.html**, find the element `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.
 
