@@ -1,7 +1,7 @@
 ---
 title: Customize your Node.js SSO-enabled add-in
 description: Learn about customizing the SSO-enabled add-in that you created with the Yeoman generator.
-ms.date: 01/24/2020
+ms.date: 01/27/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
