@@ -94,7 +94,7 @@ Complete the following steps to make these updates.
     export function writeDataToOfficeDocument(result) {
       return new OfficeExtension.Promise(function(resolve, reject) {
         try {
-          writeDataToWord(result);
+          writeDataToExcel(result);
           resolve();
         } catch (error) {
           reject(Error("Unable to write data to document. " + error.toString()));
