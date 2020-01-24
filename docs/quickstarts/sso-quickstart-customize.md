@@ -19,13 +19,13 @@ The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets
 
 * At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
 
-* [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version)
+* [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 ## Review contents of the project
 
-Let's begin with a quick review of the add-in project that you've [created with the Yeoman generator](sso-quickstart.md).
+Let's begin with a quick review of the add-in project that you previously [created with the Yeoman generator](sso-quickstart.md).
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
@@ -33,7 +33,7 @@ Let's begin with a quick review of the add-in project that you've [created with 
 
 The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document. Let's change the add-in's functionality such that it gets the first 10 file and folder names from the signed-in user's OneDrive for Business and writes that information to the document. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
 
-### Update the code
+### Update code in the add-in project
 
 To enable the add-in to read contents of the signed-in user's OneDrive for Business, you'll need to:
 
