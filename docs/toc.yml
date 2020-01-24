@@ -1006,3 +1006,7 @@
   - name: Batching custom function remote calls
     href: excel/custom-functions-batching.md
     displayName: Excel, Custom Functions
+  - name: Authentication
+    href: develop/authentication-pnp.md
+  - name: Share data between custom functions and task pane
+    href: excel/custom-functions-save-state-redirect.md
