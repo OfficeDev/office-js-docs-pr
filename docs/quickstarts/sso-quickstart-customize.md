@@ -46,9 +46,9 @@ To enable the add-in to read contents of the signed-in user's OneDrive for Busin
 Complete the following steps to make these updates.
 
 > [!TIP]
-> Start with the [All add-ins](#all-add-ins) section to complete steps that are required regardless of which Office host your add-in targets. Then complete steps in the subsequent section that corresponds to the Office host your add-in targets ([Excel](#excel-add-in), [PowerPoint](#powerpoint-add-in), or [Word](#word-add-in)).
+> Start with the [Changes required for any type of add-in](#changes-required-for-any-type-of-add-in) section to complete steps that are required regardless of which Office host your add-in targets. Then complete steps in the subsequent section that corresponds to the Office host your add-in targets ([Excel](#changes-required-for-an-excel-add-in), [PowerPoint](#changes-required-for-a-powerpoint-add-in), or [Word](#changes-required-for-a-word-add-in)).
 
-#### All add-ins
+### Changes required for any type of add-in
 
 Complete the following steps for your add-in. These steps are the same, regardless of which Office host your add-in targets.
 
@@ -116,191 +116,191 @@ Complete the following steps for your add-in. These steps are the same, regardle
     </li>
     ```
 
-#### Excel add-in
+### Changes required for an Excel add-in
 
 If your add-in is an Excel add-in, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
-```javascript
-export function writeDataToOfficeDocument(result) {
-  return new OfficeExtension.Promise(function(resolve, reject) {
-    try {
-      writeDataToExcel(result);
-      resolve();
-    } catch (error) {
-      reject(Error("Unable to write data to document. " + error.toString()));
+    ```javascript
+    export function writeDataToOfficeDocument(result) {
+      return new OfficeExtension.Promise(function(resolve, reject) {
+        try {
+          writeDataToExcel(result);
+          resolve();
+        } catch (error) {
+           reject(Error("Unable to write data to document. " + error.toString()));
+        }
+      });
     }
-  });
-}
-```
+    ```
 
 2. Find the `filterUserProfileInfo` function and replace it with the following function:
 
-```javascript
-function filterOneDriveInfo(result) {
-  let itemNames = [];
-  let oneDriveItems = result['value'];
-  for (let item of oneDriveItems) {
-    itemNames.push(item['name']);
-  }
-  return itemNames;
-}
-```
+    ```javascript
+    function filterOneDriveInfo(result) {
+      let itemNames = [];
+      let oneDriveItems = result['value'];
+      for (let item of oneDriveItems) {
+        itemNames.push(item['name']);
+      }
+      return itemNames;
+    }
+    ```
 
 3. Find the `writeDataToExcel` function and replace it with the following function:
 
-```javascript
-function writeDataToExcel(result) {
-  return Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    let data = [];
-    let oneDriveInfo = filterOneDriveInfo(result);
+    ```javascript
+    function writeDataToExcel(result) {
+      return Excel.run(function (context) {
+        var sheet = context.workbook.worksheets.getActiveWorksheet();
+        let data = [];
+        let oneDriveInfo = filterOneDriveInfo(result);
 
-    for (let i = 0; i < oneDriveInfo.length; i++) {
-      if (oneDriveInfo[i] !== null) {
-        let innerArray = [];
-        innerArray.push(oneDriveInfo[i]);
-        data.push(innerArray);
-      }
+        for (let i = 0; i < oneDriveInfo.length; i++) {
+          if (oneDriveInfo[i] !== null) {
+            let innerArray = [];
+            innerArray.push(oneDriveInfo[i]);
+            data.push(innerArray);
+          }
+        }
+
+        const rangeAddress = `B5:B${5 + (data.length - 1)}`;
+        const range = sheet.getRange(rangeAddress);
+        range.values = data;
+        range.format.autofitColumns();
+
+        return context.sync();
+      });
     }
-
-    const rangeAddress = `B5:B${5 + (data.length - 1)}`;
-    const range = sheet.getRange(rangeAddress);
-    range.values = data;
-    range.format.autofitColumns();
-
-    return context.sync();
-  });
-}
-```
+    ```
 
 4. Delete the `writeDataToPowerPoint` function.
 
 5. Delete the `writeDataToWord` function.
 
-#### PowerPoint add-in
+### Changes required for a PowerPoint add-in
 
 If your add-in is a PowerPoint add-in, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
-```javascript
-export function writeDataToOfficeDocument(result) {
-  return new OfficeExtension.Promise(function(resolve, reject) {
-    try {
-      writeDataToPowerPoint(result);
-      resolve();
-    } catch (error) {
-      reject(Error("Unable to write data to document. " + error.toString()));
+    ```javascript
+    export function writeDataToOfficeDocument(result) {
+      return new OfficeExtension.Promise(function(resolve, reject) {
+        try {
+          writeDataToPowerPoint(result);
+          resolve();
+        } catch (error) {
+          reject(Error("Unable to write data to document. " + error.toString()));
+        }
+      });
     }
-  });
-}
-```
+    ```
 
 2. Find the `filterUserProfileInfo` function and replace it with the following function:
 
-```javascript
-function filterOneDriveInfo(result) {
-  let itemNames = [];
-  let oneDriveItems = result['value'];
-  for (let item of oneDriveItems) {
-    itemNames.push(item['name']);
-  }
-  return itemNames;
-}
-```
+    ```javascript
+    function filterOneDriveInfo(result) {
+      let itemNames = [];
+      let oneDriveItems = result['value'];
+      for (let item of oneDriveItems) {
+        itemNames.push(item['name']);
+      }
+      return itemNames;
+    }
+    ```
 
 3. Find the `writeDataToPowerPoint` function and replace it with the following function:
 
-```javascript
-function writeDataToPowerPoint(result) {
-  let data = [];
-  let oneDriveInfo = filterOneDriveInfo(result);
+    ```javascript
+    function writeDataToPowerPoint(result) {
+      let data = [];
+      let oneDriveInfo = filterOneDriveInfo(result);
 
-  for (let i = 0; i < oneDriveInfo.length; i++) {
-    if (oneDriveInfo[i] !== null) {
-      data.push(oneDriveInfo[i]);
-    }
-  }
-
-  let objectNames = "";
-  for (let i = 0; i < data.length; i++) {
-    objectNames += data[i] + "\n";
-  }
-
-  Office.context.document.setSelectedDataAsync(
-    objectNames, 
-    function(asyncResult) {
-      if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-        throw asyncResult.error.message;
+      for (let i = 0; i < oneDriveInfo.length; i++) {
+        if (oneDriveInfo[i] !== null) {
+          data.push(oneDriveInfo[i]);
+        }
       }
-  });
-}
-```
+
+      let objectNames = "";
+      for (let i = 0; i < data.length; i++) {
+        objectNames += data[i] + "\n";
+      }
+
+      Office.context.document.setSelectedDataAsync(
+        objectNames, 
+        function(asyncResult) {
+          if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            throw asyncResult.error.message;
+          }
+      });
+    }
+    ```
 
 4. Delete the `writeDataToExcel` function.
 
 5. Delete the `writeDataToWord` function.
 
-#### Word add-in 
+### Changes required for a Word add-in 
 
 If your add-in is a Word add-in, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
-```javascript
-export function writeDataToOfficeDocument(result) {
-  return new OfficeExtension.Promise(function(resolve, reject) {
-    try {
-      writeDataToWord(result);
-      resolve();
-    } catch (error) {
-      reject(Error("Unable to write data to document. " + error.toString()));
+    ```javascript
+    export function writeDataToOfficeDocument(result) {
+      return new OfficeExtension.Promise(function(resolve, reject) {
+        try {
+          writeDataToWord(result);
+          resolve();
+        } catch (error) {
+          reject(Error("Unable to write data to document. " + error.toString()));
+        }
+      });
     }
-  });
-}
-```
+    ```
 
 2. Find the `filterUserProfileInfo` function and replace it with the following function:
 
-```javascript
-function filterOneDriveInfo(result) {
-  let itemNames = [];
-  let oneDriveItems = result['value'];
-  for (let item of oneDriveItems) {
-    itemNames.push(item['name']);
-  }
-  return itemNames;
-}
-```
+    ```javascript
+    function filterOneDriveInfo(result) {
+      let itemNames = [];
+      let oneDriveItems = result['value'];
+      for (let item of oneDriveItems) {
+        itemNames.push(item['name']);
+      }
+      return itemNames;
+    }
+    ```
 
 3. Find the `writeDataToWord` function and replace it with the following function:
 
-```javascript
-function writeDataToWord(result) {
+    ```javascript
+    function writeDataToWord(result) {
 
-  return Word.run(function (context) {
-    let data = [];
-    let oneDriveInfo = filterOneDriveInfo(result);
+      return Word.run(function (context) {
+        let data = [];
+        let oneDriveInfo = filterOneDriveInfo(result);
 
-    for (let i = 0; i < oneDriveInfo.length; i++) {
-      if (oneDriveInfo[i] !== null) {
-        data.push(oneDriveInfo[i]);
-      }
+        for (let i = 0; i < oneDriveInfo.length; i++) {
+          if (oneDriveInfo[i] !== null) {
+            data.push(oneDriveInfo[i]);
+          }
+        }
+
+        const documentBody = context.document.body;
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] !== null) {
+            documentBody.insertParagraph(data[i], "End");
+          }
+        }
+
+        return context.sync();
+      });
     }
-
-    const documentBody = context.document.body;
-    for (let i = 0; i < data.length; i++) {
-      if (data[i] !== null) {
-        documentBody.insertParagraph(data[i], "End");
-      }
-    }
-
-    return context.sync();
-  });
-}
-```
+    ```
 
 4. Delete the `writeDataToExcel` function.
 
