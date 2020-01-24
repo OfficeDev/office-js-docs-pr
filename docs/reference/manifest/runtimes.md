@@ -1,7 +1,7 @@
 ---
 title: Runtimes in the manifest file
 description: ''
-ms.date: 01/06/2020
+ms.date: 01/24/2020
 localization_priority: Normal
 ---
 
@@ -27,4 +27,4 @@ This feature is in preview. Specifies the runtime of your add-in and allows cust
 
 ## See also
 
--[Runtimes](runtimes.md)
+-[Runtime](runtime.md)
