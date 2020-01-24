@@ -13,7 +13,7 @@ localization_priority: Normal
 Your code should handle two categories of events:
 
 - Errors returned by the call of `displayDialogAsync` because the dialog box cannot be created.
-- Errors, and other events, in the dialog window.
+- Errors, and other events, in the dialog box.
 
 ## Errors from displayDialogAsync
 
@@ -26,7 +26,7 @@ In addition to general platform and system errors, four errors are specific to c
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time.|
 |12009|The user chose to ignore the dialog box. This error can occur in Office on the web, where users may choose not to allow an add-in to present a dialog. For more information, see [Handling pop-up blockers with Office on the web](dialog-best-practices.md#handling-pop-up-blockers-with-office-on-the-web).|
 
-When `displayDialogAsync` is called, it always passes an [AsyncResult](/javascript/api/office/office.asyncresult) object to its callback function. When the call is successful - that is, the dialog window is opened - the `value` property of the `AsyncResult` object is a [Dialog](/javascript/api/office/office.dialog) object. An example of this is in [Send information from the dialog box to the host page](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). When the call to `displayDialogAsync` fails, the window is not created, the `status` property of the `AsyncResult` object is set to `Office.AsyncResultStatus.Failed`, and the `error` property of the object is populated. You should always have a callback that tests the `status` and responds when it's an error. For an example that simply reports the error message regardless of its code number, see the following code. (The `showNotification` function, not defined in this article, either displays or logs the error. For an example of how you might implement this function within your add-in, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
+When `displayDialogAsync` is called, it passes an [AsyncResult](/javascript/api/office/office.asyncresult) object to its callback function. When the call is successful - that is, the dialog box is opened - the `value` property of the `AsyncResult` object is a [Dialog](/javascript/api/office/office.dialog) object. An example of this is in the article: [Send information from the dialog box to the host page](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). When the call to `displayDialogAsync` fails, the dialog box is not created, the `status` property of the `AsyncResult` object is set to `Office.AsyncResultStatus.Failed`, and the `error` property of the object is populated. You should always provide a callback that tests the `status` and responds when it's an error. For an example that simply reports the error message regardless of its code number, see the following code. (The `showNotification` function, not defined in this article, either displays or logs the error. For an example of how you might implement this function within your add-in, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
 
 ```js
 var dialog;
@@ -43,13 +43,13 @@ function (asyncResult) {
 
 ## Errors and events in the dialog window
 
-Three errors and events in the dialog box will trigger a `DialogEventReceived` event in the host page.
+Three errors and events in the dialog box will raise a `DialogEventReceived` event in the host page.
 
 |Code number|Meaning|
 |:-----|:-----|
 |12002|One of the following:<br> - No page exists at the URL that was passed to `displayDialogAsync`.<br> - The page that was passed to `displayDialogAsync` loaded, but the dialog box was then redirected to a page that it cannot find or load, or it has been directed to a URL with invalid syntax.|
 |12003|The dialog box was directed to a URL with the HTTP protocol. HTTPS is required.|
-|12006|The dialog box was closed, usually because the user chooses the **X** button.|
+|12006|The dialog box was closed, usually because the user chose the **Close** button **X**.|
 
 Your code can assign a handler for the `DialogEventReceived` event in the call to `displayDialogAsync`. The following is a simple example:
 

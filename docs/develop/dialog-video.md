@@ -12,7 +12,7 @@ localization_priority: Normal
 
 To show a video in a dialog box with the Office Dialog API take these steps:
 
-1. Create a page whose only content is an iframe. (The page must be in the same domain as the host page.) The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTP**S**. In this article we'll call this page "video.dialogbox.html". The following is an example of the markup:
+1. Create a page whose only content is an iframe. (The page must be in the same domain as the host page.) The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTPS. In this article we'll call this page "video.dialogbox.html". The following is an example of the markup:
 
     ```HTML
     <iframe class="ms-firstrun-video__player"  width="640" height="360"
