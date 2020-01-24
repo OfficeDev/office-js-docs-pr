@@ -161,6 +161,14 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ---
 
+### RibbonAPI
+
+|**Office hosts**|**Methods in set**|
+|:-----|:-----|
+| Excel on Windows<br>Excel on the web|Office.UI.getRibbon<br>Ribbon.requestUpdate|
+
+---
+
 ### Selection
 
 |**Office hosts**|**Methods in set**|
