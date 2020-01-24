@@ -45,7 +45,7 @@ To enable the add-in to read contents of the signed-in user's OneDrive for Busin
 
 Complete the following steps to make these updates.
 
-1. In the **.\.ENV** file:
+1. In the **./.ENV** file:
 
     a. Replace `GRAPH_URL_SEGMENT=/me` with the following: `GRAPH_URL_SEGMENT=/me/drive/root/children`
 
@@ -53,7 +53,7 @@ Complete the following steps to make these updates.
 
     c. Replace `SCOPE=User.Read` with the following: `SCOPE=Files.Read.All`
 
-2. In **.\manifest.xml**, find the line `<Scope>User.Read</Scope>` within the `<WebApplicationInfo>` element near the end of the file. Replace that line with `<Scope>Files.Read.All</Scope>`, such that the scopes within `<WebApplicationInfo>` are defined as follows:
+2. In **./manifest.xml**, find the line `<Scope>User.Read</Scope>` within the `<WebApplicationInfo>` element near the end of the file. Replace that line with `<Scope>Files.Read.All</Scope>`, such that the scopes within `<WebApplicationInfo>` are defined as follows:
 
     ```xml
     <WebApplicationInfo>  
@@ -65,7 +65,7 @@ Complete the following steps to make these updates.
     </WebApplicationInfo> 
     ```
 
-3. In **.\src\helpers\fallbackauthdialog.js**, find the string `https://graph.microsoft.com/User.Read` and replace it with the string `https://graph.microsoft.com/Files.Read.All`, such that `requestObj` is defined as follows:
+3. In **./src/helpers/fallbackauthdialog.js**, find the string `https://graph.microsoft.com/User.Read` and replace it with the string `https://graph.microsoft.com/Files.Read.All`, such that `requestObj` is defined as follows:
 
     ```javascript
     var requestObj = {
@@ -73,7 +73,7 @@ Complete the following steps to make these updates.
     };
     ```
 
-4. In **.\src\helpers\documentHelper.js**, find the `filterUserProfileInfo` function and replace it with the following function:
+4. In **./src/helpers/documentHelper.js**, find the `filterUserProfileInfo` function and replace it with the following function:
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -86,7 +86,7 @@ Complete the following steps to make these updates.
     }
     ```
 
-5. In **.\src\helpers\documentHelper.js**, find the `writeDataToExcel` function and replace it with the following function:
+5. In **./src/helpers/documentHelper.js**, find the `writeDataToExcel` function and replace it with the following function:
 
     ```javascript
     function writeDataToExcel(result) {
@@ -113,7 +113,7 @@ Complete the following steps to make these updates.
     }
     ```
 
-6. In **.\src\helpers\documentHelper.js**, find the `writeDataToPowerPoint` function and replace it with the following function:
+6. In **./src/helpers/documentHelper.js**, find the `writeDataToPowerPoint` function and replace it with the following function:
 
     ```javascript
     function writeDataToPowerPoint(result) {
@@ -141,7 +141,7 @@ Complete the following steps to make these updates.
     }
     ```
 
-7. In **.\src\helpers\documentHelper.js**, find the `writeDataToWord` function and replace it with the following function:
+7. In **./src/helpers/documentHelper.js**, find the `writeDataToWord` function and replace it with the following function:
 
     ```javascript
     function writeDataToWord(result) {
@@ -168,7 +168,7 @@ Complete the following steps to make these updates.
     }
     ```
 
-8. In **.\src\taskpane\taskpane.html**, find the element `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.
+8. In **./src/taskpane/taskpane.html**, find the element `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -178,7 +178,7 @@ Complete the following steps to make these updates.
     </section>
     ```
 
-9. In **.\src\taskpane\taskpane.html**, find and replace both occurrences of the string `Get My User Profile Information` with the string `Read my OneDrive for Business`.
+9. In **./src/taskpane/taskpane.html**, find and replace both occurrences of the string `Get My User Profile Information` with the string `Read my OneDrive for Business`.
 
     ```html
     <li class="ms-ListItem">
@@ -195,7 +195,7 @@ Complete the following steps to make these updates.
     </p>
     ```
 
-10. In **.\src\taskpane\taskpane.html**, find and replace the string `Your user profile information will be displayed in the document.` with the string `The names of objects in your OneDrive for Business will be displayed in the document.`.
+10. In **./src/taskpane/taskpane.html**, find and replace the string `Your user profile information will be displayed in the document.` with the string `The names of objects in your OneDrive for Business will be displayed in the document.`.
 
     ```html
     <li class="ms-ListItem">
