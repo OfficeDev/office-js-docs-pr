@@ -39,7 +39,7 @@ To enable the add-in to read contents of the signed-in user's OneDrive for Busin
 
 - Update the code that references the Microsoft Graph URL, parameters, and required access scope.
 
-- Update the task pane UI so that it accurately describes the new functionality. 
+- Update the code that defines the task pane UI, so that it accurately describes the new functionality. 
 
 - Update the code that parses the response from Microsoft Graph and writes it to the document.
 
