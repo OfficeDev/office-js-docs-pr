@@ -1,16 +1,16 @@
 ---
-title: Use the Office Dialog to show a video
-description: 'Shows how to open a video in the Office Dialog'
-ms.date: 01/16/2020
+title: Use the Office dialog box to show a video
+description: 'Shows how to open a video in the Office dialog box'
+ms.date: 01/25/2020
 localization_priority: Normal
 ---
 
-# Use the Office Dialog to show a video
+# Use the Office dialog box to show a video
 
 > [!NOTE]
-> This article presupposes that you are familiar with the basics of using the Office Dialog as described in [Use the Dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
+> This article presupposes that you are familiar with the basics of using the Office dialog box as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 
-To show a video in a dialog box with the Office Dialog API take these steps:
+To show a video in a dialog box with the Office dialog API take these steps:
 
 1. Create a page whose only content is an iframe. (The page must be in the same domain as the host page.) The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTPS. In this article we'll call this page "video.dialogbox.html". The following is an example of the markup:
 
@@ -22,7 +22,7 @@ To show a video in a dialog box with the Office Dialog API take these steps:
     ```
 
 2. Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
-3. If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog](dialog-handle-errors-events.md).
+3. If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the article [Errors and events in the Office dialog box](dialog-handle-errors-events.md).
 
 For a sample that shows a video in a dialog box, see the [video placemat design pattern](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
 
