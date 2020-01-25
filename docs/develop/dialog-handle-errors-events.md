@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Handling errors and events with the Office dialog box
 
+This article describes how to trap and handle errors when opening the dialog box and errors that happen inside the dialog box.
+
 > [!NOTE]
 > This article presupposes that you are familiar with the basics of using the Office dialog API as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 
@@ -43,7 +45,7 @@ function (asyncResult) {
 
 ## Errors and events in the dialog box
 
-Three errors and events in the dialog box will raise a `DialogEventReceived` event in the host page.
+Three errors and events in the dialog box will raise a `DialogEventReceived` event in the host page. (For a reminder of what a host page is, see [Open a dialog box from a host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
 
 |Code number|Meaning|
 |:-----|:-----|

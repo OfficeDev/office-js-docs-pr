@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Best practices and rules for the Office dialog API
 
+This article provides rules, gotchas, and best practices for the Office dialog API, including best practices for designing the UI of a dialog and using the API with in a single-page application (SPA)
+
 > [!NOTE]
 > This article presupposes that you are familiar with the basics of using the Office dialog API as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 
@@ -32,14 +34,13 @@ For best practices in dialog box design, see [Dialog boxes in Office Add-ins](..
 
 ### Handling pop-up blockers with Office on the web
 
-Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. The browser's pop-up blocker can be circumvented if the user of your add-in first agrees to a prompt from the add-in. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) has the `promptBeforeOpen` property to trigger such a prompt. `promptBeforeOpen` is a boolean value with the following meaning:
-
- - `true` - The framework displays a prompt to trigger the navigation and avoid the browser's pop-up blocker. 
- - `false` - The dialog box will not be shown and the developer must handle pop-ups (by providing a user interface artifact to trigger the navigation). 
- 
-The prompt looks similar to the following screenshot:
+Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. Office on the web has a feature that enables your add-in's dialog boxes to be an exception to the browser's pop-up blocker. By default, Office on the web will do this automatically. When your code calls the `displayDialogAsync` method, then Office on the web will open a prompt similar to the following.
 
 ![The prompt that an add-in can generate to avoid in-browser pop-up blockers.](../images/dialog-prompt-before-open.png)
+
+If the user chooses **Allow**, the Office dialog box opens. If the user chooses **Ignore**, the prompt closes and the Office dialog box does not open. Instead, the `displayDialogAsync` method returns error 12009. Your code should catch this error and either provide an alternate experience that does not require a dialog, or display a message to the user advising that the add-in requires them to allow the dialog. (For more about 12007, see [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
+
+If, for any reason, you want to turn off this feature, then your code has to opt out. It makes this request with the [DialogOptions](/javascript/api/office/office.dialogoptions) object that is passed to the `displayDialogAsync` method. Specifically, the object should include `promptBeforeOpen: false`. When this option is set to false, Office on the web will not prompt the user with the option of letting the add-in open a dialog, and the Office dialog will not open.
 
 ### Do not use the \_host\_info value
 
@@ -54,7 +55,7 @@ If your add-in uses client-side routing, as single-page applications (SPAs) typi
 
 #### Problems with SPAs and the Office dialog API
 
-The Office dialog box is in a new window with its own instance of the JavaScript engine, and hence it's own complete execution context. If you pass a route, your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog box. So this technique downloads and launches a second instance of your application in the  box window, which partially defeats the purpose of an SPA. In addition, code that changes variables in the dialog box window does not change the task pane version of the same variables. Similarly, the dialog box window has its own session storage, which is not accessible from code in the task pane. The dialog box and the host page on which `displayDialogAsync` was called look like two different clients to your server.
+The Office dialog box is in a new window with its own instance of the JavaScript engine, and hence it's own complete execution context. If you pass a route, your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog box. So this technique downloads and launches a second instance of your application in the  box window, which partially defeats the purpose of an SPA. In addition, code that changes variables in the dialog box window does not change the task pane version of the same variables. Similarly, the dialog box window has its own session storage, which is not accessible from code in the task pane. The dialog box and the host page on which `displayDialogAsync` was called look like two different clients to your server. (For a reminder of what a host page is, see [Open a dialog box from a host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
 
 So, if you passed a route to the `displayDialogAsync` method, you wouldn't really have an SPA; you'd have *two instances of the same SPA*. Moreover, much of the code in the task pane instance would never be used in that instance and much of the code in the dialog box instance would never be used in that instance. It would be like having two SPAs in the same bundle.
 

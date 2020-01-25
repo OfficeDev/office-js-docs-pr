@@ -5,7 +5,7 @@ ms.date: 01/25/2020
 localization_priority: Priority
 ---
 
-# Use the Office dialog API in your Office Add-ins
+# Use the Office dialog API in Office Add-ins
 
 You can use the [Office dialog API](/javascript/api/office/office.ui) to open dialog boxes in your Office Add-in. This article provides guidance for using the dialog API in your Office Add-in.
 
@@ -27,15 +27,17 @@ The following image shows an example of a dialog box.
 
 ![Add-in commands](../images/auth-o-dialog-open.png)
 
-Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the host Office application and with the host page in the task pane, if there is one.
+Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the host Office application and with the page in the task pane, if there is one.
 
 ## Working with the Dialog API
 
 The Office JavaScript APIs include a [Dialog](/javascript/api/office/office.dialog) object and two functions in the [Office.context.ui namespace](/javascript/api/office/office.ui).
 
-### Open a dialog box
+### Open a dialog box from a host page
 
-To open a dialog box, your code in the host page, typically a page in a task pane, calls the [displayDialogAsync](/javascript/api/office/office.ui) method and passes to it the URL of the resource that you want to open. This is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog box. The following code is a simple example:
+To open a dialog box, your code, typically a page in a task pane, calls the [displayDialogAsync](/javascript/api/office/office.ui) method and passes to it the URL of the resource that you want to open. The page on which this method is called is known as the "host page". For example, if you call this method in script on index.html in a task pane, then index.html is the host page of the dialog box that the method opens. 
+
+The resource that is opened in the dialog box is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog box. The following code is a simple example:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
