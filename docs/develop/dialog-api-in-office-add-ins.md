@@ -29,13 +29,11 @@ The following image shows an example of a dialog box.
 
 Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the host Office application and with the page in the task pane, if there is one.
 
-## Working with the Dialog API
+## Open a dialog box from a host page
 
 The Office JavaScript APIs include a [Dialog](/javascript/api/office/office.dialog) object and two functions in the [Office.context.ui namespace](/javascript/api/office/office.ui).
 
-### Open a dialog box from a host page
-
-To open a dialog box, your code, typically a page in a task pane, calls the [displayDialogAsync](/javascript/api/office/office.ui) method and passes to it the URL of the resource that you want to open. The page on which this method is called is known as the "host page". For example, if you call this method in script on index.html in a task pane, then index.html is the host page of the dialog box that the method opens. 
+To open a dialog box, your code, typically a page in a task pane, calls the [displayDialogAsync](/javascript/api/office/office.ui) method and passes to it the URL of the resource that you want to open. The page on which this method is called is known as the "host page". For example, if you call this method in script on index.html in a task pane, then index.html is the host page of the dialog box that the method opens.
 
 The resource that is opened in the dialog box is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog box. The following code is a simple example:
 
@@ -78,7 +76,7 @@ The default value is `false`, which is the same as omitting the property entirel
 > [!NOTE]
 > You should **not** use `displayInIframe: true` if the dialog box will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
 
-### Send information from the dialog box to the host page
+## Send information from the dialog box to the host page
 
 The dialog box cannot communicate with the host page in the task pane unless:
 
@@ -164,7 +162,7 @@ function processMessage(arg) {
 
 For an example of an add-in that does this, see the [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) sample.
 
-#### Conditional messaging
+### Conditional messaging
 
 Because you can send multiple `messageParent` calls from the dialog box, but you have only one handler in the host page for the `DialogMessageReceived` event, the handler must use conditional logic to distinguish different messages. For example, if the dialog box prompts a user to sign in to an identity provider such as Microsoft Account or Google, it sends the user's profile as a message. If authentication fails, the dialog box sends error information to the host page, as in the following example:
 
@@ -206,7 +204,7 @@ function processMessage(arg) {
 > [!NOTE]
 > The `showNotification` implementation is not shown in the sample code provided by this article. For an example of how you might implement this function within your add-in, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-### Pass information to the dialog box
+## Pass information to the dialog box
 
 Sometimes the host page needs to pass information to the dialog box. You can do this in two primary ways:
 
@@ -216,7 +214,7 @@ Sometimes the host page needs to pass information to the dialog box. You can do 
 > [!NOTE]
 > \* There is a bug that will effect your strategy for token handling. If the add-in is running in **Office on the web** in either the Safari or Edge browser, the dialog box and task pane do not share the same Local Storage, so it cannot be used to communicate between them.
 
-#### Use local storage
+### Use local storage
 
 To use local storage, your code calls the `setItem` method of the `window.localStorage` object in the host page before the `displayDialogAsync` call, as in the following example:
 
@@ -232,7 +230,7 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-#### Use query parameters
+### Use query parameters
 
 The following example shows how to pass data with a query parameter:
 
@@ -247,7 +245,7 @@ Code in your dialog box can parse the URL and read the parameter value.
 > [!NOTE]
 > Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
 
-### Closing the dialog box
+## Closing the dialog box
 
 You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example:
 
@@ -272,19 +270,21 @@ function processMessage(arg) {
 
 Even when you don't have your own close-dialog UI, an end user can close the dialog box by choosing the **X** in the upper-right corner. This action triggers the `DialogEventReceived` event. If your host pane needs to know when this happens, it should declare a handler for this event. See the section [Errors and events in the dialog box](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-box) for details.
 
-## Use the Dialog API to show a video
+## Advanced topics and special scenarios
+
+### Use the Dialog API to show a video
 
 See [Use the Office dialog box to show a video](dialog-video.md).
 
-## Use the Dialog APIs in an authentication flow
+### Use the Dialog APIs in an authentication flow
 
 See [Authenticate with the Office dialog API](auth-with-office-dialog-api.md).
 
-## Using the Office dialog API with single-page applications and client-side routing
+### Using the Office dialog API with single-page applications and client-side routing
 
 SPAs and client-side routing need to be handled with care when you are using the Office dialog API. Please see [Best practices for using the Office dialog API in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-api-in-an-spa).
 
-## Error and event handling
+### Error and event handling
 
 See [Handling errors and events in the Office dialog box](dialog-handle-errors-events.md).
 
