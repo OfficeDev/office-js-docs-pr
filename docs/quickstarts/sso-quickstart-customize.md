@@ -183,7 +183,7 @@ If your add-in is an Excel add-in, make the following changes in **./src/helpers
 
 ### Changes required for an Outlook add-in
 
-If your add-in is an Excel add-in, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is an Outlook add-in, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
