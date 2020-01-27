@@ -216,7 +216,7 @@ If your add-in is an Excel add-in, make the following changes in **./src/helpers
 3. Find the `writeDataToOutlook` function and replace it with the following function:
 
     ```javascript
-    function writeDataToOutlookExcel(result) {
+    function writeDataToOutlook(result) {
       return Excel.run(function (context) {
         let data = [];
         let oneDriveInfo = filterOneDriveInfo(result);
@@ -407,10 +407,10 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
 ### Excel, Word, and PowerPoint
 
-If you've created an Excel, Word, or PowerPoint add-in, complete the following steps to try it out.
+If your add-in is an Excel, Word, or PowerPoint add-in, complete the following steps to try it out.
 
 > [!NOTE]
-> If you've created an Outlook add-in, skip this section and complete the steps in the [Outlook](#outlook) section instead.
+> If your add-in is an Outlook add-in, skip this section and complete the steps in the [Outlook](#outlook) section instead.
 
 1. In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 

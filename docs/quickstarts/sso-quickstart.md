@@ -83,10 +83,10 @@ At this point, your add-in project has been created and contains the code that's
 
 ### Excel, Word, and PowerPoint
 
-If you've created an Excel, Word, or PowerPoint add-in, complete the following steps to try it out.
+If your add-in is an Excel, Word, or PowerPoint add-in, complete the following steps to try it out.
 
 > [!NOTE]
-> If you've created an Outlook add-in, skip this section and complete the steps in the [Outlook](#outlook) section instead.
+> If your add-in is an Outlook add-in, skip this section and complete the steps in the [Outlook](#outlook) section instead.
 
 1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
@@ -121,10 +121,10 @@ If you've created an Excel, Word, or PowerPoint add-in, complete the following s
 
 ### Outlook
 
-If you've created an Outlook add-in, complete the following steps to try it out.
+If your add-in is an Outlook add-in, complete the following steps to try it out.
 
 > [!NOTE]
-> If you've created an Excel, Word, or PowerPoint add-in, complete the steps in the previous [Excel, Word, and PowerPoint](#excel-word-and-powerpoint) section instead.
+> If your add-in is an Excel, Word, or PowerPoint add-in, complete the steps in the previous [Excel, Word, and PowerPoint](#excel-word-and-powerpoint) section instead.
 
 1. When the SSO configuration process completes, run the following command to build the project and start the local web server.
 
