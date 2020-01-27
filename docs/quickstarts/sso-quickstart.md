@@ -1,14 +1,14 @@
 ---
 title: Use the Yeoman generator to create an Office Add-in that uses SSO (preview)
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on (preview).
-ms.date: 01/16/2020
+ms.date: 01/27/2020
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
 
 # Use the Yeoman generator to create an Office Add-in that uses single sign-on (preview)
 
-In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Word, or PowerPoint that uses single sign-on (SSO) when possible, and uses an alternate method of user authentication when SSO is not supported.
+In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Outlook, Word, or PowerPoint that uses single sign-on (SSO) when possible, and uses an alternate method of user authentication when SSO is not supported.
 
 > [!TIP]
 > Before you attempt to complete this quick start, review [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md) to learn basic concepts about SSO in Office Add-ins. 
@@ -32,7 +32,7 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
 ## Create the add-in project
 
 > [!TIP]
-> The Yeoman generator can create an SSO-enabled Office Add-in for Excel, Word, or PowerPoint, and can be created with script type of JavaScript or TypeScript. The following instructions specify `JavaScript` and `Excel`, but you should choose the script type and Office client application that best suits your scenario.
+> The Yeoman generator can create an SSO-enabled Office Add-in for Excel, Outlook, Word, or PowerPoint, and can be created with script type of JavaScript or TypeScript. The following instructions specify `JavaScript` and `Excel`, but you should choose the script type and Office client application that best suits your scenario.
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -95,6 +95,12 @@ At this point, your add-in project has been created and contains the code that's
 
 ## Try it out
 
+If you've created an Excel, Word, or PowerPoint add-in, complete the steps in the following section to try it out. If you've created an Outlook add-in, complete the steps in the [Outlook](#outlook) section instead.
+
+### Excel, Word, and PowerPoint
+
+Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
+
 1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
     > [!NOTE]
@@ -112,9 +118,6 @@ At this point, your add-in project has been created and contains the code that's
 
 4. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process. 
 
-    > [!NOTE] 
-    > If you're not already signed in to Office at this point, you'll be prompted to sign in. As described previously, you should sign in with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso), if you want SSO to succeed.
-
 5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
@@ -125,6 +128,40 @@ At this point, your add-in project has been created and contains the code that's
 6. The add-in retrieves profile information for the signed-in user and writes it to the document. The following image shows an example of profile information written to an Excel worksheet.
 
     ![User profile information in Excel worksheet](../images/sso-user-profile-info-excel.png)
+
+### Outlook
+
+Complete the following steps to try out an Outlook add-in.
+
+1. When the SSO configuration process completes, run the following command to build the project and start the local web server.
+
+    > [!NOTE]
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
+
+    ```command&nbsp;line
+    npm start
+    ```
+
+2. Follow the instructions in [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed. 
+
+3. In Outlook, compose a new message.
+
+4. In the message compose window, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    ![Outlook add-in button](../images/outlook-sso-ribbon-button.png)
+
+5. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process. 
+
+6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
+
+    ![Permissions request dialog](../images/sso-permissions-request.png)
+
+    > [!NOTE]
+    > After a user accepts this permissions request, they won't be prompted again in the future.
+
+7. The add-in retrieves profile information for the signed-in user and writes it to the body of the email message. 
+
+    ![User profile information in Outlook message](../images/sso-user-profile-info-outlook.png)
 
 ## Next steps
 
