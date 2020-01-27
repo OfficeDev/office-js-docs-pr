@@ -140,7 +140,7 @@ If you've created an Outlook add-in, complete the following steps to try it out.
 > [!NOTE]
 > If you've created an Excel, Word, or PowerPoint add-in, complete the steps in the previous [Excel, Word, and PowerPoint](#excel-word-and-powerpoint) section instead.
 
-1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
+1. When the SSO configuration process completes, run the following command to build the project and start the local web server.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
@@ -169,7 +169,7 @@ If you've created an Outlook add-in, complete the following steps to try it out.
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
-7. The add-in retrieves profile information for the signed-in user and writes it to the body of the email message. The following image shows an example of profile information written to an Excel worksheet.
+7. The add-in retrieves profile information for the signed-in user and writes it to the body of the email message. 
 
     ![User profile information in Outlook message](../images/sso-user-profile-info-outlook.png)
 
