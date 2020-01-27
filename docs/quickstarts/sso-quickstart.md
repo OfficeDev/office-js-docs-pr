@@ -95,12 +95,11 @@ At this point, your add-in project has been created and contains the code that's
 
 ## Try it out
 
+If you've created an Excel, Word, or PowerPoint add-in, complete the steps in the following section to try it out. If you've created an Outlook add-in, complete the steps in the [Outlook](#outlook) section instead.
+
 ### Excel, Word, and PowerPoint
 
-If you've created an Excel, Word, or PowerPoint add-in, complete the following steps to try it out.
-
-> [!NOTE]
-> If you've created an Outlook add-in, skip this section and complete the steps in the [Outlook](#outlook) section instead.
+Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
@@ -119,9 +118,6 @@ If you've created an Excel, Word, or PowerPoint add-in, complete the following s
 
 4. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process. 
 
-    > [!NOTE] 
-    > If you're not already signed in to Office at this point, you'll be prompted to sign in. As described previously, you should sign in with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso), if you want SSO to succeed.
-
 5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
@@ -135,10 +131,7 @@ If you've created an Excel, Word, or PowerPoint add-in, complete the following s
 
 ### Outlook
 
-If you've created an Outlook add-in, complete the following steps to try it out.
-
-> [!NOTE]
-> If you've created an Excel, Word, or PowerPoint add-in, complete the steps in the previous [Excel, Word, and PowerPoint](#excel-word-and-powerpoint) section instead.
+Complete the following steps to try out an Outlook add-in.
 
 1. When the SSO configuration process completes, run the following command to build the project and start the local web server.
 
