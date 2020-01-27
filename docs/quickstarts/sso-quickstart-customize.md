@@ -405,12 +405,11 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
 ## Try it out
 
+If your add-in is an Excel, Word, or PowerPoint add-in, complete the steps in the following section to try it out. If your add-in is an Outlook add-in, complete the steps in the [Outlook](#outlook) section instead.
+
 ### Excel, Word, and PowerPoint
 
-If your add-in is an Excel, Word, or PowerPoint add-in, complete the following steps to try it out.
-
-> [!NOTE]
-> If your add-in is an Outlook add-in, skip this section and complete the steps in the [Outlook](#outlook) section instead.
+Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 1. In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
@@ -444,6 +443,8 @@ If your add-in is an Excel, Word, or PowerPoint add-in, complete the following s
     ![OneDrive for Business information in Excel worksheet](../images/sso-onedrive-info-excel.png)
 
 ### Outlook
+
+Complete the following steps to try out an Outlook add-in.
 
 ...TO DO...
 
