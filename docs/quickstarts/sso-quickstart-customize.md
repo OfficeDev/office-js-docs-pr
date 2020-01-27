@@ -46,7 +46,7 @@ To enable the add-in to read contents of the signed-in user's OneDrive for Busin
 The following steps describe these updates.
 
 > [!TIP]
-> Start with the [Changes required for any type of add-in](#changes-required-for-any-type-of-add-in) section to complete steps that are required regardless of which Office host your add-in targets. Then complete steps in the subsequent section that corresponds to the Office host your add-in targets ([Excel](#changes-required-for-an-excel-add-in), [PowerPoint](#changes-required-for-a-powerpoint-add-in), or [Word](#changes-required-for-a-word-add-in)).
+> Start with the [Changes required for any type of add-in](#changes-required-for-any-type-of-add-in) section to complete steps that are required regardless of which Office host your add-in targets. Then complete steps in the subsequent section that corresponds to the Office host your add-in targets ([Excel](#changes-required-for-an-excel-add-in), [Outlook](#changes-required-for-an-outlook-add-in), [PowerPoint](#changes-required-for-a-powerpoint-add-in), or [Word](#changes-required-for-a-word-add-in)).
 
 ### Changes required for any type of add-in
 
@@ -56,7 +56,7 @@ Complete the following steps for your add-in. These steps are the same, regardle
 
     a. Replace `GRAPH_URL_SEGMENT=/me` with the following: `GRAPH_URL_SEGMENT=/me/drive/root/children`
 
-    b. Replace `GRAPH_PARAM_SEGMENT=` with the following: `GRAPH_PARAM_SEGMENT=?$select=name&$top=10`
+    b. Replace `QUERY_PARAM_SEGMENT=` with the following: `QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
     c. Replace `SCOPE=User.Read` with the following: `SCOPE=Files.Read.All`
 
@@ -175,9 +175,75 @@ If your add-in is an Excel add-in, make the following changes in **./src/helpers
     }
     ```
 
-4. Delete the `writeDataToPowerPoint` function.
+4. Delete the `writeDataToOutlook` function.
 
-5. Delete the `writeDataToWord` function.
+5. Delete the `writeDataToPowerPoint` function.
+
+6. Delete the `writeDataToWord` function.
+
+### Changes required for an Outlook add-in
+
+If your add-in is an Excel add-in, make the following changes in **./src/helpers/documentHelper.js**:
+
+1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+
+    ```javascript
+    export function writeDataToOfficeDocument(result) {
+      return new OfficeExtension.Promise(function(resolve, reject) {
+        try {
+          writeDataToOutlook(result);
+          resolve();
+        } catch (error) {
+          reject(Error("Unable to write data to document. " + error.toString()));
+        }
+      });
+    }
+    ```
+
+2. Find the `filterUserProfileInfo` function and replace it with the following function:
+
+    ```javascript
+    function filterOneDriveInfo(result) {
+      let itemNames = [];
+      let oneDriveItems = result['value'];
+      for (let item of oneDriveItems) {
+        itemNames.push(item['name']);
+      }
+      return itemNames;
+    }
+    ```
+
+3. Find the `writeDataToOutlook` function and replace it with the following function:
+
+    ```javascript
+    function writeDataToOutlookExcel(result) {
+      return Excel.run(function (context) {
+        let data = [];
+        let oneDriveInfo = filterOneDriveInfo(result);
+
+        for (let i = 0; i < oneDriveInfo.length; i++) {
+          if (oneDriveInfo[i] !== null) {
+            let innerArray = [];
+            innerArray.push(oneDriveInfo[i]);
+            data.push(innerArray);
+          }
+        }
+
+        let objectNames = "";
+        for (let i = 0; i < data.length; i++) {
+          objectNames += data[i] + "\n";
+        }
+
+        Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
+      });
+    }
+    ```
+
+4. Delete the `writeDataToExcel` function.
+
+5. Delete the `writeDataToPowerPoint` function.
+
+6. Delete the `writeDataToWord` function.
 
 ### Changes required for a PowerPoint add-in
 
@@ -241,7 +307,9 @@ If your add-in is a PowerPoint add-in, make the following changes in **./src/hel
 
 4. Delete the `writeDataToExcel` function.
 
-5. Delete the `writeDataToWord` function.
+5. Delete the `writeDataToOutlook` function.
+
+6. Delete the `writeDataToWord` function.
 
 ### Changes required for a Word add-in 
 
@@ -303,7 +371,9 @@ If your add-in is a Word add-in, make the following changes in **./src/helpers/d
 
 4. Delete the `writeDataToExcel` function.
 
-5. Delete the `writeDataToPowerPoint` function.
+5. Delete the `writeDataToOutlook` function.
+
+6. Delete the `writeDataToPowerPoint` function.
 
 ### Update app permissions in Azure
 
@@ -335,6 +405,13 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
 ## Try it out
 
+### Excel, Word, and PowerPoint
+
+If you've created an Excel, Word, or PowerPoint add-in, complete the following steps to try it out.
+
+> [!NOTE]
+> If you've created an Outlook add-in, skip this section and complete the steps in the [Outlook](#outlook) section instead.
+
 1. In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
     > [!NOTE]
@@ -365,6 +442,10 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 6. The add-in reads data from the signed-in user's OneDrive for Business and writes file and folder names to the document. The following image shows an example of file and folder names written to an Excel worksheet.
 
     ![OneDrive for Business information in Excel worksheet](../images/sso-onedrive-info-excel.png)
+
+### Outlook
+
+...TO DO...
 
 ## Next steps
 
