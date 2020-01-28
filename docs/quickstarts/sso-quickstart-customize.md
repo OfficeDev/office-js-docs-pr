@@ -240,7 +240,7 @@ If your add-in is an Outlook add-in, make the following changes in **./src/helpe
 
         let objectNames = "";
         for (let i = 0; i < data.length; i++) {
-          objectNames += data[i] + "\n";
+          objectNames += data[i] + "<br/>";
         }
 
         Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
