@@ -416,11 +416,11 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
     c. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
 
-8. Select the **Grant admin consent for *[domain]*** button.
+8. Select the **Grant admin consent for [tenant name]** button.
 
 9. In the **Grant admin consent** panel, select **Yes, add other granted permissions to configured permissions** and then select the **Save and continue** button at the bottom of the panel.
 
-10. Select **Grant admin consent** and then select the **Yes** button to answer the prompt that's displayed.
+10. Select the **Grant admin consent** button and then select the **Yes** button in response to the prompt that's displayed.
 
 ## Try it out
 
