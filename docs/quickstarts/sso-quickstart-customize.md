@@ -404,7 +404,7 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
 4. From the app overview page, choose **API permissions** under the **Manage** heading on the left side of the page.
 
-5. Select **Add a permission**.
+5. Select the **Add a permission** button.
 
 6. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
 
@@ -415,6 +415,12 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
     b. Under **User**, deselect **User.Read**.
 
     c. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
+
+8. Select the **Grant admin consent for *[domain]*** button.
+
+9. In the **Grant admin consent** panel, select **Yes, add other granted permissions to configured permissions** and then select the **Save and continue** button at the bottom of the panel.
+
+10. Select **Grant admin consent** and then select the **Yes** button to answer the prompt that's displayed.
 
 ## Try it out
 
