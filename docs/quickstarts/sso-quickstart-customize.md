@@ -118,10 +118,10 @@ Complete the following steps for your add-in. These steps are the same, regardle
 
 7. Complete the additional changes required for your type of add-in, as described in one of the following sections:
 
-    - [Changes required for an Excel add-in](changes-required-for-an-excel-add-in)
-    - [Changes required for an Outlook add-in](changes-required-for-an-outlook-add-in)
-    - [Changes required for a PowerPoint add-in](changes-required-for-a-powerpoint-add-in)
-    - [Changes required for a Word add-in](changes-required-for-a-word-add-in)
+    - [Changes required for an Excel add-in](#changes-required-for-an-excel-add-in)
+    - [Changes required for an Outlook add-in](#changes-required-for-an-outlook-add-in)
+    - [Changes required for a PowerPoint add-in](#changes-required-for-a-powerpoint-add-in)
+    - [Changes required for a Word add-in](#changes-required-for-a-word-add-in)
 
 ### Changes required for an Excel add-in
 
