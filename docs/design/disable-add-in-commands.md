@@ -186,6 +186,29 @@ function chartFormatButtonHandler() {
 }
 ```
 
+## Error handling
+
+In some scenarios Office is unable to update the ribbon and will return an error. For example, if the add-in is upgraded and the upgraded add-in has a different set of custom add-in commands, then the Office application must be closed and reopened. Until it is, the requestUpdate method will return the error `HostRestartNeeded`. The following is an example of how to handle this error. In this case, the `reportError` method displays the error to the user.
+
+```javascript
+function disableChartFormat() {
+    OfficeRuntime.ui.getRibbon()
+        .then(function (ribbon) {
+            var button = {id: "ChartFormatButton", enabled: false};
+            var parentTab = {id: "CustomChartTab", controls: [button]};
+            var ribbonUpdater = {tabs: [parentTab]};
+            await ribbon.requestUpdate(ribbonUpdater);
+
+            chartFormatButtonEnabled = false;
+        })
+        .catch(function (error){
+            if (error.code == "HostRestartNeeded"){
+                reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
+            }
+        });
+}
+```
+
 ## Test for platform support with requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
