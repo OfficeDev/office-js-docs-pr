@@ -188,7 +188,7 @@ If your add-in is an Excel add-in, make the following changes in **./src/helpers
 
 6. Delete the `writeDataToWord` function.
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#try-it-out) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
 ### Changes required for an Outlook add-in
 
@@ -254,7 +254,7 @@ If your add-in is an Outlook add-in, make the following changes in **./src/helpe
 
 6. Delete the `writeDataToWord` function.
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#try-it-out) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
 ### Changes required for a PowerPoint add-in
 
@@ -322,7 +322,7 @@ If your add-in is a PowerPoint add-in, make the following changes in **./src/hel
 
 6. Delete the `writeDataToWord` function.
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#try-it-out) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
 ### Changes required for a Word add-in 
 
