@@ -84,7 +84,7 @@ Complete the following steps for your add-in. These steps are the same, regardle
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
-        <h2 class="ms-font-m"> This add-in demonstrates how to use single sign-on by making a call to Microsoft
+        <h2 class="ms-font-m">This add-in demonstrates how to use single sign-on by making a call to Microsoft
             Graph to read content from OneDrive for Business.</h2>
         <div class="ms-firstrun-instructionstep__header--image"></div>
     </section>
@@ -115,6 +115,13 @@ Complete the following steps for your add-in. These steps are the same, regardle
         <div class="clearfix"></div>
     </li>
     ```
+
+7. Complete the additional changes required for your type of add-in, as described in one of the following sections:
+
+    - [Changes required for an Excel add-in](changes-required-for-an-excel-add-in)
+    - [Changes required for an Outlook add-in](changes-required-for-an-outlook-add-in)
+    - [Changes required for a PowerPoint add-in](changes-required-for-a-powerpoint-add-in)
+    - [Changes required for a Word add-in](changes-required-for-a-word-add-in)
 
 ### Changes required for an Excel add-in
 
