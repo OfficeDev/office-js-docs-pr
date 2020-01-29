@@ -152,7 +152,7 @@
           href: develop/dialog-best-practices.md
         - name: Handling errors and events in the Office dialog box
           href: develop/dialog-handle-errors-events.md
-        - name: Use the Office dialog box to show a video
+        - name: Use the Office dialog box to play a video
           href: develop/dialog-video.md
       - name: Performance
         href: concepts/resource-limits-and-performance-optimization.md
