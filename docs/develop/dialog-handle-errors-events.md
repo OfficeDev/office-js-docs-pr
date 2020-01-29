@@ -1,7 +1,7 @@
 ---
 title: Handling errors and events in the Office dialog box 
 description: 'Describes how to trap and handle errors when opening and using the Office dialog box'
-ms.date: 01/25/2020
+ms.date: 01/29/2020
 localization_priority: Normal
 ---
 
