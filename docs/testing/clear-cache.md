@@ -1,7 +1,7 @@
 ---
 title: Clear the Office cache
 description: Learn how to clear the Office cache on your computer.
-ms.date: 12/31/2019
+ms.date: 01/21/2020
 localization_priority: Priority
 ---
 
@@ -13,7 +13,37 @@ Additionally, if you make changes to your add-in's manifest (for example, update
 
 ## Clear the Office cache on Windows
 
-To clear the Office cache on Windows, delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+### Excel, Word, and PowerPoint 
+
+To clear the Office cache on Windows for Excel, Word, and PowerPoint, delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+### Outlook (Windows 10)
+
+To clear the Outlook cache on Windows 10 when the add-in is running in Microsoft Edge, you can use the Microsoft Edge DevTools.
+
+> [!TIP]
+> If you're just wanting the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to use the following steps to clear the cache. Instead, just put focus in the add-in's task pane (by clicking anywhere within the task pane) and then press **F5** to reload the add-in. 
+
+> [!NOTE]
+> To clear the Outlook cache using the following steps, your add-in must have a task pane. If your add-in is a UI-less add-in -- for example, one that uses the [on-send](/outlook/add-ins/outlook-on-send-addins) feature -- you'll need to add a task pane to your add-in that uses the same domain for [SourceLocation](../reference/manifest/sourcelocation.md), before you can use the following steps to clear the cache.
+
+1. Install the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj).
+
+2. Open your add-in in Outlook.
+
+3. Run the Microsoft Edge DevTools.
+
+4. In the Microsoft Edge DevTools, open the **Local** tab. Your add-in will be listed by its name.
+
+5. Select the add-in name to attach the debugger to your add-in. A new Microsoft Edge DevTools window will open when the debugger attaches to your add-in.
+
+6. On the **Network** tab of the new window, select the **Clear cache** button.
+
+    ![Microsoft Edge DevTools screenshot with the Clear cache button highlighted](../images/edge-devtools-clear-cache.png)
+
+7. If completing these steps doesn't produce the desired result, you can also select the **Always refresh from server** button.
+
+    ![Microsoft Edge DevTools screenshot with the Always refresh from server button highlighted](../images/edge-devtools-refresh-from-server.png)
 
 ## Clear the Office cache on Mac
 
@@ -25,8 +55,9 @@ To clear the Office cache on iOS, call `window.location.reload(true)` from JavaS
 
 ## See also
 
-- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
-- [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
+- [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
-- [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
+- [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
+
