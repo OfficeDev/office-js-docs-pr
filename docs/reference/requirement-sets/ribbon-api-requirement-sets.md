@@ -16,7 +16,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 on Windows<br>(one-time purchase) | Office 2016 or later on Windows<br>(one-time purchase)   | Office on Windows\*<br>(connected to Office 365 subscription) |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | N/A | N/A | Version 2001 (Build 12430.20000) or later | N/A | N/A | January 2020 | N/A|
+| RibbonApi 1.1  | N/A | N/A | Version 2002 (Build 12527.xxxxx) or later | N/A | N/A | February 2020 | N/A|
 
 > **&#42;** During the preview phase, the Ribbon API is supported only on Excel and it requires Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including the Ribbon API, is turned off for that build.
 
