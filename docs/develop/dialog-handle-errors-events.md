@@ -5,7 +5,7 @@ ms.date: 01/25/2020
 localization_priority: Normal
 ---
 
-# git sta
+# Handling errors and events in the Office dialog box
 
 This article describes how to trap and handle errors when opening the dialog box and errors that happen inside the dialog box.
 
