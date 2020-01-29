@@ -11,6 +11,8 @@ This article describes how to trap and handle errors when opening the dialog box
 
 > [!NOTE]
 > This article presupposes that you are familiar with the basics of using the Office dialog API as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
+> 
+> See also [Best practices and rules for the Office dialog API](dialog-best-practices.md).
 
 Your code should handle two categories of events:
 
