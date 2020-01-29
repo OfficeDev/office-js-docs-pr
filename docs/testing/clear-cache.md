@@ -27,7 +27,7 @@ Additionally, to clear the Office cache on Windows 10 when the add-in is running
 
 1. Install the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj).
 
-2. Open your add-in in Outlook.
+2. Open your add-in in the Office client.
 
 3. Run the Microsoft Edge DevTools.
 
