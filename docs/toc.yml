@@ -73,7 +73,7 @@
       items:
       - name: Overview of authentication and authorization
         href: develop/overview-authn-authz.md
-      - name: Authenticate and authorize with the Office Dialog API
+      - name: Authenticate and authorize with the Office dialog API
         href: develop/auth-with-office-dialog-api.md
       - name: Authorize external services
         href: develop/auth-external-add-ins.md
@@ -144,8 +144,16 @@
         displayName: manifest
       - name: Localization
         href: develop/localization.md
-      - name: Open a dialog box
-        href: develop/dialog-api-in-office-add-ins.md
+      - name: Dialog boxes
+        items: 
+        - name: Use the Office dialog API in your Office Add-ins
+          href: develop/dialog-api-in-office-add-ins.md
+        - name: Best practices and rules for the Office dialog API
+          href: develop/dialog-best-practices.md
+        - name: Handling errors and events in the Office dialog box
+          href: develop/dialog-handle-errors-events.md
+        - name: Use the Office dialog box to play a video
+          href: develop/dialog-video.md
       - name: Performance
         href: concepts/resource-limits-and-performance-optimization.md
       - name: Privacy and security
