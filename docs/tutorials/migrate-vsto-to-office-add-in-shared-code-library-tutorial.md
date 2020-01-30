@@ -50,12 +50,12 @@ You also need the following:
 
 ## The Cell analyzer VSTO Add-in
 
-This tutorial uses the [VSTO Add-in shared library for Office add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/vstoshared/Samples/VSTO-shared-code-start) PnP solution. The **/start** folder contains the VSTO Add-in solution that you will migrate. Your goal is to migrate the VSTO Add-in to a modern Office add-in by sharing code when possible.
+This tutorial uses the [VSTO Add-in shared library for Office add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution. The **/start** folder contains the VSTO Add-in solution that you will migrate. Your goal is to migrate the VSTO Add-in to a modern Office add-in by sharing code when possible.
 
 > [!NOTE]
 > The sample uses C# but you can apply the techniques in this tutorial to a VSTO Add-in written in any .NET language.
 
-1. Download the [VSTO Add-in shared library for Office add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/vstoshared/Samples/VSTO-shared-code-start) PnP solution to a working folder on your computer.
+1. Download the [VSTO Add-in shared library for Office add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution to a working folder on your computer.
 2. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
 3. On the **Debug** menu, choose **Start Debugging**.
 3. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Properties**.
