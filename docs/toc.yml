@@ -625,9 +625,6 @@
     - name: Authentication
       href: excel/custom-functions-authentication.md
       displayName: Excel, Custom Functions
-    - name: Batching
-      href: excel/custom-functions-batching.md
-      displayName: Excel, Custom Functions
     - name: Debugging
       href: excel/custom-functions-debugging.md
       displayName: Excel, Custom Functions
@@ -1023,3 +1020,17 @@
     - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
+
+- name: Patterns and practices
+  items:
+  - name: Share code from VSTO Add-in to Office add-in
+    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+  - name: Batching custom function remote calls
+    href: excel/custom-functions-batching.md
+    displayName: Excel, Custom Functions
+  - name: Authentication
+    href: develop/authentication-pnp.md
+  - name: Save and share state in custom functions
+    href: excel/custom-functions-save-state-redirect.md
+  - name: Handle high DPI and DPI scaling in your Office solution
+    href: develop/dynamic-dpi.md
