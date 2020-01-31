@@ -1,7 +1,7 @@
 ---
 title: Customize your Node.js SSO-enabled add-in
 description: Learn about customizing the SSO-enabled add-in that you created with the Yeoman generator.
-ms.date: 01/27/2020
+ms.date: 02/03/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -31,7 +31,7 @@ Let's begin with a quick review of the add-in project that you previously [creat
 
 ## Add new functionality 
 
-The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document or message. Let's change the add-in's functionality such that it gets file and folder names from the signed-in user's OneDrive for Business and writes that information to the document or message. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
+The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document or message. Let's change the add-in's functionality such that it gets the names of the top 10 files and folders from the signed-in user's OneDrive for Business and writes that information to the document or message. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
 
 ### Update code in the add-in project
 
@@ -60,17 +60,7 @@ Complete the following steps for your add-in. These steps are the same, regardle
 
     c. Replace `SCOPE=User.Read` with the following: `SCOPE=Files.Read.All`
 
-2. In **./manifest.xml**, find the line `<Scope>User.Read</Scope>` within the `<WebApplicationInfo>` element near the end of the file. Replace that line with `<Scope>Files.Read.All</Scope>`, such that the scopes within `<WebApplicationInfo>` are defined as follows:
-
-    ```xml
-    <WebApplicationInfo>  
-        ...
-        <Scopes>  
-          <Scope>Files.Read.All</Scope>
-          <Scope>profile</Scope>
-        </Scopes>  
-    </WebApplicationInfo> 
-    ```
+2. In **./manifest.xml**, find the line `<Scope>User.Read</Scope>` near the end of the file and replace it with the line `<Scope>Files.Read.All</Scope>`.
 
 3. In **./src/helpers/fallbackauthdialog.js**, find the string `https://graph.microsoft.com/User.Read` and replace it with the string `https://graph.microsoft.com/Files.Read.All`, such that `requestObj` is defined as follows:
 
@@ -107,11 +97,11 @@ Complete the following steps for your add-in. These steps are the same, regardle
     </p>
     ```
 
-6. In **./src/taskpane/taskpane.html**, find and replace the string `Your user profile information will be displayed in the document.` with the string `The names of objects in your OneDrive for Business will be displayed in the document or message.`.
+6. In **./src/taskpane/taskpane.html**, find and replace the string `Your user profile information will be displayed in the document.` with the string `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`.
 
     ```html
     <li class="ms-ListItem">
-        <span class="ms-ListItem-primaryText">The names of objects in your OneDrive for Business will be displayed in the document or message.</span>
+        <span class="ms-ListItem-primaryText">The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.</span>
         <div class="clearfix"></div>
     </li>
     ```
@@ -454,7 +444,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
-6. The add-in reads data from the signed-in user's OneDrive for Business and writes file and folder names to the document. The following image shows an example of file and folder names written to an Excel worksheet.
+6. The add-in reads data from the signed-in user's OneDrive for Business and writes the names of the top 10 files and folders to the document. The following image shows an example of file and folder names written to an Excel worksheet.
 
     ![OneDrive for Business information in Excel worksheet](../images/sso-onedrive-info-excel.png)
 
@@ -488,7 +478,7 @@ Complete the following steps to try out an Outlook add-in.
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
-7. The add-in reads data from the signed-in user's OneDrive for Business and writes file and folder names to the body of the email message.
+7. The add-in reads data from the signed-in user's OneDrive for Business and writes the names of the top 10 files and folders to the body of the email message.
 
     ![OneDrive for Business information in Outlook message](../images/sso-onedrive-info-outlook.png)
 
