@@ -1,7 +1,7 @@
 ---
 title: JavaScript API for Office error codes
 description: ''
-ms.date: 01/14/2020
+ms.date: 01/30/2020
 localization_priority: Normal
 ---
 
@@ -76,8 +76,10 @@ The following table lists the error codes, names, and messages displayed, and th
 |8021|Out of range|The column index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of columns.|The column index is more than the biggest column index of the table or less than 0.|
 |8022|Out of range|The value is out of the allowed range.|Some of the values in the format are out of the supported ranges.|
 |9016|Permission denied|Permission denied|Access is denied.|
+|9021|Save Error|Connection error occurred while trying to save the item on the server.|The item couldn't be saved. In Online Mode, this could be due to a server connection error.|
 |9022|Message In Different Store Error|The EWS ID cannot be retrieved because the message is saved in another store.|The EWS ID for the current message couldn't be retrieved as the message may have been moved or the sending mailbox may have changed.|
 |9041|Network error|The user is no longer connected to the network. Please check your network connection and try again.|The user no longer has network or internet access.|
+|9043|Attachment Type Not Supported|The attachment type is not supported.|The API doesn't support the attachment type. For example, `item.getAttachmentContentAsync` throws this error if the attachment is an embedded image in Rich Text Format, or if it's an item type other than an email or calendar item (such as a contact or task item).|
 |12002|||One of the following:<br> - No page exists at the URL that was passed to `displayDialogAsync`.<br> - The page that was passed to `displayDialogAsync` loaded, but the dialog box was directed to a page that it cannot find or load, or it has been directed to a URL with invalid syntax. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
 |12003|||The dialog box was directed to a URL with the HTTP protocol. HTTPS is required. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
 |12004|||The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number). Thrown by call of `displayDialogAsync`.|
