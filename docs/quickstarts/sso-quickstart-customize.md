@@ -45,9 +45,6 @@ To enable the add-in to read contents of the signed-in user's OneDrive for Busin
 
 The following steps describe these updates.
 
-> [!TIP]
-> Start with the [Changes required for any type of add-in](#changes-required-for-any-type-of-add-in) section to complete steps that are required regardless of which Office host your add-in targets. Then complete steps in the subsequent section that corresponds to the Office host your add-in targets ([Excel](#changes-required-for-an-excel-add-in), [Outlook](#changes-required-for-an-outlook-add-in), [PowerPoint](#changes-required-for-a-powerpoint-add-in), or [Word](#changes-required-for-a-word-add-in)).
-
 ### Changes required for any type of add-in
 
 Complete the following steps for your add-in. These steps are the same, regardless of which Office host your add-in targets.
