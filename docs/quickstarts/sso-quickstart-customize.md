@@ -28,7 +28,7 @@ The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets
 Let's begin with a quick review of the add-in project that you previously [created with the Yeoman generator](sso-quickstart.md).
 
 > [!NOTE]
-> All script file names in this article have the **.js** extension; TypeScript files will use the **.ts** extension instead. Script code snippets in this article are provided in JavaScript and TypeScript. Use the snippets corresponding to the language you selected when creating your project with the Yeoman generator. 
+> All script files mentioned in this article have the **.js** extension; files in a TypeScript project will use the **.ts** extension instead. Script code snippets in this article are provided in JavaScript and TypeScript. Use the snippets corresponding to the language you selected when creating your project with the Yeoman generator. 
 
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
