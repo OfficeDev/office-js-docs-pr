@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: ''
-ms.date: 01/07/2020
+ms.date: 01/25/2020
 localization_priority: Priority
 ---
 
@@ -22,9 +22,9 @@ The following flowchart shows you the decisions that you need to make as an add-
 
 ## User authentication without SSO
 
-You can authenticate a user in an Office Add-in with Azure Active Directory (AAD) as you would any in any other web application with one exception: AAD does not allow its login page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. This means that you will need to open the AAD login screen in a dialog opened with the Office Dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office Dialog API](auth-with-office-dialog-api.md).
+You can authenticate a user in an Office Add-in with Azure Active Directory (AAD) as you would in other web applications with one exception: AAD does not allow its login page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. This means that you'll need to open the AAD login screen in a dialog box opened with the Office dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
 
-For information about programming authentication with AAD, begin with [Microsoft identity platform (v2.0) overview](/azure/active-directory/develop/v2-overview). There are many tutorials and guides in that documentation set, as well as links to relevant samples and libraries. As explained in [Authentication with the Office Dialog API](auth-with-office-dialog-api.md), you may need to adjust the code in the samples to run in the Office Dialog.
+For information about programming authentication with AAD, begin with [Microsoft identity platform (v2.0) overview](/azure/active-directory/develop/v2-overview) where you'll find many tutorials and guides, as well as links to relevant samples and libraries. As explained in [Authentication with the Office dialog API](auth-with-office-dialog-api.md), you may need to adjust the code in the samples to run in the Office dialog box.
 
 ## Access to Microsoft Graph without SSO
 
@@ -32,7 +32,7 @@ You can get authorization to Microsoft Graph data for your add-in by obtaining a
 
 ## User authentication with SSO
 
-To use SSO to authenticate the user, your code in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) method. If the user is not signed into Office, Office will open a dialog and navigate it to the Azure Active Directory login page. After the user is signed in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. (See [Access to Microsoft Graph with SSO](#access-to-microsoft-graph-with-sso).) However, it can be used as an ID token as well, because it contains several claims that are unique to the current user, including `preferred_username`, `name`, `sub`, and `oid`. For guidance on which property to use as the ultimate user ID, see [Microsoft identity platform access tokens](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see the [Example access token](sso-in-office-add-ins.md#example-access-token).
+To authenticate the user using SSO, your code in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) method. If the user is not signed in, Office will open a dialog box and navigate to the Azure Active Directory login page. After the user signs in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. (See [Access to Microsoft Graph with SSO](#access-to-microsoft-graph-with-sso).) However, it can be used as an ID token as well, because it contains several claims that are unique to the current user, including `preferred_username`, `name`, `sub`, and `oid`. For guidance on which property to use as the ultimate user ID, see [Microsoft identity platform access tokens](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
 
 After your code has extracted the desired claim from the token, it uses that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
 
@@ -45,7 +45,7 @@ These samples, however, do not use the token as an ID token. They use it to get 
 
 ## Access to Microsoft Graph with SSO
 
-To use SSO to get access to Microsoft Graph, your add-in in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) method. If the user is not signed into Office, Office will open a dialog and navigate it to the Azure Active Directory login page. After the user is signed in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. Specifically, it has a `scope` claim with the value `access_as_user`. For guidance about the claims in the token, see [Microsoft identity platform access tokens](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see the [Example access token](sso-in-office-add-ins.md#example-access-token).
+To use SSO to access Microsoft Graph, your add-in in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) method. If the user is not signed in, Office will open a dialog box and navigate it to the Azure Active Directory login page. After the user signs in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. Specifically, it has a `scope` claim with the value `access_as_user`. For guidance about the claims in the token, see [Microsoft identity platform access tokens](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
 
 After your code obtains the token, it uses it in the **On Behalf Of** flow to obtain a second token: an access token to Microsoft Graph.
 
@@ -69,4 +69,4 @@ Note also these samples:
 Popular online services, including Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in. For an overview of the ways that your add-in can do this, see [Authorize external services in your Office Add-in](auth-external-add-ins.md).
 
 > [!IMPORTANT]
-> Before you begin coding, find out if the data source allows its login in screen to be opened in an iFrame. When an Office Add-in is running on *Office on the web*, the task pane is an iFrame. If the data source does not allow its login screen to be opened in an iFrame, then you will need to open the login screen in a dialog opened with the Office Dialog API. For more information, see [Authentication with the Office Dialog API](auth-with-office-dialog-api.md).
+> Before you begin coding, find out if the data source allows its login in screen to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. If the data source does not allow its login screen to open in an iframe, then you'll need to open the login screen in a dialog box opened with the Office dialog API. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
