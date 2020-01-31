@@ -6,7 +6,7 @@ ms.prod: non-product-specific
 localization_priority: Normal
 ---
 
-# Customize your Node.js SSO-enabled add-in 
+# Customize your Node.js SSO-enabled add-in
 
 > [!IMPORTANT]
 > This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md). Please complete the quick start before reading this article.
@@ -394,23 +394,27 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
 4. From the app overview page, choose **API permissions** under the **Manage** heading on the left side of the page.
 
-5. Select the **Add a permission** button.
+5. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.
 
-6. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
+6. Select the **Yes, remove** button in response to the prompt that's displayed.
 
-7. On the **Request API permissions** panel:
+7. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Remove permission** from the menu that appears.
+
+8. Select the **Yes, remove** button in response to the prompt that's displayed.
+
+9. Select the **Add a permission** button.
+
+10. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
+
+11. On the **Request API permissions** panel:
 
     a. Under **Files**, select **Files.Read.All**.
 
-    b. Under **User**, deselect **User.Read**.
+    b. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
 
-    c. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
+12. Select the **Grant admin consent for [tenant name]** button.
 
-8. Select the **Grant admin consent for [tenant name]** button.
-
-9. In the **Grant admin consent** panel, select **Yes, add other granted permissions to configured permissions** and then select the **Save and continue** button at the bottom of the panel.
-
-10. Select the **Grant admin consent** button and then select the **Yes** button in response to the prompt that's displayed.
+13. Select the **Yes** button in response to the prompt that's displayed.
 
 ## Try it out
 
