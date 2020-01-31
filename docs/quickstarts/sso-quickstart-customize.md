@@ -213,7 +213,6 @@ If your add-in is an Outlook add-in, make the following changes in **./src/helpe
 
     ```javascript
     function writeDataToOutlook(result) {
-      return Excel.run(function (context) {
         let data = [];
         let oneDriveInfo = filterOneDriveInfo(result);
 
@@ -231,7 +230,6 @@ If your add-in is an Outlook add-in, make the following changes in **./src/helpe
         }
 
         Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
-      });
     }
     ```
 
