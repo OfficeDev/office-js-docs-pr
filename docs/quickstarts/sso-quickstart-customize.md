@@ -213,23 +213,23 @@ If your add-in is an Outlook add-in, make the following changes in **./src/helpe
 
     ```javascript
     function writeDataToOutlook(result) {
-        let data = [];
-        let oneDriveInfo = filterOneDriveInfo(result);
+      let data = [];
+      let oneDriveInfo = filterOneDriveInfo(result);
 
-        for (let i = 0; i < oneDriveInfo.length; i++) {
-          if (oneDriveInfo[i] !== null) {
-            let innerArray = [];
-            innerArray.push(oneDriveInfo[i]);
-            data.push(innerArray);
-          }
+      for (let i = 0; i < oneDriveInfo.length; i++) {
+        if (oneDriveInfo[i] !== null) {
+          let innerArray = [];
+          innerArray.push(oneDriveInfo[i]);
+          data.push(innerArray);
         }
+      }
 
-        let objectNames = "";
-        for (let i = 0; i < data.length; i++) {
-          objectNames += data[i] + "<br/>";
-        }
+      let objectNames = "";
+      for (let i = 0; i < data.length; i++) {
+        objectNames += data[i] + "<br/>";
+      }
 
-        Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
+      Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
     }
     ```
 
