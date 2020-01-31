@@ -218,15 +218,13 @@ If your add-in is an Outlook add-in, make the following changes in **./src/helpe
 
       for (let i = 0; i < oneDriveInfo.length; i++) {
         if (oneDriveInfo[i] !== null) {
-          let innerArray = [];
-          innerArray.push(oneDriveInfo[i]);
-          data.push(innerArray);
+          data.push(oneDriveInfo[i]);
         }
       }
 
       let objectNames = "";
       for (let i = 0; i < data.length; i++) {
-        objectNames += data[i] + "<br/>";
+        objectNames += data[i] + "\n";
       }
 
       Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
