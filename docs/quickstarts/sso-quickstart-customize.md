@@ -6,7 +6,7 @@ ms.prod: non-product-specific
 localization_priority: Normal
 ---
 
-# Customize your Node.js SSO-enabled add-in
+# Customize your Node.js SSO-enabled add-in 
 
 > [!IMPORTANT]
 > This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md). Please complete the quick start before reading this article.
