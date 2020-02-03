@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.6
 description: ''
-ms.date: 12/19/2019
+ms.date: 02/03/2020
 localization_priority: Normal
 ---
 
@@ -17,7 +17,7 @@ localization_priority: Normal
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Appointment Organizer, Appointment Attendee,<br>Message Compose, Message Read|
 
 ## Properties
 
