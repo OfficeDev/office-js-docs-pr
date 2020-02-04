@@ -18,8 +18,11 @@ The root element that contains information for the add-in commands implemented b
 
 ### Namespace values
 
-|  Value of parent `<OfficeApp>` element's **xsi:type**   |  `<VersionOverrides>` element's **xsi:type** is `VersionOverridesV1_0`  |  `<VersionOverrides>` element's **xsi:type** is `VersionOverridesV1_1`  |
+The following table shows the required value of the **xmlns** value depending on the value of this `<VersionOverrides>` element's **xsi:type** value and the **xsi:type** value of the parent `<OfficeApp>` element.
+
+|  Value of parent \<OfficeApp\> element's xsi:type   | Value of this  \<VersionOverrides\> element's **xsi:type** is:  |
 |:-----|:-----|:-----|
+||`VersionOverridesV1_0`|`VersionOverridesV1_1`|
 |TaskPaneApp|`http://schemas.microsoft.com/office/taskpaneappversionoverrides`|`http://schemas.microsoft.com/office/taskpaneappversionoverrides`|
 |ContentApp|`http://schemas.microsoft.com/office/contentappversionoverrides`|`http://schemas.microsoft.com/office/contentappversionoverrides`|
 |MailApp|`http://schemas.microsoft.com/office/mailappversionoverrides`|`http://schemas.microsoft.com/office/mailappversionoverrides/1.1`|
