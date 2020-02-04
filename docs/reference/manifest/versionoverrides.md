@@ -26,16 +26,8 @@ The following lists the required value of the **xmlns** value depending on the *
     - When **xsi:type** is `VersionOverridesV1_0`, **xmlns** must be `http://schemas.microsoft.com/office/mailappversionoverrides`.
     - When **xsi:type** is `VersionOverridesV1_1`, **xmlns** must be `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`.
 
-
-|  Value of parent \<OfficeApp\> element's xsi:type   | Value of this  \<VersionOverrides\> element's **xsi:type** is:  |
-|:-----|:-----|:-----|
-||VersionOverridesV1_0|VersionOverridesV1_1\*|
-|TaskPaneApp|`http://schemas.microsoft.com/office/taskpaneappversionoverrides`|
-|ContentApp|`http://schemas.microsoft.com/office/contentappversionoverrides`|
-|MailApp|`http://schemas.microsoft.com/office/mailappversionoverrides`|`http://schemas.microsoft.com/office/mailappversionoverrides/1.1`|
-
 > [!NOTE]
-> \* Currently only Outlook 2016 or later supports the VersionOverrides v1.1 schema and the `VersionOverridesV1_1` type.
+> Currently only Outlook 2016 or later supports the VersionOverrides v1.1 schema and the `VersionOverridesV1_1` type.
 
 ## Child elements
 
