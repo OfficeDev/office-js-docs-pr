@@ -1,7 +1,7 @@
 ---
 title: OfficeApp element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 02/04/2020
 localization_priority: Normal
 ---
 
@@ -56,7 +56,7 @@ The root element in the manifest of an Office Add-in.
 |[Permissions](permissions.md)||x||
 |[DisableEntityHighlighting](disableentityhighlighting.md)||x||
 |[Dictionary](dictionary.md)|||x|
-|[VersionOverrides](versionoverrides.md)||x||
+|[VersionOverrides](versionoverrides.md)|x|x|x|
 
 ## Attributes
 
