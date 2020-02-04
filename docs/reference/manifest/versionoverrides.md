@@ -23,7 +23,7 @@ The following table shows the required value of the **xmlns** value depending on
 
 |  Value of parent \<OfficeApp\> element's xsi:type   | Value of this  \<VersionOverrides\> element's **xsi:type** is:  |
 |:-----|:-----|:-----|
-||`VersionOverridesV1_0`|`VersionOverridesV1_1`\*|
+||VersionOverridesV1_0|VersionOverridesV1_1\*|
 |TaskPaneApp|`http://schemas.microsoft.com/office/taskpaneappversionoverrides`|
 |ContentApp|`http://schemas.microsoft.com/office/contentappversionoverrides`|
 |MailApp|`http://schemas.microsoft.com/office/mailappversionoverrides`|`http://schemas.microsoft.com/office/mailappversionoverrides/1.1`|
