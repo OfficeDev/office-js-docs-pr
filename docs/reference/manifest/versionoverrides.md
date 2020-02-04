@@ -1,7 +1,7 @@
 ---
 title: VersionOverrides element in the manifest file
 description: ''
-ms.date: 08/12/2019
+ms.date: 02/04/2020
 localization_priority: Normal
 ---
 
@@ -13,10 +13,18 @@ The root element that contains information for the add-in commands implemented b
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  Yes  |  The schema location, which must be `http://schemas.microsoft.com/office/mailappversionoverrides` when `xsi:type` is `VersionOverridesV1_0`, and `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` when `xsi:type` is `VersionOverridesV1_1`.|
+|  **xmlns**       |  Yes  |  The VersionOverrides schema namespace. The allowed values vary depending on the value of this `<VersionOverrides>` element's **xsi:type** value and the **xsi:type** value of the parent `<OfficeApp>` element. See the note below.|
 |  **xsi:type**  |  Yes  | The schema version. At this time, the only valid values are `VersionOverridesV1_0` and `VersionOverridesV1_1`. |
 
 > [!NOTE]
+> If the parent `<OfficeApp>` element's **xsi:type** is "TaskPaneApp", then **xmlns** must be `http://schemas.microsoft.com/office/taskpaneappversionoverrides`.
+>
+> If the parent `<OfficeApp>` element's **xsi:type** is "ContentApp", then **xmlns** must be `http://schemas.microsoft.com/office/contentappversionoverrides`.
+>
+> If the parent `<OfficeApp>` element's **xsi:type** is "MailApp" and this `<VersionOverrides>` element's **xsi:type** is `VersionOverridesV1_0`, then **xmlns** must be `http://schemas.microsoft.com/office/mailappversionoverrides`.
+>
+> If the parent `<OfficeApp>` element's **xsi:type** is "MailApp" and this `<VersionOverrides>` element's **xsi:type** is `VersionOverridesV1_1`, then **xmlns** must be `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`.
+>
 > Currently only Outlook 2016 or later supports the VersionOverrides v1.1 schema and the `VersionOverridesV1_1` type.
 
 ## Child elements
@@ -24,7 +32,6 @@ The root element that contains information for the add-in commands implemented b
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **Description**    |  No   |  Describes the add-in. This overrides the `Description` element in any parent portion of the manifest. The text of the description is contained in a child element of the **LongString** element contained in the [Resources](./resources.md) element. The `resid` attribute of the **Description** element is set to the value of the `id` attribute of the `String` element that contains the text.|
-| **EquivalentAddins** | No | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. |
 |  **Requirements**  |  No   |  Specifies the minimum requirement set and version of Office.js that the add-in requires. This overrides the  `Requirements` element in the parent portion of the manifest.|
 |  [Hosts](./hosts.md)                |  Yes  |  Specifies a collection of Office hosts. The child  Hosts element overrides the Hosts element in the parent portion of the manifest.  |
 |  [Resources](./resources.md)    |  Yes  | Defines a collection of resources (strings, URLs, and images) that other manifest elements reference.|
@@ -37,7 +44,7 @@ The root element that contains information for the add-in commands implemented b
 The following is an example of a typical `<VersionOverrides>` element, including some child elements that are not required but are typically used.
 
 ```xml
-<OfficeApp>
+<OfficeApp ... xsi:type="MailApp">
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Description resid="residDescription" />
@@ -66,7 +73,7 @@ In order to implement multiple versions, the `VersionOverrides` element for the 
 To implement both the VersionOverrides v1.0 and v1.1 schema, the manifest would look similar to the following example:
 
 ```xml
-<OfficeApp>
+<OfficeApp ... xsi:type="MailApp">
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Description resid="residDescription" />
