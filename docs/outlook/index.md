@@ -4,7 +4,7 @@ ms.topic: landing-page
 title: Outlook add-ins documentation
 description: Resources for learning about Outlook add-ins.
 ms.date: 07/05/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Outlook Add-ins documentation

@@ -4,7 +4,7 @@ description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Create custom functions in Excel 

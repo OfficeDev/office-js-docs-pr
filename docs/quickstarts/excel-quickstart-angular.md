@@ -3,7 +3,7 @@ title: Build an Excel task pane add-in using Angular
 description: 
 ms.date: 01/16/2020
 ms.prod: excel
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Build an Excel task pane add-in using Angular

@@ -2,7 +2,7 @@
 title: Understanding the JavaScript API for Office
 description: ''
 ms.date: 06/21/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Understanding the JavaScript API for Office

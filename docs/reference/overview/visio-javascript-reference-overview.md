@@ -5,7 +5,7 @@ ms.date: 06/20/2019
 ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Visio JavaScript API overview

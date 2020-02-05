@@ -2,7 +2,7 @@
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
 ms.date: 01/16/2020
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Create a Node.js Office Add-in that uses single sign-on (preview)

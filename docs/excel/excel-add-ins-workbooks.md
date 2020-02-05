@@ -2,7 +2,7 @@
 title: Work with workbooks using the Excel JavaScript API
 description: ''
 ms.date: 10/21/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Work with workbooks using the Excel JavaScript API

@@ -2,7 +2,7 @@
 title: Office Add-ins XML manifest
 description: ''
 ms.date: 01/06/2020
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Office Add-ins XML manifest

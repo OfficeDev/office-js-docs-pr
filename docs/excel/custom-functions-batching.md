@@ -2,7 +2,7 @@
 ms.date: 07/10/2019
 description: "Batch custom functions together to reduce network calls to a remote service."
 title: Batching custom function calls for a remote service
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Batching custom function calls for a remote service

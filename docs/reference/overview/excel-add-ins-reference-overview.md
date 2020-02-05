@@ -3,7 +3,7 @@ title: Excel JavaScript API overview
 description: ''
 ms.date: 07/05/2019
 ms.prod: excel
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Excel JavaScript API overview

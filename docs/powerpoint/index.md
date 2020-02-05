@@ -4,7 +4,7 @@ ms.topic: landing-page
 title: PowerPoint add-ins documentation
 description: Resources for learning about PowerPoint add-ins.
 ms.date: 07/05/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # PowerPoint Add-ins documentation

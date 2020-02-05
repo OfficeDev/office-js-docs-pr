@@ -2,7 +2,7 @@
 title: Persisting add-in state and settings
 description: ''
 ms.date: 03/19/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Persisting add-in state and settings

@@ -2,7 +2,7 @@
 title: Design Office Add-ins
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 

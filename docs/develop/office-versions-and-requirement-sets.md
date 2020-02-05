@@ -2,7 +2,7 @@
 title: Office versions and requirement sets
 description: ''
 ms.date: 01/14/2020
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Office versions and requirement sets

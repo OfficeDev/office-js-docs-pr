@@ -3,7 +3,7 @@ ms.date: 01/21/2020
 ms.prod: non-product-specific
 description: 'Tutorial on how to share code between a VSTO Add-in and an Office add-in.'
 title: 'Tutorial: Share code between both a VSTO Add-in and an Office add-in by using a shared code library'
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Tutorial: Share code between both a VSTO Add-in and an Office add-in with a shared code library

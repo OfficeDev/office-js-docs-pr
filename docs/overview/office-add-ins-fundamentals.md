@@ -2,7 +2,7 @@
 title: Building Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.date: 12/24/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Building Office Add-ins

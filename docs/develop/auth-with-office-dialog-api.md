@@ -2,7 +2,7 @@
 title: Authenticate and authorize with the Office dialog API
 description: ''
 ms.date: 01/25/2020
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Authenticate and authorize with the Office dialog API

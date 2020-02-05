@@ -4,7 +4,7 @@ ms.topic: landing-page
 title: Project add-ins documentation
 description: Resources for learning about Project add-ins.
 ms.date: 07/05/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Project Add-ins documentation

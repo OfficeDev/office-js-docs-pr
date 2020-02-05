@@ -4,7 +4,7 @@ description:  Use familiar web technologies such as HTML, CSS, and JavaScript to
 ms.date: 01/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Office Add-ins platform overview

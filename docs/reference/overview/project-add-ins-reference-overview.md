@@ -3,7 +3,7 @@ title: JavaScript API for Project
 description: ''
 ms.date: 07/05/2019
 ms.prod: project
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # JavaScript API for Project
