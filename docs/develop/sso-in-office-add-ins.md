@@ -2,7 +2,7 @@
 title: Enable single sign-on for Office Add-ins
 description: ''
 ms.date: 01/14/2020
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Enable single sign-on for Office Add-ins (preview)

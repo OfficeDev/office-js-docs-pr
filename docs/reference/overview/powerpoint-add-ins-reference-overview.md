@@ -3,7 +3,7 @@ title: JavaScript API for PowerPoint
 description: ''
 ms.date: 07/05/2019
 ms.prod: powerpoint
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # JavaScript API for PowerPoint

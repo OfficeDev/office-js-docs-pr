@@ -3,7 +3,7 @@ title: Build an Excel task pane add-in using React
 description: 
 ms.date: 01/16/2020
 ms.prod: excel
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Build an Excel task pane add-in using React

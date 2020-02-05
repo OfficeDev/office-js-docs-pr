@@ -4,7 +4,7 @@ description: ''
 ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Task pane add-ins for Project

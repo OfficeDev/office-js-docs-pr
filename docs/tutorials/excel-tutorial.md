@@ -4,7 +4,7 @@ description: In this tutorial, you'll build an Excel add-in that creates, popula
 ms.date: 01/16/2020
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Tutorial: Create an Excel task pane add-in

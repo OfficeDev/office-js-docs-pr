@@ -2,7 +2,7 @@
 title: Overview of authentication and authorization in Office Add-ins
 description: ''
 ms.date: 01/25/2020
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Overview of authentication and authorization in Office Add-ins

@@ -4,7 +4,7 @@ description: ''
 ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 

@@ -2,7 +2,7 @@
 title: Fundamental programming concepts with the Excel JavaScript API
 description: Use the Excel JavaScript API to build add-ins for Excel.
 ms.date: 06/20/2019
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 

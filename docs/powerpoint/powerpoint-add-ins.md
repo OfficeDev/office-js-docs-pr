@@ -4,7 +4,7 @@ description: ''
 ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # PowerPoint add-ins

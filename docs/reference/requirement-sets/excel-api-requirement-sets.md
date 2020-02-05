@@ -3,7 +3,7 @@ title: Excel JavaScript API requirement sets
 description: 'Office Add-in requirement set information for Excel builds'
 ms.date: 01/06/2020
 ms.prod: excel
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Excel JavaScript API requirement sets

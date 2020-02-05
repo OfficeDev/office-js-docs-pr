@@ -4,7 +4,7 @@ description: In this tutorial, you'll build an PowerPoint add-in that inserts an
 ms.date: 12/24/2019
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Tutorial: Create a PowerPoint task pane add-in
