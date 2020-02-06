@@ -2,7 +2,7 @@
 title: Sideload Office Add-ins for testing
 description: ''
 ms.date: 12/31/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Sideload Office Add-ins for testing

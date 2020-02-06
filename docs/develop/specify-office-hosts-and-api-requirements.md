@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements
 description: ''
 ms.date: 09/26/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Specify Office hosts and API requirements

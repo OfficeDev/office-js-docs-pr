@@ -2,7 +2,7 @@
 title: ExtensionPoint element in the manifest file
 description: ''
 ms.date: 09/05/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # ExtensionPoint element

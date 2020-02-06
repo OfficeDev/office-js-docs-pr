@@ -2,7 +2,7 @@
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: ''
 ms.date: 09/26/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Create a Project add-in that uses REST with an on-premises Project Server OData service

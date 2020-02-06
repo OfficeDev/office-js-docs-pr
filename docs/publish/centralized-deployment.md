@@ -2,7 +2,7 @@
 title: Publish Office Add-ins using Centralized Deployment via the Office 365 admin center
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 
