@@ -1,6 +1,17 @@
 { 
-    "redirections": [
+    "redirections": [   
       {
+        "source_path": "docs/develop/dynamic-dpi.md",
+        "redirect_url": "https://docs.microsoft.com/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
+      },
+      {
+        "source_path": "docs/excel/custom-functions-save-state-redirect.md",
+        "redirect_url": "/office/dev/add-ins/excel/custom-functions-save-state"
+      },
+      {
+        "source_path": "docs/quickstarts/sso-quickstart-redirect.md", 
+        "redirect_url": "/office/dev/add-ins/quickstarts/sso-quickstart"
+      },{
         "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md", 
         "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
       },

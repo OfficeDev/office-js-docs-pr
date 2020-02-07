@@ -2,13 +2,13 @@
 ms.date: 11/04/2019
 description: 'Handle and return errors like #NULL! from your custom function'
 title: Handle and return errors from your custom function (preview)
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Handle and return errors from your custom function (preview)
 
 > [!NOTE]
-> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to [Office Insider](https://insider.office.com/join) to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to [Office Insider](https://insider.office.com/join) to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 If something goes wrong while your custom function runs, you will need to return an error to inform the user. If you have specific parameter requirements, such as only positive numbers, you will need to test the parameters and throw an error if they are not correct. You can also use a `try`-`catch` block to catch any errors that occur while your custom function runs.
 

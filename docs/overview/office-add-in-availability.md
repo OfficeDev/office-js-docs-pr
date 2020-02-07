@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.
-ms.date: 11/15/2019
+ms.date: 01/23/2020
 localization_priority: Priority
 ---
 
@@ -274,7 +274,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 
 *&ast; - Added with post-release updates.*
 
-## Custom Functions
+## Custom Functions (Excel only)
 
 <table style="width:80%">
   <tr>
@@ -288,7 +288,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>
         - Custom Functions</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
@@ -297,7 +297,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>
         - Custom Functions</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
@@ -306,7 +306,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>
         - Custom Functions</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>

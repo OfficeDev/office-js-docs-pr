@@ -2,7 +2,7 @@
 title: Use search options to find text in your Word add-in 
 description: ''
 ms.date: 09/27/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Use search options to find text in your Word add-in

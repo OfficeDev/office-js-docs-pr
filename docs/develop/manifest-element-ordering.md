@@ -155,6 +155,8 @@ The following sections show the manifest elements in the order in which they mus
             <Set>
       <Hosts>
         <Host>
+            <Runtimes>
+                <Runtime>
             <AllFormFactors>
             <ExtensionPoint>
                 <Script>

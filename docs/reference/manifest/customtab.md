@@ -1,7 +1,7 @@
 ---
 title: CustomTab element in the manifest file
 description: ''
-ms.date: 04/29/2019
+ms.date: 01/24/2020
 localization_priority: Normal
 ---
 
@@ -12,6 +12,9 @@ On the ribbon, you specify which tab and group for their add-in commands. This c
 On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.
 
 The  **id** attribute must be unique within the manifest.
+
+> [!IMPORTANT]
+> In Outlook on Mac, the `CustomTab` element is not available so you'll have to use [OfficeTab](officetab.md) instead.
 
 ## Child elements
 

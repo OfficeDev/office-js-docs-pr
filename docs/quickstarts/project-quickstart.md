@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: 
-ms.date: 12/24/2019
+ms.date: 01/16/2020
 ms.prod: project
 localization_priority: Priority
 ---

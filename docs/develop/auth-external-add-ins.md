@@ -2,7 +2,7 @@
 title: Authorize external services in your Office Add-in
 description: 'Getting authorization to non-Microsoft data sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub using OAuth 2.0, the Authorization Code and Implicit flows.'
 ms.date: 08/07/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Authorize external services in your Office Add-in

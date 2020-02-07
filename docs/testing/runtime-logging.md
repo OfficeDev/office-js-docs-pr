@@ -2,7 +2,7 @@
 title: Debug your add-in with runtime logging
 description: Learn how to use runtime logging to debug your add-in.
 ms.date: 12/31/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Debug your add-in with runtime logging
