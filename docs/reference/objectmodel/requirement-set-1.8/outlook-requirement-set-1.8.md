@@ -2,7 +2,7 @@
 title: Outlook add-in API requirement set 1.8
 description: ''
 ms.date: 12/17/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Outlook add-in API requirement set 1.8

@@ -2,7 +2,7 @@
 title: Resource limits and performance optimization for Office Add-ins
 description: ''
 ms.date: 09/09/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 

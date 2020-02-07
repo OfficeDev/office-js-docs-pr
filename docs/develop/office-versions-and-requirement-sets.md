@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: ''
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
 ---
 
@@ -18,7 +18,7 @@ There are many versions of Office on several platforms, and they don't all suppo
 
 To identify the Office version that you're using, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office will appear in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000):
 
-![Checking your Office version](../images/office-version-number-ui.jpg)
+![Checking your Office version](../images/office-version.png)
 
 ## Office requirement sets availability
 

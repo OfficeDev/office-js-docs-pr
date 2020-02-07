@@ -2,7 +2,7 @@
 title: Add-in commands for Excel, Word, and PowerPoint
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 

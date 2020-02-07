@@ -2,7 +2,7 @@
 title: Design toolkits for Office Add-ins
 description: ''
 ms.date: 06/27/2018
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Design toolkits

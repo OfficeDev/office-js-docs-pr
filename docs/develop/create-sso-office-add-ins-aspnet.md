@@ -2,7 +2,7 @@
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: ''
 ms.date: 12/04/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Create an ASP.NET Office Add-in that uses single sign-on (preview)
@@ -19,11 +19,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
-* Office 365 (the subscription version of Office) account which you can get by joining the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365. You should use the latest monthly version and build from the Insiders channel but you need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
 
-* A Microsoft Azure Tenant. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Set up the starter project
 
@@ -83,7 +83,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
-    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office on the web)
+    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     For each ID, take these steps:
 

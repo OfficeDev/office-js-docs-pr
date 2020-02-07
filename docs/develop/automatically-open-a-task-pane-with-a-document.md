@@ -2,7 +2,7 @@
 title: Automatically open a task pane with a document
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 
@@ -155,10 +155,9 @@ You can deploy a test version of your add-in that will automatically open a task
 </we:webextension>
 ```
 
-To test the previous example, please consider joining the [Office 365 Developer Program](/office/developer-program/office-365-developer-program) and signing up for an [Office 365 developer account](https://developer.microsoft.com/office/dev-program) if you don't already own an Office 365 subscription. You can actually test drive Centralized Deployment and verify that your add-in works as expected.
-
+You can test the previous example by using your Office 365 subscription to try out Centralized Deployment and verify that your add-in works as expected. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 ## See also
 
 For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Join the Office 365 developer program](/office/developer-program/office-365-developer-program).
+[Join the Office 365 Developer Program](/office/developer-program/office-365-developer-program).

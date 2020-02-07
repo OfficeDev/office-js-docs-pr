@@ -2,7 +2,7 @@
 title: Outlook add-in API Preview requirement set
 description: ''
 ms.date: 12/17/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Outlook add-in API Preview requirement set
