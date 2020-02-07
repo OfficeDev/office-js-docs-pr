@@ -577,20 +577,8 @@
     - name: Ranges (advanced)
       href: excel/excel-add-ins-ranges-advanced.md
       displayName: Excel
-    - name: Run code when the task pane is closed or not visible
-      href: excel/run-code-when-the-task-pane-is-closed-or-not-visible.md
-      displayName: Excel
-    - name: Configure your task pane for display on document open
-      href: excel/configure-your-task-pane-for-display-on-document-open.md
-      displayName: Excel
-    - name: Authenticate on document open
-      href: excel/authenticate-on-document-open.md
-      displayName: Excel
-    - name: Manage UI state for your Excel add-in
-      href: excel/manage-UI-state-for-your-excel-add-in.md
-      displayName: Excel
-    - name: Preload data before showing the task pane
-      href: excel/preload-data-before-showing-the-task-pane.md
+    - name: Run code on document open
+      href: excel/run-code-on-document-open.md
       displayName: Excel
     - name: Shapes
       href: excel/excel-add-ins-shapes.md
