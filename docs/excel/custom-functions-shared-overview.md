@@ -1,15 +1,21 @@
 ---
 ms.date: 02/01/2020
-description: Learn how to share context between custom functions and the task pane to share data and events.
-title: Overview of sharing custom functions with the task pane (preview)
+description: Learn how to run custom functions, ribbon buttons, and task pane code in a single browser runtime to coordinate scenarios across your add-in.
+title: Run your add-in code in a single browser runtime (preview)
 localization_priority: Priority
 ---
 
-# Overview: run custom functions in the browser runtime (preview)
+# Overview: Run your add-in code in a single browser runtime (preview)
 
 [!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
 
-Currently custom functions run in a JavaScript-only runtime that is separate from the browser runtime used by the task pane. Now you can configure custom functions to run with task pane code in the same browser runtime. This allows your custom functions to take full advantage of the browser runtime to get full CORS support, use the DOM, and enable additional web scenarios. You can also call Excel JS APIs from your custom functions to read spreadsheet document data, or modify it.
+When running Excel on Windows or Mac, ribbon buttons, custom functions, and the task pane code run in separate JavaScript runtime environments. You can configure your Excel add-in to run code in a single browser runtime. This is also known as a shared runtime since the same JavaScript runtime is used for different parts of your add-in. 
+
+Configuring a shared runtime enables the following scenarios:
+- Custom functions can take full advantage of the browser runtime to get full CORS support, use the DOM, and enable additional web scenarios.
+- Custom functions can call Excel JS APIs to read spreadsheet document data.
+- You can run code as soon as the document is opened.
+- You can continue running code after the task pane is closed.
 
 When you run custom functions in the same browser runtime as the task pane, it will run in a browser instance on different platforms as follows:
 
@@ -21,7 +27,7 @@ Additionally, any buttons that your Excel add-in displays on the ribbon will run
 
 ![Custom functions running in the same browser runtime as the task pane in Excel](../images/custom-functions-in-browser-runtime.png)
 
-## Differences when running custom functions in the browser runtime
+## Differences when running cusotm functions in the browser runtime
 
 When you configure your Excel add-in project to run custom functions in the browser runtime, there are a few differences from using the custom function runtime.
 
@@ -53,9 +59,6 @@ We'd love to hear your feedback on this feature. If you find any bugs, issues, o
 
 List of related articles for shared runtime
 - [Tutorial: Share data and events between Excel custom functions and the task pane (preview)](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Call Excel APIs from your custom function (preview)](custom-functions-call-excel-api.md)
-- [Run code when the task pane is closed or not visible (preview)](run-code-when-the-task-pane-is-closed-or-not-visible.md)
-- [Configure your task pane for display on document open (preview)](configure-your-task-pane-for-display-on-document-open.md)
-- [Authenticate on document open (preview)](authenticate-on-document-open.md)
-- [Manage UI state for your Excel add-in (preview)](manage-ui-state-for-your-excel-add-in.md)
-- [Preload data before showing the task pane (preview)](preload-data-before-showing-the-task-pane.md)
+- [Call Excel APIs from your custom function (preview)](call-excel-apis-from-custom-function.md)
+- [Run code when the task pane is closed or not visible (preview)](run-code-on-document-open.md)
+

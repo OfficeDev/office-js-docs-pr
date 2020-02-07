@@ -7,7 +7,8 @@ localization_priority: Priority
 
 # Authenticate the user from a ribbon button (preview)
 
-include
+[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
+
 
 This sample uses PnP
 

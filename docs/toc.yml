@@ -572,8 +572,8 @@
     - name: Conditional formatting of ranges
       href: excel/excel-add-ins-conditional-formatting.md
       displayName: Excel
-    - name: Configure your add-in to use a shared runtime
-      href: excel/configure-your-project-to-use-the-browser-runtime.md
+    - name: Configure your add-in to share the browser runtime
+      href: excel/configure-your-add-in-to-use-the-browser-runtime.md
       displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md

@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Call Excel APIs from a custom function
 
+[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
+
 Call Office.js Excel APIs from your custom functions to get range data and obtain more context for your calculations.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]

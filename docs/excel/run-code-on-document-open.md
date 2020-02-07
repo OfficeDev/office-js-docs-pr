@@ -1,15 +1,17 @@
 ---
-title: Run code in your Excel add-in when the document opens
+title: Run code in your Excel add-in when the document opens (preview)
 description: Run code in your Excel add-in when the document opens. 
 ms.date: 02/06/2020
 localization_priority: Normal
 ---
 
-# Run code in your Excel add-in when the document opens
+# Run code in your Excel add-in when the document opens (preview)
+
+[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
 
 You can configure your Excel add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, preload data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+[!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
 ## Code samples for configuring load behavior
 
@@ -17,13 +19,14 @@ The following code samples illustrate how to configure the start up behavior for
 
 ### Set add-in to start on document open
 
-[!NOTE] The `setStartupBehavior` method is asynchronous.
-
 The following code sets the add-in to load immediately the next time the document is opened.
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 ```
+
+> [!NOTE]
+> The `setStartupBehavior` method is asynchronous.
 
 ### Set add-in not to start on document open
 
@@ -43,9 +46,9 @@ let behavior = await Office.addin.getStartupBehavior();
 
 ## Code sample for running when document loads
 
-When your add-in is configured to load on document open, it will run immediately. Your task pane will be initialized, but not displayed. Place the code that must run on document open in the `Office.initialize` event handler.
+When your add-in is configured to load on document open, it will run immediately. The `Office.initialize` event handler will be called. Place your startup code in the `Office.initialize` event handler.
 
-One thing you can do on document open is configure your task pane to show immediately. The following code shows how to show the task pane as soon as the document is opened.
+An example scenario of running code when the document opens is to display your task pane immediately. The following code shows how to show the task pane as soon as the document is opened.
 
 ```JavaScript
 //This is called as soon as the document opens.

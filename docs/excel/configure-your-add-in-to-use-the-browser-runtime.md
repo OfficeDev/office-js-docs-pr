@@ -1,14 +1,16 @@
 ---
 ms.date: 02/06/2020
-title: "Configure your Excel add-in to use a shared runtime (preview)"
+title: "Configure your Excel add-in to share the browser runtime (preview)"
 ms.prod: excel
 description: Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.
 localization_priority: Priority
 ---
 
-# Configure your Excel add-in to share the browser runtime
+# Configure your Excel add-in to share the browser runtime (preview)
 
-You can confugre your Excel add-in to use a shared runtime. This will force all code for the ribbon, task pane, and custom functions, to run in the same browser JavaScript runtime environment. This means code for the ribbon, task pane, or custom functions can call each other and share global data. To configure your yo office project to use a shared runtime, follow the instructions in this article.
+[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
+
+When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. You can configure your Excel add-in to share code in a single browser runtime. This enables better coordination across your add-in for sharing code and data. It also enables you to run code when the document opens, or to run code while the task pane is closed. To configure your add-in to share the browser runtime, follow the instructions in this article.
 
 ## Create the add-in project
 
@@ -100,9 +102,13 @@ Follow these steps for a new or existing project to configure it to use a shared
     npm run build
     ```
 
-## Next Steps
+## Next steps
 
 Now try out some features of the shared runtime by taking a look at the following articles.
 
 - [Call Excel APIs from a custom function](call-excel-apis-from-custom-function.md)
 - [Run code in your Excel add-in when the document opens](run-code-on-document-open.md)
+
+## See also
+
+- [Overview: Run your add-in code in a single browser runtime (preview)](custom-functions-shared-overview.md)
