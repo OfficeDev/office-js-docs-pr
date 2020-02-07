@@ -18,7 +18,7 @@ Calling these APIs through a custom function can be helpful if:
 
 ## Code sample
 
-The following code sample shows you how to do TODO. This sample will only work if you have made the changes to your manifest and your task pane's HTML file as shown in the [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial).
+The following code sample shows you how to do TODO. This sample will only work if you have made the changes to your manifest and your task pane's HTML file as shown in the [Share data and events between Excel custom functions and task pane tutorial](/tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
 
 ```JavaScript
 /**
@@ -50,4 +50,4 @@ Instead, call Office.js APIs first before a custom function is run. Another opti
 
 ## See also
 
-- [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial)
+- [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)

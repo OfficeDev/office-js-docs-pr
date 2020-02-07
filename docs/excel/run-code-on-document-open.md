@@ -13,7 +13,7 @@ By default, custom functions do not run automatically when you open a document, 
 
 This is useful for particular scenarios, such as when an add-in needs to load a custom function immediately or when you wish to register a set of event handlers.
 
-To do this, your add-in's manifest and task pane HTML file must be properly configured as shown in [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial).
+To do this, your add-in's manifest and task pane HTML file must be properly configured as shown in [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
 
 ## Code sample
 
@@ -41,4 +41,4 @@ var behavior = await Office.addin.getStartupBehavior();
 
 ## See also
 
-- [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial)
+- [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
