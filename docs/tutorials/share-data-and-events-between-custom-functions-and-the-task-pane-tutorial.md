@@ -33,12 +33,12 @@ After you complete the wizard, the generator creates the project and installs su
 
 1. Start Visual Studio Code and open the **My Office Add-in** project.
 2. Open the **manifest.xml** file.
-3. Change the `<Requirements>` section to use **CustomFunctionsRuntime** version **1.2** as shown in the following code.
+3. Change the `<Requirements>` section to use **SharedRuntime** version **1.1** as shown in the following code.
     
     ```xml
     <Requirements>
     <Sets DefaultMinVersion="1.1">
-    <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
+    <Set Name="SharedRuntime" MinVersion="1.1"/>
     </Sets>
     </Requirements>
     ```
