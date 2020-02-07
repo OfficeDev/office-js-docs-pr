@@ -554,6 +554,9 @@
     - name: Advanced programming concepts
       href: excel/excel-add-ins-advanced-concepts.md
       displayName: Excel
+    - name: Authenticate from a ribbon button 
+      href: excel/authenticate-from-a-ribbon-button.md
+      displayName: Excel
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
       displayName: Excel
@@ -568,6 +571,9 @@
       displayName: Excel
     - name: Conditional formatting of ranges
       href: excel/excel-add-ins-conditional-formatting.md
+      displayName: Excel
+    - name: Configure your add-in to use a shared runtime
+      href: excel/configure-your-project-to-use-the-browser-runtime.md
       displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md

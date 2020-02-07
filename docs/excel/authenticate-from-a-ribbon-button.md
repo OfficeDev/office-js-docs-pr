@@ -8,3 +8,14 @@ localization_priority: Priority
 # Authenticate the user from a ribbon button (preview)
 
 include
+
+This sample uses PnP
+
+Open PnP sample
+
+Update manifest (and add new button)
+
+Add action code to sign in
+
+Use localstorage to pass auth code
+
