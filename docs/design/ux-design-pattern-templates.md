@@ -2,7 +2,7 @@
 title: UX design patterns for Office Add-ins
 description: ''
 ms.date: 03/19/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # UX design patterns for Office Add-ins

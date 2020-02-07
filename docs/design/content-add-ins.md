@@ -2,7 +2,7 @@
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
 ms.date: 03/19/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Content Office Add-ins

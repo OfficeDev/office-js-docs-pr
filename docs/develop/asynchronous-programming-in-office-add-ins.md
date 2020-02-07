@@ -2,7 +2,7 @@
 title: Asynchronous programming in Office Add-ins
 description: ''
 ms.date: 01/14/2020
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 

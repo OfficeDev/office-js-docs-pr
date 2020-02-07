@@ -4,7 +4,7 @@ description: In this tutorial, you’ll create an Excel add-in that contains a c
 ms.date: 01/16/2020
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Tutorial: Create custom functions in Excel

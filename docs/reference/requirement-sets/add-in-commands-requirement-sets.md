@@ -3,7 +3,7 @@ title: Add-in commands requirement sets
 description: ''
 ms.date: 06/20/2019
 ms.prod: non-product-specific
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Add-in commands requirement sets
