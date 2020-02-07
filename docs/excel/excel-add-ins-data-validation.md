@@ -2,7 +2,7 @@
 title: Add data validation to Excel ranges
 description: ''
 ms.date: 03/19/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Add data validation to Excel ranges

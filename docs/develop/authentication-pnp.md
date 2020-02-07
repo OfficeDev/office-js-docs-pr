@@ -3,7 +3,7 @@ ms.date: 01/24/2020
 ms.prod: non-product-specific
 description: 'Authentication resources and samples.'
 title: 'Authentication resources and samples'
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Authentication resources and samples

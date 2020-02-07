@@ -2,7 +2,7 @@
 title: Office UI Fabric in Office Add-ins 
 description: ''
 ms.date: 12/04/2017
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 

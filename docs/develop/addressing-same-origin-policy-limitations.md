@@ -2,7 +2,7 @@
 title: Addressing same-origin policy limitations in Office Add-ins
 description: ''
 ms.date: 10/17/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 

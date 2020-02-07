@@ -2,7 +2,7 @@
 ms.date: 07/10/2019
 description: Use `OfficeRuntime.storage` to save state with custom functions. 
 title: Save and share state in custom functions
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Save and share state in custom functions
