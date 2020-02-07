@@ -1,31 +1,31 @@
 ---
-title: Run a custom function when a document opens
-description: Write custom functions that run upon a document opening. 
+title: Run code in your Excel add-in when the document opens
+description: Run code in your Excel add-in when the document opens. 
 ms.date: 02/06/2020
 localization_priority: Normal
 ---
 
-# Run a custom function when a document opens
+# Run code in your Excel add-in when the document opens
 
-By default, custom functions do not run automatically when you open a document, they run only when you choose to run them. However, a custom function can run automatically when you open a document if you configure your add-in's start-up behavior.
+You can configure your Excel add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, preload data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-This is useful for particular scenarios, such as when an add-in needs to load a custom function immediately or when you wish to register a set of event handlers.
-
-To do this, your add-in's manifest and task pane HTML file must be properly configured as shown in [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
-
-## Code sample
+## Code samples for configuring load behavior
 
 The following code samples illustrate how to configure the start up behavior for your add-in, which could include running a custom function. These code samples also assume you have already modified your add-in's manifest and task pane HTML file so custom functions can utilize Office.js APIs.
+
+### Set add-in to start on document open
 
 [!NOTE] The `setStartupBehavior` method is asynchronous.
 
 The following code sets the add-in to load immediately the next time the document is opened.
 
 ```JavaScript
- Office.addin.setStartupBehavior(Office.StartupBehavior.load);
+Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 ```
+
+### Set add-in not to start on document open
 
 To set the add-in to not load when the document is next opened, pass `none` as the parameter:
 
@@ -33,11 +33,50 @@ To set the add-in to not load when the document is next opened, pass `none` as t
 Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 ```
 
+### Get the current load behavior
+
 To determine what the current startup behavior is, run the following function, which returns an Office.StartupBehavior object.
 
 ```JavaScript
-var behavior = await Office.addin.getStartupBehavior();
+let behavior = await Office.addin.getStartupBehavior();
 ```
+
+## Code sample for running when document loads
+
+When your add-in is configured to load on document open, it will run immediately. Your task pane will be initialized, but not displayed. Place the code that must run on document open in the `Office.initialize` event handler.
+
+One thing you can do on document open is configure your task pane to show immediately. The following code shows how to show the task pane as soon as the document is opened.
+
+```JavaScript
+Office.initialize = () => {
+  // Display the task pane
+  SetRuntimeVisibleHelper(true);
+};
+
+function SetRuntimeVisibleHelper = (visible) => {
+  let p;
+  if (visible) {
+    p = Office.addin.showAsTaskpane();
+  }
+  else {
+    p = Office.addin.hide();
+  }
+  return p.then(() => {
+    return visible;
+  })
+  .catch((error) => {
+    return error.code;
+  });
+};
+```
+
+
+Office.initialize = () => {
+  window.sharedState = "loaded";
+  document.getElementById("sideload-msg").style.display = "none";
+  document.getElementById("app-body").style.display = "flex";
+  document.getElementById("run").onclick = run;
+};
 
 ## See also
 

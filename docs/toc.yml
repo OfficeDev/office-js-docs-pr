@@ -679,16 +679,16 @@
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
-    - name: Share custom functions with the task pane
+    - name: Use a shared runtime
       items:
-      - name: Overview of sharing custom functions with the task pane
+      - name: Overview of using a shared runtime
         href: excel/custom-functions-shared-overview.md
         displayName: Excel, Custom Functions
-      - name: Share custom functions with the task pane tutorial
+      - name: Use a shared runtime tutorial
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
       - name: Call Excel JS APIs from your custom function
-        href: excel/custom-functions-call-excel-api.md
+        href: excel/call-excel-apis-from-custom-function.md
         displayName: Excel, Custom Functions
     - name: Volatile functions
       href: excel/custom-functions-volatile.md
