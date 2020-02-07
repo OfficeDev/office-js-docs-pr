@@ -48,11 +48,14 @@ When your add-in is configured to load on document open, it will run immediately
 One thing you can do on document open is configure your task pane to show immediately. The following code shows how to show the task pane as soon as the document is opened.
 
 ```JavaScript
+//This is called as soon as the document opens.
+//Put your startup code here.
 Office.initialize = () => {
   // Display the task pane
   SetRuntimeVisibleHelper(true);
 };
 
+//Display or hide the task pane based on visible parameter
 function SetRuntimeVisibleHelper = (visible) => {
   let p;
   if (visible) {
@@ -69,14 +72,6 @@ function SetRuntimeVisibleHelper = (visible) => {
   });
 };
 ```
-
-
-Office.initialize = () => {
-  window.sharedState = "loaded";
-  document.getElementById("sideload-msg").style.display = "none";
-  document.getElementById("app-body").style.display = "flex";
-  document.getElementById("run").onclick = run;
-};
 
 ## See also
 
