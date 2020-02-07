@@ -1,5 +1,5 @@
 ---
-title: Office.context.mailbox.userProfile - requirement set 1.5
+title: Office.context.mailbox.userProfile - requirement set 1.4
 description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
