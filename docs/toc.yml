@@ -590,6 +590,9 @@
     - name: Shapes
       href: excel/excel-add-ins-shapes.md
       displayName: Excel
+    - name: Show or hide an Office Add-in in a shared runtime
+      href: excel/show-hide-add-in.md
+      displayName: Excel
     - name: Tables
       href: excel/excel-add-ins-tables.md
       displayName: Excel
