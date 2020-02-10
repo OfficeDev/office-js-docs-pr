@@ -20,10 +20,6 @@ Microsoft is now making it possible for add-ins with two or more parts to share 
 > [!IMPORTANT]
 > The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).
 > A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
->
-> Also, to use these preview APIs, load this special version of the Office JavaScript library:
->
-> [https://unpkg.com/\@microsoft/office-js\@1.1.37-custom.16/dist/office.debug.js](https://unpkg.com/\@microsoft/office-js\@1.1.37-custom.16/dist/office.debug.js)
 
 ## Configure an add-in to use a shared runtime
 
