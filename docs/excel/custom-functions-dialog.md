@@ -2,7 +2,7 @@
 ms.date: 06/18/2019
 description: Create a dialog box through custom functions in Excel using JavaScript.
 title: Display a dialog box from a custom function
-localization_priority: Priority
+localization_priority: Normal
 ---
 # Display a dialog box from a custom function
 

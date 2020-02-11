@@ -1,29 +1,41 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: Use the Excel JavaScript API to create PivotTables and interact with their components. 
-ms.date: 10/22/2019
+ms.date: 01/22/2020
 localization_priority: Normal
 ---
 
 # Work with PivotTables using the Excel JavaScript API
 
-PivotTables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create PivotTables and interact with their components.
+PivotTables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create PivotTables and interact with their components. This article describes how PivotTables are represented by the Office JavaScript API and provides code samples for key scenarios.
 
 If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user.
 See [Create a PivotTable to analyze worksheet data](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools.
 
-This article provides code samples for common scenarios. To further your understanding of the PivotTable API, see [**PivotTable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottablecollection).
-
 > [!IMPORTANT]
 > PivotTables created with OLAP are not currently supported. There is also no support for Power Pivot.
 
-## Hierarchies
+## Object model
 
-PivotTables are organized based on four hierarchy categories: row, column, data, and filter. The following data describing fruit sales from various farms will be used throughout this article.
+The [PivotTable](/javascript/api/excel/excel.pivottable) is the central object for PivotTables in the Office JavaScript API.
+
+- `Workbook.pivotTables` and `Worksheet.pivotTables` are [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) that contain the [PivotTables](/javascript/api/excel/excel.pivottable) in the workbook and worksheet, respectively.
+- A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) that has multiple [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- A [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contains a [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) that has exactly one [PivotField](/javascript/api/excel/excel.pivotfield). If the design expands to include OLAP PivotTables, this may change.
+- A [PivotField](/javascript/api/excel/excel.pivotfield) contains a [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) that has multiple [PivotItems](/javascript/api/excel/excel.pivotitem).
+- A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotLayout](/javascript/api/excel/excel.pivotlayout) that defines where the [PivotFields](/javascript/api/excel/excel.pivotfield) and [PivotItems](/javascript/api/excel/excel.pivotitem) are displayed in the worksheet.
+
+Let's look at how these relationships apply to some example data. The following data describes fruit sales from various farms. It will be the example throughout this article.
 
 ![A collection of fruit sales of different types from different farms.](../images/excel-pivots-raw-data.png)
 
-This data has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies and then added to row hierarchies, it only remains in the latter.
+This fruit farm sales data will be used to make a PivotTable. Each column, such as **Types**, is a `PivotHierarchy`. The **Types** hierarchy contains the **Types** field. The **Types** field contains the items **Apple**, **Kiwi**, **Lemon**, **Lime**, and **Orange**.
+
+### Hierarchies
+
+PivotTables are organized based on four hierarchy categories: [row](/javascript/api/excel/excel.rowcolumnpivothierarchy), [column](/javascript/api/excel/excel.rowcolumnpivothierarchy), [data](/javascript/api/excel/excel.datapivothierarchy), and [filter](/javascript/api/excel/excel.filterpivothierarchy).
+
+The farm data shown earlier has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies, it cannot also be in the row, data, or filter hierarchies. If **Type** is subsequently added to row hierarchies, it is removed from the column hierarchies. This behavior is the same whether hierarchy assignment is done through the Excel UI or the Excel JavaScript APIs.
 
 Row and column hierarchies define how data will be grouped. For example, a row hierarchy of **Farms** will group together all the data sets from the same farm. The choice between row and column hierarchy defines the orientation of the PivotTable.
 
@@ -31,7 +43,7 @@ Data hierarchies are the values to be aggregated based on the row and column hie
 
 Filter hierarchies include or exclude data from the pivot based on values within that filtered type. A filter hierarchy of **Classification** with the type **Organic** selected only shows data for organic fruit.
 
-Here is the farm data again, alongside a PivotTable. The PivotTable is using **Farm** and **Type** as the row hierarchies, **Crates Sold at Farm** and **Crates Sold Wholesale** as the data hierarchies (with the default aggregation function of sum), and **Classification** as a filter hierarchy (with **Organic** selected). 
+Here is the farm data again, alongside a PivotTable. The PivotTable is using **Farm** and **Type** as the row hierarchies, **Crates Sold at Farm** and **Crates Sold Wholesale** as the data hierarchies (with the default aggregation function of sum), and **Classification** as a filter hierarchy (with **Organic** selected).
 
 ![A selection of fruit sales data next to a PivotTable with row, data, and filter hierarchies.](../images/excel-pivot-table-and-data.png)
 
@@ -270,11 +282,11 @@ PivotTables, by default, aggregate the data of their row and column hierarchies 
 The `ShowAsRule` object has three properties:
 
 - `calculation`: The type of relative calculation to apply to the data hierarchy (the default is `none`).
-- `baseField`: The field within the hierarchy containing the base data before the calculation is applied. The [PivotField](/javascript/api/excel/excel.pivotfield) usually has the same name as its parent hierarchy.
+- `baseField`: The [PivotField](/javascript/api/excel/excel.pivotfield) in the hierarchy containing the base data before the calculation is applied. Since Excel PivotTables have a one-to-one mapping of hierarchy to field, you'll use the same name to access both the hierarchy and the field.
 - `baseItem`: The individual [PivotItem](/javascript/api/excel/excel.pivotitem) compared against the values of the base fields based on the calculation type. Not all calculations require this field.
 
-The following example sets the calculation on the **Sum of Crates Sold at Farm** data hierarchy to be a percentage of the column total. 
-We still want the granularity to extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field. 
+The following example sets the calculation on the **Sum of Crates Sold at Farm** data hierarchy to be a percentage of the column total.
+We still want the granularity to extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field.
 The example also has **Farm** as the first row hierarchy, so the farm total entries display the percentage each farm is responsible for producing as well.
 
 ![A PivotTable showing the percentages of fruit sales relative to the grand total for both individual farms and individual fruit types within each farm.](../images/excel-pivots-showas-percentage.png)
@@ -297,9 +309,9 @@ Excel.run(function (context) {
 });
 ```
 
-The previous example set the calculation to the column, relative to an individual row hierarchy. When the calculation relates to an individual item, use the `baseItem` property.
+The previous example set the calculation to the column, relative to the field of an individual row hierarchy. When the calculation relates to an individual item, use the `baseItem` property.
 
-The following example shows the `differenceFrom` calculation. It displays the difference of the farm crate sales data hierarchy entries relative to those of “A Farms”.
+The following example shows the `differenceFrom` calculation. It displays the difference of the farm crate sales data hierarchy entries relative to those of **A Farms**.
 The `baseField` is **Farm**, so we see the differences between the other farms, as well as breakdowns for each type of like fruit (**Type** is also a row hierarchy in this example).
 
 ![A PivotTable showing the differences of fruit sales between “A Farms” and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If “A Farms” did not sell a particular type of fruit, “#N/A” is displayed.](../images/excel-pivots-showas-differencefrom.png)

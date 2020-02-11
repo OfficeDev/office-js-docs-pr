@@ -2,7 +2,7 @@
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
 ms.date: 12/13/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Browsers used by Office Add-ins
@@ -33,6 +33,10 @@ The following table shows which browser is used for the various platforms and op
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
 ## Troubleshooting Microsoft Edge Issues
+
+### Chromium-based Edge is installed on my development computer, but my add-in does not use it
+
+The base browser in [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) has changed to Chromium. The older base, called EdgeHTML, is not removed when Chromium-based Edge is installed. Office will still use the EdgeHTML base for add-ins until a build of Office 365 that supports Chromium is installed on the computer. We expect these builds to ship in 2020. They will likely appear in the Insiders channel in the first half of the year.
 
 ### Scroll bar does not appear in task pane
 

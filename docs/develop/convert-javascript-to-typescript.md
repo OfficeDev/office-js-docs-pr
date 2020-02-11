@@ -2,7 +2,7 @@
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: ''
 ms.date: 10/29/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Convert an Office Add-in project in Visual Studio to TypeScript

@@ -1,8 +1,8 @@
 ---
-ms.date: 07/10/2019
+ms.date: 01/14/2020
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Receive and handle data with custom functions
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Receive and handle data with custom functions
@@ -10,6 +10,8 @@ localization_priority: Priority
 One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets). You can request external data through an API like [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+![A gif of a custom function which streams the time from an API](../images/custom-functions-web-api.gif)
 
 ## Functions that return data from external sources
 

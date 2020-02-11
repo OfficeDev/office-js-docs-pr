@@ -11,7 +11,7 @@ localization_priority: Priority
 Excel custom functions and the task pane share global data, and can make function calls into each other. To configure your project so that custom functions can work with the task pane, follow the instructions in this article.
 
 > [!NOTE]
-> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. The preview features in this article are only available on Excel on Windows. To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. The preview features in this article are only available on Excel on Windows. To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 ## Create the add-in project
 
@@ -36,21 +36,23 @@ After you complete the wizard, the generator creates the project and installs su
 3. Change the `<Requirements>` section to use **CustomFunctionsRuntime** version **1.2** as shown in the following code.
     
     ```xml
-    <Requirements> 
+    <Requirements>
     <Sets DefaultMinVersion="1.1">
     <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
     </Sets>
     </Requirements>
     ```
     
-4. Under the `<Host>` element for the workbook, add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.
+4. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.
     
     ```xml
-    <Hosts>
-    <Host xsi:type="Workbook">
-    <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-    </Runtimes>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <Hosts>
+        <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+        </Runtimes>
+        <AllFormFactors>
     ```
     
 5. In the `<Page>` element, change the source location from **Functions.Page.Url** to **TaskPaneAndCustomFunction.Url**.
@@ -144,8 +146,14 @@ Now that custom functions run in the same context as your task pane code, they c
 
 ### Create task pane controls to work with global data 
 
-1. Open the file**src/taskpane/taskpane.html**.
-2. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
+1. Open the file **src/taskpane/taskpane.html**.
+2. Add the following script element just before the `</head>` element.
+
+    ```html
+    <script src="functions.js"></script>
+    ```
+
+3. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
 
     ```html
     <ol>
@@ -167,7 +175,7 @@ Now that custom functions run in the same context as your task pane code, they c
     </div>
     ```
     
-3. Before the `<body>` element add the following script. This code will handle the button click events when the user wants to store or get global data.
+4. Before the `<body>` element add the following script. This code will handle the button click events when the user wants to store or get global data.
     
     ```js
     <script>
@@ -181,8 +189,8 @@ Now that custom functions run in the same context as your task pane code, they c
     }</script>
     ```
     
-4. Save the file.
-5. Build the project
+5. Save the file.
+6. Build the project
     
     ```command&nbsp;line
     npm run build 
