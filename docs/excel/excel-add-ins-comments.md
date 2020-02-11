@@ -1,7 +1,7 @@
 ---
 title: Work with comments using the Excel JavaScript API
-description: ''
-ms.date: 10/22/2019
+description: 'Information on using the APIs to add, remove, and edit comments and comment threads.'
+ms.date: 02/11/2020
 localization_priority: Normal
 ---
 
@@ -106,7 +106,7 @@ Excel.run(function (context) {
 });
 ```
 
-## Resolve comment threads
+## Resolve comment threads ([preview](../reference/requirement-sets/excel-preview-apis.md))
 
 A comment thread has a configurable boolean value, `resolved`, to indicate if it is resolved. A value of `true` means the comment thread is resolved. A value of `false` means the comment thread is either new or reopened.
 
@@ -164,7 +164,7 @@ Excel.run(function (context) {
 });
 ```
 
-## Mentions (preview)
+## Mentions ([online-only](../reference/requirement-sets/excel-api-online-requirement-set.md))
 
 > [!NOTE]
 > The comment mention APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]

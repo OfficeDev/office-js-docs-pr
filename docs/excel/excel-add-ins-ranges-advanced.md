@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
-description: ''
-ms.date: 10/22/2019
+description: 'Advanced range object functions and scenarios, such as special cells, remove duplicates, and working with dates.'
+ms.date: 02/11/2020
 localization_priority: Normal
 ---
 
@@ -227,6 +227,23 @@ Excel.run(function (context) {
 *After the preceding function has been run.*
 
 ![Data in Excel after range’s copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
+
+### Move cells ([online-only](../reference/requirement-sets/excel-api-online-requirement-set.md))
+
+The [Range.moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) method moves cells to a new location in the workbook. This cell movement behavior works the same as when cells are moved by [dragging the range border](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) or when taking the **Cut** and **Paste** actions. Both the formatting and values of the range are moved to the location specified as the `destinationRange` parameter.
+
+The following code sample shows a range being moved with the `Range.moveTo` method. Note that if the destination range is smaller than the source, it will be expanded to encompass the source content.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.getRange("F1").values = [["Moved Range"]];
+
+    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
+    sheet.getRange("A1:E1").moveTo("G1");
+    return context.sync();
+});
+```
 
 ## Remove duplicates
 
