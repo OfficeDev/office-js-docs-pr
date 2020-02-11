@@ -1,6 +1,6 @@
 ---
 title: Build your first OneNote task pane add-in
-description: 
+description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
 ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
