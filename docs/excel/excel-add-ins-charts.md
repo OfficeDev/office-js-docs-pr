@@ -2,7 +2,7 @@
 title: Work with charts using the Excel JavaScript API
 description: ''
 ms.date: 07/17/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Work with charts using the Excel JavaScript API

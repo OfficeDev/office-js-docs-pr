@@ -3,7 +3,7 @@ title: PowerPoint JavaScript API requirement sets
 description: ''
 ms.date: 07/26/2019
 ms.prod: powerpoint
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # PowerPoint JavaScript API requirement sets

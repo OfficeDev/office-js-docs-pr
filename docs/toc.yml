@@ -26,6 +26,8 @@
       href: quickstarts/project-quickstart.md
     - name: Word add-in
       href: quickstarts/word-quickstart.md
+    - name: Single sign-on (SSO)
+      href: quickstarts/sso-quickstart-redirect.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
@@ -71,7 +73,7 @@
       items:
       - name: Overview of authentication and authorization
         href: develop/overview-authn-authz.md
-      - name: Authenticate and authorize with the Office Dialog API
+      - name: Authenticate and authorize with the Office dialog API
         href: develop/auth-with-office-dialog-api.md
       - name: Authorize external services
         href: develop/auth-external-add-ins.md
@@ -81,6 +83,8 @@
         items:
         - name: Enable single sign-on
           href: develop/sso-in-office-add-ins.md
+        - name: SSO quick start
+          href: quickstarts/sso-quickstart.md
         - name: Authorize to Microsoft Graph with SSO
           href: develop/authorize-to-microsoft-graph.md
         - name: Create an SSO add-in using ASP.NET
@@ -140,8 +144,16 @@
         displayName: manifest
       - name: Localization
         href: develop/localization.md
-      - name: Open a dialog box
-        href: develop/dialog-api-in-office-add-ins.md
+      - name: Dialog boxes
+        items: 
+        - name: Use the Office dialog API in your Office Add-ins
+          href: develop/dialog-api-in-office-add-ins.md
+        - name: Best practices and rules for the Office dialog API
+          href: develop/dialog-best-practices.md
+        - name: Handling errors and events in the Office dialog box
+          href: develop/dialog-handle-errors-events.md
+        - name: Use the Office dialog box to play a video
+          href: develop/dialog-video.md
       - name: Performance
         href: concepts/resource-limits-and-performance-optimization.md
       - name: Privacy and security
@@ -379,6 +391,10 @@
         href: reference/manifest/requirements.md
       - name: Rule
         href: reference/manifest/rule.md
+      - name: Runtime
+        href: reference/manifest/runtime.md
+      - name: Runtimes
+        href: reference/manifest/runtimes.md
       - name: Set
         href: reference/manifest/set.md
       - name: Sets
@@ -617,9 +633,6 @@
     - name: Authentication
       href: excel/custom-functions-authentication.md
       displayName: Excel, Custom Functions
-    - name: Batching
-      href: excel/custom-functions-batching.md
-      displayName: Excel, Custom Functions
     - name: Debugging
       href: excel/custom-functions-debugging.md
       displayName: Excel, Custom Functions
@@ -649,6 +662,9 @@
       displayName: Excel, Custom Functions
     - name: Requirement sets
       href: excel/custom-functions-requirement-sets.md
+      displayName: Excel, Custom Functions
+    - name: Return a dynamic array
+      href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
     - name: Runtime
       href: excel/custom-functions-runtime.md
@@ -1012,3 +1028,17 @@
     - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
+
+- name: Patterns and practices
+  items:
+  - name: Share code from VSTO Add-in to Office add-in
+    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+  - name: Batching custom function remote calls
+    href: excel/custom-functions-batching.md
+    displayName: Excel, Custom Functions
+  - name: Authentication
+    href: develop/authentication-pnp.md
+  - name: Save and share state in custom functions
+    href: excel/custom-functions-save-state-redirect.md
+  - name: Handle high DPI and DPI scaling in your Office solution
+    href: develop/dynamic-dpi.md

@@ -2,7 +2,7 @@
 title: Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint
 description: ''
 ms.date: 04/10/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint

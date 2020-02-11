@@ -1,5 +1,5 @@
 ---
-ms.date: 07/15/2019
+ms.date: 01/14/2020
 description: Define JSON metadata for custom functions in Excel and associate your function id and name properties.
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -21,10 +21,13 @@ However, you can make a custom functions project from scratch; it requires that 
 
 This article will show you how to do all three of these steps.
 
-> [!NOTE]
-> In contrast with the `yo office` scaffold files, you need to hook your manifest up with the JSON file you create, through the `<Resources>` section in your XML manifest file. Note that the server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel on the web.
+The following image explains the differences between using `yo office` scaffold files and writing JSON from scratch.
+![Image of differences between using Yo Office and writing your own JSON](../images/custom-functions-json.png)
 
-## Authoring metadata and hooking up to the manifest
+> [!NOTE]
+> In contrast with the `yo office` scaffold files, you need to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file. Note that the server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel on the web.
+
+## Authoring metadata and connecting to the manifest
 
 You need to create a JSON file in your project and provide all the details about your functions in it, such as the function's parameters. See the [following metadata example](#json-metadata-example) and [the metadata reference](#metadata-reference) for a complete list of function properties.
 

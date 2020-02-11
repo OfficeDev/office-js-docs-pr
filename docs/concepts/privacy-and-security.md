@@ -2,7 +2,7 @@
 title: Privacy and security for Office Add-ins
 description: ''
 ms.date: 09/26/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Privacy and security for Office Add-ins
@@ -163,7 +163,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange and SharePoint provide client-side proxies to enable cross-domain access. In general, same origin policy on an intranet isn't as strict as on the Internet. For more information, see [Same Origin Policy Part 1: No Peeking](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) and [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
+Exchange and SharePoint provide client-side proxies to enable cross-domain access. In general, same origin policy on an intranet isn't as strict as on the Internet. For more information, see [Same Origin Policy Part 1: No Peeking](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking) and [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
 ### Tips to prevent malicious cross-site scripting
 
@@ -260,6 +260,6 @@ The management and enforcement of Office settings is done with group policy sett
 - [Limits for activation and JavaScript API for Outlook add-ins](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Addressing same-origin policy limitations in Office Add-ins](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [Same Origin Policy](https://www.w3.org/Security/wiki/Same_Origin_Policy)
-- [Same Origin Policy Part 1: No Peeking](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [Same Origin Policy Part 1: No Peeking](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Same origin policy for JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE Protect Mode](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)

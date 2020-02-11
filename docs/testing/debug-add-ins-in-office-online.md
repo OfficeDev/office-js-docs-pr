@@ -2,7 +2,7 @@
 title: Debug add-ins in Office on the web
 description: How to use Office on the web to test and debug your add-ins.
 ms.date: 06/20/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Debug add-ins in Office on the web
@@ -17,8 +17,8 @@ To get started:
 - Get an Office 365 developer account if you don't already have one or have access to a SharePoint site.
 
   > [!NOTE]
-  > To sign up for a free Office 365 developer subscription, join our [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program). 
-  > See the [Office 365 Developer Program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription.
+  > To get a free, 90-day renewable Office 365 developer subscription, join our [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program). 
+  > See the [Office 365 Developer Program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and configure your subscription.
 
 - Set up an app catalog on Office 365 (SharePoint Online). An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
