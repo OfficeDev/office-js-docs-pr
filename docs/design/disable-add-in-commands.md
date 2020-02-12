@@ -33,13 +33,13 @@ In Office on the web, the APIs and manifest markup described in this article onl
 
 The APIs and manifest markup described in this article that the add-in's manifest specifies that it should use a shared runtime. To do this take the following steps.
 
-1. In the [Runtimes](/office/dev/add-ins/reference/manifest/runtimes) element in the manifest, add the following child element: `<Runtime resid="OEP.SharedRuntime.Url" lifetime="long" />`. (If there isn't already a `<Runtimes>` element in the manifest, create it as the first child under the `<Host>` element in the `VersionOverrides` section.)
-2. In the [Resources](/office/dev/add-ins/reference/manifest/resources).[Urls](/office/dev/add-ins/reference/manifest/urls) section of the manifest, add the following child element: `<bt:Url id="OEP.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, where `{MyDomain}` is the domain of the add-in and `{path-to-start-page}` is the path for the start page of the add-in; for example: `<bt:Url id="OEP.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
+1. In the [Runtimes](/office/dev/add-ins/reference/manifest/runtimes) element in the manifest, add the following child element: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (If there isn't already a `<Runtimes>` element in the manifest, create it as the first child under the `<Host>` element in the `VersionOverrides` section.)
+2. In the [Resources](/office/dev/add-ins/reference/manifest/resources).[Urls](/office/dev/add-ins/reference/manifest/urls) section of the manifest, add the following child element: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, where `{MyDomain}` is the domain of the add-in and `{path-to-start-page}` is the path for the start page of the add-in; for example: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
 3. Depending on whether your add-in contains a task pane, a function file, or an Excel custom function, you must do one or more of the following three steps:
 
-    - If the add-in contains a task pane, set the `resid` attribute of the [Action](/office/dev/add-ins/reference/manifest/action).[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element to `OEP.SharedRuntime.Url`. The element should look like this: `<SourceLocation resid="OEP.SharedRuntime.Url"/>`.
-    - If the add-in contains an Excel custom function, set the `resid` attribute of the [Page](/office/dev/add-ins/reference/manifest/page).[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element to `OEP.SharedRuntime.Url`. The element should look like this: `<SourceLocation resid="OEP.SharedRuntime.Url"/>`.
-    - If the add-in contains a function file, set the `resid` attribute of the [FunctionFile](/office/dev/add-ins/reference/manifest/functionfile) element to `OEP.SharedRuntime.Url`. The element should look like this: `<FunctionFile resid="OEP.SharedRuntime.Url"/>`.
+    - If the add-in contains a task pane, set the `resid` attribute of the [Action](/office/dev/add-ins/reference/manifest/action).[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element to `Contoso.SharedRuntime.Url`. The element should look like this: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - If the add-in contains an Excel custom function, set the `resid` attribute of the [Page](/office/dev/add-ins/reference/manifest/page).[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element to `Contoso.SharedRuntime.Url`. The element should look like this: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - If the add-in contains a function file, set the `resid` attribute of the [FunctionFile](/office/dev/add-ins/reference/manifest/functionfile) element to `Contoso.SharedRuntime.Url`. The element should look like this: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
 
 ## Set the default state to disabled
 
@@ -71,8 +71,8 @@ By default, any Add-in Command is enabled when the Office application launches. 
 
 The essential steps to changing the enabled status of an Add-in Command are:
 
-1. Create a [RibbonUpdaterData](/javascript/api/office/officeruntime.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
-2. Get a reference to the [Ribbon](/javascript/api/office/officeruntime.ribbon) object with the [OfficeRuntime.ui.getRibbon](/javascript/api/office/officeruntime.ui.getribbon) method.
+1. Create a [RibbonUpdaterData](/javascript/api/office-runtime/officeruntime.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
+2. Get a reference to the [Ribbon](/javascript/api/office-runtime/officeruntime.ribbon) object with the [OfficeRuntime.ui.getRibbon](/javascript/api/office-runtime/officeruntime.ui.getribbon) method.
 3. Pass the **RibbonUpdaterData** object to the **Ribbon.requestUpdate()** method.
 
 The following is a simple example. Note that "MyButton" and "OfficeAddinTab1" are copied from the manifest.
@@ -217,4 +217,4 @@ The enable/disable APIs require support of the following requirement sets:
 
 - [AddinCommands 1.1](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
 - [RibbonAPI 1.1](/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets)
-- [SharedRuntime 1.1](/office/dev/add-ins/reference/requirement-sets/shared-runtime-requirement-sets)
+
