@@ -1,5 +1,5 @@
 ---
-ms.date: 02/01/2020
+ms.date: 02/13/2020
 description: Learn how to run custom functions, ribbon buttons, and task pane code in a the same JavaScript runtime to coordinate scenarios across your add-in.
 title: Run your add-in code in a shared JavaScript runtime (preview)
 localization_priority: Priority
@@ -35,7 +35,7 @@ You no longer need to use the **Storage** API to share data between the task pan
 
 ### Authentication
 
-When you receive tokens as part of authentication, you don't need to use the **Storage** API to share them between the task pane, custom functions and ribbon UI. You can use your own preferred storage technique to share them.
+When you receive tokens as part of authentication, you don't need to use the **Storage** API to share them between the task pane, custom functions and ribbon UI. You can use your own preferred storage technique and storage location to share them, such as `localStorage`.
 
 ### Dialog API
 

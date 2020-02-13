@@ -1,5 +1,5 @@
 ---
-ms.date: 11/04/2019
+ms.date: 02/13/2020
 title: "Tutorial: Share data and events between Excel custom functions and the task pane (preview)"
 ms.prod: excel
 description: In Excel, share data and events between custom functions and the task pane.
@@ -43,7 +43,7 @@ After you complete the wizard, the generator creates the project and installs su
     </Requirements>
     ```
     
-4. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.
+4. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed. 
     
     ```xml
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">

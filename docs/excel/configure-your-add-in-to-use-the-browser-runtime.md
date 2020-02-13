@@ -1,5 +1,5 @@
 ---
-ms.date: 02/06/2020
+ms.date: 02/13/2020
 title: "Configure your Excel add-in to share the browser runtime (preview)"
 ms.prod: excel
 description: Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.
@@ -46,7 +46,7 @@ Follow these steps for a new or existing project to configure it to use a shared
     </Requirements>
     ```
     
-4. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed. The resid is `ContosoAddin.Url` which references a string in the resources section later. You can use any resid value you want.
+4. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed. The resid is `ContosoAddin.Url` which references a string in the resources section later. You can use any resid value you want, but it should match the resid of the other elements in your add-in elements.
     
     ```xml
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -58,7 +58,7 @@ Follow these steps for a new or existing project to configure it to use a shared
         <AllFormFactors>
     ```
     
-5. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**. Note that if you don't have custom functions, you will not have a **Page** entry and can skip this step.
+5. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**. This resid matches the `<Runtime>` resid element. Note that if you don't have custom functions, you will not have a **Page** entry and can skip this step.
 
     ```xml
     <AllFormFactors>
@@ -116,6 +116,9 @@ If you set this value to `short`, the add-in will behave similar to the default 
 </Runtimes>
 ```
 
+## Multiple task panes
+
+Don't design your add-in to use multiple task panes if you are planning to use shared runtime. Shared runtime only supports the use of one task pane. Note that any task pane without a `<TaskpaneID>` is considered a different task pane.
 
 ## Next steps
 
