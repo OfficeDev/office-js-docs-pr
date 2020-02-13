@@ -15,7 +15,7 @@ As part of the process of developing an Outlook add-in, you will probably find y
 1. Testing the add-in, making appropriate changes to the UI or manifest files, and repeating steps 2 and 3 to test the changes.
 
 > [!NOTE]
-> [Custom panes have been deprecated](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/) so please ensure that you're using [a supported add-in extension point](/outlook/add-ins/#extension-points).
+> [Custom panes have been deprecated](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/) so please ensure that you're using [a supported add-in extension point](outlook-add-ins-overview.md#extension-points).
 
 ## Create a manifest file for the add-in
 

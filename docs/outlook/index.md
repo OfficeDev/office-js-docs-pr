@@ -57,7 +57,7 @@ With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Outlook add-in development</h3>
-                        <p><a href="/outlook/add-ins/outlook-addin-design">Learn about key aspects of Outlook add-in development.</a></p>
+                        <p><a href="outlook-add-ins-overview.md">Learn about key aspects of Outlook add-in development.</a></p>
                     </div>
                 </div>
             </div>
