@@ -24,7 +24,7 @@ In Outlook, a user can create a message in text, HTML, or Rich Text Format (RTF)
 
 2.  If your data to insert is HTML and **getTypeAsync** returns a text type for that item, reorganize your data as text and insert it with **Office.MailboxEnums.BodyType.Text** as _coercionType_. If you simply insert the HTML data with a text coercion type, the host would display the HTML tags as text. If you attempt to insert the HTML data with **Office.MailboxEnums.BodyType.Html** as _coercionType_, you will get an error.
 
-In addition to  _coercionType_, as with most asynchronous methods in the JavaScript API for Office, **getTypeAsync**, **prependAsync** and **setSelectedDataAsync** take other optional input parameters. For more information about specifying these optional input parameters, see [passing optional parameters to asynchronous methods](/office/dev/add-ins/develop/asynchronous-programming-in-office-add-ins#passing-optional-parameters-inline) in [Asynchronous programming in Office Add-ins](/office/dev/add-ins/develop/asynchronous-programming-in-office-add-ins).
+In addition to  _coercionType_, as with most asynchronous methods in the JavaScript API for Office, **getTypeAsync**, **prependAsync** and **setSelectedDataAsync** take other optional input parameters. For more information about specifying these optional input parameters, see [passing optional parameters to asynchronous methods](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## Insert data at the current cursor position
@@ -226,7 +226,7 @@ function write(message){
 - [Get and set item data in a compose form in Outlook](get-and-set-item-data-in-a-compose-form.md)    
 - [Get and set Outlook item data in read or compose forms](item-data.md)    
 - [Create Outlook add-ins for compose forms](compose-scenario.md)    
-- [Asynchronous programming in Office Add-ins](/office/dev/add-ins/develop/asynchronous-programming-in-office-add-ins)    
+- [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)    
 - [Get, set, or add recipients when composing an appointment or message in Outlook](get-set-or-add-recipients.md)  
 - [Get or set the subject when composing an appointment or message in Outlook](get-or-set-the-subject.md)  
 - [Get or set the location when composing an appointment in Outlook](get-or-set-the-location-of-an-appointment.md) 

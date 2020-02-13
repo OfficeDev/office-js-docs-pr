@@ -23,7 +23,7 @@ item.subject.getAsync
 
 The **subject** property is available for write access in only compose forms and not in read forms.
 
-As with most asynchronous methods in the JavaScript API for Office, **getAsync** and **setAsync** take optional input parameters. For more information about specifying these optional input parameters, see "Passing optional parameters to asynchronous methods" in [Asynchronous programming in Office Add-ins](/office/dev/add-ins/develop/asynchronous-programming-in-office-add-ins).
+As with most asynchronous methods in the JavaScript API for Office, **getAsync** and **setAsync** take optional input parameters. For more information about specifying these optional input parameters, see "Passing optional parameters to asynchronous methods" in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## Get the subject
@@ -131,7 +131,7 @@ function write(message){
 - [Get and set item data in a compose form in Outlook](get-and-set-item-data-in-a-compose-form.md)   
 - [Get and set Outlook item data in read or compose forms](item-data.md)    
 - [Create Outlook add-ins for compose forms](compose-scenario.md)    
-- [Asynchronous programming in Office Add-ins](/office/dev/add-ins/develop/asynchronous-programming-in-office-add-ins)    
+- [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Get, set, or add recipients when composing an appointment or message in Outlook](get-set-or-add-recipients.md)  
 - [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md)   
 - [Get or set the location when composing an appointment in Outlook](get-or-set-the-location-of-an-appointment.md) 

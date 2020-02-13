@@ -133,13 +133,13 @@ The following example shows how a task pane add-in specifies the  **ReadDocument
 </OfficeApp>
 ```
 
-For more information about permissions for task pane and content add-ins, see [Requesting permissions for API use in add-ins](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+For more information about permissions for task pane and content add-ins, see [Requesting permissions for API use in add-ins](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 For more information about permissions for Outlook add-ins, see the following topics:
 
-- [Privacy, permissions, and security for Outlook add-ins](/outlook/add-ins/privacy-and-security)
+- [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security)
 
-- [Understanding Outlook add-in permissions](/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions)
 
 ### Same origin policy
 
@@ -254,11 +254,11 @@ The management and enforcement of Office settings is done with group policy sett
 
 ## See also
 
-- [Requesting permissions for API use in add-ins](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
-- [Privacy, permissions, and security for Outlook add-ins](/outlook/add-ins/privacy-and-security)
-- [Understanding Outlook add-in permissions](/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Limits for activation and JavaScript API for Outlook add-ins](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
-- [Addressing same-origin policy limitations in Office Add-ins](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
+- [Requesting permissions for API use in add-ins](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security.md)
+- [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md)
+- [Limits for activation and JavaScript API for Outlook add-ins](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md)
 - [Same Origin Policy](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Same Origin Policy Part 1: No Peeking](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Same origin policy for JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)

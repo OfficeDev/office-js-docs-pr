@@ -19,11 +19,11 @@ Outlook add-in commands provide ways to initiate specific add-in actions from th
 >
 > Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/help/4012106/cumulative-update-5-for-exchange-server-2016).
 
-Add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](/office/dev/add-ins/concepts/add-in-development-best-practices).
+Add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
 
 ## Creating the add-in command
 
-Add-in commands are declared in the add-in manifest in the [VersionOverrides element](/office/dev/add-ins/reference/manifest/versionoverrides). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support `VersionOverrides`, existing add-ins will continue to function as they did without add-in commands.
+Add-in commands are declared in the add-in manifest in the [VersionOverrides element](../reference/manifest/versionoverrides.md). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support `VersionOverrides`, existing add-ins will continue to function as they did without add-in commands.
 
 The `VersionOverrides` manifest entries specify many things for the add-in, such as the host, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
@@ -31,7 +31,7 @@ When an add-in needs to provide status updates, such as progress indicators or e
 
 Developers should define icons for all required sizes so that the add-in commands will adjust smoothly along with the ribbon. The required icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels for desktop, and 48 x 48 pixels, 32 x 32 pixels, and 25 x 25 pixels for mobile.
 
-For more information about creating add-in commands, see [Create add-in commands in your manifest](/office/dev/add-ins/develop/create-addin-commands).
+For more information about creating add-in commands, see [Create add-in commands in your manifest](../develop/create-addin-commands.md).
 
 ## How do add-in commands appear?
 
@@ -40,9 +40,9 @@ the default is a custom tab. On the default tab, each add-in can have one ribbon
 
 As the ribbon gets more crowded, add-in commands will be displayed in the overflow menu. The add-in commands for an add-in are usually grouped together.
 
-![Add-in command buttons on ribbon](images/commands-normal.png)
+![Add-in command buttons on ribbon](../images/commands-normal.png)
 
-![Add-in command buttons on ribbon and in overflow menu](images/commands-collapsed.png)
+![Add-in command buttons on ribbon and in overflow menu](../images/commands-collapsed.png)
 
 When an add-in command is added to an add-in, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
 
@@ -50,9 +50,9 @@ When an add-in command is added to an add-in, the add-in name is removed from th
 
 In Outlook on the web, the add-in name is displayed in an overflow menu. If the add-in has multiple add-in commands, you can expand the add-in menu to see the group of buttons labeled with the add-in name.
 
-![Overflow menu where add-in command buttons will be found](images/commands-overflow-menu-web.png)
+![Overflow menu where add-in command buttons will be found](../images/commands-overflow-menu-web.png)
 
-![Overflow menu displaying add-in command buttons](images/commands-overflow-menu-expand-web.png)
+![Overflow menu displaying add-in command buttons](../images/commands-overflow-menu-expand-web.png)
 
 ## What UX shapes exist for add-in commands?
 
@@ -68,7 +68,7 @@ Use an add-in command button that executes a JavaScript function for scenarios w
 
 In module extensions, the add-in command button can execute JavaScript functions that interact with the content in the main user interface.
 
-![A button that executes a function on the Outlook ribbon.](images/commands-uiless-button-1.png)
+![A button that executes a function on the Outlook ribbon.](../images/commands-uiless-button-1.png)
 
 ### Launching a task pane
 
@@ -76,7 +76,7 @@ Use an add-in command button to launch a task pane for scenarios where a user ne
 
 The default width of the vertical task pane is 320 px. The vertical task pane can be resized in both the Outlook Explorer and inspector. The pane can be resized in the same way the to-do pane and list view resize.
 
-![A button that opens a task pane on the Outlook ribbon.](images/commands-task-pane-button-1.png)
+![A button that opens a task pane on the Outlook ribbon.](../images/commands-task-pane-button-1.png)
 
 <br/>
 
@@ -88,7 +88,7 @@ If a user chooses another add-in command that opens a task pane, the task pane i
 
 A drop-down menu add-in command defines a static list of buttons. The buttons within the menu can be any mix of buttons that execute a function or buttons that open a task pane. Submenus are not supported.
 
-![A button that drops down a menu on the Outlook ribbon.](images/commands-menu-button-1.png)
+![A button that drops down a menu on the Outlook ribbon.](../images/commands-menu-button-1.png)
 
 ## Where do add-in commands appear in the UI?
 
@@ -116,5 +116,5 @@ When using a module extension, add-in commands appear on the extension's custom 
 
 ## See also
 
-- [Define add-in commands in your manifest](/office/dev/add-ins/develop/create-addin-commands)
+- [Define add-in commands in your manifest](../develop/create-addin-commands.md)
 - [Add-in command demo Outlook add-in](https://github.com/officedev/outlook-add-in-command-demo)

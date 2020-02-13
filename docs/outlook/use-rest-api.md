@@ -7,11 +7,11 @@ localization_priority: Normal
 
 # Use the Outlook REST APIs from an Outlook add-in
 
-The [Office.context.mailbox.item](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](../rest/index.md) is the recommended method to retrieve the information.
+The [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](../rest/index.md) is the recommended method to retrieve the information.
 
 ## Get an access token
 
-The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox#methods) method introduced in the Mailbox requirement set 1.5.
+The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) method introduced in the Mailbox requirement set 1.5.
 
 By setting the `isRest` option to `true`, you can request a token compatible with the REST APIs.
 
@@ -38,13 +38,13 @@ Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
 
 ## Get the item ID
 
-To retrieve the current item via REST, your add-in will need the item's ID, properly formatted for REST. This is obtained from the [Office.context.mailbox.item.itemId](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#properties) property, but some checks should be made to ensure that it is a REST-formatted ID.
+To retrieve the current item via REST, your add-in will need the item's ID, properly formatted for REST. This is obtained from the [Office.context.mailbox.item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) property, but some checks should be made to ensure that it is a REST-formatted ID.
 
 - In Outlook Mobile, the value returned by `Office.context.mailbox.item.itemId` is a REST-formatted ID and can be used as-is.
-- In other Outlook clients, the value returned by `Office.context.mailbox.item.itemId` is an EWS-formatted ID, and must be converted using the [Office.context.mailbox.convertToRestId](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox#methods) method.
+- In other Outlook clients, the value returned by `Office.context.mailbox.item.itemId` is an EWS-formatted ID, and must be converted using the [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) method.
 - Note you must also convert Attachment ID to a REST-formatted ID in order to use it. The reason the IDs must be converted is that EWS IDs can contain non-URL safe values which will cause problems for REST.
 
-Your add-in can determine which Outlook client it is loaded in by checking the [Office.context.mailbox.diagnostics.hostName](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics#properties) property.
+Your add-in can determine which Outlook client it is loaded in by checking the [Office.context.mailbox.diagnostics.hostName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics.md#properties) property.
 
 ### Example
 
@@ -65,7 +65,7 @@ function getItemRestId() {
 
 ## Get the REST API URL
 
-The final piece of information your add-in needs to call the REST API is the hostname it should use to send API requests. This information is in the [Office.context.mailbox.restUrl](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox#properties) property.
+The final piece of information your add-in needs to call the REST API is the hostname it should use to send API requests. This information is in the [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) property.
 
 ### Example
 

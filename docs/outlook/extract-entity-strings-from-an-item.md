@@ -200,7 +200,7 @@ The remaining sections describe how this sample (default_entities.js file) extra
 
 ## Extracting entities upon initialization
 
-Upon the [Office.initialize](/javascript/api/office#office-initialize-reason-) event, the entities add-in calls the [getEntities](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#methods) method of the current item. The **getEntities** method returns the global variable `_MyEntities` an array of instances of supported entities. The following is the related JavaScript code.
+Upon the [Office.initialize](/javascript/api/office#office-initialize-reason-) event, the entities add-in calls the [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method of the current item. The **getEntities** method returns the global variable `_MyEntities` an array of instances of supported entities. The following is the related JavaScript code.
 
 
 ```js
@@ -825,4 +825,4 @@ function myGetUrls()
 
 - [Create Outlook add-ins for read forms](read-scenario.md)
 - [Match strings in an Outlook item as well-known entities](match-strings-in-an-item-as-well-known-entities.md)
-- [item.getEntities method](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#methods)
+- [item.getEntities method](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)

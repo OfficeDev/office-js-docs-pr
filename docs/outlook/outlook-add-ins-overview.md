@@ -19,7 +19,7 @@ Outlook add-ins are different from COM or VSTO add-ins, which are older integrat
 The Outlook items that support add-ins include email messages, meeting requests, responses and cancellations, and appointments. Each Outlook add-in defines the context in which it is available, including the types of items and if the user is reading or composing an item.
 
 > [!NOTE]
-> When you build your add-in, if you plan to [publish](/office/dev/add-ins/publish/publish?product=outlook) your add-in to AppSource, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](/office/dev/add-ins/overview/office-add-in-availability)).
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to AppSource, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 ## Extension points
 
@@ -29,13 +29,13 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
     **An add-in with command buttons on the ribbon**
 
-    ![Add-in Command UI-less shape](images/uiless-command-shape.png)
+    ![Add-in Command UI-less shape](../images/uiless-command-shape.png)
 
 - Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     **A contextual add-in for a highlighted entity (an address)**
 
-    ![Shows a contextual app in a card](images/outlook-detected-entity-card.png)
+    ![Shows a contextual app in a card](../images/outlook-detected-entity-card.png)
 
 
 > [!NOTE]
@@ -63,21 +63,21 @@ In general, Outlook can activate add-ins in read form for items in the Sent Item
 
 ## Supported hosts
 
-Outlook add-ins are supported in Outlook 2013 or later on Windows, Outlook 2016 or later on Mac, Outlook on the web for Exchange 2013 on-premises and later versions, Outlook on iOS, Outlook on Android, and Outlook on the web in Office 365 and Outlook.com. Not all of the newest features are supported in all [clients](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) at the same time. Please refer to articles and API references for those features to see which hosts they may or may not be supported in.
+Outlook add-ins are supported in Outlook 2013 or later on Windows, Outlook 2016 or later on Mac, Outlook on the web for Exchange 2013 on-premises and later versions, Outlook on iOS, Outlook on Android, and Outlook on the web in Office 365 and Outlook.com. Not all of the newest features are supported in all [clients](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) at the same time. Please refer to articles and API references for those features to see which hosts they may or may not be supported in.
 
 
 ## Get started building Outlook add-ins
 
 To get started building Outlook add-ins, try the following.
 
-- [Quick start](quick-start.md) - Build a simple task pane.
-- [Tutorial](addin-tutorial.md) - Learn how to create an add-in that inserts GitHub gists into a new message.
+- [Quick start](../quickstarts/outlook-quickstart.md) - Build a simple task pane.
+- [Tutorial](../tutorials/outlook-tutorial.md) - Learn how to create an add-in that inserts GitHub gists into a new message.
 
 
 ## See also
 
-- [Best practices for developing Office Add-ins](/office/dev/add-ins/concepts/add-in-development-best-practices?product=outlook)
-- [Design guidelines for Office Add-ins](/office/dev/add-ins/design/add-in-design?product=outlook)
+- [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
+- [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [License your Office and SharePoint Add-ins](/office/dev/store/license-your-add-ins)
-- [Publish your Office Add-in](/office/dev/add-ins/publish/publish?product=outlook)
+- [Publish your Office Add-in](../publish/publish.md)
 - [Make your solutions available in AppSource and within Office](/office/dev/store/submit-to-the-office-store)

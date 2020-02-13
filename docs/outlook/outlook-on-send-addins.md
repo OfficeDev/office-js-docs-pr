@@ -36,7 +36,7 @@ The following screenshot shows an information bar that notifies the sender to ad
 
 <br/>
 
-![Screenshot showing an error message prompting the user to enter a missing subject line](images/block-on-send-subject-cc-inforbar.png)
+![Screenshot showing an error message prompting the user to enter a missing subject line](../images/block-on-send-subject-cc-inforbar.png)
 
 <br/>
 
@@ -46,7 +46,7 @@ The following screenshot shows an information bar that notifies the sender that 
 
 <br/>
 
-![Screenshot showing an error message telling the user that blocked words were found](images/block-on-send-body.png)
+![Screenshot showing an error message telling the user that blocked words were found](../images/block-on-send-body.png)
 
 ## Limitations
 
@@ -437,8 +437,8 @@ The on-send API requires `VersionOverrides v1_1`. The following shows you how to
 > [!NOTE]
 > For more information, see the following:
 > - [Outlook add-in manifests](manifests.md)
-> - [VersionOverrides](/office/dev/add-ins/develop/create-addin-commands#step-3-add-versionoverrides-element)
-> - [Office Add-ins XML manifest](/office/dev/add-ins/overview/add-in-manifests)
+> - [VersionOverrides](../develop/create-addin-commands#step-3-add-versionoverrides-element.md)
+> - [Office Add-ins XML manifest](../overview/add-in-manifests.md)
 
 
 ### `Event` and `item` objects, and `body.getAsync` and `body.setAsync` methods
@@ -501,7 +501,7 @@ The following are the parameters for the `addAsync` method:
 To signal that the add-in has finished processing the `ItemSend` event triggered by the send operation, call the `event.completed({allowEvent:Boolean})` method. The `allowEvent` property is a Boolean. If set to `true`, send is allowed. If set to `false`, the email message is blocked from sending.
 
 > [!NOTE]
-> For more information, see [notificationMessages](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#properties) and [completed](/javascript/api/office/office.addincommands.event).
+> For more information, see [notificationMessages](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) and [completed](/javascript/api/office/office.addincommands.event).
 
 ### `replaceAsync`, `removeAsync`, and `getAllAsync` methods
 

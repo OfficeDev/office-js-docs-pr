@@ -14,7 +14,7 @@ Using this method, your add-in can obtain an access token scoped to your server 
 - Complete the On-Behalf-Of flow to obtain an access token scoped to the Microsoft Graph API
 - Use the identity information in the token to establish the user's identity and authenticate to your own back-end services
 
-For an overview of SSO in Office Add-ins, see [Enable single sign-on for Office Add-ins](/office/dev/add-ins/develop/sso-in-office-add-ins) and [Authorize to Microsoft Graph in your Office Add-in](/office/dev/add-ins/develop/authorize-to-microsoft-graph).
+For an overview of SSO in Office Add-ins, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md) and [Authorize to Microsoft Graph in your Office Add-in](../develop/authorize-to-microsoft-graph.md).
 
 > [!NOTE]
 > To use SSO, you must load the beta version of the Office JavaScript Library from https://appsforoffice.microsoft.com/lib/beta/hosted/office.js in the startup HTML page of the add-in.
@@ -25,23 +25,23 @@ To use SSO with an Outlook add-in, you must enable Modern Authentication for the
 
 ## Register your add-in
 
-To use SSO, your Outlook add-in will need to have a server-side web API that is registered with Azure Active Directory (AAD) v2.0. For more information, see [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](/office/dev/add-ins/develop/register-sso-add-in-aad-v2).
+To use SSO, your Outlook add-in will need to have a server-side web API that is registered with Azure Active Directory (AAD) v2.0. For more information, see [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](../develop/register-sso-add-in-aad-v2.md).
 
 ### Provide consent when sideloading an add-in
 
-When an add-in that uses SSO is acquired from AppSource, the store UI handles prompting the user for consent to the requested Graph permissions. However, when you are developing an add-in, you have to provide consent in advance. For more information, see [Grant administrator consent to the add-in](/office/dev/add-ins/develop/grant-admin-consent-to-an-add-in)
+When an add-in that uses SSO is acquired from AppSource, the store UI handles prompting the user for consent to the requested Graph permissions. However, when you are developing an add-in, you have to provide consent in advance. For more information, see [Grant administrator consent to the add-in](../develop/grant-admin-consent-to-an-add-in.md)
 
 ## Update the add-in manifest
 
-The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides) element. For more information, see [Configure the add-in](/office/dev/add-ins/develop/sso-in-office-add-ins#configure-the-add-in).
+The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](../reference/manifest/versionoverrides.md) element. For more information, see [Configure the add-in](../develop/sso-in-office-add-ins#configure-the-add-in.md).
 
 ## Get the SSO token
 
-The add-in gets an SSO token with client-side script. For more information, see [Add client-side code](/office/dev/add-ins/develop/sso-in-office-add-ins#add-client-side-code).
+The add-in gets an SSO token with client-side script. For more information, see [Add client-side code](../develop/sso-in-office-add-ins#add-client-side-code.md).
 
 ## Use the SSO token at the back-end
 
-In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. For details on what your server-side could and should do, see [Add server-side code](/office/dev/add-ins/develop/sso-in-office-add-ins#add-server-side-code).
+In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. For details on what your server-side could and should do, see [Add server-side code](../develop/sso-in-office-add-ins#add-server-side-code.md).
 
 > [!IMPORTANT]
 > When using the SSO token as an identity in an *Outlook* add-in, we recommend that you also [use the Exchange identity token](authenticate-a-user-with-an-identity-token.md) as an alternate identity. Users of your add-in may use multiple clients, and some may not support providing an SSO token. By using the Exchange identity token as an alternate, you can avoid having to prompt these users for credentials multiple times. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](implement-sso-in-outlook-add-in.md).
@@ -49,5 +49,5 @@ In most scenarios, there would be little point to obtaining the access token, if
 ## See also
 
 - For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo).
-- [SSO API reference](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
-- [IdentityAPI requirement set](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)
+- [SSO API reference](../develop/sso-in-office-add-ins.md#sso-api-reference)
+- [IdentityAPI requirement set](../reference/requirement-sets/identity-api-requirement-sets.md)

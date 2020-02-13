@@ -104,7 +104,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![A screenshot of the prompts and answers for the Yeoman generator](images/addin-tutorial/yeoman-prompts-2.png)
+    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yeoman-prompts-2.png)
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -160,11 +160,11 @@ Before going any further, let's test the basic add-in that the generator created
     npm run dev-server
     ```
 
-1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.
+1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.
 
 1. In Outlook, open an existing message and select the **Show Taskpane** button. If everything's been set up correctly, the task pane will open and render the add-in's welcome page.
 
-    ![A screenshot of the button and task pane added by the sample](images/addin-tutorial/button-and-pane.png)
+    ![A screenshot of the button and task pane added by the sample](../images/button-and-pane.png)
 
 ## Define buttons
 
@@ -272,7 +272,7 @@ The previous code references labels, tooltips, and URLs that you need to define 
 
 Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.
 
-1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md) to locate the **Custom add-ins** section at the bottom of the **My add-ins** dialog box.
+1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to locate the **Custom add-ins** section at the bottom of the **My add-ins** dialog box.
 
 1. Select the **...** button next to the **Git the gist** entry and then choose **Remove**.
 
@@ -280,17 +280,17 @@ Since you previously installed the add-in from a file, you must reinstall it in 
 
 1. The custom button should disappear from the ribbon momentarily.
 
-1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.
+1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.
 
 After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window. Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.
 
 - If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.
 
-    ![A screenshot of the ribbon in Outlook on Windows with the add-in's buttons highlighted](images/addin-tutorial/add-in-buttons-in-windows.png)
+    ![A screenshot of the ribbon in Outlook on Windows with the add-in's buttons highlighted](../images/add-in-buttons-in-windows.png)
 
 - If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window. Select that button to see the options **Insert gist** and **Insert default gist**.
 
-    ![A screenshot of the message compose form in Outlook on the web with the add-in button and pop-up menu highlighted](images/addin-tutorial/add-in-buttons-in-owa.png)
+    ![A screenshot of the message compose form in Outlook on the web with the add-in button and pop-up menu highlighted](../images/add-in-buttons-in-owa.png)
 
 ## Implement a first-run experience
 
@@ -901,11 +901,11 @@ Save all of your changes and run `npm run dev-server` from the command prompt, i
 
 1. In the compose message window, select the **Insert default gist** button. You should be prompted to configure the add-in.
 
-    ![A screenshot of the add-in's prompt to configure](images/addin-tutorial/addin-prompt-configure.png)
+    ![A screenshot of the add-in's prompt to configure](../images/addin-prompt-configure.png)
 
 1. In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of gists. Select a gist to be the default, and select **Done**.
 
-    ![A screenshot of the add-in's settings dialog](images/addin-tutorial/addin-settings.png)
+    ![A screenshot of the add-in's settings dialog](../images/addin-settings.png)
 
 1. Select the **Insert default gist** button again. This time, you should see the contents of the gist inserted into the body of the email.
 
@@ -1264,11 +1264,11 @@ Save all of your changes and run `npm run dev-server` from the command prompt, i
 
 1. In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.
 
-![A screenshot of the add-in task pane](images/addin-tutorial/addin-taskpane.png)
+![A screenshot of the add-in task pane](../images/addin-taskpane.png)
 
 ## Next steps
 
 In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message. To learn more about developing Outlook add-ins, continue to the following article:
 
 > [!div class="nextstepaction"]
-> [Outlook add-in APIs](apis.md)
+> [Outlook add-in APIs](../outlook/apis.md)

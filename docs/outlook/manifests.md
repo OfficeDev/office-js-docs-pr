@@ -269,7 +269,7 @@ If the add-in's requested permissions change, users will be prompted to upgrade 
 
 ## VersionOverrides
 
-The **VersionOverrides** element is the location of information for add-in commands. For more information about this element, see [Define add-in commands in your manifest](/office/dev/add-ins/develop/define-add-in-commands).
+The **VersionOverrides** element is the location of information for add-in commands. For more information about this element, see [Define add-in commands in your manifest](../develop/define-add-in-commands.md).
 
 This element is also where add-ins define support for [mobile add-ins](add-mobile-support.md).
 
@@ -319,7 +319,7 @@ Outlook add-ins specify the **Hosts** element like the following.
 </OfficeApp>
 ```
 
-This is separate from the **Hosts** element inside the **VersionOverrides** element, which is discussed in [Define add-in commands in your manifest](/office/dev/add-ins/develop/define-add-in-commands).
+This is separate from the **Hosts** element inside the **VersionOverrides** element, which is discussed in [Define add-in commands in your manifest](../develop/define-add-in-commands.md).
 
 ## Requirements
 
@@ -347,7 +347,7 @@ The **FormSettings** element is used by older Outlook clients, which only suppor
 
 These settings are directly related to the activation rules in the **Rule** element. For example, if an add-in specifies that it should appear on a message in compose mode, an **ItemEdit** form must be specified.
 
-For more details, please refer to the [Schema reference for Office Add-ins manifests (v1.1)](/office/dev/add-ins/overview/add-in-manifests).
+For more details, please refer to the [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md).
 
 ## App domains
 
@@ -375,15 +375,15 @@ The following table describes browser behavior when your add-in attempts to navi
 |Outlook 2016 on Windows (one-time purchase)<br>Outlook 2013 on Windows|No|Link opens in Internet Explorer 11.|
 |Other clients|No|Link opens in user's default browser.|
 
-For more details, see the [Specify domains you want to open in the add-in window](/office/dev/add-ins/develop/add-in-manifests?tabs=tabid-1#specify-domains-you-want-to-open-in-the-add-in-window).
+For more details, see the [Specify domains you want to open in the add-in window](../develop/add-in-manifests.md?tabs=tabid-1#specify-domains-you-want-to-open-in-the-add-in-window).
 
 ## Permissions
 
-The **Permissions** element contains the required permissions for the add-in. In general, you should specify the minimum necessary permission that your add-in needs, depending on the exact methods that you plan to use. For example, a mail add-in that activates in compose forms and only reads but does not write to item properties like [item.requiredAttendees](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#properties), and does not call [mailbox.makeEwsRequestAsync](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox#methods) to access any Exchange Web Services operations should specify **ReadItem** permission. For details on the available permissions, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
+The **Permissions** element contains the required permissions for the add-in. In general, you should specify the minimum necessary permission that your add-in needs, depending on the exact methods that you plan to use. For example, a mail add-in that activates in compose forms and only reads but does not write to item properties like [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), and does not call [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) to access any Exchange Web Services operations should specify **ReadItem** permission. For details on the available permissions, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 
 **Four-tier permissions model for mail add-ins**
 
-![4-tier permissions model for mail apps schema v1.1](images/add-in-permission-tiers.png)
+![4-tier permissions model for mail apps schema v1.1](../images/add-in-permission-tiers.png)
 
 ```XML
 <OfficeApp>
@@ -415,7 +415,7 @@ For details and samples of activation rules, see [Activation rules for Outlook a
 
 ## Next steps: Add-in commands
 
-After defining a basic manifest, [define add-in commands for your add-in](/office/dev/add-ins/develop/define-add-in-commands). Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
+After defining a basic manifest, [define add-in commands for your add-in](../develop/define-add-in-commands.md). Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
 For an example add-in that defines add-in commands, see [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 
@@ -425,12 +425,12 @@ Add-ins can optionally add support for Outlook mobile. Outlook mobile supports a
 
 ## See also
 
-- [Localization for Office Add-ins](/office/dev/add-ins/develop/localization)
+- [Localization for Office Add-ins](../develop/localization.md)
 - [Privacy, permissions, and security for Outlook add-ins](privacy-and-security.md)
 - [Outlook add-in APIs](apis.md)
-- [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)
-- [Schema reference for Office Add-ins manifests (v1.1)](/office/dev/add-ins/develop/add-in-manifests)
-- [Design your Office Add-ins](/office/dev/add-ins/design/add-in-design)
+- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
+- [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
+- [Design your Office Add-ins](../design/add-in-design.md)
 - [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md)
 - [Use regular expression activation rules to show an Outlook add-in](use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Match strings in an Outlook item as well-known entities](match-strings-in-an-item-as-well-known-entities.md)

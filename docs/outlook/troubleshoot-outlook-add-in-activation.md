@@ -19,7 +19,7 @@ You can verify the version of Exchange 2013 by using one of the following approa
 
 - If you are testing the add-in on Outlook on the web or mobile devices, in a script debugger (for example, the JScript Debugger that comes with Internet Explorer), look for the **src** attribute of the **script** tag that specifies the location from which scripts are loaded. The path should contain a substring **owa/15.0.516.x/owa2/...**, where **15.0.516.x** represents the version of the Exchange Server, such as **15.0.516.2**.
 
-- Alternatively, you can use the [Office.context.mailbox.diagnostics.hostVersion](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics#properties) property to verify the version. On Outlook on the web and mobile devices, this property returns the version of the Exchange Server.
+- Alternatively, you can use the [Office.context.mailbox.diagnostics.hostVersion](../reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics.md#properties) property to verify the version. On Outlook on the web and mobile devices, this property returns the version of the Exchange Server.
 
 - If you can test the add-in on Outlook, you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor:
 
@@ -65,7 +65,7 @@ Use one of the following approaches to verify whether an add-in is disabled:
 
 If your Outlook add-in is a read add-in and is supposed to be activated when the user is viewing a message (including email messages, meeting requests, responses, and cancellations) or appointment, even though these items generally support add-ins, there are exceptions. Check if the selected item is one of those [listed where Outlook add-ins do not activate](index.md#mailbox-items-available-to-add-ins).
 
-Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](/office/dev/add-ins/reference/manifest/rule#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** would not activate an add-in on an appointment or message that is saved in plain text or Rich Text Format.
+Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** would not activate an add-in on an appointment or message that is saved in plain text or Rich Text Format.
 
 Even if a mail item is not one of the above types, if the item was not delivered by a version of Exchange Server that is at least Exchange 2013, known entities and properties such as sender's SMTP address would not be identified on the item. Any activation rules that rely on these entities or properties would not be satisfied, and the add-in would not be activated.
 
@@ -87,7 +87,7 @@ Figure 1 shows a summary of the steps to verify whether Outlook has a valid vers
 
 **Figure 1. Flow chart of the steps to verify whether Outlook properly cached the manifest**
 
-![Flow chart to check manifest](images/troubleshoot-manifest-flow.png)
+![Flow chart to check manifest](../images/troubleshoot-manifest-flow.png)
 
 The following procedure describes the details.
 
@@ -144,11 +144,11 @@ The following procedure describes the details.
 
 ## Is the add-in manifest valid?
 
-See [Validate and troubleshoot issues with your manifest](/office/dev/add-ins/testing/troubleshoot-manifest) to debug add-in manifest issues.
+See [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md) to debug add-in manifest issues.
 
 ## Are you using the appropriate activation rules?
 
-Starting in version 1.1 of the Office Add-ins manifests schema, you can create add-ins that are activated when the user is in a compose form (compose add-ins) or in a read form (read add-ins). Make sure you specify the appropriate activation rules for each type of form that your add-in is supposed to activate in. For example, you can activate compose add-ins using only [ItemIs](/office/dev/add-ins/reference/manifest/rule#itemis-rule) rules with the **FormType** attribute set to **Edit** or **ReadOrEdit**, and you cannot use any of the other types of rules, such as [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) and [ItemHasRegularExpressionMatch](/office/dev/add-ins/reference/manifest/rule#itemhasregularexpressionmatch-rule) rules for compose add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
+Starting in version 1.1 of the Office Add-ins manifests schema, you can create add-ins that are activated when the user is in a compose form (compose add-ins) or in a read form (read add-ins). Make sure you specify the appropriate activation rules for each type of form that your add-in is supposed to activate in. For example, you can activate compose add-ins using only [ItemIs](../reference/manifest/rule.md#itemis-rule) rules with the **FormType** attribute set to **Edit** or **ReadOrEdit**, and you cannot use any of the other types of rules, such as [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) and [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rules for compose add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
 ## If you use a regular expression, is it properly specified?
 
@@ -248,4 +248,4 @@ This section applies to all activation rules that use regular expressions -- par
 - [Activation rules for Outlook add-ins](activation-rules.md)
 - [Use regular expression activation rules to show an Outlook add-in](use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-- [Validate and troubleshoot issues with your manifest](/office/dev/add-ins/testing/troubleshoot-manifest)
+- [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md)

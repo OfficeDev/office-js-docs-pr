@@ -42,14 +42,14 @@ The following figure describes how Exchange Server and Outlook support well-know
 
 **How Exchange Server, Outlook, and add-ins support well-known entities**
 
-![Support and use of well-known entities in mail app](images/well-known-entities-info.png)
+![Support and use of well-known entities in mail app](../images/well-known-entities-info.png)
 
 
 ## Permissions to extract entities
 
 To extract entities in your JavaScript code or to have your add-in activated based on the existence of certain well-known entities, make sure you have requested the appropriate permissions in the add-in manifest.
 
-Specifying the default restricted permission allows your add-in to extract the **Address**, **MeetingSuggestion**, or **TaskSuggestion** entity. To extract any of the other entities, specify read item, read/write item, or read/write mailbox permission. To do that in the manifest, use the [Permissions](/office/dev/add-ins/reference/manifest/permissions) element and specify the appropriate permission&mdash;**Restricted**, **ReadItem**, **ReadWriteItem**, or **ReadWriteMailbox**&mdash;as in the following example:
+Specifying the default restricted permission allows your add-in to extract the **Address**, **MeetingSuggestion**, or **TaskSuggestion** entity. To extract any of the other entities, specify read item, read/write item, or read/write mailbox permission. To do that in the manifest, use the [Permissions](../reference/manifest/permissions.md) element and specify the appropriate permission&mdash;**Restricted**, **ReadItem**, **ReadWriteItem**, or **ReadWriteMailbox**&mdash;as in the following example:
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -85,7 +85,7 @@ if (null != entities && null != entities.addresses && undefined != entities.addr
 
 Another way to use well-known entities is to have Outlook activate your add-in based on the existence of one or more types of entities in the subject or body of the currently viewed item. You can do so by specifying an **ItemHasKnownEntity** rule in the add-in manifest. The [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) simple type represents the different types of well-known entities supported by **ItemHasKnownEntity** rules. After your add-in is activated, you can also retrieve the instances of such entities for your purposes, as described in the previous section [Retrieving entities in your add-in](#retrieving-entities-in-your-add-in).
 
-You can optionally apply a regular expression in an **ItemHasKnownEntity** rule, so as to further filter instances of an entity and have Outlook activate an add-in only on a subset of the instances of the entity. For example, you can specify a filter for the street address entity in a message that contains a Washington state zip code beginning with "98". To apply a filter on the entity instances, use the **RegExFilter** and **FilterName** attributes in the `Rule` element of the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) type.
+You can optionally apply a regular expression in an **ItemHasKnownEntity** rule, so as to further filter instances of an entity and have Outlook activate an add-in only on a subset of the instances of the entity. For example, you can specify a filter for the street address entity in a message that contains a Washington state zip code beginning with "98". To apply a filter on the entity instances, use the **RegExFilter** and **FilterName** attributes in the `Rule` element of the [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) type.
 
 Similar to other activation rules, you can specify multiple rules to form a rule collection for your add-in. The following example applies an "AND" operation on 2 rules: an **ItemIs** rule and an **ItemHasKnownEntity** rule. This rule collection activates the add-in whenever the current item is a message and Outlook recognizes an address in the subject or body of that item.
 
@@ -142,7 +142,7 @@ There are a few facts and limits you should be aware of if you use well-known en
     
 - You cannot extract entities from items in the Sent Items folder.
     
-In addition, the following applies if you use an [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule, and may affect the scenarios where you'd otherwise expect your add-in to be activated:
+In addition, the following applies if you use an [ItemHasKnownEntity](../reference/manifest/rule#itemhasknownentity-rule.md) rule, and may affect the scenarios where you'd otherwise expect your add-in to be activated:
 
 - When using the **ItemHasKnownEntity** rule, expect Outlook to match entity strings in only English regardless of the default locale specified in the manifest.
     

@@ -10,7 +10,7 @@ localization_priority: Normal
 In Outlook, a user can apply categories to messages and appointments as a means of organizing their mailbox data. The user defines the master list of color-coded categories for their mailbox, and can then apply one or more of those categories to any message or appointment item. Each [category](/javascript/api/outlook/office.categorydetails) in the master list is represented by the name and [color](/javascript/api/outlook/office.mailboxenums.categorycolor) that the user specifies. You can use the Office JavaScript API to manage the categories master list on the mailbox and the categories applied to an item.
 
 > [!NOTE]
-> Support for this feature was introduced in requirement set 1.8. See [clients and platforms](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.8. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Manage categories in the master list
 
@@ -136,4 +136,4 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## See also
 
 - [Outlook permissions](understanding-outlook-add-in-permissions.md)
-- [Permissions element in the manifest](/office/dev/add-ins/reference/manifest/permissions)
+- [Permissions element in the manifest](../reference/manifest/permissions.md)

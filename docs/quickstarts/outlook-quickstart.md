@@ -40,7 +40,7 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![A screenshot of the prompts and answers for the Yeoman generator](images/yo-office-outlook.png)
+    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-outlook.png)
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -96,23 +96,23 @@ The add-in project that you've created with the Yeoman generator contains sample
     npm run dev-server
     ```
 
-1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
+1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
 
 1. In Outlook, select or open a message.
 
 1. Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of a message window in Outlook with the add-in button highlighted](images/quick-start-button-1.png)
+    ![A screenshot of a message window in Outlook with the add-in button highlighted](../images/quick-start-button-1.png)
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.
 
-    ![A screenshot of the add-in's task pane with the Run link highlighted](images/quick-start-task-pane-2.png)
+    ![A screenshot of the add-in's task pane with the Run link highlighted](../images/quick-start-task-pane-2.png)
 
-    ![A screenshot of the add-in's task pane displaying message subject](images/quick-start-task-pane-3.png)
+    ![A screenshot of the add-in's task pane displaying message subject](../images/quick-start-task-pane-3.png)
 
 ### Next steps
 
-Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the [Outlook add-in tutorial](addin-tutorial.md).
+Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the [Outlook add-in tutorial](../tutorials/outlook-tutorial.md).
 
 # [Visual Studio](#tab/visualstudio)
 
@@ -265,21 +265,21 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Within the message, locate the ellipsis for the overflow menu containing the add-in's button.
 
-    ![A screenshot of a message window in Outlook on the web with the ellipsis highlighted](images/quick-start-button-owa-1.png)
+    ![A screenshot of a message window in Outlook on the web with the ellipsis highlighted](../images/quick-start-button-owa-1.png)
 
 1. Within the overflow menu, locate the add-in's button.
 
-    ![A screenshot of a message window in Outlook on the web with the add-in button highlighted](images/quick-start-button-owa-2.png)
+    ![A screenshot of a message window in Outlook on the web with the add-in button highlighted](../images/quick-start-button-owa-2.png)
 
 1. Click the button to open the add-in's task pane.
 
-    ![A screenshot of the add-in's task pane in Outlook on the web displaying message properties](images/quick-start-task-pane-owa-1.png)
+    ![A screenshot of the add-in's task pane in Outlook on the web displaying message properties](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.
 
 ### Next steps
 
-Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](/office/dev/add-ins/develop/develop-add-ins-visual-studio).
+Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio).
 
 ---

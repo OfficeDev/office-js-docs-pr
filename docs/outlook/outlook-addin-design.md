@@ -47,15 +47,15 @@ The following high-level guidelines will help you design and build a compelling 
 > [!NOTE]
 > While the above principles apply to all endpoints/platforms, the following patterns and examples are specific to mobile add-ins on the iOS platform.
 
-To help you create a well-designed add-in, we have [templates](/office/dev/add-ins/design/ux-design-pattern-templates) that contain iOS mobile patterns that work within the Outlook Mobile environment. Leveraging these specific patterns will help ensure your add-in feels native to both the iOS platform and Outlook Mobile. These patterns are also detailed below. While not exhaustive, this is the start of a library that we will continue to build upon as we uncover additional paradigms partners wish to include in their add-ins.  
+To help you create a well-designed add-in, we have [templates](../design/ux-design-pattern-templates.md) that contain iOS mobile patterns that work within the Outlook Mobile environment. Leveraging these specific patterns will help ensure your add-in feels native to both the iOS platform and Outlook Mobile. These patterns are also detailed below. While not exhaustive, this is the start of a library that we will continue to build upon as we uncover additional paradigms partners wish to include in their add-ins.  
 
 ### Overview
 
 A typical add-in is made up of the following components.
 
-![A diagram of basic UX patterns for a task pane on iOS](images/outlook-mobile-design-overview.png)
+![A diagram of basic UX patterns for a task pane on iOS](../images/outlook-mobile-design-overview.png)
 
-![A diagram of basic UX patterns for a task pane on Android](images/outlook-mobile-design-overview-android.jpg)
+![A diagram of basic UX patterns for a task pane on Android](../images/outlook-mobile-design-overview-android.jpg)
 
 ### Loading
 
@@ -63,11 +63,11 @@ When a user taps on your add-in, the UX should display as quickly as possible. I
 
 **An example of loading pages on iOS**
 
-![Examples of a progress bar and an activity indicator on iOS](images/outlook-mobile-design-loading.png)
+![Examples of a progress bar and an activity indicator on iOS](../images/outlook-mobile-design-loading.png)
 
 **An example of loading pages on Android**
 
-![Examples of a progress bar and an activity indicator on Android](images/outlook-mobile-design-loading-android.jpg)
+![Examples of a progress bar and an activity indicator on Android](../images/outlook-mobile-design-loading-android.jpg)
 
 
 ### Sign in/Sign up
@@ -76,11 +76,11 @@ Make your sign in (and sign up) flow straightforward and simple to use.
 
 **An example sign in and sign up page on iOS**
 
-![Examples of sign in and sign up pages on iOS](images/outlook-mobile-design-signin.png)
+![Examples of sign in and sign up pages on iOS](../images/outlook-mobile-design-signin.png)
 
 **An example sign in page on Android**
 
-![Examples of sign in page on Android](images/outlook-mobile-design-signin-android.png)
+![Examples of sign in page on Android](../images/outlook-mobile-design-signin-android.png)
 
 ### Brand bar
 
@@ -88,17 +88,17 @@ The first screen of your add-in should include your branding element. Designed f
 
 **An example of branding on iOS**
 
-![Examples of brand bars on iOS](images/outlook-mobile-design-branding.png)
+![Examples of brand bars on iOS](../images/outlook-mobile-design-branding.png)
 
 **An example of branding on Android**
 
-![Examples of brand bars on Android](images/outlook-mobile-design-branding-android.png)
+![Examples of brand bars on Android](../images/outlook-mobile-design-branding-android.png)
 
 ### Margins
 
 Mobile margins should be set to 15px (8% of screen) for each side, to align with Outlook iOS and 16px for each side to align with Outlook Android.
 
-![Examples of margins on iOS](images/outlook-mobile-design-margins.png)
+![Examples of margins on iOS](../images/outlook-mobile-design-margins.png)
 
 ### Typography
 
@@ -106,17 +106,17 @@ Typography usage is aligned to Outlook iOS and is kept simple for scannability.
 
 **Typography on iOS**
 
-![Typography samples for iOS](images/outlook-mobile-design-typography.png)
+![Typography samples for iOS](../images/outlook-mobile-design-typography.png)
 
 **Typography on Android**
 
-![Typography samples for Android](images/outlook-mobile-design-typography-android.png)
+![Typography samples for Android](../images/outlook-mobile-design-typography-android.png)
 
 ### Color palette
 
 Color usage is subtle in Outlook iOS.  To align, we ask that usage of color is localized to actions and error states, with only the brand bar using a unique color.
 
-![Color palette for iOS](images/outlook-mobile-design-color-palette.png)
+![Color palette for iOS](../images/outlook-mobile-design-color-palette.png)
 
 ### Cells
 
@@ -124,25 +124,25 @@ Since the navigation bar cannot be used to label a page, use section titles to l
 
 **Examples of cells on iOS**
 
-![Cell types for iOS](images/outlook-mobile-design-cell-types.png)
+![Cell types for iOS](../images/outlook-mobile-design-cell-types.png)
 * * *
-![Cell 'dos' for iOS](images/outlook-mobile-design-cell-dos.png)
+![Cell 'dos' for iOS](../images/outlook-mobile-design-cell-dos.png)
 * * *
-![Cell 'don'ts' for iOS](images/outlook-mobile-design-cell-donts.png)
+![Cell 'don'ts' for iOS](../images/outlook-mobile-design-cell-donts.png)
 * * *
-![Cells and inputs for iOS](images/outlook-mobile-design-cell-input.png)
+![Cells and inputs for iOS](../images/outlook-mobile-design-cell-input.png)
 
 **Examples of cells on Android**
 
-![Cell types for Android](images/outlook-mobile-design-cell-type-android.png)
+![Cell types for Android](../images/outlook-mobile-design-cell-type-android.png)
 * * *
-![Cell 'dos' for Android](images/outlook-mobile-design-cell-dos-android.png)
+![Cell 'dos' for Android](../images/outlook-mobile-design-cell-dos-android.png)
 * * *
-![Cell 'don'ts' for Android](images/outlook-mobile-design-cell-donts-android.png)
+![Cell 'don'ts' for Android](../images/outlook-mobile-design-cell-donts-android.png)
 * * *
-![Cells and inputs for Android part 1](images/outlook-mobile-design-cell-input-1-android.png)
+![Cells and inputs for Android part 1](../images/outlook-mobile-design-cell-input-1-android.png)
 
-![Cells and inputs for Android part 2](images/outlook-mobile-design-cell-input-2-android.png)
+![Cells and inputs for Android part 2](../images/outlook-mobile-design-cell-input-2-android.png)
 
 ### Actions
 
@@ -150,15 +150,15 @@ Even if your app handles a multitude of actions, think about the most important 
 
 **Examples of actions on iOS**
 
-![Actions and cells in iOS](images/outlook-mobile-design-action-cells.png)
+![Actions and cells in iOS](../images/outlook-mobile-design-action-cells.png)
 * * *
-![Actions 'dos' for iOS](images/outlook-mobile-design-action-dos.png)
+![Actions 'dos' for iOS](../images/outlook-mobile-design-action-dos.png)
 
 **Examples of actions on Android**
 
-![Actions and cells in Android](images/outlook-mobile-design-action-cells-android.png)
+![Actions and cells in Android](../images/outlook-mobile-design-action-cells-android.png)
 * * *
-![Actions 'dos' for Android](images/outlook-mobile-design-action-dos-android.png)
+![Actions 'dos' for Android](../images/outlook-mobile-design-action-dos-android.png)
 
 ### Buttons
 
@@ -166,11 +166,11 @@ Buttons are used when there are other UX elements below (vs. actions, where the 
 
 **Examples of buttons on iOS**
 
-![Examples of buttons for iOS](images/outlook-mobile-design-buttons.png)
+![Examples of buttons for iOS](../images/outlook-mobile-design-buttons.png)
 
 **Examples of buttons on Android**
 
-![Examples of buttons for Android](images/outlook-mobile-design-buttons-android.png)
+![Examples of buttons for Android](../images/outlook-mobile-design-buttons-android.png)
 
 ### Tabs
 
@@ -178,11 +178,11 @@ Tabs can aid in content organization.
 
 **Examples of tabs on iOS**
 
-![Examples of tabs for iOS](images/outlook-mobile-design-tabs.png)
+![Examples of tabs for iOS](../images/outlook-mobile-design-tabs.png)
 
 **Examples of tabs on Android**
 
-![Examples of tabs for Android](images/outlook-mobile-design-tabs-android.png)
+![Examples of tabs for Android](../images/outlook-mobile-design-tabs-android.png)
 
 ### Icons
 
@@ -190,11 +190,11 @@ Icons should follow the current Outlook iOS design when possible. Use our standa
 
 **Examples of icons on iOS**
 
-![Examples of icons for iOS](images/outlook-mobile-design-icons.png)
+![Examples of icons for iOS](../images/outlook-mobile-design-icons.png)
 
 **Examples of icons on Android**
 
-![Examples of icons for Android](images/outlook-mobile-design-icons-android.jpg)
+![Examples of icons for Android](../images/outlook-mobile-design-icons-android.jpg)
 
 ## End-to-end examples
 
@@ -207,44 +207,44 @@ For our v1 Outlook Mobile Add-ins launch, we worked closely with our partners wh
 
 **An example of GIPHY on iOS**
 
-![End-to-end design for the GIPHY add-in on iOS](images/outlook-mobile-design-giphy.png)
+![End-to-end design for the GIPHY add-in on iOS](../images/outlook-mobile-design-giphy.png)
 
 **An example of GIPHY on Android**
 
-![End-to-end design for the GIPHY add-in on Android](images/outlook-mobile-design-giphy-android.png)
+![End-to-end design for the GIPHY add-in on Android](../images/outlook-mobile-design-giphy-android.png)
 
 ### Nimble
 
 **An example of Nimble on iOS**
 
-![End-to-end design for the Nimble add-in on iOS](images/outlook-mobile-design-nimble.png)
+![End-to-end design for the Nimble add-in on iOS](../images/outlook-mobile-design-nimble.png)
 
 **An example of Nimble on Android**
 
-![End-to-end design for the Nimble add-in on Android](images/outlook-mobile-design-nimble-android.png)
+![End-to-end design for the Nimble add-in on Android](../images/outlook-mobile-design-nimble-android.png)
 
 ### Trello
 
 **An example of Trello on iOS**
 
-![End-to-end design for the Trello add-in part 1 on iOS](images/outlook-mobile-design-trello-1.png)
+![End-to-end design for the Trello add-in part 1 on iOS](../images/outlook-mobile-design-trello-1.png)
 * * *
-![End-to-end design for the Trello add-in part 2 on iOS](images/outlook-mobile-design-trello-2.png)
+![End-to-end design for the Trello add-in part 2 on iOS](../images/outlook-mobile-design-trello-2.png)
 * * *
-![End-to-end design for the Trello add-in part 3 on iOS](images/outlook-mobile-design-trello-3.png)
+![End-to-end design for the Trello add-in part 3 on iOS](../images/outlook-mobile-design-trello-3.png)
 
 **An example of Trello on Android**
 
-![End-to-end design for the Trello add-in part 1 on Android](images/outlook-mobile-design-trello-1-android.png)
+![End-to-end design for the Trello add-in part 1 on Android](../images/outlook-mobile-design-trello-1-android.png)
 * * *
-![End-to-end design for the Trello add-in part 2 on Android](images/outlook-mobile-design-trello-2-android.png)
+![End-to-end design for the Trello add-in part 2 on Android](../images/outlook-mobile-design-trello-2-android.png)
 
 ### Dynamics CRM
 
 **An example of Dynamics CRM on iOS**
 
-![End-to-end design for the Dynamics CRM add-in on iOS](images/outlook-mobile-design-crm.png)
+![End-to-end design for the Dynamics CRM add-in on iOS](../images/outlook-mobile-design-crm.png)
 
 **An example of Dynamics CRM on Android**
 
-![End-to-end design for the Dynamics CRM add-in on Android](images/outlook-mobile-design-crm-android.png)
+![End-to-end design for the Dynamics CRM add-in on Android](../images/outlook-mobile-design-crm-android.png)

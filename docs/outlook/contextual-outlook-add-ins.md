@@ -19,11 +19,11 @@ The following are examples of contextual add-ins:
 > [!NOTE]
 > Contextual add-ins are not currently available in Outlook on Android and iOS. This functionality will be made available in the future.
 >
-> Support for this feature was introduced in requirement set 1.6. See [clients and platforms](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.6. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## How to make a contextual add-in
 
-A contextual add-in's manifest must include an [ExtensionPoint](/office/dev/add-ins/reference/manifest/extensionpoint) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **ExtensionPoint** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
+A contextual add-in's manifest must include an [ExtensionPoint](../reference/manifest/extensionpoint.md) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **ExtensionPoint** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
 
 Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify that an add-in should activate on messages with a detected entity that is a phone number:
 
@@ -57,7 +57,7 @@ A user launches a contextual add-in through text, either a known entity or a dev
 
 **Example of text with highlighted entity (an address)**
 
-![Shows the highlighted entity within an email](images/outlook-detected-entity-highlight.png)
+![Shows the highlighted entity within an email](../images/outlook-detected-entity-highlight.png)
     
 When there are multiple entities or contextual add-ins in a message, there are a few user interaction rules:
 
@@ -71,7 +71,7 @@ An activated contextual add-in appears in a card, which is a separate window nea
 
 **Example of an add-in displayed in a card**
 
-![Shows a contextual app in a card](images/outlook-detected-entity-card.png)
+![Shows a contextual app in a card](../images/outlook-detected-entity-card.png)
 
 To close the card and the add-in, a user clicks anywhere outside of the card.
 
@@ -85,6 +85,6 @@ The following contextual add-ins are installed by default for users with Outlook
 ## See also
 
 - [Outlook add-in: Contoso Order Number](https://github.com/OfficeDev/Outlook-Add-In-Contextual-Regex) (sample contextual add-in that activates based on a regular expression match)
-- [Write your first Outlook add-in](quick-start.md)
+- [Write your first Outlook add-in](../quickstarts/outlook-quickstart.md)
 - [Use regular expression activation rules to show an Outlook add-in](use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Entities object](/javascript/api/outlook/office.entities)

@@ -9,7 +9,7 @@ localization_priority: Normal
 
 You can specify regular expression rules to have a [contextual add-in](contextual-outlook-add-ins.md) activated when a match is found in specific fields of the message. Contextual add-ins activate only in read mode, Outlook does not activate contextual add-ins when the user is composing an item. There are also other scenarios where Outlook does not activate add-ins, for example, items protected by Information Rights Management (IRM). For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
-You can specify a regular expression as part of an [ItemHasRegularExpressionMatch](/office/dev/add-ins/reference/manifest/rule#itemhasregularexpressionmatch-rule) rule or [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule in the add-in XML manifest. The rules are specified in a [DetectedEntity](/office/dev/add-ins/reference/manifest/extensionpoint#detectedentity) extension point.
+You can specify a regular expression as part of an [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rule or [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule in the add-in XML manifest. The rules are specified in a [DetectedEntity](../reference/manifest/extensionpoint#detectedentity.md) extension point.
 
 Outlook evaluates regular expressions based on the rules for the JavaScript interpreter used by the browser on the client computer. Outlook supports the same list of special characters that all XML processors also support. The following table lists these special characters. You can use these characters in a regular expression by specifying the escaped sequence for the corresponding character, as described in the following table.
 
@@ -121,11 +121,11 @@ The following `ItemHasKnownEntity` rule activates the add-in whenever there is a
 
 You can obtain matches to a regular expression by using the following methods on the current item:
 
-- [getRegExMatches](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#methods) returns matches in the current item for all regular expressions specified in `ItemHasRegularExpressionMatch` and `ItemHasKnownEntity` rules of the add-in.
+- [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) returns matches in the current item for all regular expressions specified in `ItemHasRegularExpressionMatch` and `ItemHasKnownEntity` rules of the add-in.
 
-- [getRegExMatchesByName](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#methods) returns matches in the current item for the identified regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
+- [getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) returns matches in the current item for the identified regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
 
-- [getFilteredEntitiesByName](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#methods) returns entire instances of entities that contain matches for the identified regular expression specified in an `ItemHasKnownEntity` rule of the add-in.
+- [getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) returns entire instances of entities that contain matches for the identified regular expression specified in an `ItemHasKnownEntity` rule of the add-in.
 
 When the regular expressions are evaluated, the matches are returned to your add-in in an array object. For `getRegExMatches`, that object has the identifier of the name of the regular expression.
 

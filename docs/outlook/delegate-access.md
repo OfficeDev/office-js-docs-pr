@@ -12,7 +12,7 @@ A mailbox owner can use the delegate access feature to [allow someone else to ma
 > [!IMPORTANT]
 > Delegate access is not currently available in Outlook on Mac, Android, and iOS. This functionality may be made available in the future.
 >
-> Support for this feature was introduced in requirement set 1.8. See [clients and platforms](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.8. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Supported permissions for delegate access
 
@@ -40,7 +40,7 @@ However, if the add-in uses REST or EWS operations to set an extended property o
 
 ## Configure the manifest
 
-To enable delegate access scenarios in your add-in, you must set the [SupportsSharedFolders](/office/dev/add-ins/reference/manifest/supportssharedfolders) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors are not supported.
+To enable delegate access scenarios in your add-in, you must set the [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors are not supported.
 
 The following example shows the `SupportsSharedFolders` element set to `true` in a section of the manifest.
 
@@ -71,7 +71,7 @@ The following example shows the `SupportsSharedFolders` element set to `true` in
 
 ## Perform an operation as delegate
 
-You can get an item's shared properties in Compose or Read mode by calling the [item.getSharedPropertiesAsync](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#methods) method. This returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that currently provides the delegate's permissions, the owner's email address, the REST API's base URL, and the target mailbox.
+You can get an item's shared properties in Compose or Read mode by calling the [item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method. This returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that currently provides the delegate's permissions, the owner's email address, the REST API's base URL, and the target mailbox.
 
 The following example shows how to get the shared properties of a message or appointment, check if the delegate has **Write** permission, and make a REST call.
 
@@ -128,6 +128,6 @@ function performOperation() {
 
 - [Allow someone else to manage your mail and calendar](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Calendar sharing in Office 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)
-- [How to order manifest elements](/office/dev/add-ins/develop/manifest-element-ordering)
+- [How to order manifest elements](../develop/manifest-element-ordering.md)
 - [Mask (computing)](https://en.wikipedia.org/wiki/Mask_(computing))
 - [JavaScript bitwise operators](https://www.w3schools.com/js/js_bitwise.asp)

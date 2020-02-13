@@ -26,18 +26,18 @@ Starting with version 1.1 of the schema for Office Add-ins manifests and v1.1 of
 
 In each of these compose scenarios, any add-in command buttons defined by the add-in are shown. For older add-ins that do not implement add-in commands, users can choose **Office Add-ins** in the ribbon to open the add-in selection pane, and then choose and start a compose add-in. The following figure shows add-in commands in a compose form.
 
-![Shows an Outlook compose form with add-in commands.](images/compose-form-commands.png)
+![Shows an Outlook compose form with add-in commands.](../images/compose-form-commands.png)
 
 The following figure shows the add-in selection pane consisting of two compose add-ins that do not implement add-in commands, activated when the user is composing an inline reply in Outlook.
 
-![Templates mail app activated for composed item](images/templates-app-selection.png)
+![Templates mail app activated for composed item](../images/templates-app-selection.png)
 
 ## Types of add-ins available in compose mode
 
-Compose add-ins are implemented as [Add-in commands for Outlook](add-in-commands-for-outlook.md). To activate add-ins for composing email or meeting responses, add-ins include a [MessageComposeCommandSurface extension point element](/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface) in the manifest. To activate add-ins for composing or editing appointments or meetings where the user is the organizer, add-ins include a [AppointmentOrganizerCommandSurface extension point element](/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface).
+Compose add-ins are implemented as [Add-in commands for Outlook](add-in-commands-for-outlook.md). To activate add-ins for composing email or meeting responses, add-ins include a [MessageComposeCommandSurface extension point element](../reference/manifest/extensionpoint.md#messagecomposecommandsurface) in the manifest. To activate add-ins for composing or editing appointments or meetings where the user is the organizer, add-ins include a [AppointmentOrganizerCommandSurface extension point element](../reference/manifest/extensionpoint.md#appointmentorganizercommandsurface).
 
 > [!NOTE]
-> Add-ins developed for servers or clients that do not support add-in commands use [activation rules](activation-rules.md) in a [Rule](/office/dev/add-ins/reference/manifest/rule) element contained in the [OfficeApp](/office/dev/add-ins/reference/manifest/officeapp) element. Unless the add-in is being specifically developed for older clients and servers, new add-ins should use add-in commands.
+> Add-ins developed for servers or clients that do not support add-in commands use [activation rules](activation-rules.md) in a [Rule](../reference/manifest/rule.md) element contained in the [OfficeApp](../reference/manifest/officeapp.md) element. Unless the add-in is being specifically developed for older clients and servers, new add-ins should use add-in commands.
 
 ## API features available to compose add-ins
 
@@ -51,4 +51,4 @@ Compose add-ins are implemented as [Add-in commands for Outlook](add-in-commands
 
 ## See also
 
-- [Get Started with Outlook add-ins for Office 365](quick-start.md)
+- [Get Started with Outlook add-ins for Office 365](../quickstarts/outlook-quickstart.md)

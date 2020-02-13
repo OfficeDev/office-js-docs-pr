@@ -82,4 +82,4 @@ Deciding what versions of the Outlook client to test depends on your development
 
 ## See also
 
-- [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting)
+- [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)

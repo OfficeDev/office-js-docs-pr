@@ -10,7 +10,7 @@ localization_priority: Normal
 Sometimes you need to create and update a recurring appointment, such as a weekly status meeting for a team project or a yearly birthday reminder. You can use the JavaScript API for Office to manage the recurrence patterns of an appointment series in your add-in.
 
 > [!NOTE]
-> Support for this feature was introduced in requirement set 1.7. See [clients and platforms](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.7. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Available recurrence patterns
 
@@ -175,7 +175,7 @@ var recurrenceType = recurrence.recurrenceType;
 [RecurrenceChanged event](/javascript/api/office/office.eventtype)
 
 [getAsync link]: /javascript/api/outlook/office.recurrence#getasync-options--callback-
-[item.recurrence link]: /office/dev/add-ins/reference/objectmodel/preview-requirement-set/office.context.mailbox.item#properties
+[item.recurrence link]: ../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties
 [setAsync link]: /javascript/api/outlook/office.recurrence#setasync-recurrencepattern--options--callback-
 
 [dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayofmonth
