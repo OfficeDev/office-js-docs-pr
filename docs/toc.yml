@@ -706,16 +706,130 @@
     href: outlook/index.md
     displayName: Outlook
   - name: Overview
-    href: /outlook/add-ins/index?context=office/dev/add-ins/context
+    href: outlook/outlook-add-ins-overview.md
     displayName: Outlook
   - name: Build your first Outlook add-in
-    href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
+    href: quickstarts/outlook-quickstart.md
     displayName: Outlook
   - name: Outlook add-in tutorial
-    href: /outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context
+    href: tutorials/outlook-tutorial.md
     displayName: Outlook
   - name: Outlook add-in concepts
-    href: /outlook/add-ins/outlook-addin-design
+    items: 
+
+    - name: Outlook add-in design guidelines
+      href: outlook/outlook-addin-design.md
+    - name: Add-in commands
+      href: outlook/add-in-commands-for-outlook.md
+    - name: Contextual add-ins
+      href: outlook/contextual-outlook-add-ins.md
+    - name: Module extension add-ins
+      href: outlook/extension-module-outlook-add-ins.md
+    - name: Add-ins for Outlook Mobile
+      href: outlook/outlook-mobile-addins.md
+    - name: On send add-ins
+      href: outlook/outlook-on-send-addins.md
+    - name: Pinnable task pane
+      href: outlook/pinnable-taskpane.md
+    - name: Delegate access
+      href: outlook/delegate-access.md
+    - name: Manifests
+      items:
+      - name: Outlook add-in manifests
+        href: outlook/manifests.md
+      - name: Activation rules
+        href: outlook/activation-rules.md
+      - name: Add support for Outlook Mobile
+        href: outlook/add-mobile-support.md
+    - name: Add-in requirements
+      href: outlook/add-in-requirements.md
+    - name: Add-in APIs
+      href: outlook/apis.md
+    - name: Call Outlook REST APIs
+      href: outlook/use-rest-api.md
+    - name: Call Exchange web services
+      href: outlook/web-services.md
+    - name: Get or set item data
+      href: outlook/item-data.md
+    - name: Get or set categories
+      href: outlook/categories.md
+    - name: Get or set internet headers
+      href: outlook/internet-headers.md
+    - name: Get or set recurrence
+      href: outlook/get-and-set-recurrence.md
+    - name: Get or set add-in metadata
+      href: outlook/metadata-for-an-outlook-add-in.md
+    - name: Read scenario
+      items:
+      - name: Overview
+        href: outlook/read-scenario.md
+      - name: Use regular expressions to activate contextual add-ins
+        href: outlook/use-regular-expressions-to-show-an-outlook-add-in.md
+      - name: Match well known entities in an item
+        href: outlook/match-strings-in-an-item-as-well-known-entities.md
+      - name: Extract entities from an item
+        href: outlook/extract-entity-strings-from-an-item.md
+      - name: Get attachments
+        href: outlook/get-attachments-of-an-outlook-item.md
+    - name: Compose scenario
+      items:
+      - name: Overview
+        href: outlook/compose-scenario.md
+      - name: Add and remove attachments
+        href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
+      - name: Get and set item data
+        href: outlook/get-and-set-item-data-in-a-compose-form.md
+      - name: Get and set recipients
+        href: outlook/get-set-or-add-recipients.md
+      - name: Insert data in the body
+        href: outlook/insert-data-in-the-body.md
+      - name: Get and set subject
+        href: outlook/get-or-set-the-subject.md
+      - name: Get and set times
+        href: outlook/get-or-set-the-time-of-an-appointment.md
+      - name: Get and set location
+        href: outlook/get-or-set-the-location-of-an-appointment.md
+    - name: Privacy and security
+      items:
+      - name: Overview
+        href: outlook/privacy-and-security.md
+      - name: Understanding add-in permissions
+        href: outlook/understanding-outlook-add-in-permissions.md
+    - name: Authentication
+      items:
+      - name: Overview
+        href: outlook/authentication.md
+      - name: Authenticate with SSO token
+        href: outlook/authenticate-a-user-with-an-sso-token.md
+      - name: Authenticate with an identity token
+        href: outlook/authenticate-a-user-with-an-identity-token.md
+      - name: Validate an identity token
+        href: outlook/validate-an-identity-token.md
+      - name: Inside the identity token
+        href: outlook/inside-the-identity-token.md
+      - name: "Scenario: Implement single sign-on"
+        href: outlook/implement-sso-in-outlook-add-in.md
+    - name: Testing and tips
+      items:
+      - name: Overview
+        href: outlook/testing-and-tips.md
+      - name: Sideload an add-in for testing
+        href: outlook/sideload-outlook-add-ins-for-testing.md
+      - name: Compare add-in support in Outlook on Mac
+        href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
+      - name: Tips for handling date values
+        href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
+      - name: Limits for activation and JavaScript API
+        href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
+      - name: Troubleshoot add-in activation
+        href: outlook/troubleshoot-outlook-add-in-activation.md
+    
+
+
+
+
+
+
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
