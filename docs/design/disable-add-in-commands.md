@@ -72,8 +72,8 @@ By default, any Add-in Command is enabled when the Office application launches. 
 The essential steps to changing the enabled status of an Add-in Command are:
 
 1. Create a [RibbonUpdaterData](/javascript/api/office-runtime/officeruntime.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
-2. Get a reference to the [Ribbon](/javascript/api/office-runtime/officeruntime.ribbon) object with the [OfficeRuntime.ui.getRibbon](/javascript/api/office-runtime/officeruntime.ui.getribbon) method.
-3. Pass the **RibbonUpdaterData** object to the **Ribbon.requestUpdate()** method.
+2. Get a reference to the [Ribbon](/javascript/api/office-runtime/officeruntime.ribbon) object with the [OfficeRuntime.ui.getRibbon](/javascript/api/office-runtime/officeruntime.ui#getribbon--) method.
+3. Pass the **RibbonUpdaterData** object to the [Ribbon.requestUpdate()](/javascript/api/office-runtime/officeruntime.ribbon#requestupdate-input-) method.
 
 The following is a simple example. Note that "MyButton" and "OfficeAddinTab1" are copied from the manifest.
 
@@ -96,7 +96,7 @@ function enableButton() {
 }
 ```
 
-We also provide several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the equivalent example in TypeScript and it makes use of these types. All of the types are in the **OfficeRuntime** namespace.
+We also provide several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the equivalent example in TypeScript and it makes use of these types.
 
 ```typescript
 const enableButton = async () => {
