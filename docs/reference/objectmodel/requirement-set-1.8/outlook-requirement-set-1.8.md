@@ -49,7 +49,7 @@ Requirement set 1.8 includes all of the features of [Requirement set 1.7](../req
 
 ## See also
 
-- [Outlook add-ins](/outlook/add-ins/)
+- [Outlook add-ins](../outlook/outlook-add-ins-overview.md)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Get started](/outlook/add-ins/quick-start)
+- [Get started](../../../quickstarts/outlook-quickstart.md)
 - [Requirement sets and supported clients](../../requirement-sets/outlook-api-requirement-sets.md)

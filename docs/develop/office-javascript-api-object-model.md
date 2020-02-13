@@ -164,4 +164,4 @@ Additionally, Outlook add-ins can use the following objects:
 
 -  **RoamingSettings** object: for saving Outlook add-in-specific custom settings to the user's mailbox where the add-in is installed.
 
-For information about using JavaScript in Outlook add-ins, see [Outlook add-ins](/outlook/add-ins/).
+For information about using JavaScript in Outlook add-ins, see [Outlook add-ins](../outlook/outlook-add-ins-overview.md).

@@ -92,7 +92,7 @@ The add-in platform addresses end users' privacy concerns in the following ways:
 
   - Running in a web browser control allows the add-in to do almost anything a regular web page running in a browser can do but, at the same time, restricts the add-in to observe the same-origin policy for domain isolation and security zones.
 
-Outlook add-ins provide additional security and performance features through Outlook add-in specific resource usage monitoring. For more information, see [Privacy, permissions, and security for Outlook add-ins](/outlook/add-ins/privacy-and-security).
+Outlook add-ins provide additional security and performance features through Outlook add-in specific resource usage monitoring. For more information, see [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security.md).
 
 ### Developer guidelines to handle PII
 
@@ -235,7 +235,7 @@ Developers should also take note of the following security practices:
   - Produce a statement outlining a compliant privacy policy.
   - Be ready to sign a contractual agreement upon submitting the add-in.
 
-Other than resource usage rules, developers for Outlook add-ins should also make sure their add-ins observe limits for specifying activation rules and using the JavaScript API. For more information, see [Limits for activation and JavaScript API for Outlook add-ins](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins).
+Other than resource usage rules, developers for Outlook add-ins should also make sure their add-ins observe limits for specifying activation rules and using the JavaScript API. For more information, see [Limits for activation and JavaScript API for Outlook add-ins](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 ## IT administrators' control
 

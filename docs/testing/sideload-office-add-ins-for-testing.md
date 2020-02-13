@@ -13,7 +13,7 @@ When you sideload an add-in, the add-in manifest is stored in the browser's loca
 
 
 > [!NOTE]
-> Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 The following video walks you through the process of sideloading your add-in in Office on the web or desktop.
 

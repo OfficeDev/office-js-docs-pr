@@ -55,7 +55,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 ## Sideload an add-in in Office on Mac
 
 > [!NOTE]
-> To sideload an Outlook add-in on Mac, see [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> To sideload an Outlook add-in on Mac, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 1. Open  **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
     
