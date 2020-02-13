@@ -23,7 +23,7 @@ With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Overview</h3>
-                        <p><a href="/outlook/add-ins/index?context=office/dev/add-ins/context">Learn about the components and capabilities of a Outlook add-in.</a></p>
+                        <p><a href="outlook-add-ins-overview.md">Learn about the components and capabilities of a Outlook add-in.</a></p>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@ With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Getting started</h3>
-                        <p><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Build your first Outlook add-in in under 5 minutes</a>.</p>
+                        <p><a href="../quickstarts/outlook-quickstart.md">Build your first Outlook add-in in under 5 minutes</a>.</p>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, a
                     </div>
                     <div class="cardText">
                         <h3>Outlook JavaScript API</h3>
-                        <p><a href="/outlook/add-ins/apis?context=office/dev/add-ins/context">Learn how to use the Outlook JavaScript API to interact with 
+                        <p><a href="apis.md">Learn how to use the Outlook JavaScript API to interact with 
                         objects in Outlook.</a></p>
                     </div>
                 </div>

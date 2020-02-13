@@ -19,7 +19,7 @@
     - name: OneNote add-in
       href: quickstarts/onenote-quickstart.md
     - name: Outlook add-in
-      href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
+      href: quickstarts/outlook-quickstart.md
     - name: PowerPoint add-in
       href: quickstarts/powerpoint-quickstart.md
     - name: Project add-in
@@ -826,7 +826,7 @@
     displayName: Outlook
     items:
     - name: Overview
-      href: /outlook/add-ins/apis?context=office/dev/add-ins/context
+      href: outlook/apis.md
       displayName: Outlook
     - name: API requirement sets
       href: reference/requirement-sets/outlook-api-requirement-sets.md
