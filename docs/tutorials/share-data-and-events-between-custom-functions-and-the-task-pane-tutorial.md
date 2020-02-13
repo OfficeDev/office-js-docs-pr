@@ -49,9 +49,9 @@ After you complete the wizard, the generator creates the project and installs su
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
       <Hosts>
         <Host xsi:type="Workbook">
-        <Runtimes>
-          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-        </Runtimes>
+            <Runtimes>
+                <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+            </Runtimes>
         <AllFormFactors>
     ```
     
