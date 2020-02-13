@@ -584,5 +584,5 @@ To learn more about how to add a recipient to the CC line and verify that the em
 
 ## See also
 
-- [Overview of Outlook add-ins architecture and features](index.md)
+- [Overview of Outlook add-ins architecture and features](outlook-add-ins-overview.md)
 - [Add-in Command Demo Outlook add-in](https://github.com/OfficeDev/outlook-add-in-command-demo)
