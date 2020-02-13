@@ -716,7 +716,6 @@
     displayName: Outlook
   - name: Outlook add-in concepts
     items: 
-
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
     - name: Add-in commands
@@ -823,13 +822,6 @@
         href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
       - name: Troubleshoot add-in activation
         href: outlook/troubleshoot-outlook-add-in-activation.md
-    
-
-
-
-
-
-
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
