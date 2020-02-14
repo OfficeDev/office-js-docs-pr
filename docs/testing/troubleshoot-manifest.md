@@ -39,7 +39,7 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
 
 	> [!NOTE]
 	> If running this command results in the error message "The command syntax is not valid." (because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file): 
-	> 
+	>
 	> `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## Validate your manifest against the XML schema
