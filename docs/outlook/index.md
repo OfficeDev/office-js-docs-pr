@@ -52,23 +52,6 @@ With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, a
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-automate.svg" alt="Custom functions" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Outlook add-in development</h3>
-                        <p><a href="outlook-add-ins-overview.md">Learn about key aspects of Outlook add-in development.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
                             <img src="../images/index-landing-page/i_code-blocks.svg" alt="Outlook JavaScript API" />
                         </div>
                     </div>
