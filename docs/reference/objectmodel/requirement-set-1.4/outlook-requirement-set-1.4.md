@@ -24,7 +24,7 @@ Requirement set 1.4 includes all of the features of [Requirement set 1.3](../req
 
 ## See also
 
-- [Outlook add-ins](../outlook/outlook-add-ins-overview.md)
+- [Outlook add-ins](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
 - [Get started](../../../quickstarts/outlook-quickstart.md)
 - [Requirement sets and supported clients](../../requirement-sets/outlook-api-requirement-sets.md)

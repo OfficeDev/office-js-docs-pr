@@ -33,15 +33,15 @@ When an add-in that uses SSO is acquired from AppSource, the store UI handles pr
 
 ## Update the add-in manifest
 
-The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](../reference/manifest/versionoverrides.md) element. For more information, see [Configure the add-in](../develop/sso-in-office-add-ins#configure-the-add-in.md).
+The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](../reference/manifest/versionoverrides.md) element. For more information, see [Configure the add-in](../develop/sso-in-office-add-ins.md#configure-the-add-in).
 
 ## Get the SSO token
 
-The add-in gets an SSO token with client-side script. For more information, see [Add client-side code](../develop/sso-in-office-add-ins#add-client-side-code.md).
+The add-in gets an SSO token with client-side script. For more information, see [Add client-side code](../develop/sso-in-office-add-ins.md#add-client-side-code).
 
 ## Use the SSO token at the back-end
 
-In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. For details on what your server-side could and should do, see [Add server-side code](../develop/sso-in-office-add-ins#add-server-side-code.md).
+In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. For details on what your server-side could and should do, see [Add server-side code](../develop/sso-in-office-add-ins.md#add-server-side-code).
 
 > [!IMPORTANT]
 > When using the SSO token as an identity in an *Outlook* add-in, we recommend that you also [use the Exchange identity token](authenticate-a-user-with-an-identity-token.md) as an alternate identity. Users of your add-in may use multiple clients, and some may not support providing an SSO token. By using the Exchange identity token as an alternate, you can avoid having to prompt these users for credentials multiple times. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](implement-sso-in-outlook-add-in.md).

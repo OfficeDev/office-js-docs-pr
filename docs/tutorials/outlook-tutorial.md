@@ -2,6 +2,7 @@
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you'll build an Outlook add-in that inserts GitHub gists into the body of a new message.
 ms.date: 12/10/2019
+ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 localization_priority: Priority
 ---

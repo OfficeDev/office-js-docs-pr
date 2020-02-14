@@ -9,7 +9,7 @@ localization_priority: Normal
 
 You can specify regular expression rules to have a [contextual add-in](contextual-outlook-add-ins.md) activated when a match is found in specific fields of the message. Contextual add-ins activate only in read mode, Outlook does not activate contextual add-ins when the user is composing an item. There are also other scenarios where Outlook does not activate add-ins, for example, items protected by Information Rights Management (IRM). For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
-You can specify a regular expression as part of an [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rule or [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule in the add-in XML manifest. The rules are specified in a [DetectedEntity](../reference/manifest/extensionpoint#detectedentity.md) extension point.
+You can specify a regular expression as part of an [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rule or [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule in the add-in XML manifest. The rules are specified in a [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity) extension point.
 
 Outlook evaluates regular expressions based on the rules for the JavaScript interpreter used by the browser on the client computer. Outlook supports the same list of special characters that all XML processors also support. The following table lists these special characters. You can use these characters in a regular expression by specifying the escaped sequence for the corresponding character, as described in the following table.
 

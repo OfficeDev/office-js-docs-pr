@@ -137,9 +137,9 @@ For more information about permissions for task pane and content add-ins, see [R
 
 For more information about permissions for Outlook add-ins, see the following topics:
 
-- [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security)
+- [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security.md)
 
-- [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions)
+- [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md)
 
 ### Same origin policy
 

@@ -142,7 +142,7 @@ There are a few facts and limits you should be aware of if you use well-known en
     
 - You cannot extract entities from items in the Sent Items folder.
     
-In addition, the following applies if you use an [ItemHasKnownEntity](../reference/manifest/rule#itemhasknownentity-rule.md) rule, and may affect the scenarios where you'd otherwise expect your add-in to be activated:
+In addition, the following applies if you use an [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule, and may affect the scenarios where you'd otherwise expect your add-in to be activated:
 
 - When using the **ItemHasKnownEntity** rule, expect Outlook to match entity strings in only English regardless of the default locale specified in the manifest.
     

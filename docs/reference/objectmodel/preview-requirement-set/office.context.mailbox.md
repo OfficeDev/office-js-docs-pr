@@ -17,7 +17,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../outlook/understanding-outlook-add-in-permissions.md)| Restricted|
-|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ## Properties
 
