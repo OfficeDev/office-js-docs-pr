@@ -714,7 +714,7 @@
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
-  - name: Outlook add-in concepts
+  - name: Concepts
     items: 
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
