@@ -1,5 +1,5 @@
 ---
-ms.date: 02/13/2019
+ms.date: 02/13/2020
 title: "Tutorial: Share data and events between Excel custom functions and the task pane (preview)"
 ms.prod: excel
 description: In Excel, share data and events between custom functions and the task pane.
@@ -52,7 +52,7 @@ After you complete the wizard, the generator creates the project and installs su
             <Runtimes>
                 <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
             </Runtimes>
-        <AllFormFactors>
+            <AllFormFactors>
     ```
     
 5. In the `<Page>` element, change the source location from **Functions.Page.Url** to **TaskPaneAndCustomFunction.Url**.

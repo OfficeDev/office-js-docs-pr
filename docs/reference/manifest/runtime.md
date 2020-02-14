@@ -1,15 +1,18 @@
 ---
 title: Runtime in the manifest file
 description: ''
-ms.date: 01/24/2020
+ms.date: 02/14/2020
 localization_priority: Normal
 ---
 
 # Runtime element
 
-This feature is in preview. Child element of the [`<Runtimes>`](runtimes.md) element. This element facilitates sharing of global data and function calls between Excel custom functions and the task pane of your add-in.
+Child element of the [`<Runtimes>`](runtimes.md) element. This element facilitates sharing of global data and function calls between Excel custom functions and the task pane of your add-in.
 
 **Add-in type:** Task pane
+
+> [!IMPORTANT]
+> Shared runtime is currently in preview and are only available on Excel on Windows. To try the preview features, you will need to join Office Insider.
 
 ## Syntax
 
