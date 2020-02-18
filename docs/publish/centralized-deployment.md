@@ -63,14 +63,16 @@ If your organization meets all requirements, complete the following steps to pub
     > [!NOTE]
     > With the Office Store option, updates and enhancements to the add-in are automatically available to users without your intervention.
 
-    ![Select an Add-In dialog in Office 365 admin center](../images/select-an-add-in.png)
+    ![Select an add-In dialog in Office 365 admin center](../images/select-an-add-in.png)
 
 9. Choose **Continue** after reviewing the add-in details, Privacy Policy, and License Terms.
 
+    [!div class="mx-imgBorder"]
     ![Selected add-in page in Office 365 admin center](../images/selected-add-in-admin-center.png)
 
 10. On the **Assign Users** page, choose **Everyone**, **Specific Users/Groups**, or **Only me**. Use the search box to find the users and groups to whom you want to deploy the add-in. For Outlook add-ins, you can also choose the deployment method **Fixed**, **Available**, or **Optional**.
 
+    [!div class="mx-imgBorder"]
     ![Manage who has access and deployment method in Office 365 admin center](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
@@ -116,7 +118,7 @@ After an Office Add-in has been published via Centralized Deployment, any change
 
   > [!NOTE]
   > An admin doesn't need to remove a LOB add-in to make an update. In the Add-ins section, the admin can simply choose the LOB add-in and invoke this functionality by pressing the **Update add-in** button present in the bottom right corner.
-  >
+  > 
   > ![Screenshot shows the Update add-in dialog in Office 365 admin center](../images/update-add-in-admin-center.png)
 
 - **Office Store add-in**: If an admin selected an add-in from the Office Store when implementing Centralized Deployment via the Office 365 admin center, and the add-in updates in the Office Store, the add-in will update later via Centralized Deployment. The next time the relevant Office applications start, the add-in will update.
