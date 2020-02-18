@@ -193,41 +193,39 @@ After you've made these changes, skip ahead to the [Update app permissions in Az
 
 ### Changes required for an Excel add-in (TypeScript)
 
-If your add-in is an Excel add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
+If your add-in is an Excel add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
 
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+```typescript
+export function writeDataToOfficeDocument(result: Object): Promise<any> {
+  return Excel.run(function(context) {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    let data: string[] = [];
 
-    ```typescript
-    export function writeDataToOfficeDocument(result: Object): Promise<any> {
-      return Excel.run(function(context) {
-        const sheet = context.workbook.worksheets.getActiveWorksheet();
-        let data: string[] = [];
-
-        let itemNames: string[] = [];
-        let oneDriveItems = result["value"];
-        for (let item of oneDriveItems) {
-          itemNames.push(item['name']);
-        }
-
-        for (let i = 0; i < itemNames.length; i++) {
-          if (itemNames[i] !== null) {
-            let innerArray = [];
-            innerArray.push(itemNames[i]);
-            data.push(innerArray);
-          }
-        }
-        
-        const rangeAddress = `B5:B${5 + (data.length - 1)}`;
-        const range = sheet.getRange(rangeAddress);
-        range.values = data;
-        range.format.autofitColumns();
-
-        return context.sync();
-      });
+    let itemNames: string[] = [];
+    let oneDriveItems = result["value"];
+    for (let item of oneDriveItems) {
+      itemNames.push(item["name"]);
     }
-    ```
 
-2. Skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+    for (let i = 0; i < itemNames.length; i++) {
+      if (itemNames[i] !== null) {
+        let innerArray = [];
+        innerArray.push(itemNames[i]);
+        data.push(innerArray);
+      }
+    }
+    
+    const rangeAddress = `B5:B${5 + (data.length - 1)}`;
+    const range = sheet.getRange(rangeAddress);
+    range.values = data;
+    range.format.autofitColumns();
+
+    return context.sync();
+  });
+}
+```
+
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
 ### Changes required for an Outlook add-in (JavaScript)
 
@@ -293,9 +291,10 @@ After you've made these changes, skip ahead to the [Update app permissions in Az
 
 ### Changes required for an Outlook add-in (TypeScript)
 
-If your add-in is an Outlook add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
+If your add-in is an Outlook add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
 
-...TO DO...
+```typescript
+```
 
 After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
@@ -369,40 +368,38 @@ After you've made these changes, skip ahead to the [Update app permissions in Az
 
 ### Changes required for a PowerPoint add-in (TypeScript)
 
-If your add-in is a PowerPoint add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
+If your add-in is a PowerPoint add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
 
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+```typescript
+export function writeDataToOfficeDocument(result: Object): void {
+  let data: string[] = [];
 
-    ```typescript
-    export function writeDataToOfficeDocument(result: Object): void {
-      let data: string[] = [];
+  let itemNames: string[] = [];
+  let oneDriveItems = result["value"];
+  for (let item of oneDriveItems) {
+    itemNames.push(item["name"]);
+  };
 
-      let itemNames: string[] = [];
-      let oneDriveItems = result["value"];
-      for (let item of oneDriveItems) {
-        itemNames.push(item['name']);
-      };
-
-      for (let i = 0; i < itemNames.length; i++) {
-        if (itemNames[i] !== null) {
-          data.push(itemNames[i]);
-        }
-      }
-
-      let objectNames: string = "";
-      for (let i = 0; i < data.length; i++) {
-        objectNames += data[i] + "\n";
-      }
-
-      Office.context.document.setSelectedDataAsync(objectNames, function(asyncResult) {
-        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-          throw asyncResult.error.message;
-        }
-      });
+  for (let i = 0; i < itemNames.length; i++) {
+    if (itemNames[i] !== null) {
+      data.push(itemNames[i]);
     }
-    ```
+  }
 
-2. Skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+  let objectNames: string = "";
+  for (let i = 0; i < data.length; i++) {
+    objectNames += data[i] + "\n";
+  }
+
+  Office.context.document.setSelectedDataAsync(objectNames, function(asyncResult) {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+      throw asyncResult.error.message;
+    }
+  });
+}
+```
+
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
 ### Changes required for a Word add-in (JavaScript)
 
@@ -472,9 +469,35 @@ After you've made these changes, skip ahead to the [Update app permissions in Az
 
 ### Changes required for a Word add-in (TypeScript)
 
-If your add-in is a Word add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
+If your add-in is a Word add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
 
-...TO DO...
+```typescript
+export function writeDataToOfficeDocument(result: Object): Promise<any> {
+  return Word.run(function(context) {
+    let data: string[] = [];
+
+    let itemNames: string[] = [];
+    let oneDriveItems = result["value"];
+    for (let item of oneDriveItems) {
+      itemNames.push(item["name"]);
+    };
+
+    for (let i = 0; i < itemNames.length; i++) {
+      if (itemNames[i] !== null) {
+        data.push(itemNames[i]);
+      }
+    }
+
+    const documentBody: Word.Body = context.document.body;
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] !== null) {
+        documentBody.insertParagraph(data[i], "End");
+      }
+    }
+    return context.sync();
+  });
+}
+```
 
 ### Update app permissions in Azure
 
