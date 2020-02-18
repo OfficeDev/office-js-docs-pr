@@ -260,6 +260,7 @@
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: Clear the Office cache
       href: testing/clear-cache.md
+      displayName: uninstall, sideload
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Troubleshoot user errors
