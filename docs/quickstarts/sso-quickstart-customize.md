@@ -28,7 +28,7 @@ The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets
 Let's begin with a quick review of the add-in project that you previously [created with the Yeoman generator](sso-quickstart.md).
 
 > [!NOTE]
-> All script files mentioned in this article have the **.js** extension; files in a TypeScript project will use the **.ts** extension instead. Script code snippets in this article are provided in JavaScript and TypeScript. Use the snippets corresponding to the language you selected when creating your project with the Yeoman generator. 
+> Some script files mentioned in this article have the **.js** extension; files in a TypeScript project will use the **.ts** extension instead. Script code snippets in this article are provided in JavaScript and TypeScript. Use the snippets corresponding to the language you selected when creating your project with the Yeoman generator. 
 
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
@@ -115,14 +115,15 @@ Complete the following steps for your add-in. These steps are the same, regardle
 
 7. Complete the additional changes required for your type of add-in, as described in one of the following sections:
 
-    - [Changes required for an Excel add-in](#changes-required-for-an-excel-add-in)
+    - [Changes required for an Excel add-in (JavaScript)](#changes-required-for-an-excel-add-in-javascript)
+    - [Changes required for an Excel add-in (TypeScript)](#changes-required-for-an-excel-add-in-typescript)
     - [Changes required for an Outlook add-in](#changes-required-for-an-outlook-add-in)
     - [Changes required for a PowerPoint add-in](#changes-required-for-a-powerpoint-add-in)
     - [Changes required for a Word add-in](#changes-required-for-a-word-add-in)
 
-### Changes required for an Excel add-in
+### Changes required for an Excel add-in (JavaScript)
 
-If your add-in is an Excel add-in, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is an Excel add-in that was created with JavaScript as the script type, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
@@ -186,6 +187,12 @@ If your add-in is an Excel add-in, make the following changes in **./src/helpers
 6. Delete the `writeDataToWord` function.
 
 After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+
+### Changes required for an Excel add-in (TypeScript)
+
+If your add-in is an Excel add-in that was created with TypeScript as the script type, make the following changes in **./src/taskpane/taskpan.ts**:
+
+...TO DO...
 
 ### Changes required for an Outlook add-in
 
