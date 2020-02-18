@@ -83,3 +83,7 @@ The process for sideloading an add-in in Outlook in Office 365 depends upon whet
     ![Store screenshot pointing to Add from a file option](../images/outlook-sideload-desktop-add-from-file.png)
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+
+## Remove a sideloaded add-in
+
+To remove a sideloaded add-in from Outlook, use the steps previously described in this article to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the the add-in and then choose **Remove** to remove that specific add-in.
