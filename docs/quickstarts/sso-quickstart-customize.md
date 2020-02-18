@@ -117,13 +117,16 @@ Complete the following steps for your add-in. These steps are the same, regardle
 
     - [Changes required for an Excel add-in (JavaScript)](#changes-required-for-an-excel-add-in-javascript)
     - [Changes required for an Excel add-in (TypeScript)](#changes-required-for-an-excel-add-in-typescript)
-    - [Changes required for an Outlook add-in](#changes-required-for-an-outlook-add-in)
-    - [Changes required for a PowerPoint add-in](#changes-required-for-a-powerpoint-add-in)
-    - [Changes required for a Word add-in](#changes-required-for-a-word-add-in)
+    - [Changes required for an Outlook add-in (JavaScript)](#changes-required-for-an-outlook-add-in-javascript)
+    - [Changes required for an Outlook add-in (TypeScript)](#changes-required-for-an-outlook-add-in-typescript)
+    - [Changes required for a PowerPoint add-in JavaScript)](#changes-required-for-a-powerpoint-add-in-javascript)
+    - [Changes required for a PowerPoint add-in TypeScript)](#changes-required-for-a-powerpoint-add-in-typescript)
+    - [Changes required for a Word add-in (JavaScript)](#changes-required-for-a-word-add-in-javascript)
+    - [Changes required for a Word add-in (TypeScript)](#changes-required-for-a-word-add-in-typescript)
 
 ### Changes required for an Excel add-in (JavaScript)
 
-If your add-in is an Excel add-in that was created with JavaScript as the script type, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is an Excel add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
@@ -190,13 +193,15 @@ After you've made these changes, skip ahead to the [Update app permissions in Az
 
 ### Changes required for an Excel add-in (TypeScript)
 
-If your add-in is an Excel add-in that was created with TypeScript as the script type, make the following changes in **./src/taskpane/taskpan.ts**:
+If your add-in is an Excel add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
 
 ...TO DO...
 
-### Changes required for an Outlook add-in
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
-If your add-in is an Outlook add-in, make the following changes in **./src/helpers/documentHelper.js**:
+### Changes required for an Outlook add-in (JavaScript)
+
+If your add-in is an Outlook add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
@@ -256,9 +261,17 @@ If your add-in is an Outlook add-in, make the following changes in **./src/helpe
 
 After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
-### Changes required for a PowerPoint add-in
+### Changes required for an Outlook add-in (TypeScript)
 
-If your add-in is a PowerPoint add-in, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is an Outlook add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
+
+...TO DO...
+
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+
+### Changes required for a PowerPoint add-in (JavaScript)
+
+If your add-in is a PowerPoint add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
@@ -324,9 +337,17 @@ If your add-in is a PowerPoint add-in, make the following changes in **./src/hel
 
 After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
-### Changes required for a Word add-in 
+### Changes required for a PowerPoint add-in (TypeScript)
 
-If your add-in is a Word add-in, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is a PowerPoint add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
+
+...TO DO...
+
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+
+### Changes required for a Word add-in (JavaScript)
+
+If your add-in is a Word add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:
 
 1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
@@ -387,6 +408,14 @@ If your add-in is a Word add-in, make the following changes in **./src/helpers/d
 5. Delete the `writeDataToOutlook` function.
 
 6. Delete the `writeDataToPowerPoint` function.
+
+After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+
+### Changes required for a Word add-in (TypeScript)
+
+If your add-in is a Word add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
+
+...TO DO...
 
 ### Update app permissions in Azure
 
