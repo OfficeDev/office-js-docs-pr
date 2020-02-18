@@ -2,7 +2,7 @@
 title: Debug add-ins in Office on the web
 description: How to use Office on the web to test and debug your add-ins.
 ms.date: 06/20/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Debug add-ins in Office on the web

@@ -2,7 +2,7 @@
 title: Debug Office Add-ins on a Mac
 description: ''
 ms.date: 11/26/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Debug Office Add-ins on a Mac

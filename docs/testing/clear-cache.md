@@ -2,7 +2,7 @@
 title: Clear the Office cache
 description: Learn how to clear the Office cache on your computer.
 ms.date: 01/29/2020
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Clear the Office cache

@@ -2,7 +2,7 @@
 title: Privacy and security for Office Add-ins
 description: ''
 ms.date: 09/26/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Privacy and security for Office Add-ins

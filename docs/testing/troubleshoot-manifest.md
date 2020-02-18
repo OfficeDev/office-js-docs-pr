@@ -2,7 +2,7 @@
 title: Validate an Office Add-in's manifest
 description: Learn how to validate an Office Add-in's manifest using the XML schema and other tools.
 ms.date: 12/31/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Validate an Office Add-in's manifest
@@ -39,12 +39,12 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
 
 	> [!NOTE]
 	> If running this command results in the error message "The command syntax is not valid." (because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file): 
-	> 
+	>
 	> `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## Validate your manifest against the XML schema
 
-You can validate the manifest file against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files. This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**. You can use an XML schema validation tool to perform this validation.
+You can validate the manifest file against the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) files. This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**. You can use an XML schema validation tool to perform this validation.
 
 ### To use a command-line XML schema validation tool to validate your manifest
 

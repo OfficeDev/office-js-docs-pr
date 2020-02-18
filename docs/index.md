@@ -7,7 +7,7 @@ author: o365devx
 ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Office Add-ins documentation

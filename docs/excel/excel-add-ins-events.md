@@ -1,8 +1,8 @@
 ---
 title: Work with Events using the Excel JavaScript API
-description: ''
-ms.date: 10/22/2019
-localization_priority: Priority
+description: 'A list of events for Excel JavaScript objects. This includes information on using event handlers and the associated patterns.'
+ms.date: 02/11/2020
+localization_priority: Normal
 ---
 
 # Work with Events using the Excel JavaScript API
@@ -106,7 +106,7 @@ function handleChange(event)
 
 ## Remove an event handler
 
-The following code sample registers an event handler for the `onSelectionChanged` event in the worksheet named **Sample** and defines the `handleSelectionChange` function that will run when the event occurs. It also defines the `remove()` function that can subsequently be called to remove that event handler.
+The following code sample registers an event handler for the `onSelectionChanged` event in the worksheet named **Sample** and defines the `handleSelectionChange` function that will run when the event occurs. It also defines the `remove()` function that can subsequently be called to remove that event handler. Note that the `RequestContext` used to create the event handler is needed to remove it.
 
 ```js
 var eventResult;

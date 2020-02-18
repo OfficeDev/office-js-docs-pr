@@ -2,7 +2,7 @@
 title: Attach a debugger from the task pane
 description: ''
 ms.date: 09/09/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Attach a debugger from the task pane

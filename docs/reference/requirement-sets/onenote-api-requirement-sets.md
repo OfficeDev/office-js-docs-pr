@@ -3,7 +3,7 @@ title: OneNote JavaScript API requirement sets
 description: ''
 ms.date: 07/17/2019
 ms.prod: onenote
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # OneNote JavaScript API requirement sets

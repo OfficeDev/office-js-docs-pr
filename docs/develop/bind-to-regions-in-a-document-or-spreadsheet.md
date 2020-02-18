@@ -2,7 +2,7 @@
 title: Bind to regions in a document or spreadsheet
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 
