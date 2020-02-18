@@ -673,12 +673,12 @@
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
-    - name: Use a single browser runtime
+    - name: Use a shared runtime
       items:
-      - name: Overview of using a single browser runtime
+      - name: Overview of using a shared runtime
         href: excel/custom-functions-shared-overview.md
         displayName: Excel, Custom Functions
-      - name: Use a shared runtime tutorial
+      - name: Shared custom function data with the task pane tutorial
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
       - name: Call Excel JS APIs from your custom function
