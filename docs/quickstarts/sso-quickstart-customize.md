@@ -119,8 +119,8 @@ Complete the following steps for your add-in. These steps are the same, regardle
     - [Changes required for an Excel add-in (TypeScript)](#changes-required-for-an-excel-add-in-typescript)
     - [Changes required for an Outlook add-in (JavaScript)](#changes-required-for-an-outlook-add-in-javascript)
     - [Changes required for an Outlook add-in (TypeScript)](#changes-required-for-an-outlook-add-in-typescript)
-    - [Changes required for a PowerPoint add-in JavaScript)](#changes-required-for-a-powerpoint-add-in-javascript)
-    - [Changes required for a PowerPoint add-in TypeScript)](#changes-required-for-a-powerpoint-add-in-typescript)
+    - [Changes required for a PowerPoint add-in (JavaScript)](#changes-required-for-a-powerpoint-add-in-javascript)
+    - [Changes required for a PowerPoint add-in (TypeScript)](#changes-required-for-a-powerpoint-add-in-typescript)
     - [Changes required for a Word add-in (JavaScript)](#changes-required-for-a-word-add-in-javascript)
     - [Changes required for a Word add-in (TypeScript)](#changes-required-for-a-word-add-in-typescript)
 
