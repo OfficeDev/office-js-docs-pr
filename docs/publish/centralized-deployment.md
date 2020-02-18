@@ -67,12 +67,10 @@ If your organization meets all requirements, complete the following steps to pub
 
 9. Choose **Continue** after reviewing the add-in details, Privacy Policy, and License Terms.
 
-    [!div class="mx-imgBorder"]
     ![Selected add-in page in Office 365 admin center](../images/selected-add-in-admin-center.png)
 
 10. On the **Assign Users** page, choose **Everyone**, **Specific Users/Groups**, or **Only me**. Use the search box to find the users and groups to whom you want to deploy the add-in. For Outlook add-ins, you can also choose the deployment method **Fixed**, **Available**, or **Optional**.
 
-    [!div class="mx-imgBorder"]
     ![Manage who has access and deployment method in Office 365 admin center](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
