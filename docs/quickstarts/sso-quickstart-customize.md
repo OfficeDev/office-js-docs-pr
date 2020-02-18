@@ -201,7 +201,7 @@ If your add-in is an Excel add-in that was created with TypeScript, make the fol
     export function writeDataToOfficeDocument(result: Object): Promise<any> {
       return Excel.run(function(context) {
         const sheet = context.workbook.worksheets.getActiveWorksheet();
-        let data = [];
+        let data: string[] = [];
 
         let itemNames: string[] = [];
         let oneDriveItems = result["value"];
@@ -371,9 +371,38 @@ After you've made these changes, skip ahead to the [Update app permissions in Az
 
 If your add-in is a PowerPoint add-in that was created with TypeScript, make the following changes in **./src/taskpane/taskpane.ts**:
 
-...TO DO...
+1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+    ```typescript
+    export function writeDataToOfficeDocument(result: Object): void {
+      let data: string[] = [];
+
+      let itemNames: string[] = [];
+      let oneDriveItems = result["value"];
+      for (let item of oneDriveItems) {
+        itemNames.push(item['name']);
+      };
+
+      for (let i = 0; i < itemNames.length; i++) {
+        if (itemNames[i] !== null) {
+          data.push(itemNames[i]);
+        }
+      }
+
+      let objectNames: string = "";
+      for (let i = 0; i < data.length; i++) {
+        objectNames += data[i] + "\n";
+      }
+
+      Office.context.document.setSelectedDataAsync(objectNames, function(asyncResult) {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          throw asyncResult.error.message;
+        }
+      });
+    }
+    ```
+
+2. Skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
 ### Changes required for a Word add-in (JavaScript)
 
