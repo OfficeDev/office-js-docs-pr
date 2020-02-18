@@ -14,13 +14,13 @@ The following files define the add-in's task pane UI and functionality.
 
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
 
-- The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
+- In a JavaScript project, the **./src/taskpane/taskpane.js** file contains code to initialize the add-in. In a TypeScript project, the **./src/taskpane/taskpane.ts** file contains code to initialize the add-in and also code that uses the Office JavaScript library to add the data from Microsoft Graph to the Office document.
 
 ### Authentication
 
 The following files facilitate the SSO process and write data to the Office document.
 
-- The **./src/helpers/documentHelper.js** file uses the Office JavaScript library to add the data from Microsoft Graph to the Office document.
+- In a JavaScript project, the **./src/helpers/documentHelper.js** file contains code that uses the Office JavaScript library to add the data from Microsoft Graph to the Office document. In a TypeScript project, the **./src/helpers/documentHelper.ts** file doesn't exist; the code that uses the Office JavaScript library to add the data from Microsoft Graph to the Office document exists in the **./src/taskpane/taskpane.ts** file.
 
 - The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the fallback authentication method's JavaScript.
 
