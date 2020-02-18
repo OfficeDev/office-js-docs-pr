@@ -294,6 +294,28 @@ After you've made these changes, skip ahead to the [Update app permissions in Az
 If your add-in is an Outlook add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
 
 ```typescript
+export function writeDataToOfficeDocument(result: Object): void {
+    let data: string[] = [];
+
+    let itemNames: string[] = [];
+    let oneDriveItems = result["value"];
+    for (let item of oneDriveItems) {
+        itemNames.push(item["name"]);
+    };
+
+    for (let i = 0; i < itemNames.length; i++) {
+        if (itemNames[i] !== null) {
+        data.push(itemNames[i]);
+        }
+    }
+
+    let objectNames: string = "";
+    for (let i = 0; i < data.length; i++) {
+        objectNames += data[i] + "\n";
+    }
+    
+    Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
+}
 ```
 
 After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
