@@ -73,13 +73,13 @@ The following video walks you through the process of sideloading your add-in in 
 2. Add the following content to the file:
 
     ```
-	Windows Registry Editor Version 5.00
-	
-	[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
-	"Id"="{-random-GUID-here-}"
-	"Url"="\\\\-share-\\-folder-"
-	"Flags"=dword:00000001
-	```
+    Windows Registry Editor Version 5.00
+
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
+    "Id"="{-random-GUID-here-}"
+    "Url"="\\\\-share-\\-folder-"
+    "Flags"=dword:00000001
+    ```
 3. Use one of the many online GUID generation tools, such as [GUID Generator](https://guidgenerator.com/), to generate a random GUID, and within the TrustNetworkShareCatalog.reg file, replace the string "-random-GUID-here-" *in both places* with the GUID. (The enclosing `{}` symbols should remain.)
 
 4. Replace the `Url` value with the full network path to the folder that you [shared](#share-a-folder) previously. (Note that any `\` characters in the URL must be doubled.) If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot.
@@ -88,14 +88,14 @@ The following video walks you through the process of sideloading your add-in in 
 
 5. The file should now look like the following. Save it.
 
-	```
-	Windows Registry Editor Version 5.00
-	
-	[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
-	"Id"="{01234567-89ab-cedf-0123-456789abcedf}"
-	"Url"="\\\\TestServer\\OfficeAddinManifests"
-	"Flags"=dword:00000001
-	```
+    ```
+    Windows Registry Editor Version 5.00
+
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
+    "Id"="{01234567-89ab-cedf-0123-456789abcedf}"
+    "Url"="\\\\TestServer\\OfficeAddinManifests"
+    "Flags"=dword:00000001
+    ```
 
 6. Close *all* Office applications.
 
