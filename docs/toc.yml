@@ -59,7 +59,7 @@
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
       - name: Load Office.js
         href: develop/loading-the-dom-and-runtime-environment.md
-      - name: Office JavaScript API object model
+      - name: Common JavaScript API object model
         href: develop/office-javascript-api-object-model.md
       - name: Asynchronous programming in Office Add-ins
         href: develop/asynchronous-programming-in-office-add-ins.md
