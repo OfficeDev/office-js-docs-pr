@@ -154,7 +154,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 # [Task pane](#tab/tabid-1)
 
-[Task pane app manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[Add-in manifest schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -352,7 +352,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 # [Content](#tab/tabid-2)
 
-[Content app manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[Add-in manifest schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -392,7 +392,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 # [Mail](#tab/tabid-3)
 
-[Mail app manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[Add-in manifest schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -485,7 +485,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 ## Validate an Office Add-in's manifest
 
-For information about validating a manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).
+For information about validating a manifest against the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8), see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).
 
 ## See also
 
@@ -493,7 +493,7 @@ For information about validating a manifest against the [XML Schema Definition (
 * [Create add-in commands in your manifest][add-in commands]
 * [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md)
 * [Localization for Office Add-ins](localization.md)
-* [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

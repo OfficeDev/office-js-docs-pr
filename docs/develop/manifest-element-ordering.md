@@ -9,7 +9,7 @@ localization_priority: Normal
 
 The XML elements in the manifest of an Office Add-in must be under the proper parent element *and* in a specific order, relative to each other, under the parent.
 
-The required ordering is specified in the XSD files in the [Schemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) folder. The XSD files are categorized into subfolders for taskpane, content, and mail add-ins.
+The required ordering is specified in the XSD files in the [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) folder. The XSD files are categorized into subfolders for taskpane, content, and mail add-ins.
 
 For example, in the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderName>` must appear in that order. If an `<AlternateId>` element is added, it must be between the `<Id>` and `<Version>` element. Your manifest will not be valid and your add-in will not load, if any element is in the wrong order.
 
@@ -19,7 +19,7 @@ For example, in the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderNa
 The following sections show the manifest elements in the order in which they must appear. There are differences depending on whether the `type` attribute of the `<OfficeApp>` element is `TaskPaneApp`, `ContentApp`, or `MailApp`. To keep these sections from becoming too unwieldy, the highly complex `<VersionOverrides>` element is broken out into separate sections.
 
 > [!Note]
-> Not all of the elements shown are mandatory. If the `minOccurs` value for a element is **0** in the [schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), the element is optional.
+> Not all of the elements shown are mandatory. If the `minOccurs` value for a element is **0** in the [schema](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3), the element is optional.
 
 ## Basic task pane add-in element ordering
 

@@ -2,7 +2,7 @@
     "redirections": [   
       {
         "source_path": "docs/develop/dynamic-dpi.md",
-        "redirect_url": "https://docs.microsoft.com/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
+        "redirect_url": "/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
       },
       {
         "source_path": "docs/excel/custom-functions-save-state-redirect.md",
@@ -11,7 +11,8 @@
       {
         "source_path": "docs/quickstarts/sso-quickstart-redirect.md", 
         "redirect_url": "/office/dev/add-ins/quickstarts/sso-quickstart"
-      },{
+      },
+      {
         "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md", 
         "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
       },
@@ -428,6 +429,97 @@
       {
         "source_path": "docs/tutorials/excel-tutorial-setup.md",
         "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+
+      {
+        "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-preview"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-preview"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.8"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.8"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.7"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.7"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.6"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.6"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.5"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.5"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.4"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.4"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.3"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.3"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.2"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.2"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.diagnostics.md",
+        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.1"
+      }
+      ,
+      {
+        "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.userprofile.md",
+        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.1"
       }
     ] 
 }

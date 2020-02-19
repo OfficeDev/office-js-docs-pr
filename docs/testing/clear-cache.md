@@ -7,20 +7,20 @@ localization_priority: Normal
 
 # Clear the Office cache
 
-You can remove an add-in that you've previously sideloaded on Windows, Mac, or iOS by clearing the Office cache on your computer. 
+You can remove an add-in that you've previously sideloaded on Windows, Mac, or iOS by clearing the Office cache on your computer.
 
 Additionally, if you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you should clear the Office cache and then re-sideload the add-in using updated manifest. Doing so will allow Office to render the add-in as it's described by the updated manifest.
 
 ## Clear the Office cache on Windows
 
-To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`. 
+To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 To remove a sideloaded add-in from Outlook, use the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the the add-in and then choose **Remove** to remove that specific add-in.
 
 Additionally, to clear the Office cache on Windows 10 when the add-in is running in Microsoft Edge, you can use the Microsoft Edge DevTools.
 
 > [!TIP]
-> If you're just wanting the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to use the following steps to clear the cache. Instead, just put focus in the add-in's task pane (by clicking anywhere within the task pane) and then press **F5** to reload the add-in. 
+> If you're just wanting the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to use the following steps to clear the cache. Instead, just put focus in the add-in's task pane (by clicking anywhere within the task pane) and then press **F5** to reload the add-in.
 
 > [!NOTE]
 > To clear the Office cache using the following steps, your add-in must have a task pane. If your add-in is a UI-less add-in -- for example, one that uses the [on-send](../outlook/outlook-on-send-addins.md) feature -- you'll need to add a task pane to your add-in that uses the same domain for [SourceLocation](../reference/manifest/sourcelocation.md), before you can use the following steps to clear the cache.
@@ -47,7 +47,7 @@ Additionally, to clear the Office cache on Windows 10 when the add-in is running
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
-##  Clear the Office cache on iOS
+## Clear the Office cache on iOS
 
 To clear the Office cache on iOS, call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
@@ -58,4 +58,3 @@ To clear the Office cache on iOS, call `window.location.reload(true)` from JavaS
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
-
