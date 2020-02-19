@@ -49,7 +49,7 @@ The **Restricted** permission is the most basic level of permission. Specify **R
     - [mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
     - [mailbox.getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
     - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [mailbox.userProfile](../reference/objectmodel/preview-requirement-set/office.context.mailbox.userprofile.md)
+    - [mailbox.userProfile](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
     - [Body](/javascript/api/outlook/office.body) and all its child members
     - [Location](/javascript/api/outlook/office.location) and all its child members
     - [Recipients](/javascript/api/outlook/office.recipients) and all its child members
