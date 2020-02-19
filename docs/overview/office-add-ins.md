@@ -97,7 +97,7 @@ Outlook add-ins can extend the Office ribbon and also display contextually next 
 
 Outlook add-ins can access contextual information from the item, such as an address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification in the Outlook host application to provide a seamless experience on the desktop, web, and tablet and mobile devices.
 
-For an overview of Outlook add-ins, see [Outlook add-ins overview](/outlook/add-ins/).
+For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md).
 
 ### Create new objects in Office documents
 

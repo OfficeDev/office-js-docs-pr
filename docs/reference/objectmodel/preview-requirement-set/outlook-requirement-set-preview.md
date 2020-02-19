@@ -56,13 +56,13 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 #### [OfficeRuntime.auth.getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
 
-Added access to `getAccessToken`, which allows add-ins to [get an access token](/outlook/add-ins/authenticate-a-user-with-an-sso-token) for the Microsoft Graph API.
+Added access to `getAccessToken`, which allows add-ins to [get an access token](../../../outlook/authenticate-a-user-with-an-sso-token.md) for the Microsoft Graph API.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription), Outlook on the web (modern), Outlook on the web (classic)
 
 ## See also
 
-- [Outlook add-ins](/outlook/add-ins/)
+- [Outlook add-ins](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Get started](/outlook/add-ins/quick-start)
+- [Get started](../../../quickstarts/outlook-quickstart.md)
 - [Requirement sets and supported clients](../../requirement-sets/outlook-api-requirement-sets.md)

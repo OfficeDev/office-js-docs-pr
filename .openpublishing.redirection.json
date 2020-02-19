@@ -356,7 +356,7 @@
       },
       {
             "source_path": "docs/design/ui-elements/layout-for-outlook-add-ins.md",
-            "redirect_url": "/outlook/add-ins",
+            "redirect_url": "/office/dev/add-ins/outlook/outlook-add-ins-overview",
             "redirect_document_id": true
       },
       {
