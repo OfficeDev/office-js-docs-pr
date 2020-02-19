@@ -7,6 +7,8 @@
 
 - name: Get started
   items:
+  - name: START HERE! A guide for beginners making Office Add-ins
+    href: overview/learning-path-beginner.md
   - name: Building Office Add-ins
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
