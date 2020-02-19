@@ -16,7 +16,7 @@ Office.context provides shared interfaces that are used by add-ins in all of the
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Properties
 
@@ -38,7 +38,7 @@ Office.context provides shared interfaces that are used by add-ins in all of the
 
 #### auth: [Auth](/javascript/api/office/office.auth)
 
-Supports [single sign-on (SSO)](/outlook/add-ins/authenticate-a-user-with-an-sso-token) by providing a method that allows the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
+Supports [single sign-on (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) by providing a method that allows the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
 
 ##### Type
 
@@ -49,7 +49,7 @@ Supports [single sign-on (SSO)](/outlook/add-ins/authenticate-a-user-with-an-sso
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| Preview|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -84,7 +84,7 @@ The `contentLanguage` value reflects the current **Editing Language** setting sp
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -125,7 +125,7 @@ Gets information about the environment in which the add-in is running.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -153,7 +153,7 @@ The `displayLanguage` value reflects the current **Display Language** setting sp
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -194,7 +194,7 @@ Gets the Office application host in which the add-in is running.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -234,7 +234,7 @@ Using Office theme colors lets you coordinate the color scheme of your add-in wi
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| Preview|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -269,7 +269,7 @@ Provides the platform on which the add-in is running.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -295,7 +295,7 @@ Provides a method for determining what requirement sets are supported on the cur
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -323,8 +323,8 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Minimum permission level](../../../outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 <br>
 
@@ -344,4 +344,4 @@ Provides objects and methods that you can use to create and manipulate UI compon
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|

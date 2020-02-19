@@ -330,5 +330,5 @@ function saveCallback(asyncResult) {
 ## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
-- [Outlook add-ins](/outlook/add-ins/)
+- [Outlook add-ins](../outlook/outlook-add-ins-overview.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)
