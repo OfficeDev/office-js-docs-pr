@@ -85,6 +85,8 @@
           href: develop/sso-in-office-add-ins.md
         - name: SSO quick start
           href: quickstarts/sso-quickstart.md
+        - name: Customize your SSO-enabled add-in
+          href: quickstarts/sso-quickstart-customize.md
         - name: Authorize to Microsoft Graph with SSO
           href: develop/authorize-to-microsoft-graph.md
         - name: Create an SSO add-in using ASP.NET
