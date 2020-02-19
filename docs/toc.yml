@@ -554,9 +554,6 @@
     - name: Advanced programming concepts
       href: excel/excel-add-ins-advanced-concepts.md
       displayName: Excel
-    - name: Authenticate from a ribbon button 
-      href: excel/authenticate-from-a-ribbon-button.md
-      displayName: Excel
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
       displayName: Excel
