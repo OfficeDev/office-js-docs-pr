@@ -28,8 +28,7 @@ The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets
 Let's begin with a quick review of the add-in project that you previously [created with the Yeoman generator](sso-quickstart.md).
 
 > [!NOTE]
-> Some script files mentioned in this article have the **.js** extension; files in a TypeScript project will use the **.ts** extension instead. Script code snippets in this article are provided in JavaScript and TypeScript. Use the snippets corresponding to the language you selected when creating your project with the Yeoman generator. 
-
+> In places where this article references script files using **.js** file extension, assume the **.ts** file extension instead if your project was created with TypeScript.
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
@@ -51,7 +50,7 @@ The following steps describe these updates.
 
 ### Changes required for any type of add-in
 
-Complete the following steps for your add-in. These steps are the same, regardless of which Office host your add-in targets.
+Complete the following steps for your add-in, to change the Microsoft Graph URL, parameters, and access scope, and update the taskpane UI. These steps are the same, regardless of which Office host your add-in targets.
 
 1. In the **./.ENV** file:
 
@@ -113,7 +112,7 @@ Complete the following steps for your add-in. These steps are the same, regardle
     </li>
     ```
 
-7. Complete the additional changes required for your type of add-in, as described in one of the following sections:
+7. Update the code that parses the response from Microsoft Graph and writes it to the document or message, by following guidance in the section that corresponds to your type of add-in:
 
     - [Changes required for an Excel add-in (JavaScript)](#changes-required-for-an-excel-add-in-javascript)
     - [Changes required for an Excel add-in (TypeScript)](#changes-required-for-an-excel-add-in-typescript)
@@ -520,6 +519,8 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
   });
 }
 ```
+
+After you've made these changes, continue to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
 
 ### Update app permissions in Azure
 
