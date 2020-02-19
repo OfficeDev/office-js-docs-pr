@@ -22,14 +22,14 @@ There are a lot of links in those articles, but if you're a beginner with Office
 
 ## 2 Install tools and create your first add-in
 
-You've got the big picture now, but you need tools before you can code. Use one of our quickstarts. For purposes of learning the platform, we recommend the Excel quickstart. For each we have a version that is based on Visual Studio and a version that is based in Node.js and Visual Studio Code:
+You've got the big picture now, but you need tools before you can code. Use one of our quick starts. For purposes of learning the platform, we recommend the Excel quick start. For each we have a version that is based on Visual Studio and a version that is based in Node.js and Visual Studio Code:
 
-    - [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-    - [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)]
+- [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
+- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)]
 
 ## 3 Code
 
-You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial). You'll be using the Office JavaScript library, and some XML in the add-in's manifest, but don't try to memorize anything. You'll be getting more background about both in a later step.
+You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial). You'll be using the Office JavaScript library, and some XML in the add-in's manifest, but don't try to memorize anything. You'll be getting more background about both in a later steps.
 
 ## 4 Understand the JavaScript library
 
@@ -45,10 +45,19 @@ Get an understanding of the purposes of the add-in manifest and an introduction 
 
 You're not a beginner anymore. Here are some suggestions for further exploration of our documentation:
 
-- [Develop Office Add-ins](../develop/develop-overview.md)
-- [Core concepts](core-concepts-office-add-ins.md)
-- [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
-- [Design Office Add-ins](../design/add-in-design.md)
-- [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
-- [Deploy and publish Office Add-ins](../publish/publish.md)
-- [Resources](../resources/resources-links-help.md)
+- Tutorials or quick starts for other Office applications:
+
+  - [OneNote quick start](../quickstarts/onenote-quickstart.md)
+  - [Outlook tutorial](../../../outlook/add-ins/addin-tutorial.md)
+  - [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md)
+  - [Project quick start](../quickstarts/project-quickstart.md)
+  - [Word tutorial](../tutorials/word-tutorial.md)
+
+- Other important subjects:
+
+  - [Develop Office Add-ins](../develop/develop-overview.md)
+  - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
+  - [Design Office Add-ins](../design/add-in-design.md)
+  - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
+  - [Deploy and publish Office Add-ins](../publish/publish.md)
+  - [Resources](../resources/resources-links-help.md)
