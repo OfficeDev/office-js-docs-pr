@@ -25,7 +25,7 @@ There are a lot of links in those articles, but if you're a beginner with Office
 You've got the big picture now, but you need tools before you can code. Use one of our quick starts. For purposes of learning the platform, we recommend the Excel quick start. For each we have a version that is based on Visual Studio and a version that is based in Node.js and Visual Studio Code:
 
 - [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)]
+- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)
 
 ## 3 Code
 
@@ -48,7 +48,7 @@ You're not a beginner anymore. Here are some suggestions for further exploration
 - Tutorials or quick starts for other Office applications:
 
   - [OneNote quick start](../quickstarts/onenote-quickstart.md)
-  - [Outlook tutorial](../../../outlook/add-ins/addin-tutorial.md)
+  - [Outlook tutorial](https://docs.microsoft.com/outlook/add-ins/addin-tutorial)
   - [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md)
   - [Project quick start](../quickstarts/project-quickstart.md)
   - [Word tutorial](../tutorials/word-tutorial.md)
