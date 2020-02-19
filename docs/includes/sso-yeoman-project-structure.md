@@ -22,10 +22,10 @@ The following files facilitate the SSO process and write data to the Office docu
 
 - In a JavaScript project, the **./src/helpers/documentHelper.js** file contains code that uses the Office JavaScript library to add the data from Microsoft Graph to the Office document. There is no such file in a TypeScript project; the code that uses the Office JavaScript library to add the data from Microsoft Graph to the Office document exists in **./src/taskpane/taskpane.ts** instead.
 
-- The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the fallback authentication method's JavaScript.
+- The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the JavaScript for the fallback authentication strategy.
 
-- The **./src/helpers/fallbackauthdialog.js** file contains the fallback authentication method's JavaScript that signs on the user with msal.js.
+- The **./src/helpers/fallbackauthdialog.js** file contains the JavaScript for the fallback authentication strategy that signs in the user with msal.js.
 
-- The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication method in scenarios when SSO authentication is not supported.
+- The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication strategy in scenarios when SSO authentication is not supported.
 
 - The **./src/helpers/ssoauthhelper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the bootstrap token, initiates the swap of the bootstrap token for an access token to Microsoft Graph, and calls to Microsoft Graph for the data.

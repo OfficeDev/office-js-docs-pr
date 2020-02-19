@@ -34,7 +34,45 @@ Let's begin with a quick review of the add-in project that you previously [creat
 
 ## Add new functionality 
 
-The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document or message. Let's change the add-in's functionality such that it gets the names of the top 10 files and folders from the signed-in user's OneDrive for Business and writes that information to the document or message. Enabling this new functionality requires updating code within the add-in project and also updating app permissions in Azure.
+The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document or message. Let's change the add-in's functionality such that it gets the names of the top 10 files and folders from the signed-in user's OneDrive for Business and writes that information to the document or message. Enabling this new functionality requires updating app permissions in Azure and updating code within the add-in project.
+
+### Update app permissions in Azure
+
+Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission and revoke the **User.Read** permission, which is no longer needed.
+
+1. Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and **sign in using your Office 365 administrator credentials**. 
+
+2. Navigate to the **App registrations** page. 
+    > [!TIP]
+    > You can do this either by choosing the **App registrations** tile on the Azure home page or by using the search box on the home page to find and choose **App registrations**.
+
+3. On the **App registrations** page, choose the app that you created during the quick start. 
+    > [!TIP]
+    > The **Display name** of the app will match the add-in name that you specified when you created the project with the Yeoman generator.
+
+4. From the app overview page, choose **API permissions** under the **Manage** heading on the left side of the page.
+
+5. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.
+
+6. Select the **Yes, remove** button in response to the prompt that's displayed.
+
+7. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Remove permission** from the menu that appears.
+
+8. Select the **Yes, remove** button in response to the prompt that's displayed.
+
+9. Select the **Add a permission** button.
+
+10. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
+
+11. On the **Request API permissions** panel:
+
+    a. Under **Files**, select **Files.Read.All**.
+
+    b. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
+
+12. Select the **Grant admin consent for [tenant name]** button.
+
+13. Select the **Yes** button in response to the prompt that's displayed.
 
 ### Update code in the add-in project
 
@@ -188,7 +226,7 @@ If your add-in is an Excel add-in that was created with JavaScript, make the fol
 
 6. Delete the `writeDataToWord` function.
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
 ### Changes required for an Excel add-in (TypeScript)
 
@@ -224,7 +262,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 }
 ```
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
 ### Changes required for an Outlook add-in (JavaScript)
 
@@ -286,7 +324,7 @@ If your add-in is an Outlook add-in that was created with JavaScript, make the f
 
 6. Delete the `writeDataToWord` function.
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
 ### Changes required for an Outlook add-in (TypeScript)
 
@@ -317,7 +355,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 }
 ```
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
 ### Changes required for a PowerPoint add-in (JavaScript)
 
@@ -385,7 +423,7 @@ If your add-in is a PowerPoint add-in that was created with JavaScript, make the
 
 6. Delete the `writeDataToWord` function.
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
 ### Changes required for a PowerPoint add-in (TypeScript)
 
@@ -420,7 +458,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 }
 ```
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
 ### Changes required for a Word add-in (JavaScript)
 
@@ -486,7 +524,7 @@ If your add-in is a Word add-in that was created with JavaScript, make the follo
 
 6. Delete the `writeDataToPowerPoint` function.
 
-After you've made these changes, skip ahead to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
+After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
 ### Changes required for a Word add-in (TypeScript)
 
@@ -520,45 +558,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 }
 ```
 
-After you've made these changes, continue to the [Update app permissions in Azure](#update-app-permissions-in-azure) section of this article to make the necessary updates in Azure.
-
-### Update app permissions in Azure
-
-Before the add-in can successfully read the contents of the user's OneDrive for Business, the app must be granted the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission and revoke the **User.Read** permission, which is no longer needed.
-
-1. Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and sign in using your Office 365 administrator credentials. 
-
-2. Navigate to the **App registrations** page. 
-    > [!TIP]
-    > You can do this either by choosing the **App registrations** tile on the Azure home page or by using the search box on the home page to find and choose **App registrations**.
-
-3. On the **App registrations** page, choose the app that you created during the quick start. 
-    > [!TIP]
-    > The **Display name** of the app will match the add-in name that you specified when you created the project with the Yeoman generator.
-
-4. From the app overview page, choose **API permissions** under the **Manage** heading on the left side of the page.
-
-5. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.
-
-6. Select the **Yes, remove** button in response to the prompt that's displayed.
-
-7. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Remove permission** from the menu that appears.
-
-8. Select the **Yes, remove** button in response to the prompt that's displayed.
-
-9. Select the **Add a permission** button.
-
-10. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
-
-11. On the **Request API permissions** panel:
-
-    a. Under **Files**, select **Files.Read.All**.
-
-    b. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
-
-12. Select the **Grant admin consent for [tenant name]** button.
-
-13. Select the **Yes** button in response to the prompt that's displayed.
+After you've made these changes, continue to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
 ## Try it out
 
