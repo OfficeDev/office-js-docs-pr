@@ -1,7 +1,7 @@
 ---
 title: Understanding Outlook add-in permissions
 description: Outlook add-ins specify the required permission level in their manifest, which include Restricted, ReadItem, ReadWriteItem, or ReadWriteMailbox. 
-ms.date: 12/10/2019
+ms.date: 02/19/2020
 localization_priority: Normal
 ---
 
@@ -25,7 +25,7 @@ The **Restricted** permission is the most basic level of permission. Specify **R
 
 ### Can't do
 
-- Use an [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule on the contact, email address, meeting suggestion, or task suggestion entitiy.
+- Use an [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule on the contact, email address, meeting suggestion, or task suggestion entity.
 
 - Use the [ItemHasAttachment](../reference/manifest/rule.md#itemhasattachment-rule) or [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rule.
 
