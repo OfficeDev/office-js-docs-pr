@@ -29,11 +29,11 @@ You've got the big picture now, but you need tools before you can code. Use one 
 
 ## 3 Code
 
-You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial). You'll be using the Office JavaScript library, and some XML in the add-in's manifest, but don't try to memorize anything. You'll be getting more background about both in a later steps.
+You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial.md). You'll be using the Office JavaScript library, and some XML in the add-in's manifest, but don't try to memorize anything. You'll be getting more background about both in a later steps.
 
 ## 4 Understand the JavaScript library
 
-First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn: [Understand the Office JavaScript APIs](https://docs.microsoft.com/en-us/learn/modules/understand-office-javascript-apis/index).
+First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn: [Understand the Office JavaScript APIs](https://docs.microsoft.com/learn/modules/understand-office-javascript-apis/index).
 
 Then explore the Office JavaScript APIs using [the Script Lab tool](explore-with-script-lab.md).
 
