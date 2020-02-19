@@ -164,4 +164,4 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 
 ## Office JavaScript API object model
 
-Once initialized, the add-in can interact with the host (e.g. Excel, Outlook). The [Office JavaScript API object model](office-javascript-api-object-model.md) page has more details on specific usage patterns. There is also detailed reference documentation for both [Common APIs](/office/dev/add-ins/reference/javascript-api-for-office) and host-specific APIs.
+Once initialized, the add-in can interact with the host (e.g. Excel, Outlook). The [Common JavaScript API object model](office-javascript-api-object-model.md) page has more details on specific usage patterns. There is also detailed reference documentation for both [Common APIs](/office/dev/add-ins/reference/javascript-api-for-office) and host-specific APIs.
