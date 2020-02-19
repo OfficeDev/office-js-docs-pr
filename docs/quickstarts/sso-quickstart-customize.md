@@ -274,7 +274,7 @@ If your add-in is an Outlook add-in that was created with JavaScript, make the f
 
       let objectNames = "";
       for (let i = 0; i < data.length; i++) {
-        objectNames += data[i] + "\n";
+        objectNames += data[i] + "<br/>";
       }
 
       Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
@@ -311,7 +311,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
     let objectNames: string = "";
     for (let i = 0; i < data.length; i++) {
-        objectNames += data[i] + "\n";
+        objectNames += data[i] + "<br/>";
     }
     
     Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
