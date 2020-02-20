@@ -29,7 +29,7 @@ To configure the add-in to use a shared runtime, see [Configure your Office Add-
 
 The new APIs are in the `Office.addin` namespace. To show the task pane, your code calls `Office.addin.showAsTaskpane()`. Office will display in a task pane the page that you assigned to the resource ID (`resid`) for the task pane. This is the `resid` that you assigned to the `<SourceLocation>` of the `<Action xsi:type="ShowTaskpane">` in the manifest. (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-the-browser-runtime.md).)
 
-This is an asynchronous method, so code that should not run until it completes should be awaited, either with the `await` keyword or with a `then()` method, depending on which JavaScript syntax you are using. The following assumes that there is an Excel worksheet named **CurrentQuarterSales**. The task pane should be made visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=excel-js-preview#onactivated) event which has been registered for the worksheet.
+This is an asynchronous method, so code that should not run until it completes should be awaited, either with the `await` keyword or with a `then()` method, depending on which JavaScript syntax you are using. The following assumes that there is an Excel worksheet named **CurrentQuarterSales**. The task pane should be made visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview#onactivated) event which has been registered for the worksheet.
 
 ```javascript
 function onCurrentQuarter() {
@@ -41,7 +41,7 @@ function onCurrentQuarter() {
 }
 ```
 
-To hide the task pane, your code calls `Office.addin.hide()`. The following example is a handler that is registered for the [Office.Worksheet.onDeactivated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=excel-js-preview#ondeactivated) event.
+To hide the task pane, your code calls `Office.addin.hide()`. The following example is a handler that is registered for the [Office.Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview#ondeactivated) event.
 
 ```javascript
 function onCurrentQuarterDeactivated() {
