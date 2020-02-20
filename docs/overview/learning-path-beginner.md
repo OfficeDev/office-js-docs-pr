@@ -10,7 +10,7 @@ localization_priority: Priority
 
 Want to get started building your own cross-platform Office extensions? The following steps show you what to read first, what tools to install, and recommended tutorials to complete.
 
-## Step 1 Begin with fundamentals
+## Step 1: Begin with fundamentals
 
 We know you're eager to start coding, but there are some things about Office Add-ins that you should read before you open your IDE or code editor.
 
@@ -19,24 +19,24 @@ We know you're eager to start coding, but there are some things about Office Add
 
 There are a lot of links in those articles, but if you're a beginner with Office Add-ins, we recommend that you come back here when you've read them and continue with the next section.
 
-## Step 2 Install tools and create your first add-in
+## Step 2: Install tools and create your first add-in
 
 You've got the big picture now, so dive in with one of our quick starts. For purposes of learning the platform, we recommend the Excel quick start. There is a version that is based on Visual Studio and a version that is based in Node.js and Visual Studio Code.
 
 - [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
 - [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)
 
-## Step 3 Code
+## Step 3: Code
 
 You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial.md). You'll be using the Office JavaScript library and some XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later steps.
 
-## Step 4 Understand the JavaScript library
+## Step 4: Understand the JavaScript library
 
 First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn: [Understand the Office JavaScript APIs](/learn/modules/understand-office-javascript-apis/index).
 
 Then explore the Office JavaScript APIs with our [the Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
 
-## Step 5 Understand the manifest
+## Step 5: Understand the manifest
 
 Get an understanding of the purposes of the add-in manifest and an introduction to its XML markup in [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 
