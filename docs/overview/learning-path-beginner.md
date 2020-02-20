@@ -2,7 +2,6 @@
 title: Start Here! A guide for beginners making Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
 ms.date: 02/19/2020
-ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
