@@ -29,25 +29,8 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Office Add-ins platform overview</h3>
-                        <p><a href="overview/office-add-ins.md">Learn about the Office Add-ins platform.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/index-landing-page/i_article.svg" alt="article" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Building Office Add-ins</h3>
-                        <p><a href="overview/office-add-ins-fundamentals.md">Learn about building Office Add-ins.</a></p>
+                        <h3>Get started with Office Add-ins</h3>
+                        <p><a href="overview/learning-path-beginner.md">Learn about the Office Add-ins platform.</a></p>
                     </div>
                 </div>
             </div>
