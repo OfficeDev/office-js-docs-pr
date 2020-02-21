@@ -14,7 +14,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Properties
 
@@ -57,7 +57,7 @@ Specifies the result of an asynchronous call.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 <br>
 
@@ -84,7 +84,7 @@ Specifies how to coerce data returned or set by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 <br>
 
@@ -115,7 +115,7 @@ Specifies the event associated with an event handler.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read |
 
 <br>
 
@@ -142,4 +142,4 @@ Specifies the source of the data returned by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|

@@ -16,8 +16,8 @@ localization_priority: Normal
 |Requirement|Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
-|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Appointment Organizer, Appointment Attendee,<br>Message Compose, or Message Read|
+|[Minimum permission level](../../../outlook/understanding-outlook-add-in-permissions.md)|Restricted|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)|Appointment Organizer, Appointment Attendee,<br>Message Compose, or Message Read|
 
 ## Properties
 

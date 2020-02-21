@@ -1,7 +1,7 @@
 ---
 title: Use the Yeoman generator to create an Office Add-in that uses SSO (preview)
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on (preview).
-ms.date: 01/30/2020
+ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
@@ -17,7 +17,7 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
 
 ## Prerequisites
 
-* [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version)
+* [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).
 
 * The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:
 
@@ -53,21 +53,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 The add-in project that you've created with the Yeoman generator contains code for an SSO-enabled task pane add-in.
 
-- The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
-
-- The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
-- The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
-- The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
-
-- The **./src/helpers/documentHelper.js** file uses the Office JavaScript library to add the data from Microsoft Graph to the Office document.
-- The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the fallback authentication method's JavaScript.
-- The **./src/helpers/fallbackauthdialog.js** file contains the fallback authentication method's JavaScript that signs on the user with msal.js.
-- The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication method in scenarios when SSO authentication is not supported.
-- The **./src/helpers/ssoauthhelper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the bootstrap token, initiates the swap of the bootstrap token for an access token to Microsoft Graph, and calls to Microsoft Graph for the data.
-
-- The **./ENV** file in the root directory of the project defines constants that are used by the add-in project.
-    > [!NOTE]
-    > Some of the constants defined in this file are used to facilitate the SSO process. You may want to update values in this file to match your specific scenario. For example, you can update this file to specify a different scope, if your add-in requires something other than `User.Read`.
+[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## Configure SSO
 
@@ -144,7 +130,7 @@ Complete the following steps to try out an Outlook add-in.
     npm start
     ```
 
-2. Follow the instructions in [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed. 
+2. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed. 
 
 3. In Outlook, compose a new message.
 
@@ -167,10 +153,11 @@ Complete the following steps to try out an Outlook add-in.
 
 ## Next steps
 
-Congratulations, you've successfully created a task pane add-in that uses SSO when possible, and uses an alternate method of user authentication when SSO is not supported. To learn more about SSO configuration steps that the Yeoman generator completed automatically, and the code that facilitates the SSO process, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
+Congratulations, you've successfully created a task pane add-in that uses SSO when possible, and uses an alternate method of user authentication when SSO is not supported. To learn about customizing your add-in to add new functionality that requires different permissions, see [Customize your Node.js SSO-enabled add-in](sso-quickstart-customize.md).
 
 ## See also
 
 - [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
+- [Customize your Node.js SSO-enabled add-in](sso-quickstart-customize.md)
 - [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
