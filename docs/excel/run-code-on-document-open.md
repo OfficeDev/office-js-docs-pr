@@ -13,9 +13,9 @@ You can configure your Excel add-in to load and run code as soon as the document
 
 [!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
-## Configure your add-in to start on document open
+## Configure your add-in to load when the document opens
 
-The following code configures your add-in to start when the document is opened.
+The following code configures your add-in to load and start running when the document is opened.
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.load);
@@ -24,7 +24,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 > [!NOTE]
 > The `setStartupBehavior` method is asynchronous.
 
-## Configure your add-in not to delay start
+## Configure your add-in for no load behavior on document open
 
 The following code configures your add-in not to start when the document is opened. Instead it will start when the user engages it in some way (such as choosing a ribbon button, or opening the task pane.)
 
@@ -40,11 +40,11 @@ To determine what the current startup behavior is, run the following function, w
 let behavior = await Office.addin.getStartupBehavior();
 ```
 
-## How to run code as soon as your add-in starts
+## How to run code when the document opens
 
 When your add-in is configured to load on document open, it will run immediately. The `Office.initialize` event handler will be called. Place your startup code in the `Office.initialize` event handler.
 
-The following code shows how to register an event handler for change events from the active worksheet. If you configure your add-in to start on document open, this code will register the event handler when the document is opened and you can handle change events before the task pane is opened.
+The following code shows how to register an event handler for change events from the active worksheet. If you configure your add-in to load on document open, this code will register the event handler when the document is opened. You can handle change events before the task pane is opened.
 
 
 ```JavaScript
