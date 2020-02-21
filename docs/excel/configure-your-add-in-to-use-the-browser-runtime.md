@@ -1,5 +1,5 @@
 ---
-ms.date: 02/13/2020
+ms.date: 02/20/2020
 title: "Configure your Excel add-in to share the browser runtime (preview)"
 ms.prod: excel
 description: Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.
@@ -18,7 +18,7 @@ However, you can configure your Excel add-in to share code in a shared JavaScrip
 
 If you are starting a new project, follow these steps to use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts with the following answers:
 
-```command&nbsp;line
+```command line
 yo office
 ```
 
@@ -36,73 +36,63 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open the **My Office Add-in** project.
 2. Open the **manifest.xml** file.
-3. Change the `<Requirements>` section to use **SharedRuntime** version **1.1** as shown in the following code.
-    
-    ```xml
-    <Requirements>
-    <Sets DefaultMinVersion="1.1">
-    <Set Name="SharedRuntime" MinVersion="1.1"/>
-    </Sets>
-    </Requirements>
-    ```
-    
-4. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed. The resid is `ContosoAddin.Url` which references a string in the resources section later. You can use any resid value you want, but it should match the resid of the other elements in your add-in elements.
-    
-    ```xml
-    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-      <Hosts>
-        <Host xsi:type="Workbook">
-        <Runtimes>
-          <Runtime resid="ContosoAddin.Url" lifetime="long" />
-        </Runtimes>
-        <AllFormFactors>
-    ```
-    
-5. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**. This resid matches the `<Runtime>` resid element. Note that if you don't have custom functions, you will not have a **Page** entry and can skip this step.
+3. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed. The resid is `ContosoAddin.Url` which references a string in the resources section later. You can use any resid value you want, but it should match the resid of the other elements in your add-in elements.
 
-    ```xml
-    <AllFormFactors>
-    ...
-    <Page>
-    <SourceLocation resid="ContosoAddin.Url"/>
-    </Page>
-    ...
-    ```
+   ```xml
+   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+     <Hosts>
+       <Host xsi:type="Workbook">
+       <Runtimes>
+         <Runtime resid="ContosoAddin.Url" lifetime="long" />
+       </Runtimes>
+       <AllFormFactors>
+   ```
 
-6. In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **ContosoAddin.Url**. Note that if you don't have action commands, you won't have a **FunctionFile** entry, and can skip this step.
-    
-    ```xml
-    <DesktopFormFactor>
-    <GetStarted>
-    ...
-    </GetStarted>
-    <FunctionFile resid="ContosoAddin.Url"/>
-    ```
-    
-7. In the `<Action>` section, change the source location from **Taskpane.Url** to **ContosoAddin.Url**. Note that if you don't have a task pane, you won't have a **ShowTaskpane** action, and can skip this step.
-    
-    ```xml
-    <Action xsi:type="ShowTaskpane">
-    <TaskpaneId>ButtonId1</TaskpaneId>
-    <SourceLocation resid="ContosoAddin.Url"/>
-    </Action>
-    ```
-    
-8. Add a new **Url id** for **ContosoAddin.Url** that points to **taskpane.html**.
-     
-    ```xml
-    <bt:Urls>
-    <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
-    ...
-    <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-    ...
-    ```
-    
-9. Save your changes and rebuild the project.
-    
-    ```command&nbsp;line
-    npm run build
-    ```
+4. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**. This resid matches the `<Runtime>` resid element. Note that if you don't have custom functions, you will not have a **Page** entry and can skip this step.
+
+   ```xml
+   <AllFormFactors>
+   ...
+   <Page>
+   <SourceLocation resid="ContosoAddin.Url"/>
+   </Page>
+   ...
+   ```
+
+5. In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **ContosoAddin.Url**. Note that if you don't have action commands, you won't have a **FunctionFile** entry, and can skip this step.
+
+   ```xml
+   <DesktopFormFactor>
+   <GetStarted>
+   ...
+   </GetStarted>
+   <FunctionFile resid="ContosoAddin.Url"/>
+   ```
+
+6. In the `<Action>` section, change the source location from **Taskpane.Url** to **ContosoAddin.Url**. Note that if you don't have a task pane, you won't have a **ShowTaskpane** action, and can skip this step.
+
+   ```xml
+   <Action xsi:type="ShowTaskpane">
+   <TaskpaneId>ButtonId1</TaskpaneId>
+   <SourceLocation resid="ContosoAddin.Url"/>
+   </Action>
+   ```
+
+7. Add a new **Url id** for **ContosoAddin.Url** that points to **taskpane.html**.
+
+   ```xml
+   <bt:Urls>
+   <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
+   ...
+   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+   ...
+   ```
+
+8. Save your changes and rebuild the project.
+
+   ```command line
+   npm run build
+   ```
 
 ## Runtime lifetime
 
