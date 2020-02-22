@@ -39,48 +39,48 @@ After you complete the wizard, the generator creates the project and installs su
      <Hosts>
        <Host xsi:type="Workbook">
        <Runtimes>
-         <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+         <Runtime resid="ContosoAddin.Url" lifetime="long" />
        </Runtimes>
        <AllFormFactors>
    ```
 
-4. In the `<Page>` element, change the source location from **Functions.Page.Url** to **TaskPaneAndCustomFunction.Url**.
+4. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**.
 
    ```xml
    <AllFormFactors>
    ...
    <Page>
-   <SourceLocation resid="TaskPaneAndCustomFunction.Url"/>
+   <SourceLocation resid="ContosoAddin.Url"/>
    </Page>
    ...
    ```
 
-5. In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **TaskPaneAndCustomFunction.Url**.
+5. In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **ContosoAddin.Url**.
 
    ```xml
    <DesktopFormFactor>
    <GetStarted>
    ...
    </GetStarted>
-   <FunctionFile resid="TaskPaneAndCustomFunction.Url"/>
+   <FunctionFile resid="ContosoAddin.Url"/>
    ```
 
-6. In the `<Action>` section, change the source location from **Taskpane.Url** to **TaskPaneAndCustomFunction.Url**.
+6. In the `<Action>` section, change the source location from **Taskpane.Url** to **ContosoAddin.Url**.
 
    ```xml
    <Action xsi:type="ShowTaskpane">
    <TaskpaneId>ButtonId1</TaskpaneId>
-   <SourceLocation resid="TaskPaneAndCustomFunction.Url"/>
+   <SourceLocation resid="ContosoAddin.Url"/>
    </Action>
    ```
 
-7. Add a new **Url id** for **TaskPaneAndCustomFunction.Url** that points to **taskpane.html**.
+7. Add a new **Url id** for **ContosoAddin.Url** that points to **taskpane.html**.
 
    ```xml
    <bt:Urls>
    <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
    ...
-   <bt:Url id="TaskPaneAndCustomFunction.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
    ...
    ```
 
