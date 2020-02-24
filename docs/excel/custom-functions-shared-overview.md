@@ -47,7 +47,7 @@ When using a shared runtime, you can't use Visual Studio Code to debug custom fu
 
 ## Get Started
 
-To configure your Excel add-in project to run custom functions in a shared runtime, see [Configure your Excel add-in to use a shared JavaScript runtime (preview)](configure-your-add-in-to-use-the-browser-runtime.md).
+To configure your Excel add-in project to run custom functions in a shared runtime, see [Configure your Excel add-in to use a shared JavaScript runtime (preview)](configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## Give us feedback
 

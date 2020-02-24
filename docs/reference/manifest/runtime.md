@@ -9,7 +9,7 @@ localization_priority: Normal
 
 [!include[Running custom functions in browser runtime note](../../includes/excel-shared-runtime-preview-note.md)]
 
-Child element of the [`<Runtimes>`](runtimes.md) element. This element configures your add-in to use a shared JavaScript runtime so that your ribbon, task pane, and custom functions, all run in the same runtime. For more information, see [Configure your Excel add-in to use a shared JavaScript runtime](../../excel/configure-your-add-in-to-use-the-browser-runtime.md).
+Child element of the [`<Runtimes>`](runtimes.md) element. This element configures your add-in to use a shared JavaScript runtime so that your ribbon, task pane, and custom functions, all run in the same runtime. For more information, see [Configure your Excel add-in to use a shared JavaScript runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 
 **Add-in type:** Task pane
 

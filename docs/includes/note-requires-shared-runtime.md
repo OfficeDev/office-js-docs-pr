@@ -1,2 +1,2 @@
 > [!NOTE]
-> This article requires that your Office Add-in is configured to use a shared runtime. For more information, see [Configure your Office Add-in to use a shared runtime](../excel/configure-your-add-in-to-use-the-browser-runtime.md).
+> This article requires that your Office Add-in is configured to use a shared runtime. For more information, see [Configure your Office Add-in to use a shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md).
