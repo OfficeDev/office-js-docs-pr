@@ -107,9 +107,9 @@ Here's a simple example of a call to `getAccessToken`.
 ```js
 async function getGraphData() {
     try {
-        let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        let bootstrapToken = await OfficeRuntime.auth.getAccessToken();
 
-        // The /api/values controller will make the token exchange and use the
+        // The /api/DoSomething controller will make the token exchange and use the
         // access token it gets back to make the call to MS Graph.
         getData("/api/DoSomething", bootstrapToken);
     }
@@ -146,7 +146,7 @@ $.ajax({
 
 #### When to call the method
 
-If your add-in cannot be used when no user is logged into Office, then you should call `getAccessToken` *when the add-in launches* and pass `allowSignInPrompt: true` in the `options` parameter of `getAccessToken`.
+If your add-in cannot be used when no user is logged into Office, then you should call `getAccessToken` *when the add-in launches* and pass `allowSignInPrompt: true` in the `options` parameter of `getAccessToken`. For example; `OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });`
 
 If the add-in has some functionality that doesn't require a logged in user, then you call `getAccessToken` *when the user takes an action that requires a logged in user*. There is no significant performance degradation with redundant calls of `getAccessToken` because Office caches the bootstrap token and will reuse it, until it expires, without making another call to the AAD v. 2.0 endpoint whenever `getAccessToken` is called. So you can add calls of `getAccessToken` to all functions and handlers that initiate an action where the token is needed.
 

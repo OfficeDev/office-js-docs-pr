@@ -95,7 +95,7 @@ The user is running the add-in in Office on Microsoft Edge or Internet Explorer.
 There are several possible causes:
 
 - The add-in is running on a platform that does not support the `getAccessToken` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
-- The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the AAD `profile` scope.
+- The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the AAD `profile` scope. For more information, see [Distributing SSO-enabled add-ins in Microsoft AppSource](authorize-to-microsoft-graph.md#distributing-sso-enabled-add-ins-in-microsoft-appsource).
 
 Your code should fall back to an alternate system of user authentication.
 
