@@ -1,12 +1,13 @@
 ---
 title: Asynchronous programming in Office Add-ins
 description: ''
-ms.date: 01/14/2020
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
-
 # Asynchronous programming in Office Add-ins
+
+[!include[information about the common API](../includes/alert-common-api-info.md)]
 
 Why does the Office Add-ins API use asynchronous programming? Because JavaScript is a single-threaded language, if script invokes a long-running synchronous process, all subsequent script execution will be blocked until that process completes. Because certain operations against Office web clients (but rich clients as well) could block execution if they are run synchronously, most of the methods in the JavaScript API for Office are designed to execute asynchronously. This makes sure that Office Add-ins are responsive and highly performing. It also frequently requires you to write callback functions when working with these asynchronous methods.
 

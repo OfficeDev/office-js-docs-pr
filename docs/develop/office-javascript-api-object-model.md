@@ -1,12 +1,13 @@
 ---
 title: Common JavaScript API object model
 description: ''
-ms.date: 02/18/2020
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
-
 # Common JavaScript API object model
+
+[!include[information about the common API](../includes/alert-common-api-info.md)]
 
 Office JavaScript add-ins give access to the host’s underlying functionality. Most of this access goes through a few important objects. The [Context](#context-object) object gives access to the runtime environment after initialization. The [Document](#document-object) object gives the user control over an Excel, PowerPoint, or Word document. The [Mailbox](#mailbox-object) object gives an Outlook add-in access to messages and user profiles. Understanding the relationships between these high-level objects is the foundation of a JavaScript add-in.
 

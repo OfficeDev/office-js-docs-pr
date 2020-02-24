@@ -1,11 +1,13 @@
 ---
 title: Persisting add-in state and settings
 description: ''
-ms.date: 03/19/2019
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
 # Persisting add-in state and settings
+
+[!include[information about the common API](../includes/alert-common-api-info.md)]
 
 Office Add-ins are essentially web applications running in the stateless environment of a browser control. As a result, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions of using your add-in. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location.
 To do that, you can:
