@@ -1,13 +1,13 @@
 ---
 title: Outlook add-in APIs
 description: Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.
-ms.date: 10/31/2019
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
 # Outlook add-in APIs
 
-To use APIs in your Outlook add-in, you must specify the location of the Office.js library, the requirement set, the schema, and the permissions.
+To use APIs in your Outlook add-in, you must specify the location of the Office.js library, the requirement set, the schema, and the permissions. You'll primarily use the subset of the Office JavaScript APIs that are exposed through the [Mailbox](/javascript/api/outlook/Office.mailbox) object.
 
 ## Office.js library
 
@@ -62,6 +62,9 @@ Your add-in requires the appropriate permissions to use the APIs that it needs. 
 
 In general, you should specify the minimum permission needed for your add-in. Permissions are declared in the `<Permissions>` element in the manifest. For more information, see [Outlook add-in manifests](manifests.md). For information about security issues, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).
 
+## Mailbox object
+
+[!include[information about Mailbox object](../includes/mailbox-object-desc.md)]
 
 ## See also
 
