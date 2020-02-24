@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph with SSO
 description: ''
-ms.date: 01/14/2020
+ms.date: 02/24/2020
 localization_priority: Normal
 ---
 

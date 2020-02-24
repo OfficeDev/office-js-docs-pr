@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: ''
-ms.date: 11/05/2019
+ms.date: 02/24/2020
 localization_priority: Normal
 ---
 
