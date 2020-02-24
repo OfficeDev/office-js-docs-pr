@@ -60,7 +60,7 @@
       - name: Common coding issues
         href: develop/common-coding-issues.md
 
-      - name: Common APIs (Office 2013)
+      - name: Common APIs (Office 2013+)
         items:
         - name: Common JavaScript API object model
           href: develop/office-javascript-api-object-model.md
