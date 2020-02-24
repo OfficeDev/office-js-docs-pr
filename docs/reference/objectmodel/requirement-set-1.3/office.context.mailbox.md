@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.3
 description: ''
-ms.date: 12/16/2019
+ms.date: 02/19/2020
 localization_priority: Normal
 ---
 
@@ -16,17 +16,17 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Minimum permission level](../../../outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ## Properties
 
 | Property | Minimum<br>permission level | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|---|:---:|
-| [diagnostics](office.context.mailbox.diagnostics.md) | ReadItem | Compose<br>Read | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.3) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-1.3#diagnostics) | ReadItem | Compose<br>Read | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.3) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.3#ewsurl) | ReadItem | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restricted | Compose<br>Read | [Item](/javascript/api/outlook/office.item?view=outlook-js-1.3) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [userProfile](office.context.mailbox.userProfile.md) | ReadItem | Compose<br>Read | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.3) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.3#userprofile) | ReadItem | Compose<br>Read | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.3) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## Methods
 

@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: ''
-ms.date: 01/14/2020
+ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -61,7 +61,7 @@ Developers should use the earliest requirement set that contains the critical se
 
 ## Requirement sets supported by Exchange servers and Outlook clients
 
-In this section, we note the range of requirement sets supported by Exchange server and Outlook clients.
+In this section, we note the range of requirement sets supported by Exchange server and Outlook clients. For details about server and client requirements for running Outlook add-ins, see [Outlook add-ins requirements](../../outlook/add-in-requirements.md).
 
 > [!IMPORTANT]
 > If your target Exchange server and Outlook client support different requirement sets, then you're restricted to the lower requirement set range. For example, if an add-in is running in Outlook 2016 on Mac (highest requirement set: 1.6) against Exchange 2013 (highest requirement set: 1.1), your add-in is limited to requirement set 1.1.
@@ -103,11 +103,11 @@ Add-ins are supported in Outlook on the following platforms.
 >
 > **modern**
 >
-> ![partial screenshot of the modern Outlook toolbar](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-new-toolbar.png)
+> ![partial screenshot of the modern Outlook toolbar](../../images/outlook-on-the-web-new-toolbar.png)
 >
 > **classic**
 >
-> ![partial screenshot of the classic Outlook toolbar](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-classic-toolbar.png)
+> ![partial screenshot of the classic Outlook toolbar](../../images/outlook-on-the-web-classic-toolbar.png)
 
 ## Using preview APIs
 

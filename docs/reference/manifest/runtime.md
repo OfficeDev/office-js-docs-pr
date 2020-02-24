@@ -13,6 +13,10 @@ Child element of the [`<Runtimes>`](runtimes.md) element. This element configure
 
 **Add-in type:** Task pane
 
+> [!IMPORTANT]
+<<<<<<< HEAD
+> Shared runtime is currently in preview and are only available on Excel on Windows. To try the preview features, you will need to join [Office Insider](https://insider.office.com/).
+
 ## Syntax
 
 ```XML
