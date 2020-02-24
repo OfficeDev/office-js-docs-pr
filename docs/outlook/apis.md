@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Outlook add-in APIs
 
-To use APIs in your Outlook add-in, you must specify the location of the Office.js library, the requirement set, the schema, and the permissions. You'll primarily use the subset of the Office JavaScript APIs that are exposed through the [Mailbox](/javascript/api/outlook/Office.mailbox) object.
+To use APIs in your Outlook add-in, you must specify the location of the Office.js library, the requirement set, the schema, and the permissions. You'll primarily use the subset of the Office JavaScript APIs that are exposed through the [Mailbox](#mailbox-object) object.
 
 ## Office.js library
 
