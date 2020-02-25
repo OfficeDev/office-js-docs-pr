@@ -59,7 +59,7 @@
         href: develop/loading-the-dom-and-runtime-environment.md
       - name: Initialize your add-in
         href: develop/initialize-add-in.md
-      - name: Common coding issues
+      - name: Coding guidance for common issues
         href: develop/common-coding-issues.md
       - name: Common APIs (Office 2013+)
         items:

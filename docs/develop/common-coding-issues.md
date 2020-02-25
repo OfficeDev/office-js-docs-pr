@@ -1,11 +1,11 @@
 ---
-title: Common coding issues and unexpected platform behaviors
+title: Coding guidance for common issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 01/02/2020
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
-# Common coding issues and unexpected platform behaviors
+# Coding guidance for common issues and unexpected platform behaviors
 
 This article highlights aspects of the Office JavaScript API that may result in unexpected behavior or require specific coding patterns to achieve the desired outcome. If you encounter an issue that belongs in this list, please let us know by using the feedback form at the bottom of the article.
 
