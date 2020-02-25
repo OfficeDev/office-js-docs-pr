@@ -14,7 +14,7 @@ For Outlook add-ins, the JavaScript API for Office provides [RoamingSettings](/j
 
 |**Object**|**Storage location**|
 |:-----|:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|The user's Exchange server mailbox where the add-in is installed.Because these settings are stored in the user's server mailbox, they can "roam" with the user and are available to the add-in when it is running in the context of any supported client host application or browser accessing that user's mailbox.<br/><br/> Outlook add-in roaming settings are available only to the add-in that created them, and only from the mailbox where the add-in is installed.|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|The user's Exchange server mailbox where the add-in is installed. Because these settings are stored in the user's server mailbox, they can "roam" with the user and are available to the add-in when it is running in the context of any supported client host application or browser accessing that user's mailbox.<br/><br/> Outlook add-in roaming settings are available only to the add-in that created them, and only from the mailbox where the add-in is installed.|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|The message, appointment, or meeting request item the add-in is working with. Outlook add-in item custom properties are available only to the add-in that created them, and only from the item where they are saved.|
 
 ## How to save settings in the user's mailbox for Outlook add-ins as roaming settings
