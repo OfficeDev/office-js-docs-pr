@@ -181,7 +181,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| See [Shared runtime requirement sets](shared-runtime-requirement-sets.md). | Office.addin.setStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
+| See [Shared runtime requirement sets](shared-runtime-requirement-sets.md). | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
 
 ---
 
