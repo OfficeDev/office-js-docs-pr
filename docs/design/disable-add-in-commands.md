@@ -79,7 +79,7 @@ The following is a simple example. Note that "MyButton" and "OfficeAddinTab1" ar
 
 ```javascript
 function enableButton() {
-    OfficeRuntime.ui.getRibbon()
+    Office.ui.getRibbon()
         .then(function (ribbon) { 
             ribbon.requestUpdate({
                 tabs: [
@@ -103,7 +103,7 @@ const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
     const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    const ribbon: Ribbon = await OfficeRuntime.ui.getRibbon();
+    const ribbon: Ribbon = await Office.ui.getRibbon();
     await ribbon.requestUpdate(ribbonUpdater);
 }
 ```
@@ -135,7 +135,7 @@ Third, define the `enableChartFormat` handler. The following is a simple example
 
 ```javascript
 function enableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
+    Office.ui.getRibbon()
         .then(function (ribbon) {
             var button = {id: "ChartFormatButton", enabled: true};
             var parentTab = {id: "CustomChartTab", controls: [button]};
@@ -158,7 +158,7 @@ The following example shows a function that disables a button and records the bu
 
 ```javascript
 function disableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
+    Office.ui.getRibbon()
         .then(function (ribbon) {
             var button = {id: "ChartFormatButton", enabled: false};
             var parentTab = {id: "CustomChartTab", controls: [button]};
@@ -192,7 +192,7 @@ In some scenarios Office is unable to update the ribbon and will return an error
 
 ```javascript
 function disableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
+    Office.ui.getRibbon()
         .then(function (ribbon) {
             var button = {id: "ChartFormatButton", enabled: false};
             var parentTab = {id: "CustomChartTab", controls: [button]};
