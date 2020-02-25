@@ -55,11 +55,12 @@
         href: develop/office-versions-and-requirement-sets.md
       - name: Reference Office.js
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-      - name: Load Office.js
+      - name: Load sequence of an Office Add-in
         href: develop/loading-the-dom-and-runtime-environment.md
+      - name: Initialize your add-in
+        href: develop/initialize-add-in.md
       - name: Common coding issues
         href: develop/common-coding-issues.md
-
       - name: Common APIs (Office 2013+)
         items:
         - name: Common JavaScript API object model

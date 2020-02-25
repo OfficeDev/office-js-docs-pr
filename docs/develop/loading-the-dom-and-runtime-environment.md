@@ -109,3 +109,4 @@ The phone dialer sample Outlook add-in shows a slightly different approach using
 ## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
+- [Initialize your Office Add-in](initialize-add-in.md)
