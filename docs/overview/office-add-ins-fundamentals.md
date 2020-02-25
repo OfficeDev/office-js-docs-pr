@@ -88,7 +88,7 @@ For detailed information about the manifest, see [Office Add-ins XML manifest](a
 
 An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running. 
 
-#### Accessing the Office JavaScript library
+#### Accessing the Office JavaScript API library
 
 [!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 

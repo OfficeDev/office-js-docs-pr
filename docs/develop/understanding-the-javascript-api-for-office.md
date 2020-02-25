@@ -9,7 +9,7 @@ localization_priority: Priority
 
 An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running.
 
-## Accessing the Office JavaScript library
+## Accessing the Office JavaScript API library
 
 [!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
@@ -28,5 +28,5 @@ An Office Add-in can use the Office JavaScript APIs to interact with content in 
 
 - [Office JavaScript API reference](../reference/javascript-api-for-office.md)
 - [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md)
-- [Referencing the JavaScript API for Office library](referencing-the-javascript-api-for-office-library-from-its-cdn.md)
+- [Referencing the Office JavaScript API library](referencing-the-javascript-api-for-office-library-from-its-cdn.md)
 - [Initialize your Office Add-in](initialize-add-in.md)

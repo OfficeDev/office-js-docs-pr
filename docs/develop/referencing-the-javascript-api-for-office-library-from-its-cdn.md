@@ -1,11 +1,11 @@
 ---
-title: Referencing the JavaScript API for Office library
-description: Learn how to reference the JavaScript API for Office library in your add-in.
+title: Referencing the Office JavaScript API library
+description: Learn how to reference the Office JavaScript API library in your add-in.
 ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
-# Referencing the JavaScript API for Office library
+# Referencing the Office JavaScript API library
 
 The [JavaScript API for Office](../reference/javascript-api-for-office.md) library provides the APIs that your add-in can use to interact with the Office host. The simplest way to reference the library is to use the content delivery network (CDN) by adding the following `<script>` tag within the `<head>` section of your HTML page:  
 
@@ -28,7 +28,7 @@ In the previous HTML snippet, the  `/1/` in front of `office.js` in the CDN URL 
 If you plan to publish your Office Add-in from AppSource, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
 
 > [!NOTE]
-> To use preview APIs, reference the preview version of the JavaScript API for Office library on the CDN: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
+> To use preview APIs, reference the preview version of the Office JavaScript API library on the CDN: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
 
 ## Enabling intellisense for a TypeScript project
 

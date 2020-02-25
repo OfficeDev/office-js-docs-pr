@@ -41,9 +41,9 @@ Your add-in's manifest must use version 1.1 of the add-in manifest schema. Set t
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
 ```
 
-### Specify the latest JavaScript API for Office library
+### Specify the latest Office JavaScript API library
 
-If you use runtime checks, reference the most current version of the JavaScript API for Office library from the content delivery network (CDN). To do this, add the following  `script` tag to your HTML. Using `/1/` in the CDN URL ensures that you reference the most recent version of Office.js.
+If you use runtime checks, reference the most current version of the Office JavaScript API library from the content delivery network (CDN). To do this, add the following  `script` tag to your HTML. Using `/1/` in the CDN URL ensures that you reference the most recent version of Office.js.
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -156,7 +156,7 @@ Use **isSetSupported** with the **RequirementSetName** associated with the Offic
 |Outlook|Mailbox|
 |Word|WordApi|
 
-The **isSetSupported** method and the requirement sets for these hosts are available in the latest Office.js file on the CDN. If you don't use Office.js from the CDN, your add-in might generate exceptions because **isSetSupported** will be undefined. For more information, see [Specify the latest JavaScript API for Office library](#specify-the-latest-javascript-api-for-office-library).
+The **isSetSupported** method and the requirement sets for these hosts are available in the latest Office.js file on the CDN. If you don't use Office.js from the CDN, your add-in might generate exceptions because **isSetSupported** will be undefined. For more information, see [Specify the latest Office JavaScript API library](#specify-the-latest-javascript-api-for-office-library).
 
 The following code example shows how an add-in can provide different functionality for different Office hosts that might support different requirement sets or API members.
 

@@ -1,11 +1,11 @@
 ---
-title: Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
+title: Update to the latest Office JavaScript API library and version 1.1 add-in manifest schema
 description: Update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 ms.date: 10/11/2019
 localization_priority: Normal
 ---
 
-# Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
+# Update to the latest Office JavaScript API library and version 1.1 add-in manifest schema
 
 This article describes how to update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 
@@ -36,7 +36,7 @@ For projects created before the release of v1.1 of the JavaScript API for Office
 Note that the update process is applied on a  _per-project basis_ - you'll need to repeat the updating process for each add-in project in which you want to use v1.1 of Office.js and add-in manifest schema.
 
 
-### Update the JavaScript API for Office library files in your project to the newest release
+### Update the Office JavaScript API library files in your project to the newest release
 The following steps will update your Office.js library files to the latest version. The steps use Visual Studio 2019, but they are similar for previous versions of Visual Studio.
 
 1. In Visual Studio 2019, open or create a new  **Office Add-in** project.
@@ -45,7 +45,7 @@ The following steps will update your Office.js library files to the latest versi
 4. Select Microsoft.Office.js. Ensure the package source is from **nuget.org**.
 5. In the left pane, choose **Install** and complete the package update process.
 
-You'll need to take a few additional steps to complete the update. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references, and reference the updated JavaScript API for Office library as follows:
+You'll need to take a few additional steps to complete the update. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references, and reference the updated Office JavaScript API library as follows:
 
   ```html
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -85,11 +85,11 @@ You don't need local copies of the JavaScript API for Office files (Office.js an
 > To get a copy of the XSD (XML Schema Definition) for the v1.1 add-in manifest, see the listing in [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md).
 
 
-### Update the JavaScript API for Office library files in your project to use the newest release
+### Update the Office JavaScript API library files in your project to use the newest release
 
 1. Open the HTML pages for your add-in in your text editor or IDE.
 
-2. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references, and reference the updated JavaScript API for Office library as follows:
+2. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references, and reference the updated Office JavaScript API library as follows:
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
