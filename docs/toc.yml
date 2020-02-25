@@ -49,7 +49,7 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Office JavaScript API
       items:
-      - name: Understanding the JavaScript API for Office
+      - name: Understanding the Office JavaScript API
         href: develop/understanding-the-javascript-api-for-office.md
       - name: Office versions and requirement sets
         href: develop/office-versions-and-requirement-sets.md

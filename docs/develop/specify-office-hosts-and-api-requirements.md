@@ -31,7 +31,7 @@ The following table lists core concepts discussed throughout this article.
 
 ## Before you begin
 
-Your add-in must use the most current version of the add-in manifest schema. If you use runtime checks in your add-in, ensure that you use the latest JavaScript API for Office (office.js) library.
+Your add-in must use the most current version of the add-in manifest schema. If you use runtime checks in your add-in, ensure that you use the latest Office JavaScript API (office.js) library.
 
 ### Specify the latest add-in manifest schema
 
@@ -178,7 +178,7 @@ else
 
 ## Runtime checks using methods not in a requirement set
 
-Some API members don't belong to requirement sets. This only applies to API members that are part of the [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office) namespace (anything under `Office.` except [Outlook Mailbox APIs](/javascript/api/outlook)), but not API members that belong to the [Word JavaScript API](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview) (anything in `Word.`), [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) (anything in `Excel.`), or [OneNote JavaScript API](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference) (anything in `OneNote.`) namespaces. When your add-in depends on a method that is not part of a requirement set, you can use the runtime check to determine whether the method is supported by the Office host, as shown in the following code example. For a complete list of methods that don't belong to a requirement set, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
+Some API members don't belong to requirement sets. This only applies to API members that are part of the [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) namespace (anything under `Office.` except [Outlook Mailbox APIs](/javascript/api/outlook)), but not API members that belong to the [Word JavaScript API](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview) (anything in `Word.`), [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) (anything in `Excel.`), or [OneNote JavaScript API](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference) (anything in `OneNote.`) namespaces. When your add-in depends on a method that is not part of a requirement set, you can use the runtime check to determine whether the method is supported by the Office host, as shown in the following code example. For a complete list of methods that don't belong to a requirement set, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
 > We recommend that you limit the use of this type of runtime check in your add-in's code.

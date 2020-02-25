@@ -62,7 +62,7 @@ To help you understand how selection- and binding-based data access methods work
 
  **Applies to:** Content and task pane add-in types
 
-To create extensions that seamlessly work across different Office documents, the JavaScript API for Office abstracts away the particularities of each Office application through common data types and the ability to coerce different document contents into three common data types.
+To create extensions that seamlessly work across different Office documents, the Office JavaScript API abstracts away the particularities of each Office application through common data types and the ability to coerce different document contents into three common data types.
 
 
 #### Common data types

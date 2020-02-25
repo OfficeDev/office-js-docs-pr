@@ -143,5 +143,5 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 
 ## See also
 
-- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
+- [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md)

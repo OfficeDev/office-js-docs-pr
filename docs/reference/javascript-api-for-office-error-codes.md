@@ -1,13 +1,13 @@
 ---
-title: JavaScript API for Office error codes
+title: Office JavaScript API error codes
 description: ''
 ms.date: 01/30/2020
 localization_priority: Normal
 ---
 
-# JavaScript API for Office error codes
+# Office JavaScript API error codes
 
-This article documents the error messages you might encounter while using the JavaScript API for Office (Office.js).
+This article documents the error messages you might encounter while using the Office JavaScript API (Office.js).
 
 **Applies to:** Office Add-ins | SharePoint Add-ins | Excel | Outlook | PowerPoint | Project | Word
 

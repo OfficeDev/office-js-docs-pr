@@ -8,7 +8,7 @@ localization_priority: Priority
 
 # Word JavaScript API overview
 
-An Word add-in interacts with objects in Word by using the JavaScript API for Office, which includes two JavaScript object models:
+An Word add-in interacts with objects in Word by using the Office JavaScript API, which includes two JavaScript object models:
 
 * **Word JavaScript API**: Introduced with Office 2016, the [Word JavaScript API](/javascript/api/word) provides strongly-typed objects that you can use to access objects and metadata in a Word document. 
 

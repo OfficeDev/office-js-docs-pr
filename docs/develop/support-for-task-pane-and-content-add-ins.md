@@ -31,7 +31,7 @@ You can use the [Office JavaScript API](../reference/javascript-api-for-office.m
 > [!IMPORTANT]
 > Some of the API members aren't supported across all Office applications that can host content and task pane add-ins. To determine which members are supported, see any of the following:
 
-For a summary of Office JavaScript API support across Office host applications, see [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md).
+For a summary of Office JavaScript API support across Office host applications, see [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
 
 
 ## Reading and writing to an active selection

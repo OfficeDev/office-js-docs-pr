@@ -130,7 +130,7 @@ Specify **ReadWriteItem** in the **Permissions** element in the manifest to requ
 
 - [Add or remove attachments](add-and-remove-attachments-to-an-item-in-a-compose-form.md) of that item.
 
-- Use all other members of the JavaScript API for Office that are applicable to mail add-ins, except **Mailbox.makeEWSRequestAsync**.
+- Use all other members of the Office JavaScript API that are applicable to mail add-ins, except **Mailbox.makeEWSRequestAsync**.
 
 ### Can't do
 

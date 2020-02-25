@@ -219,7 +219,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ## Methods that aren't part of a requirement set
 
-The following methods in the JavaScript API for Office aren't part of a requirement set. If your add-in requires any of these methods, use the **Methods** and **Method** elements in the add-in's manifest to declare that they are required, or perform the runtime check using an `if` statement. For more information, see [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+The following methods in the Office JavaScript API aren't part of a requirement set. If your add-in requires any of these methods, use the **Methods** and **Method** elements in the add-in's manifest to declare that they are required, or perform the runtime check using an `if` statement. For more information, see [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
 
 |**Method name**|**Office host support**|
 |:-----|:-----|
