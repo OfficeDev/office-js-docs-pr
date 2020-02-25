@@ -145,3 +145,4 @@ function saveCallback(asyncResult) {
 ## See also
 
 - [Persisting add-in state and settings](../develop/persisting-add-in-state-and-settings.md)
+- [Initialize your Office Add-in](../develop/initialize-add-in.md)
