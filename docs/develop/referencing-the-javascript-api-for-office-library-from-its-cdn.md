@@ -1,11 +1,11 @@
 ---
-title: Referencing the JavaScript API for Office library in your add-in
+title: Referencing the JavaScript API for Office library
 description: Learn how to reference the JavaScript API for Office library in your add-in.
 ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
-# Referencing the JavaScript API for Office library in your add-in
+# Referencing the JavaScript API for Office library
 
 The [JavaScript API for Office](../reference/javascript-api-for-office.md) library provides the APIs that your add-in can use to interact with the Office host. The simplest way to reference the library is to use the content delivery network (CDN) by adding the following `<script>` tag within the `<head>` section of your HTML page:  
 
@@ -26,11 +26,11 @@ If you plan to publish your Office Add-in from AppSource, you must use this CDN 
 
 ## Enabling intellisense for a TypeScript project
 
-To enable intellisense for TypeScript add-in project, run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
-> 
-> ```command&nbsp;line
-> npm install --save-dev @types/office-js
-> ```
+In addition to referencing the JavaScript API for Office as described previously, you can also enable intellisense for TypeScript add-in project by using the type definitions from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js). To do so, run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
+
+```command&nbsp;line
+npm install --save-dev @types/office-js
+```
 
 ## See also
 
