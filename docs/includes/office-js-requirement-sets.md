@@ -2,4 +2,4 @@
 
 Your add-in can use requirement sets to determine whether the Office host supports the API members that it needs to use. For more information about this, see [Specify Office hosts and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 
-Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](office-add-in-availability.md).
+Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
