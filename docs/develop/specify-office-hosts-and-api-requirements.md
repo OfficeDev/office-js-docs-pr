@@ -156,7 +156,7 @@ Use **isSetSupported** with the **RequirementSetName** associated with the Offic
 |Outlook|Mailbox|
 |Word|WordApi|
 
-The **isSetSupported** method and the requirement sets for these hosts are available in the latest Office.js file on the CDN. If you don't use Office.js from the CDN, your add-in might generate exceptions because **isSetSupported** will be undefined. For more information, see [Specify the latest Office JavaScript API library](#specify-the-latest-javascript-api-for-office-library).
+The **isSetSupported** method and the requirement sets for these hosts are available in the latest Office.js file on the CDN. If you don't use Office.js from the CDN, your add-in might generate exceptions because **isSetSupported** will be undefined. For more information, see [Specify the latest Office JavaScript API library](#specify-the-latest-office-javascript-api-library).
 
 The following code example shows how an add-in can provide different functionality for different Office hosts that might support different requirement sets or API members.
 
