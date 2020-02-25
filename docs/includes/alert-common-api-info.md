@@ -1,4 +1,4 @@
 > [!IMPORTANT]
-> This article applies to the **Common APIs** -- the Office JavaScript API model that's supported by Office 2013 and later -- and can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. Outlook add-ins exclusively use Common APIs, including especially the subset of APIs exposed through the [Mailbox](/javascript/api/outlook/Office.mailbox) object. 
+> This article applies to the **Common APIs**, the Office JavaScript API model that's supported by Office 2013 and later and can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. Outlook add-ins exclusively use Common APIs, including especially the subset of APIs exposed through the [Mailbox](/javascript/api/outlook/Office.mailbox) object. 
 > 
 > You should only use Common APIs for scenarios that aren't supported by **host-specific APIs**. For more information the applicability of Common APIs versus host-specific APIs, see [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md).
