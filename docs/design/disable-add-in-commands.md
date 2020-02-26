@@ -71,28 +71,24 @@ By default, any Add-in Command is enabled when the Office application launches. 
 
 The essential steps to changing the enabled status of an Add-in Command are:
 
-1. Create a [RibbonUpdaterData](/javascript/api/office-runtime/office.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
-2. Get a reference to the [Ribbon](/javascript/api/office-runtime/officer.ribbon) object with the [Office.ui.getRibbon](/javascript/api/office-runtime/office.ui#getribbon--) method.
-3. Pass the **RibbonUpdaterData** object to the [Ribbon.requestUpdate()](/javascript/api/office-runtime/office.ribbon#requestupdate-input-) method.
+1. Create a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
+2. Pass the **RibbonUpdaterData** object to the [Office.Ribbon.requestUpdate()](/javascript/api/office/office.ribbon#requestupdate-input-) method.
 
 The following is a simple example. Note that "MyButton" and "OfficeAddinTab1" are copied from the manifest.
 
 ```javascript
 function enableButton() {
-    Office.ui.getRibbon()
-        .then(function (ribbon) { 
-            ribbon.requestUpdate({
-                tabs: [
-                    {
-                        id: "OfficeAppTab1", 
-                        controls: [
-                        {
-                            id: "MyButton", 
-                            enabled: true
-                        }
-                    ]}
-                ]}); 
-        }); 
+    Office.Ribbon.requestUpdate({
+        tabs: [
+            {
+                id: "OfficeAppTab1", 
+                controls: [
+                {
+                    id: "MyButton", 
+                    enabled: true
+                }
+            ]}
+        ]});
 }
 ```
 
@@ -103,8 +99,7 @@ const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
     const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    const ribbon: Ribbon = await Office.ui.getRibbon();
-    await ribbon.requestUpdate(ribbonUpdater);
+    await Office.Ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -135,13 +130,10 @@ Third, define the `enableChartFormat` handler. The following is a simple example
 
 ```javascript
 function enableChartFormat() {
-    Office.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: true};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
-        });
+    var button = {id: "ChartFormatButton", enabled: true};
+    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var ribbonUpdater = {tabs: [parentTab]};
+    await Office.Ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -158,15 +150,12 @@ The following example shows a function that disables a button and records the bu
 
 ```javascript
 function disableChartFormat() {
-    Office.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: false};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
+    var button = {id: "ChartFormatButton", enabled: false};
+    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var ribbonUpdater = {tabs: [parentTab]};
+    await Office.Ribbon.requestUpdate(ribbonUpdater);
 
-            chartFormatButtonEnabled = false;
-        });
+    chartFormatButtonEnabled = false;
 }
 ```
 
@@ -188,24 +177,23 @@ function chartFormatButtonHandler() {
 
 ## Error handling
 
-In some scenarios Office is unable to update the ribbon and will return an error. For example, if the add-in is upgraded and the upgraded add-in has a different set of custom add-in commands, then the Office application must be closed and reopened. Until it is, the requestUpdate method will return the error `HostRestartNeeded`. The following is an example of how to handle this error. In this case, the `reportError` method displays the error to the user.
+In some scenarios, Office is unable to update the ribbon and will return an error. For example, if the add-in is upgraded and the upgraded add-in has a different set of custom add-in commands, then the Office application must be closed and reopened. Until it is, the `requestUpdate` method will return the error `HostRestartNeeded`. The following is an example of how to handle this error. In this case, the `reportError` method displays the error to the user.
 
 ```javascript
 function disableChartFormat() {
-    Office.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: false};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
+    try {
+        var button = {id: "ChartFormatButton", enabled: false};
+        var parentTab = {id: "CustomChartTab", controls: [button]};
+        var ribbonUpdater = {tabs: [parentTab]};
+        await ribbon.requestUpdate(ribbonUpdater);
 
-            chartFormatButtonEnabled = false;
-        })
-        .catch(function (error){
-            if (error.code == "HostRestartNeeded"){
-                reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
-            }
-        });
+        chartFormatButtonEnabled = false;
+    }
+    catch(error) {
+        if (error.code == "HostRestartNeeded"){
+            reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
+        }
+    }
 }
 ```
 
