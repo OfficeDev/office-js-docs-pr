@@ -1,7 +1,7 @@
 ---
 title: Show or hide an Office Add-in in a shared runtime
 description: 'Learn how to programmatically hide or show the UI of an add-in while it runs continuously'
-ms.date: 02/11/2020
+ms.date: 03/02/2020
 localization_priority: Normal
 ---
 
