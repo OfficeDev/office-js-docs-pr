@@ -85,6 +85,8 @@
           href: develop/sso-in-office-add-ins.md
         - name: SSO quick start
           href: quickstarts/sso-quickstart.md
+        - name: Customize your SSO-enabled add-in
+          href: quickstarts/sso-quickstart-customize.md
         - name: Authorize to Microsoft Graph with SSO
           href: develop/authorize-to-microsoft-graph.md
         - name: Create an SSO add-in using ASP.NET
@@ -570,6 +572,9 @@
     - name: Conditional formatting of ranges
       href: excel/excel-add-ins-conditional-formatting.md
       displayName: Excel
+    - name: Configure your add-in to use a shared runtime
+      href: excel/configure-your-add-in-to-use-a-shared-runtime.md
+      displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
@@ -594,6 +599,9 @@
     - name: Ranges (advanced)
       href: excel/excel-add-ins-ranges-advanced.md
       displayName: Excel
+    - name: Run code on document open
+      href: excel/run-code-on-document-open.md
+      displayName: Excel
     - name: Shapes
       href: excel/excel-add-ins-shapes.md
       displayName: Excel
@@ -616,9 +624,6 @@
       displayName: Excel, Custom Functions
     - name: Custom functions tutorial
       href: tutorials/excel-tutorial-create-custom-functions.md
-      displayName: Excel, Custom Functions
-    - name: Custom functions share data to task pane tutorial
-      href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
       displayName: Excel, Custom Functions
     - name: Architecture
       href: excel/custom-functions-architecture.md
@@ -668,6 +673,17 @@
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
+    - name: Use a shared runtime
+      items:
+      - name: Overview of using a shared runtime
+        href: excel/custom-functions-shared-overview.md
+        displayName: Excel, Custom Functions
+      - name: Shared custom function data with the task pane tutorial
+        href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+        displayName: Excel, Custom Functions
+      - name: Call Excel JS APIs from your custom function
+        href: excel/call-excel-apis-from-custom-function.md
+        displayName: Excel, Custom Functions
     - name: Volatile functions
       href: excel/custom-functions-volatile.md
       displayName: Excel, Custom Functions
