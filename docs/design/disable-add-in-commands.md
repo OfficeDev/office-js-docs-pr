@@ -78,7 +78,7 @@ The following is a simple example. Note that "MyButton" and "OfficeAddinTab1" ar
 
 ```javascript
 function enableButton() {
-    Office.Ribbon.requestUpdate({
+    Office.ribbon.requestUpdate({
         tabs: [
             {
                 id: "OfficeAppTab1", 
@@ -99,7 +99,7 @@ const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
     const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    await Office.Ribbon.requestUpdate(ribbonUpdater);
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -133,7 +133,7 @@ function enableChartFormat() {
     var button = {id: "ChartFormatButton", enabled: true};
     var parentTab = {id: "CustomChartTab", controls: [button]};
     var ribbonUpdater = {tabs: [parentTab]};
-    await Office.Ribbon.requestUpdate(ribbonUpdater);
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -153,7 +153,7 @@ function disableChartFormat() {
     var button = {id: "ChartFormatButton", enabled: false};
     var parentTab = {id: "CustomChartTab", controls: [button]};
     var ribbonUpdater = {tabs: [parentTab]};
-    await Office.Ribbon.requestUpdate(ribbonUpdater);
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 
     chartFormatButtonEnabled = false;
 }
@@ -185,7 +185,7 @@ function disableChartFormat() {
         var button = {id: "ChartFormatButton", enabled: false};
         var parentTab = {id: "CustomChartTab", controls: [button]};
         var ribbonUpdater = {tabs: [parentTab]};
-        await ribbon.requestUpdate(ribbonUpdater);
+        await Office.ribbon.requestUpdate(ribbonUpdater);
 
         chartFormatButtonEnabled = false;
     }
