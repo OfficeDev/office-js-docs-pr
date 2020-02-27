@@ -1,4 +1,4 @@
-Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](/javascript/api/outlook/Office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/outlook/Office.mailbox) object, you use the [mailbox](/javascript/api/outlook/Office.mailbox) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
+Outlook add-ins primarily use the APIs exposed through the [Mailbox](/javascript/api/outlook/Office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) object, you use the [mailbox](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
 
 ```js
 // Access the Item object.
@@ -14,4 +14,4 @@ Additionally, Outlook add-ins can use the following objects:
 
 -  **RoamingSettings** object: for saving Outlook add-in-specific custom settings to the user's mailbox where the add-in is installed.
 
-For information about using JavaScript in Outlook add-ins, see [Outlook add-ins](../outlook/outlook-add-ins-overview.md).
+For information about using the Outlook JavaScript API, see [Outlook add-ins](../outlook/outlook-add-ins-overview.md).
