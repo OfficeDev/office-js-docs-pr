@@ -15,7 +15,7 @@ Office Add-ins can include any of the following parts:
 
 Until now, if an add-in had more than one of these parts, then each part ran in its own separate JavaScript runtime, with its own global object and global variables.
 
-Microsoft is now making it possible for add-ins with two or more parts to share a common JavaScript runtime. This new feature enables new preview APIs for hiding the task pane part of an add-in while the add-in remains running and for reopening the task pane later.
+It's possible for add-ins with two or more parts to share a common JavaScript runtime. This shared runtime feature enables new preview APIs for hiding the task pane part of an add-in while the add-in remains running and for reopening the task pane later.
 
 > [!IMPORTANT]
 > The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).
