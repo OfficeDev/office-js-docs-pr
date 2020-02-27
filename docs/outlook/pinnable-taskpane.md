@@ -1,7 +1,7 @@
 ---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 11/18/2019
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
@@ -13,11 +13,14 @@ However, by default, if a user has an add-in task pane open for a message in the
 
 > [!NOTE]
 > Pinnable task panes are currently available to Office 365 subscribers using Outlook 2016 or later on Windows (build 7668.2000 or later for users in the Current or Office Insider Channels, build 7900.xxxx or later for users in Deferred channels), Outlook 2016 or later on Mac (version 16.13.503 or later), and Outlook on the web.
+>
+> Support for this feature was introduced in requirement set 1.5. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 > [!IMPORTANT]
 > Pinnable task panes are not available for the following.
 > - Appointments/Meetings
 > - Outlook.com
+> - iOS and Android
 
 ## Support task pane pinning
 
