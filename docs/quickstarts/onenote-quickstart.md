@@ -40,7 +40,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Update the code
 
-In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the OneNote JavaScript API to set the page title and add an outline to the body of the page.
+In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function. This code uses the OneNote JavaScript API to set the page title and add an outline to the body of the page.
 
 ```js
 try {

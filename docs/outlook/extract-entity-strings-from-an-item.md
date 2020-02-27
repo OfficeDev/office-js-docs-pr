@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Extract entity strings from an Outlook item
 
-This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation. 
+This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.
 
 The supported entities include:
 
@@ -200,7 +200,7 @@ The remaining sections describe how this sample (default_entities.js file) extra
 
 ## Extracting entities upon initialization
 
-Upon the [Office.initialize](/javascript/api/office#office-initialize-reason-) event, the entities add-in calls the [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method of the current item. The **getEntities** method returns the global variable `_MyEntities` an array of instances of supported entities. The following is the related JavaScript code.
+Upon the [Office.initialize](/javascript/api/office#office-initialize-reason-) event, the entities add-in calls the [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method of the current item. The `getEntities` method returns the global variable `_MyEntities` an array of instances of supported entities. The following is the related JavaScript code.
 
 
 ```js
@@ -368,7 +368,7 @@ When the user clicks the **Get Meeting Suggestions** button, the `myGetMeetingSu
 
 
  > [!NOTE]
- > Only messages but not appointments support the **MeetingSuggestion** entity type.
+ > Only messages but not appointments support the `MeetingSuggestion` entity type.
 
 Each extracted meeting suggestion is stored as a [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) object in the array. `myGetMeetingSuggestions` obtains further data about each meeting suggestion:
 

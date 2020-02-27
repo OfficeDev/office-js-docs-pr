@@ -31,21 +31,21 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 ## Sideload an add-in on Excel or Word on iPad
 
-1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with  **Trust This Computer?**. Choose **Trust** to continue.
+1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with **Trust This Computer?**. Choose **Trust** to continue.
 
-2. In iTunes, choose the  **iPad** icon below the menu bar.
+2. In iTunes, choose the **iPad** icon below the menu bar.
 
-3. Under  **Settings** on the left side of iTunes, choose **Apps**.
+3. Under **Settings** on the left side of iTunes, choose **Apps**.
 
-4. On the right side of iTunes, scroll down to  **File Sharing**, and then choose  **Excel** or **Word** in the **Add-ins** column.
+4. On the right side of iTunes, scroll down to **File Sharing**, and then choose **Excel** or **Word** in the **Add-ins** column.
 
-5. At the bottom of the  **Excel** or **Word Documents** column, choose **Add File**, and then select the manifest .xml file of the add-in you want to sideload.
+5. At the bottom of the **Excel** or **Word Documents** column, choose **Add File**, and then select the manifest .xml file of the add-in you want to sideload.
 
-6. Open the Excel or Word app on your iPad. If the Excel or Word app is already running, choose the  **Home** button, and then close and restart the app.
+6. Open the Excel or Word app on your iPad. If the Excel or Word app is already running, choose the **Home** button, and then close and restart the app.
 
 7. Open a document.
 
-8. Choose  **Add-ins** on the **Insert** tab. Your sideloaded add-in is available to insert under the **Developer** heading in the **Add-ins** UI.
+8. Choose **Add-ins** on the **Insert** tab. Your sideloaded add-in is available to insert under the **Developer** heading in the **Add-ins** UI.
 
     ![Insert Add-ins in the Excel app](../images/excel-insert-add-in.png)
 
@@ -54,19 +54,19 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 > [!NOTE]
 > To sideload an Outlook add-in on Mac, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
-1. Open  **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
+1. Open **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
 
     - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
     - For Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - For PowerPoint: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. Open the folder in  **Finder** using the command `open .` (including the period or dot). Copy your add-in's manifest file to this folder.
+2. Open the folder in **Finder** using the command `open .` (including the period or dot). Copy your add-in's manifest file to this folder.
 
     ![Wef folder in Office on Mac](../images/all-my-files.png)
 
 3. Open Word, and then open a document. Restart Word if it's already running.
 
-4. In Word, choose  **Insert** > **Add-ins** > **My Add-ins** (drop-down menu), and then choose your add-in.
+4. In Word, choose **Insert** > **Add-ins** > **My Add-ins** (drop-down menu), and then choose your add-in.
 
     ![My Add-ins in Office on Mac](../images/my-add-ins-wikipedia.png)
 

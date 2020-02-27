@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # OfficeTab element
 
-Defines the ribbon tab on which your add-in command appears. This can either be the default tab (either  **Home**,  **Message**, or  **Meeting**), or a custom tab defined by the add-in. This element is required.
+Defines the ribbon tab on which your add-in command appears. This can either be the default tab (either **Home**, **Message**, or **Meeting**), or a custom tab defined by the add-in. This element is required.
 
 ## Child elements
 
@@ -88,7 +88,7 @@ The following are valid tab `id` values by host. Values in **bold** are supporte
 
 ## Group
 
-A group of UI extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](group.md).
+A group of UI extension points in a tab. A group can have up to six controls. The **id** attribute is required and each **id** must be unique within the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](group.md).
 
 ## OfficeTab example
 

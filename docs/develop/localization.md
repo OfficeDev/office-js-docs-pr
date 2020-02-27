@@ -203,7 +203,7 @@ The text that you want to localize for another language appears in two areas:
 
 To localize the add-in display name and description:
 
-1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose  **WorldReadyAddIn.xml**.
+1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose **WorldReadyAddIn.xml**.
 
 2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code:
 
@@ -330,7 +330,7 @@ Now you can use the **UIStrings** object to set the strings for the UI of your a
 
 If you want to change the localization for your add-in based on what language is used for display in menus and commands in the host application, you use the **Office.context.displayLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for display in menus and commands, the **Office.context.displayLanguage** property will return the language code es-ES.
 
-If you want to change the localization for your add-in based on what language is being used for editing document content, you use the  **Office.context.contentLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for editing document content, the **Office.context.contentLanguage** property will return the language code es-ES.
+If you want to change the localization for your add-in based on what language is being used for editing document content, you use the **Office.context.contentLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for editing document content, the **Office.context.contentLanguage** property will return the language code es-ES.
 
 After you know the language the host application is using, you can use **UIStrings** to get the set of localized strings that matches the host application language.
 
@@ -386,7 +386,7 @@ To change the language used for display or editing in your add-in:
 
     ![Word Options dialog](../images/office15-app-how-to-localize-fig04.png)
 
-2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under  **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
+2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
 
 3. Choose **OK** to confirm your selection, and then close Word.
 

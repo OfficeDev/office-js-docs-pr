@@ -47,13 +47,13 @@ worksheet.getRange("A1").set({
 
 In the Excel JavaScript API, you need to explicitly load the properties of a proxy object. Although you're able to load all the properties at once with an empty ```load()``` call, that approach can have significant performance overhead. Instead, we suggest that you only load the necessary properties, especially for those objects which have a large number of properties.
 
-For example, if you only intend to read the **address** property of a range object, specify only that property when you call the **load()** method:
+For example, if you only intend to read the `address` property of a range object, specify only that property when you call the `load()` method:
 
 ```js
 range.load('address');
 ```
 
-You can call **load()** method in any of the following ways:
+You can call `load()` method in any of the following ways:
 
 _Syntax:_
 
@@ -67,7 +67,7 @@ object.load({ loadOption });
 
 _Where:_
 
-* `properties` is the list of properties to load, specified as comma-delimited strings or as an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
+* `properties` is the list of properties to load, specified as comma-delimited strings or as an array of names. For more information, see the `load()` methods defined for objects in [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
 * `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](/javascript/api/office/officeextension.loadoption) for details.
 
 Please be aware that some of the “properties” under an object may have the same name as another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously. To avoid this, your code should only load the “leaf nodes” in an object tree. 

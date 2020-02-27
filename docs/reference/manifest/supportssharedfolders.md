@@ -14,7 +14,7 @@ Defines whether the Outlook add-in is available in delegate scenarios. The **Sup
 >
 > Support for this element was introduced in requirement set 1.8. See [clients and platforms](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
-The following is an example of the  **SupportsSharedFolders** element.
+The following is an example of the **SupportsSharedFolders** element.
 
 ```XML
 ...

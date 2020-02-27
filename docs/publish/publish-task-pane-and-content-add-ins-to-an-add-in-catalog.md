@@ -33,7 +33,7 @@ Once you have created the app catalog follow the steps to [publish an Office Add
     > [!NOTE]
     > You need to use the Classic SharePoint admin center to create the catalog. If you are in the new SharePoint admin center, choose **Classic SharePoint admin center** in the left pane.
 
-3. In the left task pane, choose  **apps**.
+3. In the left task pane, choose **apps**.
 
 4. On the **apps** page, choose **App Catalog**.
     > [!NOTE]
@@ -61,7 +61,7 @@ Complete the steps in one of the following sections to publish an Office Add-in 
 2. On the Microsoft 365 admin center page, expand the list of **Admin centers**, and then choose **SharePoint**.
     > [!NOTE]
     > You need to use the Classic SharePoint admin center to create the catalog. If you are in the new SharePoint admin center, choose **Classic SharePoint admin center** in the left pane.
-3. In the left task pane, choose  **apps**.
+3. In the left task pane, choose **apps**.
 4. On the **apps** page, choose **App Catalog**.
 5. Choose **Distribute apps for Office**.
 6. In the **Apps for Office** page, choose **New**.

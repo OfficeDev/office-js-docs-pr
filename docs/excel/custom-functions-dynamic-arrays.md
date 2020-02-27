@@ -9,11 +9,11 @@ localization_priority: Normal
 
 You can return multiple results from your custom function which will be returned to neighboring cells. This behavior is called spilling. When your custom function returns an array of results, it is known as a dynamic array formula. For more information on dynamic array formulas in Excel, see [Dynamic arrays and spilled array behavior](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
 
-The following image shows how the **SORT** function spills down into neighboring cells. Your custom function can also return multiple results like this.
+The following image shows how the `SORT` function spills down into neighboring cells. Your custom function can also return multiple results like this.
 
-![Screen shot of the SORT function displaying multiple results down into multiple cells.](../images/dynamic-array-spill.png)
+![Screen shot of the `SORT` function displaying multiple results down into multiple cells.](../images/dynamic-array-spill.png)
 
-To create a custom function that is a dynamic array formula, it must return a two-dimensional array of values. If the results spill into neighboring cells that already have values, the formula will display a **#SPILL!** error. 
+To create a custom function that is a dynamic array formula, it must return a two-dimensional array of values. If the results spill into neighboring cells that already have values, the formula will display a `#SPILL!` error.
 
 The following example shows how to return a dynamic array that spills down.
 

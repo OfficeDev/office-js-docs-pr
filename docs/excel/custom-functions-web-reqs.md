@@ -22,7 +22,7 @@ If a custom function retrieves data from an external source such as the web, it 
 
 ### Fetch example
 
-In the following code sample, the **webRequest** function reaches out to the hypothetical Contoso "Number of People in Space" API, which tracks the number of people currently on the International Space Station. The function returns a JavaScript Promise and uses fetch to request information from the API. The resulting data is transformed into JSON and the `names` property is converted into a string, which is used to resolve the Promise.
+In the following code sample, the `webRequest` function reaches out to the hypothetical Contoso "Number of People in Space" API, which tracks the number of people currently on the International Space Station. The function returns a JavaScript Promise and uses fetch to request information from the API. The resulting data is transformed into JSON and the `names` property is converted into a string, which is used to resolve the Promise.
 
 When developing your own functions, you may want to perform an action if the web request does not complete in a timely manner or consider [batching up multiple API requests](./custom-functions-batching.md).
 
@@ -55,7 +55,7 @@ Within custom functions runtime, XHR implements additional security measures by 
 
 Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a Content-Type header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
-In the following code sample, the **getStarCount** function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript Promise. When data is obtained from the web call, the Promise is resolved which returns the data to the cell.
+In the following code sample, the `getStarCount` function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript Promise. When data is obtained from the web call, the Promise is resolved which returns the data to the cell.
 
 ```TS
 /**

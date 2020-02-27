@@ -6,7 +6,7 @@ localization_priority: Normal
 ---
 # Naming guidelines
 
-A custom function is identified by an **id** and **name** property in the JSON metadata file.
+A custom function is identified by an `id` and `name` property in the JSON metadata file.
 
 - The function `id` is used to uniquely identify custom functions in your JavaScript code.
 - The function `name` is used as the display name that appears to a user in Excel.

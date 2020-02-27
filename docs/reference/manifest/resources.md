@@ -21,10 +21,10 @@ Each resource can have one or more **Override** child elements to define a diffe
 |  **LongStrings**  |  string  | The text for **Description** attributes. Each **String** contains a maximum of 250 characters.|
 
 > [!NOTE]
-> You must use Secure Sockets Layer (SSL) for all URLs in the  **Image** and **Url** elements.
+> You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.
 
 ### Images
-Each icon must have three  **Images** elements, one for each of the three mandatory sizes:
+Each icon must have three **Images** elements, one for each of the three mandatory sizes:
 
 - 16x16
 - 32x32
