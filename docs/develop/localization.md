@@ -1,17 +1,17 @@
 ---
 title: Localization for Office Add-ins
-description: You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
+description: You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
 ms.date: 10/11/2019
 localization_priority: Normal
 ---
 
 # Localization for Office Add-ins
 
-You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
+You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
 
 ## Use the JavaScript API to determine locale-specific strings
 
-The JavaScript API for Office provides two properties that support displaying or interpreting values consistent with the locale of the host application and data:
+The Office JavaScript API provides two properties that support displaying or interpreting values consistent with the locale of the host application and data:
 
 - [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the host application. The following example verifies if the host application uses the en-US or fr-FR locale, and displays a locale-specific greeting.
 

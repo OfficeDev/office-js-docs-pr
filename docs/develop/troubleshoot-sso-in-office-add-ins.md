@@ -101,6 +101,10 @@ Your code should fall back to an alternate system of user authentication.
 
 In development, the add-in is sideloaded in Outlook and the `forMSGraphAccess` option was passed in the call to `getAccessToken`.
 
+### 13013
+
+The `getAccessToken` was called too many times in a short amount of time, so Office throttled the most recent call. This is usually caused by an infinite loop of calls to the method. There are scenarios when recalling the method is advisable. However, your code should use a counter or flag variable to ensure that the method is not recalled repeatedly. If the same "retry" code path is running again, the code should fall back to an alternate system of user authentication. For a code example, see how the `retryGetAccessToken` variable is used in [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) or [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+
 ### 50001
 
 This error (which is not specific to `getAccessToken`) may indicate that the browser has cached an old copy of the office.js files. When you are developing, clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. On Windows, the minimum version is 16.0.12215.20006. On Mac, it is 16.32.19102902.
@@ -119,7 +123,7 @@ In certain configurations of identity in AAD and Office 365, it is possible for 
 
 Your code should test for this `claims` property. Depending on your add-in's architecture, you may test for it on the client-side, or you may test for it on the server-side and relay it to the client. You need this information in the client because Office handles authentication for SSO add-ins. If you relay it from the server-side, the message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response. 
 
-Regardless of your architexture, if the claims value has been sent from AAD, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
+Regardless of your architecture, if the claims value has been sent from AAD, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
 
 ### Consent missing errors
 

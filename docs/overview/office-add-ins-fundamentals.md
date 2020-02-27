@@ -1,7 +1,7 @@
 ---
 title: Building Office Add-ins
 description: An introduction to developing Office Add-ins.
-ms.date: 02/19/2020
+ms.date: 02/27/2020
 localization_priority: Priority
 ---
 
@@ -88,42 +88,17 @@ For detailed information about the manifest, see [Office Add-ins XML manifest](a
 
 An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running. 
 
-#### Accessing the Office JavaScript library
+#### Accessing the Office JavaScript API library
 
-The Office JavaScript library can be accessed via the Office JS content delivery network (CDN) at: `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. To use Office JavaScript APIs within any of your add-in's web pages, you must reference the CDN in a `<script>` tag in the `<head>` tag of the page.
-
-```html
-<head>
-    ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
-</head>
-```
-
-> [!NOTE]
-> To use preview APIs, reference the preview version of the Office JavaScript library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
-For more information about accessing the Office JavaScript library, including how to get IntelliSense, see [Referencing the JavaScript API for Office library from its content delivery network (CDN)](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+[!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
 #### API models
 
-The Office JavaScript APIs include two distinct models:
-
-- **Host-specific** APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Host-specific APIs are currently available for [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md), and [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md). This API model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) and allows you to specify multiple operations in each request you send to the Office host. Batching operations in this manner can significantly improve add-in performance in Office on the web applications. Host-specific APIs were introduced with Office 2016 and cannot be used to interact with Office 2013.
-
-- **Common** APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), where you can only specify one operation in each request you send to the Office host. Common APIs were introduced with Office 2013 and can be used to interact with Office 2013 or later. For details about the Common API object model, which includes APIs for interacting with Outlook and PowerPoint, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
-
-> [!NOTE]
-> Excel Custom functions run within a unique runtime that prioritizes execution of calculations, and therefore uses a slightly different programming model. For details, see [Custom functions architecture](../excel/custom-functions-architecture.md).
-
-For additional information about the Office JavaScript APIs, see [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md).
+[!include[information about the Office JS API models](../includes/office-js-api-models.md)]
 
 #### API requirement sets
 
-[Requirement sets](../develop/office-versions-and-requirement-sets.md) are named groups of API members. Requirement sets can be specific to Office hosts, such as the `ExcelApi 1.7` requirement set (a set of APIs that can only be used in Excel), or common to multiple hosts, such as the `DialogApi 1.1` requirement set (a set of APIs that can be used in any Office application that supports the Dialog API).
-
-Your add-in can use requirement sets to determine whether the Office host supports the API members that it needs to use. For more information about this, see [Specify Office hosts and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
-
-Requirement set support varies by Office host, version, and platform. For detailed information about the platforms, requirement sets, and Common APIs that each Office application supports, see [Office Add-in host and platform availability](office-add-in-availability.md).
+[!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
 ## Testing and debugging an Office Add-in
 

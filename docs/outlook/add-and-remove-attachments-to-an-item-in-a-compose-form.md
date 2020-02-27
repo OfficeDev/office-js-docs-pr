@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Manage an item's attachments in a compose form in Outlook
 
-The JavaScript API for Office provides several APIs you can use to manage an item's attachments when the user is composing.
+The Office JavaScript API provides several APIs you can use to manage an item's attachments when the user is composing.
 
 ## Attach a file or Outlook item
 

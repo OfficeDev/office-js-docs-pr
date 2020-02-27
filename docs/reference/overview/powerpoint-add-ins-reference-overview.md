@@ -8,7 +8,7 @@ localization_priority: Priority
 
 # JavaScript API for PowerPoint
 
-A PowerPoint add-in interacts with objects in PowerPoint by using the JavaScript API for Office, which includes two JavaScript object models:
+A PowerPoint add-in interacts with objects in PowerPoint by using the Office JavaScript API, which includes two JavaScript object models:
 
 * **PowerPoint JavaScript API**: The [PowerPoint JavaScript API](/javascript/api/powerpoint) provides strongly-typed objects that you can use to access objects in PowerPoint.
 

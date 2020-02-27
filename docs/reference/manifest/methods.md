@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Methods element
 
-Specifies the list of JavaScript API for Office methods that your Office Add-in requires in order to activate.
+Specifies the list of Office JavaScript API methods that your Office Add-in requires in order to activate.
 
 **Add-in type:** Content, Task pane
 
