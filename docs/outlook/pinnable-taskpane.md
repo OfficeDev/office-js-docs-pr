@@ -20,7 +20,7 @@ However, by default, if a user has an add-in task pane open for a message in the
 > Pinnable task panes are not available for the following.
 > - Appointments/Meetings
 > - Outlook.com
-> - iOS and Android
+> - Outlook on mobile, and on clients and servers that don't support requirement set 1.5
 
 ## Support task pane pinning
 

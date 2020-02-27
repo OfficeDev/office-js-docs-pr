@@ -129,7 +129,7 @@ Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOve
 > [!NOTE]
 > SupportsPinning is currently only supported by Outlook 2016 or later on Windows (build 7628.1000 or later) and Outlook 2016 or later on Mac (build 16.13.503 or later).
 >
-> Support for this feature was introduced in requirement set 1.5. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.5. See [clients and platforms](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
