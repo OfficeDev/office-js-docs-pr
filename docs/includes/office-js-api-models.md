@@ -1,6 +1,7 @@
 The Office JavaScript API includes two distinct models:
 
 - **Host-specific** APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Host-specific APIs are currently available for the following hosts:
+
     - [Excel](../reference/overview/excel-add-ins-reference-overview.md)
     - [Word](../reference/overview/word-add-ins-reference-overview.md)
     - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
