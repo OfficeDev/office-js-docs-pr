@@ -75,7 +75,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel add-in quick start</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Excel custom functions quick start</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">OneNote add-in quick start</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook add-in quick start</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/outlook-quickstart.md">Outlook add-in quick start</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint add-in quick start</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project add-in quick start</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word add-in quick start</a></li>
@@ -102,7 +102,7 @@ Use the Office Add-ins platform to build solutions that extend Office applicatio
                         <ul>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Excel add-in tutorial</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Excel custom functions tutorial</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook add-in tutorial </a></li>
+                            <li><a style="font-size: 1rem;" href="tutorials/outlook-tutorial.md">Outlook add-in tutorial </a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">PowerPoint add-in tutorial </a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/word-tutorial.md">Word add-in tutorial </a></li>
                         </ul>

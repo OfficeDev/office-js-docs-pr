@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview | Microsoft Docs
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 01/14/2020
+ms.date: 02/13/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -9,9 +9,9 @@ localization_priority: Priority
 
 # Office Add-ins platform overview
 
-![Image of Office Add-ins extensibility](../images/addins-overview.png)
-
 You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
+
+![Image of Office Add-ins extensibility](../images/addins-overview.png)
 
 Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
 
@@ -97,7 +97,7 @@ Outlook add-ins can extend the Office ribbon and also display contextually next 
 
 Outlook add-ins can access contextual information from the item, such as an address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification in the Outlook host application to provide a seamless experience on the desktop, web, and tablet and mobile devices.
 
-For an overview of Outlook add-ins, see [Outlook add-ins overview](/outlook/add-ins/).
+For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md).
 
 ### Create new objects in Office documents
 

@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API programming overview
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -121,7 +121,7 @@ OneNote add-ins support only the following Common APIs:
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | Settings are supported by content add-ins only | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-In general, you use the Common API to do something that isn't supported in the host-specific API. To learn more about using the Common API, see [Office JavaScript API object model](../develop/office-javascript-api-object-model.md).
+In general, you use the Common API to do something that isn't supported in the host-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 
 <a name="om-diagram"></a>
