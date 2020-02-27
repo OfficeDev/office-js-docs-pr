@@ -28,9 +28,9 @@ Before you start debugging, review the properties of each project to confirm tha
 
 Open the **Properties** window for the add-in project to review project properties:
 
-1. In  **Solution Explorer**, choose the add-in project (*not* the web application project).
+1. In **Solution Explorer**, choose the add-in project (*not* the web application project).
 
-2. From the menu bar, choose  **View** >  **Properties Window**.
+2. From the menu bar, choose **View** > **Properties Window**.
 
 The following table describes the properties of the add-in project.
 
@@ -54,9 +54,9 @@ The following table describes the properties of the add-in project.
 
 Open the **Properties** window for the web application project to review project properties:
 
-1. In  **Solution Explorer**, choose the web application project.
+1. In **Solution Explorer**, choose the web application project.
 
-2. From the menu bar, choose  **View** >  **Properties Window**.
+2. From the menu bar, choose **View** > **Properties Window**.
 
 The following table describes the properties of the web application project that are most relevant to Office Add-in projects.
 
@@ -114,7 +114,7 @@ Next, Visual Studio does the following:
 
 3. Opens the host application.
 
-Visual Studio doesn't show validation errors in the  **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information about how to enable or disable validation, see [Options, Text Editor, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
+Visual Studio doesn't show validation errors in the **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information about how to enable or disable validation, see [Options, Text Editor, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
 To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 

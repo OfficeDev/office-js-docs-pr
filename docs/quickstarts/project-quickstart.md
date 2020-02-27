@@ -42,7 +42,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Update the code
 
-In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.
+In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function. This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.
 
 ```js
 var taskGuid;

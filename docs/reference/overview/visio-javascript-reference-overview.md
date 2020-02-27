@@ -22,7 +22,7 @@ You can use the Visio JavaScript APIs to:
 * Write custom handlers for mouse events within the drawing.
 * Expose diagram data, such as shape text, shape data, and hyperlinks, to your solution.
 
-This article describes how to use the Visio JavaScript APIs with Visio on the web to build your solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as **EmbeddedSession**, **RequestContext**, and JavaScript proxy objects, and the **sync()**, **Visio.run()**, and **load()** methods. The code examples show you how to apply these concepts.
+This article describes how to use the Visio JavaScript APIs with Visio on the web to build your solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as `EmbeddedSession`, `RequestContext`, and JavaScript proxy objects, and the `sync()`, `Visio.run()`, and `load()` methods. The code examples show you how to apply these concepts.
 
 ## EmbeddedSession
 
@@ -37,9 +37,9 @@ session.init().then(function () {
 
 ## Visio.run(session, function(context) { batch })
 
-**Visio.run()** executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and **sync()** methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in **Visio.run()** is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
+`Visio.run()` executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and `sync()` methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in `Visio.run()` is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
 
-The run method takes in session and RequestContext object and returns a promise (typically, just the result of **context.sync()**). It is possible to run the batch operation outside of the **Visio.run()**. However, in such a scenario, any page object references needs to be manually tracked and managed.
+The run method takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). It is possible to run the batch operation outside of the `Visio.run()`. However, in such a scenario, any page object references needs to be manually tracked and managed.
 
 ## RequestContext
 
@@ -64,7 +64,7 @@ function hideToolbars() {
 
 The Visio JavaScript objects declared and used in an add-in are proxy objects for the real objects in a Visio document. All actions taken on proxy objects are not realized in Visio, and the state of the Visio document is not realized in the proxy objects until the document state has been synchronized. The document state is synchronized when `context.sync()` is run.
 
-For example, the local JavaScript object getActivePage is declared to reference the selected page. This can be used to queue the setting of its properties and invoking methods. The actions on such objects are not realized until the **sync()** method is run.
+For example, the local JavaScript object getActivePage is declared to reference the selected page. This can be used to queue the setting of its properties and invoking methods. The actions on such objects are not realized until the `sync()` method is run.
 
 ```js
 var activePage = context.document.getActivePage();
@@ -72,28 +72,28 @@ var activePage = context.document.getActivePage();
 
 ## sync()
 
-The **sync()** method synchronizes the state between JavaScript proxy objects and real objects in Visio by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code. This method returns a promise, which is resolved when synchronization is complete. 
+The `sync()` method synchronizes the state between JavaScript proxy objects and real objects in Visio by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code. This method returns a promise, which is resolved when synchronization is complete. 
 
 ## load()
 
-The **load()** method is used to fill in the proxy objects created in the add-in JavaScript layer. When trying to retrieve an object such as a document, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue the setting of its properties and invoking methods. However, for reading object properties or relations, the **load()** and **sync()** methods need to be invoked first. The load() method takes in the properties and relations that need to be loaded when the **sync()** method is called.
+The `load()` method is used to fill in the proxy objects created in the add-in JavaScript layer. When trying to retrieve an object such as a document, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue the setting of its properties and invoking methods. However, for reading object properties or relations, the `load()` and `sync()` methods need to be invoked first. The load() method takes in the properties and relations that need to be loaded when the `sync()` method is called.
 
-The following shows the syntax for the **load()** method.
+The following shows the syntax for the `load()` method.
 
 ```js
 object.load(string: properties); //or object.load(array: properties); //or object.load({loadOption});
 ```
 
-1. **properties** is the list of property names to be loaded, specified as comma-delimited strings or array of names. See **.load()** methods under each object for details.
+1. **properties** is the list of property names to be loaded, specified as comma-delimited strings or array of names. See `.load()` methods under each object for details.
 
 2. **loadOption** specifies an object that describes the selection, expansion, top, and skip options. See object load [options](/javascript/api/office/officeextension.loadoption) for details.
 
 ## Example: Printing all shapes text in active page
 
 The following example shows you how to print shape text value from an array shapes object.
-The **Visio.run()** method contains a batch of instructions. As part of this batch, a proxy object is created that references shapes on the active document.
+The `Visio.run()` method contains a batch of instructions. As part of this batch, a proxy object is created that references shapes on the active document.
 
-All these commands are queued and run when **context.sync()** is called. The **sync()** method returns a promise that can be used to chain it with other operations.
+All these commands are queued and run when `context.sync()` is called. The `sync()` method returns a promise that can be used to chain it with other operations.
 
 ```js
 Visio.run(session, function (context) {

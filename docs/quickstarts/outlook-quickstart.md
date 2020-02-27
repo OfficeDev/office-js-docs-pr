@@ -76,7 +76,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     </main>
     ```
 
-1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.
+1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function. This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.
 
     ```js
     // Get a reference to the current message

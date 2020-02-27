@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Work with ranges using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
 > [!NOTE]
 > For code samples that show how to perform more advanced tasks with ranges, see [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md).
@@ -18,7 +18,7 @@ The following examples show different ways to get a reference to a range within 
 
 ### Get range by address
 
-The following code sample gets the range with address **B2:C5** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.
+The following code sample gets the range with address **B2:C5** from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -35,7 +35,7 @@ Excel.run(function (context) {
 
 ### Get range by name
 
-The following code sample gets the range named **MyRange** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.
+The following code sample gets the range named `MyRange` from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -52,7 +52,7 @@ Excel.run(function (context) {
 
 ### Get used range
 
-The following code sample gets the used range from the worksheet named **Sample**, loads its **address** property, and writes a message to the console. The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them. If the entire worksheet is blank, the **getUsedRange()** method returns a range that consists of only the top-left cell in the worksheet.
+The following code sample gets the used range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console. The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them. If the entire worksheet is blank, the `getUsedRange()` method returns a range that consists of only the top-left cell in the worksheet.
 
 ```js
 Excel.run(function (context) {
@@ -69,7 +69,7 @@ Excel.run(function (context) {
 
 ### Get entire range
 
-The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.
+The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -174,7 +174,7 @@ Excel.run(function (context) {
 
 ## Get the selected range
 
-The following code sample gets the selected range, loads its **address** property, and writes a message to the console. 
+The following code sample gets the selected range, loads its `address` property, and writes a message to the console. 
 
 ```js
 Excel.run(function (context) {
@@ -305,7 +305,7 @@ These examples show how to get values, text, and formulas from a range of cells.
 
 ### Get values from a range of cells
 
-The following code sample gets the range **B2:E6**, loads its **values** property, and writes the values to the console. The **values** property of a range specifies the raw values that the cells contain. Even if some cells in a range contain formulas, the **values** property of the range specifies the raw values for those cells, not any of the formulas.
+The following code sample gets the range **B2:E6**, loads its `values` property, and writes the values to the console. The `values` property of a range specifies the raw values that the cells contain. Even if some cells in a range contain formulas, the `values` property of the range specifies the raw values for those cells, not any of the formulas.
 
 ```js
 Excel.run(function (context) {
@@ -363,7 +363,7 @@ Excel.run(function (context) {
 
 ### Get text from a range of cells
 
-The following code sample gets the range **B2:E6**, loads its **text** property, and writes it to the console.  The **text** property of a range specifies the display values for cells in the range. Even if some cells in a range contain formulas, the **text** property of the range specifies the display values for those cells, not any of the formulas.
+The following code sample gets the range **B2:E6**, loads its `text` property, and writes it to the console. The `text` property of a range specifies the display values for cells in the range. Even if some cells in a range contain formulas, the `text` property of the range specifies the display values for those cells, not any of the formulas.
 
 ```js
 Excel.run(function (context) {
@@ -421,7 +421,7 @@ Excel.run(function (context) {
 
 ### Get formulas from a range of cells
 
-The following code sample gets the range **B2:E6**, loads its **formulas** property, and writes it to the console.  The **formulas** property of a range specifies the formulas for cells in the range that contain formulas and the raw values for cells in the range that do not contain formulas.
+The following code sample gets the range **B2:E6**, loads its `formulas` property, and writes it to the console. The `formulas` property of a range specifies the formulas for cells in the range that contain formulas and the raw values for cells in the range that do not contain formulas.
 
 ```js
 Excel.run(function (context) {

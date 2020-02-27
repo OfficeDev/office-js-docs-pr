@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Create your first task pane add-in for Microsoft Project by using a text editor
 
-You can create a task pane add-in for Project Standard 2013, Project Professional 2013, or later versions using the Yeoman generator for Office Add-ins. This article describes how to create a simple add-in that uses an XML manifest that points to an HTML file on a file share. The Project OM Test sample add-in tests some JavaScript functions that use the object model for add-ins. After you use the  **Trust Center** in Project to register the file share that contains the manifest file, you can open the task pane add-in from the **Project** tab on the ribbon. (The sample code in this article is based on a test application by Arvind Iyer, Microsoft Corporation.)
+You can create a task pane add-in for Project Standard 2013, Project Professional 2013, or later versions using the Yeoman generator for Office Add-ins. This article describes how to create a simple add-in that uses an XML manifest that points to an HTML file on a file share. The Project OM Test sample add-in tests some JavaScript functions that use the object model for add-ins. After you use the **Trust Center** in Project to register the file share that contains the manifest file, you can open the task pane add-in from the **Project** tab on the ribbon. (The sample code in this article is based on a test application by Arvind Iyer, Microsoft Corporation.)
 
 Project uses the same add-in manifest schema that other Microsoft Office clients use, and much of the same JavaScript API. The complete code for the add-in that is described in this article is available in the  `Samples\Apps` subdirectory of the Project 2013 SDK download.
 
@@ -21,7 +21,7 @@ For an introduction to using JavaScript in Office Add-ins, see [Understanding th
 
 ## Procedure 1. To create the add-in manifest file
 
-Create an XML file in a local directory. The XML file includes the **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the **Id** element).
+Create an XML file in a local directory. The XML file includes the `OfficeApp` element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the `Id` element).
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -58,13 +58,13 @@ Create an XML file in a local directory. The XML file includes the **OfficeApp**
    </OfficeApp>
 ```
 
-For Project, the **OfficeApp** element must include the `xsi:type="TaskPaneApp"` attribute value. The **Id** element is a GUID. The **SourceLocation** value must be a file share path or a SharePoint URL for the add-in HTML source file or the web application that runs in the task pane. For an explanation of the other elements in manifest file, see [Task pane add-ins for Project](../project/project-add-ins.md).
+For Project, the `OfficeApp` element must include the `xsi:type="TaskPaneApp"` attribute value. The `Id` element is a GUID. The `SourceLocation` value must be a file share path or a SharePoint URL for the add-in HTML source file or the web application that runs in the task pane. For an explanation of the other elements in manifest file, see [Task pane add-ins for Project](../project/project-add-ins.md).
 
 Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml manifest specifies for the Project test add-in. Buttons that are specified in the HTML file call related JavaScript functions. You can add the JavaScript functions within the HTML file, or put them in a separate .js file.
 
 ## Procedure 2. To create the source files for the Project OM Test add-in
 
-1. Create an HTML file with a name that is specified by the **SourceLocation** element in the JSOM_SimpleOMCalls.xml manifest. 
+1. Create an HTML file with a name that is specified by the `SourceLocation` element in the JSOM_SimpleOMCalls.xml manifest. 
 
    For example, create theJSOMCall.html file in the `C:\Project\AppSource` directory. Although you can use a simple text editor to create the source files, it is easier to use a tool such as Visual Studio Code, which works with specific document types (such as HTML and JavaScript) and has other editing aids. If you have not already done the Bing Search example that is described in [Task pane add-ins for Project](../project/project-add-ins.md), Procedure 3 shows how to create the `\\ServerName\AppSource` file share that the manifest specifies.
 
@@ -93,7 +93,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     </html>
     ```
 
-   The **textarea** element specifies a text box that shows results of the JavaScript functions.
+   The `textarea` element specifies a text box that shows results of the JavaScript functions.
 
    > [!NOTE]
    > For the Project OM Test sample to work, copy the following files from the Project 2013 SDK download to the same directory as the JSOMCall.html file: Office.js, Project-15.js, and MicrosoftAjax.js.
@@ -102,9 +102,9 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
 2. Create a JavaScript file named JSOM_Sample.js in the same directory as the JSOMCall.html file. 
 
-   The following code gets the application context and document information by using functions in the Office.js file. The **text** object is the ID of the **textarea** control in the HTML file.
+   The following code gets the application context and document information by using functions in the Office.js file. The `text` object is the ID of the `textarea` control in the HTML file.
 
-   The **\_projDoc** variable is initialized with a **ProjectDocument** object. The code includes some simple error handling functions, and the **getContextValues** function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office).
+   The **\_projDoc** variable is initialized with a `ProjectDocument` object. The code includes some simple error handling functions, and the `getContextValues` function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office).
 
     ```js
     /*
@@ -166,27 +166,27 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     }
     ```
 
-   For information about the functions in the Office.debug.js file, see [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office). For example, the **getDocumentUrl** function gets the URL or file path of the open project.
+   For information about the functions in the Office.debug.js file, see [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office). For example, the `getDocumentUrl` function gets the URL or file path of the open project.
 
 3. Add JavaScript functions that call asynchronous functions in Office.js and Project-15.js to get selected data:
 
-   - For example, **getSelectedDataAsync** is a general function in Office.js that gets unformatted text for the selected data. For more information, see [AsyncResult object](/javascript/api/office/office.asyncresult).
+   - For example, `getSelectedDataAsync` is a general function in Office.js that gets unformatted text for the selected data. For more information, see [AsyncResult object](/javascript/api/office/office.asyncresult).
 
-   - The **getSelectedTaskAsync** function in Project-15.js gets the GUID of the selected task. Similarly, the **getSelectedResourceAsync** function gets the GUID of the selected resource. If you call those functions when a task or a resource is not selected, the functions show an undefined error.
+   - The `getSelectedTaskAsync` function in Project-15.js gets the GUID of the selected task. Similarly, the `getSelectedResourceAsync` function gets the GUID of the selected resource. If you call those functions when a task or a resource is not selected, the functions show an undefined error.
 
-   - The **getTaskAsync** function gets the task name and the names of the assigned resources. If the task is in a synchronized SharePoint task list, **getTaskAsync** gets the task ID in the SharePoint list; otherwise, the SharePoint task ID is 0.
+   - The `getTaskAsync` function gets the task name and the names of the assigned resources. If the task is in a synchronized SharePoint task list, `getTaskAsync` gets the task ID in the SharePoint list; otherwise, the SharePoint task ID is 0.
 
      > [!NOTE]
-     > For demonstration purposes, the example code includes a bug. If  **taskGuid** is undefined, the **getTaskAsync** function errors off. If you get a valid task GUID and then select a different task, the **getTaskAsync** function gets data for the most recent task that was operated on by the **getSelectedTaskAsync** function.
+     > For demonstration purposes, the example code includes a bug. If `taskGuid` is undefined, the `getTaskAsync` function errors off. If you get a valid task GUID and then select a different task, the `getTaskAsync` function gets data for the most recent task that was operated on by the `getSelectedTaskAsync` function.
   
-   - **getTaskFields**, **getResourceFields**, and **getProjectFields** are local functions that call **getTaskFieldAsync**, **getResourceFieldAsync**, or **getProjectFieldAsync** multiple times to get specified fields of a task or a resource. In the project-15.debug.js file, the **ProjectTaskFields** enumeration and the **ProjectResourceFields** enumeration show which fields are supported.
+   - `getTaskFields`, `getResourceFields`, and `getProjectFields` are local functions that call `getTaskFieldAsync`, `getResourceFieldAsync`, or `getProjectFieldAsync` multiple times to get specified fields of a task or a resource. In the project-15.debug.js file, the `ProjectTaskFields` enumeration and the `ProjectResourceFields` enumeration show which fields are supported.
 
-   - The **getSelectedViewAsync** function gets the type of view (defined in the **ProjectViewTypes** enumeration in project-15.debug.js) and the name of the view.
+   - The `getSelectedViewAsync` function gets the type of view (defined in the `ProjectViewTypes` enumeration in project-15.debug.js) and the name of the view.
 
-   - If the project is synchronized with a SharePoint tasks list, the  **getWSSUrlAsync** function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the **getWSSUrlAsync** function errors off.
+   - If the project is synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function errors off.
 
      > [!NOTE]
-     > To get the SharePoint URL and name of the tasks list, we recommend that you use the  **getProjectFieldAsync** function with the **WSSUrl** and **WSSList** constants in the [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) enumeration.
+     > To get the SharePoint URL and name of the tasks list, we recommend that you use the `getProjectFieldAsync` function with the `WSSUrl` and `WSSList` constants in the [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) enumeration.
 
    Each of the functions in the following code includes an anonymous function that is specified by  `function (asyncResult)`, which is a callback that gets the asynchronous result. Instead of anonymous functions, you could use named functions, which can help with maintainability of complex add-ins.
 
@@ -543,9 +543,9 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     }
     ```
 
-4. Add JavaScript event handler callbacks and functions to register the task selection, resource selection, and view selection change event handlers and to unregister the event handlers. The **manageEventHandlerAsync** function adds or removes the specified event handler, depending on the _operation_ parameter. The operation can be **addHandlerAsync** or **removeHandlerAsync**.
+4. Add JavaScript event handler callbacks and functions to register the task selection, resource selection, and view selection change event handlers and to unregister the event handlers. The `manageEventHandlerAsync` function adds or removes the specified event handler, depending on the _operation_ parameter. The operation can be `addHandlerAsync` or `removeHandlerAsync`.
 
-   The **manageTaskEventHandler**, **manageResourceEventHandler**, and **manageViewEventHandler** functions can add or remove an event handler, as specified by the _docMethod_ parameter.
+   The `manageTaskEventHandler`, `manageResourceEventHandler`, and `manageViewEventHandler` functions can add or remove an event handler, as specified by the _docMethod_ parameter.
 
     ```js
     // Task selection changed event handler.
@@ -619,7 +619,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     }
     ```
 
-5. For the body of the HTML document, add buttons that call the JavaScript functions for testing. For example, in the  **div** element for the common JSOM API, add an input button that calls the general **getSelectedDataAsync** function.
+5. For the body of the HTML document, add buttons that call the JavaScript functions for testing. For example, in the `div` element for the common JSOM API, add an input button that calls the general `getSelectedDataAsync` function.
 
     ```HTML
     <body>
@@ -634,7 +634,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
         <!--  more code . . .  -->
     ```
 
-6. Add a **div** section with buttons for project-specific task functions and for the **TaskSelectionChanged** event.
+6. Add a `div` section with buttons for project-specific task functions and for the `TaskSelectionChanged` event.
 
     ```HTML
     <div id="ProjectSpecificTask">
@@ -650,7 +650,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     </div>
     ```
 
-7. Add  **div** sections with buttons for the resource methods and events, view methods and events, project properties, and context properties
+7. Add `div` sections with buttons for the resource methods and events, view methods and events, project properties, and context properties
 
     ```HTML
     <div id="ResourceMethods">
@@ -682,7 +682,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     </div>
     ```
 
-8. To format the button elements, add a CSS  **style** element. For example, add the following as a child of the **head** element.
+8. To format the button elements, add a CSS `style` element. For example, add the following as a child of the `head` element.
 
     ```HTML
     <style type="text/css">
@@ -711,50 +711,50 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
 
     `net share AppSource=C:\Project\AppSource`
 
-3. In Project, open the **Project Options** dialog box, choose **Trust Center**, and then choose  **Trust Center Settings**.
+3. In Project, open the **Project Options** dialog box, choose **Trust Center**, and then choose **Trust Center Settings**.
 
    The procedure for registering an add-in is also described in [Task pane add-ins for Project](../project/project-add-ins.md), with additional information.
 
 4. In the **Trust Center** dialog box, in the left pane, choose **Trusted Add-in Catalogs**.
 
-5. If you have already added the `\\ServerName\AppManifests` path for the Bing Search add-in, skip this step. Otherwise, in the **Trusted Add-in Catalogs** pane, add the `\\ServerName\AppManifests` path in the **Catalog Url** text box, choose **Add catalog**, enable the network share as a default source (see Figure 1), and then choose  **OK**.
+5. If you have already added the `\\ServerName\AppManifests` path for the Bing Search add-in, skip this step. Otherwise, in the **Trusted Add-in Catalogs** pane, add the `\\ServerName\AppManifests` path in the **Catalog Url** text box, choose **Add catalog**, enable the network share as a default source (see Figure 1), and then choose **OK**.
 
    *Figure 1. Adding a network file share for add-in manifests*
 
    ![Adding a network file share for app manifests](../images/pj15-create-simple-agave-manage-catalogs.png)
 
-6. After you add new add-ins, or change the source code, restart Project. On the  **PROJECT** ribbon, choose the **Office Add-ins** drop-down menu, and then choose **See All**. In the  **Insert Add-in** dialog box, choose **SHARED FOLDER** (see Figure 2), select **Project OM Test**, and then choose  **Insert**. The Project OM Test add-in starts in a task pane.
+6. After you add new add-ins, or change the source code, restart Project. On the **PROJECT** ribbon, choose the **Office Add-ins** drop-down menu, and then choose **See All**. In the **Insert Add-in** dialog box, choose **SHARED FOLDER** (see Figure 2), select **Project OM Test**, and then choose **Insert**. The Project OM Test add-in starts in a task pane.
 
    *Figure 2. Starting the Project OM Test add-in that is on a file share*
 
    ![Inserting an app](../images/pj15-create-simple-agave-start-agave-app.png)
 
-7. In Project, create and save a simple project that has at least two tasks. For example, create tasks named T1, T2, and a milestone named M1, and then set the task durations and predecessors to be similar to those in Figure 3. Choose the  **PROJECT** tab on the ribbon, select the entire row for task T2, and then choose the **getSelectedDataAsync** button in the task pane. Figure 3 shows the data that is selected in the text box of the **Project OM Test** add-in.
+7. In Project, create and save a simple project that has at least two tasks. For example, create tasks named T1, T2, and a milestone named M1, and then set the task durations and predecessors to be similar to those in Figure 3. Choose the **PROJECT** tab on the ribbon, select the entire row for task T2, and then choose the **getSelectedDataAsync** button in the task pane. Figure 3 shows the data that is selected in the text box of the **Project OM Test** add-in.
 
    *Figure 3. Using the Project OM Test add-in*
 
    ![Using the Project OM Test app](../images/pj15-create-simple-agave-project-om-test.png)
 
-8. Select the cell in the  **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The **getSelectedDataAsync** function sets the text box value to show `2 days`. 
+8. Select the cell in the **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The `getSelectedDataAsync` function sets the text box value to show `2 days`. 
 
-9. Select the three  **Duration** cells for all three tasks. The **getSelectedDataAsync** function returns semicolon-separated text values for cells selected in different rows, for example, `2 days;4 days;0 days`.
+9. Select the three **Duration** cells for all three tasks. The `getSelectedDataAsync` function returns semicolon-separated text values for cells selected in different rows, for example, `2 days;4 days;0 days`.
 
-   The  **getSelectedDataAsync** function returns comma-separated text values for cells selected within a row. For example in Figure 3, the entire row for task T2 is selected. When you choose **getSelectedDataAsync**, the text box shows the following:  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
+   The `getSelectedDataAsync` function returns comma-separated text values for cells selected within a row. For example in Figure 3, the entire row for task T2 is selected. When you choose `getSelectedDataAsync`, the text box shows the following:  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
 
-   The  **Indicators** column and the **Resource Names** column are both empty, so the text array shows empty values for those columns. The `<NA>` value is for the **Add New Column** cell.
+   The **Indicators** column and the **Resource Names** column are both empty, so the text array shows empty values for those columns. The `<NA>` value is for the **Add New Column** cell.
 
-10. Select any cell in the row for task T2, or the entire row for task T2, and then choose  **getSelectedTaskAsync**. The text box shows the task GUID value, for example,  `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. Project stores that value in the global  **taskGuid** variable of the **Project OM Test** add-in.
+10. Select any cell in the row for task T2, or the entire row for task T2, and then choose **getSelectedTaskAsync**. The text box shows the task GUID value, for example,  `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. Project stores that value in the global `taskGuid` variable of the **Project OM Test** add-in.
 
-11. Select **getTaskAsync**. If the **taskGuid** variable contains the GUID for task T2, the text box displays the task information. The **ResourceNames** value is empty.
+11. Select `getTaskAsync`. If the `taskGuid` variable contains the GUID for task T2, the text box displays the task information. The **ResourceNames** value is empty.
 
-    Create two local resources R1 andR2, assign them to task T2 at 50% each, and choose  **getTaskAsync** again. The results in the text box include the resource information. If the task is in a synchronized SharePoint task list, the results also include the SharePoint task ID.
+    Create two local resources R1 andR2, assign them to task T2 at 50% each, and choose **getTaskAsync** again. The results in the text box include the resource information. If the task is in a synchronized SharePoint task list, the results also include the SharePoint task ID.
 
     - Task name: `T2`
     - GUID: `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
     - WSS Id: `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-12. Select the **Get Task Fields** button. The **getTaskFields** function calls the **getTaskfieldAsync** function multiple times for the task name, index, start date, duration, priority, and task notes.
+12. Select the **Get Task Fields** button. The `getTaskFields` function calls the `getTaskfieldAsync` function multiple times for the task name, index, start date, duration, priority, and task notes.
 
     - Name: `T2`
     - ID: `2`
@@ -769,16 +769,16 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
     - A SharePoint task list that was imported to Project Professional, and then saved back in SharePoint (not using Project Server).
 
     > [!NOTE]
-    > If Project Professional is installed on a Windows Server computer, to be able to save the project back to SharePoint, you can use the  **Server Manager** to add the **Desktop Experience** feature.
+    > If Project Professional is installed on a Windows Server computer, to be able to save the project back to SharePoint, you can use the **Server Manager** to add the **Desktop Experience** feature.
 
-    If the project is a local project, or if you use Project Professional to open a project that is managed by Project Server, the  **getWSSUrlAsync** method shows an undefined error.
+    If the project is a local project, or if you use Project Professional to open a project that is managed by Project Server, the `getWSSUrlAsync` method shows an undefined error.
 
     - SharePoint URL: `http://ServerName`
     - List name: `Test task list`
 
-14. Select the **Add** button in the **TaskSelectionChanged event** section, which calls the **manageTaskEventHandler** function to register a task selection changed event and returns `In onComplete function for addHandlerAsync Status: succeeded` in the text box. Select a different task; the text box shows `In task selection changed event handler`, which is the output of the callback function for the task selection changed event. Choose the  **Remove** button to unregister the event handler.
+14. Select the **Add** button in the **TaskSelectionChanged event** section, which calls the `manageTaskEventHandler` function to register a task selection changed event and returns `In onComplete function for addHandlerAsync Status: succeeded` in the text box. Select a different task; the text box shows `In task selection changed event handler`, which is the output of the callback function for the task selection changed event. Choose the **Remove** button to unregister the event handler.
 
-15. To use the resource methods, first select a view such as  **Resource Sheet**,  **Resource Usage**, or  **Resource Form**, and then select a resource in that view. Choose  **getSelectedResourceAsync** to initialize the **resourceGuid** variable, and then choose **Get Resource Fields** to call **getResourceFieldAsync** multiple times for the resource properties. You can also add or remove the resource selection changed event handler.
+15. To use the resource methods, first select a view such as **Resource Sheet**, **Resource Usage**, or **Resource Form**, and then select a resource in that view. Choose **getSelectedResourceAsync** to initialize the **resourceGuid** variable, and then choose **Get Resource Fields** to call `getResourceFieldAsync` multiple times for the resource properties. You can also add or remove the resource selection changed event handler.
 
     - Resource name: `R1`
     - Cost: `$800.00`
@@ -787,12 +787,12 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
     - Actual Work: `0h`
     - Units: `100%`
 
-16. Select **getSelectedViewAsync** to show the type and name of the active view. You can also add or remove the view selection changed event handler. For example, if **Resource Form** is the active view, the **getSelectedViewAsync** function shows the following in the text box:
+16. Select **getSelectedViewAsync** to show the type and name of the active view. You can also add or remove the view selection changed event handler. For example, if **Resource Form** is the active view, the `getSelectedViewAsync` function shows the following in the text box:
 
     - View type: `6`
     - Name: `Resource Form`
 
-17. Select **Get Project Fields** to call the **getProjectFieldAsync** function multiple times for different properties of the active project. If the project is opened from Project Web App, the **getProjectFieldAsync** function can get the URL of the Project Web App instance.
+17. Select **Get Project Fields** to call the `getProjectFieldAsync` function multiple times for different properties of the active project. If the project is opened from Project Web App, the `getProjectFieldAsync` function can get the URL of the Project Web App instance.
 
     - Project GUID: `9845922E-DAB4-E111-8AF3-00155D3BA208`
     - Start: `Tue 6/12/12`
@@ -802,14 +802,14 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
     - Symbol position: `0`
     - Project web app URL: `http://servername/pwa`
   
-18. Select  the **Get Context Values** button get properties of the document and the application in which the add-in is running, by getting properties of the **Office.Context.document** object and the **Office.context.application** object. For example, if the Project1.mpp file is on the local computer desktop, the document URL is `C:\Users\UserAlias\Desktop\Project1.mpp`. If the .mpp file is in a SharePoint library, the value is the URL of the document. If you use Project Professional 2013 to open a project named Project1 from Project Web App, the document URL is  `<>\Project1`.
+18. Select the **Get Context Values** button get properties of the document and the application in which the add-in is running, by getting properties of the **Office.Context.document** object and the `Office.context.application` object. For example, if the Project1.mpp file is on the local computer desktop, the document URL is `C:\Users\UserAlias\Desktop\Project1.mpp`. If the .mpp file is in a SharePoint library, the value is the URL of the document. If you use Project Professional 2013 to open a project named Project1 from Project Web App, the document URL is  `<>\Project1`.
 
     - Document URL: `<>\Project1`
     - Document mode: `readWrite`
     - App language: `en-US`
     - Display language: `en-US`
 
-19. You can refresh the add-in after you edit the source code by closing and restarting Project. In the  **Project** ribbon, the **Office Add-ins** drop-down list maintains the list of recently used add-ins.
+19. You can refresh the add-in after you edit the source code by closing and restarting Project. In the **Project** ribbon, the **Office Add-ins** drop-down list maintains the list of recently used add-ins.
 
 ## Example
 
@@ -897,9 +897,9 @@ The Project 2013 SDK download contains the complete code in the JSOMCall.html fi
 
 ## Robust programming
 
-The  **Project OM Test** add-in is an example that shows the use of some JavaScript functions for Project 2013 in the Project-15.js and Office.js files. The example is for testing only and does not include robust error checks. For example, if you do not select a resource and run the **getSelectedResourceAsync** function, the **resourceGuid** variable is not initialized, and calls to **getResourceFieldAsync** return an error. For a production add-in, you should check for specific errors and ignore the results, hide functionality that does not apply, or notify the user to choose a view and make a valid selection before using a function.
+The **Project OM Test** add-in is an example that shows the use of some JavaScript functions for Project 2013 in the Project-15.js and Office.js files. The example is for testing only and does not include robust error checks. For example, if you do not select a resource and run the `getSelectedResourceAsync` function, the `resourceGuid` variable is not initialized, and calls to `getResourceFieldAsync` return an error. For a production add-in, you should check for specific errors and ignore the results, hide functionality that does not apply, or notify the user to choose a view and make a valid selection before using a function.
 
-For a simple example, the error output in the following code includes the  **actionMessage** variable that specifies the action to take to avoid an error in the **getSelectedResourceAsync** function.
+For a simple example, the error output in the following code includes th  `actionMessage` variable that specifies the action to take to avoid an error in the `getSelectedResourceAsync` function.
 
 ```js
 function logError(errorText) {
@@ -930,7 +930,7 @@ function getSelectedResourceAsync() {
 
 The **HelloProject_OData** sample in the Project 2013 SDK download includes the SurfaceErrors.js file that uses the JQuery library to display a pop-up error message. Figure 4 shows the error message in a "toast" notification.
 
-The following code in the SurfaceErrors.js file includes the  **throwError** function that creates a **Toast** object.
+The following code in the SurfaceErrors.js file includes th  `throwError` function that creates a `Toast` object.
 
 ```js
 /*
@@ -1040,7 +1040,7 @@ var Toast = {
 }
 ```
 
-To use the  **throwError** function, include the JQuery library and the SurfaceErrors.js script in the JSOMCall.html file, and then add a call to **throwError** in other JavaScript functions such as **logMethodError**.
+To use the `throwError` function, include the JQuery library and the SurfaceErrors.js script in the JSOMCall.html file, and then add a call to `throwError` in other JavaScript functions such as `logMethodError`.
 
 > [!NOTE]
 > Before you deploy the add-in, change the office.js reference and the jQuery reference to the content delivery network (CDN) reference. The CDN reference provides the most recent version and better performance.

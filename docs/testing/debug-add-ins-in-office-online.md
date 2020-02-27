@@ -42,7 +42,7 @@ To debug your add-in by using Office on the web:
 
 4. Launch Excel or Word on the web from the app launcher in Office 365, and open a new document.
 
-5. On the Insert tab, choose  **My Add-ins** or **Office Add-ins** to insert your add-in and test it in the app.
+5. On the Insert tab, choose **My Add-ins** or **Office Add-ins** to insert your add-in and test it in the app.
 
 6. Use your favorite browser tool debugger to debug your add-in.
 

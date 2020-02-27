@@ -18,11 +18,11 @@ Defines a rich tooltip (both Title and Description). It is used by both [Button]
 
 ### Title
 
-Required. The text for the supertip. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
+Required. The text for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
 
 ### Description
 
-Required. The description for the supertip. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **LongStrings** element in the [Resources](resources.md) element.
+Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **LongStrings** element in the [Resources](resources.md) element.
 
 > [!NOTE]
 > For Outlook, only Windows and Mac clients support the **Description** element.

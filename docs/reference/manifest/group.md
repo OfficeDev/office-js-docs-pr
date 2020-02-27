@@ -28,7 +28,7 @@ Required. Unique identifier for the group. It is a string with a maximum of 125 
 
 ### Label 
 
-Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
+Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
 
 ### Icon
 

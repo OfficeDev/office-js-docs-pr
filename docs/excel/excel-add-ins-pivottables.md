@@ -97,7 +97,7 @@ Excel.run(function (context) {
 
 ## Use an existing PivotTable
 
-Manually created PivotTables are also accessible through the PivotTable collection of the workbook or of individual worksheets. The following code gets a PivotTable named  **My Pivot** from the workbook.
+Manually created PivotTables are also accessible through the PivotTable collection of the workbook or of individual worksheets. The following code gets a PivotTable named **My Pivot** from the workbook.
 
 ```js
 Excel.run(function (context) {
