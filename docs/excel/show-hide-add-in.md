@@ -17,9 +17,7 @@ Until now, if an add-in had more than one of these parts, then each part ran in 
 
 It's possible for add-ins with two or more parts to share a common JavaScript runtime. This shared runtime feature enables new preview APIs for hiding the task pane part of an add-in while the add-in remains running and for reopening the task pane later.
 
-> [!IMPORTANT]
-> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).
-> A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> [!INCLUDE [Information about using preview APIs](../includes/excel-shared-runtime-preview-note.md)]
 
 ## Configure an add-in to use a shared runtime
 
@@ -29,7 +27,7 @@ To configure the add-in to use a shared runtime, see [Configure your Office Add-
 
 The new APIs are in the `Office.addin` namespace. To show the task pane, your code calls `Office.addin.showAsTaskpane()`. Office will display in a task pane the page that you assigned to the resource ID (`resid`) for the task pane. This is the `resid` that you assigned to the `<SourceLocation>` of the `<Action xsi:type="ShowTaskpane">` in the manifest. (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).)
 
-This is an asynchronous method, so code that should not run until it completes should be awaited, either with the `await` keyword or with a `then()` method, depending on which JavaScript syntax you are using. The following assumes that there is an Excel worksheet named **CurrentQuarterSales**. The task pane should be made visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview#onactivated) event which has been registered for the worksheet.
+This is an asynchronous method, so it your code should await it when the code that follows it should not run until it completes, either with the `await` keyword or with a `then()` method, depending on which JavaScript syntax you are using. The following assumes that there is an Excel worksheet named **CurrentQuarterSales**. The add-in should make the task pane visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview#onactivated) event which has been registered for the worksheet.
 
 ```javascript
 function onCurrentQuarter() {
@@ -54,6 +52,8 @@ function onCurrentQuarterDeactivated() {
 The `hide()` and `showAsTaskpane()` methods only change the *visibility* of the task pane. They do not unload or reload it (or reinitialize its state).
 
 Consider the following scenario: A task pane is designed with tabs. The **Home** tab is open when the add-in is first launched. Suppose a user opens the **Settings** tab and, later, code in the task pane calls `hide()` in response to some event. Still later code calls `showAsTaskpane()` in response to another event. The task pane will reappear, and the **Settings** tab is still elected.
+
+![A screenshot of task pane that has four tabs labelled Home, Settings, Favorites, and Accounts.](../images/TaskpaneWithTabs.png)
 
 In addition, any event listeners that are registered in the task pane continue to run even when the task pane is hidden.
 
