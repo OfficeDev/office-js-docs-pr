@@ -6,7 +6,7 @@ The Office JavaScript API includes two distinct models:
     - [Word](../reference/overview/word-add-ins-reference-overview.md)
     - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 
-    This API model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) and allows you to specify multiple operations in each request you send to the Office host. Batching operations in this manner can significantly improve add-in performance in Office on the web applications. Host-specific APIs were introduced with Office 2016 and cannot be used to interact with Office 2013.
+    This API model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) and allows you to specify multiple operations in each request you send to the Office host. Batching operations in this manner can significantly improve add-in performance in Office on the web applications. Host-specific APIs were introduced with Office 2016 and cannot be used to interact with Office 2013. 
 
 - **Common** APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), where you can only specify one operation in each request sent to the Office host. Common APIs were introduced with Office 2013 and can be used to interact with Office 2013 or later. For details about the Common API object model, which includes APIs for interacting with Outlook and PowerPoint, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
