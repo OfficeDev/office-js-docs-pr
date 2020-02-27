@@ -1,16 +1,15 @@
 ---
 title: Office JavaScript API support for content and task pane add-ins in Office 2013
 description: ''
-ms.date: 09/26/2019
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
-
 # Office JavaScript API support for content and task pane add-ins in Office 2013
 
+[!include[information about the common API](../includes/alert-common-api-info.md)]
 
-You can use the [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) to create task pane or content add-ins for Office 2013 host applications. The objects and methods that content and task pane add-ins support are categorized as follows:
-
+You can use the [Office JavaScript API](../reference/javascript-api-for-office.md) to create task pane or content add-ins for Office 2013 host applications. The objects and methods that content and task pane add-ins support are categorized as follows:
 
 1. **Common objects shared with other Office Add-ins.** These objects include [Office](/javascript/api/office), [Context](/javascript/api/office/office.context), and [AsyncResult](/javascript/api/office/office.asyncresult). The `Office` object is the root object of the Office JavaScript API. The `Context` object represents the add-in's runtime environment. Both `Office` and `Context` are the fundamental objects for any Office Add-in. The `AsyncResult` object represents the results of an asynchronous operation, such as the data returned to the `getSelectedDataAsync` method, which reads what a user has selected in a document.
 
@@ -32,7 +31,7 @@ You can use the [Office JavaScript API](/office/dev/add-ins/reference/javascript
 > [!IMPORTANT]
 > Some of the API members aren't supported across all Office applications that can host content and task pane add-ins. To determine which members are supported, see any of the following:
 
-For a summary of Office JavaScript API support across Office host applications, see [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md).
+For a summary of Office JavaScript API support across Office host applications, see [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
 
 
 ## Reading and writing to an active selection

@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Sets element
 
-Specifies the minimum subset of the JavaScript API for Office that your Office Add-in requires in order to activate.
+Specifies the minimum subset of the Office JavaScript API that your Office Add-in requires in order to activate.
 
 **Add-in type:** Content, Task pane, Mail
 

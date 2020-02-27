@@ -11,7 +11,7 @@ This article builds upon the information in [Fundamental programming concepts wi
 
 ## Office.js APIs for Excel
 
-An Excel add-in interacts with objects in Excel by using the JavaScript API for Office, which includes two JavaScript object models:
+An Excel add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:
 
 * **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.
 

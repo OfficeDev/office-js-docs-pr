@@ -1,13 +1,13 @@
 ---
 title: Handling date values in Outlook add-ins
-description: The JavaScript API for Office uses the JavaScript Date object for most of the storage and retrieval of dates and times. 
+description: The Office JavaScript API uses the JavaScript Date object for most of the storage and retrieval of dates and times. 
 ms.date: 10/31/2019
 localization_priority: Normal
 ---
 
 # Tips for handling date values in Outlook add-ins
 
-The JavaScript API for Office uses the JavaScript [Date](https://www.w3schools.com/jsref/jsref_obj_date.asp) object for most of the storage and retrieval of dates and times. 
+The Office JavaScript API uses the JavaScript [Date](https://www.w3schools.com/jsref/jsref_obj_date.asp) object for most of the storage and retrieval of dates and times. 
 
 That `Date` object provides methods such as [getUTCDate](https://www.w3schools.com/jsref/jsref_getutcdate.asp), [getUTCHour](https://www.w3schools.com/jsref/jsref_getutchours.asp), [getUTCMinutes](https://www.w3schools.com/jsref/jsref_getutcminutes.asp), and [toUTCString](https://www.w3schools.com/jsref/jsref_toutcstring.asp), which return the requested date or time value according to Universal Coordinated Time (UTC) time.
 
@@ -33,7 +33,7 @@ While you can use the JavaScript `Date` object to get a date or time value based
 
 ## Date-related features for Outlook add-ins
 
-The aforementioned JavaScript limitation has an implication for you, when you use the JavaScript API for Office to handle date or time values in Outlook add-ins that run in an Outlook rich client, and in Outlook on the web or mobile devices.
+The aforementioned JavaScript limitation has an implication for you, when you use the Office JavaScript API to handle date or time values in Outlook add-ins that run in an Outlook rich client, and in Outlook on the web or mobile devices.
 
 
 ### Time zones for Outlook clients
@@ -50,7 +50,7 @@ Because an Outlook rich client uses the client computer time zone, and the user 
 
 ### Date-related API
 
-The following are the properties and methods in the JavaScript API for Office that support date-related features.
+The following are the properties and methods in the Office JavaScript API that support date-related features.
 
 **API member**|**Time zone representation**|**Example in an Outlook rich client**|**Example in Outlook on the web or mobile devices**
 --------------|----------------------------|-------------------------------------|-------------------
@@ -61,7 +61,7 @@ The following are the properties and methods in the JavaScript API for Office th
 ## Helper methods for date-related scenarios
 
 
-As described in the preceding sections, because the "local time" for a user in Outlook on the web or mobile devices can be different on an Outlook rich client, but the JavaScript **Date** object supports converting to only the client computer time zone or UTC, the JavaScript API for Office provides two helper methods: [Office.context.mailbox.convertToLocalClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) and [Office.context.mailbox.convertToUtcClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
+As described in the preceding sections, because the "local time" for a user in Outlook on the web or mobile devices can be different on an Outlook rich client, but the JavaScript **Date** object supports converting to only the client computer time zone or UTC, the Office JavaScript API provides two helper methods: [Office.context.mailbox.convertToLocalClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) and [Office.context.mailbox.convertToUtcClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
 
 These helper methods take care of any need to handle date or time differently for the following two date-related scenarios, in an Outlook rich client, Outlook on the web and mobile devices, thus reinforcing "write-once" for different clients of your add-in.
 

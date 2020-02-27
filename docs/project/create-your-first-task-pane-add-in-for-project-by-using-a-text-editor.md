@@ -17,7 +17,7 @@ The [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?
 
 The JSOMCall.html sample uses JavaScript functions in the office.js file and project-15.js file, which are included. You can use the corresponding debug files (office.debug.js and project-15.debug.js) to examine the functions.
 
-For an introduction to using JavaScript in Office Add-ins, see [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md).
+For an introduction to using JavaScript in Office Add-ins, see [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md).
 
 ## Procedure 1. To create the add-in manifest file
 
@@ -106,6 +106,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
    The **\_projDoc** variable is initialized with a `ProjectDocument` object. The code includes some simple error handling functions, and the `getContextValues` function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office).
 
+
     ```js
     /*
     * JavaScript functions for the Project OM Test example app
@@ -166,7 +167,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     }
     ```
 
-   For information about the functions in the Office.debug.js file, see [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office). For example, the `getDocumentUrl` function gets the URL or file path of the open project.
+   For information about the functions in the Office.debug.js file, see [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office). For example, the `getDocumentUrl` function gets the URL or file path of the open project.
 
 3. Add JavaScript functions that call asynchronous functions in Office.js and Project-15.js to get selected data:
 
@@ -1090,6 +1091,6 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Task pane add-ins for Project](../project/project-add-ins.md)
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
-- [JavaScript API for Office Add-ins](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API Add-ins](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
 - [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)

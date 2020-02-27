@@ -1,13 +1,13 @@
 ---
 title: Outlook add-in APIs
 description: Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.
-ms.date: 10/31/2019
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
 # Outlook add-in APIs
 
-To use APIs in your Outlook add-in, you must specify the location of the Office.js library, the requirement set, the schema, and the permissions.
+To use APIs in your Outlook add-in, you must specify the location of the Office.js library, the requirement set, the schema, and the permissions. You'll primarily use the Office JavaScript APIs exposed through the [Mailbox](#mailbox-object) object.
 
 ## Office.js library
 
@@ -21,7 +21,7 @@ Reference the CDN in a `<script>` tag in the `<head>` tag of the web page (.html
 As we add new APIs, the URL to Office.js will stay the same. We will change the version in the URL only if we break an existing API behavior.
 
 > [!IMPORTANT]
-> When developing an add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. Crossing this threshold results in the add-in being declared unresponsive and an error message is displayed to the user.
+> When developing an add-in for any Office host application, reference the Office JavaScript API from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. Crossing this threshold results in the add-in being declared unresponsive and an error message is displayed to the user.
 
 ## Requirement sets
 
@@ -62,6 +62,9 @@ Your add-in requires the appropriate permissions to use the APIs that it needs. 
 
 In general, you should specify the minimum permission needed for your add-in. Permissions are declared in the `<Permissions>` element in the manifest. For more information, see [Outlook add-in manifests](manifests.md). For information about security issues, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).
 
+## Mailbox object
+
+[!include[information about Mailbox object](../includes/mailbox-object-desc.md)]
 
 ## See also
 

@@ -1,14 +1,15 @@
 ---
 title: Asynchronous programming in Office Add-ins
 description: ''
-ms.date: 01/14/2020
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
-
 # Asynchronous programming in Office Add-ins
 
-Why does the Office Add-ins API use asynchronous programming? Because JavaScript is a single-threaded language, if script invokes a long-running synchronous process, all subsequent script execution will be blocked until that process completes. Because certain operations against Office web clients (but rich clients as well) could block execution if they are run synchronously, most of the methods in the JavaScript API for Office are designed to execute asynchronously. This makes sure that Office Add-ins are responsive and highly performing. It also frequently requires you to write callback functions when working with these asynchronous methods.
+[!include[information about the common API](../includes/alert-common-api-info.md)]
+
+Why does the Office Add-ins API use asynchronous programming? Because JavaScript is a single-threaded language, if script invokes a long-running synchronous process, all subsequent script execution will be blocked until that process completes. Because certain operations against Office web clients (but rich clients as well) could block execution if they are run synchronously, most of the Office JavaScript APIs are designed to execute asynchronously. This makes sure that Office Add-ins are responsive and fast. It also frequently requires you to write callback functions when working with these asynchronous methods.
 
 The names of all asynchronous methods in the API end with "Async", such as the `Document.getSelectedDataAsync`, `Binding.getDataAsync`, or `Item.loadCustomPropertiesAsync` methods. When an "Async" method is called, it executes immediately and any subsequent script execution can continue. The optional callback function you pass to an "Async" method executes as soon as the data or requested operation is ready. This generally occurs promptly, but there can be a slight delay before it returns.
 
@@ -106,7 +107,7 @@ For a description of what's returned to the `AsyncResult.value` property for an 
 ## Asynchronous programming patterns
 
 
-The JavaScript API for Office supports two kinds of asynchronous programming patterns:
+The Office JavaScript API supports two kinds of asynchronous programming patterns:
 
 
 - Using nested callbacks
@@ -115,7 +116,7 @@ The JavaScript API for Office supports two kinds of asynchronous programming pat
     
 Asynchronous programming with callback functions frequently requires you to nest the returned result of one callback within two or more callbacks. If you need to do so, you can use nested callbacks from all "Async" methods of the API.
 
-Using nested callbacks is a programming pattern familiar to most JavaScript developers, but code with deeply nested callbacks can be difficult to read and understand. As an alternative to nested callbacks, the JavaScript API for Office also supports an implementation of the promises pattern. However, in the current version of the JavaScript API for Office, the promises pattern only works with code for [bindings in Excel spreadsheets and Word documents](bind-to-regions-in-a-document-or-spreadsheet.md).
+Using nested callbacks is a programming pattern familiar to most JavaScript developers, but code with deeply nested callbacks can be difficult to read and understand. As an alternative to nested callbacks, the Office JavaScript API also supports an implementation of the promises pattern. However, in the current version of the Office JavaScript API, the promises pattern only works with code for [bindings in Excel spreadsheets and Word documents](bind-to-regions-in-a-document-or-spreadsheet.md).
 
 <a name="AsyncProgramming_NestedCallbacks" />
 ### Asynchronous programming using nested callback functions
@@ -148,7 +149,7 @@ function write(message){
 }
 ```
 
-This basic nested callback pattern can be used for all asynchronous methods in the JavaScript API for Office.
+This basic nested callback pattern can be used for all asynchronous methods in the Office JavaScript API.
 
 The following sections show how to use either anonymous or named functions for nested callbacks in asynchronous methods.
 
@@ -208,7 +209,9 @@ function write(message){
 
 Instead of passing a callback function and waiting for the function to return before execution continues, the promises programming pattern immediately returns a promise object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins runtime environment can complete the request. An _onError_ handler is provided to cover situations when the request can't be fulfilled.
 
-The JavaScript API for Office provides the [Office.select](/javascript/api/office#office-select-expression--callback-) method to support the promises pattern for working with existing binding objects. The promise object returned to the `Office.select` method supports only the four methods that you can access directly from the [Binding](/javascript/api/office/office.binding) object: [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-), [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-), [addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-), and [removeHandlerAsync](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-).
+
+The Office JavaScript API provides the [Office.select](/javascript/api/office#office-select-expression--callback-) method to support the promises pattern for working with existing binding objects. The promise object returned to the `Office.select` method supports only the four methods that you can access directly from the [Binding](/javascript/api/office/office.binding) object: [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-), [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-), [addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-), and [removeHandlerAsync](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-).
+
 
 The promises pattern for working with bindings takes this form:
 
@@ -390,5 +393,5 @@ In both optional parameter examples, the _callback_ parameter is specified as th
 
 ## See also
 
-- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
-- [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
+- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)

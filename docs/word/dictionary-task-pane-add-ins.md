@@ -524,7 +524,7 @@ a:hover, a:active
 
 The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the  `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.
 
-The primary members of the JavaScript API for Office (Office.js) that are called from this implementation are as follows:
+The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:
 
 
 - The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.

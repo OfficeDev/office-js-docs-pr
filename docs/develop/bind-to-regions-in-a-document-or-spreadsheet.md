@@ -386,7 +386,7 @@ function removeEventHandlerFromBinding() {
 
 ## See also
 
-- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md) 
+- [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md) 
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 
