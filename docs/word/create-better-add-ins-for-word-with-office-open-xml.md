@@ -10,7 +10,7 @@ localization_priority: Normal
 
 **Provided by:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
-If you're building Office Add-ins to run in Word, you might already know that the JavaScript API for Office (Office.js) offers several formats for reading and writing document content. These are called coercion types, and they include plain text, tables, HTML, and Office Open XML.
+If you're building Office Add-ins to run in Word, you might already know that the Office JavaScript API (Office.js) offers several formats for reading and writing document content. These are called coercion types, and they include plain text, tables, HTML, and Office Open XML.
 
 So what are your options when you need to add rich content to a document, such as images, formatted tables, charts, or even just formatted text? 
 You can use HTML for inserting some types of rich content, such as pictures. Depending on your scenario, there can be drawbacks to HTML coercion, such as limitations in the formatting and positioning options available to your content.
@@ -854,6 +854,6 @@ When using templates with your app, whether the add-in will be resident in the t
 
 ## See also
 
-- [JavaScript API for Office ](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API ](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Standard ECMA-376: Office Open XML File Formats](https://www.ecma-international.org/publications/standards/Ecma-376.htm) (access the complete language reference and related documentation on Open XML here)
-- [Exploring the JavaScript API for Office: Data Binding and Custom XML Parts](https://msdn.microsoft.com/magazine/dn166930.aspx)
+- [Exploring the Office JavaScript API: Data Binding and Custom XML Parts](https://msdn.microsoft.com/magazine/dn166930.aspx)

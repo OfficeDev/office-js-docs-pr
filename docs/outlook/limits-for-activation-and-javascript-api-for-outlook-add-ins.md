@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Limits for activation and JavaScript API for Outlook add-ins
 
-To provide a satisfactory experience for users of Outlook add-ins, you should be aware of certain activation and API usage guidelines, and implement your add-ins to stay within these limits. These guidelines exist so that an individual add-in cannot require Exchange Server or Outlook to spend an unusually long period of time to process its activation rules or calls to the JavaScript API for Office, affecting the overall user experience for Outlook and other add-ins. These limits apply to designing activation rules in the add-in manifest, and using custom properties, roaming settings, recipients, Exchange Web Services (EWS) requests and responses, and asynchronous calls.
+To provide a satisfactory experience for users of Outlook add-ins, you should be aware of certain activation and API usage guidelines, and implement your add-ins to stay within these limits. These guidelines exist so that an individual add-in cannot require Exchange Server or Outlook to spend an unusually long period of time to process its activation rules or calls to the Office JavaScript API, affecting the overall user experience for Outlook and other add-ins. These limits apply to designing activation rules in the add-in manifest, and using custom properties, roaming settings, recipients, Exchange Web Services (EWS) requests and responses, and asynchronous calls.
 
 > [!NOTE]
 > If your add-in runs on an Outlook rich client, you must also verify that the add-in performs within certain run-time resource usage limits.
@@ -65,7 +65,7 @@ Table 3 lists the limits and describes the differences in the matches that each 
 
 Aside from the preceding guidelines for activation rules, each of the Outlook hosts enforces certain limits in the JavaScript object model, as described in Table 4.
 
-**Table 4. Limits to get or set certain data using the JavaScript API for Office**
+**Table 4. Limits to get or set certain data using the Office JavaScript API**
 
 |Feature|Limit|Related API|Description|
 |:-----|:-----|:-----|:-----|

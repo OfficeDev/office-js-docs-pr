@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Compare Outlook add-in support in Outlook on Mac with other Outlook hosts
 
-You can create and run an Outlook add-in the same way in Outlook on Mac as in the other hosts, including Outlook on the web, Windows, iOS, and Android, without customizing the JavaScript for each host. The same calls from the add-in to the JavaScript API for Office generally work the same way, except for the areas described in the following table.
+You can create and run an Outlook add-in the same way in Outlook on Mac as in the other hosts, including Outlook on the web, Windows, iOS, and Android, without customizing the JavaScript for each host. The same calls from the add-in to the Office JavaScript API generally work the same way, except for the areas described in the following table.
 
 For more information, see [Deploy and install Outlook add-ins for testing](testing-and-tips.md).
 

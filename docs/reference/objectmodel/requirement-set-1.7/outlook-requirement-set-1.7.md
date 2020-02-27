@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Outlook add-in API requirement set 1.7
 
-The Outlook add-in API subset of the JavaScript API for Office includes objects, methods, properties and events that you can use in an Outlook add-in.
+The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties and events that you can use in an Outlook add-in.
 
 > [!NOTE]
 > This documentation is for a [requirement set](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) other than the latest requirement set.

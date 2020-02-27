@@ -32,7 +32,7 @@ The Office Add-ins platform provides the framework and Office.js JavaScript APIs
 
 An Excel add-in includes two basic components: a web application and a configuration file, called a manifest file. 
 
-The web application uses the [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office) to interact with objects in Excel, and can also facilitate interaction with online resources. For example, an add-in can perform any of the following tasks:
+The web application uses the [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) to interact with objects in Excel, and can also facilitate interaction with online resources. For example, an add-in can perform any of the following tasks:
 
 * Create, read, update, and delete data in the workbook (worksheets, ranges, tables, charts, named items, and more).
 * Perform user authorization with an online service by using the standard OAuth 2.0 flow.
@@ -105,7 +105,7 @@ For more information about content add-ins, see [Content Office Add-ins](../desi
 
 ## JavaScript APIs to interact with workbook content
 
-An Excel add-in interacts with objects in Excel by using the [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office), which includes two JavaScript object models:
+An Excel add-in interacts with objects in Excel by using the [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office), which includes two JavaScript object models:
 
 * **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) provides strongly-typed Excel objects that you can use to access worksheets, ranges, tables, charts, and more. 
 
