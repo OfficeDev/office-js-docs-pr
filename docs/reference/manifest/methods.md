@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Methods element
 
-Specifies the list of JavaScript API for Office methods that your Office Add-in requires in order to activate.
+Specifies the list of Office JavaScript API methods that your Office Add-in requires in order to activate.
 
 **Add-in type:** Content, Task pane
 
@@ -29,5 +29,5 @@ Specifies the list of JavaScript API for Office methods that your Office Add-in 
 
 ## Remarks
 
-The  **Methods** and **Method** elements aren't supported in mail add-ins. For more information about requirement sets, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+The **Methods** and **Method** elements aren't supported in mail add-ins. For more information about requirement sets, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 

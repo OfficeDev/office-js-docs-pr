@@ -45,9 +45,9 @@ Add-in scenarios for Project include the following:
 
 ## Developing Project add-ins
 
-The JavaScript library for Project add-ins includes extensions of the  **Office** namespace alias that enable developers to access properties of the Project application and tasks, resources, and views in a project. The JavaScript library extensions in the Project-15.js file are used in a Project add-in created with Visual Studio 2015. The Office.js, Office.debug.js, Project-15.js, Project-15.debug.js, and related files are also provided in the Project 2013 SDK download.
+The JavaScript library for Project add-ins includes extensions of the **Office** namespace alias that enable developers to access properties of the Project application and tasks, resources, and views in a project. The JavaScript library extensions in the Project-15.js file are used in a Project add-in created with Visual Studio 2015. The Office.js, Office.debug.js, Project-15.js, Project-15.debug.js, and related files are also provided in the Project 2013 SDK download.
 
-To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an XML manifest file for configuration. Project can use a manifest file that includes a  **type** attribute that is specified as **TaskPaneExtension**. The manifest file can be used by multiple Office 2013 client applications, or you can create a manifest file that is specific for Project 2013. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
+To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an XML manifest file for configuration. Project can use a manifest file that includes a **type** attribute that is specified as **TaskPaneExtension**. The manifest file can be used by multiple Office 2013 client applications, or you can create a manifest file that is specific for Project 2013. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
 
 When you install the Project 2013 SDK download, the  `\Samples\Apps\` subdirectory includes the following sample add-ins:
 
@@ -63,7 +63,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 
 ### Procedure 1. To create the add-in manifest file for Bing Search
 
-- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
+- Create an XML file in a local directory. The XML file includes the **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -94,16 +94,16 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     ```
 
 - Following are the required elements in the add-in manifest:
-  - In the  **OfficeApp** element, the `xsi:type="TaskPaneApp"` attribute specifies that the add-in is a task pane type.
-  - The  **Id** element is a UUID and must be unique.
-  - The  **Version** element is the version of the add-in. The **ProviderName** element is the name of the company or developer who provides the add-in. The **DefaultLocale** element specifies the default locale for the strings in the manifest.
-  - The  **DisplayName** element is the name that shows in the **Task Pane Add-in** drop-down list in the **VIEW** tab of the ribbon in Project 2013. The value can contain up to 32 characters.
-  - The  **Description** element contains the add-in description for the default locale. The value can contain up to 2000 characters.
-  - The  **Capabilities** element contains one or more **Capability** child elements that specify the host application.
-  - The  **DefaultSettings** element includes the **SourceLocation** element, which specifies the path of an HTML file on a file share or the URL of a webpage that the add-in uses. A task pane add-in ignores the **RequestedHeight** element and the **RequestedWidth** element.
-  - The  **IconUrl** element is optional. It can be an icon on a file share or the URL of an icon in a web application.
+  - In the **OfficeApp** element, the `xsi:type="TaskPaneApp"` attribute specifies that the add-in is a task pane type.
+  - The **Id** element is a UUID and must be unique.
+  - The **Version** element is the version of the add-in. The **ProviderName** element is the name of the company or developer who provides the add-in. The **DefaultLocale** element specifies the default locale for the strings in the manifest.
+  - The **DisplayName** element is the name that shows in the **Task Pane Add-in** drop-down list in the **VIEW** tab of the ribbon in Project 2013. The value can contain up to 32 characters.
+  - The **Description** element contains the add-in description for the default locale. The value can contain up to 2000 characters.
+  - The **Capabilities** element contains one or more **Capability** child elements that specify the host application.
+  - The **DefaultSettings** element includes the **SourceLocation** element, which specifies the path of an HTML file on a file share or the URL of a webpage that the add-in uses. A task pane add-in ignores the **RequestedHeight** element and the **RequestedWidth** element.
+  - The **IconUrl** element is optional. It can be an icon on a file share or the URL of an icon in a web application.
 
-- (Optional) Add  **Override** elements that have values for other locales. For example, the following manifest provides **Override** elements for French values of **DisplayName**,  **Description**,  **IconUrl**, and  **SourceLocation**.
+- (Optional) Add **Override** elements that have values for other locales. For example, the following manifest provides **Override** elements for French values of **DisplayName**, **Description**, **IconUrl**, and **SourceLocation**.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -141,7 +141,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 
 In Project 2013, you can install add-ins as stand-alone solutions on a file share, or in a private add-in catalog. You can also review and purchase add-ins in AppSource.
 
-There can be multiple add-in manifest XML files and subdirectories in a file share. You can add or remove manifest directory locations and catalogs by using the  **Trusted Add-in Catalogs** tab in the **Trust Center** dialog box in Project 2013. To show an add-in in Project, the **SourceLocation** element in a manifest must point to an existing website or HTML source file.
+There can be multiple add-in manifest XML files and subdirectories in a file share. You can add or remove manifest directory locations and catalogs by using the **Trusted Add-in Catalogs** tab in the **Trust Center** dialog box in Project 2013. To show an add-in in Project, the **SourceLocation** element in a manifest must point to an existing website or HTML source file.
 
 > [!NOTE]
 > If you are developing on a Windows computer, either Internet Explorer or Microsoft Edge must be installed. For more information see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -156,26 +156,26 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
 
 3. Copy the BingSearch.xml manifest file to the  `C:\Project\AppManifests` directory.
 
-4. In Project 2013, open the  **Project Options** dialog box, choose **Trust Center**, and then choose  **Trust Center Settings**.
+4. In Project 2013, open the **Project Options** dialog box, choose **Trust Center**, and then choose **Trust Center Settings**.
 
-5. In the  **Trust Center** dialog box, in the left pane, choose **Trusted Add-in Catalogs**.
+5. In the **Trust Center** dialog box, in the left pane, choose **Trusted Add-in Catalogs**.
 
-6. In the  **Trusted Add-in Catalogs** pane (see Figure 1), add the `\\ServerName\AppManifests` path in the **Catalog Url** text box, choose **Add Catalog**, and then choose  **OK**.
+6. In the **Trusted Add-in Catalogs** pane (see Figure 1), add the `\\ServerName\AppManifests` path in the **Catalog Url** text box, choose **Add Catalog**, and then choose **OK**.
 
     > [!NOTE]
-    > Figure 1 shows two file shares and one hypothetical URL for a private catalog in the  **Trusted Catalog Address** list. Only one file share can be the default file share and only one catalog URL can be the default catalog. For example, if you set `\\Server2\AppManifests` as the default, Project clears the **Default** check box for `\\ServerName\AppManifests`.If you change the default selection, you can choose  **Clear** to remove installed add-ins, and then restart Project. If you add an add-in to the default file share or SharePoint catalog while Project is open, you should restart Project.
+    > Figure 1 shows two file shares and one hypothetical URL for a private catalog in the **Trusted Catalog Address** list. Only one file share can be the default file share and only one catalog URL can be the default catalog. For example, if you set `\\Server2\AppManifests` as the default, Project clears the **Default** check box for `\\ServerName\AppManifests`.If you change the default selection, you can choose **Clear** to remove installed add-ins, and then restart Project. If you add an add-in to the default file share or SharePoint catalog while Project is open, you should restart Project.
 
     *Figure 1. Using the Trust Center to add catalogs of add-in manifests*
 
     ![Using the Trust Center to add app manifests](../images/pj15-agave-overview-trust-centers.png)
 
-7. On the  **Project** ribbon, choose the **Office Add-ins** drop-down menu, and then choose **See All**. In the  **Insert Add-in** dialog box, choose **SHARED FOLDER** (see Figure 2).
+7. On the **Project** ribbon, choose the **Office Add-ins** drop-down menu, and then choose **See All**. In the **Insert Add-in** dialog box, choose **SHARED FOLDER** (see Figure 2).
 
     *Figure 2. Starting an add-in that is on a file share*
 
     ![Starting an Office app that is on a file share](../images/pj15-agave-overview-start-agave-apps.png)
 
-8. Select the Bing Search add-in, and then choose  **Insert**.
+8. Select the Bing Search add-in, and then choose **Insert**.
 
     The Bing Search add-in shows in a task pane, as in Figure 3. You can manually resize the task pane, and use the Bing Search add-in.
 

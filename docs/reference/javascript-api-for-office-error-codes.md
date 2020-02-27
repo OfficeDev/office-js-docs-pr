@@ -1,13 +1,13 @@
 ---
-title: JavaScript API for Office error codes
+title: Office JavaScript API error codes
 description: ''
 ms.date: 01/30/2020
 localization_priority: Normal
 ---
 
-# JavaScript API for Office error codes
+# Office JavaScript API error codes
 
-This article documents the error messages you might encounter while using the JavaScript API for Office (Office.js).
+This article documents the error messages you might encounter while using the Office JavaScript API (Office.js).
 
 **Applies to:** Office Add-ins | SharePoint Add-ins | Excel | Outlook | PowerPoint | Project | Word
 
@@ -45,24 +45,24 @@ The following table lists the error codes, names, and messages displayed, and th
 |3004|Binding Creation Error|A binding cannot be created with the current selection and the specified binding type.|There are several conditions under which this might happen. Please see the "Binding creation error conditions" section later in this article.|
 |3005|Invalid Binding Operation|Operation is not supported on this binding type.|The developer sends a add row or add column operation on a binding type that is not  _table_.|
 |3006|Binding Creation Error|The named item does not exist.|The named item cannot be found. No content control or table with that name exists.|
-|3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to  **true**.|
+|3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to **true**.|
 |3008|Binding Creation Error|The specified binding type is not compatible with the supplied named item.|Named item cannot be bound to type. For example, a content control contains text but the developer tried to bind by using coercion type  _table_.|
 |3009|Invalid Binding Operation|The binding type is not supported.|Used for backward compatibility.|
-|3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the  **addRowsAsynch** or **deleteAllDataValuesAsynch** methods of the **TableBinding** object on data of coercion type _matrix_.|
+|3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the `addRowsAsynch` or `deleteAllDataValuesAsynch` methods of the `TableBinding` object on data of coercion type _matrix_.|
 |4000|Read Settings Error|The specified setting name does not exist.|A nonexistent setting name is supplied.|
 |4001|Save Settings Error|The settings could not be saved.|Settings could not be saved.|
 |4002|Settings Stale Error|Settings could not be saved because they are stale.|Settings are stale and developer indicated not to override settings.|
-|5000|Settings Stale Error|The operation is not supported.|The operation is not supported in the current host. For example,  **document.getSelectionAsync** is called from Outlook.|
+|5000|Settings Stale Error|The operation is not supported.|The operation is not supported in the current host. For example, `document.getSelectionAsync` is called from Outlook.|
 |5001|Internal Error|An internal error has occurred.|Refers to an internal error condition, which can occur for any of the following reasons:<br/><table><tr><td>An add-in being used by another user sharing the workbook created a binding at approximately the same time, and your add-in needs to retry binding.</tr></td><tr><td>An unknown error occurred.</tr></td><tr><td>The operation failed.</tr></td><tr><td>Access was denied because the user is not a member of an authorized role.</tr></td><tr><td>Access was denied because secure, encrypted communication is required.</tr></td><tr><td>Data is stale and the user needs to confirm enabling the queries to refresh it.</tr></td><tr><td>The site collection CPU quota has been exceeded.</tr></td><tr><td>The site collection memory quota has been exceeded.</tr></td><tr><td>The session memory quota has been exceeded.</tr></td><tr><td>The workbook is in an invalid state and the operation can't be performed.</tr></td><tr><td>The session has timed out due to inactivity and the user needs to reload the workbook.</tr></td><tr><td>The maximum number of allowed sessions per user has been exceeded.</tr></td><tr><td>The operation was canceled by the user.</tr></td><tr><td>The operation can't be completed because it is taking too long.</tr></td><tr><td>The request can't be completed and needs to be retried.</tr></td><tr><td>The trial period of the product has expired.</tr></td><tr><td>The session has timed out due to inactivity.</tr></td><tr><td>The user doesn't have permission to perform the operation on the specified range.</tr></td><tr><td>The user's regional settings don't match the current collaboration session.</tr></td><tr><td>The user is no longer connected and must refresh or re-open the workbook.</tr></td><tr><td>The requested range doesn't exist in the sheet.</tr></td><tr><td>The user doesn't have permission to edit the workbook.</tr></td><tr><td>The workbook can't be edited because it is locked.</tr></td><tr><td>The session can't auto save the workbook.</tr></td><tr><td>The session can't refresh its lock on the workbook file.</tr></td><tr><td>The request can't be processed and needs to be retried.</tr></td><tr><td>The user's sign-in information couldn't be verified and needs to be re-entered.</tr></td><tr><td>The user has been denied access.</tr></td><tr><td>The shared workbook needs to be updated.</tr></td></table>|
 |5002|Permission Denied|The requested operation is not allowed on the current document mode.|The solution developer submits a set operation, but the document is in a mode that does not allow modifications, such as 'Restrict Editing'.|
 |5003|Event Registration Error|The specified event type is not supported by the current object.|The solution developer tries to register or unregister a handler to an event that does not exist.|
-|5004|Invalid API call|Invalid API call in the current context.|An invalid call is made for the context, for example, trying to use a  **CustomXMLPart** object in Excel.|
+|5004|Invalid API call|Invalid API call in the current context.|An invalid call is made for the context, for example, trying to use a `CustomXMLPart` object in Excel.|
 |5005|Data Stale|Operation failed because the data is stale on the server.|The data on the server needs to be refreshed.|
 |5006|Session Timeout|The document session timed out. Reload the document. |The session has timed out.|
 |5007|Invalid API call|The enumeration is not supported in the current context.|The enumeration is not supported in the current context.|
 |5009|Permission Denied|Access Denied|The add-in does not have permission to call the specific API.|
 |5012|Invalid Or Timed Out Session|Your Office browser session has expired or is invalid. To continue, refresh the page.|The session between the Office client and server has expired or the date, time, or time zone is incorrect on your computer.|
-|6000|Invalid node|The specified node was not found.|The **CustomXmlPart** node was not found.|
+|6000|Invalid node|The specified node was not found.|The `CustomXmlPart` node was not found.|
 |6100|Custom XML error|Custom XML error|Invalid API call.|
 |7000|Invalid Id|The specified Id does not exist.|Invalid ID.|
 |7001|Invalid navigation|The object is located in a place where navigation is not supported.|The user can find the object, but cannot navigate to it. (For example, in Word, the binding is to the header, footer, or a comment.)|
@@ -87,7 +87,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |12006|||The dialog box was closed, usually because the user chooses the **X** button. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
 |12007|||A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time. Thrown by call of `displayDialogAsync`.|
 |12009|||The user chose to ignore the dialog box. This error can occur in online versions of Office, where users may choose not to allow an add-in to present a dialog. Thrown by call of `displayDialogAsync`.|
-|13000 - 13010|||See [Causes and handling of errors from getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
+|13nnn|||See [Causes and handling of errors from getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## Binding creation error conditions
 

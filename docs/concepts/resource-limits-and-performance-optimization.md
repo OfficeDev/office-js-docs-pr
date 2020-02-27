@@ -22,7 +22,7 @@ Run-time resource usage limits apply to all types of Office Add-ins. These limit
 
 - **Memory usage** - A default memory usage threshold that is dynamically determined based on the available physical memory of the device.
 
-   By default, when a host rich client detects that physical memory usage on a device exceeds 80% of the available memory, the client starts monitoring the add-in's memory usage, at a document level for content and task pane add-ins, and at a mailbox level for Outlook add-ins. At a default interval of 5 seconds, the client warns the user if physical memory usage for a set of add-ins at the document or mailbox level exceeds 50%. This memory usage limit uses physical rather than virtual memory to ensure performance on devices with limited RAM, such as tablets. Administrators can override this dynamic setting with an explicit limit by using the  **MemoryAlertThreshold** Windows registry key as a global setting, ir adjust the alert interval by using the **AlertInterval** key as a global setting.
+   By default, when a host rich client detects that physical memory usage on a device exceeds 80% of the available memory, the client starts monitoring the add-in's memory usage, at a document level for content and task pane add-ins, and at a mailbox level for Outlook add-ins. At a default interval of 5 seconds, the client warns the user if physical memory usage for a set of add-ins at the document or mailbox level exceeds 50%. This memory usage limit uses physical rather than virtual memory to ensure performance on devices with limited RAM, such as tablets. Administrators can override this dynamic setting with an explicit limit by using the **MemoryAlertThreshold** Windows registry key as a global setting, ir adjust the alert interval by using the **AlertInterval** key as a global setting.
 
 - **Crash tolerance** - A default limit of four crashes for an add-in.
 
@@ -43,11 +43,11 @@ In addition to the CPU core, memory, and reliability rules, Outlook add-ins shou
 
 - **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
-    Using a group policy or application-specific setting in the Windows registry, administrators can adjust this default threshold value of 1,000 milliseconds in the  **OutlookActivationAlertThreshold** setting.
+    Using a group policy or application-specific setting in the Windows registry, administrators can adjust this default threshold value of 1,000 milliseconds in the **OutlookActivationAlertThreshold** setting.
 
-- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by  **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook disables the Outlook add-in. The Exchange Admin Center displays the disabled status, and the add-in is disabled for use in the Outlook rich clients, and Outlook on the web and mobile devices.
+- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook disables the Outlook add-in. The Exchange Admin Center displays the disabled status, and the add-in is disabled for use in the Outlook rich clients, and Outlook on the web and mobile devices.
 
-    Using a group policy or application-specific setting in the Windows registry, administrators can adjust this number of times to retry evaluation in the  **OutlookActivationManagerRetryLimit** setting.
+    Using a group policy or application-specific setting in the Windows registry, administrators can adjust this number of times to retry evaluation in the **OutlookActivationManagerRetryLimit** setting.
 
 ### Task pane and content add-ins
 
@@ -77,10 +77,10 @@ The following table lists the events that the Telemetry Log tracks for Office Ad
 |8|Add-in manifest did not download|Critical|The host application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or AppSource.|
 |9|Add-in markup could not be parsed|Critical|The host application loaded the Office Add-in manifest, but could not read the HTML markup of the app.|
 |10|Add-in used too much CPU|Critical|The Office Add-in used more than 90% of the CPU resources over a finite period of time.|
-|15|Add-in disabled due to string search time-out||Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the  **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
+|15|Add-in disabled due to string search time-out||Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
 |18|Add-in closed successfully||The host application was able to close the Office Add-in successfully.|
-|19|Add-in encountered runtime error|Critical|The Office Add-in had a problem that caused it to fail. For more details, look at the  **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
-|20|Add-in failed to verify licensing|Critical|The licensing information for the Office Add-in could not be verified and may have expired. For more details, look at the  **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
+|19|Add-in encountered runtime error|Critical|The Office Add-in had a problem that caused it to fail. For more details, look at the **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
+|20|Add-in failed to verify licensing|Critical|The licensing information for the Office Add-in could not be verified and may have expired. For more details, look at the **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 
 For more information, see [Deploying Telemetry Dashboard](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) and [Troubleshooting Office files and custom solutions with the telemetry log](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
 

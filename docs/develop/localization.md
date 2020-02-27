@@ -1,17 +1,17 @@
 ---
 title: Localization for Office Add-ins
-description: You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
+description: You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
 ms.date: 10/11/2019
 localization_priority: Normal
 ---
 
 # Localization for Office Add-ins
 
-You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
+You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
 
 ## Use the JavaScript API to determine locale-specific strings
 
-The JavaScript API for Office provides two properties that support displaying or interpreting values consistent with the locale of the host application and data:
+The Office JavaScript API provides two properties that support displaying or interpreting values consistent with the locale of the host application and data:
 
 - [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the host application. The following example verifies if the host application uses the en-US or fr-FR locale, and displays a locale-specific greeting.
 
@@ -203,7 +203,7 @@ The text that you want to localize for another language appears in two areas:
 
 To localize the add-in display name and description:
 
-1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose  **WorldReadyAddIn.xml**.
+1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose **WorldReadyAddIn.xml**.
 
 2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code:
 
@@ -330,7 +330,7 @@ Now you can use the **UIStrings** object to set the strings for the UI of your a
 
 If you want to change the localization for your add-in based on what language is used for display in menus and commands in the host application, you use the **Office.context.displayLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for display in menus and commands, the **Office.context.displayLanguage** property will return the language code es-ES.
 
-If you want to change the localization for your add-in based on what language is being used for editing document content, you use the  **Office.context.contentLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for editing document content, the **Office.context.contentLanguage** property will return the language code es-ES.
+If you want to change the localization for your add-in based on what language is being used for editing document content, you use the **Office.context.contentLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for editing document content, the **Office.context.contentLanguage** property will return the language code es-ES.
 
 After you know the language the host application is using, you can use **UIStrings** to get the set of localized strings that matches the host application language.
 
@@ -386,7 +386,7 @@ To change the language used for display or editing in your add-in:
 
     ![Word Options dialog](../images/office15-app-how-to-localize-fig04.png)
 
-2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under  **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
+2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
 
 3. Choose **OK** to confirm your selection, and then close Word.
 

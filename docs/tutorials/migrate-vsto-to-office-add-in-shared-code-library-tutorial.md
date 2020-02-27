@@ -140,7 +140,7 @@ VSTO Add-ins are created in Visual Studio as .NET projects, so we'll reuse .NET 
     > [!NOTE]
     > Don't use the .NET Core class library because it will not work with your VSTO project.
 4. In the **Configure your new project** dialog, set the following fields.
-    - Set the  **Project name** to **CellAnalyzerSharedLibrary**.
+    - Set the **Project name** to **CellAnalyzerSharedLibrary**.
     - Leave the **Location** at it's default value.
     - Set the **Framework** to **4.7.2**.
 5. Choose **Create**.
@@ -328,7 +328,7 @@ The Office.js library requires CORS on outgoing calls, such as the one made from
     ```
     
     > [!NOTE]
-    > Leave the trailing `/` from the end of the URL when you use it in the **builder.WithOrigins** method. For example, it should appear similar to `https://localhost:44000`. Otherwise you will get a CORS error at runtime.
+    > Leave the trailing `/` from the end of the URL when you use it in the `builder.WithOrigins` method. For example, it should appear similar to `https://localhost:44000`. Otherwise you will get a CORS error at runtime.
     
 6. Add the following field to the `Startup` class:
     

@@ -22,11 +22,11 @@ The following video walks you through the process of sideloading your add-in in 
 
 1. Open [Microsoft Office on the web](https://office.live.com/).
 
-2. In  **Get started with the online apps now**, choose  **Excel**,  **Word**, or  **PowerPoint**; and then open a new document.
+2. In **Get started with the online apps now**, choose **Excel**, **Word**, or **PowerPoint**; and then open a new document.
 
-3. Open the  **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
+3. Open the **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
 
-4. On the  **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then  **Upload My Add-in**.
+4. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
 
     ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
 
@@ -49,7 +49,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 1. Sign in to your Office 365 account.
 
-2. Open the App Launcher on the left end of the toolbar and select  **Excel**,  **Word**, or  **PowerPoint**, and then create a new document.
+2. Open the App Launcher on the left end of the toolbar and select **Excel**, **Word**, or **PowerPoint**, and then create a new document.
 
 3. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office on the web**.
 

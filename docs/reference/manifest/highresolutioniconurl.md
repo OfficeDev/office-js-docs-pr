@@ -29,6 +29,6 @@ Specifies the URL of the image that is used to represent your Office Add-in in t
 
 ## Remarks
 
-For a mail add-in, the icon is displayed in the  **File** > **Manage add-ins** UI . For a content or task pane add-in, the icon is displayed in the **Insert** > **Add-ins** UI.
+For a mail add-in, the icon is displayed in the **File** > **Manage add-ins** UI . For a content or task pane add-in, the icon is displayed in the **Insert** > **Add-ins** UI.
 
 The image must be in one of the following file formats: GIF, JPG, PNG, EXIF, BMP, or TIFF. For content and task pane apps, the recommended image resolution is 64 x 64 pixels. For mail apps, the image must be 128 x 128 pixels. For more information, see the section  _Create a consistent visual identity for your app_ in [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).
