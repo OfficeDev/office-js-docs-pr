@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: 'Advanced range object functions and scenarios, such as special cells, remove duplicates, and working with dates.'
-ms.date: 02/11/2020
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 

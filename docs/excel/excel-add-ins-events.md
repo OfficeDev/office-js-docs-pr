@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: 'A list of events for Excel JavaScript objects. This includes information on using event handlers and the associated patterns.'
-ms.date: 02/11/2020
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Work with comments using the Excel JavaScript API
 description: 'Information on using the APIs to add, remove, and edit comments and comment threads.'
-ms.date: 02/11/2020
+ms.date: 02/27/2020
 localization_priority: Normal
 ---
 
