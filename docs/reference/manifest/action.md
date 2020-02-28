@@ -126,10 +126,11 @@ The following example shows an action that uses the **Title** element. Note that
 
 Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support task pane pinning. The user will be able to "pin" the task pane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable task pane in Outlook](../../outlook/pinnable-taskpane.md).
 
-> [!NOTE]
-> SupportsPinning is currently only supported by Outlook 2016 or later on Windows (build 7628.1000 or later) and Outlook 2016 or later on Mac (build 16.13.503 or later).
->
-> Support for this feature was introduced in requirement set 1.5. See [clients and platforms](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> [!IMPORTANT]
+> Although the `SupportsPinning` element was introduced in [requirement set 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only supported for Office 365 subscribers using the following.
+> - Outlook 2016 or later on Windows (build 7628.1000 or later)
+> - Outlook 2016 or later on Mac (build 16.13.503 or later)
+> - Modern Outlook on the web
 
 ```xml
 <Action xsi:type="ShowTaskpane">
