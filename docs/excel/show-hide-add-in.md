@@ -9,11 +9,11 @@ localization_priority: Normal
 
 An Office Add-in can include any of the following parts:
 
-- a task pane
-- a UI-less function file
-- an Excel custom function
+- A task pane
+- A UI-less function file
+- An Excel custom function
 
-Until now, if an add-in had more than one of these parts, then each part ran in its own separate JavaScript runtime, with its own global object and global variables.
+By default, each part runs in its own separate JavaScript runtime, with its own global object and global variables. 
 
 It's possible for add-ins with two or more parts to share a common JavaScript runtime. This shared runtime feature enables new preview APIs that hide and reopen the task pane while the add-in runs.
 
@@ -57,21 +57,77 @@ Consider the following scenario: A task pane is designed with tabs. The **Home**
 
 In addition, any event listeners that are registered in the task pane continue to run even when the task pane is hidden.
 
-Consider the following scenario: The task pane has a registered handler for the Excel `Worksheet.onActivated` and `Excel.Worksheet.onDeactivated` events for a sheet named **Sheet1**. The activated handler causes a green dot to appear in the task pane. The deactivated handler turns the dot red (which is its default state). Suppose then that code calls `hide()` when **Sheet1** is not activated and the dot is red. While the task pane is hidden, **Sheet1** is activated. Later code calls `showAsTaskpane()` in response to some event. When the task pane opens, the dot is green because the event listeners and handlers ran even though the task pane was hidden.
+Consider the following scenario: The task pane has a registered handler for the Excel `Worksheet.onActivated` and `Worksheet.onDeactivated` events for a sheet named **Sheet1**. The activated handler causes a green dot to appear in the task pane. The deactivated handler turns the dot red (which is its default state). Suppose then that code calls `hide()` when **Sheet1** is not activated and the dot is red. While the task pane is hidden, **Sheet1** is activated. Later code calls `showAsTaskpane()` in response to some event. When the task pane opens, the dot is green because the event listeners and handlers ran even though the task pane was hidden.
 
 ### Handle visibility changed event
 
-Changing the visibility of the task pane is an event that your code can handle. To register a handler for the event, you do not use an "add handler" method as you would in most Office JavaScript contexts. Instead, there is a special function to which you pass your handler: `Office.addin.onVisibilityModeChanged`. The function returns another function that deregisters the handler. The following is an example. Note that the `visibilityMode` property of the `args` object that Office passes to the handler can have the values "Hidden" or "Taskpane".
+When your code changes the visibility of the task pane with `showAsTaskpane()` or `hide()`, Office triggers the VisibilityModeChanged event. It can be useful to handle this event. For example, suppose the task pane displays a list of all the sheets in a workbook. If a new worksheet is added while the task pane is hidden, making the task pane visible would not, in itself, add the new worksheet name to the list. But your code can respond to the VisibilityModeChanged event to reload the [Worksheet.name](/javascript/api/excel/excel.worksheet#name) property of all the worksheets in the [Workbook.worksheets](/javascript/api/excel/excel.workbook#worksheets) collection as shown in the example code below.
+
+To register a handler for the event, you do not use an "add handler" method as you would in most Office JavaScript contexts. Instead, there is a special function to which you pass your handler: [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#onvisibilitymodechanged-listener-). The following is an example. Note that the `args.visibilityMode` property is type [VisibilityMode](/javascript/api/office/office.visibilitymode).
+
+```javascript
+Office.addin.onVisibilityModeChanged(function(args) {
+    if (args.visibilityMode = "Taskpane"); {
+        // Code that runs whenever the task pane is made visible.
+        // For example, an Excel.run() that loads the names of
+        // all worksheets and passes them to the task pane UI.
+    }
+});
+```
+
+The function returns another function that *deregisters* the handler. Here is a simple, but not robust, example:
+
+```javascript
+var removeVisibilityModeHandler =
+    Office.addin.onVisibilityModeChanged(function(args) {
+        if (args.visibilityMode = "Taskpane"); {
+            // Code that runs whenever the task pane is made visible.
+        }
+    });
+
+
+// In some later code path, deregister with:
+removeVisibilityModeHandler();
+```
+
+The `onVisibilityModeChanged` method is asynchronous which means that if your code calls the *deregister* handler that `onVisibilityModeChanged` returns, you should ensure that `onVisibilityModeChanged` has completed before calling the deregister handler. One way to do that is to use the `await` keyword on the method call as in the following example.
 
 ```javascript
 var removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
-        console.log('Visibility is changed to ' + args.visibilityMode);
-});
+        if (args.visibilityMode = "Taskpane"); {
+            // Code that runs whenever the task pane is made visible.
+        }
+    });
 ```
+
+If you want to use only pre-ES2015 JavaScript, your code can use the `then` method to wait until the returned Promise object has resolved and assign the returned function to a global variable as in the following example.
+
+```javascript
+var removeVisibilityModeHandler;
+
+Office.addin.onVisibilityModeChanged(function(args) {
+        if (args.visibilityMode = "Taskpane"); {
+            // Code that runs whenever the task pane is made visible.
+        }
+}).then(function(removeHandler) {
+        removeVisibilityModeHandler = removeHandler;
+    });
+
+// In some later code path, deregister with:
+removeVisibilityModeHandler();
+```
+
+The deregister function is itself asynchronous. So, if you have code that should not run until after the deregistration is complete, then the deregister function should also be awaited with either the `await` keyword or with a `then` method as in the following examples.
 
 To deregister the handler:
 
 ```javascript
 await removeVisibilityModeHandler();
+// subsequent code here
+
+// or use pre-ES2015 syntax:
+removeVisibilityModeHandler().then(function () {
+        // subsequent code here
+    })
 ```
