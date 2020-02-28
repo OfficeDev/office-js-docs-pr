@@ -1,7 +1,7 @@
 ---
 title: Action element in the manifest file
 description: ''
-ms.date: 02/27/2020
+ms.date: 02/28/2020
 localization_priority: Normal
 ---
 
