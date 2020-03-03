@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: ''
-ms.date: 02/28/2020
+ms.date: 03/03/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -109,6 +109,23 @@ Add-ins are supported in Outlook on the following platforms.
 >
 > ![partial screenshot of the classic Outlook toolbar](../../images/outlook-on-the-web-classic-toolbar.png)
 
+### Outlook client minimum build by requirement set (Office 365 subscription only)
+
+The following table notes the minimum client build needed for each requirement set.
+
+| Requirement set | Windows | Mac | iOS | Android |
+|:---:|:---:|:---:|:---:|:---:|
+|1.8|______________|______________|not applicable|not applicable|
+|1.7|xxx15.20.1063.0xxx<br>correct: ______________|xxx15.20.1063.0xxx<br>correct: ______________|not applicable|not applicable|
+|1.6|xxx15.20.0441.0xxx<br>correct: ______________|xxx15.20.0441.0xxx<br>correct: ______________|not applicable|not applicable|
+|1.5|15.1.990.0|15.1.990.0|15.1.990.0|16.0.8414.0|
+|1.4|15.1.448.0|15.1.448.0|15.1.448.0|15.1.448.0|
+|1.3|15.1.225.0|15.1.225.0|15.1.225.0|15.1.225.0|
+|1.2|15.1.135.0|15.1.135.0|15.1.135.0|15.1.135.0|
+|1.1|15.0.847.0|15.0.847.0|15.0.847.0|15.0.847.0|
+
+TODO: Is there a way for us to get the minimum ProPlus version and build number? [ProPlus update history](https://docs.microsoft.com/en-us/officeupdates/update-history-office365-proplus-by-date), [Excel requirement sets](https://docs.microsoft.com/en-us/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
+
 ## Using preview APIs
 
 New Outlook JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired. To provide feedback about a preview API, please use the feedback mechanism at the end of the web page where the API is documented.
@@ -117,3 +134,7 @@ New Outlook JavaScript APIs are first introduced in "preview" and later become p
 > Preview APIs are subject to change and are not intended for use in a production environment.
 
 For more details about the preview APIs, see [Outlook API Preview requirement set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md).
+
+## See also
+
+- [Update history for Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
