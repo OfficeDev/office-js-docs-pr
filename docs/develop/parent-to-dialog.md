@@ -87,7 +87,7 @@ Office.onReady()
     });
 
 function onRegisterMessageComplete(asyncResult) {
-    if (asyncResult.status != Office.AsyncResultStatus.Succeeded) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
         reportError(asyncResult.error.message);
     }
 }
