@@ -55,7 +55,7 @@ function sheetPropertiesChanged() {
 ## Handle DialogParentMessageReceived in the dialog box
 
 In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event. This would typically be done in the [Office.onReady or Office.initialize
-methods](understanding-the-javascript-api-for-office.md#initializing-your-add-in). The following is an example:
+methods](initialize-add-in.md). The following is an example:
 
 ```javascript
 Office.onReady()
