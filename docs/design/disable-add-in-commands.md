@@ -105,7 +105,7 @@ function enableButton() {
 >
 > ```javascript
 > function enableButton() {
->    Office.Ribbon.requestUpdate({
+>    Office.ribbon.requestUpdate({
 >        tabs: [
 >            {
 >                id: "OfficeAppTab1", 
