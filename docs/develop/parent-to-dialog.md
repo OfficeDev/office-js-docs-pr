@@ -1,13 +1,13 @@
 ---
 title: Passing data and messages to a dialog box from its host page
-description: 'Learn how to pass data to a dialog from the host page'
+description: 'Learn how to pass data to a dialog from the host page by using the messageChild and DialogParentMessageReceived APIs'
 ms.date: 03/11/2020
 localization_priority: Normal
 ---
 
-# Passing data and messages to a dialog box from its host page
+# Passing data and messages to a dialog box from its host page (preview)
 
-Microsoft is now making available for preview new APIs for messaging from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to the dialog box.
+Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using the `messageChild()` method of the [Dialog](/javascript/api/office/office.dialog) object.
 
 > [!Important]
 >
@@ -39,7 +39,7 @@ function processMessage(arg) {
 
 This `Dialog` object has a `messageChild` method that sends any string, or stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
 
-In the following example, `sheetPropertiesChanged` sends newly changed Excel worksheet properties to the dialog box.
+Consider a scenario in which the UI of the dialog should correlate with the currently active worksheet and that worksheet's position relative to the other worksheets. In the following example, `sheetPropertiesChanged` sends Excel worksheet properties to the dialog box. In this case the current worksheet is named "My Sheet" and it is the 2nd sheet in the workbook. The data is encapsulated in an object which is stringified so that it can be passed to `messageChild`.
 
 ```javascript
 function sheetPropertiesChanged() {
