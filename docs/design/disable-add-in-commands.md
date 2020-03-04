@@ -1,6 +1,6 @@
 ---
 title: Enable and Disable Add-in Commands
-description: 'Learn how to change the enabled/disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
+description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
 ms.date: 03/02/2020
 localization_priority: Priority
 ---
@@ -71,35 +71,63 @@ By default, any Add-in Command is enabled when the Office application launches. 
 
 The essential steps to changing the enabled status of an Add-in Command are:
 
-1. Create a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
-2. Pass the **RibbonUpdaterData** object to the [Office.Ribbon.requestUpdate()](/javascript/api/office/office.ribbon#requestupdate-input-) method.
+1. Create a [RibbonUpdaterData](/javascript/api/office-runtime/officeruntime.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
+2. Pass the **RibbonUpdaterData** object to the [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office-runtime/officeruntime.ribbon#requestupdate-input-) method.
 
 The following is a simple example. Note that "MyButton" and "OfficeAddinTab1" are copied from the manifest.
 
 ```javascript
-function enableButton() {
-    Office.ribbon.requestUpdate({
-        tabs: [
-            {
-                id: "OfficeAppTab1", 
-                controls: [
-                {
-                    id: "MyButton", 
-                    enabled: true
-                }
-            ]}
-        ]});
+function enableButton() {
+    OfficeRuntime.ui.getRibbon()
+        .then(function (ribbon) {
+            ribbon.requestUpdate({
+                tabs: [
+                    {
+                        id: "OfficeAppTab1",
+                        controls: [
+                        {
+                            id: "MyButton",
+                            enabled: true
+                        }
+                    ]}
+                ]});
+        });
 }
 ```
+
+> [!NOTE]
+> We tentatively plan to simplify the APIs in April, 2020, in two ways:
+>
+> - The APIs will move from the `OfficeRuntime` namespace to the `Office` namespace.
+> - You will not need to call a `getRibbon()` method. The `Ribbon` object will be a singleton property of the `Office` object.
+>
+> For example, the preceding code would be rewritten as follows:
+>
+> ```javascript
+> function enableButton() {
+>    Office.Ribbon.requestUpdate({
+>        tabs: [
+>            {
+>                id: "OfficeAppTab1", 
+>                controls: [
+>                {
+>                    id: "MyButton", 
+>                    enabled: true
+>                }
+>            ]}
+>        ]});
+> }
+> ```
 
 We also provide several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the equivalent example in TypeScript and it makes use of these types.
 
 ```typescript
-const enableButton = async () => {
-    const button: Control = {id: "MyButton", enabled: true};
-    const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
-    const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+const enableButton = async () => {
+    const button: Control = {id: "MyButton", enabled: true};
+    const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
+    const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
+    const ribbon: Ribbon = await OfficeRuntime.ui.getRibbon();
+    await ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -129,11 +157,14 @@ Office.onReady(async () => {
 Third, define the `enableChartFormat` handler. The following is a simple example, but see **Best practice: Test for control status errors** below for a more robust way of changing a control's status.
 
 ```javascript
-function enableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: true};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
-    var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+function enableChartFormat() {
+    OfficeRuntime.ui.getRibbon()
+        .then(function (ribbon) {
+            var button = {id: "ChartFormatButton", enabled: true};
+            var parentTab = {id: "CustomChartTab", controls: [button]};
+            var ribbonUpdater = {tabs: [parentTab]};
+            await ribbon.requestUpdate(ribbonUpdater);
+        });
 }
 ```
 
@@ -149,13 +180,16 @@ In some circumstances, the ribbon does not repaint after `requestUpdate` is call
 The following example shows a function that disables a button and records the button's status. Note that `chartFormatButtonEnabled` is a global boolean variable that is initialized to the same value as the [Enabled](/office/dev/add-ins/reference/manifest/enabled) element for the button in the manifest.
 
 ```javascript
-function disableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: false};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
-    var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+function disableChartFormat() {
+    OfficeRuntime.ui.getRibbon()
+        .then(function (ribbon) {
+            var button = {id: "ChartFormatButton", enabled: false};
+            var parentTab = {id: "CustomChartTab", controls: [button]};
+            var ribbonUpdater = {tabs: [parentTab]};
+            await ribbon.requestUpdate(ribbonUpdater);
 
-    chartFormatButtonEnabled = false;
+            chartFormatButtonEnabled = false;
+        });
 }
 ```
 
@@ -180,20 +214,21 @@ function chartFormatButtonHandler() {
 In some scenarios, Office is unable to update the ribbon and will return an error. For example, if the add-in is upgraded and the upgraded add-in has a different set of custom add-in commands, then the Office application must be closed and reopened. Until it is, the `requestUpdate` method will return the error `HostRestartNeeded`. The following is an example of how to handle this error. In this case, the `reportError` method displays the error to the user.
 
 ```javascript
-function disableChartFormat() {
-    try {
-        var button = {id: "ChartFormatButton", enabled: false};
-        var parentTab = {id: "CustomChartTab", controls: [button]};
-        var ribbonUpdater = {tabs: [parentTab]};
-        await Office.ribbon.requestUpdate(ribbonUpdater);
+function disableChartFormat() {
+    OfficeRuntime.ui.getRibbon()
+        .then(function (ribbon) {
+            var button = {id: "ChartFormatButton", enabled: false};
+            var parentTab = {id: "CustomChartTab", controls: [button]};
+            var ribbonUpdater = {tabs: [parentTab]};
+            await ribbon.requestUpdate(ribbonUpdater);
 
-        chartFormatButtonEnabled = false;
-    }
-    catch(error) {
-        if (error.code == "HostRestartNeeded"){
-            reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
-        }
-    }
+            chartFormatButtonEnabled = false;
+        })
+        .catch(function (error){
+            if (error.code == "HostRestartNeeded"){
+                reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
+            }
+        });
 }
 ```
 
