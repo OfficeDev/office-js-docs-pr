@@ -7,18 +7,18 @@ localization_priority: Normal
 
 # Passing data and messages to a dialog box from its host page
 
-Microsoft is now making available for preview new APIs for messaging from the host page (defined [here](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)) to the dialog box.
+Microsoft is now making available for preview new APIs for messaging from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to the dialog box.
 
 > [!Important]
 >
-> - The APIs are in preview. They are available to developers for experimentation; but they should not be used in a production add-in. Until this API is released, use the techniques described in [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) in production add-ins.
+> - The APIs described in this article are in preview. They are available to developers for experimentation; but should not be used in a production add-in. Until this API is released, use the techniques described in [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) for production add-ins.
 > - The APIs described in this article require Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features is turned off for that build.
 > - The APIs are only supported in Excel during the preview.
 
-## Use messageChild() from the host page
+## Use `messageChild()` from the host page
 
-When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned and should be assigned to a variable which typically has greater scope than the [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-)
-method because the object will be referenced in other methods. The following is an example:
+When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned. It should be assigned to a variable, which typically has greater scope than the [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-)
+method because the object will be referenced by other methods. The following is an example:
 
 ```javascript
 var dialog;
@@ -37,7 +37,7 @@ function processMessage(arg) {
 }
 ```
 
-This `Dialog` object has a `messageChild` method that will send any string, or stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event. (See next section.)
+This `Dialog` object has a `messageChild` method that sends any string, or stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
 
 In the following example, `sheetPropertiesChanged` sends newly changed Excel worksheet properties to the dialog box.
 
@@ -54,7 +54,7 @@ function sheetPropertiesChanged() {
 
 ## Handle DialogParentMessageReceived in the dialog box
 
-In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event. This would typically be done in the [Office.onReady or Office.initialize
+In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event. This is typically done in the [Office.onReady or Office.initialize
 methods](initialize-add-in.md). The following is an example:
 
 ```javascript
@@ -66,7 +66,7 @@ Office.onReady()
     });
 ```
 
-Then, of course, define the `onMessageFromParent` handler. The following code continues the example from the preceding section. Note that Office passes an argument to the handler and that the `message` property of argument object contains the string from the host page. In this example, the message is reconverted to an object and jQuery is used to set the top heading of the dialog to match the new worksheet name.
+Then, define the `onMessageFromParent` handler. The following code continues the example from the preceding section. Note that Office passes an argument to the handler and that the `message` property of argument object contains the string from the host page. In this example, the message is reconverted to an object and jQuery is used to set the top heading of the dialog to match the new worksheet name.
 
 ```javascript
 function onMessageFromParent(event) {
