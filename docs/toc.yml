@@ -158,7 +158,7 @@
         - name: Best practices and rules for the Office dialog API
           href: develop/dialog-best-practices.md
         - name: Send data from host page to dialog box
-          href: parent-to-dialog.md          
+          href: develop/parent-to-dialog.md          
         - name: Handling errors and events in the Office dialog box
           href: develop/dialog-handle-errors-events.md
         - name: Use the Office dialog box to play a video
