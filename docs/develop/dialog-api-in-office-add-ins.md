@@ -206,6 +206,9 @@ function processMessage(arg) {
 
 ## Pass information to the dialog box
 
+> [!NOTE]
+> There is now in preview a `messageChild` API that the parent page can use to send messages to the dialog just as the `messageParent` API described above sends messages from the dialog. For more about it, see [Passing data and messages to a dialog box from its host page](parent-to-dialog.md). We encourage you to try it out, but for production add-ins, we recommend that you use the techniques described in this section.
+
 Sometimes the host page needs to pass information to the dialog box. You can do this in two primary ways:
 
 - Add query parameters to the URL that is passed to `displayDialogAsync`.
