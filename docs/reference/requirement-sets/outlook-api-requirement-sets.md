@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: ''
-ms.date: 02/11/2020
+ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -20,7 +20,7 @@ For example, the following manifest snippet indicates a minimum requirement set 
 </Requirements>
 ```
 
-All Outlook APIs belong to the `Mailbox` [requirement set](../../develop/specify-office-hosts-and-api-requirements.md). The `Mailbox` requirement set has versions, and each new set of APIs that we release belongs to a higher version of the set. Not all Outlook clients support the newest set of APIs, but if an Outlook client declares support for a requirement set, it supports all of the APIs in that requirement set.
+All Outlook APIs belong to the `Mailbox` [requirement set](../../develop/specify-office-hosts-and-api-requirements.md). The `Mailbox` requirement set has versions, and each new set of APIs that we release belongs to a higher version of the set. Not all Outlook clients support the newest set of APIs, but if an Outlook client declares support for a requirement set, generally it supports all of the APIs in that requirement set (check the documentation on a specific API or feature for any exceptions).
 
 Setting a minimum requirement set version in the manifest controls which Outlook client the add-in will appear in. If a client does not support the minimum requirement set, it does not load the add-in. For example, if requirement set version 1.3 is specified, this means the add-in will not show up in any Outlook client that doesn't support at least 1.3.
 
@@ -96,7 +96,7 @@ Add-ins are supported in Outlook on the following platforms.
 || classic | Exchange on-premises | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
 > [!NOTE]
-> Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). Support for 1.4 in Outlook 2013 was added as part of the [September 13, 2016, update for Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). Support for 1.4 in Outlook 2016 (MSI) was added as part of the [July 3, 2018, update for Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
+> Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). Support for 1.4 in Outlook 2013 was added as part of the [September 13, 2016, update for Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). Support for 1.4 in Outlook 2016 (one-time purchase) was added as part of the [July 3, 2018, update for Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
 
 > [!TIP]
 > You can distinguish between classic and modern Outlook in a web browser by checking your mailbox toolbar.

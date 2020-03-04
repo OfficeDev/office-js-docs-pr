@@ -214,9 +214,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                   <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
                   <!--Icons. Required sizes: 16, 32, 80; optional: 20, 24, 40, 48, 64. You should provide as many sizes as possible for a great user experience. -->
                   <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
-                  <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                  <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                  <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                  <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                  <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                  <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                 </Icon>
 
                 <!--Control. It can be of type "Button" or "Menu" -->
@@ -230,9 +230,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                     <Description resid="Contoso.FunctionButton.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.FunctionButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.FunctionButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.FunctionButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.FunctionButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.FunctionButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.FunctionButton.Icon80" />
                   </Icon>
                   <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane-->
                   <!--Look at the FunctionFile.html page for reference on how to implement the function -->
@@ -249,9 +249,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                     <Description resid="Contoso.TaskpaneButton.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button2Id1</TaskpaneId>
@@ -267,9 +267,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                     <Description resid="Contoso.Dropdown.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                   </Icon>
                   <Items>
                     <Item id="Contoso.Menu.Item1">
@@ -279,9 +279,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                         <Description resid="Contoso.Item1.Tooltip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
                         <TaskpaneId>MyTaskPaneID1</TaskpaneId>
@@ -296,9 +296,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                         <Description resid="Contoso.Item2.Tooltip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
                         <TaskpaneId>MyTaskPaneID2</TaskpaneId>
@@ -321,7 +321,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Contoso.TaskpaneButton.Icon" DefaultValue="https://i.imgur.com/FkSShX9.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon16" DefaultValue="https://myCDN/Images/Button16x16.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon32" DefaultValue="https://myCDN/Images/Button32x32.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon80" DefaultValue="https://myCDN/Images/Button80x80.png" />
         <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
       </bt:Images>
       <bt:Urls>
