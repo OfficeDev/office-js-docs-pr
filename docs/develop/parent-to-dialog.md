@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Passing data and messages to a dialog box from its host page (preview)
 
-Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using the `messageChild()` method of the [Dialog](/javascript/api/office/office.dialog) object.
+Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using the [messageChild](/javascript/api/office/office.dialog#messagechild-message-) method of the [Dialog](/javascript/api/office/office.dialog) object.
 
 > [!Important]
 >
@@ -39,7 +39,7 @@ function processMessage(arg) {
 }
 ```
 
-This `Dialog` object has a `messageChild` method that sends any string, or stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
+This `Dialog` object has a [messageChild](/javascript/api/office/office.dialog#messagechild-message-) method that sends any string, or stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
 
 Consider a scenario in which the UI of the dialog should correlate with the currently active worksheet and that worksheet's position relative to the other worksheets. In the following example, `sheetPropertiesChanged` sends Excel worksheet properties to the dialog box. In this case the current worksheet is named "My Sheet" and it is the 2nd sheet in the workbook. The data is encapsulated in an object which is stringified so that it can be passed to `messageChild`.
 
@@ -56,7 +56,7 @@ function sheetPropertiesChanged() {
 
 ## Handle DialogParentMessageReceived in the dialog box
 
-In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event. This is typically done in the [Office.onReady or Office.initialize
+In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) method. This is typically done in the [Office.onReady or Office.initialize
 methods](initialize-add-in.md). The following is an example:
 
 ```javascript
