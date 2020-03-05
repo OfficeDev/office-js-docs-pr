@@ -1,22 +1,24 @@
 ---
 title: ExtendedPermission element in the manifest file
 description: ''
-ms.date: 03/04/2020
+ms.date: 03/05/2020
 localization_priority: Normal
 ---
 
 # `ExtendedPermission` element
 
-Defines an extended permission the add-in needs to work. The `ExtendedPermission` element is a child element of [ExtendedPermissions](extendedpermissions.md).
+Defines an extended permission the add-in needs to access the associated API or feature. The `ExtendedPermission` element is a child element of [ExtendedPermissions](extendedpermissions.md).
 
 > [!IMPORTANT]
 > This element is only available in the [Outlook add-ins preview requirement set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) against Exchange Online. Add-ins that use this element cannot be published to AppSource or deployed via centralized deployment.
 
+## Available extended permissions
+
 The following are the available values.
 
-|Available value|Description|Add-in types|
+|Available value|Description|Hosts|
 |---|---|---|
-|`AppendOnSend`|Declares that the add-in is using the append on send feature.|`Mail`|
+|`AppendOnSend`|Declares that the add-in is using the [Office.Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API.|Outlook|
 
 ## `ExtendedPermission` example
 

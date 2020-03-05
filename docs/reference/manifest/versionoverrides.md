@@ -1,7 +1,7 @@
 ---
 title: VersionOverrides element in the manifest file
 description: ''
-ms.date: 03/04/2020
+ms.date: 03/05/2020
 localization_priority: Normal
 ---
 
@@ -40,7 +40,7 @@ The following lists the required value of the **xmlns** value depending on the *
 |  [EquivalentAddins](equivalentaddins.md)    |  No  | Specifies the native (COM/XLL) add-ins that are equivalent to the web add-in. The web add-in is not activated if an equivalent native add-in is installed.|
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing-multiple-versions) for details. |
 |  [WebApplicationInfo](webapplicationinfo.md)    |  No  | Specifies details about the add-in's registration with secure token issuers, such as Azure Active Directory V2.0. |
-|  [ExtendedPermissions](extendedpermissions.md) |  No  |  Specifies a collection of extended properties.<br><br>**Important**: Because the append on send feature is currently in preview, add-ins that use the `ExtendedPermission` element can't be published to AppSource or deployed via centralized deployment. |
+|  [ExtendedPermissions](extendedpermissions.md) |  No  |  Specifies a collection of extended permissions.<br><br>**Important**: Because the [Office.Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API is currently in preview, add-ins that use the `ExtendedPermissions` element can't be published to AppSource or deployed via centralized deployment. |
 
 ### VersionOverrides example
 

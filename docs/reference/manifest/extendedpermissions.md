@@ -1,13 +1,13 @@
 ---
 title: ExtendedPermissions element in the manifest file
 description: ''
-ms.date: 03/04/2020
+ms.date: 03/05/2020
 localization_priority: Normal
 ---
 
 # ExtendedPermissions element
 
-Defines the extended permissions the add-in needs to work. The `ExtendedPermissions` element is a child element of [VersionOverrides](versionoverrides.md).
+Defines the collection of extended permissions the add-in needs to access associated APIs or features. The `ExtendedPermissions` element is a child element of [VersionOverrides](versionoverrides.md).
 
 > [!IMPORTANT]
 > This element is only available in the [Outlook add-ins preview requirement set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) against Exchange Online. Add-ins that use this element cannot be published to AppSource or deployed via centralized deployment.
@@ -15,8 +15,8 @@ Defines the extended permissions the add-in needs to work. The `ExtendedPermissi
 ## Child elements
 
 |  Element |  Required  |  Description  |
-|:-----|:-----|:-----|
-|  [ExtendedPermission](extendedpermission.md)    |  Yes   | Defines the extended permission needed for the add-in to work. At least one entry should be included in the `ExtendedPermissions` collection. |
+|:-----|:-----:|:-----|
+|  [ExtendedPermission](extendedpermission.md)    |  No   | Defines an extended permission needed for the add-in to access the associated API or feature. |
 
 ## `ExtendedPermissions` example
 
