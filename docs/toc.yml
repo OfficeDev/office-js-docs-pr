@@ -349,6 +349,10 @@
         href: reference/manifest/equivalentaddin.md
       - name: EquivalentAddins
         href: reference/manifest/equivalentaddins.md
+      - name: ExtendedPermission
+        href: reference/manifest/extendedpermission.md
+      - name: ExtendedPermissions
+        href: reference/manifest/extendedpermissions.md
       - name: FileName
         href: reference/manifest/filename.md
       - name: Form
