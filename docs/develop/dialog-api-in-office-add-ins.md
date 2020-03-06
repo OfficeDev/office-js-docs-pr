@@ -242,8 +242,11 @@ For a sample that uses this technique, see [Insert Excel charts using Microsoft 
 
 Code in your dialog box can parse the URL and read the parameter value.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
+
+> [!NOTE]
+> There is now in preview a `messageChild` API that the parent page can use to send messages to the dialog just as the `messageParent` API described above sends messages from the dialog. For more about it, see [Passing data and messages to a dialog box from its host page](parent-to-dialog.md). We encourage you to try it out, but for production add-ins, we recommend that you use the techniques described in this section.
 
 ## Closing the dialog box
 
