@@ -61,11 +61,14 @@ The on-send feature currently has the following limitations.
 
 On-send functionality is only supported for user mailboxes in Outlook on the web, Windows, and Mac. The functionality is not currently supported for the following mailbox types and modes.
 
-- Shared mailboxes
+- Shared mailboxes\*
 - Group mailboxes
 - Offline mode
 
 Outlook won't allow sending if the on-send feature is enabled for these mailbox scenarios. However, if a user responds to an email in a group mailbox, the on-send add-in won't run and the message will be sent.
+
+> [!IMPORTANT]
+> \* On-send functionality should work on shared mailboxes or folders if the add-in also [implements support for delegate access scenarios](delegate-access.md).
 
 ## Multiple on-send add-ins
 
@@ -494,7 +497,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 
 The following are the parameters for the `addAsync` method:
 
-- `NoSend` &ndash; A string that is a developer-specified key to reference a notification message. You can use it to modify this message later. The key can’t be longer than 32 characters.
+- `NoSend` &ndash; A string that is a developer-specified key to reference a notification message. You can use it to modify this message later. The key can't be longer than 32 characters.
 - `type` &ndash; One of the properties of the  JSON object parameter. Represents the type of a message; the types correspond to the values of the [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) enumeration. Possible values are progress indicator, information message, or error message. In this example, `type` is an error message.  
 - `message` &ndash; One of the properties of the JSON object parameter. In this example, `message` is the text of the notification message.
 
