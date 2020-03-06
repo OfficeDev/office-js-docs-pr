@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins for Outlook Mobile
 description: Outlook mobile add-ins are supported on all Office 365 Commercial accounts, Outlook.com accounts, and support is coming soon to gmail accounts.
-ms.date: 10/31/2019
+ms.date: 02/28/2020
 localization_priority: Normal
 ---
 
@@ -20,6 +20,9 @@ Outlook mobile add-ins are supported on all Office 365 Commercial accounts, Outl
 **An example task pane in Outlook on Android**
 
 ![A screenshot of a task pane in Outlook on Android](../images/outlook-mobile-addin-taskpane-android.png)
+
+> [!IMPORTANT]
+> Add-ins don't work in the modern version of Outlook in a mobile browser. For more information, see [Outlook on your mobile browser is being upgraded](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
 
 ## What's different on mobile?
 
