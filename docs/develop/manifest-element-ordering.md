@@ -1,7 +1,7 @@
 ---
 title: How to find the proper order of manifest elements
 description: Learn how to find the correct order in which to place child elements in a parent element.
-ms.date: 08/22/2019
+ms.date: 01/10/2020
 localization_priority: Normal
 ---
 
@@ -153,7 +153,7 @@ The following sections show the manifest elements in the order in which they mus
     <Requirements>
         <Sets>
             <Set>
-      <Hosts>
+    <Hosts>
         <Host>
             <Runtimes>
                 <Runtime>
@@ -190,6 +190,7 @@ The following sections show the manifest elements in the order in which they mus
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
+                            <Enabled>
                             <Items>
                                 <Item>
                                 <Label>
@@ -218,6 +219,7 @@ The following sections show the manifest elements in the order in which they mus
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
+                            <Enabled>
                             <Items>
                                 <Item>
                                     <Label>
@@ -243,6 +245,7 @@ The following sections show the manifest elements in the order in which they mus
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
+                            <Enabled>
                             <Items>
                                 <Item>
                                     <Label>

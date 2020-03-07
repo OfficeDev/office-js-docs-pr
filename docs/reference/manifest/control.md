@@ -1,7 +1,7 @@
 ---
 title: Control element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/10/2020
 localization_priority: Normal
 ---
 
@@ -31,8 +31,11 @@ A button performs a single action when the user selects it. It can either execut
 |  [Supertip](supertip.md)  | Yes |  The supertip for the button.    |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  [Action](action.md)    | Yes |  Specifies the action to perform.  |
+|  [Enabled](enabled.md)    | No |  Specifies whether the control is enabled when the add-in launches.  |
 
 ### ExecuteFunction button example
+
+In the following example, the button is disabled when the add-in launches. It can be programmatically enabled. For more information, see [Enable and Disable Add-in Commands](/office/dev/add-ins/design/disable-add-in-commands).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -49,6 +52,7 @@ A button performs a single action when the user selects it. It can either execut
   <Action xsi:type="ExecuteFunction">
     <FunctionName>getSubject</FunctionName>
   </Action>
+  <Enabled>false</Enabled>
 </Control>
 ```
 
