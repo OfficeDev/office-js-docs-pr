@@ -36,7 +36,7 @@ The following table shows which browser is used for the various platforms and op
 
 ### Service Workers are not working
 
-Service Workers are not supported on [Microsoft Edge WebView](/microsoft-edge/hosting/webview.md) for Office add-ins. Please see [here](../overview/office-add-ins.md) for the latest supported features on the Edge Webview control. We are working hard to bring the new [Chromium based Edge WebView2](/microsoft-edge/hosting/webview2) to the Office add-ins platform, which we expect will support Service Workers.
+Service Workers are not supported on [Microsoft Edge WebView](/microsoft-edge/hosting/webview) for Office add-ins. Please see [here](../overview/office-add-ins) for the latest supported features on the Edge Webview control. We are working hard to bring the new [Chromium based Edge WebView2](/microsoft-edge/hosting/webview2) to the Office add-ins platform, which we expect will support Service Workers.
 
 ### Chromium-based Edge is installed on my development computer, but my add-in does not use it
 
