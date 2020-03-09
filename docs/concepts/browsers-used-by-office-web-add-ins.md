@@ -1,17 +1,17 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 12/13/2019
+ms.date: 03/09/2020
 localization_priority: Normal
 ---
 
 # Browsers used by Office Add-ins
 
-Office add-ins are web applications that are displayed using iFrames when running in Office on the web and using embedded browser controls in Office for desktop and mobile clients. Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user’s computer.
+Office add-ins are web applications that are displayed using iFrames when running in Office on the web and using embedded browser controls in Office for desktop and mobile clients. Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user's computer.
 
 Which browser is used depends on:
 
-- The computer’s operating system.
+- The computer's operating system.
 - Whether the add-in is running in Office on the web, Office 365, or non-subscription Office 2013 or later.
 
 The following table shows which browser is used for the various platforms and operating systems.
@@ -33,6 +33,10 @@ The following table shows which browser is used for the various platforms and op
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
 ## Troubleshooting Microsoft Edge Issues
+
+### Service Workers are not working
+
+Office Add-ins do not support Service Workers on [Microsoft Edge WebView](/microsoft-edge/hosting/webview). Please see the [Office Add-ins overview](../overview/office-add-ins.md) for the latest supported features on the Edge WebView control. We are working hard to bring the new [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2) to the Office Add-ins platform, which we expect will support Service Workers.
 
 ### Chromium-based Edge is installed on my development computer, but my add-in does not use it
 
