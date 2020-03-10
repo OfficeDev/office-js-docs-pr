@@ -14,7 +14,7 @@ A search function is exposed by every content control (this includes [Body](/jav
 
 The search options are a collection of boolean values defining how the search parameter should be treated.
 
-| Property	   | Description|
+| Property       | Description|
 |:---------------|:----|
 |ignorePunct|Gets or sets a value indicating whether to ignore all punctuation characters between words. Corresponds to the "Ignore punctuation characters" check box in the Find and Replace dialog box.|
 |ignoreSpace|Gets or sets a value indicating whether to ignore all whitespace between words. Corresponds to the "Ignore white-space characters" check box in the Find and Replace dialog box.|
@@ -199,4 +199,4 @@ Word.run(function (context) {
 });
 ```
 
-More information can be found in the [Word JavaScript Reference API](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).
+More information can be found in the [Word JavaScript Reference API](../reference/overview/word-add-ins-reference-overview.md).

@@ -1,14 +1,14 @@
 ---
 title: Shared runtime requirement sets
 description: 'Specifies the platforms and Office hosts that support the SharedRuntime APIs.'
-ms.date: 02/11/2020
+ms.date: 03/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
 
 # Shared runtime requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 Parts of an Office Add-in that run JavaScript code, such as task panes, function files launched from add-in commands, and Excel custom functions, can share a single JavaScript runtime. This enables all the parts to share a set of global variables, to share a set of loaded libraries, and to communicate with each other without having to pass messages through a persisted storage.
 
@@ -31,6 +31,6 @@ For information about Common API requirement sets, see [Office Common API requir
 
 ## See also
 
-- [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)
+- [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
+- [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office Add-ins XML manifest](../../develop/add-in-manifests.md)

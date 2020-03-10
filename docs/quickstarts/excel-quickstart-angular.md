@@ -72,4 +72,4 @@ Congratulations, you've successfully created an Excel task pane add-in using Ang
 * [Develop Office Add-ins](../develop/develop-overview.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)

@@ -157,6 +157,8 @@
           href: develop/dialog-api-in-office-add-ins.md
         - name: Best practices and rules for the Office dialog API
           href: develop/dialog-best-practices.md
+        - name: Send data from host page to dialog box
+          href: develop/parent-to-dialog.md          
         - name: Handling errors and events in the Office dialog box
           href: develop/dialog-handle-errors-events.md
         - name: Use the Office dialog box to play a video
@@ -212,7 +214,11 @@
       - name: Overview
         href: design/interface-elements.md
       - name: Add-in commands
-        href: design/add-in-commands.md
+        items: 
+        - name: Basic concepts for Add-in Commands
+          href: design/add-in-commands.md
+        - name: Enable and Disable Add-in Commands
+          href: design/disable-add-in-commands.md
       - name: Dialog boxes
         href: design/dialog-boxes.md
       - name: Content add-ins
@@ -317,6 +323,7 @@
         href: reference/requirement-sets/office-add-in-requirement-sets.md
       - name: Shared Runtime requirement sets
         href: reference/requirement-sets/shared-runtime-requirement-sets.md
+
     - name: Office Add-in manifest reference
       items:
       - name: AllowSnapshot
@@ -433,6 +440,8 @@
           href: reference/manifest/control.md
         - name: CustomTab
           href: reference/manifest/customtab.md
+        - name: Enabled
+          href: reference/manifest/enabled.md
         - name: EquivalentAddin
           href: reference/manifest/equivalentaddin.md
         - name: EquivalentAddins

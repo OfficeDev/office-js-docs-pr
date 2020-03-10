@@ -1,8 +1,8 @@
 ---
-title: Add-in commands for Excel, Word, and PowerPoint
-description: ''
-ms.date: 06/20/2019
-localization_priority: Normal
+title: Basic concepts for add-in commands
+description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Web Add-in.'
+ms.date: 02/11/2020
+localization_priority: Priority
 ---
 
 
@@ -30,20 +30,27 @@ The following command capabilities are currently supported.
 > [!NOTE]
 > Content add-ins do not currently support add-in commands.
 
-**Extension points**
+### Extension points
 
 - Ribbon tabs - Extend built-in tabs or create a new custom tab.
 - Context menus - Extend selected context menus.
 
-**Control types**
+### Control types
 
 - Simple buttons - trigger specific actions.
 - Menus - simple menu dropdown with buttons that trigger actions.
 
-**Actions**
+### Actions
 
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](/javascript/api/office/office.ui) API.  
+
+### Default Enabled or Disabled Status (preview)
+
+You can specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting. 
+
+> [!NOTE]
+> This feature is in preview and is not supported in all hosts or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
 
 ## Supported platforms
 
@@ -55,8 +62,6 @@ Add-in commands are currently supported on the following platforms.
 - Office on Mac (build 15.33+, connected to Office 365 subscription)
 - Office 2019 on Mac
 - Office on the web
-
-More platforms are coming soon.
 
 ## Debugging
 
