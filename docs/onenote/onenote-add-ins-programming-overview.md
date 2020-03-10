@@ -82,7 +82,7 @@ function getPagesInSection() {
 }
 ```
 
-You can find supported OneNote objects and operations in the [API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference).
+You can find supported OneNote objects and operations in the [API reference](../reference/overview/onenote-add-ins-javascript-reference.md).
 
 #### OneNote JavaScript API requirement sets
 
@@ -135,6 +135,6 @@ The following diagram represents what's currently available in the OneNote JavaS
 
 - [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
 - [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
-- [OneNote JavaScript API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

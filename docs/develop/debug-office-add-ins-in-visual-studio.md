@@ -108,7 +108,7 @@ When Visual Studio builds the project it performs the following tasks:
 
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the XML manifest file by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
+1. Modifies the [SourceLocation](../reference/manifest/sourcelocation.md) element of the XML manifest file by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
 
 2. Starts the web application project in IIS Express.
 

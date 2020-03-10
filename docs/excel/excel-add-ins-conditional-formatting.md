@@ -18,17 +18,17 @@ The Excel JavaScript Library provides APIs to apply conditional formatting to da
 
 The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) objects that apply to the range.  The `ConditionalFormat` object contains several properties that define the format to be applied based on the [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype). 
 
--	`cellValue`
--	`colorScale`
--	`custom`
--	`dataBar`
--	`iconSet`
--	`preset`
--	`textComparison`
--	`topBottom`
+-    `cellValue`
+-    `colorScale`
+-    `custom`
+-    `dataBar`
+-    `iconSet`
+-    `preset`
+-    `textComparison`
+-    `topBottom`
 
 > [!NOTE]
-> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [*OrNullObject methods](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods) section.
+> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [*OrNullObject methods](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods) section.
 
 Only one format type can be set for the ConditionalFormat object. This is determined by the `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value. `type` is set when adding a conditional format to a range. 
 
@@ -62,11 +62,11 @@ await context.sync();
 
 Color scale conditional formatting applies a color gradient across the data range. The `criteria` property on the `ColorScaleConditionalFormat` defines three [ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion): `minimum`, `maximum`, and, optionally, `midpoint`. Each of the criterion scale points have three properties:
 
--	`color` - The HTML color code for the endpoint.
--	`formula` - A number or formula representing the endpoint. This will be `null` if `type` is `lowestValue` or `highestValue`.
--	`type` - How the formula should be evaluated. `highestValue` and `lowestValue` refer to values in the range being formatted.
+-    `color` - The HTML color code for the endpoint.
+-    `formula` - A number or formula representing the endpoint. This will be `null` if `type` is `lowestValue` or `highestValue`.
+-    `type` - How the formula should be evaluated. `highestValue` and `lowestValue` refer to values in the range being formatted.
 
-The following example shows a range being colored blue to yellow to red. Note that `minimum` and `maximum` are the lowest and highest values respectively and use `null` formulas. `midpoint` is using the `percentage` type with a formula of `”=50”` so the yellowest cell is the mean value.
+The following example shows a range being colored blue to yellow to red. Note that `minimum` and `maximum` are the lowest and highest values respectively and use `null` formulas. `midpoint` is using the `percentage` type with a formula of `"=50"` so the yellowest cell is the mean value.
 
 ![A range with the low number in blue, average number in yellow, and high number is red, with gradients for between values.](../images/excel-conditional-format-color-scale.png)
 
@@ -104,9 +104,9 @@ await context.sync();
 
 Custom conditional formatting applies a user-defined format to the cells based on a formula of arbitrary complexity. The [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) object lets you define the formula in different notations:
 
--	`formula` - Standard notation.
--	`formulaLocal` - Localized based on the user’s language.
--	`formulaR1C1` - R1C1-style notation.
+-    `formula` - Standard notation.
+-    `formulaLocal` - Localized based on the user's language.
+-    `formulaR1C1` - R1C1-style notation.
 
 The following example colors the fonts green of cells with higher values than the cell to their left.
 
@@ -119,7 +119,7 @@ const conditionalFormat = range.conditionalFormats.add(
      Excel.ConditionalFormatType.custom
 );
 
-// if a cell has a higher value than the one to its left, set that cell’s font to green
+// if a cell has a higher value than the one to its left, set that cell's font to green
 conditionalFormat.custom.rule.formula = '=IF(B8>INDIRECT("RC[-1]",0),TRUE)';
 conditionalFormat.custom.format.font.color = "green";
 
@@ -128,7 +128,7 @@ await context.sync();
 ```
 ### [Data bar](/javascript/api/excel/excel.databarconditionalformat)
 
-Data bar conditional formatting adds data bars to the cells. By default, the minimum and maximum values in the Range form the bounds and proportional sizes of the data bars. The `DataBarConditionalFormat` object has several properties to control the bar’s appearance. 
+Data bar conditional formatting adds data bars to the cells. By default, the minimum and maximum values in the Range form the bounds and proportional sizes of the data bars. The `DataBarConditionalFormat` object has several properties to control the bar's appearance. 
 
 The following example formats the range with data bars filling left-to-right.
 
@@ -165,7 +165,7 @@ const iconSetCF = conditionalFormat.iconSet;
 iconSetCF.style = Excel.IconSet.threeTriangles;
 
 /*
-   With a "three*” icon set style, such as "threeTriangles", the third
+   With a "three*" icon set style, such as "threeTriangles", the third
     element in the criteria array (criteria[2]) defines the "top" icon;
     e.g., a green triangle. The second (criteria[1]) defines the "middle"
     icon, The first (criteria[0]) defines the "low" icon, but it can often 
@@ -193,7 +193,7 @@ await context.sync();
 
 Preset conditional formatting applies a user-defined format to the range based on a selected standard rule. These rules are defined by the [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) in the [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
 
-The following example colors the font white wherever a cell’s value is at least one standard deviation above the range’s average.
+The following example colors the font white wherever a cell's value is at least one standard deviation above the range's average.
 
 ![A range with white font cells where the values are at least one standard deviation above average.](../images/excel-conditional-format-preset.png)
 
@@ -204,7 +204,7 @@ const conditionalFormat = range.conditionalFormats.add(
      Excel.ConditionalFormatType.presetCriteria
 );
 
-// color every cell’s font white that is one standard deviation above average relative to the range
+// color every cell's font white that is one standard deviation above average relative to the range
 conditionalFormat.preset.format.font.color = "white";
 conditionalFormat.preset.rule = {
      criterion: Excel.ConditionalFormatPresetCriterion.oneStdDevAboveAverage
@@ -217,7 +217,7 @@ await context.sync();
 
 Text comparison conditional formatting uses string comparisons as the condition. The `rule` property is a [ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule) defining a string to compare with the cell and an operator to specify the type of comparison. 
 
-The following example formats the font color red when a cell’s text contains “Delayed”.
+The following example formats the font color red when a cell's text contains "Delayed".
 
 ![A range with cells containing "Delayed" in red.](../images/excel-conditional-format-text.png)
 
@@ -228,7 +228,7 @@ const conditionalFormat = range.conditionalFormats.add(
      Excel.ConditionalFormatType.containsText
 );
 
-// color the font of every cell containing “Delayed”
+// color the font of every cell containing "Delayed"
 conditionalFormat.textComparison.format.font.color = "red";
 conditionalFormat.textComparison.rule = {
      operator: Excel.ConditionalTextOperator.contains,
@@ -331,8 +331,8 @@ await context.sync();
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](/office/dev/add-ins/excel/excel-add-ins-core-concepts)
-- [Work with ranges using the Excel JavaScript API](/office/dev/add-ins/excel/excel-add-ins-ranges)
+- [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
+- [Work with ranges using the Excel JavaScript API](../excel/excel-add-ins-ranges.md)
 - [ConditionalFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.conditionalformat)
 - [Add, change, or clear conditional formats](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
 - [Use formulas with conditional formatting](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)

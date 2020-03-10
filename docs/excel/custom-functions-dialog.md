@@ -11,11 +11,11 @@ If your custom function needs to interact with the user, you can create a dialog
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> The `Office.Dialog` object is part of the custom functions runtime. Task panes don't use the `Dialog` object. To create a dialog box from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
+> The `Office.Dialog` object is part of the custom functions runtime. Task panes don't use the `Dialog` object. To create a dialog box from a task pane, see [Dialog API](../develop/dialog-api-in-office-add-ins.md).
 
 ## dialog box API example
 
-In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog box.
+In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API's `displayWebDialogOptions` function to display a dialog box.
 
 ```js
 /**

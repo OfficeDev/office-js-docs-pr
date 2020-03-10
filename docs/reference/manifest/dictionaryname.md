@@ -23,5 +23,4 @@ Specifies the name of this dictionary.
 
 ## See also
 
-- [Create a dictionary task pane add-in](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
-    
+- [Create a dictionary task pane add-in](../../word/dictionary-task-pane-add-ins.md)
