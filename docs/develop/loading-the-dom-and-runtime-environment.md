@@ -1,7 +1,7 @@
 ---
 title: Loading the DOM and runtime environment
 description: ''
-ms.date: 07/01/2019
+ms.date: 03/10/2020
 localization_priority: Normal
 ---
 
@@ -28,7 +28,7 @@ The following events occur when a content or task pane add-in starts:
 
 4. The browser control loads the DOM and HTML body, and calls the event handler for the `window.onload` event.
 
-5. The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#office-initialize-reason-) event of the [Office](/javascript/api/office) object, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](../develop/understanding-the-javascript-api-for-office.md#initializing-your-add-in).
+5. The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#office-initialize-reason-) event of the [Office](/javascript/api/office) object, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initialize your add-in](initialize-add-in.md).
 
 6. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
 
@@ -51,7 +51,7 @@ The following events occur when an Outlook add-in starts:
 
 5. The browser control loads the DOM and HTML body, and calls the event handler for the `onload` event.
 
-6. Outlook loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the event handler for the [initialize](/javascript/api/office#office-initialize-reason-) event of the [Office](/javascript/api/office) object of the add-in, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](../develop/understanding-the-javascript-api-for-office.md#initializing-your-add-in).
+6. Outlook loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the event handler for the [initialize](/javascript/api/office#office-initialize-reason-) event of the [Office](/javascript/api/office) object of the add-in, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initialize your add-in](initialize-add-in.md).
 
 7. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
 
@@ -89,7 +89,7 @@ Office.initialize = function () {
 
 This same technique can be used in the `onReady` or `initialize` handlers of any Office Add-in.
 
-The phone dialer sample Outlook add-in shows a slightly different approach using only JavaScript to check these same conditions. 
+The phone dialer sample Outlook add-in shows a slightly different approach using only JavaScript to check these same conditions.
 
 > [!IMPORTANT]
 > Even if your add-in has no initialization tasks to perform, you must include at least a call of `Office.onReady` or assign minimal `Office.initialize` event handler function as shown in the following examples.
