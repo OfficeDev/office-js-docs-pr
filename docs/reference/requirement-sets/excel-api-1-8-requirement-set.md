@@ -12,11 +12,11 @@ The Excel JavaScript API requirement set 1.8 features include APIs for PivotTabl
 
 ## PivotTable
 
-Wave 2 of the PivotTable APIs lets add-ins set the hierarchies of a PivotTable. You can now control the data and how it is aggregated. Our [PivotTable article](/office/dev/add-ins/excel/excel-add-ins-pivottables) has more on the new PivotTable functionality.
+Wave 2 of the PivotTable APIs lets add-ins set the hierarchies of a PivotTable. You can now control the data and how it is aggregated. Our [PivotTable article](../../excel/excel-add-ins-pivottables.md) has more on the new PivotTable functionality.
 
 ## Data Validation
 
-Data validation gives you control of what a user enters in a worksheet. You can limit cells to pre-defined answer sets or give pop-up warnings about undesirable input. Learn more about [adding data validation to ranges](/office/dev/add-ins/excel/excel-add-ins-data-validation) today.
+Data validation gives you control of what a user enters in a worksheet. You can limit cells to pre-defined answer sets or give pop-up warnings about undesirable input. Learn more about [adding data validation to ranges](../../excel/excel-add-ins-data-validation.md) today.
 
 ## Charts
 
@@ -24,7 +24,7 @@ Another round of Chart APIs brings even greater programmatic control over chart 
 
 ## Events
 
-More [events](/office/dev/add-ins/excel/excel-add-ins-events) have been added for charts. Have your add-in react to users interacting with the chart. You can also [toggle events](/office/dev/add-ins/excel/performance#enable-and-disable-events) firing across the entire workbook.
+More [events](../../excel/excel-add-ins-events.md) have been added for charts. Have your add-in react to users interacting with the chart. You can also [toggle events](../../excel/performance.md#enable-and-disable-events) firing across the entire workbook.
 
 ## API list
 

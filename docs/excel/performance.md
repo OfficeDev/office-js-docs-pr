@@ -67,10 +67,10 @@ object.load({ loadOption });
 
 _Where:_
 
-* `properties` is the list of properties to load, specified as comma-delimited strings or as an array of names. For more information, see the `load()` methods defined for objects in [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
+* `properties` is the list of properties to load, specified as comma-delimited strings or as an array of names. For more information, see the `load()` methods defined for objects in [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md).
 * `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](/javascript/api/office/officeextension.loadoption) for details.
 
-Please be aware that some of the “properties” under an object may have the same name as another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously. To avoid this, your code should only load the “leaf nodes” in an object tree. 
+Please be aware that some of the "properties" under an object may have the same name as another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously. To avoid this, your code should only load the "leaf nodes" in an object tree. 
 
 ## Suspend Excel processes temporarily
 
@@ -184,21 +184,21 @@ The following code sample fills a selected range with data, one cell at a time. 
 
 ```js
 Excel.run(async (context) => {
-	var largeRange = context.workbook.getSelectedRange();
-	largeRange.load(["rowCount", "columnCount"]);
-	await context.sync();
-	
-	for (var i = 0; i < largeRange.rowCount; i++) {
-		for (var j = 0; j < largeRange.columnCount; j++) {
-			var cell = largeRange.getCell(i, j);
-			cell.values = [[i *j]];
+    var largeRange = context.workbook.getSelectedRange();
+    largeRange.load(["rowCount", "columnCount"]);
+    await context.sync();
+    
+    for (var i = 0; i < largeRange.rowCount; i++) {
+        for (var j = 0; j < largeRange.columnCount; j++) {
+            var cell = largeRange.getCell(i, j);
+            cell.values = [[i *j]];
 
-			// call untrack() to release the range from memory
-			cell.untrack();
-		}
-	}
+            // call untrack() to release the range from memory
+            cell.untrack();
+        }
+    }
 
-	await context.sync();
+    await context.sync();
 });
 ```
 

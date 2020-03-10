@@ -9,13 +9,13 @@ localization_priority: Normal
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office JavaScript add-ins give access to the host’s underlying functionality. Most of this access goes through a few important objects. The [Context](#context-object) object gives access to the runtime environment after initialization. The [Document](#document-object) object gives the user control over an Excel, PowerPoint, or Word document. The [Mailbox](#mailbox-object) object gives an Outlook add-in access to messages and user profiles. Understanding the relationships between these high-level objects is the foundation of a JavaScript add-in.
+Office JavaScript add-ins give access to the host's underlying functionality. Most of this access goes through a few important objects. The [Context](#context-object) object gives access to the runtime environment after initialization. The [Document](#document-object) object gives the user control over an Excel, PowerPoint, or Word document. The [Mailbox](#mailbox-object) object gives an Outlook add-in access to messages and user profiles. Understanding the relationships between these high-level objects is the foundation of a JavaScript add-in.
 
 ## Context object
 
 **Applies to:** All add-in types
 
-When an add-in is [initialized](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in), it has many different objects that it can interact with in the runtime environment. The add-in's runtime context is reflected in the API by the [Context](/javascript/api/office/office.context) object. The **Context** is the main object that provides access to the most important objects of the API, such as the [Document](/javascript/api/office/office.document) and [Mailbox](/javascript/api/outlook/Office.mailbox) objects, which in turn provide access to document and mailbox content.
+When an add-in is [initialized](../develop/understanding-the-javascript-api-for-office.md#initializing-your-add-in), it has many different objects that it can interact with in the runtime environment. The add-in's runtime context is reflected in the API by the [Context](/javascript/api/office/office.context) object. The **Context** is the main object that provides access to the most important objects of the API, such as the [Document](/javascript/api/office/office.document) and [Mailbox](/javascript/api/outlook/Office.mailbox) objects, which in turn provide access to document and mailbox content.
 
 For example, in task pane or content add-ins, you can use the [document](/javascript/api/office/office.context#document) property of the **Context** object to access the properties and methods of the **Document** object to interact with the content of Word documents, Excel worksheets, or Project schedules. Similarly, in Outlook add-ins, you can use the [mailbox](/javascript/api/outlook/Office.mailbox) property of the **Context** object to access the properties and methods of the **Mailbox** object to interact with the message, meeting request, or appointment content.
 

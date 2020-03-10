@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: ''
-ms.date: 02/20/2020
+ms.date: 0/10/2020
 localization_priority: Normal
 ---
 
@@ -29,12 +29,12 @@ For examples of the error handling described in this section, see:
 
 ### 13000
 
-The [getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API is not supported by the add-in or the Office version.
+The [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API is not supported by the add-in or the Office version.
 
-- The version of Office does not support SSO. The required version is Office 365 (the subscription version of Office), in any monthly channel. 
-- The add-in manifest is missing the proper [WebApplicationInfo](/office/dev/add-ins/reference/manifest/webapplicationinfo) section.
+- The version of Office does not support SSO. The required version is Office 365 (the subscription version of Office), in any monthly channel.
+- The add-in manifest is missing the proper [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) section.
 
-Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
+Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### 13001
 
@@ -55,11 +55,11 @@ The user aborted sign in or consent; for example, by choosing **Cancel** on the 
 
 ### 13003
 
-User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. This may happen if Office runs with an on-premises domain account, for example. Your code should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. This may happen if Office runs with an on-premises domain account, for example. Your code should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### 13004
 
-Invalid Resource. (This error should only be seen in development.) The add-in manifest hasn’t been configured correctly. Update the manifest. For more information, see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md). The most common problem is that the **Resource** element (in the **WebApplicationInfo** element) has a domain that does not match the domain of the add-in. Although the protocol part of the Resource value should be "api" not "https"; all other parts of the domain name (including port, if any) should be the same as for the add-in.
+Invalid Resource. (This error should only be seen in development.) The add-in manifest hasn't been configured correctly. Update the manifest. For more information, see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md). The most common problem is that the **Resource** element (in the **WebApplicationInfo** element) has a domain that does not match the domain of the add-in. Although the protocol part of the Resource value should be "api" not "https"; all other parts of the domain name (including port, if any) should be the same as for the add-in.
 
 ### 13005
 
@@ -88,13 +88,13 @@ The user triggered an operation that calls `getAccessToken` before a previous ca
 
 ### 13010
 
-The user is running the add-in in Office on Microsoft Edge or Internet Explorer. The user’s Office 365 domain, and the `login.microsoftonline.com` domain, are in a different security zones in the browser settings. This error is only seen on **Office on the web**. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
+The user is running the add-in in Office on Microsoft Edge or Internet Explorer. The user's Office 365 domain, and the `login.microsoftonline.com` domain, are in a different security zones in the browser settings. This error is only seen on **Office on the web**. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
 
 ### 13012
 
 There are several possible causes:
 
-- The add-in is running on a platform that does not support the `getAccessToken` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+- The add-in is running on a platform that does not support the `getAccessToken` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](../reference/requirement-sets/identity-api-requirement-sets.md).
 - The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the AAD `profile` scope.
 
 Your code should fall back to an alternate system of user authentication.
@@ -109,7 +109,7 @@ The `getAccessToken` was called too many times in a short amount of time, so Off
 
 This error (which is not specific to `getAccessToken`) may indicate that the browser has cached an old copy of the office.js files. When you are developing, clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. On Windows, the minimum version is 16.0.12215.20006. On Mac, it is 16.32.19102902.
 
-In a production add-in, the add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+In a production add-in, the add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ## Errors on the server-side from Azure Active Directory
 
@@ -136,7 +136,7 @@ If the add-in needs Microsoft Graph scopes that can only be consented to by an a
 This kind of error should only be seen in development.
 
 - Your server-side code should send a `403 Forbidden` response to the client which should log the error to the console or record it in a log.
-- Be sure your add-in manifest [Scopes](/office/dev/add-ins/reference/manifest/scopes) section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
+- Be sure your add-in manifest [Scopes](../reference/manifest/scopes.md) section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 
 ### Invalid audience error in the access token (not the bootstrap token)
 

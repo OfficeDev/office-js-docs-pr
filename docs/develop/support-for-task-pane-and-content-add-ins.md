@@ -160,6 +160,6 @@ For more information, see [Requesting permissions for API use in add-ins](reques
 
 ## See also
 
-- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API](../reference/javascript-api-for-office.md)
 - [Schema reference for Office Add-ins manifests](../develop/add-in-manifests.md)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)

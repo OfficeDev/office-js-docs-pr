@@ -8,7 +8,7 @@ localization_priority: Priority
 
 # Fundamental programming concepts with the Excel JavaScript API
 
-This article describes how to use the [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) to build add-ins for Excel 2016 or later. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
+This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016 or later. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
 
 ## Asynchronous nature of Excel APIs
 
@@ -84,7 +84,7 @@ Excel.run(function (context) {
 
 In the previous example, `selectedRange` is set and its `address` property is loaded when `context.sync()` is called.
 
-Because `sync()` is an asynchronous operation that returns a promise, you should always `return` the promise (in JavaScript). Doing so ensures that the `sync()` operation completes before the script continues to run. For more information about optimizing performance with `sync()`, see [Excel JavaScript API performance optimization](/office/dev/add-ins/excel/performance).
+Because `sync()` is an asynchronous operation that returns a promise, you should always `return` the promise (in JavaScript). Doing so ensures that the `sync()` operation completes before the script continues to run. For more information about optimizing performance with `sync()`, see [Excel JavaScript API performance optimization](../excel/performance.md).
 
 ### load()
 
@@ -246,6 +246,6 @@ When an API error occurs, the API returns an `error` object that contains a code
 - [Build your first Excel add-in](../quickstarts/excel-quickstart-jquery.md)
 - [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
-- [Excel JavaScript API performance optimization](/office/dev/add-ins/excel/performance)
-- [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Excel JavaScript API performance optimization](../excel/performance.md)
+- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
 - [Common coding issues and unexpected platform behaviors](../develop/common-coding-issues.md).

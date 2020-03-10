@@ -1,7 +1,7 @@
 ---
 title: Office JavaScript API error codes
 description: ''
-ms.date: 01/30/2020
+ms.date: 03/10/2020
 localization_priority: Normal
 ---
 
@@ -134,4 +134,4 @@ The following table summarizes binding behavior in Word.
 
 ## See also
 
-- [Office Add-ins development lifecycle](/office/dev/add-ins/concepts/add-in-development-lifecycle)
+- [Office Add-ins development lifecycle](../overview/office-add-ins.md)
