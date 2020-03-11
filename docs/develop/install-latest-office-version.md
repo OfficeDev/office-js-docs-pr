@@ -40,10 +40,10 @@ When the installation process finishes, you will have the latest Office applicat
 
 For information about the minimum product builds for each platform for the API requirement sets, see the following:
 
-- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
-- [OneNote JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
-- [Outlook JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)
-- [PowerPoint JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets)
-- [Word JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
-- [Dialog API requirement sets](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
-- [Office Common API requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md)
+- [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md)
+- [Outlook JavaScript API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [PowerPoint JavaScript API requirement sets](../reference/requirement-sets/powerpoint-api-requirement-sets.md)
+- [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md)
+- [Dialog API requirement sets](../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Office Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)

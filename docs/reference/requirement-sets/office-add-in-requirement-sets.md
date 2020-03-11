@@ -8,9 +8,9 @@ localization_priority: Normal
 
 # Office Common API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-Need information about where add-ins are supported by Office host? See [Office Add-in host and platform availability](/office/dev/add-ins/overview/office-add-in-availability).
+Need information about where add-ins are supported by Office host? See [Office Add-in host and platform availability](../../overview/office-add-in-availability.md).
 
 Looking for the *host-specific* API requirement sets? See the following API requirement sets:
 
@@ -227,7 +227,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ## Methods that aren't part of a requirement set
 
-The following methods in the Office JavaScript API aren't part of a requirement set. If your add-in requires any of these methods, use the **Methods** and **Method** elements in the add-in's manifest to declare that they are required, or perform the runtime check using an `if` statement. For more information, see [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+The following methods in the Office JavaScript API aren't part of a requirement set. If your add-in requires any of these methods, use the **Methods** and **Method** elements in the add-in's manifest to declare that they are required, or perform the runtime check using an `if` statement. For more information, see [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md).
 
 |**Method name**|**Office host support**|
 |:-----|:-----|
@@ -250,6 +250,6 @@ The following methods in the Office JavaScript API aren't part of a requirement 
 
 ## See also
 
-- [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)
+- [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
+- [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office Add-ins XML manifest](../../develop/add-in-manifests.md)

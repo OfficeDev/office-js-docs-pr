@@ -26,7 +26,7 @@ The following table lists core concepts discussed throughout this article.
 |:-----|:-----|
 |Office application, Office host application, Office host, or host|The Office application used to run your add-in. For example, Word, Excel, and so on.|
 |Platform|Where the Office host runs, such as in a browser or on an iPad.|
-|Requirement set|A named group of related API members. Add-ins use requirement sets to determine whether the Office host supports API members used by your add-in. It's easier to test for the support of a requirement set than for the support of individual API members. Requirement set support varies by Office host and the version of the Office host. <br >Requirement sets are specified in the manifest file. When you specify requirement sets in the manifest, you set the minimum level of API support that the Office host must provide in order to run your add-in. Office hosts that don't support requirement sets specified in the manifest can't run your add-in, and your add-in won't display in <span class="ui">My Add-ins</span>. This restricts where your add-in is available. In code using runtime checks. For the complete list of requirement sets, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).|
+|Requirement set|A named group of related API members. Add-ins use requirement sets to determine whether the Office host supports API members used by your add-in. It's easier to test for the support of a requirement set than for the support of individual API members. Requirement set support varies by Office host and the version of the Office host. <br >Requirement sets are specified in the manifest file. When you specify requirement sets in the manifest, you set the minimum level of API support that the Office host must provide in order to run your add-in. Office hosts that don't support requirement sets specified in the manifest can't run your add-in, and your add-in won't display in <span class="ui">My Add-ins</span>. This restricts where your add-in is available. In code using runtime checks. For the complete list of requirement sets, see [Office Add-in requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md).|
 |Runtime check|A test that is performed at runtime to determine whether the Office host running your add-in supports requirement sets or methods used by your add-in. To perform a runtime check, you use an **if** statement with the `isSetSupported` method, the requirement sets, or the method names that aren't part of a requirement set. Use runtime checks to ensure that your add-in reaches the broadest number of customers. Unlike requirement sets, runtime checks don't specify the minimum level of API support that the Office host must provide for your add-in to run. Instead, you use the **if** statement to determine whether an API member is supported. If it is, you can provide additional functionality in your add-in. Your add-in will always display in **My Add-ins** when you use runtime checks.|
 
 ## Before you begin
@@ -122,7 +122,7 @@ The following code example shows an add-in that loads in all Office host applica
 
 - The `Sets` element can contain one or more `Set` elements. `DefaultMinVersion` specifies the default `MinVersion` value of all child `Set` elements.
 
-- The `Set` element specifies requirement sets that the Office host must support to run the add-in. The `Name` attribute specifies the name of the requirement set. The `MinVersion` specifies the minimum version of the requirement set. `MinVersion` overrides the value of `DefaultMinVersion` For more information about requirement sets and requirement set versions that your API members belong to, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+- The `Set` element specifies requirement sets that the Office host must support to run the add-in. The `Name` attribute specifies the name of the requirement set. The `MinVersion` specifies the minimum version of the requirement set. `MinVersion` overrides the value of `DefaultMinVersion` For more information about requirement sets and requirement set versions that your API members belong to, see [Office Add-in requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md).
 
 - The `Methods` element can contain one or more `Method` elements. You can't use the `Methods` element with Outlook add-ins.
 
@@ -140,7 +140,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersio
 
 ```
 
-- _RequirementSetName_ (required) is a string that represents the name of the requirement set (e.g., "**ExcelApi**", "**Mailbox**", etc.). For more information about available requirement sets, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+- _RequirementSetName_ (required) is a string that represents the name of the requirement set (e.g., "**ExcelApi**", "**Mailbox**", etc.). For more information about available requirement sets, see [Office Add-in requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md).
 - _MinimumVersion_ (optional) is a string that specifies the minimum requirement set version that the host must support in order for the code within the `if` statement to run (e.g., "**1.9**").
 
 > [!WARNING]
@@ -178,7 +178,7 @@ else
 
 ## Runtime checks using methods not in a requirement set
 
-Some API members don't belong to requirement sets. This only applies to API members that are part of the [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) namespace (anything under `Office.` except [Outlook Mailbox APIs](/javascript/api/outlook)), but not API members that belong to the [Word JavaScript API](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview) (anything in `Word.`), [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) (anything in `Excel.`), or [OneNote JavaScript API](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference) (anything in `OneNote.`) namespaces. When your add-in depends on a method that is not part of a requirement set, you can use the runtime check to determine whether the method is supported by the Office host, as shown in the following code example. For a complete list of methods that don't belong to a requirement set, see [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
+Some API members don't belong to requirement sets. This only applies to API members that are part of the [Office JavaScript API](../reference/javascript-api-for-office.md) namespace (anything under `Office.` except [Outlook Mailbox APIs](/javascript/api/outlook)), but not API members that belong to the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) (anything in `Word.`), [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) (anything in `Excel.`), or [OneNote JavaScript API](../reference/overview/onenote-add-ins-javascript-reference.md) (anything in `OneNote.`) namespaces. When your add-in depends on a method that is not part of a requirement set, you can use the runtime check to determine whether the method is supported by the Office host, as shown in the following code example. For a complete list of methods that don't belong to a requirement set, see [Office Add-in requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
 > We recommend that you limit the use of this type of runtime check in your add-in's code.
@@ -196,5 +196,5 @@ if (Office.context.document.setSelectedDataAsync)
 ## See also
 
 - [Office Add-ins XML manifest](add-in-manifests.md)
-- [Office Add-in requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Office Add-in requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

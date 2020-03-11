@@ -12,7 +12,7 @@ Defines whether the Outlook add-in is available in delegate scenarios. The **Sup
 > [!IMPORTANT]
 > Only Outlook on the web and Windows support the **SupportsSharedFolders** element.
 >
-> Support for this element was introduced in requirement set 1.8. See [clients and platforms](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this element was introduced in requirement set 1.8. See [clients and platforms](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 The following is an example of the **SupportsSharedFolders** element.
 

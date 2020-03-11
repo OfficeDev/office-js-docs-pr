@@ -46,4 +46,4 @@ npm install --save-dev @types/office-js
 ## See also
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
-- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API](../reference/javascript-api-for-office.md)

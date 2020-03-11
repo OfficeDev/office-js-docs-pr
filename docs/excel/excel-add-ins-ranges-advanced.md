@@ -94,7 +94,7 @@ If no cells with the targeted characteristic exist in the range, `getSpecialCell
 If you expect that cells with the targeted characteristic should always exist, you'll likely want your code to throw an error if those cells aren't there. If it's a valid scenario that there aren't any matching cells, your code should check for this possibility and handle it gracefully without throwing an error. You can achieve this behavior with the `getSpecialCellsOrNullObject` method and its returned `isNullObject` property. The following example uses this pattern. About this code, note:
 
 - The `getSpecialCellsOrNullObject` method always returns a proxy object, so it is never `null` in the ordinary JavaScript sense. But if no matching cells are found, the `isNullObject` property of the object is set to `true`.
-- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
+- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods).
 - You can test this code by first selecting a range that has no formula cells and running it. Then select a range that has at least one cell with a formula and run it again.
 
 ```js
@@ -192,10 +192,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` specifies what data gets copied from the source to the destination.
 
-- `Excel.RangeCopyType.formulas` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is.
+- `Excel.RangeCopyType.formulas` transfers the formulas in the source cells and preserves the relative positioning of those formulas' ranges. Any non-formula entries are copied as-is.
 - `Excel.RangeCopyType.values` copies the data values and, in the case of formulas, the result of the formula.
 - `Excel.RangeCopyType.formats` copies the formatting of the range, including font, color, and other format settings, but no values.
-- `Excel.RangeCopyType.all` (the default option) copies both data and formatting, preserving cells’ formulas if found.
+- `Excel.RangeCopyType.all` (the default option) copies both data and formatting, preserving cells' formulas if found.
 
 `skipBlanks` sets whether blank cells are copied into the destination. When true, `copyFrom` skips blank cells in the source range.
 Skipped cells will not overwrite the existing data of their corresponding cells in the destination range. The default is false.
@@ -224,11 +224,11 @@ Excel.run(function (context) {
 
 *Before the preceding function has been run.*
 
-![Data in Excel before range’s copy method has been run](../images/excel-range-copyfrom-skipblanks-before.png)
+![Data in Excel before range's copy method has been run](../images/excel-range-copyfrom-skipblanks-before.png)
 
 *After the preceding function has been run.*
 
-![Data in Excel after range’s copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
+![Data in Excel after range's copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ### Cut and paste (move) cells ([online-only](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
 
@@ -277,11 +277,11 @@ Excel.run(function (context) {
 
 *Before the preceding function has been run.*
 
-![Data in Excel before range’s remove duplicates method has been run](../images/excel-ranges-remove-duplicates-before.png)
+![Data in Excel before range's remove duplicates method has been run](../images/excel-ranges-remove-duplicates-before.png)
 
 *After the preceding function has been run.*
 
-![Data in Excel after range’s remove duplicates method has been run](../images/excel-ranges-remove-duplicates-after.png)
+![Data in Excel after range's remove duplicates method has been run](../images/excel-ranges-remove-duplicates-after.png)
 
 ## Group data for an outline
 
