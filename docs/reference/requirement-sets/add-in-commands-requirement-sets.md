@@ -1,7 +1,7 @@
 ---
 title: Add-in commands requirement sets
 description: ''
-ms.date: 03/09/2020
+ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -28,11 +28,11 @@ The following table lists the add-in commands 1.1 requirement set, the Office ho
 
 >\* The [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
 
+## Office versions and build numbers
+
 To find out more about versions, build numbers, and Office Online Server, see:
 
-- [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 - [Office Online Server overview](/officeonlineserver/office-online-server-overview)
 
 ## Office Common API requirement sets
