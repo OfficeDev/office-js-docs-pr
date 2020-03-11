@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 12/17/2019
+ms.date: 03/04/2020
 localization_priority: Normal
 ---
 
@@ -19,6 +19,26 @@ The Preview Requirement set includes all of the features of [Requirement set 1.8
 ## Features in preview
 
 The following features are in preview.
+
+### Append on send
+
+#### [Office.Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
+
+Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+#### [ExtendedPermissions](../../manifest/extendedpermissions.md)
+
+Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+<br>
+
+---
+
+---
 
 ### Integration with actionable messages
 
