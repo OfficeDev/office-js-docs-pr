@@ -24,7 +24,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
-[!INCLUDE [Links to get Office versions and how to find Office client version](../includes/links-get-office-versions-builds.md)]
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 - [Office Online Server overview](/officeonlineserver/office-online-server-overview)
 
 ## Office Common API requirement sets

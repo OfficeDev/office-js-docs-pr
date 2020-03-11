@@ -20,7 +20,7 @@ The following table lists the PowerPoint requirement sets, the Office host appli
 
 For more information about Office versions and build numbers, see:
 
-[!INCLUDE [Links to get Office versions and how to find Office client version](../includes/links-get-office-versions-builds.md)]
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
 ## PowerPoint JavaScript API 1.1
 

@@ -36,7 +36,7 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 
 For more information about Office versions and build numbers, see:
 
-[!INCLUDE [Links to get Office versions and how to find Office client version](../includes/links-get-office-versions-builds.md)]
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
 ## See also
 
