@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API requirement sets
 description: 'Office Add-in requirement set information for Word builds'
-ms.date: 03/09/2020
+ms.date: 03/11/2020
 ms.prod: word
 localization_priority: Priority
 ---
@@ -36,9 +36,7 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 
 For more information about Office versions and build numbers, see:
 
-- [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../includes/links-get-office-versions-builds.md)]
 
 ## See also
 
