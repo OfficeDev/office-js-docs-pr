@@ -1,5 +1,5 @@
 ---
-ms.date: 11/04/2019
+ms.date: 03/11/2020
 description: 'Handle and return errors like #NULL! from your custom function'
 title: Handle and return errors from your custom function (preview)
 localization_priority: Normal
@@ -8,13 +8,13 @@ localization_priority: Normal
 # Handle and return errors from your custom function (preview)
 
 > [!NOTE]
-> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to [Office Insider](https://insider.office.com/join) to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to join the [Office Insider](https://insider.office.com/join) program to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 If something goes wrong while your custom function runs, you will need to return an error to inform the user. If you have specific parameter requirements, such as only positive numbers, you will need to test the parameters and throw an error if they are not correct. You can also use a `try`-`catch` block to catch any errors that occur while your custom function runs.
 
 ## Detect and throw an error
 
-Let’s look at a case where you need to ensure that a zip code parameter is in the correct format for the custom function to work. The following custom function uses a regular expression to check the zip code. If it is correct, then it will look up the city (in another function) and return the value. If it is not correct, it returns a `#VALUE!` error to the cell.
+Let's look at a case where you need to ensure that a zip code parameter is in the correct format for the custom function to work. The following custom function uses a regular expression to check the zip code. If it is correct, then it will look up the city (in another function) and return the value. If it is not correct, it returns a `#VALUE!` error to the cell.
 
 ```typescript
 /**
@@ -55,7 +55,7 @@ When you return a `#VALUE!` error you can also include a custom message that wil
 
 ```typescript
 // You can only return a custom error message with the #VALUE! error
-let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, “The parameter can only contain lowercase characters.”);
+let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "The parameter can only contain lowercase characters.");
 throw error;
 ```
 
