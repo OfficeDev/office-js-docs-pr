@@ -1,8 +1,8 @@
 ---
-ms.date: 02/20/2020
 title: Tutorial: Share data and events between Excel custom functions and the task pane (preview)
-ms.prod: excel
 description: 'In Excel, share data and events between custom functions and the task pane.'
+ms.date: 02/20/2020
+ms.prod: excel
 localization_priority: Priority
 ---
 
