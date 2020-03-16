@@ -1,6 +1,6 @@
 ---
 title: Office.context.mailbox - requirement set 1.5
-description: 'The object model for the Outlook Mailbox object in the Outlook Add-ins API (MailboxApi 1.5 version).'
+description: 'The object model for the Outlook Mailbox object in the Outlook Add-ins API (Mailbox API 1.5 version).'
 ms.date: 03/06/2020
 localization_priority: Normal
 ---
