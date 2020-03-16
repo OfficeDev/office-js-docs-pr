@@ -1,6 +1,6 @@
 ---
 title: AlternateId element in the manifest file
-description: ''
+description: Specifies the alternate ID for your Office Add-in as issued by AppSource.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---
