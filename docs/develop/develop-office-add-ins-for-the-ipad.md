@@ -1,6 +1,6 @@
 ---
 title: Develop Office Add-ins for the iPad
-description: ''
+description: 'Get an overview and best practices for creating an Office Add-in that runs on an IPad.'
 ms.date: 06/20/2019
 localization_priority: Normal
 ---

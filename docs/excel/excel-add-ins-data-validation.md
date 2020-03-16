@@ -1,6 +1,6 @@
 ---
 title: Add data validation to Excel ranges
-description: ''
+description: 'Learn how the Excel JavaScript APIs enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

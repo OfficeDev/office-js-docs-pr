@@ -1,6 +1,6 @@
 ---
 title: SupportsSharedFolders element in the manifest file
-description: ''
+description: The SupportsSharedFolders element defines whether the Outlook add-in is available in delegate scenarios.
 ms.date: 01/14/2020
 localization_priority: Normal
 ---
