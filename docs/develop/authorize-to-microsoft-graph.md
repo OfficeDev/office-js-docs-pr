@@ -1,6 +1,6 @@
 ---
 title: Authorize to Microsoft Graph with SSO
-description: ''
+description: 'Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.'
 ms.date: 01/14/2020
 localization_priority: Normal
 ---

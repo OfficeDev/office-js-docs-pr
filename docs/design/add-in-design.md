@@ -1,6 +1,6 @@
 ---
 title: Design Office Add-ins
-description: ''
+description: 'Learn the best practices for the visual design of Office Add-ins.'
 ms.date: 06/20/2019
 localization_priority: Priority
 ---

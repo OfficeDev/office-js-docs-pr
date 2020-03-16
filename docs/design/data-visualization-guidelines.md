@@ -1,6 +1,6 @@
 ---
 title: Data visualization style guidelines for Office Add-ins
-description: ''
+description: 'Get some good practices for how to visualize data in an Office Add-in.'
 ms.date: 01/14/2019
 localization_priority: Normal
 ---
