@@ -1,6 +1,6 @@
 ---
 ms.date: 12/28/2019
-description: 'Create an Excel custom function for your Office add-in'
+description: 'Create an Excel custom function for your Office Add-in'
 title: Create custom functions in Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
