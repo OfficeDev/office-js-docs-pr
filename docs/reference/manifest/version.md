@@ -1,6 +1,6 @@
 ---
 title: Version element in the manifest file
-description: ''
+description: The Version element specifies your Office Add-in version.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---
