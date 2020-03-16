@@ -1,6 +1,6 @@
 ---
 title: Type element in the manifest file
-description: 'The Type element specifies if the equivalent add-in is a COM add-in or an XLL.'
+description: The Type element specifies if the equivalent add-in is a COM add-in or an XLL.
 ms.date: 03/16/2020
 localization_priority: Normal
 ---

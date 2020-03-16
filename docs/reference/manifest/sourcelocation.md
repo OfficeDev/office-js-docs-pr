@@ -1,6 +1,6 @@
 ---
 title: SourceLocation element in the manifest file
-description: 'The SourceLocation element specifies the source file locations for your Office Add-in.'
+description: The SourceLocation element specifies the source file locations for your Office Add-in.
 ms.date: 03/16/2020
 localization_priority: Normal
 ---

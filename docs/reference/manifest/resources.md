@@ -1,6 +1,6 @@
 ---
 title: Resources element in the manifest file
-description: 'The Resources element contains icons, strings, and URLs for the VersionOverrides node.'
+description: The Resources element contains icons, strings, and URLs for the VersionOverrides node.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---

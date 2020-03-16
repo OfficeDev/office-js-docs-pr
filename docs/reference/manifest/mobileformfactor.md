@@ -1,6 +1,6 @@
 ---
 title: MobileFormFactor element in the manifest file
-description: 'The MobileFormFactor element specifies the mobile form factor settings for an add-in.'
+description: The MobileFormFactor element specifies the mobile form factor settings for an add-in.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---

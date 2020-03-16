@@ -1,6 +1,6 @@
 ---
 title: Override element in the manifest file
-description: 'the Override element enables you to specify the value of a setting for an additional locale.'
+description: The Override element enables you to specify the value of a setting for an additional locale.
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

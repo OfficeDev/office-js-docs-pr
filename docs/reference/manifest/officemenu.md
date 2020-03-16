@@ -1,6 +1,6 @@
 ---
 title: OfficeMenu element in the manifest file
-description: 'The OfficeMenu element defines a collection of controls to be added to the Office context menu.'
+description: The OfficeMenu element defines a collection of controls to be added to the Office context menu.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---

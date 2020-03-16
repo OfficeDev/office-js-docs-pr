@@ -1,6 +1,6 @@
 ---
 title: ProviderName element in the manifest file
-description: 'The ProviderName elements specifies the name of the individual or company that developed this Office Add-in.'
+description: The ProviderName elements specifies the name of the individual or company that developed this Office Add-in.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---
