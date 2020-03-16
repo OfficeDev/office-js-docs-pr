@@ -54,6 +54,44 @@ Added a new function that returns initialization data passed when the add-in is 
 
 ---
 
+### Mail signature
+
+#### [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setsignatureasync-data--options--callback-)
+
+Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+#### [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods)
+
+Added a new function that disables the client signature on the item in Compose mode.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+#### [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
+
+Added a new function that gets the compose type of a message in Compose mode.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+#### [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
+
+Added a new function that checks if the client signature is enabled on the item in Compose mode.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+#### [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
+
+Added a new enum `ComposeType` available in Compose mode.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+<br>
+
+---
+
+---
+
 ### Office theme
 
 #### [Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
