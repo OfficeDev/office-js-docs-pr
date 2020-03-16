@@ -1,6 +1,6 @@
 ---
 title: Common JavaScript API object model
-description: ''
+description: 'Learn about the Office JavaScript common API object model'
 ms.date: 02/27/2020
 localization_priority: Normal
 ---
