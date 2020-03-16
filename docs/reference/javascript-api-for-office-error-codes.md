@@ -1,6 +1,6 @@
 ---
 title: Office JavaScript API error codes
-description: ''
+description: 'Error codes for the Office JavaScript API'
 ms.date: 03/10/2020
 localization_priority: Normal
 ---

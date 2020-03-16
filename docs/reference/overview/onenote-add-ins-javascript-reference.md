@@ -1,6 +1,6 @@
 ---
 title: OneNote JavaScript API overview
-description: ''
+description: 'Learn more about the OneNote JavaScript API'
 ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
