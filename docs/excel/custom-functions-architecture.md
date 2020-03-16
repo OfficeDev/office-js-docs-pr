@@ -1,6 +1,6 @@
 ---
 ms.date: 07/10/2019
-description: 'Learn about Excel custom functions' runtime.'
+description: 'Learn about the runtime for Excel custom functions.'
 title: Custom functions architecture
 localization_priority: Normal
 ---
