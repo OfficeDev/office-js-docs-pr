@@ -26,6 +26,6 @@ To play a video in a dialog box with the Office dialog API, follow these steps:
 2. Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
 3. If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see [Errors and events in the Office dialog box](dialog-handle-errors-events.md).
 
-For a sample of a video playing in a dialog box, see the [video placemat design pattern](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
+For a sample of a video playing in a dialog box, see the [video placemat design pattern](../design/first-run-experience-patterns.md#video-placemat).
 
 ![Screenshot of a video playing in an add-in dialog box](../images/video-placemats-dialog-open.png)

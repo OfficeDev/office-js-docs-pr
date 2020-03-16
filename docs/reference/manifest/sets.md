@@ -1,6 +1,6 @@
 ---
 title: Sets element in the manifest file
-description: ''
+description: The Sets element specifies the minimum set of Office JavaScript API your Office Add-in requires in order to activate.
 ms.date: 03/19/2019
 localization_priority: Normal
 ---
@@ -35,7 +35,7 @@ Specifies the minimum subset of the Office JavaScript API that your Office Add-i
 
 ## Remarks
 
-For more information about requirement sets, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+For more information about requirement sets, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-For more information about the **MinVersion** attribute of the **Set** element and the **DefaultMinVersion** attribute of the **Sets** element, see [Set the Requirements element in the manifest](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest).
+For more information about the **MinVersion** attribute of the **Set** element and the **DefaultMinVersion** attribute of the **Sets** element, see [Set the Requirements element in the manifest](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest).
 

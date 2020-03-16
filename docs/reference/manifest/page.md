@@ -1,6 +1,6 @@
 ---
 title: Page element in the manifest file
-description: ''
+description: The Page element defines HTML page settings a custom function uses in Excel.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---
@@ -23,6 +23,6 @@ None
 
 ```xml
 <Page>
-	<SourceLocation resid="pageURL"/>
+    <SourceLocation resid="pageURL"/>
 </Page>
 ```

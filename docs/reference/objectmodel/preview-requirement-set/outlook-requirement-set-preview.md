@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 12/17/2019
+ms.date: 03/04/2020
 localization_priority: Normal
 ---
 
@@ -10,7 +10,7 @@ localization_priority: Normal
 The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.
 
 > [!IMPORTANT]
-> This documentation is for a **preview** [requirement set](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets). This requirement set is not fully implemented yet, and clients will not accurately report support for it. You should not specify this requirement set in your add-in manifest.
+> This documentation is for a **preview** [requirement set](../../requirement-sets/outlook-api-requirement-sets.md). This requirement set is not fully implemented yet, and clients will not accurately report support for it. You should not specify this requirement set in your add-in manifest.
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
@@ -19,6 +19,26 @@ The Preview Requirement set includes all of the features of [Requirement set 1.8
 ## Features in preview
 
 The following features are in preview.
+
+### Append on send
+
+#### [Office.Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
+
+Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+#### [ExtendedPermissions](../../manifest/extendedpermissions.md)
+
+Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+<br>
+
+---
+
+---
 
 ### Integration with actionable messages
 
@@ -54,7 +74,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 ### SSO
 
-#### [OfficeRuntime.auth.getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
+#### [OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
 
 Added access to `getAccessToken`, which allows add-ins to [get an access token](../../../outlook/authenticate-a-user-with-an-sso-token.md) for the Microsoft Graph API.
 

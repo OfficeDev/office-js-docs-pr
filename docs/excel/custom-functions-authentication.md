@@ -28,7 +28,7 @@ If a token doesn't exist, you should use the Dialog API to ask the user to sign 
 > [!NOTE]
 > The custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use `OfficeRuntime.Dialog` to authenticate users in the custom functions runtime.
 
-For information on how to use the `Dialog` object, see [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog).
+For information on how to use the `Dialog` object, see [Custom Functions dialog](../excel/custom-functions-dialog.md).
 
 When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `OfficeRuntime.storage`.
 
@@ -85,7 +85,7 @@ function receiveTokenFromCustomFunction() {
 
 ## General guidance
 
-Office Add-ins are web-based and you can use any web authentication technique. There is no particular pattern or method you must follow to implement your own authentication with custom functions. You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](/office/dev/add-ins/develop/auth-external-add-ins).  
+Office Add-ins are web-based and you can use any web authentication technique. There is no particular pattern or method you must follow to implement your own authentication with custom functions. You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](../develop/auth-external-add-ins.md).  
 
 Avoid using the following locations to store data when developing custom functions:  
 

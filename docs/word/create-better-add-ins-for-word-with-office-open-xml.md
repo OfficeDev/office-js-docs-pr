@@ -853,6 +853,6 @@ When using templates with your app, whether the add-in will be resident in the t
 
 ## See also
 
-- [Office JavaScript API ](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API](../reference/javascript-api-for-office.md)
 - [Standard ECMA-376: Office Open XML File Formats](https://www.ecma-international.org/publications/standards/Ecma-376.htm) (access the complete language reference and related documentation on Open XML here)
 - [Exploring the Office JavaScript API: Data Binding and Custom XML Parts](https://msdn.microsoft.com/magazine/dn166930.aspx)
