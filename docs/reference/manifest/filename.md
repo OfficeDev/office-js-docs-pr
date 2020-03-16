@@ -1,6 +1,6 @@
 ---
 title: FileName element in the manifest file
-description: ''
+description: Specifies the file name of the equivalent XLL for custom functions in your web add-in.
 ms.date: 05/03/2019
 localization_priority: Normal
 ---

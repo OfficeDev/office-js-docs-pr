@@ -1,6 +1,6 @@
 ---
 title: Office JavaScript API error codes
-description: ''
+description: This article documents the error messages you might encounter while using the Office JavaScript API.
 ms.date: 03/10/2020
 localization_priority: Normal
 ---

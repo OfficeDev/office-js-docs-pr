@@ -1,6 +1,6 @@
 ---
 title: AppDomain element in the manifest file
-description: ''
+description: Specifies additional domains that load pages in the add-in window.
 ms.date: 07/03/2019
 localization_priority: Normal
 ---
