@@ -1,6 +1,6 @@
 ---
 title: Requesting permissions for API use in add-ins
-description: ''
+description: 'Learn about different permission levels to declare in the manifest of a content or task pane add-in to specify the level of JavaScript API access.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

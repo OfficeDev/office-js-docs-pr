@@ -1,6 +1,6 @@
 ---
 title: Work with tables using the Excel JavaScript API
-description: ''
+description: 'Code samples that show how to perform common tasks with tables using the Excel JavaScript API.'
 ms.date: 09/09/2019
 localization_priority: Normal
 ---
