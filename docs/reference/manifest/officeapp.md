@@ -1,6 +1,6 @@
 ---
 title: OfficeApp element in the manifest file
-description: ''
+description: 'The OfficeApp element is the root element of an Office Add-in manifest.'
 ms.date: 02/04/2020
 localization_priority: Normal
 ---

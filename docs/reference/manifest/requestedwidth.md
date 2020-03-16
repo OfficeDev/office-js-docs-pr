@@ -1,6 +1,6 @@
 ---
 title: RequestedWidth element in the manifest file
-description: ''
+description: 'The RequestedWidth element specifies the initial width (in pixels) of a content add-in.'
 ms.date: 11/13/2018
 localization_priority: Normal
 ---

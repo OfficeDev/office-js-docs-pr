@@ -1,13 +1,13 @@
 ---
 title: Rule element in the manifest file
-description: ''
-ms.date: 03/19/2019
+description: 'The Rule element specifies the activation rules that should be evaluated for this contextual mail add-in.'
+ms.date: 03/16/2020
 localization_priority: Normal
 ---
 
 # Rule element
 
-Specifies the activation rule(s) that should be evaluated for this contextual mail add-in.
+Specifies the activation rules that should be evaluated for this contextual mail add-in.
 
 **Add-in type:** Mail contextual add-in
 

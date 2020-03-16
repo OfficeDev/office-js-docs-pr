@@ -1,6 +1,6 @@
 ---
 title: Requirements element in the manifest file
-description: ''
+description: 'The Requirements element specifies the minimum requirement set and methods your Office Add-in needs in order to activate.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

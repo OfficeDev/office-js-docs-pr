@@ -1,6 +1,6 @@
 ---
 title: Metadata element in the manifest file
-description: ''
+description: 'The Metadata element defines the metadata settings a custom function uses in Excel.'
 ms.date: 10/09/2018
 localization_priority: Normal
 ---

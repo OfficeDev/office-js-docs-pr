@@ -1,13 +1,13 @@
 ---
 title: Type element in the manifest file
-description: ''
-ms.date: 05/03/2019
+description: 'The Type element specifies if the equivalent add-in is a COM add-in or an XLL.'
+ms.date: 03/16/2020
 localization_priority: Normal
 ---
 
 # Type element
 
-Specifies if the equivalent add-in is a COM addin or an XLL.
+Specifies if the equivalent add-in is a COM add-in or an XLL.
 
 **Add-in type:** Task pane, Custom function
 

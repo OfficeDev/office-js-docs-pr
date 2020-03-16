@@ -1,6 +1,6 @@
 ---
 title: OfficeTab element in the manifest file
-description: ''
+description: 'The OfficeTab element defines the ribbon tab where your add-in command appears.'
 ms.date: 06/20/2019
 localization_priority: Normal
 ---
