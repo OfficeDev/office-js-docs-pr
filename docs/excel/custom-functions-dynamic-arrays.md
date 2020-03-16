@@ -1,6 +1,6 @@
 ---
 ms.date: 12/18/2019
-description: Return multiple results from your custom function in an Office Excel add-in.
+description: 'Return multiple results from your custom function in an Office Excel add-in.'
 title: Return multiple results from your custom function
 localization_priority: Normal
 ---

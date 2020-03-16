@@ -1,6 +1,6 @@
 ---
 ms.date: 12/28/2019
-description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
+description: 'Learn requirements for Excel custom functions' names and avoid common naming pitfalls.'
 title: Naming guidelines for custom functions in Excel
 localization_priority: Normal
 ---

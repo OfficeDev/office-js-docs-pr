@@ -2,7 +2,7 @@
 layout: LandingPage
 ms.topic: landing-page
 title: OneNote add-ins documentation
-description: Resources for learning about OneNote add-ins.
+description: 'Resources for learning about OneNote add-ins.'
 ms.date: 07/05/2019
 localization_priority: Priority
 ---

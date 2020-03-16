@@ -1,6 +1,6 @@
 ---
 ms.date: 01/14/2020
-description: Learn to implement volatile and offline streaming custom functions.
+description: 'Learn to implement volatile and offline streaming custom functions.'
 title: Volatile values in functions
 localization_priority: Normal
 ---
@@ -11,7 +11,7 @@ Volatile functions are functions in which the value changes each time the cell i
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
+Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel's volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
 Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modeling. For example, [Monte Carlo simulations](https://en.wikipedia.org/wiki/Monte_Carlo_method) require the generation of random inputs to determine an optimal solution.
 

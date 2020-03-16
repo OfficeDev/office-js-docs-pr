@@ -1,6 +1,6 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
-description: Use the Excel JavaScript API to create PivotTables and interact with their components. 
+description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
 ms.date: 01/22/2020
 localization_priority: Normal
 ---
@@ -108,7 +108,7 @@ Excel.run(function (context) {
 
 ## Add rows and columns to a PivotTable
 
-Rows and columns pivot the data around those fields’ values.
+Rows and columns pivot the data around those fields' values.
 
 Adding the **Farm** column pivots all the sales around each farm. Adding the **Type** and **Classification** rows further breaks down the data based on what fruit was sold and whether it was organic or not.
 
@@ -286,7 +286,7 @@ The `ShowAsRule` object has three properties:
 - `baseItem`: The individual [PivotItem](/javascript/api/excel/excel.pivotitem) compared against the values of the base fields based on the calculation type. Not all calculations require this field.
 
 The following example sets the calculation on the **Sum of Crates Sold at Farm** data hierarchy to be a percentage of the column total.
-We still want the granularity to extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field.
+We still want the granularity to extend to the fruit type level, so we'll use the **Type** row hierarchy and its underlying field.
 The example also has **Farm** as the first row hierarchy, so the farm total entries display the percentage each farm is responsible for producing as well.
 
 ![A PivotTable showing the percentages of fruit sales relative to the grand total for both individual farms and individual fruit types within each farm.](../images/excel-pivots-showas-percentage.png)
@@ -314,7 +314,7 @@ The previous example set the calculation to the column, relative to the field of
 The following example shows the `differenceFrom` calculation. It displays the difference of the farm crate sales data hierarchy entries relative to those of **A Farms**.
 The `baseField` is **Farm**, so we see the differences between the other farms, as well as breakdowns for each type of like fruit (**Type** is also a row hierarchy in this example).
 
-![A PivotTable showing the differences of fruit sales between “A Farms” and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If “A Farms” did not sell a particular type of fruit, “#N/A” is displayed.](../images/excel-pivots-showas-differencefrom.png)
+![A PivotTable showing the differences of fruit sales between "A Farms" and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If "A Farms" did not sell a particular type of fruit, "#N/A" is displayed.](../images/excel-pivots-showas-differencefrom.png)
 
 ```js
 Excel.run(function (context) {
@@ -361,7 +361,7 @@ Excel.run(function (context) {
 });
 ```
 
-PivotTables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples.
+PivotTables have three layout styles: Compact, Outline, and Tabular. We've seen the compact style in the previous examples.
 
 The following examples use the outline and tabular styles, respectively. The code sample shows how to cycle between the different layouts.
 
