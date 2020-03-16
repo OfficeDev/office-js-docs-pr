@@ -1,6 +1,6 @@
 ---
 title: Enable single sign-on for Office Add-ins
-description: 'Learn how to enable single sign-on for Office Add-ins using your Microsoft, work,or school Office 365 account.'
+description: 'Learn how to enable single sign-on for Office Add-ins using your Microsoft, work, or school Office 365 account.'
 ms.date: 01/14/2020
 localization_priority: Priority
 ---
