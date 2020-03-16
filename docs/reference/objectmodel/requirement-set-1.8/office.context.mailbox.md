@@ -1,6 +1,6 @@
 ---
 title: Office.context.mailbox - requirement set 1.8
-description: ''
+description: 'The object model for Office.context.mailbox (Requirement set 1.8)'
 ms.date: 03/06/2020
 localization_priority: Normal
 ---

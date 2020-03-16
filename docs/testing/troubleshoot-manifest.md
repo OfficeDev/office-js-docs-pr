@@ -1,6 +1,6 @@
 ---
 title: Validate an Office Add-in's manifest
-description: Learn how to validate an Office Add-in's manifest using the XML schema and other tools.
+description: 'Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.'
 ms.date: 12/31/2019
 localization_priority: Normal
 ---
@@ -33,14 +33,14 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
 
 2. Run the following command in the root directory of your project. Replace `MANIFEST_FILE` with the name of the manifest file.
 
-	```command&nbsp;line
-	npx office-addin-manifest validate MANIFEST_FILE
-	```
+    ```command&nbsp;line
+    npx office-addin-manifest validate MANIFEST_FILE
+    ```
 
-	> [!NOTE]
-	> If running this command results in the error message "The command syntax is not valid." (because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file): 
-	>
-	> `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
+    > [!NOTE]
+    > If running this command results in the error message "The command syntax is not valid." (because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file): 
+    >
+    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## Validate your manifest against the XML schema
 
@@ -51,10 +51,10 @@ You can validate the manifest file against the [XML Schema Definition (XSD)](/op
 1. Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.
 
 2. Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
-	
-	```command&nbsp;line
-	xmllint --noout --schema XSD_FILE XML_FILE
-	```
+    
+    ```command&nbsp;line
+    xmllint --noout --schema XSD_FILE XML_FILE
+    ```
 
 ## See also
 

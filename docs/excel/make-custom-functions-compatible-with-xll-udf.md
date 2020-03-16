@@ -1,6 +1,6 @@
 ---
 title: Extend custom functions with XLL user-defined functions
-description: Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions
+description: 'Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions'
 ms.date: 07/31/2019
 localization_priority: Normal
 ---
@@ -43,7 +43,7 @@ The following example shows how to specify both a COM add-in and an XLL as equiv
 ```
 
 > [!NOTE]
-> If an add-in declares its custom functions to be XLL compatible, changing the manifest at a later time could break a user’s workbook because it will change the file format.
+> If an add-in declares its custom functions to be XLL compatible, changing the manifest at a later time could break a user's workbook because it will change the file format.
 
 ## Custom function behavior for XLL compatible functions
 

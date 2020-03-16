@@ -1,6 +1,6 @@
 ---
 title: Excel add-in tutorial
-description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
+description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
 ms.date: 01/16/2020
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
@@ -159,7 +159,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
 
     ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['&euro;#,##0.00']];
     expensesTable.getRange().format.autofitColumns();
     expensesTable.getRange().format.autofitRows();
     ```
@@ -398,7 +398,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
    
    - The parameters to the `setPosition` method specify the upper left and lower right cells of the worksheet area that should contain the chart. Excel can adjust things like line width to make the chart look good in the space it has been given.
    
-   - A "series" is a set of data points from a column of the table. Since there is only one non-string column in the table, Excel infers that the column is the only column of data points to chart. It interprets the other columns as chart labels. So there will be just one series in the chart and it will have index 0. This is the one to label with "Value in €".
+   - A "series" is a set of data points from a column of the table. Since there is only one non-string column in the table, Excel infers that the column is the only column of data points to chart. It interprets the other columns as chart labels. So there will be just one series in the chart and it will have index 0. This is the one to label with "Value in &euro;".
 
     ```js
     chart.setPosition("A15", "F30");
@@ -407,7 +407,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
-    chart.series.getItemAt(0).name = 'Value in €';
+    chart.series.getItemAt(0).name = 'Value in &euro;';
     ```
 
 9. Verify that you've saved all of the changes you've made to the project.
@@ -614,7 +614,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
                 console.log("Debug info: " + JSON.stringify(error.debugInfo));
             }
         });
-		args.completed();
+        args.completed();
     }
     ```
 
