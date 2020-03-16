@@ -1,6 +1,6 @@
 ---
 title: Office namespace - requirement set 1.4
-description: ''
+description: 'The object model for the top-level namespace of the Outlook Add-ins API (MailboxApi 1.4 version).'
 ms.date: 12/16/2019
 localization_priority: Normal
 ---

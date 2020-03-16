@@ -1,6 +1,6 @@
 ---
 title: VersionOverrides element in the manifest file
-description: ''
+description: 'Reference documentation of the VersionOverrides element for Office Add-ins manifest (XML) files.'
 ms.date: 03/05/2020
 localization_priority: Normal
 ---

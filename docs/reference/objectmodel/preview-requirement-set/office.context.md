@@ -1,6 +1,6 @@
 ---
 title: Office.context - preview requirement set
-description: ''
+description: 'The object model for the Outlook Context object in the Outlook Add-ins API (MailboxApi Preview version).'
 ms.date: 12/16/2019
 localization_priority: Normal
 ---
