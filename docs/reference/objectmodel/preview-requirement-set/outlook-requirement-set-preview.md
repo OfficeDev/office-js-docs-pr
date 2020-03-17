@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook Add-ins and the Office JavaScript APIs.'
-ms.date: 03/16/2020
+ms.date: 03/17/2020
 localization_priority: Normal
 ---
 
@@ -64,7 +64,7 @@ Added a new function to the `Body` object that adds or replaces the signature in
 
 #### [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
-Added a new function that disables the client signature on the item in Compose mode.
+Added a new function that disables the client signature for the sending mailbox in Compose mode.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription)
 
