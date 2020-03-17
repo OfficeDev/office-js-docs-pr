@@ -1,6 +1,6 @@
 ---
 title: Design toolkits for Office Add-ins
-description: ''
+description: 'Get links to some tools to help design the UI of an Office Add-in.'
 ms.date: 06/27/2018
 localization_priority: Normal
 ---

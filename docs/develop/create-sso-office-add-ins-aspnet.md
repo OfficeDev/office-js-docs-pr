@@ -1,6 +1,6 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
-description: ''
+description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
 ms.date: 12/04/2019
 localization_priority: Normal
 ---

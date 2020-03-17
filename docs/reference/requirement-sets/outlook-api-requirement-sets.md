@@ -1,6 +1,6 @@
 ---
 title: Outlook JavaScript API requirement sets
-description: ''
+description: 'Learn more about the Outlook JavaScript API requirement sets'
 ms.date: 03/10/2020
 ms.prod: outlook
 localization_priority: Priority

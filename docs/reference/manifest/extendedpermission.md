@@ -1,6 +1,6 @@
 ---
 title: ExtendedPermission element in the manifest file
-description: ''
+description: Defines an extended permission the add-in needs to access the associated API or feature.
 ms.date: 03/05/2020
 localization_priority: Normal
 ---

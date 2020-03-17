@@ -1,6 +1,6 @@
 ---
 title: Excel add-ins overview
-description: ''
+description: 'Excel add-in allow you to extend Excel application functionality across multiple platforms including Windows, Mac, iPad, and in a browser.'
 ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started

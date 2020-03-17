@@ -2,7 +2,7 @@
 ms.date: 02/20/2020
 title: "Configure your Excel add-in to share the browser runtime (preview)"
 ms.prod: excel
-description: Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.
+description: 'Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.'
 localization_priority: Priority
 ---
 

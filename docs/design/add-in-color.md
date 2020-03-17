@@ -1,6 +1,6 @@
 ---
 title: Color guidelines for Office Add-ins
-description: ''
+description: 'Learn how to use colors in the UI of an Office Add-in.'
 ms.date: 01/14/2020
 localization_priority: Normal
 ---

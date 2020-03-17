@@ -1,6 +1,6 @@
 ---
 title: Task pane add-ins for Project
-description: ''
+description: 'Learn about task pane add-ins for Project.'
 ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started

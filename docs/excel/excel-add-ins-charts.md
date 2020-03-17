@@ -1,6 +1,6 @@
 ---
 title: Work with charts using the Excel JavaScript API
-description: ''
+description: 'Code samples demonstrating chart tasks using the Excel JavaScript API.'
 ms.date: 07/17/2019
 localization_priority: Normal
 ---
@@ -206,9 +206,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 These parameters determine the size of the image. Images are always proportionally scaled. The width and height parameters put upper or lower bounds on the scaled image. `ImageFittingMode` has three values with the following behaviors:
 
-- `Fill`: The image’s minimum height or width is the specified height or width (whichever is reached first when scaling the image). This is the default behavior when no fitting mode is specified.
-- `Fit`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image).
-- `FitAndCenter`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image). The resulting image is centered relative to the other dimension.
+- `Fill`: The image's minimum height or width is the specified height or width (whichever is reached first when scaling the image). This is the default behavior when no fitting mode is specified.
+- `Fit`: The image's maximum height or width is the specified height or width (whichever is reached first when scaling the image).
+- `FitAndCenter`: The image's maximum height or width is the specified height or width (whichever is reached first when scaling the image). The resulting image is centered relative to the other dimension.
 
 ## See also
 

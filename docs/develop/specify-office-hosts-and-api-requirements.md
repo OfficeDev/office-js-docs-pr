@@ -1,6 +1,6 @@
 ---
 title: Specify Office hosts and API requirements
-description: ''
+description: 'Learn how to specify Office hosts and API requirements for your add-in to work as expected.'
 ms.date: 09/26/2019
 localization_priority: Normal
 ---

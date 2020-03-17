@@ -1,6 +1,6 @@
 ---
 title: Coauthoring in Excel add-ins
-description: ''
+description: 'Learn to coauthor an Excel workbook stored in OneDrive, OneDrive for Business, or SharePoint Online.'
 ms.date: 06/20/2019
 localization_priority: Normal
 ---

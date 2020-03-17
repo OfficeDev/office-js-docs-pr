@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.7
-description: ''
-ms.date: 03/06/2020
+description: 'The object model for the Office.context.mailbox.item (Requirement set 1.7)' 
+ms.date: 03/16/2020
 localization_priority: Normal
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: ProgId element in the manifest file
-description: ''
+description: The ProgId element specifies the programmatic ID of the equivalent COM add-in for your web add-in's task pane.
 ms.date: 06/19/2019
 localization_priority: Normal
 ---

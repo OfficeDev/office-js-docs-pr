@@ -1,6 +1,6 @@
 ---
 title: Read and write data to the active selection in a document or spreadsheet
-description: ''
+description: 'Learn how to read and write data to the active selection in a Word document or Excel spreadsheet.'
 ms.date: 06/20/2019
 localization_priority: Normal
 ---

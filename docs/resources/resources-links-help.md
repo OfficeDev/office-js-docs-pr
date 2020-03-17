@@ -1,6 +1,6 @@
 ---
 title: Office Add-ins additional resources
-description: 
+description: 'Useful resources on the topic of Office Add-ins'
 ms.date: 03/02/2020
 localization_priority: Normal
 ---

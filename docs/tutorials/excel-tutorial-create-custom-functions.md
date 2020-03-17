@@ -1,6 +1,6 @@
 ---
 title: Excel custom functions tutorial
-description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
+description: 'In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.'
 ms.date: 01/16/2020
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -101,7 +101,7 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 ## Create a custom function that requests data from the web
 
-Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
+Integrating data from the Web is a great way to extend Excel through custom functions. Next you'll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
 
 1. In the **starcount** project, find the file **./src/functions/functions.js** and open it in your code editor. 
 
