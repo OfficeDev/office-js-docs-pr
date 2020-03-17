@@ -7,19 +7,20 @@ localization_priority: Normal
 
 # Set up your development environment
 
-This guide will help you set up tools so you can create Office Add-ins following our quick start guides or tutorials. You'll need to install tools in the list below, which you may already have. If you already have these installed, you should be ready to begin a quick start, such as this [Excel quick start]().
+This guide will help you set up tools so you can create Office Add-ins following our quick starts or tutorials. You'll need to install tools in the list below. If you already have these installed, you should be ready to begin a quick start, such as this [Excel React quick start](../quickstarts/excel-quickstart-react.md).
 
 - Node.js
 - npm
 - An Office 365 (the subscription version of Office) account
 - A code editor of your choice
-- A command line tool if necessary
+
+This guide assumes that you know how to use the command line and have one installed.
 
 ## Install Node.js
 
-Node.js is a JavaScript runtime you will need in order to develop modern Office Add-ins. 
+Node.js is a JavaScript runtime you will need in order to develop modern Office Add-ins.
 
-To install Node.js, visit their [website](https://nodejs.org/).
+To install Node.js, visit [their website to install the latest version](https://nodejs.org/about/releases) and follow the instructions.
 
 ## Install npm
 
@@ -45,5 +46,29 @@ If you don't already have an Office 365 account, you can get a free, 90-day rene
 
 ## Install a code editor
 
-## Install a command line tool
+You can use any code editor or IDE that supports client-side development to build your web part, such as:
 
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Atom](https://atom.io)
+- [Webstorm](https://www.jetbrains.com/webstorm)
+
+## Next steps
+
+Try creating your own add-in or use Script Lab to try built-in samples.
+
+### Create an Office add-in
+
+You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.md). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try the [tutorial](../index.md).
+
+### Explore the APIs with Script Lab
+
+Explore the library of built-in samples in [Script Lab](explore-with-script-lab.md) to get a sense for the capabilities of the Office JavaScript APIs.
+
+## See also
+
+- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Design Office Add-ins](../design/add-in-design.md)
+- [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
+- [Publish Office Add-ins](../publish/publish.md)

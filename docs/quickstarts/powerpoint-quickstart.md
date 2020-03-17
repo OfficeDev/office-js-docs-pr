@@ -10,6 +10,8 @@ localization_priority: Priority
 
 In this article, you'll walk through the process of building a PowerPoint task pane add-in.
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
+
 ## Create the add-in 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]

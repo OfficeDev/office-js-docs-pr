@@ -9,6 +9,7 @@ localization_priority: Priority
 # Build your first Project task pane add-in
 
 In this article, you'll walk through the process of building a Project task pane add-in.
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
 ## Prerequisites
 

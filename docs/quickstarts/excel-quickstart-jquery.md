@@ -12,6 +12,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ## Create the add-in
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # [Yeoman generator](#tab/yeomangenerator)
