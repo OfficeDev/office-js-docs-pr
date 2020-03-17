@@ -1,6 +1,6 @@
 ---
 title: Word add-ins overview
-description: ''
+description: 'Learn the basics of Word Add-ins'
 ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started

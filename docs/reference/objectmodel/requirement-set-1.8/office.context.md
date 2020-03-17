@@ -1,6 +1,6 @@
 ---
 title: Office.context - requirement set 1.8
-description: ''
+description: 'The object model for Office.context (Requirement set 1.8)'
 ms.date: 12/16/2019
 localization_priority: Normal
 ---

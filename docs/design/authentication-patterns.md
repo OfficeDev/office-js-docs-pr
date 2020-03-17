@@ -1,6 +1,6 @@
 ---
 title: Authentication design guidelines for Office Add-ins
-description: ''
+description: 'Learn how to visually design a sign-on or sign-up page in an Office Add-in.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

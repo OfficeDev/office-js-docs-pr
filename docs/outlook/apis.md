@@ -1,6 +1,6 @@
 ---
 title: Outlook add-in APIs
-description: Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.
+description: 'Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.'
 ms.date: 02/27/2020
 localization_priority: Normal
 ---

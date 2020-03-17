@@ -1,6 +1,6 @@
 ---
 title: Call Microsoft Excel APIs from a custom function
-description: Learn which Microsoft Excel APIs you can call from your custom function. 
+description: 'Learn which Microsoft Excel APIs you can call from your custom function.'
 ms.date: 02/06/2020
 localization_priority: Normal
 ---

@@ -1,6 +1,6 @@
 ---
 title: JavaScript API for PowerPoint
-description: ''
+description: 'Overview of the PowerPoint JavaScript API'
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority

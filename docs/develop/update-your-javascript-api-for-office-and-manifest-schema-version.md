@@ -1,6 +1,6 @@
 ---
 title: Update to the latest Office JavaScript API library and version 1.1 add-in manifest schema
-description: Update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
+description: 'Update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.'
 ms.date: 10/11/2019
 localization_priority: Normal
 ---

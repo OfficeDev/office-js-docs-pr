@@ -1,7 +1,7 @@
 ---
 title: Loading the DOM and runtime environment
-description: ''
-ms.date: 03/10/2020
+description: 'Load the DOM and Office Add-ins runtime environment'
+ms.date: 07/01/2019
 localization_priority: Normal
 ---
 

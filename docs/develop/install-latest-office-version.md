@@ -1,6 +1,6 @@
 ---
 title: Install the latest version of Office
-description: Information about how to opt in to getting the latest builds of Office.
+description: 'Information about how to opt in to getting the latest builds of Office.'
 ms.date: 01/14/2020
 localization_priority: Normal
 ---

@@ -1,6 +1,6 @@
 ---
 ms.date: 07/09/2019
-description: Authenticate users using custom functions in Excel.
+description: 'Authenticate users using custom functions in Excel.'
 title: Authentication for custom functions
 localization_priority: Normal
 ---

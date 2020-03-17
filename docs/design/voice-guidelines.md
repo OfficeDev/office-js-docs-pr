@@ -1,6 +1,6 @@
 ---
 title: Voice guidelines for Office Add-ins
-description: ''
+description: 'Learn best practices in writing user help and other strings for Office Add-ins.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

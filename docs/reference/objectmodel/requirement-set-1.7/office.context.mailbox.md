@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.7
-description: ''
-ms.date: 03/06/2020
+description: 'Office.context.mailbox'
+ms.date: 03/16/2020
 localization_priority: Normal
 ---
 

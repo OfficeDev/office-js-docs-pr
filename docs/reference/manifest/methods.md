@@ -1,6 +1,6 @@
 ---
 title: Methods element in the manifest file
-description: ''
+description: The Methods element specifies the list of Office JavaScript API methods that your Office Add-in requires in order to activate.
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

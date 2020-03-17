@@ -1,6 +1,6 @@
 ---
 title: Work with ranges using the Excel JavaScript API (fundamental)
-description: ''
+description: 'Code samples that show how to perform common tasks with ranges using the Excel JavaScript API.'
 ms.date: 04/30/2019
 localization_priority: Normal
 ---

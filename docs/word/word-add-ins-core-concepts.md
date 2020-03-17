@@ -1,6 +1,6 @@
 ---
 title: Fundamental programming concepts with the Word JavaScript API
-description: Use the Word JavaScript API to build add-ins for Word.
+description: 'Use the Word JavaScript API to build add-ins for Word.'
 ms.date: 07/05/2019
 localization_priority: Priority
 ---

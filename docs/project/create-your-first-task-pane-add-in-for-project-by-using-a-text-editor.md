@@ -1,6 +1,6 @@
 ---
 title: Create your first task pane add-in for Microsoft Project by using a text editor
-description: ''
+description: 'Create a task pane add-in for Project Standard 2013, Project Professional 2013, or later versions using the Yeoman generator for Office Add-ins.'
 ms.date: 10/11/2019
 localization_priority: Normal
 ---

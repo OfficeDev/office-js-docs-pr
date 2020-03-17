@@ -1,6 +1,6 @@
 ---
 title: API open specifications for the Office JavaScript API
-description: ''
+description: 'API open specifications'
 ms.date: 07/17/2019
 localization_priority: Normal
 ---

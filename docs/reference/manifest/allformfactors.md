@@ -1,6 +1,6 @@
 ---
 title: AllFormFactors element in the manifest file
-description: ''
+description: Specifies the settings for an add-in for all form factors. 
 ms.date: 10/09/2018
 localization_priority: Normal
 ---

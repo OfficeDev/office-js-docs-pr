@@ -1,6 +1,6 @@
 ---
 title: Run code in your Excel add-in when the document opens (preview)
-description: Run code in your Excel add-in when the document opens. 
+description: 'Run code in your Excel add-in when the document opens.'
 ms.date: 02/20/2020
 localization_priority: Normal
 ---

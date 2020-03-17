@@ -1,6 +1,6 @@
 ---
 title: Advanced programming concepts with the Excel JavaScript API
-description: ''
+description: 'Learn how an Excel add-in interacts with objects in Excel by using the Office JavaScript API bject models.'
 ms.date: 01/14/2020
 localization_priority: Priority
 ---

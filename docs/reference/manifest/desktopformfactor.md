@@ -1,6 +1,6 @@
 ---
 title: DesktopFormFactor element in the manifest file
-description: ''
+description: Specifies the settings for an add-in for the desktop form factor.
 ms.date: 10/31/2019
 localization_priority: Normal
 ---

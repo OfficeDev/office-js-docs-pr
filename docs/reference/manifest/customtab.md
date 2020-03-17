@@ -1,6 +1,6 @@
 ---
 title: CustomTab element in the manifest file
-description: ''
+description: On the ribbon, you specify which tab and group for their add-in commands.
 ms.date: 01/24/2020
 localization_priority: Normal
 ---

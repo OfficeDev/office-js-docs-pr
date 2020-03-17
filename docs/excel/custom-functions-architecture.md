@@ -1,6 +1,6 @@
 ---
 ms.date: 07/10/2019
-description: Learn about Excel custom functions' runtime. 
+description: 'Learn about the runtime for Excel custom functions.'
 title: Custom functions architecture
 localization_priority: Normal
 ---
@@ -18,11 +18,11 @@ Note that if you're using the [Yeoman generator for Office Add-ins](https://www.
 
 The following table highlights the differences between the custom functions runtime and the browser engine runtime:
 
-| Custom functions runtime 	| Browser engine runtime 	|
-|------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------	|
-| Supports returning a value from a cell 	| Supports Office.js APIs and UI elements 	|
-| Does not have `localStorage` object, instead uses the `OfficeRuntime.storage` object. 	| Has `localStorage` object, can optionally use the `OfficeRuntime.storage` object. 	|
-| Does not support interacting with the DOM, or loading libraries that depend on the DOM such as jQuery.	| Supports interacting with the DOM and loading libraries that depend on the DOM. |
+| Custom functions runtime     | Browser engine runtime     |
+|------------------------------------------------------------------    |--------------------------------------------------------------------------------------------------------------    |
+| Supports returning a value from a cell     | Supports Office.js APIs and UI elements     |
+| Does not have `localStorage` object, instead uses the `OfficeRuntime.storage` object.     | Has `localStorage` object, can optionally use the `OfficeRuntime.storage` object.     |
+| Does not support interacting with the DOM, or loading libraries that depend on the DOM such as jQuery.    | Supports interacting with the DOM and loading libraries that depend on the DOM. |
 
 ## Browser engine runtime
 

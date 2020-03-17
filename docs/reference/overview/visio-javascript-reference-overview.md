@@ -1,6 +1,6 @@
 ---
 title: Visio JavaScript API overview
-description: ''
+description: 'Overview of the Visio JavaScript API'
 ms.date: 06/20/2019
 ms.prod: visio
 ms.topic: conceptual

@@ -1,6 +1,6 @@
 ---
 title: Office Common API requirement sets
-description: ''
+description: 'Learn more about the Office Common API requirement sets'
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal

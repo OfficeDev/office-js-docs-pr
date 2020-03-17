@@ -1,6 +1,6 @@
 ---
 title: Sideload Office Add-ins for testing
-description: ''
+description: 'Learn how to sideload an Office add-in for testing'
 ms.date: 02/18/2020
 localization_priority: Normal
 ---

@@ -1,6 +1,6 @@
 ---
 title: Office namespace - requirement set 1.8
-description: ''
+description: 'The Office namespace provides shared interfaces for Outlook Office add-ins (Requirement set 1.8)'
 ms.date: 12/16/2019
 localization_priority: Normal
 ---

@@ -1,6 +1,6 @@
 ---
 title: HighResolutionIconUrl element in the manifest file
-description: ''
+description: Specifies the URL of the image that is used to represent your Office Add-in in the insertion UX and Office Store on high DPI screens.
 ms.date: 12/04/2018
 localization_priority: Normal
 ---

@@ -1,6 +1,6 @@
 ---
 title: TargetDialects element in the manifest file
-description: ''
+description: The TargetDialects element defines the regional languages supported by this dictionary.
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

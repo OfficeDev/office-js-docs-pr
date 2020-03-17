@@ -1,6 +1,6 @@
 ---
 title: Enable delegate access scenarios in an Outlook add-in
-description: Briefly describes delegate access and discusses how to configure add-in support.
+description: 'Briefly describes delegate access and discusses how to configure add-in support.'
 ms.date: 01/14/2020
 localization_priority: Normal
 ---

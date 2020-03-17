@@ -1,6 +1,6 @@
 ---
 title: AppDomains element in the manifest file
-description: ''
+description: Lists any domains in addition to the domain specified in the `SourceLocation` element that your Office Add-in will use to load pages.
 ms.date: 07/03/2019
 localization_priority: Normal
 ---

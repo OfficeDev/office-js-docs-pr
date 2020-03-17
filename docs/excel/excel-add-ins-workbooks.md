@@ -1,6 +1,6 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
-description: ''
+description: 'Code samples that show how to perform common tasks with workbooks using the Excel JavaScript API.'
 ms.date: 10/21/2019
 localization_priority: Normal
 ---

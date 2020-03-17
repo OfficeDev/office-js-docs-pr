@@ -1,6 +1,6 @@
 ---
 title: Error handling
-description: ''
+description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

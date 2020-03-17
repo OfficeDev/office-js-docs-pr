@@ -1,6 +1,6 @@
 ---
 title: UX design patterns for Office Add-ins
-description: ''
+description: 'Get an overview of the UI design patterns for Office Add-ins, including patterns for navigation, authentication, first-run, and branding.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---

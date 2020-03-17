@@ -1,6 +1,6 @@
 ---
 title: How to find the proper order of manifest elements
-description: Learn how to find the correct order in which to place child elements in a parent element.
+description: 'Learn how to find the correct order in which to place child elements in a parent element.'
 ms.date: 01/10/2020
 localization_priority: Normal
 ---

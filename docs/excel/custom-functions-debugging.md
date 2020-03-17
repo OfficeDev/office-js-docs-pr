@@ -1,6 +1,6 @@
 ---
 ms.date: 07/10/2019
-description: Debug your custom functions in Excel.
+description: 'Debug your custom functions in Excel.'
 title: Custom functions debugging
 localization_priority: Normal
 ---

@@ -1,8 +1,8 @@
 ---
-ms.date: 02/20/2020
 title: "Tutorial: Share data and events between Excel custom functions and the task pane (preview)"
+description: 'In Excel, share data and events between custom functions and the task pane.'
+ms.date: 02/20/2020
 ms.prod: excel
-description: In Excel, share data and events between custom functions and the task pane.
 localization_priority: Priority
 ---
 
@@ -202,7 +202,7 @@ Now that custom functions run in the same context as your task pane code, they c
   npm run start
   ```
 
-Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE(“new value”)` to change the shared data to a new value.
+Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE("new value")` to change the shared data to a new value.
 
 > [!NOTE]
 > Configuring your project as shown in this article will share context between custom functions and the task pane. Calling Office APIs from custom functions is not supported in the preview.
