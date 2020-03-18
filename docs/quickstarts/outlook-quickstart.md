@@ -10,6 +10,8 @@ localization_priority: Priority
 
 In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message.
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
+
 ## Create the add-in
 
 You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) or Visual Studio. The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution.  Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.
