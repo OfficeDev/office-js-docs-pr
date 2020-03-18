@@ -74,14 +74,14 @@ Apply the following best practices when you develop add-in commands:
 - Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.
 - Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.
 - For the placement of your commands in the Office ribbon:
-	- Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
-	- Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office on the web or desktop) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office on the web).  
-	- Place commands on a custom tab if you have more than six top-level commands.
+    - Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+    - Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office on the web or desktop) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office on the web).  
+    - Place commands on a custom tab if you have more than six top-level commands.
     - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
     - Do not add superfluous buttons to increase the real estate of your add-in.
 
      > [!NOTE]
-     > Add-ins that take up too much space might not pass [AppSource validation](/office/dev/store/validation-policies).
+     > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
 
 - For all icons, follow the [icon design guidelines](add-in-icons.md).
 - Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a task pane) hosts.

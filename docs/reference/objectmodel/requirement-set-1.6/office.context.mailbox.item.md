@@ -1,11 +1,11 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.6
-description: 'The object model for the Outlook Item object in the Outlook Add-ins API (Mailbox API 1.6 version).'
-ms.date: 03/17/2020
+description: 'Outlook Mailbox API requirement set 1.6 version of the Item object model.'
+ms.date: 03/18/2020
 localization_priority: Normal
 ---
 
-# item
+# item (Mailbox requirement set 1.6)
 
 ### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 

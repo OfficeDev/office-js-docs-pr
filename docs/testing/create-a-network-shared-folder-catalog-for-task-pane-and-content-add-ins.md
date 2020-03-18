@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing
 description: 'Learn how to sideload an Office add-in for testing'
-ms.date: 02/18/2020
+ms.date: 03/18/2020
 localization_priority: Normal
 ---
 
@@ -72,7 +72,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 2. Add the following content to the file:
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
@@ -88,7 +88,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 5. The file should now look like the following. Save it.
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]

@@ -1,11 +1,11 @@
 ---
 title: Office namespace - preview requirement set
-description: 'The object model for the top-level namespace of the Outlook Add-ins API (Mailbox API Preview version).'
-ms.date: 12/16/2019
+description: 'Office namespace members available for Outlook add-ins using Mailbox API preview requirement set.'
+ms.date: 03/18/2020
 localization_priority: Normal
 ---
 
-# Office
+# Office (Mailbox preview requirement set)
 
 The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office).
 
