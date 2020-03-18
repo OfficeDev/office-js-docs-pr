@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs'
-ms.date: 01/02/2020
+ms.date: 03/18/2020
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -34,7 +34,7 @@ The following table lists the Excel JavaScript APIs currently in preview. To see
 |[Comment](/javascript/api/excel/excel.comment)|[resolved](/javascript/api/excel/excel.comment#resolved)|Gets or sets the comment thread status. A value of "true" means the comment thread is in the resolved state.|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[resolved](/javascript/api/excel/excel.commentreply#resolved)|Gets or sets the comment reply status. A value of "true" means the comment reply is in the resolved state.|
 |[CultureInfo](/javascript/api/excel/excel.cultureinfo)|[name](/javascript/api/excel/excel.cultureinfo#name)|Gets the culture name in the format languagecode2-country/regioncode2 (e.g. "zh-cn" or "en-us"). This is based on current system settings.|
-||[numberFormatInfo](/javascript/api/excel/excel.cultureinfo#numberformatinfo)|Defines the culturally appropriate format of displaying numbers. This is based on current system culture settings.|
+||[numberFormat](/javascript/api/excel/excel.cultureinfo#numberformat)|Defines the culturally appropriate format of displaying numbers. This is based on current system culture settings.|
 |[NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo)|[numberDecimalSeparator](/javascript/api/excel/excel.numberformatinfo#numberdecimalseparator)|Gets the string used as the decimal separator for numeric values. This is based on current system settings.|
 ||[numberGroupSeparator](/javascript/api/excel/excel.numberformatinfo#numbergroupseparator)|Gets the string used to separate groups of digits to the left of the decimal for numeric values. This is based on current system settings.|
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Gets a unique cell in the PivotTable based on a data hierarchy and the row and column items of their respective hierarchies. The returned cell is the intersection of the given row and column that contains the data from the given hierarchy. This method is the inverse of calling getPivotItems and getDataHierarchy on a particular cell.|
