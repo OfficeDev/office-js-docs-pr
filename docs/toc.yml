@@ -298,7 +298,7 @@
     - name: Publish add-ins to AppSource
       href: /office/dev/store/submit-to-the-office-store
     - name: AppSource validation policies
-      href: /office/dev/store/validation-policies
+      href: /legal/marketplace/certification-policies
     - name: Publish add-ins via Centralized Deployment
       href: publish/centralized-deployment.md
     - name: Publish add-ins to a SharePoint app catalog
@@ -488,8 +488,6 @@
           href: reference/manifest/supportssharedfolders.md
         - name: WebApplicationInfo
           href: reference/manifest/webapplicationinfo.md
-    - name: API open specifications
-      href: reference/openspec/openspec.md
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
 
@@ -1145,4 +1143,4 @@
   - name: Save and share state in custom functions
     href: excel/custom-functions-save-state-redirect.md
   - name: Handle high DPI and DPI scaling in your Office solution
-    href: develop/dynamic-dpi.md
+    href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution

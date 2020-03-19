@@ -1,11 +1,11 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.7
-description: 'The object model for the Office.context.mailbox.item (Requirement set 1.7)' 
-ms.date: 03/17/2020
+description: 'Outlook Mailbox API requirement set 1.7 version of the Item object model.'
+ms.date: 03/18/2020
 localization_priority: Normal
 ---
 
-# item
+# item (Mailbox requirement set 1.7)
 
 ### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
