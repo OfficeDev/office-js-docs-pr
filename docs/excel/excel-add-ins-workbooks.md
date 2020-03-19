@@ -203,7 +203,7 @@ Excel.run(function (context) {
     return context.sync().then(function() {
         var systemDecimalSeparator =
             context.application.cultureInfo.numberFormat.numberDecimalSeparator;
-        var oldDecimalString: string = decimalSource.values[0][0];
+        var oldDecimalString = decimalSource.values[0][0];
 
         // This assumes the input column is standardized to use "," as the decimal separator.
         var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
