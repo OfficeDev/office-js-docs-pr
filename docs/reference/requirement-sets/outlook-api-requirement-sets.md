@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: 'Learn more about the Outlook JavaScript API requirement sets'
-ms.date: 03/17/2020
+ms.date: 03/19/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -96,7 +96,7 @@ Add-ins are supported in Outlook on the following platforms.
 | | classic Outlook UI when connected to<br>Exchange on-premises | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
 > [!NOTE]
-> <sup>1</sup> Support for 1.8 in Outlook on Windows with an Office 365 subscription is available from version xxx (build yyy). For more details, see the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19).
+> <sup>1</sup> Support for 1.8 in Outlook on Windows with an Office 365 subscription is available from version 1910 (build 12130.20272). For more details, see the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19).
 >
 > <sup>2</sup> Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). Support for 1.4 in Outlook 2013 was added as part of the [September 13, 2016, update for Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). Support for 1.4 in Outlook 2016 (one-time purchase) was added as part of the [July 3, 2018, update for Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
 
