@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
-description: 'Code samples that show how to perform common tasks with workbooks using the Excel JavaScript API.'
-ms.date: 10/21/2019
+description: 'Code samples that show how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
+ms.date: 03/19/2020
 localization_priority: Normal
 ---
 
@@ -46,7 +46,7 @@ Excel.createWorkbook();
 
 The `createWorkbook` method can also create a copy of an existing workbook. The method accepts a base64-encoded string representation of an .xlsx file as an optional parameter. The resulting workbook will be a copy of that file, assuming the string argument is a valid .xlsx file.
 
-You can get your add-in’s current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
+You can get your add-in's current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
 
 ```js
 var myFile = document.getElementById("file");
@@ -179,6 +179,41 @@ Excel.run(function (context) {
         console.log("Workbook needs review : " + needsReview.value);
     });
 }).catch(errorHandlerFunction);
+```
+
+## Access application culture settings (preview)
+
+A workbook has language and culture settings that affect how certain data is displayed. This settings can help localize data when your add-in user-base is using shared workbooks across different regions. Your add-in can use string parsing to standardize the format of numbers, dates, and times based on the system culture settings.
+
+`Application.cultureInfo` defines the system culture settings as a [CultureInfo](/javascript/api/excel/excel.cultureinfo) object. This contains settings like the numerical decimal separator or the date format.
+
+Some culture settings can be [changed through the Excel UI](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). The system settings are preserved in the `CultureInfo` object. Any local changes are kept as [Application](/javascript/api/excel/excel.application)-level properties, such as `Application.decimalSeparator`.
+
+The following sample changes the decimal separator character of a numerical string from a ',' to the character used by the system settings.
+
+```js
+// This will convert a number like "14,37" to "14.37"
+// (assuming the system decimal separator is ".").
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var decimalSource = sheet.getRange("B2");
+    decimalSource.load("values");
+    context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+
+    return context.sync().then(function() {
+        var systemDecimalSeparator =
+            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+        var oldDecimalString: string = decimalSource.values[0][0];
+
+        // This assumes the input column is standardized to use "," as the decimal separator.
+        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+
+        var resultRange = sheet.getRange("C2");
+        resultRange.values = [[newDecimalString]];
+        resultRange.format.autofitColumns();
+        return context.sync();
+    });
+});
 ```
 
 ## Add custom XML data to the workbook
