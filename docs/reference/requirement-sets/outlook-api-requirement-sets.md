@@ -119,7 +119,3 @@ New Outlook JavaScript APIs are first introduced in "preview" and later become p
 > Preview APIs are subject to change and are not intended for use in a production environment.
 
 For more details about the preview APIs, see [Outlook API Preview requirement set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md).
-
-## See also
-
-- [Update history for Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
