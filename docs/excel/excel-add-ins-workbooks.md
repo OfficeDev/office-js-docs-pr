@@ -183,7 +183,7 @@ Excel.run(function (context) {
 
 ## Access application culture settings (preview)
 
-A workbook has language and culture settings that affect how certain data is displayed. This settings can help localize data when your add-in user-base is using shared workbooks across different regions. Your add-in can use string parsing to standardize the format of numbers, dates, and times based on the system culture settings.
+A workbook has language and culture settings that affect how certain data is displayed. These settings can help localize data when your add-in's users are sharing workbooks across different languages and cultures. Your add-in can use string parsing to localize the format of numbers, dates, and times based on the system culture settings so that each user sees data in their own culture's format.
 
 `Application.cultureInfo` defines the system culture settings as a [CultureInfo](/javascript/api/excel/excel.cultureinfo) object. This contains settings like the numerical decimal separator or the date format.
 
