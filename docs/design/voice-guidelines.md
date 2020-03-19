@@ -23,4 +23,4 @@ To align your text with the principles of the Office voice:
 - Guidelines for [writing for all abilities](/style-guide/accessibility/writing-all-abilities)
 - [Top 10 tips for Microsoft style and voice](/style-guide/top-10-tips-style-voice)
 - Guidelines on [word choice](/style-guide/word-choice/)
-- Office Add-in [validation policies](/office/dev/store/validation-policies)
+- Office Add-in [validation policies](/legal/marketplace/certification-policies)

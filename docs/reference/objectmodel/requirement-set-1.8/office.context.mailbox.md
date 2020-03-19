@@ -1,11 +1,11 @@
 ---
 title: Office.context.mailbox - requirement set 1.8
-description: 'The object model for Office.context.mailbox (Requirement set 1.8)'
-ms.date: 03/06/2020
+description: 'Outlook Mailbox API requirement set 1.8 version of the Mailbox object model.'
+ms.date: 03/18/2020
 localization_priority: Normal
 ---
 
-# mailbox
+# mailbox (requirement set 1.8)
 
 ### [Office](office.md)[.context](office.context.md).mailbox
 

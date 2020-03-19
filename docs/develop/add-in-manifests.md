@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: 'Get an overview of the Office Add-in manifest and its uses.'
-ms.date: 01/06/2020
+ms.date: 03/18/2020
 localization_priority: Priority
 ---
 
@@ -23,8 +23,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 * For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
-> [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
@@ -105,7 +104,7 @@ All URLs, such as the source file locations specified in the [SourceLocation](..
 
 Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
-Add-ins submitted to AppSource must also include the [SupportUrl](../reference/manifest/supporturl.md) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/office/dev/store/validation-policies).
+Add-ins submitted to AppSource must also include the [SupportUrl](../reference/manifest/supporturl.md) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/legal/marketplace/certification-policies).
 
 Only use the [AppDomains](../reference/manifest/appdomains.md) element to specify domains other than the one specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element for authentication scenarios.
 
@@ -121,7 +120,7 @@ To override this (desktop Office) behavior, specify each domain you want to open
 > - It applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
 > - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
 
-The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](../reference/manifest/appdomain.md) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.
+The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](../reference/manifest/appdomain.md) element within the **AppDomains** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

@@ -59,7 +59,6 @@ The following are some issues that you might encounter as you debug:
 ## See also
 
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
-- [AppSource validation policies](/office/dev/store/validation-policies)  
+- [AppSource validation policies](/legal/marketplace/certification-policies)  
 - [Create effective AppSource apps and add-ins](/office/dev/store/create-effective-office-store-listings)  
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
-    
