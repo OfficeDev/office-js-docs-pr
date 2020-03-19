@@ -126,7 +126,3 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
 </ul>
 
 <b>Note</b>: There's currently no host-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins. Additionally, the host-specific API for PowerPoint is very limited in scope; you'll mainly use Common APIs to create PowerPoint add-ins.
-
-<h2>Open API specifications</h2>
-
-As we design and develop new APIs for Office Add-ins, we'll make them available for your feedback on our [Open API specifications](openspec/openspec.md) page. Find out what new features are in the pipeline, and provide your input on our design specifications.

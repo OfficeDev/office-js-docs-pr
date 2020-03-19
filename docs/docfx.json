@@ -63,7 +63,6 @@
         "project/*.md": "project",
         "publish/*.md": "non-product-specific",
         "reference/*.md": "non-product-specific",
-        "reference/openspec/*.md": "non-product-specific",
         "reference/manifest/*.md": "non-product-specific",
         "reference/objectmodel/**/*.md": "outlook",
         "resources/*.md": "non-product-specific",
@@ -77,7 +76,6 @@
         "reference/*.md": "reference",
         "reference/manifest/*.md": "reference",
         "reference/objectmodel/**/*.md": "reference",
-        "reference/openspec/*.md": "reference",
         "reference/requirement-sets/*.md": "reference"
       },
       "ms.custom": {

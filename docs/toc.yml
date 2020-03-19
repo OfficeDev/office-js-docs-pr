@@ -488,8 +488,6 @@
           href: reference/manifest/supportssharedfolders.md
         - name: WebApplicationInfo
           href: reference/manifest/webapplicationinfo.md
-    - name: API open specifications
-      href: reference/openspec/openspec.md
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
 
