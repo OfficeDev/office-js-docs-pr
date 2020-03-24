@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 03/19/2020
+ms.date: 03/24/2020
 localization_priority: Normal
 ---
 
@@ -30,7 +30,7 @@ You can use the on-send feature to build an Outlook add-in that integrates the `
 - Verify that the message includes a subject line
 - Set a predetermined recipient
 
-Validation is done on the client side in Outlook, when the send event is triggered, and the add-in has up to 5 minutes before it times out. If validation fails, the sending of the item is blocked, and an error message is displayed in an information bar that prompts the user to take action.
+Validation is done on the client side in Outlook when the send event is triggered, and the add-in has up to 5 minutes before it times out. If validation fails, the sending of the item is blocked, and an error message is displayed in an information bar that prompts the user to take action.
 
 The following screenshot shows an information bar that notifies the sender to add a subject.
 
