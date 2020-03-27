@@ -22,13 +22,13 @@ The following features are in preview.
 
 ### Additional calendar properties
 
-#### [Office.IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
+#### [IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
 
 Added a new object that represents the all-day event property of an appointment in Compose mode.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription)
 
-#### [Office.Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
+#### [Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
 
 Added a new object that represents the sensitivity of an appointment in Compose mode.
 
