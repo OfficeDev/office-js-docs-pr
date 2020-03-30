@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 03/24/2020
+ms.date: 03/30/2020
 localization_priority: Normal
 ---
 
@@ -13,7 +13,7 @@ The on-send feature for Outlook add-ins provides a way to handle a message or me
 - Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.
 
 > [!NOTE]
-> The on-send feature is currently supported for Outlook on the web in Exchange Online (Office 365), Exchange 2016 on-premises (Cumulative Update 6 or later), and Exchange 2019 on-premises (Cumulative Update 1 or later). This feature is also available in the latest Outlook builds on Windows and Mac, connected to Exchange Online (Office 365). The feature was introduced in requirement set 1.8.
+> The on-send feature is currently supported for Outlook on the web in Exchange Online (Office 365), Exchange 2016 on-premises (Cumulative Update 6 or later), and Exchange 2019 on-premises (Cumulative Update 1 or later). This feature is also available in the latest Outlook builds on Windows and Mac, connected to Exchange Online (Office 365). The feature was introduced in requirement set 1.8 ([current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)).
 
 > [!IMPORTANT]
 > Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
