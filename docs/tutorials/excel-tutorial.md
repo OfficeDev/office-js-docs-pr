@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 01/16/2020
+ms.date: 03/30/2020
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Priority
@@ -159,7 +159,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
 
     ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['&euro;#,##0.00']];
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['\u20AC#,##0.00']];
     expensesTable.getRange().format.autofitColumns();
     expensesTable.getRange().format.autofitRows();
     ```
