@@ -38,4 +38,3 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 - [Word add-ins overview](../../word/word-add-ins-programming-overview.md)
 - [Word JavaScript API reference](/javascript/api/word)
 - [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
-- [API open specifications](../openspec/openspec.md)

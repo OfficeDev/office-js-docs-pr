@@ -1,7 +1,7 @@
 ---
 title: Deploy and install Outlook add-ins for testing
 description: Create a manifest file, deploy the add-in UI file to a web server, install the add-in in your mailbox, and then test the add-in.
-ms.date: 11/06/2019
+ms.date: 03/18/2020
 localization_priority: Priority
 ---
 
@@ -71,11 +71,11 @@ Deciding what versions of the Outlook client to test depends on your development
 
 - If you are developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
 
-- If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [AppSource validation policies 4.12.1](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably). This includes:
+- If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
     - The latest version of Outlook on Windows and the version prior to the latest.
     - The latest version of Outlook on Mac.
     - The latest version of Outlook on iOS and Android (if your add-in [supports mobile form factor](add-mobile-support.md)).
-    - The browser versions specified in AppSource validation policy 4.12.1.
+    - The browser versions specified in the Commercial marketplace validation policy 1120.3.
 
 > [!NOTE]
 > If your add-in does not support one of the above clients due to [requesting an API requirement set](apis.md) that the client does not support, that client would be removed from the list of required clients.

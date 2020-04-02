@@ -1,11 +1,11 @@
 ---
 title: Office.context - preview requirement set
-description: 'The object model for the Outlook Context object in the Outlook Add-ins API (Mailbox API Preview version).'
-ms.date: 12/16/2019
+description: 'Office.Context object members available for Outlook add-ins using Mailbox API preview requirement set.'
+ms.date: 03/18/2020
 localization_priority: Normal
 ---
 
-# context
+# context (Mailbox preview requirement set)
 
 ### [Office](office.md).context
 
