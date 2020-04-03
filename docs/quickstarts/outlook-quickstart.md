@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 12/28/2019
+ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -10,8 +10,6 @@ localization_priority: Priority
 
 In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message.
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
-
 ## Create the add-in
 
 You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) or Visual Studio. The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution.  Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.
@@ -19,6 +17,8 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 # [Yeoman generator](#tab/yeomangenerator)
 
 ### Prerequisites
+
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
 - [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
 

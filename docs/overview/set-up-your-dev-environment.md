@@ -1,30 +1,30 @@
 ---
 title: Set up your development environment
 description:  'Set up your developer environment so you can build Office Add-ins' 
-ms.date: 03/17/2020
+ms.date: 04/03/2020
 localization_priority: Normal
 ---
 
 # Set up your development environment
 
-This guide will help you set up tools so you can create Office Add-ins following our quick starts or tutorials. You'll need to install tools in the list below. If you already have these installed, you should be ready to begin a quick start, such as this [Excel React quick start](../quickstarts/excel-quickstart-react.md).
+This guide will help you set up tools so you can create Office Add-ins following our quick starts or tutorials. You'll need to install tools in the list below. If you already have these installed, you should be ready to begin a quick start, such as this [Excel quick start](../quickstarts/excel-quickstart-jquery.md).
 
 - Node.js
 - npm
 - An Office 365 (the subscription version of Office) account
 - A code editor of your choice
 
-This guide assumes that you know how to use the command line and have one installed.
+This guide assumes that you know how to use a command line tool. 
 
 ## Install Node.js
 
 Node.js is a JavaScript runtime you will need in order to develop modern Office Add-ins.
 
-To install Node.js, visit [their website to install the latest version](https://nodejs.org/about/releases) and follow the instructions.
+To install Node.js, visit [their website to install the latest version](https://nodejs.org) and follow the instructions.
 
 ## Install npm
 
-Npm is an open source software registry, which allows you to download the packages which you will need to develop Office Add-ins.
+npm is an open source software registry from which to download the packages used in developing Office Add-ins.
 
 To install npm, run the following in the command line:
 
