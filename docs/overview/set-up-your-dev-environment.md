@@ -18,7 +18,7 @@ This guide assumes that you know how to use the command line and have one instal
 
 ## Install Node.js
 
-Node.js is a JavaScript runtime you will need in order to develop modern Office Add-ins.
+Node.js is a JavaScript runtime you will need to develop modern Office Add-ins.
 
 To install Node.js, visit [their website to install the latest version](https://nodejs.org/about/releases) and follow the instructions.
 
