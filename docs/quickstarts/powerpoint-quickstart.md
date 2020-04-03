@@ -247,6 +247,8 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
     ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3.png)
 
+[!include[Console tool note](../includes/console-tool-note.md)]
+
 ### Next steps
 
 Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).

@@ -8,7 +8,7 @@ localization_priority: Priority
 
 # Build an Excel task pane add-in
 
-In this article, you'll walk through the process of building an Excel task pane add-in. 
+In this article, you'll walk through the process of building an Excel task pane add-in.
 
 ## Create the add-in 
 
@@ -49,7 +49,7 @@ After you complete the wizard, the generator creates the project and installs su
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
 3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -109,7 +109,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
     </body>
     ```
 
-2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file. 
+2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -140,7 +140,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
     })();
     ```
 
-3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file. 
+3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -150,7 +150,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -161,7 +161,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -193,7 +193,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS. If you are asked to trust a certificate, do so to allow the add-in to connect to its host.
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -204,6 +204,8 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
     ![Excel add-in](../images/excel-quickstart-addin-2c.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### Next steps
 

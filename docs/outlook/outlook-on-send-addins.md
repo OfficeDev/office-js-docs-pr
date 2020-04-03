@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 11/07/2019
+ms.date: 03/30/2020
 localization_priority: Normal
 ---
 
@@ -13,10 +13,10 @@ The on-send feature for Outlook add-ins provides a way to handle a message or me
 - Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.
 
 > [!NOTE]
-> The on-send feature is currently supported for Outlook on the web in Exchange Online (Office 365), Exchange 2016 on-premises (Cumulative Update 6 or later), and Exchange 2019 on-premises (Cumulative Update 1 or later). This feature is also available in the latest Outlook builds on Windows and Mac, connected to Exchange Online (Office 365). The feature was introduced in requirement set 1.8.
+> The on-send feature is currently supported for Outlook on the web in Exchange Online (Office 365), Exchange 2016 on-premises (Cumulative Update 6 or later), and Exchange 2019 on-premises (Cumulative Update 1 or later). This feature is also available in the latest Outlook builds on Windows and Mac, connected to Exchange Online (Office 365). The feature was introduced in requirement set 1.8 ([current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)).
 
 > [!IMPORTANT]
-> Add-ins that use the on send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
+> Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
 
 The on-send feature is triggered by the `ItemSend` event type and is UI-less.
 
@@ -30,7 +30,7 @@ You can use the on-send feature to build an Outlook add-in that integrates the `
 - Verify that the message includes a subject line
 - Set a predetermined recipient
 
-Validation is done on the client side in Outlook, when the send event is triggered. If validation fails, the sending of the item is blocked, and an error message is displayed in an information bar that prompts the user to take action.  
+Validation is done on the client side in Outlook when the send event is triggered, and the add-in has up to 5 minutes before it times out. If validation fails, the sending of the item is blocked, and an error message is displayed in an information bar that prompts the user to take action.
 
 The following screenshot shows an information bar that notifies the sender to add a subject.
 
