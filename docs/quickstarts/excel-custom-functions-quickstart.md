@@ -12,6 +12,7 @@ With custom functions, developers can now add new functions to Excel by defining
 
 ## Prerequisites
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 * Excel on Windows (version 1904 or later, connected to Office 365 subscription) or Excel on the web
