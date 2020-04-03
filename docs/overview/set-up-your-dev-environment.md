@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Set up your development environment
 
-This guide will help you set up tools so you can create Office Add-ins following our quick starts or tutorials. You'll need to install tools in the list below. If you already have these installed, you should be ready to begin a quick start, such as this [Excel React quick start](../quickstarts/excel-quickstart-react.md).
+This guide helps you set up tools so you can create Office Add-ins by following our quick starts or tutorials. You'll need to install the tools from the list below. If you already have these installed, you are ready to begin a quick start, such as this [Excel React quick start](../quickstarts/excel-quickstart-react.md).
 
 - Node.js
 - npm
