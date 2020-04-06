@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook Add-ins and the Office JavaScript APIs.'
-ms.date: 03/27/2020
+ms.date: 04/06/2020
 localization_priority: Normal
 ---
 
@@ -64,13 +64,13 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
 
 #### [ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
 
 <br>
 
@@ -110,7 +110,7 @@ Added a new function that disables the client signature for the sending mailbox 
 
 Added a new function that gets the compose type of a message in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
