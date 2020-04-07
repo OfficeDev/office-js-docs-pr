@@ -1,5 +1,5 @@
 ---
-ms.date: 07/10/2019
+ms.date: 04/07/2020
 description: 'Debug your custom functions in Excel.'
 title: Custom functions debugging
 localization_priority: Normal
@@ -153,7 +153,7 @@ There are several build tasks available:
 - `npm run watch`: builds for development and automatically rebuilds when a source file is saved
 - `npm run build-dev`: builds for development once
 - `npm run build`: builds for production
-- `npm run dev-server`: runs the web server used for development
+- `npm run start:server`: runs the web server used for development
 
 You can use the following tasks to start debugging on desktop or online.
 - `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in.

@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
-ms.date: 01/16/2020
+ms.date: 04/07/2020
 ms.prod: onenote
 localization_priority: Priority
 ---
@@ -82,7 +82,7 @@ try {
     > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
     >
     > ```command&nbsp;line
-    > npm run dev-server
+    > npm run start:server
     > ```
 
     Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).

@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JS API.
-ms.date: 04/03/2020
+ms.date: 04/07/2020
 ms.prod: word
 localization_priority: Priority
 ---
@@ -61,7 +61,7 @@ After you complete the wizard, the generator creates the project and installs su
     > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
     >
     > ```command&nbsp;line
-    > npm run dev-server
+    > npm run start:server
     > ```
 
     - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.

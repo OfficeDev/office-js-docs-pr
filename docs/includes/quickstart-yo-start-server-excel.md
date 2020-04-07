@@ -8,7 +8,7 @@ Complete the following steps to start the local web server and sideload your add
 > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
 >
 > ```command&nbsp;line
-> npm run dev-server
+> npm run start:server
 > ```
 
 - To test your add-in in Excel, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.

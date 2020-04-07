@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 03/30/2020
+ms.date: 04/07/2020
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Priority
@@ -177,7 +177,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     > If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding. When you run this command, the local web server starts.
     >
     > ```command&nbsp;line
-    > npm run dev-server
+    > npm run start:server
     > ```
 
     - To test your add-in in Excel, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.

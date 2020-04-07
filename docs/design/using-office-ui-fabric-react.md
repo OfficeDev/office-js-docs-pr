@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric React in Office Add-ins
 description: 'Learn how to use Office UI Fabric React in Office Add-ins.'
-ms.date: 01/16/2020
+ms.date: 04/07/2020
 localization_priority: Normal
 ---
 
@@ -54,7 +54,7 @@ After you complete the wizard, the generator creates the project and installs su
     > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
     >
     > ```command&nbsp;line
-    > npm run dev-server
+    > npm run start:server
     > ```
 
     - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
