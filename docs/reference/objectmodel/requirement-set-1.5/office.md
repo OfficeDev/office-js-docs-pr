@@ -1,11 +1,11 @@
 ---
 title: Office namespace - requirement set 1.5
-description: ''
-ms.date: 12/16/2019
+description: 'Office namespace members available for Outlook add-ins using Mailbox API requirement set 1.5.'
+ms.date: 03/18/2020
 localization_priority: Normal
 ---
 
-# Office
+# Office (Mailbox requirement set 1.5)
 
 The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office).
 
@@ -14,7 +14,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Properties
 
@@ -57,7 +57,7 @@ Specifies the result of an asynchronous call.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 <br>
 
@@ -84,7 +84,7 @@ Specifies how to coerce data returned or set by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 <br>
 
@@ -110,7 +110,7 @@ Specifies the event associated with an event handler.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read |
 
 <br>
 
@@ -137,4 +137,4 @@ Specifies the source of the data returned by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|

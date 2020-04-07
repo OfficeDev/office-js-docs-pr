@@ -1,6 +1,6 @@
 ---
 title: Event element in the manifest file
-description: ''
+description: Defines an event handler in an add-in.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---

@@ -1,23 +1,23 @@
 ---
 title: Outlook add-in API requirement set 1.5
-description: ''
+description: 'Features and APIs that were introduced for Outlook Add-ins and the Office JavaScript APIs as part of Mailbox API 1.5.'
 ms.date: 12/17/2019
 localization_priority: Normal
 ---
 
 # Outlook add-in API requirement set 1.5
 
-The Outlook add-in API subset of the JavaScript API for Office includes objects, methods, properties, and events that you can use in an Outlook add-in.
+The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.
 
 > [!NOTE]
-> This documentation is for a [requirement set](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) other than the latest requirement set.
+> This documentation is for a [requirement set](../../requirement-sets/outlook-api-requirement-sets.md) other than the latest requirement set.
 
 ## What's new in 1.5?
 
 Requirement set 1.5 includes all of the features of [Requirement set 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md). It added the following features.
 
-- Added support for [pinnable task panes](/outlook/add-ins/pinnable-taskpane).
-- Added support for calling [REST APIs](/outlook/add-ins/use-rest-api).
+- Added support for [pinnable task panes](../../../outlook/pinnable-taskpane.md).
+- Added support for calling [REST APIs](../../../outlook/use-rest-api.md).
 - Added ability to mark an attachment as inline.
 - Added ability to close a task pane or dialog.
 
@@ -35,7 +35,7 @@ Requirement set 1.5 includes all of the features of [Requirement set 1.4](../req
 
 ## See also
 
-- [Outlook add-ins](/outlook/add-ins/)
+- [Outlook add-ins](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Get started](/outlook/add-ins/quick-start)
+- [Get started](../../../quickstarts/outlook-quickstart.md)
 - [Requirement sets and supported clients](../../requirement-sets/outlook-api-requirement-sets.md)

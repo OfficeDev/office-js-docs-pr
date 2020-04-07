@@ -1,8 +1,8 @@
 ---
 title: Debug Office Add-ins on a Mac
-description: ''
+description: 'Learn how to use a Mac to debug Office Add-ins'
 ms.date: 11/26/2019
-localization_priority: Priority
+localization_priority: Normal
 ---
 
 # Debug Office Add-ins on a Mac

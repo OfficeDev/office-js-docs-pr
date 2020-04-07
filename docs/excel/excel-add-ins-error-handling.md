@@ -1,6 +1,6 @@
 ---
 title: Error handling
-description: ''
+description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---
@@ -11,7 +11,7 @@ localization_priority: Normal
 When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
 > [!NOTE]
-> For more information about the **sync()** method and the asynchronous nature of Excel JavaScript API, see [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md).
+> For more information about the `sync()` method and the asynchronous nature of Excel JavaScript API, see [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md).
 
 ## Best practices
 

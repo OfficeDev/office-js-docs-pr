@@ -1,8 +1,8 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 06/20/2019
-localization_priority: Priority
+ms.date: 03/27/2020
+localization_priority: Normal
 ---
 
 # Performance optimization using the Excel JavaScript API
@@ -47,13 +47,13 @@ worksheet.getRange("A1").set({
 
 In the Excel JavaScript API, you need to explicitly load the properties of a proxy object. Although you're able to load all the properties at once with an empty ```load()``` call, that approach can have significant performance overhead. Instead, we suggest that you only load the necessary properties, especially for those objects which have a large number of properties.
 
-For example, if you only intend to read the **address** property of a range object, specify only that property when you call the **load()** method:
+For example, if you only intend to read the `address` property of a range object, specify only that property when you call the `load()` method:
 
 ```js
 range.load('address');
 ```
 
-You can call **load()** method in any of the following ways:
+You can call `load()` method in any of the following ways:
 
 _Syntax:_
 
@@ -67,10 +67,10 @@ object.load({ loadOption });
 
 _Where:_
 
-* `properties` is the list of properties to load, specified as comma-delimited strings or as an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
+* `properties` is the list of properties to load, specified as comma-delimited strings or as an array of names. For more information, see the `load()` methods defined for objects in [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md).
 * `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](/javascript/api/office/officeextension.loadoption) for details.
 
-Please be aware that some of the “properties” under an object may have the same name as another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously. To avoid this, your code should only load the “leaf nodes” in an object tree. 
+Please be aware that some of the "properties" under an object may have the same name as another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously. To avoid this, your code should only load the "leaf nodes" in an object tree.
 
 ## Suspend Excel processes temporarily
 
@@ -125,10 +125,12 @@ Excel.run(async function(ctx) {
 
 Excel displays changes your add-in makes approximately as they happen in the code. For large, iterative data sets, you may not need to see this progress on the screen in real-time. `Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the add-in calls `context.sync()`, or until `Excel.run` ends (implicitly calling `context.sync`). Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.
 
+> [!NOTE]
+> Don't call `suspendScreenUpdatingUntilNextSync` repeatedly (such as in a loop). Repeated calls will cause the Excel window to flicker.
+
 ### Enable and disable events
 
-Performance of an add-in may be improved by disabling events. 
-A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
+Performance of an add-in may be improved by disabling events. A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
 
 ## Update all cells in a range
 
@@ -184,21 +186,21 @@ The following code sample fills a selected range with data, one cell at a time. 
 
 ```js
 Excel.run(async (context) => {
-	var largeRange = context.workbook.getSelectedRange();
-	largeRange.load(["rowCount", "columnCount"]);
-	await context.sync();
-	
-	for (var i = 0; i < largeRange.rowCount; i++) {
-		for (var j = 0; j < largeRange.columnCount; j++) {
-			var cell = largeRange.getCell(i, j);
-			cell.values = [[i *j]];
+    var largeRange = context.workbook.getSelectedRange();
+    largeRange.load(["rowCount", "columnCount"]);
+    await context.sync();
 
-			// call untrack() to release the range from memory
-			cell.untrack();
-		}
-	}
+    for (var i = 0; i < largeRange.rowCount; i++) {
+        for (var j = 0; j < largeRange.columnCount; j++) {
+            var cell = largeRange.getCell(i, j);
+            cell.values = [[i *j]];
 
-	await context.sync();
+            // call untrack() to release the range from memory
+            cell.untrack();
+        }
+    }
+
+    await context.sync();
 });
 ```
 
@@ -207,5 +209,4 @@ Excel.run(async (context) => {
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 - [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
 - [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
-- [Excel JavaScript API Open Specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

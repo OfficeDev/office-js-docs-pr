@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JS API.
-ms.date: 01/16/2020
+ms.date: 04/03/2020
 ms.prod: word
 localization_priority: Priority
 ---
@@ -22,6 +22,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 ### Prerequisites
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### Create the add-in project
@@ -302,6 +303,8 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
     ![Screenshot of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1b.png)
 
+[!include[Console tool note](../includes/console-tool-note.md)]
+
 ### Next steps
 
 Congratulations, you've successfully created a Word task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
@@ -315,4 +318,4 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 * [Develop Office Add-ins](../develop/develop-overview.md)
 * [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 * [Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API reference](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
+* [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)

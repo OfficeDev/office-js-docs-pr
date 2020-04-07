@@ -1,8 +1,8 @@
 ---
 title: Best practices for developing Office Add-ins
-description: ''
-ms.date: 03/19/2019
-localization_priority: Priority
+description: 'Apply the best practices when developing to create Office Add-ins.'
+ms.date: 03/18/2020
+localization_priority: Normal
 ---
 
 
@@ -11,8 +11,7 @@ localization_priority: Priority
 
 Effective add-ins offer unique and compelling functionality that extends Office applications in a visually appealing way. To create a great add-in, provide an engaging first-time experience for your users, design a first-class UI experience, and optimize your add-in's performance. Apply the best practices described in this article to create add-ins that help your users complete their tasks quickly and efficiently.
 
-> [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## Provide clear value
 
@@ -47,7 +46,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Avoid pop ups. If you have to use them, guide the user to enable your pop up.
 
-For patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](/office/dev/add-ins/design/first-run-experience-patterns).
+For patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](../design/first-run-experience-patterns.md).
 
 ## Use add-in commands
 

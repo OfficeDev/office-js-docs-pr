@@ -49,7 +49,7 @@
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office on the web)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     For each ID, take these steps:
 

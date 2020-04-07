@@ -1,6 +1,6 @@
 ---
 title: AppDomain element in the manifest file
-description: ''
+description: Specifies additional domains that load pages in the add-in window.
 ms.date: 07/03/2019
 localization_priority: Normal
 ---
@@ -27,4 +27,4 @@ Specifies additional domains that load pages in the add-in window. It also lists
 
 ## Remarks
 
-**AppDomain** elements should be used to specify any additional domains other than the one specified in the [SourceLocation element](sourcelocation.md). For more information, see [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests).
+**AppDomain** elements should be used to specify any additional domains other than the one specified in the [SourceLocation element](sourcelocation.md). For more information, see [Office Add-ins XML manifest](../../develop/add-in-manifests.md).

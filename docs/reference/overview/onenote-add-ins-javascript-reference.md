@@ -1,20 +1,20 @@
 ---
 title: OneNote JavaScript API overview
-description: ''
-ms.date: 07/05/2019
+description: 'Learn more about the OneNote JavaScript API'
+ms.date: 02/19/2020
 ms.prod: onenote
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # OneNote JavaScript API overview
 
-A OneNote add-in interacts with objects in OneNote on the web by using the JavaScript API for Office, which includes two JavaScript object models:
+A OneNote add-in interacts with objects in OneNote on the web by using the Office JavaScript API, which includes two JavaScript object models:
 
 * **OneNote JavaScript API**: Introduced with Office 2016, the [OneNote JavaScript API](/javascript/api/onenote) provides strongly-typed objects that you can use to access objects in OneNote on the web. 
 
 * **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
 
-This section of the documentation focuses on the OneNote JavaScript API, which you'll use to develop the majority of functionality in add-ins that target OneNote on the web. For information about the Common API, see [Office JavaScript API object model](../../develop/office-javascript-api-object-model.md). 
+This section of the documentation focuses on the OneNote JavaScript API, which you'll use to develop the majority of functionality in add-ins that target OneNote on the web. For information about the Common API, see [Common JavaScript API object model](../../develop/office-javascript-api-object-model.md). 
 
 ## Learn programming concepts
 

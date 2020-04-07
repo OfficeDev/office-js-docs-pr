@@ -1,6 +1,6 @@
 ---
 title: Typography guidelines for Office Add-ins
-description: ''
+description: 'Learn what typefaces and font sizes to use in Office Add-ins.'
 ms.date: 06/27/2018
 localization_priority: Normal
 ---

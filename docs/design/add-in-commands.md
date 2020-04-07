@@ -1,7 +1,7 @@
 ---
-title: Add-in commands for Excel, Word, and PowerPoint
-description: ''
-ms.date: 06/20/2019
+title: Basic concepts for add-in commands
+description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Web Add-in.'
+ms.date: 02/11/2020
 localization_priority: Priority
 ---
 
@@ -30,20 +30,27 @@ The following command capabilities are currently supported.
 > [!NOTE]
 > Content add-ins do not currently support add-in commands.
 
-**Extension points**
+### Extension points
 
 - Ribbon tabs - Extend built-in tabs or create a new custom tab.
 - Context menus - Extend selected context menus.
 
-**Control types**
+### Control types
 
 - Simple buttons - trigger specific actions.
 - Menus - simple menu dropdown with buttons that trigger actions.
 
-**Actions**
+### Actions
 
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](/javascript/api/office/office.ui) API.  
+
+### Default Enabled or Disabled Status (preview)
+
+You can specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting. 
+
+> [!NOTE]
+> This feature is in preview and is not supported in all hosts or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
 
 ## Supported platforms
 
@@ -56,8 +63,6 @@ Add-in commands are currently supported on the following platforms.
 - Office 2019 on Mac
 - Office on the web
 
-More platforms are coming soon.
-
 ## Debugging
 
 To debug an Add-in Command, you must run it in Office on the web. For details, see [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md).
@@ -69,14 +74,14 @@ Apply the following best practices when you develop add-in commands:
 - Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.
 - Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.
 - For the placement of your commands in the Office ribbon:
-	- Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
-	- Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office on the web or desktop) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office on the web).  
-	- Place commands on a custom tab if you have more than six top-level commands.
+    - Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+    - Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office on the web or desktop) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office on the web).  
+    - Place commands on a custom tab if you have more than six top-level commands.
     - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
     - Do not add superfluous buttons to increase the real estate of your add-in.
 
      > [!NOTE]
-     > Add-ins that take up too much space might not pass [AppSource validation](/office/dev/store/validation-policies).
+     > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
 
 - For all icons, follow the [icon design guidelines](add-in-icons.md).
 - Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a task pane) hosts.
@@ -90,4 +95,4 @@ Apply the following best practices when you develop add-in commands:
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
-For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides) reference content.
+For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](../reference/manifest/versionoverrides.md) reference content.

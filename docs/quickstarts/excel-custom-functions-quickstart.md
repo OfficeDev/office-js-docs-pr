@@ -3,7 +3,7 @@ ms.date: 01/16/2020
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
-localization_priority: Normal
+localization_priority: Priority
 ---
 
 # Get started developing Excel custom functions
@@ -12,6 +12,7 @@ With custom functions, developers can now add new functions to Excel by defining
 
 ## Prerequisites
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 * Excel on Windows (version 1904 or later, connected to Office 365 subscription) or Excel on the web
