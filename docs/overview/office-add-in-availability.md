@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
-description: Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.
-ms.date: 01/23/2020
+description: 'Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.'
+ms.date: 04/07/2020
 localization_priority: Priority
 ---
 
@@ -323,8 +323,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office on the web<br>(modern)</td>
-    <td> - Mail Read<br>
-      - Mail Compose<br>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -338,8 +340,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office on the web<br>(classic)</td>
-    <td> - Mail Read<br>
-      - Mail Compose<br>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -351,8 +355,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office on Windows<br>(connected to Office 365 subscription)</td>
-    <td> - Mail Read<br>
-      - Mail Compose<br>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
       - Modules</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -367,8 +373,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2019 on Windows<br>(one-time purchase)</td>
-    <td> - Mail Read<br>
-      - Mail Compose<br>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
       - Modules</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -382,8 +390,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2016 on Windows<br>(one-time purchase)</td>
-    <td> - Mail Read<br>
-      - Mail Compose<br>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
       - Modules</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -394,8 +404,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2013 on Windows<br>(one-time purchase)</td>
-    <td> - Mail Read<br>
-      - Mail Compose</td>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a>*<br>
@@ -404,7 +416,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office on iOS<br>(connected to Office 365 subscription)</td>
-    <td> - Mail Read<br>
+    <td> - Message Read<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -415,8 +427,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office on Mac<br>(connected to Office 365 subscription)</td>
-    <td> - Mail Read<br>
-      - Mail Compose<br>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -430,8 +444,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2019 on Mac<br>(one-time purchase)</td>
-    <td> - Mail Read<br>
-      - Mail Compose<br>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -443,8 +459,10 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2016 on Mac<br>(one-time purchase)</td>
-    <td> - Mail Read<br>
-      - Mail Compose<br>
+    <td> - Message Read<br>
+      - Message Compose<br>
+      - Appointment Attendee (Read)<br>
+      - Appointment Organizer (Compose)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -456,7 +474,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office on Android<br>(connected to Office 365 subscription)</td>
-    <td> - Mail Read<br>
+    <td> - Message Read<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>

@@ -1,6 +1,6 @@
 ---
 title: Building Office Add-ins
-description: An introduction to developing Office Add-ins.
+description: 'An introduction to developing Office Add-ins.'
 ms.date: 02/27/2020
 localization_priority: Priority
 ---

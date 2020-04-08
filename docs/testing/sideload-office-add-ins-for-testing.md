@@ -41,7 +41,7 @@ The following video walks you through the process of sideloading your add-in in 
 >
 > - In a Windows Command Prompt, run the following line: `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
 >
-> - Enter “**about:flags**” in the Microsoft Edge search bar to bring up the Developer Settings options.  Check the “**Allow localhost loopback**” option and restart Microsoft Edge.
+> - Enter "**about:flags**" in the Microsoft Edge search bar to bring up the Developer Settings options.  Check the "**Allow localhost loopback**" option and restart Microsoft Edge.
 
 >    ![The Microsoft Edge Allow localhost loopback option with the box checked.](../images/allow-localhost-loopback.png)
 

@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: Learn how to build a simple Project task pane add-in by using the Office JS API.
-ms.date: 01/16/2020
+ms.date: 04/03/2020
 ms.prod: project
 localization_priority: Priority
 ---
@@ -12,6 +12,7 @@ In this article, you'll walk through the process of building a Project task pane
 
 ## Prerequisites
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Project 2016 or later on Windows

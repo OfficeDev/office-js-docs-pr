@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook Add-ins and the Office JavaScript APIs.'
-ms.date: 03/27/2020
+ms.date: 04/08/2020
 localization_priority: Normal
 ---
 
@@ -64,13 +64,13 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
 
 #### [ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
 
 <br>
 
@@ -98,13 +98,13 @@ Added a new function that returns initialization data passed when the add-in is 
 
 Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Added a new function that disables the client signature for the sending mailbox in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 #### [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
@@ -116,13 +116,13 @@ Added a new function that gets the compose type of a message in Compose mode.
 
 Added a new function that checks if the client signature is enabled on the item in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 #### [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 Added a new enum `ComposeType` available in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 <br>
 
@@ -143,6 +143,20 @@ Added ability to get Office theme.
 Added `OfficeThemeChanged` event to `Mailbox`.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+<br>
+
+---
+
+---
+
+### Online meeting provider integration
+
+#### [MobileOnlineMeetingCommandSurface extension point](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
+
+Added `MobileOnlineMeetingCommandSurface` extension point to manifest. It defines the online meeting integration.
+
+**Available in**: Outlook on Android (connected to Office 365 subscription)
 
 <br>
 
