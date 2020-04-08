@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook Add-ins and the Office JavaScript APIs.'
-ms.date: 04/06/2020
+ms.date: 04/08/2020
 localization_priority: Normal
 ---
 
@@ -143,6 +143,20 @@ Added ability to get Office theme.
 Added `OfficeThemeChanged` event to `Mailbox`.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+<br>
+
+---
+
+---
+
+### Online meeting provider integration
+
+#### [MobileOnlineMeetingCommandSurface extension point](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
+
+Added `MobileOnlineMeetingCommandSurface` extension point to manifest. It defines the online meeting integration.
+
+**Available in**: Outlook on Android (connected to Office 365 subscription)
 
 <br>
 
