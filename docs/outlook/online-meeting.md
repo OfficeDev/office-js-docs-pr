@@ -133,7 +133,7 @@ You can follow the usual guidance to [test and validate your add-in](testing-and
 
 #### Create meeting flow UI
 
-As a meeting organizer, you see a screen similar to the following.
+As a meeting organizer, you should see a screen similar to the following.
 
 ***TODO:*** Create meeting flow UI
 
