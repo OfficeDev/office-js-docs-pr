@@ -92,7 +92,7 @@ Word.run(async (context) => {
       await context.sync();
       console.log(paragraph.text);
     }
-  });
+});
 ```
 
 In this scenario, to avoid having a `context.sync` in a loop, you should use a pattern we call the **split loop** pattern. Let's see a concrete example of the pattern before we get to a formal description of it. Here's how the split loop pattern can be applied to the preceding code snippet. Note the following about this code:
@@ -167,7 +167,7 @@ Word.run(async (context) => {
 In the preceding code, there is an outer and an inner loop. Each of them contains a `context.sync`. Based on the very first code snippet in this article, you probably see that the `context.sync` in the inner loop can simply be moved after the inner loop. But that would still leave the code with a `context.sync` (two of them actually) in the outer loop. The following code shows how you can remove `context.sync`s from the loops. We discuss the code below.
 
 ```javascript
-  Word.run(async (context) => {
+Word.run(async (context) => {
 
     const allSearchResults = [];
     for (let i = 0; i < jobMapping.length; i++) {
@@ -195,7 +195,7 @@ In the preceding code, there is an outer and an inner loop. Each of them contain
     }
 
     await context.sync();
-  });
+});
 ```
 
 Note the code uses the split loop pattern:
@@ -222,4 +222,4 @@ One further caveat: sometimes it takes more than one loop just to create the arr
 
 ## When should you not use the patterns in this article?
 
-Excel cannot read more than 5 MB in data in a given call of `context.sync`. If this limit is exceeded an error is thrown. (For more information, see [Excel data transfer limits](../develop/.md#excel-data-transfer-limits).) It is very rare that this limit is approached, but if there's a chance that this will happen with your add-in, then your code should *not* load all the data in a single loop and follow the loop with a `context.sync`. But you still should avoid having a `context.sync` in every iteration of a loop over a collection object. Instead, define subsets of the items in the collection and loop over each subset in turn, with a `context.sync` between the loops. You could structure this with an outer loop that iterates over the subsets and contains the `context.sync` in each of these outer iterations. 
+Excel cannot read more than 5 MB in data in a given call of `context.sync`. If this limit is exceeded an error is thrown. (For more information, see [Excel data transfer limits](../develop/common-coding-issues.md#excel-data-transfer-limits).) It is very rare that this limit is approached, but if there's a chance that this will happen with your add-in, then your code should *not* load all the data in a single loop and follow the loop with a `context.sync`. But you still should avoid having a `context.sync` in every iteration of a loop over a collection object. Instead, define subsets of the items in the collection and loop over each subset in turn, with a `context.sync` between the loops. You could structure this with an outer loop that iterates over the subsets and contains the `context.sync` in each of these outer iterations. 
