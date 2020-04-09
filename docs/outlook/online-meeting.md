@@ -135,8 +135,6 @@ You can follow the usual guidance to [test and validate your add-in](testing-and
 
 As a meeting organizer, you should see screens similar to the following when you create a meeting.
 
-***TODO:*** Size images - need to resize?
-
 > ![screenshot of create meeting screen on Android - loading Contoso toggle](../images/outlook-android-create-online-meeting-1.png)
 
 > ![screenshot of create meeting screen on Android - Contoso toggle off](../images/outlook-android-create-online-meeting-2.png)
