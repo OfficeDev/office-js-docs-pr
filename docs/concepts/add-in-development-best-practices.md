@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
 description: 'Apply the best practices when developing to create Office Add-ins.'
-ms.date: 03/18/2020
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
