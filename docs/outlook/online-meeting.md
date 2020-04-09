@@ -135,17 +135,17 @@ You can follow the usual guidance to [test and validate your add-in](testing-and
 
 As a meeting organizer, you should see screens similar to the following when you create a meeting.
 
-> ![screenshot of create meeting screen on Android - loading Contoso toggle](../images/outlook-android-create-online-meeting-1.png)
+> ![screenshot of create meeting screen on Android - loading Contoso toggle](../images/outlook-android-create-online-meeting-load.png)
 
-> ![screenshot of create meeting screen on Android - Contoso toggle off](../images/outlook-android-create-online-meeting-2.png)
+> ![screenshot of create meeting screen on Android - Contoso toggle off](../images/outlook-android-create-online-meeting-off.png)
 
-> ![screenshot of create meeting screen on Android - Contoso toggle on](../images/outlook-android-create-online-meeting-3.png)
+> ![screenshot of create meeting screen on Android - Contoso toggle on](../images/outlook-android-create-online-meeting-on.png)
 
 #### Join meeting UI
 
 As a meeting attendee, you should see a screen similar to the following when you view the meeting.
 
-> ![screenshot of join meeting screen on Android](../images/outlook-android-join-online-meeting.png)
+> ![screenshot of join meeting screen on Android](../images/outlook-android-join-online-meeting-view.png)
 
 ## Available APIs
 
