@@ -2,7 +2,7 @@
 title: How to create an Outlook mobile add-in for an online-meeting provider (preview)
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 04/08/2020
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
@@ -131,17 +131,23 @@ function updateBody(event, existingBody) {
 
 You can follow the usual guidance to [test and validate your add-in](testing-and-tips.md). After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, you should restart Outlook on your mobile device (Android is the only supported client for now) then verify on a new meeting screen that the Microsoft Teams or Skype toggle has been replaced with your own.
 
-#### Create meeting flow UI
+#### Create meeting UI
 
-As a meeting organizer, you should see a screen similar to the following.
+As a meeting organizer, you should see screens similar to the following when you create a meeting.
 
-***TODO:*** Create meeting flow UI
+***TODO:*** Size images - need to resize?
 
-#### Join meeting flow UI
+> ![screenshot of create meeting screen on Android - loading Contoso toggle](../images/outlook-android-create-online-meeting-1.png)
 
-As a meeting attendee, you should see a screen similar to the following.
+> ![screenshot of create meeting screen on Android - Contoso toggle off](../images/outlook-android-create-online-meeting-2.png)
 
-***TODO:*** Join meeting flow UI
+> ![screenshot of create meeting screen on Android - Contoso toggle on](../images/outlook-android-create-online-meeting-3.png)
+
+#### Join meeting UI
+
+As a meeting attendee, you should see a screen similar to the following when you view the meeting.
+
+> ![screenshot of join meeting screen on Android](../images/outlook-android-join-online-meeting.png)
 
 ## Available APIs
 
@@ -173,7 +179,7 @@ Several restrictions apply.
 - Currently in preview.
 - At present, Android is the only supported client. Support on iOS is coming soon.
 - Only admin-installed add-ins should show up on the meeting compose screen, replacing the default Teams or Skype option. User-installed add-ins won't activate.
-- The add-in icon should be in grayscale. ***TODO:*** Link to Fabric UI or other example?
+- The add-in icon should be in grayscale using hex code #919191 or its equivalent in other color formats.
 - Only one UI-less command is supported in Appointment Organizer (compose) mode.
 
 ## See also
