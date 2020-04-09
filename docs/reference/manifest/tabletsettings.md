@@ -1,7 +1,7 @@
 ---
 title: TabletSettings element in the manifest file
 description: The TabletSettings element specifies control settings that apply when your mail add-in is used on a tablet.
-ms.date: 01/13/2020
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
@@ -20,14 +20,14 @@ Specifies control settings that apply when your mail add-in is used on a tablet.
 <Form xsi:type="ItemRead">
    <!--website.html is a placeholder for your own add-in website.-->
    <DesktopSettings>
-      <SourceLocation DefaultValue="https://website.html" />
-      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
+      <SourceLocation DefaultValue="https://website.html" />
    </DesktopSettings>
    <TabletSettings>
-      <SourceLocation DefaultValue="https://website.html" />
-      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
+      <SourceLocation DefaultValue="https://website.html" />
    </TabletSettings>
    <PhoneSettings>
       <SourceLocation DefaultValue="https://website.html" />
@@ -38,4 +38,3 @@ Specifies control settings that apply when your mail add-in is used on a tablet.
 ## Contained in
 
 [Form](form.md)
-

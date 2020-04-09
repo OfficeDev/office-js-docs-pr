@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # RequestedHeight element
 
-Specifies the initial height (in pixels) of a content add-in or mail add-in. 
+Specifies the initial height (in pixels) of a content add-in or mail add-in.
 
 **Add-in type:** Content, Mail
 
