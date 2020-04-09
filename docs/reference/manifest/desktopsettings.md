@@ -18,19 +18,19 @@ Specifies source location and control settings that apply when your mail add-in 
 
 ```XML
 <Form xsi:type="ItemRead">
-   <!--website.html is a placeholder for your own add-in website.-->
+   <!--https://MyDomain.com/website.html is a placeholder for your own add-in website.-->
    <DesktopSettings>
       <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
-      <SourceLocation DefaultValue="https://website.html" />
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </DesktopSettings>
    <TabletSettings>
       <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
-      <SourceLocation DefaultValue="https://website.html" />
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </TabletSettings>
    <PhoneSettings>
-      <SourceLocation DefaultValue="https://website.html" />
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </PhoneSettings>
 </Form>
 ```
