@@ -99,6 +99,8 @@ While the resources limits on CPU and memory usage, crash tolerance, UI responsi
 
 - Test your add-in against the highest volume of data you expect, and restrict your add-in to process up to that limit.
 
+- Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
+
 
 ## See also
 

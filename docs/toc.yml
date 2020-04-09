@@ -164,7 +164,11 @@
         - name: Use the Office dialog box to play a video
           href: develop/dialog-video.md
       - name: Performance
-        href: concepts/resource-limits-and-performance-optimization.md
+        items:
+        - name: Resource limits and performance optimization for Office Add-ins
+          href: concepts/resource-limits-and-performance-optimization.md
+        - name: Avoid using the context.sync method in loops
+          href: concepts/correlated-objects-pattern.md
       - name: Privacy and security
         href: concepts/privacy-and-security.md
       - name: Request permissions for API use in add-ins

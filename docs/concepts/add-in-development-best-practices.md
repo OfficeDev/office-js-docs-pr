@@ -118,6 +118,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Monitor your service health, and use telemetry to monitor user success.
 
+- Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
 ## Market your add-in
 
