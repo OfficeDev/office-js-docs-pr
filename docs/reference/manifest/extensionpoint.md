@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 04/07/2020
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
@@ -345,6 +345,8 @@ However, there are some limitations to be aware of. These limitations are in pla
 ```xml
 <ExtensionPoint xsi:type="DetectedEntity">
   <Label resid="residLabelName"/>
+  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
+  <!--<RequestedHeight>360</RequestedHeight>-->
   <SourceLocation resid="residDetectedEntityURL" />
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" />
