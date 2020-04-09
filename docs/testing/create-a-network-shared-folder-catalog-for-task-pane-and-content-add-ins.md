@@ -62,7 +62,7 @@ The following video walks you through the process of sideloading your add-in in 
 
     ![Trust Center dialog with catalog selected](../images/sideload-windows-trust-center-dialog.png)
 
-8. Choose the **OK** button to close the **Word Options** dialog window.
+8. Choose the **OK** button to close the **Options** dialog window.
 
 9. Close and reopen the Office application so your changes will take effect.
 
