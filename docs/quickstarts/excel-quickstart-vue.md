@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using Vue
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Vue.
-ms.date: 01/16/2020
+ms.date: 04/09/2020
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -53,7 +53,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     When prompted, provide the following information to create your add-in project:
 
     - **Choose a project type:** `Office Add-in project containing the manifest only`
-    - **What do you want to name your add-in?** `my-office-add-in`
+    - **What do you want to name your add-in?** `My Office Add-in`
     - **Which Office client application would you like to support?** `Excel`
 
     ![Yeoman generator](../images/yo-office-manifest-only-vue.png)
@@ -178,7 +178,9 @@ module.exports = {
    npm run serve
    ```
 
-2. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If your browser indicates that the site's certificate is not trusted, you will need to [configure your computer to trust the certificate](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie).
+2. npx office-addin-dev-certs install
+
+In a web browser, navigate to `https://localhost:3000` (notice the `https`). If your browser indicates that the site's certificate is not trusted, you will need to [configure your computer to trust the certificate](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie).
 
 3. When the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
 
