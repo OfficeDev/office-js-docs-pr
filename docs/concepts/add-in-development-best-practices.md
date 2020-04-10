@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
 description: 'Apply the best practices when developing to create Office Add-ins.'
-ms.date: 03/18/2020
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
@@ -118,6 +118,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Monitor your service health, and use telemetry to monitor user success.
 
+- Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
 ## Market your add-in
 

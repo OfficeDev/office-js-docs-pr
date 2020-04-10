@@ -1,7 +1,7 @@
 ---
 title: Error handling
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 03/19/2019
+ms.date: 04/10/2020
 localization_priority: Normal
 ---
 
@@ -49,25 +49,25 @@ The following table is a list of errors that the API may return.
 
 |error.code | error.message |
 |:----------|:--------------|
-|InvalidArgument |The argument is invalid or missing or has an incorrect format.|
-|InvalidRequest  |Cannot process the request.|
-|InvalidReference|This reference is not valid for the current operation.|
-|InvalidBinding  |This object binding is no longer valid due to previous updates.|
-|InvalidSelection|The current selection is invalid for this operation.|
-|Unauthenticated |Required authentication information is either missing or invalid.|
-|AccessDenied |You cannot perform the requested operation.|
-|ItemNotFound |The requested resource doesn't exist.|
-|ActivityLimitReached|Activity limit has been reached.|
-|GeneralException|There was an internal error while processing the request.|
-|NotImplemented  |The requested feature isn't implemented.|
-|ServiceNotAvailable|The service is unavailable.|
-|Conflict|Request could not be processed because of a conflict.|
-|ItemAlreadyExists|The resource being created already exists.|
-|UnsupportedOperation|The operation being attempted is not supported.|
-|RequestAborted|The request was aborted during run time.|
-|ApiNotAvailable|The requested API is not available.|
-|InsertDeleteConflict|The insert or delete operation attempted resulted in a conflict.|
-|InvalidOperation|The operation attempted is invalid on the object.|
+|`AccessDenied` |You cannot perform the requested operation.|
+|`ActivityLimitReached`|Activity limit has been reached.|
+|`ApiNotAvailable`|The requested API is not available.|
+|`Conflict`|Request could not be processed because of a conflict.|
+|`GeneralException`|There was an internal error while processing the request.|
+|`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
+|`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|
+|`InvalidBinding`  |This object binding is no longer valid due to previous updates.|
+|`InvalidOperation`|The operation attempted is invalid on the object.|
+|`InvalidReference`|This reference is not valid for the current operation.|
+|`InvalidRequest`  |Cannot process the request.|
+|`InvalidSelection`|The current selection is invalid for this operation.|
+|`ItemAlreadyExists`|The resource being created already exists.|
+|`ItemNotFound` |The requested resource doesn't exist.|
+|`NotImplemented`  |The requested feature isn't implemented.|
+|`RequestAborted`|The request was aborted during run time.|
+|`ServiceNotAvailable`|The service is unavailable.|
+|`Unauthenticated` |Required authentication information is either missing or invalid.|
+|`UnsupportedOperation`|The operation being attempted is not supported.|
 
 ## See also
 

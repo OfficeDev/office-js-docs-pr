@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: 'Learn about the resource limits of the Office Add-in platform, including CPU and memory.'
-ms.date: 09/09/2019
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
@@ -98,6 +98,8 @@ While the resources limits on CPU and memory usage, crash tolerance, UI responsi
 - If your add-in uses a CPU-intensive algorithm but you can divide the data input or output into smaller sets, consider creating a web service, passing the data to the web service to off-load the CPU, and wait for an asynchronous callback.
 
 - Test your add-in against the highest volume of data you expect, and restrict your add-in to process up to that limit.
+
+- Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
 
 ## See also

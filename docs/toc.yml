@@ -167,7 +167,11 @@
         - name: Use the Office dialog box to play a video
           href: develop/dialog-video.md
       - name: Performance
-        href: concepts/resource-limits-and-performance-optimization.md
+        items:
+        - name: Avoid using the context.sync method in loops
+          href: concepts/correlated-objects-pattern.md
+        - name: Resource limits and performance optimization for Office Add-ins
+          href: concepts/resource-limits-and-performance-optimization.md
       - name: Privacy and security
         href: concepts/privacy-and-security.md
       - name: Request permissions for API use in add-ins
@@ -971,6 +975,8 @@
         href: outlook/get-or-set-the-time-of-an-appointment.md
       - name: Get and set location
         href: outlook/get-or-set-the-location-of-an-appointment.md
+      - name: Configure online meeting (preview)
+        href: outlook/online-meeting.md
     - name: Privacy and security
       items:
       - name: Overview
