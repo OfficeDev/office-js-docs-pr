@@ -2,7 +2,7 @@
 title: Create an Outlook mobile add-in for an online-meeting provider (preview)
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 04/09/2020
+ms.date: 04/10/2020
 localization_priority: Normal
 ---
 
@@ -13,11 +13,9 @@ Setting up an online meeting is a core experience for an Outlook user, and it's 
 > [!NOTE]
 > This feature is only supported in [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Android with an Office 365 subscription.
 
-## Scenario: Online-meeting provider
+In this article, you'll learn how to set up your Outlook mobile add-in to enable users to organize and join a meeting using your online-meeting service. Throughout this article, we'll be using a fictional online-meeting service provider, "Contoso".
 
-In this section, you'll learn how to set up your Outlook mobile add-in to enable users to organize and join a meeting using your online-meeting service. Throughout this article, we'll be using a fictional online-meeting service provider, "Contoso".
-
-### Configure the manifest
+## Configure the manifest
 
 To enable users to create online meetings with your add-in, you must configure the `MobileOnlineMeetingCommandSurface` extension point in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
 
@@ -61,7 +59,7 @@ The following example shows a sample of the manifest that includes the `MobileFo
 ...
 ```
 
-### Implementation
+## Implement adding online meeting details
 
 In this section, learn how your add-in script can update a user's meeting to include online meeting details.
 
@@ -127,17 +125,17 @@ function updateBody(event, existingBody) {
 }
 ```
 
-### Testing and validation
+## Testing and validation
 
 Follow the usual guidance to [test and validate your add-in](testing-and-tips.md). After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device (Android is the only supported client for now). Then, on a new meeting screen, verify that the Microsoft Teams or Skype toggle is replaced with your own.
 
-#### Create meeting UI
+### Create meeting UI
 
 As a meeting organizer, you should see screens similar to the following three images when you create a meeting.
 
 [![screenshot of create meeting screen on Android - loading Contoso toggle](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![screenshot of create meeting screen on Android - Contoso toggle off](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![screenshot of create meeting screen on Android - Contoso toggle on](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
-#### Join meeting UI
+### Join meeting UI
 
 As a meeting attendee, you should see a screen similar to the following image when you view the meeting.
 
@@ -145,14 +143,8 @@ As a meeting attendee, you should see a screen similar to the following image wh
 
 ## Available APIs
 
-***TODO:*** Confirm set of APIs - will need to update ref docs for each of them - point to this article
-e.g. **Note**: This member is not supported in Outlook on iOS or Android. However, there's an exception for online-meeting providers. See *online meeting article* for details.
-
-***TODO:*** Note similar exception in [mobile add-ins support](add-mobile-support.md#compose-mode-and-appointments) article.
-
 The following APIs are available for this feature.
 
-- [Dialog APIs for auth flow](../develop/dialog-api-in-office-add-ins.md)
 - Appointment Organizer APIs
   - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#subject) ([Subject](/javascript/api/outlook/office.subject?view=outlook-js-preview))
   - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#start) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview))
@@ -164,16 +156,17 @@ The following APIs are available for this feature.
   - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#getasync-coerciontype--options--callback-), [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setasync-data--options--callback-))
   - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview))
   - [Office.context.roamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview))
+- [Dialog APIs for auth flow](../develop/dialog-api-in-office-add-ins.md)
 
 ## Restrictions
 
 Several restrictions apply.
 
 - Applicable only to online-meeting service providers.
-- Currently in preview.
+- Currently in preview so this feature shouldn't be used in production add-ins.
 - At present, Android is the only supported client. Support on iOS is coming soon.
 - Only admin-installed add-ins will appear on the meeting compose screen, replacing the default Teams or Skype option. User-installed add-ins won't activate.
-- The add-in icon should be in grayscale using hex code #919191 or its equivalent in other color formats.
+- The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 - Only one UI-less command is supported in Appointment Organizer (compose) mode.
 
 ## See also
