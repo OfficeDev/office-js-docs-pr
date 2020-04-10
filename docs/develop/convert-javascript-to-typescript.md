@@ -116,7 +116,7 @@ For your reference, the following code snippet shows the contents of the **Home.
             messageBanner.hideBanner();
 
             // If you're using Excel 2013, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
