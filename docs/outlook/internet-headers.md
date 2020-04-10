@@ -9,7 +9,11 @@ localization_priority: Normal
 
 ## Background
 
-A common requirement in Outlook add-ins development is to store custom properties associated with an add-in at different levels. At present, custom properties are stored at the item or mailbox level.
+A common requirement in Outlook add-ins development is to store custom properties associated with an add-in at different levels. 
+
+![Diagram of internet headers. Text: User 1 sends email. Add-in manages custom internet headers while user is composing email. User 2 receives the email. Add-in gets internet headers from received email then parses and uses custom headers. ](../images/outlook-internet-headers.png)
+
+At present, custom properties are stored at the item or mailbox level.
 
 - Item level - For properties that apply to a specific item, use the [CustomProperties](/javascript/api/outlook/office.customproperties) object. For example, store a customer code associated with the person who sent the email.
 - Mailbox level - For properties that apply to all the mail items in the user's mailbox, use the [RoamingSettings](/javascript/api/outlook/office.roamingsettings) object. For example, store a user's preference to show the temperature in a particular scale.
@@ -28,8 +32,6 @@ Introduced in requirement set 1.8, the internet headers APIs enable developers t
 - Stamp information on an email that persists after it leaves Exchange across all clients.
 - Read information on an email that persisted after the email left Exchange across all clients in mail read scenarios.
 - Access the entire MIME header of the email.
-
-![Diagram of internet headers. Text: User 1 sends email. Add-in manages custom internet headers while user is composing email. User 2 receives the email. Add-in gets internet headers from received email then parses and uses custom headers. ](../images/outlook-internet-headers.png)
 
 ## Set internet headers while composing a message
 
