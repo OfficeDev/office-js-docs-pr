@@ -58,7 +58,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
     ![Yeoman generator](../images/yo-office-manifest-only-vue.png)
 
-After you complete the wizard, it creates a `my-office-add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
+After you complete the wizard, it creates a `My Office Add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
 
 > [!TIP]
 > You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created. The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.
