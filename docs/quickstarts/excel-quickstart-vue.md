@@ -70,11 +70,18 @@ After you complete the wizard, it creates a `my-office-add-in` folder, which con
 To enable HTTPS for your app, create a `vue.config.js` file in the root folder of the Vue project with the following contents:
 
 ```js
+var fs = require("fs");
+var path = require("path");
+var homedir = require('os').homedir()
+
 module.exports = {
-  devServer: {
-    port: 3000,
-    https: true
-  }
+    devServer: {
+        port: 3000,
+        https: true,
+        key: fs.readFileSync(path.resolve(${homedir}/.office-addin-dev-certs/localhost.key)),
+        cert: fs.readFileSync(path.resolve(${homedir}/.office-addin-dev-certs/localhost.crt)),
+        ca: fs.readFileSync(path.resolve(${homedir}/.office-addin-dev-certs/ca.crt))
+    }
 };
 ```
 
@@ -178,11 +185,13 @@ module.exports = {
    npm run serve
    ```
 
-2. npx office-addin-dev-certs install
+2. Also from the terminal, run the following command to install the add-in's certificates.
 
-In a web browser, navigate to `https://localhost:3000` (notice the `https`). If your browser indicates that the site's certificate is not trusted, you will need to [configure your computer to trust the certificate](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie).
+   ```command&nbsp;line
+   npx office-addin-dev-certs install
+   ```
 
-3. When the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
+3. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
 
 ## Try it out
 
