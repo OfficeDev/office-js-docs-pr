@@ -1,7 +1,7 @@
 ---
 title: Get and set internet headers
 description: How to get and set internet headers on a message in an Outlook add-in.
-ms.date: 04/10/2019
+ms.date: 04/10/2020
 localization_priority: Normal
 ---
 
