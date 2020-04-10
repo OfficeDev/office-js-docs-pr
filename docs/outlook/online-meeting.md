@@ -1,5 +1,5 @@
 ---
-title: How to create an Outlook mobile add-in for an online-meeting provider (preview)
+title: Create an Outlook mobile add-in for an online-meeting provider (preview)
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
 ms.date: 04/09/2020
@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # Create an Outlook mobile add-in for an online-meeting provider (preview)
 
-Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook) mobile. However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can make the online meeting creation experience seamless for their Outlook add-in users.
+Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook) mobile. However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can streamline the online meeting creation experience for their Outlook add-in users.
 
 > [!NOTE]
 > This feature is only supported in [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Android with an Office 365 subscription.
@@ -63,9 +63,9 @@ The following example shows a sample of the manifest that includes the `MobileFo
 
 ### Implementation
 
-In this section, you'll see an outline for how your add-in script can update a user's meeting to include online meeting details.
+In this section, learn how your add-in script can update a user's meeting to include online meeting details.
 
-The following example shows how you could construct online meeting details. Not shown is how to get the meeting organizer's ID and other details from your service.
+The following example shows how you construct online meeting details. Not shown is how to get the meeting organizer's ID and other details from your service.
 
 ```js
 const newBody = '<br>' +
@@ -81,7 +81,7 @@ const newBody = '<br>' +
     '<br><br>';
 ```
 
-The next example shows how you could define a UI-less function named `insertContosoMeeting` referenced in the manifest to update the meeting body with the online meeting details.
+The following example shows how to define a UI-less function named `insertContosoMeeting` referenced in the manifest to update the meeting body with the online meeting details.
 
 ```js
 var mailboxItem;
@@ -108,7 +108,7 @@ function insertContosoMeeting(event) {
 }
 ```
 
-This sample shows an implementation of the supporting function `updateBody` used in the previous example that appends the online meeting details to the current body of the meeting.
+The following example shows an implementation of the supporting function `updateBody` used in the previous example that appends the online meeting details to the current body of the meeting.
 
 ```js
 function updateBody(event, existingBody) {
@@ -129,17 +129,17 @@ function updateBody(event, existingBody) {
 
 ### Testing and validation
 
-You can follow the usual guidance to [test and validate your add-in](testing-and-tips.md). After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, you should restart Outlook on your mobile device (Android is the only supported client for now) then verify on a new meeting screen that the Microsoft Teams or Skype toggle has been replaced with your own.
+Follow the usual guidance to [test and validate your add-in](testing-and-tips.md). After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device (Android is the only supported client for now). Then, on a new meeting screen, verify that the Microsoft Teams or Skype toggle is replaced with your own.
 
 #### Create meeting UI
 
-As a meeting organizer, you should see screens similar to the following when you create a meeting.
+As a meeting organizer, you should see screens similar to the following three images when you create a meeting.
 
 [![screenshot of create meeting screen on Android - loading Contoso toggle](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![screenshot of create meeting screen on Android - Contoso toggle off](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![screenshot of create meeting screen on Android - Contoso toggle on](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 #### Join meeting UI
 
-As a meeting attendee, you should see a screen similar to the following when you view the meeting.
+As a meeting attendee, you should see a screen similar to the following image when you view the meeting.
 
 [![screenshot of join meeting screen on Android](../images/outlook-android-join-online-meeting-view.png)](../images/outlook-android-join-online-meeting-view-expanded.png#lightbox)
 
@@ -172,7 +172,7 @@ Several restrictions apply.
 - Applicable only to online-meeting service providers.
 - Currently in preview.
 - At present, Android is the only supported client. Support on iOS is coming soon.
-- Only admin-installed add-ins should show up on the meeting compose screen, replacing the default Teams or Skype option. User-installed add-ins won't activate.
+- Only admin-installed add-ins will appear on the meeting compose screen, replacing the default Teams or Skype option. User-installed add-ins won't activate.
 - The add-in icon should be in grayscale using hex code #919191 or its equivalent in other color formats.
 - Only one UI-less command is supported in Appointment Organizer (compose) mode.
 
