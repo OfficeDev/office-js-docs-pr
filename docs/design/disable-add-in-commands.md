@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 03/09/2020
+ms.date: 04/11/2020
 localization_priority: Priority
 ---
 
@@ -31,19 +31,19 @@ In Office on the web, the APIs and manifest markup described in this article onl
 
 ### Shared runtime required
 
-The APIs and manifest markup described in this article that the add-in's manifest specifies that it should use a shared runtime. To do this take the following steps.
+The APIs and manifest markup described in this article require that the add-in's manifest specify that it should use a shared runtime. To do this take the following steps.
 
 1. In the [Runtimes](../reference/manifest/runtimes.md) element in the manifest, add the following child element: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (If there isn't already a `<Runtimes>` element in the manifest, create it as the first child under the `<Host>` element in the `VersionOverrides` section.)
 2. In the [Resources.Urls](../reference/manifest/resources.md) section of the manifest, add the following child element: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, where `{MyDomain}` is the domain of the add-in and `{path-to-start-page}` is the path for the start page of the add-in; for example: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
 3. Depending on whether your add-in contains a task pane, a function file, or an Excel custom function, you must do one or more of the following three steps:
 
-    - If the add-in contains a task pane, set the `resid` attribute of the [Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md) element to `Contoso.SharedRuntime.Url`. The element should look like this: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - If the add-in contains an Excel custom function, set the `resid` attribute of the [Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md) element to `Contoso.SharedRuntime.Url`. The element should look like this: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - If the add-in contains a function file, set the `resid` attribute of the [FunctionFile](../reference/manifest/functionfile.md) element to `Contoso.SharedRuntime.Url`. The element should look like this: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
+    - If the add-in contains a task pane, set the `resid` attribute of the [Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md) element to exactly the same string as you used for the `resid` of the `<Runtime>` element in step 1; for example, `Contoso.SharedRuntime.Url`. The element should look like this: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - If the add-in contains an Excel custom function, set the `resid` attribute of the [Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md) element exactly the same string as you used for the `resid` of the `<Runtime>` element in step 1; for example, `Contoso.SharedRuntime.Url`. The element should look like this: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - If the add-in contains a function file, set the `resid` attribute of the [FunctionFile](../reference/manifest/functionfile.md) element to exactly the same string as you used for the `resid` of the `<Runtime>` element in step 1; for example, `Contoso.SharedRuntime.Url`. The element should look like this: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
 
 ## Set the default state to disabled
 
-By default, any Add-in Command is enabled when the Office application launches. If you want a custom button or menu item to be disabled when the Office application launches, you specify this in the manifest. Just add an [Enabled](../reference/manifest/enabled.md) element (with the value `false`) immediately below the [Action](../reference/manifest/action.md) element in the declaration of the control. The following shows the basic structure:
+By default, any Add-in Command is enabled when the Office application launches. If you want a custom button or menu item to be disabled when the Office application launches, you specify this in the manifest. Just add an [Enabled](../reference/manifest/enabled.md) element (with the value `false`) immediately *below* (not inside) the [Action](../reference/manifest/action.md) element in the declaration of the control. The following shows the basic structure:
 
 ```xml
 <OfficeApp ...>
@@ -72,52 +72,25 @@ By default, any Add-in Command is enabled when the Office application launches. 
 The essential steps to changing the enabled status of an Add-in Command are:
 
 1. Create a [RibbonUpdaterData](/javascript/api/office-runtime/officeruntime.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
-2. Pass the **RibbonUpdaterData** object to the [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office-runtime/officeruntime.ribbon#requestupdate-input-) method.
+2. Pass the **RibbonUpdaterData** object to the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-) method.
 
 The following is a simple example. Note that "MyButton" and "OfficeAddinTab1" are copied from the manifest.
 
 ```javascript
 function enableButton() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            ribbon.requestUpdate({
-                tabs: [
-                    {
-                        id: "OfficeAppTab1",
-                        controls: [
-                        {
-                            id: "MyButton",
-                            enabled: true
-                        }
-                    ]}
-                ]});
-        });
+    Office.ribbon.requestUpdate({
+        tabs: [
+            {
+                id: "OfficeAppTab1", 
+                controls: [
+                {
+                    id: "MyButton", 
+                    enabled: true
+                }
+            ]}
+        ]});
 }
 ```
-
-> [!NOTE]
-> We tentatively plan to simplify the APIs in April, 2020, in two ways:
->
-> - The APIs will move from the `OfficeRuntime` namespace to the `Office` namespace.
-> - You will not need to call a `getRibbon()` method. The `Ribbon` object will be a singleton property of the `Office` object.
->
-> For example, the preceding code would be rewritten as follows:
->
-> ```javascript
-> function enableButton() {
->    Office.ribbon.requestUpdate({
->        tabs: [
->            {
->                id: "OfficeAppTab1", 
->                controls: [
->                {
->                    id: "MyButton", 
->                    enabled: true
->                }
->            ]}
->        ]});
-> }
-> ```
 
 We also provide several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the equivalent example in TypeScript and it makes use of these types.
 
@@ -126,8 +99,7 @@ const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
     const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    const ribbon: Ribbon = await OfficeRuntime.ui.getRibbon();
-    await ribbon.requestUpdate(ribbonUpdater);
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -158,13 +130,10 @@ Third, define the `enableChartFormat` handler. The following is a simple example
 
 ```javascript
 function enableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: true};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
-        });
+    var button = {id: "ChartFormatButton", enabled: true};
+    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var ribbonUpdater = {tabs: [parentTab]};
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -181,15 +150,12 @@ The following example shows a function that disables a button and records the bu
 
 ```javascript
 function disableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: false};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
+    var button = {id: "ChartFormatButton", enabled: false};
+    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var ribbonUpdater = {tabs: [parentTab]};
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 
-            chartFormatButtonEnabled = false;
-        });
+    chartFormatButtonEnabled = false;
 }
 ```
 
@@ -215,20 +181,19 @@ In some scenarios, Office is unable to update the ribbon and will return an erro
 
 ```javascript
 function disableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: false};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
+    try {
+        var button = {id: "ChartFormatButton", enabled: false};
+        var parentTab = {id: "CustomChartTab", controls: [button]};
+        var ribbonUpdater = {tabs: [parentTab]};
+        await Office.ribbon.requestUpdate(ribbonUpdater);
 
-            chartFormatButtonEnabled = false;
-        })
-        .catch(function (error){
-            if (error.code == "HostRestartNeeded"){
-                reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
-            }
-        });
+        chartFormatButtonEnabled = false;
+    }
+    catch(error) {
+        if (error.code == "HostRestartNeeded"){
+            reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
+        }
+    }
 }
 ```
 
@@ -236,6 +201,6 @@ function disableChartFormat() {
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
 
-The enable/disable APIs require support of the following requirement sets:
+The enable/disable APIs require support of the following requirement set:
 
 - [AddinCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)
