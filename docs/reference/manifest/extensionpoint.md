@@ -258,7 +258,7 @@ This extension point puts buttons in the command surface for the mail read view 
 > [!NOTE]
 > This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Android with an Office 365 subscription.
 
-This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting.
+This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting. To learn more about this scenario, see the [Create an Outlook mobile add-in for an online-meeting provider](../../outlook/online-meeting.md) article.
 
 #### Child elements
 
@@ -266,9 +266,11 @@ This extension point puts a mode-appropriate toggle in the command surface for a
 |:-----|:-----|
 |  [Control](control.md) |  Adds a button to the command surface.  |
 
-**ExtensionPoint** elements of this type can only have one child element: a **Control** element.
+`ExtensionPoint` elements of this type can only have one child element: a `Control` element.
 
-The **Control** element contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.
+The `Control` element contained in this extension point must have the `xsi:type` attribute set to `MobileButton`.
+
+The `Icon` images should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 
 #### Example
 
@@ -288,7 +290,7 @@ The **Control** element contained in this extension point must have the **xsi:ty
       <bt:Image resid="UiLessIcon" size="48" scale="3" />
     </Icon>
     <Action xsi:type="ExecuteFunction">
-      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+      <FunctionName>insertContosoMeeting</FunctionName>
     </Action>
   </Control>
 </ExtensionPoint>
