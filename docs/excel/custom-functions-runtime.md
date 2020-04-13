@@ -1,5 +1,5 @@
 ---
-ms.date: 05/08/2019
+ms.date: 04/13/2020
 description: 'Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.'
 title: Runtime for Excel custom functions
 localization_priority: Normal
@@ -76,7 +76,7 @@ ws.onerror = function (error) {
 
 Within a custom function (or within any other part of an add-in), you can store and access data by using the `OfficeRuntime.storage` object. `Storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
-`Storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (e.g. www.contoso.com/addin1, www.contoso.com/addin2), they are also permitted to share information back and forth through `storage`. Note that add-ins which have different subdomains will have different instances of `storage` (e.g. subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2).
+`Storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (for example, `www.contoso.com/addin1`, `www.contoso.com/addin2`), they are also permitted to share information back and forth through `storage`. Note that add-ins which have different subdomains will have different instances of `storage` (for example, `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
 
 Because `storage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
 
