@@ -1,7 +1,7 @@
 ---
 title: Passing data and messages to a dialog box from its host page
-description: 'Learn how to pass data to a dialog from the host page by using the messageChild and DialogParentMessageReceived APIs'
-ms.date: 03/11/2020
+description: 'Learn how to pass data to a dialog from the host page by using the messageChild and DialogParentMessageReceived APIs.'
+ms.date: 04/16/2020
 localization_priority: Normal
 ---
 
@@ -12,7 +12,7 @@ Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.
 > [!Important]
 >
 > - The APIs described in this article are in preview. They are available to developers for experimentation; but should not be used in a production add-in. Until this API is released, use the techniques described in [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) for production add-ins.
-> - The APIs described in this article require Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features is turned off for that build.
+> - The APIs described in this article require Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://insider.office.com). Please note that when a build graduates to the production semi-annual channel, support for preview features is turned off for that build.
 > - In the initial stage of the preview, the APIs are supported in Excel, PowerPoint, and Word; but not in Outlook.
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
