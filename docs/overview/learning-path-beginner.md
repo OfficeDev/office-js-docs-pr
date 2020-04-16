@@ -1,7 +1,7 @@
 ---
 title: Start Here! A guide for beginners making Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
-ms.date: 02/19/2020
+ms.date: 04/16/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
@@ -10,12 +10,17 @@ localization_priority: Priority
 
 Want to get started building your own cross-platform Office extensions? The following steps show you what to read first, what tools to install, and recommended tutorials to complete.
 
+## Step 0: Prerequisites
+
+- Office Add-ins are essentially web applications embedded in Office. So, you should first have a basic understanding of web applications and how they are hosted on the web. There is an enormous amount of information about this on the Internet, in books, and in online courses. A good way to start if you have no prior knowledge of web applications at all is to search for "What is a web app?" on Bing.
+- The primary programming language you will use in creating Office Add-ins is JavaScript or TypeScript. You can think of TypeScript as a strongly-typed version of JavaScript. If you are not familiar with either of these languages, but you have experience with VBA, VB.Net, C#, you will probably find TypeScript easier to learn. Again, there is a wealth of information about these languages on the Internet, in books, and in online courses.
+
 ## Step 1: Begin with fundamentals
 
 We know you're eager to start coding, but there are some things about Office Add-ins that you should read before you open your IDE or code editor.
 
 - [Office Add-ins Platform Overview](office-add-ins.md): Find out what Office Web Add-ins are and how they differ from older ways of extending Office, such as VSTO add-ins.
-- [Building Office Add-ins](office-add-ins-fundamentals.md): Get an overview of Office add-in development and lifecycle including tools, creating an add-in UI, and using the JavaScript APIs to interact with the Office document.
+- [Building Office Add-ins](office-add-ins-fundamentals.md): Get an overview of Office add-in development and lifecycle including tooling, creating an add-in UI, and using the JavaScript APIs to interact with the Office document.
 
 There are a lot of links in those articles, but if you're a beginner with Office Add-ins, we recommend that you come back here when you've read them and continue with the next section.
 
