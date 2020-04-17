@@ -56,7 +56,7 @@ One known cause is that Microsoft Edge requires that localhost be given a loopba
 
 ### Get errors trying to download a PDF file
 
-Directly downloading blobs as PDF files in an add-in is not supported when Edge is the browser. The workaround is to create a simple web application that downloads blobs as PDF files. In your add-in call the `Office.context.ui.openBrowserWindow(url)` method and pass the URL of the web application.
+Directly downloading blobs as PDF files in an add-in is not supported when Edge is the browser. The workaround is to create a simple web application that downloads blobs as PDF files. In your add-in call the `Office.context.ui.openBrowserWindow(url)` method and pass the URL of the web application. This will open the web application in a browser window outside of Office.
 
 ## See also
 
