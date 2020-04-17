@@ -40,7 +40,9 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
     > [!NOTE]
     > If this command is not available or not working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file):
     >
-    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
+    > ```command&nbsp;line
+    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > ```
 
 ## Validate your manifest against the XML schema
 
