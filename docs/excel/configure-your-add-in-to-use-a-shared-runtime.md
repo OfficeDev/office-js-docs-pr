@@ -1,5 +1,5 @@
 ---
-ms.date: 02/20/2020
+ms.date: 04/16/2020
 title: "Configure your Excel add-in to share the browser runtime (preview)"
 ms.prod: excel
 description: 'Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.'
@@ -112,9 +112,8 @@ Don't design your add-in to use multiple task panes if you are planning to use s
 
 ## Next steps
 
-Now try out some features of the shared runtime by taking a look at the following articles.
-
-- [Call Excel APIs from a custom function](call-excel-apis-from-custom-function.md)
+- Read the [Call Excel APIs from a custom function](call-excel-apis-from-custom-function.md) article for details on using the Excel JavaScript APIs and custom Excel functions in a shared runtime.
+- Explore the patterns-and-practices sample [Manage ribbon and task pane UI, and run code on doc open](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario) to see a larger example of the shared JavaScript runtime in action.
 
 ## See also
 
