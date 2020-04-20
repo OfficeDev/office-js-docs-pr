@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 01/22/2020
+ms.date: 04/20/2020
 localization_priority: Normal
 ---
 
@@ -20,7 +20,8 @@ See [Create a PivotTable to analyze worksheet data](https://support.office.com/a
 The [PivotTable](/javascript/api/excel/excel.pivottable) is the central object for PivotTables in the Office JavaScript API.
 
 - `Workbook.pivotTables` and `Worksheet.pivotTables` are [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) that contain the [PivotTables](/javascript/api/excel/excel.pivottable) in the workbook and worksheet, respectively.
-- A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) that has multiple [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) that has multiple [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- These [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) can be added to specific hierarchy collections to define how the PivotTable pivots data (as explained in the [following section](#hierarchies)).
 - A [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contains a [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) that has exactly one [PivotField](/javascript/api/excel/excel.pivotfield). If the design expands to include OLAP PivotTables, this may change.
 - A [PivotField](/javascript/api/excel/excel.pivotfield) contains a [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) that has multiple [PivotItems](/javascript/api/excel/excel.pivotitem).
 - A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotLayout](/javascript/api/excel/excel.pivotlayout) that defines where the [PivotFields](/javascript/api/excel/excel.pivotfield) and [PivotItems](/javascript/api/excel/excel.pivotitem) are displayed in the worksheet.
@@ -161,6 +162,61 @@ Excel.run(function (context) {
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
+    return context.sync();
+});
+```
+
+## PivotTable layouts and getting pivoted data
+
+A [PivotLayout](/javascript/api/excel/excel.pivotlayout) defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored.
+
+The following diagram shows which layout function calls correspond to which ranges of the PivotTable.
+
+![A diagram showing which sections of a PivotTable are returned by the layout's get range functions.](../images/excel-pivots-layout-breakdown.png)
+
+### Get data from the PivotTable
+
+The layout defines how the PivotTable is displayed in the worksheet. This means the `PivotLayout` object controls the ranges used for PivotTable elements. Use the ranges provided by the layout to get data collected and aggregated by the PivotTable. In particular, use `PivotLayout.getDataBodyRange` to access what the PivotTable produces.
+
+The following code demonstrates how to get the last row of the PivotTable data by going through the layout (the **Grand Total** of both the **Sum of Crates Sold at Farm** and **Sum of Crates Sold Wholesale** columns in the earlier example). Those values are then summed together for a final total, which is displayed in cell **E30** (outside of the PivotTable).
+
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+
+    // Get the totals for each data hierarchy from the layout.
+    var range = pivotTable.layout.getDataBodyRange();
+    var grandTotalRange = range.getLastRow();
+    grandTotalRange.load("address");
+    return context.sync().then(function () {
+        // Sum the totals from the PivotTable data hierarchies and place them in a new range, outside of the PivotTable.
+        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("E30");
+        masterTotalRange.formulas = [["=SUM(" + grandTotalRange.address + ")"]];
+    });
+});
+```
+
+### Layout types
+
+PivotTables have three layout styles: Compact, Outline, and Tabular. We've seen the compact style in the previous examples.
+
+The following examples use the outline and tabular styles, respectively. The code sample shows how to cycle between the different layouts.
+
+#### Outline layout
+
+![A PivotTable using the outline layout.](../images/excel-pivots-outline-layout.png)
+
+#### Tabular layout
+
+![A PivotTable using the tabular layout.](../images/excel-pivots-tabular-layout.png)
+
+## Delete a PivotTable
+
+PivotTables are deleted by using their name.
+
+```js
+Excel.run(function (context) {
+    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
     return context.sync();
 });
 ```
@@ -335,44 +391,6 @@ Excel.run(function (context) {
 });
 ```
 
-## PivotTable layouts
-
-A [PivotLayout](/javascript/api/excel/excel.pivotlayout) defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored.
-
-The following diagram shows which layout function calls correspond to which ranges of the PivotTable.
-
-![A diagram showing which sections of a PivotTable are returned by the layout's get range functions.](../images/excel-pivots-layout-breakdown.png)
-
-The following code demonstrates how to get the last row of the PivotTable data by going through the layout. Those values are then summed together for a grand total.
-
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-
-    // Get the totals for each data hierarchy from the layout.
-    var range = pivotTable.layout.getDataBodyRange();
-    var grandTotalRange = range.getLastRow();
-    grandTotalRange.load("address");
-    return context.sync().then(function () {
-        // Sum the totals from the PivotTable data hierarchies and place them in a new range.
-        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-    });
-});
-```
-
-PivotTables have three layout styles: Compact, Outline, and Tabular. We've seen the compact style in the previous examples.
-
-The following examples use the outline and tabular styles, respectively. The code sample shows how to cycle between the different layouts.
-
-### Outline layout
-
-![A PivotTable using the outline layout.](../images/excel-pivots-outline-layout.png)
-
-### Tabular layout
-
-![A PivotTable using the tabular layout.](../images/excel-pivots-tabular-layout.png)
-
 ## Change hierarchy names
 
 Hierarchy fields are editable. The following code demonstrates how to change the displayed names of two data hierarchies.
@@ -387,17 +405,6 @@ Excel.run(function (context) {
         dataHierarchies.items[0].name = "Farm Sales";
         dataHierarchies.items[1].name = "Wholesale";
     });
-});
-```
-
-## Delete a PivotTable
-
-PivotTables are deleted by using their name.
-
-```js
-Excel.run(function (context) {
-    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
-    return context.sync();
 });
 ```
 
