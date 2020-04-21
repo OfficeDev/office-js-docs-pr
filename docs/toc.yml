@@ -659,12 +659,6 @@
     - name: Architecture
       href: excel/custom-functions-architecture.md
       displayName: Excel, Custom Functions
-    - name: Authentication
-      href: excel/custom-functions-authentication.md
-      displayName: Excel, Custom Functions
-    - name: Debugging
-      href: excel/custom-functions-debugging.md
-      displayName: Excel, Custom Functions
     - name: Dialog
       href: excel/custom-functions-dialog.md
       displayName: Excel, Custom Functions
@@ -721,7 +715,15 @@
     - name: Web requests
       href: excel/custom-functions-web-reqs.md
       displayName: Excel, Custom Functions
-
+    - name: UI-less custom functions
+      items: 
+        - name: Authentication
+          href: excel/custom-functions-authentication.md
+          displayName: Excel, Custom Functions
+        - name: Debugging
+          href: excel/custom-functions-debugging.md
+          displayName: Excel, Custom Functions
+          
 - name: OneNote
   items:
   - name: OneNote add-ins documentation
