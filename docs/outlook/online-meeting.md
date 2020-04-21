@@ -2,7 +2,7 @@
 title: Create an Outlook mobile add-in for an online-meeting provider (preview)
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 04/21/2020
 localization_priority: Normal
 ---
 
@@ -19,7 +19,10 @@ In this article, you'll learn how to set up your Outlook mobile add-in to enable
 
 To enable users to create online meetings with your add-in, you must configure the `MobileOnlineMeetingCommandSurface` extension point in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
 
-The following example shows a sample of the manifest that includes the `MobileFormFactor` element and `MobileOnlineMeetingCommandSurface` extension point.
+The following example shows an excerpt from the manifest that includes the `MobileFormFactor` element and `MobileOnlineMeetingCommandSurface` extension point.
+
+> [!TIP]
+> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
 
 ```xml
 ...
