@@ -1,7 +1,7 @@
 ---
 title: Manage state and settings for an Outlook add-in
 description: Learn how to persist add-in state and settings for an Outlook add-in.
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
 ---
 
@@ -60,7 +60,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 }
 ```
 
-The **saveAsync** method saves roaming settings asynchronously and takes an optional callback function. This code sample passes a callback function named `saveMyAppSettingsCallback` to the **saveAsync** method. When the asynchronous call returns, the _asyncResult_ parameter of the `saveMyAppSettingsCallback` function provides access to an [AsyncResult](/javascript/api/outlook) object that you can use to determine the success or failure of the operation with the **AsyncResult.status** property.
+The **saveAsync** method saves roaming settings asynchronously and takes an optional callback function. This code sample passes a callback function named `saveMyAppSettingsCallback` to the **saveAsync** method. When the asynchronous call returns, the _asyncResult_ parameter of the `saveMyAppSettingsCallback` function provides access to an [AsyncResult](/javascript/api/office/office.asyncresult) object that you can use to determine the success or failure of the operation with the **AsyncResult.status** property.
 
 ### Removing a roaming setting
 
