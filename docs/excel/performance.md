@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 03/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ There are multiple ways that you can perform common tasks with the Excel JavaScr
 
 ## Minimize the number of sync() calls
 
-In the Excel JavaScript API, ```sync()``` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to ```sync()``` by queueing up as many changes as possible before calling it.
+In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to `sync()` by queueing up as many changes as possible before calling it.
 
 See [Core Concepts - sync()](excel-add-ins-core-concepts.md#sync) for code samples that follow this practice.
 
@@ -45,7 +45,7 @@ worksheet.getRange("A1").set({
 
 ## Load necessary properties only
 
-In the Excel JavaScript API, you need to explicitly load the properties of a proxy object. Although you're able to load all the properties at once with an empty ```load()``` call, that approach can have significant performance overhead. Instead, we suggest that you only load the necessary properties, especially for those objects which have a large number of properties.
+In the Excel JavaScript API, you need to explicitly load the properties of a proxy object. Although you're able to load all the properties at once with an empty `load()` call, that approach can have significant performance overhead. Instead, we suggest that you only load the necessary properties, especially for those objects which have a large number of properties.
 
 For example, if you only intend to read the `address` property of a range object, specify only that property when you call the `load()` method:
 
@@ -120,6 +120,8 @@ Excel.run(async function(ctx) {
     console.log(rangeToGet.values);
 })
 ```
+
+Please note that only formula calculations are suspended. Any altered references are still rebuilt. For example, renaming a worksheet still updates any references in formulas to that worksheet.
 
 ### Suspend screen updating
 
