@@ -772,7 +772,7 @@
       href: reference/requirement-sets/outlook-api-requirement-sets.md
       displayName: Outlook
     - name: API reference
-      href: reference/outlook-api-reference-preview.md
+      href: reference/outlook-api-reference-1.8.md
       displayName: Outlook
     - name: API object model
       items:
