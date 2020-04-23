@@ -1,7 +1,7 @@
 ---
 title: Coding guidance for common issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
 ---
 
@@ -103,6 +103,10 @@ Excel.run(async (context) => {
     return context.sync();
 }
 ```
+
+## Supporting Internet Explorer
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
 
 ## See also
 
