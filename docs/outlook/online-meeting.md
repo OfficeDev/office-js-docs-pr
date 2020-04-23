@@ -2,7 +2,7 @@
 title: Create an Outlook mobile add-in for an online-meeting provider (preview)
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 04/21/2020
+ms.date: 04/23/2020
 localization_priority: Normal
 ---
 
@@ -43,7 +43,7 @@ The following example shows an excerpt from the manifest that includes the `Mobi
                 <bt:Image resid="UiLessIcon" size="25" scale="3" />
                 <bt:Image resid="UiLessIcon" size="32" scale="1" />
                 <bt:Image resid="UiLessIcon" size="32" scale="2" />
-                <bt:Image resid="UiLessIcon" size="32" scale="2" />
+                <bt:Image resid="UiLessIcon" size="32" scale="3" />
                 <bt:Image resid="UiLessIcon" size="48" scale="1" />
                 <bt:Image resid="UiLessIcon" size="48" scale="2" />
                 <bt:Image resid="UiLessIcon" size="48" scale="3" />
