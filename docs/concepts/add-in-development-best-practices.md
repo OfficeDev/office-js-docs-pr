@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
 description: 'Apply the best practices when developing to create Office Add-ins.'
-ms.date: 04/09/2020
+ms.date: 04/22/2020
 localization_priority: Normal
 ---
 
@@ -131,6 +131,10 @@ For patterns that you can apply as you develop your first-run experience, see [U
 - Convey the value proposition of your add-in in your title and description. Don't rely on your brand.
 
 - Create a website to help users find and use your add-in.
+
+## Use JavaScript that supports Internet Explorer
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
 
 ## See also
 
