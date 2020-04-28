@@ -131,7 +131,7 @@ Sender's preferred vegetable: broccoli
 
 ## Recommended practices
 
-Currently, the underlying infrastructure for this feature limits the cumulative number of named properties on a user's mailbox. When the quota is exhausted, you can't create any more named properties on that mailbox, which can result in unexpected behavior from clients that rely on named properties to function. Due to this limitation, we recommend the following guidelines when designing and implementing your add-in.
+Currently, the underlying infrastructure for this feature limits the cumulative number of named properties on a user's mailbox. When the quota is exhausted, you can't create any more named properties on that mailbox, which can result in unexpected behavior from clients that rely on named properties to function. Due to this limitation, we recommend the following guidelines as you design and implement your add-in.
 
 - Create the minimum number of headers required for your scenarios.
 - Name headers such that you can reuse and update their values later.
