@@ -1,7 +1,7 @@
 ---
 title: Use Exchange Web Services (EWS) from an Outlook add-in
 description: Provides an example that shows how an Outlook add-in can request information from Exchange Web Services.
-ms.date: 04/23/2020
+ms.date: 04/28/2020
 localization_priority: Normal
 ---
 
@@ -78,24 +78,24 @@ When parsing a SOAP response from an EWS operation, note the following browser-d
    ```
 
 - Use the DOM property `textContent` to get the contents of a tag in an EWS response, as shown below:
-    
+
    ```js
       content = $.parseJSON(value.textContent);
    ```
 
    Other properties such as `innerHTML` may not work on Internet Explorer for some tags in an EWS response.
-    
+
 
 ## Example
 
 The following example calls `makeEwsRequestAsync` to use the [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to get the subject of an item. This example includes the following three functions:
 
 -  `getSubjectRequest` &ndash; Takes an item ID as input, and returns the XML for the SOAP request to call `GetItem` for the specified item.
-    
+
 -  `sendRequest` &ndash; Calls  `getSubjectRequest` to get the SOAP request for the selected item, then passes the SOAP request and the callback method, `callback`, to `makeEwsRequestAsync` to get the subject of the specified item.
-    
+
 -  `callback` &ndash; Processes the SOAP response which includes any subject and other information about the specified item.
-    
+
 
 ```js
 function getSubjectRequest(id) {
@@ -143,20 +143,20 @@ function callback(asyncResult)  {
 
 ## EWS operations that add-ins support
 
-Outlook add-ins can access a subset of operations that are available in EWS via the `makeEwsRequestAsync` method. If you are unfamiliar with EWS operations and how to use the `makeEwsRequestAsync` method to access an operation, start with a SOAP request example to customize your _data_ argument. 
+Outlook add-ins can access a subset of operations that are available in EWS via the `makeEwsRequestAsync` method. If you are unfamiliar with EWS operations and how to use the `makeEwsRequestAsync` method to access an operation, start with a SOAP request example to customize your _data_ argument.
 
 The following describes how you can use the `makeEwsRequestAsync` method:
 
 1. In the XML, substitute any item IDs and relevant EWS operation attributes with appropriate values.
-    
+
 2. Include the SOAP request as an argument for the  _data_ parameter of `makeEwsRequestAsync`.
-    
+
 3. Specify a callback method and call `makeEwsRequestAsync`.
-    
+
 4. In the callback method, verify the results of the operation in the SOAP response.
-    
+
 5. Use the results of the EWS operation according to your needs.
-    
+
 The following table lists the EWS operations that add-ins support. To see examples of SOAP requests and responses, choose the link for each operation. For more information about EWS operations, see [EWS operations in Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
 
 **Table 2. Supported EWS operations**
@@ -196,20 +196,14 @@ When you use the `makeEwsRequestAsync` method, the request is authenticated by u
 
 Your add-in must specify the `ReadWriteMailbox` permission in its add-in manifest to use the `makeEwsRequestAsync` method. For information about using the `ReadWriteMailbox` permission, see the section [ReadWriteMailbox permission](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) in [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 
-> [!NOTE]
-> The server administrator must use the [New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps) or the [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps) cmdlet to set the _OAuthAuthentication_ parameter to **true** on the Client Access server EWS directory in order to enable the `makeEwsRequestAsync` method to make EWS requests.
-
-
-
 ## See also
 
-- [Privacy and security for Office Add-ins](../develop/privacy-and-security.md)   
+- [Privacy and security for Office Add-ins](../develop/privacy-and-security.md)
 - [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md)
-- [EWS reference for Exchange](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)   
+- [EWS reference for Exchange](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)
 - [Mail apps for Outlook and EWS in Exchange](/exchange/client-developer/exchange-web-services/mail-apps-for-outlook-and-ews-in-exchange)
-   
+
 See the following for creating backend services for add-ins using ASP.NET Web API:
 
-- [Create a web service for an Office Add-in using the ASP.NET Web API](https://blogs.msdn.microsoft.com/officeapps/2013/06/10/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api/)    
+- [Create a web service for an Office Add-in using the ASP.NET Web API](https://blogs.msdn.microsoft.com/officeapps/2013/06/10/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api/)
 - [The basics of building an HTTP service using ASP.NET Web API](https://www.asp.net/web-api)
-    
