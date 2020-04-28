@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: 'Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.'
-ms.date: 11/19/2019
+ms.date: 04/28/2020
 localization_priority: Normal
 ---
 
@@ -17,7 +17,7 @@ Using this method, your add-in can obtain an access token scoped to your server 
 For an overview of SSO in Office Add-ins, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md) and [Authorize to Microsoft Graph in your Office Add-in](../develop/authorize-to-microsoft-graph.md).
 
 > [!NOTE]
-> To use SSO, you must load the beta version of the Office JavaScript Library from https://appsforoffice.microsoft.com/lib/beta/hosted/office.js in the startup HTML page of the add-in.
+> To use SSO, you must load the beta version of the Office JavaScript Library from https://appsforoffice.microsoft.com/lib/beta/hosted/office.js in the startup HTML page of the add-in. However, you should **not** use beta APIs in production add-ins.
 
 ## Enable modern authentication in your Office 365 tenancy
 
