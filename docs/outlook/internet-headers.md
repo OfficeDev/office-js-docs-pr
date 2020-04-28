@@ -1,7 +1,7 @@
 ---
 title: Get and set internet headers
 description: How to get and set internet headers on a message in an Outlook add-in.
-ms.date: 04/10/2020
+ms.date: 04/28/2020
 localization_priority: Normal
 ---
 
@@ -23,13 +23,13 @@ While there's a way for you to set the internet headers through EWS requests, in
 
 ## Purpose of the internet headers API
 
-Introduced in requirement set 1.8, the internet headers APIs enable developers to:
+Introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), the internet headers APIs enable developers to:
 
 - Stamp information on an email that persists after it leaves Exchange across all clients.
 - Read information on an email that persisted after the email left Exchange across all clients in mail read scenarios.
 - Access the entire MIME header of the email.
 
-![Diagram of internet headers. Text: User 1 sends email. Add-in manages custom internet headers while user is composing email. User 2 receives the email. Add-in gets internet headers from received email then parses and uses custom headers. ](../images/outlook-internet-headers.png)
+![Diagram of internet headers. Text: User 1 sends email. Add-in manages custom internet headers while user is composing email. User 2 receives the email. Add-in gets internet headers from received email then parses and uses custom headers.](../images/outlook-internet-headers.png)
 
 ## Set internet headers while composing a message
 
@@ -127,7 +127,14 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> This sample works for simple cases. For more complex information retrieval (e.g., multi-instance headers or folded values as described in [RFC 2822](https://tools.ietf.org/html/rfc2822)), try using an appropriate MIME-parsing library.
+> This sample works for simple cases. For more complex information retrieval (for example, multi-instance headers or folded values as described in [RFC 2822](https://tools.ietf.org/html/rfc2822)), try using an appropriate MIME-parsing library.
+
+## Recommended practices
+
+Currently, the underlying infrastructure for this feature limits the cumulative number of named properties on a user's mailbox. When the quota is exhausted, you can't create any more named properties on that mailbox, which can result in unexpected behavior from clients that rely on named properties to function. Due to this limitation, we recommend the following guidelines when designing and implementing your add-in.
+
+- Create the minimum number of headers required for your scenarios.
+- Name headers such that you can reuse and update their values later.
 
 ## See also
 
