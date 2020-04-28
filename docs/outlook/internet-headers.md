@@ -131,10 +131,12 @@ Sender's preferred vegetable: broccoli
 
 ## Recommended practices
 
-Currently, the underlying infrastructure for this feature limits the cumulative number of named properties on a user's mailbox. When the quota is exhausted, you can't create any more named properties on that mailbox, which can result in unexpected behavior from clients that rely on named properties to function. Due to this limitation, we recommend the following guidelines as you design and implement your add-in.
+Currently, internet headers are a finite resource on a user's mailbox. When the quota is exhausted, you can't create any more internet headers on that mailbox, which can result in unexpected behavior from clients that rely on this to function.
 
-- Create the minimum number of headers required for your scenarios.
-- Name headers such that you can reuse and update their values later.
+Apply the following guidelines when you create internet headers in your add-in.
+
+- Create the minimum number of headers required.
+- Name headers so that you can reuse and update their values later. As such, avoid naming headers in a variable manner (for example, based on user input, timestamp, etc.).
 
 ## See also
 
