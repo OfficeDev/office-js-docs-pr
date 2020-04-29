@@ -59,4 +59,3 @@ Learn about [error handling best practices](custom-functions-errors.md).
 
 * [Custom functions metadata](custom-functions-json.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
