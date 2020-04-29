@@ -1,15 +1,15 @@
 ---
-title: Run code in your Excel add-in when the document opens (preview)
+title: Run code in your Excel add-in when the document opens
 description: 'Run code in your Excel add-in when the document opens.'
 ms.date: 02/20/2020
 localization_priority: Normal
 ---
 
-# Run code in your Excel add-in when the document opens (preview)
+# Run code in your Excel add-in when the document opens
 
 [!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
 
-You can configure your Excel add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, preload data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
+You can configure your Excel add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
 [!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
