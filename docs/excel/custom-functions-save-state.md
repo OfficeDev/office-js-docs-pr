@@ -1,7 +1,7 @@
 ---
-ms.date: 07/10/2019
+ms.date: 04/29/2019
 description: 'Use `OfficeRuntime.storage` to save state with custom functions.' 
-title: Save and share state in custom functions
+title: Save and share state in UI-less custom functions
 localization_priority: Normal
 ---
 
@@ -38,6 +38,32 @@ function GetValue(key) {
 
 >[!NOTE]
 > The `storage` object replaces the previous storage object named `AsyncStorage` which is now deprecated. If using the `AsyncStorage` object in your current custom functions code, please update it to use the `storage` object.
+
+## Addressing cell's context parameter
+
+In some cases you need to get the address of the cell that invoked your custom function. This is useful in the following scenarios:
+
+- Formatting ranges: Use the cell's address as the key to store information in [OfficeRuntime.storage](../excel/custom-functions-runtime.md#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `OfficeRuntime.storage`.
+- Displaying cached values: If your function is used offline, display stored cached values from `OfficeRuntime.storage` using `onCalculated`.
+- Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
+
+To request an addressing cell's context in a function, you need to use a function to find the cell's address, such as the one in the following example. The information about a cell's address is exposed only if `@requiresAddress` is tagged in the function's comments.
+
+```js
+/**
+ * Function that gets the address of a cell.
+ * @customfunction
+ * @param {CustomFunctions.Invocation} invocation Uses the invocation parameter present in each cell.
+ * @requiresAddress
+ * @returns {string} Returns address of cell.
+ */
+
+function getAddress(invocation) {
+  return invocation.address;
+}
+```
+
+By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
 ## Next steps
 Learn how to [autogenerate the JSON metadata for your custom functions](custom-functions-json-autogeneration.md). 

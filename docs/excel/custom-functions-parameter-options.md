@@ -1,5 +1,5 @@
 ---
-ms.date: 07/15/2019
+ms.date: 04/29/2019
 description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -7,13 +7,13 @@ localization_priority: Normal
 
 # Custom functions parameter options
 
-Custom functions are configurable with many different options for parameters.
+Custom functions are configurable with many different parameter options.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Optional parameters
 
-Whereas regular parameters are required, optional parameters are not. When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.
+When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.
 
 #### [JavaScript](#tab/javascript)
 
@@ -56,9 +56,9 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> When no value is specified for an optional parameter, Excel assigns it the value `null`. This means default-initialized parameters in TypeScript will not work as expected. Therefore, don't use the syntax `function add(first:number, second:number, third=0):number` because it will not initialize `third` to 0. Instead use the TypeScript syntax as shown in the previous example.
+> When no value is specified for an optional parameter, Excel assigns it the value `null`. This means default-initialized parameters in TypeScript will not work as expected. Don't use the syntax `function add(first:number, second:number, third=0):number` because it will not initialize `third` to 0. Instead use the TypeScript syntax as shown in the previous example.
 
-When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are null. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is null, the default value is set to `98052`. If the `dayOfWeek` parameter is null, it is set to Wednesday.
+When you define a function that contains one or more optional parameters, specify what happens when the optional parameters are null. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is null, the default value is set to `98052`. If the `dayOfWeek` parameter is null, it's set to Wednesday.
 
 #### [JavaScript](#tab/javascript)
 
@@ -141,7 +141,7 @@ function secondHighest(values) {
 
 ## Repeating parameters
 
-A repeating parameter allows a user to enter a series of optional of arguments to a function. When the function is called, the values are provided in an array for the parameter. If the parameter name ends with a number, each argument will increment the number, such as `ADD(number1, [number2], [number3],…)`. This matches the convention used for built-in Excel functions.
+A repeating parameter allows a user to enter a series of optional arguments to a function. When the function is called, the values are provided in an array for the parameter. If the parameter name ends with a number, each argument's number will increase incrementally, such as `ADD(number1, [number2], [number3],…)`. This matches the convention used for built-in Excel functions.
 
 The following function sums the total of numbers, cell addresses, as well as ranges, if entered.
 
@@ -192,7 +192,7 @@ function addSingleValue(singleValue) {
 
 ### Single range parameter
 
-A single range parameter is not technically a repeating parameter, but is included here because the declaration is very similar to repeating parameters. It would appear to the user as ADD(A2:B3) where a single range is passed from Excel. The following sample shows how to declare a single range parameter.
+A single range parameter isn't technically a repeating parameter, but is included here because the declaration is very similar to repeating parameters. It would appear to the user as ADD(A2:B3) where a single range is passed from Excel. The following sample shows how to declare a single range parameter.
 
 ```JS
 /**
@@ -222,9 +222,6 @@ In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@para
 
 For hand-authored JSON, ensure your parameter is specified as `"repeating": true` in your JSON file, as well as check that your parameters are marked as `"dimensionality": matrix`.
 
->[!NOTE]
->Functions containing repeating parameters automatically contain an invocation parameter as the last parameter. For more information on invocation parameters, see the following section.
-
 ## Invocation parameter
 
 Every custom function is automatically passed an `invocation` argument as the last argument. This argument can be used to retrieve additional context, such as the address of the calling cell. Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#make-a-streaming-function). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
@@ -244,37 +241,11 @@ function add(first, second, invocation) {
 }
 ```
 
-The parameter allows you to get the context of the invoking cell, which can be helpful in some scenarios including [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).
-
-### Addressing cell's context parameter
-
-In some cases you need to get the address of the cell that invoked your custom function. This is useful in the following scenarios:
-
-- Formatting ranges: Use the cell's address as the key to store information in [OfficeRuntime.storage](../excel/custom-functions-runtime.md#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `OfficeRuntime.storage`.
-- Displaying cached values: If your function is used offline, display stored cached values from `OfficeRuntime.storage` using `onCalculated`.
-- Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
-
-To request an addressing cell's context in a function, you need to use a function to find the cell's address, such as the one in the following example. The information about a cell's address is exposed only if `@requiresAddress` is tagged in the function's comments.
-
-```js
-/**
- * Function that gets the address of a cell.
- * @customfunction
- * @param {CustomFunctions.Invocation} invocation Uses the invocation parameter present in each cell.
- * @requiresAddress
- * @returns {string} Returns address of cell.
- */
-
-function getAddress(invocation) {
-  return invocation.address;
-}
-```
-
-By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
+The parameter allows you to get the context of the invoking cell. This can be helpful in some scenarios such as [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).
 
 ## Next steps
 
-Learn how to [save state in your custom functions](custom-functions-save-state.md) or use [volatile values in your custom functions](custom-functions-volatile.md).
+Learn how to use [volatile values in your custom functions](custom-functions-volatile.md).
 
 ## See also
 
