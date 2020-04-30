@@ -1,7 +1,7 @@
 ---
 title: Common JavaScript API object model
 description: 'Learn about the Office JavaScript common API object model'
-ms.date: 04/22/2020
+ms.date: 04/30/2020
 localization_priority: Normal
 ---
 
@@ -149,7 +149,7 @@ The [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-
 
 **Applies to:** Outlook add-ins
 
-Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/outlook/office.item) object, you use the [mailbox](/javascript/api/outlook/office.context#mailbox) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
+Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/outlook/office.item) object, you use the [mailbox](/javascript/api/office/office.context#mailbox) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
 
 ```js
 // Access the Item object.
