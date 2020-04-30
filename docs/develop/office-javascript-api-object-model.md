@@ -1,7 +1,7 @@
 ---
 title: Common JavaScript API object model
 description: 'Learn about the Office JavaScript common API object model'
-ms.date: 04/22/2020
+ms.date: 04/30/2020
 localization_priority: Normal
 ---
 
@@ -17,9 +17,9 @@ Office JavaScript add-ins give access to the host's underlying functionality. Mo
 
 When an add-in is [initialized](initialize-add-in.md), it has many different objects that it can interact with in the runtime environment. The add-in's runtime context is reflected in the API by the [Context](/javascript/api/office/office.context) object. The **Context** is the main object that provides access to the most important objects of the API, such as the [Document](/javascript/api/office/office.document) and [Mailbox](/javascript/api/outlook/office.mailbox) objects, which in turn provide access to document and mailbox content.
 
-For example, in task pane or content add-ins, you can use the [document](/javascript/api/office/office.context#document) property of the **Context** object to access the properties and methods of the **Document** object to interact with the content of Word documents, Excel worksheets, or Project schedules. Similarly, in Outlook add-ins, you can use the [mailbox](/javascript/api/outlook/office.mailbox) property of the **Context** object to access the properties and methods of the **Mailbox** object to interact with the message, meeting request, or appointment content.
+For example, in task pane or content add-ins, you can use the [document](/javascript/api/office/office.context#document) property of the **Context** object to access the properties and methods of the **Document** object to interact with the content of Word documents, Excel worksheets, or Project schedules. Similarly, in Outlook add-ins, you can use the [mailbox](/javascript/api/office/office.context#mailbox) property of the **Context** object to access the properties and methods of the **Mailbox** object to interact with the message, meeting request, or appointment content.
 
-The **Context** object also provides access to the [contentLanguage](/javascript/api/office/office.context#contentlanguage) and [displayLanguage](/javascript/api/office/office.context#displaylanguage) properties that let you determine the locale (language) used in the document or item, or by the host application. The [roamingSettings](/javascript/api/office/office.context#roamingsettings) property lets you access the members of the [RoamingSettings](/javascript/api/office/office.context#roamingsettings) object, which stores settings specific to your add-in for individual users' mailboxes. Finally, the **Context** object provides a [ui](/javascript/api/office/office.ui) property that enables your add-in to launch pop-up dialogs.
+The **Context** object also provides access to the [contentLanguage](/javascript/api/office/office.context#contentlanguage) and [displayLanguage](/javascript/api/office/office.context#displaylanguage) properties that let you determine the locale (language) used in the document or item, or by the host application. The [roamingSettings](/javascript/api/office/office.context#roamingsettings) property lets you access the members of the [RoamingSettings](/javascript/api/office/office.context#roamingsettings) object, which stores settings specific to your add-in for individual users' mailboxes. Finally, the **Context** object provides a [ui](/javascript/api/office/office.context#ui) property that enables your add-in to launch pop-up dialogs.
 
 
 ## Document object
@@ -149,7 +149,7 @@ The [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-
 
 **Applies to:** Outlook add-ins
 
-Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/outlook/office.item) object, you use the [mailbox](/javascript/api/outlook/office.context#mailbox) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
+Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/outlook/office.item) object, you use the [mailbox](/javascript/api/office/office.context#mailbox) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
 
 ```js
 // Access the Item object.
