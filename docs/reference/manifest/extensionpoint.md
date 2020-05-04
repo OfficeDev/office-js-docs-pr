@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 04/09/2020
+ms.date: 05/04/2020
 localization_priority: Normal
 ---
 
@@ -284,7 +284,7 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
       <bt:Image resid="UiLessIcon" size="25" scale="3" />
       <bt:Image resid="UiLessIcon" size="32" scale="1" />
       <bt:Image resid="UiLessIcon" size="32" scale="2" />
-      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="32" scale="3" />
       <bt:Image resid="UiLessIcon" size="48" scale="1" />
       <bt:Image resid="UiLessIcon" size="48" scale="2" />
       <bt:Image resid="UiLessIcon" size="48" scale="3" />
