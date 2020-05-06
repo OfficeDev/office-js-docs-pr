@@ -1,20 +1,19 @@
 ---
-ms.date: 03/11/2020
+ms.date: 05/06/2020
 description: 'Handle and return errors like #NULL! from your custom function'
-title: Handle and return errors from your custom function (preview)
+title: Handle and return errors from your custom function
 localization_priority: Normal
 ---
 
-# Handle and return errors from your custom function (preview)
+# Handle and return errors from your custom function
 
-> [!NOTE]
-> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to join the [Office Insider](https://insider.office.com/join) program to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-If something goes wrong while your custom function runs, you will need to return an error to inform the user. If you have specific parameter requirements, such as only positive numbers, you will need to test the parameters and throw an error if they are not correct. You can also use a `try`-`catch` block to catch any errors that occur while your custom function runs.
+If something goes wrong while your custom function runs, return an error to inform the user. If you have specific parameter requirements, such as only positive numbers, test the parameters and throw an error if they aren't correct. You can also use a `try`-`catch` block to catch any errors that occur while your custom function runs.
 
 ## Detect and throw an error
 
-Let's look at a case where you need to ensure that a zip code parameter is in the correct format for the custom function to work. The following custom function uses a regular expression to check the zip code. If it is correct, then it will look up the city (in another function) and return the value. If it is not correct, it returns a `#VALUE!` error to the cell.
+Let's look at a case where you need to ensure that a zip code parameter is in the correct format for the custom function to work. The following custom function uses a regular expression to check the zip code. If it is correct, then it will look up the city (using another function) and return the value. If it isn't correct, it returns a `#VALUE!` error to the cell.
 
 ```typescript
 /**
@@ -39,10 +38,10 @@ The `CustomFunctions.Error` object is used to return an error back to the cell. 
 |ErrorCode enum value  |Excel cell value  |Meaning  |
 |---------------|---------|---------|
 |`invalidValue`   | `#VALUE!` | A value used in the formula is the wrong type. |
-|`notAvailable`   | `#N/A`    | The function or service is not available. |
+|`notAvailable`   | `#N/A`    | The function or service isn't available. |
 |`divisionByZero` | `#DIV/0`  | Be aware that JavaScript allows division by zero so you need to write an error handler carefully to detect this condition. |
 |`invalidNumber`  | `#NUM!`   | There is a problem with the number used in the formula |
-|`nullReference`  | `#NULL!`  | The ranges in the formula do not intersect. |
+|`nullReference`  | `#NULL!`  | The ranges in the formula don't intersect. |
 
 The following code sample shows how to create and return an error for an invalid number (`#NUM!`).
 
@@ -61,7 +60,7 @@ throw error;
 
 ## Use try-catch blocks
 
-In general, you should use `try`-`catch` blocks in your custom function to catch any potential errors that occur. If you do not handle exceptions in your code, they will be returned to Excel. By default, Excel returns `#VALUE!` for an unhandled exception.
+In general, use `try`-`catch` blocks in your custom function to catch any potential errors that occur. If you do not handle exceptions in your code, they will be returned to Excel. By default, Excel returns `#VALUE!` for an unhandled exception.
 
 In the following code sample, the custom function makes a fetch call to a REST service. It's possible that the call will fail, for example, if the REST service returns an error or the network goes down. If this happens, the custom function will return `#N/A` to indicate the web call failed.
 
