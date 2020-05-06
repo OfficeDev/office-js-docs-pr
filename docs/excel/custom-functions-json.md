@@ -1,5 +1,5 @@
 ---
-ms.date: 01/14/2020
+ms.date: 05/06/2020
 description: 'Define JSON metadata for custom functions in Excel and associate your function id and name properties.'
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -11,27 +11,25 @@ As described in the [custom functions overview](custom-functions-overview.md) ar
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-It is recommended that you use JSON autogeneration when possible, using the `yo office` scaffold files, similar to the process shown in the [Excel Custom Function tutorial](../tutorials/excel-tutorial-create-custom-functions.md) because this process is easier and less prone to user error. For more information on the process of JSDoc comment JSON file generation, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+We recommend using JSON auto-generation when possible instead of creating your own JSON file. Auto-generation is less prone to user error and the `yo office` scaffold files already include this. For more information on the process of JSDoc comment JSON file generation, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 However, you can make a custom functions project from scratch; it requires that you:
 
-- Write your JSON file by hand
-- Check that your manifest file is connected to your hand-authored JSON file
+- Write your JSON file
+- Check that your manifest file is connected to your JSON file
 - Associate your functions' `id` and `name` properties in the script file in order to register your functions
-
-This article will show you how to do all three of these steps.
 
 The following image explains the differences between using `yo office` scaffold files and writing JSON from scratch.
 ![Image of differences between using Yo Office and writing your own JSON](../images/custom-functions-json.png)
 
 > [!NOTE]
-> In contrast with the `yo office` scaffold files, you need to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file. Note that the server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel on the web.
+> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file if you do not use the `yo office` generator. Note that the server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel on the web.
 
 ## Authoring metadata and connecting to the manifest
 
-You need to create a JSON file in your project and provide all the details about your functions in it, such as the function's parameters. See the [following metadata example](#json-metadata-example) and [the metadata reference](#metadata-reference) for a complete list of function properties.
+Create a JSON file in your project and provide all the details about your functions in it, such as the function's parameters. See the [following metadata example](#json-metadata-example) and [the metadata reference](#metadata-reference) for a complete list of function properties.
 
-You also need to make sure your XML manifest file references your JSON file in the `<Resources>` section, similar to the following example.
+Ensure your XML manifest file references your JSON file in the `<Resources>` section, similar to the following example.
 
 ```json
 <Resources>
@@ -165,7 +163,7 @@ The `parameters` property is an array of parameter objects. The following table 
 
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  No |  A description of the parameter. This is displayed in Excel's intelliSense.  |
+|  `description`  |  string  |  No |  A description of the parameter. This is displayed in Excel's IntelliSense.  |
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
