@@ -106,7 +106,7 @@ Excel.run(function (context) {
 });
 ```
 
-## Resolve comment threads ([preview](../reference/requirement-sets/excel-preview-apis.md)) 
+## Resolve comment threads
 
 A comment thread has a configurable boolean value, `resolved`, to indicate if it is resolved. A value of `true` means the comment thread is resolved. A value of `false` means the comment thread is either new or reopened.
 
@@ -164,13 +164,7 @@ Excel.run(function (context) {
 });
 ```
 
-## Mentions ([online-only](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
-
-> [!NOTE]
-> The comment mention APIs are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-> [!IMPORTANT]
-> Comment mentions are currently only supported for Excel on the web.
+## Mentions
 
 [Mentions](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) are used to tag colleagues in a comment. This sends them notifications with your comment's content. Your add-in can create these mentions on your behalf.
 
