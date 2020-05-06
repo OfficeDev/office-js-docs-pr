@@ -1,5 +1,5 @@
 ---
-ms.date: 04/13/2020
+ms.date: 05/06/2020
 description: 'Use JSDoc tags to dynamically create your custom functions JSON metadata.'
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Normal
@@ -47,9 +47,9 @@ The following JSDoc tags are supported in Excel custom functions:
 ### @cancelable
 <a id="cancelable"/>
 
-Indicates that a custom function wants to perform an action when the function is canceled.
+Indicates that a custom function performs an action when the function is canceled.
 
-The last function parameter must be of type `CustomFunctions.CancelableInvocation`. The function can assign a function to the `oncanceled` property to denote the action to perform when the function is canceled.
+The last function parameter must be of type `CustomFunctions.CancelableInvocation`. The function can assign a function to the `oncanceled` property to denote what happens when the function is canceled.
 
 If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag isn't present.
 
@@ -61,11 +61,9 @@ A function can't have both `@cancelable` and `@streaming` tags.
 
 Syntax: @customfunction _id_ _name_
 
-Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.
+This tag indicates that the JavaScript/TypeScript function as an Excel custom function. It is required to create metadata for the custom function.
 
-This tag is required to create metadata for the custom function.
-
-The following example shows the simplest way to declare a custom function.
+The following shows an example of this tag.
 
 ```js
 /**
@@ -77,7 +75,7 @@ The following example shows the simplest way to declare a custom function.
 
 #### id
 
-The `id` is an invariant identifier for the custom function.
+The `id` identifies a custom function.
 
 * If `id` isn't provided, the JavaScript/TypeScript function name is converted to uppercase and disallowed characters are removed.
 * The `id` must be unique for all custom functions.
@@ -114,9 +112,9 @@ In the following example, INC is the `id` of the function and `increment` is the
 
 ### description
 
-A description doesn't require any specific tag. Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment. By default, whatever text is untagged in the JSDoc comment section will be the description of the function. The description appears to users in Excel as they are entering the function. In the following example, the phrase "A function that adds two numbers" is the description for the custom function with the id property of `ADD`.
+A description appears to users in Excel as they are entering the function and specifies what the function does. A description doesn't require any specific tag. Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment. By default, whatever text is untagged in the JSDoc comment section will be the description of the function.
 
-In the following example, ADD is the `id` and `name` of the function and a description is given.
+In the following example, the phrase "A function that adds two numbers" is the description for the custom function with the id property of `ADD`.
 
 ```js
 /**
@@ -153,9 +151,9 @@ In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
 
 JavaScript Syntax: @param {type} name _description_
 
-* `{type}` should specify the type info within curly braces. See the [Types](#types) section for more information about the types which may be used. Optional: if not specified, the type `any` will be used.
-* `name` specifies which parameter the @param tag applies to. Required.
-* `description` provides the description which appears in Excel for the function parameter. Optional.
+* `{type}` specifies the type info within curly braces. See the [Types](#types) section for more information about the types which may be used. If no type is specified, the default type `any` will be used.
+* `name` specifies the parameter that the @param tag applies to. It is required.
+* `description` provides the description which appears in Excel for the function parameter. It is optional.
 
 To denote a custom function parameter as optional:
 * Put square brackets around the parameter name. For example: `@param {string} [text] Optional text`.
@@ -163,7 +161,7 @@ To denote a custom function parameter as optional:
 > [!NOTE]
 > The default value for optional parameters is `null`.
 
-The following example shows a ADD function which adds two or three numbers, with the third number as an optional parameter.
+The following example shows a ADD function that adds two or three numbers, with the third number as an optional parameter.
 
 ```js
 /**
@@ -180,8 +178,8 @@ The following example shows a ADD function which adds two or three numbers, with
 
 TypeScript Syntax: @param name _description_
 
-* `name` specifies which parameter the @param tag applies to. Required.
-* `description` provides the description which appears in Excel for the function parameter. Optional.
+* `name` specifies the parameter that the @param tag applies to. It is required.
+* `description` provides the description which appears in Excel for the function parameter. It is optional.
 
 See the [Types](#types) section for more information about the function parameter types which may be used.
 
@@ -251,7 +249,7 @@ Used to indicate that a custom function is a streaming function.
 The last parameter should be of type `CustomFunctions.StreamingInvocation<ResultType>`.
 The function should return `void`.
 
-Streaming functions don't return values directly, but rather should call `setResult(result: ResultType)` using the last parameter.
+Streaming functions don't return values directly, instead they should call `setResult(result: ResultType)` using the last parameter.
 
 Exceptions thrown by a streaming function are ignored. `setResult()` may be called with Error to indicate an error result. For an example of a streaming function and more information, see [Make a streaming function](./custom-functions-web-reqs.md#make-a-streaming-function).
 
@@ -300,7 +298,7 @@ A streaming function can indicate an error by calling `setResult()` with an Erro
 
 ### Promise
 
-A function can return a Promise, which will provide the value when the promise is resolved. If the promise is rejected, then it is an error.
+A function can return a Promise, that provides the value when the promise is resolved. If the promise is rejected, then it will throw an error.
 
 ### Other types
 
