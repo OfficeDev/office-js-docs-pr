@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 03/18/2020
+ms.date: 05/06/2020
 localization_priority: Priority
 ---
 
@@ -12,7 +12,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |**Method**|**Use...**|
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser.|
-|[Centralized Deployment](centralized-deployment.md)|In a cloud or hybrid deployment, to distribute your add-in to users in your organization by using the Office 365 admin center.|
+|[Centralized Deployment](centralized-deployment.md)|In a cloud deployment, to distribute your add-in to users in your organization by using the Office 365 admin center.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
