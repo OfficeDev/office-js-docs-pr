@@ -10,6 +10,9 @@ localization_priority: Priority
 
 Want to get started building your own cross-platform Office extensions? The following steps show you what to read first, what tools to install, and recommended tutorials to complete.
 
+> [!NOTE]
+> If you are experienced in creating VSTO add-ins for Office, we recommend that you immediately turn to [Transition Here! A guide for VSTO add-in creators making Office Web Add-ins](learning-path-beginner.md) which is a superset of the information in this article.
+
 ## Step 0: Prerequisites
 
 - Office Add-ins are essentially web applications embedded in Office. So, you should first have a basic understanding of web applications and how they are hosted on the web. There is an enormous amount of information about this on the Internet, in books, and in online courses. A good way to start if you have no prior knowledge of web applications at all is to search for "What is a web app?" on Bing.
