@@ -11,7 +11,7 @@ localization_priority: Priority
 Want to get started building your own cross-platform Office extensions? The following steps show you what to read first, what tools to install, and recommended tutorials to complete.
 
 > [!NOTE]
-> If you are experienced in creating VSTO add-ins for Office, we recommend that you immediately turn to [Transition Here! A guide for VSTO add-in creators making Office Web Add-ins](learning-path-transition.md) which is a superset of the information in this article.
+> If you're experienced in creating VSTO add-ins for Office, we recommend that you immediately turn to [Transition Here! A guide for VSTO add-in creators making Office Web Add-ins](learning-path-transition.md), which is a superset of the information in this article.
 
 ## Step 0: Prerequisites
 

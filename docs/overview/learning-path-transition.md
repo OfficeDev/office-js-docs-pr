@@ -1,6 +1,6 @@
 ---
 title: Transition Here! A guide for VSTO add-in creators making Office Web Add-ins
-description:  A recommended path for experienced VBA add-in developers to learning resources for Office Web Add-ins.
+description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
 ms.date: 05/10/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -20,8 +20,8 @@ For these reasons, much of this article duplicates our learning path for complet
 
 ## Step 0: Prerequisites
 
-- Office Web Add-ins are essentially web applications embedded in Office. So, you should first have a basic understanding of web applications and how they are hosted on the web. There is an enormous amount of information about this on the Internet, in books, and in online courses. A good way to start if you have no prior knowledge of web applications at all is to search for "What is a web app?" on Bing.
-- The primary programming language you will use in creating Office Add-ins is JavaScript or TypeScript. You can think of TypeScript as a strongly-typed version of JavaScript. If you are not familiar with either of these languages, but you have experience with VBA, VB.Net, C#, you will probably find TypeScript easier to learn. Again, there is a wealth of information about these languages on the Internet, in books, and in online courses.
+- Office Web Add-ins (also referred to as Office Add-ins) are essentially web applications embedded in Office. So, you should first have a basic understanding of web applications and how they are hosted on the web. There's an enormous amount of information about this on the Internet, in books, and in online courses. A good way to start if you have no prior knowledge of web applications at all is to search for "What is a web app?" on Bing.
+- The primary programming language you'll use to create Office Add-ins is JavaScript or TypeScript. You can think of TypeScript as a strongly-typed version of JavaScript. If you're not familiar with either of these languages, but you have experience with VBA, VB.Net, C#, you'll probably find TypeScript easier to learn. Again, there's a wealth of information about these languages on the Internet, in books, and in online courses.
 
 ## Step 1: Begin with fundamentals
 
@@ -34,7 +34,7 @@ There are a lot of links in those articles, but if you're transitioning to Offic
 
 ## Step 2: Install tools and create your first add-in
 
-You've got the big picture now, so dive in with one of our quick starts. For purposes of learning the platform, we recommend the Excel quick start. There is a version that is based on Visual Studio and a version that is based in Node.js and Visual Studio Code. If you're transitioning from VSTO add-ins, you'll probably find the Visual Studio version the easiest to work with.
+You've got the big picture now, so dive in with one of our quick starts. For purposes of learning the platform, we recommend the Excel quick start. There's a version based on Visual Studio and another based on Node.js and Visual Studio Code. If you're transitioning from VSTO add-ins, you'll probably find the Visual Studio version easier to work with.
 
 - [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
 - [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)
@@ -45,9 +45,9 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 ## Step 4: Understand the JavaScript library
 
-First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn: [Understand the Office JavaScript APIs](https://docs.microsoft.com/learn/modules/understand-office-javascript-apis/index).
+First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn: [Understand the Office JavaScript APIs](/learn/modules/intro-office-add-ins/3-apis).
 
-Then explore the Office JavaScript APIs with our [the Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
+Then explore the Office JavaScript APIs with the [Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
 
 ### Special resource for VSTO add-in developers
 
@@ -55,11 +55,11 @@ This would be a good place to take a look at the sample add-in, [Excel Add-in Ja
 
 ## Step 5: Understand the manifest
 
-Get an understanding of the purposes of the add-in manifest and an introduction to its XML markup in [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+Get an understanding of the purposes of the web add-in manifest and an introduction to its XML markup in [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 
 ## Step 6 (for VSTO developers only): Reuse your VSTO code
 
-You can reuse some of your VSTO add-in code in an Office Web Add-in by moving it to your web application's back end on the server and making it available to your JavaScript or TypeScript as a web API. See this tutorial: [Tutorial: Share code between both a VSTO Add-in and an Office add-in by using a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
+You can reuse some of your VSTO add-in code in an Office web add-in by moving it to your web application's back end on the server and making it available to your JavaScript or TypeScript as a web API. For guidance, see [Tutorial: Share code between both a VSTO Add-in and an Office add-in by using a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
 
 ## Next Steps
 
