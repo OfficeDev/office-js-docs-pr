@@ -1,5 +1,5 @@
 ---
-ms.date: 12/18/2019
+ms.date: 05/06/2020
 description: 'Return multiple results from your custom function in an Office Excel add-in.'
 title: Return multiple results from your custom function
 localization_priority: Normal
@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Return multiple results from your custom function
 
-You can return multiple results from your custom function which will be returned to neighboring cells. This behavior is called spilling. When your custom function returns an array of results, it is known as a dynamic array formula. For more information on dynamic array formulas in Excel, see [Dynamic arrays and spilled array behavior](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
+You can return multiple results from your custom function which will be returned to neighboring cells. This behavior is called spilling. When your custom function returns an array of results, it's known as a dynamic array formula. For more information on dynamic array formulas in Excel, see [Dynamic arrays and spilled array behavior](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
 
 The following image shows how the `SORT` function spills down into neighboring cells. Your custom function can also return multiple results like this.
 

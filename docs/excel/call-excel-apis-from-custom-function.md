@@ -1,13 +1,11 @@
 ---
 title: Call Microsoft Excel APIs from a custom function
 description: 'Learn which Microsoft Excel APIs you can call from your custom function.'
-ms.date: 02/06/2020
+ms.date: 05/06/2020
 localization_priority: Normal
 ---
 
 # Call Microsoft Excel APIs from a custom function
-
-[!include[Running custom functions in a shared runtime note](../includes/excel-shared-runtime-preview-note.md)]
 
 Call Office.js Excel APIs from your custom functions to get range data and obtain more context for your calculations.
 
