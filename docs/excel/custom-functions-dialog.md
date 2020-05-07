@@ -1,17 +1,17 @@
 ---
-ms.date: 06/18/2019
-description: 'Create a dialog box through custom functions in Excel using JavaScript.'
-title: Display a dialog box from a custom function
+ms.date: 05/07/2020
+description: 'Create a dialog box from UI-less custom functions in Excel using JavaScript.'
+title: Display a dialog box from a UI-less custom function
 localization_priority: Normal
 ---
-# Display a dialog box from a custom function
+# Display a dialog box from a UI-less custom function
 
-If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog). A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
+If your UI-less custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog). A common scenario for using the dialog box is to authenticate a user so that your UI-less custom function can access a web service. For more details about authentication with custom functions, see [UI-less custom functions authentication](./custom-functions-authentication.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> The `Office.Dialog` object is part of the custom functions runtime. Task panes don't use the `Dialog` object. To create a dialog box from a task pane, see [Dialog API](../develop/dialog-api-in-office-add-ins.md).
+> The `Office.Dialog` object is part of the UI-less custom functions runtime. Task panes don't use the `Dialog` object. To create a dialog box from a task pane, see [Dialog API](../develop/dialog-api-in-office-add-ins.md).
 
 ## dialog box API example
 
