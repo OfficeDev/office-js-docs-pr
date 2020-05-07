@@ -1,12 +1,12 @@
 ---
-ms.date: 07/10/2019
-description: 'Debug your custom functions in Excel.'
-title: Custom functions debugging
+ms.date: 05/07/2020
+description: 'Learn how to debug your UI-less custom functions in Excel.'
+title: UI-less custom functions debugging
 localization_priority: Normal
 ---
-# Custom functions debugging
+# UI-less custom functions debugging
 
-Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
+Debugging for UI-less custom functions can be accomplished by multiple means, depending on what platform you're using.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -161,7 +161,7 @@ You can use the following tasks to start debugging on desktop or online.
 - `npm run stop`: Stops Excel and debugging.
 
 ## Next steps
-Learn about [authentication practices in custom functions](custom-functions-authentication.md). Or, review [custom function's unique architecture](custom-functions-architecture.md).
+Learn about [authentication practices in custom functions](custom-functions-authentication.md).
 
 ## See also
 

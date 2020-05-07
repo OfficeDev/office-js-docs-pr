@@ -63,9 +63,9 @@ function getAddress(invocation) {
 By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
 ## Next steps
-Learn how to [autogenerate the JSON metadata for your custom functions](custom-functions-json-autogeneration.md). 
+Learn how to [autogenerate the JSON metadata for your custom functions](custom-functions-json-autogeneration.md).
 
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions debugging](custom-functions-debugging.md)
+* [Ui-less custom functions debugging](custom-functions-debugging.md)
