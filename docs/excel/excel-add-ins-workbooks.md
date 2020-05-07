@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 03/19/2020
+ms.date: 05/06/2020
 localization_priority: Normal
 ---
 
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Access application culture settings (preview)
+## Access application culture settings
 
 A workbook has language and culture settings that affect how certain data is displayed. These settings can help localize data when your add-in's users are sharing workbooks across different languages and cultures. Your add-in can use string parsing to localize the format of numbers, dates, and times based on the system culture settings so that each user sees data in their own culture's format.
 
@@ -292,10 +292,7 @@ The Excel API also lets add-ins turn off calculations until `RequestContext.sync
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## Save the workbook (preview)
-
-> [!NOTE]
-> The `Workbook.save` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Save the workbook
 
 `Workbook.save` saves the workbook to persistent storage. The `save` method takes a single, optional `saveBehavior` parameter that can be one of the following values:
 
@@ -309,10 +306,7 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## Close the workbook (preview)
-
-> [!NOTE]
-> The `Workbook.close` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Close the workbook
 
 `Workbook.close` closes the workbook, along with add-ins that are associated with the workbook (the Excel application remains open). The `close` method takes a single, optional `closeBehavior` parameter that can be one of the following values:
 
