@@ -10,6 +10,9 @@
   - name: Start Here! A guide for beginners
     href: overview/learning-path-beginner.md
     displayName: develop
+  - name: Transition Here! A guide for VSTO add-in developers
+    href: overview/learning-path-transition.md
+    displayName: develop
   - name: Building Office Add-ins
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
@@ -416,10 +419,6 @@
         href: reference/manifest/requirements.md
       - name: Rule
         href: reference/manifest/rule.md
-      - name: Runtime
-        href: reference/manifest/runtime.md
-      - name: Runtimes
-        href: reference/manifest/runtimes.md
       - name: Set
         href: reference/manifest/set.md
       - name: Sets
@@ -486,6 +485,10 @@
           href: reference/manifest/page.md
         - name: Resources
           href: reference/manifest/resources.md
+        - name: Runtime
+          href: reference/manifest/runtime.md
+        - name: Runtimes
+          href: reference/manifest/runtimes.md
         - name: Scopes
           href: reference/manifest/scopes.md
         - name: Script
@@ -545,6 +548,9 @@
         displayName: Excel
       - name: ExcelApi online-only requirement set
         href: reference/requirement-sets/excel-api-online-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.11 requirement set
+        href: reference/requirement-sets/excel-api-1-11-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.10 requirement set
         href: reference/requirement-sets/excel-api-1-10-requirement-set.md
