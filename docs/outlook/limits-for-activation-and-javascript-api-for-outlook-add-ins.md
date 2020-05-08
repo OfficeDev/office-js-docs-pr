@@ -1,7 +1,7 @@
 ---
 title: Limits for activation and API usage in Outlook add-ins
 description: Be aware of certain activation and API usage guidelines, and implement your add-ins to stay within these limits.
-ms.date: 10/31/2019
+ms.date: 05/08/2020
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ To provide a satisfactory experience for users of Outlook add-ins, you should be
 
 ## Limits on where add-ins activate
 
-Add-ins are designed to activate in the user's main mailbox only. Add-ins do not activate in shared mailboxes, folders from other user's mailboxes opened with delegate access, archive mailboxes, or public folders.
+By default, add-ins are designed to activate in the user's main mailbox only. That means add-ins don't usually activate in shared mailboxes, folders from other user's mailboxes opened with delegate access, archive mailboxes, or public folders. However, add-ins that support [delegate access or shared folders](delegate-access.md) should activate.
 
 ## Limits for activation rules
 
