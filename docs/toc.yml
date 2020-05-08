@@ -10,6 +10,9 @@
   - name: Start Here! A guide for beginners
     href: overview/learning-path-beginner.md
     displayName: develop
+  - name: Transition Here! A guide for VSTO add-in developers
+    href: overview/learning-path-transition.md
+    displayName: develop
   - name: Building Office Add-ins
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
