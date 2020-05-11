@@ -203,4 +203,4 @@ Now that custom functions run in the same context as your task pane code, they c
 Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE("new value")` to change the shared data to a new value.
 
 > [!NOTE]
-> Configuring your project as shown in this article will share context between custom functions and the task pane. Calling Office APIs from custom functions is supported with s[some limitations](./excel/call-excel-apis-from-custom-function.md).
+> Configuring your project as shown in this article will share context between custom functions and the task pane. Calling Office APIs from custom functions is supported with s[some limitations](../excel/call-excel-apis-from-custom-function.md).
