@@ -1,7 +1,7 @@
 ---
 title: Deploy and install Outlook add-ins for testing
 description: Create a manifest file, deploy the add-in UI file to a web server, install the add-in in your mailbox, and then test the add-in.
-ms.date: 03/18/2020
+ms.date: 05/11/2020
 localization_priority: Priority
 ---
 
@@ -61,9 +61,9 @@ The fully qualified URL is the location of the add-in manifest file that you pre
 
 You can use the following additional PowerShell cmdlets to manage the add-ins for a mailbox:
 
--  `Get-App` - Lists the add-ins that are enabled for a mailbox.
--  `Set-App` - Enables or disables a add-in on a mailbox.
--  `Remove-App` - Removes a previously installed add-in from an Exchange server.
+- `Get-App` - Lists the add-ins that are enabled for a mailbox.
+- `Set-App` - Enables or disables a add-in on a mailbox.
+- `Remove-App` - Removes a previously installed add-in from an Exchange server.
 
 ## Client versions
 
@@ -72,13 +72,26 @@ Deciding what versions of the Outlook client to test depends on your development
 - If you are developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
 
 - If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
-    - The latest version of Outlook on Windows and the version prior to the latest.
-    - The latest version of Outlook on Mac.
-    - The latest version of Outlook on iOS and Android (if your add-in [supports mobile form factor](add-mobile-support.md)).
-    - The browser versions specified in the Commercial marketplace validation policy 1120.3.
+  - The latest version of Outlook on Windows and the version prior to the latest.
+  - The latest version of Outlook on Mac.
+  - The latest version of Outlook on iOS and Android (if your add-in [supports mobile form factor](add-mobile-support.md)).
+  - The browser versions specified in the Commercial marketplace validation policy 1120.3.
 
 > [!NOTE]
 > If your add-in does not support one of the above clients due to [requesting an API requirement set](apis.md) that the client does not support, that client would be removed from the list of required clients.
+
+## Outlook on the web and Exchange server versions
+
+Consumer and Microsoft 365 account users see the modern UI version when they access Outlook on the web and no longer see the classic version which has been deprecated. However, on-premises Exchange servers continue to support classic Outlook on the web. Therefore, during the validation process, your submission may receive a warning that the add-in is not compatible with classic Outlook on the web. In that case, you should consider testing your add-in in an on-premises Exchange environment. This warning won't block your submission to AppSource but your customers may experience a sub-optimal experience if they use Outlook on the web in an on-premises Exchange environment.
+
+To mitigate this, we recommend you test your add-in in Outlook on the web connected to your own private on-premises Exchange environment. For more information, see guidance on how to [Establish an Exchange 2016 or Exchange 2019 test environment](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019#establish-an-exchange-2016-or-exchange-2019-test-environment) and how to manage [Outlook on the web in Exchange Server](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019).
+
+Alternatively, you can opt to pay for and use a service that hosts and manages on-premises Exchange servers. A couple of options are:
+
+- [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
+- [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)
+
+Furthermore, if you don't want your add-ins to be available for users who are connected to on-premises Exchange, you can set the [requirement set](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support) in the add-in manifest to be 1.6 or higher. Such add-ins will not be tested or validated on the classic Outlook on the web UI.
 
 ## See also
 
