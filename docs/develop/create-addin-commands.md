@@ -433,4 +433,4 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 
 ## See also
 
-- [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md)
+- [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md)
