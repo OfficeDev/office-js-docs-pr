@@ -13,7 +13,9 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 > This documentation is for a **preview** [requirement set](../../requirement-sets/outlook-api-requirement-sets.md). This requirement set is not fully implemented yet, and clients will not accurately report support for it. You should not specify this requirement set in your add-in manifest.
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
-> - You may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request access" is noted on this page for applicable features.
+
+> [!TIP]
+> You may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request access" is noted on this page for applicable features.
 
 The Preview Requirement set includes all of the features of [Requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).
 
