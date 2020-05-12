@@ -926,6 +926,8 @@
       href: outlook/pinnable-taskpane.md
     - name: Delegate access
       href: outlook/delegate-access.md
+    - name: Configure autolaunch (preview)
+      href: outlook/autolaunch.md
     - name: Manifests
       items:
       - name: Outlook add-in manifests

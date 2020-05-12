@@ -1,21 +1,3 @@
-Purpose: (show to to configure an autolaunch add-in) ([work item 2289979](https://office.visualstudio.com/OC/_workitems/edit/2289979))<br>
-Audience: developer<br>
-Level: Beginner/Intermediate/Expert
-Tools: Policheck
-
-Thoughts:<br>
-(include research links, possible location in repo TOC, consider keywords)
-- Briefly discuss the existing Events model, handling?
-- Deal with runtime, runtimes as they currently only talk about custom functions support
-
-Outline:<br>
-- Overview
-- Manifest
-- Behavior
-- See also
-
-Article:<br>
-(begin article, starting with metadata)
 ---
 title: Configure your add-in to autolaunch
 description: Learn how to configure your add-in to autolaunch.

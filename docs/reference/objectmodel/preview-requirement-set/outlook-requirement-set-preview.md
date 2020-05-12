@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 05/04/2020
+ms.date: 05/12/2020
 localization_priority: Normal
 ---
 
@@ -71,6 +71,22 @@ Added a new function to the `Body` object that appends data to the end of the it
 Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription)
+
+<br>
+
+---
+
+---
+
+### Autolaunch
+
+Added support for autolaunch functionality in Outlook add-ins. See [Configure your add-in to autolaunch](../../../outlook/autolaunch.md) to learn more.
+
+#### [LaunchEvent extension point](../../manifest/extensionpoint.md#launchevent-preview)
+
+Added `LaunchEvent` extension point to manifest. It configures the autolaunch functionality.
+
+**Available in**: Outlook on the web (connected to Office 365 subscription)
 
 <br>
 
