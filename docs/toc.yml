@@ -656,9 +656,6 @@
     - name: Custom functions tutorial
       href: tutorials/excel-tutorial-create-custom-functions.md
       displayName: Excel, Custom Functions
-    - name: Architecture
-      href: excel/custom-functions-architecture.md
-      displayName: Excel, Custom Functions
     - name: Authentication
       href: excel/custom-functions-authentication.md
       displayName: Excel, Custom Functions

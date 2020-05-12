@@ -150,8 +150,6 @@ Want to try out custom functions? Check out the simple [custom functions quick s
 
 Another easy way to try out custom functions is to use [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), an add-in that allows you to experiment with custom functions right in Excel. You can try out creating your own custom function or play with the provided samples.
 
-Ready to read more about the capabilities custom functions? Learn about an overview of [the custom functions architecture](custom-functions-architecture.md).
-
 ## See also 
 * [Custom functions requirements](custom-functions-requirement-sets.md)
 * [Naming guidelines](custom-functions-naming.md)
