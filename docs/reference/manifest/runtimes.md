@@ -1,7 +1,7 @@
 ---
 title: Runtimes in the manifest file (preview)
-description: The Runtimes element specifies the your add-in's runtime.
-ms.date: 02/21/2020
+description: The Runtimes element specifies the add-in's runtime.
+ms.date: 05/12/2020
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ localization_priority: Normal
 
 Specifies the runtime of your add-in and enables custom functions, ribbon buttons, and the task pane to use the same JavaScript runtime. Child of the `<Host>` element in your manifest file. For more information, see [Configure your Excel add-in to use a shared JavaScript runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 
-**Add-in type:** Task pane
+**Add-in type:** Task pane, Mail
 
 > [!IMPORTANT]
 > Shared runtime is currently in preview and are only available on Excel on Windows. To try the preview features, you will need to join [Office Insider](https://insider.office.com/).
@@ -24,7 +24,8 @@ Specifies the runtime of your add-in and enables custom functions, ribbon button
 </Runtimes>
 ```
 
-## Contained in 
+## Contained in
+
 [Host](./host.md)
 
 ## Child elements

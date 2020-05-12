@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 05/04/2020
+ms.date: 05/12/2020
 localization_priority: Normal
 ---
 
@@ -88,6 +88,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 - [Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [LaunchEvent](#launchevent-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
@@ -293,6 +294,34 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
       <FunctionName>insertContosoMeeting</FunctionName>
     </Action>
   </Control>
+</ExtensionPoint>
+```
+
+### LaunchEvent (preview)
+
+> [!NOTE]
+> This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web with an Office 365 subscription.
+
+This extension point enables an add-in to autolaunch on supported events in the desktop form factor. To learn more about this scenario, see the [Configure your add-in to autolaunch](../../outlook/autolaunch.md) article.
+
+#### Child elements
+
+|  Element |  Description  |
+|:-----|:-----|
+| [LaunchEvents](launchevents.md) |  Map autolaunch events to functions in the JavaScript file.  |
+| [SourceLocation](sourcelocation.md) |  The location of the source JavaScript file.  |
+
+Currently, the only supported launch events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`.
+
+#### Example
+
+```xml
+<ExtensionPoint xsi:type="LaunchEvent">
+  <LaunchEvents>
+    <LaunchEvent Type="OnNewMessageCompose" FunctionName="SubjectChange"/>
+    <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="SubjectChange"/>
+  </LaunchEvents>
+  <SourceLocation resid="runtime1"/>
 </ExtensionPoint>
 ```
 
