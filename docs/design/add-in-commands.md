@@ -1,19 +1,22 @@
 ---
 title: Basic concepts for add-in commands
 description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
-ms.date: 04/21/2020
+ms.date: 05/12/2020
 localization_priority: Priority
 ---
 
 
-# Add-in commands for Excel, Outlook, PowerPoint, and Word
+# Add-in commands for Excel, PowerPoint, and Word
 
 Add-in commands are UI elements that extend the Office UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane. Add-in commands help users find and use your add-in, which can help increase your add-in's adoption and reuse, and improve customer retention.
 
 For an overview of the feature, see the video [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing. 
+> SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing.
+
+> [!IMPORTANT]
+> Add-in commands are also supported in Outlook. For more information, see [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md).
 
 *Figure 1. Add-in with commands running in Excel Desktop*
 
@@ -56,13 +59,14 @@ You can specify whether the command is enabled or disabled when your add-in laun
 
 Add-in commands are currently supported on the following platforms.
 
-- Outlook 2013 on Windows (build 15.0.???+)
-- Outlook 2016 on Windows (build 16.0.4678.1000+)
 - Office on Windows (build 16.0.6769+, connected to Office 365 subscription)
 - Office 2019 on Windows
 - Office on Mac (build 15.33+, connected to Office 365 subscription)
 - Office 2019 on Mac
 - Office on the web
+
+> [!NOTE]
+> For information about support in Outlook, see [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md).
 
 ## Debugging
 
