@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 04/10/2020
+ms.date: 05/04/2020
 localization_priority: Normal
 ---
 
@@ -64,13 +64,13 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 #### [ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to Office 365 subscription)
 
 <br>
 
