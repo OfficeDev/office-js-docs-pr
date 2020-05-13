@@ -40,14 +40,14 @@ Depending on the size of the target audience, you may want to add steps to or re
 
 ## Publish an Office Add-in via Centralized Deployment
 
-Before you begin, confirm that your organization meets all requirements for using Centralized Deployment, as described in [Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
+Before you begin, confirm that your organization meets all requirements for using Centralized Deployment, as described in [Determine if Centralized Deployment of add-ins works for your Office 365 organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 If your organization meets all requirements, complete the following steps to publish an Office Add-in via Centralized Deployment:
 
 1. Sign in to Office 365 with your work or school account.
 2. Select the app launcher icon in the upper-left and choose **Admin**.
 3. In the navigation menu, press **Show more**, then choose **Settings** > **Services & add-ins**.
-4. If you see a message on the top of the page announcing the new Office 365 admin center, choose the message to go to the Admin Center Preview (see [About the Office 365 admin center](https://support.office.com/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)).
+4. If you see a message on the top of the page announcing the new Office 365 admin center, choose the message to go to the Admin Center Preview (see [About the Office 365 admin center](/microsoft-365/admin/admin-overview/about-the-admin-center)).
 5. Choose **Deploy Add-In** at the top of the page.
 6. Choose **Next** after reviewing the requirements.
 7. Choose one of the following options on the **Centralized Deployment** page:

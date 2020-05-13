@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: 'Advanced range object functions and scenarios, such as special cells, remove duplicates, and working with dates.' 
-ms.date: 02/11/2020 
+ms.date: 05/06/2020 
 localization_priority: Normal
 ---
 
@@ -55,7 +55,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-Your add-in will have to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
+Your add-in will have to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
 
 ## Work with multiple ranges simultaneously
 
@@ -167,11 +167,11 @@ Excel.run(function (context) {
 })
 ```
 
-## Cut, copy, and paste 
+## Cut, copy, and paste
 
-### Copy and paste 
+### Copy and paste
 
-The [Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) method replicates the **Copy** and **Paste** actions of the Excel UI. The range object that `copyFrom` is called on is the destination. The source to be copied is passed as a range or a string address representing a range. 
+The [Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) method replicates the **Copy** and **Paste** actions of the Excel UI. The range object that `copyFrom` is called on is the destination. The source to be copied is passed as a range or a string address representing a range.
 
 The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
@@ -230,22 +230,22 @@ Excel.run(function (context) {
 
 ![Data in Excel after range's copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
 
-### Cut and paste (move) cells ([online-only](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
+### Cut and paste (move) cells
 
-The [Range.moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) method moves cells to a new location in the workbook. This cell movement behavior works the same as when cells are moved by [dragging the range border](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) or when taking the **Cut** and **Paste** actions. Both the formatting and values of the range are moved to the location specified as the `destinationRange` parameter. 
+The [Range.moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) method moves cells to a new location in the workbook. This cell movement behavior works the same as when cells are moved by [dragging the range border](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) or when taking the **Cut** and **Paste** actions. Both the formatting and values of the range are moved to the location specified as the `destinationRange` parameter.
 
-The following code sample shows a range being moved with the `Range.moveTo` method. Note that if the destination range is smaller than the source, it will be expanded to encompass the source content. 
+The following code sample shows a range being moved with the `Range.moveTo` method. Note that if the destination range is smaller than the source, it will be expanded to encompass the source content.
 
-```js 
-Excel.run(function (context) { 
-    var sheet = context.workbook.worksheets.getActiveWorksheet(); 
-    sheet.getRange("F1").values = [["Moved Range"]]; 
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.getRange("F1").values = [["Moved Range"]];
 
-    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1"). 
-    sheet.getRange("A1:E1").moveTo("G1"); 
-    return context.sync(); 
-}); 
-``` 
+    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
+    sheet.getRange("A1:E1").moveTo("G1");
+    return context.sync();
+});
+```
 
 ## Remove duplicates
 

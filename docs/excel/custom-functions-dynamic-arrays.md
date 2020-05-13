@@ -1,5 +1,5 @@
 ---
-ms.date: 05/06/2020
+ms.date: 05/11/2020
 description: 'Return multiple results from your custom function in an Office Excel add-in.'
 title: Return multiple results from your custom function
 localization_priority: Normal
@@ -60,5 +60,5 @@ function spillRectangle() {
 
 ## See also
 
-- [Dynamic arrays and spilled array behavior](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)
+- [Dynamic arrays and spilled array behavior](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
 - [Options for Excel custom functions](custom-functions-parameter-options.md)
