@@ -1,13 +1,11 @@
 ---
-ms.date: 02/13/2020
+ms.date: 05/11/2020
 description: 'Learn how to run custom functions, ribbon buttons, and task pane code in a the same JavaScript runtime to coordinate scenarios across your add-in.'
-title: Run your add-in code in a shared JavaScript runtime (preview)
+title: Run your add-in code in a shared JavaScript runtime
 localization_priority: Priority
 ---
 
-# Overview: Run your add-in code in a shared JavaScript runtime (preview)
-
-[!include[Running custom functions in shared JavaScript runtime note](../includes/excel-shared-runtime-preview-note.md)]
+# Overview: Run your add-in code in a shared JavaScript runtime
 
 When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
 
@@ -47,7 +45,7 @@ When using a shared runtime, you can't use Visual Studio Code to debug custom fu
 
 ## Get Started
 
-To configure your Excel add-in project to run custom functions in a shared runtime, see [Configure your Excel add-in to use a shared JavaScript runtime (preview)](configure-your-add-in-to-use-a-shared-runtime.md).
+To configure your Excel add-in project to run custom functions in a shared runtime, see [Configure your Excel add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## Give us feedback
 
@@ -57,4 +55,4 @@ We'd love to hear your feedback on this feature. If you find any bugs, issues, o
 
 List of related articles for shared runtime
 - [Tutorial: Share data and events between Excel custom functions and the task pane (preview)](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Call Excel APIs from your custom function (preview)](call-excel-apis-from-custom-function.md)
+- [Call Excel APIs from your custom function](call-excel-apis-from-custom-function.md)
