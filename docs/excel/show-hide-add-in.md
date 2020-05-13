@@ -1,11 +1,11 @@
 ---
 title: Show or hide an Office Add-in in a shared runtime
 description: 'Learn how to programmatically hide or show the UI of an add-in while it runs continuously'
-ms.date: 03/02/2020
+ms.date: 05/11/2020
 localization_priority: Normal
 ---
 
-# Show or hide an Office Add-in in a shared runtime (preview)
+# Show or hide an Office Add-in in a shared runtime
 
 An Office Add-in can include any of the following parts:
 
@@ -15,9 +15,7 @@ An Office Add-in can include any of the following parts:
 
 By default, each part runs in its own separate JavaScript runtime, with its own global object and global variables. 
 
-It's possible for add-ins with two or more parts to share a common JavaScript runtime. This shared runtime feature enables new preview APIs that hide and reopen the task pane while the add-in runs.
-
-> [!INCLUDE [Information about using preview APIs](../includes/excel-shared-runtime-preview-note.md)]
+It's possible for add-ins with two or more parts to share a common JavaScript runtime. This shared runtime feature enables new APIs that hide and reopen the task pane while the add-in runs.
 
 ## Configure an add-in to use a shared runtime
 

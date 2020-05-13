@@ -1,14 +1,12 @@
 ---
 ms.date: 04/16/2020
-title: "Configure your Excel add-in to share the browser runtime (preview)"
+title: "Configure your Excel add-in to share the browser runtime"
 ms.prod: excel
 description: 'Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.'
 localization_priority: Priority
 ---
 
-# Configure your Excel add-in to use a shared JavaScript runtime (preview)
-
-[!include[Running custom functions in a shared runtime note](../includes/excel-shared-runtime-preview-note.md)]
+# Configure your Excel add-in to use a shared JavaScript runtime
 
 When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
 
@@ -117,4 +115,4 @@ Don't design your add-in to use multiple task panes if you are planning to use s
 
 ## See also
 
-- [Overview: Run your add-in code in a shared JavaScript runtime (preview)](custom-functions-shared-overview.md)
+- [Overview: Run your add-in code in a shared JavaScript runtime](custom-functions-shared-overview.md)
