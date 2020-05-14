@@ -1,7 +1,7 @@
 ---
 title: Error handling
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 04/10/2020
+ms.date: 05/13/2020
 localization_priority: Normal
 ---
 
@@ -72,4 +72,4 @@ The following table is a list of errors that the API may return.
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error object (JavaScript API for Excel)](/javascript/api/office/officeextension.error)
+- [OfficeExtension.Error object (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview)
