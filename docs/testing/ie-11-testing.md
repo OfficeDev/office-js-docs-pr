@@ -33,11 +33,11 @@ You should see a note in the command line that the web view type is now set to I
 
 ## Command settings
 
-Should you have a different manifest path, specify this in the command, as shown in the following: 
+Should you have a different manifest path, specify this in the command, as shown in the following:
 
-office-add-dev-settings webview **path to your manifest** ie
+`office-add-dev-settings webview [path to your manifest] ie`
 
-The `office-addin-dev-settings webview` command can also take a number of runtimes as arguments: 
+The `office-addin-dev-settings webview` command can also take a number of runtimes as arguments:
 
 - ie
 - edge
