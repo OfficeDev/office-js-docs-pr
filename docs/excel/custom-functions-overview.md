@@ -7,9 +7,9 @@ ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
 
-# Create custom functions in Excel 
+# Create custom functions in Excel
 
-Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. This article describes how to create custom functions in Excel.
+Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -21,7 +21,7 @@ The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 
 ```js
 /**
- * Returns the volume of a sphere. 
+ * Returns the volume of a sphere.
  * @customfunction
  * @param {number} radius
  */
@@ -35,19 +35,19 @@ function sphereVolume(radius) {
 
 ## How a custom function is defined in code
 
-If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions:
+If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, it creates files which control your functions and task pane. We'll concentrate on the files that are important to custom functions:
 
 | File | File format | Description |
 |------|-------------|-------------|
 | **./src/functions/functions.js**<br/>or<br/>**./src/functions/functions.ts** | JavaScript<br/>or<br/>TypeScript | Contains the code that defines custom functions. |
 | **./src/functions/functions.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
-| **./manifest.xml** | XML | Specifies the namespace for all custom functions within the add-in and the location of the JavaScript and HTML files that are listed previously in this table. It also lists the locations of other files your add-in might make use of, such as the task pane files and command files. |
+| **./manifest.xml** | XML | Specifies the location of multiple files that your custom function use, such as the custom functions JavaScript, JSON, and HTML files. It also lists the locations of task pane files, command files, and specifies which runtime your custom functions should use. |
 
 ### Script file
 
 The script file (**./src/functions/functions.js** or **./src/functions/functions.ts**) contains the code that defines custom functions and comments which define the function.
 
-The following code defines the custom function `add`. The code comments are used to generate a JSON metadata file that describes the custom function to Excel. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+The following code defines the custom function `add`. The code comments are used to generate a JSON metadata file that describes the custom function to Excel. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Next, two parameters are declared, `first` and `second`, followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -63,80 +63,23 @@ function add(first, second){
 }
 ```
 
-Note that the **functions.html** file, which governs the loading of the custom functions runtime, must link to the current CDN for custom functions. Projects prepared with the current version of the Yo Office generator reference the correct CDN. If you are retrofitting a previous custom function project from March 2019 or earlier, you need to copy in the code below to the **functions.html** page.
-
-```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/custom-functions-runtime.js" type="text/javascript"></script>
-```
-
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files.
+The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) does several things:
 
-The following basic XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions. If using the Yo Office generator, your generated custom function files will contain a more complex manifest file, which you can compare on [this Github repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml).
+- Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
+- Uses `<ExtensionPoint>` and `<Resources>` elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
+- Specifies which runtime to use for your custom function. We recommend always using the shared runtime unless you have a specific need for another runtime, because the shared runtime allows for the sharing of data between functions and the task pane.
 
-> [!NOTE] 
-> The URLs specified in the manifest file for the custom functions JavaScript, JSON, and HTML files must be publicly accessible and have the same subdomain.
+If you are using the Yo Office generator to create files, we recommend adjusting your manifest to use shared runtime, as this is not the default for these files. To change your manifest, use [this tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
 
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
-  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
-  <Id>6f4e46e8-07a8-4644-b126-547d5b539ece</Id>
-  <Version>1.0.0.0</Version>
-  <ProviderName>Contoso</ProviderName>
-  <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="helloworld"/>
-  <Description DefaultValue="Samples to test custom functions"/>
-  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-  <Hosts>
-    <Host Name="Workbook"/>
-  </Hosts>
-  <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:8081/index.html"/>
-  </DefaultSettings>
-  <Permissions>ReadWriteDocument</Permissions>
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <Hosts>
-      <Host xsi:type="Workbook">
-        <AllFormFactors>
-          <ExtensionPoint xsi:type="CustomFunctions">
-            <Script>
-              <SourceLocation resid="JS-URL"/>
-            </Script>
-            <Page>
-              <SourceLocation resid="HTML-URL"/>
-            </Page>
-            <Metadata>
-              <SourceLocation resid="JSON-URL"/>
-            </Metadata>
-            <Namespace resid="namespace"/>
-          </ExtensionPoint>
-        </AllFormFactors>
-      </Host>
-    </Hosts>
-    <Resources>
-      <bt:Urls>
-        <bt:Url id="JSON-URL" DefaultValue="https://subdomain.contoso.com/config/customfunctions.json"/>
-        <bt:Url id="JS-URL" DefaultValue="https://subdomain.contoso.com/dist/win32/ship/index.win32.bundle"/>
-        <bt:Url id="HTML-URL" DefaultValue="https://subdomain.contoso.com/index.html"/>
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="namespace" DefaultValue="CONTOSO"/>
-      </bt:ShortStrings>
-    </Resources>
-  </VersionOverrides>
-</OfficeApp>
-```
-
-> [!NOTE]
-> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.
+To see a full working manifest from a sample add-in, see [this Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## Coauthoring
 
-Excel on the web and Windows connected to an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
+Excel on the web and Windows connected to an Office 365 subscription allow you to coauthor within Excel. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
