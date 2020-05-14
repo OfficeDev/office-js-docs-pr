@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Specifies the activation rules that should be evaluated for this contextual mail add-in.
 
-**Add-in type:** Mail
+**Add-in type:** Mail (contextual)
 
 ## Contained in
 
