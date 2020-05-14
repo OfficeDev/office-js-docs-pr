@@ -118,5 +118,4 @@ Learn how to [perform web requests with custom functions](custom-functions-web-r
 ## See also
 
 * [Create custom functions in Excel](custom-functions-overview.md)
-* [Display a dialog in custom functions](custom-functions-dialog.md)
 * [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -662,14 +662,11 @@
     - name: Custom functions tutorial
       href: tutorials/excel-tutorial-create-custom-functions.md
       displayName: Excel, Custom Functions
-    - name: Authentication
-      href: excel/custom-functions-authentication.md
+    - name: Shared custom function data with the task pane tutorial
+      href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
       displayName: Excel, Custom Functions
-    - name: Debugging
-      href: excel/custom-functions-debugging.md
-      displayName: Excel, Custom Functions
-    - name: Dialog
-      href: excel/custom-functions-dialog.md
+    - name: Call Excel JS APIs from your custom function
+      href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
     - name: Error handling
       href: excel/custom-functions-errors.md
@@ -689,6 +686,9 @@
     - name: Naming guidelines
       href: excel/custom-functions-naming.md
       displayName: Excel, Custom Functions
+    - name: Overview of using a shared runtime
+      href: excel/custom-functions-shared-overview.md
+      displayName: Excel, Custom Functions
     - name: Parameter options
       href: excel/custom-functions-parameter-options.md
       displayName: Excel, Custom Functions
@@ -701,23 +701,20 @@
     - name: Runtime
       href: excel/custom-functions-runtime.md
       displayName: Excel, Custom Functions
-    - name: Save and share state
-      href: excel/custom-functions-save-state.md
-      displayName: Excel, Custom Functions
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
-    - name: Use a shared runtime
-      items:
-      - name: Overview of using a shared runtime
-        href: excel/custom-functions-shared-overview.md
-        displayName: Excel, Custom Functions
-      - name: Shared custom function data with the task pane tutorial
-        href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
-        displayName: Excel, Custom Functions
-      - name: Call Excel JS APIs from your custom function
-        href: excel/call-excel-apis-from-custom-function.md
-        displayName: Excel, Custom Functions
+    - name: UI-less custom functions
+      items: 
+        - name: Authentication for UI-less functions
+          href: excel/custom-functions-authentication.md
+          displayName: Excel, Custom Functions
+        - name: Debugging for UI-less functions
+          href: excel/custom-functions-debugging.md
+          displayName: Excel, Custom Functions
+        - name: Save and share state with UI-less functions
+          href: excel/custom-functions-save-state.md
+          displayName: Excel, Custom Functions
     - name: Volatile functions
       href: excel/custom-functions-volatile.md
       displayName: Excel, Custom Functions
