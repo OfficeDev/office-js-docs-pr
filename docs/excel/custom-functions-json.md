@@ -23,7 +23,7 @@ The following image explains the differences between using `yo office` scaffold 
 ![Image of differences between using Yo Office and writing your own JSON](../images/custom-functions-json.png)
 
 > [!NOTE]
-> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file if you do not use the `yo office` generator. Note that the server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel on the web.
+> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file if you do not use the `yo office` generator.
 
 ## Authoring metadata and connecting to the manifest
 
