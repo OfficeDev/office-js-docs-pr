@@ -1,7 +1,11 @@
 ---
 title: Call Microsoft Excel APIs from a custom function
 description: 'Learn which Microsoft Excel APIs you can call from your custom function.'
+<<<<<<< HEAD
 ms.date: 05/06/2020
+=======
+ms.date: 05/11/2020
+>>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 localization_priority: Normal
 ---
 

@@ -1,13 +1,21 @@
 ---
+<<<<<<< HEAD
 ms.date: 05/13/2020
+=======
+ms.date: 05/11/2020
+>>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 description: 'Learn how to run custom functions, ribbon buttons, and task pane code in a the same JavaScript runtime to coordinate scenarios across your add-in.'
 title: Run your add-in code in a shared JavaScript runtime
 localization_priority: Priority
 ---
 
+<<<<<<< HEAD
 # Overview: Run your add-in code in a shared JavaScript runtimes
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+=======
+# Overview: Run your add-in code in a shared JavaScript runtime
+>>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 
 When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
 
@@ -33,8 +41,12 @@ See the [configuring a shared runtime article](./configure-your-add-in-to-use-a-
 
 When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools. For more information, see [Debug add-ins using developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
 
+## Give us feedback
+
+We'd love to hear your feedback on this feature. If you find any bugs, issues, or have requests on this feature, please let us know by creating a GitHub issue in the [office-js repo](https://github.com/OfficeDev/office-js).
+
 ## See also
 
 List of related articles for shared runtime
 - [Tutorial: Share data and events between Excel custom functions and the task pane (preview)](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Call Excel APIs from your custom function (preview)](call-excel-apis-from-custom-function.md)
+- [Call Excel APIs from your custom function](call-excel-apis-from-custom-function.md)
