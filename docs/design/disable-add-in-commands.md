@@ -1,11 +1,11 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 04/11/2020
+ms.date: 05/11/2020
 localization_priority: Priority
 ---
 
-# Enable and Disable Add-in Commands (preview)
+# Enable and Disable Add-in Commands
 
 When some functionality in your add-in should only be available in certain contexts, you can programmatically enable or disable your custom Add-in Commands. For example, a function that changes the header of a table should only be enabled when the cursor is in a table.
 
@@ -15,13 +15,6 @@ You can also specify whether the command is enabled or disabled when the Office 
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
 >
 > [Basic concepts for Add-in Commands](add-in-commands.md)
-
-## Preview status
-
-The APIs described in this article are in preview and are currently only available in Excel.
-
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 ## Rules and gotchas
 

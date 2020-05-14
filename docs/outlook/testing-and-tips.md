@@ -1,7 +1,7 @@
 ---
 title: Deploy and install Outlook add-ins for testing
 description: Create a manifest file, deploy the add-in UI file to a web server, install the add-in in your mailbox, and then test the add-in.
-ms.date: 03/18/2020
+ms.date: 05/13/2020
 localization_priority: Priority
 ---
 
@@ -61,9 +61,9 @@ The fully qualified URL is the location of the add-in manifest file that you pre
 
 You can use the following additional PowerShell cmdlets to manage the add-ins for a mailbox:
 
--  `Get-App` - Lists the add-ins that are enabled for a mailbox.
--  `Set-App` - Enables or disables a add-in on a mailbox.
--  `Remove-App` - Removes a previously installed add-in from an Exchange server.
+- `Get-App` - Lists the add-ins that are enabled for a mailbox.
+- `Set-App` - Enables or disables a add-in on a mailbox.
+- `Remove-App` - Removes a previously installed add-in from an Exchange server.
 
 ## Client versions
 
@@ -72,10 +72,10 @@ Deciding what versions of the Outlook client to test depends on your development
 - If you are developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
 
 - If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
-    - The latest version of Outlook on Windows and the version prior to the latest.
-    - The latest version of Outlook on Mac.
-    - The latest version of Outlook on iOS and Android (if your add-in [supports mobile form factor](add-mobile-support.md)).
-    - The browser versions specified in the Commercial marketplace validation policy 1120.3.
+  - The latest version of Outlook on Windows and the version prior to the latest.
+  - The latest version of Outlook on Mac.
+  - The latest version of Outlook on iOS and Android (if your add-in [supports mobile form factor](add-mobile-support.md)).
+  - The browser versions specified in the Commercial marketplace validation policy 1120.3.
 
 > [!NOTE]
 > If your add-in does not support one of the above clients due to [requesting an API requirement set](apis.md) that the client does not support, that client would be removed from the list of required clients.
