@@ -7,13 +7,13 @@ localization_priority: Normal
 
 # Handling data and state in UI-less custom functions
 
-UI-less custom functions don't run in the shared runtime like ordinary custom functions. In the UI-less custom functions runtime, only calculations and web requests can be performed and interaction with the task pane requires using a separate object. The UI-less custom functions runtime doesn't have access to the Document Object Model (DOM), so it can't use jQuery or other libraries which rely on the DOM.
-
-Instead UI-less custom functions rely on a `storage` object to interact with the task pane. UI-less custom functions running on Excel on Windows have access to the `OfficeRuntime.storage` object, a separate location within the UI-less custom functions runtime. For UI-less functions running on Excel on the web and Mac, the `storage` object is the same as the browser's `localStorage`.
-
-Use the `storage` object to save state when using UI-less custom functions. Storage is limited to 10 MB per domain, may be shared across multiple add-ins, and is unencrypted. If two add-ins share a domain (for example, www.contoso.com/addin1, www.contoso.com/addin2), they can also share information through `storage`. However, if add-ins have different subdomains, (such as subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2), they will have different `storage` instances. Because `storage` can be a shared location, be aware that you can overwrite key-value pairs.
+UI-less custom functions don't run in the shared runtime like ordinary custom functions. Instead, they use a JavaScript-only runtime, meaning that interaction with the task pane requires additional steps.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+UI-less custom functions rely on a `storage` object to interact with the task pane. UI-less custom functions running on Excel on Windows have access to the `OfficeRuntime.storage` object, a separate location within the UI-less custom functions runtime. For UI-less functions running on Excel on the web and Mac, the `storage` object is the same as the browser's `localStorage`.
+
+Use the `storage` object to save state when using UI-less custom functions. Storage is limited to 10 MB per domain, may be shared across multiple add-ins, and is unencrypted. If two add-ins share a domain (for example, www.contoso.com/addin1, www.contoso.com/addin2), they can also share information through `storage`. However, if add-ins have different subdomains, (such as subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2), they will have different `storage` instances. Because `storage` can be a shared location, be aware that you can overwrite key-value pairs.
 
 There are multiple ways to use `storage` for state management:
 
@@ -53,7 +53,18 @@ The following methods are available on the `storage` object:
 > [!NOTE]
 There's no method for clearing all information (such as `clear`). Instead, use `removeItems` to remove multiple entries at a time.
 
-## Addressing cell's context parameter
+> [!NOTE]
+> The JavaScript-only runtime doesn't have access to the Document Object Model (DOM), so it can't use jQuery or other libraries which rely on the DOM.
+
+## Requesting external data
+
+Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+
+Within the JavaScript runtime used by custom functions, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
+
+Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
+
+## Finding an addressing cell's context parameter
 
 In some cases you need to get the address of the cell that invoked your UI-less custom function. This is useful in the following scenarios:
 
@@ -78,14 +89,6 @@ function getAddress(invocation) {
 ```
 
 By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
-
-## Requesting external data
-
-Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
-
-Within the JavaScript runtime used by custom functions, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
-
-Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
 ## Next steps
 Learn how to [autogenerate the JSON metadata for your custom functions](custom-functions-json-autogeneration.md).

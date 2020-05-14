@@ -7,13 +7,13 @@ localization_priority: Normal
 
 # Authentication for UI-less custom functions
 
-In some scenarios your UI-less custom function will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, be aware that UI-less custom functions run in a a different runtime than ordinary custom functions using the recommended shared runtime. Because of this, you'll need to pass data back and forth between the two runtimes using the `OfficeRuntime.storage` object and the Dialog API.
+In some scenarios your UI-less custom function will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, be aware that UI-less custom functions run in a JavaScript-only runtime. Because of this, you'll need to pass data back and forth between the JavaScript-only runtime and the typical browser engine runtime used by most add-ins using the `OfficeRuntime.storage` object and the Dialog API.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## OfficeRuntime.storage object
 
-The UI-less custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between UI-less custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
+The JavaScript-only runtime used by UI-less custom functions doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between UI-less custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
 
 ### Suggested usage
 
@@ -24,9 +24,7 @@ When you need to authenticate from a UI-less custom function, check `storage` to
 If a token doesn't exist, you should use the Dialog API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored in `storage`.
 
 > [!NOTE]
-> The UI-less custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use `OfficeRuntime.Dialog` to authenticate users in the UI-less custom functions runtime.
-
-For information on how to use the `Dialog` object, see [Custom Functions dialog](../excel/custom-functions-dialog.md).
+> The JavaScript-only runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use `OfficeRuntime.Dialog` to authenticate users in the JavaScript-only runtime.
 
 The following diagram outlines this basic process. The dotted line indicates that UI-less custom functions and your add-in's task pane are both part of your add-in as a whole, though they use separate runtimes.
 
@@ -88,8 +86,56 @@ Avoid using the following locations to store data when developing custom functio
 - `localStorage`: UI-less custom functions do not have access to the global `window` object and therefore have no access to data stored in `localStorage`.
 - `Office.context.document.settings`:  This location is not secure and information can be extracted by anyone using the add-in.
 
+## Dialog box API example
+
+In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API's `displayWebDialogOptions` function to display a dialog box. This sample is provided only to show the capabilities of the `Dialog` object.
+
+```JavaScript
+/**
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * @param {string} url URL for a stored token.
+ */
+function getTokenViaDialog(url) {
+  return new Promise (function (resolve, reject) {
+    if (_dialogOpen) {
+      // Can only have one dialog box open at once, wait for previous dialog box's token
+      let timeout = 5;
+      let count = 0;
+      var intervalId = setInterval(function () {
+        count++;
+        if(_cachedToken) {
+          resolve(_cachedToken);
+          clearInterval(intervalId);
+        }
+        if(count >= timeout) {
+          reject("Timeout while waiting for token");
+          clearInterval(intervalId);
+        }
+      }, 1000);
+    } else {
+      _dialogOpen = true;
+      OfficeRuntime.displayWebDialog(url, {
+        height: '50%',
+        width: '50%',
+        onMessage: function (message, dialog) {
+          _cachedToken = message;
+          resolve(message);
+          dialog.close();
+          return;
+        },
+        onRuntimeError: function(error, dialog) {
+          reject(error);
+        },
+      }).catch(function (e) {
+        reject(e);
+      });
+    }
+  });
+}
+```
+
 ## Next steps
-Learn about the [dialog API for UI-less custom functions](custom-functions-dialog.md).
+
 
 ## See also
 
