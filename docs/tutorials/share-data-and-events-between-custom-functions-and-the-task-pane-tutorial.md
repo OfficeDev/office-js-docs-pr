@@ -10,6 +10,8 @@ localization_priority: Priority
 
 You can configure your Excel add-in to use a shared runtime. This will make it possible to shared global data, or send events between the task pane and custom functions. For most custom functions scenarios, we recommend using a shared runtime, unless you have a specific reason to use a UI-less custom function.
 
+This tutorial assumes you are familiar with using the Yo Office generator to create add-in projects. If you haven't done this yet, consider reading the [Excel custom functions tutorial](./excel-tutorial-create-custom-functions.md).
+
 ## Create the add-in project
 
 Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts with the following answers:
