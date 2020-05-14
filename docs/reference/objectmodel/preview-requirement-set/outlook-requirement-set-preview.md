@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 05/13/2020
+ms.date: 05/14/2020
 localization_priority: Normal
 ---
 
@@ -15,9 +15,9 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> You may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request access" is noted on this page for applicable features.
+> You may be able to preview features in Outlook on the web by [configuring targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center). "Configure preview access" is noted on this page for applicable features.
 >
-> For other features, you may be able to preview them in Outlook on the web by [configuring targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center). "Configure preview access" is noted on those features.
+> For other features, you may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request access" is noted on those features.
 
 The Preview Requirement set includes all of the features of [Requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).
 
@@ -103,31 +103,31 @@ Added a new function that returns initialization data passed when the add-in is 
 
 Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Added a new function that disables the client signature for the sending mailbox in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
 Added a new function that gets the compose type of a message in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
 Added a new function that checks if the client signature is enabled on the item in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 Added a new enum `ComposeType` available in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
