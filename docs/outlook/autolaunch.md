@@ -2,7 +2,7 @@
 title: Configure your add-in for event-based activation
 description: Learn how to configure your add-in for event-based activation.
 ms.topic: article
-ms.date: 05/13/2020
+ms.date: 05/14/2020
 localization_priority: Normal
 ---
 

@@ -89,7 +89,19 @@ Added support for event-based activation functionality in Outlook add-ins. See [
 
 #### [LaunchEvent extension point](../../manifest/extensionpoint.md#launchevent-preview)
 
-Added `LaunchEvent` extension point to manifest. It configures event-based activation functionality.
+Added `LaunchEvent` extension point support to manifest. It configures event-based activation functionality.
+
+**Available in**: Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
+
+#### [LaunchEvents manifest element](../../manifest/launchevents.md)
+
+Added `LaunchEvent` element to manifest. It supports configuring event-based activation functionality.
+
+**Available in**: Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
+
+#### [LaunchEvent manifest element](../../manifest/launchevent.md)
+
+Added `LaunchEvent` element to manifest. It supports configuring event-based activation functionality.
 
 **Available in**: Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
 
