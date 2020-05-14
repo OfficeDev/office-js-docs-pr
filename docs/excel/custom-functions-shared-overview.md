@@ -27,7 +27,7 @@ When you run custom functions in a shared runtime with the task pane, it will ru
 
 ## Set up shared runtime
 
-See the [shared runtime tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md) to learn how to set up your custom functions to use shared runtime.
+See the [configuring a shared runtime article](./configure-your-add-in-to-use-a-shared-runtime.md) to learn how to set up your custom functions to use shared runtime.
 
 ### Debugging
 
