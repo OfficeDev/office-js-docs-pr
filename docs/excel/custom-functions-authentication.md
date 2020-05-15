@@ -88,7 +88,7 @@ Avoid using the following locations to store data when developing custom functio
 
 ## Dialog box API example
 
-In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API's `displayWebDialogOptions` function to display a dialog box. This sample is provided only to show the capabilities of the `Dialog` object.
+In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API's `displayWebDialogOptions` function to display a dialog box. This sample is provided to show the capabilities of the `Dialog` object, not demonstrate how to authenticate.
 
 ```JavaScript
 /**
