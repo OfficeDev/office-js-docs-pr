@@ -328,7 +328,7 @@ Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppoint
 
 ### Events
 
-This extension point adds an event handler for a specified event.
+This extension point adds an event handler for a specified event. For more information about using this extension point, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).
 
 | Element | Description  |
 |:-----|:-----|
