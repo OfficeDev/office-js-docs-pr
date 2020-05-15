@@ -23,27 +23,27 @@ These instructions assume you have experience using the command line, understand
 
 ## Install and use
 
-1. [Create a new project with the latest version of Yo Office](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
+1. [Create a new project with the latest version of Yo Office](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
 
-2. Open a command prompt as administrator
+2. Open a command prompt as administrator.
    ![Command prompt options, including "run as administrator" in Windows 10](../images/run-as-administrator-vs-code.jpg)
 
 3. Navigate to your project directory.
 
 4. Run the following command to open your project in Visual Studio Code as an administrator.
 
-```command line
+```command&nbsp;line
 code .
 ```
 
 Once Visual Studio Code is open, navigate manually to the project folder.
 
 > [!TIP]
-> To open Visual Studio Code as an administrator, select the **run as administrator** option when opening Visual Studio Code from the Start Menu in Windows.
+> To open Visual Studio Code as an administrator, select the **Run as administrator** option when opening Visual Studio Code from the Start Menu in Windows.
 
-5. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "VS Code Debugger for Office Add-ins" extension and install it.
+5. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "VS Code Debugger for Office Add-ins" extension and install it.
 
-6. In the .vscode folder of your project, you will find a launch.json file. At the end of the file, add the following code to the configurations section of the file.
+6. In the .vscode folder of your project, open the **launch.json** file. Add the following code to the `configurations` section:
 
 ```JSON
 {
@@ -60,7 +60,7 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 
 7. In the section of JSON you just copied, find the "url" section. In this URL, you will need to replace the uppercase HOST text with the host application for your Office add-in. For example, if your Office add-in is for Excel, your URL value would be "https://localhost:3000/taskpane.html?_host_Info=<strong>Excel</strong>$Win32$16.01$en-US$\$\$\$0".
 
-8. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in Excel, open the task pane.
+8. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in the Office client, open the task pane.
 
 9. Return to Visual Studio Code and choose **View > Debug** or enter **Ctrl+Shift+D** to switch to debug view.
 
