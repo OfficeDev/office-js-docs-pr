@@ -1,22 +1,22 @@
 ---
-title: Configure your add-in for event-based activation (preview)
-description: Learn how to configure your add-in for event-based activation.
+title: Configure your Outlook add-in for event-based activation (preview)
+description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
 ms.date: 05/15/2020
 localization_priority: Normal
 ---
 
-# Configure your add-in for event-based activation (preview)
+# Configure your Outlook add-in for event-based activation (preview)
 
-Before the introduction of the event-based activation feature, a user would have to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality. At present, the supported events are as follows.
+Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality. At present, the supported events are as follows.
 
 - Compose a new message
-- Organize a new appointment
+- Create a new appointment
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new message is created.
 
 > [!IMPORTANT]
-> This feature is only supported for preview in Outlook on the web with an Office 365 subscription. See [How to preview](#how-to-preview) in this article for more details.
+> This feature is only supported for preview in Outlook on the web with an Office 365 subscription. See [How to preview](#how-to-preview-event-based-activation-feature) in this article for more details.
 >
 > Because preview APIs are subject to change without notice, they shouldn't be used in production add-ins.
 
@@ -43,7 +43,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 
 1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
 
-```xml
+```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
@@ -150,7 +150,9 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web uses an HTML
 
 ## Implement event handling
 
-You have to implement handling for your selected events. In this case, you'll add handling for composing new items.
+You have to implement handling for your selected events.
+
+In this scenario, you'll add handling for composing new items.
 
 1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
 
@@ -193,7 +195,7 @@ You have to implement handling for your selected events. In this case, you'll ad
 
 ## Event-based activation behavior and limitations
 
-Add-ins that activate based on events are designed to be short-running, up to 330 seconds only. We recommend you have your add-in call the `event.completed` method to signal it has completed processing the launch event. The add-in is also ended when the user closes the compose window.
+Add-ins that activate based on events are designed to be short-running, up to 330 seconds only. We recommend you have your add-in call the `event.completed` method to signal it has completed processing the launch event. The add-in also ends when the user closes the compose window.
 
 If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running. Any additional add-ins are pushed to a queue then run as previously active add-ins are completed or deactivated.
 

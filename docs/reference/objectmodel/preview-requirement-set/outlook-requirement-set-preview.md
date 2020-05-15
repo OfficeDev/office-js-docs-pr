@@ -85,7 +85,7 @@ Added a new element to the manifest where the `AppendOnSend` extended permission
 
 ### Event-based activation
 
-Added support for event-based activation functionality in Outlook add-ins. See [Configure your add-in for event-based activation](../../../outlook/autolaunch.md) to learn more.
+Added support for event-based activation functionality in Outlook add-ins. See [Configure your Outlook add-in for event-based activation](../../../outlook/autolaunch.md) to learn more.
 
 #### [LaunchEvent extension point](../../manifest/extensionpoint.md#launchevent-preview)
 
@@ -94,12 +94,6 @@ Added `LaunchEvent` extension point support to manifest. It configures event-bas
 **Available in**: Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
 
 #### [LaunchEvents manifest element](../../manifest/launchevents.md)
-
-Added `LaunchEvent` element to manifest. It supports configuring event-based activation functionality.
-
-**Available in**: Outlook on the web (modern, [Request access](https://aka.ms/OWAPreview))
-
-#### [LaunchEvent manifest element](../../manifest/launchevent.md)
 
 Added `LaunchEvent` element to manifest. It supports configuring event-based activation functionality.
 
