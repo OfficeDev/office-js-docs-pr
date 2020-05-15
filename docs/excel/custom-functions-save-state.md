@@ -1,5 +1,5 @@
 ---
-ms.date: 05/13/2020
+ms.date: 05/15/2020
 description: 'Use `OfficeRuntime.storage` to save state and data with UI-less custom functions.' 
 title: Handling data and state in UI-less custom functions
 localization_priority: Normal
@@ -10,6 +10,8 @@ localization_priority: Normal
 UI-less custom functions don't run in the shared runtime like ordinary custom functions. Instead, they use a JavaScript-only runtime, meaning that interaction with the task pane requires additional steps.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 UI-less custom functions rely on a `storage` object to interact with the task pane. UI-less custom functions running on Excel on Windows have access to the `OfficeRuntime.storage` object, a separate location within the UI-less custom functions runtime. For UI-less functions running on Excel on the web and Mac, the `storage` object is the same as the browser's `localStorage`.
 
@@ -42,13 +44,13 @@ function GetValue(key) {
 
 The following methods are available on the `storage` object:
 
-- getItem
-- getItems
-- setItem
-- setItems
-- removeItem
-- removeItems
-- getKeys
+- `getItem`
+- `getItems`
+- `setItem`
+- `setItems`
+- `removeItem`
+- `removeItems`
+- `getKeys`
 
 > [!NOTE]
 There's no method for clearing all information (such as `clear`). Instead, use `removeItems` to remove multiple entries at a time.

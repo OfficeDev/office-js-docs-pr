@@ -1,5 +1,5 @@
 ---
-ms.date: 05/07/2020
+ms.date: 05/15/2020
 description: 'Learn how to debug your UI-less custom functions in Excel.'
 title: UI-less custom functions debugging
 localization_priority: Normal
@@ -9,6 +9,8 @@ localization_priority: Normal
 Debugging for UI-less custom functions can be accomplished by multiple means, depending on what platform you're using.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 On Windows:
 - [Excel Desktop and Visual Studio Code (VS Code) debugger](#use-the-vs-code-debugger-for-excel-desktop)

@@ -1,5 +1,5 @@
 ---
-ms.date: 05/13/2020
+ms.date: 05/15/2020
 description: 'Authenticate users using UI-less custom functions in Excel.'
 title: Authentication for UI-less custom functions
 localization_priority: Normal
@@ -10,6 +10,8 @@ localization_priority: Normal
 In some scenarios your UI-less custom function will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, be aware that UI-less custom functions run in a JavaScript-only runtime. Because of this, you'll need to pass data back and forth between the JavaScript-only runtime and the typical browser engine runtime used by most add-ins using the `OfficeRuntime.storage` object and the Dialog API.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 ## OfficeRuntime.storage object
 

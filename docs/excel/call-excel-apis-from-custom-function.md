@@ -1,11 +1,7 @@
 ---
 title: Call Microsoft Excel APIs from a custom function
 description: 'Learn which Microsoft Excel APIs you can call from your custom function.'
-<<<<<<< HEAD
-ms.date: 05/06/2020
-=======
 ms.date: 05/11/2020
->>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 localization_priority: Normal
 ---
 
@@ -17,8 +13,6 @@ Calling Office.js APIs through a custom function can be helpful when:
 
 - A custom function needs to get information from Excel before calculation. This information might include document properties, range formats, custom XML parts, a workbook name, or other Excel-specific information.
 - A custom function will set the cell's number format for the return values after calculation.
-
-[!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
 ## Code sample
 
