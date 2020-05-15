@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: 'Learn how to troubleshoot user errors in Office Add-ins.'
-ms.date: 04/13/2020
+ms.date: 05/15/2020
 localization_priority: Normal
 ---
 
