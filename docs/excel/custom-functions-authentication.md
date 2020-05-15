@@ -13,7 +13,7 @@ In some scenarios your UI-less custom function will need to authenticate the use
 
 ## OfficeRuntime.storage object
 
-The JavaScript-only runtime used by UI-less custom functions doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between UI-less custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
+The JavaScript-only runtime used by UI-less custom functions doesn't have a `localStorage` object available on the global window, where you typically store data. Instead, you should share data between UI-less custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
 
 ### Suggested usage
 
