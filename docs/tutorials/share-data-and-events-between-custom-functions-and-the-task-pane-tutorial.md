@@ -17,7 +17,7 @@ You can configure your Excel add-in to use a shared runtime. This will make it p
 =======
 >>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 
-This tutorial assumes you are familiar with using the Yo Office generator to create add-in projects. If you haven't done this yet, consider reading the [Excel custom functions tutorial](./excel-tutorial-create-custom-functions.md).
+This tutorial assumes you are familiar with using the Yo Office generator to create add-in projects. Consider completing the [Excel custom functions tutorial](./excel-tutorial-create-custom-functions.md), if you have not already.
 
 ## Create the add-in project
 

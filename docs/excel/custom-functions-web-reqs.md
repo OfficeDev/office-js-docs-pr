@@ -125,7 +125,7 @@ function increment(incrementBy, invocation) {
 
 ## Canceling a function
 
-Note that Excel cancels the execution of a function in the following situations:
+Excel cancels the execution of a function in the following situations:
 
 - When the user edits or deletes a cell that references the function.
 - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
