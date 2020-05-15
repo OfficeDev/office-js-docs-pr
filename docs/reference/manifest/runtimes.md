@@ -10,7 +10,6 @@ localization_priority: Normal
 Specifies the runtime of your add-in and enables custom functions, ribbon buttons, and the task pane to use the same JavaScript runtime. Child of the `<Host>` element in your manifest file. For more information, see [Configure your Excel add-in to use a shared JavaScript runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 
 > [!IMPORTANT]
-> Shared runtime is currently only available on Excel on Windows. To try this feature, join [Office Insider](https://insider.office.com/).
 
 **Add-in type:** Task pane
 

@@ -1,9 +1,6 @@
 ---
-<<<<<<< HEAD
 title: "Tutorial: Share data and events between Excel custom functions and the task pane"
-=======
 title: "Tutorial: Share data and events between Excel custom functions and the task pane "
->>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 description: 'In Excel, share data and events between custom functions and the task pane.'
 ms.date: 05/11/2020
 ms.prod: excel
@@ -11,13 +8,10 @@ localization_priority: Priority
 ---
 
 # Tutorial: Share data and events between Excel custom functions and the task pane
-<<<<<<< HEAD
 
 You can configure your Excel add-in to use a shared runtime. This will make it possible to shared global data, or send events between the task pane and custom functions. For most custom functions scenarios, we recommend using a shared runtime, unless you have a specific reason to use a UI-less custom function.
-=======
->>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 
-This tutorial assumes you are familiar with using the Yo Office generator to create add-in projects. If you haven't done this yet, consider reading the [Excel custom functions tutorial](./excel-tutorial-create-custom-functions.md).
+This tutorial assumes you are familiar with using the Yo Office generator to create add-in projects. Consider completing the [Excel custom functions tutorial](./excel-tutorial-create-custom-functions.md), if you have not already.
 
 ## Create the add-in project
 
@@ -212,8 +206,4 @@ Now that custom functions run in the same context as your task pane code, they c
 Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE("new value")` to change the shared data to a new value.
 
 > [!NOTE]
-<<<<<<< HEAD
 > Configuring your project as shown in this article will share context between custom functions and the task pane. Calling some Office APIs from custom functions is possible. [See Call Microsoft Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md) for more details.
-=======
-> Configuring your project as shown in this article will share context between custom functions and the task pane. Calling Office APIs from custom functions is supported with s[some limitations](../excel/call-excel-apis-from-custom-function.md).
->>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d

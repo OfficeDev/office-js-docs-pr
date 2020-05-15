@@ -85,7 +85,7 @@ If using Excel on Windows or Mac, you can report feedback to the Office extensib
 Feel free to submit an issue you encounter either through the "Content feedback" feature at the bottom of any documentation page, or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## Next steps
-Learn how to [make your custom functions compatible with XLL user-defined functions.](make-custom-functions-compatible-with-xll-udf.md)
+Learn how to [make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md).
 
 ## See also
 

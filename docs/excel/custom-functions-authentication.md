@@ -15,7 +15,7 @@ In some scenarios your UI-less custom function will need to authenticate the use
 
 ## OfficeRuntime.storage object
 
-The JavaScript-only runtime used by UI-less custom functions doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between UI-less custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
+The JavaScript-only runtime used by UI-less custom functions doesn't have a `localStorage` object available on the global window, where you typically store data. Instead, you should share data between UI-less custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
 
 ### Suggested usage
 
@@ -90,7 +90,7 @@ Avoid using the following locations to store data when developing custom functio
 
 ## Dialog box API example
 
-In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API's `displayWebDialogOptions` function to display a dialog box. This sample is provided only to show the capabilities of the `Dialog` object.
+In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API's `displayWebDialogOptions` function to display a dialog box. This sample is provided to show the capabilities of the `Dialog` object, not demonstrate how to authenticate.
 
 ```JavaScript
 /**
@@ -100,7 +100,7 @@ In the following code sample, the function `getTokenViaDialog` uses the `Dialog`
 function getTokenViaDialog(url) {
   return new Promise (function (resolve, reject) {
     if (_dialogOpen) {
-      // Can only have one dialog box open at once, wait for previous dialog box's token
+      // Can only have one dialog box open at once. Wait for previous dialog box's token.
       let timeout = 5;
       let count = 0;
       var intervalId = setInterval(function () {
