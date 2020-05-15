@@ -98,7 +98,7 @@ In the following code sample, the function `getTokenViaDialog` uses the `Dialog`
 function getTokenViaDialog(url) {
   return new Promise (function (resolve, reject) {
     if (_dialogOpen) {
-      // Can only have one dialog box open at once, wait for previous dialog box's token
+      // Can only have one dialog box open at once. Wait for previous dialog box's token.
       let timeout = 5;
       let count = 0;
       var intervalId = setInterval(function () {
