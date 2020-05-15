@@ -246,7 +246,7 @@ function add(first: number, second: number): number {
 
 Used to indicate that a custom function is a streaming function. 
 
-The last parameter should be of type `CustomFunctions.StreamingInvocation<ResultType>`.
+The last parameter is of type `CustomFunctions.StreamingInvocation<ResultType>`.
 The function returns `void`.
 
 Streaming functions don't return values directly, instead they call `setResult(result: ResultType)` using the last parameter.
