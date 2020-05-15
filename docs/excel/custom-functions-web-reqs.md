@@ -94,7 +94,10 @@ async function getStarCount(userName: string, repoName: string) {
 
 Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything. This can be useful to check live data from a service online, like the function in [the custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
 
-To declare a streaming function, either use the tag `@streaming` or the `CustomFunctions.StreamingInvocation` invocation parameter, either will indicate that your function is streaming.
+To declare a streaming function, you can use either:
+
+- The `@streaming` tag.
+- The `CustomFunctions.StreamingInvocation` invocation parameter.
 
 The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
 
@@ -141,7 +144,7 @@ The `invocation` parameter is the last parameter of any custom function by defau
 
 If you're using TypeScript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.
 
-## Receive data via WebSockets
+## Receiving data via WebSockets
 
 Within a custom function, you can use WebSockets to exchange data over a persistent connection with a server. Using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
 
