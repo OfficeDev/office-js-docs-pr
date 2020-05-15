@@ -11,7 +11,7 @@ As described in the [custom functions overview](custom-functions-overview.md) ar
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-We recommend using JSON auto-generation when possible instead of creating your own JSON file. Auto-generation is less prone to user error and the `yo office` scaffold files already include this. For more information on the process of JSDoc comment JSON file generation, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+We recommend using JSON auto-generation when possible instead of creating your own JSON file. Auto-generation is less prone to user error and the `yo office` scaffolded files already include this. For more information on the process of JSDoc comment JSON file generation, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 However, you can make a custom functions project from scratch; it requires that you:
 
