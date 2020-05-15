@@ -12,7 +12,7 @@ Configures your add-in to activate based on supported events. Child of the [`<La
 **Add-in type:** Mail
 
 > [!IMPORTANT]
-> Event-based activation is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web. For more information, see [How to preview](../../outlook/autolaunch.md#how-to-preview-event-based-activation-feature).
+> Event-based activation is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-event-based-activation-feature).
 
 ## Syntax
 
