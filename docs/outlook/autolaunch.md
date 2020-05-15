@@ -13,16 +13,16 @@ Before the introduction of the event-based activation feature, a user would have
 - Compose a new message
 - Organize a new appointment
 
-By the end of this walkthrough, you will have an add-in that runs whenever a new message is created.
+By the end of this walkthrough, you'll have an add-in that runs whenever a new message is created.
 
 > [!IMPORTANT]
-> This feature is only supported for preview in Outlook on the web with an Office 365 subscription. See [How to preview](#how-to-preview) later in this article for more details.
+> This feature is only supported for preview in Outlook on the web with an Office 365 subscription. See [How to preview](#how-to-preview) in this article for more details.
 >
 > Because preview APIs are subject to change without notice, they shouldn't be used in production add-ins.
 
-## How to preview
+## How to preview event-based activation feature
 
-We invite you to try out the event-based activation feature! Then let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
+We invite you to try out the event-based activation feature! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
 
 To preview this feature:
 
@@ -195,9 +195,9 @@ You have to implement handling for your selected events. In this case, you'll ad
 
 Add-ins that activate based on events are designed to be short-running, up to 330 seconds only. We recommend you have your add-in call the `event.completed` method to signal it has completed processing the launch event. The add-in is also ended when the user closes the compose window.
 
-If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only 5 event-based add-ins can be actively running. Any additional add-ins are pushed to a queue then run as previously active add-ins are completed or deactivated.
+If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running. Any additional add-ins are pushed to a queue then run as previously active add-ins are completed or deactivated.
 
-The user can switch or navigate away from the item (that is, moves away from current mail item) where the add-in started running. The add-in that was launched will finish its operation in the background.
+The user can switch or navigate away from the current mail item where the add-in started running. The add-in that was launched will finish its operation in the background.
 
 Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs.
 
