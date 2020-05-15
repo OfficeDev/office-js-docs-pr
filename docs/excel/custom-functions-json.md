@@ -15,7 +15,7 @@ We recommend using JSON auto-generation when possible instead of creating your o
 
 However, you can make a custom functions project from scratch; it requires that you:
 
-- Write your JSON file
+- Write your JSON file.
 - Check that your manifest file is connected to your JSON file
 - Associate your functions' `id` and `name` properties in the script file in order to register your functions
 
