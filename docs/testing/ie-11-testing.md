@@ -1,11 +1,11 @@
 ---
 ms.date: 05/16/2020
-description: 'Test your add-in using Internet Explorer 11.'
+description: 'Test your Office Add-in using Internet Explorer 11.'
 title: Internet Explorer 11 testing
 localization_priority: Normal
 ---
 
-## Test with Internet Explorer 11
+# Test your Office Add-in using Internet Explorer 11
 
 Depending on the specifications of your add-in, you may plan to support older versions of Windows and Office, which require testing on Internet Explorer 11. This is often necessary as part of submitting your add-in to AppSource. You can use the following command line tooling to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing.
 
@@ -20,6 +20,9 @@ These instructions assume you have set up a Yo Office generator project before. 
 ## Using IE11 tooling
 
 1. Create a Yo Office generator project. It doesn't matter what kind of project you select, this tooling will work with all project types.
+
+> ![NOTE]
+> If you have an existing project and want to add this tooling without creating a new project, skip this step and move to the next step. 
 
 2. In the root folder of your new project, run the following in the command line:
 
