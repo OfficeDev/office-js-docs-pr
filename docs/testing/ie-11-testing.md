@@ -5,7 +5,7 @@ title: Internet Explorer 11 testing
 localization_priority: Normal
 ---
 
-## Internet Explorer 11 testing
+## Test with Internet Explorer 11
 
 Depending on the specifications of your add-in, you may plan to support older versions of Windows and Office, which require testing on Internet Explorer 11. This is often necessary as part of submitting your add-in to AppSource. You can use the following command line tooling to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing.
 
