@@ -80,6 +80,6 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 
 * [Test and debug Office Add-ins](test-debug-office-add-ins.md)
 
-* [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools.md)
+* [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
 * [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
