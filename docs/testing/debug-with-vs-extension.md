@@ -1,15 +1,17 @@
 ---
-title: Visual Studio Code Debugger Extension for Office Add-ins
-description: 'Use a VS Code extension to debug your Office add-in.'
+title: Office Addin Debugger Extension for Visual Studio Code
+description: 'Use the Visual Studio Code extension Office Addin Debugger to debug your Office add-in.'
 ms.date: 05/14/2020
 localization_priority: Normal
 ---
 
-# Visual Studio Code Debugger Extension for Office Add-ins
+# Office Addin Debugger Extension for Visual Studio Code
 
-The Visual Studio Debugger Extension for Office Add-ins allows you to use F5 in VS Code to debug your Office Add-in against the Edge runtime. This debugging mode is dynamic, allowing you to set breakpoints while code is running. You can see changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you can see the results of multiple changes to your code. The following image shows this extension in action.
+The "Office Addin Debugger" Extension for Visual Studio Code allows you to debug your Office Add-in against the Edge runtime.
 
-![VS Code Debugger Extension debugging a section of Excel Add-ins](../images/vs-debugger-extension-for-office-addins.jpg)
+This debugging mode is dynamic, allowing you to set breakpoints while code is running. You can see changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you can see the results of multiple changes to your code. The following image shows this extension in action.
+
+![Office Addin Debugger Extension debugging a section of Excel Add-ins](../images/vs-debugger-extension-for-office-addins.jpg)
 
 ## Pre-Requisites
 
@@ -17,13 +19,15 @@ The Visual Studio Debugger Extension for Office Add-ins allows you to use F5 in 
 - [Node.js (version 10+)](https://nodejs.org/)
 - Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
-- [Yo Office](https://github.com/OfficeDev/generator-office)
 
 These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
 
 ## Install and use
 
-1. [Create a new project with the latest version of Yo Office](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
+1. If you need to create an add-in project, [use the Yo Office generator to create one](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
+
+> ![NOTE]
+> If you already have a project, skip this step and move to the next step.
 
 2. Open a command prompt as administrator
    ![Command prompt options, including "run as administrator" in Windows 10](../images/run-as-administrator-vs-code.jpg)
@@ -39,9 +43,9 @@ code .
 Once Visual Studio Code is open, navigate manually to the project folder.
 
 > [!TIP]
-> To open Visual Studio Code as an administrator, select the **run as administrator** option when opening Visual Studio Code from the Start Menu in Windows.
+> To open Visual Studio Code as an administrator, select the **run as administrator** option when opening Visual Studio Code after searching for it in Windows.
 
-5. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "VS Code Debugger for Office Add-ins" extension and install it.
+5. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "Office Addin Debugger" extension and install it.
 
 6. In the .vscode folder of your project, you will find a launch.json file. At the end of the file, add the following code to the configurations section of the file.
 
@@ -71,3 +75,11 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 ![A red circle appears on a line of code in VS Code](../images/set-breakpoint.jpg)
 
 12. Run your add-in. You will see that breakpoints have been hit and you can inspect local variables.
+
+## See also
+
+* [Test and debug Office Add-ins](test-debug-office-add-ins.md)
+
+* [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools.md)
+
+* [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
