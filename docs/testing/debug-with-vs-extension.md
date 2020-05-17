@@ -29,14 +29,14 @@ These instructions assume you have experience using the command line, understand
 > ![NOTE]
 > If you already have a project, skip this step and move to the next step.
 
-2. Open a command prompt as administrator
+2. Open a command prompt as administrator.
    ![Command prompt options, including "run as administrator" in Windows 10](../images/run-as-administrator-vs-code.jpg)
 
 3. Navigate to your project directory.
 
 4. Run the following command to open your project in Visual Studio Code as an administrator.
 
-```command line
+```command&nbsp;line
 code .
 ```
 
@@ -47,7 +47,7 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 
 5. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "Office Addin Debugger" extension and install it.
 
-6. In the .vscode folder of your project, you will find a launch.json file. At the end of the file, add the following code to the configurations section of the file.
+6. In the .vscode folder of your project, open the **launch.json** file. Add the following code to the `configurations` section:
 
 ```JSON
 {
@@ -64,9 +64,9 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 
 7. In the section of JSON you just copied, find the "url" section. In this URL, you will need to replace the uppercase HOST text with the host application for your Office add-in. For example, if your Office add-in is for Excel, your URL value would be "https://localhost:3000/taskpane.html?_host_Info=<strong>Excel</strong>$Win32$16.01$en-US$\$\$\$0".
 
-8. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in Excel, open the task pane.
+8. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in the Office client, open the task pane.
 
-9. Return to Visual Studio Code and choose **View > Debug** or enter **Ctrl+Shift+D** to switch to debug view.
+9. Return to Visual Studio Code and choose **View > Debug** or enter **CTRL + SHIFT + D** to switch to debug view.
 
 10. From the Debug options, choose **Attach to Office Add-ins**. Select **F5** or choose **Debug -> Start Debugging** from the menu to begin debugging.
 
