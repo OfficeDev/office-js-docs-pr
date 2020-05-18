@@ -141,7 +141,7 @@ The `functions` property is an array of custom function objects. The following t
 | `description` | string    | No       | The description of the function that end users see in Excel. For example, **Converts a Celsius value to Fahrenheit**.                                                            |
 | `helpUrl`     | string    | No       | URL that provides information about the function. (It is displayed in a task pane.) For example, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Yes      | A unique ID for the function. This ID can only contain alphanumeric characters and periods and should not be changed after it is set.                                            |
-| `name`        | string    | Yes      | The name of the function that end users see in Excel. In Excel, this function name will be prefixed by the custom functions namespace that's specified in the XML manifest file. |
+| `name`        | string    | Yes      | The name of the function that end users see in Excel. In Excel, this function name is prefixed by the custom functions namespace that's specified in the XML manifest file. |
 | `options`     | object    | No       | Enables you to customize some aspects of how and when Excel executes the function. See [options](#options) for details.                                                          |
 | `parameters`  | array     | Yes      | Array that defines the input parameters for the function. See [parameters](#parameters) for details.                                                                             |
 | `result`      | object    | Yes      | Object that defines the type of information that is returned by the function. See [result](#result) for details.                                                                 |
@@ -155,7 +155,7 @@ The `options` object enables you to customize some aspects of how and when Excel
 | `cancelable`      | boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function cannot be both streaming and cancelable. For more information, see the note near the end of [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
 | `requiresAddress` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked your custom function. To get the address of the cell that invoked your custom function, use context.address in your custom function. Custom functions cannot be set as both streaming and requiresAddress. When using this option, the 'invocation' parameter must be the last parameter passed in options.                                              |
 | `stream`          | boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback method. For more information, see [Streaming functions](custom-functions-web-reqs.md#make-a-streaming-function).                                                                                                                                                                |
-| `volatile`        | boolean   | No <br/><br/>Default value is `false`. | <br /><br /> If `true`, the function will recalculate each time Excel recalculates, instead of only when the formula's dependent values have changed. A function cannot be both streaming and volatile. If the `stream` and `volatile` properties are both set to `true`, the volatile option will be ignored.                                                                                                                                                                                                                                                                                             |
+| `volatile`        | boolean   | No <br/><br/>Default value is `false`. | <br /><br /> If `true`, the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. A function cannot be both streaming and volatile. If the `stream` and `volatile` properties are both set to `true`, the volatile option will be ignored.                                                                                                                                                                                                                                                                                             |
 
 ### parameters
 
@@ -165,10 +165,10 @@ The `parameters` property is an array of parameter objects. The following table 
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  No |  A description of the parameter. This is displayed in Excel's IntelliSense.  |
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
-|  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
+|  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's IntelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
 |  `optional`  | boolean | No | If `true`, the parameter is optional. |
-|`repeating`| boolean | No | If `true`, parameters will populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
+|`repeating`| boolean | No | If `true`, parameters populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
 
 ### result
 
@@ -180,7 +180,7 @@ The `result` object defines the type of information that is returned by the func
 
 ## Associating function names with JSON metadata
 
-For a function to work properly, you need to associate the function's `id` property with the JavaScript implementation. Make sure there is an association, otherwise the function will not be registered and not useable in Excel. The following code sample shows how to make the association using the `CustomFunctions.associate()` method. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
+For a function to work properly, you need to associate the function's `id` property with the JavaScript implementation. Make sure there is an association, otherwise the function won't be registered and isn't useable in Excel. The following code sample shows how to make the association using the `CustomFunctions.associate()` method. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
 ```js
 /**
