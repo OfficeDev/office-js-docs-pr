@@ -1,13 +1,13 @@
 ---
-ms.date: 05/15/2020
-description: 'Use `OfficeRuntime.storage` to save state and data with UI-less custom functions.' 
-title: Handling data and state in UI-less custom functions
+ms.date: 05/17/2020
+description: 'Use `OfficeRuntime.storage` to save state and data with custom functions that don't use a task pane.' 
+title: Handling data and state in custom functions that don't use a task pane
 localization_priority: Normal
 ---
 
 # Handling data and state in UI-less custom functions
 
-UI-less custom functions don't run in the shared runtime like ordinary custom functions. Instead, they use a JavaScript-only runtime, meaning that interaction with the task pane requires additional steps.
+Custom functions that don't use a task pane or have other user interface elements (UI-less custom functions) don't run in a shared runtime like ordinary custom functions. Instead, they use a JavaScript-only runtime, meaning that interaction with the task pane requires additional steps.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 

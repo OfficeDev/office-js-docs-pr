@@ -1,15 +1,17 @@
 ---
 title: "Tutorial: Share data and events between Excel custom functions and the task pane"
-title: "Tutorial: Share data and events between Excel custom functions and the task pane "
+title: "Tutorial: Share data and events between Excel custom functions and the task pane"
 description: 'In Excel, share data and events between custom functions and the task pane.'
-ms.date: 05/11/2020
+ms.date: 05/17/2020
 ms.prod: excel
 localization_priority: Priority
 ---
 
 # Tutorial: Share data and events between Excel custom functions and the task pane
 
-You can configure your Excel add-in to use a shared runtime. This makes it possible to shared global data, or send events between the task pane and custom functions. For most custom functions scenarios, we recommend using a shared runtime, unless you have a specific reason to use a non-task pane (UI-less) custom function.
+You can configure your Excel add-in to use a shared runtime. This makes it possible to shared global data, or send events between the task pane and custom functions.
+
+For most custom functions scenarios, we recommend using a shared runtime, unless you have a specific reason to use a non-task pane (UI-less) custom function.
 
 This tutorial assumes you're familiar with using the Yo Office generator to create add-in projects. Consider completing the [Excel custom functions tutorial](./excel-tutorial-create-custom-functions.md), if you haven't already.
 
