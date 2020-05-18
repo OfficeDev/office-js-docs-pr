@@ -33,10 +33,9 @@ function roll6sided() {
 ```
 
 ## Next steps
-Learn how to [save state in your custom functions](custom-functions-save-state.md).
+* Learn about [custom functions parameter options](custom-functions-parameter-options.md).
 
 ## See also
 
-* [Custom functions parameter options](custom-functions-parameter-options.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
