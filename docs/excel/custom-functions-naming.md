@@ -41,6 +41,7 @@ To fix a naming conflict, change the `name` in your add-in and try the function 
 
 - Consider adding multiple arguments to a function rather than creating multiple functions with the same or similar names.
 - Avoid ambiguous abbreviations in function names. Clarity is more important than brevity. Choose a name like `=INCREASETIME` rather than `=INC`.
+- Function names should indicate the action of the function, such as =GETZIPCODE instead of ZIPCODE.
 - Consistently use the same verbs for functions which perform similar actions. For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.
 - When naming a streaming function, consider adding a note to that effect in the description of the function or adding `STREAM` to the end of the function's name.
 
