@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 05/15/2020
+ms.date: 05/18/2020
 localization_priority: Normal
 ---
 
@@ -17,7 +17,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 > [!TIP]
 > You may be able to preview features in Outlook on the web by [configuring targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center). "Configure preview access" is noted on this page for applicable features.
 >
-> For other features, you may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request access" is noted on those features.
+> For other features, you may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request preview access" is noted on those features.
 
 The Preview Requirement set includes all of the features of [Requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).
 
@@ -76,6 +76,34 @@ Added a new function to the `Body` object that appends data to the end of the it
 Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
 
 **Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+
+<br>
+
+---
+
+---
+
+### Event-based activation
+
+Added support for event-based activation functionality in Outlook add-ins. See [Configure your Outlook add-in for event-based activation](../../../outlook/autolaunch.md) to learn more.
+
+#### [LaunchEvent extension point](../../manifest/extensionpoint.md#launchevent-preview)
+
+Added `LaunchEvent` extension point support to manifest. It configures event-based activation functionality.
+
+**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))
+
+#### [LaunchEvents manifest element](../../manifest/launchevents.md)
+
+Added `LaunchEvents` element to manifest. It supports configuring event-based activation functionality.
+
+**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))
+
+#### [Runtimes manifest element](../../manifest/runtimes.md)
+
+Added Outlook support to the `Runtimes` manifest element. It references the HTML and JavaScript files needed for event-based activation functionality.
+
+**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))
 
 <br>
 

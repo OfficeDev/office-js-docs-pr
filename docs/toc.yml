@@ -477,6 +477,10 @@
           href: reference/manifest/hosts.md
         - name: Icon
           href: reference/manifest/icon.md
+        - name: LaunchEvent
+          href: reference/manifest/launchevent.md
+        - name: LaunchEvents
+          href: reference/manifest/launchevents.md
         - name: MobileFormFactor
           href: reference/manifest/mobileformfactor.md
         - name: OfficeMenu
@@ -921,6 +925,8 @@
       href: outlook/pinnable-taskpane.md
     - name: Delegate access
       href: outlook/delegate-access.md
+    - name: Configure event-based activation (preview)
+      href: outlook/autolaunch.md
     - name: Manifests
       items:
       - name: Outlook add-in manifests
