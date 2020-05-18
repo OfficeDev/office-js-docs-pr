@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. Next, you can modify your project to use a shared runtime, making it easier for your function to interact with the task pane. Follow the steps in the following article:
 
 > [!div class="nextstepaction"]
-> [Create custom functions in Excel](../excel/custom-functions-overview.md)
+> [Configure your add-in to use a shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
