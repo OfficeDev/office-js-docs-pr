@@ -39,5 +39,5 @@ We'd love to hear your feedback on this feature. If you find any bugs, issues, o
 
 ## See also
 
-- [Tutorial: Share data and events between Excel custom functions and the task pane (preview)](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Tutorial: Share data and events between Excel custom functions and the task pane](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Call Excel APIs from your custom function](call-excel-apis-from-custom-function.md)
