@@ -106,7 +106,7 @@ The following code sample is a custom function that adds a number to the result 
 - The `onCanceled` callback defines the function that executes when the function is canceled.
 - Streaming isn't necessarily tied to making a web request: in this case, the function isn't making a web request but is still getting data at set intervals, so it requires the use of the streaming `invocation` parameter.
 
-```JavaScript
+```JS
 /**
  * Increments a value once a second.
  * @customfunction INC increment
