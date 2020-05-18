@@ -24,14 +24,14 @@ For more information, see [Deploy and install Outlook add-ins for testing](testi
 
 ## New Outlook on Mac
 
-Outlook add-ins are now supported in Modern UI on Mac. However, the following requirement sets and features are **NOT** supported yet.
+Outlook add-ins are now supported in Modern UI on Mac, up to requirement set 1.6. However, the following requirement sets and features are **NOT** supported yet.
 
 1. API requirement sets 1.7 and 1.8
 1. Pinnable task pane, `ItemChanged` event
-1. Single sign-on (SSO)
 1. Contextual add-ins
 1. On-send
 1. Shared folder support
 1. `saveAsync` when composing a meeting
+1. Single sign-on (SSO)
 
 New Outlook on Mac is available from version 16.32. To learn more about how to try out this feature, see [Outlook for Mac - Release notes for Insider Fast builds](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
