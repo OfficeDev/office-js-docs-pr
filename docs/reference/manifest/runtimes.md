@@ -1,11 +1,11 @@
 ---
-title: Runtimes in the manifest file
+title: Runtimes in the manifest file 
 description: 'The Runtimes element specifies the your add-in's runtime.'
 ms.date: 05/13/2020
 localization_priority: Normal
 ---
 
-# Runtimes element
+# Runtimes element 
 
 Specifies the runtime of your add-in and enables custom functions, ribbon buttons, and the task pane to use the same JavaScript runtime. Child of the `<Host>` element in your manifest file. For more information, see [Configure your Excel add-in to use a shared JavaScript runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 
