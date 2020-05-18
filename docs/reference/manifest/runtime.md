@@ -37,7 +37,7 @@ In Outlook, this element enables event-based add-in activation. For more informa
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **resid**  |  Yes  | Specifies the URL location of the HTML page for your add-in. The `resid` must match an `id` attribute of a `Url` element in the `Resources` element. |
-|  **lifetime**  |  No  | Set to `short` by default. Should always be `long` if you want to use a shared runtime for an Excel add-in. |
+|  **lifetime**  |  No  | The default value for lifetime is `short` and doesn't need to be specified. If you want to use a shared runtime in an Excel add-in, explicitly set the value to a `long`. |
 
 ## See also
 

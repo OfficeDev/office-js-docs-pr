@@ -1,13 +1,10 @@
 ---
-title: Runtimes in the manifest file (preview)
-description: The Runtimes element specifies the add-in's runtime.
-ms.date: 05/15/2020
+title: Runtimes in the manifest file 
+description: The Runtimes element specifies your add-in's runtime.
+ms.date: 05/17/2020
 localization_priority: Normal
 ---
-
-# Runtimes element (preview)
-
-[!include[Running custom functions in browser runtime note](../../includes/excel-shared-runtime-preview-note.md)]
+# Runtimes element
 
 Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element.
 

@@ -1,5 +1,5 @@
 ---
-ms.date: 12/31/2019
+ms.date: 04/29/2020
 description: 'Troubleshoot common problems with Excel custom functions.'
 title: Troubleshoot custom functions
 localization_priority: Normal
@@ -47,7 +47,7 @@ When Excel is waiting for a custom function to complete, it displays #BUSY! in t
 
 ### Error: The dev server is already running on port 3000
 
-Sometimes when running `npm start` you may see an error that the dev server is already running on port 3000 (or whichever port your add-in uses). You can stop the dev server by running `npm stop` or by closing the Node.js window. But in some cases in can take a few minutes for the dev server to actually stop running.
+Sometimes when running `npm start` you may see an error that the dev server is already running on port 3000 (or whichever port your add-in uses). You can stop the dev server by running `npm stop` or by closing the Node.js window. In some cases, it can take a few minutes for the dev server to stop running.
 
 ### My functions won't load: associate functions
 
@@ -85,11 +85,9 @@ If using Excel on Windows or Mac, you can report feedback to the Office extensib
 Feel free to submit an issue you encounter either through the "Content feedback" feature at the bottom of any documentation page, or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## Next steps
-Learn how to [debug your custom functions](custom-functions-debugging.md).
+Learn how to [make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md).
 
 ## See also
 
 * [Custom functions metadata autogeneration](custom-functions-json-autogeneration.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
