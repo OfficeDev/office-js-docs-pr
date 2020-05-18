@@ -27,7 +27,7 @@ These instructions assume you have experience using the command line, understand
 1. If you need to create an add-in project, [use the Yo Office generator to create one](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
 
 > ![NOTE]
-> If you already have a project, skip this step and move to the next step.
+> If you already have a project, skip step 1 and move to step 2.
 
 2. Open a command prompt as administrator.
    ![Command prompt options, including "run as administrator" in Windows 10](../images/run-as-administrator-vs-code.jpg)
