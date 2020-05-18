@@ -13,7 +13,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 
 ![Office Addin Debugger Extension debugging a section of Excel Add-ins](../images/vs-debugger-extension-for-office-addins.jpg)
 
-## Pre-Requisites
+## Prerequisites
 
 - [Visual Studio Code](https://code.visualstudio.com/) (must be run as an administrator)
 - [Node.js (version 10+)](https://nodejs.org/)
