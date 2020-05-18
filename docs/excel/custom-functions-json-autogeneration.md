@@ -49,7 +49,7 @@ The following JSDoc tags are supported in Excel custom functions:
 
 Indicates that a custom function performs an action when the function is canceled.
 
-The last function parameter must be of type `CustomFunctions.CancelableInvocation`. The function can assign a function to the `oncanceled` property to denote what happens when the function is canceled.
+The last function parameter must be of type `CustomFunctions.CancelableInvocation`. The function can assign a function to the `oncanceled` property to denote the result when the function is canceled.
 
 If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag isn't present.
 
@@ -61,7 +61,7 @@ A function can't have both `@cancelable` and `@streaming` tags.
 
 Syntax: @customfunction _id_ _name_
 
-This tag indicates that the JavaScript/TypeScript function as an Excel custom function. It is required to create metadata for the custom function.
+This tag indicates that the JavaScript/TypeScript function is an Excel custom function. It is required to create metadata for the custom function.
 
 The following shows an example of this tag.
 
@@ -246,10 +246,10 @@ function add(first: number, second: number): number {
 
 Used to indicate that a custom function is a streaming function. 
 
-The last parameter should be of type `CustomFunctions.StreamingInvocation<ResultType>`.
-The function should return `void`.
+The last parameter is of type `CustomFunctions.StreamingInvocation<ResultType>`.
+The function returns `void`.
 
-Streaming functions don't return values directly, instead they should call `setResult(result: ResultType)` using the last parameter.
+Streaming functions don't return values directly, instead they call `setResult(result: ResultType)` using the last parameter.
 
 Exceptions thrown by a streaming function are ignored. `setResult()` may be called with Error to indicate an error result. For an example of a streaming function and more information, see [Make a streaming function](./custom-functions-web-reqs.md#make-a-streaming-function).
 

@@ -14,7 +14,7 @@ If something goes wrong while your custom function runs, return an error to info
 
 ## Detect and throw an error
 
-Let's look at a case where you need to ensure that a zip code parameter is in the correct format for the custom function to work. The following custom function uses a regular expression to check the zip code. If it is correct, then it will look up the city (using another function) and return the value. If it isn't correct, it returns a `#VALUE!` error to the cell.
+Let's look at a case where you need to ensure that a zip code parameter is in the correct format for the custom function to work. The following custom function uses a regular expression to check the zip code. If it is correct, then it will look up the city using another function, and return the value. If it isn't correct, it returns a `#VALUE!` error to the cell.
 
 ```typescript
 /**

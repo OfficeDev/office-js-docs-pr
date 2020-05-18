@@ -1,20 +1,13 @@
 ---
 ms.date: 05/13/2020
-=======
-ms.date: 05/11/2020
->>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 description: 'Learn how to run custom functions, ribbon buttons, and task pane code in a the same JavaScript runtime to coordinate scenarios across your add-in.'
 title: Run your add-in code in a shared JavaScript runtime
 localization_priority: Priority
 ---
 
-<<<<<<< HEAD
 # Overview: Run your add-in code in a shared JavaScript runtimes
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-=======
-# Overview: Run your add-in code in a shared JavaScript runtime
->>>>>>> fa8a3d99ebebb6b966b3efc481c794e33d02084d
 
 When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
 
