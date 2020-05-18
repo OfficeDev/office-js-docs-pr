@@ -1,14 +1,16 @@
 ---
-ms.date: 07/10/2019
-description: 'Debug your custom functions in Excel.'
-title: Custom functions debugging
+ms.date: 05/17/2020
+description: 'Learn how to debug your Excel custom functions that don't use a task pane.'
+title: UI-less custom functions debugging
 localization_priority: Normal
 ---
-# Custom functions debugging
+# UI-less custom functions debugging
 
-Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
+Debugging for custom functions that don't use a task pane or other user interface elements (UI-less custom functions) can be accomplished by multiple means, depending on what platform you're using.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 On Windows:
 - [Excel Desktop and Visual Studio Code (VS Code) debugger](#use-the-vs-code-debugger-for-excel-desktop)
@@ -29,7 +31,7 @@ Before starting to debug, you should use the [Yeoman generator for Office add-in
 
 ## Use the VS Code debugger for Excel Desktop
 
-You can use VS Code to debug custom functions in Office Excel on the desktop.
+You can use VS Code to debug UI-less custom functions in Office Excel on the desktop.
 
 > [!NOTE]
 > Desktop debugging for the Mac is not available but can be achieved [using the browser tools and command line to debug Excel on the web](#use-the-command-line-tools-to-debug)).
@@ -56,7 +58,7 @@ At this point execution will stop on the line of code where you set the breakpoi
 
 ## Use the VS Code debugger for Excel in Microsoft Edge
 
-You can use VS Code to debug custom functions in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
+You can use VS Code to debug UI-less custom functions in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
 
 ### Run your add-in from VS Code
 
@@ -92,7 +94,7 @@ You can use VS Code to debug custom functions in Excel on the Microsoft Edge bro
 
 ## Use the browser developer tools to debug custom functions in Excel on the web
 
-You can use the browser developer tools to debug custom functions in Excel on the web. The following steps work for both Windows and macOS.
+You can use the browser developer tools to debug UI-less custom functions in Excel on the web. The following steps work for both Windows and macOS.
 
 ### Run your add-in from Visual Studio Code
 
@@ -161,11 +163,10 @@ You can use the following tasks to start debugging on desktop or online.
 - `npm run stop`: Stops Excel and debugging.
 
 ## Next steps
-Learn about [authentication practices in custom functions](custom-functions-authentication.md). Or, review [custom function's unique architecture](custom-functions-architecture.md).
+Learn about [authentication practices for UI-less custom functions](custom-functions-authentication.md).
 
 ## See also
 
 * [Custom functions troubleshooting](custom-functions-troubleshooting.md)
 * [Error handling for custom functions in Excel](custom-functions-errors.md)
-* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

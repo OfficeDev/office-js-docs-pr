@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 05/04/2020
+ms.date: 05/15/2020
 localization_priority: Normal
 ---
 
@@ -298,7 +298,7 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
 
 ### Events
 
-This extension point adds an event handler for a specified event.
+This extension point adds an event handler for a specified event. For more information about using this extension point, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).
 
 | Element | Description  |
 |:-----|:-----|

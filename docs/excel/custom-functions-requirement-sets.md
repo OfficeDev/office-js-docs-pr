@@ -12,7 +12,7 @@ localization_priority: Normal
 
 |  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) or later | Not supported | 16.24 or later | April 2019 |
+| CustomFunctionsRuntime 1.1 | 16.0.12527.20092 or later | Not supported | 16.34 or later | May |
 
 > [!NOTE]
 > Excel custom functions are not supported on Office 2019 or earlier (one-time purchase).
