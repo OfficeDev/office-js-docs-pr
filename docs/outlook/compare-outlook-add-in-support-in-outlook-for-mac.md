@@ -22,3 +22,16 @@ For more information, see [Deploy and install Outlook add-ins for testing](testi
 | String representing the time zone in the `dateTimeCreated` and `dateTimeModified` properties |As an example: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | As an example: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
 | Time accuracy of `dateTimeCreated` and `dateTimeModified` | If an add-in uses the following code, the accuracy is up to a millisecond:<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| The accuracy is up to only a second. |
 
+## New Outlook on Mac
+
+Outlook add-ins are now supported in Modern UI on Mac. However, the following requirement sets and features are **NOT** supported yet.
+
+1. API requirement sets 1.7 and 1.8
+1. Pinnable task pane, `ItemChanged` event
+1. Single sign-on (SSO)
+1. Contextual add-ins
+1. On-send
+1. Shared folder support
+1. `saveAsync` when composing a meeting
+
+New Outlook on Mac is available from version 16.32. To learn more about how to try out this feature, see [Outlook for Mac - Release notes for Insider Fast builds](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
