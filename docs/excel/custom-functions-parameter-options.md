@@ -241,7 +241,7 @@ function add(first, second, invocation) {
 }
 ```
 
-The parameter allows you to get the context of the invoking cell. This can be helpful in some scenarios such as [discovering the address of a cell which invoke a custom function](custom-functions-save-state.md#find-an-addressing-cells-context-parameter).
+The parameter allows you to get the context of the invoking cell. This can be helpful in some scenarios such as [discovering the address of a cell which invoke a custom function](custom-functions-save-state.md).
 
 ## Next steps
 
