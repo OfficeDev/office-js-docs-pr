@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Runtime for UI-less Excel custom functions
 
-Custom functions that do not use a task pane (UI-less custom functions) use a JavaScript runtime which is designed to optimize performance of calculations. This runtime contains APIs that you can use to perform common web-based actions within custom functions such as requesting external data or exchanging data over a persistent connection with a server.
+Custom functions that do not use a task pane (UI-less custom functions) use a JavaScript runtime which is designed to optimize performance of calculations. TAPIs that you can use to perform common web-based actions within custom functions such as requesting external data or exchanging data over a persistent connection with a server.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
