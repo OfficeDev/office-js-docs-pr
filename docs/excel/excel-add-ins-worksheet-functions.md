@@ -179,7 +179,7 @@ The following built-in Excel worksheet functions can be called using the Excel J
 | <a href="https://support.office.com/article/DGET-function-455568bf-4eef-45f7-90f0-ec250d00892e" target="_blank">DGET function</a> | Extracts from a database a single record that matches the specified criteria |
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">DISC function</a> | Returns the discount rate for a security |
 | <a href="https://support.microsoft.com/office/f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">DMAX function</a> | Returns the maximum value from selected database entries |
-| <a href="https://support.microsoft.com/office/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN function</a> | Returns the minimum value from selected database entries |
+| <a href="https://support.microsoft.com/office/4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN function</a> | Returns the minimum value from selected database entries |
 | <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">DOLLAR, USDOLLAR functions</a> | Converts a number to text, using the $ (dollar) currency format |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">DOLLARDE function</a> | Converts a dollar price, expressed as a fraction, into a dollar price, expressed as a decimal number |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">DOLLARFR function</a> | Converts a dollar price, expressed as a decimal number, into a dollar price, expressed as a fraction |
@@ -312,7 +312,7 @@ The following built-in Excel worksheet functions can be called using the Excel J
 | <a href="https://support.microsoft.com/office/7f1ae29b-6b92-435e-b950-ad8b190ddd2b" target="_blank">NOMINAL function</a> | Returns the annual nominal interest rate |
 | <a href="https://support.office.com/article/NORMDIST-function-edb1cc14-a21c-4e53-839d-8082074c9f8d" target="_blank">NORM.DIST function</a> | Returns the normal cumulative distribution |
 | <a href="https://support.microsoft.com/office/54b30935-fee7-493c-bedb-2278a9db7e13" target="_blank">NORM.INV function</a> | Returns the inverse of the normal cumulative distribution |
-| <a href="https://support.microsoft.com/office/NORMSDIST-function-1e787282-3832-4520-a9ae-bd2a8d99ba88" target="_blank">NORM.S.DIST function</a> | Returns the standard normal cumulative distribution |
+| <a href="https://support.microsoft.com/office/1e787282-3832-4520-a9ae-bd2a8d99ba88" target="_blank">NORM.S.DIST function</a> | Returns the standard normal cumulative distribution |
 | <a href="https://support.office.com/article/NORMSINV-function-d6d556b4-ab7f-49cd-b526-5a20918452b1" target="_blank">NORM.S.INV function</a> | Returns the inverse of the standard normal cumulative distribution |
 | <a href="https://support.office.com/article/NOT-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77" target="_blank">NOT function</a> | Reverses the logic of its argument |
 | <a href="https://support.office.com/article/NOW-function-3337fd29-145a-4347-b2e6-20c904739c46" target="_blank">NOW function</a> | Returns the serial number of the current date and time |
@@ -429,7 +429,7 @@ The following built-in Excel worksheet functions can be called using the Excel J
 | <a href="https://support.office.com/article/WORKDAY-function-f764a5b7-05fc-4494-9486-60d494efbf33" target="_blank">WORKDAY function</a> | Returns the serial number of the date before or after a specified number of workdays |
 | <a href="https://support.microsoft.com/office/a378391c-9ba7-4678-8a39-39611a9bf81d" target="_blank">WORKDAY.INTL function</a> | Returns the serial number of the date before or after a specified number of workdays using parameters to indicate which and how many days are weekend days |
 | <a href="https://support.office.com/article/XIRR-function-de1242ec-6477-445b-b11b-a303ad9adc9d" target="_blank">XIRR function</a> | Returns the internal rate of return for a schedule of cash flows that is not necessarily periodic |
-| <a href="https://support.microsoft.com/office/XNPV-function-1b42bbf6-370f-4532-a0eb-d67c16b664b7" target="_blank">XNPV function</a> | Returns the net present value for a schedule of cash flows that is not necessarily periodic |
+| <a href="https://support.microsoft.com/office/1b42bbf6-370f-4532-a0eb-d67c16b664b7" target="_blank">XNPV function</a> | Returns the net present value for a schedule of cash flows that is not necessarily periodic |
 | <a href="https://support.microsoft.com/office/1548d4c2-5e47-4f77-9a92-0533bba14f37" target="_blank">XOR function</a> | Returns a logical exclusive OR of all arguments |
 | <a href="https://support.office.com/article/YEAR-function-c64f017a-1354-490d-981f-578e8ec8d3b9" target="_blank">YEAR function</a> | Converts a serial number to a year |
 | <a href="https://support.office.com/article/YEARFRAC-function-3844141e-c76d-4143-82b6-208454ddc6a8" target="_blank">YEARFRAC function</a> | Returns the year fraction representing the number of whole days between start_date and end_date |
