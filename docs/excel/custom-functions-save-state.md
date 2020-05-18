@@ -98,4 +98,4 @@ Learn how to [autogenerate the JSON metadata for your custom functions](custom-f
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
-* [Ui-less custom functions debugging](custom-functions-debugging.md)
+* [UI-less custom functions debugging](custom-functions-debugging.md)
