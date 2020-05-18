@@ -7,19 +7,19 @@ localization_priority: Normal
 
 # Runtime for UI-less Excel custom functions
 
-Custom functions that do not use a task pane (UI-less custom functions) use a JavaScript runtime which is designed to optimize performance of calculations. TAPIs that you can use to perform common web-based actions within custom functions such as requesting external data or exchanging data over a persistent connection with a server.
+Custom functions that do not use a task pane (UI-less custom functions) use a JavaScript runtime that is designed to optimize performance of calculations.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-The JavaScript runtime also provides access to new APIs in the `OfficeRuntime` namespace that can be used within custom functions or by other parts of an add-in to store data or display a dialog box. This article describes how to use these APIs within custom functions and also outlines additional considerations to keep in mind as you develop custom functions.
+This JavaScript runtime provides access to APIs in the `OfficeRuntime` namespace that can be used by UI-less custom functions and the task pane to store data or display a dialog box.
 
 ## Requesting external data
 
-Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+Within a UI-less custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
-Within the JavaScript runtime used by custom functions, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
+Within the JavaScript runtime used by UI-less custom functions, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
 
 Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
@@ -40,7 +40,7 @@ function getTemperature(thermometerID) {
   });
 }
 
-// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
+// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for UI-less custom functions  
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -58,7 +58,7 @@ function sendWebRequest(thermometerID, data) {
 
 ## Receiving data via WebSockets
 
-Within a custom function, you can use [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to exchange data over a persistent connection with a server. By using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
+Within a custom function, you can use [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to exchange data over a persistent connection with a server. By using WebSockets, your UI-less custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
 
 ### WebSockets example
 
@@ -76,9 +76,9 @@ ws.onerror = function (error) {
 
 ## Storing and accessing data
 
-Within a custom function (or within any other part of an add-in), you can store and access data by using the `OfficeRuntime.storage` object. `Storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. `Storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
+Within a UI-less custom function, you can store and access data by using the `OfficeRuntime.storage` object. `Storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used by UI-less custom functions. `Storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
-`Storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `storage` because it can be accessed by both a custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (for example, `www.contoso.com/addin1`, `www.contoso.com/addin2`), they are also permitted to share information back and forth through `storage`. Note that add-ins which have different subdomains will have different instances of `storage` (for example, `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
+`Storage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `storage` because it can be accessed by both a UI-less custom function and add-in UI elements such as a task pane. Similarly, if two add-ins share the same domain (for example, `www.contoso.com/addin1`, `www.contoso.com/addin2`), they are also permitted to share information back and forth through `storage`. Note that add-ins which have different subdomains will have different instances of `storage` (for example, `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
 
 Because `storage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
 
@@ -112,12 +112,13 @@ function StoreValue(key, value) {
 
 ## Additional considerations
 
-In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. In Excel on Windows, where custom functions use the JavaScript runtime, custom functions cannot access the DOM.
+If your add-in only uses UI-less custom functions, note that you can't access the Document Object Model (DOM) with UI-less custom functions or use libraries like jQuery that rely on the DOM.
 
 ## Next steps
-Learn how to [perform web requests with custom functions](custom-functions-web-reqs.md).
+Learn how to [debug UI-less custom functions](custom-functions-debugging.md).
 
 ## See also
 
+* [Authenticate UI-less custom functions](custom-functions-authentication.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

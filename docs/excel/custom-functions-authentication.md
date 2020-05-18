@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Authentication for UI-less custom functions
 
-In some scenarios your custom function that does not use a task pane or other user interface elements (UI-less custom function) will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, be aware that UI-less custom functions run in a JavaScript-only runtime. Because of this, you'll need to pass data back and forth between the JavaScript-only runtime and the typical browser engine runtime used by most add-ins using the `OfficeRuntime.storage` object and the Dialog API.
+In some scenarios your custom function that does not use a task pane or other user interface elements (UI-less custom function) will need to authenticate the user in order to access protected resources. Be aware that UI-less custom functions run in a JavaScript-only runtime. Because of this, you'll need to pass data back and forth between the JavaScript-only runtime and the typical browser engine runtime used by most add-ins using the `OfficeRuntime.storage` object and the Dialog API.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -137,10 +137,9 @@ function getTokenViaDialog(url) {
 ```
 
 ## Next steps
-
+Learn how to [debug UI-less custom functions](custom-functions-debugging.md).
 
 ## See also
 
-* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
 * [Runtime for UI-less Excel custom functions](custom-functions-runtime.md)
 * [Excel custom functions tutorial](excel-tutorial-custom-functions.md)
