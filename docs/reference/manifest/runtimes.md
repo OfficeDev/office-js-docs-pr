@@ -1,5 +1,5 @@
 ---
-title: Runtimes in the manifest file 
+title: Element of Runtimes in the manifest file 
 description: 'The Runtimes element specifies the your add-in's runtime.'
 ms.date: 05/13/2020
 localization_priority: Normal
