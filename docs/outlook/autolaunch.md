@@ -10,8 +10,8 @@ localization_priority: Normal
 
 Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality. At present, the supported events are as follows.
 
-- Compose a new message (includes reply, reply all, and forward)
-- Create a new appointment
+- `OnNewMessageCompose`: On composing a new message (includes reply, reply all, and forward)
+- `OnNewAppointmentOrganizer`: On creating a new appointment
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new message is created.
 
