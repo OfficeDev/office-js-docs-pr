@@ -1,7 +1,7 @@
 ---
 title: Runtimes in the manifest file 
 description: The Runtimes element specifies your add-in's runtime.
-ms.date: 05/17/2020
+ms.date: 05/18/2020
 localization_priority: Normal
 ---
 # Runtimes element
@@ -17,7 +17,7 @@ In Outlook, this element enables event-based add-in activation. For more informa
 > [!IMPORTANT]
 > **Excel**: Shared runtime is currently in preview and only available in Excel on Windows. To try the preview features, you will need to join [Office Insider](https://insider.office.com/).
 >
-> **Outlook**: Event-based activation is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
+> **Outlook**: The event-based activation feature is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## Syntax
 

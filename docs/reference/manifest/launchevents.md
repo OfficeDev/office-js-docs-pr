@@ -1,7 +1,7 @@
 ---
 title: LaunchEvents in the manifest file (preview)
 description: The LaunchEvents element configures your add-in to activate based on supported events.
-ms.date: 05/15/2020
+ms.date: 05/18/2020
 localization_priority: Normal
 ---
 
@@ -35,7 +35,7 @@ Configures your add-in to activate based on supported events. Child of the [`<Ex
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-| [LaunchEvent](launchevent.md) | Yes |  Configures a supported event to activate your add-in. |
+| [LaunchEvent](launchevent.md) | Yes |  Map supported event to its function in the JavaScript file for add-in activation. |
 
 ## See also
 

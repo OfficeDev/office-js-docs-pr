@@ -1,7 +1,7 @@
 ---
 title: Runtime in the manifest file
 description: The Runtime element configures your add-in to use a shared JavaScript runtime for its various components, for example, ribbon, task pane, custom functions.
-ms.date: 05/15/2020
+ms.date: 05/18/2020
 localization_priority: Normal
 ---
 
@@ -37,7 +37,7 @@ In Outlook, this element enables event-based add-in activation. For more informa
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **resid**  |  Yes  | Specifies the URL location of the HTML page for your add-in. The `resid` must match an `id` attribute of a `Url` element in the `Resources` element. |
-|  **lifetime**  |  No  | The default value for lifetime is `short` and doesn't need to be specified. If you want to use a shared runtime in an Excel add-in, explicitly set the value to a `long`. |
+|  **lifetime**  |  No  | The default value for `lifetime` is `short` and doesn't need to be specified. Outlook add-ins use only the `short` value. If you want to use a shared runtime in an Excel add-in, explicitly set the value to `long`. |
 
 ## See also
 

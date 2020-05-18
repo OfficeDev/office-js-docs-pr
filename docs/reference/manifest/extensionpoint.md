@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 05/15/2020
+ms.date: 05/18/2020
 localization_priority: Normal
 ---
 
@@ -302,16 +302,14 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
 > [!NOTE]
 > This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web with an Office 365 subscription.
 
-This extension point enables an add-in to activate based on supported events in the desktop form factor. To learn more about this scenario, see the [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md) article.
+This extension point enables an add-in to activate based on supported events in the desktop form factor. Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`. To learn more about this scenario, see the [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md) article.
 
 #### Child elements
 
 |  Element |  Description  |
 |:-----|:-----|
-| [LaunchEvents](launchevents.md) |  Map events to functions in the JavaScript file.  |
+| [LaunchEvents](launchevents.md) |  List of [LaunchEvent](launchevent.md) for event-based activation.  |
 | [SourceLocation](sourcelocation.md) |  The location of the source JavaScript file.  |
-
-Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`.
 
 #### Example
 
