@@ -7,72 +7,21 @@ localization_priority: Normal
 
 # Runtime for UI-less Excel custom functions
 
-Custom functions that do not use a task pane (UI-less custom functions) use a JavaScript runtime that is designed to optimize performance of calculations.
+Custom functions that don't use a task pane (UI-less custom functions) use a JavaScript runtime that is designed to optimize performance of calculations.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-This JavaScript runtime provides access to APIs in the `OfficeRuntime` namespace that can be used by UI-less custom functions and the task pane to store data or display a dialog box.
+This JavaScript runtime provides access to APIs in the `OfficeRuntime` namespace that can be used by UI-less custom functions and the task pane to store data.
 
 ## Requesting external data
 
 Within a UI-less custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
-Within the JavaScript runtime used by UI-less custom functions, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
+Be aware that UI-less functions must use additional security measures when making XmlHttpRequests, requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
 
-Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
-
-### XHR example
-
-In the following code sample, the `getTemperature` function calls the `sendWebRequest` function to get the temperature of a particular area based on thermometer ID. The `sendWebRequest` function uses XHR to issue a `GET` request to an endpoint that can provide the data.
-
-> [!NOTE] 
-> When using fetch or XHR, a new JavaScript `Promise` is returned. Prior to September 2018, you had to specify `OfficeExtension.Promise` to use promises within the Office JavaScript API, but now you can simply use a JavaScript `Promise`.
-
-```js
-function getTemperature(thermometerID) {
-  return new Promise(function(setResult) {
-      sendWebRequest(thermometerID, function(data){ 
-          storeLastTemperature(thermometerID, data.temperature);
-          setResult(data.temperature);
-      });
-  });
-}
-
-// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for UI-less custom functions  
-function sendWebRequest(thermometerID, data) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-           data.temperature = JSON.parse(xhttp.responseText).temperature
-        };
-        
-        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
-        xhttp.setRequestHeader("Content-Type", "application/text");
-        xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
-        xhttp.send();  
-    }
-}
-```
-
-## Receiving data via WebSockets
-
-Within a custom function, you can use [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to exchange data over a persistent connection with a server. By using WebSockets, your UI-less custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
-
-### WebSockets example
-
-The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server.
-
-```js
-const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = function (message) {
-    console.log(`Received: ${message}`);
-}
-ws.onerror = function (error) {
-    console.err(`Failed: ${error}`);
-}
-```
+A simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
 ## Storing and accessing data
 
