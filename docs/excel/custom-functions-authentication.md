@@ -1,6 +1,6 @@
 ---
 ms.date: 05/17/2020
-description: 'Authenticate users using custom functions in Excel which don't use the task pane.'
+description: Authenticate users using custom functions in Excel which don't use the task pane.
 title: Authentication for UI-less custom functions
 localization_priority: Normal
 ---
