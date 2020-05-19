@@ -1,17 +1,17 @@
 ---
-title: Create an Outlook mobile add-in for an online-meeting provider (preview)
+title: Create an Outlook mobile add-in for an online-meeting provider
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 04/23/2020
+ms.date: 05/19/2020
 localization_priority: Normal
 ---
 
-# Create an Outlook mobile add-in for an online-meeting provider (preview)
+# Create an Outlook mobile add-in for an online-meeting provider
 
 Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook) mobile. However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can streamline the online meeting creation experience for their Outlook add-in users.
 
-> [!NOTE]
-> This feature is only supported in [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Android with an Office 365 subscription.
+> [!IMPORTANT]
+> This feature is only supported on Android with an Office 365 subscription.
 
 In this article, you'll learn how to set up your Outlook mobile add-in to enable users to organize and join a meeting using your online-meeting service. Throughout this article, we'll be using a fictional online-meeting service provider, "Contoso".
 
@@ -166,7 +166,6 @@ The following APIs are available for this feature.
 Several restrictions apply.
 
 - Applicable only to online-meeting service providers.
-- Currently in preview so this feature shouldn't be used in production add-ins.
 - At present, Android is the only supported client. Support on iOS is coming soon.
 - Only admin-installed add-ins will appear on the meeting compose screen, replacing the default Teams or Skype option. User-installed add-ins won't activate.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
