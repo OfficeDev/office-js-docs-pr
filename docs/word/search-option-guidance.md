@@ -169,7 +169,7 @@ Word.run(function (context) {
 
     // Queue a command to search the document with a wildcard
     // for any string of characters that starts with 'to' and ends with 'n'.
-    var searchResults = context.document.body.search('to*n', {matchWildCards: true});
+    var searchResults = context.document.body.search('to*n', {matchWildcards: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');

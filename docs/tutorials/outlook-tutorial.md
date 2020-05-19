@@ -727,7 +727,7 @@ var btnEvent;
 Office.initialize = function (reason) {
 };
 
-// Add any ui-less function here.
+// Add any UI-less function here.
 function showError(error) {
   Office.context.mailbox.item.notificationMessages.replaceAsync('github-error', {
     type: 'errorMessage',

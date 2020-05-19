@@ -272,6 +272,8 @@
         href: testing/attach-debugger-from-task-pane.md
       - name: Debug using developer tools
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+      - name: Test with Internet Explorer 11
+        href: testing/ie-11-testing.md
     - name: Web browser
       items:
       - name: Sideload Add-ins in Office on the web
@@ -475,6 +477,10 @@
           href: reference/manifest/hosts.md
         - name: Icon
           href: reference/manifest/icon.md
+        - name: LaunchEvent
+          href: reference/manifest/launchevent.md
+        - name: LaunchEvents
+          href: reference/manifest/launchevents.md
         - name: MobileFormFactor
           href: reference/manifest/mobileformfactor.md
         - name: OfficeMenu
@@ -662,17 +668,11 @@
     - name: Custom functions tutorial
       href: tutorials/excel-tutorial-create-custom-functions.md
       displayName: Excel, Custom Functions
-    - name: Architecture
-      href: excel/custom-functions-architecture.md
+    - name: Shared custom function data with the task pane tutorial
+      href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
       displayName: Excel, Custom Functions
-    - name: Authentication
-      href: excel/custom-functions-authentication.md
-      displayName: Excel, Custom Functions
-    - name: Debugging
-      href: excel/custom-functions-debugging.md
-      displayName: Excel, Custom Functions
-    - name: Dialog
-      href: excel/custom-functions-dialog.md
+    - name: Call Excel JS APIs from your custom function
+      href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
     - name: Error handling
       href: excel/custom-functions-errors.md
@@ -701,26 +701,23 @@
     - name: Return a dynamic array
       href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
-    - name: Runtime
-      href: excel/custom-functions-runtime.md
-      displayName: Excel, Custom Functions
-    - name: Save and share state
-      href: excel/custom-functions-save-state.md
+    - name: Shared runtime
+      href: excel/custom-functions-shared-overview.md
       displayName: Excel, Custom Functions
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
-    - name: Use a shared runtime
-      items:
-      - name: Overview of using a shared runtime
-        href: excel/custom-functions-shared-overview.md
-        displayName: Excel, Custom Functions
-      - name: Shared custom function data with the task pane tutorial
-        href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
-        displayName: Excel, Custom Functions
-      - name: Call Excel JS APIs from your custom function
-        href: excel/call-excel-apis-from-custom-function.md
-        displayName: Excel, Custom Functions
+    - name: UI-less custom functions
+      items: 
+        - name: Authentication for UI-less functions
+          href: excel/custom-functions-authentication.md
+          displayName: Excel, Custom Functions
+        - name: Debugging for UI-less functions
+          href: excel/custom-functions-debugging.md
+          displayName: Excel, Custom Functions
+        - name: Runtime
+          href: excel/custom-functions-runtime.md
+          displayName: Excel, Custom Functions
     - name: Volatile functions
       href: excel/custom-functions-volatile.md
       displayName: Excel, Custom Functions
@@ -928,6 +925,8 @@
       href: outlook/pinnable-taskpane.md
     - name: Delegate access
       href: outlook/delegate-access.md
+    - name: Configure event-based activation (preview)
+      href: outlook/autolaunch.md
     - name: Manifests
       items:
       - name: Outlook add-in manifests
@@ -1158,7 +1157,5 @@
     displayName: Excel, Custom Functions
   - name: Authentication
     href: develop/authentication-pnp.md
-  - name: Save and share state in custom functions
-    href: excel/custom-functions-save-state-redirect.md
   - name: Handle high DPI and DPI scaling in your Office solution
     href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution

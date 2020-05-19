@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 05/04/2020
+ms.date: 05/18/2020
 localization_priority: Normal
 ---
 
@@ -88,6 +88,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 - [Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [LaunchEvent](#launchevent-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
@@ -296,9 +297,36 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
 </ExtensionPoint>
 ```
 
+### LaunchEvent (preview)
+
+> [!NOTE]
+> This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web with an Office 365 subscription.
+
+This extension point enables an add-in to activate based on supported events in the desktop form factor. Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`. To learn more about this scenario, see the [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md) article.
+
+#### Child elements
+
+|  Element |  Description  |
+|:-----|:-----|
+| [LaunchEvents](launchevents.md) |  List of [LaunchEvent](launchevent.md) for event-based activation.  |
+| [SourceLocation](sourcelocation.md) |  The location of the source JavaScript file.  |
+
+#### Example
+
+```xml
+<ExtensionPoint xsi:type="LaunchEvent">
+  <LaunchEvents>
+    <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
+    <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+  </LaunchEvents>
+  <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
+  <SourceLocation resid="WebViewRuntime.Url"/>
+</ExtensionPoint>
+```
+
 ### Events
 
-This extension point adds an event handler for a specified event.
+This extension point adds an event handler for a specified event. For more information about using this extension point, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).
 
 | Element | Description  |
 |:-----|:-----|

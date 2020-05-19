@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: 'Learn how to troubleshoot user errors in Office Add-ins.'
-ms.date: 04/13/2020
+ms.date: 05/15/2020
 localization_priority: Normal
 ---
 
@@ -91,7 +91,7 @@ To add a URL to your list of trusted sites:
 This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
-Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
 ## Changes to add-in commands including ribbon buttons and menu items do not take effect
