@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 04/15/2020
+ms.date: 05/19/2020
 localization_priority: Normal
 ---
 
@@ -12,15 +12,26 @@ The on-send feature for Outlook add-ins provides a way to handle a message or me
 - Prevent a user from sending sensitive information or leaving the subject line blank.  
 - Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.
 
-> [!NOTE]
-> The on-send feature is currently supported for Outlook on the web in Exchange Online (Office 365), Exchange 2016 on-premises (Cumulative Update 6 or later), and Exchange 2019 on-premises (Cumulative Update 1 or later). This feature is also available in the latest Outlook builds on Windows and Mac, connected to Exchange Online (Office 365). The feature was introduced in requirement set 1.8 (see [current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details).
-
-> [!IMPORTANT]
-> Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
-
 The on-send feature is triggered by the `ItemSend` event type and is UI-less.
 
 For information about limitations related to the on-send feature, see [Limitations](#limitations) later in this article.
+
+## Supported clients and platforms
+
+The following table shows supported client-server combinations for the on-send feature. Excluded combinations are not supported.
+
+| Client | Exchange Online | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) |
+|---|---|---|---|
+|Windows<br>version 1910 (build 12130.20272) or later|Yes|Yes|Yes|
+|Mac<br>build 16.30 or later|Yes|No|No|
+|Web browser<br>modern Outlook UI|Yes|Not applicable|Not applicable|
+|Web browser<br>classic Outlook UI|Not applicable|Yes|Yes|
+
+> [!NOTE]
+> The on-send feature was released in requirement set 1.8 (see [current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details).
+
+> [!IMPORTANT]
+> Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
 
 ## How does the on-send feature work?
 
