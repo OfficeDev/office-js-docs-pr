@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: 'Learn how add-in support in Outlook on Mac compares with other Outlook hosts.'
-ms.date: 05/18/2020
+ms.date: 05/20/2020
 localization_priority: Normal
 ---
 
@@ -10,6 +10,8 @@ localization_priority: Normal
 You can create and run an Outlook add-in the same way in Outlook on Mac as in the other hosts, including Outlook on the web, Windows, iOS, and Android, without customizing the JavaScript for each host. The same calls from the add-in to the Office JavaScript API generally work the same way, except for the areas described in the following table.
 
 For more information, see [Deploy and install Outlook add-ins for testing](testing-and-tips.md).
+
+For information about Modern UI support, see [New Outlook on Mac](#new-outlook-on-mac).
 
 | Area | Outlook on the web, Windows, and mobile devices | Outlook on Mac |
 |:-----|:-----|:-----|
@@ -34,4 +36,4 @@ Outlook add-ins are now supported in Modern UI on Mac, up to requirement set 1.6
 1. `saveAsync` when composing a meeting
 1. Single sign-on (SSO)
 
-New Outlook on Mac is available from version 16.32. To learn more about how to try out this feature, see [Outlook for Mac - Release notes for Insider Fast builds](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
+New Outlook on Mac is available from version 16.38.506. To learn more about how to try out this feature, see [Outlook for Mac - Release notes for Insider Fast builds](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
