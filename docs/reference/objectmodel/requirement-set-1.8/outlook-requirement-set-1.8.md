@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.8
 description: 'Requirement set 1.8 for Outlook add-in API'
-ms.date: 12/17/2019
+ms.date: 05/20/2020
 localization_priority: Normal
 ---
 
@@ -15,11 +15,12 @@ Requirement set 1.8 includes all of the features of [Requirement set 1.7](../req
 
 - Added new APIs for attachments, categories, delegate access, enhanced location, internet headers, and block on send features.
 - Added optional `options` parameter to Event.completed.
-- Added support for AttachmentsChanged and EnhancedLocationsChanged events.
+- Added support for `AttachmentsChanged` and `EnhancedLocationsChanged` events.
 
 ### Change log
 
 - Added [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8): Adds a new object that represents the content of an attachment.
+- Added [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8): Adds a new object that represents the details of an attachment in Compose mode.
 - Added [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8): Adds a new object that represents an item's categories.
 - Added [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8): Adds a new object that represents a category's details (its name and associated color).
 - Added [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8): Adds a new object that represents the set of locations on an appointment.
