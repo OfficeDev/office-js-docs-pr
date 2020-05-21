@@ -921,6 +921,8 @@
       href: outlook/online-meeting.md
     - name: On send add-ins
       href: outlook/outlook-on-send-addins.md
+    - name: Append on send (preview)
+      href: outlook/outlook-on-send-addins.md
     - name: Event-based activation (preview)
       href: outlook/autolaunch.md
     - name: Pinnable task pane
