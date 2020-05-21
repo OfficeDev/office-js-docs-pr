@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 05/18/2020
+ms.date: 05/21/2020
 localization_priority: Normal
 ---
 
@@ -64,11 +64,11 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         </Runtimes>
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url" />
-          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
             <OfficeTab id="TabDefault">
-              <Group id="msgReadGroup">
+              <Group id="msgComposeGroup">
                 <Label resid="GroupLabel" />
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                <Control xsi:type="Button" id="msgComposeOpenPaneButton">
                   <Label resid="TaskpaneButton.Label" />
                   <Supertip>
                     <Title resid="TaskpaneButton.Label" />
