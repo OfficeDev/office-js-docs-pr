@@ -35,6 +35,8 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 To enable the append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](../reference/manifest/extendedpermissions.md).
 
+For this scenario, instead of running the `action` function on choosing the **Perform an action** button, you'll be running the `appendOnSend` function.
+
 1. In your code editor, open the quick start project.
 
 1. Open the **manifest.xml** file located at the root of your project.
@@ -84,7 +86,7 @@ To enable the append-on-send feature in your add-in, you must include the `Appen
                         <bt:Image size="80" resid="Icon.80x80"/>
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>appendOnSend</FunctionName>
+                        <FunctionName>appendDisclaimerOnSend</FunctionName>
                       </Action>
                     </Control>
                   </Group>
@@ -133,14 +135,14 @@ To enable the append-on-send feature in your add-in, you must include the `Appen
 
 Next, implement appending on the send event.
 
-For this scenario, you'll implement appending a disclaimer to the item when the user presses send.
+For this scenario, you'll implement appending a disclaimer to the item when the user sends.
 
 1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
 
-1. After the `action` function, insert the following JavaScript functions.
+1. After the `action` function, insert the following JavaScript function.
 
     ```js
-    function appendOnSend(event) {
+    function appendDisclaimerOnSend(event) {
       var appendText =
         '<p style = "color:blue"> <i>This and subsequent emails on the same topic are for discussion and information purposes only. Only those matters set out in a fully executed agreement are legally binding. This email may contain confidential information and should not be shared with any third party without the prior written agreement of Contoso. If you are not the intended recipient, take no action and contact the sender immediately.<br><br>Contoso Limited (company number 01624297) is a company registered in England and Wales whose registered office is at Contoso Campus, Thames Valley Park, Reading RG6 1WG</i></p>';  
       /**
@@ -163,10 +165,10 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
     }
     ```
 
-1. At the end of the file, add the following statements.
+1. At the end of the file, add the following statement.
 
     ```js
-    g.appendOnSend = appendOnSend;
+    g.appendDisclaimerOnSend = appendDisclaimerOnSend;
     ```
 
 ## Try it out
@@ -179,7 +181,11 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
 
 1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
 
-1. In Outlook, create and send a new message to yourself then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.
+1. In Outlook, create a new message and add yourself to the **To** line.
+
+1. Choose the **Perform an action** button from the ribbon or overflow menu.
+
+1. Send the message then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.
 
 ## See also
 
