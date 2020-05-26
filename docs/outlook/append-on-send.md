@@ -8,9 +8,7 @@ localization_priority: Normal
 
 # Implement append on send in your Outlook add-in (preview)
 
-***TODO***: Introductory text here
-
-By the end of this walkthrough, you'll have an add-in that inserts a disclaimer whenever a message is sent.
+By the end of this walkthrough, you'll have an add-in that can insert a disclaimer when a message is sent.
 
 > [!IMPORTANT]
 > This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with an Office 365 subscription. See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.
@@ -186,6 +184,8 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
 1. Choose the **Perform an action** button from the ribbon or overflow menu.
 
 1. Send the message then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.
+
+    ![A screenshot of an example message with the disclaimer appended on send in Outlook on the web.](../images/outlook-web-append-disclaimer.png)
 
 ## See also
 
