@@ -2,7 +2,7 @@
 title: Implement append on send in your Outlook add-in (preview)
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 05/21/2020
+ms.date: 05/26/2020
 localization_priority: Normal
 ---
 
@@ -41,7 +41,7 @@ To enable the append-on-send feature in your add-in, you must include the `Appen
 
 1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
 
-    ``XML
+    ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
         <Requirements>
