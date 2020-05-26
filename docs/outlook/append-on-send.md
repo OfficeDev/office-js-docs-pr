@@ -84,7 +84,7 @@ To enable the append-on-send feature in your add-in, you must include the `Appen
                         <bt:Image size="80" resid="Icon.80x80"/>
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>action</FunctionName>
+                        <FunctionName>appendOnSend</FunctionName>
                       </Action>
                     </Control>
                   </Group>
@@ -140,7 +140,7 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
 1. After the `action` function, insert the following JavaScript functions.
 
     ```js
-    function run() {
+    function appendOnSend(event) {
       var appendText =
         '<p style = "color:blue"> <i>This and subsequent emails on the same topic are for discussion and information purposes only. Only those matters set out in a fully executed agreement are legally binding. This email may contain confidential information and should not be shared with any third party without the prior written agreement of Contoso. If you are not the intended recipient, take no action and contact the sender immediately.<br><br>Contoso Limited (company number 01624297) is a company registered in England and Wales whose registered office is at Contoso Campus, Thames Valley Park, Reading RG6 1WG</i></p>';  
       /**
@@ -158,7 +158,15 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
           console.log(asyncResult);
         }
       );
+
+      event.completed();
     }
+    ```
+
+1. At the end of the file, add the following statements.
+
+    ```js
+    g.appendOnSend = appendOnSend;
     ```
 
 ## Try it out
