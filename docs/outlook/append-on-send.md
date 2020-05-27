@@ -8,10 +8,10 @@ localization_priority: Normal
 
 # Implement append on send in your Outlook add-in (preview)
 
-By the end of this walkthrough, you'll have an add-in that can insert a disclaimer when a message is sent.
+By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.
 
 > [!IMPORTANT]
-> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with an Office 365 subscription. See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.
+> This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with an Office 365 subscription. See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.
 >
 > Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
 
@@ -171,19 +171,19 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
 
 ## Try it out
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+1. Run the following command in the root directory of your project. When you run this command, the local web server will start if it's not already running.
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
+1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 
-1. In Outlook, create a new message and add yourself to the **To** line.
+1. Create a new message, and add yourself to the **To** line.
 
-1. Choose the **Perform an action** button from the ribbon or overflow menu.
+1. From the ribbon or overflow menu, choose **Perform an action**.
 
-1. Send the message then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.
+1. Send the message, then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.
 
     ![A screenshot of an example message with the disclaimer appended on send in Outlook on the web.](../images/outlook-web-append-disclaimer.png)
 
