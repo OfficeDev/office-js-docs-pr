@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 05/19/2020
+ms.date: 05/27/2020
 localization_priority: Normal
 ---
 
@@ -451,7 +451,6 @@ The on-send API requires `VersionOverrides v1_1`. The following shows you how to
 > [!NOTE]
 > For more information, see the following:
 > - [Outlook add-in manifests](manifests.md)
-> - [VersionOverrides](../develop/create-addin-commands.md#step-3-add-versionoverrides-element)
 > - [Office Add-ins XML manifest](../overview/add-in-manifests.md)
 
 
