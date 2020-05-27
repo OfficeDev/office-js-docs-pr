@@ -79,7 +79,7 @@ This scenario applies to only Outlook on Windows. Normally, when you install an 
 %LocalAppData%\Microsoft\Office\16.0\WEF
 ```
 
-For example, for the user John, the cache might be at C:\Users\john\AppData\Local\Microsoft\Office\15.0\WEF.
+For example, for the user John, the cache might be at C:\Users\john\AppData\Local\Microsoft\Office\16.0\WEF.
 
 > [!IMPORTANT]
 > For Outlook 2013 on Windows, use 15.0 instead of 16.0 so the location would be:
