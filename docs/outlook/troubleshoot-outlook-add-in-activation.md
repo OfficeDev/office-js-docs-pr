@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: If your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Normal
 ---
 
@@ -76,10 +76,17 @@ If your add-in is a compose add-in and is supposed to be activated when the user
 This scenario applies to only Outlook on Windows. Normally, when you install an Outlook add-in for a mailbox, the Exchange Server copies the add-in manifest from the location you indicate to the mailbox on that Exchange Server. Every time Outlook starts, it reads all the manifests installed for that mailbox into a temporary cache at the following location:
 
 ```text
-%LocalAppData%\Microsoft\Office\15.0\WEF
+%LocalAppData%\Microsoft\Office\16.0\WEF
 ```
 
 For example, for the user John, the cache might be at C:\Users\john\AppData\Local\Microsoft\Office\15.0\WEF.
+
+> [!IMPORTANT]
+> For Outlook 2013 on Windows, use 15.0 instead of 16.0 so the location would be:
+>
+> ```text
+> %LocalAppData%\Microsoft\Office\15.0\WEF
+> ```
 
 If an add-in does not activate for any items, the manifest might not have been installed properly on the Exchange Server, or Outlook has not read the manifest properly on startup. Using the Exchange Admin Center, ensure that the add-in is installed and enabled for your mailbox, and reboot the Exchange Server, if necessary.
 
@@ -98,7 +105,7 @@ The following procedure describes the details.
 1. If Outlook doesn't activate the add-in, check whether Outlook has a properly cached copy of the manifest for the add-in. Look under the following path:
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF
+    %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
     You can find the manifest in the following subfolder:
@@ -111,7 +118,7 @@ The following procedure describes the details.
     > The following is an example of a path to a manifest installed for a mailbox for the user John:
     >
     > ```text
-    > C:\Users\john\appdata\Local\Microsoft\Office\15.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
+    > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
     > ```
 
     Verify whether the manifest of the add-in you're testing is among the cached manifests.
@@ -135,7 +142,7 @@ The following procedure describes the details.
 1. If you don't see a successful event, close Outlook, and delete all the manifests in the following path:
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
+    %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
     ```
 
     Start Outlook and test whether Outlook now activates the add-in.
