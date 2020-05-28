@@ -1,11 +1,11 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 05/11/2020
+ms.date: 05/28/2020
 localization_priority: Priority
 ---
 
-# Enable and Disable Add-in Commands
+# Enable and Disable Add-in Commands (preview)
 
 When some functionality in your add-in should only be available in certain contexts, you can programmatically enable or disable your custom Add-in Commands. For example, a function that changes the header of a table should only be enabled when the cursor is in a table.
 
@@ -16,11 +16,18 @@ You can also specify whether the command is enabled or disabled when the Office 
 >
 > [Basic concepts for Add-in Commands](add-in-commands.md)
 
+## Preview status
+
+The APIs described in this article are in preview and are currently only available in Excel.
+
+> [!NOTE]
+> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
 ## Rules and gotchas
 
 ### Single-line ribbon in Office on the web
 
-In Office on the web, the APIs and manifest markup described in this article only affect the single-line ribbon. They have no effect on the multiline ribbon. They affect both ribbons for desktop Office. For more information about the two ribbons, see [Use the simplified ribbon](https://support.office.com/article/Use-the-Simplified-Ribbon-44bef9c3-295d-4092-b7f0-f471fa629a98).
+In Office on the web, the APIs and manifest markup described in this article only affect the single-line ribbon. They have no effect on the multiline ribbon. They affect both ribbons for desktop Office. For more information about the two ribbons, see [The new look of Office - Simplified Ribbon](https://support.microsoft.com/en-us/office/the-new-look-of-office-a6cdf19a-b2bd-4be1-9515-d74a37aa59bf).
 
 ### Shared runtime required
 
@@ -196,4 +203,4 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 The enable/disable APIs require support of the following requirement set:
 
-- [AddinCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md)
