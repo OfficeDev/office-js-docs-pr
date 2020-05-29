@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 05/19/2020
+ms.date: 05/9/2020
 localization_priority: Normal
 ---
 
@@ -64,6 +64,8 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 ---
 
 ### Append on send
+
+To learn about using the append-on-send feature, see [Implement append on send in your Outlook add-in](../../../outlook/append-on-send.md).
 
 #### [Office.context.mailbox.item.body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
