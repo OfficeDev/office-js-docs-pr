@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 04/21/2020
+ms.date: 05/29/2020
 localization_priority: Normal
 ---
 
@@ -33,6 +33,9 @@ The following table shows which browser is used for the various platforms and op
 
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
+
+>[!NOTE]
+> If your add-in includes the `Runtimes` element in your manifest, then it will use Internet Explorer 11 by default. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 ## Troubleshooting Microsoft Edge Issues
 
