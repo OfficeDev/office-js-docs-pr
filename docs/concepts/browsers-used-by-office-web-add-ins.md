@@ -29,12 +29,13 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
->[!NOTE] If your add-in is configured to use a shared runtime, by including the `Runtimes` element in your manifest, your add-in will use Internet Explorer 11 by default. For more information, see [Runtimes](../reference/manifest/runtimes.md).
-
 <sup>2</sup> When Microsoft Edge is being used, the Windows 10 Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the `<DisplayName>` value in the add-in's manifest.
 
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
+
+>[!NOTE]
+> If your add-in is configured to use a shared runtime, by including the `Runtimes` element in your manifest, your add-in will use Internet Explorer 11 by default. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 ## Troubleshooting Microsoft Edge Issues
 
