@@ -33,7 +33,7 @@ For information about Common API requirement sets, see [Office Common API requir
 
 ## Ribbon API 1.1
 
-The Ribbon API 1.1 is the first version of the API. For details about the API, see the [Office UI
+The Ribbon API 1.1 is the first version of the API. For details about the API, see the [Office.ribbon
 ](/javascript/api/office/office.ribbon) reference topic.
 
 ## See also
