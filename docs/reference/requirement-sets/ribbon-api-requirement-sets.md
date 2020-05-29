@@ -14,7 +14,7 @@ The Ribbon API set supports programmatic control of when custom Add-in Commands 
 
 Office Add-ins run across multiple versions of Office. The following table lists the Ribbon API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2013 on Windows<br>(one-time purchase) | Office 2016 or later on Windows<br>(one-time purchase)   | Office on Windows\*<br>(connected to Office 365 subscription) |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  |  Office Online Server  |
+|  Requirement set  | Office 2013 on Windows<br>(one-time purchase) | Office 2016 or later on Windows<br>(one-time purchase)   | Office on Windows\*<br>(connected to Office 365 subscription) |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac\*<br>(connected to Office 365 subscription)  | Office on the web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1.1  | N/A | N/A | Version 2002 (Build 12527.20264) or later | 16.38 or later | N/A | February 2020 | N/A|
 

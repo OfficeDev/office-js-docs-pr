@@ -27,7 +27,7 @@ The APIs described in this article are in preview and are currently only availab
 
 ### Single-line ribbon in Office on the web
 
-In Office on the web, the APIs and manifest markup described in this article only affect the single-line ribbon. They have no effect on the multiline ribbon. They affect both ribbons for desktop Office. For more information about the two ribbons, see [The new look of Office - Simplified Ribbon](https://support.microsoft.com/en-us/office/the-new-look-of-office-a6cdf19a-b2bd-4be1-9515-d74a37aa59bf).
+In Office on the web, the APIs and manifest markup described in this article only affect the single-line ribbon. They have no effect on the multiline ribbon. They affect both ribbons for desktop Office. For more information about the two ribbons, see [The new look of Office - Simplified Ribbon](https://support.microsoft.com/office/the-new-look-of-office-a6cdf19a-b2bd-4be1-9515-d74a37aa59bf).
 
 ### Shared runtime required
 
