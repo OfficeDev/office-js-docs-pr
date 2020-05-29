@@ -1,7 +1,7 @@
 ---
 title: Runtime in the manifest file
 description: The Runtime element configures your add-in to use a shared JavaScript runtime for its various components, for example, ribbon, task pane, custom functions.
-ms.date: 05/18/2020
+ms.date: 05/29/2020
 localization_priority: Normal
 ---
 
@@ -16,7 +16,7 @@ In Outlook, this element enables event-based add-in activation. For more informa
 **Add-in type:** Task pane, Mail
 
 > [!IMPORTANT]
-> **Excel**: Shared runtime is currently in preview and only available in Excel on Windows. To try the preview features, you will need to join [Office Insider](https://insider.office.com/).
+> **Excel**: Shared runtime is currently only available in Excel on Windows.
 >
 > **Outlook**: Event-based activation is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
