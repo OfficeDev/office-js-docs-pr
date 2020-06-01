@@ -113,6 +113,20 @@ Added Outlook support to the `Runtimes` manifest element. It references the HTML
 
 ---
 
+### Get all custom properties
+
+#### [CustomProperties.getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview#getall--)
+
+Added a new function to the `CustomProperties` object that gets all custom properties.
+
+**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription), Outlook on Android, Outlook on iOS
+
+<br>
+
+---
+
+---
+
 ### Integration with actionable messages
 
 #### [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#methods)
