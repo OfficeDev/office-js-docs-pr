@@ -1,12 +1,15 @@
 ---
 title: Runtimes in the manifest file 
 description: The Runtimes element specifies your add-in's runtime.
-ms.date: 05/29/2020
+ms.date: 06/01/2020
 localization_priority: Normal
 ---
 # Runtimes element
 
-Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element. If the `Runtimes` element is present in your manifest, your add-in will by default use the Internet Explorer 11 browser.
+Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element.
+
+> [!NOTE]
+> When running in a Windows app, your add-in will use the Internet Explorer 11 browser by default.
 
 In Excel, this element enables the ribbon, task pane, and custom functions to use the same runtime. For more information, see [Configure your Excel add-in to use a shared JavaScript runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 

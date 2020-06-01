@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 05/29/2020
+ms.date: 06/01/2020
 localization_priority: Normal
 ---
 
@@ -25,17 +25,16 @@ The following table shows which browser is used for the various platforms and op
 |Windows / non-subscription Office 2013 or later|Internet Explorer 11|
 |Windows 10 ver. < 1903 / Office 365|Internet Explorer 11|
 |Windows 10 ver. >= 1903 / Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
-|Windows 10 ver. >= 1903 / Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2</sup>|
+|Windows 10 ver. >= 1903 / Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2, 3</sup>|
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
 <sup>2</sup> When Microsoft Edge is being used, the Windows 10 Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the `<DisplayName>` value in the add-in's manifest.
 
+<sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it will use Internet Explorer 11 by default regardless of the Windows or Office 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
+
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
-
->[!NOTE]
-> If your add-in includes the `Runtimes` element in your manifest, then it will use Internet Explorer 11 by default. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 ## Troubleshooting Microsoft Edge Issues
 
