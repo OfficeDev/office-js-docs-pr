@@ -31,7 +31,7 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>2</sup> When Microsoft Edge is being used, the Windows 10 Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the `<DisplayName>` value in the add-in's manifest.
 
-<sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it will use Internet Explorer 11 by default regardless of the Windows or Office 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Office 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
