@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 05/06/2020
+ms.date: 06/02/2020
 localization_priority: Priority
 ---
 
@@ -11,26 +11,26 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 |**Method**|**Use...**|
 |:---------|:------------|
-|[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser.|
+|[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.)|
+|[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows after you have published the add-in to a server other than localhost. (Not for production add-ins or for testing on iPad, Mac, or the web.)|
 |[Centralized Deployment](centralized-deployment.md)|In a cloud deployment, to distribute your add-in to users in your organization by using the Office 365 admin center.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
-|[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|On a Windows computer on a network where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.|
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-## Deployment options by Office host
+## Deployment options by Office host and add-in type
 
 The deployment options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 
-| Extension point | Sideloading | Office 365 admin center |AppSource   | SharePoint catalog\* |
-|:----------------|:-----------:|:-----------------------:|:----------:|:--------------------:|
-| Content         | X           | X                       | X          | X                    |
-| Task pane       | X           | X                       | X          | X                    |
-| Command         | X           | X                       | X          |                      |
+| Extension point | Sideloading | Network share | Office 365 admin center |AppSource   | SharePoint catalog\* |
+|:----------------|:-----------:|:-------------:|:-----------------------:|:----------:|:--------------------:|
+| Content         | X           | X             | X                       | X          | X                    |
+| Task pane       | X           | X             | X                       | X          | X                    |
+| Command         | X           | X             | X                       | X          |                      |
 
 &#42; SharePoint catalogs do not support Office on Mac.
 
@@ -41,9 +41,9 @@ The deployment options that are available depend on the Office host that you're 
 | Mail app        | X           | X               | X            |
 | Command         | X           | X               | X            |
 
-## Deployment methods
+## Production deployment methods
 
-The following sections provide additional information about the deployment methods that are most commonly used to distribute Office Add-ins to users within an organization.
+The following sections provide additional information about the deployment methods that are most commonly used to distribute production Office Add-ins to users within an organization.
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862).
 

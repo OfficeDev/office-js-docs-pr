@@ -266,7 +266,7 @@
       displayName: test, debug
     - name: Windows
       items:
-      - name: Sideload Office Add-ins on Windows
+      - name: Sideload Office Add-ins on Windows from a network share
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
