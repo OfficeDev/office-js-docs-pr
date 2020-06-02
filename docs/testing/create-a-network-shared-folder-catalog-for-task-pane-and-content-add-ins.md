@@ -7,10 +7,10 @@ localization_priority: Normal
 
 # Sideload Office Add-ins for testing from a network share
 
-You can install an Office Add-in for testing in an Office client running on Windows by publishing the manifest to a network file share (instructions below). This deployment option is primarily intended to be used when you have completed development and testing on a localhost and want to test the add-in from a non-local server or cloud account.
+You can test an Office Add-in in an Office client that is on Windows by publishing the manifest to a network file share (instructions below). This deployment option is intended to be used when you have completed development and testing on a localhost and want to test the add-in from a non-local server or cloud account.
 
 > [!IMPORTANT]
-> Deployment by network share is not supported for production add-ins. If you use this method for a production add-in, note these limitations:
+> Deployment by network share is not supported for production add-ins. This method has the following limitations:
 > 
 > - The add-in can only be installed on Windows computers.
 > - If a new version of an add-in changes the ribbon, each user will have to reinstall the add-in.
