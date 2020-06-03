@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: 'Learn how add-in support in Outlook on Mac compares with other Outlook hosts.'
-ms.date: 05/20/2020
+ms.date: 06/03/2020
 localization_priority: Normal
 ---
 
@@ -36,4 +36,14 @@ Outlook add-ins are now supported in the new Mac UI, up to requirement set 1.6. 
 1. `saveAsync` when composing a meeting
 1. Single sign-on (SSO)
 
-You can preview the new Outlook on Mac from version 16.38.506. To learn more about how to try it out, see [Outlook for Mac - Release notes for Insider Fast builds](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
+We encourage you to preview the new Outlook on Mac, available from version 16.38.506. To learn more about how to try it out, see [Outlook for Mac - Release notes for Insider Fast builds](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
+
+You can determine which UI version you're on, as follows.
+
+**Current UI**
+
+![Current UI on Mac](../images/outlook-on-mac-classic.png)
+
+**New UI (preview)**
+
+![New UI in preview on Mac](../images/outlook-on-mac-new.png)
