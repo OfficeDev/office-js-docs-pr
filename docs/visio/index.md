@@ -1,15 +1,15 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Visio add-ins documentation
-description: 'Resources for learning about Visio add-ins.'
+title: Visio documentation
+description: 'Resources for learning about embedding Visio diagrams in SharePoint.'
 ms.date: 07/05/2019
 localization_priority: Priority
 ---
 
-# Visio Add-ins documentation
+# Visio documentation
 
-You can use the Visio JavaScript APIs to embed Visio diagrams in SharePoint Online. Learn how to use the Visio JavaScript APIs with Visio on the web to build solutions for SharePoint Online. 
+You can use the Visio JavaScript APIs to embed Visio diagrams in SharePoint Online. Learn how to use the Visio JavaScript APIs with Visio on the web to build solutions for SharePoint Online.
 
 <ul class="panelContent cardsF cols cols3">
     <li>

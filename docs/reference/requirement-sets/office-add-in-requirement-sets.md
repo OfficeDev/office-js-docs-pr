@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: 'Learn more about the Office Common API requirement sets'
-ms.date: 07/17/2019
+ms.date: 06/03/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -12,13 +12,14 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Need information about where add-ins are supported by Office host? See [Office Add-in host and platform availability](../../overview/office-add-in-availability.md).
 
-Looking for the *host-specific* API requirement sets? See the following API requirement sets:
-
-- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
-- [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
-- [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
-- [PowerPoint JavaScript API requirement sets](powerpoint-api-requirement-sets.md) (PowerPointApi)
-- [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md) (Mailbox)
+> [!TIP]
+> Looking for the *host-specific* API requirement sets? See the following API requirement sets:
+>
+> - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
+> - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
+> - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
+> - [PowerPoint JavaScript API requirement sets](powerpoint-api-requirement-sets.md) (PowerPointApi)
+> - [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md) (Mailbox)
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
