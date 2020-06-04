@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: 'Learn how add-in support in Outlook on Mac compares with other Outlook hosts.'
-ms.date: 06/03/2020
+ms.date: 06/04/2020
 localization_priority: Normal
 ---
 
@@ -42,8 +42,8 @@ You can determine which UI version you're on, as follows.
 
 **Current UI**
 
-![Current UI on Mac](../images/outlook-on-mac-classic.png)
+&nbsp;&nbsp;&nbsp;&nbsp;![Current UI on Mac](../images/outlook-on-mac-classic.png)
 
 **New UI (preview)**
 
-![New UI in preview on Mac](../images/outlook-on-mac-new.png)
+&nbsp;&nbsp;&nbsp;&nbsp;![New UI in preview on Mac](../images/outlook-on-mac-new.png)
