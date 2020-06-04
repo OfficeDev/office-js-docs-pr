@@ -756,7 +756,7 @@
 - name: Outlook
   items:
   - name: Outlook add-ins documentation
-    href: outlook/index.md
+    href: outlook/index.yml
     displayName: Outlook
   - name: Overview
     href: outlook/outlook-add-ins-overview.md
