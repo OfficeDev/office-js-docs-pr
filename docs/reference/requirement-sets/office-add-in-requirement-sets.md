@@ -162,6 +162,14 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ---
 
+### RibbonApi
+
+|**Office hosts**|**Methods in set**|
+|:-----|:-----|
+| See [Ribbon API requirement sets](ribbon-api-requirement-sets.md). | Office.ribbon.requestUpdate |
+
+---
+
 ### Selection
 
 |**Office hosts**|**Methods in set**|
