@@ -96,7 +96,7 @@ In the following example, increment is the `id` and the `name` of the function.
 Provides the display `name` for the custom function.
 
 * If name isn't provided, the id is also used as the name.
-* Allowed characters: Letters [Unicode Alphabetic character](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), numbers, period (.), and underscore (\_).
+* Allowed characters: Letters [Unicode Alphabetic character](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), numbers, period (.), and underscore (\_).
 * Must start with a letter.
 * Maximum length is 128 characters.
 
