@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 03/30/2020
+ms.date: 06/05/2020
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Priority
@@ -730,6 +730,7 @@ These steps must be completed whenever your code needs to *read* information fro
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office host (e.g., `Excel`)
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office host (e.g., `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+        >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
 3. If the local web server is already running, stop it by closing the node command window.
 
