@@ -1027,7 +1027,7 @@
 - name: PowerPoint
   items:
   - name: PowerPoint add-ins documentation
-    href: powerpoint/index.md
+    href: powerpoint/index.yml
     displayName: PowerPoint
   - name: Overview
     href: powerpoint/powerpoint-add-ins.md
@@ -1059,7 +1059,7 @@
 - name: Project
   items:
   - name: Project add-ins documentation
-    href: project/index.md
+    href: project/index.yml
     displayName: Project
   - name: Overview
     href: project/project-add-ins.md

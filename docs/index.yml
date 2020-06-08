@@ -35,7 +35,7 @@ landingContent:
           - text: PowerPoint add-ins documentation
             url: powerpoint/index.yml
           - text: Project add-ins documentation
-            url: project/index.md
+            url: project/index.yml
           - text: Word add-ins documentation
             url: word/index.md
 
