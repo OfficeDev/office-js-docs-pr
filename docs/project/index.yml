@@ -21,7 +21,7 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Outlook Add-ins?
+          - text: What is Project Add-ins?
             url: project-add-ins.md
           - text: JavaScript API for Project
             url: ../reference/overview/project-add-ins-reference-overview.md
@@ -31,9 +31,9 @@ landingContent:
             url: ../quickstarts/project-quickstart.md
       - linkListType: how-to-guide
         links:
-          - text: Test and debug a Outlook add-in
+          - text: Test and debug a Project Add-ins
             url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish a Outlook add-in
+          - text: Deploy and publish a Project Add-ins
             url: ../publish/publish.md
 
   # Card (optional)
