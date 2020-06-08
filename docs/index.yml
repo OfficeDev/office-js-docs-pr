@@ -1,16 +1,16 @@
 ### YamlMime:Landing
 
 title: Office Add-ins documentation # < 60 chars
-summary: Learn how to build Office Add-ins. # < 160 chars
+summary: Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on Windows, Mac, iPad, and on the web. # < 160 chars
 
 metadata:
   title: Office Add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Learn how to build Office Add-ins. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: o365-proplus-itpro #Required; service per approved list. service slug assigned to your service by ACOM.
+  ms.prod: non-product-specific #Required
   ms.topic: landing-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 12/24/2019 #Required; mm/dd/yyyy format.
+  ms.date: 06/08/2020 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -23,21 +23,21 @@ landingContent:
       - linkListType: concept
         links:
           - text: Core concepts
-            url: ./overview/office-add-ins.md
+            url: overview/office-add-ins.md
       - linkListType: overview
         links:
           - text: Excel add-ins documentation
-            url: ./excel/index.md
+            url: excel/index.md
           - text: OneNote add-ins documentation
-            url: ./onenote/index.md
+            url: onenote/index.md
           - text: Outlook add-ins documentation
-            url: ./outlook/index.md
+            url: outlook/index.md
           - text: PowerPoint add-ins documentation
-            url: ./powerpoint/index.md
+            url: powerpoint/index.md
           - text: Project add-ins documentation
-            url: ./project/index.md
+            url: project/index.md
           - text: Word add-ins documentation
-            url: ./word/index.md
+            url: word/index.md
 
   # Card (optional)
   - title: Get started
@@ -45,24 +45,27 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Get started with Office Add-ins
-            url: ./overview/learning-path-beginner.md
+            url: overview/learning-path-beginner.md
+          - text: Explore Office JavaScript API using Script Lab
+            url: overview/explore-with-script-lab.md
+      - linkListType: quickstart
+        links:
           - text: Excel add-in quick start
-            url: ./quickstarts/excel-quickstart-jquery.md
+            url: quickstarts/excel-quickstart-jquery.md
           - text: Excel custom functions quick start
-            url: ./quickstarts/excel-custom-functions-quickstart.md
+            url: quickstarts/excel-custom-functions-quickstart.md
           - text: OneNote add-in quick start
-            url: ./quickstarts/onenote-quickstart.md
+            url: quickstarts/onenote-quickstart.md
           - text: Outlook add-in quick start
-            url: ./quickstarts/outlook-quickstart.md
+            url: quickstarts/outlook-quickstart.md
           - text: PowerPoint add-in quick start
-            url: ./quickstarts/powerpoint-quickstart.md
+            url: quickstarts/powerpoint-quickstart.md
           - text: Project add-in quick start
-            url: ./quickstarts/project-quickstart.md
+            url: quickstarts/project-quickstart.md
           - text: Word add-in quick start
-            url: ./quickstarts/word-quickstart.md
+            url: quickstarts/word-quickstart.md
           - text: Single sign-on (SSO) quick start
-            url: ./quickstarts/sso-quickstart.md
- 
+            url: quickstarts/sso-quickstart.md
 
   # Card
   - title: Tutorials
@@ -70,24 +73,16 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: Excel add-in tutorial
-            url: ./tutorials/excel-tutorial.md
+            url: tutorials/excel-tutorial.md
           - text: Excel custom functions tutorial
-            url: ./tutorials/excel-tutorial-create-custom-functions.md
+            url: tutorials/excel-tutorial-create-custom-functions.md
           - text: Outlook add-in tutorial
-            url: ./tutorials/outlook-tutorial.md
+            url: tutorials/outlook-tutorial.md
           - text: PowerPoint add-in tutorial
-            url: ./tutorials/powerpoint-tutorial.md
+            url: tutorials/powerpoint-tutorial.md
           - text: Word add-in tutorial
-            url: ./tutorials/word-tutorial.md
+            url: tutorials/word-tutorial.md
 
-  # Card
-  - title: Script Lab
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Explore Office JavaScript API using Script Lab
-            url: overview/explore-with-script-lab.md
-  
    # Card
   - title: Resources
     linkLists:
@@ -99,5 +94,5 @@ landingContent:
             url: https://github.com/officedev/office-js/issues
           - text: Request features
             url: https://officespdev.uservoice.com/
-          - text: COM or VSTO add-ins
+          - text: COM or VSTO add-ins documentation
             url: /office/client-developer/office-client-development
