@@ -29,11 +29,11 @@ landingContent:
           - text: Excel add-ins documentation
             url: excel/index.md
           - text: OneNote add-ins documentation
-            url: onenote/index.md
+            url: onenote/index.yml
           - text: Outlook add-ins documentation
-            url: outlook/index.md
+            url: outlook/index.yml
           - text: PowerPoint add-ins documentation
-            url: powerpoint/index.md
+            url: powerpoint/index.yml
           - text: Project add-ins documentation
             url: project/index.yml
           - text: Word add-ins documentation
@@ -86,7 +86,7 @@ landingContent:
    # Card
   - title: Resources
     linkLists:
-      - linkListType: overview
+      - linkListType: reference
         links:
           - text: Ask questions
             url: https://stackoverflow.com/questions/tagged/office-js
