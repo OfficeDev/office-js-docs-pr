@@ -1,0 +1,77 @@
+### YamlMime:Landing
+
+title: OneNote Add-ins documentation # < 60 chars
+summary: With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in OneNote on the web. # < 160 chars
+
+metadata:
+  title: OneNote Add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Resources for learning about OneNote add-ins. # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: o365-proplus-itpro #Required; service per approved list. service slug assigned to your service by ACOM.
+  ms.topic: landing-page # Required
+  ms.date: 07/05/2019 #Required; mm/dd/yyyy format.
+  localization_priority: Priority
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card (optional)
+  - title: About OneNote Add-ins
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is OneNote Add-ins?
+            url: onenote-add-ins-programming-overview.md
+      - linkListType: quickstart
+        links:
+          - text: Build your first OneNote add-in
+            url: ../quickstarts/onenote-quickstart.md
+      - linkListType: how-to-guide
+        links:
+          - text: Use the OneNote JavaScript API to interact with objects and notebook content
+            url: ../reference/overview/onenote-add-ins-javascript-reference.md
+          - text: Test and debug a OneNote add-in
+            url: ../testing/test-debug-office-add-ins.md
+          - text: Deploy and publish a OneNote add-in
+            url: ../publish/publish.md
+
+  # Card (optional)
+  - title: Fundamental concepts
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Office Add-ins platform overview
+            url: ../overview/office-add-ins.md
+      - linkListType: get-started
+        links:
+          - text: Building Office Add-ins
+            url: ../overview/office-add-ins-fundamentals.md
+          - text: Explore Office JavaScript API using Script Lab
+            url: ../overview/explore-with-script-lab.md
+
+  # Card
+  - title: Advanced concepts
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Core concepts for Office Add-ins
+            url: ../overview/core-concepts-office-add-ins.md
+          - text: Design Office Add-ins
+            url: ../design/add-in-design.md
+          - text: Develop Office Add-ins
+            url: ../develop/develop-overview.md
+
+  # Card
+  - title: Resources
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Office Add-ins additional resources
+            url: ../resources/resources-links-help.md
+          - text: Ask questions
+            url: https://stackoverflow.com/questions/tagged/office-js
+          - text: Request features
+            url: https://officespdev.uservoice.com/
+          - text: Report issues
+            url: https://github.com/officedev/office-js/issues
