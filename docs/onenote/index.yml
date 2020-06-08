@@ -27,8 +27,6 @@ landingContent:
         links:
           - text: Build your first OneNote add-in
             url: ../quickstarts/onenote-quickstart.md
-          - text: Explore Office JavaScript API using Script Lab
-            url: ../overview/explore-with-script-lab.md
       - linkListType: how-to-guide
         links:
           - text: Use the OneNote JavaScript API to interact with objects and notebook content
