@@ -29,7 +29,7 @@ landingContent:
           - text: Excel add-ins documentation
             url: excel/index.md
           - text: OneNote add-ins documentation
-            url: onenote/index.md
+            url: onenote/index.yml
           - text: Outlook add-ins documentation
             url: outlook/index.md
           - text: PowerPoint add-ins documentation
