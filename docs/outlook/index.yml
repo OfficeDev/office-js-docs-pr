@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Outlook Add-ins documentation # < 60 chars
-summary: With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Outlook across multiple platforms, including on Windows, Mac, iPad, and on the web. Learn how to build, test, debug, and publish Outlook add-ins. # < 160 chars
+summary: With Outlook add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Outlook across multiple platforms, including on Windows, Mac, iPad, and on the web. # < 160 chars
 
 metadata:
   title: Outlook Add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
