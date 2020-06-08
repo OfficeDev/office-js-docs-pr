@@ -1,5 +1,5 @@
 - name: Office Add-ins Documentation
-  href: index.md
+  href: index.yml
 
 - name: About Office Add-ins
   href: overview/office-add-ins.md
