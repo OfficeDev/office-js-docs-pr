@@ -33,7 +33,7 @@ landingContent:
           - text: Outlook add-ins documentation
             url: outlook/index.md
           - text: PowerPoint add-ins documentation
-            url: powerpoint/index.md
+            url: powerpoint/index.yml
           - text: Project add-ins documentation
             url: project/index.md
           - text: Word add-ins documentation
