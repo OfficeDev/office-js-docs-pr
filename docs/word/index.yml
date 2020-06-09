@@ -6,7 +6,7 @@ summary: With Word add-ins, you can use familiar web technologies such as HTML, 
 metadata:
   title: Word add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
-  ms.prod: Word #Required
+  ms.prod: word #Required
   ms.topic: landing-page # Required
   ms.date: 06/09/2020 #Required; mm/dd/yyyy format.
   localization_priority: Priority
@@ -27,6 +27,8 @@ landingContent:
         links:
           - text: Build your first Word add-in
             url: ../quickstarts/word-quickstart.md
+          - text: Explore APIs with Script Lab
+            url: ../overview/explore-with-script-lab.md       
       - linkListType: how-to-guide
         links:
           - text: Use the Word JavaScript API to interact with document content and metadata
@@ -59,8 +61,6 @@ landingContent:
     linkLists:
       - linkListType: reference
         links:
-          - text: Explore APIs with Script Lab
-            url: ../overview/explore-with-script-lab.md       
           - text: Ask questions
             url: https://stackoverflow.com/questions/tagged/office-js
           - text: Request features
