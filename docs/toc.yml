@@ -1,5 +1,5 @@
 - name: Office Add-ins Documentation
-  href: index.md
+  href: index.yml
 
 - name: About Office Add-ins
   href: overview/office-add-ins.md
@@ -519,7 +519,7 @@
 - name: Excel
   items: 
   - name: Excel add-ins documentation
-    href: excel/index.md
+    href: excel/index.yml
     displayName: Excel
   - name: Overview
     href: excel/excel-add-ins-overview.md
@@ -730,7 +730,7 @@
 - name: OneNote
   items:
   - name: OneNote add-ins documentation
-    href: onenote/index.md
+    href: onenote/index.yml
     displayName: OneNote
   - name: Overview
     href: onenote/onenote-add-ins-programming-overview.md
@@ -756,7 +756,7 @@
 - name: Outlook
   items:
   - name: Outlook add-ins documentation
-    href: outlook/index.md
+    href: outlook/index.yml
     displayName: Outlook
   - name: Overview
     href: outlook/outlook-add-ins-overview.md
@@ -1027,7 +1027,7 @@
 - name: PowerPoint
   items:
   - name: PowerPoint add-ins documentation
-    href: powerpoint/index.md
+    href: powerpoint/index.yml
     displayName: PowerPoint
   - name: Overview
     href: powerpoint/powerpoint-add-ins.md
@@ -1059,7 +1059,7 @@
 - name: Project
   items:
   - name: Project add-ins documentation
-    href: project/index.md
+    href: project/index.yml
     displayName: Project
   - name: Overview
     href: project/project-add-ins.md
@@ -1082,7 +1082,7 @@
 - name: Visio
   items:
   - name: Visio documentation
-    href: visio/index.md
+    href: visio/index.yml
     displayName: Visio
   - name: Overview
     href: reference/overview/visio-javascript-reference-overview.md
@@ -1094,7 +1094,7 @@
 - name: Word
   items:
   - name: Word add-ins documentation
-    href: word/index.md
+    href: word/index.yml
     displayName: Word
   - name: Overview
     href: word/word-add-ins-programming-overview.md
