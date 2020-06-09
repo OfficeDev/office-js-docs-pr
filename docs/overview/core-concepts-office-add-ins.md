@@ -12,9 +12,9 @@ All Office Add-ins are built upon the Office Add-ins platform. They share a comm
 
 For any add-in you build, you'll need to understand important concepts like host and platform availability, Office JavaScript API programming patterns, how to specify an add-in's settings and capabilities in the manifest file, how to test, debug, and publish an add-in, and more. You'll find this information here in the **Core concepts** section of the documentation. Review this documentation before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)).
 
-|               |               |
+|  <div style="width:40px"></div> |               |
 | ------------- | ------------- |
-| ![code-blocks](../images/index-landing-page/i_code-blocks.svg) {width=30px} | **Develop** [Learn important development concepts for Office Add-ins.](../develop/develop-overview.md) |
-| ![design](../images/index-landing-page/i_design.svg) {width=30px} | **UI and UX** [Learn about designing the user interface and user experience for Office Add-ins.](../design/interface-elements.md) |
-| ![recommended-testing](../images/index-landing-page/i_recommended-testing.svg) {width=30px} | **Test and debug** [Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
-| ![deploy](../images/index-landing-page/i_deploy.svg) {width=30px} | **Publish** [Learn how to deploy and publish Office Add-ins.](../publish/publish.md) |
+| ![code-blocks](../images/index-landing-page/i_code-blocks.svg) | **Develop** [Learn important development concepts for Office Add-ins.](../develop/develop-overview.md) |
+| ![design](../images/index-landing-page/i_design.svg) | **UI and UX** [Learn about designing the user interface and user experience for Office Add-ins.](../design/interface-elements.md) |
+| ![recommended-testing](../images/index-landing-page/i_recommended-testing.svg) | **Test and debug** [Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
+| ![deploy](../images/index-landing-page/i_deploy.svg) | **Publish** [Learn how to deploy and publish Office Add-ins.](../publish/publish.md) |
