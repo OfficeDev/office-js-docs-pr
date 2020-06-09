@@ -17,7 +17,7 @@ All Office Add-ins are built upon the Office Add-ins platform. They share a comm
 
 ## Next steps
 
-After you're familiar with the core concepts covered here, explore the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)). Each host-specific section of the documentation contains information specifically about building add-ins for a certain Office host.
+After you're familiar with the core concepts covered here, explore the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.yml)). Each host-specific section of the documentation contains information specifically about building add-ins for a certain Office host.
 
 ## See also
 
