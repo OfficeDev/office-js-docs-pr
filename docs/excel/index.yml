@@ -27,6 +27,8 @@ landingContent:
         links:
           - text: Build your first Excel add-in
             url: ../quickstarts/excel-quickstart-jquery.md
+          - text: Explore APIs with Script Lab
+            url: ../overview/explore-with-script-lab.md
       - linkListType: how-to-guide
         links:
           - text: Use the Excel JavaScript API to interact with objects and workbook content
@@ -61,8 +63,6 @@ landingContent:
     linkLists:
       - linkListType: reference
         links:
-          - text: Explore APIs with Script Lab
-            url: ../overview/explore-with-script-lab.md
           - text: Ask questions
             url: https://stackoverflow.com/questions/tagged/office-js
           - text: Request features

@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Office Add-ins documentation # < 60 chars
-summary: Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on Windows, Mac, iPad, and on the web. # < 160 chars
+summary: Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on the web, Windows, Mac, and iPad. # < 160 chars
 
 metadata:
   title: Office Add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
@@ -10,7 +10,7 @@ metadata:
   ms.topic: landing-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 06/08/2020 #Required; mm/dd/yyyy format.
+  ms.date: 06/09/2020 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -27,7 +27,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Excel add-ins documentation
-            url: excel/index.md
+            url: excel/index.yml
           - text: OneNote add-ins documentation
             url: onenote/index.yml
           - text: Outlook add-ins documentation
