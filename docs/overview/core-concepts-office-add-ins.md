@@ -2,7 +2,7 @@
 ms.topic: conceptual
 title: Core concepts for Office Add-ins
 description: 'Learn more about the Office Add-ins platform.'
-ms.date: 6/8/2020
+ms.date: 06/08/2020
 localization_priority: Priority
 ---
 
