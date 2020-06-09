@@ -34,7 +34,7 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 
 ## See also
 
-- [Word add-ins documentation](../../word/index.md)
+- [Word add-ins documentation](../../word/index.yml)
 - [Word add-ins overview](../../word/word-add-ins-programming-overview.md)
 - [Word JavaScript API reference](/javascript/api/word)
 - [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)

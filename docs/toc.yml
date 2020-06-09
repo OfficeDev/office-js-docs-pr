@@ -1094,7 +1094,7 @@
 - name: Word
   items:
   - name: Word add-ins documentation
-    href: word/index.md
+    href: word/index.yml
     displayName: Word
   - name: Overview
     href: word/word-add-ins-programming-overview.md
