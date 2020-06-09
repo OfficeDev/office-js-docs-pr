@@ -37,7 +37,7 @@ landingContent:
           - text: Project add-ins documentation
             url: project/index.yml
           - text: Word add-ins documentation
-            url: word/index.md
+            url: word/index.yml
 
   # Card (optional)
   - title: Get started

@@ -29,7 +29,7 @@ landingContent:
             url: ../reference/overview/visio-javascript-reference-overview.md#get-started
       - linkListType: reference
         links:
-          - text: Explore detailed information about the Visio JavaScript API
+          - text: Explore the Visio JavaScript API
             url: /javascript/api/visio
 
   # Card
