@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about Excel add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.prod: excel #Required
   ms.topic: landing-page # Required
-  ms.date: 06/08/2020 #Required; mm/dd/yyyy format.
+  ms.date: 06/09/2020 #Required; mm/dd/yyyy format.
   localization_priority: Priority
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
