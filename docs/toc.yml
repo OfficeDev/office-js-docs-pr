@@ -519,7 +519,7 @@
 - name: Excel
   items: 
   - name: Excel add-ins documentation
-    href: excel/index.md
+    href: excel/index.yml
     displayName: Excel
   - name: Overview
     href: excel/excel-add-ins-overview.md
