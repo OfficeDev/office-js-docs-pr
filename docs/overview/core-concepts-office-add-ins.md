@@ -2,7 +2,7 @@
 ms.topic: conceptual
 title: Core concepts for Office Add-ins
 description: 'Learn more about the Office Add-ins platform.'
-ms.date: 12/24/2019
+ms.date: 6/8/2020
 localization_priority: Priority
 ---
 
@@ -14,7 +14,7 @@ For any add-in you build, you'll need to understand important concepts like host
 
 |               |               |
 | ------------- | ------------- |
-| ![code-blocks](../images/index-landing-page/i_code-blocks.svg)  | **Develop** [Learn important development concepts for Office Add-ins.](../develop/develop-overview.md) |
-| ![design](../images/index-landing-page/i_design.svg)  | **UI and UX** [Learn about designing the user interface and user experience for Office Add-ins.](../design/interface-elements.md) |
-| ![recommended-testing](../images/index-landing-page/i_recommended-testing.svg)  | **Test and debug** [Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
-| ![deploy](../images/index-landing-page/i_deploy.svg)  | **Publish** [Learn how to deploy and publish Office Add-ins.](../publish/publish.md) |
+| ![code-blocks](../images/index-landing-page/i_code-blocks.svg) {width=30px} | **Develop** [Learn important development concepts for Office Add-ins.](../develop/develop-overview.md) |
+| ![design](../images/index-landing-page/i_design.svg) {width=30px} | **UI and UX** [Learn about designing the user interface and user experience for Office Add-ins.](../design/interface-elements.md) |
+| ![recommended-testing](../images/index-landing-page/i_recommended-testing.svg) {width=30px} | **Test and debug** [Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
+| ![deploy](../images/index-landing-page/i_deploy.svg) {width=30px} | **Publish** [Learn how to deploy and publish Office Add-ins.](../publish/publish.md) |
