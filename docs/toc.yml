@@ -1082,7 +1082,7 @@
 - name: Visio
   items:
   - name: Visio documentation
-    href: visio/index.md
+    href: visio/index.yml
     displayName: Visio
   - name: Overview
     href: reference/overview/visio-javascript-reference-overview.md
