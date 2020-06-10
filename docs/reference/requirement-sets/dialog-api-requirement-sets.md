@@ -1,7 +1,7 @@
 ---
 title: Dialog API requirement sets
 description: 'Learn more about the Dialog API requirement sets'
-ms.date: 03/11/2020
+ms.date: 06/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -24,7 +24,6 @@ Office Add-ins run across multiple versions of Office. The following table lists
 To find out more about versions, build numbers, and Office Online Server, see:
 
 [!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
-
 - [Office Online Server overview](/officeonlineserver/office-online-server-overview)
 
 ## Office Common API requirement sets
@@ -37,6 +36,7 @@ The Dialog API 1.1 is the first version of the API. Version 1.2 adds support for
 
 ## See also
 
+- [Use the Office dialog API in Office Add-ins](../../develop/dialog-api-in-office-add-ins.md)
 - [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
 - [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../develop/add-in-manifests.md)
