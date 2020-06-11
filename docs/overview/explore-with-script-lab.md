@@ -9,7 +9,7 @@ localization_priority: Priority
 
 # Explore Office JavaScript API using Script Lab
 
-The [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862) and [Script Lab for Outlook add-in](https://appsource.microsoft.com/en-us/product/office/WA200001603?tab=Overview), which are available free from AppSource, enable you to explore the Office JavaScript API while you're working in an Office program such as Excel or Word. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your add-in.
+The [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) and [Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603) add-ins, available free from AppSource, enable you to explore the Office JavaScript API while you're working in an Office program such as Excel or Outlook. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your own add-in.
 
 ## What is Script Lab?
 
