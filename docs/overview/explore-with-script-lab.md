@@ -62,7 +62,7 @@ Script Lab for Outlook is available on the following clients.
 - Outlook 2016 or later on Mac
 - Outlook on the web when using Chrome, Microsoft Edge, or Safari browsers
 
-For complete details on Script Lab for Outlook, see the [Script Lab now supports Outlook blog post](https://developer.microsoft.com/en-us/office/blogs/script-lab-now-supports-outlook/) available on the Office 365: Developer Blog.
+For more details on Script Lab for Outlook, see the related [blog post](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/).
 
 ## Next steps
 
