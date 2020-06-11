@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: 'Use Script Lab to explore the Office JS API and to prototype functionality.'
-ms.date: 04/16/2020
+ms.date: 06/10/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -9,11 +9,11 @@ localization_priority: Priority
 
 # Explore Office JavaScript API using Script Lab
 
-The [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862), which is available free from AppSource, enables you to explore the Office JavaScript API while you're working in an Office program such as Excel or Word. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your add-in.
+The [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862) and [Script Lab for Outlook add-in](https://appsource.microsoft.com/en-us/product/office/WA200001603?tab=Overview), which are available free from AppSource, enable you to explore the Office JavaScript API while you're working in an Office program such as Excel or Word. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your add-in.
 
 ## What is Script Lab?
 
-Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins using the Office JavaScript API in Excel, Word, or PowerPoint. It provides IntelliSense so you can see what's available and is built on the Monaco framework, the same framework used by Visual Studio Code. Through Script Lab, you can access a library of samples to quickly try out features or you can use a sample as the starting point for your own code. You can even use Script Lab to try preview APIs.
+Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins using the Office JavaScript API in Excel, Word, PowerPoint, and Outlook. It provides IntelliSense so you can see what's available and is built on the Monaco framework, the same framework used by Visual Studio Code. Through Script Lab, you can access a library of samples to quickly try out features or you can use a sample as the starting point for your own code. You can even use Script Lab to try preview APIs.
 
 Sounds good so far? Take a look at this one-minute video to see Script Lab in action.
 
@@ -56,9 +56,19 @@ Script Lab is supported for Excel, Word, and PowerPoint on the following clients
 - Office 2016 or later on Mac
 - Office on the web
 
+Script Lab for Outlook is available on the following clients.
+
+- Outlook 2013 or later on Windows
+- Office 2016 or later on Mac
+- Office on the web when using Chrome, Microsoft Edge, or Safari browsers.
+
+For complete details on Script Lab for Outlook, see the [Script Lab now supports Outlook blog post](https://developer.microsoft.com/en-us/office/blogs/script-lab-now-supports-outlook/) available on the Office 365: Developer Blog.
+
 ## Next steps
 
 To use Script Lab in Excel, Word, or PowerPoint, install the [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862) from AppSource. 
+
+To use Script Lab for Outlook, install the [Script Lab for Outlook add-in](https://appsource.microsoft.com/en-US/product/office/wa200001603?tab=overview) from AppSource.
 
 You're welcome to expand the sample library in Script Lab by contributing new snippets to the [office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) GitHub repository.
 
