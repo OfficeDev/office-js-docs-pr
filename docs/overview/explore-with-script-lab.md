@@ -68,7 +68,7 @@ For more details on Script Lab for Outlook, see the related [blog post](https://
 
 To use Script Lab in Excel, Word, or PowerPoint, install the [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862) from AppSource. 
 
-To use Script Lab for Outlook, install the [Script Lab for Outlook add-in](https://appsource.microsoft.com/en-US/product/office/wa200001603?tab=overview) from AppSource.
+To use Script Lab for Outlook, install the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/wa200001603) from AppSource.
 
 You're welcome to expand the sample library in Script Lab by contributing new snippets to the [office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) GitHub repository.
 
