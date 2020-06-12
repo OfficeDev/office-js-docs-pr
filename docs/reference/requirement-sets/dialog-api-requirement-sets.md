@@ -1,7 +1,7 @@
 ---
 title: Dialog API requirement sets
-description: 'Learn more about the Dialog API requirement sets'
-ms.date: 03/11/2020
+description: 'Learn more about the Dialog API requirement sets.'
+ms.date: 06/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -35,6 +35,7 @@ The Dialog API 1.1 is the first version of the API. For details about the API, s
 
 ## See also
 
+- [Use the Office dialog API in Office Add-ins](../../develop/dialog-api-in-office-add-ins.md)
 - [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
 - [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../develop/add-in-manifests.md)
