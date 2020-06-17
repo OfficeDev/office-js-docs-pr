@@ -291,6 +291,8 @@
       displayName: uninstall, sideload
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
+    - name: Microsoft Office Add-in Debugger Extension for Visual Studio Code
+      href: testing/debug-with-vs-extension.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
     - name: Usability testing
