@@ -1,7 +1,7 @@
 ---
 title: Publish Office Add-ins using Centralized Deployment via the Office 365 admin center
 description: 'Learn how to use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.'
-ms.date: 03/24/2020
+ms.date: 06/15/2020
 localization_priority: Normal
 ---
 
@@ -10,10 +10,10 @@ localization_priority: Normal
 
 The Office 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.
 
-The Office 365 admin center currently supports the following scenarios:
+The Office 365 admin center currently supports the following scenarios.
 
 - Centralized Deployment of new and updated add-ins to individuals, groups, or an organization.
-- Deployment to multiple platforms, including Windows, Mac, iOS, Android, and on the web.
+- Deployment to multiple client platforms, including Windows, Mac, and the web. For Outlook, deployment to iOS and Android is also supported. (However, while user installation of Excel, Outlook, Word, and PowerPoint add-ins on iPad is supported, Centralized Deployment to iPad is **not** supported.)
 - Deployment to English language and worldwide tenants.
 - Deployment of cloud-hosted add-ins.
 - Deployment of add-ins that are hosted within a firewall.
