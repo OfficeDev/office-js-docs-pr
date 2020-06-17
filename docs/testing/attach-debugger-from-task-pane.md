@@ -1,7 +1,7 @@
 ---
 title: Attach a debugger from the task pane
 description: 'Learn how to attach a debugger from the task pane'
-ms.date: 09/09/2019
+ms.date: 06/17/2020
 localization_priority: Normal
 ---
 
@@ -40,3 +40,5 @@ For more information about debugging in Visual Studio, see the following:
 
 - [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - [Publish your Office Add-in](../publish/publish.md)
+- [Microsoft Office Add-in Debugger Extension for Visual Studio Code
+](./debug-with-vs-extension.md)
