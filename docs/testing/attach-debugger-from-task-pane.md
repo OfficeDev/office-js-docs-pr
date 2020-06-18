@@ -40,5 +40,4 @@ For more information about debugging in Visual Studio, see the following:
 
 - [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - [Publish your Office Add-in](../publish/publish.md)
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code
-](./debug-with-vs-extension.md)
+- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
