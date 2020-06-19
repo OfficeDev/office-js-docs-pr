@@ -16,16 +16,16 @@ Which browser is used depends on:
 
 The following table shows which browser is used for the various platforms and operating systems.
 
-|**OS / Platform**|**Browser**|
+|**OS / Platform**|**Office version**|**Browser**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office on the web|The browser in which Office is opened.|
-|Mac|Safari|
-|iOS|Safari|
-|Android|Chrome|
-|Windows / non-subscription Office 2013 or later|Internet Explorer 11|
-|Windows 10 ver. < 1903 / Office 365|Internet Explorer 11|
-|Windows 10 ver. >= 1903 / Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
-|Windows 10 ver. >= 1903 / Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2, 3</sup>|
+|any|Office on the web|The browser in which Office is opened.|
+|Mac|any|Safari|
+|iOS|any|Safari|
+|Android|any|Chrome|
+|Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Internet Explorer 11|
+|Windows 10 ver. < 1903 | Office 365|Internet Explorer 11|
+|Windows 10 ver. >= 1903 | Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
+|Windows 10 ver. >= 1903 | Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2, 3</sup>|
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
