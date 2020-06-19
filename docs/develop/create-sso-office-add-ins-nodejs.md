@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 01/16/2020
+ms.date: 06/18/2020
 localization_priority: Normal
 ---
 
@@ -36,12 +36,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     > [!NOTE]
     > There are three versions of the sample:  
-    > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
-    > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
+    > * The **Begin** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
+    > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
     > * The **SSOAutoSetup** version is a completed sample that automates most of the steps to register the add-in with Azure AD and configure it. Use this version if you want to see a working add-in with SSO quickly. Just follow the steps in the Readme of the folder. We recommend that at some point you go through the manual registration and setup steps in this article to better understand the relationship between Azure AD and an add-in. 
 
-
-1. Open a command prompt in the **Before** folder.
+1. Open a command prompt in the **Begin** folder.
 
 1. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
 
@@ -57,7 +56,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     * Set **Name** to `Office-Add-in-NodeJS-SSO`.
     * Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
-    * Set **Redirect URI** to` https://localhost:44355/dialog.html`.
+    * Set the application type to **Web** and then set **Redirect URI** to ` https://localhost:44355/dialog.html`.
     * Choose **Register**.
 
 1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
@@ -65,13 +64,15 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > [!NOTE]
     > This ID is the "audience" value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
-1. Select **Authentication** under **Manage**. In the **Implict grant** section, enable the checkboxes for both **Access token** and **ID token**. The sample has a fallback authorization system that is invoked when SSO is not available. This system uses the Implicit Flow.
+1. Select **Authentication** under **Manage**. In the **Implicit grant** section, enable the checkboxes for both **Access token** and **ID token**. The sample has a fallback authorization system that is invoked when SSO is not available. This system uses the Implicit Flow.
 
 1. Select **Save** at the top of the form.
 
 1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**. *Copy the client secret value immediately and save it with the application ID* before proceeding as you'll need it in a later procedure.
 
-1. Select **Expose an API** under **Manage**. Select the **Set** link to generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**. Insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. The entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`. 
+1. Select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**.
+
+1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
 1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope** name.
 
@@ -79,10 +80,10 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office host application to use your add-in's web APIs with the same rights as the current user. Suggestions:
 
-    - **Admin consent title**: Office can act as the user.
+    - **Admin consent display name**: Office can act as the user.
     - **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights as the current user.
-    - **User consent title**: Office can act as you.
-    - **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
+    - **User consent display name**: Office can act as you.
+    - **User consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
 
 1. Ensure that **State** is set to **Enabled**.
 
@@ -145,7 +146,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     </WebApplicationInfo>
     ```
 
-1. Replace the placeholder "$application_GUID here$" *in both places* in the markup with the Application ID that you copied when you registered your add-in. The "$" symbols are not part of the ID, so do not include them. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder "$application_GUID here$" *in both places* in the markup with the Application ID that you copied when you registered your add-in. The "$" symbols are not part of the ID, so do not include them. This is the same ID you used in for the CLIENT_ID and Audience in the .ENV file.
 
 	> [!NOTE]
     > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
@@ -167,7 +168,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
             
             // TODO 1: Tell Office to get a bootstrap token from Azure AD.
             
-            // TODO 2: Attempt to exhange the bootstrap token for an 
+            // TODO 2: Attempt to exchange the bootstrap token for an 
             //         access token to Microsoft Graph.
 
             // TODO 3: Handle case where Microsoft Graph requires an 
@@ -190,7 +191,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     - `OfficeRuntime.auth.getAccessToken` instructs Office to get a bootstrap token from Azure AD. A bootstrap token is similar to an ID token, but it has a `scp` (scope) property with the value `access-as-user`. This kind of token can be exchanged by a web application for an access token to Microsoft Graph.
     - Setting the `allowSignInPrompt`option to true means that if no user is currently signed into Office, then Office will open a popup sign-in prompt.
-    - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an access token to Micrsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `OfficeRuntime.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign in again and the user *can* be prompted to consent to Micrsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
+    - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an access token to Microsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `OfficeRuntime.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign in again and the user *can* be prompted to consent to Microsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
 
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true }); 
@@ -241,7 +242,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Below the `getGraphData` method, add the following function. Note that `/auth` is a server-side Express route that exhanges the bootstrap token with Azure AD for an access token to Microsoft Graph.
+1. Below the `getGraphData` method, add the following function. Note that `/auth` is a server-side Express route that exchanges the bootstrap token with Azure AD for an access token to Microsoft Graph.
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -269,6 +270,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
         }
     }
     ```
+
 1. Replace `TODO 6` with the following code. 
 For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). 
 
@@ -325,7 +327,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it, but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply recursively call `getGraphData`. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So replace `TODO 8` with the following. 
 
     ```javascript
-    if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)       
+    if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
     {
         getGraphData();
     }
@@ -357,7 +359,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 1. Replace `TODO 9` with the following. 
 
     ```javascript
-    else {                
+    else {
         dialogFallback();
     }
     ```
@@ -397,7 +399,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
     ```javascript
     {
-        type: "GET", 
+        type: "GET",
         url: "/getuserdata",
         headers: {"access_token": accessToken },
         cache: false
@@ -411,10 +413,10 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
     ```javascript
     writeFileNamesToOfficeDocument(response)
-    .then(function () { 
-        showMessage("Your data has been added to the document."); 
+    .then(function () {
+        showMessage("Your data has been added to the document.");
     })
-    .catch(function (error) {        
+    .catch(function (error) {
         showMessage(error);
     });
     ```
@@ -433,7 +435,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
         // TODO 12: Test for the presence of the Authorization header.
 
         // TODO 13: Create the hidden form that will be sent to Azure AD 
-        //          to request the access token in exhange for the 
+        //          to request the access token in exchange for the 
         //          bootstrap token.
 
         // TODO 14: Send the POST request to Azure AD and relay the 
@@ -493,7 +495,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
                 }
             });
             const json = await tokenResponse.json();
-            
+
             res.send(json);
         }
         catch(error) {
@@ -527,7 +529,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     - The code minimizes the data that must come from Microsoft Graph by specifying only the property we need ("name") and only the top 10 folder or file names.
 
     ```javascript
-    const graphToken = req.get('access_token');    
+    const graphToken = req.get('access_token');
     const graphData = await getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=10");
     ```
 
@@ -557,7 +559,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Ensure that you have some files in your OneDrive so that you can verify the results.
 
-1. Open a command prompt in the root of the `\Complete` folder. 
+1. Open a command prompt in the root of the `\Begin` folder. 
 
 1. Run the command `npm start`. 
 
