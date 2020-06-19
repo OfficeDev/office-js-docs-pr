@@ -23,10 +23,11 @@ The following table shows which browser is used for the various platforms and op
 |iOS|any|Safari|
 |Android|any|Chrome|
 |Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Internet Explorer 11|
-|Windows 8.1, 10 ver.&nbsp;<&nbsp;1903 | Office 365|Internet Explorer 11<br>unless Edge WebView2 is installed (see below)|
-|Windows 10 ver.&nbsp;>=&nbsp;1903 | Office 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>|Internet Explorer 11<br>unless Edge WebView2 is installed (see below)|
-|Windows 10 ver.&nbsp;>=&nbsp;1903 | Office 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.12822<sup>1</sup>|Microsoft Edge<sup>2, 3</sup> with original WebView, also called EdgeHTML<br>unless Edge WebView2 is installed (see below)|
-|Windows 8.1, 10 | Office 365 ver.&nbsp;>=&nbsp;16.0.12822<sup>1</sup> |Microsoft Edge<sup>2, 3</sup> with WebView2 &mdash; Chromium based Edge web control &mdash; if it is installed.<br>If it is not, Microsoft Edge with original Webview, also called EdgeHTML.
+|Windows 7 | Office 365 | Internet Explorer 11|
+|Windows 8.1,<br>10 ver.&nbsp;<&nbsp;1903 | Office 365 |Internet Explorer 11<br>unless Edge WebView2 is installed (see below).|
+|Windows 10 ver.&nbsp;>=&nbsp;1903 | Office 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>|Internet Explorer 11<br>unless Edge WebView2 is installed (see below).|
+|Windows 10 ver.&nbsp;>=&nbsp;1903 | Office 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.12822<sup>1</sup>|Microsoft Edge<sup>2, 3</sup> with original WebView, also called EdgeHTML<br>unless Edge WebView2 is installed (see below).|
+|Windows 8.1, 10 | Office 365 ver.&nbsp;>=&nbsp;16.0.12822<sup>1</sup> |Microsoft Edge<sup>2, 3</sup> with WebView2 &mdash; Chromium web control &mdash; if it is installed.<br>If it is not, Microsoft Edge with original Webview, also called EdgeHTML.
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
