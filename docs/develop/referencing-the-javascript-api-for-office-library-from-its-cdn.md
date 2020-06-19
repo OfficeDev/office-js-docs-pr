@@ -43,6 +43,12 @@ npm install --save-dev @types/office-js
 >
 > `npm install --save-dev @types/office-js-preview`
 
+## Preview
+
+New JavaScript APIs are first introduced in "preview" and later become part of a specific numbered requirement set after suffiecient testign occurs and user feedback is required.
+
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
+
 ## See also
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
