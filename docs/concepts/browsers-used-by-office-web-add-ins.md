@@ -42,11 +42,7 @@ The following table shows which browser is used for the various platforms and op
 
 ### Service Workers are not working
 
-Office Add-ins do not support Service Workers on [Microsoft Edge WebView](/microsoft-edge/hosting/webview). Please see the [Office Add-ins overview](../overview/office-add-ins.md) for the latest supported features on the Edge WebView control. We are working hard to bring the new [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2) to the Office Add-ins platform, which we expect will support Service Workers.
-
-### Chromium-based Edge is installed on my development computer, but my add-in does not use it
-
-The base browser in [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) has changed to Chromium. The older base, called EdgeHTML, is not removed when Chromium-based Edge is installed. Office will still use the EdgeHTML base for add-ins until a build of Office 365 that supports Chromium is installed on the computer. We expect these builds to ship in 2020. They will likely appear in the Insiders channel in the first half of the year.
+Office Add-ins do not support Service Workers when the original [Microsoft Edge WebView](/microsoft-edge/hosting/webview) is used. They are supported with the [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2).
 
 ### Scroll bar does not appear in task pane
 
@@ -62,7 +58,7 @@ One known cause is that Microsoft Edge requires that localhost be given a loopba
 
 ### Get errors trying to download a PDF file
 
-Directly downloading blobs as PDF files in an add-in is not supported when Edge is the browser. The workaround is to create a simple web application that downloads blobs as PDF files. In your add-in call the `Office.context.ui.openBrowserWindow(url)` method and pass the URL of the web application. This will open the web application in a browser window outside of Office.
+Directly downloading blobs as PDF files in an add-in is not supported when Edge is the browser. The workaround is to create a simple web application that downloads blobs as PDF files. In your add-in, call the `Office.context.ui.openBrowserWindow(url)` method and pass the URL of the web application. This will open the web application in a browser window outside of Office.
 
 ## See also
 
