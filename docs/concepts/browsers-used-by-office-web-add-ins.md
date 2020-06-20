@@ -16,18 +16,19 @@ Which browser is used depends on:
 
 The following table shows which browser is used for the various platforms and operating systems.
 
-|**OS / Platform**|**Office version**|**Browser**|
+|**OS / Platform**|**Office version**|**Edge WebView2 (Chromium) installed**|**Browser**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|any|Office on the web|The browser in which Office is opened.|
-|Mac|any|Safari|
-|iOS|any|Safari|
-|Android|any|Chrome|
-|Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Internet Explorer 11|
-|Windows 7 | Office 365 | Internet Explorer 11|
-|Windows 8.1,<br>10 ver.&nbsp;<&nbsp;1903 | Office 365 |Internet Explorer 11<br>unless Edge WebView2 is installed (see below).|
-|Windows 10 ver.&nbsp;>=&nbsp;1903 | Office 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>|Internet Explorer 11<br>unless Edge WebView2 is installed (see below).|
-|Windows 10 ver.&nbsp;>=&nbsp;1903 | Office 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.12822<sup>1</sup>|Microsoft Edge<sup>2, 3</sup> with original WebView, also called EdgeHTML<br>unless Edge WebView2 is installed (see below).|
-|Windows 8.1, 10 | Office 365 ver.&nbsp;>=&nbsp;16.0.12822<sup>1</sup> |Microsoft Edge<sup>2, 3</sup> with WebView2 &mdash; Chromium web control &mdash; if it is installed.<br>If it is not, Microsoft Edge with original Webview, also called EdgeHTML.
+|any|Office on the web|N/A|The browser in which Office is opened.|
+|Mac|any|N/A|Safari|
+|iOS|any|N/A|Safari|
+|Android|any|N/A|Chrome|
+|Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Doesn't matter|Internet Explorer 11|
+|Windows 7 | Office 365| Doesn't matter | Internet Explorer 11|
+|Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Office 365 | No| Internet Explorer 11|
+|Windows 10 ver.&nbsp;>=&nbsp;1903 | Office 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.12822<sup>1</sup>| Doesn't matter|Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
+|Windows 10 ver.&nbsp;>=&nbsp;1903 | Office 365 ver.&nbsp;>=&nbsp;16.0.12822<sup>1</sup>| No |Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
+|Windows 8.1<br>
+Windows 10| Office 365 ver.&nbsp;>=&nbsp;16.0.12822<sup>1</sup>| Yes|  Microsoft Edge<sup>2, 3</sup> with WebView2 (Chromium)|
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
