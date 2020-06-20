@@ -16,7 +16,7 @@ Which browser is used depends on:
 
 The following table shows which browser is used for the various platforms and operating systems.
 
-|**OS / Platform**|**Office version**|**Edge WebView2 (Chromium) installed**|**Browser**|
+|**OS**|**Office version**|**Edge WebView2 (Chromium) installed**|**Browser**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |any|Office on the web|N/A|The browser in which Office is opened.|
 |Mac|any|N/A|Safari|
