@@ -38,7 +38,7 @@ In addition to referencing the Office JavaScript API as described previously, yo
 npm install --save-dev @types/office-js
 ```
 
-## Preview
+## Preview APIs
 
 New JavaScript APIs are first introduced in "preview" and later become part of a specific numbered requirement set after sufficient testing occurs and user feedback is required.
 
