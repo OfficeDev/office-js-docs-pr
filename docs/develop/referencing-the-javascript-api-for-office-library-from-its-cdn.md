@@ -38,9 +38,6 @@ In addition to referencing the Office JavaScript API as described previously, yo
 npm install --save-dev @types/office-js
 ```
 
-> [!NOTE]
-> To enable IntelliSense for preview APIs, see the [Preview](#preview) section later in this article.
-
 ## Preview
 
 New JavaScript APIs are first introduced in "preview" and later become part of a specific numbered requirement set after sufficient testing occurs and user feedback is required.
