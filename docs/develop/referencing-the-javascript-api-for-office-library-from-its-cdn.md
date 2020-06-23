@@ -1,7 +1,7 @@
 ---
 title: Referencing the Office JavaScript API library
 description: 'Learn how to reference the Office JavaScript API library and type definitions in your add-in.'
-ms.date: 02/27/2020
+ms.date: 06/23/2020
 localization_priority: Normal
 ---
 
@@ -30,18 +30,16 @@ If you plan to publish your Office Add-in from AppSource, you must use this CDN 
 > [!NOTE]
 > To use preview APIs, reference the preview version of the Office JavaScript API library on the CDN: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
 
-## Enabling Intellisense for a TypeScript project
+## Enabling IntelliSense for a TypeScript project
 
-In addition to referencing the Office JavaScript API as described previously, you can also enable Intellisense for TypeScript add-in project by using the type definitions from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js). To do so, run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
+In addition to referencing the Office JavaScript API as described previously, you can also enable IntelliSense for TypeScript add-in project by using the type definitions from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js). To do so, run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
 ```
 
 > [!NOTE]
-> To enable Intellisense for preview APIs, use the preview type definitions from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js-preview) by running the following command in the root of your project folder: 
->
-> `npm install --save-dev @types/office-js-preview`
+> To enable IntelliSense for preview APIs, see the [Preview](#preview) section later in this article.
 
 ## Preview
 
