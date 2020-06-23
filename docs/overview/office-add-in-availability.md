@@ -210,6 +210,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-12">ImageCoercion 1.2</a></td>
     <td>- BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
         - MatrixBindings<br>
@@ -304,7 +305,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(connected to Office 365)</td>
+    <td>Office on Mac<br>(connected to Office 365)</td>
     <td>
         - Custom Functions</td>
     <td>
