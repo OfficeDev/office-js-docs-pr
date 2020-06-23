@@ -247,7 +247,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
     ```xml
     ...
-    <ProviderName>Northwind Traders</ProviderName>
+    <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
     <DisplayName DefaultValue="My Office Add-in" />
