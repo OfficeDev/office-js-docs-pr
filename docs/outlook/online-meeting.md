@@ -102,7 +102,7 @@ To enable users to create online meetings with your add-in, you must configure t
         <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/app.html"/>
+        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
