@@ -2,7 +2,7 @@
 title: Create an Outlook mobile add-in for an online-meeting provider
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 06/24/2020
+ms.date: 06/25/2020
 localization_priority: Normal
 ---
 
@@ -125,7 +125,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
 
 1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
 
-1. Replace the entire content of the commands.js file with the following JavaScript.
+1. Replace the entire content of the **commands.js** file with the following JavaScript.
 
     ```js
     // 1. How to construct online meeting details.
@@ -215,6 +215,21 @@ As a meeting organizer, you should see screens similar to the following three im
 As a meeting attendee, you should see a screen similar to the following image when you view the meeting.
 
 [![screenshot of join meeting screen on Android](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+
+> [!IMPORTANT]
+> If you don't see the **Join** link, it may be that the online-meeting template for your service is not registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
+
+## Register your online-meeting template
+
+If you would like to register the online-meeting template for your service, you can create a GitHub issue with the details. After that, we'll contact you to coordinate registration timeline.
+
+1. Go to the **Feedback** section at the end of this article.
+1. Press the **This page** link.
+1. Set the **Title** of the new issue to "Register the online-meeting template for my-service", replacing `my-service` with your service name.
+1. In the issue body, replace the string "[Enter feedback here]" with the string you set in the `newBody` or similar variable from the [Implement adding online meeting details](#implement-adding-online-meeting-details) section earlier in this article.
+1. Click **Submit new issue**.
+
+![screenshot of new GitHub issue screen with Contoso sample content](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## Available APIs
 
