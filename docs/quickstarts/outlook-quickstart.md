@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 03/04/2020
+ms.date: 06/23/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -247,7 +247,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
     ```xml
     ...
-    <ProviderName>Northwind Traders</ProviderName>
+    <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
     <DisplayName DefaultValue="My Office Add-in" />

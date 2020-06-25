@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: 'Learn more about the Office Common API requirement sets'
-ms.date: 06/03/2020
+ms.date: 06/23/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -54,7 +54,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
+| Excel 2016 and later on Windows<br>Excel on the web<br>Excel 2016 and later on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
 
 ---
 
