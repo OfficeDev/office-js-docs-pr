@@ -1,7 +1,7 @@
 ---
 title: Enable delegate access scenarios in an Outlook add-in
 description: 'Briefly describes delegate access and discusses how to configure add-in support.'
-ms.date: 01/14/2020
+ms.date: 06/26/2020
 localization_priority: Normal
 ---
 
@@ -73,6 +73,9 @@ The following example shows the `SupportsSharedFolders` element set to `true` in
 
 You can get an item's shared properties in Compose or Read mode by calling the [item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method. This returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that currently provides the delegate's permissions, the owner's email address, the REST API's base URL, and the target mailbox.
 
+> [!IMPORTANT]
+> In a delegate scenario, you can use REST but not EWS.
+
 The following example shows how to get the shared properties of a message or appointment, check if the delegate has **Write** permission, and make a REST call.
 
 ```js
@@ -123,6 +126,9 @@ function performOperation() {
   );
 }
 ```
+
+> [!TIP]
+> As a delegate, you can use REST to [get the content of an Outlook message attached to an Outlook item or group post](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
 
 ## See also
 
