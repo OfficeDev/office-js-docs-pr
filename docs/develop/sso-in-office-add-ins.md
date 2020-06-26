@@ -236,7 +236,7 @@ The method calls the Azure Active Directory V 2.0 endpoint to get an access toke
 > [!NOTE]
 > In Outlook, this API is not supported if the add-in is loaded in an Outlook.com or Gmail mailbox.
 
-|Hosts|Excel, OneNote, Outlook, PowerPoint, Word|
+|Hosts|Excel, Outlook, PowerPoint, Word|
 |---|---|
 |[Requirement sets](specify-office-hosts-and-api-requirements.md)|[IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)|
 
