@@ -1,7 +1,7 @@
 ---
 title: Enable delegate access scenarios in an Outlook add-in
 description: 'Briefly describes delegate access and discusses how to configure add-in support.'
-ms.date: 06/26/2020
+ms.date: 06/29/2020
 localization_priority: Normal
 ---
 
@@ -45,7 +45,7 @@ However, if REST or EWS operations were used to set an extended property on an i
 
 To enable delegate access scenarios in your add-in, you must set the [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors are not supported.
 
-To support REST calls from a delegate, set the [permissions](../reference/manifest/permissions.md) node in the manifest to `ReadWriteMailbox`.
+To support REST calls from a delegate, set the [Permissions](../reference/manifest/permissions.md) node in the manifest to `ReadWriteMailbox`.
 
 The following example shows the `SupportsSharedFolders` element set to `true` in a section of the manifest.
 
