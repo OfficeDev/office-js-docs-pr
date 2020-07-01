@@ -1,7 +1,7 @@
 ---
 title: Enable delegate access scenarios in an Outlook add-in
 description: 'Briefly describes delegate access and discusses how to configure add-in support.'
-ms.date: 06/29/2020
+ms.date: 06/30/2020
 localization_priority: Normal
 ---
 
@@ -36,7 +36,7 @@ The [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepe
 
 A delegate's updates to the owner's mailbox are usually synced across mailboxes immediately.
 
-However, if REST or EWS operations were used to set an extended property on an item, such changes could take a few hours to sync. We recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs to avoid such a delay. To learn more, see the [custom properties section](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) of the "Get and set metadata in an Outlook add-in" article.
+However, if REST or Exchange Web Services (EWS) operations were used to set an extended property on an item, such changes could take a few hours to sync. We recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs to avoid such a delay. To learn more, see the [custom properties section](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) of the "Get and set metadata in an Outlook add-in" article.
 
 > [!IMPORTANT]
 > In a delegate scenario, you can't use EWS with the tokens currently provided by office.js API.
