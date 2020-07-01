@@ -145,9 +145,8 @@ If you call the `load()` method on an object (or collection) without specifying 
 
 > [!IMPORTANT]
 > The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations:
-> |Class|Property|
-> |---|---|
-> |[Excel.Range](/javascript/api/excel/excel.range)|`numberFormatCategories`|
+>
+> * `Excel.Range.numberFormatCategories`
 
 ## Scalar and navigation properties
 
