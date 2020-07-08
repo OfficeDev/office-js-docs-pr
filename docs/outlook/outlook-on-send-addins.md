@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 05/27/2020
+ms.date: 07/06/2020
 localization_priority: Normal
 ---
 
@@ -387,6 +387,9 @@ The on-send add-ins will run during send if the Exchange server is online and re
 ## Code examples
 
 The following code examples show you how to create a simple on-send add-in. To download the code sample that these examples are based on, see [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send).
+
+> [!TIP]
+> If you use a dialog with the on-send event, make sure to close the dialog before completing the event.
 
 ### Manifest, version override, and event
 
