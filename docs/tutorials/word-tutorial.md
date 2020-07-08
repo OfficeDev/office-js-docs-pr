@@ -146,7 +146,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
         npm run start:web
         ```
 
-        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office for the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office for the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-for-the-web).
 
 2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 

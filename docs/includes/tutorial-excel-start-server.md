@@ -12,4 +12,4 @@ If the local web server is already running and your add-in is already loaded in 
     npm run start:web
     ```
 
-    To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office for the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+    To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office for the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-for-the-web).
