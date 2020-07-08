@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  'Set up your developer environment to build Office Add-ins' 
-ms.date: 04/03/2020
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ This guide helps you set up tools so you can create Office Add-ins by following 
 
 - Node.js
 - npm
-- An Office 365 (the subscription version of Office) account
+- a Microsoft 365 (the subscription version of Office) account
 - A code editor of your choice
 
 This guide assumes that you know how to use a command line tool. 
@@ -42,7 +42,7 @@ You may wish to use a Node version manager to allow you to switch between multip
 
 ## Get Office 365
 
-If you don't already have an Office 365 account, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+If you don't already have a Microsoft 365 account, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 Developer Program](https://developer.microsoft.com/office/dev-program).
 
 ## Install a code editor
 

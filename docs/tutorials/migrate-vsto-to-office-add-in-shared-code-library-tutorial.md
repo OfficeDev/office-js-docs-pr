@@ -1,5 +1,5 @@
 ---
-ms.date: 01/21/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 description: 'Tutorial on how to share code between a VSTO Add-in and an Office add-in.'
 title: 'Tutorial: Share code between both a VSTO Add-in and an Office add-in by using a shared code library'
@@ -8,11 +8,11 @@ localization_priority: Priority
 
 # Tutorial: Share code between both a VSTO Add-in and an Office add-in with a shared code library
 
-Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO Add-ins on Mac, online, or mobile platforms.
+Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office for Windows. You can't run VSTO Add-ins on Mac, online, or mobile platforms.
 
 Office Add-ins use HTML, JavaScript, and additional web technologies to build Office solutions on all platforms. Migrating your existing VSTO Add-in to an Office add-in is a great way to make your solution available across all platforms.
 
-You may want to maintain both your VSTO Add-in and a new Office add-in that both have the same functionality. This enables you to continue servicing your customers that use the VSTO Add-in on Office on Windows. This also enables you to provide the same functionality in an Office add-in for customers across all platforms. You can also [Make your Office add-in compatible with the existing VSTO Add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+You may want to maintain both your VSTO Add-in and a new Office add-in that both have the same functionality. This enables you to continue servicing your customers that use the VSTO Add-in on Office for Windows. This also enables you to provide the same functionality in an Office add-in for customers across all platforms. You can also [Make your Office add-in compatible with the existing VSTO Add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 However it is best to avoid rewriting all the code from your VSTO Add-in for the Office add-in. This tutorial shows how to avoid rewriting code by using a shared code library for both add-ins.
 
@@ -45,7 +45,7 @@ To set up your development environment:
 
 You also need the following:
 
-- An Office 365 account. You can join the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365.
+- A Microsoft 365 account. You can join the [Microsoft 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365.
 - A Microsoft Azure Tenant. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## The Cell analyzer VSTO Add-in
@@ -447,4 +447,4 @@ Excel will run and sideload the Office add-in. To test that the App Service is w
 
 ## Conclusion
 
-In this tutorial you learned how to create an Office add-in that uses shared code with the original VSTO add-in. You learned how to maintain both VSTO code for Office on Windows, and an Office add-in for Office on other platforms. You refactored VSTO C# code into a shared library and deployed it to an Azure App Service. You created an Office add-in that uses the shared library so that you don't have to rewrite the code in JavaScript.
+In this tutorial you learned how to create an Office add-in that uses shared code with the original VSTO add-in. You learned how to maintain both VSTO code for Office for Windows, and an Office add-in for Office on other platforms. You refactored VSTO C# code into a shared library and deployed it to an Azure App Service. You created an Office add-in that uses the shared library so that you don't have to rewrite the code in JavaScript.

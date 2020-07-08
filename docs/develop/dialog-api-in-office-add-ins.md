@@ -63,15 +63,15 @@ Set both values to 100% to get what is effectively a full screen experience. (Th
 > [!NOTE]
 > You can open only one dialog box from a host window. An attempt to open another dialog box generates an error. For example, if a user opens a dialog box from a task pane, she cannot open a second dialog box, from a different page in the task pane. However, when a dialog box is opened from an [add-in command](../design/add-in-commands.md), the command opens a new (but unseen) HTML file each time it is selected. This creates a new (unseen) host window, so each such window can launch its own dialog box. For more information, see [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).
 
-### Take advantage of a performance option in Office on the web
+### Take advantage of a performance option in Office for the web
 
-The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office on the web, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example:
+The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office for the web, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-The default value is `false`, which is the same as omitting the property entirely. If the add-in is not running in Office on the web, the `displayInIframe` is ignored.
+The default value is `false`, which is the same as omitting the property entirely. If the add-in is not running in Office for the web, the `displayInIframe` is ignored.
 
 > [!NOTE]
 > You should **not** use `displayInIframe: true` if the dialog box will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
@@ -213,7 +213,7 @@ Sometimes the host page needs to pass information to the dialog box. You can do 
 - Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage, but *if they have the same domain* (including port number, if any), they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*
 
 > [!NOTE]
-> \* There is a bug that will effect your strategy for token handling. If the add-in is running in **Office on the web** in either the Safari or Edge browser, the dialog box and task pane do not share the same Local Storage, so it cannot be used to communicate between them.
+> \* There is a bug that will effect your strategy for token handling. If the add-in is running in **Office for the web** in either the Safari or Edge browser, the dialog box and task pane do not share the same Local Storage, so it cannot be used to communicate between them.
 
 ### Use local storage
 

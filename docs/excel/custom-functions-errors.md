@@ -8,7 +8,7 @@ localization_priority: Normal
 # Handle and return errors from your custom function (preview)
 
 > [!NOTE]
-> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to join the [Office Insider](https://insider.office.com/join) program to try the preview features.  A good way to try out preview features is by using an Office 365 subscription. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> The features described in this article are currently in preview and subject to change. They are not currently supported for use in production environments. You will need to join the [Office Insider](https://insider.office.com/join) program to try the preview features.  A good way to try out preview features is by using a Microsoft 365 subscription. If you don't already have a Microsoft 365 subscription, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 If something goes wrong while your custom function runs, return an error to inform the user. If you have specific parameter requirements, such as only positive numbers, test the parameters and throw an error if they aren't correct. You can also use a `try`-`catch` block to catch any errors that occur while your custom function runs.
 

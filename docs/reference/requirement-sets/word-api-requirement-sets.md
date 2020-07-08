@@ -12,14 +12,14 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 ## Requirement set availability
 
-Word add-ins run across multiple versions of Office, including Office 2016 or later on Windows, and Office on the web, iPad, and Mac. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications.
+Word add-ins run across multiple versions of Office, including Office 2016 or later on Windows, and Office for the web, iPad, and Mac. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications.
 
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > For information about using preview APIs, see the [Excel JavaScript preview APIs](word-preview-apis.md) article.
 
-|  Requirement set  |   Office on Windows\*<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  |
+|  Requirement set  |   Office for Windows\*<br>(connected to Microsoft 365 subscription)  |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(connected to Microsoft 365 subscription)  | Office for the web  |
 |:-----|-----|:-----|:-----|:-----|
 | [Preview](word-preview-apis.md) | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://insider.office.com)) |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | Version 1612 (Build 7668.1000) or later| March 2017, 2.22 or later | March 2017, 15.32 or later| March 2017 |

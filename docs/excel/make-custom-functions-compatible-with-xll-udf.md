@@ -10,12 +10,12 @@ localization_priority: Normal
 If you have existing Excel XLLs, you can build equivalent custom functions in an Excel add-in to extend your solution features to other platforms such as online or on a Mac. However, Excel add-ins don't have all of the functionality available in XLLs. Depending on the functionality your solution uses, the XLL may provide a better experience than the Excel add-in custom functions in Excel on Windows.
 
 > [!NOTE]
-> COM add-in and XLL UDF compatibility is supported by the following platforms, when connected to an Office 365 subscription:
+> COM add-in and XLL UDF compatibility is supported by the following platforms, when connected to a Microsoft 365 subscription:
 > - Excel on the web
 > - Excel on Windows (version 1904 or later)
 > - Excel on Mac (version 13.329 or later)
 > 
-> To use COM add-in and XLL UDF compatibility within Excel on the web, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account). If you don't already have an Office 365 subscription, you can a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+> To use COM add-in and XLL UDF compatibility within Excel on the web, login by using either your Microsoft 365 subscription or a [Microsoft account](https://account.microsoft.com/account). If you don't already have a Microsoft 365 subscription, you can a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 ## Specify equivalent XLL in the manifest
 
