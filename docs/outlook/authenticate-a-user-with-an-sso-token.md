@@ -19,9 +19,9 @@ For an overview of SSO in Office Add-ins, see [Enable single sign-on for Office 
 > [!NOTE]
 > To use SSO, you must load the beta version of the Office JavaScript Library from https://appsforoffice.microsoft.com/lib/beta/hosted/office.js in the startup HTML page of the add-in. However, you should **not** use beta APIs in production add-ins.
 
-## Enable modern authentication in your Office 365 tenancy
+## Enable modern authentication in your Microsoft 365 tenancy
 
-To use SSO with an Outlook add-in, you must enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+To use SSO with an Outlook add-in, you must enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## Register your add-in
 

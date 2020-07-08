@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: 'Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.'
-ms.date: 04/13/2020
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
@@ -12,7 +12,7 @@ This article provides some guidance about how to troubleshoot problems with sing
 > [!NOTE]
 > The Single Sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md).
 > [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## Debugging tools
 
@@ -31,7 +31,7 @@ For examples of the error handling described in this section, see:
 
 The [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API is not supported by the add-in or the Office version.
 
-- The version of Office does not support SSO. The required version is Office 365 (the subscription version of Office), in any monthly channel.
+- The version of Office does not support SSO. The required version is Microsoft 365 subscription, in any monthly channel.
 - The add-in manifest is missing the proper [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) section.
 
 Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
@@ -44,7 +44,7 @@ But there may be exceptions. For example, you want the add-in to open with featu
 
 Another option is to respond to 13001 by falling back to an alternate system of user authentication. This will sign the user into AAD, but not sign the user into Office.
 
-This error is never seen in **Office on the web**. If the user's cookie expires, **Office on the web** returns error 13006.
+This error is never seen in **Office for the web**. If the user's cookie expires, **Office for the web** returns error 13006.
 
 ### 13002
 
@@ -55,7 +55,7 @@ The user aborted sign in or consent; for example, by choosing **Cancel** on the 
 
 ### 13003
 
-User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. This may happen if Office runs with an on-premises domain account, for example. Your code should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
+User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Microsoft 365 Education or Work account. This may happen if Office runs with an on-premises domain account, for example. Your code should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### 13004
 
@@ -69,7 +69,7 @@ Another possible cause, during development, is that your add-in using Internet E
 
 ### 13006
 
-Client Error. This error is only seen in **Office on the web**. Your code should suggest that the user sign out and then restart the Office browser session.
+Client Error. This error is only seen in **Office for the web**. Your code should suggest that the user sign out and then restart the Office browser session.
 
 ### 13007
 
@@ -77,18 +77,18 @@ The Office host was unable to get an access token to the add-in's web service.
 
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 - In production, there are several things that can cause this error. Some of them are:
-    - The user has an Microsoft Account (MSA) identity.
-    - Some situations that would cause one of the other 13xxx errors with a Work or School account, will cause a 13007 when a MSA is used.
+    - The user has a Microsoft Account (MSA) identity.
+    - Some situations that would cause one of the other 13xxx errors with a Microsoft 365 Education or Work account will cause a 13007 when a MSA is used.
 
   For all of these cases, your code should fall back to an alternate system of user authentication.
 
 ### 13008
 
-The user triggered an operation that calls `getAccessToken` before a previous call of `getAccessToken` completed. This error is only seen on **Office on the web**. Your code should ask the user to repeat the operation after the previous operation has completed.
+The user triggered an operation that calls `getAccessToken` before a previous call of `getAccessToken` completed. This error is only seen on **Office for the web**. Your code should ask the user to repeat the operation after the previous operation has completed.
 
 ### 13010
 
-The user is running the add-in in Office on Microsoft Edge or Internet Explorer. The user's Office 365 domain, and the `login.microsoftonline.com` domain, are in a different security zones in the browser settings. This error is only seen on **Office on the web**. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
+The user is running the add-in in Office on Microsoft Edge or Internet Explorer. The user's Microsoft 365 domain, and the `login.microsoftonline.com` domain, are in a different security zones in the browser settings. This error is only seen on **Office for the web**. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
 
 ### 13012
 
@@ -119,7 +119,7 @@ For samples of the error-handling described in this section, see:
 
 ### Conditional access / Multifactor authentication errors
 
-In certain configurations of identity in AAD and Office 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Office 365 tenancy does not. When AAD receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed.
+In certain configurations of identity in AAD and Microsoft 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Microsoft 365 tenancy does not. When AAD receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed.
 
 Your code should test for this `claims` property. Depending on your add-in's architecture, you may test for it on the client-side, or you may test for it on the server-side and relay it to the client. You need this information in the client because Office handles authentication for SSO add-ins. If you relay it from the server-side, the message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response. 
 

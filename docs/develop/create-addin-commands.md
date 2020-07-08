@@ -115,7 +115,7 @@ The following example shows how to use the **VersionOverrides** element and its 
 
 The **Hosts** element contains one or more **Host** elements. A **Host** element specifies a particular Office host. The **Host** element contains child elements that specify the add-in commands to display after your add-in is installed in that Office host. To show the same add-in commands in two or more different Office hosts, you must duplicate the child elements in each **Host**.
 
-The **DesktopFormFactor** element specifies the settings for an add-in that runs in Office on the web (in a browser) and Windows.
+The **DesktopFormFactor** element specifies the settings for an add-in that runs in Office for the web (in a browser) and Windows.
 
 The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** elements.
 
@@ -244,7 +244,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 |**Element**|**Description**|
 |:-----|:-----|
 |**CustomTab** <br/> |Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required. <br/> |
-|**OfficeTab** <br/> |Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. <br/> For more tab values to use with the **id** attribute, see [Tab values for default Office ribbon tabs](../reference/manifest/officetab.md).  <br/> |
+|**OfficeTab** <br/> |Required if you want to extend a default Office app ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. <br/> For more tab values to use with the **id** attribute, see [Tab values for default Office app ribbon tabs](../reference/manifest/officetab.md).  <br/> |
 |**OfficeMenu** <br/> | Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: <br/> **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> **ContextMenuCell** for Excel. Displays the item on the context menu when the user right-clicks on a cell on the spreadsheet. <br/> |
 |**Group** <br/> |A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters. <br/> |
 |**Label** <br/> |Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> |
@@ -424,7 +424,7 @@ The following shows an example of how to use the **Resources** element. Each res
 > [!NOTE]
 > You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.
 
-### Tab values for default Office ribbon tabs
+### Tab values for default Office app ribbon tabs
 
 In Excel and Word, you can add your add-in commands to the ribbon by using the default Office UI tabs. The following table lists the values that you can use for the **id** attribute of the **OfficeTab** element. The tab values are case sensitive.
 

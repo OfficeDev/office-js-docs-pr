@@ -60,7 +60,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
+    <td>Office on Windows<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - TaskPane<br>
       - Content<br>
@@ -183,7 +183,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on iPad<br>(connected to Office 365 subscription)</td>
+    <td>Office on iPad<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - TaskPane<br>
       - Content
@@ -218,7 +218,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on Mac<br>(connected to Office 365 subscription)</td>
+    <td>Office on Mac<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - TaskPane<br>
       - Content<br>
@@ -339,13 +339,13 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td></td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
+    <td>Office on Windows<br>(connected to Microsoft 365 subscription)</td>
     <td>- Custom Functions</td>
     <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td></td>
   </tr>
   <tr>
-    <td>Office on Mac<br>(connected to Office 365)</td>
+    <td>Office on Mac<br>(connected to Microsoft 365 subscription)</td>
     <td>- Custom Functions</td>
     <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td></td>
@@ -402,7 +402,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
+    <td>Office on Windows<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message Read</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Message Compose</a><br>
@@ -479,7 +479,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office on iOS<br>(connected to Office 365 subscription)</td>
+    <td>Office on iOS<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Message Read</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
@@ -494,7 +494,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office on Mac<br>(connected to Office 365 subscription)</td>
+    <td>Office on Mac<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message Read</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Message Compose</a><br>
@@ -553,7 +553,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Not available</td>
   </tr>
   <tr>
-    <td>Office on Android<br>(connected to Office 365 subscription)</td>
+    <td>Office on Android<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Message Read</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface-preview">Appointment Organizer (Compose): online meeting</a> (preview)<br>
@@ -620,7 +620,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
+    <td>Office on Windows<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - TaskPane<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
@@ -742,7 +742,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on iPad<br>(connected to Office 365 subscription)</td>
+    <td>Office on iPad<br>(connected to Microsoft 365 subscription)</td>
     <td>- TaskPane</td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-1-1-requirement-set">WordApi 1.1</a><br>
@@ -772,7 +772,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on Mac<br>(connected to Office 365 subscription)</td>
+    <td>Office on Mac<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - TaskPane<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
@@ -906,7 +906,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on Windows<br>(connected to Office 365 subscription)</td>
+    <td>Office on Windows<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - Content<br>
       - TaskPane<br>
@@ -994,7 +994,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on iPad<br>(connected to Office 365 subscription)</td>
+    <td>Office on iPad<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - Content<br>
       - TaskPane
@@ -1016,7 +1016,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office on Mac<br>(connected to Office 365 subscription)</td>
+    <td>Office on Mac<br>(connected to Microsoft 365 subscription)</td>
     <td>
       - Content<br>
       - TaskPane<br>
@@ -1167,7 +1167,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 - [Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Add-in Commands requirement sets](../reference/requirement-sets/add-in-commands-requirement-sets.md)
 - [API Reference documentation](../reference/javascript-api-for-office.md)
-- [Update history for Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
+- [Update history for Microsoft 365 Apps for enterprise](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016 and 2019 update history (Click-To-Run)](/officeupdates/update-history-office-2019)
 - [Office 2013 update history (Click-To-Run)](/officeupdates/update-history-office-2013)
 - [Office 2010, 2013, and 2016 update history (MSI)](/officeupdates/office-updates-msi)

@@ -1,13 +1,13 @@
 ---
 title: Authenticate and authorize with the Office dialog API
 description: 'Learn how to use the Office dialog API to enable users to sign-on to Google, Facebook, Microsoft 365, and other services protected by Microsoft Identity Platform.'
-ms.date: 01/25/2020
+ms.date: 07/07/2020
 localization_priority: Priority
 ---
 
 # Authenticate and authorize with the Office dialog API
 
-Many identity authorities, also called Secure Token Services (STS), prevent their login page from opening in an iframe. These include Google, Facebook, and services protected by Microsoft Identity Platform (formerly Azure AD V 2.0) such as Microsoft Account and Office 365 (Work or School accounts). This creates a problem for Office Add-ins because when the add-in is running in **Office on the web**, the task pane is an iframe. Users of an add-in can only login to one of these services if the add-in can open an entirely separate browser instance. This is why Office provides its [Office dialog API](dialog-api-in-office-add-ins.md), specifically the [displayDialogAsync](/javascript/api/office/office.ui) method.
+Many identity authorities, also called Secure Token Services (STS), prevent their login page from opening in an iframe. These include Google, Facebook, and services protected by Microsoft Identity Platform (formerly Azure AD V 2.0) such as a Microsoft Account, a Microsoft 365 Education or Work account, or other common account. This creates a problem for Office Add-ins because when the add-in is running in **Office for the web**, the task pane is an iframe. Users of an add-in can only login to one of these services if the add-in can open an entirely separate browser instance. This is why Office provides its [Office dialog API](dialog-api-in-office-add-ins.md), specifically the [displayDialogAsync](/javascript/api/office/office.ui) method.
 
 > [!NOTE]
 > This article assumes that you are familiar with [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
@@ -45,7 +45,7 @@ If your add-in gives the user a choice of providers, such as Microsoft Account, 
 
 #### Authorization of the add-in to an external resource
 
-In the modern web, users and web applications are security principals. The application has its own identity and permissions to an online resource such as Office 365, Google Plus, Facebook, or LinkedIn. The application is registered with the resource provider before it is deployed. The registration includes:
+In the modern web, users and web applications are security principals. The application has its own identity and permissions to an online resource such as Microsoft 365, Google Plus, Facebook, or LinkedIn. The application is registered with the resource provider before it is deployed. The registration includes:
 
 - A list of the permissions that the application needs.
 - A URL to which the resource service should return an access token when the application accesses the service.  
@@ -72,7 +72,7 @@ Closely related to this is the fact that a library will typically provide both i
 As an alternative, your add-in's dialog box browser instance can directly call the library's interactive method. When that method returns a token, your code must explicitly store the token someplace where the task pane's browser instance can retrieve it, such as Local Storage\* or a server-side database. Another option is to pass the token to the task pane with the `messageParent` method. This alternative is only possible if the interactive method stores the access token in a place where your code can read it. Sometimes a library's interactive method is designed to store the token in a private property of an object that is inaccessible to your code.
 
 > [!NOTE]
-> \* There is a bug that will effect your strategy for token handling. If the add-in is running in **Office on the web** in either the Safari or Edge browser, the dialog box and task pane do not share the same Local Storage, so it cannot be used to communicate between them.
+> \* There is a bug that will effect your strategy for token handling. If the add-in is running in **Office for the web** in either the Safari or Edge browser, the dialog box and task pane do not share the same Local Storage, so it cannot be used to communicate between them.
 
 ### You usually cannot use the library's "auth context" object
 

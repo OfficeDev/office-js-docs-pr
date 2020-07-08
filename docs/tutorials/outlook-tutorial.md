@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: 'In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.'
-ms.date: 12/10/2019
+ms.date: 07/07/2020
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 localization_priority: Priority
@@ -33,7 +33,7 @@ In this tutorial, you will:
     > [!NOTE]
     > Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.
 
-- Outlook 2016 or later on Windows (connected to an Office 365 account) or Outlook on the web
+- Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web
 
 - A [GitHub](https://www.github.com) account
 

@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in requirements
 description: 'For Outlook add-ins to load and function properly, there are a number of requirements for both the servers and the clients.'
-ms.date: 10/09/2019
+ms.date: 07/07/2020
 localization_priority: Priority
 ---
 
@@ -21,11 +21,11 @@ For Outlook add-ins to load and function properly, there are a number of require
    - Outlook on the web for Exchange 2013
    - Outlook.com
 
-- The client must be connected to an Exchange server or Office 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office 365**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
+- The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office 365**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
 
 ## Mail server requirements
 
-If the user is connected to Office 365 or Outlook.com, mail server requirements are all taken care of already. However, for users connected to on-premises installations of Exchange Server, the following requirements apply.
+If the user is connected to Microsoft 365 or Outlook.com, mail server requirements are all taken care of already. However, for users connected to on-premises installations of Exchange Server, the following requirements apply.
 
 - The server must be Exchange 2013 or later.
 - Exchange Web Services (EWS) must be enabled and must be exposed to the Internet. Many add-ins require EWS to function properly.

@@ -10,11 +10,11 @@ localization_priority: Normal
 This article describes how to use Visual Studio 2019 to debug an Office Add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly. 
 
 > [!NOTE]
-> You can't use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
+> You can't use Visual Studio to debug add-ins in Office for the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office for the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
 
 ## Enable debugging for add-in commands and UI-less code
 
-When Visual Studio debugs Office on Windows, the add-in is hosted in either a Microsoft Internet Explorer or Microsoft Edge browser instance. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+When Visual Studio debugs Office for Windows, the add-in is hosted in either a Microsoft Internet Explorer or Microsoft Edge browser instance. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 > [!NOTE]
 > The JS_Debug environment variable is no longer needed in the following procedure. For more information, see [Debugging behaviors in Office web add-ins](https://developercommunity.visualstudio.com/content/problem/740413/office-development-inconsistent-script-debugging-b.html) on the Microsoft Developer Community support forum.
 
@@ -91,7 +91,7 @@ If you have a document that contains test data you want to use while debugging y
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar. Visual Studio will automatically build the solution and start Office to host your add-in.
 
 > [!NOTE]
-> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Office 365 tenant. In this case, try using a Microsoft account instead. You may also need to set the property "Use multi-factor auth" to True in the Outlook Web Add-in project properties dialog.
+> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You may also need to set the property "Use multi-factor auth" to True in the Outlook Web Add-in project properties dialog.
 
 When Visual Studio builds the project it performs the following tasks:
 

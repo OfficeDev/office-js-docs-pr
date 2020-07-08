@@ -55,5 +55,5 @@ There are various ways to specify which Office hosts and requirement sets are re
 
 - [Specify Office hosts and API requirements](../develop/specify-office-hosts-and-api-requirements.md)
 - [Install the latest version of Office](../develop/install-latest-office-version.md)
-- [Overview of update channels for Office 365 ProPlus](/deployoffice/overview-of-update-channels-for-office-365-proplus)
+- [Overview of update channels for Microsoft 365 Apps for enterprise](/deployoffice/overview-of-update-channels-for-office-365-proplus)
 - [Get the most from Office with Office 365](https://products.office.com/compare-all-microsoft-office-products?tab=2)

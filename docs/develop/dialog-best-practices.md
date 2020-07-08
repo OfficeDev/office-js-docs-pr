@@ -34,15 +34,15 @@ Because overlapping UI elements are discouraged, avoid opening a dialog box from
 
 For best practices in dialog box design, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md).
 
-### Handling pop-up blockers with Office on the web
+### Handling pop-up blockers with Office for the web
 
-Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. Office on the web has a feature that enables your add-in's dialog boxes to be an exception to the browser's pop-up blocker. When your code calls the `displayDialogAsync` method, then Office on the web will open a prompt similar to the following.
+Attempting to display a dialog box while using Office for the web may cause the browser's pop-up blocker to block the dialog box. Office for the web has a feature that enables your add-in's dialog boxes to be an exception to the browser's pop-up blocker. When your code calls the `displayDialogAsync` method, then Office for the web will open a prompt similar to the following.
 
 ![The prompt that an add-in can generate to avoid in-browser pop-up blockers.](../images/dialog-prompt-before-open.png)
 
 If the user chooses **Allow**, the Office dialog box opens. If the user chooses **Ignore**, the prompt closes and the Office dialog box does not open. Instead, the `displayDialogAsync` method returns error 12009. Your code should catch this error and either provide an alternate experience that does not require a dialog, or display a message to the user advising that the add-in requires them to allow the dialog. (For more about 12009, see [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 
-If, for any reason, you want to turn off this feature, then your code must opt out. It makes this request with the [DialogOptions](/javascript/api/office/office.dialogoptions) object that is passed to the `displayDialogAsync` method. Specifically, the object should include `promptBeforeOpen: false`. When this option is set to false, Office on the web will not prompt the user to allow the add-in open a dialog, and the Office dialog will not open.
+If, for any reason, you want to turn off this feature, then your code must opt out. It makes this request with the [DialogOptions](/javascript/api/office/office.dialogoptions) object that is passed to the `displayDialogAsync` method. Specifically, the object should include `promptBeforeOpen: false`. When this option is set to false, Office for the web will not prompt the user to allow the add-in open a dialog, and the Office dialog will not open.
 
 ### Do not use the \_host\_info value
 
