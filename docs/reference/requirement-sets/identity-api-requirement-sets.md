@@ -12,7 +12,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Office Add-ins run across multiple versions of Office. The following table lists the Identity API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office for Windows<br>(connected to Microsoft 365 subscription) |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(connected to Microsoft 365 subscription)  | Office for the web  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
+|  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Microsoft 365 subscription) |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(connected to Microsoft 365 subscription)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI Preview  | N/A | Preview<b>*</b> | Coming soon | Preview<b>*</b> | Preview<b>*&#8224;</b> | Preview<b>*&#8224;</b>| Coming soon | Coming soon |
 

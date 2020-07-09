@@ -1167,7 +1167,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 - [Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Add-in Commands requirement sets](../reference/requirement-sets/add-in-commands-requirement-sets.md)
 - [API Reference documentation](../reference/javascript-api-for-office.md)
-- [Update history for Microsoft 365 Apps for enterprise](/officeupdates/update-history-office365-proplus-by-date)
+- [Update history for Microsoft 365 Apps](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016 and 2019 update history (Click-To-Run)](/officeupdates/update-history-office-2019)
 - [Office 2013 update history (Click-To-Run)](/officeupdates/update-history-office-2013)
 - [Office 2010, 2013, and 2016 update history (MSI)](/officeupdates/office-updates-msi)

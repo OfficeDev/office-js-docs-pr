@@ -12,14 +12,14 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 ## Requirement set availability
 
-Excel add-ins run across multiple versions of Office, including Office 2016 or later on Windows, and Office for the web, Mac, and iPad. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
+Excel add-ins run across multiple versions of Office, including Office 2016 or later on Windows, and Office on the web, Mac, and iPad. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets or `ExcelApiOnline`, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > For information about using preview APIs, see the [Excel JavaScript preview APIs](excel-preview-apis.md) article.
 
-|  Requirement set  |  Office for Windows<br>(connected to Microsoft 365 subscription)  |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(connected to Microsoft 365 subscription)  | Office for the web |
+|  Requirement set  |  Office on Windows<br>(connected to Microsoft 365 subscription)  |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(connected to Microsoft 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Preview](excel-preview-apis.md)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://insider.office.com)) |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | N/A | N/A | N/A | Latest (see [requirement set page](./excel-api-online-requirement-set.md)) |

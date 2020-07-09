@@ -21,11 +21,11 @@ You can test an Office Add-in in an Office client that is on Windows by publishi
 
 This article applies only to testing Word, Excel, PowerPoint, and Project add-ins and only on Windows. If you want to test on another platform or want to test an Outlook add-in, see one of the following topics to sideload your add-in:
 
-- [Sideload Office Add-ins in Office for the web for testing](sideload-office-add-ins-for-testing.md)
+- [Sideload Office Add-ins in Office on the web for testing](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
 
-The following video walks you through the process of sideloading your add-in in Office for the web or desktop using a shared folder catalog.  
+The following video walks you through the process of sideloading your add-in in Office on the web or desktop using a shared folder catalog.  
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 

@@ -11,7 +11,7 @@ This guide helps you set up tools so you can create Office Add-ins by following 
 
 - Node.js
 - npm
-- a Microsoft 365 (the subscription version of Office) account
+- A Microsoft 365 account which includes the subscription version of Office
 - A code editor of your choice
 
 This guide assumes that you know how to use a command line tool. 

@@ -44,7 +44,7 @@ But there may be exceptions. For example, you want the add-in to open with featu
 
 Another option is to respond to 13001 by falling back to an alternate system of user authentication. This will sign the user into AAD, but not sign the user into Office.
 
-This error is never seen in **Office for the web**. If the user's cookie expires, **Office for the web** returns error 13006.
+This error is never seen in **Office on the web**. If the user's cookie expires, **Office on the web** returns error 13006.
 
 ### 13002
 
@@ -55,7 +55,7 @@ The user aborted sign in or consent; for example, by choosing **Cancel** on the 
 
 ### 13003
 
-User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Microsoft 365 Education or Work account. This may happen if Office runs with an on-premises domain account, for example. Your code should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
+User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Microsoft 365 Education or work account. This may happen if Office runs with an on-premises domain account, for example. Your code should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### 13004
 
@@ -69,7 +69,7 @@ Another possible cause, during development, is that your add-in using Internet E
 
 ### 13006
 
-Client Error. This error is only seen in **Office for the web**. Your code should suggest that the user sign out and then restart the Office browser session.
+Client Error. This error is only seen in **Office on the web**. Your code should suggest that the user sign out and then restart the Office browser session.
 
 ### 13007
 
@@ -78,17 +78,17 @@ The Office host was unable to get an access token to the add-in's web service.
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 - In production, there are several things that can cause this error. Some of them are:
     - The user has a Microsoft Account (MSA) identity.
-    - Some situations that would cause one of the other 13xxx errors with a Microsoft 365 Education or Work account will cause a 13007 when a MSA is used.
+    - Some situations that would cause one of the other 13xxx errors with a Microsoft 365 Education or work account will cause a 13007 when a MSA is used.
 
   For all of these cases, your code should fall back to an alternate system of user authentication.
 
 ### 13008
 
-The user triggered an operation that calls `getAccessToken` before a previous call of `getAccessToken` completed. This error is only seen on **Office for the web**. Your code should ask the user to repeat the operation after the previous operation has completed.
+The user triggered an operation that calls `getAccessToken` before a previous call of `getAccessToken` completed. This error is only seen on **Office on the web**. Your code should ask the user to repeat the operation after the previous operation has completed.
 
 ### 13010
 
-The user is running the add-in in Office on Microsoft Edge or Internet Explorer. The user's Microsoft 365 domain, and the `login.microsoftonline.com` domain, are in a different security zones in the browser settings. This error is only seen on **Office for the web**. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
+The user is running the add-in in Office on Microsoft Edge or Internet Explorer. The user's Microsoft 365 domain, and the `login.microsoftonline.com` domain, are in a different security zones in the browser settings. This error is only seen on **Office on the web**. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
 
 ### 13012
 

@@ -115,7 +115,7 @@ The following example shows how to use the **VersionOverrides** element and its 
 
 The **Hosts** element contains one or more **Host** elements. A **Host** element specifies a particular Office host. The **Host** element contains child elements that specify the add-in commands to display after your add-in is installed in that Office host. To show the same add-in commands in two or more different Office hosts, you must duplicate the child elements in each **Host**.
 
-The **DesktopFormFactor** element specifies the settings for an add-in that runs in Office for the web (in a browser) and Windows.
+The **DesktopFormFactor** element specifies the settings for an add-in that runs in Office on the web (in a browser) and Windows.
 
 The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** elements.
 

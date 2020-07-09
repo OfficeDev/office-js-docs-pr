@@ -7,7 +7,7 @@ localization_priority: Priority
 
 # Overview of authentication and authorization in Office Add-ins
 
-Web applications and, hence, Office Add-ins allow anonymous access by default, but you can require users to authenticate with a login. For example, you can require that your users be logged in with a Microsoft Account, a Microsoft 365 Education or Work account, or other common account. This task is called user authentication because it enables the add-in to know who the user is.
+Web applications and, hence, Office Add-ins allow anonymous access by default, but you can require users to authenticate with a login. For example, you can require that your users be logged in with a Microsoft Account, a Microsoft 365 Education or work account, or other common account. This task is called user authentication because it enables the add-in to know who the user is.
 
 Your add-in can also get the user's consent to access their Microsoft Graph data (such as their Microsoft 365 profile, OneDrive files, and SharePoint data) or to data in other external sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub. This task is called add-in (or app) authorization, because it is the *add-in* that is being authorized, not the user.
 
@@ -22,7 +22,7 @@ The following flowchart shows you the decisions that you need to make as an add-
 
 ## User authentication without SSO
 
-You can authenticate a user in an Office Add-in with Azure Active Directory (AAD) as you would in other web applications with one exception: AAD does not allow its login page to open in an iframe. When an Office Add-in is running on *Office for the web*, the task pane is an iframe. This means that you'll need to open the AAD login screen in a dialog box opened with the Office dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
+You can authenticate a user in an Office Add-in with Azure Active Directory (AAD) as you would in other web applications with one exception: AAD does not allow its login page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. This means that you'll need to open the AAD login screen in a dialog box opened with the Office dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
 
 For information about programming authentication with AAD, begin with [Microsoft identity platform (v2.0) overview](/azure/active-directory/develop/v2-overview) where you'll find many tutorials and guides, as well as links to relevant samples and libraries. As explained in [Authentication with the Office dialog API](auth-with-office-dialog-api.md), you may need to adjust the code in the samples to run in the Office dialog box.
 
@@ -69,4 +69,4 @@ Note also these samples:
 Popular online services, including Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in. For an overview of the ways that your add-in can do this, see [Authorize external services in your Office Add-in](auth-external-add-ins.md).
 
 > [!IMPORTANT]
-> Before you begin coding, find out if the data source allows its login in screen to open in an iframe. When an Office Add-in is running on *Office for the web*, the task pane is an iframe. If the data source does not allow its login screen to open in an iframe, then you'll need to open the login screen in a dialog box opened with the Office dialog API. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
+> Before you begin coding, find out if the data source allows its login in screen to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. If the data source does not allow its login screen to open in an iframe, then you'll need to open the login screen in a dialog box opened with the Office dialog API. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).

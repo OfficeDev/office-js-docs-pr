@@ -74,7 +74,7 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 |**Affected browsers**|**Affected platforms**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office for the web|
+|Internet Explorer, Microsoft Edge|Office on the web|
 
 To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
 
@@ -135,7 +135,7 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## See also
 
-- [Debug add-ins in Office for the web](debug-add-ins-in-office-online.md) 
+- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](./debug-with-vs-extension.md)
