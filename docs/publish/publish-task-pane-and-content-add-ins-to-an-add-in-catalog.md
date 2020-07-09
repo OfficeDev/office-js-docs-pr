@@ -84,10 +84,10 @@ For Office applications on the desktop, you can find Office Add-ins from the app
     
     Specify just the URL of the parent site collection:
     - `https://<domain>/sites/<AddinCatalogSiteCollection>`
-4. Close and reopen the Office application. 
+4. Close and reopen the Office application.
 5. Choose **Insert** > **Get Add-ins**.
 4. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
     The Office Add-ins are listed.
 5. Choose an Office Add-in and then choose **Add**.
 
-Alternatively, an administrator can specify an app catalog on SharePoint by using Group Policy. The relevant policy settings are available in the [Administrative Template files (ADMX/ADML) for Microsoft 365 Apps for enterprise, Office 2019, and Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) and be found under **User Configuration\Policies\Administrative Templates\Microsoft Office 2016\Security Settings\Trust Center\Trusted Catalogs**.
+Alternatively, an administrator can specify an app catalog on SharePoint by using Group Policy. The relevant policy settings are available in the [Administrative Template files (ADMX/ADML) for Microsoft 365 Apps, Office 2019, and Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) and be found under **User Configuration\Policies\Administrative Templates\Microsoft Office 2016\Security Settings\Trust Center\Trusted Catalogs**.

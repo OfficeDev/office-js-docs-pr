@@ -1,13 +1,13 @@
 ---
 title: Enable single sign-on for Office Add-ins
-description: 'Learn how to enable single sign-on for Office Add-ins using your Microsoft, work, or Microsoft 365 Education account.'
+description: 'Learn how to enable single sign-on for Office Add-ins using common Microsoft personal, work, or education accounts.'
 ms.date: 07/07/2020
 localization_priority: Priority
 ---
 
 # Enable single sign-on for Office Add-ins (preview)
 
-Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or Work account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
+Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
 
 ![An image showing the sign-in process for an add-in](../images/sso-for-office-addins.png)
 
@@ -15,7 +15,7 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 The Single Sign-on API is currently supported in preview only. It is available to developers for experimentation; but it should not be used in a production add-in. In addition, add-ins that use SSO are not accepted in [AppSource](https://appsource.microsoft.com).
 
-SSO requires Microsoft 365 subscription. You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://insider.office.com). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+SSO requires a Microsoft 365 subscription. You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://insider.office.com). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
 
 Not all Office applications support the SSO preview. It is available in Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md).
 

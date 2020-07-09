@@ -1,13 +1,13 @@
 ---
-title: Debug add-ins in Office for the web
-description: 'How to use Office for the web to test and debug your add-ins.'
+title: Debug add-ins in Office on the web
+description: 'How to use Office on the web to test and debug your add-ins.'
 ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
-# Debug add-ins in Office for the web
+# Debug add-ins in Office on the web
 
-You can build and debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac. This article describes how to use Office for the web to test and debug your add-ins. 
+You can build and debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac. This article describes how to use Office on the web to test and debug your add-ins. 
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ To get started:
 
 ## Debug your add-in from Excel or Word on the web
 
-To debug your add-in by using Office for the web:
+To debug your add-in by using Office on the web:
 
 1. Deploy your add-in to a server that supports SSL.
 
@@ -49,11 +49,11 @@ To debug your add-in by using Office for the web:
 
 The following are some issues that you might encounter as you debug:
 
-- Some JavaScript errors that you see might originate from Office for the web.
+- Some JavaScript errors that you see might originate from Office on the web.
 
 - The browser might show an invalid certificate error that you will need to bypass. The process for doing this varies with the browser and the various browsers' UIs for doing this change periodically. You should search the browser's help or search online for instructions. (For example, search for "Microsoft Edge invalid certificate warning".) Most browsers will have a link on the warning page that enables you to click through to the add-in page. For example, Microsoft Edge has a link "Go on to the webpage (Not recommended)". But you will usually have to go through this link every time the add-in reloads. For a longer lasting bypass, see the help as suggested.
 
-- If you set breakpoints in your code, Office for the web might throw an error indicating that it is unable to save.
+- If you set breakpoints in your code, Office on the web might throw an error indicating that it is unable to save.
 
 ## See also
 

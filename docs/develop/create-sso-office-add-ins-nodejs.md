@@ -96,7 +96,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office for the web)
+    - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     For each ID, take these steps:
@@ -288,16 +288,16 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
         showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
         break;
     case 13006:
-        // Only seen in Office for the web.
-        showMessage("Office for the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
+        // Only seen in Office on the web.
+        showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
         break;
     case 13008:
         // The OfficeRuntime.auth.getAccessToken method has already been called and 
-        // that call has not completed yet. Only seen in Office for the web.
+        // that call has not completed yet. Only seen in Office on the web.
         showMessage("Office is still working on the last operation. When it completes, try this operation again."); 
         break;
     case 13010:
-        // Only seen in Office for the web.
+        // Only seen in Office on the web.
         showMessage("Follow the instructions to change your browser's zone configuration.");
         break;
     ```
@@ -567,7 +567,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** button in the **SSO Node.js** group to open the task pane add-in.
 
-1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or Work account or Microsoft Account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are inserted into the document. (It may take as much as 15 seconds the first time.) If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.
+1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account or Microsoft Account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are inserted into the document. (It may take as much as 15 seconds the first time.) If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.
 
 > [!NOTE]
 > If you were previously signed into Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get OneDrive File Names**.

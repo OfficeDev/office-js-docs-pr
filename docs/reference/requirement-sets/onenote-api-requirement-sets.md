@@ -12,7 +12,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 The following table lists the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date.
 
-|  Requirement set  |  Office for the web |
+|  Requirement set  |  Office on the web |
 |:-----|:-----|
 | [OneNoteApi 1.1](/javascript/api/onenote?view=onenote-js-1.1)  | September 2016 |  
 

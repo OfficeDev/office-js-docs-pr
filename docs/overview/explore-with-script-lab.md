@@ -54,7 +54,7 @@ Script Lab is supported for Excel, Word, and PowerPoint on the following clients
 
 - Office 2013 or later on Windows
 - Office 2016 or later on Mac
-- Office for the web
+- Office on the web
 
 Script Lab for Outlook is available on the following clients.
 
