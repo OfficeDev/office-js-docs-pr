@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 01/16/2020
+ms.date: 07/07/2020
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 localization_priority: Priority
@@ -114,7 +114,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     ```js
     var docBody = context.document.body;
-    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office on the web.",
+    docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
                             "Start");
     ```
 

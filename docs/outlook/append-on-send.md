@@ -11,7 +11,7 @@ localization_priority: Normal
 By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.
 
 > [!IMPORTANT]
-> This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with an Office 365 subscription. See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.
+> This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with a Microsoft 365 subscription. See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.
 >
 > Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
 

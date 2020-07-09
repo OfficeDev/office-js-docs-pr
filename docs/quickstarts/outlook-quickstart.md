@@ -129,7 +129,7 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 - Office 365
 
     > [!NOTE]
-    > If you do not have an Office 365 subscription, you can get a free one by signing up for the [Office 365 developer program](https://developer.microsoft.com/office/dev-program).
+    > If you do not have a Microsoft 365 subscription, you can get a free one by signing up for the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 ### Create the add-in project
 
@@ -262,7 +262,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 1. In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account) and then choose **Connect**. When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.
 
     > [!NOTE]
-    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in, Basic Auth may be disabled for accounts on your Office 365 tenant. To test this add-in, sign in using a [Microsoft account](https://account.microsoft.com/account) instead.
+    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in, Basic Auth may be disabled for accounts on your Microsoft 365 tenant. To test this add-in, sign in using a [Microsoft account](https://account.microsoft.com/account) instead.
 
 1. In Outlook on the web, select or open a message.
 

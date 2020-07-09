@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 06/01/2020
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
@@ -12,7 +12,7 @@ Office add-ins are web applications that are displayed using iFrames when runnin
 Which browser is used depends on:
 
 - The computer's operating system.
-- Whether the add-in is running in Office on the web, Office 365, or non-subscription Office 2013 or later.
+- Whether the add-in is running in Office on the web, Microsoft 365, or non-subscription Office 2013 or later.
 
 The following table shows which browser is used for the various platforms and operating systems.
 
@@ -31,7 +31,7 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>2</sup> When Microsoft Edge is being used, the Windows 10 Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the `<DisplayName>` value in the add-in's manifest.
 
-<sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Office 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
@@ -44,7 +44,7 @@ Office Add-ins do not support Service Workers on [Microsoft Edge WebView](/micro
 
 ### Chromium-based Edge is installed on my development computer, but my add-in does not use it
 
-The base browser in [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) has changed to Chromium. The older base, called EdgeHTML, is not removed when Chromium-based Edge is installed. Office will still use the EdgeHTML base for add-ins until a build of Office 365 that supports Chromium is installed on the computer. We expect these builds to ship in 2020. They will likely appear in the Insiders channel in the first half of the year.
+The base browser in [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) has changed to Chromium. The older base, called EdgeHTML, is not removed when Chromium-based Edge is installed. Office will still use the EdgeHTML base for add-ins until a build of Microsoft 365 that supports Chromium is installed on the computer. We expect these builds to ship in 2020. They will likely appear in the Insiders channel in the first half of the year.
 
 ### Scroll bar does not appear in task pane
 

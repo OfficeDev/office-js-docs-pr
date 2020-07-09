@@ -21,7 +21,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-* At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
+* At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
 * A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
@@ -40,7 +40,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
-1. Sign in with the ***admin*** credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
+1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
@@ -282,15 +282,15 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         showResult(["You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
         break;
     case 13006:
-        // Only seen in Office on the Web.
-        showResult(["Office on the Web is experiencing a problem. Please sign out of Office, close the browser, and then start again."]);
+        // Only seen in Office on the web.
+        showResult(["Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."]);
         break;
     case 13008:
-        // Only seen in Office on the Web.
+        // Only seen in Office on the web.
         showResult(["Office is still working on the last operation. When it completes, try this operation again."]);
         break;
     case 13010:
-        // Only seen in Office on the Web.
+        // Only seen in Office on the web.
         showResult(["Follow the instructions to change your browser's zone configuration."]);
         break;
     ```
@@ -603,4 +603,4 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Press F5.
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** in the **SSO ASP.NET** group to open the task pane add-in.
-1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Work or School (Office 365) account or Microsoft Account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.
+1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account or Microsoft Account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.

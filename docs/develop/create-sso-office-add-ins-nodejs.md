@@ -26,7 +26,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * A code editor. We recommend Visual Studio Code.
 
-* At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
+* At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
 * A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
@@ -50,7 +50,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
-1. Sign in with the ***admin*** credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
+1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
@@ -205,7 +205,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace `TODO 3` with the following. About this code, note: 
 
-    - If the Office 365 tenant has been configured to require multifactor authentication, then the `exchangeResponse` will include a `claims` property with information about the additional required factors. In that case, `OfficeRuntime.auth.getAccessToken` should be called again with the `authChallenge` option set to the value of the claims property. This tells AAD to prompt the user for all required forms of authentication.
+    - If the Microsoft 365 tenant has been configured to require multifactor authentication, then the `exchangeResponse` will include a `claims` property with information about the additional required factors. In that case, `OfficeRuntime.auth.getAccessToken` should be called again with the `authChallenge` option set to the value of the claims property. This tells AAD to prompt the user for all required forms of authentication.
 
     ```javascript
     if (exchangeResponse.claims) {
@@ -288,8 +288,8 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
         showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
         break;
     case 13006:
-        // Only seen in Office on the Web.
-        showMessage("Office on the Web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
+        // Only seen in Office on the web.
+        showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
         break;
     case 13008:
         // The OfficeRuntime.auth.getAccessToken method has already been called and 
@@ -477,7 +477,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO 14` with the following code, which completes the `else` block. About this code, note:
 
-    - The const `tenant` is set to 'common' because you configured the add-in as multitenant when you registered it with Azure AD; specifically when you set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**. If you had instead chosen to support only accounts in the same Office 365 tenancy where the add-in is registered, then in this code `tenant` would be set to the GUID of the tenant. 
+    - The const `tenant` is set to 'common' because you configured the add-in as multitenant when you registered it with Azure AD; specifically when you set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**. If you had instead chosen to support only accounts in the same Microsoft 365 tenancy where the add-in is registered, then in this code `tenant` would be set to the GUID of the tenant. 
     - If the POST request does not error, then the response from Azure AD is converted to JSON and sent to the client. This JSON object has an `access_token` property to which Azure AD has assigned the access token to Microsoft Graph.
 
     ```javascript
@@ -567,7 +567,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** button in the **SSO Node.js** group to open the task pane add-in.
 
-1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Work or School (Office 365) account or Microsoft Account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are inserted into the document. (It may take as much as 15 seconds the first time.) If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.
+1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account or Microsoft Account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are inserted into the document. (It may take as much as 15 seconds the first time.) If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.
 
 > [!NOTE]
 > If you were previously signed into Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get OneDrive File Names**.

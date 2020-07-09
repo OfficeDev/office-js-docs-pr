@@ -12,11 +12,11 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Office Add-ins run across multiple versions of Office. The following table lists the Identity API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Office 365 subscription) |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
+|  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Microsoft 365 subscription) |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(connected to Microsoft 365 subscription)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI Preview  | N/A | Preview<b>*</b> | Coming soon | Preview<b>*</b> | Preview<b>*&#8224;</b> | Preview<b>*&#8224;</b>| Coming soon | Coming soon |
 
-> **&#42;** During the preview phase, the Identity API requires Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://insider.office.com). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+> **&#42;** During the preview phase, the Identity API requires Microsoft 365 subscription. You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://insider.office.com). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
 >
 > **&#8224;** Add-ins that use the SSO APIs on these platforms will only work if the user's tenant administrator has granted consent to the add-in. The user cannot grant consent even to their own Azure AD profile.
 

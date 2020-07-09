@@ -31,31 +31,31 @@ The following features are in preview.
 
 Added a new object that represents the all-day event property of an appointment in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
 
 Added a new object that represents the sensitivity of an appointment in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.context.mailbox.item.isAllDayEvent](office.context.mailbox.item.md#properties)
 
 Added a new property that represents if an appointment is an all-day event.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.context.mailbox.item.sensitivity](office.context.mailbox.item.md#properties)
 
 Added a new property that represents the sensitivity of an appointment.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
 
 Added a new enum `AppointmentSensitivityType` that represents the sensitivity options available on an appointment.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 <br>
 
@@ -71,13 +71,13 @@ To learn about using the append-on-send feature, see [Implement append on send i
 
 Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -91,37 +91,37 @@ Added a new element to the manifest where the `AppendOnSend` extended permission
 
 Added a new function to the `Mailbox` object that displays an existing appointment. This is the async version of the `displayAppointmentForm` method.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.context.mailbox.displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
 
 Added a new function to the `Mailbox` object that displays an existing message. This is the async version of the `displayMessageForm` method.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.context.mailbox.displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
 
 Added a new function to the `Mailbox` object that displays a new appointment form. This is the async version of the `displayNewAppointmentForm` method.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.context.mailbox.displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
 
 Added a new function to the `Mailbox` object that displays a new message form. This is the async version of the `displayNewMessageForm` method.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.context.mailbox.item.displayReplyAllFormAsync](office.context.mailbox.item.md#methods)
 
 Added a new function to the `Item` object that displays the "Reply all" form in Read mode. This is the async version of the `displayReplyAllForm` method.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.context.mailbox.item.displayReplyFormAsync](office.context.mailbox.item.md#methods)
 
 Added a new function to the `Item` object that displays the "Reply" form in Read mode. This is the async version of the `displayReplyForm` method.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 <br>
 
@@ -163,7 +163,7 @@ Added Outlook support to the `Runtimes` manifest element. It references the HTML
 
 Added a new function to the `CustomProperties` object that gets all custom properties.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Office 365 subscription), Outlook on Android, Outlook on iOS
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to Microsoft 365 subscription), Outlook on Android, Outlook on iOS
 
 <br>
 
@@ -177,7 +177,7 @@ Added a new function to the `CustomProperties` object that gets all custom prope
 
 Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (classic)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (classic)
 
 <br>
 
@@ -191,31 +191,31 @@ Added a new function that returns initialization data passed when the add-in is 
 
 Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Added a new function that disables the client signature for the sending mailbox in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
 Added a new function that gets the compose type of a message in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
 Added a new function that checks if the client signature is enabled on the item in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 Added a new enum `ComposeType` available in Compose mode.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -229,13 +229,13 @@ Added a new enum `ComposeType` available in Compose mode.
 
 Added ability to get Office theme.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 #### [Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Added `OfficeThemeChanged` event to `Mailbox`.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription)
 
 <br>
 
@@ -249,7 +249,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 Added access to `getAccessToken`, which allows add-ins to [get an access token](../../../outlook/authenticate-a-user-with-an-sso-token.md) for the Microsoft Graph API.
 
-**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription), Outlook on the web (modern), Outlook on the web (classic)
+**Available in**: Outlook on Windows (connected to Microsoft 365 subscription), Outlook on Mac (connected to Microsoft 365 subscription), Outlook on the web (modern), Outlook on the web (classic)
 
 ## See also
 

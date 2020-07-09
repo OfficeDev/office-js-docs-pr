@@ -18,11 +18,11 @@ Single sign-on access tokens provide a seamless way for your add-in to authentic
 >
 > To use SSO, you must load the beta version of the Office JavaScript Library from https://appsforoffice.microsoft.com/lib/beta/hosted/office.js in the startup HTML page of the add-in.
 >
-> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Consider using SSO access tokens if your add-in:
 
-- Is used primarily by Office 365 users
+- Is used primarily by Microsoft 365 users
 - Needs access to:
   - Microsoft services that are exposed as part of Microsoft Graph
   - A non-Microsoft service that you control

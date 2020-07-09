@@ -10,7 +10,7 @@ localization_priority: Normal
 
 [Custom Functions](./custom-functions-overview.md) use separate requirement sets from the core Excel JavaScript APIs. The following table lists the Custom Functions requirement sets, the supported Office host applications, and the build versions or number for those applications.
 
-|  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web |
+|  Requirement set  |  Office on Windows<br>(connected to Microsoft 365 subscription)  |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(connected to Microsoft 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.1 | 16.0.12527.20092 or later | Not supported | 16.34 or later | May |
 

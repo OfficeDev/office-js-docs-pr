@@ -6,7 +6,7 @@ Carry out this procedure *after* you have [registered the add-in](../develop/reg
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to view your app registration.
 
-1. Sign in with the ***admin*** credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
+1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
 1. Select the app with display name **$ADD-IN-NAME$**.
 
