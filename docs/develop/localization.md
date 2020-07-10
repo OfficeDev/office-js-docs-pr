@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: 'You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.'
-ms.date: 10/11/2019
+ms.date: 07/10/2020
 localization_priority: Normal
 ---
 
@@ -171,7 +171,7 @@ This section provides examples that show you how to localize an Office Add-in de
 
 ### Configure Office to use additional languages for display or editing
 
-To run the sample code provided, configure Microsoft Office on your computer to use additional languages so that you can test your add-in by switching the language used for display in menus and commands, for editing and proofing, or both.
+To run the sample code provided, configure Office on your computer to use additional languages so that you can test your add-in by switching the language used for display in menus and commands, for editing and proofing, or both.
 
 You can use an Office Language pack to install an additional language. For more information about Language Packs and where to get them, see [Language Accessory Pack for Office](https://office.microsoft.com/language-packs/).
 
