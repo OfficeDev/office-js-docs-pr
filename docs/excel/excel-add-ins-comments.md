@@ -170,7 +170,7 @@ Excel.run(function (context) {
 
 Comments with mentions need to be created with [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) objects. Call `CommentCollection.add` with a `CommentRichContent` containing one or more mentions and specify `ContentType.mention` as the `contentType` parameter. The `content` string also needs to be formatted to insert the mention into the text. The format for a mention is: `<at id="{replyIndex}">{mentionName}</at>`.
 
-> [NOTE]
+> [!NOTE]
 > Currently, only the mention's exact name can be used as the text of the mention link. Support for shortened versions of a name will be added later.
 
 The following example shows a comment with a single mention.
