@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
-description: 'Test your Office Add-in in Office on the web by sideloading'
-ms.date: 07/07/2020
+description: 'Test your Office Add-in in Office on the web by sideloading.'
+ms.date: 07/10/2020
 localization_priority: Normal
 ---
 
@@ -20,7 +20,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 ## Sideload an Office Add-in in Office on the web
 
-1. Open [Microsoft Office on the web](https://office.live.com/).
+1. Open [Office on the web](https://office.live.com/).
 
 2. In **Get started with the online apps now**, choose **Excel**, **Word**, or **PowerPoint**; and then open a new document.
 
