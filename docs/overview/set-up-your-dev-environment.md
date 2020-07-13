@@ -42,7 +42,7 @@ You may wish to use a Node version manager to allow you to switch between multip
 
 ## Get Office 365
 
-If you don't already have a Microsoft 365 account, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+If you don't already have a Microsoft 365 account, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 ## Install a code editor
 

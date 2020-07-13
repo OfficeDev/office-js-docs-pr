@@ -116,7 +116,7 @@ async function getGraphData() {
     catch (exception) {
         if (exception.code === 13003) {
             // SSO is not supported for domain user accounts, only
-            // work or school (Microsoft 365) or Microsoft Account IDs.
+            // Microsoft 365 Education or work account, or a Microsoft account.
         } else {
             // Handle error
         }
