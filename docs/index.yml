@@ -101,4 +101,5 @@ landingContent:
           - text: Office Add-ins blogs
             url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
           - text: Additional resources
-            url: https://docs.microsoft.com/office/dev/add-ins/resources/resources-links-help
+            url: resources/resources-links-help.md
+            
