@@ -10,7 +10,7 @@ metadata:
   ms.topic: landing-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 06/09/2020 #Required; mm/dd/yyyy format.
+  ms.date: 07/13/2020 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -96,3 +96,9 @@ landingContent:
             url: https://officespdev.uservoice.com/
           - text: COM or VSTO add-ins documentation
             url: /office/client-developer/office-client-development
+          - text: Office Add-ins PnP samples repo
+            url: https://github.com/OfficeDev/PnP-OfficeAddins
+          - text: Office Add-ins blogs
+            url: https://developer.microsoft.com/en-us/office/gallery/?filterBy=Add-ins,Blog%20Posts
+          - text: Additional resources
+            url: https://docs.microsoft.com/en-us/office/dev/add-ins/resources/resources-links-help
