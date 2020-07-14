@@ -99,6 +99,6 @@ landingContent:
           - text: Office Add-ins PnP samples repo
             url: https://github.com/OfficeDev/PnP-OfficeAddins
           - text: Office Add-ins blogs
-            url: https://developer.microsoft.com/en-us/office/gallery/?filterBy=Add-ins,Blog%20Posts
+            url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
           - text: Additional resources
-            url: https://docs.microsoft.com/en-us/office/dev/add-ins/resources/resources-links-help
+            url: https://docs.microsoft.com/office/dev/add-ins/resources/resources-links-help
