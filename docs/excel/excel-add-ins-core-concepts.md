@@ -1,7 +1,7 @@
 ---
 title: Fundamental programming concepts with the Excel JavaScript API
 description: 'Use the Excel JavaScript API to build add-ins for Excel.'
-ms.date: 06/20/2019
+ms.date: 07/13/2020
 localization_priority: Priority
 ---
 
@@ -207,35 +207,6 @@ range.values = 'Due Date';
 If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.
 
 For details on the system limitations, see [Excel data transfer limits](../develop/common-coding-issues.md#excel-data-transfer-limits).
-
-## Update all cells in a range
-
-To apply the same update to all cells in a range, (for example, to populate all cells with the same value, set the same number format, or populate all cells with the same formula), set the corresponding property on the `range` object to the desired (single) value.
-
-The following example gets a range that contains 20 cells, and then sets the number format and populates all cells in the range with the value **3/11/2015**.
-
-```js
-Excel.run(function (context) {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:A20';
-    var worksheet = context.workbook.worksheets.getItem(sheetName);
-
-    var range = worksheet.getRange(rangeAddress);
-    range.numberFormat = 'm/d/yyyy';
-    range.values = '3/11/2015';
-    range.load('text');
-
-    return context.sync()
-      .then(function () {
-        console.log(range.text);
-    });
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
 
 ## Handle errors
 

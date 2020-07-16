@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
-ms.date: 05/12/2020
+ms.date: 07/10/2020
 localization_priority: Priority
 ---
 
@@ -59,9 +59,9 @@ You can specify whether the command is enabled or disabled when your add-in laun
 
 Add-in commands are currently supported on the following platforms.
 
-- Office on Windows (build 16.0.6769+, connected to Microsoft 365 subscription)
+- Office on Windows (build 16.0.6769+, connected to a Microsoft 365 subscription)
 - Office 2019 on Windows
-- Office on Mac (build 15.33+, connected to Microsoft 365 subscription)
+- Office on Mac (build 15.33+, connected to a Microsoft 365 subscription)
 - Office 2019 on Mac
 - Office on the web
 
