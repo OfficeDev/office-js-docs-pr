@@ -11,7 +11,7 @@ When users are signed in to Office, your add-in can use the same credentials to 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET.
 
 > [!NOTE]
-> For a similar article about an ASP.NET-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
+> For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
 
 ## Prerequisites
 
