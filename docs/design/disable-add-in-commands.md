@@ -29,7 +29,7 @@ The enable/disable APIs belong to the [RibbonApi 1.1](../reference/requirement-s
 > [!NOTE]
 > The **RibbonApi 1.1** requirement set is not yet supported in the manifest, so you cannot specify it in the manifest's `<Requirements>` section. To test for support, your code should call `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. If, *and only if*, that call returns `true`, your code can call the enable/disable APIs. If the call of `isSetSupported` returns `false`, then all custom add-in commands are enabled all of the time. You must design your production add-in, and any in-app instructions, to take account of how it will work when the **RibbonApi 1.1** requirement set is not supported. For more information and examples of using `isSetSupported`, see [Specify Office hosts and API requirements](../develop/specify-office-hosts-and-api-requirements.md), especially [Use runtime checks in your javascript codes](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (The section [Set the Requirements element in the manifest](../develop/specify-office-hosts-and-api-requirements.m#set-the-requirements-element-in-the-manifest) of that article does not apply to Ribbon 1.1.)
 
-### Shared runtime required
+## Shared runtime required
 
 The APIs and manifest markup described in this article require that the add-in's manifest specify that it should use a shared runtime. To do this take the following steps.
 
