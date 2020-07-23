@@ -16,8 +16,6 @@ Using this method, your add-in can obtain an access token scoped to your server 
 
 For an overview of SSO in Office Add-ins, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md) and [Authorize to Microsoft Graph in your Office Add-in](../develop/authorize-to-microsoft-graph.md).
 
-> [!NOTE]
-> To use SSO, you must load the beta version of the Office JavaScript Library from https://appsforoffice.microsoft.com/lib/beta/hosted/office.js in the startup HTML page of the add-in. However, you should **not** use beta APIs in production add-ins.
 
 ## Enable modern authentication in your Microsoft 365 tenancy
 
@@ -29,7 +27,7 @@ To use SSO, your Outlook add-in will need to have a server-side web API that is 
 
 ### Provide consent when sideloading an add-in
 
-When an add-in that uses SSO is acquired from AppSource, the store UI handles prompting the user for consent to the requested Graph permissions. However, when you are developing an add-in, you have to provide consent in advance. For more information, see [Grant administrator consent to the add-in](../develop/grant-admin-consent-to-an-add-in.md)
+When an add-in that uses SSO is acquired from AppSource, it must have a backup authentication method for providing consent if it contains Microsoft Graph scopes. When you are developing an add-in, you will have to provide consent in advance. For more information, see [Grant administrator consent to the add-in](../develop/grant-admin-consent-to-an-add-in.md)
 
 ## Update the add-in manifest
 
