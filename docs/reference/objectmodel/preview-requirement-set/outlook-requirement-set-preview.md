@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 07/10/2020
+ms.date: 07/22/2020
 localization_priority: Normal
 ---
 
@@ -216,6 +216,40 @@ Added a new function that checks if the client signature is enabled on the item 
 Added a new enum `ComposeType` available in Compose mode.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+
+<br>
+
+---
+
+---
+
+### Notification messages with actions
+
+This feature allows your add-in to include a notification message with a custom action besides the default **Dismiss** action.
+
+#### [Office.NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions)
+
+Added a new property that enables you to add an `InsightMessage` notification with a custom action.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
+
+#### [Office.NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction)
+
+Added a new object where you define a custom action for your `InsightMessage` notification.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
+
+#### [Office.MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype)
+
+Added a new enum `ActionType`.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
+
+#### [Office.MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)
+
+Added a new type `InsightMessage` to the `ItemNotificationMessageType` enum.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 <br>
 
