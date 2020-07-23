@@ -30,7 +30,7 @@ For examples of the error handling described in this section, see:
 
 The [getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API is not supported by the add-in or the Office version.
 
-- The version of Office does not support SSO. The required version is Office 365 (the subscription version of Office), in any monthly channel. 
+- The version of Office does not support SSO. The required version is Office 365 (the subscription version of Office), in any monthly channel.
 - The add-in manifest is missing the proper [WebApplicationInfo](/office/dev/add-ins/reference/manifest/webapplicationinfo) section.
 
 Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
