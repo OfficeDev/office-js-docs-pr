@@ -1,11 +1,11 @@
 ---
 title: Office.context - requirement set 1.7
-description: ''
-ms.date: 12/16/2019
+description: 'Office.Context object members available for Outlook add-ins using Mailbox API requirement set 1.7.'
+ms.date: 03/18/2020
 localization_priority: Normal
 ---
 
-# context
+# context (Mailbox requirement set 1.7)
 
 ### [Office](office.md).context
 

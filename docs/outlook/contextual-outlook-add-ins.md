@@ -1,7 +1,7 @@
 ---
 title: Contextual Outlook add-ins
-description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
-ms.date: 10/09/2019
+description: 'Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.'
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
@@ -23,13 +23,15 @@ The following are examples of contextual add-ins:
 
 ## How to make a contextual add-in
 
-A contextual add-in's manifest must include an [ExtensionPoint](../reference/manifest/extensionpoint.md) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **ExtensionPoint** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
+A contextual add-in's manifest must include an [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **ExtensionPoint** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
 
 Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify that an add-in should activate on messages with a detected entity that is a phone number:
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
   <Label resid="contextLabel" />
+  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
+  <!--<RequestedHeight>360</RequestedHeight>-->
   <SourceLocation resid="detectedEntityURL" />
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" />

@@ -1,21 +1,20 @@
 ---
 title: Enable single sign-on for Office Add-ins
-description: ''
+description: 'Learn how to enable single sign-on for Office Add-ins using common Microsoft personal, work, or education accounts.'
 ms.date: 07/30/2020
 localization_priority: Priority
 ---
 
 # Enable single sign-on for Office Add-ins
 
-Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their work or school (Microsoft 365) account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
+
+Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
 
 ![An image showing the sign-in process for an add-in](../images/sso-for-office-addins.png)
 
-Not all Office applications support SSO. It is available in Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md).
-
 ## Requirements and Best Practices
 
-If you are working with an **Outlook** add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+If you are working with an **Outlook** add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. You can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For samples that use Azure Active Directory as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
@@ -107,7 +106,7 @@ async function getGraphData() {
     catch (exception) {
         if (exception.code === 13003) {
             // SSO is not supported for domain user accounts, only
-            // work or school (Office 365) or Microsoft Account IDs.
+            // Microsoft 365 Education or work account, or a Microsoft account.
         } else {
             // Handle error
         }
@@ -227,7 +226,7 @@ The method calls the Azure Active Directory V 2.0 endpoint to get an access toke
 > [!NOTE]
 > In Outlook, this API is not supported if the add-in is loaded in an Outlook.com or Gmail mailbox.
 
-|Hosts|Excel, OneNote, Outlook, PowerPoint, Word|
+|Hosts|Excel, Outlook, PowerPoint, Word|
 |---|---|
 |[Requirement sets](specify-office-hosts-and-api-requirements.md)|[IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)|
 

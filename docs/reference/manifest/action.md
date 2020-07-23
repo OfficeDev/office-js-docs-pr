@@ -1,13 +1,13 @@
 ---
 title: Action element in the manifest file
-description: ''
-ms.date: 06/20/2019
+description: This element specifies the action to perform when the user selects a button or menu control.
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
 # Action element
 
-Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.
+Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) control.
 
 ## Attributes
 
@@ -45,7 +45,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 
 ## SourceLocation
 
-Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.
+Required element when **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -126,8 +126,11 @@ The following example shows an action that uses the **Title** element. Note that
 
 Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support task pane pinning. The user will be able to "pin" the task pane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable task pane in Outlook](../../outlook/pinnable-taskpane.md).
 
-> [!NOTE]
-> SupportsPinning is currently only supported by Outlook 2016 or later on Windows (build 7628.1000 or later) and Outlook 2016 or later on Mac (build 16.13.503 or later).
+> [!IMPORTANT]
+> Although the `SupportsPinning` element was introduced in [requirement set 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only supported for Microsoft 365 subscribers using the following.
+> - Outlook 2016 or later on Windows (build 7628.1000 or later)
+> - Outlook 2016 or later on Mac (build 16.13.503 or later)
+> - Modern Outlook on the web
 
 ```xml
 <Action xsi:type="ShowTaskpane">

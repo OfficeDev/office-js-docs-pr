@@ -1,6 +1,6 @@
 ---
 title: Outlook add-in API requirement set 1.2
-description: ''
+description: 'Features and APIs that were introduced for Outlook Add-ins and the Office JavaScript APIs as part of Mailbox API 1.2.'
 ms.date: 12/17/2019
 localization_priority: Normal
 ---
@@ -10,7 +10,7 @@ localization_priority: Normal
 The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.
 
 > [!NOTE]
-> This documentation is for a [requirement set](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) other than the latest requirement set. 
+> This documentation is for a [requirement set](../../requirement-sets/outlook-api-requirement-sets.md) other than the latest requirement set.
 
 ## What's new in 1.2?
 

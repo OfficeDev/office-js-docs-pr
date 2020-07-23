@@ -1,18 +1,25 @@
 ---
-title: Sideload Office Add-ins for testing
-description: ''
-ms.date: 02/18/2020
+title: Sideload Office Add-ins for testing from a network share
+description: 'Learn how to sideload an Office add-in for testing from a network share'
+ms.date: 06/02/2020
 localization_priority: Normal
 ---
 
-# Sideload Office Add-ins for testing
+# Sideload Office Add-ins for testing from a network share
 
-You can install an Office Add-in for testing in an Office client running on Windows by publishing the manifest to a network file share (instructions below).
+You can test an Office Add-in in an Office client that is on Windows by publishing the manifest to a network file share (instructions below). This deployment option is intended to be used when you have completed development and testing on a localhost and want to test the add-in from a non-local server or cloud account.
+
+> [!IMPORTANT]
+> Deployment by network share is not supported for production add-ins. This method has the following limitations:
+> 
+> - The add-in can only be installed on Windows computers.
+> - If a new version of an add-in changes the ribbon, each user will have to reinstall the add-in.
+
 
 > [!NOTE]
 > If your add-in project was created with a sufficiently recent version of the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), the add-in will automatically sideload in the Office desktop client when you run `npm start`.
 
-This article applies only to testing Word, Excel, PowerPoint, and Project add-ins on Windows. If you want to test on another platform or want to test an Outlook add-in, see one of the following topics to sideload your add-in:
+This article applies only to testing Word, Excel, PowerPoint, and Project add-ins and only on Windows. If you want to test on another platform or want to test an Outlook add-in, see one of the following topics to sideload your add-in:
 
 - [Sideload Office Add-ins in Office on the web for testing](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -62,7 +69,7 @@ The following video walks you through the process of sideloading your add-in in 
 
     ![Trust Center dialog with catalog selected](../images/sideload-windows-trust-center-dialog.png)
 
-8. Choose the **OK** button to close the **Word Options** dialog window.
+8. Choose the **OK** button to close the **Options** dialog window.
 
 9. Close and reopen the Office application so your changes will take effect.
 
@@ -72,7 +79,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 2. Add the following content to the file:
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
@@ -88,7 +95,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 5. The file should now look like the following. Save it.
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]

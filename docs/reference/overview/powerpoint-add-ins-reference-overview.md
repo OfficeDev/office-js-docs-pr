@@ -1,6 +1,6 @@
 ---
 title: JavaScript API for PowerPoint
-description: ''
+description: 'Overview of the PowerPoint JavaScript API'
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
@@ -30,7 +30,7 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 
 ## See also
 
-- [PowerPoint add-ins documentation](../../powerpoint/index.md)
+- [PowerPoint add-ins documentation](../../powerpoint/index.yml)
 - [PowerPoint add-ins overview](../../powerpoint/powerpoint-add-ins.md)
 - [PowerPoint JavaScript API reference](/javascript/api/powerpoint)
 - [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)

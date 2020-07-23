@@ -1,7 +1,7 @@
 ---
 title: Install the latest version of Office
-description: Information about how to opt in to getting the latest builds of Office.
-ms.date: 01/14/2020
+description: 'Information about how to opt in to getting the latest builds of Office.'
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
@@ -13,8 +13,8 @@ New developer features, including those still in preview, are delivered first to
 
 To opt in to getting the latest builds of Office:
 
-- If you're an Office 365 Home, Personal, or University subscriber, see [Be an Office Insider](https://products.office.com/office-insider).
-- If you're an Office 365 for business customer, see [Install the First Release build for Office 365 for business customers](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).
+- If you're a Microsoft 365 Family, Personal, or University subscriber, see [Be an Office Insider](https://insider.office.com).
+- If you're a Microsoft 365 Apps for business customer, see [Install the First Release build for Microsoft 365 Apps for business customers](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).
 - If you're running Office on a Mac:
   - Start an Office application.
   - Select **Check for Updates** on the Help menu.
@@ -40,10 +40,10 @@ When the installation process finishes, you will have the latest Office applicat
 
 For information about the minimum product builds for each platform for the API requirement sets, see the following:
 
-- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
-- [OneNote JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
-- [Outlook JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)
-- [PowerPoint JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets)
-- [Word JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
-- [Dialog API requirement sets](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
-- [Office Common API requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md)
+- [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md)
+- [Outlook JavaScript API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [PowerPoint JavaScript API requirement sets](../reference/requirement-sets/powerpoint-api-requirement-sets.md)
+- [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md)
+- [Dialog API requirement sets](../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Office Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)

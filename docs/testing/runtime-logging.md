@@ -1,6 +1,6 @@
 ---
 title: Debug your add-in with runtime logging
-description: Learn how to use runtime logging to debug your add-in.
+description: 'Learn how to use runtime logging to debug your add-in.'
 ms.date: 12/31/2019
 localization_priority: Normal
 ---
@@ -21,31 +21,31 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
 - To enable runtime logging:
     ```command&nbsp;line
-	npx office-addin-dev-settings runtime-log --enable
-	```
+    npx office-addin-dev-settings runtime-log --enable
+    ```
 - To enable runtime logging only for a specific file, use the same command with a filename:
 
     ```command&nbsp;line
-	npx office-addin-dev-settings runtime-log --enable [filename.txt]
-	```
+    npx office-addin-dev-settings runtime-log --enable [filename.txt]
+    ```
 
 - To disable runtime logging:
 
     ```command&nbsp;line
-	npx office-addin-dev-settings runtime-log --disable
-	```
+    npx office-addin-dev-settings runtime-log --disable
+    ```
 
 - To display whether runtime logging is enabled:
 
     ```command&nbsp;line
-	npx office-addin-dev-settings runtime-log
-	```
+    npx office-addin-dev-settings runtime-log
+    ```
 
 - To display help within the command line for runtime logging:
 
     ```command&nbsp;line
-	npx office-addin-dev-settings runtime-log --help
-	```
+    npx office-addin-dev-settings runtime-log --help
+    ```
 
 ## Runtime logging on Windows
 
@@ -55,8 +55,8 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
     > [!NOTE]
     > If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, complete the following steps to create it: 
-	> 1. Right-click the **WEF** key (folder) and select **New** > **Key**.
-	> 2. Name the new key **Developer**.
+    > 1. Right-click the **WEF** key (folder) and select **New** > **Key**.
+    > 2. Name the new key **Developer**.
 
 3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
@@ -73,18 +73,18 @@ The following image shows what the registry should look like. To turn the featur
 
 2. Open **Terminal** and set a runtime logging preference by using the `defaults` command:
     
-	```command&nbsp;line
-	defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
-	```
+    ```command&nbsp;line
+    defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
+    ```
 
-	`<bundle id>` identifies which the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log will be written.
+    `<bundle id>` identifies which the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log will be written.
 
-	Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding host:
+    Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding host:
 
-	- `com.microsoft.Word`
-	- `com.microsoft.Excel`
-	- `com.microsoft.Powerpoint`
-	- `com.microsoft.Outlook`
+    - `com.microsoft.Word`
+    - `com.microsoft.Excel`
+    - `com.microsoft.Powerpoint`
+    - `com.microsoft.Outlook`
 
 The following example enables runtime logging for Word and then opens the log file:
 
@@ -114,8 +114,8 @@ To use runtime logging to troubleshoot issues loading an add-in:
  
 1. [Sideload your add-in](sideload-office-add-ins-for-testing.md) for testing. 
 
-	> [!NOTE]
-	> We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
+    > [!NOTE]
+    > We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
 
 2. If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.
 
@@ -131,7 +131,7 @@ You might see messages in the log file that are confusing or that are classified
 
 - The message `Medium Current host not in add-in's host list` followed by `Unexpected Parsed manifest targeting different host` is incorrectly classified as an error.
 
-- If you see the message `Unexpected Add-in is missing required manifest fields	DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you are debugging. 
+- If you see the message `Unexpected Add-in is missing required manifest fields    DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you are debugging. 
 
 - Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail. 
 

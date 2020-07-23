@@ -9,7 +9,7 @@ localization_priority: Priority
 
 Your Outlook add-in can access information from anywhere on the Internet, whether from the server that hosts the add-in, from your internal network, or from somewhere else in the cloud. If that information is protected, your add-in needs a way to authenticate your user. Outlook add-ins provide a number of different methods to authenticate, depending on your specific scenario.
 
-## Single sign-on access token
+## Single sign-on access token (preview)
 
 Single sign-on access tokens provide a seamless way for your add-in to authenticate and obtain access tokens to call the [Microsoft Graph API](/graph/overview). This capability reduces friction since the user is not required to enter their credentials.
 
@@ -19,10 +19,10 @@ Single sign-on access tokens provide a seamless way for your add-in to authentic
 
 Consider using SSO access tokens if your add-in:
 
-- Is used primarily by Office 365 users
+- Is used primarily by Microsoft 365 users
 - Needs access to:
-    - Microsoft services that are exposed as part of Microsoft Graph
-    - A non-Microsoft service that you control
+  - Microsoft services that are exposed as part of Microsoft Graph
+  - A non-Microsoft service that you control
 
 The SSO authentication method uses the [OAuth2 On-Behalf-Of flow provided by Azure Active Directory](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of). It requires that the add-in register in the [Application Registration Portal](https://apps.dev.microsoft.com/) and specify any required Microsoft Graph scopes in its manifest.
 

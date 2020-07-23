@@ -1,6 +1,6 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
-description: ''
+description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
 ms.date: 07/30/2020
 localization_priority: Normal
 ---
@@ -11,7 +11,8 @@ When users are signed in to Office, your add-in can use the same credentials to 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET.
 
 > [!NOTE]
-> For a similar article about an Node-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
+
+> For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
 
 ## Prerequisites
 
@@ -21,7 +22,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-* At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
+* At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
 * A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
@@ -40,7 +41,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
-1. Sign in with the ***admin*** credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
+1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
@@ -282,15 +283,15 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         showResult(["You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
         break;
     case 13006:
-        // Only seen in Office on the Web.
-        showResult(["Office on the Web is experiencing a problem. Please sign out of Office, close the browser, and then start again."]);
+        // Only seen in Office on the web.
+        showResult(["Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."]);
         break;
     case 13008:
-        // Only seen in Office on the Web.
+        // Only seen in Office on the web.
         showResult(["Office is still working on the last operation. When it completes, try this operation again."]);
         break;
     case 13010:
-        // Only seen in Office on the Web.
+        // Only seen in Office on the web.
         showResult(["Follow the instructions to change your browser's zone configuration."]);
         break;
     ```
@@ -423,7 +424,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Replace the `TODO 1` with the following. Note about this code:
 
     * The code instructs OWIN to ensure that the audience specified in the bootstrap token that comes from the Office host must match the value specified in the web.config.
-    * Microsoft Accounts have an issuer GUID that is different from any organizational tenant GUID, so to support both kinds of accounts, we do not validate the issuer.
+    * Microsoft accounts have an issuer GUID that is different from any organizational tenant GUID, so to support both kinds of accounts, we do not validate the issuer.
     * Setting `SaveSigninToken` to `true` causes OWIN to save the raw bootstrap token from the Office host. The add-in needs it to obtain an access token to Microsoft Graph with the on-behalf-of flow.
     * Scopes are not validated by the OWIN middleware. The scopes of the bootstrap token, which should include `access_as_user`, is validated in the controller.
 
@@ -603,4 +604,4 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Press F5.
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** in the **SSO ASP.NET** group to open the task pane add-in.
-1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Work or School (Office 365) account or Microsoft Account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.
+1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account, or a Microsoft account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.

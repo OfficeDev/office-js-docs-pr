@@ -1,13 +1,13 @@
 ---
 title: ExtensionPoint element in the manifest file
-description: ''
-ms.date: 09/05/2019
+description: Defines where an add-in exposes functionality in the Office UI.
+ms.date: 05/18/2020
 localization_priority: Normal
 ---
 
 # ExtensionPoint element
 
- Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md). 
+ Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md).
 
 ## Attributes
 
@@ -26,9 +26,9 @@ localization_priority: Normal
 - **PrimaryCommandSurface** - The ribbon in Office.
 - **ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.
 
-The following examples show how to use the  **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
+The following examples show how to use the **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format. <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
@@ -68,29 +68,32 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
  
 |**Element**|**Description**|
 |:-----|:-----|
-|**CustomTab**|Required if you want to add a custom tab to the ribbon (using  **PrimaryCommandSurface**). If you use the  **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.|
-|**OfficeTab**|Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the  **OfficeTab** element, you can't use the **CustomTab** element. For details, see [OfficeTab](officetab.md).|
-|**OfficeMenu**|Required if you're adding add-in commands to a default context menu (using  **ContextMenu**). The  **id** attribute must be set to: <br/> - **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> - **ContextMenuCell** for Excel. Displays the  item on the context menu when the user right-clicks on a cell on the spreadsheet.|
-|**Group**|A group of user interface extension points on a tab. A group can have up to six controls. The  **id** attribute is required. It's a string with a maximum of 125 characters.|
-|**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
-|**Icon**|Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
-|**Tooltip**|Optional. The tooltip of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
-|**Control**|Each group requires at least one control. A  **Control** element can be either a **Button** or a **Menu**. Use  **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the [Button controls](control.md#button-control) and [Menu controls](control.md#menu-dropdown-button-controls) sections for more information.<br/>**Note:**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.|
+|**CustomTab**|Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.|
+|**OfficeTab**|Required if you want to extend a default Office app ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. For details, see [OfficeTab](officetab.md).|
+|**OfficeMenu**|Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: <br/> - **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> - **ContextMenuCell** for Excel. Displays the  item on the context menu when the user right-clicks on a cell on the spreadsheet.|
+|**Group**|A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters.|
+|**Label**|Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
+|**Icon**|Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
+|**Tooltip**|Optional. The tooltip of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
+|**Control**|Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the [Button controls](control.md#button-control) and [Menu controls](control.md#menu-dropdown-button-controls) sections for more information.<br/>**Note:**  To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.|
 |**Script**|Links to the JavaScript file with the custom function definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
 |**Page**|Links to the HTML page for your custom functions.|
 
 ## Extension points for Outlook
 
-- [MessageReadCommandSurface](#messagereadcommandsurface) 
-- [MessageComposeCommandSurface](#messagecomposecommandsurface) 
-- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
+- [MessageReadCommandSurface](#messagereadcommandsurface)
+- [MessageComposeCommandSurface](#messagecomposecommandsurface)
+- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface)
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [LaunchEvent](#launchevent-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
 ### MessageReadCommandSurface
+
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
 
 #### Child elements
@@ -101,6 +104,7 @@ This extension point puts buttons in the command surface for the mail read view.
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 #### OfficeTab example
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -110,6 +114,7 @@ This extension point puts buttons in the command surface for the mail read view.
 ```
 
 #### CustomTab example
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -119,6 +124,7 @@ This extension point puts buttons in the command surface for the mail read view.
 ```
 
 ### MessageComposeCommandSurface
+
 This extension point puts buttons on the ribbon for add-ins using mail compose form. 
 
 #### Child elements
@@ -129,6 +135,7 @@ This extension point puts buttons on the ribbon for add-ins using mail compose f
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 #### OfficeTab example
+
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -159,6 +166,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 #### OfficeTab example
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <OfficeTab id="TabDefault">
@@ -168,6 +176,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 ```
 
 #### CustomTab example
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <CustomTab id="TabCustom1">
@@ -188,6 +197,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 #### OfficeTab example
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -197,6 +207,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 ```
 
 #### CustomTab example
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <CustomTab id="TabCustom1">
@@ -207,7 +218,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 
 ### Module
 
-This extension point puts buttons on the ribbon for the module extension. 
+This extension point puts buttons on the ribbon for the module extension.
 
 #### Child elements
 
@@ -217,6 +228,7 @@ This extension point puts buttons on the ribbon for the module extension.
 |  [CustomTab](customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
 ### MobileMessageReadCommandSurface
+
 This extension point puts buttons in the command surface for the mail read view in the mobile form factor.
 
 #### Child elements
@@ -230,6 +242,7 @@ This extension point puts buttons in the command surface for the mail read view 
 **Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.
 
 #### Example
+
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
   <Group id="mobileGroupID">
@@ -241,12 +254,79 @@ This extension point puts buttons in the command surface for the mail read view 
 </ExtensionPoint>
 ```
 
-### Events
-
-This extension point adds an event handler for a specified event.
+### MobileOnlineMeetingCommandSurface (preview)
 
 > [!NOTE]
-> This element type is supported by classic Outlook on the web, and in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Windows, Mac, and modern Outlook on the web. An Office 365 subscription is also required.
+> This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Android with a Microsoft 365 subscription.
+
+This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting. To learn more about this scenario, see the [Create an Outlook mobile add-in for an online-meeting provider](../../outlook/online-meeting.md) article.
+
+#### Child elements
+
+|  Element |  Description  |
+|:-----|:-----|
+|  [Control](control.md) |  Adds a button to the command surface.  |
+
+`ExtensionPoint` elements of this type can only have one child element: a `Control` element.
+
+The `Control` element contained in this extension point must have the `xsi:type` attribute set to `MobileButton`.
+
+The `Icon` images should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
+
+#### Example
+
+```xml
+<ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
+  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+    <Label resid="residUILessButton0Name" />
+    <Icon>
+      <bt:Image resid="UiLessIcon" size="25" scale="1" />
+      <bt:Image resid="UiLessIcon" size="25" scale="2" />
+      <bt:Image resid="UiLessIcon" size="25" scale="3" />
+      <bt:Image resid="UiLessIcon" size="32" scale="1" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="32" scale="3" />
+      <bt:Image resid="UiLessIcon" size="48" scale="1" />
+      <bt:Image resid="UiLessIcon" size="48" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="3" />
+    </Icon>
+    <Action xsi:type="ExecuteFunction">
+      <FunctionName>insertContosoMeeting</FunctionName>
+    </Action>
+  </Control>
+</ExtensionPoint>
+```
+
+### LaunchEvent (preview)
+
+> [!NOTE]
+> This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web with a Microsoft 365 subscription.
+
+This extension point enables an add-in to activate based on supported events in the desktop form factor. Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`. To learn more about this scenario, see the [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md) article.
+
+#### Child elements
+
+|  Element |  Description  |
+|:-----|:-----|
+| [LaunchEvents](launchevents.md) |  List of [LaunchEvent](launchevent.md) for event-based activation.  |
+| [SourceLocation](sourcelocation.md) |  The location of the source JavaScript file.  |
+
+#### Example
+
+```xml
+<ExtensionPoint xsi:type="LaunchEvent">
+  <LaunchEvents>
+    <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
+    <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+  </LaunchEvents>
+  <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
+  <SourceLocation resid="WebViewRuntime.Url"/>
+</ExtensionPoint>
+```
+
+### Events
+
+This extension point adds an event handler for a specified event. For more information about using this extension point, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).
 
 | Element | Description  |
 |:-----|:-----|
@@ -277,7 +357,7 @@ The containing [VersionOverrides](versionoverrides.md) element must have an `xsi
 
 #### Label
 
-Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
+Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
 
 #### Highlight requirements
 
@@ -295,11 +375,13 @@ However, there are some limitations to be aware of. These limitations are in pla
 ```xml
 <ExtensionPoint xsi:type="DetectedEntity">
   <Label resid="residLabelName"/>
+  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
+  <!--<RequestedHeight>360</RequestedHeight>-->
   <SourceLocation resid="residDetectedEntityURL" />
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" />
     <Rule xsi:type="ItemHasKnownEntity" EntityType="MeetingSuggestion" Highlight="all" />
     <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" Highlight="none" />
   </Rule>
-</ExtensionPoint> 
+</ExtensionPoint>
 ```

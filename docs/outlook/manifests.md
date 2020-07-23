@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in manifests
 description: The manifest describes how an Outlook add-in integrates across Outlook clients; includes an example.
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Priority
 ---
 
@@ -269,9 +269,11 @@ If the add-in's requested permissions change, users will be prompted to upgrade 
 
 ## VersionOverrides
 
-The **VersionOverrides** element is the location of information for add-in commands. For more information about this element, see [Define add-in commands in your manifest](../develop/define-add-in-commands.md).
+The **VersionOverrides** element is the location of information for [add-in commands](add-in-commands-for-outlook.md).
 
 This element is also where add-ins define support for [mobile add-ins](add-mobile-support.md).
+
+For a discussion on this element, see [Create add-in commands in your manifest for Excel, PowerPoint, and Word](../develop/create-addin-commands.md).
 
 ## Localization
 
@@ -319,7 +321,7 @@ Outlook add-ins specify the **Hosts** element like the following.
 </OfficeApp>
 ```
 
-This is separate from the **Hosts** element inside the **VersionOverrides** element, which is discussed in [Define add-in commands in your manifest](../develop/define-add-in-commands.md).
+This is separate from the **Hosts** element inside the **VersionOverrides** element, which is discussed in [Create add-in commands in your manifest for Excel, PowerPoint, and Word](../develop/create-addin-commands.md).
 
 ## Requirements
 
@@ -415,7 +417,7 @@ For details and samples of activation rules, see [Activation rules for Outlook a
 
 ## Next steps: Add-in commands
 
-After defining a basic manifest, [define add-in commands for your add-in](../develop/define-add-in-commands.md). Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
+After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
 For an example add-in that defines add-in commands, see [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 

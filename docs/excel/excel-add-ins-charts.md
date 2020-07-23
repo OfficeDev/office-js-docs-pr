@@ -1,6 +1,6 @@
 ---
 title: Work with charts using the Excel JavaScript API
-description: ''
+description: 'Code samples demonstrating chart tasks using the Excel JavaScript API.'
 ms.date: 07/17/2019
 localization_priority: Normal
 ---
@@ -8,7 +8,7 @@ localization_priority: Normal
 # Work with charts using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API.
-For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection).
+For the complete list of properties and methods that the `Chart` and `ChartCollection` objects support, see [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection).
 
 ## Create a chart
 
@@ -123,7 +123,7 @@ Excel.run(function (context) {
 
 ## Set visibility of gridlines in a chart
 
-The following code sample hides the major gridlines for the value axis of the first chart in the worksheet. You can show the major gridlines for the value axis of the chart, by setting `chart.axes.valueAxis.majorGridlines.visible` to **true**.
+The following code sample hides the major gridlines for the value axis of the first chart in the worksheet. You can show the major gridlines for the value axis of the chart, by setting `chart.axes.valueAxis.majorGridlines.visible` to `true`.
 
 ```js
 Excel.run(function (context) {
@@ -164,7 +164,7 @@ Excel.run(function (context) {
 
 ### Update a trendline
 
-The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.
+The following code sample sets the trendline to type `Linear` for the first series in the first chart in the worksheet named **Sample**.
 
 ```js
 Excel.run(function (context) {
@@ -206,9 +206,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 These parameters determine the size of the image. Images are always proportionally scaled. The width and height parameters put upper or lower bounds on the scaled image. `ImageFittingMode` has three values with the following behaviors:
 
-- `Fill`: The image’s minimum height or width is the specified height or width (whichever is reached first when scaling the image). This is the default behavior when no fitting mode is specified.
-- `Fit`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image).
-- `FitAndCenter`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image). The resulting image is centered relative to the other dimension.
+- `Fill`: The image's minimum height or width is the specified height or width (whichever is reached first when scaling the image). This is the default behavior when no fitting mode is specified.
+- `Fit`: The image's maximum height or width is the specified height or width (whichever is reached first when scaling the image).
+- `FitAndCenter`: The image's maximum height or width is the specified height or width (whichever is reached first when scaling the image). The resulting image is centered relative to the other dimension.
 
 ## See also
 

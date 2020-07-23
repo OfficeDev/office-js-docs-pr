@@ -1,16 +1,16 @@
 ---
-ms.date: 02/20/2020
-title: "Configure your Excel add-in to share the browser runtime (preview)"
+ms.date: 05/17/2020
+title: "Configure your Excel add-in to share the browser runtime"
 ms.prod: excel
-description: Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.
+description: 'Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.'
 localization_priority: Priority
 ---
 
-# Configure your Excel add-in to use a shared JavaScript runtime (preview)
+# Configure your Excel add-in to use a shared JavaScript runtime
 
-[!include[Running custom functions in a shared runtime note](../includes/excel-shared-runtime-preview-note.md)]
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
+When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not having access to all CORS functionality from a custom function.
 
 However, you can configure your Excel add-in to share code in a shared JavaScript runtime. This enables better coordination across your add-in and access to the DOM and CORS from all parts of your add-in. It also enables you to run code when the document opens, or to run code while the task pane is closed. To configure your add-in to use a shared runtime, follow the instructions in this article.
 
@@ -84,7 +84,7 @@ Follow these steps for a new or existing project to configure it to use a shared
    <bt:Urls>
    <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
    ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/dist/taskpane.html"/>
    ...
    ```
 
@@ -98,7 +98,8 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 When you add the `Runtime` element, you also specify a lifetime with a value of `long` or `short`. Set this value to `long` to take advantage of features such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions.
 
-If you set this value to `short`, the add-in will behave similar to the default behavior. The add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
+>![NOTE]
+> The default lifetime value is `short`, but we recommend using `long` in Excel add-ins. If you set your runtime to `short` in this example, your Excel add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
 
 ```xml
 <Runtimes>
@@ -108,14 +109,13 @@ If you set this value to `short`, the add-in will behave similar to the default 
 
 ## Multiple task panes
 
-Don't design your add-in to use multiple task panes if you are planning to use shared runtime. Shared runtime only supports the use of one task pane. Note that any task pane without a `<TaskpaneID>` is considered a different task pane.
+Don't design your add-in to use multiple task panes if you are planning to use a shared runtime. A shared runtime only supports the use of one task pane. Note that any task pane without a `<TaskpaneID>` is considered a different task pane.
 
 ## Next steps
 
-Now try out some features of the shared runtime by taking a look at the following articles.
-
-- [Call Excel APIs from a custom function](call-excel-apis-from-custom-function.md)
+- Read the [Call Excel APIs from a custom function](call-excel-apis-from-custom-function.md) article for details on using the Excel JavaScript APIs and custom Excel functions in a shared runtime.
+- Explore the patterns-and-practices sample [Manage ribbon and task pane UI, and run code on doc open](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario) to see a larger example of the shared JavaScript runtime in action.
 
 ## See also
 
-- [Overview: Run your add-in code in a shared JavaScript runtime (preview)](custom-functions-shared-overview.md)
+- [Overview: Run your add-in code in a shared JavaScript runtime](custom-functions-shared-overview.md)

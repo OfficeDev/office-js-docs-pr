@@ -1,20 +1,20 @@
 ---
 title: Rule element in the manifest file
-description: ''
-ms.date: 03/19/2019
+description: The Rule element specifies the activation rules that should be evaluated for this contextual mail add-in.
+ms.date: 05/14/2020
 localization_priority: Normal
 ---
 
 # Rule element
 
-Specifies the activation rule(s) that should be evaluated for this contextual mail add-in.
+Specifies the activation rules that should be evaluated for this contextual mail add-in.
 
-**Add-in type:** Mail contextual add-in
+**Add-in type:** Mail (contextual)
 
 ## Contained in
 
 - [OfficeApp](officeapp.md)
-- [ExtensionPoint](extensionpoint.md)
+- [ExtensionPoint](extensionpoint.md) ([**CustomPane** (deprecated)](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/), [**DetectedEntity**](extensionpoint.md#detectedentity))
 
 ## Attributes
 

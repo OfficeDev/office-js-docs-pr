@@ -18,7 +18,7 @@ This article provides rules, gotchas, and best practices for the Office dialog A
 
 - The dialog box can only navigate to HTTPS URLs, not HTTP.
 - The URL passed to the [displayDialogAsync](/javascript/api/office/office.ui) method must be in the exact same domain as the add-in itself. It cannot be a subdomain. But the page that is passed to it can redirect to a page in another domain.
-- A host window, which can be a task pane or the UI-less [function file](/office/dev/add-ins/reference/manifest/functionfile) of an add-in command, can have only one dialog box open at a time.
+- A host window, which can be a task pane or the UI-less [function file](../reference/manifest/functionfile.md) of an add-in command, can have only one dialog box open at a time.
 - Only two Office APIs can be called in the dialog box:
   - The [messageParent](/javascript/api/office/office.ui#messageparent-message-) function.
   - `Office.context.requirements.isSetSupported` (For more information, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).)

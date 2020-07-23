@@ -1,7 +1,7 @@
 ---
 title: Manage state and settings for an Outlook add-in
 description: Learn how to persist add-in state and settings for an Outlook add-in.
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
 ---
 
@@ -10,7 +10,7 @@ localization_priority: Normal
 > [!NOTE]
 > Please review [Persisting add-in state and settings](../develop/persisting-add-in-state-and-settings.md) in the **Core concepts** section of this documentation before reading this article.
 
-For Outlook add-ins, the Office JavaScript API provides [RoamingSettings](/javascript/api/outlook/office.roamingsettings) and [CustomProperties](/javascript/api/outlook/office.customproperties) objects for saving add-in state across sessions as described in the following table. In all cases, the saved settings values are associated with the [Id](/office/dev/add-ins/reference/manifest/id) of the add-in that created them.
+For Outlook add-ins, the Office JavaScript API provides [RoamingSettings](/javascript/api/outlook/office.roamingsettings) and [CustomProperties](/javascript/api/outlook/office.customproperties) objects for saving add-in state across sessions as described in the following table. In all cases, the saved settings values are associated with the [Id](../reference/manifest/id.md) of the add-in that created them.
 
 |**Object**|**Storage location**|
 |:-----|:-----|:-----|
@@ -60,7 +60,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 }
 ```
 
-The **saveAsync** method saves roaming settings asynchronously and takes an optional callback function. This code sample passes a callback function named `saveMyAppSettingsCallback` to the **saveAsync** method. When the asynchronous call returns, the _asyncResult_ parameter of the `saveMyAppSettingsCallback` function provides access to an [AsyncResult](/javascript/api/outlook) object that you can use to determine the success or failure of the operation with the **AsyncResult.status** property.
+The **saveAsync** method saves roaming settings asynchronously and takes an optional callback function. This code sample passes a callback function named `saveMyAppSettingsCallback` to the **saveAsync** method. When the asynchronous call returns, the _asyncResult_ parameter of the `saveMyAppSettingsCallback` function provides access to an [AsyncResult](/javascript/api/office/office.asyncresult) object that you can use to determine the success or failure of the operation with the **AsyncResult.status** property.
 
 ### Removing a roaming setting
 

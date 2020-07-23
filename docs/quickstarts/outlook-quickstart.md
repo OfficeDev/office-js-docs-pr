@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 12/28/2019
+ms.date: 06/23/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -17,6 +17,8 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 # [Yeoman generator](#tab/yeomangenerator)
 
 ### Prerequisites
+
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
 - [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
 
@@ -76,7 +78,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     </main>
     ```
 
-1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.
+1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function. This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.
 
     ```js
     // Get a reference to the current message
@@ -127,7 +129,7 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 - Office 365
 
     > [!NOTE]
-    > If you do not have an Office 365 subscription, you can get a free one by signing up for the [Office 365 developer program](https://developer.microsoft.com/office/dev-program).
+    > If you do not have a Microsoft 365 subscription, you can get a free one by signing up for the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 ### Create the add-in project
 
@@ -245,7 +247,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
     ```xml
     ...
-    <ProviderName>Northwind Traders</ProviderName>
+    <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
     <DisplayName DefaultValue="My Office Add-in" />
@@ -260,7 +262,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 1. In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account) and then choose **Connect**. When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.
 
     > [!NOTE]
-    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in, Basic Auth may be disabled for accounts on your Office 365 tenant. To test this add-in, sign in using a [Microsoft account](https://account.microsoft.com/account) instead.
+    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in, Basic Auth may be disabled for accounts on your Microsoft 365 tenant. To test this add-in, sign in using a [Microsoft account](https://account.microsoft.com/account) instead.
 
 1. In Outlook on the web, select or open a message.
 

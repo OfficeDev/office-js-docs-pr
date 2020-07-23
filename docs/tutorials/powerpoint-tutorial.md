@@ -1,6 +1,6 @@
 ---
 title: PowerPoint add-in tutorial
-description: In this tutorial, you'll build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
+description: 'In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.'
 ms.date: 12/24/2019
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
@@ -179,7 +179,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
     $('#insert-image').click(insertImage);
     ```
 
-8. In the **Home.js** file, replace `TODO2` with the following code to define the **insertImage** function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
+8. In the **Home.js** file, replace `TODO2` with the following code to define the `insertImage` function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
 
     ```js
     function insertImage() {
@@ -291,7 +291,7 @@ Complete the following steps to add code that inserts text into the title slide 
     $('#insert-text').click(insertText);
     ```
 
-3. In the **Home.js** file, replace `TODO5` with the following code to define the **insertText** function. This function inserts text into the current slide.
+3. In the **Home.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
 
     ```js
     function insertText() {
@@ -348,7 +348,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. In the **Home.js** file, replace `TODO7` with the following code to define the **getSlideMetadata** function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
+3. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
 
     ```js
     function getSlideMetadata() {

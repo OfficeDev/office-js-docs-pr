@@ -1,0 +1,105 @@
+### YamlMime:Landing
+
+title: Office Add-ins documentation # < 60 chars
+summary: Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on the web, Windows, Mac, and iPad. # < 160 chars
+
+metadata:
+  title: Office Add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Learn how to build Office Add-ins. # Required; article description that is displayed in search results. < 160 chars.
+  ms.prod: non-product-specific #Required
+  ms.topic: landing-page # Required
+  author: o365devx #Required; your GitHub user alias, with correct capitalization.
+  ms.author: o365devx #Required; microsoft alias of author; optional team alias.
+  ms.date: 07/13/2020 #Required; mm/dd/yyyy format.
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card (optional)
+  - title: About Office Add-ins
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Core concepts
+            url: overview/office-add-ins.md
+      - linkListType: overview
+        links:
+          - text: Excel add-ins documentation
+            url: excel/index.yml
+          - text: OneNote add-ins documentation
+            url: onenote/index.yml
+          - text: Outlook add-ins documentation
+            url: outlook/index.yml
+          - text: PowerPoint add-ins documentation
+            url: powerpoint/index.yml
+          - text: Project add-ins documentation
+            url: project/index.yml
+          - text: Word add-ins documentation
+            url: word/index.yml
+
+  # Card (optional)
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Get started with Office Add-ins
+            url: overview/learning-path-beginner.md
+          - text: Explore Office JavaScript API using Script Lab
+            url: overview/explore-with-script-lab.md
+      - linkListType: quickstart
+        links:
+          - text: Excel add-in quick start
+            url: quickstarts/excel-quickstart-jquery.md
+          - text: Excel custom functions quick start
+            url: quickstarts/excel-custom-functions-quickstart.md
+          - text: OneNote add-in quick start
+            url: quickstarts/onenote-quickstart.md
+          - text: Outlook add-in quick start
+            url: quickstarts/outlook-quickstart.md
+          - text: PowerPoint add-in quick start
+            url: quickstarts/powerpoint-quickstart.md
+          - text: Project add-in quick start
+            url: quickstarts/project-quickstart.md
+          - text: Word add-in quick start
+            url: quickstarts/word-quickstart.md
+          - text: Single sign-on (SSO) quick start
+            url: quickstarts/sso-quickstart.md
+
+  # Card
+  - title: Tutorials
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Excel add-in tutorial
+            url: tutorials/excel-tutorial.md
+          - text: Excel custom functions tutorial
+            url: tutorials/excel-tutorial-create-custom-functions.md
+          - text: Outlook add-in tutorial
+            url: tutorials/outlook-tutorial.md
+          - text: PowerPoint add-in tutorial
+            url: tutorials/powerpoint-tutorial.md
+          - text: Word add-in tutorial
+            url: tutorials/word-tutorial.md
+
+   # Card
+  - title: Resources
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Ask questions
+            url: https://stackoverflow.com/questions/tagged/office-js
+          - text: Report issues
+            url: https://github.com/officedev/office-js/issues
+          - text: Request features
+            url: https://officespdev.uservoice.com/
+          - text: COM or VSTO add-ins documentation
+            url: /office/client-developer/office-client-development
+          - text: Office Add-ins PnP samples repo
+            url: https://github.com/OfficeDev/PnP-OfficeAddins
+          - text: Office Add-ins blogs
+            url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
+          - text: Additional resources
+            url: resources/resources-links-help.md
+            

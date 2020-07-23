@@ -1,7 +1,7 @@
 ---
 title: Office UI Fabric in Office Add-ins 
-description: ''
-ms.date: 12/04/2017
+description: 'Get an overview of how to use the Office UI Fabric components in Office Add-ins.'
+ms.date: 04/20/2020
 localization_priority: Normal
 ---
 
@@ -62,4 +62,4 @@ You can use different JavaScript frameworks, such as Angular or React, to build 
 |**Framework**|**Example**|
 |:------------|:----------|
 |**React**|[Using Office UI Fabric React in Office Add-ins](using-office-ui-fabric-react.md )|
-|**Angular**| See [ngOfficeUIFabric](http://ngofficeuifabric.com/), which is a community project with Angular 1.5 directives, and [Consider wrapping Fabric components with Angular 2 components](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
+|**Angular**| [Consider wrapping Fabric components with Angular 2 components](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|

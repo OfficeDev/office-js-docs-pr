@@ -1,30 +1,29 @@
 ---
-title: Create add-in commands in your manifest for Excel, Word, and PowerPoint
-description: Use VersionOverrides in your manifest to define add-in commands for Excel, Word, and PowerPoint. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 09/26/2019
+title: Create add-in commands in your manifest for Excel, PowerPoint, and Word
+description: 'Use VersionOverrides in your manifest to define add-in commands for Excel, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.'
+ms.date: 05/27/2020
 localization_priority: Normal
 ---
 
 
-# Create add-in commands in your manifest for Excel, Word, and PowerPoint
+# Create add-in commands in your manifest for Excel, PowerPoint, and Word
 
+Use **[VersionOverrides](../reference/manifest/versionoverrides.md)** in your manifest to define add-in commands for Excel, PowerPoint, and Word. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
 
-Use **[VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
-- Create UI elements or entry points that make your add-in's functionality easier to use.  
-  
+- Create UI elements or entry points that make your add-in's functionality easier to use.
 - Add buttons or a drop-down list of buttons to the ribbon.
-  
 - Add individual menu items — each containing optional submenus — to specific context (shortcut) menus.
-  
 - Perform actions when your add-in command is chosen. You can:
-
   - Show one or more task pane add-ins for users to interact with. Inside your task pane add-in, you can display HTML that uses Office UI Fabric to create a custom UI.
 
      *or*
 
   - Run JavaScript code, which normally runs without displaying any UI.
 
-This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article. 
+This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
+
+> [!NOTE]
+> Add-in commands are also supported in Outlook. For more information, see [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md)
 
 The following image is an overview of add-in commands elements in the manifest.
 ![Overview of add-in commands elements in the manifest](../images/version-overrides.png)
@@ -142,7 +141,7 @@ The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** el
 
 ## Step 5: Add the FunctionFile element
 
-The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](/office/dev/add-ins/reference/manifest/control#button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
+The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](../reference/manifest/control.md#button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
 
 The following is an example of the **FunctionFile** element.
   
@@ -151,7 +150,7 @@ The following is an example of the **FunctionFile** element.
     <FunctionFile resid="residDesktopFuncUrl" />
     <ExtensionPoint xsi:type="PrimaryCommandSurface">
       <!-- information about this extension point -->
-    </ExtensionPoint> 
+    </ExtensionPoint>
 
     <!-- You can define more than one ExtensionPoint element as needed -->
 </DesktopFormFactor>
@@ -160,12 +159,11 @@ The following is an example of the **FunctionFile** element.
 > [!IMPORTANT]
 > Make sure your JavaScript code calls  `Office.initialize`.
 
-The JavaScript in the HTML file referenced by the **FunctionFile** element must call `Office.initialize`. The **FunctionName** element (see [Button controls](/office/dev/add-ins/reference/manifest/control#button-control) for a description) uses the functions in **FunctionFile**.
+The JavaScript in the HTML file referenced by the **FunctionFile** element must call `Office.initialize`. The **FunctionName** element (see [Button controls](../reference/manifest/control.md#button-control) for a description) uses the functions in **FunctionFile**.
 
 The following code shows how to implement the function used by **FunctionName**.
 
 ```js
-
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -189,7 +187,7 @@ The following code shows how to implement the function used by **FunctionName**.
                 }
             });
 
-        // Calling event.completed is required. event.completed lets the platform know that processing has completed. 
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
 </script>
@@ -246,14 +244,13 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 |**Element**|**Description**|
 |:-----|:-----|
 |**CustomTab** <br/> |Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required. <br/> |
-|**OfficeTab** <br/> |Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. <br/> For more tab values to use with the **id** attribute, see [Tab values for default Office ribbon tabs](/office/dev/add-ins/reference/manifest/officetab).  <br/> |
+|**OfficeTab** <br/> |Required if you want to extend a default Office app ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. <br/> For more tab values to use with the **id** attribute, see [Tab values for default Office app ribbon tabs](../reference/manifest/officetab.md).  <br/> |
 |**OfficeMenu** <br/> | Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: <br/> **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> **ContextMenuCell** for Excel. Displays the item on the context menu when the user right-clicks on a cell on the spreadsheet. <br/> |
 |**Group** <br/> |A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters. <br/> |
 |**Label** <br/> |Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> |
 |**Icon** <br/> |Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64. <br/> |
 |**Tooltip** <br/> |Optional. The tooltip of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the  [Button controls](/office/dev/add-ins/reference/manifest/control#button-control) and [Menu controls](/office/dev/add-ins/reference/manifest/control#menu-dropdown-button-controls) sections for more information. <br/>**Note:** To make troubleshooting easier, we recommend that you add a **Control** element and the related **Resources** child elements one at a time.          |
-
+|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the  [Button controls](../reference/manifest/control.md#button-control) and [Menu controls](../reference/manifest/control.md#menu-dropdown-button-controls) sections for more information. <br/>**Note:** To make troubleshooting easier, we recommend that you add a **Control** element and the related **Resources** child elements one at a time.          |
 
 ### Button controls
 
@@ -309,24 +306,21 @@ A button performs a single action when the user selects it. It can either execut
 |**Icon** <br/> | Required. Contains the **Image** elements for the button. Image files must be .png format. <br/> **Image** <br/>  Defines an image to display on the button. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute indicates the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64. <br/> |
 |**Action** <br/> | Required. Specifies the action to perform when the user selects the button. You can specify one of the following values for the **xsi:type** attribute: <br/> **ExecuteFunction**, which runs a JavaScript function located in the file referenced by **FunctionFile**. **ExecuteFunction** does not display a UI. The **FunctionName** child element specifies the name of the function to execute. <br/> **ShowTaskPane**, which shows a task pane add-in. The **SourceLocation** child element specifies the source file location of the task pane add-in to display. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the **Resources** element. <br/> |
 
-
 ### Menu controls
+
 A **Menu** control can be used with either **PrimaryCommandSurface** or **ContextMenu**, and defines:
   
 - A root-level menu item.
-
 - A list of submenu items.
- 
+
 When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
 
 The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function. In the **Control** element:
 
 - The **xsi:type** attribute is required, and must be set to **Menu**.
-  
 - The **id** attribute is a string with a maximum of 125 characters.
 
 ```xml
-
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
@@ -381,14 +375,13 @@ The following example shows how to define a menu item with two submenu items. Th
 |**Tooltip** <br/> |Optional. The tooltip for the menu. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
 |**SuperTip** <br/> | Required. The supertip for the menu, which is defined by the following: <br/> **Title** <br/>  Required. The text of the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> **Description** <br/>  Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
 |**Icon** <br/> | Required. Contains the **Image** elements for the menu. Image files must be .png format. <br/> **Image** <br/>  An image for the menu. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute indicates the size in pixels of the image. Three image sizes, in pixels, are required: 16, 32, and 80. Five optional sizes, in pixels, are also supported: 20, 24, 40, 48, and 64. <br/> |
-|**Items** <br/> |Required. Contains the **Item** elements for each submenu item. Each **Item** element contains the same child elements as [Button controls](/office/dev/add-ins/reference/manifest/control#button-control).  <br/> |
-   
+|**Items** <br/> |Required. Contains the **Item** elements for each submenu item. Each **Item** element contains the same child elements as [Button controls](../reference/manifest/control.md#button-control).  <br/> |
+
 ## Step 7: Add the Resources element
 
 The **Resources** element contains resources used by the different child elements of the **VersionOverrides** element. Resources include icons, strings, and URLs. An element in the manifest can use a resource by referencing the **id** of the resource. Using the **id** helps organize the manifest, especially when there are different versions of the resource for different locales. An **id** has a maximum of 32 characters.
   
 The following shows an example of how to use the **Resources** element. Each resource can have one or more **Override** child elements to define a different resource for a specific locale.
-
 
 ```xml
 <Resources>
@@ -427,10 +420,11 @@ The following shows an example of how to use the **Resources** element. Each res
 |**Urls**/ **Url** <br/> |Provides an HTTPS URL location. A URL can be a maximum of 2048 characters.  <br/> |
 |**ShortStrings**/ **String** <br/> |The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters. <br/> |
 |**LongStrings**/ **String** <br/> |The text for **Tooltip** and **Description** elements. Each **String** contains a maximum of 250 characters. <br/> |
-   > [!NOTE]
+
+> [!NOTE]
 > You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.
 
-### Tab values for default Office ribbon tabs
+### Tab values for default Office app ribbon tabs
 
 In Excel and Word, you can add your add-in commands to the ribbon by using the default Office UI tabs. The following table lists the values that you can use for the **id** attribute of the **OfficeTab** element. The tab values are case sensitive.
 
@@ -442,4 +436,4 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 
 ## See also
 
--  [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md)
+- [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md)

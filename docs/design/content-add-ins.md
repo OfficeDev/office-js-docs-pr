@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
-description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 03/19/2019
+description: 'Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.'
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
@@ -20,7 +20,7 @@ Content add-ins are surfaces that can be embedded directly into Excel or PowerPo
 
 ## Variants
 
-Content add-in sizes for Excel and PowerPoint in Office desktop and Office 365 are user specified.
+Content add-in sizes for Excel and PowerPoint in Office desktop and Microsoft 365 are user specified.
 
 ## Personality menu
 
@@ -45,13 +45,13 @@ For a sample that implements a content add-in, see [Excel Content Add-in Humongo
 
 ## Support considerations
 
-- Check to see if your Office Add-in will work on a [specific Office host platform](/office/dev/add-ins/overview/office-add-in-availability). 
-- Some content add-ins may require the user to "trust" the add-in to read and write to Excel or PowerPoint. You can declare what [level of permissions](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) you want your user to have in the add-in's manifest.  
+- Check to see if your Office Add-in will work on a [specific Office host platform](../overview/office-add-in-availability.md).
+- Some content add-ins may require the user to "trust" the add-in to read and write to Excel or PowerPoint. You can declare what [level of permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) you want your user to have in the add-in's manifest.  
 - Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
 
 ## See also
 
-- [Office Add-in host and platform availability](/office/dev/add-ins/overview/office-add-in-availability)
-- [Office UI Fabric in Office Add-ins](/office/dev/add-ins/design/office-ui-fabric)
-- [UX design patterns for Office Add-ins](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [Requesting permissions for API use in add-ins](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
+- [Office UI Fabric in Office Add-ins](../design/office-ui-fabric.md)
+- [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)
+- [Requesting permissions for API use in add-ins](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

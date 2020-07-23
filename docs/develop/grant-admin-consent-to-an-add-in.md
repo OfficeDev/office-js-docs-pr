@@ -1,6 +1,6 @@
 ---
 title: Grant administrator consent to the add-in
-description: ''
+description: 'Learn how to grant administrator consent to your add-in'
 ms.date: 04/10/2018 
 localization_priority: Normal
 ---

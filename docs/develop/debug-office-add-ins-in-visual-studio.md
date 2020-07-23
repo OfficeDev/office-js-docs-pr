@@ -28,9 +28,9 @@ Before you start debugging, review the properties of each project to confirm tha
 
 Open the **Properties** window for the add-in project to review project properties:
 
-1. In  **Solution Explorer**, choose the add-in project (*not* the web application project).
+1. In **Solution Explorer**, choose the add-in project (*not* the web application project).
 
-2. From the menu bar, choose  **View** >  **Properties Window**.
+2. From the menu bar, choose **View** > **Properties Window**.
 
 The following table describes the properties of the add-in project.
 
@@ -54,9 +54,9 @@ The following table describes the properties of the add-in project.
 
 Open the **Properties** window for the web application project to review project properties:
 
-1. In  **Solution Explorer**, choose the web application project.
+1. In **Solution Explorer**, choose the web application project.
 
-2. From the menu bar, choose  **View** >  **Properties Window**.
+2. From the menu bar, choose **View** > **Properties Window**.
 
 The following table describes the properties of the web application project that are most relevant to Office Add-in projects.
 
@@ -91,7 +91,7 @@ If you have a document that contains test data you want to use while debugging y
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar. Visual Studio will automatically build the solution and start Office to host your add-in.
 
 > [!NOTE]
-> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Office 365 tenant. In this case, try using a Microsoft account instead. You may also need to set the property "Use multi-factor auth" to True in the Outlook Web Add-in project properties dialog.
+> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You may also need to set the property "Use multi-factor auth" to True in the Outlook Web Add-in project properties dialog.
 
 When Visual Studio builds the project it performs the following tasks:
 
@@ -108,13 +108,13 @@ When Visual Studio builds the project it performs the following tasks:
 
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the XML manifest file by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
+1. Modifies the [SourceLocation](../reference/manifest/sourcelocation.md) element of the XML manifest file by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
 
 2. Starts the web application project in IIS Express.
 
 3. Opens the host application.
 
-Visual Studio doesn't show validation errors in the  **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information about how to enable or disable validation, see [Options, Text Editor, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
+Visual Studio doesn't show validation errors in the **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information about how to enable or disable validation, see [Options, Text Editor, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
 To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 

@@ -1,13 +1,13 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
-description: ''
-ms.date: 10/21/2019
+description: 'Code samples that show how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
+ms.date: 05/06/2020
 localization_priority: Normal
 ---
 
 # Work with workbooks using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with workbooks using the Excel JavaScript API. For the complete list of properties and methods that the **Workbook** object supports, see [Workbook Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook). This article also covers workbook-level actions performed through the [Application](/javascript/api/excel/excel.application) object.
+This article provides code samples that show how to perform common tasks with workbooks using the Excel JavaScript API. For the complete list of properties and methods that the `Workbook` object supports, see [Workbook Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook). This article also covers workbook-level actions performed through the [Application](/javascript/api/excel/excel.application) object.
 
 The Workbook object is the entry point for your add-in to interact with Excel. It maintains collections of worksheets, tables, PivotTables, and more, through which Excel data is accessed and changed. The [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) object gives your add-in access to all the workbook's data through individual worksheets. Specifically, it lets your add-in add worksheets, navigate among them, and assign handlers to worksheet events. The article [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md) describes how to access and edit worksheets.
 
@@ -46,7 +46,7 @@ Excel.createWorkbook();
 
 The `createWorkbook` method can also create a copy of an existing workbook. The method accepts a base64-encoded string representation of an .xlsx file as an optional parameter. The resulting workbook will be a copy of that file, assuming the string argument is a valid .xlsx file.
 
-You can get your add-in’s current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
+You can get your add-in's current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
 
 ```js
 var myFile = document.getElementById("file");
@@ -131,7 +131,7 @@ Protection can also be set at the worksheet level to prevent unwanted data editi
 
 ## Access document properties
 
-Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the **author** property.
+Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the `author` property.
 
 ```js
 Excel.run(function (context) {
@@ -179,6 +179,41 @@ Excel.run(function (context) {
         console.log("Workbook needs review : " + needsReview.value);
     });
 }).catch(errorHandlerFunction);
+```
+
+## Access application culture settings
+
+A workbook has language and culture settings that affect how certain data is displayed. These settings can help localize data when your add-in's users are sharing workbooks across different languages and cultures. Your add-in can use string parsing to localize the format of numbers, dates, and times based on the system culture settings so that each user sees data in their own culture's format.
+
+`Application.cultureInfo` defines the system culture settings as a [CultureInfo](/javascript/api/excel/excel.cultureinfo) object. This contains settings like the numerical decimal separator or the date format.
+
+Some culture settings can be [changed through the Excel UI](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). The system settings are preserved in the `CultureInfo` object. Any local changes are kept as [Application](/javascript/api/excel/excel.application)-level properties, such as `Application.decimalSeparator`.
+
+The following sample changes the decimal separator character of a numerical string from a ',' to the character used by the system settings.
+
+```js
+// This will convert a number like "14,37" to "14.37"
+// (assuming the system decimal separator is ".").
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var decimalSource = sheet.getRange("B2");
+    decimalSource.load("values");
+    context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+
+    return context.sync().then(function() {
+        var systemDecimalSeparator =
+            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+        var oldDecimalString = decimalSource.values[0][0];
+
+        // This assumes the input column is standardized to use "," as the decimal separator.
+        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+
+        var resultRange = sheet.getRange("C2");
+        resultRange.values = [[newDecimalString]];
+        resultRange.format.autofitColumns();
+        return context.sync();
+    });
+});
 ```
 
 ## Add custom XML data to the workbook
@@ -257,10 +292,7 @@ The Excel API also lets add-ins turn off calculations until `RequestContext.sync
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## Save the workbook (preview)
-
-> [!NOTE]
-> The `Workbook.save` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Save the workbook
 
 `Workbook.save` saves the workbook to persistent storage. The `save` method takes a single, optional `saveBehavior` parameter that can be one of the following values:
 
@@ -274,10 +306,7 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## Close the workbook (preview)
-
-> [!NOTE]
-> The `Workbook.close` method is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## Close the workbook
 
 `Workbook.close` closes the workbook, along with add-ins that are associated with the workbook (the Excel application remains open). The `close` method takes a single, optional `closeBehavior` parameter that can be one of the following values:
 

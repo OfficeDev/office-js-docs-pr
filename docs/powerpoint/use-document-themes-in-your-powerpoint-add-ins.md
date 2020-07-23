@@ -1,13 +1,13 @@
 ---
 title: Use document themes in your PowerPoint add-ins
-description: ''
+description: 'Learn how to visually coordinate themes such as fonts and colors to apply to presentations, documents, worksheets, and emails.'
 ms.date: 10/14/2019
 localization_priority: Normal
 ---
 
 # Use document themes in your PowerPoint add-ins
 
-An [Office theme](https://support.office.com/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, you use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
+An [Office theme](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, you use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
 
 Using OfficeThemes.css, helps you design add-ins that are coordinated with PowerPoint in two ways:
 
@@ -21,7 +21,7 @@ Every Office document theme defines 12 colors. Ten of these colors are available
 
 ![Color palette](../images/office15-app-color-palette.png)
 
-To view or customize the full set of 12 theme colors in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then select **Colors** > **Customize Colors** to display the **Create New Theme Colors** dialog box.
+To view or customize the full set of 12 theme colors in PowerPoint, in the **Variants** group on the **Design** tab, click the **More** drop-down - then select **Colors** > **Customize Colors** to display the **Create New Theme Colors** dialog box.
 
 ![Create new theme colors dialog box](../images/office15-app-create-new-theme-colors.png)
 
@@ -29,17 +29,17 @@ The first four colors are for text and backgrounds. Text that is created with th
 
 ### Document theme fonts
 
-Every Office document theme also defines two fonts -- one for headings and one for body text. PowerPoint uses these fonts to construct automatic text styles. In addition,  **Quick Styles** galleries for text and **WordArt** use these same theme fonts. These two fonts are available as the first two selections when you select fonts with the font picker.
+Every Office document theme also defines two fonts -- one for headings and one for body text. PowerPoint uses these fonts to construct automatic text styles. In addition, **Quick Styles** galleries for text and **WordArt** use these same theme fonts. These two fonts are available as the first two selections when you select fonts with the font picker.
 
 ![The font picker](../images/office15-app-font-picker.png)
 
-To view or customize theme fonts in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then select **Fonts** > **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
+To view or customize theme fonts in PowerPoint, in the **Variants** group on the **Design** tab, click the **More** drop-down - then select **Fonts** > **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
 
 ![Create new theme fonts dialog box](../images/office15-app-create-new-theme-fonts.png)
 
 ### Office UI theme fonts and colors
 
-Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. To do that, you use the  **File** > **Account** > **Office Theme** drop-down (from any Office application).
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. To do that, you use the **File** > **Account** > **Office Theme** drop-down (from any Office application).
 
 ![Office theme drop-down](../images/office15-app-office-theme-picker.png)
 
@@ -175,7 +175,7 @@ The following shows a simple example of HTML in a content add-in that uses the O
 </body>
 ```
 
-At runtime, when inserted into a presentation that uses the default  **Office Theme**, the content add-in is rendered like this.
+At runtime, when inserted into a presentation that uses the default **Office Theme**, the content add-in is rendered like this.
 
 ![Content app running with Office theme](../images/office15-app-content-app-office-theme.png)
 

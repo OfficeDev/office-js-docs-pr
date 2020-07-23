@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
-description: ''
-ms.date: 01/06/2020
+description: 'Get an overview of the Office Add-in manifest and its uses.'
+ms.date: 03/18/2020
 localization_priority: Priority
 ---
 
@@ -13,7 +13,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 * Describe itself by providing an ID, version, description, display name, and default locale.
 
-* Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office Ribbon.
+* Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office app ribbon.
 
 * Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
 
@@ -23,8 +23,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 * For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
-> [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
@@ -67,61 +66,61 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 
 <!-- Links for above table -->
 
-[officeapp]: /office/dev/add-ins/reference/manifest/officeapp
-[id]: /office/dev/add-ins/reference/manifest/id
-[version]: /office/dev/add-ins/reference/manifest/version
-[providername]: /office/dev/add-ins/reference/manifest/providername
-[defaultlocale]: /office/dev/add-ins/reference/manifest/defaultlocale
-[displayname]: /office/dev/add-ins/reference/manifest/displayname
-[description]: /office/dev/add-ins/reference/manifest/description
-[iconurl]: /office/dev/add-ins/reference/manifest/iconurl
-[supporturl]: /office/dev/add-ins/reference/manifest/supporturl
-[defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
-[sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
-[desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
-[sourcelocation (mailapp)]: https://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: /office/dev/add-ins/reference/manifest/permissions
-[permissions (taskpaneapp)]: /office/dev/add-ins/reference/manifest/permissions
-[permissions (mailapp)]: /office/dev/add-ins/reference/manifest/permissions
-[rule (rulecollection)]: /office/dev/add-ins/reference/manifest/rule
-[rule (mailapp)]: /office/dev/add-ins/reference/manifest/rule
-[requirements (mailapp)*]: /office/dev/add-ins/reference/manifest/requirements
-[set*]: /office/dev/add-ins/reference/manifest/set
-[sets (mailapprequirements)*]: /office/dev/add-ins/reference/manifest/sets
-[form*]: /office/dev/add-ins/reference/manifest/form
-[formsettings*]: /office/dev/add-ins/reference/manifest/formsettings
-[sets (requirements)*]: /office/dev/add-ins/reference/manifest/sets
-[hosts*]: /office/dev/add-ins/reference/manifest/hosts
+[officeapp]: ../reference/manifest/officeapp.md
+[id]: ../reference/manifest/id.md
+[version]: ../reference/manifest/version.md
+[providername]: ../reference/manifest/providername.md
+[defaultlocale]: ../reference/manifest/defaultlocale.md
+[displayname]: ../reference/manifest/displayname.md
+[description]: ../reference/manifest/description.md
+[iconurl]: ../reference/manifest/iconurl.md
+[supporturl]: ../reference/manifest/supporturl.md
+[defaultsettings (contentapp)]: ../reference/manifest/defaultsettings.md
+[defaultsettings (taskpaneapp)]: ../reference/manifest/defaultsettings.md
+[sourcelocation (contentapp)]: ../reference/manifest/sourcelocation.md
+[sourcelocation (taskpaneapp)]: ../reference/manifest/sourcelocation.md
+[desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
+[sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
+[permissions (contentapp)]: ../reference/manifest/permissions.md
+[permissions (taskpaneapp)]: ../reference/manifest/permissions.md
+[permissions (mailapp)]: ../reference/manifest/permissions.md
+[rule (rulecollection)]: ../reference/manifest/rule.md
+[rule (mailapp)]: ../reference/manifest/rule.md
+[requirements (mailapp)*]: ../reference/manifest/requirements.md
+[set*]: ../reference/manifest/set.md
+[sets (mailapprequirements)*]: ../reference/manifest/sets.md
+[form*]: ../reference/manifest/form.md
+[formsettings*]: ../reference/manifest/formsettings.md
+[sets (requirements)*]: ../reference/manifest/sets.md
+[hosts*]: ../reference/manifest/hosts.md
 
 ## Hosting requirements
 
 All image URIs, such as those used for [add-in commands][], must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
-All URLs, such as the source file locations specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+All URLs, such as the source file locations specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## Best practices for submitting to AppSource
 
 Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
-Add-ins submitted to AppSource must also include the [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/office/dev/store/validation-policies).
+Add-ins submitted to AppSource must also include the [SupportUrl](../reference/manifest/supporturl.md) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/legal/marketplace/certification-policies).
 
-Only use the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element for authentication scenarios.
+Only use the [AppDomains](../reference/manifest/appdomains.md) element to specify domains other than the one specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element for authentication scenarios.
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
+When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
 
-To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
+To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](../reference/manifest/appdomains.md) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
 > [!NOTE]
 > There are two exceptions to this behavior:
-> 
+>
 > - It applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
-> - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office. 
+> - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
 
-The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.
+The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](../reference/manifest/appdomain.md) element within the **AppDomains** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -146,7 +145,7 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 
 ## Specify domains from which Office.js API calls are made
 
-Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file. If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md). 
+Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](../reference/manifest/sourcelocation.md) element of the manifest file. If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](../reference/manifest/appdomains.md) element of the manifest file. If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).
 
 ## Manifest v1.1 XML file examples and schemas
 
@@ -201,7 +200,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
-          <!--PrimaryCommandSurface==Main Office Ribbon-->
+          <!--PrimaryCommandSurface==Main Office app ribbon-->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->
@@ -214,9 +213,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                   <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
                   <!--Icons. Required sizes: 16, 32, 80; optional: 20, 24, 40, 48, 64. You should provide as many sizes as possible for a great user experience. -->
                   <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
-                  <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                  <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                  <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                  <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                  <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                  <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                 </Icon>
 
                 <!--Control. It can be of type "Button" or "Menu" -->
@@ -230,9 +229,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                     <Description resid="Contoso.FunctionButton.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.FunctionButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.FunctionButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.FunctionButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.FunctionButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.FunctionButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.FunctionButton.Icon80" />
                   </Icon>
                   <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane-->
                   <!--Look at the FunctionFile.html page for reference on how to implement the function -->
@@ -249,9 +248,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                     <Description resid="Contoso.TaskpaneButton.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button2Id1</TaskpaneId>
@@ -267,9 +266,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                     <Description resid="Contoso.Dropdown.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                   </Icon>
                   <Items>
                     <Item id="Contoso.Menu.Item1">
@@ -279,9 +278,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                         <Description resid="Contoso.Item1.Tooltip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
                         <TaskpaneId>MyTaskPaneID1</TaskpaneId>
@@ -296,9 +295,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                         <Description resid="Contoso.Item2.Tooltip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
                         <TaskpaneId>MyTaskPaneID2</TaskpaneId>
@@ -321,7 +320,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Contoso.TaskpaneButton.Icon" DefaultValue="https://i.imgur.com/FkSShX9.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon16" DefaultValue="https://myCDN/Images/Button16x16.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon32" DefaultValue="https://myCDN/Images/Button32x32.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon80" DefaultValue="https://myCDN/Images/Button80x80.png" />
         <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
       </bt:Images>
       <bt:Urls>

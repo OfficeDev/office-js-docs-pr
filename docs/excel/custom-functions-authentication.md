@@ -1,52 +1,48 @@
 ---
-ms.date: 07/09/2019
-description: Authenticate users using custom functions in Excel.
-title: Authentication for custom functions
+ms.date: 05/17/2020
+description: Authenticate users using custom functions in Excel which don't use the task pane.
+title: Authentication for UI-less custom functions
 localization_priority: Normal
 ---
 
-# Authentication for custom functions
+# Authentication for UI-less custom functions
 
-In some scenarios your custom function will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, you should be aware that custom functions run in a separate runtime from the task pane and other UI elements of your add-in. Because of this, you'll need to pass data back and forth between the two runtimes using the `OfficeRuntime.storage` object and the Dialog API.
+In some scenarios your custom function that does not use a task pane or other user interface elements (UI-less custom function) will need to authenticate the user in order to access protected resources. Be aware that UI-less custom functions run in a JavaScript-only runtime. Because of this, you'll need to pass data back and forth between the JavaScript-only runtime and the typical browser engine runtime used by most add-ins using the `OfficeRuntime.storage` object and the Dialog API.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
+
 ## OfficeRuntime.storage object
 
-The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
-
-Additionally, there is a benefit to using the `storage` object; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.
+The JavaScript-only runtime used by UI-less custom functions doesn't have a `localStorage` object available on the global window, where you typically store data. Instead, you should share data between UI-less custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.
 
 ### Suggested usage
 
-When you need to authenticate either from the task pane or a custom function, check `storage` to see if the access token was already acquired. If not, use the dialog API to authenticate the user, retrieve the access token, and then store the token in `storage` for future use.
+When you need to authenticate from a UI-less custom function, check `storage` to see if the access token was already acquired. If not, use the dialog API to authenticate the user, retrieve the access token, and then store the token in `storage` for future use.
 
 ## Dialog API
 
 If a token doesn't exist, you should use the Dialog API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored in `storage`.
 
 > [!NOTE]
-> The custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use `OfficeRuntime.Dialog` to authenticate users in the custom functions runtime.
+> The JavaScript-only runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use `OfficeRuntime.Dialog` to authenticate users in the JavaScript-only runtime.
 
-For information on how to use the `Dialog` object, see [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog).
+The following diagram outlines this basic process. The dotted line indicates that UI-less custom functions and your add-in's task pane are both part of your add-in as a whole, though they use separate runtimes.
 
-When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `OfficeRuntime.storage`.
-
-The following diagram outlines this basic process. Note that the dotted line indicates that while they perform separate actions, custom functions and your add-in's task pane are both part of your add-in as a whole.
-
-1. You issue a custom function call from a cell in an Excel workbook.
-2. The custom function uses `Dialog` to pass your user credentials to a website.
-3. This website then returns an access token to the custom function.
-4. Your custom function then sets this access token to the `storage`.
+1. You issue a UI-less custom function call from a cell in an Excel workbook.
+2. The UI-less custom function uses `Dialog` to pass your user credentials to a website.
+3. This website then returns an access token to the UI-less custom function.
+4. Your UI-less custom function then sets this access token to the `storage`.
 5. Your add-in's task pane accesses the token from `storage`.
 
 ![Diagram of custom function using dialog API to get access token, and then share token with task pane through the OfficeRuntime.storage API.](../images/authentication-diagram.png "Authentication diagram.")
 
 ## Storing the token
 
-The following examples are from the [Using OfficeRuntime.storage in custom functions](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) code sample. Refer to this code sample for a complete example of sharing data between custom functions and the task pane.
+The following examples are from the [Using OfficeRuntime.storage in custom functions](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) code sample. Refer to this code sample for a complete example of sharing data between UI-less custom functions and the task pane.
 
-If the custom function authenticates, then it receives the access token and will need to store it in `storage`. The following code sample shows how to call the `storage.setItem` method to store a value. The `storeValue` function is a custom function that for example purposes stores a value from the user. You can modify this to store any token value you need.
+If the UI-less custom function authenticates, then it receives the access token and will need to store it in `storage`. The following code sample shows how to call the `storage.setItem` method to store a value. The `storeValue` function is a UI-less custom function that for example purposes stores a value from the user. You can modify this to store any token value you need.
 
 ```js
 /**
@@ -85,19 +81,65 @@ function receiveTokenFromCustomFunction() {
 
 ## General guidance
 
-Office Add-ins are web-based and you can use any web authentication technique. There is no particular pattern or method you must follow to implement your own authentication with custom functions. You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](/office/dev/add-ins/develop/auth-external-add-ins).  
+Office Add-ins are web-based and you can use any web authentication technique. There is no particular pattern or method you must follow to implement your own authentication with UI-less custom functions. You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](../develop/auth-external-add-ins.md).  
 
 Avoid using the following locations to store data when developing custom functions:  
 
-- `localStorage`: Custom functions do not have access to the global `window` object and therefore have no access to data stored in `localStorage`.
+- `localStorage`: UI-less custom functions do not have access to the global `window` object and therefore have no access to data stored in `localStorage`.
 - `Office.context.document.settings`:  This location is not secure and information can be extracted by anyone using the add-in.
 
+## Dialog box API example
+
+In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API's `displayWebDialogOptions` function to display a dialog box. This sample is provided to show the capabilities of the `Dialog` object, not demonstrate how to authenticate.
+
+```JavaScript
+/**
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * @param {string} url URL for a stored token.
+ */
+function getTokenViaDialog(url) {
+  return new Promise (function (resolve, reject) {
+    if (_dialogOpen) {
+      // Can only have one dialog box open at once. Wait for previous dialog box's token.
+      let timeout = 5;
+      let count = 0;
+      var intervalId = setInterval(function () {
+        count++;
+        if(_cachedToken) {
+          resolve(_cachedToken);
+          clearInterval(intervalId);
+        }
+        if(count >= timeout) {
+          reject("Timeout while waiting for token");
+          clearInterval(intervalId);
+        }
+      }, 1000);
+    } else {
+      _dialogOpen = true;
+      OfficeRuntime.displayWebDialog(url, {
+        height: '50%',
+        width: '50%',
+        onMessage: function (message, dialog) {
+          _cachedToken = message;
+          resolve(message);
+          dialog.close();
+          return;
+        },
+        onRuntimeError: function(error, dialog) {
+          reject(error);
+        },
+      }).catch(function (e) {
+        reject(e);
+      });
+    }
+  });
+}
+```
+
 ## Next steps
-Learn about the [dialog API for custom functions](custom-functions-dialog.md).
+Learn how to [debug UI-less custom functions](custom-functions-debugging.md).
 
 ## See also
 
-* [Custom functions architecture](custom-functions-architecture.md)
-* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Runtime for UI-less Excel custom functions](custom-functions-runtime.md)
 * [Excel custom functions tutorial](excel-tutorial-custom-functions.md)

@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JS API.
-ms.date: 01/16/2020
+ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
 ---
@@ -22,6 +22,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 ### Prerequisites
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### Create the add-in project
@@ -294,13 +295,15 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the one-time purchase version of Office, instead of the Office 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)
+2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the one-time purchase version of Office, instead of the Microsoft 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)
 
     ![A screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-0.png)
 
 3. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
     ![Screenshot of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1b.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### Next steps
 
@@ -315,4 +318,4 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 * [Develop Office Add-ins](../develop/develop-overview.md)
 * [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 * [Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API reference](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
+* [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)

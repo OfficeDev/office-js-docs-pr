@@ -1,6 +1,6 @@
 ---
 title: Building Office Add-ins
-description: An introduction to developing Office Add-ins.
+description: 'An introduction to developing Office Add-ins.'
 ms.date: 02/27/2020
 localization_priority: Priority
 ---
@@ -114,7 +114,7 @@ This article has outlined the different ways to create Office Add-ins, introduce
 
 ### Create an Office add-in
 
-You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.md). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try the [tutorial](../index.md).
+You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](/office/dev/add-ins/). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try the [tutorial](/office/dev/add-ins/).
 
 ### Explore the APIs with Script Lab
 
@@ -125,7 +125,7 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 Learn more about developing, testing, and publishing Office Add-ins by exploring this documentation.
 
 > [!TIP]
-> For any add-in that you build, you'll use information in the [Core concepts](core-concepts-office-add-ins.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel](../excel/index.md)).
+> For any add-in that you build, you'll use information in the [Core concepts](core-concepts-office-add-ins.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel](../excel/index.yml)).
 >
 > ![An image that shows the table of contents](../images/top-level-toc.png)
 

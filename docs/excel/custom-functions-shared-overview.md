@@ -1,13 +1,13 @@
 ---
-ms.date: 02/13/2020
-description: Learn how to run custom functions, ribbon buttons, and task pane code in a the same JavaScript runtime to coordinate scenarios across your add-in.
-title: Run your add-in code in a shared JavaScript runtime (preview)
+ms.date: 05/17/2020
+description: 'Learn how to run custom functions, ribbon buttons, and task pane code in a the same JavaScript runtime to coordinate scenarios across your add-in.'
+title: Run your add-in code in a shared JavaScript runtime
 localization_priority: Priority
 ---
 
-# Overview: Run your add-in code in a shared JavaScript runtime (preview)
+# Overview: Run your add-in code in a shared JavaScript runtimes
 
-[!include[Running custom functions in shared JavaScript runtime note](../includes/excel-shared-runtime-preview-note.md)]
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
 
@@ -23,31 +23,15 @@ Configuring a shared runtime enables the following scenarios:
 
 When you run custom functions in a shared runtime with the task pane, it will run in a browser instance on different platforms as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Additionally, any buttons that your Excel add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
 
-![Custom functions running in the shared runtime with ribbon buttons and the task pane in Excel](../images/custom-functions-in-browser-runtime.png)
+![Custom functions running in a shared runtime with ribbon buttons and the task pane in Excel](../images/custom-functions-in-browser-runtime.png)
 
-## Differences when running custom functions in a shared runtime
+## Set up a shared runtime
 
-When you configure your Excel add-in project to run custom functions in a shared runtime, there are a few differences from using the custom function runtime.
-
-### Storage
-
-You no longer need to use the **Storage** API to share data between the task pane, custom functions or ribbon UI. You can put global variables in the **window** object, or use your own preferred state management approach.
-
-### Authentication
-
-When you receive tokens as part of authentication, you don't need to use the **Storage** API to share them between the task pane, custom functions and ribbon UI. You can use your own preferred storage technique and storage location to share them, such as `localStorage`.
-
-### Dialog API
-
-You no longer need to use the **OfficeRuntime.Dialog** API to display a dialog from a custom function. You can use the same [Dialog API](../develop/dialog-api-in-office-add-ins.md) for custom functions, ribbon buttons, and the task pane.
+See the [configuring a shared runtime article](./configure-your-add-in-to-use-a-shared-runtime.md) to learn how to set up your custom functions to use a shared runtime.
 
 ### Debugging
 
-When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools. For more information, see [Debug add-ins using developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
-
-## Get Started
-
-To configure your Excel add-in project to run custom functions in a shared runtime, see [Configure your Excel add-in to use a shared JavaScript runtime (preview)](configure-your-add-in-to-use-a-shared-runtime.md).
+When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools instead. For more information, see [Debug add-ins using developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
 
 ## Give us feedback
 
@@ -55,6 +39,5 @@ We'd love to hear your feedback on this feature. If you find any bugs, issues, o
 
 ## See also
 
-List of related articles for shared runtime
-- [Tutorial: Share data and events between Excel custom functions and the task pane (preview)](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Call Excel APIs from your custom function (preview)](call-excel-apis-from-custom-function.md)
+- [Tutorial: Share data and events between Excel custom functions and the task pane](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Call Excel APIs from your custom function](call-excel-apis-from-custom-function.md)

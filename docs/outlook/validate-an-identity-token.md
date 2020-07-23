@@ -1,7 +1,7 @@
 ---
 title: Validate an Outlook add-in identity token
 description: Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect.
-ms.date: 11/07/2019
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
@@ -35,7 +35,7 @@ To validate the token contents, you should check the following.
     - `x5t` claim is present.
 
 - Check the payload and verify that the:
-    - `amurl` claim inside the `appctx` is set to the location of an authorized token signing key manifest file. For example, the expected `amurl` value for Office 365 is https://outlook.office365.com:443/autodiscover/metadata/json/1. See the next section [Verify the domain](#verify-the-domain) for additional information.
+    - `amurl` claim inside the `appctx` is set to the location of an authorized token signing key manifest file. For example, the expected `amurl` value for Microsoft 365 is https://outlook.office365.com:443/autodiscover/metadata/json/1. See the next section [Verify the domain](#verify-the-domain) for additional information.
     - Current time is between the times specified in the `nbf` and `exp` claims. The `nbf` claim specifies the earliest time that the token is considered valid, and the `exp` claim specifies the expiration time for the token. It is recommended to allow for some variation in clock settings between servers.
     - `aud` claim is the expected URL for your add-in.
     - `version` claim inside the `appctx` claim is set to `ExIdTok.V1`.
@@ -101,7 +101,10 @@ You can create a unique identifier for an Exchange account by concatenating the 
 
 ## Use a library to validate the token
 
-There are a number of libraries that can do general JWT parsing and validation. Microsoft provides two libraries that can be used to validate Exchange user identity tokens.
+There are a number of libraries that can do general JWT parsing and validation. Microsoft provides the `System.IdentityModel.Tokens.Jwt` library that can be used to validate Exchange user identity tokens.
+
+> [!IMPORTANT]
+> We no longer recommend the Exchange Web Services Managed API because the Microsoft.Exchange.WebServices.Auth.dll, though still available, is now obsolete and relies on unsupported libraries like Microsoft.IdentityModel.Extensions.dll.
 
 ### System.IdentityModel.Tokens.Jwt
 
@@ -184,30 +187,6 @@ public class ExchangeAppContext
 ```
 
 For an example that uses this library to validate Exchange tokens and has an implementation of `GetSigningKeys`, see [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer).
-
-### Microsoft.Exchange.WebServices
-
-The [Exchange Web Services Managed API](https://www.nuget.org/packages/Microsoft.Exchange.WebServices/) can also validate Exchange user identity tokens. Because it is Exchange-specific, it implements all of the necessary logic to parse the `appctx` claim and verify the token version.
-
-```cs
-using Microsoft.Exchange.WebServices.Auth.Validation;
-
-AppIdentityToken ValidateIdentityToken(string rawToken, string expectedAudience)
-{
-    try
-    {
-        AppIdentityToken appIdToken = AuthToken.Parse(rawToken) as AppIdentityToken;
-        appIdToken.Validate(new Uri(expectedAudience));
-
-        // No exception, validation succeeded
-        return appIdToken;
-    }
-    catch (TokenValidationException ex)
-    {
-        throw new Exception(string.Format("Token validation failed: {0}", ex.Message));
-    }
-}
-```
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
-description: You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
-ms.date: 10/11/2019
+description: 'You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.'
+ms.date: 07/21/2020
 localization_priority: Normal
 ---
 
@@ -171,9 +171,9 @@ This section provides examples that show you how to localize an Office Add-in de
 
 ### Configure Office to use additional languages for display or editing
 
-To run the sample code provided, configure Microsoft Office on your computer to use additional languages so that you can test your add-in by switching the language used for display in menus and commands, for editing and proofing, or both.
+To run the sample code provided, configure Office on your computer to use additional languages so that you can test your add-in by switching the language used for display in menus and commands, for editing and proofing, or both.
 
-You can use an Office Language pack to install an additional language. For more information about Language Packs and where to get them, see [Language Accessory Pack for Office](https://office.microsoft.com/language-packs/).
+You can use an Office Language pack to install an additional language. For more information about Language Packs and where to get them, see [Language Accessory Pack for Office](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f).
 
 After you install the Language Accessory Pack, you can configure Office to use the installed language for display in the UI, for editing document content, or both. The example in this article uses an installation of Office that has the Spanish Language Pack applied.
 
@@ -203,7 +203,7 @@ The text that you want to localize for another language appears in two areas:
 
 To localize the add-in display name and description:
 
-1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose  **WorldReadyAddIn.xml**.
+1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose **WorldReadyAddIn.xml**.
 
 2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code:
 
@@ -330,7 +330,7 @@ Now you can use the **UIStrings** object to set the strings for the UI of your a
 
 If you want to change the localization for your add-in based on what language is used for display in menus and commands in the host application, you use the **Office.context.displayLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for display in menus and commands, the **Office.context.displayLanguage** property will return the language code es-ES.
 
-If you want to change the localization for your add-in based on what language is being used for editing document content, you use the  **Office.context.contentLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for editing document content, the **Office.context.contentLanguage** property will return the language code es-ES.
+If you want to change the localization for your add-in based on what language is being used for editing document content, you use the **Office.context.contentLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for editing document content, the **Office.context.contentLanguage** property will return the language code es-ES.
 
 After you know the language the host application is using, you can use **UIStrings** to get the set of localized strings that matches the host application language.
 
@@ -386,7 +386,7 @@ To change the language used for display or editing in your add-in:
 
     ![Word Options dialog](../images/office15-app-how-to-localize-fig04.png)
 
-2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under  **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
+2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
 
 3. Choose **OK** to confirm your selection, and then close Word.
 
@@ -406,17 +406,17 @@ Once running, the strings in the add-in UI change to match the language used by 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]: 		/office/dev/add-ins/reference/manifest/defaultlocale
-[Description]: 			/office/dev/add-ins/reference/manifest/description
-[DisplayName]: 			/office/dev/add-ins/reference/manifest/displayname
-[IconUrl]: 				/office/dev/add-ins/reference/manifest/iconurl
-[HighResolutionIconUrl]:/office/dev/add-ins/reference/manifest/highresolutioniconurl
-[Resources]: 		    /office/dev/add-ins/reference/manifest/resources
-[SourceLocation]: 		/office/dev/add-ins/reference/manifest/sourcelocation
-[Override]:  			/office/dev/add-ins/reference/manifest/override
-[DesktopSettings]: 		/office/dev/add-ins/reference/manifest/desktopsettings
-[TabletSettings]: 		/office/dev/add-ins/reference/manifest/tabletsettings
-[PhoneSettings]: 		/office/dev/add-ins/reference/manifest/phonesettings
-[displayLanguage]: 	/javascript/api/office/office.context#displaylanguage 
-[contentLanguage]: 	/javascript/api/office/office.context#contentlanguage 
-[RFC 3066]: https://www.rfc-editor.org/info/rfc3066
+[DefaultLocale]:         ../reference/manifest/defaultlocale.md
+[Description]:           ../reference/manifest/description.md
+[DisplayName]:           ../reference/manifest/displayname.md
+[IconUrl]:               ../reference/manifest/iconurl.md
+[HighResolutionIconUrl]: ../reference/manifest/highresolutioniconurl.md
+[Resources]:             ../reference/manifest/resources.md
+[SourceLocation]:        ../reference/manifest/sourcelocation.md
+[Override]:              ../reference/manifest/override.md
+[DesktopSettings]:       ../reference/manifest/desktopsettings.md
+[TabletSettings]:        ../reference/manifest/tabletsettings.md
+[PhoneSettings]:         ../reference/manifest/phonesettings.md
+[displayLanguage]:       /javascript/api/office/office.context#displaylanguage
+[contentLanguage]:       /javascript/api/office/office.context#contentlanguage
+[RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

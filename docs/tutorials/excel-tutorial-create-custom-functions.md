@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
-description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 01/16/2020
+description: 'In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.'
+ms.date: 07/10/2020
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 localization_priority: Priority
@@ -22,7 +22,7 @@ In this tutorial, you will:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (version 1904 or later, connected to Office 365 subscription) or on the web
+* Excel on Windows (version 1904 or later, connected to a Microsoft 365 subscription) or on the web
 
 ## Create a custom functions project
 
@@ -101,7 +101,7 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 ## Create a custom function that requests data from the web
 
-Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
+Integrating data from the Web is a great way to extend Excel through custom functions. Next you'll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
 
 1. In the **starcount** project, find the file **./src/functions/functions.js** and open it in your code editor. 
 
@@ -235,12 +235,12 @@ function clock(invocation) {
 --- 
 
 <ol start="4">
-<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.CLOCK())</strong> and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</li>
+<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.CLOCK()</strong> and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</li>
 </ol>
 
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. Next, you can modify your project to use a shared runtime, making it easier for your function to interact with the task pane. Follow the steps in the following article:
 
 > [!div class="nextstepaction"]
-> [Create custom functions in Excel](../excel/custom-functions-overview.md)
+> [Configure your add-in to use a shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md)

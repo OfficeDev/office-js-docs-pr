@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
-description: ''
-ms.date: 03/19/2019
+description: 'Apply the best practices when developing to create Office Add-ins.'
+ms.date: 04/22/2020
 localization_priority: Normal
 ---
 
@@ -11,8 +11,7 @@ localization_priority: Normal
 
 Effective add-ins offer unique and compelling functionality that extends Office applications in a visually appealing way. To create a great add-in, provide an engaging first-time experience for your users, design a first-class UI experience, and optimize your add-in's performance. Apply the best practices described in this article to create add-ins that help your users complete their tasks quickly and efficiently.
 
-> [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## Provide clear value
 
@@ -119,6 +118,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Monitor your service health, and use telemetry to monitor user success.
 
+- Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
 ## Market your add-in
 
@@ -131,6 +131,10 @@ For patterns that you can apply as you develop your first-run experience, see [U
 - Convey the value proposition of your add-in in your title and description. Don't rely on your brand.
 
 - Create a website to help users find and use your add-in.
+
+## Use JavaScript that supports Internet Explorer
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
 
 ## See also
 

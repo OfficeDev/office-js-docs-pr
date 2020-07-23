@@ -1,7 +1,7 @@
 ---
 title: Form element in the manifest file
-description: ''
-ms.date: 01/13/2020
+description: UX settings for the forms that your mail add-in will use when running on a particular device (desktop, tablet, or phone).
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
@@ -18,19 +18,19 @@ UX settings for the forms that your mail add-in will use when running on a parti
 
 ```XML
 <Form xsi:type="ItemRead">
-   <!--website.html is a placeholder for your own add-in website.-->
+   <!--https://MyDomain.com/website.html is a placeholder for your own add-in website.-->
    <DesktopSettings>
-      <SourceLocation DefaultValue="https://website.html" />
-      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </DesktopSettings>
    <TabletSettings>
-      <SourceLocation DefaultValue="https://website.html" />
-      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </TabletSettings>
    <PhoneSettings>
-      <SourceLocation DefaultValue="https://website.html" />
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </PhoneSettings>
 </Form>
 ```

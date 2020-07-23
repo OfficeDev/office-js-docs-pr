@@ -18,7 +18,7 @@ For an overview of SSO in Office Add-ins, see [Enable single sign-on for Office 
 
 ## Enable modern authentication in your Office 365 tenancy
 
-To use SSO with an Outlook add-in, you must enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+To use SSO with an Outlook add-in, you must enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## Register your add-in
 

@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
-description: 'Learn the basics of creating a dialog box in an Office add-in'
-ms.date: 01/29/2020
+description: 'Learn the basics of creating a dialog box in an Office Add-in.'
+ms.date: 06/10/2020
 localization_priority: Normal
 ---
 
@@ -10,7 +10,7 @@ localization_priority: Normal
 You can use the [Office dialog API](/javascript/api/office/office.ui) to open dialog boxes in your Office Add-in. This article provides guidance for using the dialog API in your Office Add-in.
 
 > [!NOTE]
-> For information about where the Dialog API is currently supported, see [Dialog API requirement sets](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
+> For information about where the Dialog API is currently supported, see [Dialog API requirement sets](../reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
 
 A primary scenario for the Dialog API is to enable authentication with a resource such as Google, Facebook, or Microsoft Graph. For more information, see [Authenticate with the Office dialog API](auth-with-office-dialog-api.md) *after* you are familiar with this article.
 
@@ -43,7 +43,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
-> - The dialog box's domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](/office/dev/add-ins/reference/manifest/functionfile) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
+> - The dialog box's domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](../reference/manifest/functionfile.md) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
 
 > [!IMPORTANT]
 > The host page and the resource that opens in the dialog box must have the same full domain. If you attempt to pass `displayDialogAsync` a subdomain of the add-in's domain, it will not work. The full domain, including any subdomain, must match.
@@ -74,7 +74,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 The default value is `false`, which is the same as omitting the property entirely. If the add-in is not running in Office on the web, the `displayInIframe` is ignored.
 
 > [!NOTE]
-> You should **not** use `displayInIframe: true` if the dialog box will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
+> You should **not** use `displayInIframe: true` if the dialog box will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft account, cannot be opened in an iframe.
 
 ## Send information from the dialog box to the host page
 
@@ -91,9 +91,10 @@ if (loginSuccess) {
 }
 ```
 
-> [!NOTE]
-> - The `messageParent` function is one of *only* two Office APIs that can be called in the dialog box. The other is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
+> [!IMPORTANT]
 > - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
+> - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box. 
+> - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
 
 In the next example, `googleProfile` is a stringified version of the user's Google profile.
 
@@ -131,7 +132,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - Office passes the `arg` object to the handler. Its `message` property is the Boolean or string sent by the call of `messageParent` in the dialog box. In this example, it is a stringified representation of a user's profile from a service such as Microsoft Account or Google, so it is deserialized back to an object with `JSON.parse`.
+> - Office passes the `arg` object to the handler. Its `message` property is the Boolean or string sent by the call of `messageParent` in the dialog box. In this example, it is a stringified representation of a user's profile from a service such as Microsoft account or Google, so it is deserialized back to an object with `JSON.parse`.
 > - The `showUserName` implementation is not shown. It might display a personalized welcome message on the task pane.
 
 When the user interaction with the dialog box is completed, your message handler should close the dialog box, as shown in this example.
@@ -164,7 +165,7 @@ For an example of an add-in that does this, see the [Insert Excel charts using M
 
 ### Conditional messaging
 
-Because you can send multiple `messageParent` calls from the dialog box, but you have only one handler in the host page for the `DialogMessageReceived` event, the handler must use conditional logic to distinguish different messages. For example, if the dialog box prompts a user to sign in to an identity provider such as Microsoft Account or Google, it sends the user's profile as a message. If authentication fails, the dialog box sends error information to the host page, as in the following example:
+Because you can send multiple `messageParent` calls from the dialog box, but you have only one handler in the host page for the `DialogMessageReceived` event, the handler must use conditional logic to distinguish different messages. For example, if the dialog box prompts a user to sign in to an identity provider such as Microsoft account or Google, it sends the user's profile as a message. If authentication fails, the dialog box sends error information to the host page, as in the following example:
 
 ```js
 if (loginSuccess) {
@@ -242,8 +243,11 @@ For a sample that uses this technique, see [Insert Excel charts using Microsoft 
 
 Code in your dialog box can parse the URL and read the parameter value.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
+
+> [!NOTE]
+> There is now in preview a `messageChild` API that the parent page can use to send messages to the dialog just as the `messageParent` API described above sends messages from the dialog. For more about it, see [Passing data and messages to a dialog box from its host page](parent-to-dialog.md). We encourage you to try it out, but for production add-ins, we recommend that you use the techniques described in this section.
 
 ## Closing the dialog box
 

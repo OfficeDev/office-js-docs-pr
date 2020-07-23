@@ -1,6 +1,6 @@
 ---
 title: Develop Office Add-ins with Visual Studio
-description: How to develop Office Add-ins with Visual Studio
+description: 'How to develop Office Add-ins with Visual Studio'
 ms.date: 12/31/2019
 localization_priority: Priority
 ---
@@ -30,7 +30,7 @@ Visual Studio creates a basic add-in with limited functionality. You can customi
 > [!TIP]
 > Because an Office Add-in is a web application, you'll need at least basic web development skills to customize your add-in. If you're new to JavaScript, we recommend reviewing the [Mozilla JavaScript tutorial](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction).
 
-To customize your add-in, you'll need to understand concepts described in the [Core concepts > Develop](develop-overview.md) area of this documentation, as well as concepts described in the host-specific area of documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.md)). 
+To customize your add-in, you'll need to understand concepts described in the [Core concepts > Develop](develop-overview.md) area of this documentation, as well as concepts described in the host-specific area of documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.yml)). 
 
 ## Test and debug the add-in
 

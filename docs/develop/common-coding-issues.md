@@ -1,7 +1,7 @@
 ---
 title: Coding guidance for common issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 02/27/2020
+ms.date: 05/21/2020
 localization_priority: Normal
 ---
 
@@ -68,17 +68,6 @@ You can identify a property that cannot have its subproperties directly set by c
 - Read-only property: Subproperties can be set through navigation.
 - Writable property: Subproperties cannot be set through navigation (must be set as part of the initial parent object assignment).
 
-## Excel data transfer limits
-
-If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook:
-
-- Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
-- A range is limited to five million cells for get operations.
-
-If you expect user input to exceed these limits, be sure to check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Be sure to call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
-
-These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
-
 ## Setting read-only properties
 
 The [TypeScript definitions](referencing-the-javascript-api-for-office-library-from-its-cdn.md) for Office JS specify which object properties are read-only. If you attempt to set a read-only property, the write operation will fail silently, with no error thrown. The following example erroneously attempts to set the read-only property [Chart.id](/javascript/api/excel/excel.chart#id).
@@ -103,6 +92,51 @@ Excel.run(async (context) => {
     return context.sync();
 }
 ```
+
+## Supporting Internet Explorer
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
+
+## Excel-specific issues
+
+### Excel data transfer limits
+
+If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook:
+
+- Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
+- A range is limited to five million cells for get operations.
+
+If you expect user input to exceed these limits, be sure to check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Be sure to call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
+
+These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
+
+### API limitations when the active workbook switches
+
+Add-ins for Excel are intended to operate on a single workbook at a time. Errors can arise when a workbook that is separate from the one running the add-in gains focus. This only happens when particular methods are in the process of being called when the focus changes.
+
+The following APIs are affected by this workbook switch:
+
+|Excel JavaScript API | Error thrown |
+|--|--|
+| `Chart.activate` | GeneralException |
+| `Range.select` | GeneralException |
+| `Table.clearFilters` | GeneralException |
+| `Workbook.getActiveCell`  | InvalidSelection|
+| `Workbook.getSelectedRange` | InvalidSelection|
+| `Workbook.getSelectedRanges`  | InvalidSelection|
+| `Worksheet.activate` | GeneralException |
+| `Worksheet.delete`  | InvalidSelection|
+| `Worksheet.gridlines` | GeneralException |
+| `Worksheet.showHeadings` | GeneralException |
+| `WorksheetCollection.add` | GeneralException |
+| `WorksheetFreezePanes.freezeAt` | GeneralException |
+| `WorksheetFreezePanes.freezeColumns` | GeneralException |
+| `WorksheetFreezePanes.freezeRows` | GeneralException |
+| `WorksheetFreezePanes.getLocationOrNullObject`| GeneralException |
+| `WorksheetFreezePanes.unfreeze` | GeneralException |
+
+> [!NOTE]
+> This only applies to multiple Excel workbooks open on Windows or Mac.
 
 ## See also
 

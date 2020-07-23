@@ -1,7 +1,7 @@
 ---
 title: Common JavaScript API object model
-description: ''
-ms.date: 02/27/2020
+description: 'Learn about the Office JavaScript common API object model'
+ms.date: 04/30/2020
 localization_priority: Normal
 ---
 
@@ -9,42 +9,42 @@ localization_priority: Normal
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office JavaScript add-ins give access to the host’s underlying functionality. Most of this access goes through a few important objects. The [Context](#context-object) object gives access to the runtime environment after initialization. The [Document](#document-object) object gives the user control over an Excel, PowerPoint, or Word document. The [Mailbox](#mailbox-object) object gives an Outlook add-in access to messages and user profiles. Understanding the relationships between these high-level objects is the foundation of a JavaScript add-in.
+Office JavaScript add-ins give access to the host's underlying functionality. Most of this access goes through a few important objects. The [Context](#context-object) object gives access to the runtime environment after initialization. The [Document](#document-object) object gives the user control over an Excel, PowerPoint, or Word document. The [Mailbox](#mailbox-object) object gives an Outlook add-in access to messages and user profiles. Understanding the relationships between these high-level objects is the foundation of a JavaScript add-in.
 
 ## Context object
 
 **Applies to:** All add-in types
 
-When an add-in is [initialized](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in), it has many different objects that it can interact with in the runtime environment. The add-in's runtime context is reflected in the API by the [Context](/javascript/api/office/office.context) object. The **Context** is the main object that provides access to the most important objects of the API, such as the [Document](/javascript/api/office/office.document) and [Mailbox](/javascript/api/outlook/Office.mailbox) objects, which in turn provide access to document and mailbox content.
+When an add-in is [initialized](initialize-add-in.md), it has many different objects that it can interact with in the runtime environment. The add-in's runtime context is reflected in the API by the [Context](/javascript/api/office/office.context) object. The **Context** is the main object that provides access to the most important objects of the API, such as the [Document](/javascript/api/office/office.document) and [Mailbox](/javascript/api/outlook/office.mailbox) objects, which in turn provide access to document and mailbox content.
 
-For example, in task pane or content add-ins, you can use the [document](/javascript/api/office/office.context#document) property of the **Context** object to access the properties and methods of the **Document** object to interact with the content of Word documents, Excel worksheets, or Project schedules. Similarly, in Outlook add-ins, you can use the [mailbox](/javascript/api/outlook/Office.mailbox) property of the **Context** object to access the properties and methods of the **Mailbox** object to interact with the message, meeting request, or appointment content.
+For example, in task pane or content add-ins, you can use the [document](/javascript/api/office/office.context#document) property of the **Context** object to access the properties and methods of the **Document** object to interact with the content of Word documents, Excel worksheets, or Project schedules. Similarly, in Outlook add-ins, you can use the [mailbox](/javascript/api/office/office.context#mailbox) property of the **Context** object to access the properties and methods of the **Mailbox** object to interact with the message, meeting request, or appointment content.
 
-The **Context** object also provides access to the [contentLanguage](/javascript/api/office/office.context#contentlanguage) and [displayLanguage](/javascript/api/office/office.context#displaylanguage) properties that let you determine the locale (language) used in the document or item, or by the host application. The [roamingSettings](/javascript/api/office/office.context#roamingsettings) property lets you access the members of the [RoamingSettings](/javascript/api/office/office.context#roamingsettings) object, which stores settings specific to your add-in for individual users' mailboxes. Finally, the **Context** object provides a [ui](/javascript/api/office/office.ui) property that enables your add-in to launch pop-up dialogs.
+The **Context** object also provides access to the [contentLanguage](/javascript/api/office/office.context#contentlanguage) and [displayLanguage](/javascript/api/office/office.context#displaylanguage) properties that let you determine the locale (language) used in the document or item, or by the host application. The [roamingSettings](/javascript/api/office/office.context#roamingsettings) property lets you access the members of the [RoamingSettings](/javascript/api/office/office.context#roamingsettings) object, which stores settings specific to your add-in for individual users' mailboxes. Finally, the **Context** object provides a [ui](/javascript/api/office/office.context#ui) property that enables your add-in to launch pop-up dialogs.
 
 
 ## Document object
 
 **Applies to:** Content and task pane add-in types
 
-To interact with document data in Excel, PowerPoint, and Word, the API provides the [Document](/javascript/api/office/office.document) object. You can use **Document** object members to access data from the following ways:
+To interact with document data in Excel, PowerPoint, and Word, the API provides the [Document](/javascript/api/office/office.document) object. You can use `Document` object members to access data from the following ways:
 
 - Read and write to active selections in the form of text, contiguous cells (matrices), or tables.
 
 - Tabular data (matrices or tables).
 
-- Bindings (created with the "add" methods of the  **Bindings** object).
+- Bindings (created with the "add" methods of the `Bindings` object).
 
 - Custom XML parts (only for Word).
 
 - Settings or add-in state persisted per add-in on the document.
 
-You can also use the  **Document** object to interact with data in Project documents. The Project-specific functionality of the API is documented in the members [ProjectDocument](/javascript/api/office/office.document) abstract class. For more information about creating task pane add-ins for Project, see [Task pane add-ins for Project](../project/project-add-ins.md).
+You can also use the `Document` object to interact with data in Project documents. The Project-specific functionality of the API is documented in the members [ProjectDocument](/javascript/api/office/office.document) abstract class. For more information about creating task pane add-ins for Project, see [Task pane add-ins for Project](../project/project-add-ins.md).
 
-All these forms of data access start from an instance of the abstract  **Document** object.
+All these forms of data access start from an instance of the abstract `Document` object.
 
-You can access an instance of the  **Document** object when the task pane or content add-in is initialized by using the [document](/javascript/api/office/office.context#document) property of the **Context** object. The **Document** object defines common data access functions shared across Word and Excel documents, and also provides access to the **CustomXmlParts** object for Word documents.
+You can access an instance of the `Document` object when the task pane or content add-in is initialized by using the [document](/javascript/api/office/office.context#document) property of the `Context` object. The `Document` object defines common data access functions shared across Word and Excel documents, and also provides access to the `CustomXmlParts` object for Word documents.
 
-The  **Document** object supports four ways for developers to access document contents:
+The `Document` object supports four ways for developers to access document contents:
 
 
 - Selection-based access
@@ -75,15 +75,15 @@ In both selection-based and binding-based data access, document contents are exp
 |:-----|:-----|:-----|
 |Text|Provides a string representation of the data in the selection or binding.|In Excel 2013, Project 2013, and PowerPoint 2013, only plain text is supported. In Word 2013, three text formats are supported: plain text, HTML, and Office Open XML (OOXML). When text is selected in a cell in Excel, selection-based methods read and write to the entire contents of the cell, even if only a portion of the text is selected in the cell. When text is selected in Word and PowerPoint, selection-based methods read and write only to the run of characters that are selected. Project 2013 and PowerPoint 2013 support only selection-based data access.|
 |Matrix|Provides the data in the selection or binding as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns would be ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows would be `[['a'], ['b'], ['c']]`.|Matrix data access is supported only in Excel 2013 and Word 2013.|
-|Table|Provides the data in the selection or binding as a [TableData](/javascript/api/office/office.tabledata) object. The **TableData** object exposes the data through the **headers** and **rows** properties.|Table data access is supported only in Excel 2013 and Word 2013.|
+|Table|Provides the data in the selection or binding as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.|Table data access is supported only in Excel 2013 and Word 2013.|
 
 #### Data type coercion
 
-The data access methods on the **Document** and [Binding](/javascript/api/office/office.binding) objects support specifying the desired data type using the _coercionType_ parameter of these methods, and corresponding [CoercionType](/javascript/api/office/office.coerciontype) enumeration values. Regardless of the actual shape of the binding, the different Office applications support the common data types by trying to coerce the data into the requested data type. For example, if a Word table or paragraph is selected, the developer can specify to read it as plain text, HTML, Office Open XML, or a table, and the API implementation handles the necessary transformations and data conversions.
+The data access methods on the `Document` and [Binding](/javascript/api/office/office.binding) objects support specifying the desired data type using the _coercionType_ parameter of these methods, and corresponding [CoercionType](/javascript/api/office/office.coerciontype) enumeration values. Regardless of the actual shape of the binding, the different Office applications support the common data types by trying to coerce the data into the requested data type. For example, if a Word table or paragraph is selected, the developer can specify to read it as plain text, HTML, Office Open XML, or a table, and the API implementation handles the necessary transformations and data conversions.
 
 
 > [!TIP]
-> **When should you use the matrix versus table coercionType for data access?** If you need your tabular data to grow dynamically when rows and columns are added, and you must work with table headers, you should use the table data type (by specifying the _coercionType_ parameter of a **Document** or **Binding** object data access method as `"table"` or **Office.CoercionType.Table**). Adding rows and columns within the data structure is supported in both table and matrix data, but appending rows and columns is supported only for table data. If you aren't planning on adding rows and columns, and your data doesn't require header functionality, then you should use the matrix data type (by specifying the  _coercionType_ parameter of the data access method as `"matrix"` or **Office.CoercionType.Matrix**), which provides a simpler model of interacting with the data.
+> **When should you use the matrix versus table coercionType for data access?** If you need your tabular data to grow dynamically when rows and columns are added, and you must work with table headers, you should use the table data type (by specifying the _coercionType_ parameter of a `Document` or `Binding` object data access method as `"table"` or `Office.CoercionType.Table`). Adding rows and columns within the data structure is supported in both table and matrix data, but appending rows and columns is supported only for table data. If you aren't planning on adding rows and columns, and your data doesn't require header functionality, then you should use the matrix data type (by specifying the  _coercionType_ parameter of the data access method as `"matrix"` or `Office.CoercionType.Matrix`), which provides a simpler model of interacting with the data.
 
 If the data can't be coerced to the specified type, the [AsyncResult.status](/javascript/api/office/office.asyncresult#status) property in the callback returns `"failed"`, and you can use the [AsyncResult.error](/javascript/api/office/office.asyncresult#error) property to access an [Error](/javascript/api/office/office.error) object with information about why the method call failed.
 
@@ -91,7 +91,7 @@ If the data can't be coerced to the specified type, the [AsyncResult.status](/ja
 ## Working with selections using the Document object
 
 
-The  **Document** object exposes methods that let you to read and write to the user's current selection in a "get and set" fashion. To do that, the **Document** object provides the **getSelectedDataAsync** and **setSelectedDataAsync** methods.
+The `Document` object exposes methods that let you to read and write to the user's current selection in a "get and set" fashion. To do that, the `Document` object provides the `getSelectedDataAsync` and `setSelectedDataAsync` methods.
 
 For code examples that demonstrate how to perform tasks with selections, see [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
@@ -110,9 +110,9 @@ Binding-based data access enables content and task pane add-ins to consistently 
 
 Establishing a binding also allows you to subscribe to data and selection change events that are scoped to that particular region of the document or spreadsheet. This means that the add-in is only notified of changes that happen within the bound region as opposed to general changes across the whole document or spreadsheet.
 
-The [Bindings](/javascript/api/office/office.bindings) object exposes a [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) method that gives access to the set of all bindings established on the document or spreadsheet. An individual binding can be accessed by its ID using either the [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) or [Office.select](/javascript/api/office) methods. You can establish new bindings as well as remove existing ones by using one of the following methods of the **Bindings** object: [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-), or [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
+The [Bindings](/javascript/api/office/office.bindings) object exposes a [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) method that gives access to the set of all bindings established on the document or spreadsheet. An individual binding can be accessed by its ID using either the [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) or [Office.select](/javascript/api/office) methods. You can establish new bindings as well as remove existing ones by using one of the following methods of the `Bindings` object: [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-), or [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
 
-There are three different types of bindings that you specify with the  _bindingType_ parameter when you create a binding with the **addFromSelectionAsync**, **addFromPromptAsync** or **addFromNamedItemAsync** methods:
+There are three different types of bindings that you specify with the  _bindingType_ parameter when you create a binding with the `addFromSelectionAsync`, `addFromPromptAsync` or `addFromNamedItemAsync` methods:
 
 
 
@@ -120,11 +120,11 @@ There are three different types of bindings that you specify with the  _bindingT
 |:-----|:-----|:-----|
 |Text binding|Binds to a region of the document that can be represented as text.|In Word, most contiguous selections are valid, while in Excel only single cell selections can be the target of a text binding. In Excel, only plain text is supported. In Word, three formats are supported: plain text, HTML, and Open XML for Office.|
 |Matrix binding|Binds to a fixed region of a document that contains tabular data without headers. Data in a matrix binding is written or read as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns can be written or read as ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as `[['a'], ['b'], ['c']]`.|In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.|
-|Table binding|Binds to a region of a document that contains a table with headers. Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The **TableData** object exposes the data through the **headers** and **rows** properties.|Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding. |
+|Table binding|Binds to a region of a document that contains a table with headers. Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the **headers** and **rows** properties.|Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding. |
 
 <br/>
 
-After a binding is created by using one of the three "add" methods of the  **Bindings** object, you can work with the binding's data and properties by using the methods of the corresponding object: [MatrixBinding](/javascript/api/office/office.matrixbinding), [TableBinding](/javascript/api/office/office.tablebinding), or [TextBinding](/javascript/api/office/office.textbinding). All three of these objects inherit the [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) and [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) methods of the **Binding** object that enable to you interact with the bound data.
+After a binding is created by using one of the three "add" methods of the `Bindings` object, you can work with the binding's data and properties by using the methods of the corresponding object: [MatrixBinding](/javascript/api/office/office.matrixbinding), [TableBinding](/javascript/api/office/office.tablebinding), or [TextBinding](/javascript/api/office/office.textbinding). All three of these objects inherit the [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) and [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) methods of the `Binding` object that enable to you interact with the bound data.
 
 For code examples that demonstrate how to perform tasks with bindings, see [Bind to regions in a document or spreadsheet](bind-to-regions-in-a-document-or-spreadsheet.md).
 
@@ -134,7 +134,7 @@ For code examples that demonstrate how to perform tasks with bindings, see [Bind
 
  **Applies to:** Task pane add-ins for Word
 
-The [CustomXmlParts](/javascript/api/office/office.customxmlparts) and [CustomXmlPart](/javascript/api/office/office.customxmlpart) objects of the API provide access to custom XML parts in Word documents, which enable XML-driven manipulation of the contents of the document. For demonstrations of working with the **CustomXmlParts** and **CustomXmlPart** objects, see the [Word-add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) code sample.
+The [CustomXmlParts](/javascript/api/office/office.customxmlparts) and [CustomXmlPart](/javascript/api/office/office.customxmlpart) objects of the API provide access to custom XML parts in Word documents, which enable XML-driven manipulation of the contents of the document. For demonstrations of working with the `CustomXmlParts` and `CustomXmlPart` objects, see the [Word-add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) code sample.
 
 
 ## Working with the entire document using the getFileAsync method
@@ -149,4 +149,21 @@ The [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-
 
 **Applies to:** Outlook add-ins
 
-[!include[information about Mailbox object](../includes/mailbox-object-desc.md)]
+Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/outlook/office.item) object, you use the [mailbox](/javascript/api/office/office.context#mailbox) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
+
+```js
+// Access the Item object.
+var item = Office.context.mailbox.item;
+
+```
+
+Additionally, Outlook add-ins can use the following objects:
+
+- `Office` object: for initialization.
+
+- `Context` object: for access to content and display language properties.
+
+- `RoamingSettings` object: for saving Outlook add-in-specific custom settings to the user's mailbox where the add-in is installed.
+
+For information about using JavaScript in Outlook add-ins, see [Outlook add-ins](../outlook/outlook-add-ins-overview.md).
+

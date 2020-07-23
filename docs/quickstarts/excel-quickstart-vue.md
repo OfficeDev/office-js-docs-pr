@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using Vue
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Vue.
-ms.date: 01/16/2020
+ms.date: 04/14/2020
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -12,6 +12,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ## Prerequisites
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Install the [Vue CLI](https://cli.vuejs.org/) globally.
@@ -52,12 +53,12 @@ Each add-in requires a manifest file to define its settings and capabilities.
     When prompted, provide the following information to create your add-in project:
 
     - **Choose a project type:** `Office Add-in project containing the manifest only`
-    - **What do you want to name your add-in?** `my-office-add-in`
+    - **What do you want to name your add-in?** `My Office Add-in`
     - **Which Office client application would you like to support?** `Excel`
 
     ![Yeoman generator](../images/yo-office-manifest-only-vue.png)
 
-After you complete the wizard, it creates a `my-office-add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
+After you complete the wizard, it creates a `My Office Add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
 
 > [!TIP]
 > You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created. The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.
@@ -66,16 +67,29 @@ After you complete the wizard, it creates a `my-office-add-in` folder, which con
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-To enable HTTPS for your app, create a `vue.config.js` file in the root folder of the Vue project with the following contents:
+1. To enable HTTPS for your app, create a `vue.config.js` file in the root folder of the Vue project with the following contents:
 
-```js
-module.exports = {
-  devServer: {
-    port: 3000,
-    https: true
-  }
-};
-```
+    ```js
+    var fs = require("fs");
+    var path = require("path");
+    var homedir = require('os').homedir()
+  
+    module.exports = {
+      devServer: {
+        port: 3000,
+        https: true,
+        key: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.key`)),
+        cert: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.crt`)),
+        ca: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/ca.crt`))
+      }
+    }
+    ```
+
+2. From the terminal, run the following command to install the add-in's certificates.
+
+   ```command&nbsp;line
+   npx office-addin-dev-certs install
+   ```
 
 ## Update the app
 
@@ -177,9 +191,7 @@ module.exports = {
    npm run serve
    ```
 
-2. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If your browser indicates that the site's certificate is not trusted, you will need to [configure your computer to trust the certificate](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie).
-
-3. When the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
+2. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
 
 ## Try it out
 
@@ -213,4 +225,4 @@ Congratulations, you've successfully created an Excel task pane add-in using Vue
 * [Develop Office Add-ins](../develop/develop-overview.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)

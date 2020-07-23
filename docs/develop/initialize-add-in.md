@@ -1,6 +1,6 @@
 ---
 title: Initialize your Office Add-in
-description: Learn how to initialize your Office Add-in.
+description: 'Learn how to initialize your Office Add-in.'
 ms.date: 02/27/2020
 localization_priority: Normal
 ---
@@ -134,7 +134,7 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 > [!NOTE]
 > Even if you have no start-up logic, you should either call `Office.onReady()` or assign an empty function to `Office.initialize` when your add-in JavaScript loads. Some Office host and platform combinations won't load the task pane until one of these happens. The following examples show these two approaches.
 >
->```js	
+>```js    
 >Office.onReady();
 >```
 >

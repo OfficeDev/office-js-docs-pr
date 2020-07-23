@@ -1,6 +1,6 @@
 ---
 title: SourceLocation element in the manifest file
-description: ''
+description: Defines the location of a resource needed by the Script or Page elements used by custom functions in Excel.
 ms.date: 10/09/2018
 localization_priority: Normal
 ---

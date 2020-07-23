@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
-description: ''
-ms.date: 10/22/2019
+description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
+ms.date: 03/24/2020
 localization_priority: Normal
 ---
 
@@ -28,9 +28,9 @@ Excel.run(function (context) {
             } else {
                 console.log(`There is one worksheet in the workbook:`);
             }
-            for (var i in sheets.items) {
-                console.log(sheets.items[i].name);
-            }
+            sheets.items.forEach(function (sheet) {
+              console.log(sheet.name);
+            });
         });
 }).catch(errorHandlerFunction);
 ```

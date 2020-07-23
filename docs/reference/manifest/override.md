@@ -1,6 +1,6 @@
 ---
 title: Override element in the manifest file
-description: ''
+description: The Override element enables you to specify the value of a setting for an additional locale.
 ms.date: 03/19/2019
 localization_priority: Normal
 ---
@@ -41,5 +41,4 @@ Provides a way to specify the value of a setting for an additional locale.
 
 ## See also
 
-- [Localization for Office Add-ins](/office/dev/add-ins/develop/localization)
-    
+- [Localization for Office Add-ins](../../develop/localization.md)

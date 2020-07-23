@@ -1,6 +1,6 @@
 ---
 title: UX design patterns for Office Add-ins
-description: ''
+description: 'Get an overview of the UI design patterns for Office Add-ins, including patterns for navigation, authentication, first-run, and branding.'
 ms.date: 03/19/2019
 localization_priority: Normal
 ---
@@ -41,5 +41,5 @@ Browse each grouping to get an idea of how you can design your add-in using best
 
 * [Design toolkits](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [Best practices for developing Office Add-ins](/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Get started using Fabric React](/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
+* [Get started using Fabric React](../design/using-office-ui-fabric-react.md)

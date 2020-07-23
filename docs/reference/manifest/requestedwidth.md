@@ -1,15 +1,15 @@
 ---
 title: RequestedWidth element in the manifest file
-description: ''
-ms.date: 11/13/2018
+description: The RequestedWidth element specifies the initial width (in pixels) of a content add-in.
+ms.date: 04/09/2020
 localization_priority: Normal
 ---
 
 # RequestedWidth element
 
-Specifies the initial width of a content add-in in pixels, which can be between 32 and 1000.
+Specifies the initial width (in pixels) of a content add-in.
 
-**Add-in type:** Content, Mail
+**Add-in type:** Content
 
 ## Syntax
 
@@ -17,3 +17,6 @@ Specifies the initial width of a content add-in in pixels, which can be between 
 <RequestedWidth>integer</RequestedWidth>
 ```
 
+## Contained in
+
+- [DefaultSettings](defaultsettings.md) (Content add-ins) with a value that can be between 32 and 1000

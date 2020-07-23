@@ -1,19 +1,19 @@
 ---
-ms.date: 12/28/2019
-description: Learn requirements for Excel custom functions' names and avoid common naming pitfalls.
+ms.date: 05/17/2020
+description: 'Learn requirements for names  of Excel custom functions and avoid common naming pitfalls.'
 title: Naming guidelines for custom functions in Excel
 localization_priority: Normal
 ---
 # Naming guidelines
 
-A custom function is identified by an **id** and **name** property in the JSON metadata file.
+A custom function is identified by an `id` and `name` property in the JSON metadata file.
 
 - The function `id` is used to uniquely identify custom functions in your JavaScript code.
 - The function `name` is used as the display name that appears to a user in Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-A function `name` can differ from the function `id`, such as for localization purposes. In general, a function's `name` should stay the same as the `id` if there is no compelling reason for them to differ.
+A function `name` can differ from the function `id`, such as for localization purposes. In general, a function's `name` should stay the same as the `id` if there is no reason for them to differ.
 
 A function's `name` and `id` share some common requirements:
 
@@ -23,9 +23,9 @@ A function's `name` and `id` share some common requirements:
 
 - Both function `name` and `id` must start with a letter and have a minimum limit of three characters.
 
-Excel uses uppercase letters for built-in function names (such as `SUM`). Therefore, consider using uppercase letters for your custom function's `name` and `id` as a best practice.
+Excel uses uppercase letters for built-in function names (such as `SUM`). Use uppercase letters for your custom function's `name` and `id` as a best practice.
 
-A function's `name` shouldn't be named the same as:
+A function's `name` shouldn't be the same as:
 
 - Any cells between A1 to XFD1048576 or any cells between R1C1 to R1048576C16384.
 
@@ -40,8 +40,8 @@ To fix a naming conflict, change the `name` in your add-in and try the function 
 ## Best practices
 
 - Consider adding multiple arguments to a function rather than creating multiple functions with the same or similar names.
-- Function names should indicate the action of the function, such as `=GETZIPCODE` instead of `ZIPCODE`.
 - Avoid ambiguous abbreviations in function names. Clarity is more important than brevity. Choose a name like `=INCREASETIME` rather than `=INC`.
+- Function names should indicate the action of the function, such as =GETZIPCODE instead of ZIPCODE.
 - Consistently use the same verbs for functions which perform similar actions. For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.
 - When naming a streaming function, consider adding a note to that effect in the description of the function or adding `STREAM` to the end of the function's name.
 
@@ -49,7 +49,7 @@ To fix a naming conflict, change the `name` in your add-in and try the function 
 
 ## Localizing function names
 
-You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file. As a best practice, avoid giving your functions an `id` or `name` that is a built-in Excel function in another language as this could conflict with localized functions.
+You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file. Avoid giving your functions an `id` or `name` that is a built-in Excel function in another language as this could conflict with localized functions.
 
 For full information on localizing, see [Localize custom functions](custom-functions-localize.md)
 
@@ -60,4 +60,3 @@ Learn about [error handling best practices](custom-functions-errors.md).
 
 * [Custom functions metadata](custom-functions-json.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)

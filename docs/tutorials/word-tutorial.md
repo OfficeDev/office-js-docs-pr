@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 01/16/2020
+ms.date: 07/07/2020
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 localization_priority: Priority
@@ -114,7 +114,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     ```js
     var docBody = context.document.body;
-    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office on the web.",
+    docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
                             "Start");
     ```
 
@@ -312,7 +312,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 3. Be sure there are at least three paragraphs in the document. You can choose the **Insert Paragraph** button three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
 
-4. In Word, create a [custom style](https://support.office.com/article/Customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) named "MyCustomStyle". It can have any formatting that you want.
+4. In Word, create a [custom style](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) named "MyCustomStyle". It can have any formatting that you want.
 
 5. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
 

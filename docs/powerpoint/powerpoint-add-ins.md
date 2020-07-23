@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-ins
-description: ''
-ms.date: 11/07/2019
+description: 'Learn how to use PowerPoint add-ins to build engaging solutions for presentations across platforms including Windows, iPad, Mac, and in a browser.'
+ms.date: 06/29/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -11,9 +11,9 @@ localization_priority: Priority
 
 You can use PowerPoint add-ins to build engaging solutions for your users' presentations across platforms including Windows, iPad, Mac, and in a browser. You can create two types of PowerPoint add-ins:
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/WA104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
+- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
-- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907) add-in, which you can use to add professional photos to your presentation.
+- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pexels - Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997) add-in, which you can use to add professional photos to your presentation.
 
 ## PowerPoint add-in scenarios
 
@@ -86,7 +86,7 @@ function registerActiveViewChanged() {
 
 ## Navigate to a particular slide in the presentation
 
-In the following code sample, the `getSelectedRange` function calls the [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method to get the JSON object returned by `asyncResult.value`, which contains an array named **slides**. The **slides** array contains the ids, titles, and indexes of selected range of slides (or of the current slide, if multiple slides are not selected). It also saves the id of the first slide in the selected range to a global variable.
+In the following code sample, the `getSelectedRange` function calls the [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method to get the JSON object returned by `asyncResult.value`, which contains an array named `slides`. The `slides` array contains the ids, titles, and indexes of selected range of slides (or of the current slide, if multiple slides are not selected). It also saves the id of the first slide in the selected range to a global variable.
 
 ```js
 function getSelectedRange() {
@@ -122,7 +122,7 @@ function goToFirstSlide() {
 
 ## Navigate between slides in the presentation
 
-In the following code sample, the `goToSlideByIndex` function calls the **Document.goToByIdAsync** method to navigate to the next slide in the presentation.
+In the following code sample, the `goToSlideByIndex` function calls the `Document.goToByIdAsync` method to navigate to the next slide in the presentation.
 
 ```js
 function goToSlideByIndex() {

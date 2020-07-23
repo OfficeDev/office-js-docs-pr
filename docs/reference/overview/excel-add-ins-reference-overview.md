@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript API overview
-description: ''
+description: 'Learn more about the Excel JavaScript API'
 ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
@@ -38,8 +38,7 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 
 ## See also
 
-- [Excel add-ins documentation](../../excel/index.md)
+- [Excel add-ins documentation](../../excel/index.yml)
 - [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
 - [Excel JavaScript API reference](/javascript/api/excel)
 - [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
-- [API open specifications](../openspec/openspec.md)

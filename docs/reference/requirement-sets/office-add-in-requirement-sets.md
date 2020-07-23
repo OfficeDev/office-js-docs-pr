@@ -1,24 +1,23 @@
 ---
 title: Office Common API requirement sets
-description: ''
-ms.date: 07/17/2019
+description: 'Learn more about the Office Common API requirement sets.'
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
 
 # Office Common API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-Need information about where add-ins are supported by Office host? See [Office Add-in host and platform availability](/office/dev/add-ins/overview/office-add-in-availability).
-
-Looking for the *host-specific* API requirement sets? See the following API requirement sets:
-
-- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
-- [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
-- [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
-- [PowerPoint JavaScript API requirement sets](powerpoint-api-requirement-sets.md) (PowerPointApi)
-- [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md) (Mailbox)
+> [!TIP]
+> Looking for the *host-specific* API requirement sets? See the following API requirement sets:
+>
+> - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
+> - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
+> - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
+> - [PowerPoint JavaScript API requirement sets](powerpoint-api-requirement-sets.md) (PowerPointApi)
+> - [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md) (Mailbox)
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
@@ -26,6 +25,9 @@ Looking for the *host-specific* API requirement sets? See the following API requ
 ## Common API requirement sets
 
 The following sections list the Common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1, unless otherwise specified.
+
+> [!TIP]
+> Need information about where add-ins and requirement sets are supported by Office host and version? See [Office Add-in host and platform availability](../../overview/office-add-in-availability.md).
 
 ### ActiveView
 
@@ -53,7 +55,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
+| Excel 2016 and later on Windows<br>Excel on the web<br>Excel 2016 and later on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
 
 ---
 
@@ -157,7 +159,15 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to PDF format (Office.FileType.Pdf)<br>when using the Document.getFileAsync method.|
+| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to PDF format (Office.FileType.Pdf)<br>when using the Document.getFileAsync method.|
+
+---
+
+### RibbonApi
+
+|**Office hosts**|**Methods in set**|
+|:-----|:-----|
+| See [Ribbon API requirement sets](ribbon-api-requirement-sets.md). | Office.ribbon.requestUpdate |
 
 ---
 
@@ -227,7 +237,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ## Methods that aren't part of a requirement set
 
-The following methods in the Office JavaScript API aren't part of a requirement set. If your add-in requires any of these methods, use the **Methods** and **Method** elements in the add-in's manifest to declare that they are required, or perform the runtime check using an `if` statement. For more information, see [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+The following methods in the Office JavaScript API aren't part of a requirement set. If your add-in requires any of these methods, use the **Methods** and **Method** elements in the add-in's manifest to declare that they are required, or perform the runtime check using an `if` statement. For more information, see [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md).
 
 |**Method name**|**Office host support**|
 |:-----|:-----|
@@ -250,6 +260,6 @@ The following methods in the Office JavaScript API aren't part of a requirement 
 
 ## See also
 
-- [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)
+- [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
+- [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office Add-ins XML manifest](../../develop/add-in-manifests.md)

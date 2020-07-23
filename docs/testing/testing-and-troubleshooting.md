@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
-description: ''
-ms.date: 12/31/2019
+description: 'Learn how to troubleshoot user errors in Office Add-ins.'
+ms.date: 06/17/2020
 localization_priority: Normal
 ---
 
@@ -21,7 +21,7 @@ The following table lists common error messages that users might encounter and s
 |:-----|:-----|
 |App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to AppSource. This message indicates that the user cannot access AppSource.|
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/kb/2986156/).|
-|Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
+|Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools > **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
 ## When installing an add-in, you see "Error loading add-in" in the status bar
@@ -38,11 +38,11 @@ You can also give us feedback: if using Excel on Windows or Mac, you can report 
 If an Outlook add-in running on Windows and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) is not working correctly, try turning on script debugging in Internet Explorer. 
 
 
-- Go to Tools >  **Internet Options** > **Advanced**.
+- Go to Tools > **Internet Options** > **Advanced**.
     
-- Under  **Browsing**, uncheck  **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)**.
+- Under **Browsing**, uncheck **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)**.
     
-We recommend that you uncheck these settings only to troubleshoot the issue. If you leave them unchecked, you will get prompts when you browse. After the issue is resolved, check  **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)** again.
+We recommend that you uncheck these settings only to troubleshoot the issue. If you leave them unchecked, you will get prompts when you browse. After the issue is resolved, check **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)** again.
 
 
 ## Add-in doesn't activate in Office 2013
@@ -91,7 +91,7 @@ To add a URL to your list of trusted sites:
 This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
-Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
 ## Changes to add-in commands including ribbon buttons and menu items do not take effect
@@ -116,7 +116,7 @@ The browser may be caching these files. To prevent this, turn off client-side ca
 - Pragma: "no-cache"
 - Expires: "-1"
 
-For an example of doing this in an Node.JS Express server, see [this app.js file](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). For an example in an ASP.NET project, see [this cshtml file](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/src/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
+For an example of doing this in an Node.JS Express server, see [this app.js file](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). For an example in an ASP.NET project, see [this cshtml file](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
 
 If your add-in is hosted in Internet Information Server (IIS), you could also add the following to the web.config.
 
@@ -135,8 +135,9 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## See also
 
-- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md) 
+- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
+- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)

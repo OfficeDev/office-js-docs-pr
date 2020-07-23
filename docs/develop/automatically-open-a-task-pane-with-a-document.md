@@ -1,21 +1,21 @@
 ---
 title: Automatically open a task pane with a document
-description: ''
-ms.date: 06/20/2019
+description: 'Learn how to configure an Office Add-in to open automatically when a document opens.'
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
 
 # Automatically open a task pane with a document
 
-You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office ribbon. When users click your command button, an action occurs, such as opening a task pane.
+You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office app ribbon. When users click your command button, an action occurs, such as opening a task pane.
 
 Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the AddInCommands 1.1 requirement set, to automatically open a task pane when your scenario requires it.
 
 
 ## How is the autoopen feature different from inserting a task pane?
 
-When a user launches add-ins that don't use add-in commands - for example, add-ins that run in Office 2013 - they are inserted into the document, and persist in that document. As a result, when other users open the document, they are prompted to install the add-in, and the task pane opens. The challenge with this model is that in many cases, users don’t want the add-in to persist in the document. For example, a student who uses a dictionary add-in in a Word document might not want their classmates or teachers to be prompted to install that add-in when they open the document.
+When a user launches add-ins that don't use add-in commands - for example, add-ins that run in Office 2013 - they are inserted into the document, and persist in that document. As a result, when other users open the document, they are prompted to install the add-in, and the task pane opens. The challenge with this model is that in many cases, users don't want the add-in to persist in the document. For example, a student who uses a dictionary add-in in a Word document might not want their classmates or teachers to be prompted to install that add-in when they open the document.
 
 With the autoopen feature, you can explicitly define or allow the user to define whether a specific task pane add-in persists in a specific document.
 
@@ -36,8 +36,8 @@ Apply the following best practices when you use the autoopen feature:
   - When the document needs the add-in in order to function properly. For example, a spreadsheet that includes stock values that are periodically refreshed by an add-in. The add-in should open automatically when the spreadsheet is opened to keep the values up to date.
   - When the user will most likely always use the add-in with a particular document. For example, an add-in that helps users fill in or change data in a document by pulling information from a backend system.
 - Allow users to turn on or turn off the autoopen feature. Include an option in your UI for users to choose to no longer automatically open the add-in task pane.  
-- Use requirement set detection to determine whether the autoopen feature is available, and provide a fallback behavior if it isn’t.
-- Don't use the autoopen feature to artificially increase usage of your add-in. If it doesn’t make sense for your add-in to open automatically with certain documents, this feature can annoy users.
+- Use requirement set detection to determine whether the autoopen feature is available, and provide a fallback behavior if it isn't.
+- Don't use the autoopen feature to artificially increase usage of your add-in. If it doesn't make sense for your add-in to open automatically with certain documents, this feature can annoy users.
 
     > [!NOTE]
     > If Microsoft detects abuse of the autoopen feature, your add-in might be rejected from AppSource.
@@ -56,7 +56,7 @@ To implement the autoopen feature:
 
 ### Step 1: Specify the task pane to open
 
-To specify the task pane to open automatically, set the [TaskpaneId](/office/dev/add-ins/reference/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
+To specify the task pane to open automatically, set the [TaskpaneId](../reference/manifest/action.md#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
 
 The following example shows the TaskPaneId value set to Office.AutoShowTaskpaneWithDocument.
 
@@ -110,11 +110,11 @@ The `webextension` part includes a property bag and a property named **Office.Au
 
 The `webextension` part also includes a reference to the store or catalog with attributes for `id`, `storeType`, `store`, and `version`. Of the `storeType` values, only four are relevant to the autoopen feature. The values for the other three attributes depend on the value for `storeType`, as shown in the following table.
 
-| **`storeType` value** | **`id` value**	|**`store` value** | **`version` value**|
+| **`storeType` value** | **`id` value**    |**`store` value** | **`version` value**|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|The AppSource asset ID of the add-in (see Note)|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note)|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
-|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Office 365 admin center.|The version in the add-in manifest.
+|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
 
 > [!NOTE]
@@ -143,7 +143,7 @@ An easy way to write the XML is to first run your add-in and [tag the document o
 
 ## Test and verify opening task panes
 
-You can deploy a test version of your add-in that will automatically open a task pane using Centralized Deployment via the Office 365 admin center. The following example shows how add-ins are inserted from the Centralized Deployment catalog using the EXCatalog store version.
+You can deploy a test version of your add-in that will automatically open a task pane using Centralized Deployment via the Microsoft 365 admin center. The following example shows how add-ins are inserted from the Centralized Deployment catalog using the EXCatalog store version.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -155,9 +155,9 @@ You can deploy a test version of your add-in that will automatically open a task
 </we:webextension>
 ```
 
-You can test the previous example by using your Office 365 subscription to try out Centralized Deployment and verify that your add-in works as expected. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+You can test the previous example by using your Microsoft 365 subscription to try out Centralized Deployment and verify that your add-in works as expected. If you don't already have a Microsoft 365 subscription, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 ## See also
 
 For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Join the Office 365 Developer Program](/office/developer-program/office-365-developer-program).
+[Join the Microsoft 365 developer program](/office/developer-program/office-365-developer-program).

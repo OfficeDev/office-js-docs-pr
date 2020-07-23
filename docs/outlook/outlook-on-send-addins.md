@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 11/07/2019
+ms.date: 07/06/2020
 localization_priority: Normal
 ---
 
@@ -12,15 +12,26 @@ The on-send feature for Outlook add-ins provides a way to handle a message or me
 - Prevent a user from sending sensitive information or leaving the subject line blank.  
 - Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.
 
-> [!NOTE]
-> The on-send feature is currently supported for Outlook on the web in Exchange Online (Office 365), Exchange 2016 on-premises (Cumulative Update 6 or later), and Exchange 2019 on-premises (Cumulative Update 1 or later). This feature is also available in the latest Outlook builds on Windows and Mac, connected to Exchange Online (Office 365). The feature was introduced in requirement set 1.8.
-
-> [!IMPORTANT]
-> Add-ins that use the on send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
-
 The on-send feature is triggered by the `ItemSend` event type and is UI-less.
 
 For information about limitations related to the on-send feature, see [Limitations](#limitations) later in this article.
+
+## Supported clients and platforms
+
+The following table shows supported client-server combinations for the on-send feature. Excluded combinations are not supported.
+
+| Client | Exchange Online | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) |
+|---|:---:|:---:|:---:|
+|Windows:<br>version 1910 (build 12130.20272) or later|Yes|Yes|Yes|
+|Mac:<br>build 16.30 or later|Yes|No|No|
+|Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|
+|Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
+
+> [!NOTE]
+> The on-send feature was released in requirement set 1.8 (see [current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details).
+
+> [!IMPORTANT]
+> Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
 
 ## How does the on-send feature work?
 
@@ -30,7 +41,7 @@ You can use the on-send feature to build an Outlook add-in that integrates the `
 - Verify that the message includes a subject line
 - Set a predetermined recipient
 
-Validation is done on the client side in Outlook, when the send event is triggered. If validation fails, the sending of the item is blocked, and an error message is displayed in an information bar that prompts the user to take action.  
+Validation is done on the client side in Outlook when the send event is triggered, and the add-in has up to 5 minutes before it times out. If validation fails, the sending of the item is blocked, and an error message is displayed in an information bar that prompts the user to take action.
 
 The following screenshot shows an information bar that notifies the sender to add a subject.
 
@@ -61,11 +72,14 @@ The on-send feature currently has the following limitations.
 
 On-send functionality is only supported for user mailboxes in Outlook on the web, Windows, and Mac. The functionality is not currently supported for the following mailbox types and modes.
 
-- Shared mailboxes
+- Shared mailboxes\*
 - Group mailboxes
 - Offline mode
 
 Outlook won't allow sending if the on-send feature is enabled for these mailbox scenarios. However, if a user responds to an email in a group mailbox, the on-send add-in won't run and the message will be sent.
+
+> [!IMPORTANT]
+> \* On-send functionality should work on shared mailboxes or folders if the add-in also [implements support for delegate access scenarios](delegate-access.md).
 
 ## Multiple on-send add-ins
 
@@ -191,9 +205,26 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 > [!NOTE]
 > To learn how to use remote PowerShell to connect to Exchange Online, see [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
 
+#### Disable the on-send policy
+
+By default, on-send policy is enabled. To disable the on-send policy for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
+
+```powershell
+Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+```
+
+> [!NOTE]
+> For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).
+
+To disable the on-send policy for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.
+
+```powershell
+Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+```
+
 #### Enable the on-send policy
 
-By default, on-send policy is disabled. Administrators can enable on-send by running Exchange Online PowerShell cmdlets.
+Administrators can enable on-send by running Exchange Online PowerShell cmdlets.
 
 To enable on-send add-ins for all users:
 
@@ -246,23 +277,6 @@ To enable the on-send policy for a specific group of users the steps are as foll
 
 > [!NOTE]
 > Wait up to 60 minutes for the policy to take effect, or restart Internet Information Services (IIS). When the policy takes effect, the on-send feature will be enforced for the group.
-
-#### Disable the on-send policy
-
-To disable the on-send policy for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
-
-```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
-```
-
-> [!NOTE]
-> For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).
-
-To disable the on-send policy for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.
-
-```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
-```
 
 ### [Windows](#tab/windows)
 
@@ -374,6 +388,9 @@ The on-send add-ins will run during send if the Exchange server is online and re
 
 The following code examples show you how to create a simple on-send add-in. To download the code sample that these examples are based on, see [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send).
 
+> [!TIP]
+> If you use a dialog with the on-send event, make sure to close the dialog before completing the event.
+
 ### Manifest, version override, and event
 
 The [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send) code sample includes two manifests:
@@ -437,7 +454,6 @@ The on-send API requires `VersionOverrides v1_1`. The following shows you how to
 > [!NOTE]
 > For more information, see the following:
 > - [Outlook add-in manifests](manifests.md)
-> - [VersionOverrides](../develop/create-addin-commands.md#step-3-add-versionoverrides-element)
 > - [Office Add-ins XML manifest](../overview/add-in-manifests.md)
 
 
@@ -494,7 +510,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 
 The following are the parameters for the `addAsync` method:
 
-- `NoSend` &ndash; A string that is a developer-specified key to reference a notification message. You can use it to modify this message later. The key can’t be longer than 32 characters.
+- `NoSend` &ndash; A string that is a developer-specified key to reference a notification message. You can use it to modify this message later. The key can't be longer than 32 characters.
 - `type` &ndash; One of the properties of the  JSON object parameter. Represents the type of a message; the types correspond to the values of the [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) enumeration. Possible values are progress indicator, information message, or error message. In this example, `type` is an error message.  
 - `message` &ndash; One of the properties of the JSON object parameter. In this example, `message` is the text of the notification message.
 

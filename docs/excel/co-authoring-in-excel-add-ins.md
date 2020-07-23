@@ -1,6 +1,6 @@
 ---
 title: Coauthoring in Excel add-ins
-description: ''
+description: 'Learn to coauthor an Excel workbook stored in OneDrive, OneDrive for Business, or SharePoint Online.'
 ms.date: 06/20/2019
 localization_priority: Normal
 ---
@@ -11,7 +11,7 @@ localization_priority: Normal
 With [coauthoring](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), multiple people can work together and edit the same Excel workbook simultaneously. All coauthors of a workbook can see another coauthor's changes as soon as that coauthor saves the workbook. To coauthor an Excel workbook, the workbook must be stored in OneDrive, OneDrive for Business, or SharePoint Online.
 
 > [!IMPORTANT]
-> In Excel for Office 365, you will notice AutoSave in the upper-left corner. When AutoSave is turned on, coauthors see your changes in real time. Consider the impact of this behavior on the design of your Excel add-in. Users can turn off AutoSave via the switch in the upper left of the Excel window.
+> In Excel for Microsoft 365, you will notice AutoSave in the upper-left corner. When AutoSave is turned on, coauthors see your changes in real time. Consider the impact of this behavior on the design of your Excel add-in. Users can turn off AutoSave via the switch in the upper left of the Excel window.
 
 ## Coauthoring overview
 
@@ -41,7 +41,7 @@ If you want User A's custom visualizations to respond to changes made by coautho
 
 As described earlier, in some scenarios, triggering events for all coauthors provides an improved user experience. However, be aware that in some scenarios this behavior can produce poor user experiences. 
 
-For example, in data validation scenarios, it is common to display UI in response to events. The [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event described in the previous section runs when either a local user or coauthor (remote) changes the workbook content within the binding. If the event handler of the **BindingDataChanged** event displays UI, users will see UI that is unrelated to changes they were working on in the workbook, leading to a poor user experience. Avoid displaying UI when using events in your add-in.
+For example, in data validation scenarios, it is common to display UI in response to events. The [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event described in the previous section runs when either a local user or coauthor (remote) changes the workbook content within the binding. If the event handler of the `BindingDataChanged` event displays UI, users will see UI that is unrelated to changes they were working on in the workbook, leading to a poor user experience. Avoid displaying UI when using events in your add-in.
 
 ## See also
 
