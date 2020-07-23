@@ -63,7 +63,7 @@ For examples of detailed walkthroughs and scenarios, see:
 
 ## Distributing SSO-enabled add-ins in Microsoft AppSource
 
-When an Office 365 admin acquires an add-in from [AppSource](https://appsource.microsoft.com), the admin can redistribute it by [centralized deployment](../publish/centralized-deployment.md) and grant admin consent to the add-in to access Microsoft Graph scopes. It's also possible, however, for the end user to acquire the add-in directly from AppSource, in which case the user must grant consent to the add-in. This can create a potential performance problem for which we've provided a solution.
+When a Microsoft 365 admin acquires an add-in from [AppSource](https://appsource.microsoft.com), the admin can redistribute it by [centralized deployment](../publish/centralized-deployment.md) and grant admin consent to the add-in to access Microsoft Graph scopes. It's also possible, however, for the end user to acquire the add-in directly from AppSource, in which case the user must grant consent to the add-in. This can create a potential performance problem for which we've provided a solution.
 
 If your code passes the `allowConsentPrompt` option in the call of `getAccessToken`, like `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );`, then Office can prompt the user for consent if Azure AD reports to Office that consent has not yet been granted to the add-in. However, for security reasons, Office can only prompt the user to consent to the Azure AD `profile` scope. *Office cannot prompt for consent to any Microsoft Graph scopes*, not even `User.Read`. This means that if the user grants consent on the prompt, Office will return a bootstrap token. But the attempt to exchange the bootstrap token for an access token to Microsoft Graph will fail with error AADSTS65001, which means consent (to Microsoft Graph scopes) has not been granted.
 
@@ -71,5 +71,5 @@ Your code can, and should, handle this error by falling back to an alternate sys
 
 As a best practice, always pass `forMSGraphAccess` to `getAccessToken` when your add-in will be distributed in AppSource and needs Microsoft Graph scopes.
 
-> [!NOTE]
+> [!TIP]
 > If you develop an Outlook add-in that uses SSO and you sideload it for testing, Office will *always* return error 13012 when `forMSGraphAccess` is passed to `getAccessToken` even if admin consent has been granted. For this reason, you should comment out the `forMSGraphAccess` option when developing an Outlook add-in.

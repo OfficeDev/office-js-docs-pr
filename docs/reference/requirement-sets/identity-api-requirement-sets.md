@@ -1,7 +1,7 @@
 ---
 title: Identity API requirement sets
 description: 'Identity API requirement set information for Office Add-ins.'
-ms.date: 07/20/2020
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
