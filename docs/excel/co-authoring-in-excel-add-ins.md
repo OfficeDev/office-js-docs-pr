@@ -1,7 +1,7 @@
 ---
 title: Coauthoring in Excel add-ins
 description: 'Learn to coauthor an Excel workbook stored in OneDrive, OneDrive for Business, or SharePoint Online.'
-ms.date: 06/20/2019
+ms.date: 07/23/2020
 localization_priority: Normal
 ---
 
@@ -20,6 +20,7 @@ When you change a workbook's content, Excel automatically synchronizes those cha
 ```js
 range.values = [['Contoso']];
 ```
+
 After 'Contoso' synchronizes across all coauthors, any user or add-in running in the same workbook will see the new value of the range.
 
 Coauthoring only synchronizes the content within the shared workbook. Values copied from the workbook to JavaScript variables in an Excel add-in are not synchronized. For example, if your add-in stores the value of a cell (such as 'Contoso') in a JavaScript variable, and then a coauthor changes the value of the cell to 'Example', after synchronization all coauthors see 'Example' in the cell. However, the value of the JavaScript variable is still set to 'Contoso'. Furthermore, when multiple coauthors use the same add-in, each coauthor has their own copy of the variable, which is not synchronized. When you use variables that use workbook content, be sure you check for updated values in the workbook before you use the variable.
@@ -39,9 +40,21 @@ If you want User A's custom visualizations to respond to changes made by coautho
 
 ## Caveats to using events with coauthoring
 
-As described earlier, in some scenarios, triggering events for all coauthors provides an improved user experience. However, be aware that in some scenarios this behavior can produce poor user experiences. 
+As described earlier, in some scenarios, triggering events for all coauthors provides an improved user experience. However, be aware that in some scenarios this behavior can produce poor user experiences.
 
 For example, in data validation scenarios, it is common to display UI in response to events. The [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event described in the previous section runs when either a local user or coauthor (remote) changes the workbook content within the binding. If the event handler of the `BindingDataChanged` event displays UI, users will see UI that is unrelated to changes they were working on in the workbook, leading to a poor user experience. Avoid displaying UI when using events in your add-in.
+
+## Avoiding table row coauthoring conflicts
+
+Updating a table can cause coauthoring conflicts. The following guidance should help you avoid issues (and that yellow bar Excel shows asking users to refresh):
+
+1. Use [`Range.values`](/javascript/api/excel/excel.range#values) instead of [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-). Setting the `Range` values directly below the table automatically expands the table. Otherwise, adding table rows through the `Table` APIs results in merge conflicts for coauth users.
+1. There should no [data validation rules](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) applied to cells below the table, unless the data validation is applied to the entire column.
+
+Note that there are two limitations when using `Range.values` instead of `TableRowCollection.add`:
+
+1. If there is data under the table, the add-in needs to handle that before setting the range value. Using [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) to insert an empty row will move the data add make space for the expanding table.
+1. You cannot add an empty row to a table with `Range.values`. You can work around this with hidden columns or temporary data.
 
 ## See also
 

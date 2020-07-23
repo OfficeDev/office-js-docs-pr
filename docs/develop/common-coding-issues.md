@@ -1,7 +1,7 @@
 ---
 title: Coding guidance for common issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 05/21/2020
+ms.date: 07/23/2020
 localization_priority: Normal
 ---
 
@@ -137,6 +137,10 @@ The following APIs are affected by this workbook switch:
 
 > [!NOTE]
 > This only applies to multiple Excel workbooks open on Windows or Mac.
+
+### Coauthoring
+
+See [Coauthoring in Excel add-ins](../excel/co-authoring-in-excel-add-ins.md) for patterns to use with events in a coauthoring environment. The article also discusses potential merge conflicts when using certain APIs, such as [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-).
 
 ## See also
 
