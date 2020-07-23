@@ -1,11 +1,11 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 01/16/2020
+ms.date: 07/30/2020
 localization_priority: Normal
 ---
 
-# Create a Node.js Office Add-in that uses single sign-on (preview)
+# Create a Node.js Office Add-in that uses single sign-on
 
 Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 
@@ -167,7 +167,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
             
             // TODO 1: Tell Office to get a bootstrap token from Azure AD.
             
-            // TODO 2: Attempt to exhange the bootstrap token for an 
+            // TODO 2: Attempt to exchange the bootstrap token for an 
             //         access token to Microsoft Graph.
 
             // TODO 3: Handle case where Microsoft Graph requires an 
@@ -190,7 +190,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     - `OfficeRuntime.auth.getAccessToken` instructs Office to get a bootstrap token from Azure AD. A bootstrap token is similar to an ID token, but it has a `scp` (scope) property with the value `access-as-user`. This kind of token can be exchanged by a web application for an access token to Microsoft Graph.
     - Setting the `allowSignInPrompt`option to true means that if no user is currently signed into Office, then Office will open a popup sign-in prompt.
-    - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an access token to Micrsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `OfficeRuntime.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign in again and the user *can* be prompted to consent to Micrsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
+    - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an access token to Microsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `OfficeRuntime.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign in again and the user *can* be prompted to consent to Microsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
 
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true }); 
@@ -241,7 +241,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Below the `getGraphData` method, add the following function. Note that `/auth` is a server-side Express route that exhanges the bootstrap token with Azure AD for an access token to Microsoft Graph.
+1. Below the `getGraphData` method, add the following function. Note that `/auth` is a server-side Express route that exchanges the bootstrap token with Azure AD for an access token to Microsoft Graph.
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -269,6 +269,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
         }
     }
     ```
+
 1. Replace `TODO 6` with the following code. 
 For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). 
 
@@ -433,7 +434,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
         // TODO 12: Test for the presence of the Authorization header.
 
         // TODO 13: Create the hidden form that will be sent to Azure AD 
-        //          to request the access token in exhange for the 
+        //          to request the access token in exchange for the 
         //          bootstrap token.
 
         // TODO 14: Send the POST request to Azure AD and relay the 

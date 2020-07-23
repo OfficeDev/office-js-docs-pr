@@ -1,12 +1,12 @@
 ---
-title: Use the Yeoman generator to create an Office Add-in that uses SSO (preview)
-description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on (preview).
-ms.date: 02/20/2020
+title: Use the Yeoman generator to create an Office Add-in that uses SSO
+description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
 
-# Use the Yeoman generator to create an Office Add-in that uses single sign-on (preview)
+# Use the Yeoman generator to create an Office Add-in that uses single sign-on
 
 In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Outlook, Word, or PowerPoint that uses single sign-on (SSO) when possible, and uses an alternate method of user authentication when SSO is not supported.
 
@@ -26,8 +26,6 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
     ```
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
-
-[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * If you're using a Mac and don't have the Azure CLI installed on your machine, you must install [Homebrew](https://brew.sh/). The SSO configuration script that you'll run during this quick start will use Homebrew to install the Azure CLI, and will then use the Azure CLI to configure SSO within Azure.
 

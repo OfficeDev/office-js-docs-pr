@@ -1,17 +1,17 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: ''
-ms.date: 12/04/2019
+ms.date: 07/30/2020
 localization_priority: Normal
 ---
 
-# Create an ASP.NET Office Add-in that uses single sign-on (preview)
+# Create an ASP.NET Office Add-in that uses single sign-on
 
 When users are signed in to Office, your add-in can use the same credentials to permit users to access multiple applications without requiring them to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
-This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and Express.
+This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET.
 
 > [!NOTE]
-> For a similar article about an ASP.NET-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
+> For a similar article about an Node-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
 
 ## Prerequisites
 
@@ -49,7 +49,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     * In the **Redirect URI** section, ensure that **Web** is selected in the drop down and then set the URI to` https://localhost:44355/AzureADAuth/Authorize`.
     * Choose **Register**.
 
-1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
+1. On the **Office-Add-in-ASPNET-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
 
     > [!NOTE]
     > This ID is the "audience" value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
@@ -187,7 +187,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graphn and then get the data
+            //         for an access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -206,7 +206,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
     * `getAccessToken` tells Office to get a bootstrap token from Azure AD and return to the add-in.
     * `allowSignInPrompt` tells Office to prompt the user to sign in if the user isn't already signed into Office.
-    * `forMSGraphAccess` tells Office that the add-in intends to swap the bootstrap token for an access token to Microsoft Graph (instead of just using the bootstrap token as a user ID token). Setting this option gives Office a chance to cancel the process of getting a bootstrap token (and return error code 13012) if the user's tenant administrator has not granted consent to the add-in. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system. If the `forMSGraphAccess` is not used, and the admin has not granted consent, the bootstrap token is returned, but the attempt to exhange it with the on-behalf-of flow would result in an error. Thus, the `forMSGraphAccess` option enables the add-in to branch to the fallback system quickly.
+    * `forMSGraphAccess` tells Office that the add-in intends to swap the bootstrap token for an access token to Microsoft Graph (instead of just using the bootstrap token as a user ID token). Setting this option gives Office a chance to cancel the process of getting a bootstrap token (and return error code 13012) if the user's tenant administrator has not granted consent to the add-in. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system. If the `forMSGraphAccess` is not used, and the admin has not granted consent, the bootstrap token is returned, but the attempt to exchange it with the on-behalf-of flow would result in an error. Thus, the `forMSGraphAccess` option enables the add-in to branch to the fallback system quickly.
     * You create the `getData` function in a later step.
     * The `/api/values` parameter is the URL of a server-side controller that will make the token exchange and use the access token it gets back to make the call to Microsoft Graph.
 
@@ -295,7 +295,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         break;
     ```
 
-1. Replace `TODO 3` with the following code. For all other errors, the add-in branches to the fallback authorization system. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). In this add-in, the fallback system opens a dialog which requires the user to sign in, even if the user already is, and uses msal.js and the Implicit Flow to get an access token to Microsoft Graph.
+1. Replace `TODO 3` with the following code. For all other errors, the add-in branches to the fallback authorization system. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). In this add-in, the fallback system opens a dialog which requires the user to sign in, even if the user already is.
 
     ```javascript
     default:
