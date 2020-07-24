@@ -496,7 +496,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 ## Protect a worksheet
 
-In this step of the tutorial, you'll add another button to the ribbon that, when chosen, executes a function that you'll define to toggle worksheet protection on and off.
+In this step of the tutorial, you'll add a button to the ribbon that toggles worksheet protection on and off.
 
 ### Configure the manifest to add a second ribbon button
 
