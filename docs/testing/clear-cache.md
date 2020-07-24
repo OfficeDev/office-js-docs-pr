@@ -15,13 +15,13 @@ Additionally, if you make changes to your add-in's manifest (for example, update
 
 To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the folder:
 
-```text
+```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
 ```
 
 If the following folder exists, delete its contents too:
 
-```text
+```
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
