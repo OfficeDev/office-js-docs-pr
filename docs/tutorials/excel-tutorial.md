@@ -296,9 +296,9 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 6. Within the `sortTable()` function, replace `TODO1` with the following code. Note:
 
-   - The code creates an array of `SortField` objects which has just one member since the add-in only sorts on the Merchant column.
+   - The code creates an array of `SortField` objects, which has just one member since the add-in only sorts on the Merchant column.
 
-   - The `key` property of a `SortField` object is the zero-based index of the column to sort-on.
+   - The `key` property of a `SortField` object is the zero-based index of the column to sort.
 
    - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed to the `TableSort` object's `apply` method.
 
