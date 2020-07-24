@@ -719,7 +719,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. Close all Office applications, including Excel. 
 
-2. Delete the Office cache by deleting the contents of the cache folder. This is necessary to completely clear the old version of the add-in from the host. 
+2. Delete the Office cache by deleting the contents of the cache folder. This is necessary to completely clear the old version of the add-in from the host.
 
     - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
@@ -770,7 +770,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 3. Add the following markup to **popup.html**. Note:
 
-   - The page has a `<input>` where the user will enter their name and a button that will send the name to the page in the task pane where it will be displayed.
+   - The page has an `<input>` where the user will enter their name, and a button that will send this name to the task pane page where it will display.
 
    - The markup loads a script named **popup.js** that you will create in a later step.
 
