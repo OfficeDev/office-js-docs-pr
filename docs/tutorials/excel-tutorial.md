@@ -719,7 +719,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. Close all Office applications, including Excel. 
 
-2. Delete the Office cache by deleting the contents of the cache folder. This is necessary to completely clear the old version of the add-in from the host.
+2. Delete the Office cache by deleting the contents (which may include files and subfolders) of the cache folder. This is necessary to completely clear the old version of the add-in from the host.
 
     - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
