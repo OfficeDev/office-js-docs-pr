@@ -99,7 +99,8 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 If changes you've made in the manifest, such as file names of ribbon button icons or text of menu items, do not seem to take effect, try clearing the Office cache on your computer. 
 
 #### For Windows:
-Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`, and delete the contents of the folder `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\`, if it exists.
 
 #### For Mac:
 
