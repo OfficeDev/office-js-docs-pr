@@ -528,13 +528,13 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. The next three `TODO`s set "resid"s, which is short for resource ID. A resource is a string, and you'll create these three strings in a later step. For now, you need to give IDs to the resources. The button label should read "Toggle Protection", but the *ID* of this string should be "ProtectionButtonLabel", so the `Label` element should look like this:
+4. The next three `TODO`s set resource IDs, or `resid`s. A resource is a string, and you'll create these three strings in a later step. For now, you need to give IDs to the resources. The button label should read "Toggle Protection", but the *ID* of this string should be "ProtectionButtonLabel", so the `Label` element should look like this:
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. The `SuperTip` element defines the tool tip for the button. The tool tip title should be the same as the button label, so we use the very same resource ID: "ProtectionButtonLabel". The tool tip description will be "Click to turn protection of the worksheet on and off". But the `ID` should be "ProtectionButtonToolTip". So, when you are done, the `SuperTip` element should look like this: 
+5. The `SuperTip` element defines the tool tip for the button. The tool tip title should be the same as the button label, so we use the very same resource ID: "ProtectionButtonLabel". The tool tip description will be "Click to turn protection of the worksheet on and off". But the `resid` should be "ProtectionButtonToolTip". So, when you are done, the `SuperTip` element should look like this: 
 
     ```xml
     <Supertip>            
