@@ -469,7 +469,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
    - The `Worksheet.freezePanes` collection is a set of panes in the worksheet that are pinned, or frozen, in place when the worksheet is scrolled.
 
-   - The `freezeRows` method takes as a parameter the number of rows, from the top that are to be pinned in place. We pass `1` to pin the first row in place.
+   - The `freezeRows` method takes as a parameter the number of rows, from the top, that are to be pinned in place. We pass `1` to pin the first row in place.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
