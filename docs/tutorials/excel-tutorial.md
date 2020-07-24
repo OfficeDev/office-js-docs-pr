@@ -968,7 +968,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
    - The callback is executed immediately after the dialog successfully opens and before the user has taken any action in the dialog.
 
-   - The `result.value` is the object that acts as a kind of middleman between the execution contexts of the parent and dialog pages.
+   - The `result.value` is the object that acts as an intermediary between the execution contexts of the parent and dialog pages.
 
    - The `processMessage` function will be created in a later step. This handler will process any values that are sent from the dialog page with calls of the `messageParent` function.
 
