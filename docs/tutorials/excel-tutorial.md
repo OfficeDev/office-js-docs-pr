@@ -546,7 +546,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
    > [!NOTE] 
    > In a production add-in, you would not want to use the same icon for two different buttons; but to simplify this tutorial, we'll do that. So the `Icon` markup in our new `Control` is just a copy of the `Icon` element from the existing `Control`. 
 
-6. The `Action` element inside the original `Control` element that was already present in the manifest, has its type set to `ShowTaskpane`, but our new button isn't going to open a task pane; it's going to run a custom function that you create in a later step. So replace `TODO5` with `ExecuteFunction` which is the action type for buttons that trigger custom functions. The opening tag for the `Action` element should look like this:
+6. The `Action` element inside the original `Control` element has its type set to `ShowTaskpane`, but our new button isn't going to open a task pane; it's going to run a custom function that you create in a later step. So, replace `TODO5` with `ExecuteFunction`, which is the action type for buttons that trigger custom functions. The opening tag for the `Action` element should look like this:
  
     ```xml
     <Action xsi:type="ExecuteFunction">
