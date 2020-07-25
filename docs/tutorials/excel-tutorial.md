@@ -770,7 +770,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 3. Add the following markup to **popup.html**. Note:
 
-   - The page has an `<input>` where the user will enter their name, and a button that will send this name to the task pane page where it will display.
+   - The page has an `<input>` field where the user will enter their name, and a button that will send this name to the task pane page where it will display.
 
    - The markup loads a script named **popup.js** that you will create in a later step.
 
