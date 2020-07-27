@@ -1,11 +1,11 @@
 ---
-title: Using the promise-based API Model
-description: 'Use the promise-based API model for Excel, OneNote, and Word add-ins.'
+title: Using the host-specific API model
+description: 'Learn about the promise-based API model for Excel, OneNote, and Word add-ins.'
 ms.date: 07/27/2020
 localization_priority: Normal
 ---
 
-# Using the promise-based API Model
+# Using the host-specific API model
 
 This article describes how to use the API model for building add-ins in Excel, Word, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs. Note that this model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
 

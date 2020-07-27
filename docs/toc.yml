@@ -60,8 +60,8 @@
       items:
       - name: Understanding the Office JavaScript API
         href: develop/understanding-the-javascript-api-for-office.md
-      - name: Using the promise-based API Model
-        href: develop/promise-based-api-model.md
+      - name: Using the host-specific API Model
+        href: develop/host-specific-api-model.md
       - name: Common APIs
         items:
         - name: Common JavaScript API object model

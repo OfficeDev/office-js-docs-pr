@@ -13,6 +13,8 @@ The Office JavaScript API includes two distinct models:
     > [!NOTE]
     > There is also a host-specific API for [Visio](../reference/overview/visio-javascript-reference-overview.md), but you can use it only in SharePoint Online pages to interact with Visio diagrams that have been embedded in the page. Office web add-ins are not supported in Visio.
 
+    Learn more about how to use this API model in the article [Using the host-specific API model](../develop/host-specific-api-model.md).
+
 - **Common** APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office host. Common APIs were introduced with Office 2013 and can be used to interact with Office 2013 or later. For details about the Common API object model, which includes APIs for interacting with Outlook, PowerPoint, and Project, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 > [!NOTE]
