@@ -53,7 +53,7 @@ Updating a table can cause coauthoring conflicts. The following guidance should 
 
 Note that there are two limitations when using `Range.values` instead of `TableRowCollection.add`:
 
-1. If there is data under the table, the add-in needs to handle that before setting the range value. Using [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) to insert an empty row will move the data add make space for the expanding table.
+1. If there is data under the table, the add-in needs to handle that before setting the range value. Using [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) to insert an empty row will move the data and make space for the expanding table.
 1. You cannot add an empty row to a table with `Range.values`. You can work around this with hidden columns or temporary data.
 
 ## See also
