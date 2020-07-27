@@ -1,13 +1,16 @@
 ---
-title: Fundamentals of the promise-based API Model
+title: Using the promise-based API Model
 description: 'Use the promise-based API model for Excel, OneNote, and Word add-ins.'
 ms.date: 07/27/2020
 localization_priority: Normal
 ---
 
-# Fundamentals of the promise-based API Model
+# Using the promise-based API Model
 
 This article describes how to use the API model for building add-ins in Excel, Word, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs. Note that this model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
+
+> [!NOTE]
+> The examples in this page use the Excel JavaScriptAPIs, but the concepts equally apply to Excel, Word, and OneNote add-ins, as well as SharePoint-embedded Visio diagrams that use the Office JavaScript APIs.
 
 ## Asynchronous nature of the promise-based APIs
 
@@ -35,7 +38,7 @@ Excel.run(function (context) {
 
 ## Request context
 
-The Office host and your add-in run in two different processes. Since they use different runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables.
+The Office host and your add-in run in two different processes. Since they use different runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables. This `RequestContext` object is provided as an argument when calling `*.run`.
 
 ## Proxy objects
 
@@ -78,14 +81,7 @@ Because `sync()` is an asynchronous operation that returns a promise, you should
 
 ### load()
 
-Before you can read the properties of a proxy object, you must explicitly load the properties to populate the proxy object with data from the Office document, and then call `context.sync()`. For example, if you create a proxy object to reference a selected range, and then want to read the selected range's `address` property, you need to load the `address` property before you can read it. To request properties of a proxy object be loaded, call the `load()` method on the object and specify the properties to load.
-
-> [!NOTE]
-> If you are only calling methods or setting properties on a proxy object, you do not need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.
-
-Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
-
-In the following example, only specific properties of the `Excel.Range` object are loaded.
+Before you can read the properties of a proxy object, you must explicitly load the properties to populate the proxy object with data from the Office document, and then call `context.sync()`. For example, if you create a proxy object to reference a selected range, and then want to read the selected range's `address` property, you need to load the `address` property before you can read it. To request properties of a proxy object be loaded, call the `load()` method on the object and specify the properties to load. The following example shows the `Range.address` property being loaded for `myRange`.
 
 ```js
 Excel.run(function (context) {
@@ -93,14 +89,12 @@ Excel.run(function (context) {
     var rangeAddress = 'A1:B2';
     var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
-    myRange.load(['address', 'format/*', 'format/fill', ]);
+    myRange.load('address');
 
     return context.sync()
       .then(function () {
-        console.log (myRange.address);              // ok
-        console.log (myRange.format.wrapText);      // ok
-        console.log (myRange.format.fill.color);    // ok
-        //console.log (myRange.format.font.color);  // not ok as it was not loaded
+        console.log (myRange.address);   // ok
+        //console.log (myRange.values);  // not ok as it was not loaded
         });
     }).then(function () {
         console.log('done');
@@ -112,14 +106,106 @@ Excel.run(function (context) {
 });
 ```
 
-In the previous example, because `format/font` is not specified in the call to `myRange.load()`, the `format.font.color` property cannot be read.
+> [!NOTE]
+> If you are only calling methods or setting properties on a proxy object, you do not need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.
 
-To optimize performance, you should explicitly specify the properties to load when using the `load()` method on an object, as covered in [Excel JavaScript API performance optimizations](../excel/performance.md).
+Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
 
-## Handle errors
+#### Scalar and navigation properties
 
-When an API error occurs, the API returns an `error` object that contains a code and a message. For detailed information about error handling, including a list of API errors, see [Error handling](excel-add-ins-error-handling.md).
+There are two categories of properties: **scalar** and **navigational**. Scalar properties are assignable types such as strings, integers, and JSON structs. Navigation properties are readonly objects and collections of objects that have their fields assigned, instead of directly assigning the property. For example, `name` and `position` members on the [Excel.Worksheet](/javascript/api/excel/excel.worksheet) object are scalar properties, whereas `protection` and `tables` are navigation properties.
+
+Your add-in can use navigational properties as a path to load specific scalar properties. The following code queues up a `load` command for the name of the font used by an `Excel.Range` object, without loading any other information.
+
+```js
+someRange.load("format/font/name")
+```
+
+You can also set the scalar properties of a navigation property by traversing the path. For example, you could set the font size for an `Excel.Range` by using `someRange.format.font.size = 10;`. You don't need to load the property before you set it.
+
+#### Calling `load` without parameters
+
+If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object (or all scalar properties of all objects in the collection) will be loaded. To reduce the amount of data transfer between the Excel host application and the add-in, you should avoid calling the `load()` method without explicitly specifying which properties to load.
+
+> [!IMPORTANT]
+> The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations:
+>
+> * `Excel.Range.numberFormatCategories`
+
+To optimize performance, you should always explicitly specify the properties to load when using the `load()` method on an object.
+
+### ClientResult
+
+Methods in the promise-based APIs that return primitive types have a similar pattern to the `load`/`sync` paradigm. As an example, `Excel.TableCollection.getCount` gets the number of tables in the collection. `getCount` returns a `ClientResult<number>`, meaning the `value` property in the returned [`ClientResult`](/javascript/api/office/officeextension.clientresult) is a number. Your script can't access that value until `context.sync()` is called.
+
+The following code gets the total number of tables in an Excel workbook and logs that number to the console.
+
+```TypeScript
+let tableCount = context.workbook.tables.getCount();
+
+// This sync call implicitly loads tableCount.value.
+// Any other ClientResult values are loaded too.
+return context.sync()
+    .then(function () {
+        // Trying to log the value before calling sync would throw an error.
+        console.log (tableCount.value);
+    });
+```
+
+### set()
+
+Setting properties on an object with nested navigation properties can be cumbersome. As an alternative to setting individual properties using navigation paths as described above, you can use the `object.set()` method that is available on objects in the promise-based JavaScript APIs. With this method, you can set multiple properties of an object at once by passing either another object of the same Office.js type or a JavaScript object with properties that are structured like the properties of the object on which the method is called.
+
+The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the `Range` object. This example assumes that there is data in range **B2:E2**.
+
+```js
+Excel.run(function (ctx) {
+    var sheet = ctx.workbook.worksheets.getItem("Sample");
+    var range = sheet.getRange("B2:E2");
+    range.set({
+        format: {
+            fill: {
+                color: '#4472C4'
+            },
+            font: {
+                name: 'Verdana',
+                color: 'white'
+            }
+        }
+    });
+    range.format.autofitColumns();
+
+    return ctx.sync();
+}).catch(function(error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+## get&#42;OrNullObject methods
+
+Some `get*` methods throw an exception when the desired object is not present. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that is not in the workbook, the `getItem()` method throws an `ItemNotFound` exception.
+
+Any `get*OrNullObject` method variant lets you check for an object without throwing exceptions. These methods return a null object (not the JavaScript `null`) rather than throwing an exception if the specified item doesn't exist. For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to attempt to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns a null object. The null object that is returned contains the boolean property `isNullObject` that you can evaluate to determine whether the object exists.
+
+The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet needs to be created before actions can taken on the sheet.
+
+```js
+var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+
+return context.sync()
+  .then(function() {
+    if (dataSheet.isNullObject) {
+        // Create the sheet
+    }
+
+    dataSheet.position = 1;
+    //...
+  })
+```
 
 ## See also
 
-- [Common coding issues and unexpected platform behaviors](../develop/common-coding-issues.md).
+* [Common coding issues and unexpected platform behaviors](../develop/common-coding-issues.md).
