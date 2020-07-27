@@ -26,7 +26,7 @@ To use SSO, your Outlook add-in will need to have a server-side web API that is 
 
 ### Provide consent when sideloading an add-in
 
-When an add-in that uses SSO is acquired from AppSource, it must have a backup authentication method for providing consent if it contains Microsoft Graph scopes. When you are developing an add-in, you will have to provide consent in advance. For more information, see [Grant administrator consent to the add-in](../develop/grant-admin-consent-to-an-add-in.md).
+When you are developing an add-in, you will have to provide consent in advance. For more information, see [Grant administrator consent to the add-in](../develop/grant-admin-consent-to-an-add-in.md).
 
 ## Update the add-in manifest
 

@@ -14,7 +14,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI ?.?  | N/A | ????? | Coming soon | ?????? | ?????<b>&#8224;</b> | ????<b>&#8224;</b>| Coming soon | Coming soon |
+| IdentityAPI 1.3  | N/A | ????? | Coming soon | ?????? | ?????<b>&#8224;</b> | ????<b>&#8224;</b>| Coming soon | Coming soon |
 
 > **&#8224;** Add-ins that use the SSO APIs on these platforms will only work if the user's tenant administrator has granted consent to the add-in. The user cannot grant consent even to their own Azure AD profile.
 
