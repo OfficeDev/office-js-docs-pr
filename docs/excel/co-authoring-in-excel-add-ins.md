@@ -46,15 +46,12 @@ For example, in data validation scenarios, it is common to display UI in respons
 
 ## Avoiding table row coauthoring conflicts
 
-Updating a table can cause coauthoring conflicts. The following guidance should help you avoid issues (and that yellow bar Excel shows asking users to refresh):
+It is a known issue that calls to the [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) API can cause coauthoring conflicts. We do not recommend using that API if you anticipate your add-in will be run while other users are editing the add-in's workbook. The following guidance should help you avoid issues with the `TableRowCollection.add` method (and avoid triggering the yellow bar Excel shows that asks users to refresh):
 
 1. Use [`Range.values`](/javascript/api/excel/excel.range#values) instead of [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-). Setting the `Range` values directly below the table automatically expands the table. Otherwise, adding table rows through the `Table` APIs results in merge conflicts for coauth users.
-1. There should no [data validation rules](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) applied to cells below the table, unless the data validation is applied to the entire column.
-
-Note that there are two limitations when using `Range.values` instead of `TableRowCollection.add`:
-
-1. If there is data under the table, the add-in needs to handle that before setting the range value. Using [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) to insert an empty row will move the data and make space for the expanding table.
-1. You cannot add an empty row to a table with `Range.values`. You can work around this with hidden columns or temporary data.
+1. There should be no [data validation rules](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) applied to cells below the table, unless the data validation is applied to the entire column.
+1. If there is data under the table, the add-in needs to handle that before setting the range value. Using [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) to insert an empty row will move the data and make space for the expanding table. Otherwise, you risk overwriting cells below the table.
+1. You cannot add an empty row to a table with `Range.values`. The table only automatically expands if data is present in the cells directly below the table. Use either temporary data or hidden columns as a workaround to add an empty table row.
 
 ## See also
 
