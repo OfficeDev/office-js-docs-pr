@@ -107,6 +107,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     ![A screenshot of a message window in Outlook with the add-in button highlighted](../images/quick-start-button-1.png)
 
+    > [!NOTE]
+    > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
+
 1. Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.
 
     ![A screenshot of the add-in's task pane with the Run link highlighted](../images/quick-start-task-pane-2.png)
