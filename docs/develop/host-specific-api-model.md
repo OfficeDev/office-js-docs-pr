@@ -140,8 +140,8 @@ Methods in the promise-based APIs that return primitive types have a similar pat
 
 The following code gets the total number of tables in an Excel workbook and logs that number to the console.
 
-```TypeScript
-let tableCount = context.workbook.tables.getCount();
+```js
+var tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
