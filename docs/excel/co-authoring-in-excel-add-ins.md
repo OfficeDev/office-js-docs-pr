@@ -46,7 +46,7 @@ For example, in data validation scenarios, it is common to display UI in respons
 
 ## Avoiding table row coauthoring conflicts
 
-It is a known issue that calls to the [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) API can cause coauthoring conflicts. We do not recommend using that API if you anticipate your add-in will be run while other users are editing the add-in's workbook. The following guidance should help you avoid issues with the `TableRowCollection.add` method (and avoid triggering the yellow bar Excel shows that asks users to refresh):
+It is a known issue that calls to the [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) API can cause coauthoring conflicts. We do not recommend using that API if you anticipate your add-in will be run while other users are editing the add-in's workbook (specifically, if they are editing the table or any range under the table). The following guidance should help you avoid issues with the `TableRowCollection.add` method (and avoid triggering the yellow bar Excel shows that asks users to refresh):
 
 1. Use [`Range.values`](/javascript/api/excel/excel.range#values) instead of [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-). Setting the `Range` values directly below the table automatically expands the table. Otherwise, adding table rows through the `Table` APIs results in merge conflicts for coauth users.
 1. There should be no [data validation rules](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) applied to cells below the table, unless the data validation is applied to the entire column.
