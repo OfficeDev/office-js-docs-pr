@@ -552,7 +552,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     <Action xsi:type="ExecuteFunction">
     ```
 
-7. The original `Action` element has child elements that specify a task pane ID and a URL of the page that should be opened in the task pane. But an `Action` element of the `ExecuteFunction` type has a single child element that names the function the control executes. You'll create that function in a later step, and it will be called `toggleProtection`. So, replace `TODO6` with the following markup:
+7. The original `Action` element has child elements that specify a task pane ID and a URL of the page that should be opened in the task pane. But an `Action` element of the `ExecuteFunction` type has a single child element that names the function that the control executes. You'll create that function in a later step, and it will be called `toggleProtection`. So, replace `TODO6` with the following markup:
  
     ```xml
     <FunctionName>toggleProtection</FunctionName>
