@@ -198,7 +198,7 @@ var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 return context.sync()
   .then(function() {
     if (dataSheet.isNullObject) {
-        // Create the sheet
+        // Create the sheet.
     }
 
     dataSheet.position = 1;
