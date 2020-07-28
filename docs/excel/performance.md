@@ -13,8 +13,6 @@ There are multiple ways that you can perform common tasks with the Excel JavaScr
 
 In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to `sync()` by queueing up as many changes as possible before calling it.
 
-See [Core Concepts - sync()](excel-add-ins-core-concepts.md#sync) for code samples that follow this practice.
-
 ## Minimize the number of proxy objects created
 
 Avoid repeatedly creating the same proxy object. Instead, if you need the same proxy object for more than one operation, create it once and assign it to a variable, then use that variable in your code.
@@ -136,14 +134,14 @@ Performance of an add-in may be improved by disabling events. A code sample show
 
 ## Importing data into tables
 
-When trying to import a huge amount of data directly into a [Table](/javascript/api/excel/excel.table) object directly (for example, by using `TableRowCollection.add()`), you might experience slow performance. If you are trying to add a new table, you should fill in the data first by setting `range.values`, and then call `worksheet.tables.add()` to create a table over the range. If you are trying to write data into an existing table, write the data into a range object via `table.getDataBodyRange()`, and the table will expand automatically. 
+When trying to import a huge amount of data directly into a [Table](/javascript/api/excel/excel.table) object directly (for example, by using `TableRowCollection.add()`), you might experience slow performance. If you are trying to add a new table, you should fill in the data first by setting `range.values`, and then call `worksheet.tables.add()` to create a table over the range. If you are trying to write data into an existing table, write the data into a range object via `table.getDataBodyRange()`, and the table will expand automatically.
 
 Here is an example of this approach:
 
 ```js
 Excel.run(async (ctx) => {
     var sheet = ctx.workbook.worksheets.getItem("Sheet1");
-    // Write the data into the range first 
+    // Write the data into the range first.
     var range = sheet.getRange("A1:B3");
     range.values = [["Key", "Value"], ["A", 1], ["B", 2]];
 
