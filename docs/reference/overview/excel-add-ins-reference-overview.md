@@ -26,19 +26,19 @@ For hands-on experience using the Excel JavaScript API to access objects in Exce
 
 Each major Excel API feature has an article exploring the what that feature can do and the relevant object model.
 
-* [Charts](../excel/excel-add-ins-charts.md)
-* [Comments](../excel/excel-add-ins-comments.md)
-* [Conditional formatting](../excel/excel-add-ins-conditional-formatting.md)
-* [Custom functions](../excel/custom-functions-overview.md)
-* [Data validation](../excel/excel-add-ins-data-validation.md)
-* [Events](../excel/excel-add-ins-events.md)
-* [Multiple ranges (RangeArea)](../excel/excel-add-ins-multiple-ranges.md)
-* [PivotTables](../excel/excel-add-ins-pivottables.md)
-* [Ranges](../excel/excel-add-ins-ranges.md) and [Advanced Range APIs](../excel/excel-add-ins-ranges-advanced.md)
-* [Shapes](../excel/excel-add-ins-shapes.md)
-* [Tables](../excel/excel-add-ins-tables.md)
-* [Workbooks and Application-level APIs](../excel/excel-add-ins-workbooks.md)
-* [Worksheets](../excel/excel-add-ins-worksheets.md)
+* [Charts](../../excel/excel-add-ins-charts.md)
+* [Comments](../../excel/excel-add-ins-comments.md)
+* [Conditional formatting](../../excel/excel-add-ins-conditional-formatting.md)
+* [Custom functions](../../excel/custom-functions-overview.md)
+* [Data validation](../../excel/excel-add-ins-data-validation.md)
+* [Events](../../excel/excel-add-ins-events.md)
+* [Multiple ranges (RangeArea)](../../excel/excel-add-ins-multiple-ranges.md)
+* [PivotTables](../../excel/excel-add-ins-pivottables.md)
+* [Ranges](../../excel/excel-add-ins-ranges.md) and [Advanced Range APIs](../../excel/excel-add-ins-ranges-advanced.md)
+* [Shapes](../../excel/excel-add-ins-shapes.md)
+* [Tables](../../excel/excel-add-ins-tables.md)
+* [Workbooks and Application-level APIs](../../excel/excel-add-ins-workbooks.md)
+* [Worksheets](../../excel/excel-add-ins-worksheets.md)
 
 For detailed information about the Excel JavaScript API object model, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
 
@@ -52,4 +52,4 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 * [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
 * [Excel JavaScript API reference](/javascript/api/excel)
 * [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
-* [Using the host-specific API model](../develop/host-specific-api-model.md)
+* [Using the host-specific API model](../../develop/host-specific-api-model.md)
