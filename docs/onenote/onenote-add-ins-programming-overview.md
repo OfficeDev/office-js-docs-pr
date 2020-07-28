@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API programming overview
 description: 'Learn about the OneNote JavaScript API for OneNote add-ins on the web.'
-ms.date: 03/18/2020
+ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -21,7 +21,7 @@ Add-ins consist of two basic components:
 
 - An **XML manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the same [manifest](../develop/add-in-manifests.md) format as other Office Add-ins.
 
-**Office Add-in = Manifest + Webpage**
+### Office Add-in = Manifest + Webpage
 
 ![An Office Add-in consists of a manifest and webpage](../images/onenote-add-in.png)
 
@@ -81,6 +81,8 @@ function getPagesInSection() {
 }
 ```
 
+See [Using the host-specific API model](../develop/host-specific-api-model.md) to learn more about the `load`/`sync` pattern and other common practices in the OneNote JavaScript APIs.
+
 You can find supported OneNote objects and operations in the [API reference](../reference/overview/onenote-add-ins-javascript-reference.md).
 
 #### OneNote JavaScript API requirement sets
@@ -91,7 +93,6 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Use the `Document` object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)
 and [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) methods.
-
 
 For example:  
 
@@ -122,13 +123,11 @@ OneNote add-ins support only the following Common APIs:
 
 In general, you use the Common API to do something that isn't supported in the host-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
-
 <a name="om-diagram"></a>
 ## OneNote object model diagram 
 The following diagram represents what's currently available in the OneNote JavaScript API.
 
   ![OneNote object model diagram](../images/onenote-om.png)
-
 
 ## See also
 
