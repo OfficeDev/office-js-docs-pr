@@ -298,7 +298,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
    - The code creates an array of `SortField` objects, which has just one member since the add-in only sorts on the Merchant column.
 
-   - The `key` property of a `SortField` object is the zero-based index of the column to sort.
+   - The `key` property of a `SortField` object is the zero-based index of the column used for sorting. The rows of the table are sorted based on the values in the referenced column.
 
    - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed to the `TableSort` object's `apply` method.
 
