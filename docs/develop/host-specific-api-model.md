@@ -107,7 +107,7 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> If you are only calling methods or setting properties on a proxy object, you do not need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.
+> If you are only calling methods or setting properties on a proxy object, you don't need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.
 
 Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
 
