@@ -1,20 +1,23 @@
 ---
 title: Using the host-specific API model
 description: 'Learn about the promise-based API model for Excel, OneNote, and Word add-ins.'
-ms.date: 07/27/2020
+ms.date: 07/28/2020
 localization_priority: Normal
 ---
 
 # Using the host-specific API model
 
-This article describes how to use the API model for building add-ins in Excel, Word, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs. Note that this model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
+This article describes how to use the API model for building add-ins in Excel, Word, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs.
 
 > [!NOTE]
-> The examples in this page use the Excel JavaScriptAPIs, but the concepts equally apply to Excel, Word, and OneNote add-ins, as well as SharePoint-embedded Visio diagrams that use the Office JavaScript APIs.
+> This model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
+
+> [!TIP]
+> The examples in this page use the Excel JavaScript APIs, but the concepts equally apply to Excel, OneNote, Visio, and Word JavaScript APIs.
 
 ## Asynchronous nature of the promise-based APIs
 
-The web-based add-ins run inside a browser container. This container is embedded within the Office application on desktop-based platforms, such as Office on Windows, and runs inside an HTML iFrame in Office on the web. Enabling the Office.js API to interact synchronously with the Office host across all supported platforms is not feasible due to performance considerations. Therefore, the `sync()` API call in Office.js returns a [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Office application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `run()` and `sync()` APIs.
+Office Add-ins are websites which appear inside a browser container within Office hosts, such as Excel. This container is embedded within the Office application on desktop-based platforms, such as Office on Windows, and runs inside an HTML iFrame in Office on the web. Due to performance considerations, the Office.js APIs cannot interact synchronously with the Office hosts across all platforms. Therefore, the `sync()` API call in Office.js returns a [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Office application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `run()` and `sync()` APIs.
 
 ## *.run function
 
@@ -24,8 +27,7 @@ The following example shows how to use `Excel.run`. The same pattern is also use
 
 ```js
 Excel.run(function (context) {
-    // You can use the Excel JavaScript API here in the batch function
-    // to execute actions on the Excel object model.
+    // Add your Excel JS API calls here that will be batched and sent to the workbook.
     console.log('Your code goes here.');
 }).catch(function (error) {
     // Catch and log any errors that occur within `Excel.run`.
@@ -55,9 +57,9 @@ selectedRange.format.autofitColumns();
 
 ### sync()
 
-Calling the `sync()` method on the request context synchronizes the state between proxy objects and objects in the Office document. The `sync()` method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The `sync()` method executes asynchronously and returns a [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the `sync()` method completes.
+Calling the `sync()` method on the request context synchronizes the state between proxy objects and objects in the Office document. The `sync()` method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The `sync()` method executes asynchronously and returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the `sync()` method completes.
 
-The following example shows a batch function that defines a local JavaScript proxy object (`selectedRange`), loads a property of that object, and then uses the JavaScript Promises pattern to call `context.sync()` to synchronize the state between proxy objects and objects in the Excel document.
+The following example shows a batch function that defines a local JavaScript proxy object (`selectedRange`), loads a property of that object, and then uses the JavaScript promises pattern to call `context.sync()` to synchronize the state between proxy objects and objects in the Excel document.
 
 ```js
 Excel.run(function (context) {
@@ -77,7 +79,7 @@ Excel.run(function (context) {
 
 In the previous example, `selectedRange` is set and its `address` property is loaded when `context.sync()` is called.
 
-Because `sync()` is an asynchronous operation that returns a promise, you should always `return` the promise (in JavaScript). Doing so ensures that the `sync()` operation completes before the script continues to run. For more information about optimizing performance with `sync()`, see [Excel JavaScript API performance optimization](../excel/performance.md).
+Since `sync()` is an asynchronous operation, you should always return the `Promise` to ensure the sync operation completes before the script runs. Doing so ensures that the `sync()` operation completes before the script continues to run. If you're using TypeScript or ES6+ JavaScript, you can `await` the `context.sync()` call instead of returning it. For more information about optimizing performance with `sync()`, see [Excel JavaScript API performance optimization](../excel/performance.md).
 
 ### load()
 
@@ -113,7 +115,7 @@ Just like requests to set properties or invoke methods on proxy objects, request
 
 #### Scalar and navigation properties
 
-There are two categories of properties: **scalar** and **navigational**. Scalar properties are assignable types such as strings, integers, and JSON structs. Navigation properties are readonly objects and collections of objects that have their fields assigned, instead of directly assigning the property. For example, `name` and `position` members on the [Excel.Worksheet](/javascript/api/excel/excel.worksheet) object are scalar properties, whereas `protection` and `tables` are navigation properties.
+There are two categories of properties: **scalar** and **navigational**. Scalar properties are assignable types such as strings, integers, and JSON structs. Navigation properties are read-only objects and collections of objects that have their fields assigned, instead of directly assigning the property. For example, `name` and `position` members on the [Excel.Worksheet](/javascript/api/excel/excel.worksheet) object are scalar properties, whereas `protection` and `tables` are navigation properties.
 
 Your add-in can use navigational properties as a path to load specific scalar properties. The following code queues up a `load` command for the name of the font used by an `Excel.Range` object, without loading any other information.
 
@@ -125,7 +127,7 @@ You can also set the scalar properties of a navigation property by traversing th
 
 #### Calling `load` without parameters
 
-If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object (or all scalar properties of all objects in the collection) will be loaded. To reduce the amount of data transfer between the Excel host application and the add-in, you should avoid calling the `load()` method without explicitly specifying which properties to load.
+If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object or the collection's objects will be loaded. To reduce the amount of data transfer between the host application and the add-in, you should avoid calling the `load()` method without explicitly specifying which properties to load.
 
 > [!IMPORTANT]
 > The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations:
@@ -186,9 +188,9 @@ Excel.run(function (ctx) {
 
 ## &#42;OrNullObject methods and properties
 
-Some accessor methods and properties throw an exception when the desired object is not present. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that is not in the workbook, the `getItem()` method throws an `ItemNotFound` exception.
+Some accessor methods and properties throw an exception when the desired object doesn't exist. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that isn't in the workbook, the `getItem()` method throws an `ItemNotFound` exception.
 
-Any `*OrNullObject` variant lets you check for an object without throwing exceptions. These methods and properties return a null object (not the JavaScript `null`) rather than throwing an exception if the specified item doesn't exist. For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to attempt to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns a null object. The null object that is returned contains the boolean property `isNullObject` that you can evaluate to determine whether the object exists.
+Any `*OrNullObject` variant lets you check for an object without throwing exceptions. These methods and properties return a null object (not the JavaScript `null`) rather than throwing an exception if the specified item doesn't exist. For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns a null object. The null object that is returned contains the boolean property `isNullObject` that you can evaluate to determine whether the object exists.
 
 The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet needs to be created before actions can taken on the sheet.
 
