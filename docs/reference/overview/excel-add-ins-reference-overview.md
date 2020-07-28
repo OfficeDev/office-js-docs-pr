@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API overview
 description: 'Learn more about the Excel JavaScript API'
-ms.date: 02/19/2020
+ms.date: 07/28/2020
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -21,8 +21,6 @@ This section of the documentation focuses on the Excel JavaScript API, which you
 See the following articles for information about important programming concepts:
  
 - [Fundamental programming concepts with the Excel JavaScript API](../../excel/excel-add-ins-core-concepts.md)
-
-- [Advanced programming concepts with the Excel JavaScript API](../../excel/excel-add-ins-advanced-concepts.md)
 
 ## Learn about API capabilities
 

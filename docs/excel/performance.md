@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 07/14/2020
+ms.date: 07/28/2020
 localization_priority: Normal
 ---
 
@@ -197,7 +197,6 @@ Excel.run(async (context) => {
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-- [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
-- [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
-- [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
+* [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+* [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
+* [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

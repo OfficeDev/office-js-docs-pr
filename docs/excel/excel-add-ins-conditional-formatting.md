@@ -1,13 +1,13 @@
 ---
 title: Apply conditional formatting to ranges with the Excel JavaScript API
 description: 'This article covers conditional formatting in the context of Excel JavaScript add-ins.'
-ms.date: 04/15/2019
+ms.date: 07/28/2020
 localization_priority: Normal
 ---
 
 # Apply conditional formatting to Excel ranges
 
-The Excel JavaScript Library provides APIs to apply conditional formatting to data ranges in your worksheets. This functionality makes large sets of data easy to visually parse. The formatting also dynamically updates based on changes within the range. 
+The Excel JavaScript Library provides APIs to apply conditional formatting to data ranges in your worksheets. This functionality makes large sets of data easy to visually parse. The formatting also dynamically updates based on changes within the range.
 
 > [!NOTE]
 > This article covers conditional formatting in the context of Excel JavaScript add-ins. The following articles provide detailed information about the full conditional formatting capabilities within Excel.
@@ -16,7 +16,7 @@ The Excel JavaScript Library provides APIs to apply conditional formatting to da
 
 ## Programmatic control of conditional formatting
 
-The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) objects that apply to the range.  The `ConditionalFormat` object contains several properties that define the format to be applied based on the [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype). 
+The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) objects that apply to the range.  The `ConditionalFormat` object contains several properties that define the format to be applied based on the [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype).
 
 -    `cellValue`
 -    `colorScale`
@@ -28,9 +28,9 @@ The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/
 -    `topBottom`
 
 > [!NOTE]
-> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [*OrNullObject methods](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods) section.
+> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [\*OrNullObject methods](../develop/host-specific-api-model.md##ornullobject-methods-and-properties) section.
 
-Only one format type can be set for the ConditionalFormat object. This is determined by the `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value. `type` is set when adding a conditional format to a range. 
+Only one format type can be set for the ConditionalFormat object. This is determined by the `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value. `type` is set when adding a conditional format to a range.
 
 ## Creating conditional formatting rules
 

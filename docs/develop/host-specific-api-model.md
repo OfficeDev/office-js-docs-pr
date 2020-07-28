@@ -184,11 +184,11 @@ Excel.run(function (ctx) {
 });
 ```
 
-## get&#42;OrNullObject methods
+## &#42;OrNullObject methods and properties
 
-Some `get*` methods throw an exception when the desired object is not present. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that is not in the workbook, the `getItem()` method throws an `ItemNotFound` exception.
+Some accessor methods and properties throw an exception when the desired object is not present. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that is not in the workbook, the `getItem()` method throws an `ItemNotFound` exception.
 
-Any `get*OrNullObject` method variant lets you check for an object without throwing exceptions. These methods return a null object (not the JavaScript `null`) rather than throwing an exception if the specified item doesn't exist. For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to attempt to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns a null object. The null object that is returned contains the boolean property `isNullObject` that you can evaluate to determine whether the object exists.
+Any `*OrNullObject` variant lets you check for an object without throwing exceptions. These methods and properties return a null object (not the JavaScript `null`) rather than throwing an exception if the specified item doesn't exist. For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to attempt to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns a null object. The null object that is returned contains the boolean property `isNullObject` that you can evaluate to determine whether the object exists.
 
 The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet needs to be created before actions can taken on the sheet.
 
