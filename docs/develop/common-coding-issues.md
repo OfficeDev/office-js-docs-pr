@@ -1,7 +1,7 @@
 ---
 title: Coding guidance for common issues and unexpected platform behaviors
 description: 'A list of Office JavaScript API platform issues frequently encountered by developers.'
-ms.date: 05/21/2020
+ms.date: 07/29/2020
 localization_priority: Normal
 ---
 
@@ -98,17 +98,6 @@ Excel.run(async (context) => {
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
 
 ## Excel-specific issues
-
-### Excel data transfer limits
-
-If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook:
-
-- Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
-- A range is limited to five million cells for get operations.
-
-If you expect user input to exceed these limits, be sure to check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Be sure to call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
-
-These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
 
 ### API limitations when the active workbook switches
 

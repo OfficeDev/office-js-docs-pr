@@ -5,7 +5,6 @@ ms.date: 07/29/2020
 localization_priority: Normal
 ---
 
-
 # Resource limits and performance optimization for Office Add-ins
 
 To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running in Office clients on Windows and OS X, but not on mobile apps or in a browser.
@@ -48,6 +47,17 @@ In addition to the CPU core, memory, and reliability rules, Outlook add-ins shou
 - **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook disables the Outlook add-in. The Exchange Admin Center displays the disabled status, and the add-in is disabled for use in the Outlook rich clients, and Outlook on the web and mobile devices.
 
     Using a group policy or application-specific setting in the Windows registry, administrators can adjust this number of times to retry evaluation in the **OutlookActivationManagerRetryLimit** setting.
+
+### Excel add-ins
+
+If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook:
+
+- Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
+- A range is limited to five million cells for get operations.
+
+If you expect user input to exceed these limits, be sure to check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Be sure to call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
+
+These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
 
 ### Task pane and content add-ins
 
