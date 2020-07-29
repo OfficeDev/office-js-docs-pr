@@ -111,7 +111,7 @@ Since `sync()` is an asynchronous operation, you should always return the `Promi
 
 #### Performance tip: Minimize the number of sync calls
 
-In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to `sync()` by queueing up as many changes as possible before calling it. For more information about optimizing performance with `sync()`, see [concepts/correlated-objects-pattern](../concepts/correlated-objects-pattern.md).
+In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to `sync()` by queueing up as many changes as possible before calling it. For more information about optimizing performance with `sync()`, see [Avoid using the context.sync method in loops](../concepts/correlated-objects-pattern.md).
 
 ### load()
 
