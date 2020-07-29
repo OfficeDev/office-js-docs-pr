@@ -14,7 +14,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.3  | N/A | 2008 (build 13127) or later | Coming soon | 16.40 or later | August, 2020*<b>&#8224;</b> |
+| IdentityAPI 1.3  | N/A | 2008 (build 13127.10000) or later | Coming soon | 16.40 or later | August, 2020*<b>&#8224;</b> |
 
 > \* Initially, the requirement set is supported in Office on the web only for documents that are opened from SharePoint Online and OneDrive.com. Support for other documents will come to Office on the web later in 2020.
 >
