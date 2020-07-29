@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: 'Learn about the resource limits of the Office Add-in platform, including CPU and memory.'
-ms.date: 04/09/2020
+ms.date: 07/29/2020
 localization_priority: Normal
 ---
 
@@ -62,7 +62,7 @@ Office provides a Telemetry Log that maintains a record of certain events (loadi
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
-For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log. 
+For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
 |**Date/Time**|**Event ID**|**Severity**|**Title**|**File**|**ID**|**Application**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
@@ -84,12 +84,11 @@ The following table lists the events that the Telemetry Log tracks for Office Ad
 
 For more information, see [Deploying Telemetry Dashboard](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) and [Troubleshooting Office files and custom solutions with the telemetry log](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
 
-
 ## Design and implementation techniques
 
 While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the host application can remain responsive:
 
-- In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation. 
+- In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation.
 
    For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
 
@@ -99,8 +98,46 @@ While the resources limits on CPU and memory usage, crash tolerance, UI responsi
 
 - Test your add-in against the highest volume of data you expect, and restrict your add-in to process up to that limit.
 
-- Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
+### Performance improvements with the host-specific APIs
 
+The performance tips in [Using the host-specific API model](../develop/host-specific-api-model.md) provide guidance when using the host-specific APIs for Excel, OneNote, Visio, and Word. In summary, you should:
+
+- [Only load necessary properties](../develop/host-specific-api-model.md#calling-load-without-parameters-not-recommended).
+- [Minimize the number of sync() calls](../develop/host-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls). Read [Avoid using the context.sync method in loops](correlated-objects-pattern.md) for further information on how to avoid `sync` calls in your code.
+- [Minimize the number of proxy objects created](../develop/host-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created). You can also untrack proxy objects, as described below.
+
+#### Untrack unneeded proxy objects
+
+[Proxy objects](../develop/host-specific-api-model.md#proxy-objects) persist in memory until `RequestContext.sync()` is called. Large batch operations may generate a lot of proxy objects that are only needed once by the add-in and can be released from memory before the batch executes.
+
+The `untrack()` method releases the object from memory. This method is implemented on many host-specific API proxy objects. Calling `untrack()` after your add-in is done with the object should yield a noticeable performance benefit when using large numbers of proxy objects.
+
+> [!NOTE]
+> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context.
+
+The following Excel code sample fills a selected range with data, one cell at a time. After the value is added to the cell, the range representing that cell is untracked. Run this code with a selected range of 10,000 to 20,000 cells, first with the `cell.untrack()` line, and then without it. You should notice the code runs faster with the `cell.untrack()` line than without it. You may also notice a quicker response time afterwards, since the cleanup step takes less time.
+
+```js
+Excel.run(async (context) => {
+    var largeRange = context.workbook.getSelectedRange();
+    largeRange.load(["rowCount", "columnCount"]);
+    await context.sync();
+
+    for (var i = 0; i < largeRange.rowCount; i++) {
+        for (var j = 0; j < largeRange.columnCount; j++) {
+            var cell = largeRange.getCell(i, j);
+            cell.values = [[i *j]];
+
+            // Call untrack() to release the range from memory.
+            cell.untrack();
+        }
+    }
+
+    await context.sync();
+});
+```
+
+Note that needing to untrack objects only becomes important when you're dealing with thousands of them. Most add-ins will not need to manage proxy object tracking.
 
 ## See also
 
