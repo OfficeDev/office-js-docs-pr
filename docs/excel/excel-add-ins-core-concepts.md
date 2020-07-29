@@ -147,7 +147,7 @@ Excel.run({ delayForCellEdit: true }, function (context) { ... })
 
 ## null or blank property values
 
-`null` and empty strings have special implications in the Excel JavaScript APIs. There are used to represent empty cells, no formatting, or default values. This section details the use of `null` and empty string when getting and setting properties.
+`null` and empty strings have special implications in the Excel JavaScript APIs. They're used to represent empty cells, no formatting, or default values. This section details the use of `null` and empty string when getting and setting properties.
 
 ### null input in 2-D Array
 
