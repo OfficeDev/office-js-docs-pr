@@ -540,8 +540,8 @@ Excel.run(function (context) {
 
 An unbounded range address is a range address that specifies either entire columns or entire rows. For example:
 
-- Range addresses comprised of entire column(s):<ul><li>`C:C`</li><li>`A:F`</li></ul>
-- Range addresses comprised of entire row(s):<ul><li>`2:2`</li><li>`1:4`</li></ul>
+- Range addresses comprised of entire columns:<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- Range addresses comprised of entire rows:<ul><li>`2:2`</li><li>`1:4`</li></ul>
 
 When the API makes a request to retrieve an unbounded range (for example, `getRange('C:C')`), the response will contain `null` values for cell-level properties such as `values`, `text`, `numberFormat`, and `formula`. Other properties of the range, such as `address` and `cellCount`, will contain valid values for the unbounded range.
 
