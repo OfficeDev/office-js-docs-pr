@@ -129,6 +129,7 @@ The following APIs are affected by this workbook switch:
 
 ## See also
 
+- [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
 - [OfficeDev/office-js](https://github.com/OfficeDev/office-js/issues): The place to report and view issues with the Office Add-ins platform and JavaScript APIs.
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js): The place to ask and view programming questions about the Office JavaScript APIs. Be sure to apply the "office-js" tag to your question when posting to Stack Overflow.
 - [UserVoice](https://officespdev.uservoice.com/): The place to suggest new features for the Office Add-ins platform and Office JavaScript APIs.
