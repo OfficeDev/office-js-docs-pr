@@ -10,7 +10,7 @@ localization_priority: Priority
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016 or later. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
 
 > [!IMPORTANT]
-> Please read [Using the host-specific API model](../develop/host-specific-api-model.md) to learn about the asynchronous nature of the Excel APIs and how they work with the workbook.  
+> See [Using the host-specific API model](../develop/host-specific-api-model.md) to learn about the asynchronous nature of the Excel APIs and how they work with the workbook.  
 
 ## Office.js APIs for Excel
 
