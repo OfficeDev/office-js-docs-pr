@@ -28,7 +28,7 @@ The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/
 -    `topBottom`
 
 > [!NOTE]
-> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [\*OrNullObject methods](../develop/host-specific-api-model.md##ornullobject-methods-and-properties) section.
+> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [\*OrNullObject methods](../develop/host-specific-api-model.md#ornullobject-methods-and-properties) section.
 
 Only one format type can be set for the ConditionalFormat object. This is determined by the `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value. `type` is set when adding a conditional format to a range.
 
