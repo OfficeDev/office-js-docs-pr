@@ -192,20 +192,21 @@ Some accessor methods and properties throw an exception when the desired object 
 
 Any `*OrNullObject` variant lets you check for an object without throwing exceptions. These methods and properties return a null object (not the JavaScript `null`) rather than throwing an exception if the specified item doesn't exist. For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns a null object. The null object that is returned contains the boolean property `isNullObject` that you can evaluate to determine whether the object exists.
 
-The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet needs to be created before actions can taken on the sheet.
+The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet is created before actions are taken on the sheet.
 
 ```js
 var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 
 return context.sync()
-  .then(function() {
-    if (dataSheet.isNullObject) {
-        // Create the sheet.
-    }
+    .then(function () {
+        // If `dataSheet` is a null object, create the worksheet.
+        if (dataSheet.isNullObject) {
+            dataSheet = context.workbook.worksheets.add("Data");
+        }
 
-    dataSheet.position = 1;
-    //...
-  })
+        // Set `dataSheet` to be the second worksheet in the workbook.
+        dataSheet.position = 1;
+    });
 ```
 
 ## See also
