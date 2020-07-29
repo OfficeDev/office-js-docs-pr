@@ -25,7 +25,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 To run your add-in, use an `Office.initialize` event handler. For more information about add-in initialization, see [Understanding the API](../develop/understanding-the-javascript-api-for-office.md).
 
-Add-ins that target Word 2016 or later can use the Word-specific APIs. They will pass the Word-interaction logic as a function into the `Word.run()` method. See [Using the host-specific API model](../develop/host-specific-api-model.md) to learn about how to interact with the Word document in this programming model.
+Add-ins that target Word 2016 or later can use the Word-specific APIs. They pass the Word-interaction logic as a function into the `Word.run()` method. See [Using the host-specific API model](../develop/host-specific-api-model.md) to learn about how to interact with the Word document in this programming model.
 
 The following example shows how to initialize and run a Word add-in by using the `Word.run()` method.
 
