@@ -24,7 +24,7 @@ For hands-on experience using the Excel JavaScript API to access objects in Exce
 
 ## Learn API capabilities
 
-Each major Excel API feature has an article exploring the what that feature can do and the relevant object model.
+Each major Excel API feature has an article exploring what that feature can do and the relevant object model.
 
 * [Charts](../../excel/excel-add-ins-charts.md)
 * [Comments](../../excel/excel-add-ins-comments.md)
