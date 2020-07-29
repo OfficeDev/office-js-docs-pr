@@ -538,7 +538,7 @@ Excel.run(function (context) {
 
 ### Read an unbounded range
 
-An unbounded range address is a range address that specifies either entire column(s) or entire row(s). For example:
+An unbounded range address is a range address that specifies either entire columns or entire rows. For example:
 
 - Range addresses comprised of entire column(s):<ul><li>`C:C`</li><li>`A:F`</li></ul>
 - Range addresses comprised of entire row(s):<ul><li>`2:2`</li><li>`1:4`</li></ul>
