@@ -1,7 +1,7 @@
 ---
 title: Using the host-specific API model
 description: 'Learn about the promise-based API model for Excel, OneNote, and Word add-ins.'
-ms.date: 07/28/2020
+ms.date: 07/29/2020
 localization_priority: Normal
 ---
 
@@ -55,6 +55,34 @@ selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
 ```
 
+### Performance tip: Minimize the number of proxy objects created
+
+Avoid repeatedly creating the same proxy object. Instead, if you need the same proxy object for more than one operation, create it once and assign it to a variable, then use that variable in your code.
+
+```js
+// BAD: Repeated calls to .getRange() to create the same proxy object.
+worksheet.getRange("A1").format.fill.color = "red";
+worksheet.getRange("A1").numberFormat = "0.00%";
+worksheet.getRange("A1").values = [[1]];
+
+// GOOD: Create the range proxy object once and assign to a variable.
+var range = worksheet.getRange("A1")
+range.format.fill.color = "red";
+range.numberFormat = "0.00%";
+range.values = [[1]];
+
+// ALSO GOOD: Use a "set" method to immediately set all the properties without even needing to create a variable!
+worksheet.getRange("A1").set({
+    numberFormat: [["0.00%"]],
+    values: [[1]],
+    format: {
+        fill: {
+            color: "red"
+        }
+    }
+});
+```
+
 ### sync()
 
 Calling the `sync()` method on the request context synchronizes the state between proxy objects and objects in the Office document. The `sync()` method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The `sync()` method executes asynchronously and returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the `sync()` method completes.
@@ -79,7 +107,11 @@ Excel.run(function (context) {
 
 In the previous example, `selectedRange` is set and its `address` property is loaded when `context.sync()` is called.
 
-Since `sync()` is an asynchronous operation, you should always return the `Promise` to ensure the sync operation completes before the script runs. Doing so ensures that the `sync()` operation completes before the script continues to run. If you're using TypeScript or ES6+ JavaScript, you can `await` the `context.sync()` call instead of returning it. For more information about optimizing performance with `sync()`, see [Excel JavaScript API performance optimization](../excel/performance.md).
+Since `sync()` is an asynchronous operation, you should always return the `Promise` object to ensure the `sync()` operation completes before the script continues to run. If you're using TypeScript or ES6+ JavaScript, you can `await` the `context.sync()` call instead of returning the promise.
+
+#### Performance tip: Minimize the number of sync calls
+
+In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to `sync()` by queueing up as many changes as possible before calling it. For more information about optimizing performance with `sync()`, see [Avoid using the context.sync method in loops](../concepts/correlated-objects-pattern.md).
 
 ### load()
 
@@ -125,16 +157,16 @@ someRange.load("format/font/name")
 
 You can also set the scalar properties of a navigation property by traversing the path. For example, you could set the font size for an `Excel.Range` by using `someRange.format.font.size = 10;`. You don't need to load the property before you set it.
 
-#### Calling `load` without parameters
+Please be aware that some of the properties under an object may have the same name as another object. For example, `format` is a property under the `Excel.Range` object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()` (an undesirable empty `load()` statement). To avoid this, your code should only load the "leaf nodes" in an object tree.
 
-If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object or the collection's objects will be loaded. To reduce the amount of data transfer between the host application and the add-in, you should avoid calling the `load()` method without explicitly specifying which properties to load.
+#### Calling `load` without parameters (not recommended)
+
+If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object or the collection's objects will be loaded. Loading unneeded data will slow down your add-in. You should always explicitly specify which properties to load.
 
 > [!IMPORTANT]
 > The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations:
 >
 > * `Excel.Range.numberFormatCategories`
-
-To optimize performance, you should always explicitly specify the properties to load when using the `load()` method on an object.
 
 ### ClientResult
 
@@ -211,4 +243,6 @@ return context.sync()
 
 ## See also
 
-* [Common coding issues and unexpected platform behaviors](../develop/common-coding-issues.md).
+* [Common JavaScript API object model](office-javascript-api-object-model.md)
+* [Common coding issues and unexpected platform behaviors](/common-coding-issues.md).
+* [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
