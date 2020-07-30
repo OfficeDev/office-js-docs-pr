@@ -114,7 +114,7 @@
         displayName: manifest
     - name: Privacy, security, and authentication
       items:
-        name: Overview of add-in privacy and security
+      - name: Overview of add-in privacy and security
         href: concepts/privacy-and-security.md
       - name: Overview of authentication and authorization
         href: develop/overview-authn-authz.md
