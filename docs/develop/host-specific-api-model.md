@@ -55,23 +55,23 @@ selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
 ```
 
-### Performance tip: minimize the number of proxy objects created
+### Performance tip: Minimize the number of proxy objects created
 
 Avoid repeatedly creating the same proxy object. Instead, if you need the same proxy object for more than one operation, create it once and assign it to a variable, then use that variable in your code.
 
 ```js
-// BAD: repeated calls to .getRange() to create the same proxy object
+// BAD: Repeated calls to .getRange() to create the same proxy object.
 worksheet.getRange("A1").format.fill.color = "red";
 worksheet.getRange("A1").numberFormat = "0.00%";
 worksheet.getRange("A1").values = [[1]];
 
-// GOOD: create the range proxy object once and assign to a variable
+// GOOD: Create the range proxy object once and assign to a variable.
 var range = worksheet.getRange("A1")
 range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
 
-// ALSO GOOD: use a "set" method to immediately set all the properties without even needing to create a variable!
+// ALSO GOOD: Use a "set" method to immediately set all the properties without even needing to create a variable!
 worksheet.getRange("A1").set({
     numberFormat: [["0.00%"]],
     values: [[1]],
