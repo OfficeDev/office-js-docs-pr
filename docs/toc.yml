@@ -165,18 +165,6 @@
         displayName: manifest
       - name: Localization
         href: develop/localization.md
-      - name: Dialog boxes
-        items: 
-        - name: Use the Office dialog API in your Office Add-ins
-          href: develop/dialog-api-in-office-add-ins.md
-        - name: Best practices and rules for the Office dialog API
-          href: develop/dialog-best-practices.md
-        - name: Send data from host page to dialog box
-          href: develop/parent-to-dialog.md          
-        - name: Handling errors and events in the Office dialog box
-          href: develop/dialog-handle-errors-events.md
-        - name: Use the Office dialog box to play a video
-          href: develop/dialog-video.md
       - name: Performance
         items:
         - name: Avoid using the context.sync method in loops
@@ -190,75 +178,86 @@
         displayName: manifest
     - name: Coding guidance for common issues
       href: develop/common-coding-issues.md
-  
-  - name: UI and UX
-    items:
-    - name: Overview
-      href: design/add-in-design.md
-    - name: Guidelines
-      items:
-      - name: Accessibility
-        href: design/accessibility-guidelines.md
-      - name: Data visualization
-        href: design/data-visualization-guidelines.md
-      - name: Voice
-        href: design/voice-guidelines.md
-    - name: Design language
+    - name: UI and UX
       items:
       - name: Overview
-        href: design/add-in-design-language.md
-      - name: Color
-        href: design/add-in-color.md
-      - name: Icons
+        href: design/add-in-design.md
+      - name: Guidelines
         items:
-        - name: Icon guidelines
-          href: design/add-in-icons.md
-        - name: Fresh style
-          href: design/add-in-icons-fresh.md
-        - name: Monoline style
-          href: design/add-in-icons-monoline.md
-      - name: Layout
-        href: design/add-in-layout.md
-      - name: Motion
-        href: design/using-motion-office-addins.md
-      - name: Typography
-        href: design/add-in-typography.md
-    - name: Interface elements
-      items:
-      - name: Overview
-        href: design/interface-elements.md
-      - name: Add-in commands
+        - name: Accessibility
+          href: design/accessibility-guidelines.md
+        - name: Data visualization
+          href: design/data-visualization-guidelines.md
+        - name: Voice
+          href: design/voice-guidelines.md
+      - name: Design language
+        items:
+        - name: Overview
+          href: design/add-in-design-language.md
+        - name: Color
+          href: design/add-in-color.md
+        - name: Icons
+          items:
+          - name: Icon guidelines
+            href: design/add-in-icons.md
+          - name: Fresh style
+            href: design/add-in-icons-fresh.md
+          - name: Monoline style
+            href: design/add-in-icons-monoline.md
+        - name: Layout
+          href: design/add-in-layout.md
+        - name: Motion
+          href: design/using-motion-office-addins.md
+        - name: Typography
+          href: design/add-in-typography.md
+      - name: Interface elements
+        items:
+        - name: Overview
+          href: design/interface-elements.md
+        - name: Add-in commands
+          items: 
+          - name: Basic concepts for Add-in Commands
+            href: design/add-in-commands.md
+          - name: Enable and Disable Add-in Commands
+            href: design/disable-add-in-commands.md
+        - name: Dialog boxes
+          items: 
+          - name: Overview
+            href: design/dialog-boxes.md
+          - name: Use the Office dialog API in your Office Add-ins
+            href: develop/dialog-api-in-office-add-ins.md
+          - name: Best practices and rules for the Office dialog API
+            href: develop/dialog-best-practices.md
+          - name: Send data from host page to dialog box
+            href: develop/parent-to-dialog.md          
+          - name: Handling errors and events in the Office dialog box
+            href: develop/dialog-handle-errors-events.md
+          - name: Use the Office dialog box to play a video
+            href: develop/dialog-video.md
+        - name: Content add-ins
+          href: design/content-add-ins.md
+        - name: Task panes
+          href: design/task-pane-add-ins.md
+      - name: UX design patterns
+        items:
+        - name: Overview
+          href: design/ux-design-pattern-templates.md
+        - name: Authentication
+          href: design/authentication-patterns.md
+        - name: Branding
+          href: design/branding-patterns.md
+        - name: First run experience
+          href: design/first-run-experience-patterns.md
+        - name: Navigation
+          href: design/navigation-patterns.md
+      - name: Resources
         items: 
-        - name: Basic concepts for Add-in Commands
-          href: design/add-in-commands.md
-        - name: Enable and Disable Add-in Commands
-          href: design/disable-add-in-commands.md
-      - name: Dialog boxes
-        href: design/dialog-boxes.md
-      - name: Content add-ins
-        href: design/content-add-ins.md
-      - name: Task panes
-        href: design/task-pane-add-ins.md
-    - name: UX design patterns
-      items:
-      - name: Overview
-        href: design/ux-design-pattern-templates.md
-      - name: Authentication
-        href: design/authentication-patterns.md
-      - name: Branding
-        href: design/branding-patterns.md
-      - name: First run experience
-        href: design/first-run-experience-patterns.md
-      - name: Navigation
-        href: design/navigation-patterns.md
-    - name: Resources
-      items: 
-      - name: Design toolkits
-        href: design/design-toolkits.md
-      - name: Get started using Fabric React
-        href: design/using-office-ui-fabric-react.md
-      - name: Office UI Fabric
-        href: design/office-ui-fabric.md
+        - name: Design toolkits
+          href: design/design-toolkits.md
+        - name: Get started using Fabric React
+          href: design/using-office-ui-fabric-react.md
+        - name: Office UI Fabric
+          href: design/office-ui-fabric.md
 
   - name: Test and debug
     items:
