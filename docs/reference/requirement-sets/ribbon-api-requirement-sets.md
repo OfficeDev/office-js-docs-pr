@@ -16,11 +16,22 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 on Windows<br>(one-time purchase) | Office 2016 or later on Windows<br>(one-time purchase)   | Office on Windows\*<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac\*<br>(connected to a Microsoft 365 subscription)  | Office on the web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | N/A | N/A | See table below | N/A | See table below | Coming soon | N/A|
+| RibbonApi 1.1  | N/A | N/A | See table below | N/A | 16.38 | Coming soon | N/A|
 
 > **&#42;** The Ribbon API is supported only on Excel and it requires Microsoft 365 subscription. 
 
-**TABLE OF SUPPORTED BUILDS BY CHANNEL GOES HERE**
+## Office on Windows (subscription) support table
+
+The requirement set is supported in the Consumer Channel version 2006 (build, 13001.20498 or greater). For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available July 14th, 2020 or later. The minimum supported builds for each channel are as follows:  
+
+|Channel | Version | Build|
+|:-----|:-----|:-----|
+|Current Channel | 2006 or greater | 20266.20266 or greater|
+|Monthly Enterprise Channel | 2005 or greater | 12827.20538 or greater|
+|Monthly Enterprise Channel | 2004 | 12730.20602 or greater|
+|Semi-Annual Enterprise Channel | 2002 or greater | 12527.20880 or greater|
+
+## More information
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
