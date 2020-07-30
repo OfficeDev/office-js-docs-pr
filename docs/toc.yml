@@ -64,9 +64,6 @@
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Browsers used by Office Add-ins
-      href: concepts/browsers-used-by-office-web-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
     items:
     - name: Develop Office Add-ins
@@ -94,16 +91,31 @@
         href: develop/loading-the-dom-and-runtime-environment.md
       - name: Initialize your add-in
         href: develop/initialize-add-in.md
-      - name: Request permissions for API use in add-ins
-        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-        displayName: manifest
       - name: Specify Office hosts and API requirements
         href: develop/specify-office-hosts-and-api-requirements.md
         displayName: manifest
+      - name: Automatically open a task pane with a document
+        href: develop/automatically-open-a-task-pane-with-a-document.md
+        displayName: manifest
+      - name: Request permissions for API use in add-ins
+        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+        displayName: manifest
     - name: Manifest
-      href: develop/add-in-manifests.md
-    - name: Authentication and authorization
       items:
+      - name: Overview
+        href: develop/add-in-manifests.md
+      - name: Find the proper order of manifest elements
+        href: develop/manifest-element-ordering.md
+      - name: Update API and manifest version
+        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+        displayName: manifest
+      - name: Identify an equivalent COM add-in
+        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+        displayName: manifest
+    - name: Privacy, security, and authentication
+      items:
+        name: Overview of add-in privacy and security
+        href: concepts/privacy-and-security.md
       - name: Overview of authentication and authorization
         href: develop/overview-authn-authz.md
       - name: Authenticate and authorize with the Office dialog API
@@ -132,15 +144,16 @@
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
-    - name: How to
-      items: 
-      - name: Address same origin policy limitations
-        href: develop/addressing-same-origin-policy-limitations.md
-      - name: Automatically open a task pane with a document
-        href: develop/automatically-open-a-task-pane-with-a-document.md
+    - name: Add-in commands
+      items:
+      - name: Basic concepts for Add-in Commands
+        href: design/add-in-commands.md
       - name: Create add-in commands
         href: develop/create-addin-commands.md
-        displayName: manifest
+      - name: Enable and Disable Add-in Commands
+        href: design/disable-add-in-commands.md
+    - name: Frameworks and IDEs
+      items:
       - name: Develop add-ins for the iPad
         href: develop/develop-office-add-ins-for-the-ipad.md
       - name: Develop add-ins with Angular
@@ -158,24 +171,14 @@
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript to TypeScript
           href: develop/convert-javascript-to-typescript.md
-      - name: Find the proper order of manifest elements
-        href: develop/manifest-element-ordering.md
-      - name: Identify an equivalent COM add-in
-        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-        displayName: manifest
-      - name: Localization
-        href: develop/localization.md
-      - name: Performance
-        items:
-        - name: Avoid using the context.sync method in loops
-          href: concepts/correlated-objects-pattern.md
-        - name: Resource limits and performance optimization for Office Add-ins
-          href: concepts/resource-limits-and-performance-optimization.md
-      - name: Privacy and security
-        href: concepts/privacy-and-security.md
-      - name: Update API and manifest version
-        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-        displayName: manifest
+    - name: Performance
+      items:
+      - name: Avoid using the context.sync method in loops
+        href: concepts/correlated-objects-pattern.md
+      - name: Resource limits and performance optimization for Office Add-ins
+        href: concepts/resource-limits-and-performance-optimization.md
+    - name: Localization
+      href: develop/localization.md
     - name: Coding guidance for common issues
       href: develop/common-coding-issues.md
     - name: UI and UX
@@ -214,12 +217,6 @@
         items:
         - name: Overview
           href: design/interface-elements.md
-        - name: Add-in commands
-          items: 
-          - name: Basic concepts for Add-in Commands
-            href: design/add-in-commands.md
-          - name: Enable and Disable Add-in Commands
-            href: design/disable-add-in-commands.md
         - name: Dialog boxes
           items: 
           - name: Overview
@@ -511,6 +508,11 @@
           href: reference/manifest/supportssharedfolders.md
         - name: WebApplicationInfo
           href: reference/manifest/webapplicationinfo.md
+    - name: Address same origin policy limitations
+      href: develop/addressing-same-origin-policy-limitations.md
+    - name: Browsers used by Office Add-ins
+      href: concepts/browsers-used-by-office-web-add-ins.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
     - name: Unsupported window objects
