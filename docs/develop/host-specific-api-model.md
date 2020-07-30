@@ -107,7 +107,7 @@ Excel.run(function (context) {
 
 In the previous example, `selectedRange` is set and its `address` property is loaded when `context.sync()` is called.
 
-Since `sync()` is an asynchronous operation, you should always return the `Promise` to ensure the sync operation completes before the script runs. Doing so ensures that the `sync()` operation completes before the script continues to run. If you're using TypeScript or ES6+ JavaScript, you can `await` the `context.sync()` call instead of returning it.
+Since `sync()` is an asynchronous operation, you should always return the `Promise` object to ensure the `sync()` operation completes before the script continues to run. If you're using TypeScript or ES6+ JavaScript, you can `await` the `context.sync()` call instead of returning the promise.
 
 #### Performance tip: Minimize the number of sync calls
 
@@ -157,7 +157,7 @@ someRange.load("format/font/name")
 
 You can also set the scalar properties of a navigation property by traversing the path. For example, you could set the font size for an `Excel.Range` by using `someRange.format.font.size = 10;`. You don't need to load the property before you set it.
 
-Please be aware that some of the properties under an object may have the same name as another object. For example, `format` is a property under `Exce;.Range` object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty `load()` call that can cause performance problems as outlined previously. To avoid this, your code should only load the "leaf nodes" in an object tree.
+Please be aware that some of the properties under an object may have the same name as another object. For example, `format` is a property under the `Excel.Range` object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()` (an undesirable empty `load()` statement). To avoid this, your code should only load the "leaf nodes" in an object tree.
 
 #### Calling `load` without parameters (not recommended)
 
