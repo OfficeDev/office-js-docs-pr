@@ -55,23 +55,23 @@ selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
 ```
 
-### Performance tip: minimize the number of proxy objects created
+### Performance tip: Minimize the number of proxy objects created
 
 Avoid repeatedly creating the same proxy object. Instead, if you need the same proxy object for more than one operation, create it once and assign it to a variable, then use that variable in your code.
 
 ```js
-// BAD: repeated calls to .getRange() to create the same proxy object
+// BAD: Repeated calls to .getRange() to create the same proxy object.
 worksheet.getRange("A1").format.fill.color = "red";
 worksheet.getRange("A1").numberFormat = "0.00%";
 worksheet.getRange("A1").values = [[1]];
 
-// GOOD: create the range proxy object once and assign to a variable
+// GOOD: Create the range proxy object once and assign to a variable.
 var range = worksheet.getRange("A1")
 range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
 
-// ALSO GOOD: use a "set" method to immediately set all the properties without even needing to create a variable!
+// ALSO GOOD: Use a "set" method to immediately set all the properties without even needing to create a variable!
 worksheet.getRange("A1").set({
     numberFormat: [["0.00%"]],
     values: [[1]],
@@ -157,7 +157,7 @@ someRange.load("format/font/name")
 
 You can also set the scalar properties of a navigation property by traversing the path. For example, you could set the font size for an `Excel.Range` by using `someRange.format.font.size = 10;`. You don't need to load the property before you set it.
 
-Please be aware that some of the properties under an object may have the same name as another object. For example, `format` is a property under `Exce;.Range` object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty `load()` call that can cause performance problems as outlined previously. To avoid this, your code should only load the "leaf nodes" in an object tree.
+Please be aware that some of the properties under an object may have the same name as another object. For example, `format` is a property under the `Excel.Range` object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty `load()` call that can cause performance problems as outlined previously. To avoid this, your code should only load the "leaf nodes" in an object tree.
 
 #### Calling `load` without parameters (not recommended)
 

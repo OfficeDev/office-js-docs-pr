@@ -113,8 +113,8 @@ While the resources limits on CPU and memory usage, crash tolerance, UI responsi
 The performance tips in [Using the host-specific API model](../develop/host-specific-api-model.md) provide guidance when using the host-specific APIs for Excel, OneNote, Visio, and Word. In summary, you should:
 
 - [Only load necessary properties](../develop/host-specific-api-model.md#calling-load-without-parameters-not-recommended).
-- [Minimize the number of sync() calls](../develop/host-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls). Read [Avoid using the context.sync method in loops](correlated-objects-pattern.md) for further information on how to avoid `sync` calls in your code.
-- [Minimize the number of proxy objects created](../develop/host-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created). You can also untrack proxy objects, as described below.
+- [Minimize the number of sync() calls](../develop/host-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls). Read [Avoid using the context.sync method in loops](correlated-objects-pattern.md) for further information on how to manage `sync` calls in your code.
+- [Minimize the number of proxy objects created](../develop/host-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created). You can also untrack proxy objects, as described in the next section.
 
 #### Untrack unneeded proxy objects
 
