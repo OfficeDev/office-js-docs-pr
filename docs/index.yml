@@ -40,10 +40,10 @@ landingContent:
             url: word/index.yml
       - linkListType: learn
         links: 
-          - text: Microsoft Learn Introduction to Office client customization with add-ins
-            url: //docs.microsoft.com/en-us/learn/modules/intro-office-add-ins/
-          - text: Microsoft Learn Extend Office clients with Office add-ins
-            url: //docs.microsoft.com/en-us/learn/paths/m365-office-add-in-associate/
+          - text: Introduction to Office client customization with add-ins
+            url: //docs.microsoft.com/learn/modules/intro-office-add-ins/
+          - text: Extend Office clients with Office add-ins
+            url: //docs.microsoft.com/learn/paths/m365-office-add-in-associate/
 
   # Card (optional)
   - title: Get started
