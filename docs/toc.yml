@@ -228,14 +228,6 @@
         href: develop/create-addin-commands.md
       - name: Enable and Disable Add-in Commands
         href: design/disable-add-in-commands.md
-    - name: Performance
-      items:
-      - name: Avoid using the context.sync method in loops
-        href: concepts/correlated-objects-pattern.md
-      - name: Resource limits and performance optimization for Office Add-ins
-        href: concepts/resource-limits-and-performance-optimization.md
-    - name: Coding guidance for common issues
-      href: develop/common-coding-issues.md
     - name: Frameworks and IDEs
       items:
       - name: Develop add-ins for the iPad
@@ -286,10 +278,18 @@
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
+    - name: Coding guidance for common issues
+      href: develop/common-coding-issues.md
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debugger Extension for Visual Studio Code
       href: testing/debug-with-vs-extension.md
+    - name: Performance
+      items:
+      - name: Avoid using the context.sync method in loops
+        href: concepts/correlated-objects-pattern.md
+      - name: Resource limits and performance optimization for Office Add-ins
+        href: concepts/resource-limits-and-performance-optimization.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
     - name: Usability testing
