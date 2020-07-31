@@ -87,18 +87,16 @@
       items:
       - name: Reference Office.js
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+      - name: Specify Office hosts and API requirements
+        href: develop/specify-office-hosts-and-api-requirements.md
       - name: Load sequence of an Office Add-in
         href: develop/loading-the-dom-and-runtime-environment.md
       - name: Initialize your add-in
         href: develop/initialize-add-in.md
-      - name: Specify Office hosts and API requirements
-        href: develop/specify-office-hosts-and-api-requirements.md
         displayName: manifest
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
         displayName: manifest
-      - name: Request permissions for API use in add-ins
-        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
         displayName: manifest
     - name: Manifest
       items:
@@ -144,43 +142,8 @@
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
-    - name: Add-in commands
-      items:
-      - name: Basic concepts for Add-in Commands
-        href: design/add-in-commands.md
-      - name: Create add-in commands
-        href: develop/create-addin-commands.md
-      - name: Enable and Disable Add-in Commands
-        href: design/disable-add-in-commands.md
-    - name: Frameworks and IDEs
-      items:
-      - name: Develop add-ins for the iPad
-        href: develop/develop-office-add-ins-for-the-ipad.md
-      - name: Develop add-ins with Angular
-        href: develop/add-ins-with-angular2.md
-      - name: Develop add-ins with Visual Studio Code
-        href: develop/develop-add-ins-vscode.md
-      - name: Develop add-ins with Visual Studio
-        items:
-        - name: Overview
-          href: develop/develop-add-ins-visual-studio.md
-          displayName: Visual Studio
-        - name: Debug Office Add-ins in Visual Studio
-          href: develop/debug-office-add-ins-in-visual-studio.md
-        - name: Get JavaScript IntelliSense in Visual Studio
-          href: develop/get-javascript-intellisense-in-visual-studio.md
-        - name: Convert JavaScript to TypeScript
-          href: develop/convert-javascript-to-typescript.md
-    - name: Performance
-      items:
-      - name: Avoid using the context.sync method in loops
-        href: concepts/correlated-objects-pattern.md
-      - name: Resource limits and performance optimization for Office Add-ins
-        href: concepts/resource-limits-and-performance-optimization.md
-    - name: Localization
-      href: develop/localization.md
-    - name: Coding guidance for common issues
-      href: develop/common-coding-issues.md
+      - name: Request permissions for API use in add-ins
+        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
     - name: UI and UX
       items:
       - name: Overview
@@ -235,6 +198,8 @@
           href: design/content-add-ins.md
         - name: Task panes
           href: design/task-pane-add-ins.md
+      - name: Localization
+        href: develop/localization.md
       - name: UX design patterns
         items:
         - name: Overview
@@ -255,6 +220,41 @@
           href: design/using-office-ui-fabric-react.md
         - name: Office UI Fabric
           href: design/office-ui-fabric.md
+    - name: Add-in commands
+      items:
+      - name: Basic concepts for Add-in Commands
+        href: design/add-in-commands.md
+      - name: Create add-in commands
+        href: develop/create-addin-commands.md
+      - name: Enable and Disable Add-in Commands
+        href: design/disable-add-in-commands.md
+    - name: Performance
+      items:
+      - name: Avoid using the context.sync method in loops
+        href: concepts/correlated-objects-pattern.md
+      - name: Resource limits and performance optimization for Office Add-ins
+        href: concepts/resource-limits-and-performance-optimization.md
+    - name: Coding guidance for common issues
+      href: develop/common-coding-issues.md
+    - name: Frameworks and IDEs
+      items:
+      - name: Develop add-ins for the iPad
+        href: develop/develop-office-add-ins-for-the-ipad.md
+      - name: Develop add-ins with Angular
+        href: develop/add-ins-with-angular2.md
+      - name: Develop add-ins with Visual Studio Code
+        href: develop/develop-add-ins-vscode.md
+      - name: Develop add-ins with Visual Studio
+        items:
+        - name: Overview
+          href: develop/develop-add-ins-visual-studio.md
+          displayName: Visual Studio
+        - name: Debug Office Add-ins in Visual Studio
+          href: develop/debug-office-add-ins-in-visual-studio.md
+        - name: Get JavaScript IntelliSense in Visual Studio
+          href: develop/get-javascript-intellisense-in-visual-studio.md
+        - name: Convert JavaScript to TypeScript
+          href: develop/convert-javascript-to-typescript.md
 
   - name: Test and debug
     items:
