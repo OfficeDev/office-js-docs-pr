@@ -22,7 +22,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Core concepts
+          - text: Office Add-ins platform overview
             url: overview/office-add-ins.md
       - linkListType: overview
         links:
