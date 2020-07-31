@@ -10,7 +10,7 @@ metadata:
   ms.topic: landing-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 07/13/2020 #Required; mm/dd/yyyy format.
+  ms.date: 07/31/2020 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -38,6 +38,12 @@ landingContent:
             url: project/index.yml
           - text: Word add-ins documentation
             url: word/index.yml
+      - linkListType: concept
+        links: 
+          - text: Introduction to Office client customization with add-ins
+            url: //docs.microsoft.com/en-us/learn/modules/intro-office-add-ins/
+          - text: Extend Office clients with Office add-ins
+            url: //docs.microsoft.com/en-us/learn/paths/m365-office-add-in-associate/
 
   # Card (optional)
   - title: Get started
