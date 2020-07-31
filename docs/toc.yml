@@ -180,8 +180,18 @@
         items:
         - name: Overview
           href: design/interface-elements.md
+        - name: Add-in commands
+          items:
+          - name: Basic concepts for Add-in Commands
+            href: design/add-in-commands.md
+          - name: Create add-in commands
+            href: develop/create-addin-commands.md
+          - name: Enable and Disable Add-in Commands
+            href: design/disable-add-in-commands.md
+        - name: Content add-ins
+          href: design/content-add-ins.md
         - name: Dialog boxes
-          items: 
+          items:
           - name: Overview
             href: design/dialog-boxes.md
           - name: Use the Office dialog API in your Office Add-ins
@@ -194,8 +204,6 @@
             href: develop/dialog-handle-errors-events.md
           - name: Use the Office dialog box to play a video
             href: develop/dialog-video.md
-        - name: Content add-ins
-          href: design/content-add-ins.md
         - name: Task panes
           href: design/task-pane-add-ins.md
       - name: Localization
@@ -220,14 +228,6 @@
           href: design/using-office-ui-fabric-react.md
         - name: Office UI Fabric
           href: design/office-ui-fabric.md
-    - name: Add-in commands
-      items:
-      - name: Basic concepts for Add-in Commands
-        href: design/add-in-commands.md
-      - name: Create add-in commands
-        href: develop/create-addin-commands.md
-      - name: Enable and Disable Add-in Commands
-        href: design/disable-add-in-commands.md
     - name: Frameworks and IDEs
       items:
       - name: Develop add-ins for the iPad
