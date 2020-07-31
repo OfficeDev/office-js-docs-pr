@@ -15,6 +15,7 @@ For any add-in you build, you'll need to understand important concepts like host
 
 |               |               |
 | ------------- | ------------- |
+| ![best-practices](../images/i_best-practices_small.svg) | **Plan**<br>[Learn the best practices and system requirements for Office Add-ins.](../concepts/add-in-development-best-practices.md) |
 | ![code-blocks](../images/i_code-blocks_small.svg) | **Develop**<br>[Learn the APIs and patterns to develop Office Add-ins.](../develop/develop-overview.md) |
 | ![recommended-testing](../images/i_recommended-testing_small.svg) | **Test and debug**<br>[Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
 | ![deploy](../images/i_deploy_small.svg) | **Publish**<br>[Learn how to deploy and publish Office Add-ins.](../publish/publish.md) |
