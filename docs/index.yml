@@ -43,7 +43,7 @@ landingContent:
           - text: Introduction to Office client customization with add-ins
             url: /learn/modules/intro-office-add-ins/
           - text: Extend Office clients with Office add-ins
-            url: //docs.microsoft.com/learn/paths/m365-office-add-in-associate/
+            url: /learn/paths/m365-office-add-in-associate/
 
   # Card (optional)
   - title: Get started
