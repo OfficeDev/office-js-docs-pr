@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 07/28/2020
+ms.date: 08/03/2020
 localization_priority: Priority
 ---
 
