@@ -1,13 +1,13 @@
 ---
 title: Use regular expression activation rules to show an add-in
 description: Learn how to use regular expression activation rules for Outlook contextual add-ins.
-ms.date: 10/31/2019
+ms.date: 07/28/2020
 localization_priority: Normal
 ---
 
 # Use regular expression activation rules to show an Outlook add-in
 
-You can specify regular expression rules to have a [contextual add-in](contextual-outlook-add-ins.md) activated when a match is found in specific fields of the message. Contextual add-ins activate only in read mode, Outlook does not activate contextual add-ins when the user is composing an item. There are also other scenarios where Outlook does not activate add-ins, for example, items protected by Information Rights Management (IRM). For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
+You can specify regular expression rules to have a [contextual add-in](contextual-outlook-add-ins.md) activated when a match is found in specific fields of the message. Contextual add-ins activate only in read mode, Outlook does not activate contextual add-ins when the user is composing an item. There are also other scenarios where Outlook does not activate add-ins, for example, digitally signed items. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
 You can specify a regular expression as part of an [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rule or [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule in the add-in XML manifest. The rules are specified in a [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity) extension point.
 
