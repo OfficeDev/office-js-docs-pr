@@ -66,7 +66,7 @@ The security model addresses security, privacy, and performance concerns of end 
 - End user's messages that are protected by Outlook's Information Rights Management (IRM) do not interact with Outlook add-ins.
     
   > [!IMPORTANT]
-  > Starting with Outlook build 13120.1000 on Windows, add-ins now activate on items protected by IRM. This feature is currently [in preview](../reference/requirement-sets/outlook-api-requirement-sets.md#using-preview-apis).
+  > Starting with Outlook build 13120.1000 on Windows, add-ins can now activate on items protected by IRM. For more information about this feature, see [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
     
