@@ -69,7 +69,7 @@ Also, because appointments are always saved in Rich Text Format, an [ItemHasRegu
 
 Even if a mail item is not one of the above types, if the item was not delivered by a version of Exchange Server that is at least Exchange 2013, known entities and properties such as sender's SMTP address would not be identified on the item. Any activation rules that rely on these entities or properties would not be satisfied, and the add-in would not be activated.
 
-If your add-in is a compose add-in and is supposed to be activated when the user is authoring a message or meeting request, make sure the item is not protected by IRM. However, starting with Outlook build 13120.1000 on Windows, add-ins can now activate on items protected by IRM.  For more information about this support, see [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+If your add-in is a compose add-in and is supposed to be activated when the user is authoring a message or meeting request, make sure the item is not protected by IRM. However, starting with Outlook build 13120.1000 on Windows, add-ins can now activate on items protected by IRM.  For more information about this support in preview, see [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
 
