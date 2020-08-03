@@ -41,7 +41,7 @@ landingContent:
       - linkListType: learn
         links: 
           - text: Introduction to Office client customization with add-ins
-            url: //docs.microsoft.com/learn/modules/intro-office-add-ins/
+            url: /learn/modules/intro-office-add-ins/
           - text: Extend Office clients with Office add-ins
             url: //docs.microsoft.com/learn/paths/m365-office-add-in-associate/
 
