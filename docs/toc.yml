@@ -97,7 +97,6 @@
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
         displayName: manifest
-        displayName: manifest
     - name: Manifest
       items:
       - name: Overview
