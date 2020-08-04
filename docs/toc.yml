@@ -13,7 +13,7 @@
   - name: A guide for VSTO add-in developers
     href: overview/learning-path-transition.md
     displayName: develop
-  - name: Office Add-ins development process
+  - name: Development process overview
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
   - name: Quick starts
