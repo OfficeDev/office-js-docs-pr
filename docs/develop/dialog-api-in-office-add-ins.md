@@ -27,7 +27,7 @@ The following image shows an example of a dialog box.
 
 ![Add-in commands](../images/auth-o-dialog-open.png)
 
-Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the host Office application and with the page in the task pane, if there is one.
+Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the Office application and with the page in the task pane, if there is one.
 
 ## Open a dialog box from a host page
 

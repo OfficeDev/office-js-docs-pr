@@ -34,4 +34,4 @@ For detailed information about the OneNote JavaScript API object model, see the 
 * [OneNote add-ins documentation](../../onenote/index.yml)
 * [OneNote add-ins overview](../../onenote/onenote-add-ins-programming-overview.md)
 * [OneNote JavaScript API reference](/javascript/api/onenote)
-* [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
+* [Office Add-in application and platform availability](../../overview/office-add-in-availability.md)
