@@ -1,23 +1,23 @@
 ---
-title: Using the host-specific API model
+title: Using the application-specific API model
 description: 'Learn about the promise-based API model for Excel, OneNote, and Word add-ins.'
 ms.date: 07/29/2020
 localization_priority: Normal
 ---
 
-# Using the host-specific API model
+# Using the application-specific API model
 
 This article describes how to use the API model for building add-ins in Excel, Word, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs.
 
 > [!NOTE]
-> This model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
+> This model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office Add-in application and platform availability](../overview/office-add-in-availability.md).
 
 > [!TIP]
 > The examples in this page use the Excel JavaScript APIs, but the concepts also apply to OneNote, Visio, and Word JavaScript APIs.
 
 ## Asynchronous nature of the promise-based APIs
 
-Office Add-ins are websites which appear inside a browser container within Office hosts, such as Excel. This container is embedded within the Office application on desktop-based platforms, such as Office on Windows, and runs inside an HTML iFrame in Office on the web. Due to performance considerations, the Office.js APIs cannot interact synchronously with the Office hosts across all platforms. Therefore, the `sync()` API call in Office.js returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Office application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `run()` and `sync()` APIs.
+Office Add-ins are websites which appear inside a browser container within Office applications, such as Excel. This container is embedded within the Office application on desktop-based platforms, such as Office on Windows, and runs inside an HTML iFrame in Office on the web. Due to performance considerations, the Office.js APIs cannot interact synchronously with the Office applications across all platforms. Therefore, the `sync()` API call in Office.js returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Office application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `run()` and `sync()` APIs.
 
 ## *.run function
 
@@ -40,11 +40,11 @@ Excel.run(function (context) {
 
 ## Request context
 
-The Office host and your add-in run in two different processes. Since they use different runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables. This `RequestContext` object is provided as an argument when calling `*.run`.
+The Office application and your add-in run in two different processes. Since they use different runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables. This `RequestContext` object is provided as an argument when calling `*.run`.
 
 ## Proxy objects
 
-The Office JavaScript objects that you declare and use with the promise-based APIs are proxy objects. Any methods that you invoke or properties that you set or load on proxy objects are simply added to a queue of pending commands. When you call the `sync()` method on the request context (for example, `context.sync()`), the queued commands are dispatched to the Office host and run. These APIs are fundamentally batch-centric. You can queue up as many changes as you wish on the request context, and then call the `sync()` method to run the batch of queued commands.
+The Office JavaScript objects that you declare and use with the promise-based APIs are proxy objects. Any methods that you invoke or properties that you set or load on proxy objects are simply added to a queue of pending commands. When you call the `sync()` method on the request context (for example, `context.sync()`), the queued commands are dispatched to the Office application and run. These APIs are fundamentally batch-centric. You can queue up as many changes as you wish on the request context, and then call the `sync()` method to run the batch of queued commands.
 
 For example, the following code snippet declares the local JavaScript [Excel.Range](/javascript/api/excel/excel.range) object, `selectedRange`, to reference a selected range in the Excel workbook, and then sets some properties on that object. The `selectedRange` object is a proxy object, so the properties that are set and the method that is invoked on that object will not be reflected in the Excel document until your add-in calls `context.sync()`.
 

@@ -41,7 +41,7 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 - **debugInfo**: When present, the `debugInfo` property of the error message provides additional information that you can use to understand the root cause of the error.
 
 > [!NOTE]
-> If you use `console.log()` to print error messages to the console, those messages will only be visible on the server. End users will not see those error messages in the add-in task pane or anywhere in the host application.
+> If you use `console.log()` to print error messages to the console, those messages will only be visible on the server. End users will not see those error messages in the add-in task pane or anywhere in the Office application.
 
 ## Error Messages
 

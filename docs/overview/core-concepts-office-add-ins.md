@@ -11,7 +11,7 @@ localization_priority: Priority
 
 All Office Add-ins are built upon the Office Add-ins platform. They share a common framework through which certain capabilities can be implemented. This means that regardless of whether you're creating an add-in for Excel, Outlook, or another Office application, you can implement features such as dialog boxes, add-in commands, task panes, and single sign-on (SSO).
 
-For any add-in you build, you'll need to understand important concepts like host and platform availability, Office JavaScript API programming patterns, how to specify an add-in's settings and capabilities in the manifest file, how to test, debug, and publish an add-in, and more. You'll find this information here in the **Core concepts** section of the documentation. Review this documentation before exploring the host-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.yml)).
+For any add-in you build, you'll need to understand important concepts like Office application and platform availability, Office JavaScript API programming patterns, how to specify an add-in's settings and capabilities in the manifest file, how to test, debug, and publish an add-in, and more. You'll find this information here in the **Core concepts** section of the documentation. Review this documentation before exploring the application-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.yml)).
 
 |               |               |
 | ------------- | ------------- |

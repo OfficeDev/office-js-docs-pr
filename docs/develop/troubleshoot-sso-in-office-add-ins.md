@@ -73,7 +73,7 @@ Client Error. This error is only seen in **Office on the web**. Your code should
 
 ### 13007
 
-The Office host was unable to get an access token to the add-in's web service.
+The Office application was unable to get an access token to the add-in's web service.
 
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 - In production, there are several things that can cause this error. Some of them are:

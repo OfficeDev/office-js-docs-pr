@@ -9,7 +9,7 @@ localization_priority: Normal
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office JavaScript add-ins give access to the host's underlying functionality. Most of this access goes through a few important objects. The [Context](#context-object) object gives access to the runtime environment after initialization. The [Document](#document-object) object gives the user control over an Excel, PowerPoint, or Word document. The [Mailbox](#mailbox-object) object gives an Outlook add-in access to messages and user profiles. Understanding the relationships between these high-level objects is the foundation of a JavaScript add-in.
+Office JavaScript add-ins give access to the Office client application's underlying functionality. Most of this access goes through a few important objects. The [Context](#context-object) object gives access to the runtime environment after initialization. The [Document](#document-object) object gives the user control over an Excel, PowerPoint, or Word document. The [Mailbox](#mailbox-object) object gives an Outlook add-in access to messages and user profiles. Understanding the relationships between these high-level objects is the foundation of a JavaScript add-in.
 
 ## Context object
 
@@ -19,7 +19,7 @@ When an add-in is [initialized](initialize-add-in.md), it has many different obj
 
 For example, in task pane or content add-ins, you can use the [document](/javascript/api/office/office.context#document) property of the **Context** object to access the properties and methods of the **Document** object to interact with the content of Word documents, Excel worksheets, or Project schedules. Similarly, in Outlook add-ins, you can use the [mailbox](/javascript/api/office/office.context#mailbox) property of the **Context** object to access the properties and methods of the **Mailbox** object to interact with the message, meeting request, or appointment content.
 
-The **Context** object also provides access to the [contentLanguage](/javascript/api/office/office.context#contentlanguage) and [displayLanguage](/javascript/api/office/office.context#displaylanguage) properties that let you determine the locale (language) used in the document or item, or by the host application. The [roamingSettings](/javascript/api/office/office.context#roamingsettings) property lets you access the members of the [RoamingSettings](/javascript/api/office/office.context#roamingsettings) object, which stores settings specific to your add-in for individual users' mailboxes. Finally, the **Context** object provides a [ui](/javascript/api/office/office.context#ui) property that enables your add-in to launch pop-up dialogs.
+The **Context** object also provides access to the [contentLanguage](/javascript/api/office/office.context#contentlanguage) and [displayLanguage](/javascript/api/office/office.context#displaylanguage) properties that let you determine the locale (language) used in the document or item, or by the Office application. The [roamingSettings](/javascript/api/office/office.context#roamingsettings) property lets you access the members of the [RoamingSettings](/javascript/api/office/office.context#roamingsettings) object, which stores settings specific to your add-in for individual users' mailboxes. Finally, the **Context** object provides a [ui](/javascript/api/office/office.context#ui) property that enables your add-in to launch pop-up dialogs.
 
 
 ## Document object

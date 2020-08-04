@@ -6,7 +6,7 @@ This article assumes that you are using a text editor to create the task pane ad
 
 - On a shared network folder or on a web server, you need the following files:
 
-    - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and host-specific .js files) and Cascading Style Sheet (CSS) files.
+    - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and application-specific .js files) and Cascading Style Sheet (CSS) files.
 
     - A JavaScript file (GetDoc_App.js) to contain the programming logic of the add-in.
 

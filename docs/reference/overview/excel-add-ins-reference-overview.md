@@ -10,7 +10,7 @@ localization_priority: Priority
 
 An Excel add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:
 
-* **Excel JavaScript API**: These are the [host-specific APIs](../../develop/host-specific-api-model.md) for Excel. Introduced with Office 2016, the [Excel JavaScript API](/javascript/api/excel) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.
+* **Excel JavaScript API**: These are the [application-specific APIs](../../develop/application-specific-api-model.md) for Excel. Introduced with Office 2016, the [Excel JavaScript API](/javascript/api/excel) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.
 
 * **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
 
@@ -52,4 +52,4 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 * [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
 * [Excel JavaScript API reference](/javascript/api/excel)
 * [Office Add-in host and platform availability](../../overview/office-add-in-availability.md)
-* [Using the host-specific API model](../../develop/host-specific-api-model.md)
+* [Using the application-specific API model](../../develop/application-specific-api-model.md)

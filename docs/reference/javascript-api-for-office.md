@@ -9,14 +9,14 @@ localization_priority: Priority
 
 # API reference documentation
 
-An add-in can use the Office JavaScript APIs to interact with objects in Office host applications. 
+An add-in can use the Office JavaScript APIs to interact with objects in Office client applications. 
 
 <ul>
-    <li><b>Host-specific</b> APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application.</li>
+    <li><b>application-specific</b> APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application.</li>
     <li><b>Common</b> APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</li>
 </ul>
 
-You should use host-specific APIs whenever feasible, and use Common APIs only for scenarios that aren't supported by host-specific APIs. For more detailed information about these two API models, see <a href="../overview/office-add-ins-fundamentals.md#api-models">Building Office Add-ins</a>.
+You should use application-specific APIs whenever feasible, and use Common APIs only for scenarios that aren't supported by application-specific APIs. For more detailed information about these two API models, see <a href="../overview/office-add-ins-fundamentals.md#api-models">Building Office Add-ins</a>.
 
 <h2>API reference</h2>
 
@@ -125,4 +125,4 @@ You should use host-specific APIs whenever feasible, and use Common APIs only fo
     </li>
 </ul>
 
-<b>Note</b>: There's currently no host-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins. Additionally, the host-specific API for PowerPoint is very limited in scope; you'll mainly use Common APIs to create PowerPoint add-ins.
+<b>Note</b>: There's currently no application-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins. Additionally, the application-specific API for PowerPoint is very limited in scope; you'll mainly use Common APIs to create PowerPoint add-ins.

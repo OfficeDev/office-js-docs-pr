@@ -11,7 +11,7 @@ For Outlook add-ins to load and function properly, there are a number of require
 
 ## Client requirements
 
-- The client must be one of the supported hosts for Outlook add-ins. The following clients support add-ins:
+- The client must be one of the supported application for Outlook add-ins. The following clients support add-ins:
 
    - Outlook 2013 or later on Windows
    - Outlook 2016 or later on Mac
@@ -39,5 +39,5 @@ Add-in files (HTML, JavaScript, etc.) can be hosted on any web server platform d
 ## See also
 
 - [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md)
-- [Office Add-in host and platform availability (Outlook section)](../overview/office-add-in-availability.md#outlook)
+- [Office Add-in application and platform availability (Outlook section)](../overview/office-add-in-availability.md#outlook)
 - [Outlook JavaScript API requirement set support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

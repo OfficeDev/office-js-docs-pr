@@ -10,7 +10,7 @@ localization_priority: Priority
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016 or later. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
 
 > [!IMPORTANT]
-> See [Using the host-specific API model](../develop/host-specific-api-model.md) to learn about the asynchronous nature of the Excel APIs and how they work with the workbook.  
+> See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about the asynchronous nature of the Excel APIs and how they work with the workbook.  
 
 ## Office.js APIs for Excel
 
@@ -203,11 +203,11 @@ range.formula = [['', '', '=Rand()']];
 
 ## Requirement sets
 
-Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office host supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md).
+Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office application supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md).
 
 ### Checking for requirement set support at runtime
 
-The following code sample shows how to determine whether the host application where the add-in is running supports the specified API requirement set.
+The following code sample shows how to determine whether the Office application where the add-in is running supports the specified API requirement set.
 
 ```js
 if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
@@ -220,9 +220,9 @@ else {
 
 ### Defining requirement set support in the manifest
 
-You can use the [Requirements element](../reference/manifest/requirements.md) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office host or platform doesn't support the requirement sets or API methods that are specified in the `Requirements` element of the manifest, the add-in won't run in that host or platform, and it won't display in the list of add-ins that are shown in **My Add-ins**.
+You can use the [Requirements element](../reference/manifest/requirements.md) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office application or platform doesn't support the requirement sets or API methods that are specified in the `Requirements` element of the manifest, the add-in won't run in that application or platform, and it won't display in the list of add-ins that are shown in **My Add-ins**.
 
-The following code sample shows the `Requirements` element in an add-in manifest which specifies that the add-in should load in all Office host applications that support ExcelApi requirement set version 1.3 or greater.
+The following code sample shows the `Requirements` element in an add-in manifest which specifies that the add-in should load in all Office client applications that support ExcelApi requirement set version 1.3 or greater.
 
 ```xml
 <Requirements>
@@ -233,7 +233,7 @@ The following code sample shows the `Requirements` element in an add-in manifest
 ```
 
 > [!NOTE]
-> To make your add-in available on all platforms of an Office host, such as Excel on the web, Windows, and iPad, we recommend that you check for requirement support at runtime instead of defining requirement set support in the manifest.
+> To make your add-in available on all platforms of an Office application, such as Excel on the web, Windows, and iPad, we recommend that you check for requirement support at runtime instead of defining requirement set support in the manifest.
 
 ### Requirement sets for the Office.js Common API
 

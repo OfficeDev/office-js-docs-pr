@@ -55,7 +55,7 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Office versions and requirement sets
       href: develop/office-versions-and-requirement-sets.md
-    - name: Host and platform availability
+    - name: Application and platform availability
       href: overview/office-add-in-availability.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Requirements for running add-ins
@@ -71,8 +71,8 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Understanding the Office JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
-    - name: Using the host-specific API Model
-      href: develop/host-specific-api-model.md
+    - name: Using the application-specific API Model
+      href: develop/application-specific-api-model.md
     - name: Using the Common API model
       items:
       - name: Common JavaScript API object model
@@ -87,7 +87,7 @@
       items:
       - name: Reference Office.js
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-      - name: Specify Office hosts and API requirements
+      - name: Specify Office applications and API requirements
         href: develop/specify-office-hosts-and-api-requirements.md
       - name: Load sequence of an Office Add-in
         href: develop/loading-the-dom-and-runtime-environment.md

@@ -9,7 +9,7 @@ localization_priority: Priority
 
 When some functionality in your add-in should only be available in certain contexts, you can programmatically enable or disable your custom Add-in Commands. For example, a function that changes the header of a table should only be enabled when the cursor is in a table.
 
-You can also specify whether the command is enabled or disabled when the Office host application opens.
+You can also specify whether the command is enabled or disabled when the Office client application opens.
 
 > [!NOTE]
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.

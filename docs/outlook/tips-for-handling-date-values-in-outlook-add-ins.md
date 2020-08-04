@@ -91,16 +91,16 @@ document.write ("The item was created at " + myLocalDictionaryDate["hours"] +
 Note that `convertToLocalClientTime` takes care of the difference between an Outlook rich client, and Outlook on the web or mobile devices:
 
 
-- If `convertToLocalClientTime` detects the current host is a rich client, the method converts the `Date` representation to a dictionary representation in the same client computer time zone, consistent with the rest of the rich client user interface.
+- If `convertToLocalClientTime` detects the current application is a rich client, the method converts the `Date` representation to a dictionary representation in the same client computer time zone, consistent with the rest of the rich client user interface.
     
-- If `convertToLocalClientTime` detects the current host is Outlook on the web or mobile devices, the method converts the UTC-correct `Date` representation to a dictionary format in the EAC time zone, consistent with the rest of the Outlook on the web or mobile devices user interface.
+- If `convertToLocalClientTime` detects the current application is Outlook on the web or mobile devices, the method converts the UTC-correct `Date` representation to a dictionary format in the EAC time zone, consistent with the rest of the Outlook on the web or mobile devices user interface.
     
 
 ### Scenario B: Displaying start and end dates in a new appointment form
 
 If you are obtaining as input different parts of a date-time value represented in the local time, and would like to provide this dictionary input value as a start or end time in an appointment form, first use the `convertToUtcClientTime` helper method to convert the dictionary value to a UTC-correct `Date` object.
 
-In the following example, assume  `myLocalDictionaryStartDate` and `myLocalDictionaryEndDate` are date-time values in dictionary format that you have obtained from the user. These values are based on the local time, dependent on the host application.
+In the following example, assume  `myLocalDictionaryStartDate` and `myLocalDictionaryEndDate` are date-time values in dictionary format that you have obtained from the user. These values are based on the local time, dependent on the Office application.
 
 ```js
 var myUTCCorrectStartDate = Office.context.mailbox.convertToUtcClientTime(myLocalDictionaryStartDate);
@@ -113,9 +113,9 @@ The resultant values,  `myUTCCorrectStartDate` and `myUTCCorrectEndDate`, are UT
 Note that `convertToUtcClientTime` takes care of the difference between an Outlook rich client, and Outlook on the web or mobile devices:
 
 
-- If `convertToUtcClientTime` detects the current host is an Outlook rich client, the method simply converts the dictionary representation to a `Date` object. This `Date` object is UTC-correct, as expected by `displayNewAppointmentForm`.
+- If `convertToUtcClientTime` detects the current application is an Outlook rich client, the method simply converts the dictionary representation to a `Date` object. This `Date` object is UTC-correct, as expected by `displayNewAppointmentForm`.
     
-- If `convertToUtcClientTime` detects the current host is Outlook on the web or mobile devices, the method converts the dictionary format of the date and time values expressed in the EAC time zone to a `Date` object. This `Date` object is UTC-correct, as expected by `displayNewAppointmentForm`.
+- If `convertToUtcClientTime` detects the current application is Outlook on the web or mobile devices, the method converts the dictionary format of the date and time values expressed in the EAC time zone to a `Date` object. This `Date` object is UTC-correct, as expected by `displayNewAppointmentForm`.
     
 ## See also
 
