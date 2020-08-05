@@ -8,10 +8,10 @@ The Office JavaScript API includes two distinct models:
 
     - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 
-    This API model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) and allows you to specify multiple operations in each request you send to the Office application. Batching operations in this manner can significantly improve add-in performance in Office applications on the web. application-specific APIs were introduced with Office 2016 and cannot be used to interact with Office 2013.
+    This API model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) and allows you to specify multiple operations in each request you send to the Office application. Batching operations in this manner can significantly improve add-in performance in Office applications on the web. Application-specific APIs were introduced with Office 2016 and cannot be used to interact with Office 2013.
 
     > [!NOTE]
-    > There is also a application-specific API for [Visio](../reference/overview/visio-javascript-reference-overview.md), but you can use it only in SharePoint Online pages to interact with Visio diagrams that have been embedded in the page. Office web add-ins are not supported in Visio.
+    > There is also an application-specific API for [Visio](../reference/overview/visio-javascript-reference-overview.md), but you can use it only in SharePoint Online pages to interact with Visio diagrams that have been embedded in the page. Office web add-ins are not supported in Visio.
 
     See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn more about this API model .
 

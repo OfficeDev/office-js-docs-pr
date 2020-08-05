@@ -11,7 +11,7 @@ For Outlook add-ins to load and function properly, there are a number of require
 
 ## Client requirements
 
-- The client must be one of the supported application for Outlook add-ins. The following clients support add-ins:
+- The client must be one of the supported applications for Outlook add-ins. The following clients support add-ins:
 
    - Outlook 2013 or later on Windows
    - Outlook 2016 or later on Mac
