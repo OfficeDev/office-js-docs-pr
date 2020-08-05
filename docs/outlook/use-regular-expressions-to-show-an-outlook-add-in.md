@@ -48,7 +48,7 @@ Pay special attention to the following when you use regular expressions:
 
 - The HTML body of an item is slightly different between an Outlook rich client, and Outlook on the web or Outlook mobile. Define your regular expressions carefully.
 
-- Depending on the Outlook application, type of device, or property that a regular expression is being applied on, there are other best practices and limits for each of the applications that you should be aware of when designing regular expressions as activation rules. See [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) for details.
+- Depending on the Outlook client, type of device, or property that a regular expression is being applied on, there are other best practices and limits for each of the clients that you should be aware of when designing regular expressions as activation rules. See [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) for details.
 
 ### Examples
 

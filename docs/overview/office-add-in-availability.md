@@ -5,7 +5,7 @@ ms.date: 07/10/2020
 localization_priority: Priority
 ---
 
-# Office Add-in application and platform availability
+# Office client application and platform availability for Office Add-ins
 
 To work as expected, your Office Add-in might depend on a specific Office application, a requirement set, an API member, or a version of the API. The following tables contain the available platforms, extension points, API requirement sets, and Common APIs that are currently supported for each Office application.
 

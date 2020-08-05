@@ -63,7 +63,7 @@ When you specify Office applications or API requirements, there are several fact
 
 ## Set the Hosts element
 
-To make your add-in run in one Office client application, use the `Hosts` and `Host` elements in the manifest. If you don't specify the `Hosts` element, your add-in will run in all Office applications.
+To make your add-in run in one Office client application, use the `Hosts` and `Host` elements in the manifest. If you don't specify the `Hosts` element, your add-in will run in all Office applications supported by Office Add-ins.
 
 For example, the following `Hosts` and `Host` declaration specifies that the add-in will work with any release of Excel, which includes Excel on the web, Windows, and iPad.
 

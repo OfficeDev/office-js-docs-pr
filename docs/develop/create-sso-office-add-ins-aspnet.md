@@ -599,7 +599,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. In **Solution Explorer**, select the **Office-Add-in-ASPNET-SSO** project node (not the top solution node and not the project whose name ends in "WebAPI").
 1. In the **Properties** pane, open the **Start Document** drop down and choose one of the three options (Excel, Word, or PowerPoint).
 
-    ![Choose the desired Office client application: Excel or PowerPoint or Word](../images/SelectHost.JPG)
+    ![Choose the desired Office client application: Excel, PowerPoint, or Word](../images/SelectHost.JPG)
 
 1. Press F5.
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** in the **SSO ASP.NET** group to open the task pane add-in.
