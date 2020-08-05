@@ -228,7 +228,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
-The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any Office client application used to access that mailbox.
+The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any Outlook client used to access that mailbox.
 
 ##### Type
 
