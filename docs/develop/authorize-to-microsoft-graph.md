@@ -1,17 +1,18 @@
 ---
 title: Authorize to Microsoft Graph with SSO
 description: 'Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.'
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Normal
 ---
 
-# Authorize to Microsoft Graph with SSO (preview)
+# Authorize to Microsoft Graph with SSO
 
 Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. The best way for an Office Add-in to get authorized access to [Microsoft Graph](https://developer.microsoft.com/graph/docs) is to use the credentials from the user's Office sign on. This enables them to access their Microsoft Graph data without needing to sign in a second time.
 
 > [!NOTE]
-> The Single Sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md).
-> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+
 
 ## Add-in architecture for SSO and Microsoft Graph
 
@@ -59,3 +60,16 @@ For examples of detailed walkthroughs and scenarios, see:
 * [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
 * [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
 * [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md)
+
+## Distributing SSO-enabled add-ins in Microsoft AppSource
+
+When a Microsoft 365 admin acquires an add-in from [AppSource](https://appsource.microsoft.com), the admin can redistribute it by [centralized deployment](../publish/centralized-deployment.md) and grant admin consent to the add-in to access Microsoft Graph scopes. It's also possible, however, for the end user to acquire the add-in directly from AppSource, in which case the user must grant consent to the add-in. This can create a potential performance problem for which we've provided a solution.
+
+If your code passes the `allowConsentPrompt` option in the call of `getAccessToken`, like `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );`, then Office can prompt the user for consent if Azure AD reports to Office that consent has not yet been granted to the add-in. However, for security reasons, Office can only prompt the user to consent to the Azure AD `profile` scope. *Office cannot prompt for consent to any Microsoft Graph scopes*, not even `User.Read`. This means that if the user grants consent on the prompt, Office will return a bootstrap token. But the attempt to exchange the bootstrap token for an access token to Microsoft Graph will fail with error AADSTS65001, which means consent (to Microsoft Graph scopes) has not been granted.
+
+Your code can, and should, handle this error by falling back to an alternate system of authentication, which will prompt the user for consent to Microsoft Graph scopes. (For code examples, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md) and [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md) and the samples they link to.) But the entire process requires multiple round trips to Azure AD. You can avoid this performance penalty by including the `forMSGraphAccess` option in the call of `getAccessToken`; for example, `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )`.  This signals to Office that your add-in needs Microsoft Graph scopes. Office will ask Azure AD to verify that consent to Microsoft Graph scopes has already been granted to the add-in. If it has, the bootstrap token will be returned. If it hasn't, then the call of `getAccessToken` will return error 13012. Your code can handle this error by falling back to an alternate system of authentication immediately, without making a doomed attempt to exchange tokens with Azure AD.
+
+As a best practice, always pass `forMSGraphAccess` to `getAccessToken` when your add-in will be distributed in AppSource and needs Microsoft Graph scopes.
+
+> [!TIP]
+> If you develop an Outlook add-in that uses SSO and you sideload it for testing, Office will *always* return error 13012 when `forMSGraphAccess` is passed to `getAccessToken` even if administrator consent has been granted. For this reason, you should comment out the `forMSGraphAccess` option **when developing** an Outlook add-in. Be sure to uncomment the option when you deploy for production. The bogus 13012 only happens when you are sideloading in Outlook.
