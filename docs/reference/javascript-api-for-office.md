@@ -12,7 +12,7 @@ localization_priority: Priority
 An add-in can use the Office JavaScript APIs to interact with objects in Office client applications. 
 
 <ul>
-    <li><b>application-specific</b> APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application.</li>
+    <li><b>Application-specific</b> APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application.</li>
     <li><b>Common</b> APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</li>
 </ul>
 

@@ -100,7 +100,7 @@ Note that `convertToLocalClientTime` takes care of the difference between an Out
 
 If you are obtaining as input different parts of a date-time value represented in the local time, and would like to provide this dictionary input value as a start or end time in an appointment form, first use the `convertToUtcClientTime` helper method to convert the dictionary value to a UTC-correct `Date` object.
 
-In the following example, assume  `myLocalDictionaryStartDate` and `myLocalDictionaryEndDate` are date-time values in dictionary format that you have obtained from the user. These values are based on the local time, dependent on the Office application.
+In the following example, assume  `myLocalDictionaryStartDate` and `myLocalDictionaryEndDate` are date-time values in dictionary format that you have obtained from the user. These values are based on the local time, dependent on the client platform.
 
 ```js
 var myUTCCorrectStartDate = Office.context.mailbox.convertToUtcClientTime(myLocalDictionaryStartDate);

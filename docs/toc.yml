@@ -55,7 +55,7 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Office versions and requirement sets
       href: develop/office-versions-and-requirement-sets.md
-    - name: Application and platform availability
+    - name: Office application and platform availability
       href: overview/office-add-in-availability.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Requirements for running add-ins
