@@ -11,7 +11,7 @@ This article describes the software and device requirements for running Office A
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-For a high-level view of where Office Add-ins are currently supported, see [Office Add-in application and platform availability](../overview/office-add-in-availability.md).
+For a high-level view of where Office Add-ins are currently supported, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
 
 ## Server requirements
 
@@ -83,5 +83,5 @@ Specifically for Outlook running in a browser on smartphones and non-Windows tab
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Office Add-in application and platform availability](../overview/office-add-in-availability.md)
+- [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md)
 - [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md)

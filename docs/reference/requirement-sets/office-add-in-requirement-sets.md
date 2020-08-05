@@ -27,7 +27,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 The following sections list the Common API requirement sets, the methods in each set, and the Office client applications that support that requirement set. All of these API requirement sets are version 1.1, unless otherwise specified.
 
 > [!TIP]
-> Need information about where add-ins and requirement sets are supported by Office application and version? See [Office Add-in application and platform availability](../../overview/office-add-in-availability.md).
+> Need information about where add-ins and requirement sets are supported by Office application and version? See [Office client application and platform availability for Office Add-ins](../../overview/office-add-in-availability.md).
 
 ### ActiveView
 

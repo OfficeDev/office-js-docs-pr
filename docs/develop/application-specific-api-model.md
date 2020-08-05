@@ -10,7 +10,7 @@ localization_priority: Normal
 This article describes how to use the API model for building add-ins in Excel, Word, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs.
 
 > [!NOTE]
-> This model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office Add-in application and platform availability](../overview/office-add-in-availability.md).
+> This model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
 
 > [!TIP]
 > The examples in this page use the Excel JavaScript APIs, but the concepts also apply to OneNote, Visio, and Word JavaScript APIs.
