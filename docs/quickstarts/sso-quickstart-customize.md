@@ -88,7 +88,7 @@ The following steps describe these updates.
 
 ### Changes required for any type of add-in
 
-Complete the following steps for your add-in, to change the Microsoft Graph URL, parameters, and access scope, and update the taskpane UI. These steps are the same, regardless of which Office host your add-in targets.
+Complete the following steps for your add-in, to change the Microsoft Graph URL, parameters, and access scope, and update the taskpane UI. These steps are the same, regardless of which Office application your add-in targets.
 
 1. In the **./.ENV** file:
 

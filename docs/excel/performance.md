@@ -10,7 +10,7 @@ localization_priority: Normal
 There are multiple ways that you can perform common tasks with the Excel JavaScript API. You'll find significant performance differences between various approaches. This article provides guidance and code samples to show you how to perform common tasks efficiently using Excel JavaScript API.
 
 > [!IMPORTANT]
-> Many performance issues can be addressed through recommended usage of `load` and `sync` calls. See the "Performance improvements with the host-specific APIs" section of [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-host-specific-apis) for advice on working with the host-specific APIs in an efficient way.
+> Many performance issues can be addressed through recommended usage of `load` and `sync` calls. See the "Performance improvements with the application-specific APIs" section of [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) for advice on working with the application-specific APIs in an efficient way.
 
 ## Suspend Excel processes temporarily
 

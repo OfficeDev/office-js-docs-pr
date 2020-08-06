@@ -11,7 +11,7 @@ This article describes the software and device requirements for running Office A
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-For a high-level view of where Office Add-ins are currently supported, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
+For a high-level view of where Office Add-ins are currently supported, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
 
 ## Server requirements
 
@@ -24,7 +24,7 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 > [!TIP]
 > When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server.
 
-For content and task pane add-ins, in the supported Office host applications - Excel, PowerPoint, Project, or Word - you also need an [app catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
+For content and task pane add-ins, in the supported Office client applications - Excel, PowerPoint, Project, or Word - you also need an [app catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
 
 To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2013 or later, which is available through Microsoft 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
 
@@ -70,7 +70,7 @@ Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Expl
 Specifically for Outlook running in a browser on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
 
 
-| Host application | Device | Operating system | Exchange account | Mobile browser |
+| Office application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
 |Outlook on Android|Android tablets and smartphones|Android 4.4 KitKat later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Native app for Android, browser not applicable|
 |Outlook on iOS|iPad tablets, iPhone smartphones|iOS 11 or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Native app for iOS, browser not applicable|
@@ -83,5 +83,5 @@ Specifically for Outlook running in a browser on smartphones and non-Windows tab
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
+- [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md)
 - [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md)

@@ -59,7 +59,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
+5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
 
 6. Remove all references to the `run` button and the `run()` function by doing the following:
 
@@ -598,7 +598,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 
 1. Open the file **.\commands\commands.js**.
 
-2. Add the following function immediately after the `action` function. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office host application that the function has finished and the UI can become responsive again.
+2. Add the following function immediately after the `action` function. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office client application that the function has finished and the UI can become responsive again.
 
     ```js
     function toggleProtection(args) {
@@ -719,7 +719,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. Close all Office applications, including Excel. 
 
-2. Delete the Office cache by deleting the contents of the cache folder. This is necessary to completely clear the old version of the add-in from the host. 
+2. Delete the Office cache by deleting the contents of the cache folder. This is necessary to completely clear the old version of the add-in from the application.
 
     - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
@@ -727,8 +727,8 @@ These steps must be completed whenever your code needs to *read* information fro
     
         > [!NOTE]
         > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office host (e.g., `Excel`)
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office host (e.g., `Excel`)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
         >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
@@ -760,7 +760,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 ## Open a dialog
 
-In this final step of the tutorial, you'll open a dialog in your add-in, pass a message from the dialog process to the task pane process, and close the dialog. Office Add-in dialogs are *nonmodal*: a user can continue to interact with both the document in the host Office application and with the host page in the task pane.
+In this final step of the tutorial, you'll open a dialog in your add-in, pass a message from the dialog process to the task pane process, and close the dialog. Office Add-in dialogs are *nonmodal*: a user can continue to interact with both the document in the Office application and with the host page in the task pane.
 
 ### Create the dialog page
 
@@ -937,7 +937,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     var dialog = null;
     ```
 
-7. Add the following function to the end of the file (after the declaration of `dialog`). The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`. This is because the API to open a dialog is shared among all Office hosts, so it is part of the Office JavaScript Common API, not the Excel-specific API.
+7. Add the following function to the end of the file (after the declaration of `dialog`). The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`. This is because the API to open a dialog is shared among all Office applications, so it is part of the Office JavaScript Common API, not the Excel-specific API.
 
     ```js
     function openDialog() {

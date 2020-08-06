@@ -20,9 +20,9 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-## Deployment options by Office host and add-in type
+## Deployment options by Office application and add-in type
 
-The deployment options that are available depend on the Office host that you're targeting and the type of add-in you create.
+The deployment options that are available depend on the Office application that you're targeting and the type of add-in you create.
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 
@@ -82,4 +82,4 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
-[Office Add-in host and platform availability]: ../overview/office-add-in-availability
+[Office client application and platform availability for Office Add-ins]: ../overview/office-add-in-availability

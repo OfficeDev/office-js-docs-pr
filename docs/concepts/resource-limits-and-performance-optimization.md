@@ -13,15 +13,15 @@ You can also optimize the performance of your add-ins on desktop and mobile devi
 
 ## Resource usage limits for add-ins
 
-Run-time resource usage limits apply to all types of Office Add-ins. These limits help ensure performance for your users and mitigate denial-of-service attacks. Be sure to test your Office Add-in on your target host application by using a range of possible data, and measure its performance against the following run-time usage limits:
+Run-time resource usage limits apply to all types of Office Add-ins. These limits help ensure performance for your users and mitigate denial-of-service attacks. Be sure to test your Office Add-in on your target Office application by using a range of possible data, and measure its performance against the following run-time usage limits:
 
 - **CPU core usage** - A single CPU core usage threshold of 90%, observed three times in default 5-second intervals.
 
-   The default interval for a host rich client to check CPU core usage is every 5 seconds. If the host client detects the CPU core usage of an add-in is above the threshold value, it displays a message asking if the user wants to continue running the add-in. If the user chooses to continue, the host client does not ask the user again during that edit session. Administrators might want to use the **AlertInterval** registry key to raise the threshold to reduce the display of this warning message if users run CPU-intensive add-ins.
+   The default interval for an Office client to check CPU core usage is every 5 seconds. If the Office client detects the CPU core usage of an add-in is above the threshold value, it displays a message asking if the user wants to continue running the add-in. If the user chooses to continue, the Office client does not ask the user again during that edit session. Administrators might want to use the **AlertInterval** registry key to raise the threshold to reduce the display of this warning message if users run CPU-intensive add-ins.
 
 - **Memory usage** - A default memory usage threshold that is dynamically determined based on the available physical memory of the device.
 
-   By default, when a host rich client detects that physical memory usage on a device exceeds 80% of the available memory, the client starts monitoring the add-in's memory usage, at a document level for content and task pane add-ins, and at a mailbox level for Outlook add-ins. At a default interval of 5 seconds, the client warns the user if physical memory usage for a set of add-ins at the document or mailbox level exceeds 50%. This memory usage limit uses physical rather than virtual memory to ensure performance on devices with limited RAM, such as tablets. Administrators can override this dynamic setting with an explicit limit by using the **MemoryAlertThreshold** Windows registry key as a global setting, ir adjust the alert interval by using the **AlertInterval** key as a global setting.
+   By default, when a Office client detects that physical memory usage on a device exceeds 80% of the available memory, the client starts monitoring the add-in's memory usage, at a document level for content and task pane add-ins, and at a mailbox level for Outlook add-ins. At a default interval of 5 seconds, the client warns the user if physical memory usage for a set of add-ins at the document or mailbox level exceeds 50%. This memory usage limit uses physical rather than virtual memory to ensure performance on devices with limited RAM, such as tablets. Administrators can override this dynamic setting with an explicit limit by using the **MemoryAlertThreshold** Windows registry key as a global setting, ir adjust the alert interval by using the **AlertInterval** key as a global setting.
 
 - **Crash tolerance** - A default limit of four crashes for an add-in.
 
@@ -29,7 +29,7 @@ Run-time resource usage limits apply to all types of Office Add-ins. These limit
 
 - **Application blocking** - Prolonged unresponsiveness threshold of 5 seconds for an add-in.
 
-   This affects the user's experiences of the add-in and the host application. When this occurs, the host application automatically restarts all the active add-ins for a document or mailbox (where applicable), and warns the user as to which add-in became unresponsive. Add-ins can reach this threshold when they do not regularly yield processing while performing long-running tasks. There are techniques to ensure that blocking does not occur. Administrators cannot override this threshold.
+   This affects the user's experiences of the add-in and the Office application. When this occurs, the Office application automatically restarts all the active add-ins for a document or mailbox (where applicable), and warns the user as to which add-in became unresponsive. Add-ins can reach this threshold when they do not regularly yield processing while performing long-running tasks. There are techniques to ensure that blocking does not occur. Administrators cannot override this threshold.
 
 ### Outlook add-ins
 
@@ -61,7 +61,7 @@ These limitations are typically exceeded by large ranges. Your add-in might be a
 
 ### Task pane and content add-ins
 
-If any content or task pane add-in exceeds the preceding thresholds on CPU core or memory usage, or tolerance limit for crashes, the corresponding host application displays a warning for the user. At this point, the user can do one of the following:
+If any content or task pane add-in exceeds the preceding thresholds on CPU core or memory usage, or tolerance limit for crashes, the corresponding Office application displays a warning for the user. At this point, the user can do one of the following:
 
 - Restart the add-in.
 - Cancel further alerts about exceeding that threshold. Ideally, the user should then delete the add-in from the document; continuing the add-in would risk further performance and stability issues.  
@@ -83,12 +83,12 @@ The following table lists the events that the Telemetry Log tracks for Office Ad
 
 |**Event ID**|**Title**|**Severity**|**Description**|
 |:-----|:-----|:-----|:-----|
-|7|Add-in manifest downloaded successfully||The manifest of the Office Add-in was successfully loaded and read by the host application.|
-|8|Add-in manifest did not download|Critical|The host application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or AppSource.|
-|9|Add-in markup could not be parsed|Critical|The host application loaded the Office Add-in manifest, but could not read the HTML markup of the app.|
+|7|Add-in manifest downloaded successfully||The manifest of the Office Add-in was successfully loaded and read by the Office application.|
+|8|Add-in manifest did not download|Critical|The Office application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or AppSource.|
+|9|Add-in markup could not be parsed|Critical|The Office application loaded the Office Add-in manifest, but could not read the HTML markup of the app.|
 |10|Add-in used too much CPU|Critical|The Office Add-in used more than 90% of the CPU resources over a finite period of time.|
 |15|Add-in disabled due to string search time-out||Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
-|18|Add-in closed successfully||The host application was able to close the Office Add-in successfully.|
+|18|Add-in closed successfully||The Office application was able to close the Office Add-in successfully.|
 |19|Add-in encountered runtime error|Critical|The Office Add-in had a problem that caused it to fail. For more details, look at the **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 |20|Add-in failed to verify licensing|Critical|The licensing information for the Office Add-in could not be verified and may have expired. For more details, look at the **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 
@@ -96,7 +96,7 @@ For more information, see [Deploying Telemetry Dashboard](/previous-versions/off
 
 ## Design and implementation techniques
 
-While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the host application can remain responsive:
+While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the Office application can remain responsive:
 
 - In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation.
 
@@ -108,19 +108,19 @@ While the resources limits on CPU and memory usage, crash tolerance, UI responsi
 
 - Test your add-in against the highest volume of data you expect, and restrict your add-in to process up to that limit.
 
-### Performance improvements with the host-specific APIs
+### Performance improvements with the application-specific APIs
 
-The performance tips in [Using the host-specific API model](../develop/host-specific-api-model.md) provide guidance when using the host-specific APIs for Excel, OneNote, Visio, and Word. In summary, you should:
+The performance tips in [Using the application-specific API model](../develop/application-specific-api-model.md) provide guidance when using the application-specific APIs for Excel, OneNote, Visio, and Word. In summary, you should:
 
-- [Only load necessary properties](../develop/host-specific-api-model.md#calling-load-without-parameters-not-recommended).
-- [Minimize the number of sync() calls](../develop/host-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls). Read [Avoid using the context.sync method in loops](correlated-objects-pattern.md) for further information on how to manage `sync` calls in your code.
-- [Minimize the number of proxy objects created](../develop/host-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created). You can also untrack proxy objects, as described in the next section.
+- [Only load necessary properties](../develop/application-specific-api-model.md#calling-load-without-parameters-not-recommended).
+- [Minimize the number of sync() calls](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls). Read [Avoid using the context.sync method in loops](correlated-objects-pattern.md) for further information on how to manage `sync` calls in your code.
+- [Minimize the number of proxy objects created](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created). You can also untrack proxy objects, as described in the next section.
 
 #### Untrack unneeded proxy objects
 
-[Proxy objects](../develop/host-specific-api-model.md#proxy-objects) persist in memory until `RequestContext.sync()` is called. Large batch operations may generate a lot of proxy objects that are only needed once by the add-in and can be released from memory before the batch executes.
+[Proxy objects](../develop/application-specific-api-model.md#proxy-objects) persist in memory until `RequestContext.sync()` is called. Large batch operations may generate a lot of proxy objects that are only needed once by the add-in and can be released from memory before the batch executes.
 
-The `untrack()` method releases the object from memory. This method is implemented on many host-specific API proxy objects. Calling `untrack()` after your add-in is done with the object should yield a noticeable performance benefit when using large numbers of proxy objects.
+The `untrack()` method releases the object from memory. This method is implemented on many application-specific API proxy objects. Calling `untrack()` after your add-in is done with the object should yield a noticeable performance benefit when using large numbers of proxy objects.
 
 > [!NOTE]
 > `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context.
