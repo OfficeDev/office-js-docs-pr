@@ -25,7 +25,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |1005|Data Read Error|The specified startRow or startColumn values are invalid.|The user supplies invalid startRow or startCol values.|
 |1006|Data Read Error|Coordinate parameters cannot be used with coercion type "Table" when the table contains merged cells.|The user tries to get partial data from a non-uniform table (that is, a table that has merged cells). |
 |1007|Data Read Error|The size of the document is too large.|The user tries to get a document larger than the size currently supported.|
-|1008|Data Read Error|The requested data set is too large.|The user requests to read data beyond the data limits defined by the host add-ins.|
+|1008|Data Read Error|The requested data set is too large.|The user requests to read data beyond the data limits defined by the Office application.|
 |1009|Data Read Error|The specified file type is not supported.|The user sends an invalid file type.|
 |2000|Data Write Error|The supplied data object type is not supported. |An unsupported data object is supplied.|
 |2001|Data Write Error|Cannot write to the current selection.|The user's current selection is not supported for a write operation. (For example, when the user selects an image.)|
@@ -36,7 +36,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |2006|Invalid Format Error|The format of the specified data object is not valid.|The solution developer supplies an invalid HTML or OOXML string, a malformed HTML string, or an invalid OOXML string.|
 |2007|Invalid Data Object|The type of the specified data object is not compatible with the current selection.|The solution developer supplies a data object not compatible with the specified coercion type.|
 |2008|Data Write Error|TBD|TBD|
-|2009|Data Write Error|The specified data object is too large.|The user tries to set data beyond the data limits defined by the host add-ins.|
+|2009|Data Write Error|The specified data object is too large.|The user tries to set data beyond the data limits defined by the Office application.|
 |2010|Data Write Error|Coordinate parameters cannot be used with coercion type Table when the table contains merged cells.|The user tries to set partial data from a non- uniform table (that is, a table that has merged cells).|
 |3000|Binding Creation Error|Cannot bind to the current selection.|The user's selection is not supported for binding. (For example, the user is selecting an image or other non-supported object.)|
 |3001|Binding Creation Error|TBD|TBD|
