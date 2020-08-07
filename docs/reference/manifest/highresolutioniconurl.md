@@ -23,7 +23,7 @@ Specifies the URL of the image that is used to represent your Office Add-in in t
 
 ## Attributes
 
-|**Attribute**|**Type**|**Required**|**Description**|
+|Attribute|Type|Required|Description|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|string (URL)|required|Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](defaultlocale.md) element.|
 

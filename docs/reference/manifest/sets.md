@@ -29,7 +29,7 @@ Specifies the minimum subset of the Office JavaScript API that your Office Add-i
 
 ## Attributes
 
-|**Attribute**|**Type**|**Required**|**Description**|
+|Attribute|Type|Required|Description|
 |:-----|:-----|:-----|:-----|
 |DefaultMinVersion|string|optional|Specifies the default **MinVersion** attribute value for all child [Set](set.md) elements. The default value is "1.1".|
 

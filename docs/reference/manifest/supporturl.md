@@ -40,6 +40,6 @@ Specifies the URL of a page that provides support information for your add-in.
 
 ## Attributes
 
-|**Attribute**|**Type**|**Required**|**Description**|
+|Attribute|Type|Required|Description|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|URL|required|Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](defaultlocale.md) element.|

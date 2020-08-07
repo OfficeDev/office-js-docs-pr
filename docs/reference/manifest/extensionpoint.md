@@ -66,7 +66,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 
 #### Child elements
  
-|**Element**|**Description**|
+|Element|Description|
 |:-----|:-----|
 |**CustomTab**|Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.|
 |**OfficeTab**|Required if you want to extend a default Office app ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. For details, see [OfficeTab](officetab.md).|

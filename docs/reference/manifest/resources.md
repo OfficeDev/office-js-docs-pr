@@ -38,10 +38,10 @@ The following additional sizes are also supported, but not required:
 - 48x48
 - 64x64
 
-> [!IMPORTANT] 
-> Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.    
+> [!IMPORTANT]
+> Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.
 
-## Resources examples 
+## Resources examples
 
 ```XML
 <Resources>
