@@ -1,11 +1,11 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 12/04/2019
+ms.date: 07/30/2020
 localization_priority: Normal
 ---
 
-# Create an ASP.NET Office Add-in that uses single sign-on (preview)
+# Create an ASP.NET Office Add-in that uses single sign-on
 
 When users are signed in to Office, your add-in can use the same credentials to permit users to access multiple applications without requiring them to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET.
@@ -83,6 +83,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
+    - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     For each ID, take these steps:
@@ -187,7 +188,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graphn and then get the data
+            //         for an access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -206,7 +207,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
     * `getAccessToken` tells Office to get a bootstrap token from Azure AD and return to the add-in.
     * `allowSignInPrompt` tells Office to prompt the user to sign in if the user isn't already signed into Office.
-    * `forMSGraphAccess` tells Office that the add-in intends to swap the bootstrap token for an access token to Microsoft Graph (instead of just using the bootstrap token as a user ID token). Setting this option gives Office a chance to cancel the process of getting a bootstrap token (and return error code 13012) if the user's tenant administrator has not granted consent to the add-in. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system. If the `forMSGraphAccess` is not used, and the admin has not granted consent, the bootstrap token is returned, but the attempt to exhange it with the on-behalf-of flow would result in an error. Thus, the `forMSGraphAccess` option enables the add-in to branch to the fallback system quickly.
+    * `forMSGraphAccess` tells Office that the add-in intends to swap the bootstrap token for an access token to Microsoft Graph (instead of just using the bootstrap token as a user ID token). Setting this option gives Office a chance to cancel the process of getting a bootstrap token (and return error code 13012) if the user's tenant administrator has not granted consent to the add-in. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system. If the `forMSGraphAccess` is not used and the admin has not granted consent, the bootstrap token is returned, but the attempt to exchange it with the on-behalf-of flow would result in an error. Thus, the `forMSGraphAccess` option enables the add-in to branch to the fallback system quickly.
     * You create the `getData` function in a later step.
     * The `/api/values` parameter is the URL of a server-side controller that will make the token exchange and use the access token it gets back to make the call to Microsoft Graph.
 

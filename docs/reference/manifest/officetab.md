@@ -53,7 +53,7 @@ The following are valid tab `id` values by application. Values in **bold** are s
 - TabDeveloper
 - TabAddIns
 - TabPrintPreview
-- TabBackgroundRemoval 
+- TabBackgroundRemoval
 
 ### PowerPoint
 

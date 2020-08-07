@@ -25,7 +25,7 @@ Specifies the minimum set of Office JavaScript API requirements ([requirement se
 
 ## Can contain
 
-|**Element**|**Content**|**Mail**|**TaskPane**|
+|Element|Content|Mail|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Sets](sets.md)|x|x|x|
 |[Methods](methods.md)|x||x|

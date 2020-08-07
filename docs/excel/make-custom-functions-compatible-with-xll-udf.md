@@ -14,7 +14,7 @@ If you have existing Excel XLLs, you can build equivalent custom functions in an
 > - Excel on the web
 > - Excel on Windows (version 1904 or later)
 > - Excel on Mac (version 13.329 or later)
-> 
+>
 > To use COM add-in and XLL UDF compatibility within Excel on the web, login by using either your Microsoft 365 subscription or a [Microsoft account](https://account.microsoft.com/account). If you don't already have a Microsoft 365 subscription, you can a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 ## Specify equivalent XLL in the manifest
@@ -53,15 +53,15 @@ The following table compares features across XLL user-defined functions, XLL com
 
 |         |XLL user-defined function |XLL compatible custom functions |Excel add-in custom function |
 |---------|---------|---------|---------|
-| Supported platforms | Windows | Windows, macOS, web browser | Windows, macOS, web browser |
-| Supported file formats | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
-| Formula autocomplete | No | Yes | Yes |
-| Streaming | Possible via xlfRTD and XLL callback. | No | Yes |
-| Localization of functions | No | No. The Name and ID must match the existing XLL's functions. | Yes |
-| Volatile functions | Yes | Yes | Yes |
-| Multi-threaded recalculation support | Yes | Yes | Yes |
-| Calculation behavior | No UI. Excel can be unresponsive during calculation. | Users will see #BUSY! until a result is returned. | Users will see #BUSY! until a result is returned. |
-| Requirement sets | N/A | CustomFunctions 1.1 and later | CustomFunctions 1.1 and later |
+| **Supported platforms** | Windows | Windows, macOS, web browser | Windows, macOS, web browser |
+| **Supported file formats** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
+| **Formula autocomplete** | No | Yes | Yes |
+| **Streaming** | Possible via xlfRTD and XLL callback. | No | Yes |
+| **Localization of functions** | No | No. The Name and ID must match the existing XLL's functions. | Yes |
+| **Volatile functions** | Yes | Yes | Yes |
+| **Multi-threaded recalculation support** | Yes | Yes | Yes |
+| **Calculation behavior** | No UI. Excel can be unresponsive during calculation. | Users will see #BUSY! until a result is returned. | Users will see #BUSY! until a result is returned. |
+| **Requirement sets** | N/A | CustomFunctions 1.1 and later | CustomFunctions 1.1 and later |
 
 ## See also
 
