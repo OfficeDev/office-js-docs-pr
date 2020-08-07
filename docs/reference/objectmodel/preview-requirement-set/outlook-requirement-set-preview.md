@@ -291,7 +291,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 ### Session data
 
-#### [Office.SessionData](/javascript/api/office/office.sessiondata)
+#### [Office.SessionData](/javascript/api/outlook/office.sessiondata)
 
 Added a new object that represents the session data of an item.
 
