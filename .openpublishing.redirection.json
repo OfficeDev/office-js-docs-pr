@@ -266,7 +266,7 @@
       {   
         "source_path": "docs/access/access-web-app-add-ins.md", 
         "redirect_url": "https://powerapps.microsoft.com", 
-        "redirect_document_id": true 
+        "redirect_document_id": false 
       }, 
       {   
         "source_path": "docs/develop/implementation-details.md", 
