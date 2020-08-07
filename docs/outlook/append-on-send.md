@@ -1,12 +1,12 @@
 ---
-title: Implement append on send in your Outlook add-in (preview)
+title: Implement append-on-send in your Outlook add-in (preview)
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 05/26/2020
+ms.date: 08/07/2020
 localization_priority: Normal
 ---
 
-# Implement append on send in your Outlook add-in (preview)
+# Implement append-on-send in your Outlook add-in (preview)
 
 By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.
 
@@ -132,6 +132,9 @@ For this scenario, instead of running the `action` function on choosing the **Pe
 ## Implement append-on-send handling
 
 Next, implement appending on the send event.
+
+> [!IMPORTANT]
+> If your add-in also implements [on-send event handling using `ItemSend`](outlook-on-send-addins.md), calling `AppendOnSendAsync` in the on-send handler returns an error as this scenario isn't supported.
 
 For this scenario, you'll implement appending a disclaimer to the item when the user sends.
 
