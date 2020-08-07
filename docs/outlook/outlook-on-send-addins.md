@@ -63,7 +63,7 @@ The following screenshot shows an information bar that notifies the sender that 
 
 The on-send feature currently has the following limitations.
 
-- **Append-on-send** feature (preview) &ndash; If you call `item.body.AppendOnSendAsync` in the on-send handler, an error is returned.
+- **Append-on-send** feature (preview) &ndash; If you call [body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) in the on-send handler, an error is returned.
 - **AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation. Add-ins that use the on-send feature should be deployed by administrators.
 - **Manifest** &ndash; Only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
