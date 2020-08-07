@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 08/03/2020
+ms.date: 08/07/2020
 localization_priority: Normal
 ---
 
@@ -280,6 +280,26 @@ Added ability to get Office theme.
 #### [Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Added `OfficeThemeChanged` event to `Mailbox`.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+
+<br>
+
+---
+
+---
+
+### Session data
+
+#### [Office.SessionData](/javascript/api/office/office.sessiondata)
+
+Added a new object that represents the session data of an item.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+
+#### [Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
+
+Added a new property to manage the session data of an item in Compose mode.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
