@@ -53,7 +53,7 @@ The following are valid tab `id` values by host. Values in **bold** are supporte
 - TabDeveloper
 - TabAddIns
 - TabPrintPreview
-- TabBackgroundRemoval 
+- TabBackgroundRemoval
 
 ### PowerPoint
 

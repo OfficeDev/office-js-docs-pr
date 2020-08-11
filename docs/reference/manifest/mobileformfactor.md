@@ -15,8 +15,8 @@ The **MobileFormFactor** element is defined in VersionOverrides schema 1.1. The 
 
 ## Child elements
 
-| Element                               | Required | Description  |
-|:--------------------------------------|:--------:|:-------------|
+| Element                             | Required | Description  |
+|:------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md) | Yes      | Defines where an add-in exposes functionality. |
 | [FunctionFile](functionfile.md)     | Yes      | A URL to a file that contains JavaScript functions.|
 
@@ -31,7 +31,7 @@ The **MobileFormFactor** element is defined in VersionOverrides schema 1.1. The 
       <FunctionFile resid="residUILessFunctionFileUrl" />
       <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
         <!-- information on this extension point -->
-      </ExtensionPoint> 
+      </ExtensionPoint>
       <!-- possibly more ExtensionPoint elements -->
     </MobileFormFactor>
   </Host>

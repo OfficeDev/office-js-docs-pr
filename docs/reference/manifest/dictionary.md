@@ -25,7 +25,7 @@ Defines settings for a task pane add-in that implements additional dictionary su
 
 ## Can contain
 
-|**Element**|
+|Element|
 |:-----|
 |[TargetDialects](targetdialects.md)|
 |[QueryUri](queryuri.md)|
