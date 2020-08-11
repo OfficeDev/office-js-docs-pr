@@ -177,7 +177,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     var retryGetAccessToken = 0;
 
     async function getGraphData() {
-        await getDataWithToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
     }
     ```
 
@@ -207,6 +207,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
     * `getAccessToken` tells Office to get a bootstrap token from Azure AD and return to the add-in.
     * `allowSignInPrompt` tells Office to prompt the user to sign in if the user isn't already signed into Office.
+    * `allowConsentPrompt` tells Office to prompt the user to consent to letting the add-in access the user's AAD profile, if consent has not already been granted. (The resulting prompt does *not* allow the user to consent to any Microsoft Graph scopes.)
     * `forMSGraphAccess` tells Office that the add-in intends to swap the bootstrap token for an access token to Microsoft Graph (instead of just using the bootstrap token as a user ID token). Setting this option gives Office a chance to cancel the process of getting a bootstrap token (and return error code 13012) if the user's tenant administrator has not granted consent to the add-in. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system. If the `forMSGraphAccess` is not used and the admin has not granted consent, the bootstrap token is returned, but the attempt to exchange it with the on-behalf-of flow would result in an error. Thus, the `forMSGraphAccess` option enables the add-in to branch to the fallback system quickly.
     * You create the `getData` function in a later step.
     * The `/api/values` parameter is the URL of a server-side controller that will make the token exchange and use the access token it gets back to make the call to Microsoft Graph.
@@ -214,6 +215,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({
         allowSignInPrompt: true,
+        allowConsentPrompt: true,
         forMSGraphAccess: true });
 
     getData("/api/values", bootstrapToken);
