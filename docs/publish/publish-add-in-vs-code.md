@@ -45,7 +45,7 @@ When your add-in is working as desired and you're ready to publish it for other 
 
 ![Storage nodes listed in the Blob Containers node](azure-storage-container.png)
 
-6. To deploy, select the Files explorer, select and hold (right-click) on your **dist** folder, and choose **Deploy to Static Website**. When prompted, select the storage account you created previously.
+6. To deploy, select the Files explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website**. When prompted, select the storage account you created previously.
 
 ![Deploying to a static website](deploy-to-static-website.png)
 
