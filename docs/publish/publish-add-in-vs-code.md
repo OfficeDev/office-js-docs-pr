@@ -21,7 +21,7 @@ While you're developing your add-in, you can run the add-in on your local web se
 When your add-in is working as desired and you're ready to publish it for other users to access, ensure you have the following pre-requisites:
 
 - An [Azure account](https://azure.microsoft.com/free/). You can start one for free if you don't already have an account.
-- An Azure storage account. If you need to set one up after creating your Azure account, do so using instructions in [Create an Azure Storage Account](https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-static-website-node-03).
+- An Azure storage account. If you need to set one up after creating your Azure account, do so using instructions in [Create an Azure Storage Account](/azure/developer/javascript/tutorial-vscode-static-website-node-03).
 
 ## Publishing an add-in for other users to access
 
