@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 08/06/2020
+ms.date: 08/12/2020
 localization_priority: Normal
 ---
 
@@ -43,11 +43,11 @@ When your add-in is working as desired and you're ready to publish it for other 
 
 5. Next go to the **Azure Storage** explorer in VS Code, expand your subscription, and expand the node for the Azure Storage account that you created in the previous step. Expand the **Blob Containers** node. The $web container is where you deploy your app code.
 
-![Storage nodes listed in the Blob Containers node](azure-storage-container.png)
+![Storage nodes listed in the Blob Containers node](../images/azure-storage-container.png)
 
 6. To deploy, select the Files explorer, select and hold (right-click) on your **dist** folder, and choose **Deploy to Static Website**. When prompted, select the storage account you created previously.
 
-![Deploying to a static website](deploy-to-static-website.png)
+![Deploying to a static website](../images/deploy-to-static-website.png)
 
 7. When deployment is complete, a message appears with a **Browse to website** button. Select that button to open the primary endpoint of the deployed app code.
 
