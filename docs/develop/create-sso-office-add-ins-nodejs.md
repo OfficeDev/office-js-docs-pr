@@ -191,11 +191,12 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Replace `TODO 1` with the following code. About this code, note:
 
     - `OfficeRuntime.auth.getAccessToken` instructs Office to get a bootstrap token from Azure AD. A bootstrap token is similar to an ID token, but it has a `scp` (scope) property with the value `access-as-user`. This kind of token can be exchanged by a web application for an access token to Microsoft Graph.
-    - Setting the `allowSignInPrompt`option to true means that if no user is currently signed into Office, then Office will open a popup sign-in prompt.
+    - Setting the `allowSignInPrompt` option to true means that if no user is currently signed into Office, then Office will open a popup sign-in prompt.
+    - Setting the `allowConsentPrompt` option to true means that if the user has not consented to let the add-in access the user's AAD profile, then Office will open a consent prompt. (The prompt only allows the user to consent to the user's AAD profile, not to Microsoft Graph scopes.)
     - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an access token to Microsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `OfficeRuntime.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign in again and the user *can* be prompted to consent to Microsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true }); 
+    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
     ```
 
 1. Replace `TODO 2` with the following code. You'll create the `getGraphToken` method in a later step.
