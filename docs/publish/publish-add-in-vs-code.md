@@ -25,13 +25,13 @@ When your add-in is working as desired and you're ready to publish it for other 
 
 ## Publishing an add-in for other users to access
 
-1. Open your browser and navigate to https://portal.azure.com/, then select **Storage accounts**. You will see your storage accounts. Select the one you would like to use for your add-in.
+1. Open your browser and navigate to https://portal.azure.com/, then select **Storage accounts** to see your storage accounts. Select the one you would like to use for your add-in.
 
 2. On this same page under the settings menu, choose the **Static website** option. You'll notice **Index document name** and **Error document path** are pre-populated with the filename index.html. Change both fields from index.html to **taskpane.html**. Next, copy the **primary endpoint** URL that you did not change.
 
-![Static website settings in Azure](static-website-in-azure.png)
+![Static website settings in Azure](../images/static-website-in-azure.png)
 
-3. Open your project from it's root folder in VS Code. Next, open your project's manifest file (`manifest.xml`) and change any reference to your localhost URL (such as https://localhost:3000) to the primary endpoint information you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes you've made to your manifest file.
+3. Open your project from its root folder in VS Code. Next, open your project's manifest file (`manifest.xml`) and change any reference to your localhost URL (such as `https://localhost:3000`) to the primary endpoint information you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes you've made to your manifest file.
 
 4. Open a command line prompt. From the command line, navigate to the root directory of your add-in project. Then run the following command to prepare all files for production deployment:
 
@@ -49,7 +49,7 @@ When your add-in is working as desired and you're ready to publish it for other 
 
 ![Deploying to a static website](deploy-to-static-website.png)
 
-7. When deployment is complete, a message appears with a Browse to website button. Select that button to open the primary endpoint of the deployed app code.
+7. When deployment is complete, a message appears with a **Browse to website** button. Select that button to open the primary endpoint of the deployed app code.
 
 ## See also
 
