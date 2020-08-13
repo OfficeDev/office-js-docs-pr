@@ -1,2 +1,2 @@
 >[!NOTE]
-> Unless you have a specific reason to use a UI-less function, we recommend using custom functions with a [shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md). Also keep in mind that a shared runtime is an IE11 runtime and cannot work on an Edge runtime. 
+> Unless you have a specific reason to use a UI-less function, we recommend using custom functions with a [shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md). Also note that using a shared runtime means that your add-in will use Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
