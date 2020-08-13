@@ -1,5 +1,5 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 description: 'Create an Excel custom function for your Office Add-in'
 title: Create custom functions in Excel
 ms.topic: conceptual
