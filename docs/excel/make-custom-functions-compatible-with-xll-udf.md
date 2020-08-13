@@ -1,7 +1,7 @@
 ---
 title: Extend custom functions with XLL user-defined functions
 description: 'Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions'
-ms.date: 04/29/2020
+ms.date: 08/13/2020
 localization_priority: Normal
 ---
 
@@ -38,7 +38,7 @@ The following example shows how to specify both a COM add-in and an XLL as equiv
       <FileName>contosofunctions.xll</FileName>
       <Type>XLL</Type>
     </EquivalentAddin>
-  <EquivalentAddins>
+  </EquivalentAddins>
 </VersionOverrides>
 ```
 
