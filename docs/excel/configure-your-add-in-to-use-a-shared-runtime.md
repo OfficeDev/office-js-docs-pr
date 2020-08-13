@@ -1,5 +1,5 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 title: "Configure your Excel add-in to share the browser runtime"
 ms.prod: excel
 description: 'Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.'
@@ -106,6 +106,9 @@ When you add the `Runtime` element, you also specify a lifetime with a value of 
   <Runtime resid="ContosoAddin.Url" lifetime="long" />
 </Runtimes>
 ```
+
+>[!NOTE]
+> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime), it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 ## Multiple task panes
 
