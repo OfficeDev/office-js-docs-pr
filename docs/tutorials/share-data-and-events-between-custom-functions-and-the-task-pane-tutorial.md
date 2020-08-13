@@ -46,6 +46,9 @@ After you complete the wizard, the generator creates the project and installs su
        <AllFormFactors>
    ```
 
+>[!NOTE]
+> Keep in mind that adding the `<Runtimes>` element to use a shared runtime means that you'll be using a IE11 runtime. Shared runtime can't run on an Edge runtime.
+
 4. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**.
 
    ```xml
