@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: 'Learn the basics of creating a dialog box in an Office add-in'
-ms.date: 06/10/2020
+ms.date: 08/20/2020
 localization_priority: Normal
 ---
 
@@ -209,13 +209,8 @@ function processMessage(arg) {
 
 Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using the [messageChild](/javascript/api/office/office.dialog#messagechild-message-) method of the [Dialog](/javascript/api/office/office.dialog) object.
 
-> [!Important]
->
-> - The APIs described in this article are in preview. They are available to developers for experimentation; but should not be used in a production add-in. Until this API is released, use the techniques described in [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) for production add-ins.
-> - The APIs described in this article require Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://insider.office.com). Please note that when a build graduates to the production semi-annual channel, support for preview features is turned off for that build.
-> - In the initial stage of the preview, the APIs are supported in Excel, PowerPoint, and Word; but not in Outlook.
->
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> [!Note]
+> The APIs are supported in only Excel, PowerPoint, and Word. Support for Outlook is coming soon.
 
 ### Use `messageChild()` from the host page
 
@@ -300,7 +295,10 @@ function onRegisterMessageComplete(asyncResult) {
 Because you can make multiple `messageChild` calls from the host page, but you have only one handler in the dialog box for the `DialogParentMessageReceived` event, the handler must use conditional logic to distinguish different messages. You can do this in a way that is precisely parallel to how you would structure conditional messaging when the dialog box is sending a message to the host page as described in [Conditional messaging](#conditional-messaging).
 
 > [!NOTE]
-> In some situations, the `messageChild` API may not be supported. Some alternative ways for parent to dialog box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
+> In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md),  may not be supported. Some alternative ways for parent to dialog box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
+
+> [!Important]
+> The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) cannot be specified in the `<Requirements>` section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the [isSetSupported]](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) method. Support for manifest requirements is coming soon.
 
 ### Closing the dialog box
 

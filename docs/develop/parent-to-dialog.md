@@ -1,7 +1,7 @@
 ---
 title: Alternative ways of passing messages to a dialog box from its host page
 description: 'Learn workarounds to use when the messageChild method is not supported.'
-ms.date: 06/10/2020
+ms.date: 08/20/2020
 localization_priority: Normal
 ---
 
