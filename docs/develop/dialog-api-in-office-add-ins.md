@@ -2,6 +2,7 @@
 title: Use the Office dialog API in your Office Add-ins
 description: 'Learn the basics of creating a dialog box in an Office add-in'
 ms.date: 08/20/2020
+
 localization_priority: Normal
 ---
 
@@ -74,7 +75,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 The default value is `false`, which is the same as omitting the property entirely. If the add-in is not running in Office on the web, the `displayInIframe` is ignored.
 
 > [!NOTE]
-> You should **not** use `displayInIframe: true` if the dialog box will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
+> You should **not** use `displayInIframe: true` if the dialog box will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft account, cannot be opened in an iframe.
 
 ## Send information from the dialog box to the host page
 
@@ -132,7 +133,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - Office passes the `arg` object to the handler. Its `message` property is the Boolean or string sent by the call of `messageParent` in the dialog box. In this example, it is a stringified representation of a user's profile from a service such as Microsoft Account or Google, so it is deserialized back to an object with `JSON.parse`.
+> - Office passes the `arg` object to the handler. Its `message` property is the Boolean or string sent by the call of `messageParent` in the dialog box. In this example, it is a stringified representation of a user's profile from a service such as Microsoft account or Google, so it is deserialized back to an object with `JSON.parse`.
 > - The `showUserName` implementation is not shown. It might display a personalized welcome message on the task pane.
 
 When the user interaction with the dialog box is completed, your message handler should close the dialog box, as shown in this example.
@@ -165,7 +166,7 @@ For an example of an add-in that does this, see the [Insert Excel charts using M
 
 ### Conditional messaging
 
-Because you can send multiple `messageParent` calls from the dialog box, but you have only one handler in the host page for the `DialogMessageReceived` event, the handler must use conditional logic to distinguish different messages. For example, if the dialog box prompts a user to sign in to an identity provider such as Microsoft Account or Google, it sends the user's profile as a message. If authentication fails, the dialog box sends error information to the host page, as in the following example:
+Because you can send multiple `messageParent` calls from the dialog box, but you have only one handler in the host page for the `DialogMessageReceived` event, the handler must use conditional logic to distinguish different messages. For example, if the dialog box prompts a user to sign in to an identity provider such as Microsoft account or Google, it sends the user's profile as a message. If authentication fails, the dialog box sends error information to the host page, as in the following example:
 
 ```js
 if (loginSuccess) {

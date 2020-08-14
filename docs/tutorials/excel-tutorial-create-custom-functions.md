@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: 'In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.'
-ms.date: 01/16/2020
+ms.date: 07/10/2020
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 localization_priority: Priority
@@ -22,7 +22,7 @@ In this tutorial, you will:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (version 1904 or later, connected to Office 365 subscription) or on the web
+* Excel on Windows (version 1904 or later, connected to a Microsoft 365 subscription) or on the web
 
 ## Create a custom functions project
 

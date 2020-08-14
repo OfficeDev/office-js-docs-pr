@@ -20,7 +20,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 > * Opens a dialog
 
 > [!TIP]
-> If you've already completed the [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Create a table](#create-a-table) section to start this tutorial.
+> If you've already completed the [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Create a table](#create-a-table) section to start this tutorial.
 
 ## Prerequisites
 
@@ -114,9 +114,9 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 9. Within the `createTable()` function, replace `TODO1` with the following code. Note:
 
-    - The code creates a table by using `add` method of a worksheet's table collection, which always exists even if it is empty. This is the standard way that Excel.js objects are created. There are no class constructor APIs, and you never use a `new` operator to create an Excel object. Instead, you add to a parent collection object.
+    - The code creates a table by using the `add` method of a worksheet's table collection, which always exists even if it is empty. This is the standard way that Excel.js objects are created. There are no class constructor APIs, and you never use a `new` operator to create an Excel object. Instead, you add to a parent collection object.
 
-    - The first parameter of the `add` method is the range of only the top row of the table, not the entire range the table will ultimately use. This is because when the add-in populates the data rows (in the next step), it will add new rows to the table instead of writing values to the cells of existing rows. This is a more common pattern because the number of rows that a table will have is often not known when the table is created.
+    - The first parameter of the `add` method is the range of only the top row of the table, not the entire range the table will ultimately use. This is because when the add-in populates the data rows (in the next step), it will add new rows to the table instead of writing values to the cells of existing rows. This is a common pattern, because the number of rows a table will have is often unknown when the table is created.
 
     - Table names must be unique across the entire workbook, not just the worksheet.
 
@@ -296,9 +296,9 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 6. Within the `sortTable()` function, replace `TODO1` with the following code. Note:
 
-   - The code creates an array of `SortField` objects which has just one member since the add-in only sorts on the Merchant column.
+   - The code creates an array of `SortField` objects, which has just one member since the add-in only sorts on the Merchant column.
 
-   - The `key` property of a `SortField` object is the zero-based index of the column to sort-on.
+   - The `key` property of a `SortField` object is the zero-based index of the column used for sorting. The rows of the table are sorted based on the values in the referenced column.
 
    - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed to the `TableSort` object's `apply` method.
 
@@ -469,7 +469,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
    - The `Worksheet.freezePanes` collection is a set of panes in the worksheet that are pinned, or frozen, in place when the worksheet is scrolled.
 
-   - The `freezeRows` method takes as a parameter the number of rows, from the top that are to be pinned in place. We pass `1` to pin the first row in place.
+   - The `freezeRows` method takes as a parameter the number of rows, from the top, that are to be pinned in place. We pass `1` to pin the first row in place.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -496,13 +496,13 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 ## Protect a worksheet
 
-In this step of the tutorial, you'll add another button to the ribbon that, when chosen, executes a function that you'll define to toggle worksheet protection on and off.
+In this step of the tutorial, you'll add a button to the ribbon that toggles worksheet protection on and off.
 
 ### Configure the manifest to add a second ribbon button
 
 1. Open the manifest file **./manifest.xml**.
 
-2. Locate the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the end Control tag (`</Control>`) and the end Group tag (`</Group>`), add the following markup.
+2. Locate the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing `</Control>` tag and the closing `</Group>` tag, add the following markup.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -528,13 +528,13 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. The next three `TODO`s set "resid"s, which is short for resource ID. A resource is a string, and you'll create these three strings in a later step. For now, you need to give IDs to the resources. The button label should read "Toggle Protection", but the *ID* of this string should be "ProtectionButtonLabel", so the `Label` element should look like this:
+4. The next three `TODO`s set resource IDs, or `resid`s. A resource is a string, and you'll create these three strings in a later step. For now, you need to give IDs to the resources. The button label should read "Toggle Protection", but the *ID* of this string should be "ProtectionButtonLabel", so the `Label` element should look like this:
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. The `SuperTip` element defines the tool tip for the button. The tool tip title should be the same as the button label, so we use the very same resource ID: "ProtectionButtonLabel". The tool tip description will be "Click to turn protection of the worksheet on and off". But the `ID` should be "ProtectionButtonToolTip". So, when you are done, the `SuperTip` element should look like this: 
+5. The `SuperTip` element defines the tool tip for the button. The tool tip title should be the same as the button label, so we use the very same resource ID: "ProtectionButtonLabel". The tool tip description will be "Click to turn protection of the worksheet on and off". But the `resid` should be "ProtectionButtonToolTip". So, when you are done, the `SuperTip` element should look like this: 
 
     ```xml
     <Supertip>            
@@ -546,7 +546,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
    > [!NOTE] 
    > In a production add-in, you would not want to use the same icon for two different buttons; but to simplify this tutorial, we'll do that. So the `Icon` markup in our new `Control` is just a copy of the `Icon` element from the existing `Control`. 
 
-6. The `Action` element inside the original `Control` element that was already present in the manifest, has its type set to `ShowTaskpane`, but our new button isn't going to open a task pane; it's going to run a custom function that you create in a later step. So replace `TODO5` with `ExecuteFunction` which is the action type for buttons that trigger custom functions. The opening tag for the `Action` element should look like this:
+6. The `Action` element inside the original `Control` element has its type set to `ShowTaskpane`, but our new button isn't going to open a task pane; it's going to run a custom function that you create in a later step. So, replace `TODO5` with `ExecuteFunction`, which is the action type for buttons that trigger custom functions. The opening tag for the `Action` element should look like this:
  
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -641,7 +641,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 
 ### Add code to fetch document properties into the task pane's script objects
 
-In each function that you've created in this tutorial until now, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `sheet.protection.protected` property, and this is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual protection state of the document is, so its `protection.protected` property can't have a real value. It is necessary to first fetch the protection status from the document and use it set the value of `sheet.protection.protected`. Only then can `sheet.protection.protected` be called without causing an exception to be thrown. This fetching process has three steps:
+In each function that you've created in this tutorial until now, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method, which sends the queued commands to the document to be executed. However, the code you added in the last step calls the `sheet.protection.protected property`. This is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script. The proxy object doesn't know the actual protection state of the document, so its `protection.protected` property can't have a real value. To avoid an exception error, you must first fetch the protection status from the document and use it set the value of `sheet.protection.protected`. This fetching process has three steps:
 
    1. Queue a command to load (that is; fetch) the properties that your code needs to read.
 
@@ -719,7 +719,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. Close all Office applications, including Excel. 
 
-2. Delete the Office cache by deleting the contents of the cache folder. This is necessary to completely clear the old version of the add-in from the host. 
+2. Delete the Office cache by deleting the contents (all the files and subfolders) of the cache folder. This is necessary to completely clear the old version of the add-in from the host.
 
     - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
@@ -770,7 +770,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 3. Add the following markup to **popup.html**. Note:
 
-   - The page has a `<input>` where the user will enter their name and a button that will send the name to the page in the task pane where it will be displayed.
+   - The page has an `<input>` field where the user will enter their name, and a button that will send this name to the task pane where it will display.
 
    - The markup loads a script named **popup.js** that you will create in a later step.
 
@@ -968,7 +968,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
    - The callback is executed immediately after the dialog successfully opens and before the user has taken any action in the dialog.
 
-   - The `result.value` is the object that acts as a kind of middleman between the execution contexts of the parent and dialog pages.
+   - The `result.value` is the object that acts as an intermediary between the execution contexts of the parent and dialog pages.
 
    - The `processMessage` function will be created in a later step. This handler will process any values that are sent from the dialog page with calls of the `messageParent` function.
 

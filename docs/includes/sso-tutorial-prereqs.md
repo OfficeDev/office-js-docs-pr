@@ -1,6 +1,3 @@
-* An Office 365 (the subscription version of Office) account. If you don't already have an Office 365 account, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program). 
+* A Microsoft 365 account. If you don't already have a Microsoft 365 account, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program). 
 
-* An Insider's build of Office 365. You should use the latest monthly version and build from the Insiders channel but you need to [be an Office Insider](https://insider.office.com) to get this version. 
-
-    > [!NOTE]
-    > When a build graduates to the production semi-annual channel, support for preview features, including SSO, is disabled for that build.
+* An Insider's build of Microsoft 365. You should use the latest monthly version and build from the Insiders channel but you need to [be an Office Insider](https://products.office.com/office-insider?tab=tab-1) to get this version.

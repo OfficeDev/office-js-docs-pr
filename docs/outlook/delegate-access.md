@@ -1,7 +1,7 @@
 ---
 title: Enable delegate access scenarios in an Outlook add-in
 description: 'Briefly describes delegate access and discusses how to configure add-in support.'
-ms.date: 01/14/2020
+ms.date: 07/28/2020
 localization_priority: Normal
 ---
 
@@ -10,7 +10,7 @@ localization_priority: Normal
 A mailbox owner can use the delegate access feature to [allow someone else to manage their mail and calendar](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). This article specifies which delegate permissions the Office JavaScript API supports and describes how to enable delegate access scenarios in your Outlook add-in.
 
 > [!IMPORTANT]
-> Delegate access is not currently available in Outlook on Mac, Android, and iOS. This functionality may be made available in the future.
+> Delegate access is not currently available in Outlook on Mac, Android, and iOS. Also, this feature is not currently available with [group shared mailboxes](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide#shared-mailboxes) in Outlook on the web. This functionality may be made available in the future.
 >
 > Support for this feature was introduced in requirement set 1.8. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
@@ -36,11 +36,16 @@ The [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepe
 
 A delegate's updates to the owner's mailbox are usually synced across mailboxes immediately.
 
-However, if the add-in uses REST or EWS operations to set an extended property on an item, such changes could take a few hours to sync. We recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs to avoid such a delay. To learn more, see the [custom properties section](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) of the "Get and set metadata in an Outlook add-in" article.
+However, if REST or Exchange Web Services (EWS) operations were used to set an extended property on an item, such changes could take a few hours to sync. We recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs to avoid such a delay. To learn more, see the [custom properties section](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) of the "Get and set metadata in an Outlook add-in" article.
+
+> [!IMPORTANT]
+> In a delegate scenario, you can't use EWS with the tokens currently provided by office.js API.
 
 ## Configure the manifest
 
 To enable delegate access scenarios in your add-in, you must set the [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors are not supported.
+
+To support REST calls from a delegate, set the [Permissions](../reference/manifest/permissions.md) node in the manifest to `ReadWriteMailbox`.
 
 The following example shows the `SupportsSharedFolders` element set to `true` in a section of the manifest.
 
@@ -72,6 +77,9 @@ The following example shows the `SupportsSharedFolders` element set to `true` in
 ## Perform an operation as delegate
 
 You can get an item's shared properties in Compose or Read mode by calling the [item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method. This returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that currently provides the delegate's permissions, the owner's email address, the REST API's base URL, and the target mailbox.
+
+> [!IMPORTANT]
+> In a delegate scenario, your add-in can use REST but not EWS, and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox.
 
 The following example shows how to get the shared properties of a message or appointment, check if the delegate has **Write** permission, and make a REST call.
 
@@ -123,6 +131,9 @@ function performOperation() {
   );
 }
 ```
+
+> [!TIP]
+> As a delegate, you can use REST to [get the content of an Outlook message attached to an Outlook item or group post](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
 
 ## See also
 

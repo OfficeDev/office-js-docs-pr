@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
-ms.date: 01/16/2020
+ms.date: 07/07/2020
 ms.prod: onenote
 localization_priority: Priority
 ---
@@ -97,7 +97,7 @@ try {
 
     - If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.
 
-    - If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**. 
+    - If you're signed in with your work or education account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**. 
 
     The following image shows the **MY ADD-INS** tab for consumer notebooks.
 

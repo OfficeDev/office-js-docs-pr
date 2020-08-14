@@ -13,7 +13,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 * Describe itself by providing an ID, version, description, display name, and default locale.
 
-* Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office Ribbon.
+* Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office app ribbon.
 
 * Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
 
@@ -200,7 +200,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
-          <!--PrimaryCommandSurface==Main Office Ribbon-->
+          <!--PrimaryCommandSurface==Main Office app ribbon-->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->

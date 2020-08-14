@@ -1,19 +1,19 @@
 ---
-title: Publish Office Add-ins using Centralized Deployment via the Office 365 admin center
+title: Publish Office Add-ins using Centralized Deployment via the Microsoft 365 admin center
 description: 'Learn how to use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.'
-ms.date: 03/24/2020
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
 
-# Publish Office Add-ins using Centralized Deployment via the Office 365 admin center
+# Publish Office Add-ins using Centralized Deployment via the Microsoft 365 admin center
 
-The Office 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.
+The Microsoft 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.
 
-The Office 365 admin center currently supports the following scenarios:
+The Microsoft 365 admin center currently supports the following scenarios.
 
 - Centralized Deployment of new and updated add-ins to individuals, groups, or an organization.
-- Deployment to multiple platforms, including Windows, Mac, iOS, Android, and on the web.
+- Deployment to multiple client platforms, including Windows, Mac, and the web. For Outlook, deployment to iOS and Android is also supported. (However, while user installation of Excel, Outlook, Word, and PowerPoint add-ins on iPad is supported, Centralized Deployment to iPad is **not** supported.)
 - Deployment to English language and worldwide tenants.
 - Deployment of cloud-hosted add-ins.
 - Deployment of add-ins that are hosted within a firewall.
@@ -21,10 +21,10 @@ The Office 365 admin center currently supports the following scenarios:
 - Automatic installation of an add-in for users when they launch the Office application.
 - Automatic removal of an add-in for users if the admin turns off or deletes the add-in, or if users are removed from Azure Active Directory or from a group to which the add-in has been deployed.
 
-Centralized Deployment is the recommended way for an Office 365 admin to deploy Office Add-ins within an organization, provided that the organization meets all requirements for using Centralized Deployment. For information about how to determine if your organization can use Centralized Deployment, see [Determine if Centralized Deployment of add-ins works for your Office 365 organization](/office365/admin/manage/centralized-deployment-of-add-ins).
+Centralized Deployment is the recommended way for a Microsoft 365 admin to deploy Office Add-ins within an organization, provided that the organization meets all requirements for using Centralized Deployment. For information about how to determine if your organization can use Centralized Deployment, see [Determine if Centralized Deployment of add-ins works for your Microsoft 365 organization](/office365/admin/manage/centralized-deployment-of-add-ins).
 
 > [!NOTE]
-> In an on-premises environment with no connection to Office 365, or to deploy SharePoint add-ins or Office Add-ins that target Office 2013, use a [SharePoint app catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer, as described in [Deploying an Office solution](/visualstudio/vsto/deploying-an-office-solution).
+> In an on-premises environment with no connection to Microsoft 365, or to deploy SharePoint add-ins or Office Add-ins that target Office 2013, use a [SharePoint app catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer, as described in [Deploying an Office solution](/visualstudio/vsto/deploying-an-office-solution).
 
 ## Recommended approach for deploying Office Add-ins
 
@@ -40,14 +40,14 @@ Depending on the size of the target audience, you may want to add steps to or re
 
 ## Publish an Office Add-in via Centralized Deployment
 
-Before you begin, confirm that your organization meets all requirements for using Centralized Deployment, as described in [Determine if Centralized Deployment of add-ins works for your Office 365 organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
+Before you begin, confirm that your organization meets all requirements for using Centralized Deployment, as described in [Determine if Centralized Deployment of add-ins works for your Microsoft 365 organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 If your organization meets all requirements, complete the following steps to publish an Office Add-in via Centralized Deployment:
 
-1. Sign in to Office 365 with your work or school account.
+1. Sign in to Microsoft 365 with your work or education account.
 2. Select the app launcher icon in the upper-left and choose **Admin**.
 3. In the navigation menu, press **Show more**, then choose **Settings** > **Services & add-ins**.
-4. If you see a message on the top of the page announcing the new Office 365 admin center, choose the message to go to the Admin Center Preview (see [About the Office 365 admin center](/microsoft-365/admin/admin-overview/about-the-admin-center)).
+4. If you see a message on the top of the page announcing the new Microsoft 365 admin center, choose the message to go to the Admin Center Preview (see [About the Microsoft 365 admin center](/microsoft-365/admin/admin-overview/about-the-admin-center)).
 5. Choose **Deploy Add-In** at the top of the page.
 6. Choose **Next** after reviewing the requirements.
 7. Choose one of the following options on the **Centralized Deployment** page:
@@ -56,22 +56,22 @@ If your organization meets all requirements, complete the following steps to pub
     - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
     - **I have a URL for the manifest file.** For this option, type the manifest's URL in the field provided.
 
-    ![New Add-In dialog in Office 365 admin center](../images/new-add-in.png)
+    ![New Add-In dialog in Microsoft 365 admin center](../images/new-add-in.png)
 
 8. If you selected the option to add an add-in from the Office Store, select the add-in. You can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from Office Store. Adding paid add-ins isn't currently supported.
 
     > [!NOTE]
     > With the Office Store option, updates and enhancements to the add-in are automatically available to users without your intervention.
 
-    ![Select an add-In dialog in Office 365 admin center](../images/select-an-add-in.png)
+    ![Select an add-In dialog in Microsoft 365 admin center](../images/select-an-add-in.png)
 
 9. Choose **Continue** after reviewing the add-in details, Privacy Policy, and License Terms.
 
-    ![Selected add-in page in Office 365 admin center](../images/selected-add-in-admin-center.png)
+    ![Selected add-in page in Microsoft 365 admin center](../images/selected-add-in-admin-center.png)
 
 10. On the **Assign Users** page, choose **Everyone**, **Specific Users/Groups**, or **Only me**. Use the search box to find the users and groups to whom you want to deploy the add-in. For Outlook add-ins, you can also choose the deployment method **Fixed**, **Available**, or **Optional**.
 
-    ![Manage who has access and deployment method in Office 365 admin center](../images/manage-users-deployment-admin-center.png)
+    ![Manage who has access and deployment method in Microsoft 365 admin center](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
     > A [single sign-on (SSO)](../develop/sso-in-office-add-ins.md) system for add-ins is currently in preview and should not be used for production add-ins. When an add-in using SSO is deployed, the users and groups assigned are also shared with add-ins that share the same Azure App ID. Any changes to user assignments are also applied to those add-ins. The related add-ins are shown on this page. For SSO add-ins only, this page displays the list of Microsoft Graph permissions that the add-in requires.
@@ -81,7 +81,7 @@ If your organization meets all requirements, complete the following steps to pub
     > [!NOTE]
     > When an administrator chooses **Deploy**, consent is given for all users.
 
-    ![list of apps in Office 365 admin center](../images/citations.png)
+    ![list of apps in Microsoft 365 admin center](../images/citations.png)
 
 > [!TIP]
 > When you deploy a new add-in to users and/or groups in your organization, consider sending them an email that describes when and how to use the add-in, and includes links to relevant Help content, FAQs, or other support resources.
@@ -94,7 +94,7 @@ Admins can assign an add-in to everyone in the organization or to specific users
 
 - **Users**: If you assign an add-in to individual users, you'll need to update the Central Deployment settings for the add-in each time you want to assign it additional users. Likewise, you'll need to update the Central Deployment settings for the add-in each time you want to remove a user's access to the add-in.
 
-- **Groups**: If you assign an add-in to a group, users who are added to the group will automatically be assigned the add-in. Likewise, when a user is removed from a group, the user automatically loses access to the add-in. In either case, no additional action is required from the Office 365 admin.
+- **Groups**: If you assign an add-in to a group, users who are added to the group will automatically be assigned the add-in. Likewise, when a user is removed from a group, the user automatically loses access to the add-in. In either case, no additional action is required from the Microsoft 365 admin.
 
 In general, for ease of maintenance, we recommend assigning add-ins by using groups whenever possible. However, in situations where you want to restrict add-in access to a very small number of users, it may be more practical to assign the add-in to specific users.
 
@@ -112,14 +112,14 @@ The following table describes the different states of an add-in.
 
 After an Office Add-in has been published via Centralized Deployment, any changes made to the add-in's web application will automatically be available to all users as soon as those changes are implemented in the web application. Changes made to an add-in's [XML manifest file](../develop/add-in-manifests.md), for example, to update the add-in's icon, text, or add-in commands, happen as follows:
 
-- **Line-of-business add-in**: If an admin explicitly uploaded a manifest file when implementing Centralized Deployment via the Office 365 admin center, the admin must upload a new manifest file that contains the desired changes. After the updated manifest file has been uploaded, the next time the relevant Office applications start, the add-in will update.
+- **Line-of-business add-in**: If an admin explicitly uploaded a manifest file when implementing Centralized Deployment via the Microsoft 365 admin center, the admin must upload a new manifest file that contains the desired changes. After the updated manifest file has been uploaded, the next time the relevant Office applications start, the add-in will update.
 
   > [!NOTE]
   > An admin doesn't need to remove a LOB add-in to make an update. In the Add-ins section, the admin can simply choose the LOB add-in and invoke this functionality by pressing the **Update add-in** button present in the bottom right corner.
   > 
-  > ![Screenshot shows the Update add-in dialog in Office 365 admin center](../images/update-add-in-admin-center.png)
+  > ![Screenshot shows the Update add-in dialog in Microsoft 365 admin center](../images/update-add-in-admin-center.png)
 
-- **Office Store add-in**: If an admin selected an add-in from the Office Store when implementing Centralized Deployment via the Office 365 admin center, and the add-in updates in the Office Store, the add-in will update later via Centralized Deployment. The next time the relevant Office applications start, the add-in will update.
+- **Office Store add-in**: If an admin selected an add-in from the Office Store when implementing Centralized Deployment via the Microsoft 365 admin center, and the add-in updates in the Office Store, the add-in will update later via Centralized Deployment. The next time the relevant Office applications start, the add-in will update.
 
 ## End user experience with add-ins
 
@@ -127,7 +127,7 @@ After an add-in has been published via Centralized Deployment, end users may sta
 
 If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. In the following example, the command **Search Citation** appears in the ribbon for the **Citations** add-in.
 
-![Screenshot shows a section of the Office ribbon with the Search Citation command highlighted in the Citations add-in](../images/search-citation.png)
+![Screenshot shows a section of the Office app ribbon with the Search Citation command highlighted in the Citations add-in](../images/search-citation.png)
 
 If the add-in does not support add-in commands, users can add it to their Office application by doing the following:
 
@@ -147,4 +147,4 @@ However, for Outlook 2016 or later, users can do the following:
 
 ## See also
 
-- [Determine if Centralized Deployment of add-ins works for your Office 365 organization](/office365/admin/manage/centralized-deployment-of-add-ins)
+- [Determine if Centralized Deployment of add-ins works for your Microsoft 365 organization](/office365/admin/manage/centralized-deployment-of-add-ins)

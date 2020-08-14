@@ -2,6 +2,7 @@
 title: Alternative ways of passing messages to a dialog box from its host page
 description: 'Learn workarounds to use when the messageChild method is not supported.'
 ms.date: 08/20/2020
+
 localization_priority: Normal
 ---
 
@@ -11,6 +12,7 @@ The recommended way to pass data and messages from a parent page to a child dial
 
 - Add query parameters to the URL that is passed to `displayDialogAsync`.
 - Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage, but *if they have the same domain* (including port number, if any), they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*
+
 
 > [!NOTE]
 > \* There is a bug that will effect your strategy for token handling. If the add-in is running in **Office on the web** in either the Safari or Edge browser, the dialog box and task pane do not share the same Local Storage, so it cannot be used to communicate between them.

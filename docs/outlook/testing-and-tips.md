@@ -47,7 +47,7 @@ $users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Ro
 
 For more information about the My Custom Apps role, see [My Custom Apps role](/exchange/my-custom-apps-role-exchange-2013-help).
 
-Using Office 365 or Visual Studio to develop add-ins assigns you the organization administrator role which allows you to install add-ins by file or URL in the EAC, or by Powershell cmdlets.
+Using Microsoft 365 or Visual Studio to develop add-ins assigns you the organization administrator role which allows you to install add-ins by file or URL in the EAC, or by Powershell cmdlets.
 
 ### Install an add-in by using remote PowerShell
 

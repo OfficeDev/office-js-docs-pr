@@ -15,7 +15,7 @@ For any add-in you build, you'll need to understand important concepts like host
 
 |               |               |
 | ------------- | ------------- |
-| ![code-blocks](../images/i_code-blocks.png) | **Develop**<br>[Learn important development concepts for Office Add-ins.](../develop/develop-overview.md) |
-| ![design](../images/i_design.png) | **UI and UX**<br>[Learn about designing the user interface and user experience for Office Add-ins.](../design/interface-elements.md) |
-| ![recommended-testing](../images/i_recommended-testing.png) | **Test and debug**<br>[Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
-| ![deploy](../images/i_deploy.png) | **Publish**<br>[Learn how to deploy and publish Office Add-ins.](../publish/publish.md) |
+| ![code-blocks](../images/i_code-blocks_small.svg) | **Develop**<br>[Learn important development concepts for Office Add-ins.](../develop/develop-overview.md) |
+| ![design](../images/i_design_small.svg) | **UI and UX**<br>[Learn about designing the user interface and user experience for Office Add-ins.](../design/interface-elements.md) |
+| ![recommended-testing](../images/i_recommended-testing_small.svg) | **Test and debug**<br>[Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
+| ![deploy](../images/i_deploy_small.svg) | **Publish**<br>[Learn how to deploy and publish Office Add-ins.](../publish/publish.md) |

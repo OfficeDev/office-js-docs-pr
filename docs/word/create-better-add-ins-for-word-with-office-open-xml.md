@@ -1,7 +1,7 @@
 ---
 title: Create better add-ins for Word with Office Open XML
-description: 'Overview of how to improve your Word add-in with Office Open XML'
-ms.date: 10/10/2019
+description: 'Overview of how to improve your Word add-in with Office Open XML.'
+ms.date: 07/10/2020
 localization_priority: Normal
 ---
 
@@ -72,7 +72,7 @@ Text effects are available in Word for text inside a text box (as shown here) or
 *Figure 7. A shape*
 
 
-![A Microsoft Office drawing shape in Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![A drawing shape in Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 You can insert built-in or custom drawing shapes, with or without text and formatting effects.
 
@@ -95,7 +95,7 @@ You can use built-in or custom table styles just as easily as using a paragraph 
 
 ![A dynamic SmartArt diagram in Word.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Microsoft Office offers a wide array of SmartArt diagram layouts (and you can use Office Open XML to create your own).
+Office offers a wide array of SmartArt diagram layouts (and you can use Office Open XML to create your own).
 
 *Figure 11. A chart*
 

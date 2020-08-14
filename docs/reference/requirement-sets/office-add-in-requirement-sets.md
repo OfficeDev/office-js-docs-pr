@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
-description: 'Learn more about the Office Common API requirement sets'
-ms.date: 06/03/2020
+description: 'Learn more about the Office Common API requirement sets.'
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -9,8 +9,6 @@ localization_priority: Normal
 # Office Common API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
-
-Need information about where add-ins are supported by Office host? See [Office Add-in host and platform availability](../../overview/office-add-in-availability.md).
 
 > [!TIP]
 > Looking for the *host-specific* API requirement sets? See the following API requirement sets:
@@ -27,6 +25,9 @@ Need information about where add-ins are supported by Office host? See [Office A
 ## Common API requirement sets
 
 The following sections list the Common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1, unless otherwise specified.
+
+> [!TIP]
+> Need information about where add-ins and requirement sets are supported by Office host and version? See [Office Add-in host and platform availability](../../overview/office-add-in-availability.md).
 
 ### ActiveView
 
@@ -54,7 +55,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
+| Excel 2016 and later on Windows<br>Excel on the web<br>Excel 2016 and later on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
 
 ---
 

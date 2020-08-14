@@ -1,5 +1,5 @@
 ---
-ms.date: 01/21/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 description: 'Tutorial on how to share code between a VSTO Add-in and an Office add-in.'
 title: 'Tutorial: Share code between both a VSTO Add-in and an Office add-in by using a shared code library'
@@ -45,7 +45,7 @@ To set up your development environment:
 
 You also need the following:
 
-- An Office 365 account. You can join the [Office 365 Developer Program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365.
+- A Microsoft 365 account. You can join the [Microsoft 365 developer program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365.
 - A Microsoft Azure Tenant. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## The Cell analyzer VSTO Add-in

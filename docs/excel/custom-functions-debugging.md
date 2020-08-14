@@ -1,5 +1,5 @@
 ---
-ms.date: 05/17/2020
+ms.date: 07/10/2020
 description: Learn how to debug your Excel custom functions that don't use a task pane.
 title: UI-less custom functions debugging
 localization_priority: Normal
@@ -104,7 +104,7 @@ You can use the browser developer tools to debug UI-less custom functions in Exc
 
 ### Sideload your add-in
 
-1. Open [Microsoft Office on the web](https://office.live.com/).
+1. Open [Office on the web](https://office.live.com/).
 2. Open a new Excel workbook.
 3. Open the **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
 4. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.

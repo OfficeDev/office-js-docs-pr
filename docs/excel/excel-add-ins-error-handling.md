@@ -1,7 +1,7 @@
 ---
 title: Error handling
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 05/13/2020
+ms.date: 06/25/2020
 localization_priority: Normal
 ---
 
@@ -68,6 +68,7 @@ The following table is a list of errors that the API may return.
 |`ServiceNotAvailable`|The service is unavailable.|
 |`Unauthenticated` |Required authentication information is either missing or invalid.|
 |`UnsupportedOperation`|The operation being attempted is not supported.|
+|`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|
 
 ## See also
 
