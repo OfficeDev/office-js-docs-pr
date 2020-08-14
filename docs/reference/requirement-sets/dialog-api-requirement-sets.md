@@ -21,7 +21,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 ## Office on Windows (subscription) support
 
-The requirement set is supported in the Consumer Channel version 2005 (build, 12827.20268 or greater). For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available June 9th, 2020 or later. The minimum supported builds for each channel are as follows:  
+The DialogApi 1.2 requirement set is supported in the Consumer Channel version 2005 (build, 12827.20268 or greater). For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available June 9th, 2020 or later. The minimum supported builds for each channel are as follows:  
 
 |Channel | Version | Build|
 |:-----|:-----|:-----|
