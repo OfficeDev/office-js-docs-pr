@@ -36,7 +36,7 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Office 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
-<sup>4</sup>The browser that is used for this combination of versions depends on the channel of the Microsoft 365 subscription. If the subscription uses the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office will use Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office will use Microsoft Edge with original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021.
+<sup>4</sup> The browser that is used for this combination of versions depends on the channel of the Microsoft 365 subscription. If the subscription uses the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office will use Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office will use Microsoft Edge with original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021.
 
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
