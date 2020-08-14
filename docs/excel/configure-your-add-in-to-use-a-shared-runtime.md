@@ -1,5 +1,5 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 title: "Configure your Excel add-in to share the browser runtime"
 ms.prod: excel
 description: 'Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.'
@@ -98,7 +98,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 When you add the `Runtime` element, you also specify a lifetime with a value of `long` or `short`. Set this value to `long` to take advantage of features such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions.
 
->![NOTE]
+>[!NOTE]
 > The default lifetime value is `short`, but we recommend using `long` in Excel add-ins. If you set your runtime to `short` in this example, your Excel add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
 
 ```xml
@@ -106,6 +106,9 @@ When you add the `Runtime` element, you also specify a lifetime with a value of 
   <Runtime resid="ContosoAddin.Url" lifetime="long" />
 </Runtimes>
 ```
+
+>[!NOTE]
+> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime), it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 ## Multiple task panes
 
