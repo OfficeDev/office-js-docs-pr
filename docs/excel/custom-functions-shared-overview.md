@@ -21,7 +21,7 @@ Configuring a shared runtime enables the following scenarios:
 - Your add-in can run code as soon as the document is opened.
 - Your add-in can continue running code after the task pane is closed.
 
-When you run custom functions in a shared runtime with the task pane, your add-in will run in a Internet Explorer 11 browser instance, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Additionally, any buttons that your Excel add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
+When you run custom functions in a shared runtime with the task pane, your add-in will run in a Microsoft Internet Explorer 11 browser instance, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Additionally, any buttons that your Excel add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
 
 ![Custom functions running in a shared runtime with ribbon buttons and the task pane in Excel](../images/custom-functions-in-browser-runtime.png)
 

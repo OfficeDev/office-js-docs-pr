@@ -98,7 +98,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 When you add the `Runtime` element, you also specify a lifetime with a value of `long` or `short`. Set this value to `long` to take advantage of features such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions.
 
->![NOTE]
+>[!NOTE]
 > The default lifetime value is `short`, but we recommend using `long` in Excel add-ins. If you set your runtime to `short` in this example, your Excel add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
 
 ```xml
