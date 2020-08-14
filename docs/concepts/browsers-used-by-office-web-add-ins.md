@@ -28,7 +28,7 @@ The following table shows which browser is used for the various platforms and op
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.13127.20082<sup>1</sup>| Doesn't matter|Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| No |Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Office 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| Yes|  SEE NOTE 4 BELOW.|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| Yes|  SEE NOTE 4 BELOW.|
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
