@@ -1,17 +1,17 @@
 ---
-title: Implement append on send in your Outlook add-in (preview)
+title: Implement append-on-send in your Outlook add-in (preview)
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 05/26/2020
+ms.date: 08/11/2020
 localization_priority: Normal
 ---
 
-# Implement append on send in your Outlook add-in (preview)
+# Implement append-on-send in your Outlook add-in (preview)
 
 By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.
 
 > [!IMPORTANT]
-> This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with an Office 365 subscription. See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.
+> This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with a Microsoft 365 subscription. See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.
 >
 > Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
 
@@ -133,6 +133,9 @@ For this scenario, instead of running the `action` function on choosing the **Pe
 
 Next, implement appending on the send event.
 
+> [!IMPORTANT]
+> If your add-in also implements [on-send event handling using `ItemSend`](outlook-on-send-addins.md), calling `AppendOnSendAsync` in the on-send handler returns an error as this scenario isn't supported.
+
 For this scenario, you'll implement appending a disclaimer to the item when the user sends.
 
 1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
@@ -174,7 +177,7 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start if it's not already running.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).

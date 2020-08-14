@@ -1,7 +1,7 @@
 ---
 title: Add-in commands requirement sets
-description: 'Overview of Office Add-in commands requirement sets'
-ms.date: 03/11/2020
+description: 'Overview of Office Add-in commands requirement sets.'
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -14,7 +14,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 The initial release of add-in commands doesn't have a corresponding requirement set (that is, there isn't an AddinCommands 1.0 requirement set). The following table lists the Office host applications that support the initial release version, and the build versions or number for those applications.  
 
-| Release   |  Office 2013 on Windows<br>(one-time purchase) | Office 2016 on Windows<br>(one-time purchase) | Office 2019 on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Office 365 subscription)   |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  |
+| Release   |  Office 2013 on Windows<br>(one-time purchase) | Office 2016 on Windows<br>(one-time purchase) | Office 2019 on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription)   |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Add-in commands (initial release, no requirement set) | N/A | 16.0.4678.1000 *Supported in Outlook only* | Version 1809 (Build 10827.20150) or later |Version 1603 (Build 6769.0000) or later | N/A | 15.33 or later| January 2016 |
 
@@ -22,7 +22,7 @@ The add-in commands 1.1 requirement set introduces the ability to [autoopen a ta
 
 The following table lists the add-in commands 1.1 requirement set, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  |  Office 2013 on Windows<br>(one-time purchase) | Office 2016 on Windows<br>(one-time purchase) | Office 2019 on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Office 365 subscription)   |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web  |  
+|  Requirement set  |  Office 2013 on Windows<br>(one-time purchase) | Office 2016 on Windows<br>(one-time purchase) | Office 2019 on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription)   |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.1  | N/A | 16.0.4678.1000 *Supported in Outlook only*  | Version 1809 (Build 10827.20150) or later | Version 1705 (Build 8121.1000) or later | N/A | 15.34 or later\*| May 2017 |
 

@@ -23,7 +23,7 @@ Specifies an individual method from the Office JavaScript API that your Office A
 
 ## Attributes
 
-|**Attribute**|**Type**|**Required**|**Description**|
+|Attribute|Type|Required|Description|
 |:-----|:-----|:-----|:-----|
 |Name|string|required|Specifies the name of the required method qualified with its parent object. For example, to specify the `getSelectedDataAsync` method, you must specify `"Document.getSelectedDataAsync"`.|
 

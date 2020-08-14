@@ -27,7 +27,7 @@ These instructions assume you have set up a Yo Office generator project before. 
 2. In the root folder of your new project, run the following in the command line:
 
 ```command&nbsp;line
-office-add-dev-settings webview manifest.xml ie
+npx office-addin-dev-settings webview manifest.xml ie
 ```
 You should see a note in the command line that the web view type is now set to IE.
 
@@ -38,7 +38,7 @@ You should see a note in the command line that the web view type is now set to I
 
 Should you have a different manifest path, specify this in the command, as shown in the following:
 
-`office-add-dev-settings webview [path to your manifest] ie`
+`npx office-addin-dev-settings webview [path to your manifest] ie`
 
 The `office-addin-dev-settings webview` command can also take a number of runtimes as arguments:
 

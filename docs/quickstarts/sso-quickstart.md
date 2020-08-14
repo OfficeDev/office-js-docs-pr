@@ -1,12 +1,12 @@
 ---
-title: Use the Yeoman generator to create an Office Add-in that uses SSO (preview)
-description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on (preview).
-ms.date: 02/20/2020
+title: Use the Yeoman generator to create an Office Add-in that uses SSO
+description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
 
-# Use the Yeoman generator to create an Office Add-in that uses single sign-on (preview)
+# Use the Yeoman generator to create an Office Add-in that uses single sign-on
 
 In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Outlook, Word, or PowerPoint that uses single sign-on (SSO) when possible, and uses an alternate method of user authentication when SSO is not supported.
 
@@ -26,8 +26,6 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
     ```
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
-
-[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * If you're using a Mac and don't have the Azure CLI installed on your machine, you must install [Homebrew](https://brew.sh/). The SSO configuration script that you'll run during this quick start will use Homebrew to install the Azure CLI, and will then use the Azure CLI to configure SSO within Azure.
 
@@ -74,7 +72,7 @@ At this point, your add-in project has been created and contains the code that's
     > [!WARNING]
     > This command will fail if your tenant is configured to require two-factor authentication. In this scenario, you'll need to manually complete the Azure app registration and SSO configuration steps, as described in the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
-3. A web browser window will open and prompt you to sign in to Azure. Sign in to Azure using your Office 365 administrator credentials. These credentials will be used to register a new application in Azure and configure the settings required by SSO.
+3. A web browser window will open and prompt you to sign in to Azure. Sign in to Azure using your Microsoft 365 administrator credentials. These credentials will be used to register a new application in Azure and configure the settings required by SSO.
 
     > [!NOTE]
     > If you sign in to Azure using non-administrator credentials during this step, the `configure-sso` script won't be able to provide administrator consent for the add-in to users within your organization. SSO will therefore not be available to users of the add-in and they'll be prompted to sign-in.
@@ -98,7 +96,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
     npm start
     ```
 
-2. In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), make sure that you're signed in with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed. 
+2. In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), make sure that you're signed in with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed. 
 
 3. In the Office client application, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
 
@@ -106,7 +104,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 4. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process. 
 
-5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
+5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
 
@@ -130,7 +128,7 @@ Complete the following steps to try out an Outlook add-in.
     npm start
     ```
 
-2. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed. 
+2. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed. 
 
 3. In Outlook, compose a new message.
 
@@ -140,7 +138,7 @@ Complete the following steps to try out an Outlook add-in.
 
 5. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process. 
 
-6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
+6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
 

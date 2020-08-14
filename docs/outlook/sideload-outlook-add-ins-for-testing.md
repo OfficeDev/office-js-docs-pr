@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 06/24/2019
+ms.date: 07/09/2020
 localization_priority: Normal
 ---
 
@@ -9,10 +9,9 @@ localization_priority: Normal
 
 You can use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
 
+## Sideload an add-in in Outlook on the web
 
-## Sideload an add-in in Outlook in Office 365
-
-The process for sideloading an add-in in Outlook in Office 365 depends upon whether you are using the new Outlook on the web or classic Outlook on the web.
+The process for sideloading an add-in in Outlook on the web depends upon whether you are using the new or classic version.
 
 - If your mailbox toolbar looks like the following image, see [Sideload an add-in in the new Outlook on the web](#sideload-an-add-in-in-the-new-outlook-on-the-web).
 
@@ -29,7 +28,7 @@ The process for sideloading an add-in in Outlook in Office 365 depends upon whet
 
 1. Go to [Outlook in Office 365](https://outlook.office.com).
 
-1. In Outlook on the web, create a new message.   
+1. In Outlook on the web, create a new message.
 
 1. Choose **...** from the bottom of the new message and then select **Get Add-ins** from the menu that appears.
 
@@ -65,7 +64,9 @@ The process for sideloading an add-in in Outlook in Office 365 depends upon whet
 
 ## Sideload an add-in in Outlook on the desktop
 
-1. Open Outlook 2013 or later on Windows, or Outlook 2016 or later on Mac.
+### Outlook 2016 or later
+
+1. Open Outlook 2016 or later on Windows or Mac.
 
 1. Select the **Get Add-ins** button on the ribbon.
 
@@ -83,6 +84,14 @@ The process for sideloading an add-in in Outlook in Office 365 depends upon whet
     ![Store screenshot pointing to Add from a file option](../images/outlook-sideload-desktop-add-from-file.png)
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+
+### Outlook 2013
+
+1. Open Outlook 2013 on Windows.
+
+1. Select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab. Outlook will open a browser.
+
+1. Follow the steps in the [Sideload an add-in in Outlook on the web](#sideload-an-add-in-in-outlook-on-the-web) section according to your version of Outlook on the web.
 
 ## Remove a sideloaded add-in
 

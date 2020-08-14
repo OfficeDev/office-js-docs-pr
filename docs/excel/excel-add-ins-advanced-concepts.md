@@ -1,7 +1,7 @@
 ---
 title: Advanced programming concepts with the Excel JavaScript API
 description: 'Learn how an Excel add-in interacts with objects in Excel by using the Office JavaScript API bject models.'
-ms.date: 01/14/2020
+ms.date: 07/01/2020
 localization_priority: Priority
 ---
 
@@ -69,14 +69,11 @@ For information about Common API requirement sets, see [Office Common API requir
 
 Calling the `load()` method on an Excel JavaScript object instructs the API to load the object into JavaScript memory when the `sync()` method runs. The `load()` method accepts a string that contains comma-delimited names of properties to load or an object that specifies properties to load, pagination options, etc.
 
-> [!NOTE]
-> If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object (or all scalar properties of all objects in the collection) will be loaded. To reduce the amount of data transfer between the Excel host application and the add-in, you should avoid calling the `load()` method without explicitly specifying which properties to load.
-
 ### Method details
 
-#### load(param: object)
+#### `load(propertyNames?: string | string[])`
 
-Fills the proxy object created in JavaScript layer with property and object values specified by the parameters.
+Queues up a command to load the specified properties of the object. You must call `context.sync()` before reading the properties.
 
 #### Syntax
 
@@ -88,7 +85,7 @@ object.load(param);
 
 |**Parameter**|**Type**|**Description**|
 |:------------|:-------|:----------|
-|`param`|object|Optional. Accepts property names as comma-delimited string or an array. An object can also be passed to set the selection and navigation properties (as shown in the example below).|
+|`propertyNames`|object|Optional. Accepts property names as comma-delimited string or an array.|
 
 #### Returns
 
@@ -141,6 +138,15 @@ myWorksheets.load({
     skip: 0
 });
 ```
+
+### Calling `load` without parameters
+
+If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object (or all scalar properties of all objects in the collection) will be loaded. To reduce the amount of data transfer between the Excel host application and the add-in, you should avoid calling the `load()` method without explicitly specifying which properties to load.
+
+> [!IMPORTANT]
+> The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations:
+>
+> * `Excel.Range.numberFormatCategories`
 
 ## Scalar and navigation properties
 

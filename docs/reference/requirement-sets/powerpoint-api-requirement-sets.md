@@ -1,7 +1,7 @@
 ---
 title: PowerPoint JavaScript API requirement sets
-description: 'Learn more about the PowerPoint JavaScript API requirement sets'
-ms.date: 03/11/2020
+description: 'Learn more about the PowerPoint JavaScript API requirement sets.'
+ms.date: 07/10/2020
 ms.prod: powerpoint
 localization_priority: Priority
 ---
@@ -12,7 +12,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 The following table lists the PowerPoint requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date.
 
-|  Requirement set  |  Office on Windows<br>(connected to Office 365 subscription)  |  Office on iPad<br>(connected to Office 365 subscription)  |  Office on Mac<br>(connected to Office 365 subscription)  | Office on the web |
+|  Requirement set  |  Office on Windows<br>(connected to a Microsoft 365 subscription)  |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | PowerPointApi 1.1 | Version 1810 (Build 11001.20074) or later | 2.17 or later | 16.19 or later | October 2018 |
 

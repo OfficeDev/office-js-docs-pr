@@ -16,7 +16,7 @@ The following image shows the types of Office UI elements that you can create.
 
 ## Add-in commands
 
-Use [add-in commands](add-in-commands.md) to add entry points to your add-in to the Office ribbon. Commands start actions in your add-in either by running JavaScript code, or by launching an HTML container. You can create two types of add-in commands.
+Use [add-in commands](add-in-commands.md) to add entry points to your add-in to the Office app ribbon. Commands start actions in your add-in either by running JavaScript code, or by launching an HTML container. You can create two types of add-in commands.
 
 |**Command type**|**Description**|
 |:---------------|:--------------|

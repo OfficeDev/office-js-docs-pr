@@ -28,7 +28,7 @@ The root element in the manifest of an Office Add-in.
 
 ## Must contain
 
-|**Element**|**Content**|**Mail**|**TaskPane**|
+|Element|Content|Mail|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Id](id.md)|x|x|x|
 |[Version](version.md)|x|x|x|
@@ -43,7 +43,7 @@ The root element in the manifest of an Office Add-in.
 
 ## Can contain
 
-|**Element**|**Content**|**Mail**|**TaskPane**|
+|Element|Content|Mail|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|
@@ -60,7 +60,7 @@ The root element in the manifest of an Office Add-in.
 
 ## Attributes
 
-|||
+|Attribute|Description|
 |:-----|:-----|
 |xmlns|Defines the Office Add-in manifest namespace and schema version. This attribute should always be set to  `"http://schemas.microsoft.com/office/appforoffice/1.1"`|
 |xmlns:xsi|Defines the XMLSchema instance. This attribute should always be set to  `"http://www.w3.org/2001/XMLSchema-instance"`|

@@ -123,5 +123,5 @@ Defines a collection of rules and the logical operator to use when evaluating th
 ## See also
 
 - [Activation rules for Outlook add-ins](../../outlook/activation-rules.md)
-- [Match strings in an Outlook item as well-known entities](../../outlook/match-strings-in-an-item-as-well-known-entities.md)    
+- [Match strings in an Outlook item as well-known entities](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
 - [Use regular expression activation rules to show an Outlook add-in](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)

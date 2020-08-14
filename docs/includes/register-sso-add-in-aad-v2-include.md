@@ -2,7 +2,7 @@
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
-1. Sign in with the ***admin*** credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
+1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
@@ -24,7 +24,7 @@
     > You may get an inaccurate error at this point saying "The application ID URI must be a valid URI starting with HTTPS, API, URN, MS-APPX. It must not end in a slash." If the ID meets the stated conditions, ignore the error and save your change.
 
     > [!NOTE]
-    > If you get an error saying that the domain is already owned but you own it, follow the procedure at [Quickstart: Add a custom domain name to Azure Active Directory](/azure/active-directory/add-custom-domain) to register it, and then repeat this step. (This error can also occur if you are not signed in with credentials of an admin in the Office 365 tenancy. See step 2. Sign out and sign in again with admin credentials and repeat the process from step 3.)
+    > If you get an error saying that the domain is already owned but you own it, follow the procedure at [Quickstart: Add a custom domain name to Azure Active Directory](/azure/active-directory/add-custom-domain) to register it, and then repeat this step. (This error can also occur if you are not signed in with credentials of an admin in the Microsoft 365 tenancy. See step 2. Sign out and sign in again with admin credentials and repeat the process from step 3.)
 
 1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope name**.
 
@@ -49,6 +49,7 @@
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
+    * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     For each ID, take these steps:

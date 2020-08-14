@@ -33,7 +33,7 @@ The procedure for debugging an Office Add-in varies by platform as well. Each of
 
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)
 
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](./debug-with-vs-extension.md)
+- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 
 ## Validate an Office Add-in manifest
 

@@ -1,14 +1,14 @@
 ---
 title: Automatically open a task pane with a document
 description: 'Learn how to configure an Office Add-in to open automatically when a document opens.'
-ms.date: 06/20/2019
+ms.date: 07/07/2020
 localization_priority: Normal
 ---
 
 
 # Automatically open a task pane with a document
 
-You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office ribbon. When users click your command button, an action occurs, such as opening a task pane.
+You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office app ribbon. When users click your command button, an action occurs, such as opening a task pane.
 
 Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the AddInCommands 1.1 requirement set, to automatically open a task pane when your scenario requires it.
 
@@ -114,7 +114,7 @@ The `webextension` part also includes a reference to the store or catalog with a
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|The AppSource asset ID of the add-in (see Note)|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note)|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
-|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Office 365 admin center.|The version in the add-in manifest.
+|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
 
 > [!NOTE]
@@ -143,7 +143,7 @@ An easy way to write the XML is to first run your add-in and [tag the document o
 
 ## Test and verify opening task panes
 
-You can deploy a test version of your add-in that will automatically open a task pane using Centralized Deployment via the Office 365 admin center. The following example shows how add-ins are inserted from the Centralized Deployment catalog using the EXCatalog store version.
+You can deploy a test version of your add-in that will automatically open a task pane using Centralized Deployment via the Microsoft 365 admin center. The following example shows how add-ins are inserted from the Centralized Deployment catalog using the EXCatalog store version.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -155,9 +155,9 @@ You can deploy a test version of your add-in that will automatically open a task
 </we:webextension>
 ```
 
-You can test the previous example by using your Office 365 subscription to try out Centralized Deployment and verify that your add-in works as expected. If you don't already have an Office 365 subscription, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).
+You can test the previous example by using your Microsoft 365 subscription to try out Centralized Deployment and verify that your add-in works as expected. If you don't already have a Microsoft 365 subscription, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 ## See also
 
 For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Join the Office 365 Developer Program](/office/developer-program/office-365-developer-program).
+[Join the Microsoft 365 developer program](/office/developer-program/office-365-developer-program).

@@ -1,7 +1,7 @@
 ---
 title: Customize your Node.js SSO-enabled add-in
 description: Learn about customizing the SSO-enabled add-in that you created with the Yeoman generator.
-ms.date: 02/20/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -17,7 +17,7 @@ The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets
 
 * An Office Add-in that you created by following the instructions in the [SSO quick start](sso-quickstart.md).
 
-* At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.
+* At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
 * [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).
 
@@ -32,7 +32,7 @@ Let's begin with a quick review of the add-in project that you previously [creat
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
-## Add new functionality 
+## Add new functionality
 
 The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document or message. Let's change the add-in's functionality such that it gets the names of the top 10 files and folders from the signed-in user's OneDrive for Business and writes that information to the document or message. Enabling this new functionality requires updating app permissions in Azure and updating code within the add-in project.
 
@@ -40,9 +40,9 @@ The add-in that you created with the SSO quick start uses Microsoft Graph to get
 
 Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission and revoke the **User.Read** permission, which is no longer needed.
 
-1. Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and **sign in using your Office 365 administrator credentials**. 
+1. Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and **sign in using your Microsoft 365 administrator credentials**.
 
-2. Navigate to the **App registrations** page. 
+2. Navigate to the **App registrations** page.
     > [!TIP]
     > You can do this either by choosing the **App registrations** tile on the Azure home page or by using the search box on the home page to find and choose **App registrations**.
 
@@ -577,7 +577,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
     npm start
     ```
 
-2. In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), make sure that you're signed in with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app. Doing so establishes the appropriate conditions for SSO to succeed. 
+2. In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), make sure that you're signed in with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app. Doing so establishes the appropriate conditions for SSO to succeed. 
 
 3. In the Office client application, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
 
@@ -585,7 +585,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 4. At the bottom of the task pane, choose the **Read my OneDrive for Business** button to initiate the SSO process. 
 
-5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
+5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
 
@@ -609,7 +609,7 @@ Complete the following steps to try out an Outlook add-in.
     npm start
     ```
 
-2. Follow the instructions in [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app. Doing so establishes the appropriate conditions for SSO to succeed. 
+2. Follow the instructions in [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app. Doing so establishes the appropriate conditions for SSO to succeed. 
 
 3. In Outlook, compose a new message.
 
@@ -619,7 +619,7 @@ Complete the following steps to try out an Outlook add-in.
 
 5. At the bottom of the task pane, choose the **Read my OneDrive for Business** button to initiate the SSO process. 
 
-6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. Choose the **Accept** button in the dialog window to continue.
+6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
 
     ![Permissions request dialog](../images/sso-permissions-request.png)
 

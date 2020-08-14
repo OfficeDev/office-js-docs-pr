@@ -99,7 +99,8 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 If changes you've made in the manifest, such as file names of ribbon button icons or text of menu items, do not seem to take effect, try clearing the Office cache on your computer. 
 
 #### For Windows:
-Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`, and delete the contents of the folder `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\`, if it exists.
 
 #### For Mac:
 
@@ -135,9 +136,9 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## See also
 
-- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md) 
+- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](./debug-with-vs-extension.md)
+- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)

@@ -1,7 +1,7 @@
 ---
 title: Permissions element in the manifest file
 description: The Permissions element specifies the API access level for your Office Add-in.
-ms.date: 03/19/2019
+ms.date: 06/26/2020
 localization_priority: Normal
 ---
 
@@ -19,7 +19,7 @@ For content and task pane add-ins:
  <Permissions> [Restricted | ReadDocument | ReadAllDocument | WriteDocument | ReadWriteDocument]</Permissions>
 ```
 
-For mail add-ins
+For mail add-ins:
 
 ```XML
  <Permissions>[Restricted | ReadItem | ReadWriteItem | ReadWriteMailbox]</Permissions>
@@ -31,4 +31,4 @@ For mail add-ins
 
 ## Remarks
 
-For more detail, see [Requesting permissions for API use in add-ins](../../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) and [Understanding Outlook add-in permissions](../../outlook/understanding-outlook-add-in-permissions.md).
+For more details, see [Requesting permissions for API use in content and task pane add-ins](../../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) and [Understanding Outlook add-in permissions](../../outlook/understanding-outlook-add-in-permissions.md).

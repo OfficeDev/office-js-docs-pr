@@ -513,6 +513,8 @@
           href: reference/manifest/webapplicationinfo.md
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
+    - name: Unsupported window objects
+      href: reference/window-objects-unsupported-in-add-ins.md
 
   - name: Resources
     href: resources/resources-links-help.md
