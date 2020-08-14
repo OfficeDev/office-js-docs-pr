@@ -12,7 +12,7 @@ Office add-ins are web applications that are displayed using iFrames when runnin
 Which browser is used depends on:
 
 - The computer's operating system.
-- Whether the add-in is running in Office on the web, Office 365, or non-subscription Office 2013 or later.
+- Whether the add-in is running in Office on the web, Microsoft 365, or non-subscription Office 2013 or later.
 
 The following table shows which browser is used for the various platforms and operating systems.
 
@@ -23,8 +23,8 @@ The following table shows which browser is used for the various platforms and op
 |iOS|any|N/A|Safari|
 |Android|any|N/A|Chrome|
 |Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Doesn't matter|Internet Explorer 11|
-|Windows 7 | Office 365| Doesn't matter | Internet Explorer 11|
-|Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Office 365 | No| Internet Explorer 11|
+|Windows 7 | Microsoft 365| Doesn't matter | Internet Explorer 11|
+|Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.13127.20082<sup>1</sup>| Doesn't matter|Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| No |Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
@@ -34,7 +34,7 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>2</sup> When Microsoft Edge is being used, the Windows 10 Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the `<DisplayName>` value in the add-in's manifest.
 
-<sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Office 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 <sup>4</sup> The browser that is used for this combination of versions depends on the channel of the Microsoft 365 subscription. If the subscription uses the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office will use Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office will use Microsoft Edge with original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021.
 
