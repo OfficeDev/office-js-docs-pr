@@ -211,7 +211,7 @@ function processMessage(arg) {
 Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using [Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-).
 
 > [!NOTE]
-> These dialog APIs are supported in only Excel, PowerPoint, and Word. Support for Outlook is coming soon.
+> These dialog APIs are supported in only Excel, PowerPoint, and Word. Support for Outlook is under development.
 
 ### Use `messageChild()` from the host page
 
@@ -253,7 +253,7 @@ function sheetPropertiesChanged() {
 ### Handle DialogParentMessageReceived in the dialog box
 
 In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) method. This is typically done in the [Office.onReady or Office.initialize
-methods](initialize-add-in.md), as shown here:
+methods](initialize-add-in.md), as shown in the following. (A more robust example is below.)
 
 ```javascript
 Office.onReady()
@@ -299,7 +299,7 @@ Because you can make multiple `messageChild` calls from the host page, but you h
 > In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md),  may not be supported. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
 
 > [!IMPORTANT]
-> The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) cannot be specified in the `<Requirements>` section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) method. Support for manifest requirements is coming soon.
+> The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) cannot be specified in the `<Requirements>` section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) method. Support for manifest requirements is under development.
 
 ## Closing the dialog box
 
@@ -339,10 +339,6 @@ See [Authenticate with the Office dialog API](auth-with-office-dialog-api.md).
 ### Using the Office dialog API with single-page applications and client-side routing
 
 SPAs and client-side routing need to be handled with care when you are using the Office dialog API. Please see [Best practices for using the Office dialog API in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-api-in-an-spa).
-
-### Message dialog from parent when messageChild is not available
-
-In some situations, the `messageChild` API may not be supported. Some alternative ways for parent to dialog box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
 
 ### Error and event handling
 
