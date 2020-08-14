@@ -16,12 +16,12 @@ Which browser is used depends on:
 
 The following table shows which browser is used for the various platforms and operating systems.
 
-|**OS**|**Office version**|**Edge WebView2 (Chromium-based) installed**|**Browser**|
+|OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|any|Office on the web|N/A|The browser in which Office is opened.|
-|Mac|any|N/A|Safari|
-|iOS|any|N/A|Safari|
-|Android|any|N/A|Chrome|
+|any|Office on the web|Not applicable|The browser in which Office is opened.|
+|Mac|any|Not applicable|Safari|
+|iOS|any|Not applicable|Safari|
+|Android|any|Not applicable|Chrome|
 |Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Doesn't matter|Internet Explorer 11|
 |Windows 7 | Microsoft 365| Doesn't matter | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
@@ -37,8 +37,6 @@ The following table shows which browser is used for the various platforms and op
 <sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 <sup>4</sup> The browser that is used for this combination of versions depends on the channel of the Microsoft 365 subscription. If the subscription uses the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office will use Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office will use Microsoft Edge with original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021.
-
-
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
