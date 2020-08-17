@@ -53,7 +53,7 @@ The following command capabilities are currently supported.
 You can specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting.
 
 > [!NOTE]
-> This feature is in preview and is not supported in all hosts or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
+> This feature is in preview and is not supported in all Office applications or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
 
 ## Supported platforms
 
@@ -89,7 +89,7 @@ Apply the following best practices when you develop add-in commands:
      > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
 
 - For all icons, follow the [icon design guidelines](add-in-icons.md).
-- Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a task pane) hosts.
+- Provide a version of your add-in that also works on Office applications that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a task pane) applications.
 
    *Figure 3. Task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016*
 

@@ -8,11 +8,11 @@ localization_priority: Normal
 
 # Image Coercion requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 ## ImageCoercion 1.1
 
-ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method. The following hosts are supported:
+ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method. The following applications are supported:
 
 - Excel 2013 and later on Windows
 - Excel 2016 and later on Mac
@@ -29,7 +29,7 @@ ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) w
 
 ## ImageCoercion 1.2
 
-ImageCoercion 1.2 enables conversion to SVG format (`Office.CoercionType.XmlSvg`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method. The following hosts are supported:
+ImageCoercion 1.2 enables conversion to SVG format (`Office.CoercionType.XmlSvg`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method. The following applications are supported:
 
 - Excel on Windows (connected to a Microsoft 365 subscription)
 - Excel on Mac (connected to a Microsoft 365 subscription)
@@ -47,5 +47,5 @@ For information about Common API requirement sets, see [Office Common API requir
 ## See also
 
 - [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
-- [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Specify Office applications and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../develop/add-in-manifests.md)

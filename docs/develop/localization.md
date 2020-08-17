@@ -1,19 +1,19 @@
 ---
 title: Localization for Office Add-ins
-description: 'You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.'
+description: 'You can use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.'
 ms.date: 07/21/2020
 localization_priority: Normal
 ---
 
 # Localization for Office Add-ins
 
-You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the Office JavaScript API to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
+You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
 
 ## Use the JavaScript API to determine locale-specific strings
 
-The Office JavaScript API provides two properties that support displaying or interpreting values consistent with the locale of the host application and data:
+The Office JavaScript API provides two properties that support displaying or interpreting values consistent with the locale of the Office application and data:
 
-- [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the host application. The following example verifies if the host application uses the en-US or fr-FR locale, and displays a locale-specific greeting.
+- [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the Office application. The following example verifies if the Office application uses the en-US or fr-FR locale, and displays a locale-specific greeting.
 
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -43,7 +43,7 @@ The Office JavaScript API provides two properties that support displaying or int
 ## Control localization from the manifest
 
 
-Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office host applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
+Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office client applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
 
 *Table 1. Localization support*
 
@@ -76,7 +76,7 @@ For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For th
 ```
 
 > [!NOTE]
-> If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using just the language name alone, in this case, `de`, is not supported across all combinations of Office host applications and platforms.
+> If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using just the language name alone, in this case, `de`, is not supported across all combinations of Office client applications and platforms.
 
 This means that the add-in assumes the  `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
 
@@ -147,9 +147,9 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 
 ## Match date/time format with client locale
 
-You can get the locale of the user interface of the hosting application by using the [displayLanguage] property. You can then display date and time values in a format consistent with the current locale of the host application. One way to do that is to prepare a resource file that specifies the date/time display format to use for each locale that your Office Add-in supports. At run time, your add-in can use the resource file and match the appropriate date/time format with the locale obtained from the [displayLanguage] property.
+You can get the locale of the user interface of the Office client application by using the [displayLanguage] property. You can then display date and time values in a format consistent with the current locale of the Office application. One way to do that is to prepare a resource file that specifies the date/time display format to use for each locale that your Office Add-in supports. At run time, your add-in can use the resource file and match the appropriate date/time format with the locale obtained from the [displayLanguage] property.
 
-You can get the locale of the data of the hosting application by using the [contentLanguage] property. Based on this value, you can then appropriately interpret or display date/time strings. For example, the `jp-JP` locale expresses data/time values as `yyyy/MM/dd`, and the `fr-FR` locale, `dd/MM/yyyy`.
+You can get the locale of the data of the Office client application by using the [contentLanguage] property. Based on this value, you can then appropriately interpret or display date/time strings. For example, the `jp-JP` locale expresses data/time values as `yyyy/MM/dd`, and the `fr-FR` locale, `dd/MM/yyyy`.
 
 
 ## Use Ajax for globalization and localization
@@ -322,19 +322,19 @@ The UIStrings.js resource file creates an object, **UIStrings**, which contains 
 To use the resource file in your add-in, you'll need to add a script tag for it on Home.html. When Home.html is loaded, UIStrings.js executes and the **UIStrings** object that you use to get the strings is available to your code. Add the following HTML in the head tag for Home.html to make **UIStrings** available to your code.
 
 ```html
-<!-- Resource file for localized strings:                                                          -->
+<!-- Resource file for localized strings: -->
 <script src="../UIStrings.js" type="text/javascript"></script>
 ```
 
 Now you can use the **UIStrings** object to set the strings for the UI of your add-in.
 
-If you want to change the localization for your add-in based on what language is used for display in menus and commands in the host application, you use the **Office.context.displayLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for display in menus and commands, the **Office.context.displayLanguage** property will return the language code es-ES.
+If you want to change the localization for your add-in based on what language is used for display in menus and commands in the Office client application, you use the **Office.context.displayLanguage** property to get the locale for that language. For example, if the application language uses Spanish for display in menus and commands, the **Office.context.displayLanguage** property will return the language code es-ES.
 
-If you want to change the localization for your add-in based on what language is being used for editing document content, you use the **Office.context.contentLanguage** property to get the locale for that language. For example, if the host application language uses Spanish for editing document content, the **Office.context.contentLanguage** property will return the language code es-ES.
+If you want to change the localization for your add-in based on what language is being used for editing document content, you use the **Office.context.contentLanguage** property to get the locale for that language. For example, if the application language uses Spanish for editing document content, the **Office.context.contentLanguage** property will return the language code es-ES.
 
-After you know the language the host application is using, you can use **UIStrings** to get the set of localized strings that matches the host application language.
+After you know the language the application is using, you can use **UIStrings** to get the set of localized strings that matches the application language.
 
-Replace the code in the Home.js file with the following code. The code shows how you can change the strings used in the UI elements on Home.html based on either the display language of the host application or the editing language of the host application.
+Replace the code in the Home.js file with the following code. The code shows how you can change the strings used in the UI elements on Home.html based on either the display language of the application or the editing language of the application.
 
 > [!NOTE]
 > To switch between changing the localization of the add-in based on the language used for editing, uncomment the line of code  `var myLanguage = Office.context.contentLanguage;` and comment out the line of code `var myLanguage = Office.context.displayLanguage;`
@@ -357,7 +357,7 @@ Replace the code in the Home.js file with the following code. The code shows how
             // line that uses Office.context.displayLanguage.
             // var myLanguage = Office.context.contentLanguage;
 
-            // Get the language setting for UI display in the host application.
+            // Get the language setting for UI display in the Office application.
             var myLanguage = Office.context.displayLanguage;
             var UIText;
 
@@ -376,7 +376,7 @@ Replace the code in the Home.js file with the following code. The code shows how
 
 ### Test your localized add-in
 
-To test your localized add-in, change the language used for display or editing in the host application and then run your add-in.
+To test your localized add-in, change the language used for display or editing in the Office application and then run your add-in.
 
 To change the language used for display or editing in your add-in:
 
@@ -394,7 +394,7 @@ To change the language used for display or editing in your add-in:
 
 5. In Word, choose **Home** > **Show Taskpane**.
 
-Once running, the strings in the add-in UI change to match the language used by the host application, as shown in the following figure.
+Once running, the strings in the add-in UI change to match the language used by the application, as shown in the following figure.
 
 
 *Figure 3. Add-in UI with localized text*
