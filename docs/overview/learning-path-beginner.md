@@ -1,17 +1,17 @@
 ---
-title: Start Here! A guide for beginners making Office Add-ins
+title: Beginner's guide
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
 ms.date: 04/16/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
 
-# Start Here! A guide for beginners making Office Add-ins
+# Beginner's guide
 
 Want to get started building your own cross-platform Office extensions? The following steps show you what to read first, what tools to install, and recommended tutorials to complete.
 
 > [!NOTE]
-> If you're experienced in creating VSTO add-ins for Office, we recommend that you immediately turn to [Transition Here! A guide for VSTO add-in creators making Office Web Add-ins](learning-path-transition.md), which is a superset of the information in this article.
+> If you're experienced in creating VSTO add-ins for Office, we recommend that you immediately turn to [VSTO add-in developer's guide](learning-path-transition.md), which is a superset of the information in this article.
 
 ## Step 0: Prerequisites
 
