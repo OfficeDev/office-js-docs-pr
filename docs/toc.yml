@@ -7,10 +7,10 @@
 
 - name: Get started
   items:
-  - name: Beginners' guide
+  - name: Beginner's guide
     href: overview/learning-path-beginner.md
     displayName: develop
-  - name: VSTO add-in developers guide
+  - name: VSTO add-in developer's guide
     href: overview/learning-path-transition.md
     displayName: develop
   - name: Development process overview
