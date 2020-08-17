@@ -10,9 +10,6 @@
   - name: Start Here! A guide for beginners
     href: overview/learning-path-beginner.md
     displayName: develop
-  - name: Transition Here! A guide for VSTO add-in developers
-    href: overview/learning-path-transition.md
-    displayName: develop
   - name: Building Office Add-ins
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
@@ -155,9 +152,6 @@
           href: develop/convert-javascript-to-typescript.md
       - name: Find the proper order of manifest elements
         href: develop/manifest-element-ordering.md
-      - name: Identify an equivalent COM add-in
-        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-        displayName: manifest
       - name: Localization
         href: develop/localization.md
       - name: Dialog boxes
@@ -1159,8 +1153,6 @@
 
 - name: Patterns and practices
   items:
-  - name: Share code from VSTO Add-in to Office add-in
-    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
   - name: Batching custom function remote calls
     href: excel/custom-functions-batching.md
     displayName: Excel, Custom Functions
@@ -1168,3 +1160,12 @@
     href: develop/authentication-pnp.md
   - name: Handle high DPI and DPI scaling in your Office solution
     href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+
+- name: VSTO transition resources
+  items: 
+    - name: VSTO add-in developers' guide
+      href: overview/learning-path-transition.md
+    - name: Share code from VSTO Add-in to Office add-in
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: Identify an equivalent COM add-in
+      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
