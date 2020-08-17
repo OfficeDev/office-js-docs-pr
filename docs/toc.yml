@@ -778,13 +778,11 @@
       href: outlook/apis.md
       displayName: Outlook
     - name: API requirement sets
-      href: reference/requirement-sets/outlook-api-requirement-sets.md
       displayName: Outlook
-    - name: API reference
-      href: reference/outlook-api-reference-1-8.md
-      displayName: Outlook
-    - name: API object model
       items:
+      - name: Overview
+        href: reference/requirement-sets/outlook-api-requirement-sets.md
+        displayName: Outlook
       - name: Preview Requirement Set
         items:
         - name: Overview
@@ -911,6 +909,9 @@
           href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
         - name: Outlook 1.1 API Reference
           href: reference/outlook-api-reference-1-1.md
+    - name: API reference - latest release
+      href: reference/outlook-api-reference-1-8.md
+      displayName: Outlook
   - name: Concepts
     items: 
     - name: Outlook add-in design guidelines
