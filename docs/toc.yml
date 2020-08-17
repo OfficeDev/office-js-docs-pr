@@ -10,7 +10,7 @@
   - name: Beginners' guide
     href: overview/learning-path-beginner.md
     displayName: develop
-  - name: A guide for VSTO add-in developers
+  - name: VSTO add-in developers guide
     href: overview/learning-path-transition.md
     displayName: develop
   - name: Development process overview
