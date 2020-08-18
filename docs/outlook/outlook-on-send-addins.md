@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 08/07/2020
+ms.date: 08/13/2020
 localization_priority: Normal
 ---
 
@@ -384,6 +384,17 @@ The on-send add-ins will run during send if the Exchange server is online and re
 > [!NOTE]
 > On Mac in any offline state, the **Send** button (or the **Send Update** button for existing meetings) is disabled and a notification displayed that their organization doesn't allow send when the user is offline.
 
+### User can edit item while on-send add-ins are working on it
+
+While on-send add-ins are processing an item, the user can edit the item by adding, for example, inappropriate text or attachments. If you want to prevent the user from editing the item while your add-in is processing on send, you can implement a workaround using a dialog. In your on-send handler:
+
+1. Call [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview#displaydialogasync-startaddress--options--callback-) to open a dialog so that mouse clicks and keystrokes are disabled.
+
+    > [!IMPORTANT]
+    > To get this behavior in Outlook on the web, you should set the [displayInIframe property](/javascript/api/office/office.dialogoptions?view=outlook-js-preview#displayiniframe) to `true` in the `options` parameter of the `displayDialogAsync` call.
+
+1. Implement processing of the item.
+1. Close the dialog. Also, handle what happens if the user closes the dialog.
 
 ## Code examples
 
