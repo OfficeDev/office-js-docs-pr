@@ -2,7 +2,7 @@
 title: Implement append-on-send in your Outlook add-in (preview)
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 08/07/2020
+ms.date: 08/11/2020
 localization_priority: Normal
 ---
 
@@ -177,7 +177,7 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start if it's not already running.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).

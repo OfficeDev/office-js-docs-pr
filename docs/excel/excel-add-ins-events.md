@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: 'A list of events for Excel JavaScript objects. This includes information on using event handlers and the associated patterns.' 
-ms.date: 05/06/2020
+ms.date: 08/18/2020
 localization_priority: Normal
 ---
 
@@ -30,15 +30,6 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | `onRowHiddenChanged` | Occurs when the row-hidden state changes on a specific worksheet. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowhiddenchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged) |
 | `onSettingsChanged` | Occurs when the Settings in the document are changed. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onsettingschanged) |
 | `onSingleClicked` | Occurs when left-clicked/tapped action occurs in the worksheet. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onsingleclicked), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onsingleclicked) |
-
-> [!WARNING]
-> `onSelectionChanged` is currently unstable. There is a workaround to reliably use `onSelectionChanged`. Add the following code to the `<head>` section of your HTML home page:
->
-> ```HTML
-> <script> MutationObserver=null; </script>
-> ```
->
-> A full discussion of the issue can be found on the [office-js GitHub repo](https://github.com/OfficeDev/office-js/issues/533).
 
 ### Events in preview
 
