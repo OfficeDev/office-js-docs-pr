@@ -7,10 +7,10 @@
 
 - name: Get started
   items:
-  - name: Start Here! A guide for beginners
+  - name: Beginner's guide
     href: overview/learning-path-beginner.md
     displayName: develop
-  - name: Building Office Add-ins
+  - name: Development process overview
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
   - name: Quick starts
@@ -38,7 +38,7 @@
     href: overview/set-up-your-dev-environment.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-- name: Core concepts
+- name: Development process
   items:
 
   - name: Overview

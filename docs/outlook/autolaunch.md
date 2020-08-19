@@ -2,16 +2,19 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/18/2020
 localization_priority: Normal
 ---
 
 # Configure your Outlook add-in for event-based activation (preview)
 
-Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality. At present, the supported events are as follows.
+Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality. At present, the following events are supported.
 
 - `OnNewMessageCompose`: On composing a new message (includes reply, reply all, and forward)
 - `OnNewAppointmentOrganizer`: On creating a new appointment
+
+  > [!IMPORTANT]
+  > This feature does **not** activate on editing an item, for example, a draft or an existing appointment.
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new message is created.
 
