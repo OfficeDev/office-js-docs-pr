@@ -22,15 +22,18 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 ## Using Visual Studio Code to publish
 
-1. Open your project from its root folder in VS (Visual Studio) Code.
+>[!NOTE]
+> These steps only work for projects created with the Yeoman generator.
+
+1. Open your project from its root folder in Visual Studio Code (VS Code).
 2. From the Extensions view in VS Code, search for the Azure Storage extension and install it.
 3. Once installed, an Azure icon will be added to the Activity Bar. Select it to access the extension. If your Activity Bar is hidden, you won't be able to access the extension. Show the Activity Bar by selecting **View > Appearance > Show Activity Bar**.
 4. When in the extension, sign in to your Azure account by selecting **Sign in to Azure**. You can also create an Azure account if you don't already have one by selecting **Create a free Azure account**. Follow the provided steps to set up your account.
 5. Once you have signed in to your Azure account, you'll see your Azure storage accounts appear in the extension. If you don't already have a storage account, you'll need to create one using the **Create new storage account** option. Name your storage account a globally unique name, using only 'a-z' and '0-9'. Note that by default, this creates a storage account and a resource group with the same name. It automatically puts the storage account in West US. This can be adjusted online through [your Azure account](https://portal.azure.com/).
-6. Select and hold your storage account, choosing **Configure static website**. You'll be asked to enter the index document name and the 404 document name. Change the index document name from the default `index.html` to **`taskpane.html`**. You may decide to also change the 404 document name but are not required to.
-7. Select and hold your storage again again, this time choosing **Browse static website**. From the browser window that opens, copy the website URL.
-8. In VS Code, open your project's manifest file (`manifest.xml`) and change any reference to your localhost URL (such as `https://localhost:3000`) to the URL you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes you've made to your manifest file.
-9. Open a command line prompt. From the command line, navigate to the root directory of your add-in project. Then run the following command to prepare all files for production deployment:
+6. Select and hold (right-click) your storage account, choosing **Configure static website**. You'll be asked to enter the index document name and the 404 document name. Change the index document name from the default `index.html` to **`taskpane.html`**. You may decide to also change the 404 document name but are not required to.
+7. Select and hold (right-click) your storage again, this time choosing **Browse static website**. From the browser window that opens, copy the website URL.
+8. In VS Code, open your project's manifest file (`manifest.xml`) and change any reference to your localhost URL (such as `https://localhost:3000`) to the URL you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes to your manifest file.
+9. Open a command line prompt and navigate to the root directory of your add-in project. Then run the following command to prepare all files for production deployment.
 
     ```command&nbsp;line
     npm run build
