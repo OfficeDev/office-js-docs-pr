@@ -1,7 +1,7 @@
 ---
 title: Scenario - Implement single sign-on to your service
 description: Learn about using the single-sign-on token and Exchange identity token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 07/30/2020
+ms.date: 08/20/2020
 localization_priority: Normal
 ---
 
