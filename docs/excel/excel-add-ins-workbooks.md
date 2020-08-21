@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 05/06/2020
+ms.date: 08/24/2020
 localization_priority: Normal
 ---
 
@@ -141,6 +141,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+### Custom properties
+
 You can also define custom properties. The DocumentProperties object contains a `custom` property that represents a collection of key-value pairs for user-defined properties. The following example shows how to create a custom property named **Introduction** with the value "Hello", then retrieve it.
 
 ```js
@@ -163,6 +165,9 @@ Excel.run(function (context) {
     });
 }).catch(errorHandlerFunction);
 ```
+
+#### Worksheet-level custom properties (preview)
+
 
 ## Access document settings
 
