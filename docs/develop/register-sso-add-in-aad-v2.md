@@ -15,6 +15,6 @@ The following table itemizes the information that you need to carry out this pro
 |---------|---------|---------|
 |A human readable name for the add-in. (Uniqueness recommended, but not required.)|`Contoso Marketing Excel Add-in (Prod)`|**$ADD-IN-NAME$**|
 |The fully qualified domain name (except for protocol) of the add-in. *You must use a domain that you own.* For this reason, you cannot use certain well-known domains such as `azurewebsites.net` or `cloudapp.net`. The domain must be the same, including any subdomains, as is used in the URLs in the `<Resources>` section of the add-in's manifest.|`localhost:6789`, `addins.contoso.com`|**$FQDN-WITHOUT-PROTOCOL$**|
-|The permissions to AAD and Microsoft Graph that your add-in needs. (`profile` is always required.)|`profile`, `Files.Read.All`|N/A|
+|The permissions to AAD and Microsoft Graph that your add-in needs. (`profile` and `openid` are always required.)|`profile`, `openid`, `Files.Read.All`|N/A|
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
