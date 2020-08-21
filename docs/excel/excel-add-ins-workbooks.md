@@ -169,6 +169,7 @@ Excel.run(function (context) {
 #### Worksheet-level custom properties (preview)
 
 
+
 ## Access document settings
 
 A workbook's settings are similar to the collection of custom properties. The difference is settings are unique to a single Excel file and add-in pairing, whereas properties are solely connected to the file. The following example shows how to create and access a setting.
