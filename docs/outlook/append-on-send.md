@@ -2,7 +2,7 @@
 title: Implement append-on-send in your Outlook add-in (preview)
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 localization_priority: Normal
 ---
 
@@ -179,6 +179,9 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > If you see a "Sideload is not supported" error, you can ignore it and proceed.
 
 1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 
