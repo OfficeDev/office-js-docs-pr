@@ -528,11 +528,11 @@ Excel.run(function (context) {
 
 **Data in range before number format is set**
 
-![Data in Excel before format is set](../images/excel-ranges-format-font-and-fill.png)
+![Data in Excel before number format is set](../images/excel-ranges-format-font-and-fill.png)
 
 **Data in range after number format is set**
 
-![Data in Excel after format is set](../images/excel-ranges-format-numbers.png)
+![Data in Excel after number format is set](../images/excel-ranges-format-numbers.png)
 
 ### Conditional formatting of ranges
 
