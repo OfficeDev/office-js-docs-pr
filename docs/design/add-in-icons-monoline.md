@@ -91,7 +91,7 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![16 px icon](../images/monolineicon7.png)|![20 px icon](../images/monolineicon8.png)|![24 px icon](../images/monolineicon9.png)|![32 px icon](../images/monolineicon10.png)|![40 px icon](../images/monolineicon11.png)|![48 px icon](../images/monolineicon12.png)|![64 px icon](../images/monolineicon13.png)|![80 px icon](../images/monolineicon14.png)|![96 px icon](../images/monolineicon15.png)|
+|![16 px icon with 0 px padding](../images/monolineicon7.png)|![20 px icon with 1 px padding](../images/monolineicon8.png)|![24 px icon with 1 px padding](../images/monolineicon9.png)|![32 px icon with 2 px padding](../images/monolineicon10.png)|![40 px icon with 2 px padding](../images/monolineicon11.png)|![48 px icon with 3 px padding](../images/monolineicon12.png)|![64 px icon with 4 px padding](../images/monolineicon13.png)|![80 px icon with 5 px padding](../images/monolineicon14.png)|![96 px icon with 6 px padding](../images/monolineicon15.png)|
 
 #### Line weights
 

@@ -36,16 +36,16 @@ Apply the following patterns as applicable to create or enhance the first-run ex
 The carousel takes users through a series of features or informational pages before they start using the add-in.
 
 *Figure 1: Allow users to advance or skip the beginning pages of the carousel flow.*
-![First Run - Carousel - Specifications for desktop task pane](../images/add-in-FRE-step-1.png)
+![First Run - Carousel Step 1 - Specifications for desktop task pane](../images/add-in-FRE-step-1.png)
 
 
 
-*Figure 2: Minimize the number of carousel screens you present to the user to only what is needed to effectively communicate your message*
-![First Run - Carousel - Specifications for desktop task pane](../images/add-in-FRE-step-2.png)
+*Figure 2: Minimize the number of carousel screens you present to the user to only what is needed to effectively communicate your message.*
+![First Run - Carousel Step 2 - Specifications for desktop task pane](../images/add-in-FRE-step-2.png)
 
 
 *Figure 3: Provide a clear call to action to exit the first-run-experience.*
-![First Run - Carousel - Specifications for desktop task pane](../images/add-in-FRE-step-3.png)
+![First Run - Carousel Step 3 - Specifications for desktop task pane](../images/add-in-FRE-step-3.png)
 
 
 
@@ -56,7 +56,7 @@ The value placement communicates your add-in's value proposition through logo pl
 
 
 ![First Run - Value Placemat - Specifications for desktop task pane](../images/add-in-FRE-value.png)
-*A value placemat with logo, clear value proposition, feature summary, and call to action.*
+*A value placemat with logo, clear value proposition, feature summary, and call-to-action.*
 
 
 ### Video Placemat
@@ -64,9 +64,10 @@ The value placement communicates your add-in's value proposition through logo pl
 The video placemat shows users a video before they start using your add-in.
 
 
-*Figure 1: First Run Placemat - The screen contains a still image from the video with a play button and clear call to action button.*![Video Placemat - Specifications for desktop task pane](../images/add-in-FRE-video.png)
+*Figure 1: First Run Placemat - The screen contains a still image from the video with a play button and clear call-to-action button.*
+![Video Placemat - Specifications for desktop task pane](../images/add-in-FRE-video.png)
 
 
 
 *Figure 2: Video Player - Users are presented with a video within a dialog window.*
-![Video Placemat - Specifications for desktop task pane](../images/add-in-FRE-video-dialog.png)
+![Video Placemat - Dialog - Specifications for desktop task pane](../images/add-in-FRE-video-dialog.png)
