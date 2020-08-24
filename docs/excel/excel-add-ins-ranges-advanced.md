@@ -325,7 +325,7 @@ To ungroup a row or column group, use the [Range.ungroup](/javascript/api/excel/
 ## Handle dynamic arrays and spilling (preview)
 
 > [!NOTE]
-> Dynamic array and range spilling APIs are currently in preview. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)
+> Dynamic array and range spilling APIs are currently in preview. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
 
 Some Excel formulas return [Dynamic arrays](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). These "spill" their results across multiple cells. Your add-in can track the ranges that have been spilled into with the [Range.getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) method. There is also a [*OrNullObject version](excel-add-ins-advanced-concepts.md#ornullobject-methods), `Range.getSpillingToRangeOrNullObject`.
 
