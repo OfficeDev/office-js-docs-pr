@@ -41,7 +41,7 @@ The following images show the various task pane sizes with the Office app ribbon
 
 *Figure 3. Office task pane sizes*
 
-![Image displaying the desktop task pane sizes at 1366x768](../images/office-365-taskpane-sizes.png)
+![Image displaying the task pane sizes at 1366x768](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350x378
 - PowerPoint - 348x391
