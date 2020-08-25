@@ -237,7 +237,7 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of PowerPoint with the Show Taskpane button highlighted](../images/powerpoint_quickstart_addin_1.png)
+    ![A screenshot of PowerPoint with the Show Taskpane ribbon button highlighted](../images/powerpoint_quickstart_addin_1.png)
 
 3. In the task pane, choose the **Insert Image** button to add an image to the selected slide.
 
@@ -245,7 +245,7 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 4. In the task pane, choose the **Insert Text** button to add text to the selected slide.
 
-    ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3.png)
+    ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` on the slide](../images/powerpoint_quickstart_addin_3.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

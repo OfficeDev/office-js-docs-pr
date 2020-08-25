@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 05/06/2020
+ms.date: 08/24/2020
 localization_priority: Normal
 ---
 
@@ -141,6 +141,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+### Custom properties
+
 You can also define custom properties. The DocumentProperties object contains a `custom` property that represents a collection of key-value pairs for user-defined properties. The following example shows how to create a custom property named **Introduction** with the value "Hello", then retrieve it.
 
 ```js
@@ -155,11 +157,46 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var customDocProperties = context.workbook.properties.custom;
     var customProperty = customDocProperties.getItem("Introduction");
-    customProperty.load("key, value");
+    customProperty.load(["key, value"]);
 
     return context.sync().then(function() {
         console.log("Custom key  : " + customProperty.key); // "Introduction"
         console.log("Custom value : " + customProperty.value); // "Hello"
+    });
+}).catch(errorHandlerFunction);
+```
+
+#### Worksheet-level custom properties (preview)
+
+> [!NOTE]
+> Worksheet-level custom properties are currently in preview. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+
+Custom properties can also be set at the worksheet level. These are similar to document-level custom properties, except that the same key can be repeated across different worksheets. The following example shows how to create a custom property named **WorksheetGroup** with the value "Alpha" on the current worksheet, then retrieve it.
+
+```js
+Excel.run(function (context) {
+    // Add the custom property.
+    var customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
+    customWorksheetProperties.add("WorksheetGroup", "Alpha");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+[...]
+
+Excel.run(function (context) {
+    // Load the keys and values of all custom properties in the current worksheet.
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    worksheet.load("name");
+
+    var customWorksheetProperties = worksheet.customProperties;
+    var customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
+    customWorksheetProperty.load(["key", "value"]);
+
+    return context.sync().then(function() {
+        // Log the WorksheetGroup custom property to the console.
+        console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
+        console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
     });
 }).catch(errorHandlerFunction);
 ```

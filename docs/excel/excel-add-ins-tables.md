@@ -278,7 +278,7 @@ Excel.run(function (context) {
 
 **Table data sorted by Amount (descending)**
 
-![Table data in Excel](../images/excel-tables-sort.png)
+![Sorted table data in Excel](../images/excel-tables-sort.png)
 
 When data is sorted in a worksheet, an event notification fires. To learn more about sort-related events and how your add-in can register event handlers to respond to such events, see [Handle sorting events](excel-add-ins-worksheets.md#handle-sorting-events).
 
@@ -489,7 +489,7 @@ Excel.run(function (context) {
 
 **New table**
 
-![New table in Excel](../images/excel-tables-create-from-json.png)
+![New table from imported JSON data in Excel](../images/excel-tables-create-from-json.png)
 
 ## See also
 
