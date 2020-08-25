@@ -88,14 +88,14 @@ Follow these steps for a new or existing project to configure it to use a shared
    ...
    ```
 
-8. Make sure the taskpane.html has a `<script>` tag that references the dist/functions.js file. The following is an example:
+8. Make sure the taskpane.html has a `<script>` tag that references the dist/functions.js file. The following is an example.
 
    ```html
-   <script type=”text/javascript” src=”/dist/functions.js” ></script>
+   <script type="text/javascript" src="/dist/functions.js" ></script>
    ```
 
    > [!NOTE]
-   > If the add-in uses Webpack and the HtmlWebpackPlugin to insert script tags, as add-ins created by the Yeoman generator do (see [Create the add-in project](#create-the-add-in-project) above), then you must ensure that the functions.js module is included in the `chunks` array as in the following example:
+   > If the add-in uses Webpack and the HtmlWebpackPlugin to insert script tags, as add-ins created by the Yeoman generator do (see [Create the add-in project](#create-the-add-in-project) above), then you must ensure that the functions.js module is included in the `chunks` array as in the following example.
    >
    > ```javascript
    > new HtmlWebpackPlugin({
