@@ -1,5 +1,5 @@
 ---
-ms.date: 08/13/2020
+ms.date: 08/25/2020
 title: "Configure your Excel add-in to share the browser runtime"
 ms.prod: excel
 description: 'Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.'
