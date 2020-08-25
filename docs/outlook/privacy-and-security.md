@@ -168,6 +168,6 @@ The security model provides the following rights and responsibilities to adminis
 
 ## See also
 
-- [Privacy and security for Office Add-ins](../develop/privacy-and-security.md)
+- [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
 - [Outlook add-in APIs](apis.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
