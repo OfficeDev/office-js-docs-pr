@@ -18,11 +18,6 @@ If you are working with an **Outlook** add-in, be sure to enable Modern Authenti
 
 You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. You can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For samples that use Azure Active Directory as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
-There are some specific requirements for sections of the manifest for SSO, which include:
-* The Application ID is an appropriately formatted GUID. 
-* The Resource URI is formatted in the follow way: **{https|api}://add-in_fully_qualified_domain_name/AppID_GUID**, where AppID_GUID matches the GUID from your App registration in Azure AD. 
-* The Resource URI does not contain Unicode characters. 
-* The minimum required scopes are listed in the Scopes section: **openid** and **profile**. 
 
 
 ## How SSO works at runtime
@@ -87,6 +82,8 @@ The following is an example of the markup:
     </Scopes>
 </WebApplicationInfo>
 ```
+[!NOTE]
+> Not following the format requirements in the manifest for SSO will cause your add-in to be rejected from AppSource until it meets the required format.
 
 ### Add client-side code
 
