@@ -82,4 +82,3 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
-[Office Add-in host and platform availability]: ../overview/office-add-in-availability
