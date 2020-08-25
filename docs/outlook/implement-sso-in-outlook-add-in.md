@@ -78,7 +78,7 @@ Based on the response from the backend Web API, the add-in may need to authorize
 1. The add-in notifies the user that it needs them to authorize their use of the API and asks them to click a link or button to start the process.
 
     > [!NOTE]
-    > The example add-in at [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO) uses the [Dialog API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) or the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) to start the [OAuth2 Authorization Code flow](/azure/active-directory/develop/active-directory-protocols-oauth-code) for the API.
+    > The example add-in at [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO) shows how to use the [Dialog API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) and the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) as options to start the [OAuth2 Authorization Code flow](/azure/active-directory/develop/active-directory-protocols-oauth-code) for the API.
 
 1. Once the flow completes, the add-in sends the refresh token to the backend Web API and includes the SSO token (if available) or the Exchange identity token.
 
