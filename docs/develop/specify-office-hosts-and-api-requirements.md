@@ -75,19 +75,6 @@ For example, the following `Hosts` and `Host` declaration specifies that the add
 
 The `Hosts` element can contain one or more `Host` elements. The `Host` element specifies the Office application your add-in requires. The `Name` attribute is required and can be set to one of the following values.
 
-<<<<<<< HEAD
-| Name          | Office client applications                                                                  |
-|:--------------|:------------------------------------------------------------------------------------------|
-| Database      | Access web apps                                                                           |
-| Document      | Word on Windows, Word on Mac, Word on iPad, Word on the web                               |
-| Mailbox       | Outlook on Windows, Outlook on Mac, Outlook on the web, Outlook on Android, Outlook on iOS|
-| Presentation  | PowerPoint on Windows, PowerPoint on Mac, PowerPoint on iPad, PowerPoint on the web       |
-| Project       | Project on Windows                                                                        |
-| Workbook      | Excel on Windows, Excel on Mac, Excel on iPad, Excel on the web                           |
-
-> [!NOTE]
-> The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on Windows and on the web can be used to run your add-in.
-=======
 | Name          | Office client applications                      |
 |:--------------|:----------------------------------------------|
 | Database      | Access web apps                               |
@@ -99,11 +86,9 @@ The `Hosts` element can contain one or more `Host` elements. The `Host` element 
 
 > [!NOTE]
 > The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on the web and Windows can be used to run your add-in.
->>>>>>> master
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
-
 
 ## Set the Requirements element in the manifest
 
