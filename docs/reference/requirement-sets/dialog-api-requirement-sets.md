@@ -8,9 +8,9 @@ localization_priority: Normal
 
 # Dialog API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-Office Add-ins run across multiple versions of Office. The following table lists the Dialog API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
+Office Add-ins run across multiple versions of Office. The following table lists the Dialog API requirement sets, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
 
 |  Requirement set  | Office 2013 on Windows\*<br>(one-time purchase) | Office 2016 or later on Windows\*<br>(one-time purchase)   | Office on Windows<br>(subscription) |  Office on iPad<br>(subscription)  |  Office on Mac<br>(subscription)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
@@ -48,5 +48,5 @@ The Dialog API 1.1 is the first version of the API. Version 1.2 adds support for
 
 - [Use the Office dialog API in Office Add-ins](../../develop/dialog-api-in-office-add-ins.md)
 - [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
-- [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Specify Office applications and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../develop/add-in-manifests.md)

@@ -26,12 +26,12 @@ The following diagram shows how the process of signing in and getting access to 
 
 ![A diagram that shows the SSO process](../images/sso-access-to-microsoft-graph.png)
 
-1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office host application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
-2. If the user is not signed in, the Office host application opens a pop-up window for the user to sign in.
+1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office client application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
+2. If the user is not signed in, the Office client application opens a pop-up window for the user to sign in.
 3. If this is the first time the current user has used your add-in, he or she is prompted to consent.
-4. The Office host application requests the **bootstrap access token** from the Azure AD v2.0 endpoint for the current user.
-5. Azure AD sends the bootstrap token to the Office host application.
-6. The Office host application sends the **bootstrap access token** to the add-in as part of the result object returned by the `getAccessToken` call.
+4. The Office client application requests the **bootstrap access token** from the Azure AD v2.0 endpoint for the current user.
+5. Azure AD sends the bootstrap token to the Office client application.
+6. The Office client application sends the **bootstrap access token** to the add-in as part of the result object returned by the `getAccessToken` call.
 7. JavaScript in the add-in makes an HTTP request to a web API that is hosted at the same fully-qualified domain as the add-in, and it includes the **bootstrap access token** as authorization proof.
 8. Server-side code validates the incoming **bootstrap access token**.
 9. Server-side code uses the "on behalf of" flow (defined at [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) and the [daemon or server application to web API Azure scenario](/azure/active-directory/develop/active-directory-authentication-scenarios)) to obtain an access token for Microsoft Graph in exchange for the bootstrap access token.
