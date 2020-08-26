@@ -10,9 +10,6 @@
   - name: Beginner's guide
     href: overview/learning-path-beginner.md
     displayName: develop
-  - name: VSTO add-in developer's guide
-    href: overview/learning-path-transition.md
-    displayName: develop
   - name: Development process overview
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
@@ -105,9 +102,6 @@
         href: develop/manifest-element-ordering.md
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-        displayName: manifest
-      - name: Identify an equivalent COM add-in
-        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
         displayName: manifest
     - name: Privacy, security, and authentication
       items:
@@ -246,7 +240,6 @@
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript to TypeScript
           href: develop/convert-javascript-to-typescript.md
-
   - name: Test and debug
     items:
     - name: Test and debug Office Add-ins
@@ -1157,8 +1150,6 @@
 
 - name: Patterns and practices
   items:
-  - name: Share code from VSTO Add-in to Office add-in
-    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
   - name: Batching custom function remote calls
     href: excel/custom-functions-batching.md
     displayName: Excel, Custom Functions
@@ -1166,3 +1157,13 @@
     href: develop/authentication-pnp.md
   - name: Handle high DPI and DPI scaling in your Office solution
     href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+
+- name: VSTO and COM transition resources
+  items: 
+    - name: VSTO add-in developers' guide
+      href: overview/learning-path-transition.md
+    - name: Share code from VSTO Add-in to Office add-in
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: Identify an equivalent COM add-in
+      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+      displayName: manifest
