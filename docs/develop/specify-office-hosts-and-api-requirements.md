@@ -1,7 +1,7 @@
 ---
-title: Specify Office applications and API requirements
+title: Specify Office hosts and API requirements
 description: 'Learn how to specify Office applications and API requirements for your add-in to work as expected.'
-ms.date: 09/26/2019
+ms.date: 08/24/2020
 localization_priority: Normal
 ---
 
@@ -75,6 +75,7 @@ For example, the following `Hosts` and `Host` declaration specifies that the add
 
 The `Hosts` element can contain one or more `Host` elements. The `Host` element specifies the Office application your add-in requires. The `Name` attribute is required and can be set to one of the following values.
 
+<<<<<<< HEAD
 | Name          | Office client applications                                                                  |
 |:--------------|:------------------------------------------------------------------------------------------|
 | Database      | Access web apps                                                                           |
@@ -86,6 +87,19 @@ The `Hosts` element can contain one or more `Host` elements. The `Host` element 
 
 > [!NOTE]
 > The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on Windows and on the web can be used to run your add-in.
+=======
+| Name          | Office client applications                      |
+|:--------------|:----------------------------------------------|
+| Database      | Access web apps                               |
+| Document      | Word on the web, Windows, Mac, iPad           |
+| Mailbox       | Outlook on the web, Windows, Mac, Android, iOS|
+| Presentation  | PowerPoint on the web, Windows, Mac, iPad     |
+| Project       | Project on Windows                            |
+| Workbook      | Excel on the web, Windows, Mac, iPad          |
+
+> [!NOTE]
+> The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on the web and Windows can be used to run your add-in.
+>>>>>>> master
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.

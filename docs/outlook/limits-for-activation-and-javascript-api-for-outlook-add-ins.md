@@ -90,4 +90,4 @@ Aside from the preceding guidelines for activation rules, each Outlook client en
 ## See also
 
 - [Deploy and install Outlook add-ins for testing](testing-and-tips.md)
-- [Privacy, permissions, and security for Outlook add-ins](../develop/privacy-and-security.md)
+- [Privacy, permissions, and security for Outlook add-ins](../concepts/privacy-and-security.md)

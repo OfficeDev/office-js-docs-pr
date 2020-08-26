@@ -11,7 +11,7 @@ This article highlights aspects of the Office JavaScript API that may result in 
 
 ## Common APIs and Outlook APIs are not promise-based
 
-The [Common APIs](/javascript/api/office) (those that are not tied to a particular Office application) and [Outlook APIs](/javascript/api/outlook) use a callback-based programming model. Interacting with the underlying Office document requires an asynchronous read or write call that specifies a callback to be ran when the operation completes. For an example of this pattern, see [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
+The [Common APIs](/javascript/api/office) (those that are not tied to a particular Office application) and [Outlook APIs](/javascript/api/outlook) use a callback-based programming model. Interacting with the underlying Office document requires an asynchronous read or write call that specifies a callback to be run when the operation completes. For an example of this pattern, see [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
 
 These Common API and Outlook API methods do not return [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Therefore, you cannot use [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) to pause the execution until the asynchronous operation completes. If you need `await` behavior, you can wrap the method call in an explicitly created Promise.
 
