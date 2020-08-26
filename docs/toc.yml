@@ -1161,7 +1161,7 @@
   - name: Handle high DPI and DPI scaling in your Office solution
     href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
 
-- name: VSTO transition resources
+- name: VSTO and COM transition resources
   items: 
     - name: VSTO add-in developers' guide
       href: overview/learning-path-transition.md
