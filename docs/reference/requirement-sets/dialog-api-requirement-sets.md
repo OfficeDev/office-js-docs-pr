@@ -27,7 +27,6 @@ The DialogApi 1.2 requirement set is supported in the Consumer Channel version 2
 |:-----|:-----|:-----|
 |Current Channel | 2005 or greater | 12827.20160 or greater|
 |Monthly Enterprise Channel | 2004 or greater | 12730.20430 or greater|
-|Monthly Enterprise Channel | 2003 | 12624.20708 or greater|
 |Semi-Annual Enterprise Channel | 2002 or greater | 12527.20720 or greater|
 
 ## Office versions and build numbers
