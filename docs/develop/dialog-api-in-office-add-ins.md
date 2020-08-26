@@ -1,7 +1,8 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
-description: 'Learn the basics of creating a dialog box in an Office Add-in.'
-ms.date: 06/10/2020
+description: 'Learn the basics of creating a dialog box in an Office add-in'
+ms.date: 08/20/2020
+
 localization_priority: Normal
 ---
 
@@ -93,7 +94,7 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
-> - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box. 
+> - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box.
 > - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
 
 In the next example, `googleProfile` is a stringified version of the user's Google profile.
@@ -207,47 +208,98 @@ function processMessage(arg) {
 
 ## Pass information to the dialog box
 
-Sometimes the host page needs to pass information to the dialog box. You can do this in two primary ways:
-
-- Add query parameters to the URL that is passed to `displayDialogAsync`.
-- Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage, but *if they have the same domain* (including port number, if any), they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*
+Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using [Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-).
 
 > [!NOTE]
-> \* There is a bug that will effect your strategy for token handling. If the add-in is running in **Office on the web** in either the Safari or Edge browser, the dialog box and task pane do not share the same Local Storage, so it cannot be used to communicate between them.
+> These dialog APIs are supported in only Excel, PowerPoint, and Word. Support for Outlook is under development.
 
-### Use local storage
+### Use `messageChild()` from the host page
 
-To use local storage, your code calls the `setItem` method of the `window.localStorage` object in the host page before the `displayDialogAsync` call, as in the following example:
+When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned. It should be assigned to a variable that has greater scope than the [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-)
+method because the object will be referenced by other methods. The following is an example:
 
-```js
-localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
+```javascript
+var dialog;
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
+    function (asyncResult) {
+        dialog = asyncResult.value;
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+    }
+);
+
+function processMessage(arg) {
+    dialog.close();
+
+  // message processing code goes here;
+
+}
 ```
 
-Code in the dialog box reads the item when it's needed, as in the following example:
+This `Dialog` object has a [messageChild](/javascript/api/office/office.dialog#messagechild-message-) method that sends any string, including stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
 
-```js
-var clientID = localStorage.getItem("clientID");
-// You can also use property syntax:
-// var clientID = localStorage.clientID;
+Consider a scenario in which the UI of the dialog is related to the currently active worksheet and that worksheet's position relative to the other worksheets. In the following example, `sheetPropertiesChanged` sends Excel worksheet properties to the dialog box. In this case, the current worksheet is named "My Sheet" and it's the second sheet in the workbook. The data is encapsulated in an object and stringified so that it can be passed to `messageChild`.
+
+```javascript
+function sheetPropertiesChanged() {
+    var messageToDialog = JSON.stringify({
+                               name: "My Sheet",
+                               position: 2
+                           });
+
+    dialog.messageChild(messageToDialog);
+}
 ```
 
-### Use query parameters
+### Handle DialogParentMessageReceived in the dialog box
 
-The following example shows how to pass data with a query parameter:
+In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) method. This is typically done in the [Office.onReady or Office.initialize
+methods](initialize-add-in.md), as shown in the following. (A more robust example is below.)
 
-```js
-Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
+```javascript
+Office.onReady()
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent);
+    });
 ```
 
-For a sample that uses this technique, see [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
+Then, define the `onMessageFromParent` handler. The following code continues the example from the preceding section. Note that Office passes an argument to the handler and that the `message` property of the argument object contains the string from the host page. In this example, the message is reconverted to an object and jQuery is used to set the top heading of the dialog to match the new worksheet name.
 
-Code in your dialog box can parse the URL and read the parameter value.
+```javascript
+function onMessageFromParent(event) {
+    var messageFromParent = JSON.parse(event.message);
+    $('h1').text(messageFromParent.name);
+}
+```
+
+It is a best practice to verify that your handler is properly registered. You can do this by passing a callback to the `addHandlerAsync` method. This runs when the attempt to register the handler completes. Use the handler to log or show an error if the handler was not successfully registered. The following is an example. Note that `reportError` is a function, not defined here, that logs or displays the error.
+
+```javascript
+Office.onReady()
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent,
+            onRegisterMessageComplete);
+    });
+
+function onRegisterMessageComplete(asyncResult) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+        reportError(asyncResult.error.message);
+    }
+}
+```
+
+### Conditional messaging from parent page to dialog box
+
+Because you can make multiple `messageChild` calls from the host page, but you have only one handler in the dialog box for the `DialogParentMessageReceived` event, the handler must use conditional logic to distinguish different messages. You can do this in a way that is precisely parallel to how you would structure conditional messaging when the dialog box is sending a message to the host page as described in [Conditional messaging](#conditional-messaging).
+
+> [!NOTE]
+> In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md),  may not be supported. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
 
 > [!IMPORTANT]
-> Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
-
-> [!NOTE]
-> There is now in preview a `messageChild` API that the parent page can use to send messages to the dialog just as the `messageParent` API described above sends messages from the dialog. For more about it, see [Passing data and messages to a dialog box from its host page](parent-to-dialog.md). We encourage you to try it out, but for production add-ins, we recommend that you use the techniques described in this section.
+> The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) cannot be specified in the `<Requirements>` section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) method. Support for manifest requirements is under development.
 
 ## Closing the dialog box
 
