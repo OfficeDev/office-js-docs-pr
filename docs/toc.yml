@@ -103,9 +103,6 @@
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
         displayName: manifest
-      - name: Identify an equivalent COM add-in
-        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-        displayName: manifest
     - name: Privacy, security, and authentication
       items:
       - name: Overview of add-in privacy and security
@@ -1169,3 +1166,4 @@
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
     - name: Identify an equivalent COM add-in
       href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+      displayName: manifest
