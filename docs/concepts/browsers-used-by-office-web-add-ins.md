@@ -1,13 +1,13 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 07/07/2020
+ms.date: 08/13/2020
 localization_priority: Normal
 ---
 
 # Browsers used by Office Add-ins
 
-Office add-ins are web applications that are displayed using iFrames when running in Office on the web and using embedded browser controls in Office for desktop and mobile clients. Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user's computer.
+Office Add-ins are web applications that are displayed using iFrames when running in Office on the web and using embedded browser controls in Office for desktop and mobile clients. Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user's computer.
 
 Which browser is used depends on:
 
@@ -16,16 +16,19 @@ Which browser is used depends on:
 
 The following table shows which browser is used for the various platforms and operating systems.
 
-|**OS / Platform**|**Browser**|
+|OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office on the web|The browser in which Office is opened.|
-|Mac|Safari|
-|iOS|Safari|
-|Android|Chrome|
-|Windows / non-subscription Office 2013 or later|Internet Explorer 11|
-|Windows 10 ver. < 1903 / Office 365|Internet Explorer 11|
-|Windows 10 ver. >= 1903 / Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
-|Windows 10 ver. >= 1903 / Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2, 3</sup>|
+|any|Office on the web|Not applicable|The browser in which Office is opened.|
+|Mac|any|Not applicable|Safari|
+|iOS|any|Not applicable|Safari|
+|Android|any|Not applicable|Chrome|
+|Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Doesn't matter|Internet Explorer 11|
+|Windows 7 | Microsoft 365| Doesn't matter | Internet Explorer 11|
+|Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
+|Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Internet Explorer 11|
+|Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.13127.20082<sup>1</sup>| Doesn't matter|Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
+|Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| No |Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| Yes|  See note 4 below. |
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
@@ -33,6 +36,7 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
+<sup>4</sup> The browser that is used for this combination of versions depends on the update channel of the Microsoft 365 subscription. If the user is on the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office uses Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office uses Microsoft Edge with the original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021.
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
@@ -40,11 +44,7 @@ The following table shows which browser is used for the various platforms and op
 
 ### Service Workers are not working
 
-Office Add-ins do not support Service Workers on [Microsoft Edge WebView](/microsoft-edge/hosting/webview). Please see the [Office Add-ins overview](../overview/office-add-ins.md) for the latest supported features on the Edge WebView control. We are working hard to bring the new [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2) to the Office Add-ins platform, which we expect will support Service Workers.
-
-### Chromium-based Edge is installed on my development computer, but my add-in does not use it
-
-The base browser in [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) has changed to Chromium. The older base, called EdgeHTML, is not removed when Chromium-based Edge is installed. Office will still use the EdgeHTML base for add-ins until a build of Microsoft 365 that supports Chromium is installed on the computer. We expect these builds to ship in 2020. They will likely appear in the Insiders channel in the first half of the year.
+Office Add-ins do not support Service Workers when the original [Microsoft Edge WebView](/microsoft-edge/hosting/webview) is used. They are supported with the [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2).
 
 ### Scroll bar does not appear in task pane
 
@@ -60,7 +60,7 @@ One known cause is that Microsoft Edge requires that localhost be given a loopba
 
 ### Get errors trying to download a PDF file
 
-Directly downloading blobs as PDF files in an add-in is not supported when Edge is the browser. The workaround is to create a simple web application that downloads blobs as PDF files. In your add-in call the `Office.context.ui.openBrowserWindow(url)` method and pass the URL of the web application. This will open the web application in a browser window outside of Office.
+Directly downloading blobs as PDF files in an add-in is not supported when Edge is the browser. The workaround is to create a simple web application that downloads blobs as PDF files. In your add-in, call the `Office.context.ui.openBrowserWindow(url)` method and pass the URL of the web application. This will open the web application in a browser window outside of Office.
 
 ## See also
 

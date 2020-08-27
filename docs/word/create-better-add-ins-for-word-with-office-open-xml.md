@@ -86,7 +86,7 @@ You can include text formatting, borders, shading, cell sizing, or any table for
 *Figure 9. A table formatted using a table style*
 
 
-![A formatted table in Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
+![A table formatted with a table style in Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
 
 You can use built-in or custom table styles just as easily as using a paragraph style for text.
 
@@ -131,7 +131,7 @@ For example, say that you want to insert just a paragraph of text with direct fo
 
 *Figure 12. Collapse and expand package parts for easier editing in Visual Studio*
 
-![Office Open XML code snippet for a package part.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
+![Office Open XML code snippet for a package part in Visual Studio.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
 *Figure 13. The parts included in a basic Word Office Open XML document package*
 

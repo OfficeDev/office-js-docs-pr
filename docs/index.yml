@@ -10,7 +10,7 @@ metadata:
   ms.topic: landing-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 07/13/2020 #Required; mm/dd/yyyy format.
+  ms.date: 07/31/2020 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -22,8 +22,14 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Core concepts
+          - text: Office Add-ins platform overview
             url: overview/office-add-ins.md
+      - linkListType: learn
+        links: 
+          - text: Introduction to Office client customization with add-ins
+            url: /learn/modules/intro-office-add-ins/
+          - text: Extend Office clients with Office Add-ins
+            url: /learn/paths/m365-office-add-in-associate/
       - linkListType: overview
         links:
           - text: Excel add-ins documentation
@@ -101,4 +107,5 @@ landingContent:
           - text: Office Add-ins blogs
             url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
           - text: Additional resources
-            url: https://docs.microsoft.com/office/dev/add-ins/resources/resources-links-help
+            url: resources/resources-links-help.md
+            

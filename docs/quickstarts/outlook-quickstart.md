@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 06/23/2020
+ms.date: 08/24/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -96,8 +96,11 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
+
+    > [!IMPORTANT]
+    > If you see a "Sideload is not supported" error, you can ignore it and proceed.
 
 1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
 
@@ -106,6 +109,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![A screenshot of a message window in Outlook with the add-in button highlighted](../images/quick-start-button-1.png)
+
+    > [!NOTE]
+    > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.
 
@@ -147,7 +153,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 |**Project**|**Description**|
 |:-----|:-----|
-|Add-in project|Contains only an XML manifest file, which contains all the settings that describe your add-in. These settings help the Office host determine when your add-in should be activated and where the add-in should appear. Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately. You can change these settings any time by modifying the XML file.|
+|Add-in project|Contains only an XML manifest file, which contains all the settings that describe your add-in. These settings help the Office application determine when your add-in should be activated and where the add-in should appear. Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately. You can change these settings any time by modifying the XML file.|
 |Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
 
 ### Update the code

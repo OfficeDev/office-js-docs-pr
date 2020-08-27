@@ -1,8 +1,7 @@
 ---
 title: "Tutorial: Share data and events between Excel custom functions and the task pane"
-title: "Tutorial: Share data and events between Excel custom functions and the task pane"
-description: 'In Excel, share data and events between custom functions and the task pane.'
-ms.date: 05/17/2020
+description: 'Learn how to share data and events between custom functions and the task pane in Excel.'
+ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -46,6 +45,9 @@ After you complete the wizard, the generator creates the project and installs su
          </Runtimes>
        <AllFormFactors>
    ```
+
+> [!NOTE]
+> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 4. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**.
 

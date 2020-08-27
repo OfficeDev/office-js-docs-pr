@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 10/31/2019
+ms.date: 08/18/2020
 localization_priority: Priority
 ---
 
@@ -12,20 +12,18 @@ End users, developers, and administrators can use the tiered permission levels o
 This article describes the possible permissions that Outlook add-ins can request, and examines the security model from the following perspectives:
 
 - **AppSource**: add-in integrity
-    
+
 - **End-users**: privacy and performance concerns
-    
+
 - **Developers**: permissions choices and resource usage limits
-    
+
 - **Administrators**: privileges to set performance thresholds
-    
 
 ## Permissions model
 
-Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data. 
+Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
-Manifest schema version 1.1 includes four levels of permissions. 
-
+Manifest schema version 1.1 includes four levels of permissions.
 
 **Table 1. Add-in permission levels**
 
@@ -36,61 +34,62 @@ Manifest schema version 1.1 includes four levels of permissions.
 |Read/write item|ReadWriteItem|
 |Read/write mailbox|ReadWriteMailbox|
 
-The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item** and **restricted**, **read/write item** includes **read item** and **restricted**, and the **read item** permission includes **restricted**. 
+The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item** and **restricted**, **read/write item** includes **read item** and **restricted**, and the **read item** permission includes **restricted**.
 
-The following figure shows the four levels of permissions and describes the capabilities offered to the end user, developer, and administrator by each tier. For more information about these permissions, see [End users: privacy and performance concerns](#end-users-privacy-and-performance-concerns), [Developers: permission choices and resource usage limits](#developers-permission-choices-and-resource-usage-limits), and [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md). 
-
+The following figure shows the four levels of permissions and describes the capabilities offered to the end user, developer, and administrator by each tier. For more information about these permissions, see [End users: privacy and performance concerns](#end-users-privacy-and-performance-concerns), [Developers: permission choices and resource usage limits](#developers-permission-choices-and-resource-usage-limits), and [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 
 **Relating the four-tier permission model to the end user, developer, and administrator**
 
 ![4-tier permissions model for mail apps schema v1.1](../images/add-in-permission-tiers.png)
-
 
 ## AppSource: add-in integrity
 
 [AppSource](https://appsource.microsoft.com) hosts add-ins that can be installed by end users and administrators. AppSource enforces the following measures to maintain the integrity of these Outlook add-ins:
 
 - Requires the host server of an add-in to always use Secure Socket Layer (SSL) to communicate.
-    
+
 - Requires a developer to provide proof of identity, a contractual agreement, and a compliant privacy policy to submit add-ins. 
-    
+
 - Archives add-ins in read-only mode.
-    
+
 - Supports a user-review system for available add-ins to promote a self-policing community.
-    
 
 ## End users: privacy and performance concerns
 
 The security model addresses security, privacy, and performance concerns of end users in the following ways:
 
 - End user's messages that are protected by Outlook's Information Rights Management (IRM) do not interact with Outlook add-ins.
-    
+
+  > [!IMPORTANT]
+  > - Add-ins activate on digitally signed messages in Outlook associated with a Microsoft 365 subscription. On Windows, this support was introduced with build 8711.1000.
+  >
+  > - Starting with Outlook build 13120.1000 on Windows, add-ins can now activate on items protected by IRM. For more information about this feature in preview, see [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+
 - Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
-    
+
 - Granting the **restricted** permission allows the Outlook add-in to have limited access on only the current item. Granting the **read item** permission allows the Outlook add-in to access personal identifiable information, such as sender and recipient names and email addresses, on only the current item,.
-    
+
 - An end user can install an Outlook add-in for only himself or herself. Outlook add-ins that affect an organization are installed by an administrator.
-    
+
 - End users can install Outlook add-ins that enable context-sensitive scenarios that are compelling to users while minimizing the users' security risks.
-    
+
 - Manifest files of installed Outlook add-ins are secured in the user's email account.
-    
+
 - Data communicated with servers hosting Office Add-ins is always encrypted according to the Secure Socket Layer (SSL) protocol.
-    
+
 - Applicable to only the Outlook rich clients: The Outlook rich clients monitor the performance of installed Outlook add-ins, exercise governance control, and disable those Outlook add-ins that exceed limits in the following areas:
-    
+
   - Response time to activate
-    
+
   - Number of failures to activate or reactivate
-    
+
   - Memory usage
-    
+
   - CPU usage  
 
   Governance deters denial-of-service attacks and maintains add-in performance at a reasonable level. The Business Bar alerts end users about Outlook add-ins that the Outlook rich client has disabled based on such governance control.
 
 - At any time, end users can verify the permissions requested by installed Outlook add-ins, and disable or subsequently enable any Outlook add-in in the Exchange Admin Center.
-
 
 ## Developers: permission choices and resource usage limits
 
@@ -114,7 +113,7 @@ Developers should follow the tiered permissions model to provide transparency an
   ```
 
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook items (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
-    
+
   ```XML
     <Permissions>Restricted</Permissions>
         <Rule xsi:type="RuleCollection" Mode="And">
@@ -137,44 +136,38 @@ Developers should follow the tiered permissions model to provide transparency an
   - Create, read, write, or send items in the mailbox.
   - Create, read, or write to folders in the mailbox.
 
-
 ### Resource usage tuning
 
 Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run on an Outlook rich client, then developers should verify that the add-in performs within the resource usage limits.
-
 
 ### Other measures to promote user security
 
 Developers should be aware of and plan for the following as well:
 
 - Developers cannot use ActiveX controls in add-ins because they are not supported.
-    
+
 - Developers should do the following when submitting an Outlook add-in to AppSource:
-    
+
   - Produce an Extended Validation (EV) SSL certificate as a proof of identity.
-    
+
   - Host the add-in they are submitting on a web server that supports SSL.
-    
+
   - Produce a compliant privacy policy.
-    
+
   - Be ready to sign a contractual agreement upon submitting the add-in.
-    
 
 ## Administrators: privileges
 
 The security model provides the following rights and responsibilities to administrators:
 
 - Can prevent end users from installing any Outlook add-in, including add-ins from AppSource.
-    
-- Can disable or enable any Outlook add-in on the Exchange Admin Center.
-    
-- Applicable to only Outlook on Windows: Can override performance threshold settings by GPO registry settings.
-    
 
+- Can disable or enable any Outlook add-in on the Exchange Admin Center.
+
+- Applicable to only Outlook on Windows: Can override performance threshold settings by GPO registry settings.
 
 ## See also
 
-- [Privacy and security for Office Add-ins](../develop/privacy-and-security.md)    
-- [Outlook add-in APIs](apis.md)    
+- [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
+- [Outlook add-in APIs](apis.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-    

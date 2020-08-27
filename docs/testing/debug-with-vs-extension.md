@@ -26,7 +26,7 @@ These instructions assume you have experience using the command line, understand
 
 1. If you need to create an add-in project, [use the Yo Office generator to create one](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
 
-> ![NOTE]
+> [!NOTE]
 > If you already have a project, skip step 1 and move to step 2.
 
 2. Open a command prompt as administrator.
@@ -62,7 +62,7 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 }
 ```
 
-7. In the section of JSON you just copied, find the "url" section. In this URL, you will need to replace the uppercase HOST text with the host application for your Office add-in. For example, if your Office add-in is for Excel, your URL value would be "https://localhost:3000/taskpane.html?_host_Info=<strong>Excel</strong>$Win32$16.01$en-US$\$\$\$0".
+7. In the section of JSON you just copied, find the "url" section. In this URL, you will need to replace the uppercase HOST text with the application that is hosting your Office add-in. For example, if your Office add-in is for Excel, your URL value would be "https://localhost:3000/taskpane.html?_host_Info=<strong>Excel</strong>$Win32$16.01$en-US$\$\$\$0".
 
 8. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in the Office client, open the task pane.
 

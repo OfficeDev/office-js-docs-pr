@@ -1,7 +1,7 @@
 ---
 title: Get and set recurrence in an Outlook add-in
 description: This topic shows you how to use the Office JavaScript API to get and set various recurrence properties of an item in an Outlook add-in.
-ms.date: 01/14/2020
+ms.date: 08/18/2020
 localization_priority: Normal
 ---
 
@@ -20,11 +20,11 @@ To configure the recurrence pattern, you need to combine the [recurrence type](/
 
 |Recurrence type|Valid recurrence properties|Usage|
 |---|---|---|
-|`daily`|- [`interval`][interval link]|An appointment occurs every *interval* days. Example: An appointment occurs every **_2_** days.|
+|`daily`|-&nbsp;[`interval`][interval link]|An appointment occurs every *interval* days. Example: An appointment occurs every **_2_** days.|
 |`weekday`|None.|An appointment occurs every weekday.|
-|`monthly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]|- An appointment occurs on day *dayOfMonth* every *interval* months. Example: An appointment occurs on day **_5_** every **_4_** months.<br/><br/>- An appointment occurs on the *weekNumber* *dayOfWeek* every *interval* months. Example: An appointment occurs on the **_third_** **_Thursday_** every **_2_** months.|
-|`weekly`|- [`interval`][interval link]<br/>- [`days`][days link]|An appointment occurs on *days* every *interval* weeks. Example: An appointment occurs on **_Tuesday_ and _Thursday_** every **_2_** weeks.|
-|`yearly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]<br/>- [`month`][month link]|- An appointment occurs on day *dayOfMonth* of *month* every *interval* years. Example: An appointment occurs on day **_7_** of **_September_** every **_4_** years.<br/><br/>- An appointment occurs on the *weekNumber* *dayOfWeek* of *month* every *interval* years. Example: An appointment occurs on the **_first_** **_Thursday_** of **_September_** every **_2_** years.|
+|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- An appointment occurs on day *dayOfMonth* every *interval* months. Example: An appointment occurs on day **_5_** every **_4_** months.<br/><br/>- An appointment occurs on the *weekNumber* *dayOfWeek* every *interval* months. Example: An appointment occurs on the **_third_** **_Thursday_** every **_2_** months.|
+|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|An appointment occurs on *days* every *interval* weeks. Example: An appointment occurs on **_Tuesday_ and _Thursday_** every **_2_** weeks.|
+|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- An appointment occurs on day *dayOfMonth* of *month* every *interval* years. Example: An appointment occurs on day **_7_** of **_September_** every **_4_** years.<br/><br/>- An appointment occurs on the *weekNumber* *dayOfWeek* of *month* every *interval* years. Example: An appointment occurs on the **_first_** **_Thursday_** of **_September_** every **_2_** years.|
 
 > [!NOTE]
 > You can also use the [`firstDayOfWeek`][firstDayOfWeek link] property with the `weekly` recurrence type. The specified day will start the list of days displayed in the recurrence dialog.
@@ -68,6 +68,27 @@ Office.context.mailbox.item.recurrence.setAsync(pattern, callback);
 function callback(asyncResult)
 {
     console.log(JSON.stringify(asyncResult));
+}
+```
+
+## Change recurrence as the organizer
+
+In the following example, in compose mode, the appointment organizer gets the recurrence object of an appointment series given the series or an instance of that series, then sets a new recurrence duration.
+
+```js
+Office.context.mailbox.item.recurrence.getAsync(callback);
+
+function callback(asyncResult) {
+  var recurrencePattern = asyncResult.value;
+  recurrencePattern.seriesTime.setDuration(60);
+  Office.context.mailbox.item.recurrence.setAsync(recurrencePattern, (asyncResult) => {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+      console.log("failed");
+      return;
+    }
+
+    console.log("success");
+  });
 }
 ```
 

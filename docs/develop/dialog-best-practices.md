@@ -21,7 +21,7 @@ This article provides rules, gotchas, and best practices for the Office dialog A
 - A host window, which can be a task pane or the UI-less [function file](../reference/manifest/functionfile.md) of an add-in command, can have only one dialog box open at a time.
 - Only two Office APIs can be called in the dialog box:
   - The [messageParent](/javascript/api/office/office.ui#messageparent-message-) function.
-  - `Office.context.requirements.isSetSupported` (For more information, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).)
+  - `Office.context.requirements.isSetSupported` (For more information, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
 - The [messageParent](/javascript/api/office/office.ui#messageparent-message-) function can only be called from a page in the exact same domain as the add-in itself.
 
 ## Best practices

@@ -1,6 +1,6 @@
 ---
 title: Building Office Add-ins
-description: 'An introduction to developing Office Add-ins.'
+description: 'An introduction to building Office Add-ins.'
 ms.date: 02/27/2020
 localization_priority: Priority
 ---
@@ -125,7 +125,7 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 Learn more about developing, testing, and publishing Office Add-ins by exploring this documentation.
 
 > [!TIP]
-> For any add-in that you build, you'll use information in the [Core concepts](core-concepts-office-add-ins.md) section of this documentation, along with information in the host-specific section that corresponds to the type of add-in you're building (for example, [Excel](../excel/index.yml)).
+> For any add-in that you build, you'll use information in the [Core concepts](core-concepts-office-add-ins.md) section of this documentation, along with information in the application-specific section that corresponds to the type of add-in you're building (for example, [Excel](../excel/index.yml)).
 >
 > ![An image that shows the table of contents](../images/top-level-toc.png)
 

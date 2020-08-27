@@ -1,7 +1,7 @@
 ---
 title: Office JavaScript API error codes
 description: This article documents the error messages you might encounter while using the Office JavaScript API.
-ms.date: 03/10/2020
+ms.date: 08/11/2020
 localization_priority: Normal
 ---
 
@@ -17,7 +17,7 @@ The following table lists the error codes, names, and messages displayed, and th
 
 |**Error.code**|**Error.name**|**Error.message**|**Condition**|
 |:-----|:-----|:-----|:-----|
-|1000|Invalid Coercion Type|The specified coercion type is not supported|The coercion type is not supported in the host application. (For example, OOXML and HTML coercion types are not supported in Excel.)|
+|1000|Invalid Coercion Type|The specified coercion type is not supported|The coercion type is not supported in the Office application. (For example, OOXML and HTML coercion types are not supported in Excel.)|
 |1001|Data Read Error|The current selection is not supported.|The user's current selection is not supported (that is, it is something different than the supported coercion types).|
 |1002|Invalid Coercion Type|The specified coercion type is not compatible for this binding type.|The solution developer provided an incompatible combination of coercion type and binding type.|
 |1003|Data Read Error|The specified rowCount or columnCount values are invalid.|The user supplies invalid column or row counts.|
@@ -25,7 +25,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |1005|Data Read Error|The specified startRow or startColumn values are invalid.|The user supplies invalid startRow or startCol values.|
 |1006|Data Read Error|Coordinate parameters cannot be used with coercion type "Table" when the table contains merged cells.|The user tries to get partial data from a non-uniform table (that is, a table that has merged cells). |
 |1007|Data Read Error|The size of the document is too large.|The user tries to get a document larger than the size currently supported.|
-|1008|Data Read Error|The requested data set is too large.|The user requests to read data beyond the data limits defined by the host add-ins.|
+|1008|Data Read Error|The requested data set is too large.|The user requests to read data beyond the data limits defined by the Office application.|
 |1009|Data Read Error|The specified file type is not supported.|The user sends an invalid file type.|
 |2000|Data Write Error|The supplied data object type is not supported. |An unsupported data object is supplied.|
 |2001|Data Write Error|Cannot write to the current selection.|The user's current selection is not supported for a write operation. (For example, when the user selects an image.)|
@@ -36,7 +36,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |2006|Invalid Format Error|The format of the specified data object is not valid.|The solution developer supplies an invalid HTML or OOXML string, a malformed HTML string, or an invalid OOXML string.|
 |2007|Invalid Data Object|The type of the specified data object is not compatible with the current selection.|The solution developer supplies a data object not compatible with the specified coercion type.|
 |2008|Data Write Error|TBD|TBD|
-|2009|Data Write Error|The specified data object is too large.|The user tries to set data beyond the data limits defined by host add-ins.|
+|2009|Data Write Error|The specified data object is too large.|The user tries to set data beyond the data limits defined by the Office application.|
 |2010|Data Write Error|Coordinate parameters cannot be used with coercion type Table when the table contains merged cells.|The user tries to set partial data from a non- uniform table (that is, a table that has merged cells).|
 |3000|Binding Creation Error|Cannot bind to the current selection.|The user's selection is not supported for binding. (For example, the user is selecting an image or other non-supported object.)|
 |3001|Binding Creation Error|TBD|TBD|
@@ -48,11 +48,11 @@ The following table lists the error codes, names, and messages displayed, and th
 |3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to **true**.|
 |3008|Binding Creation Error|The specified binding type is not compatible with the supplied named item.|Named item cannot be bound to type. For example, a content control contains text but the developer tried to bind by using coercion type  _table_.|
 |3009|Invalid Binding Operation|The binding type is not supported.|Used for backward compatibility.|
-|3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the `addRowsAsynch` or `deleteAllDataValuesAsynch` methods of the `TableBinding` object on data of coercion type _matrix_.|
+|3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the `addRowsAsync` or `deleteAllDataValuesAsync` methods of the `TableBinding` object on data of coercion type _matrix_.|
 |4000|Read Settings Error|The specified setting name does not exist.|A nonexistent setting name is supplied.|
 |4001|Save Settings Error|The settings could not be saved.|Settings could not be saved.|
 |4002|Settings Stale Error|Settings could not be saved because they are stale.|Settings are stale and developer indicated not to override settings.|
-|5000|Settings Stale Error|The operation is not supported.|The operation is not supported in the current host. For example, `document.getSelectionAsync` is called from Outlook.|
+|5000|Settings Stale Error|The operation is not supported.|The operation is not supported in the current Office application. For example, `document.getSelectionAsync` is called from Outlook.|
 |5001|Internal Error|An internal error has occurred.|Refers to an internal error condition, which can occur for any of the following reasons:<br/><table><tr><td>An add-in being used by another user sharing the workbook created a binding at approximately the same time, and your add-in needs to retry binding.</tr></td><tr><td>An unknown error occurred.</tr></td><tr><td>The operation failed.</tr></td><tr><td>Access was denied because the user is not a member of an authorized role.</tr></td><tr><td>Access was denied because secure, encrypted communication is required.</tr></td><tr><td>Data is stale and the user needs to confirm enabling the queries to refresh it.</tr></td><tr><td>The site collection CPU quota has been exceeded.</tr></td><tr><td>The site collection memory quota has been exceeded.</tr></td><tr><td>The session memory quota has been exceeded.</tr></td><tr><td>The workbook is in an invalid state and the operation can't be performed.</tr></td><tr><td>The session has timed out due to inactivity and the user needs to reload the workbook.</tr></td><tr><td>The maximum number of allowed sessions per user has been exceeded.</tr></td><tr><td>The operation was canceled by the user.</tr></td><tr><td>The operation can't be completed because it is taking too long.</tr></td><tr><td>The request can't be completed and needs to be retried.</tr></td><tr><td>The trial period of the product has expired.</tr></td><tr><td>The session has timed out due to inactivity.</tr></td><tr><td>The user doesn't have permission to perform the operation on the specified range.</tr></td><tr><td>The user's regional settings don't match the current collaboration session.</tr></td><tr><td>The user is no longer connected and must refresh or re-open the workbook.</tr></td><tr><td>The requested range doesn't exist in the sheet.</tr></td><tr><td>The user doesn't have permission to edit the workbook.</tr></td><tr><td>The workbook can't be edited because it is locked.</tr></td><tr><td>The session can't auto save the workbook.</tr></td><tr><td>The session can't refresh its lock on the workbook file.</tr></td><tr><td>The request can't be processed and needs to be retried.</tr></td><tr><td>The user's sign-in information couldn't be verified and needs to be re-entered.</tr></td><tr><td>The user has been denied access.</tr></td><tr><td>The shared workbook needs to be updated.</tr></td></table>|
 |5002|Permission Denied|The requested operation is not allowed on the current document mode.|The solution developer submits a set operation, but the document is in a mode that does not allow modifications, such as 'Restrict Editing'.|
 |5003|Event Registration Error|The specified event type is not supported by the current object.|The solution developer tries to register or unregister a handler to an event that does not exist.|

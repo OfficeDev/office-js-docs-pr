@@ -1,11 +1,11 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 12/04/2019
+ms.date: 07/30/2020
 localization_priority: Normal
 ---
 
-# Create an ASP.NET Office Add-in that uses single sign-on (preview)
+# Create an ASP.NET Office Add-in that uses single sign-on
 
 When users are signed in to Office, your add-in can use the same credentials to permit users to access multiple applications without requiring them to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET.
@@ -49,10 +49,10 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     * In the **Redirect URI** section, ensure that **Web** is selected in the drop down and then set the URI to` https://localhost:44355/AzureADAuth/Authorize`.
     * Choose **Register**.
 
-1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
+1. On the **Office-Add-in-ASPNET-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
 
     > [!NOTE]
-    > This ID is the "audience" value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
+    > This ID is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
 1. Under **Manage**, select **Certificates & secrets**. Select the **New client secret** button. Enter a value for **Description**, then select an appropriate option for **Expires** and choose **Add**. *Copy the client secret value immediately and save it with the application ID* before proceeding as you'll need it in a later procedure.
 
@@ -64,7 +64,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Set **Who can consent?** to **Admins and users**.
 
-1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office host application to use your add-in's web APIs with the same rights as the current user. Suggestions:
+1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office client application to use your add-in's web APIs with the same rights as the current user. Suggestions:
 
     - **Admin consent title**: Office can act as the user.
     - **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights as the current user.
@@ -83,6 +83,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
+    - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     For each ID, take these steps:
@@ -93,7 +94,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Under **Manage**, select **API permissions** and then select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
 
-1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office host to get a token to your add-in web application. (Only Files.Read.All and profile are actually needed by the add-in. You must request the other two because the MSAL.NET library requires them.)
+1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office application to get a token to your add-in web application. (Only Files.Read.All and profile are actually needed by the add-in. You must request the other two because the MSAL.NET library requires them.)
 
     * Files.Read.All
     * offline_access
@@ -121,7 +122,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 1. In "Web.config", use the values that you copied in earlier. Set both the **ida:ClientID** and the **ida:Audience** to your **Application (client) ID**, and set **ida:Password** to your client secret.
 
     > [!NOTE]
-    > The **Application (client) ID** is the "audience" value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
+    > The **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
 1. If you didn't choose "Accounts in this organizational directory only" for **SUPPORTED ACCOUNT TYPES** when you registered the add-in, save and close the web.config. Otherwise, save but leave it open.
 
@@ -176,7 +177,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     var retryGetAccessToken = 0;
 
     async function getGraphData() {
-        await getDataWithToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
     }
     ```
 
@@ -187,7 +188,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graphn and then get the data
+            //         for an access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -206,13 +207,15 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
     * `getAccessToken` tells Office to get a bootstrap token from Azure AD and return to the add-in.
     * `allowSignInPrompt` tells Office to prompt the user to sign in if the user isn't already signed into Office.
-    * `forMSGraphAccess` tells Office that the add-in intends to swap the bootstrap token for an access token to Microsoft Graph (instead of just using the bootstrap token as a user ID token). Setting this option gives Office a chance to cancel the process of getting a bootstrap token (and return error code 13012) if the user's tenant administrator has not granted consent to the add-in. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system. If the `forMSGraphAccess` is not used, and the admin has not granted consent, the bootstrap token is returned, but the attempt to exhange it with the on-behalf-of flow would result in an error. Thus, the `forMSGraphAccess` option enables the add-in to branch to the fallback system quickly.
+    * `allowConsentPrompt` tells Office to prompt the user to consent to letting the add-in access the user's AAD profile, if consent has not already been granted. (The resulting prompt does *not* allow the user to consent to any Microsoft Graph scopes.)
+    * `forMSGraphAccess` tells Office that the add-in intends to swap the bootstrap token for an access token to Microsoft Graph (instead of just using the bootstrap token as a user ID token). Setting this option gives Office a chance to cancel the process of getting a bootstrap token (and return error code 13012) if the user's tenant administrator has not granted consent to the add-in. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system. If the `forMSGraphAccess` is not used and the admin has not granted consent, the bootstrap token is returned, but the attempt to exchange it with the on-behalf-of flow would result in an error. Thus, the `forMSGraphAccess` option enables the add-in to branch to the fallback system quickly.
     * You create the `getData` function in a later step.
     * The `/api/values` parameter is the URL of a server-side controller that will make the token exchange and use the access token it gets back to make the call to Microsoft Graph.
 
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({
         allowSignInPrompt: true,
+        allowConsentPrompt: true,
         forMSGraphAccess: true });
 
     getData("/api/values", bootstrapToken);
@@ -295,7 +298,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         break;
     ```
 
-1. Replace `TODO 3` with the following code. For all other errors, the add-in branches to the fallback authorization system. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). In this add-in, the fallback system opens a dialog which requires the user to sign in, even if the user already is, and uses msal.js and the Implicit Flow to get an access token to Microsoft Graph.
+1. Replace `TODO 3` with the following code. For all other errors, the add-in branches to the fallback authorization system. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). In this add-in, the fallback system opens a dialog which requires the user to sign in, even if the user already is.
 
     ```javascript
     default:
@@ -422,9 +425,9 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace the `TODO 1` with the following. Note about this code:
 
-    * The code instructs OWIN to ensure that the audience specified in the bootstrap token that comes from the Office host must match the value specified in the web.config.
+    * The code instructs OWIN to ensure that the audience specified in the bootstrap token that comes from the Office application must match the value specified in the web.config.
     * Microsoft accounts have an issuer GUID that is different from any organizational tenant GUID, so to support both kinds of accounts, we do not validate the issuer.
-    * Setting `SaveSigninToken` to `true` causes OWIN to save the raw bootstrap token from the Office host. The add-in needs it to obtain an access token to Microsoft Graph with the on-behalf-of flow.
+    * Setting `SaveSigninToken` to `true` causes OWIN to save the raw bootstrap token from the Office application. The add-in needs it to obtain an access token to Microsoft Graph with the on-behalf-of flow.
     * Scopes are not validated by the OWIN middleware. The scopes of the bootstrap token, which should include `access_as_user`, is validated in the controller.
 
     ```csharp
@@ -439,7 +442,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Replace `TODO 2` with the following. Note about this code:
 
     * The method `UseOAuthBearerAuthentication` is called instead of the more common `UseWindowsAzureActiveDirectoryBearerAuthentication` because the latter is not compatible with the Azure AD V2 endpoint.
-    * The URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the bootstrap token received from the Office host. The Authority segment of the URL comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
+    * The URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the bootstrap token received from the Office application. The Authority segment of the URL comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
 
     ```csharp
     string[] endAuthoritySegments = { "oauth2/v2.0" };
@@ -505,10 +508,10 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace `TODO 2` with the following code to assemble all the information that is needed to get a token for Microsoft Graph using the "on behalf of" flow. About this code, note:
 
-    * Your add-in is no longer playing the role of a resource (or audience) to which the Office host and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object.
+    * Your add-in is no longer playing the role of a resource (or audience) to which the Office application and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object.
     * Beginning with MSAL.NET 3.x.x, the `bootstrapContext` is just the bootstrap token itself.
     * The Authority comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
-    * MSAL requires the `openid` and `offline_access` scopes to function, but it throws an error if your code redundantly requests them. It will also throw an error if your code requests `profile`, which is really only used when the Office host application gets the token to your add-in's web application. So only `Files.Read.All` is explicitly requested.
+    * MSAL requires the `openid` and `offline_access` scopes to function, but it throws an error if your code redundantly requests them. It will also throw an error if your code requests `profile`, which is really only used when the Office client application gets the token to your add-in's web application. So only `Files.Read.All` is explicitly requested.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -549,7 +552,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Replace `TODO 3a` with the following code. About this code, note:
 
     * If multi-factor authentication is required by the Microsoft Graph resource and the user has not yet provided it, Azure AD will return "400 Bad Request" with error `AADSTS50076` and a **Claims** property. MSAL throws a **MsalUiRequiredException** (which inherits from **MsalServiceException**) with this information.
-    * The **Claims** property value must be passed to the client which should pass it to the Office host, which then includes it in a request for a new bootstrap token. Azure AD will prompt the user for all required forms of authentication.
+    * The **Claims** property value must be passed to the client which should pass it to the Office application, which then includes it in a request for a new bootstrap token. Azure AD will prompt the user for all required forms of authentication.
     * The APIs that create HTTP Responses from exceptions don't know about the **Claims** property, so they don't include it in the response object. We have to manually create a message that includes it. A custom **Message** property, however, blocks the creation of an **ExceptionMessage** property, so the only way to get the error ID `AADSTS50076` to the client is to add it to the custom **Message**. JavaScript in the client will need to discover if a response has a **Message** or **ExceptionMessage**, so it knows which to read.
     * The custom message is formatted as JSON so that the client-side JavaScript can parse it with well-known JavaScript `JSON` object methods.
 
@@ -599,7 +602,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. In **Solution Explorer**, select the **Office-Add-in-ASPNET-SSO** project node (not the top solution node and not the project whose name ends in "WebAPI").
 1. In the **Properties** pane, open the **Start Document** drop down and choose one of the three options (Excel, Word, or PowerPoint).
 
-    ![Choose the desired Office host application: Excel or PowerPoint or Word](../images/SelectHost.JPG)
+    ![Choose the desired Office client application: Excel, PowerPoint, or Word](../images/SelectHost.JPG)
 
 1. Press F5.
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** in the **SSO ASP.NET** group to open the task pane add-in.

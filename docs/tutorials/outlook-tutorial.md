@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: 'In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.'
-ms.date: 07/07/2020
+ms.date: 08/24/2020
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 localization_priority: Priority
@@ -158,8 +158,11 @@ Before going any further, let's test the basic add-in that the generator created
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
+
+    > [!IMPORTANT]
+    > If you see a "Sideload is not supported" error, you can ignore it and proceed.
 
 1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.
 
@@ -595,8 +598,11 @@ Finally, open the file **webpack.config.js** file in the root directory of the p
 5. Run the following command to start the web server.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
+
+    > [!IMPORTANT]
+    > If you see a "Sideload is not supported" error, you can ignore it and proceed.
 
 ### Fetch data from GitHub
 
@@ -896,7 +902,10 @@ function buildBodyContent(gist, callback) {
 
 ### Test the button
 
-Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert default gist** button.
+Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert default gist** button.
+
+> [!IMPORTANT]
+> If you see a "Sideload is not supported" error, you can ignore it and proceed.
 
 1. Open Outlook and compose a new message.
 
@@ -1257,7 +1266,10 @@ In the project that you've created, the task pane JavaScript is specified in the
 
 ### Test the button
 
-Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert gist** button.
+Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert gist** button.
+
+> [!IMPORTANT]
+> If you see a "Sideload is not supported" error, you can ignore it and proceed.
 
 1. Open Outlook and compose a new message.
 

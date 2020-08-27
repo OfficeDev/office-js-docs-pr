@@ -26,7 +26,7 @@ Defines a collection of controls to be added to the Office context menu. Applies
 Specifies a built-in menu of the Office client application on which to add this Office Add-in.
 
 - `ContextMenuText` -  Displays the item on the context menu when text is selected and the user opens the context menu (right-clicks) on the selected text. Applies to Word, Excel, PowerPoint, and OneNote.
-- `ContextMenuCell` -  Displays the item on the context menu when the user opens the context menu (right-clicks) on a cell on the spreadsheet. Applies to Excel. 
+- `ContextMenuCell` -  Displays the item on the context menu when the user opens the context menu (right-clicks) on a cell on the spreadsheet. Applies to Excel.
 
 ## Control
 
@@ -41,12 +41,12 @@ Each **OfficeMenu** element requires at one or more [menu](control.md#menu-dropd
       <Supertip>
           <Title resid="residLabel" />
           <Description resid="residToolTip" />
-      </Supertip>   
+      </Supertip>
       <Icon>
         <bt:Image size="16" resid="icon1_16x16" />
         <bt:Image size="32" resid="icon1_32x32" />
         <bt:Image size="80" resid="icon1_80x80" />
-      </Icon>    
+      </Icon>
       <Items>
         <Item id="myMenuItemID">
           <Label resid="residLabel3"/>
@@ -58,12 +58,12 @@ Each **OfficeMenu** element requires at one or more [menu](control.md#menu-dropd
             <bt:Image size="16" resid="icon1_16x16" />
             <bt:Image size="32" resid="icon1_32x32" />
             <bt:Image size="80" resid="icon1_80x80" />
-          </Icon>    
+          </Icon>
           <Action xsi:type="ShowTaskpane">
-            <SourceLocation resid="residTaskpaneUrl2" />    
-          </Action>    
+            <SourceLocation resid="residTaskpaneUrl2" />
+          </Action>
         </Item>
       </Items>
-    </Control>   
+    </Control>
 </OfficeMenu>
 ```
