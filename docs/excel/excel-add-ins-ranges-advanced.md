@@ -327,7 +327,7 @@ To ungroup a row or column group, use the [Range.ungroup](/javascript/api/excel/
 > [!NOTE]
 > Dynamic array and range spilling APIs are currently in preview. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
 
-Some Excel formulas return [Dynamic arrays](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). These fill the values of multiple cells outside of the formula's orginal cell. This value overflow is referred to as a "spill". Your add-in can find the range used for a spill with the [Range.getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) method. There is also a [*OrNullObject version](excel-add-ins-advanced-concepts.md#ornullobject-methods), `Range.getSpillingToRangeOrNullObject`.
+Some Excel formulas return [Dynamic arrays](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). These fill the values of multiple cells outside of the formula's orginal cell. This value overflow is referred to as a "spill". Your add-in can find the range used for a spill with the [Range.getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) method. There is also a [*OrNullObject version](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject`.
 
 The following sample shows a basic formula that copies the contents of a range into a cell, which spills into neighboring cells. The add-in then logs the range that contains the spill.
 
