@@ -33,7 +33,7 @@ Setting a minimum requirement set version in the manifest controls which Outlook
 
 Setting a requirement set does not limit the available APIs that the add-in can use. For example, if the add-in specifies requirement set "Mailbox 1.1", but it is running in an Outlook client which supports "Mailbox 1.3", the add-in can use APIs from requirement set "Mailbox 1.3".
 
-To use a newer API, developers can check if a particular host supports the requirement set by doing the following.
+To use a newer API, developers can check if a particular application supports the requirement set by doing the following.
 
 ```js
 if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {

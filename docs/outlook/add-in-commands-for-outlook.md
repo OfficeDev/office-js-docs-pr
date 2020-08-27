@@ -25,7 +25,7 @@ Add-in commands are only available for add-ins that do not use [ItemHasAttachmen
 
 Add-in commands are declared in the add-in manifest in the [VersionOverrides element](../reference/manifest/versionoverrides.md). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support `VersionOverrides`, existing add-ins will continue to function as they did without add-in commands.
 
-The `VersionOverrides` manifest entries specify many things for the add-in, such as the host, types of controls to add to the ribbon, the text, the icons, and any associated functions.
+The `VersionOverrides` manifest entries specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
 
@@ -54,7 +54,7 @@ In Outlook on the web, the add-in name is displayed in an overflow menu. If the 
 
 ## What UX shapes exist for add-in commands?
 
-The UX shape for an add-in command consists of a ribbon tab in the host application that contains buttons that can perform various functions. Currently, three UI shapes are supported:
+The UX shape for an add-in command consists of a ribbon tab in the Office application that contains buttons that can perform various functions. Currently, three UI shapes are supported:
 
 - A button that executes a JavaScript function
 - A button that launches a task pane

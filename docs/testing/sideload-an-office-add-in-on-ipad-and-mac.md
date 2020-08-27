@@ -79,7 +79,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 ## Remove a sideloaded add-in
 
-You can remove a previously sideloaded add-in by clearing the Office cache on your computer. Details on how to clear the cache for each platform and host can be found in the article [Clear the Office cache](clear-cache.md).
+You can remove a previously sideloaded add-in by clearing the Office cache on your computer. Details on how to clear the cache for each platform and application can be found in the article [Clear the Office cache](clear-cache.md).
 
 ## See also
 

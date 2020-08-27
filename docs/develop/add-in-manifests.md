@@ -110,7 +110,7 @@ Only use the [AppDomains](../reference/manifest/appdomains.md) element to specif
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
+When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](../reference/manifest/appdomains.md) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
@@ -492,7 +492,7 @@ For information about validating a manifest against the [XML Schema Definition (
 
 * [How to find the proper order of manifest elements](manifest-element-ordering.md)
 * [Create add-in commands in your manifest][add-in commands]
-* [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md)
+* [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 * [Localization for Office Add-ins](localization.md)
 * [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)

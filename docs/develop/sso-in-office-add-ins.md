@@ -24,12 +24,12 @@ The following diagram shows how the SSO process works.
 
 ![A diagram that shows the SSO process](../images/sso-overview-diagram.png)
 
-1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office host application to obtain an access token to the add-in. See [Example access token](#example-access-token).
-2. If the user is not signed in, the Office host application opens a pop-up window for the user to sign in.
+1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office client application to obtain an access token to the add-in. See [Example access token](#example-access-token).
+2. If the user is not signed in, the Office client application opens a pop-up window for the user to sign in.
 3. If this is the first time the current user has used your add-in, he or she is prompted to consent.
-4. The Office host application requests the **add-in token** from the Azure AD v2.0 endpoint for the current user.
-5. Azure AD sends the add-in token to the Office host application.
-6. The Office host application sends the **add-in token** to the add-in as part of the result object returned by the `getAccessToken` call.
+4. The Office client application requests the **add-in token** from the Azure AD v2.0 endpoint for the current user.
+5. Azure AD sends the add-in token to the Office client application.
+6. The Office client application sends the **add-in token** to the add-in as part of the result object returned by the `getAccessToken` call.
 7. JavaScript in the add-in can parse the token and extract the information it needs, such as the user's email address.
 8. Optionally, the add-in can send HTTP request to its server-side for more data about the user; such as the user's preferences. Alternatively, the access token itself could be sent to the server-side for parsing and validation there.
 
@@ -49,8 +49,8 @@ Register the add-in at the registration portal for the Azure v2.0 endpoint. This
 
 * Get a client ID and secret for the add-in.
 * Specify the permissions that your add-in needs to AAD v. 2.0 endpoint (and optionally to Microsoft Graph). The "profile" permission is always needed.
-* Grant the Office host application trust to the add-in.
-* Preauthorize the Office host application to the add-in with the default permission *access_as_user*.
+* Grant the Office client application trust to the add-in.
+* Preauthorize the Office client application to the add-in with the default permission *access_as_user*.
 
 For more details about this process, see [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 
@@ -64,7 +64,7 @@ Add new markup to the add-in manifest:
 * **Scopes** - The parent of one or more **Scope** elements.
 * **Scope** - Specifies a permission that the add-in needs to AAD. The `profile` permission is always needed and it may be the only permission needed, if your add-in does not access Microsoft Graph. If it does, you also need **Scope** elements for the required Microsoft Graph permissions; for example, `User.Read`, `Mail.Read`. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For example, Microsoft Authentication Library (MSAL) for .NET requires `offline_access` permission. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
 
-For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
+For Office applications other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
 The following is an example of the markup:
 
@@ -215,7 +215,7 @@ There are some small, but important differences in using SSO in an Outlook add-i
 
 ### getAccessToken
 
-The OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) namespace, `OfficeRuntime.Auth`, provides a method, `getAccessToken` that enables the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
+The OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) namespace, `OfficeRuntime.Auth`, provides a method, `getAccessToken` that enables the Office application to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
 
 ```typescript
 getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;
