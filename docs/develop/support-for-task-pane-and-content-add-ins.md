@@ -9,7 +9,7 @@ localization_priority: Normal
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-You can use the [Office JavaScript API](../reference/javascript-api-for-office.md) to create task pane or content add-ins for Office 2013 host applications. The objects and methods that content and task pane add-ins support are categorized as follows:
+You can use the [Office JavaScript API](../reference/javascript-api-for-office.md) to create task pane or content add-ins for Office 2013 client applications. The objects and methods that content and task pane add-ins support are categorized as follows:
 
 1. **Common objects shared with other Office Add-ins.** These objects include [Office](/javascript/api/office), [Context](/javascript/api/office/office.context), and [AsyncResult](/javascript/api/office/office.asyncresult). The `Office` object is the root object of the Office JavaScript API. The `Context` object represents the add-in's runtime environment. Both `Office` and `Context` are the fundamental objects for any Office Add-in. The `AsyncResult` object represents the results of an asynchronous operation, such as the data returned to the `getSelectedDataAsync` method, which reads what a user has selected in a document.
 
@@ -31,12 +31,12 @@ You can use the [Office JavaScript API](../reference/javascript-api-for-office.m
 > [!IMPORTANT]
 > Some of the API members aren't supported across all Office applications that can host content and task pane add-ins. To determine which members are supported, see any of the following:
 
-For a summary of Office JavaScript API support across Office host applications, see [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
+For a summary of Office JavaScript API support across Office client applications, see [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
 
 
 ## Reading and writing to an active selection
 
-You can read or write to the user's current selection in a document, spreadsheet, or presentation. Depending on the host application for your add-in, you can specify the type of data structure to read or write as a parameter in the [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) and [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) methods of the [Document](/javascript/api/office/office.document) object. For example, you can specify any type of data (text, HTML, tabular data, or Office Open XML) for Word, text and tabular data for Excel, and text for PowerPoint and Project. You can also create event handlers to detect changes to the user's selection. The following example gets data from the selection as text using the `getSelectedDataAsync` method.
+You can read or write to the user's current selection in a document, spreadsheet, or presentation. Depending on the Office application for your add-in, you can specify the type of data structure to read or write as a parameter in the [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) and [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) methods of the [Document](/javascript/api/office/office.document) object. For example, you can specify any type of data (text, HTML, tabular data, or Office Open XML) for Word, text and tabular data for Excel, and text for PowerPoint and Project. You can also create event handlers to detect changes to the user's selection. The following example gets data from the selection as text using the `getSelectedDataAsync` method.
 
 
 ```js

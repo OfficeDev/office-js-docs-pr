@@ -8,11 +8,11 @@ localization_priority: Priority
 
 # Excel JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 ## Requirement set availability
 
-Excel add-ins run across multiple versions of Office, including Office 2016 or later on Windows, and Office on the web, Mac, and iPad. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
+Excel add-ins run across multiple versions of Office, including Office 2016 or later on Windows, and Office on the web, Mac, and iPad. The following table lists the Excel requirement sets, the Office client applications that support each requirement set, and the build versions or number for those applications.
 
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets or `ExcelApiOnline`, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
@@ -51,6 +51,6 @@ For more information about Office versions and build numbers, see:
 
 - [Excel JavaScript API Reference Documentation](/javascript/api/excel)
 - [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
-- [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Specify Office applications and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../develop/add-in-manifests.md)
 - [Office Online Server overview](/officeonlineserver/office-online-server-overview)

@@ -20,9 +20,9 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-## Deployment options by Office host and add-in type
+## Deployment options by Office application and add-in type
 
-The deployment options that are available depend on the Office host that you're targeting and the type of add-in you create.
+The deployment options that are available depend on the Office application that you're targeting and the type of add-in you create.
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 

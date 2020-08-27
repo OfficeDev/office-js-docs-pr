@@ -264,6 +264,11 @@
         "redirect_document_id": true 
       }, 
       {   
+        "source_path": "docs/excel/excel-add-ins-excel-add-ins-advanced-concepts.md", 
+        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts", 
+        "redirect_document_id": true 
+      }, 
+      {   
         "source_path": "docs/access/access-web-app-add-ins.md", 
         "redirect_url": "https://powerapps.microsoft.com", 
         "redirect_document_id": false 

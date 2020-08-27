@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (fundamental)
 description: 'Code samples that show how to perform common tasks with ranges using the Excel JavaScript API.'
-ms.date: 04/30/2019
+ms.date: 07/28/2020
 localization_priority: Normal
 ---
 
@@ -94,16 +94,16 @@ Excel.run(function (context) {
     var range = sheet.getRange("B4:E4");
 
     range.insert(Excel.InsertShiftDirection.down);
-    
+
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
-**Data before range is inserted**
+### Data before range is inserted
 
 ![Data in Excel before range is inserted](../images/excel-ranges-start.png)
 
-**Data after range is inserted**
+### Data after range is inserted
 
 ![Data in Excel after range is inserted](../images/excel-ranges-after-insert.png)
 
@@ -122,11 +122,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before range is cleared**
+### Data before range is cleared
 
 ![Data in Excel before range is cleared](../images/excel-ranges-start.png)
 
-**Data after range is cleared**
+### Data after range is cleared
 
 ![Data in Excel after range is cleared](../images/excel-ranges-after-clear.png)
 
@@ -145,11 +145,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before range is deleted**
+### Data before range is deleted
 
 ![Data in Excel before range is deleted](../images/excel-ranges-start.png)
 
-**Data after range is deleted**
+### Data after range is deleted
 
 ![Data in Excel after range is deleted](../images/excel-ranges-after-delete.png)
 
@@ -168,13 +168,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Selected range B2:E6**
+### Selected range B2:E6
 
 ![Selected range in Excel](../images/excel-ranges-set-selection.png)
 
 ## Get the selected range
 
-The following code sample gets the selected range, loads its `address` property, and writes a message to the console. 
+The following code sample gets the selected range, loads its `address` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -208,11 +208,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before cell value is updated**
+#### Data before cell value is updated
 
 ![Data in Excel before cell value is updated](../images/excel-ranges-set-start.png)
 
-**Data after cell value is updated**
+#### Data after cell value is updated
 
 ![Data in Excel after cell value is updated](../images/excel-ranges-set-cell-value.png)
 
@@ -227,7 +227,7 @@ Excel.run(function (context) {
     var data = [
         ["Potato Chips", 10, 1.80],
     ];
-    
+
     var range = sheet.getRange("B5:D5");
     range.values = data;
     range.format.autofitColumns();
@@ -236,11 +236,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before cell values are updated**
+#### Data before cell values are updated
 
 ![Data in Excel before cell values are updated](../images/excel-ranges-set-start.png)
 
-**Data after cell values are updated**
+#### Data after cell values are updated
 
 ![Data in Excel after cell values are updated](../images/excel-ranges-set-cell-values.png)
 
@@ -260,11 +260,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before cell formula is set**
+#### Data before cell formula is set
 
 ![Data in Excel before cell formula is set](../images/excel-ranges-start-set-formula.png)
 
-**Data after cell formula is set**
+#### Data after cell formula is set
 
 ![Data in Excel after cell formula is set](../images/excel-ranges-set-formula.png)
 
@@ -282,7 +282,7 @@ Excel.run(function (context) {
         ["=C5 * D5"],
         ["=SUM(E3:E5)"]
     ];
-    
+
     var range = sheet.getRange("E3:E6");
     range.formulas = data;
     range.format.autofitColumns();
@@ -291,11 +291,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before cell formulas are set**
+#### Data before cell formulas are set
 
 ![Data in Excel before cell formulas are set](../images/excel-ranges-start-set-formula.png)
 
-**Data after cell formulas are set**
+#### Data after cell formulas are set
 
 ![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
@@ -320,11 +320,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range (values in column E are a result of formulas)**
+#### Data in range (values in column E are a result of formulas)
 
 ![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
-**range.values (as logged to the console by the code sample above)**
+#### range.values (as logged to the console by the code sample above)
 
 ```json
 [
@@ -378,11 +378,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range (values in column E are a result of formulas)**
+#### Data in range (values in column E are a result of formulas)
 
 ![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
-**range.text (as logged to the console by the code sample above)**
+#### range.text (as logged to the console by the code sample above)
 
 ```json
 [
@@ -436,11 +436,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range (values in column E are a result of formulas)**
+#### Data in range (values in column E are a result of formulas)
 
 ![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
-**range.formulas (as logged to the console by the code sample above)**
+#### range.formulas (as logged to the console by the code sample above)
 
 ```json
 [
@@ -497,11 +497,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range before font color and fill color are set**
+#### Data in range before font color and fill color are set
 
 ![Data in Excel before format is set](../images/excel-ranges-format-before.png)
 
-**Data in range after font color and fill color are set**
+#### Data in range after font color and fill color are set
 
 ![Data in Excel after format is set](../images/excel-ranges-format-font-and-fill.png)
 
@@ -526,13 +526,39 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range before number format is set**
+#### Data in range before number format is set
 
 ![Data in Excel before number format is set](../images/excel-ranges-format-font-and-fill.png)
 
-**Data in range after number format is set**
+#### Data in range after number format is set
 
 ![Data in Excel after number format is set](../images/excel-ranges-format-numbers.png)
+
+## Read or write to an unbounded range
+
+### Read an unbounded range
+
+An unbounded range address is a range address that specifies either entire columns or entire rows. For example:
+
+- Range addresses comprised of entire columns:<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- Range addresses comprised of entire rows:<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+When the API makes a request to retrieve an unbounded range (for example, `getRange('C:C')`), the response will contain `null` values for cell-level properties such as `values`, `text`, `numberFormat`, and `formula`. Other properties of the range, such as `address` and `cellCount`, will contain valid values for the unbounded range.
+
+### Write to an unbounded range
+
+You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on an unbounded range because the input request is too large. For example, the following code snippet is not valid because it attempts to specify `values` for an unbounded range. The API returns an error if you attempt to set cell-level properties for an unbounded range.
+
+```js
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+range.values = 'Due Date';
+```
+
+## Read or write to a large range
+
+If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.
+
+For details on the system limitations, see the "Excel add-ins" section of [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins).
 
 ### Conditional formatting of ranges
 
@@ -540,7 +566,7 @@ Ranges can have formats applied to individual cells based on conditions. For mor
 
 ## Find a cell using string matching
 
-The `Range` object has a `find` method to search for a specified string within the range. It returns the range of the first cell with matching text. The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console. Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range. If you expect that the specified string may not exist in the range, use the [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) method instead, so your code gracefully handles that scenario.
+The `Range` object has a `find` method to search for a specified string within the range. It returns the range of the first cell with matching text. The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console. Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range. If you expect that the specified string may not exist in the range, use the [findOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method instead, so your code gracefully handles that scenario.
 
 ```js
 Excel.run(function (context) {

@@ -1,22 +1,33 @@
 ---
 title: Dialog API requirement sets
-description: 'Learn more about the Dialog API requirement sets.'
-ms.date: 07/10/2020
+description: 'Learn more about the Dialog API requirement sets'
+ms.date: 08/20/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
 
 # Dialog API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-Office Add-ins run across multiple versions of Office. The following table lists the Dialog API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
+Office Add-ins run across multiple versions of Office. The following table lists the Dialog API requirement sets, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2013 on Windows\*<br>(one-time purchase) | Office 2016 or later on Windows\*<br>(one-time purchase)   | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |  Office Online Server  |
+|  Requirement set  | Office 2013 on Windows\*<br>(one-time purchase) | Office 2016 or later on Windows\*<br>(one-time purchase)   | Office on Windows<br>(subscription) |  Office on iPad<br>(subscription)  |  Office on Mac<br>(subscription)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.1  | Build 15.0.4855.1000 or later | Build 16.0.4390.1000 or later | Version 1602 (Build 6741.0000) or later | 1.22 or later | 15.20 or later| January 2017 | Version 1608 (Build 7601.6800) or later|
+| DialogApi 1.1  | Build 15.0.4855.1000 or later | Build 16.0.4390.1000 or later | Version 1602 (Build 6741.0000) or later | 1.22 or later | 15.20 or later | January 2017 | Version 1608 (Build 7601.6800) or later|
+| DialogApi 1.2  | N/A | N/A | See support<br>section below | 2.67 or later | 16.37 or later | June 2020 | N/A |
 
 >\* Users of the one-time purchase Office may not have accepted all patches and updates. If so, the DLL that Office uses to report its version in the UI may be greater than the versions listed here even if the updated DLLs needed to support DialogApi have not be installed on the user's computer. To ensure that the needed patch is installed, the user must go to the Office update list ([Office 2013 list](/officeupdates/msp-files-office-2013) or [Office 2016 list](/officeupdates/msp-files-office-2016)), search for **osfclient-x-none**, and install the listed patch.
+
+## Office on Windows (subscription) support
+
+The DialogApi 1.2 requirement set is supported in the Consumer Channel version 2005 (build, 12827.20268 or greater). For Office on Windows, the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available June 9th, 2020 or later. The minimum supported builds for each channel are as follows:  
+
+|Channel | Version | Build|
+|:-----|:-----|:-----|
+|Current Channel | 2005 or greater | 12827.20160 or greater|
+|Monthly Enterprise Channel | 2004 or greater | 12730.20430 or greater|
+|Semi-Annual Enterprise Channel | 2002 or greater | 12527.20720 or greater|
 
 ## Office versions and build numbers
 
@@ -29,13 +40,13 @@ To find out more about versions, build numbers, and Office Online Server, see:
 
 For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
 
-## Dialog API 1.1
+## Dialog API 1.1 and 1.2
 
-The Dialog API 1.1 is the first version of the API. For details about the API, see the [Dialog API](/javascript/api/office/office.ui) reference topic.
+The Dialog API 1.1 is the first version of the API. Version 1.2 adds support for sending data from the parent page to the dialog box with the `Office.ui.messageChild` method. For details about these APIs, see the [Dialog API](/javascript/api/office/office.ui) reference topic.
 
 ## See also
 
 - [Use the Office dialog API in Office Add-ins](../../develop/dialog-api-in-office-add-ins.md)
 - [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
-- [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Specify Office applications and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../develop/add-in-manifests.md)
