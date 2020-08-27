@@ -1,7 +1,7 @@
 ---
 title: Ribbon API requirement sets
 description: 'Specifies which Office platforms and builds support the dynamic ribbon APIs.'
-ms.date: 07/10/2020
+ms.date: 08/26/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -16,9 +16,22 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 on Windows<br>(one-time purchase) | Office 2016 or later on Windows<br>(one-time purchase)   | Office on Windows\*<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac\*<br>(connected to a Microsoft 365 subscription)  | Office on the web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | N/A | N/A | Version 2002 (Build 12527.20264) or later | 16.38 or later | N/A | February 2020 | N/A|
+| RibbonApi 1.1  | N/A | N/A | See support<br>section below | N/A | 16.38 | Coming soon | N/A|
 
-> **&#42;** During the preview phase, the Ribbon API is supported only on Excel and it requires Microsoft 365 subscription. You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including the Ribbon API, is turned off for that build.
+> **&#42;** The Ribbon API is supported only on Excel and it requires Microsoft 365 subscription. 
+
+## Office on Windows (subscription) support
+
+The requirement set is supported in the Consumer Channel version 2006 (build, 13001.20498 or greater). For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available July 14th, 2020 or later. The minimum supported builds for each channel are as follows:  
+
+|Channel | Version | Build|
+|:-----|:-----|:-----|
+|Current Channel | 2006 or greater | 20266.20266 or greater|
+|Monthly Enterprise Channel | 2005 or greater | 12827.20538 or greater|
+|Monthly Enterprise Channel | 2004 | 12730.20602 or greater|
+|Semi-Annual Enterprise Channel | 2002 or greater | 12527.20880 or greater|
+
+## More information
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
@@ -26,6 +39,10 @@ To find out more about versions, build numbers, and Office Online Server, see:
 - [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Where you can find the version and build number for a Microsoft 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server overview](/officeonlineserver/office-online-server-overview)
+
+> [!NOTE]
+> The **RibbonApi 1.1** requirement set is not yet supported in the manifest, so you cannot specify it in the manifest's `<Requirements>` section.
+
 
 ## Office Common API requirement sets
 

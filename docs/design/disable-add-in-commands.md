@@ -1,11 +1,11 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 05/28/2020
-localization_priority: Priority
+ms.date: 08/26/2020
+localization_priority: Normal
 ---
 
-# Enable and Disable Add-in Commands (preview)
+# Enable and Disable Add-in Commands
 
 When some functionality in your add-in should only be available in certain contexts, you can programmatically enable or disable your custom Add-in Commands. For example, a function that changes the header of a table should only be enabled when the cursor is in a table.
 
@@ -14,22 +14,22 @@ You can also specify whether the command is enabled or disabled when the Office 
 > [!NOTE]
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
 >
-> [Basic concepts for Add-in Commands](add-in-commands.md)
+> - [Basic concepts for Add-in Commands](add-in-commands.md)
 
-## Preview status
+## Office application and platform support only
 
-The APIs described in this article are in preview and are currently only available in Excel.
+The APIs described in this article are only available in Excel and only on Office on Windows and Office on Mac.
+
+### Test for platform support with requirement sets
+
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application and platform combination supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
+
+The enable/disable APIs belong to the [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) requirement set.
 
 > [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> The **RibbonApi 1.1** requirement set is not yet supported in the manifest, so you cannot specify it in the manifest's `<Requirements>` section. To test for support, your code should call `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. If, *and only if*, that call returns `true`, your code can call the enable/disable APIs. If the call of `isSetSupported` returns `false`, then all custom add-in commands are enabled all of the time. You must design your production add-in, and any in-app instructions, to take account of how it will work when the **RibbonApi 1.1** requirement set is not supported. For more information and examples of using `isSetSupported`, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md), especially [Use runtime checks in your JavaScript code](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (The section [Set the Requirements element in the manifest](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) of that article does not apply to Ribbon 1.1.)
 
-## Rules and gotchas
-
-### Single-line ribbon in Office on the web
-
-In Office on the web, the APIs and manifest markup described in this article only affect the single-line ribbon. They have no effect on the multiline ribbon. They affect both ribbons for desktop Office. For more information about the two ribbons, see [The new look of Office - Simplified Ribbon](https://support.microsoft.com/office/a6cdf19a-b2bd-4be1-9515-d74a37aa59bf).
-
-### Shared runtime required
+## Shared runtime required
 
 The APIs and manifest markup described in this article require that the add-in's manifest specify that it should use a shared runtime. To do this take the following steps.
 
@@ -126,7 +126,7 @@ Office.onReady(async () => {
 });
 ```
 
-Third, define the `enableChartFormat` handler. The following is a simple example, but see **Best practice: Test for control status errors** below for a more robust way of changing a control's status.
+Third, define the `enableChartFormat` handler. The following is a simple example, but see [Best practice: Test for control status errors](#best-practice-test-for-control-status-errors) below for a more robust way of changing a control's status.
 
 ```javascript
 function enableChartFormat() {
@@ -204,3 +204,4 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 The enable/disable APIs require support of the following requirement set:
 
 - [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md)
+
