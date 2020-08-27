@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 08/18/2020
+ms.date: 08/26/2020
 localization_priority: Priority
 ---
 
@@ -11,13 +11,13 @@ End users, developers, and administrators can use the tiered permission levels o
 
 This article describes the possible permissions that Outlook add-ins can request, and examines the security model from the following perspectives:
 
-- **AppSource**: add-in integrity
+- **AppSource**: Add-in integrity
 
-- **End-users**: privacy and performance concerns
+- **End-users**: Privacy and performance concerns
 
-- **Developers**: permissions choices and resource usage limits
+- **Developers**: Permissions choices and resource usage limits
 
-- **Administrators**: privileges to set performance thresholds
+- **Administrators**: Privileges to set performance thresholds
 
 ## Permissions model
 
@@ -42,19 +42,27 @@ The following figure shows the four levels of permissions and describes the capa
 
 ![4-tier permissions model for mail apps schema v1.1](../images/add-in-permission-tiers.png)
 
-## AppSource: add-in integrity
+## AppSource: Add-in integrity
 
 [AppSource](https://appsource.microsoft.com) hosts add-ins that can be installed by end users and administrators. AppSource enforces the following measures to maintain the integrity of these Outlook add-ins:
 
 - Requires the host server of an add-in to always use Secure Socket Layer (SSL) to communicate.
 
-- Requires a developer to provide proof of identity, a contractual agreement, and a compliant privacy policy to submit add-ins. 
+- Requires a developer to provide proof of identity, a contractual agreement, and a compliant privacy policy to submit add-ins.
 
 - Archives add-ins in read-only mode.
 
 - Supports a user-review system for available add-ins to promote a self-policing community.
 
-## End users: privacy and performance concerns
+## Optional connected experiences
+
+Users can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Outlook add-ins, generally this means that users who turn off the **Optional connected experiences** setting can no longer get add-ins through these clients. However, certain Microsoft add-ins that are considered essential or business-critical, and add-ins deployed by an organization's IT admin are still available. Since the setting doesn't affect the availability of add-ins and the Office Store in Outlook on the web, the user can use the web client to [manage their add-ins](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), including admin-deployed ones.
+
+For general add-in behavior, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md#optional-connected-experiences).
+
+To learn more about connected experiences in Office, see [Connected experiences in Office](/deployoffice/privacy/connected-experiences).
+
+## End users: Privacy and performance concerns
 
 The security model addresses security, privacy, and performance concerns of end users in the following ways:
 
@@ -91,7 +99,7 @@ The security model addresses security, privacy, and performance concerns of end 
 
 - At any time, end users can verify the permissions requested by installed Outlook add-ins, and disable or subsequently enable any Outlook add-in in the Exchange Admin Center.
 
-## Developers: permission choices and resource usage limits
+## Developers: Permission choices and resource usage limits
 
 The security model provides developers granular levels of permissions to choose from, and strict performance guidelines to observe.
 
@@ -156,7 +164,7 @@ Developers should be aware of and plan for the following as well:
 
   - Be ready to sign a contractual agreement upon submitting the add-in.
 
-## Administrators: privileges
+## Administrators: Privileges
 
 The security model provides the following rights and responsibilities to administrators:
 
@@ -169,5 +177,6 @@ The security model provides the following rights and responsibilities to adminis
 ## See also
 
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
+- [Privacy controls for Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)
 - [Outlook add-in APIs](apis.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)

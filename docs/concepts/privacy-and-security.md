@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: 'Learn about the privacy and security aspects of the Office Add-ins platform.'
-ms.date: 09/26/2019
+ms.date: 08/27/2020
 localization_priority: Normal
 ---
 
@@ -9,7 +9,7 @@ localization_priority: Normal
 
 ## Understanding the add-in runtime
 
-Office Add-ins are secured by an add-in runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways: 
+Office Add-ins are secured by an add-in runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways:
 
 - Access to the host application's UI frame is managed.
 
@@ -39,7 +39,7 @@ On Windows desktops, Protected Mode in Internet Explorer must be enabled for the
 
 ![Rich-client infrastructure](../images/dk2-agave-overview-02.png)
 
-As shown in the following figure, on an OS X Mac desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection. 
+As shown in the following figure, on an OS X Mac desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection.
 
 *Figure 2. Office Add-ins runtime environment in OS X Mac clients*
 
@@ -60,7 +60,6 @@ In supported Web clients, Office Add-ins are hosted in an **iframe** that runs u
 
 You can make your Office Add-ins available to the public by publishing them to AppSource. AppSource enforces the following measures to maintain the integrity of add-ins:
 
-
 - Requires the host server of an Office Add-in to always use Secure Sockets Layer (SSL) to communicate.
 
 - Requires a developer to provide proof of identity, a contractual agreement, and a compliant privacy policy to submit add-ins.
@@ -68,6 +67,14 @@ You can make your Office Add-ins available to the public by publishing them to A
 - Ensures that the source of add-ins is accessible in read-only mode.
 
 - Supports a user-review system for available add-ins to promote a self-policing community.
+
+## Optional connected experiences
+
+Users can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Office Add-ins, generally this means that users who turn off the **Optional connected experiences** setting can no longer access add-ins or the Office Store through these clients. However, certain Microsoft add-ins that are considered essential or business-critical, and add-ins deployed by an organization's IT admin are still available. Also, the setting doesn't affect the availability of add-ins and the Store in Office on the web.
+
+For Outlook-specific behavior, see [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security.md#optional-connected-experiences).
+
+To learn more about connected experiences in Office, see [Connected experiences in Office](/deployoffice/privacy/connected-experiences).
 
 ## Addressing end users' privacy concerns
 
@@ -264,3 +271,4 @@ The management and enforcement of Office settings is done with group policy sett
 - [Same Origin Policy Part 1: No Peeking](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Same origin policy for JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE Protect Mode](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
+- [Privacy controls for Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)
