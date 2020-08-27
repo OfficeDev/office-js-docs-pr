@@ -70,9 +70,9 @@ You can make your Office Add-ins available to the public by publishing them to A
 
 ## Optional connected experiences
 
-Users can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Office Add-ins, generally this means that users who turn off the **Optional connected experiences** setting can no longer access add-ins or the Office Store through these clients. However, certain Microsoft add-ins that are considered essential or business-critical, and add-ins deployed by an organization's IT admin are still available. Also, the setting doesn't affect the availability of add-ins and the Store in Office on the web.
+End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Office Add-ins, the impact of disabling the **Optional connected experiences** setting is that users can no longer access add-ins or the Office Store through these clients. However, certain Microsoft add-ins that are considered essential or business-critical, and add-ins deployed by an organization's IT admin through [Centralized Deployment](../publish/centralized-deployment.md) will still be available. Additionally, add-ins and the Store remain available in Outlook on the web, regardless of the status of the setting.
 
-For Outlook-specific behavior, see [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security.md#optional-connected-experiences).
+For more about Outlook-specific behavior, see [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security.md#optional-connected-experiences).
 
 To learn more about connected experiences in Office, see [Connected experiences in Office](/deployoffice/privacy/connected-experiences).
 
