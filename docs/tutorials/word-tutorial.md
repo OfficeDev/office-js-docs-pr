@@ -58,7 +58,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.
+5. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
 
 6. Remove all references to the `run` button and the `run()` function by doing the following:
 

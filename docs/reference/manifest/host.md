@@ -20,7 +20,7 @@ When defined in the basic manifest (under [OfficeApp](officeapp.md)), the host t
 
 | Attribute     | Type   | Required | Description                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | string | required | The name of the type of Office host application. |
+| [Name](#name) | string | required | The name of the type of Office client application. |
 
 ### Name
 
@@ -54,7 +54,7 @@ When defined in [VersionOverrides](versionoverrides.md), the host type is determ
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Yes  | Describes the Office host where these settings apply.|
+|  [xsi:type](#xsitype)  |  Yes  | Describes the Office application where these settings apply.|
 
 ### Child elements
 
@@ -66,7 +66,7 @@ When defined in [VersionOverrides](versionoverrides.md), the host type is determ
 
 ### xsi:type
 
-Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) where the contained settings apply. The value must be one of the following:
+Controls which Office application (Word, Excel, PowerPoint, Outlook, OneNote) where the contained settings apply. The value must be one of the following:
 
 - `Document` (Word)
 - `MailHost` (Outlook)

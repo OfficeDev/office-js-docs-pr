@@ -21,7 +21,7 @@ Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and
 - [Word quick start](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [PowerPoint quick start](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-Visual Studio doesn't support creating Office Add-ins for OneNote or Project. To create Office Add-ins for either of these hosts, you'll need to use the Yeoman generator for Office Add-ins, as described in the [OneNote quick start](../quickstarts/onenote-quickstart.md) or the [Project quick start](../quickstarts/project-quickstart.md).
+Visual Studio doesn't support creating Office Add-ins for OneNote or Project. To create Office Add-ins for either of these applications, you'll need to use the Yeoman generator for Office Add-ins, as described in the [OneNote quick start](../quickstarts/onenote-quickstart.md) or the [Project quick start](../quickstarts/project-quickstart.md).
 
 ## Develop the add-in using Visual Studio
 
@@ -30,7 +30,7 @@ Visual Studio creates a basic add-in with limited functionality. You can customi
 > [!TIP]
 > Because an Office Add-in is a web application, you'll need at least basic web development skills to customize your add-in. If you're new to JavaScript, we recommend reviewing the [Mozilla JavaScript tutorial](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction).
 
-To customize your add-in, you'll need to understand concepts described in the [Core concepts > Develop](develop-overview.md) area of this documentation, as well as concepts described in the host-specific area of documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.yml)). 
+To customize your add-in, you'll need to understand concepts described in the [Core concepts > Develop](develop-overview.md) area of this documentation, as well as concepts described in the application-specific area of documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.yml)). 
 
 ## Test and debug the add-in
 

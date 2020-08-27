@@ -18,7 +18,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 - Create add-ins that help users complete tasks quickly and efficiently. Focus on scenarios that make sense for Office applications. For example:
  - Make core authoring tasks faster and easier, with fewer interruptions.
  - Enable new scenarios within Office.
- - Embed complementary services within Office hosts.
+ - Embed complementary services within Office applications.
  - Improve the Office experience to enhance productivity.
 - Make sure that the value of your add-in is clear to users right away by [creating an engaging first run experience](#create-an-engaging-first-run-experience).
 - Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
@@ -74,7 +74,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 ### Optimize for touch
 
-- Use the [Context.touchEnabled](/javascript/api/office/office.context) property to detect whether the host application your add-in runs on is touch enabled.
+- Use the [Context.touchEnabled](/javascript/api/office/office.context#touchenabled) property to detect whether the Office application that your add-in runs on is touch enabled.
 
   > [!NOTE]
   > This property is not supported in Outlook.

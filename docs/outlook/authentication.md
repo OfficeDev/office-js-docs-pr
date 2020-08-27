@@ -1,7 +1,7 @@
 ---
 title: Authentication options in Outlook add-ins
 description: Outlook add-ins provide a number of different methods to authenticate, depending on your specific scenario.
-ms.date: 07/30/2020
+ms.date: 08/20/2020
 localization_priority: Priority
 ---
 
@@ -35,7 +35,7 @@ For a more detailed overview, see the [full overview of the SSO authentication m
 
 For details on using the SSO token in an Outlook add-in, see [Authenticate a user with an single-sign-on token in an Outlook add-in](authenticate-a-user-with-an-sso-token.md).
 
-For a sample add-in that uses the SSO token, see [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo).
+For a sample add-in that uses the SSO token, see [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO).
 
 ## Exchange user identity token
 

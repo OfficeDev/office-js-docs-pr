@@ -117,7 +117,7 @@ In your add-in's manifest file, update the **xmlns** attribute of the **OfficeAp
 
 ## See also
 
-- [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md) ]
+- [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md) ]
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
 - [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
