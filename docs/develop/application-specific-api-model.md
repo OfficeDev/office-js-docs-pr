@@ -218,7 +218,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-## Testing for the existence of document entities with &#42;OrNullObject methods and properties
+## &#42;OrNullObject methods and properties
 
 Some accessor methods and properties throw an exception when the desired object doesn't exist. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that isn't in the workbook, the `getItem()` method throws an `ItemNotFound` exception. The application-specific libraries provide a way for your code to test for the existence of document entities without requiring exception handling code. This is accomplished by using the `*OrNullObject` variations of methods and properties. These variations return an object whose `isNullObject` property is set to `true`, if the specified item doesn't exist, rather than throwing an exception.
 
