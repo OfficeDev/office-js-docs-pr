@@ -68,7 +68,7 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Understanding the Office JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
-    - name: Using the application-specific API Model
+    - name: Using the application-specific API model
       href: develop/application-specific-api-model.md
     - name: Using the Common API model
       items:
