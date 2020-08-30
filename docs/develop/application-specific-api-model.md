@@ -225,7 +225,7 @@ Some accessor methods and properties throw an exception when the desired object 
 For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns an object whose `isNullObject` property is set to `true`. Your code can then evaluate this property to determine whether the object exists.
 
 > [!NOTE]
-> The `*OrNullObject` variations do not ever return the JavaScript value `null`. They return ordinary Office proxy objects. If the object does not exist then the `isNullObject` property of the object is set to `true`. Do not test the returned object for nullity or falsity. It is never `null`, `false`, or `undefined`.
+> The `*OrNullObject` variations do not ever return the JavaScript value `null`. They return ordinary Office proxy objects. If the the entity that the object represents does not exist then the `isNullObject` property of the object is set to `true`. Do not test the returned object for nullity or falsity. It is never `null`, `false`, or `undefined`.
 
 The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If a worksheet with that name does not exist, a new sheet is created. Note that the code does not load the `isNullObject` property. Office automatically loads this property when `context.sync` is called, so you do not need to explicitly load it with something like `datasheet.load('isNullObject')`.
 
