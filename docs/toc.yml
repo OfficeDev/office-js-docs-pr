@@ -149,26 +149,40 @@
           href: design/data-visualization-guidelines.md
         - name: Voice
           href: design/voice-guidelines.md
-      - name: Design language
+      - name: UX design language and patterns
         items:
-        - name: Overview
-          href: design/add-in-design-language.md
-        - name: Color
-          href: design/add-in-color.md
-        - name: Icons
+        - name: Design language
           items:
-          - name: Icon guidelines
-            href: design/add-in-icons.md
-          - name: Fresh style
-            href: design/add-in-icons-fresh.md
-          - name: Monoline style
-            href: design/add-in-icons-monoline.md
-        - name: Layout
-          href: design/add-in-layout.md
-        - name: Motion
-          href: design/using-motion-office-addins.md
-        - name: Typography
-          href: design/add-in-typography.md
+          - name: Overview
+            href: design/add-in-design-language.md
+          - name: Color
+            href: design/add-in-color.md
+          - name: Icons
+            items:
+            - name: Icon guidelines
+              href: design/add-in-icons.md
+            - name: Fresh style
+              href: design/add-in-icons-fresh.md
+            - name: Monoline style
+              href: design/add-in-icons-monoline.md
+          - name: Layout
+            href: design/add-in-layout.md
+          - name: Motion
+            href: design/using-motion-office-addins.md
+          - name: Typography
+            href: design/add-in-typography.md
+        - name: UX design patterns for common scenarios
+          items:
+          - name: Overview
+            href: design/ux-design-pattern-templates.md
+          - name: Authentication
+            href: design/authentication-patterns.md
+          - name: Branding
+            href: design/branding-patterns.md
+          - name: First run experience
+            href: design/first-run-experience-patterns.md
+          - name: Navigation
+            href: design/navigation-patterns.md
       - name: Interface elements
         items:
         - name: Overview
@@ -201,18 +215,6 @@
           href: design/task-pane-add-ins.md
       - name: Localization
         href: develop/localization.md
-      - name: UX design patterns
-        items:
-        - name: Overview
-          href: design/ux-design-pattern-templates.md
-        - name: Authentication
-          href: design/authentication-patterns.md
-        - name: Branding
-          href: design/branding-patterns.md
-        - name: First run experience
-          href: design/first-run-experience-patterns.md
-        - name: Navigation
-          href: design/navigation-patterns.md
       - name: Resources
         items: 
         - name: Design toolkits
