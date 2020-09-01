@@ -1,13 +1,16 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: 'Learn how to convert an Office Add-in project in Visual Studio to use TypeScript.'
-ms.date: 04/09/2020
+ms.date: 09/01/2020
 localization_priority: Normal
 ---
 
 # Convert an Office Add-in project in Visual Studio to TypeScript
 
 You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. This article describes this conversion process for an Excel add-in. You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.
+
+> [!IMPORTANT]
+> This article describes the *minimal* steps necessary to ensure that, when you press F5, the code will be transpiled to JavaScript which is then sideloaded automatically into Office. However, the code is not very "TypeScripty". For example, variables are declared with the `var` keyword instead of `let` and they are not declared with a specified type. To take full advantage of the strong typing of TypeScript, consider making further changes to the code. 
 
 > [!NOTE]
 > To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Yeoman generator" section of any [5-minute quick start](/office/dev/add-ins/) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).

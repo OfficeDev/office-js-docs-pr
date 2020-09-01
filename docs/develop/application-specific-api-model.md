@@ -220,18 +220,20 @@ Excel.run(function (ctx) {
 
 ## &#42;OrNullObject methods and properties
 
-Some accessor methods and properties throw an exception when the desired object doesn't exist. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that isn't in the workbook, the `getItem()` method throws an `ItemNotFound` exception.
+Some accessor methods and properties throw an exception when the desired object doesn't exist. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that isn't in the workbook, the `getItem()` method throws an `ItemNotFound` exception. The application-specific libraries provide a way for your code to test for the existence of document entities without requiring exception handling code. This is accomplished by using the `*OrNullObject` variations of methods and properties. These variations return an object whose `isNullObject` property is set to `true`, if the specified item doesn't exist, rather than throwing an exception.
 
-Any `*OrNullObject` variant lets you check for an object without throwing exceptions. These methods and properties return a null object (not the JavaScript `null`) rather than throwing an exception if the specified item doesn't exist. For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns a null object. The null object that is returned contains the boolean property `isNullObject` that you can evaluate to determine whether the object exists.
+For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns an object whose `isNullObject` property is set to `true`. Your code can then evaluate this property to determine whether the object exists.
 
-The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet is created before actions are taken on the sheet.
+> [!NOTE]
+> The `*OrNullObject` variations do not ever return the JavaScript value `null`. They return ordinary Office proxy objects. If the the entity that the object represents does not exist then the `isNullObject` property of the object is set to `true`. Do not test the returned object for nullity or falsity. It is never `null`, `false`, or `undefined`.
+
+The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If a worksheet with that name does not exist, a new sheet is created. Note that the code does not load the `isNullObject` property. Office automatically loads this property when `context.sync` is called, so you do not need to explicitly load it with something like `datasheet.load('isNullObject')`.
 
 ```js
 var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 
 return context.sync()
     .then(function () {
-        // If `dataSheet` is a null object, create the worksheet.
         if (dataSheet.isNullObject) {
             dataSheet = context.workbook.worksheets.add("Data");
         }
@@ -244,5 +246,5 @@ return context.sync()
 ## See also
 
 * [Common JavaScript API object model](office-javascript-api-object-model.md)
-* [Common coding issues and unexpected platform behaviors](/common-coding-issues.md).
+* [Common coding issues and unexpected platform behaviors](common-coding-issues.md).
 * [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)

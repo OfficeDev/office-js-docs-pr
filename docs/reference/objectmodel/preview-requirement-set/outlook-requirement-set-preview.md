@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 08/07/2020
+ms.date: 09/01/2020
 localization_priority: Normal
 ---
 
@@ -103,37 +103,37 @@ Added a new element to the manifest where the `AppendOnSend` extended permission
 
 Added a new function to the `Mailbox` object that displays an existing appointment. This is the async version of the `displayAppointmentForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
 
 Added a new function to the `Mailbox` object that displays an existing message. This is the async version of the `displayMessageForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
 
 Added a new function to the `Mailbox` object that displays a new appointment form. This is the async version of the `displayNewAppointmentForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
 
 Added a new function to the `Mailbox` object that displays a new message form. This is the async version of the `displayNewMessageForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.item.displayReplyAllFormAsync](office.context.mailbox.item.md#methods)
 
 Added a new function to the `Item` object that displays the "Reply all" form in Read mode. This is the async version of the `displayReplyAllForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.item.displayReplyFormAsync](office.context.mailbox.item.md#methods)
 
 Added a new function to the `Item` object that displays the "Reply" form in Read mode. This is the async version of the `displayReplyForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 <br>
 

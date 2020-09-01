@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: 'Learn how add-in support in Outlook on Mac compares with other Outlook clients.'
-ms.date: 06/04/2020
+ms.date: 09/01/2020
 localization_priority: Normal
 ---
 
@@ -26,9 +26,9 @@ For information about new UI support on Mac, see [New Outlook on Mac](#new-outlo
 
 ## New Outlook on Mac (preview)
 
-Outlook add-ins are now supported in the new Mac UI, up to requirement set 1.6. However, the following requirement sets and features are **NOT** supported yet.
+Outlook add-ins are now supported in the new Mac UI, up to requirement set 1.7. However, the following requirement sets and features are **NOT** supported yet.
 
-1. API requirement sets 1.7 and 1.8
+1. API requirement set 1.8
 1. Pinnable task pane, `ItemChanged` event
 1. Contextual add-ins
 1. On-send
