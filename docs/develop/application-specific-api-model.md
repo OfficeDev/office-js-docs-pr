@@ -246,5 +246,5 @@ return context.sync()
 ## See also
 
 * [Common JavaScript API object model](office-javascript-api-object-model.md)
-* [Common coding issues and unexpected platform behaviors](/common-coding-issues.md).
+* [Common coding issues and unexpected platform behaviors](common-coding-issues.md).
 * [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
