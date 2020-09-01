@@ -238,7 +238,7 @@
           href: develop/debug-office-add-ins-in-visual-studio.md
         - name: Get JavaScript IntelliSense in Visual Studio
           href: develop/get-javascript-intellisense-in-visual-studio.md
-        - name: Convert JavaScript to TypeScript
+        - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
   - name: Test and debug
     items:
