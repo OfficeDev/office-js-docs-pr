@@ -314,8 +314,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 ## See also
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
+* [Developing Office Add-ins](../develop/develop-overview.md)
 * [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 * [Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
 * [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)
