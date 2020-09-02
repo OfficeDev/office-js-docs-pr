@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
-description: 'Test your Office Add-in on iPad and Mac by sideloading'
-ms.date: 02/18/2020
+description: 'Test your Office Add-in on iPad and Mac by sideloading.'
+ms.date: 09/02/2020
 localization_priority: Normal
 ---
 
@@ -12,8 +12,10 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 ## Prerequisites for Office on iOS
 
 - A Windows or Mac computer with [iTunes](https://www.apple.com/itunes/download/) installed.
+  > [!IMPORTANT]
+  > If you're running macOS Catalina, [iTunes is no longer available](https://support.apple.com/HT210200) so you should follow the instructions in the section [Sideload an add-in on Excel or Word on iPad using macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) later in this article.
 
-- An iPad running iOS 8.2 or later with [Excel on iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) installed, and a sync cable.
+- An iPad running iOS 8.2 or later with [Excel](https://apps.apple.com/app/microsoft-excel/id586683407) or [Word](https://apps.apple.com/app/microsoft-word/id586447913) installed, and a sync cable.
 
 - The manifest .xml file for the add-in you want to test.
 
@@ -49,17 +51,18 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
     ![Insert Add-ins in the Excel app](../images/excel-insert-add-in.png)
 
-## Sideload an add-in on Excel or Word on iPad using MacOS Catalina
+## Sideload an add-in on Excel or Word on iPad using macOS Catalina
 
-**With the introduction of MacOS Catalina, Apple discontinued iTunes on Mac and integrated functionality required to side-load apps into Finder.**
+> [!IMPORTANT]
+> With the introduction of macOS Catalina, [Apple discontinued iTunes on Mac](https://support.apple.com/HT210200) and integrated functionality required to sideload apps into **Finder**.
 
-1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with **Trust This Computer?**. Choose **Trust** to continue.
+1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with **Trust This Computer?**. Choose **Trust** to continue. You may also be asked if this is a new iPad or if you're restoring one.
 
 2. In Finder, under **Locations**, choose the **iPad** icon below the menu bar.
 
-3. On the top of the Finder window, click on **Files**, and then choose **Excel** or **Word** in the **Add-ins** column.
+3. On the top of the Finder window, click on **Files**, and then locate **Excel** or **Word**.
 
-4. From a different Finder window drag and drop the manifest.xml file of the add-in you want to side load onto the **Excel** or **Word** icon.
+4. From a different Finder window, drag and drop the manifest.xml file of the add-in you want to side load onto the **Excel** or **Word** file in the first Finder window.
 
 5. Open the Excel or Word app on your iPad. If the Excel or Word app is already running, choose the **Home** button, and then close and restart the app.
 
@@ -70,11 +73,11 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 ## Sideload an add-in in Office on Mac
 
 > [!NOTE]
-> To sideload an Outlook add-in on Mac, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
+> To sideload an Outlook add-in on Mac, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-an-add-in-in-outlook-on-the-desktop).
 
 1. Open **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
 
-    - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
+    - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`
     - For Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - For PowerPoint: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
