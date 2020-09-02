@@ -59,7 +59,7 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
     items:
-    - name: Overview of the APIs, UX, manifest, and tools
+    - name: Overview
       href: develop/develop-overview.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Understanding the Office JavaScript API
