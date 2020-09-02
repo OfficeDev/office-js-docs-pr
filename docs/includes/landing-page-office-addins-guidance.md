@@ -16,7 +16,7 @@
                         <br/>
                         <ul>
                             <li><a href="../overview/office-add-ins.md">Office Add-ins platform overview</a></li>
-                            <li><a href="../develop/develop-overview.md">Building Office Add-ins</a></li>
+                            <li><a href="../develop/develop-overview.md">Developing Office Add-ins</a></li>
                             <li><a href="../overview/explore-with-script-lab.md">Explore Office JavaScript API using Script Lab</a></li>
                         </ul>
                     </div>
