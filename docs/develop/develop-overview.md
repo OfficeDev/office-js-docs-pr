@@ -8,7 +8,7 @@ localization_priority: Priority
 # Develop Office Add-ins
 
 > [!TIP]
-> Please review [Office Add-ins platform overview](office-add-ins.md) before reading this article.
+> Please review [Office Add-ins platform overview](../overview/office-add-ins.md) before reading this article.
 
 All Office Add-ins are built upon the Office Add-ins platform. For any add-in you build, you'll need to understand important concepts like application and platform availability, Office JavaScript API programming patterns, how to specify an add-in's settings and capabilities in the manifest file, how to design the UI and user experience, and more. Core development concepts like these are covered here in the **Development lifecycle** > **Develop** section of the documentation. Review the information here before exploring the application-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.yml)).
 
@@ -113,7 +113,7 @@ You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, P
 Learn more about developing, testing, and publishing Office Add-ins by exploring this documentation.
 
 > [!TIP]
-> For any add-in that you build, you'll use information in the [Development lifecycle](core-concepts-office-add-ins.md) section of this documentation, along with information in the application-specific section that corresponds to the type of add-in you're building (for example, [Excel](../excel/index.yml)).
+> For any add-in that you build, you'll use information in the [Development lifecycle](../overview/core-concepts-office-add-ins.md) section of this documentation, along with information in the application-specific section that corresponds to the type of add-in you're building (for example, [Excel](../excel/index.yml)).
 
 ## See also
 

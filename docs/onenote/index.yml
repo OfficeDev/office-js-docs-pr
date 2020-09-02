@@ -45,8 +45,6 @@ landingContent:
             url: ../overview/office-add-ins.md
       - linkListType: concept
         links:
-          - text: Building Office Add-ins
-            url: ../develop/develop-overview.md)
           - text: Core concepts for Office Add-ins
             url: ../overview/core-concepts-office-add-ins.md
           - text: Design Office Add-ins
