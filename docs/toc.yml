@@ -10,9 +10,6 @@
   - name: Beginner's guide
     href: overview/learning-path-beginner.md
     displayName: develop
-  - name: Development process overview
-    href: overview/office-add-ins-fundamentals.md
-    displayName: develop
   - name: Quick starts
     items:
     - name: Excel add-in
@@ -38,10 +35,9 @@
     href: overview/set-up-your-dev-environment.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-- name: Development process
+- name: Development lifecycle
   items:
-
-  - name: Overview
+  - name: Lifecycle overview
     href: overview/core-concepts-office-add-ins.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
@@ -63,7 +59,7 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
     items:
-    - name: Develop Office Add-ins
+    - name: Overview
       href: develop/develop-overview.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Understanding the Office JavaScript API

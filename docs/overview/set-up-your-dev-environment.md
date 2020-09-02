@@ -66,7 +66,7 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 
 ## See also
 
-- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)

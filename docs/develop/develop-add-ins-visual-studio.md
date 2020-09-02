@@ -10,7 +10,7 @@ localization_priority: Priority
 This article describes how to use Visual Studio to develop an Office Add-in. If you've already created your add-in, you can skip ahead to the [Develop the add-in using Visual Studio](#develop-the-add-in-using-visual-studio) section.
 
 > [!NOTE]
-> As an alternative to using Visual Studio, you may choose to use the Yeoman generator for Office Add-ins and VS Code to create an Office Add-in. For more information about this choice, see [Creating an Office Add-in](../overview/office-add-ins-fundamentals.md#creating-an-office-add-in).
+> As an alternative to using Visual Studio, you may choose to use the Yeoman generator for Office Add-ins and VS Code to create an Office Add-in. For more information about this choice, see [Creating an Office Add-in](../develop/develop-overview.md)#creating-an-office-add-in).
 
 ## Create the add-in project using Visual Studio
 
@@ -48,7 +48,7 @@ While you're developing your add-in in Visual Studio, your add-in runs on your l
 
 ## See also
 
-- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)
