@@ -1162,6 +1162,6 @@
       href: overview/learning-path-transition.md
     - name: Share code from VSTO Add-in to Office add-in
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: Identify an equivalent COM add-in
+    - name: Make your Office Add-in compatible with an existing COM add-in
       href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
       displayName: manifest
