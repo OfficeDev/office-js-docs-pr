@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Office Add-ins documentation # < 60 chars
-summary: Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on the web, Windows, Mac, and iPad. # < 160 chars
+summary: Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents and in Outlook mail messages and calendar items. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on the web, Windows, Mac, Android, and iOS. # < 160 chars
 
 metadata:
   title: Office Add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
