@@ -178,7 +178,7 @@ The following example activates the add-in when the user is composing a message,
 ## Limits for rules and regular expressions
 
 
-To provide a satisfactory experience with Outlook add-ins, you should adhere to the activation and API usage guidelines. The following table shows general limits for regular expressions and rules but there are specific rules for different hosts. For more information, see [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) and [Troubleshoot Outlook add-in activation](troubleshoot-outlook-add-in-activation.md).
+To provide a satisfactory experience with Outlook add-ins, you should adhere to the activation and API usage guidelines. The following table shows general limits for regular expressions and rules but there are specific rules for different applications. For more information, see [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) and [Troubleshoot Outlook add-in activation](troubleshoot-outlook-add-in-activation.md).
 
 <br/>
 
@@ -187,7 +187,7 @@ To provide a satisfactory experience with Outlook add-ins, you should adhere to 
 |Manifest Size|No larger than 256 KB.|
 |Rules|No more than 15 rules.|
 |ItemHasKnownEntity|An Outlook rich client will apply the rule against the first 1 MB of the body, and not to the rest of the body.|
-|Regular Expressions|For ItemHasKnownEntity or ItemHasRegularExpressionMatch rules for all Outlook hosts:<br><ul><li>Specify no more than 5 regular expressions in activation rules for an Outlook add-in. You cannot install an add-in if you exceed that limit.</li><li>Specify regular expressions whose anticipated results are returned by the <b>getRegExMatches</b> method call within the first 50 matches. </li><li>Specify look-ahead assertions in regular expressions, but not look-behind, `(?<=text)`, and negative look-behind `(?<!text)`.</li><li>Specify regular expressions whose match does not exceed the limits in the table below.<br/><br/><table><tr><th>Limit on length of a regex match</th><th>Outlook rich clients</th><th>Outlook on iOS and Android</th></tr><tr><td>Item body is plain text</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>Item body it HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
+|Regular Expressions|For ItemHasKnownEntity or ItemHasRegularExpressionMatch rules for all Outlook applications:<br><ul><li>Specify no more than 5 regular expressions in activation rules for an Outlook add-in. You cannot install an add-in if you exceed that limit.</li><li>Specify regular expressions whose anticipated results are returned by the <b>getRegExMatches</b> method call within the first 50 matches. </li><li>Specify look-ahead assertions in regular expressions, but not look-behind, `(?<=text)`, and negative look-behind `(?<!text)`.</li><li>Specify regular expressions whose match does not exceed the limits in the table below.<br/><br/><table><tr><th>Limit on length of a regex match</th><th>Outlook rich clients</th><th>Outlook on iOS and Android</th></tr><tr><td>Item body is plain text</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>Item body it HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
 ## See also
 

@@ -35,9 +35,9 @@ landingContent:
             url: ../reference/overview/excel-add-ins-reference-overview.md
           - text: Add custom functions to Excel
             url: custom-functions-overview.md           
-          - text: Test and debug a Excel add-in
+          - text: Test and debug an Excel add-in
             url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish a Excel add-in
+          - text: Deploy and publish an Excel add-in
             url: ../publish/publish.md
 
   # Card (optional)

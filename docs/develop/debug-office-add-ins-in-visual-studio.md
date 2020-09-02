@@ -22,7 +22,7 @@ When Visual Studio debugs Office on Windows, the add-in is hosted in either a Mi
 
 ## Review the build and debug properties
 
-Before you start debugging, review the properties of each project to confirm that Visual Studio will open the desired host application and that other build and debug properties are set appropriately.
+Before you start debugging, review the properties of each project to confirm that Visual Studio will open the desired Office application and that other build and debug properties are set appropriately.
 
 ### Add-in project properties
 
@@ -95,16 +95,16 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar.
 
 When Visual Studio builds the project it performs the following tasks:
 
-1. Creates a copy of the XML manifest file and adds it to  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The host application consumes this copy when you start Visual Studio and debug the add-in.
+1. Creates a copy of the XML manifest file and adds it to  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The Office application that hosts your add-in consumes this copy when you start Visual Studio and debug the add-in.
 
-2. Creates a set of registry entries on your computer that enable the add-in to appear in the host application.
+2. Creates a set of registry entries on your computer that enable the add-in to appear in the Office application.
 
 3. Builds the web application project, and then deploys it to the local IIS web server (https://localhost).
 
 4. If this is the first add-in project that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
 
 > [!NOTE]
-> The latest version of Office may use a newer web control to display the add-in contents when running on Windows 10. If this is the case, Visual Studio may prompt you to add a local network loopback exemption. This is required for the web control, in the Office host application, to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**.
+> The latest version of Office may use a newer web control to display the add-in contents when running on Windows 10. If this is the case, Visual Studio may prompt you to add a local network loopback exemption. This is required for the web control, in the Office client application, to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**.
 
 Next, Visual Studio does the following:
 
@@ -112,7 +112,7 @@ Next, Visual Studio does the following:
 
 2. Starts the web application project in IIS Express.
 
-3. Opens the host application.
+3. Opens the Office application.
 
 Visual Studio doesn't show validation errors in the **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information about how to enable or disable validation, see [Options, Text Editor, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
@@ -120,7 +120,7 @@ To review the validation rules of the XML manifest file in your project, see [Of
 
 ## Debug the code for an Excel, PowerPoint, or Word add-in
 
-If your add-in isn't visible within the document that's displayed in the host application (Excel, PowerPoint, or Word) after you've [started the project](#start-the-project), manually launch the add-in in the host application. For example, launch your task pane add-in by choosing the **Show Taskpane** button in the ribbon of the **Home** tab. After your add-in is displayed in Excel, PowerPoint, or Word, you can debug your code by doing the following:
+If your add-in isn't visible within the document that's displayed in the Office application (Excel, PowerPoint, or Word) after you've [started the project](#start-the-project), manually launch the add-in in the Office application. For example, launch your task pane add-in by choosing the **Show Taskpane** button in the ribbon of the **Home** tab. After your add-in is displayed in Excel, PowerPoint, or Word, you can debug your code by doing the following:
 
 1. In Excel, PowerPoint, or Word, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
 
@@ -134,11 +134,11 @@ If your add-in isn't visible within the document that's displayed in the host ap
 
 5. As breakpoints are hit in Visual Studio, step through the code as needed.
 
-You can change your code and review the effects of those changes in your add-in without having to close the host application and restart the project. After you save changes to your code, simply reload the add-in in the host application. For example, reload a task pane add-in by choosing the top-right corner of the task pane to activate the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Reload**.
+You can change your code and review the effects of those changes in your add-in without having to close the Office application and restart the project. After you save changes to your code, simply reload the add-in in the Office application. For example, reload a task pane add-in by choosing the top-right corner of the task pane to activate the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Reload**.
 
 ## Debug the code for an Outlook add-in
 
-After you've [started the project](#start-the-project) and Visual Studio launches Outlook to host your add-in, open an email message or appointment item. 
+After you've [started the project](#start-the-project) and Visual Studio launches Outlook to host your add-in, open an email message or appointment item.
 
 Outlook activates the add-in for the item as long as the activation criteria are met. The add-in bar appears at the top of the Inspector window or Reading Pane, and your Outlook add-in appears as a button in the add-in bar. If your add-in has an add-in command, a button will appear in the ribbon, either in the default tab or a specified custom tab, and the add-in will not appear in the add-in bar.
 

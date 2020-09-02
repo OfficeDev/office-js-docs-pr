@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 07/30/2020
+ms.date: 08/20/2020
 localization_priority: Normal
 ---
 
@@ -45,6 +45,6 @@ In most scenarios, there would be little point to obtaining the access token, if
 
 ## See also
 
-- For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo).
+- For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO).
 - [SSO API reference](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI requirement set](../reference/requirement-sets/identity-api-requirement-sets.md)

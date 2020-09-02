@@ -1,6 +1,6 @@
 ---
 title: WebApplicationInfo element in the manifest file
-description: 'Reference documentation of the VersionOverrides element for Office Add-ins manifest (XML) files.'
+description: 'Reference documentation of the WebApplicationInfo element for Office Add-ins manifest (XML) files.'
 ms.date: 07/30/2020
 localization_priority: Normal
 ---
@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Supports single sign-on (SSO) in Office Add-ins. This element contains information for the add-in as both:
 
-- An OAuth 2.0 *resource* to which the Office host application might need permissions.
+- An OAuth 2.0 *resource* to which the Office client application might need permissions.
 - An OAuth 2.0 *client* that might need permissions to Microsoft Graph.
 
 > [!NOTE]

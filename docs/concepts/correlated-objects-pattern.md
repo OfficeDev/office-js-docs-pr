@@ -1,7 +1,7 @@
 ---
 title: Avoid using the context.sync method in loops
 description: 'Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.'
-ms.date: 04/09/2020
+ms.date: 07/29/2020
 localization_priority: Normal
 ---
 
@@ -9,9 +9,9 @@ localization_priority: Normal
 # Avoid using the context.sync method in loops
 
 > [!NOTE]
-> This article assumes that you're beyond the beginning stage of working with at least one of the four host-specific Office JavaScript APIs&mdash;for Excel, Word, OneNote, and Visio&mdash;that use a batch system to interact with the Office document. In particular, you should know what a call of `context.sync` does and you should know what a collection object is. If you're not at that stage, please start with [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md) and the documentation linked to under "host-specific" in that article.
+> This article assumes that you're beyond the beginning stage of working with at least one of the four application-specific Office JavaScript APIs&mdash;for Excel, Word, OneNote, and Visio&mdash;that use a batch system to interact with the Office document. In particular, you should know what a call of `context.sync` does and you should know what a collection object is. If you're not at that stage, please start with [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md) and the documentation linked to under "application-specific" in that article.
 
-For some programming scenarios in Office Add-ins that use one of the host-specific API models (for Excel, Word, OneNote, and Visio), your code needs to read, write, or process some property from every member of a collection object. For example, an Excel add-in that needs to get the values of every cell in a particular table column or a Word add-in that needs to highlight every instance of a string in the document. You need to iterate over the members in the `items` property of the collection object; but, for performance reasons, you need to avoid calling `context.sync` in every iteration of the loop. Every call of `context.sync` is a round trip from the add-in to the Office document. Repeated round trips hurt performance, especially if the add-in is running in Office on the web because the round trips go across the internet.
+For some programming scenarios in Office Add-ins that use one of the application-specific API models (for Excel, Word, OneNote, and Visio), your code needs to read, write, or process some property from every member of a collection object. For example, an Excel add-in that needs to get the values of every cell in a particular table column or a Word add-in that needs to highlight every instance of a string in the document. You need to iterate over the members in the `items` property of the collection object; but, for performance reasons, you need to avoid calling `context.sync` in every iteration of the loop. Every call of `context.sync` is a round trip from the add-in to the Office document. Repeated round trips hurt performance, especially if the add-in is running in Office on the web because the round trips go across the internet.
 
 > [!NOTE]
 > All examples in this article use `for` loops but the practices described apply to any loop statement that can iterate through an array, including the following:
@@ -35,10 +35,10 @@ For some programming scenarios in Office Add-ins that use one of the host-specif
 
 ## Writing to the document
 
-In the simplest case, you are only writing to members of a collection object, not reading their properties. For example, the following code highlights in yellow every instance of "the" in a Word document. 
+In the simplest case, you are only writing to members of a collection object, not reading their properties. For example, the following code highlights in yellow every instance of "the" in a Word document.
 
 > [!NOTE]
-> It is generally a good practice to put have a final `context.sync` just before the closing "}" character of the host `run` method (such as `Excel.run`, `Word.run`, etc.). This is because the `run` method makes a hidden call of `context.sync` as the last thing it does if, and only if, there are queued commands that have not yet been synchronized. The fact that this call is hidden can be confusing, so we generally recommend that you add the explicit `context.sync`. However, given that this article is about minimizing calls of `context.sync`, it is actually more confusing to add an entirely unnecessary final `context.sync`. So, in this article, we leave it out when there are no unsynchronized commands at the end of the `run`. 
+> It is generally a good practice to put have a final `context.sync` just before the closing "}" character of the application `run` method (such as `Excel.run`, `Word.run`, etc.). This is because the `run` method makes a hidden call of `context.sync` as the last thing it does if, and only if, there are queued commands that have not yet been synchronized. The fact that this call is hidden can be confusing, so we generally recommend that you add the explicit `context.sync`. However, given that this article is about minimizing calls of `context.sync`, it is actually more confusing to add an entirely unnecessary final `context.sync`. So, in this article, we leave it out when there are no unsynchronized commands at the end of the `run`.
 
 ```javascript
 Word.run(async function (context) {
@@ -187,7 +187,7 @@ Word.run(async (context) => {
     for (let i = 0; i < allSearchResults.length; i++) {
       let correlatedObject = allSearchResults[i];
 
-      for (let j = 0; j < correlatedObject.rangesMatchingJob.items.length; j++) {        
+      for (let j = 0; j < correlatedObject.rangesMatchingJob.items.length; j++) {
         let targetRange = correlatedObject.rangesMatchingJob.items[j];
         let name = correlatedObject.personAssignedToJob;
         targetRange.insertText(name, Word.InsertLocation.replace);
@@ -201,12 +201,12 @@ Word.run(async (context) => {
 Note the code uses the split loop pattern:
 
 - The outer loop from the preceding example has been split into two. (The second loop has an inner loop, which is expected because the code is iterating over a set of jobs (or placeholders) and within that set it is iterating over the matching ranges.)
-- There is a `context.sync` after each major loop, but no `context.sync` inside any loop. 
+- There is a `context.sync` after each major loop, but no `context.sync` inside any loop.
 - The second major loop iterates through an array that is created in the first loop.
 
-But the array created in the first loop does *not* contain only an Office object as the first loop did in the section [Reading values from the document with the split loop pattern](#reading-values-from-the-document-with-the-split-loop-pattern). This is because some of the information needed to process the Word Range objects is not in the Range objects themselves but instead comes from the `jobMapping` array. 
+But the array created in the first loop does *not* contain only an Office object as the first loop did in the section [Reading values from the document with the split loop pattern](#reading-values-from-the-document-with-the-split-loop-pattern). This is because some of the information needed to process the Word Range objects is not in the Range objects themselves but instead comes from the `jobMapping` array.
 
-So, the objects in the array created in the first loop are custom objects that have two properties. The first is an array of Word Ranges that match a specific job title (that is, a placeholder string) and the second is a string that provides the name of the person assigned to the job. This makes the final loop easy to write and easy to read because all of the information needed to process a given range is contained in the same custom object that contains the range. The name that should replace _**correlatedObject**.rangesMatchingJob.items[j]_ is the other property of the same object: _**correlatedObject**.personAssignedToJob_. 
+So, the objects in the array created in the first loop are custom objects that have two properties. The first is an array of Word Ranges that match a specific job title (that is, a placeholder string) and the second is a string that provides the name of the person assigned to the job. This makes the final loop easy to write and easy to read because all of the information needed to process a given range is contained in the same custom object that contains the range. The name that should replace _**correlatedObject**.rangesMatchingJob.items[j]_ is the other property of the same object: _**correlatedObject**.personAssignedToJob_.
 
 We call this variation of the split loop pattern the **correlated objects** pattern. The general idea is that the first loop creates an array of custom objects. Each object has a property whose value is one of the items in an Office collection object (or an array of such items). The custom object has other properties, each of which provides information needed to process the Office objects in the final loop. See the section [Other examples of these patterns](#other-examples-of-these-patterns) for a link to an example where the custom correlating object has more than two properties.
 
@@ -218,8 +218,8 @@ One further caveat: sometimes it takes more than one loop just to create the arr
 - For a simple example for Word that uses `Array.forEach` loops and doesn't use `async`/`await` syntax, see the accepted answer to this Stack Overflow question: [Iterating over all paragraphs with content controls with Office JavaScript API](https://stackoverflow.com/questions/58422113/iterating-over-all-paragraphs-with-content-controls-with-office-javascript-api).
 - For an example for Word that is written in TypeScript, see the sample [Word Add-in Angular2 Style Checker](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker), especially the file [word.document.service.ts](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/services/word-document/word.document.service.ts). It has a mixture of `for` and `Array.forEach` loops.
 - For an advanced Word sample, import [this gist](https://gist.github.com/9c5a803e52480ec7f00bb3224292e0ab) into the [Script Lab tool](../overview/explore-with-script-lab.md). For context in using the gist, see the accepted answer to the Stack Overflow question [Document not in sync after replace text](https://stackoverflow.com/questions/48227941/document-not-in-sync-after-replace-text). This sample creates a custom correlating object type that has three properties. It uses a total of three loops to construct the array of correlated objects, and two more loops to do the final processing. There are a mixture of `for` and `Array.forEach` loops.
-- Although not strictly an example of the split loop or correlated objects patterns, there is an advanced Excel sample that shows how to convert a set of cell values to other currencies with just a single `context.sync`. To try it, open the [Script Lab tool](../overview/explore-with-script-lab.md) and navigate to the **Currency Converter** sample. 
+- Although not strictly an example of the split loop or correlated objects patterns, there is an advanced Excel sample that shows how to convert a set of cell values to other currencies with just a single `context.sync`. To try it, open the [Script Lab tool](../overview/explore-with-script-lab.md) and navigate to the **Currency Converter** sample.
 
 ## When should you *not* use the patterns in this article?
 
-Excel cannot read more than 5 MB of data in a given call of `context.sync`. If this limit is exceeded, an error is thrown. (For more information, see [Excel data transfer limits](../develop/common-coding-issues.md#excel-data-transfer-limits).) It is very rare that this limit is approached, but if there's a chance that this will happen with your add-in, then your code should *not* load all the data in a single loop and follow the loop with a `context.sync`. But you still should avoid having a `context.sync` in every iteration of a loop over a collection object. Instead, define subsets of the items in the collection and loop over each subset in turn, with a `context.sync` between the loops. You could structure this with an outer loop that iterates over the subsets and contains the `context.sync` in each of these outer iterations.
+Excel cannot read more than 5 MB of data in a given call of `context.sync`. If this limit is exceeded, an error is thrown. (See the "Excel add-ins section" of [Resource limits and performance optimization for Office Add-ins](resource-limits-and-performance-optimization.md#excel-add-ins) for more information.) It's very rare that this limit is approached, but if there's a chance that this will happen with your add-in, then your code should *not* load all the data in a single loop and follow the loop with a `context.sync`. But you still should avoid having a `context.sync` in every iteration of a loop over a collection object. Instead, define subsets of the items in the collection and loop over each subset in turn, with a `context.sync` between the loops. You could structure this with an outer loop that iterates over the subsets and contains the `context.sync` in each of these outer iterations.

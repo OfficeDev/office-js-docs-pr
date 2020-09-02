@@ -17,8 +17,8 @@ Each DesktopFormFactor definition contains the **FunctionFile** element and one 
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | Yes      | Defines where an add-in exposes functionality. |
 | [FunctionFile](functionfile.md)       | Yes      | A URL to a file that contains JavaScript functions.|
-| [GetStarted](getstarted.md)           | No       | Defines the callout that appears when installing the add-in in Word, Excel, or PowerPoint hosts. |
-| [SupportsSharedFolders](supportssharedfolders.md) | No | Defines whether the Outlook add-in is available in delegate scenarios and is set to *false* by default. |
+| [GetStarted](getstarted.md)           | No       | Defines the callout that appears when installing the add-in in Word, Excel, or PowerPoint. |
+| [SupportsSharedFolders](supportssharedfolders.md) | No | Defines whether the Outlook add-in is available in delegate scenarios. Set to *false* by default. |
 
 ## DesktopFormFactor example
 

@@ -1,7 +1,7 @@
 ---
 title: Get attachments in an Outlook add-in
 description: Your add-in can use the attachments API to send information about the attachments to a remote service.
-ms.date: 01/13/2020
+ms.date: 08/20/2020
 localization_priority: Normal
 ---
 
@@ -407,4 +407,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Create Outlook add-ins for read forms](read-scenario.md)
 - [Explore the EWS Managed API, EWS, and web services in Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Get started with EWS Managed API client applications](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [AttachmentsDemo Sample Outlook add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo)
+- [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)

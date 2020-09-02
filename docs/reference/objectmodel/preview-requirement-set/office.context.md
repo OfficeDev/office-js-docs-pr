@@ -38,7 +38,7 @@ Office.context provides shared interfaces that are used by add-ins in all of the
 
 #### auth: [Auth](/javascript/api/office/office.auth)
 
-Supports [single sign-on (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) by providing a method that allows the Office host to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
+Supports [single sign-on (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) by providing a method that allows the Office application to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
 
 ##### Type
 
@@ -73,7 +73,7 @@ Office.context.auth.getAccessTokenAsync(function(result) {
 
 Gets the locale (language) specified by the user for editing the item.
 
-The `contentLanguage` value reflects the current **Editing Language** setting specified with **File > Options > Language** in the Office host application.
+The `contentLanguage` value reflects the current **Editing Language** setting specified with **File > Options > Language** in the Office client application.
 
 ##### Type
 
@@ -140,9 +140,9 @@ console.log(JSON.stringify(Office.context.diagnostics));
 
 #### displayLanguage: String
 
-Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.
+Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office client application.
 
-The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office host application.
+The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office client application.
 
 ##### Type
 
@@ -183,7 +183,7 @@ function write(message){
 
 #### host: [HostType](/javascript/api/office/office.hosttype)
 
-Gets the Office application host in which the add-in is running.
+Gets the Office application that is hosting the add-in.
 
 ##### Type
 
@@ -214,7 +214,7 @@ Provides access to the properties for Office theme colors.
 > [!NOTE]
 > This member is only supported in Outlook on Windows.
 
-Using Office theme colors lets you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.
+Using Office theme colors lets you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office client applications. Using Office theme colors is appropriate for mail and task pane add-ins.
 
 ##### Type
 
@@ -284,7 +284,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 #### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-Provides a method for determining what requirement sets are supported on the current host and platform.
+Provides a method for determining what requirement sets are supported on the current application and platform.
 
 ##### Type
 
@@ -312,7 +312,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
-The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any host client application used to access that mailbox.
+The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any Outlook client used to access that mailbox.
 
 ##### Type
 

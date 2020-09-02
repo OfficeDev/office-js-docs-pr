@@ -264,7 +264,7 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 3. Notice that the task pane now contains a header section and title, and no longer contains a footer section.
 
-    ![A screenshot of PowerPoint add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![A screenshot of PowerPoint add-in with Insert Image button](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
 4. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
@@ -316,7 +316,7 @@ Complete the following steps to add code that inserts text into the title slide 
 
 3. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide and choose a design for the slide that contains a text box for the title.
 
-    ![A screenshot of PowerPoint add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![A screenshot of PowerPoint with current slide highlighted, and add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
 4. Put your cursor in the text box on the title slide and then in the task pane, choose the **Insert Text** button to add text to the slide.
 

@@ -34,11 +34,11 @@ Apply the following best practices for developing add-ins that run on iOS:
 
 -  **Use Visual Studio to develop your add-in.**
 
-    If you develop your add-in with Visual Studio, you can [set breakpoints and debug its code](../develop/debug-office-add-ins-in-visual-studio.md) in an Office host application running on Windows, before sideloading your add-in on the iPad or Mac. Because an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on both platforms.
+    If you develop your add-in with Visual Studio, you can [set breakpoints and debug its code](../develop/debug-office-add-ins-in-visual-studio.md) in an Office client application running on Windows, before sideloading your add-in on the iPad or Mac. Because an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on both platforms.
 
 -  **Specify API requirements in your add-in's manifest or with runtime checks.**
 
-    When you specify API requirements in your add-in's manifest, Office will determine if the host application supports those API members. If the API members are available in the host, then your add-in will be available in that host application. Alternatively, you can perform a runtime check to determine if a method is available in the host before using it in your add-in. Runtime checks ensure that your add-in is always available in the host, and provides additional functionality if the methods are available. For more information, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
+    When you specify API requirements in your add-in's manifest, Office will determine if the Office client application supports those API members. If the API members are available in the application, then your add-in will be available. Alternatively, you can perform a runtime check to determine if a method is available in the application before using it in your add-in. Runtime checks ensure that your add-in is always available in the application, and provides additional functionality if the methods are available. For more information, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).
 
 For general add-in development best practices, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
 

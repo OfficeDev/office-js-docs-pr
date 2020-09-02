@@ -7,13 +7,10 @@
 
 - name: Get started
   items:
-  - name: Start Here! A guide for beginners
+  - name: Beginner's guide
     href: overview/learning-path-beginner.md
     displayName: develop
-  - name: Transition Here! A guide for VSTO add-in developers
-    href: overview/learning-path-transition.md
-    displayName: develop
-  - name: Building Office Add-ins
+  - name: Development process overview
     href: overview/office-add-ins-fundamentals.md
     displayName: develop
   - name: Quick starts
@@ -41,50 +38,75 @@
     href: overview/set-up-your-dev-environment.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-- name: Core concepts
+- name: Development process
   items:
 
   - name: Overview
     href: overview/core-concepts-office-add-ins.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
+  - name: Plan
+    items:
+    - name: Add-in development best practices
+      href: concepts/add-in-development-best-practices.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Office versions and requirement sets
+      href: develop/office-versions-and-requirement-sets.md
+    - name: Office application and platform availability
+      href: overview/office-add-in-availability.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Requirements for running add-ins
+      href: concepts/requirements-for-running-office-add-ins.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Install the latest Office version
+      href: develop/install-latest-office-version.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
     items:
     - name: Develop Office Add-ins
       href: develop/develop-overview.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Host and platform availability
-      href: overview/office-add-in-availability.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Office JavaScript API
+    - name: Understanding the Office JavaScript API
+      href: develop/understanding-the-javascript-api-for-office.md
+    - name: Using the application-specific API model
+      href: develop/application-specific-api-model.md
+    - name: Using the Common API model
       items:
-      - name: Understanding the Office JavaScript API
-        href: develop/understanding-the-javascript-api-for-office.md
-      - name: Office versions and requirement sets
-        href: develop/office-versions-and-requirement-sets.md
+      - name: Common JavaScript API object model
+        href: develop/office-javascript-api-object-model.md
+      - name: Asynchronous programming in Office Add-ins
+        href: develop/asynchronous-programming-in-office-add-ins.md
+      - name: Support for content and task pane add-ins
+        href: develop/support-for-task-pane-and-content-add-ins.md
+      - name: Persist state and settings
+        href: develop/persisting-add-in-state-and-settings.md
+    - name: Setup and run your add-in
+      items:
       - name: Reference Office.js
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+      - name: Specify Office applications and API requirements
+        href: develop/specify-office-hosts-and-api-requirements.md
       - name: Load sequence of an Office Add-in
         href: develop/loading-the-dom-and-runtime-environment.md
       - name: Initialize your add-in
         href: develop/initialize-add-in.md
-      - name: Coding guidance for common issues
-        href: develop/common-coding-issues.md
-      - name: Common APIs
-        items:
-        - name: Common JavaScript API object model
-          href: develop/office-javascript-api-object-model.md
-        - name: Asynchronous programming in Office Add-ins
-          href: develop/asynchronous-programming-in-office-add-ins.md
-        - name: Support for content and task pane add-ins
-          href: develop/support-for-task-pane-and-content-add-ins.md
-        - name: Persist state and settings
-          href: develop/persisting-add-in-state-and-settings.md
-
+        displayName: manifest
+      - name: Automatically open a task pane with a document
+        href: develop/automatically-open-a-task-pane-with-a-document.md
+        displayName: manifest
     - name: Manifest
-      href: develop/add-in-manifests.md
-    - name: Authentication and authorization
       items:
+      - name: Overview
+        href: develop/add-in-manifests.md
+      - name: Find the proper order of manifest elements
+        href: develop/manifest-element-ordering.md
+      - name: Update API and manifest version
+        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+        displayName: manifest
+    - name: Privacy, security, and authentication
+      items:
+      - name: Overview of add-in privacy and security
+        href: concepts/privacy-and-security.md
       - name: Overview of authentication and authorization
         href: develop/overview-authn-authz.md
       - name: Authenticate and authorize with the Office dialog API
@@ -113,29 +135,96 @@
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
-    - name: Concepts
+      - name: Request permissions for API use in add-ins
+        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+    - name: UI and UX
       items:
-      - name: Add-in development best practices
-        href: concepts/add-in-development-best-practices.md
-        displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-      - name: Requirements for running add-ins
-        href: concepts/requirements-for-running-office-add-ins.md
-        displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-      - name: Browsers used by Office Add-ins
-        href: concepts/browsers-used-by-office-web-add-ins.md
-        displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-      - name: Install the latest Office version
-        href: develop/install-latest-office-version.md
-        displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: How to
-      items: 
-      - name: Address same origin policy limitations
-        href: develop/addressing-same-origin-policy-limitations.md
-      - name: Automatically open a task pane with a document
-        href: develop/automatically-open-a-task-pane-with-a-document.md
-      - name: Create add-in commands
-        href: develop/create-addin-commands.md
-        displayName: manifest
+      - name: Overview
+        href: design/add-in-design.md
+      - name: Guidelines
+        items:
+        - name: Accessibility
+          href: design/accessibility-guidelines.md
+        - name: Data visualization
+          href: design/data-visualization-guidelines.md
+        - name: Voice
+          href: design/voice-guidelines.md
+      - name: UX design language and patterns
+        items:
+        - name: Design language
+          items:
+          - name: Overview
+            href: design/add-in-design-language.md
+          - name: Color
+            href: design/add-in-color.md
+          - name: Icons
+            items:
+            - name: Icon guidelines
+              href: design/add-in-icons.md
+            - name: Fresh style
+              href: design/add-in-icons-fresh.md
+            - name: Monoline style
+              href: design/add-in-icons-monoline.md
+          - name: Layout
+            href: design/add-in-layout.md
+          - name: Motion
+            href: design/using-motion-office-addins.md
+          - name: Typography
+            href: design/add-in-typography.md
+        - name: UX design patterns for common scenarios
+          items:
+          - name: Overview
+            href: design/ux-design-pattern-templates.md
+          - name: Authentication
+            href: design/authentication-patterns.md
+          - name: Branding
+            href: design/branding-patterns.md
+          - name: First run experience
+            href: design/first-run-experience-patterns.md
+          - name: Navigation
+            href: design/navigation-patterns.md
+      - name: Interface elements
+        items:
+        - name: Overview
+          href: design/interface-elements.md
+        - name: Add-in commands
+          items:
+          - name: Basic concepts for Add-in Commands
+            href: design/add-in-commands.md
+          - name: Create add-in commands
+            href: develop/create-addin-commands.md
+          - name: Enable and Disable Add-in Commands
+            href: design/disable-add-in-commands.md
+        - name: Content add-ins
+          href: design/content-add-ins.md
+        - name: Dialog boxes
+          items:
+          - name: Overview
+            href: design/dialog-boxes.md
+          - name: Use the Office dialog API in your Office Add-ins
+            href: develop/dialog-api-in-office-add-ins.md
+          - name: Best practices and rules for the Office dialog API
+            href: develop/dialog-best-practices.md
+          - name: Send data from host page to dialog box
+            href: develop/parent-to-dialog.md          
+          - name: Handling errors and events in the Office dialog box
+            href: develop/dialog-handle-errors-events.md
+          - name: Use the Office dialog box to play a video
+            href: develop/dialog-video.md
+        - name: Task panes
+          href: design/task-pane-add-ins.md
+      - name: Localization
+        href: develop/localization.md
+      - name: Resources
+        items: 
+        - name: Design toolkits
+          href: design/design-toolkits.md
+        - name: Get started using Fabric React
+          href: design/using-office-ui-fabric-react.md
+        - name: Office UI Fabric
+          href: design/office-ui-fabric.md
+    - name: Frameworks and IDEs
+      items:
       - name: Develop add-ins for the iPad
         href: develop/develop-office-add-ins-for-the-ipad.md
       - name: Develop add-ins with Angular
@@ -151,114 +240,8 @@
           href: develop/debug-office-add-ins-in-visual-studio.md
         - name: Get JavaScript IntelliSense in Visual Studio
           href: develop/get-javascript-intellisense-in-visual-studio.md
-        - name: Convert JavaScript to TypeScript
+        - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
-      - name: Find the proper order of manifest elements
-        href: develop/manifest-element-ordering.md
-      - name: Identify an equivalent COM add-in
-        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-        displayName: manifest
-      - name: Localization
-        href: develop/localization.md
-      - name: Dialog boxes
-        items: 
-        - name: Use the Office dialog API in your Office Add-ins
-          href: develop/dialog-api-in-office-add-ins.md
-        - name: Best practices and rules for the Office dialog API
-          href: develop/dialog-best-practices.md
-        - name: Send data from host page to dialog box
-          href: develop/parent-to-dialog.md          
-        - name: Handling errors and events in the Office dialog box
-          href: develop/dialog-handle-errors-events.md
-        - name: Use the Office dialog box to play a video
-          href: develop/dialog-video.md
-      - name: Performance
-        items:
-        - name: Avoid using the context.sync method in loops
-          href: concepts/correlated-objects-pattern.md
-        - name: Resource limits and performance optimization for Office Add-ins
-          href: concepts/resource-limits-and-performance-optimization.md
-      - name: Privacy and security
-        href: concepts/privacy-and-security.md
-      - name: Request permissions for API use in add-ins
-        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-        displayName: manifest
-      - name: Specify Office hosts and API requirements
-        href: develop/specify-office-hosts-and-api-requirements.md
-        displayName: manifest
-      - name: Update API and manifest version
-        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-        displayName: manifest
-  
-  - name: UI and UX
-    items:
-    - name: Overview
-      href: design/add-in-design.md
-    - name: Guidelines
-      items:
-      - name: Accessibility
-        href: design/accessibility-guidelines.md
-      - name: Data visualization
-        href: design/data-visualization-guidelines.md
-      - name: Voice
-        href: design/voice-guidelines.md
-    - name: Design language
-      items:
-      - name: Overview
-        href: design/add-in-design-language.md
-      - name: Color
-        href: design/add-in-color.md
-      - name: Icons
-        items:
-        - name: Icon guidelines
-          href: design/add-in-icons.md
-        - name: Fresh style
-          href: design/add-in-icons-fresh.md
-        - name: Monoline style
-          href: design/add-in-icons-monoline.md
-      - name: Layout
-        href: design/add-in-layout.md
-      - name: Motion
-        href: design/using-motion-office-addins.md
-      - name: Typography
-        href: design/add-in-typography.md
-    - name: Interface elements
-      items:
-      - name: Overview
-        href: design/interface-elements.md
-      - name: Add-in commands
-        items: 
-        - name: Basic concepts for Add-in Commands
-          href: design/add-in-commands.md
-        - name: Enable and Disable Add-in Commands
-          href: design/disable-add-in-commands.md
-      - name: Dialog boxes
-        href: design/dialog-boxes.md
-      - name: Content add-ins
-        href: design/content-add-ins.md
-      - name: Task panes
-        href: design/task-pane-add-ins.md
-    - name: UX design patterns
-      items:
-      - name: Overview
-        href: design/ux-design-pattern-templates.md
-      - name: Authentication
-        href: design/authentication-patterns.md
-      - name: Branding
-        href: design/branding-patterns.md
-      - name: First run experience
-        href: design/first-run-experience-patterns.md
-      - name: Navigation
-        href: design/navigation-patterns.md
-    - name: Resources
-      items: 
-      - name: Design toolkits
-        href: design/design-toolkits.md
-      - name: Get started using Fabric React
-        href: design/using-office-ui-fabric-react.md
-      - name: Office UI Fabric
-        href: design/office-ui-fabric.md
-
   - name: Test and debug
     items:
     - name: Test and debug Office Add-ins
@@ -289,10 +272,18 @@
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
+    - name: Coding guidance for common issues
+      href: develop/common-coding-issues.md
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debugger Extension for Visual Studio Code
       href: testing/debug-with-vs-extension.md
+    - name: Performance
+      items:
+      - name: Avoid using the context.sync method in loops
+        href: concepts/correlated-objects-pattern.md
+      - name: Resource limits and performance optimization for Office Add-ins
+        href: concepts/resource-limits-and-performance-optimization.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
     - name: Usability testing
@@ -511,6 +502,11 @@
           href: reference/manifest/supportssharedfolders.md
         - name: WebApplicationInfo
           href: reference/manifest/webapplicationinfo.md
+    - name: Address same origin policy limitations
+      href: develop/addressing-same-origin-policy-limitations.md
+    - name: Browsers used by Office Add-ins
+      href: concepts/browsers-used-by-office-web-add-ins.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
     - name: Unsupported window objects
@@ -599,9 +595,6 @@
       displayName: Excel
     - name: Fundamental programming concepts
       href: excel/excel-add-ins-core-concepts.md
-      displayName: Excel
-    - name: Advanced programming concepts
-      href: excel/excel-add-ins-advanced-concepts.md
       displayName: Excel
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
@@ -1159,8 +1152,6 @@
 
 - name: Patterns and practices
   items:
-  - name: Share code from VSTO Add-in to Office add-in
-    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
   - name: Batching custom function remote calls
     href: excel/custom-functions-batching.md
     displayName: Excel, Custom Functions
@@ -1168,3 +1159,13 @@
     href: develop/authentication-pnp.md
   - name: Handle high DPI and DPI scaling in your Office solution
     href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+
+- name: VSTO and COM transition resources
+  items: 
+    - name: VSTO add-in developers' guide
+      href: overview/learning-path-transition.md
+    - name: Share code from VSTO Add-in to Office add-in
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: Identify an equivalent COM add-in
+      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+      displayName: manifest

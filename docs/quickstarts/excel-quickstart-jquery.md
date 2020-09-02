@@ -59,7 +59,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![Excel add-in](../images/excel-quickstart-addin-3c.png)
+    ![Excel add-in with Run button](../images/excel-quickstart-addin-3c.png)
 
 ### Next steps
 
@@ -193,11 +193,11 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS. If you are asked to trust a certificate, do so to allow the add-in to connect to its host.
+1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS. If you are asked to trust a certificate, do so to allow the add-in to connect to its Office application.
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel add-in button](../images/excel-quickstart-addin-2a.png)
+    ![Excel add-in Show Taskpane button](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 

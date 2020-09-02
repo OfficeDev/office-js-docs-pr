@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API programming overview
 description: 'Learn about the OneNote JavaScript API for OneNote add-ins on the web.'
-ms.date: 03/18/2020
+ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -21,20 +21,20 @@ Add-ins consist of two basic components:
 
 - An **XML manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the same [manifest](../develop/add-in-manifests.md) format as other Office Add-ins.
 
-**Office Add-in = Manifest + Webpage**
+### Office Add-in = Manifest + Webpage
 
 ![An Office Add-in consists of a manifest and webpage](../images/onenote-add-in.png)
 
 ## Using the JavaScript API
 
-Add-ins use the runtime context of the host application to access the JavaScript API. The API has two layers:
+Add-ins use the runtime context of the Office application to access the JavaScript API. The API has two layers:
 
-- A **host-specific API** for OneNote-specific operations, accessed through the `Application` object.
+- A **application-specific API** for OneNote-specific operations, accessed through the `Application` object.
 - A **Common API** that's shared across Office applications, accessed through the `Document` object.
 
-### Accessing the host-specific API through the *Application* object
+### Accessing the application-specific API through the *Application* object
 
-Use the `Application` object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With host-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this:
+Use the `Application` object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With application-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this:
 
 1. Get the application instance from the context.
 
@@ -81,17 +81,18 @@ function getPagesInSection() {
 }
 ```
 
+See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn more about the `load`/`sync` pattern and other common practices in the OneNote JavaScript APIs.
+
 You can find supported OneNote objects and operations in the [API reference](../reference/overview/onenote-add-ins-javascript-reference.md).
 
 #### OneNote JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md).
 
 ### Accessing the Common API through the *Document* object
 
 Use the `Document` object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)
 and [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) methods.
-
 
 For example:  
 
@@ -120,15 +121,13 @@ OneNote add-ins support only the following Common APIs:
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | Settings are supported by content add-ins only | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-In general, you use the Common API to do something that isn't supported in the host-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
-
+In general, you use the Common API to do something that isn't supported in the application-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 <a name="om-diagram"></a>
 ## OneNote object model diagram 
 The following diagram represents what's currently available in the OneNote JavaScript API.
 
   ![OneNote object model diagram](../images/onenote-om.png)
-
 
 ## See also
 

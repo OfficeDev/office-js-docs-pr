@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 08/18/2020
+ms.date: 08/24/2020
 localization_priority: Normal
 ---
 
@@ -188,6 +188,9 @@ In this scenario, you'll add handling for composing new items.
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > If you see a "Sideload is not supported" error, you can ignore it and proceed.
 
 1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
 

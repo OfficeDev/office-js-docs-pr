@@ -1,12 +1,12 @@
 ---
-title: Transition Here! A guide for VSTO add-in creators making Office Web Add-ins
+title: VSTO add-in developer's guide
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
 ms.date: 05/10/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
 
-# Transition Here! A guide for VSTO add-in creators making Office Web Add-ins
+# VSTO add-in developer's guide
 
 So, you've made some VSTO add-ins for Office applications that run on Windows and now you're exploring the new way of extending Office that will run on Windows, Mac, and the online version of the Office suite: Office Web Add-ins.
 
@@ -16,7 +16,7 @@ Your understanding of the object models for the Excel, Word, and the other Offic
 - Office Web Add-ins are deployed differently from VSTO add-ins.
 - Office Web Add-ins are web applications that run in a simplified browser window that is embedded in the Office application, so you need to gain a basic understanding of web applications and how they are hosted on web servers or cloud accounts. 
 
-For these reasons, much of this article duplicates our learning path for complete beginners to Office extensions: [Start Here! A guide for beginners making Office Add-ins](learning-path-beginner.md). What we have added are some additional learning resources to help VSTO add-in developers leverage their experience, and also help them reuse their existing code.
+For these reasons, much of this article duplicates our learning path for complete beginners to Office extensions: [Beginner's guide](learning-path-beginner.md). What we have added are some additional learning resources to help VSTO add-in developers leverage their experience, and also help them reuse their existing code.
 
 ## Step 0: Prerequisites
 
