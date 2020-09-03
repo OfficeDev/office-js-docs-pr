@@ -236,7 +236,7 @@
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
-    - name: Special requirements for add-ins on iPad
+    - name: Special requirements for add-ins on the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
     items:
