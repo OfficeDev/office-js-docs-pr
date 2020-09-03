@@ -31,7 +31,13 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
 
 1. Install [Node.js](https://nodejs.org/download/).
 
-2. Run the following command in the root directory of your project. 
+2. Open a command prompt and install the validator with the following command.
+
+    ```command&nbsp;line
+    npm -g office-addin-manifest
+    ```
+
+3. Run the following command *in the root directory of your project*.
 
     ```command&nbsp;line
     npm run validate

@@ -1,13 +1,13 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Core concepts for Office Add-ins
-description: 'Learn more about the Office Add-ins platform.'
-ms.date: 07/30/2020
+title: Development lifecycle overview
+description: 'Learn about the planning, developing, testing, and publishing lifecycle events.'
+ms.date: 09/01/2020
 localization_priority: Priority
 ---
 
-# Core concepts
+# Development lifecycle overview
 
 All Office Add-ins are built upon the Office Add-ins platform. They share a common framework through which certain capabilities can be implemented. This means that regardless of whether you're creating an add-in for Excel, Outlook, or another Office application, you can implement features such as dialog boxes, add-in commands, task panes, and single sign-on (SSO).
 

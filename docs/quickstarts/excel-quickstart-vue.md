@@ -221,8 +221,7 @@ Congratulations, you've successfully created an Excel task pane add-in using Vue
 ## See also
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
+* [Developing Office Add-ins](../develop/develop-overview.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)

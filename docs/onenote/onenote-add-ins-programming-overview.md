@@ -131,7 +131,7 @@ The following diagram represents what's currently available in the OneNote JavaS
 
 ## See also
 
-- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 09/01/2020
+ms.date: 09/02/2020
 localization_priority: Normal
 ---
 
@@ -29,7 +29,7 @@ The following features are in preview.
 
 Add-ins can now activate on IRM-protected items. To turn on this capability, a tenant administrator needs to enable the `OBJMODEL` usage right by setting the **Allow programmatic access** custom policy option in Office. See [Usage rights and descriptions](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) for more information.
 
-**Available in**: Outlook on Windows, starting with build 13120.1000 (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows, starting with build 13229.10000 (connected to a Microsoft 365 subscription)
 
 <br>
 

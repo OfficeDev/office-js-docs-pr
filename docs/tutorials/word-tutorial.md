@@ -941,5 +941,5 @@ In this tutorial, you've created a Word task pane add-in that inserts and replac
 ## See also
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
+* [Developing Office Add-ins](../develop/develop-overview.md)
+

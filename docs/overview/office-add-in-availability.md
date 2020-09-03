@@ -1173,4 +1173,4 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 - [Office 2010, 2013, and 2016 update history (MSI)](/officeupdates/office-updates-msi)
 - [Outlook 2010, 2013, and 2016 update history (MSI)](/officeupdates/outlook-updates-msi)
 - [Update history for Office for Mac](/officeupdates/update-history-office-for-mac)
-- [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
+- [Developing Office Add-ins](../develop/develop-overview.md)
