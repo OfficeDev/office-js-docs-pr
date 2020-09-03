@@ -6,7 +6,7 @@ localization_priority: Normal
 ---
 
 
-## Delay execution while cell is being edited
+# Delay execution while cell is being edited
 
 `Excel.run` has an overload that takes in a [Excel.RunOptions](/javascript/api/excel/excel.runoptions) object. This contains a set of properties that affect platform behavior when the function runs. The following property is currently supported:
 
