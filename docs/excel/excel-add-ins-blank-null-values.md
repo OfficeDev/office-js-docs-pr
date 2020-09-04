@@ -1,12 +1,12 @@
 ---
-title: Blank and null values in Excel Add-ins
+title: Blank and null values in Excel add-ins
 description: 'Learn how to work with blank an null values in Excel object model methods and properties.'
 ms.date: 09/03/2020
 localization_priority: Normal
 ---
 
 
-# Blank and null values in Excel Add-in
+# Blank and null values in Excel add-ins
 
 `null` and empty strings have special implications in the Excel JavaScript APIs. They're used to represent empty cells, no formatting, or default values. This section details the use of `null` and empty string when getting and setting properties.
 
@@ -26,13 +26,13 @@ range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 `null` is not a valid input for single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.
 
 ```js
-range.values = null;
+range.values = null; // This is not a valid snippet. 
 ```
 
 Likewise, the following code snippet is not valid, as `null` is not a valid value for the `color` property.
 
 ```js
-range.format.fill.color =  null;
+range.format.fill.color =  null;  // This is not a valid snippet. 
 ```
 
 ## null property values in the response
