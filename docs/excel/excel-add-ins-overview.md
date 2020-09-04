@@ -119,5 +119,5 @@ Get started by [creating your first Excel add-in](../quickstarts/excel-quickstar
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Developing Office Add-ins](../develop/develop-overview.md)
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)

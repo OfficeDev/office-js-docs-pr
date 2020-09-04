@@ -356,6 +356,6 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
 - [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md)

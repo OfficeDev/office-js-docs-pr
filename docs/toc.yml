@@ -589,8 +589,11 @@
     - name: API reference
       href: reference/excel-api-reference.md
       displayName: Excel
-    - name: Fundamental programming concepts
+    - name: Excel object model
       href: excel/excel-add-ins-core-concepts.md
+      displayName: Excel
+    - name: Blank and null values in Excel add-ins
+      href: excel/excel-add-ins-blank-null-values.md
       displayName: Excel
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
@@ -612,6 +615,9 @@
       displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
+      displayName: Excel
+    - name: Delay execution while cell is being edited
+      href: excel/excel-add-ins-delay-in-cell-edit.md
       displayName: Excel
     - name: Error handling
       href: excel/excel-add-ins-error-handling.md

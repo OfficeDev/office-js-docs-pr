@@ -410,5 +410,5 @@ Excel.run(function (context) {
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API Reference](/javascript/api/excel)

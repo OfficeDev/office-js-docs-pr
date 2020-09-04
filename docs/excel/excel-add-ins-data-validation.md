@@ -218,6 +218,6 @@ It isn't necessary that the range you clear is exactly the same range as a range
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [DataValidation Object (JavaScript API for Excel)](/javascript/api/excel/excel.datavalidation)
 - [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range)
