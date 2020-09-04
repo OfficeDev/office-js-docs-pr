@@ -16,9 +16,9 @@ An Excel add-in interacts with objects in Excel by using the Office JavaScript A
 
 This section of the documentation focuses on the Excel JavaScript API, which you'll use to develop the majority of functionality in add-ins that target Excel on the web or Excel 2016 or later. For information about the Common API, see [Common JavaScript API object model](../../develop/office-javascript-api-object-model.md).
 
-## Learn programming concepts
+## Learn object model concepts
 
-See [Fundamental programming concepts with the Excel JavaScript API](../../excel/excel-add-ins-core-concepts.md) for information about important programming concepts.
+See [Excel JavaScript object model in Office Add-ins](../../excel/excel-add-ins-core-concepts.md) for information about important object model concepts.
 
 For hands-on experience using the Excel JavaScript API to access objects in Excel, complete the [Excel add-in tutorial](../../tutorials/excel-tutorial.md).
 

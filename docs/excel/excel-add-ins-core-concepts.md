@@ -1,11 +1,11 @@
 ---
-title: Excel object model
+title: Excel JavaScript object model in Office Add-ins
 description: 'Learn the key object types in the Excel JavaScript APIs and how to use them to build add-ins for Excel.'
 ms.date: 09/03/2020
 localization_priority: Priority
 ---
 
-# Fundamental programming concepts with the Excel JavaScript API
+# Excel JavaScript object model in Office Add-ins
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016 or later. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
 
