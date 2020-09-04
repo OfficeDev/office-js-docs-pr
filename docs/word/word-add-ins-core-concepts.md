@@ -5,7 +5,7 @@ ms.date: 09/04/2020
 localization_priority: Priority
 ---
 
-# Fundamental programming concepts with the Word JavaScript API
+# Word JavaScript object model in Office Add-ins
 
 This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins. It introduces core concepts that are fundamental to using the API.
 
