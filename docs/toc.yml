@@ -1124,7 +1124,7 @@
     - name: API reference
       href: reference/word-api-reference.md
       displayName: Word
-    - name: Fundamental programming concepts
+    - name: Word object model
       href: word/word-add-ins-core-concepts.md
       displayName: Word
     - name: Bind to regions in a document
