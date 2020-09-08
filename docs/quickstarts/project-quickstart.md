@@ -99,7 +99,7 @@ Office.context.document.getSelectedTaskAsync(
     Run the following command in the root directory of your project. When you run this command, the local web server will start.
 
     ```command&nbsp;line
-    npm start
+    npm run dev server
     ```
 
 3. In Project, create a simple project plan.
