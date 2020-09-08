@@ -9,7 +9,7 @@ localization_priority: Normal
 
 You can create and run an Outlook add-in the same way in Outlook on Mac as in the other clients, including Outlook on the web, Windows, iOS, and Android, without customizing the JavaScript for each client. The same calls from the add-in to the Office JavaScript API generally work the same way, except for the areas described in the following table.
 
-For more information, see [Deploy and install Outlook add-ins for testing](testing-and-tips.md). Something.
+For more information, see [Deploy and install Outlook add-ins for testing](testing-and-tips.md).
 
 For information about new UI support on Mac, see [New Outlook on Mac](#new-outlook-on-mac-preview).
 
