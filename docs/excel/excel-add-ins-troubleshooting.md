@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Troubleshooting Excel Add-ins
 
+This article discusses troubleshooting issues that are unique to Excel. Please use the feedback tool at the bottom of the page to suggest other issues that can be added to the article.
+
 ## API limitations when the active workbook switches
 
 Add-ins for Excel are intended to operate on a single workbook at a time. Errors can arise when a workbook that is separate from the one running the add-in gains focus. This only happens when particular methods are in the process of being called when the focus changes.
