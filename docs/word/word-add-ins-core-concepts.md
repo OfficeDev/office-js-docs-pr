@@ -10,7 +10,7 @@ localization_priority: Priority
 This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins. It introduces core concepts that are fundamental to using the API.
 
 > [!IMPORTANT]
-> See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about the asynchronous nature of the Word APIs and how they work with the workbook.
+> See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about the asynchronous nature of the Word APIs and how they work with the document.
 
 ## Office.js APIs for Word
 
@@ -31,7 +31,7 @@ To understand the Word APIs, you must understand how the components of a documen
 
 * The **Document** contains the **Section**s, and document-level entities such as settings and custom XML parts.
 * A **Section** contains a **Body**.
-* A **Body** gives access to **Paragraphs**, **ContentControls**, and **Range** objects, among others.
+* A **Body** gives access to **Paragraph**s, **ContentControl**s, and **Range** objects, among others.
 * A **Range** represents a contiguous area of content, including text, white space, **Table**s, and images. It also contains most of the text manipulation methods.
 * A **List** represents text in a numbered or bulleted list.
 
