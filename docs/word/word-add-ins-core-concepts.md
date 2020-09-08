@@ -29,11 +29,11 @@ While you'll likely use the Word JavaScript API to develop the majority of funct
 
 To understand the Word APIs, you must understand how the components of a document are related to one another.
 
-* The **Document** contains the **Section**s, and document level entities such as settings and custom XML parts.
+* The **Document** contains the **Section**s, and document-level entities such as settings and custom XML parts.
 * A **Section** contains a **Body**.
 * A **Body** gives access to **Paragraphs**, **ContentControls**, and **Range** objects, among others.
 * A **Range** represents a contiguous area of content, including text, white space, **Table**s, and images. It also contains most of the text manipulation methods.
-* A **List** represents text represented as a numbered or bulleted list.
+* A **List** represents text in a numbered or bulleted list.
 
 ## See also
 
@@ -41,4 +41,3 @@ To understand the Word APIs, you must understand how the components of a documen
 - [Build your first Word add-in](../quickstarts/word-quickstart.md)
 - [Word add-in tutorial](../tutorials/word-tutorial.md)
 - [Word JavaScript API reference](/javascript/api/word)
-
