@@ -212,4 +212,4 @@ These parameters determine the size of the image. Images are always proportional
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)

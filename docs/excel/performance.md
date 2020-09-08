@@ -106,6 +106,6 @@ Excel.run(async (ctx) => {
 
 ## See also
 
-* [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+* [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 * [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
 * [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

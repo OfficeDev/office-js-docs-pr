@@ -268,8 +268,7 @@
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
-    - name: Coding guidance for common issues
-      href: develop/common-coding-issues.md
+
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debugger Extension for Visual Studio Code
@@ -282,6 +281,8 @@
         href: concepts/resource-limits-and-performance-optimization.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
+    - name: Troubleshoot development errors
+      href: testing/troubleshoot-development-errors.md
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in's manifest
@@ -589,8 +590,11 @@
     - name: API reference
       href: reference/excel-api-reference.md
       displayName: Excel
-    - name: Fundamental programming concepts
+    - name: Excel object model
       href: excel/excel-add-ins-core-concepts.md
+      displayName: Excel
+    - name: Blank and null values in Excel add-ins
+      href: excel/excel-add-ins-blank-null-values.md
       displayName: Excel
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
@@ -612,6 +616,9 @@
       displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
+      displayName: Excel
+    - name: Delay execution while cell is being edited
+      href: excel/excel-add-ins-delay-in-cell-edit.md
       displayName: Excel
     - name: Error handling
       href: excel/excel-add-ins-error-handling.md
@@ -652,6 +659,9 @@
     - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
       displayName: Excel
+    - name: Troubleshoot Excel add-ins
+      href: excel/excel-add-ins-troubleshooting.md
+      displayName: Excel      
   - name: Custom functions
     items:
     - name: Overview
@@ -1124,7 +1134,7 @@
     - name: API reference
       href: reference/word-api-reference.md
       displayName: Word
-    - name: Fundamental programming concepts
+    - name: Word object model
       href: word/word-add-ins-core-concepts.md
       displayName: Word
     - name: Bind to regions in a document

@@ -592,4 +592,4 @@ When the `find` method is called on a range representing a single cell, the enti
 ## See also
 
 - [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
