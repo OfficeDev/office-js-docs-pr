@@ -413,7 +413,7 @@ function getDocumentFilePath() {
 }
 ```
 
-When this method needs to be awaited, it can be called either with the `await` keyword or as the function passed to a `then ` function.
+When this method needs to be awaited, it can be called either with the `await` keyword or as the function passed to a `then` function.
 
 > [!NOTE]
 > This technique is especially useful when you need to call one of the Common APIs inside a call of the `run` method in one of the application-specific object models. For an example of the function above being used in this way, see the file [Home.js in the sample Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
