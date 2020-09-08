@@ -37,10 +37,16 @@ The following table shows which browser is used for the various platforms and op
 <sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 <sup>4</sup> The browser that is used for this combination of versions depends on the update channel of the Microsoft 365 subscription. If the user is on the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office uses Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office uses Microsoft Edge with the original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021.
-> [!IMPORTANT]
-> Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you will need to either transpile your JavaScript to ES5 or use a polyfill. Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
-## Troubleshooting Microsoft Edge Issues
+> [!IMPORTANT]
+> Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you have two options:
+>
+> - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
+> - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
+>
+> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
+
+## Troubleshooting Microsoft Edge issues
 
 ### Service Workers are not working
 

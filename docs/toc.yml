@@ -268,8 +268,7 @@
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
-    - name: Coding guidance for common issues
-      href: develop/common-coding-issues.md
+
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debugger Extension for Visual Studio Code
@@ -282,6 +281,8 @@
         href: concepts/resource-limits-and-performance-optimization.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
+    - name: Troubleshoot development errors
+      href: testing/troubleshoot-development-errors.md
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in's manifest
@@ -658,6 +659,9 @@
     - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
       displayName: Excel
+    - name: Troubleshoot Excel add-ins
+      href: excel/excel-add-ins-troubleshooting.md
+      displayName: Excel      
   - name: Custom functions
     items:
     - name: Overview

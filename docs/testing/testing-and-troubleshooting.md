@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: 'Learn how to troubleshoot user errors in Office Add-ins.'
-ms.date: 06/17/2020
+ms.date: 09/08/2020
 localization_priority: Normal
 ---
 
@@ -58,12 +58,6 @@ If the add-in doesn't activate when the user performs the following steps:
     
 Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/kb/2986156/).
 
-
-## Add-in doesn't load in task pane or other issues with the add-in manifest
-
-See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug your add-in with runtime logging](runtime-logging.md) to debug add-in manifest issues.
-
-
 ## Add-in dialog box cannot be displayed
 
 When using an Office Add-in, the user is asked to allow a dialog box to be displayed. The user chooses **Allow**, and the following error message occurs:
@@ -94,51 +88,7 @@ This issue occurs when the Dialog API is used in pop-up mode. To prevent this is
 Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
-## Changes to add-in commands including ribbon buttons and menu items do not take effect
-
-If changes you've made in the manifest, such as file names of ribbon button icons or text of menu items, do not seem to take effect, try clearing the Office cache on your computer. 
-
-#### For Windows:
-
-Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`, and delete the contents of the folder `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\`, if it exists.
-
-#### For Mac:
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### For iOS:
-Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
-
-## Changes to static files, such as JavaScript, HTML, and CSS do not take effect
-
-The browser may be caching these files. To prevent this, turn off client-side caching when developing. The details will depend on what kind of server you are using. In most cases, it involves adding certain headers to the HTTP Responses. We suggest the following set:
-
-- Cache-Control: "private, no-cache, no-store"
-- Pragma: "no-cache"
-- Expires: "-1"
-
-For an example of doing this in an Node.JS Express server, see [this app.js file](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). For an example in an ASP.NET project, see [this cshtml file](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
-
-If your add-in is hosted in Internet Information Server (IIS), you could also add the following to the web.config.
-
-```xml
-<system.webServer>
-  <staticContent>
-    <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="0.00:00:00" cacheControlCustom="must-revalidate" />
-  </staticContent>
-```
-
-If these steps don't seem to work at first, you may need to clear the browser's cache. Do this through the UI of the browser. Sometimes the Edge cache isn't successfully cleared when you try to clear it in the Edge UI. If that happens, run the following command in a Windows Command Prompt.
-
-```bash
-del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
-```
-
 ## See also
 
-- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
-- [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
-- [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
-- [Debug your add-in with runtime logging](runtime-logging.md)
+- [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md)
+
