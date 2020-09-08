@@ -41,5 +41,5 @@ See [Coauthoring in Excel add-ins](../excel/co-authoring-in-excel-add-ins.md) fo
 
 ## See also
 
-- [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md)
-- [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
+- [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)
+- [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
