@@ -1,7 +1,7 @@
 ---
 title: Using the application-specific API model
 description: 'Learn about the promise-based API model for Excel, OneNote, and Word add-ins.'
-ms.date: 07/29/2020
+ms.date: 09/08/2020
 localization_priority: Normal
 ---
 
@@ -218,6 +218,31 @@ Excel.run(function (ctx) {
 });
 ```
 
+### Some properties cannot be set directly
+
+Some properties cannot be set, despite being writable. These properties are part of a parent property that must be set as a single object. This is because that parent property relies on the subproperties having specific, logical relationships. These parent properties must be set using object literal notation to set the entire object, instead of setting that object's individual subproperties. One example of this is found in [PageLayout](/javascript/api/excel/excel.pagelayout). The `zoom` property must be set with a single [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) object, as shown here:
+
+```js
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
+sheet.pageLayout.zoom = { scale: 200 };
+```
+
+In the previous example, you would ***not*** be able to directly assign `zoom` a value: `sheet.pageLayout.zoom.scale = 200;`. That statement throws an error because `zoom` is not loaded. Even if `zoom` were to be loaded, the set of scale will not take effect. All context operations happen on `zoom`, refreshing the proxy object in the add-in and overwriting locally set values.
+
+This behavior differs from [navigational properties](application-specific-api-model.md#scalar-and-navigation-properties) like [Range.format](/javascript/api/excel/excel.range#format). Properties of `format` can be set using object navigation, as shown here:
+
+```js
+// This will set the font size on the range during the next `content.sync()`.
+range.format.font.size = 10;
+```
+
+You can identify a property that cannot have its subproperties directly set by checking its read-only modifier. All read-only properties can have their non-read-only subproperties directly set. Writeable properties like `PageLayout.zoom` must be set with an object at that level. In summary:
+
+- Read-only property: Subproperties can be set through navigation.
+- Writable property: Subproperties cannot be set through navigation (must be set as part of the initial parent object assignment).
+
+
+
 ## &#42;OrNullObject methods and properties
 
 Some accessor methods and properties throw an exception when the desired object doesn't exist. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that isn't in the workbook, the `getItem()` method throws an `ItemNotFound` exception. The application-specific libraries provide a way for your code to test for the existence of document entities without requiring exception handling code. This is accomplished by using the `*OrNullObject` variations of methods and properties. These variations return an object whose `isNullObject` property is set to `true`, if the specified item doesn't exist, rather than throwing an exception.
@@ -246,5 +271,4 @@ return context.sync()
 ## See also
 
 * [Common JavaScript API object model](office-javascript-api-object-model.md)
-* [Common coding issues and unexpected platform behaviors](common-coding-issues.md).
 * [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)

@@ -146,4 +146,3 @@ For more information, see [Work with charts using the Excel JavaScript API](exce
 * [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API performance optimization](../excel/performance.md)
 * [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
-* [Common coding issues and unexpected platform behaviors](../develop/common-coding-issues.md)
