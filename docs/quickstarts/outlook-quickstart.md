@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 08/24/2020
+ms.date: 09/09/2020
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -91,16 +91,13 @@ The add-in project that you've created with the Yeoman generator contains sample
 ### Try it out
 
 > [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an adminstrator for the changes to be made.
+> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
     ```command&nbsp;line
     npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > If you see a "Sideload is not supported" error, you can ignore it and proceed.
 
 1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
 
