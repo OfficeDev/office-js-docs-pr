@@ -23,7 +23,7 @@ Complete the following steps to deploy your web project using Visual Studio 2019
     > [!NOTE]
     > Picking a publish target specifies the server you are deploying to, the credentials needed to log on to the server, the databases to deploy, and other deployment options.
 
-3. For more information about deployment steps for each publish target option, see [First look at deployment in Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019).
+3. For more information about deployment steps for each publish target option, see [First look at deployment in Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true).
 
 ## To package and publish your add-in using IIS, FTP, or Web Deploy using Visual Studio 2019
 

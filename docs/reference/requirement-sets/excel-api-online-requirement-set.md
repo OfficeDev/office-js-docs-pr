@@ -49,6 +49,6 @@ The following APIs are currently available for Excel on the web as part of the `
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-online)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 - [Excel JavaScript preview APIs](./excel-preview-apis.md)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

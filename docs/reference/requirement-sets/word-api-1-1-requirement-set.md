@@ -12,7 +12,7 @@ WordApi 1.1 is the first requirement set of the Word JavaScript API. It's the on
 
 ## API list
 
-The following table lists the APIs in Word JavaScript API requirement set 1.1. To view API reference documentation for all APIs supported by Word JavaScript API requirement set 1.1, see [Word APIs in requirement set 1.1](/javascript/api/word?view=word-js-1.1).
+The following table lists the APIs in Word JavaScript API requirement set 1.1. To view API reference documentation for all APIs supported by Word JavaScript API requirement set 1.1, see [Word APIs in requirement set 1.1](/javascript/api/word?view=word-js-1.1&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|
