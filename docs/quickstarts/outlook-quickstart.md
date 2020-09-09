@@ -96,7 +96,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
 
     ```command&nbsp;line
-    npm run start:web
+    npm run dev-server
     ```
 
     > [!IMPORTANT]
