@@ -19,6 +19,10 @@ localization_priority: Normal
 > [!NOTE]
 > Excel custom functions are not supported on Office 2019 or earlier (one-time purchase).
 
+## CustomFunctionsRuntime 1.1, 1.2, and 1.3
+
+CustomFunctionsRuntime 1.1 is the first version of the API. Version 1.2 adds custom error message support, and version 1.3 adds [XLL streaming](/make-custom-functions-compatible-with-xll-udf#custom-function-behavior-for-xll-compatible-functions) support and additional error handling features. 
+
 ## See also
 
 - [Custom Functions Reference Documentation](/javascript/api/custom-functions-runtime)
