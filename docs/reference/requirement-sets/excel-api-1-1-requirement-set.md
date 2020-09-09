@@ -12,7 +12,7 @@ Excel JavaScript API 1.1 is the first version of the API. It is the only Excel-s
 
 ## API list
 
-The following table lists the APIs in Excel JavaScript API requirement set 1.1. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.1, see [Excel APIs in requirement set 1.1](/javascript/api/excel?view=excel-js-1.1).
+The following table lists the APIs in Excel JavaScript API requirement set 1.1. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.1, see [Excel APIs in requirement set 1.1](/javascript/api/excel?view=excel-js-1.1&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|
@@ -236,5 +236,5 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.1. 
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.1)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.1&preserve-view=true)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

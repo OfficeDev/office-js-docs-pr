@@ -14,7 +14,7 @@ New Word JavaScript APIs are first introduced in "preview" and later become part
 
 ## API list
 
-The following table lists the Word JavaScript APIs currently in preview. To see a complete list of all Word JavaScript APIs (including preview APIs and previously released APIs), see [all Word JavaScript APIs](/javascript/api/word?view=word-js-preview).
+The following table lists the Word JavaScript APIs currently in preview. To see a complete list of all Word JavaScript APIs (including preview APIs and previously released APIs), see [all Word JavaScript APIs](/javascript/api/word?view=word-js-preview&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|
