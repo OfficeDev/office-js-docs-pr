@@ -1,7 +1,7 @@
 ---
 title: Customize your Node.js SSO-enabled add-in
 description: Learn about customizing the SSO-enabled add-in that you created with the Yeoman generator.
-ms.date: 07/07/2020
+ms.date: 09/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -603,10 +603,10 @@ Complete the following steps to try out an Outlook add-in.
 1. In the root folder of the project, run the following command to build the project and start the local web server.
 
     > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
 
 2. Follow the instructions in [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app. Doing so establishes the appropriate conditions for SSO to succeed. 

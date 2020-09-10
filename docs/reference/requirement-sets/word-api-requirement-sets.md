@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API requirement sets
 description: 'Office Add-in requirement set information for Word builds.'
-ms.date: 07/10/2020
+ms.date: 09/10/2020
 ms.prod: word
 localization_priority: Priority
 ---
@@ -17,7 +17,7 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
-> For information about using preview APIs, see the [Excel JavaScript preview APIs](word-preview-apis.md) article.
+> For information about using preview APIs, see the [Word JavaScript preview APIs](word-preview-apis.md) article.
 
 |  Requirement set  |   Office on Windows\*<br>(connected to a Microsoft 365 subscription)  |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|

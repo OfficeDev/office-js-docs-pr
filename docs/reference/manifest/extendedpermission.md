@@ -18,7 +18,7 @@ The following are the available values.
 
 |Available value|Description|Hosts|
 |---|---|---|
-|`AppendOnSend`|Declares that the add-in is using the [Office.Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API.|Outlook|
+|`AppendOnSend`|Declares that the add-in is using the [Office.Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) API.|Outlook|
 
 ## `ExtendedPermission` example
 
