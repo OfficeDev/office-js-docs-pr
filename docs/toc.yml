@@ -1158,6 +1158,8 @@
 
 - name: Patterns and practices
   items:
+  - name: Overview
+    href: overview/patterns-and-practices-overview.md
   - name: Batching custom function remote calls
     href: excel/custom-functions-batching.md
     displayName: Excel, Custom Functions
