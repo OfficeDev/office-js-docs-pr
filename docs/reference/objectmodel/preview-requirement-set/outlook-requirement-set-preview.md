@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 08/07/2020
+ms.date: 09/02/2020
 localization_priority: Normal
 ---
 
@@ -15,7 +15,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> You may be able to preview features in Outlook on the web by [configuring targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center). "Configure preview access" is noted on this page for applicable features.
+> You may be able to preview features in Outlook on the web by [configuring targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center). "Configure preview access" is noted on this page for applicable features.
 >
 > For other features, you may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request preview access" is noted on those features.
 
@@ -29,7 +29,7 @@ The following features are in preview.
 
 Add-ins can now activate on IRM-protected items. To turn on this capability, a tenant administrator needs to enable the `OBJMODEL` usage right by setting the **Allow programmatic access** custom policy option in Office. See [Usage rights and descriptions](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) for more information.
 
-**Available in**: Outlook on Windows, starting with build 13120.1000 (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows, starting with build 13229.10000 (connected to a Microsoft 365 subscription)
 
 <br>
 
@@ -39,13 +39,13 @@ Add-ins can now activate on IRM-protected items. To turn on this capability, a t
 
 ### Additional calendar properties
 
-#### [IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
+#### [IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview&preserve-view=true)
 
 Added a new object that represents the all-day event property of an appointment in Compose mode.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
-#### [Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
+#### [Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview&preserve-view=true)
 
 Added a new object that represents the sensitivity of an appointment in Compose mode.
 
@@ -63,7 +63,7 @@ Added a new property that represents the sensitivity of an appointment.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
-#### [Office.MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
+#### [Office.MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
 
 Added a new enum `AppointmentSensitivityType` that represents the sensitivity options available on an appointment.
 
@@ -79,17 +79,17 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 To learn about using the append-on-send feature, see [Implement append on send in your Outlook add-in](../../../outlook/append-on-send.md).
 
-#### [Office.context.mailbox.item.body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
+#### [Office.context.mailbox.item.body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-)
 
 Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### [ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -99,41 +99,41 @@ Added a new element to the manifest where the `AppendOnSend` extended permission
 
 ### Async versions of `display` APIs
 
-#### [Office.context.mailbox.displayAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displayappointmentformasync-itemid--options--callback-)
+#### [Office.context.mailbox.displayAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentformasync-itemid--options--callback-)
 
 Added a new function to the `Mailbox` object that displays an existing appointment. This is the async version of the `displayAppointmentForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
-#### [Office.context.mailbox.displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
+#### [Office.context.mailbox.displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageformasync-itemid--options--callback-)
 
 Added a new function to the `Mailbox` object that displays an existing message. This is the async version of the `displayMessageForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
-#### [Office.context.mailbox.displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
+#### [Office.context.mailbox.displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-)
 
 Added a new function to the `Mailbox` object that displays a new appointment form. This is the async version of the `displayNewAppointmentForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
-#### [Office.context.mailbox.displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
+#### [Office.context.mailbox.displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageformasync-parameters--options--callback-)
 
 Added a new function to the `Mailbox` object that displays a new message form. This is the async version of the `displayNewMessageForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.item.displayReplyAllFormAsync](office.context.mailbox.item.md#methods)
 
 Added a new function to the `Item` object that displays the "Reply all" form in Read mode. This is the async version of the `displayReplyAllForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.item.displayReplyFormAsync](office.context.mailbox.item.md#methods)
 
 Added a new function to the `Item` object that displays the "Reply" form in Read mode. This is the async version of the `displayReplyForm` method.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 <br>
 
@@ -171,7 +171,7 @@ Added Outlook support to the `Runtimes` manifest element. It references the HTML
 
 ### Get all custom properties
 
-#### [CustomProperties.getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview#getall--)
+#### [CustomProperties.getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true#getall--)
 
 Added a new function to the `CustomProperties` object that gets all custom properties.
 
@@ -199,35 +199,35 @@ Added a new function that returns initialization data passed when the add-in is 
 
 ### Mail signature
 
-#### [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setsignatureasync-data--options--callback-)
+#### [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setsignatureasync-data--options--callback-)
 
 Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Added a new function that disables the client signature for the sending mailbox in Compose mode.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
-#### [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
+#### [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getcomposetypeasync-options--callback-)
 
 Added a new function that gets the compose type of a message in Compose mode.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
 Added a new function that checks if the client signature is enabled on the item in Compose mode.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
-#### [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
+#### [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview&preserve-view=true)
 
 Added a new enum `ComposeType` available in Compose mode.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 <br>
 

@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
-ms.date: 07/07/2020
+ms.date: 09/09/2020
 ms.prod: onenote
 localization_priority: Priority
 ---
@@ -76,7 +76,7 @@ try {
 2. Start the local web server and sideload your add-in.
 
     > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
 
     > [!TIP]
     > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
@@ -121,8 +121,7 @@ Congratulations, you've successfully created a OneNote task pane add-in! Next, l
 ## See also
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
+* [Developing Office Add-ins](../develop/develop-overview.md)
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

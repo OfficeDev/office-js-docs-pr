@@ -19,7 +19,7 @@ The ExcelApi 1.10 introduced key features, such as commenting, outlines, and sli
 
 ## API list
 
-The following table lists the APIs in Excel JavaScript API requirement set 1.10. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.10 or earlier, see [Excel APIs in requirement set 1.10 or earlier](/javascript/api/excel?view=excel-js-1.10).
+The following table lists the APIs in Excel JavaScript API requirement set 1.10. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.10 or earlier, see [Excel APIs in requirement set 1.10 or earlier](/javascript/api/excel?view=excel-js-1.10&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|
@@ -170,5 +170,5 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.10.
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.10)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)
 - [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)

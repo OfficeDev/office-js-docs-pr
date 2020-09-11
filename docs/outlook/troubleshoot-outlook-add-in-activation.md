@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: If your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
-ms.date: 08/18/2020
+ms.date: 09/02/2020
 localization_priority: Normal
 ---
 
@@ -72,7 +72,7 @@ Even if a mail item is not one of the above types, if the item was not delivered
 If your add-in is a compose add-in and is supposed to be activated when the user is authoring a message or meeting request, make sure the item is not protected by IRM. However, there are a couple of exceptions.
 
 1. Add-ins activate on digitally signed messages in Outlook associated with a Microsoft 365 subscription. On Windows, this support was introduced with build 8711.1000.
-1. Starting with Outlook build 13120.1000 on Windows, add-ins can now activate on items protected by IRM.  For more information about this support in preview, see [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+1. Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM.  For more information about this support in preview, see [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
 

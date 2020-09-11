@@ -199,6 +199,6 @@ Excel.run(function (context) {
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with workbooks using the Excel JavaScript API](excel-add-ins-workbooks.md)
 - [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

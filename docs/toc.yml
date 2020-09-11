@@ -10,9 +10,6 @@
   - name: Beginner's guide
     href: overview/learning-path-beginner.md
     displayName: develop
-  - name: Development process overview
-    href: overview/office-add-ins-fundamentals.md
-    displayName: develop
   - name: Quick starts
     items:
     - name: Excel add-in
@@ -38,10 +35,9 @@
     href: overview/set-up-your-dev-environment.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
-- name: Development process
+- name: Development lifecycle
   items:
-
-  - name: Overview
+  - name: Lifecycle overview
     href: overview/core-concepts-office-add-ins.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
@@ -63,12 +59,12 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
     items:
-    - name: Develop Office Add-ins
+    - name: Overview
       href: develop/develop-overview.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Understanding the Office JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
-    - name: Using the application-specific API Model
+    - name: Using the application-specific API model
       href: develop/application-specific-api-model.md
     - name: Using the Common API model
       items:
@@ -149,26 +145,40 @@
           href: design/data-visualization-guidelines.md
         - name: Voice
           href: design/voice-guidelines.md
-      - name: Design language
+      - name: UX design language and patterns
         items:
-        - name: Overview
-          href: design/add-in-design-language.md
-        - name: Color
-          href: design/add-in-color.md
-        - name: Icons
+        - name: Design language
           items:
-          - name: Icon guidelines
-            href: design/add-in-icons.md
-          - name: Fresh style
-            href: design/add-in-icons-fresh.md
-          - name: Monoline style
-            href: design/add-in-icons-monoline.md
-        - name: Layout
-          href: design/add-in-layout.md
-        - name: Motion
-          href: design/using-motion-office-addins.md
-        - name: Typography
-          href: design/add-in-typography.md
+          - name: Overview
+            href: design/add-in-design-language.md
+          - name: Color
+            href: design/add-in-color.md
+          - name: Icons
+            items:
+            - name: Icon guidelines
+              href: design/add-in-icons.md
+            - name: Fresh style
+              href: design/add-in-icons-fresh.md
+            - name: Monoline style
+              href: design/add-in-icons-monoline.md
+          - name: Layout
+            href: design/add-in-layout.md
+          - name: Motion
+            href: design/using-motion-office-addins.md
+          - name: Typography
+            href: design/add-in-typography.md
+        - name: UX design patterns for common scenarios
+          items:
+          - name: Overview
+            href: design/ux-design-pattern-templates.md
+          - name: Authentication
+            href: design/authentication-patterns.md
+          - name: Branding
+            href: design/branding-patterns.md
+          - name: First run experience
+            href: design/first-run-experience-patterns.md
+          - name: Navigation
+            href: design/navigation-patterns.md
       - name: Interface elements
         items:
         - name: Overview
@@ -201,18 +211,6 @@
           href: design/task-pane-add-ins.md
       - name: Localization
         href: develop/localization.md
-      - name: UX design patterns
-        items:
-        - name: Overview
-          href: design/ux-design-pattern-templates.md
-        - name: Authentication
-          href: design/authentication-patterns.md
-        - name: Branding
-          href: design/branding-patterns.md
-        - name: First run experience
-          href: design/first-run-experience-patterns.md
-        - name: Navigation
-          href: design/navigation-patterns.md
       - name: Resources
         items: 
         - name: Design toolkits
@@ -223,8 +221,6 @@
           href: design/office-ui-fabric.md
     - name: Frameworks and IDEs
       items:
-      - name: Develop add-ins for the iPad
-        href: develop/develop-office-add-ins-for-the-ipad.md
       - name: Develop add-ins with Angular
         href: develop/add-ins-with-angular2.md
       - name: Develop add-ins with Visual Studio Code
@@ -238,8 +234,10 @@
           href: develop/debug-office-add-ins-in-visual-studio.md
         - name: Get JavaScript IntelliSense in Visual Studio
           href: develop/get-javascript-intellisense-in-visual-studio.md
-        - name: Convert JavaScript to TypeScript
+        - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
+    - name: Special requirements for add-ins on the iPad
+      href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
     items:
     - name: Test and debug Office Add-ins
@@ -270,8 +268,7 @@
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
-    - name: Coding guidance for common issues
-      href: develop/common-coding-issues.md
+
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debugger Extension for Visual Studio Code
@@ -284,6 +281,8 @@
         href: concepts/resource-limits-and-performance-optimization.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
+    - name: Troubleshoot development errors
+      href: testing/troubleshoot-development-errors.md
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in's manifest
@@ -591,8 +590,11 @@
     - name: API reference
       href: reference/excel-api-reference.md
       displayName: Excel
-    - name: Fundamental programming concepts
+    - name: Excel object model
       href: excel/excel-add-ins-core-concepts.md
+      displayName: Excel
+    - name: Blank and null values in Excel add-ins
+      href: excel/excel-add-ins-blank-null-values.md
       displayName: Excel
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
@@ -614,6 +616,9 @@
       displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
+      displayName: Excel
+    - name: Delay execution while cell is being edited
+      href: excel/excel-add-ins-delay-in-cell-edit.md
       displayName: Excel
     - name: Error handling
       href: excel/excel-add-ins-error-handling.md
@@ -654,6 +659,9 @@
     - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
       displayName: Excel
+    - name: Troubleshoot Excel add-ins
+      href: excel/excel-add-ins-troubleshooting.md
+      displayName: Excel      
   - name: Custom functions
     items:
     - name: Overview
@@ -1126,7 +1134,7 @@
     - name: API reference
       href: reference/word-api-reference.md
       displayName: Word
-    - name: Fundamental programming concepts
+    - name: Word object model
       href: word/word-add-ins-core-concepts.md
       displayName: Word
     - name: Bind to regions in a document
@@ -1164,6 +1172,6 @@
       href: overview/learning-path-transition.md
     - name: Share code from VSTO Add-in to Office add-in
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: Identify an equivalent COM add-in
+    - name: Make your Office Add-in compatible with an existing COM add-in
       href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
       displayName: manifest

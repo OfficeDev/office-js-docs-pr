@@ -268,7 +268,7 @@ GET https://outlook.office.com/api/v2.0/Me/Events?$filter=SingleValueExtendedPro
   {00020329-0000-0000-C000-000000000046} Name cecp-<app-guid>')
 ```
 
-For other examples that use REST to get single-value MAPI-based extended properties, see [Get singleValueExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0).
+For other examples that use REST to get single-value MAPI-based extended properties, see [Get singleValueExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0&preserve-view=true).
 
 The following example shows how to get an item and its custom properties. In the callback function for the `done` method, `item.SingleValueExtendedProperties` contains a list of the requested custom properties.
 

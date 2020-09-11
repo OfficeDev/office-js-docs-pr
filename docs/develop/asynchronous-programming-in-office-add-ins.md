@@ -1,7 +1,7 @@
 ---
 title: Asynchronous programming in Office Add-ins
 description: 'Learn how the Office JavaScript library uses asynchronous programming in Office Add-ins.'
-ms.date: 02/27/2020
+ms.date: 09/08/2020
 localization_priority: Normal
 ---
 
@@ -116,11 +116,13 @@ The Office JavaScript API supports two kinds of asynchronous programming pattern
     
 Asynchronous programming with callback functions frequently requires you to nest the returned result of one callback within two or more callbacks. If you need to do so, you can use nested callbacks from all "Async" methods of the API.
 
-Using nested callbacks is a programming pattern familiar to most JavaScript developers, but code with deeply nested callbacks can be difficult to read and understand. As an alternative to nested callbacks, the Office JavaScript API also supports an implementation of the promises pattern. However, in the current version of the Office JavaScript API, the promises pattern only works with code for [bindings in Excel spreadsheets and Word documents](bind-to-regions-in-a-document-or-spreadsheet.md).
+Using nested callbacks is a programming pattern familiar to most JavaScript developers, but code with deeply nested callbacks can be difficult to read and understand. As an alternative to nested callbacks, the Office JavaScript API also supports an implementation of the promises pattern. 
 
-<a name="AsyncProgramming_NestedCallbacks" />
+> [!NOTE]
+> In the current version of the Office JavaScript API, *built-in* support for the promises pattern only works with code for [bindings in Excel spreadsheets and Word documents](bind-to-regions-in-a-document-or-spreadsheet.md). However, you can wrap other functions that have callbacks inside your own custom Promise-returning function. For more information, see [Wrap Common APIs in Promise-returning functions](#wrap-common-apis-in-promise-returning-functions).
+
+
 ### Asynchronous programming using nested callback functions
-
 
 Frequently, you need to perform two or more asynchronous operations to complete a task. To accomplish that, you can nest one "Async" call inside another.
 
@@ -235,7 +237,7 @@ function write(message){
 }
 ```
 
-Replace the _BindingObjectAsyncMethod_ placeholder with a call to any of the four `Binding` object methods supported by the promise object: `getDataAsync`, `setDataAsync`, `addHandlerAsync`, or `removeHandlerAsync`. Calls to these methods don't support additional promises. You must call them using the [nested callback function pattern](#AsyncProgramming_NestedCallbacks).
+Replace the _BindingObjectAsyncMethod_ placeholder with a call to any of the four `Binding` object methods supported by the promise object: `getDataAsync`, `setDataAsync`, `addHandlerAsync`, or `removeHandlerAsync`. Calls to these methods don't support additional promises. You must call them using the [nested callback function pattern](#asynchronous-programming-using-nested-callback-functions).
 
 After a `Binding` object promise is fulfilled, it can be reused in the chained method call as if it were a binding (the add-in runtime won't asynchronously retry fulfilling the promise). If the `Binding` object promise can't be fulfilled, the add-in runtime will try again to access the binding object the next time one of its asynchronous methods is invoked.
 
@@ -390,6 +392,57 @@ function write(message){
 
 In both optional parameter examples, the _callback_ parameter is specified as the last parameter (following the inline optional parameters, or following the _options_ argument object). Alternatively, you can specify the _callback_ parameter inside either the inline JSON object, or in the `options` object. However, you can pass the _callback_ parameter in only one location: either in the _options_ object (inline or created externally), or as the last parameter, but not both.
 
+## Wrap Common APIs in Promise-returning functions
+
+The Common API (and Outlook API) methods do not return [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Therefore, you cannot use [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) to pause the execution until the asynchronous operation completes. If you need `await` behavior, you can wrap the method call in an explicitly created Promise. 
+
+The basic pattern is to create an asynchronous method that returns a Promise object immediately and *resolves* that Promise object when the inner method completes, or *rejects* the object if the method fails. The following is a simple example
+
+```javascript
+function getDocumentFilePath() {
+    return new OfficeExtension.Promise(function (resolve, reject) {
+        try {
+            Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+                resolve(asyncResult.value.url);
+            });
+        }
+        catch (error) {
+            reject(WordMarkdownConversion.errorHandler(error));
+        }
+    })
+}
+```
+
+When this method needs to be awaited, it can be called either with the `await` keyword or as the function passed to a `then` function.
+
+> [!NOTE]
+> This technique is especially useful when you need to call one of the Common APIs inside a call of the `run` method in one of the application-specific object models. For an example of the function above being used in this way, see the file [Home.js in the sample Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
+
+The following is an example using TypeScript.
+
+```typescript
+readDocumentFileAsync(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const chunkSize = 65536;
+        const self = this;
+
+        Office.context.document.getFileAsync(Office.FileType.Compressed, { sliceSize: chunkSize }, (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                reject(asyncResult.error);
+            } else {
+                // `getAllSlices` is a Promise-wrapped implementation of File.getSliceAsync.
+                self.getAllSlices(asyncResult.value).then(result => {
+                    if (result.IsSuccess) {
+                        resolve(result.Data);
+                    } else {
+                        reject(asyncResult.error);
+                    }
+                });
+            }
+        });
+    });
+}
+```
 
 ## See also
 

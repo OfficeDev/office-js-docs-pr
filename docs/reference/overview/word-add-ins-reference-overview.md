@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API overview
 description: 'Overview of the Word JavaScript API'
-ms.date: 07/28/2020
+ms.date: 09/04/2020
 ms.prod: word
 localization_priority: Priority
 ---
@@ -18,7 +18,7 @@ This section of the documentation focuses on the Word JavaScript API, which you'
 
 ## Learn programming concepts
 
-See [Fundamental programming concepts with the Word JavaScript API](../../word/word-add-ins-core-concepts.md) for information about important programming concepts.
+See [Word JavaScript object model in Office Add-ins](../../word/word-add-ins-core-concepts.md) for information about important programming concepts.
 
 ## Learn about API capabilities
 

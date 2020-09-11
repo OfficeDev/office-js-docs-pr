@@ -21,7 +21,7 @@ The ExcelApi 1.11 improved support for comments and workbook-level controls (suc
 
 ## API list
 
-The following table lists the APIs in Excel JavaScript API requirement set 1.11. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.11 or earlier, see [Excel APIs in requirement set 1.11 or earlier](/javascript/api/excel?view=excel-js-1.11).
+The following table lists the APIs in Excel JavaScript API requirement set 1.11. To view API reference documentation for all APIs supported by Excel JavaScript API requirement set 1.11 or earlier, see [Excel APIs in requirement set 1.11 or earlier](/javascript/api/excel?view=excel-js-1.11&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|
@@ -63,5 +63,5 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.11.
 
 ## See also
 
-- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.11)
+- [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.11&preserve-view=true)
 - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md)

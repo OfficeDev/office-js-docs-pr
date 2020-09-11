@@ -258,5 +258,4 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 ## See also
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Building Office Add-ins](../overview/office-add-ins-fundamentals.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
+* [Developing Office Add-ins](../develop/develop-overview.md)
