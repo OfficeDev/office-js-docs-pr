@@ -61,7 +61,7 @@ The **StoreType** value would be "FileSystem".
 - The **Store** value would be the URL of the network share; for example, "\\\\MyComputer\\MySharedFolder". This should be the exact URL that appears as the share's Trusted Catalog Address in the Office Trust Center.
 - The **Id** value would be the app ID in the add-ins manifest.
 > [!NOTE]
-> For more information about alternative values for these attributes, see [Automatically open a task pane with a document](https://docs.microsoft.com/office/dev/add-ins/develop/automatically-open-a-task-pane-with-a-document).
+> For more information about alternative values for these attributes, see [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md).
 
 ## Use the Fluent UI
 
@@ -88,7 +88,7 @@ We recommend uploading new documents to OneDrive any time a customer has OneDriv
 
 ### Use a quick-start to build a new Microsoft Graph web application
 
-1. Go to https://developer.microsoft.com/en-us/graph/quick-start and follow the steps to create and open a quick start code sample that interacts with Office 365 services.
+1. Go to https://developer.microsoft.com/graph/quick-start and follow the steps to create and open a quick start code sample that interacts with Office 365 services.
 1. In **step 1: Pick you language or platform**, choose **ASP.NET MVC**. Although the steps in this procedure use the ASP.NET MVC option, the steps follow a pattern that can apply to any language or platform.
 1. In **step 2: Get an app ID and secret**, choose **Get an app ID and secret**.
 1. Sign in to your Microsoft 365 account.  
@@ -176,7 +176,7 @@ The OOXML SDK is based on .NET. If your web application is not using .NET, youâ€
 
 There is a JavaScript version of the OOXML SDK available at https://archive.codeplex.com/?p=openxmlsdkjs.
 
-You can place the OOXML code in an Azure function to separate the .NET code from the rest of your web application. Then call the Azure function (to generate the Excel document) from your Web application. For more information on Azure functions, see https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
+You can place the OOXML code in an Azure function to separate the .NET code from the rest of your web application. Then call the Azure function (to generate the Excel document) from your Web application. For more information on Azure functions, see https://docs.microsoft.com/azure/azure-functions/functions-overview
 
 ### Simplify authentication
 
@@ -193,7 +193,7 @@ Usually the customer will be authenticated and signed in when working in your we
 
 ## See also
 
-- [Welcome to the Open XML SDK 2.5 for Office](https://docs.microsoft.com/en-us/office/open-xml/open-xml-sdk)
-- [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document)
-- [Persisting add-in state and settings](../develop/persisting-add-in-state-and-settings)
+- [Welcome to the Open XML SDK 2.5 for Office](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md)
+- [Persisting add-in state and settings](../develop/persisting-add-in-state-and-settings.md)
 - [Create a spreadsheet document by providing a file name](https://docs.microsoft.com/office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name?view=openxml-2.8.1)
