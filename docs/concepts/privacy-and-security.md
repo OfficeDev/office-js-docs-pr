@@ -74,7 +74,7 @@ End users and IT admins can turn off [optional connected experiences in Office](
 
 For more about Outlook-specific behavior, see [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security.md#optional-connected-experiences).
 
-Note that if an IT admin disables the [use of connected experiences in Office](/deployoffice/privacy/connected-experiences), it has the same effect on add-ins as turning off just optional connected experiences.
+Note that if an IT admin disables the [use of connected experiences in Office](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences), it has the same effect on add-ins as turning off just optional connected experiences.
 
 ## Addressing end users' privacy concerns
 
