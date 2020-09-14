@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. 
-ms.date: 09/02/2020
+ms.date: 09/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
@@ -35,9 +35,6 @@ Extension points are the ways that add-ins integrate with Outlook. The following
     **A contextual add-in for a highlighted entity (an address)**
 
     ![Shows a contextual app in a card](../images/outlook-detected-entity-card.png)
-
-> [!NOTE]
-> [Custom panes have been deprecated](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/) so please ensure that you're using a supported extension point.
 
 ## Mailbox items available to add-ins
 
