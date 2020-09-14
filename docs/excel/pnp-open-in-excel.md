@@ -66,6 +66,7 @@ The **StoreType** value would be "FileSystem".
 ## Use the Fluent UI
 
 :::image type="content" source="../images/fluent-ui-wxp.png" alt-text="The Fluent UI icons for Word, Excel, and PowerPoint.":::
+
 A best practice is to use the Fluent UI to help your users transition between Microsoft products. You should always use an Office icon to indicate when an Office application will be launched from your web page. Let’s modify the sample code to use the Excel icon to indicate that it is launching the Excel application.
 
 1. Open the sample in Visual Studio.
@@ -109,7 +110,7 @@ We recommend uploading new documents to OneDrive any time a customer has OneDriv
     ```
 1. Open the Index.cshtml file.
 1. Insert the following ActionLink code to create a button for uploading a file to OneDrive.
-    ```aspx-csharp
+    ```razor
     @if (Request.IsAuthenticated)
     {
         <h4>Welcome @ViewBag.User.DisplayName!</h4>
@@ -119,7 +120,7 @@ We recommend uploading new documents to OneDrive any time a customer has OneDriv
     ```
 1. Open the HomeController.cs file.
 1. Insert the following code to handle the request from the action link.
-    ```aspx-csharp
+    ```csharp
     public void CreateOneDriveFile()
         {
             using (var stream = new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes("The contents of the file goes here.")))
@@ -130,7 +131,7 @@ We recommend uploading new documents to OneDrive any time a customer has OneDriv
     ```
 1. Open the GraphHelper.cs file.
 1. Insert the following code to call the Microsoft Graph API to create a new file on OneDrive.
-    ```aspx-csharp
+    ```csharp
     public static async Task UploadFile(string fileName, System.IO.MemoryStream stream)
         {
            var graphClient = GetAuthenticatedClient();
