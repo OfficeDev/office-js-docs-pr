@@ -21,7 +21,7 @@ localization_priority: Normal
 
 ## CustomFunctionsRuntime 1.1, 1.2, and 1.3
 
-The CustomFunctionsRuntime 1.1 is the first version of the API. Version 1.2 adds the `CustomFunctions.Error` object to support error handling. Version 1.3 adds [XLL streaming](/make-custom-functions-compatible-with-xll-udf#custom-function-behavior-for-xll-compatible-functions) support and new `ErrorCode` options to the `CustomFunctions.Error` object. 
+The CustomFunctionsRuntime 1.1 is the first version of the API. Version 1.2 adds the `CustomFunctions.Error` object to support error handling. Version 1.3 adds [XLL streaming](make-custom-functions-compatible-with-xll-udf.md#custom-function-behavior-for-xll-compatible-functions) support and new `ErrorCode` options to the [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) object. 
 
 ## See also
 
