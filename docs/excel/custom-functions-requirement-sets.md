@@ -1,7 +1,7 @@
 ---
 title: Custom Functions requirement sets
 description: 'Details about the Custom Functions requirement sets for Excel JavaScript API.'
-ms.date: 09/09/2020
+ms.date: 09/14/2020
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -16,13 +16,12 @@ localization_priority: Normal
 | CustomFunctionsRuntime 1.2 | 16.0.12527.20194 or later | Not supported | 16.34.20020900 or later | January 2020 |
 | CustomFunctionsRuntime 1.1 | 16.0.12527.20092 or later | Not supported | 16.34 or later | May 2019 |
 
-
 > [!NOTE]
 > Excel custom functions are not supported on Office 2019 or earlier (one-time purchase).
 
 ## CustomFunctionsRuntime 1.1, 1.2, and 1.3
 
-The CustomFunctionsRuntime 1.1 is the first version of the API. Version 1.2 adds the `CustomFunctions.Error` object to support error handling. Version 1.3 adds [XLL streaming](make-custom-functions-compatible-with-xll-udf.md#custom-function-behavior-for-xll-compatible-functions) support and new `ErrorCode` options to the [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) object. 
+The CustomFunctionsRuntime 1.1 is the first version of the API. Requirement set 1.2 adds the `CustomFunctions.Error` object to support error handling. Requirement set 1.3 adds [XLL streaming](make-custom-functions-compatible-with-xll-udf.md#custom-function-behavior-for-xll-compatible-functions) support and new `ErrorCode` options to the [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) object. 
 
 ## See also
 
