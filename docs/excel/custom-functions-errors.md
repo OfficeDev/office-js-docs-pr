@@ -1,6 +1,6 @@
 ---
 ms.date: 09/15/2020
-description: 'Handle and return errors like #NULL! from your custom function'
+description: 'Handle and return errors like #NULL! from your custom function.'
 title: Handle and return errors from your custom function
 localization_priority: Normal
 ---

@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript API requirement set 1.12
-description: 'Details about the ExcelApi 1.12 requirement set'
+description: 'Details about the ExcelApi 1.12 requirement set.'
 ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Normal
