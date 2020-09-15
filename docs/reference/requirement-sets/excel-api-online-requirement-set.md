@@ -40,5 +40,5 @@ There are currently no APIs in the `ExcelApiOnline` requirement set. All the API
 ## See also
 
 - [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-online&preserve-view=true)
-- [Excel JavaScript preview APIs](./excel-preview-apis.md)
-- [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)
+- [Excel JavaScript preview APIs](excel-preview-apis.md)
+- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md)

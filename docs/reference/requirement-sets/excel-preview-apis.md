@@ -100,4 +100,4 @@ The following table lists the Excel JavaScript APIs currently in preview. To see
 ## See also
 
 - [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
-- [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)
+- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md)

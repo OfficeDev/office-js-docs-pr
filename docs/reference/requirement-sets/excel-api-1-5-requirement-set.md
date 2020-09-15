@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript API requirement set 1.5
-description: 'Details about the ExcelApi 1.5 requirement set'
+description: 'Details about the ExcelApi 1.5 requirement set.'
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
@@ -58,4 +58,4 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.5. 
 ## See also
 
 - [Excel JavaScript API Reference Documentation](/javascript/api/excel?view=excel-js-1.5&preserve-view=true)
-- [Excel JavaScript API requirement sets](./excel-api-requirement-sets.md)
+- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md)

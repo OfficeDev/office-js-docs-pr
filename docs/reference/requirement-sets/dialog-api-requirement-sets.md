@@ -1,6 +1,6 @@
 ---
 title: Dialog API requirement sets
-description: 'Learn more about the Dialog API requirement sets'
+description: 'Learn more about the Dialog API requirement sets.'
 ms.date: 09/14/2020
 ms.prod: non-product-specific
 localization_priority: Normal
