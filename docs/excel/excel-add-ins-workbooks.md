@@ -166,10 +166,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-#### Worksheet-level custom properties (preview)
-
-> [!NOTE]
-> Worksheet-level custom properties are currently in preview. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+#### Worksheet-level custom properties
 
 Custom properties can also be set at the worksheet level. These are similar to document-level custom properties, except that the same key can be repeated across different worksheets. The following example shows how to create a custom property named **WorksheetGroup** with the value "Alpha" on the current worksheet, then retrieve it.
 
