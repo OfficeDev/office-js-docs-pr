@@ -8,14 +8,16 @@ localization_priority: Normal
 
 # What's new in Excel JavaScript API 1.12
 
-The ExcelApi 1.12 ...
+The ExcelApi 1.12 increased support for formulas in ranges by adding APIs for tracking dynamic arrays and finding a formula's direct precedents. It also added API control of PivotTable filters. Improvements were also made in the comment, culture settings, and custom properties feature areas.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Date and time [Culture settings](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | Gives access to additional cultural settings around date and time formatting. | [CultureInfo](/javascript/api/excel/excel.cultureinfo), [NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [Application](/javascript/api/excel/excel.application) |
-| [Insert workbook](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
+| [Comment events](../../excel/excel-add-ins-events.md) | Adds events for add, change, and delete to the comment collection.| [CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| Date and time [culture settings](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | Gives access to additional cultural settings around date and time formatting. | [CultureInfo](/javascript/api/excel/excel.cultureinfo), [NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [Application](/javascript/api/excel/excel.application) |
+| Direct precedents | Returns ranges that are used to evaluate a cell's formula.| [Range](/javascript/api/excel/excel.range#getdirectprecedents--) |
 | Pivot Filters | Applies value-driven filters to the fields of a PivotTable. | [PivotField](/javascript/api/excel/excel.pivotfield#applyfilter-filter-), [PivotFilters](/javascript/api/excel/excel.pivotFilters) |
-|Range spilling | Lets add-ins find ranges associated with [dynamic array](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531) results. | [Range](/javascript/api/excel/excel.range) |
+| [Range spilling](../../excel/excel-add-ins-ranges-advanced.md#handle-dynamic-arrays-and-spilling) | Lets add-ins find ranges associated with [dynamic array](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531) results. | [Range](/javascript/api/excel/excel.range) |
+| [Worksheet-level custom properties](../../excel/excel-add-ins-workbooks.md#worksheet-level-custom-properties) | Lets custom properties be scoped to the worksheet-level, in addition to being scoped to the workbook-level. | [WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty), [WorksheetCustomPropertyCollection](/javascript/api/excel/excel.worksheetcustompropertycollection)|
 
 ## API list
 

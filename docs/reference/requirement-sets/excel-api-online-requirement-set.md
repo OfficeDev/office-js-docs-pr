@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API online-only requirement set
 description: 'Details about the ExcelApiOnline requirement set'
-ms.date: 05/06/2020
+ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -35,9 +35,7 @@ Once the API is in a cross-platform requirement set, you should remove or edit t
 
 ## API list
 
-The following APIs are currently available for Excel on the web as part of the `ExcelApiOnline 1.1` requirement set.
-
-
+There are currently no APIs in the `ExcelApiOnline` requirement set. All the APIs that were previously a part of this set have graduated to a numbered requirement set and are available across all platforms.
 
 ## See also
 

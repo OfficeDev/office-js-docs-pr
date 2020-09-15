@@ -16,7 +16,8 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-
+| Linked data types | Adds support for data types connected to Excel from external sources. | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
+| Named sheet views | Gives programmatic control of per-user worksheet views. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
 
 ## API list
 
