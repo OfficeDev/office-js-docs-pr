@@ -37,15 +37,7 @@ Once the API is in a cross-platform requirement set, you should remove or edit t
 
 The following APIs are currently available for Excel on the web as part of the `ExcelApiOnline 1.1` requirement set.
 
-| Class | Fields | Description |
-|:---|:---|:---|
-|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#textorientation)|Specifies the angle to which the text is oriented for the chart axis title. The value should either be an integer from -90 to 90 or the integer 180 for vertically-oriented text.|
-|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|Gets the number of PivotTables in the collection.|
-||[getFirst()](/javascript/api/excel/excel.pivottablescopedcollection#getfirst--)|Gets the first PivotTable in the collection. The PivotTables in the collection are sorted top to bottom and left to right, such that top-left table is the first PivotTable in the collection.|
-||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|Gets a PivotTable by name.|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.|
-||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|Gets the loaded child items in this collection.|
-|[Range](/javascript/api/excel/excel.range)|[getPivotTables(fullyContained?: boolean)](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|Gets a scoped collection of PivotTables that overlap with the range.|
+
 
 ## See also
 
