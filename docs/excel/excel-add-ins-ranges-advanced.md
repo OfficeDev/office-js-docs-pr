@@ -322,10 +322,7 @@ Excel.run(function (context) {
 
 To ungroup a row or column group, use the [Range.ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) method. This removes the outermost level from the outline. If multiple groups of the same row or column type are at the same level within the specified range, all of those groups are ungrouped.
 
-## Handle dynamic arrays and spilling (preview)
-
-> [!NOTE]
-> Dynamic array and range spilling APIs are currently in preview. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+## Handle dynamic arrays and spilling
 
 Some Excel formulas return [Dynamic arrays](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). These fill the values of multiple cells outside of the formula's orginal cell. This value overflow is referred to as a "spill". Your add-in can find the range used for a spill with the [Range.getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) method. There is also a [*OrNullObject version](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject`.
 

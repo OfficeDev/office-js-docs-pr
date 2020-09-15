@@ -251,7 +251,7 @@ The function returns `void`.
 
 Streaming functions don't return values directly, instead they call `setResult(result: ResultType)` using the last parameter.
 
-Exceptions thrown by a streaming function are ignored. `setResult()` may be called with Error to indicate an error result. For an example of a streaming function and more information, see [Make a streaming function](./custom-functions-web-reqs.md#make-a-streaming-function).
+Exceptions thrown by a streaming function are ignored. `setResult()` may be called with Error to indicate an error result. For an example of a streaming function and more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function).
 
 Streaming functions can't be marked as [@volatile](#volatile).
 
