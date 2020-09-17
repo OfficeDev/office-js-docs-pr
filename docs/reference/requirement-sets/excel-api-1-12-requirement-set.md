@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.12
 description: 'Details about the ExcelApi 1.12 requirement set.'
-ms.date: 09/15/2020
+ms.date: 09/16/2020
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -74,7 +74,6 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.12.
 ||[lowerBound](/javascript/api/excel/excel.pivotlabelfilter#lowerbound)|The lower-bound of the range for the Between filter condition.|
 ||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|The substring used for `BeginsWith`, `EndsWith`, and `Contains` filter conditions.|
 ||[upperBound](/javascript/api/excel/excel.pivotlabelfilter#upperbound)|The upper-bound of the range for the Between filter condition.|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|The style applied to the PivotTable.|
 |[PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter)|[selectedItems](/javascript/api/excel/excel.pivotmanualfilter#selecteditems)|A list of selected items to manually filter. These must be existing and valid items from the chosen field.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[allowMultipleFiltersPerField](/javascript/api/excel/excel.pivottable#allowmultiplefiltersperfield)|Specifies if the PivotTable allows the application of multiple PivotFilters on a given PivotField in the table.|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|Gets the number of PivotTables in the collection.|
@@ -102,7 +101,6 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.12.
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getcount--)|Gets the number of RangeAreas objects in this collection.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getitemat-index-)|Returns the RangeAreas object based on position in the collection.|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|Gets the loaded child items in this collection.|
-|[Slicer](/javascript/api/excel/excel.slicer)|[slicerStyle](/javascript/api/excel/excel.slicer#slicerstyle)|The style applied to the Slicer.|
 |[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasbysheet-key-)|Returns the `RangeAreas` object based on worksheet id or name in the collection.|
 ||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasornullobjectbysheet-key-)|Returns the `RangeAreas` object based on worksheet name or id in the collection. If the worksheet does not exist, will return a null object.|
 ||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Returns an array of address in A1-style. Address value will contain the worksheet name for each rectangular block of cells (e.g., "Sheet1!A1:B4, Sheet1!D1:D4"). Read-only.|
