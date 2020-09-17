@@ -147,6 +147,14 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ---
 
+### OpenBrowserWindowApi
+
+|**Office hosts**|**Methods in set**|
+|:-----|:-----|
+| See [Open Browser Window API requirement sets](open-browser-window-api-requirement-sets.md). | Office.context.ui.openBrowserWindow |
+
+---
+
 ### PartialTableBindings
 
 |**Office applications**|**Methods in set**|
