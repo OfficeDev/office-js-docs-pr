@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Open Excel from your web page and embed your Office add-in
 
+:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image of Excel button on your web page opening up a new Excel document with your add-in embedded and auto-opening.":::
+
 Extend your SaaS web application so that your customers can open their data from a web page directly to Microsoft Excel. A common scenario is that customers will be working with data in your web application. Then they’ll want to take the data into an Excel document. For example, they may want to perform additional analysis using Excel. Typically, the customer is required to export the data to a file, such as a .csv file, and then import that data into Excel. They also have to manually add your Office add-in to the document.
 
 You can simplify this scenario to a single click on a button by the customer. A button on your web page generates and opens the Excel document. You can also embed your Office add-in inside the document and have it display when the document opens. This ensures the customer still has access to your application features. When the document opens, the data the customer selected, and your Office add-in is already available for them to continue working.
