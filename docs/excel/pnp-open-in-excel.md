@@ -103,12 +103,12 @@ We recommend uploading new documents to OneDrive any time a customer has OneDriv
 
 ### Upload a file to OneDrive
 
-1. Open the graph-tutorial.sln solution in Visual Studio 2019, and open the PrivateSettings.config file.
-1. Add a new scope Files.ReadWrite to the ida:AppScopes key so that it looks like the following code:
+1. Open the **graph-tutorial.sln** solution in Visual Studio 2019, and open the **PrivateSettings.config** file.
+1. Add a new scope **Files.ReadWrite** to the **ida:AppScopes** key so that it looks like the following code:
     ```xml
     <add key="ida:AppScopes" value="User.Read Calendars.Read Files.ReadWrite " />
     ```
-1. Open the Index.cshtml file.
+1. Open the **Index.cshtml** file.
 1. Insert the following ActionLink code to create a button for uploading a file to OneDrive.
     ```razor
     @if (Request.IsAuthenticated)
@@ -118,7 +118,7 @@ We recommend uploading new documents to OneDrive any time a customer has OneDriv
         @Html.ActionLink("Click here to create a new file on OneDrive", "CreateOneDriveFile", "Home", new { area = "" }, new { @class = "btn btn-primary btn-large" })
     }
     ```
-1. Open the HomeController.cs file.
+1. Open the **HomeController.cs** file.
 1. Insert the following code to handle the request from the action link.
     ```csharp
     public void CreateOneDriveFile()
@@ -129,7 +129,7 @@ We recommend uploading new documents to OneDrive any time a customer has OneDriv
             }
         }
     ```
-1. Open the GraphHelper.cs file.
+1. Open the **GraphHelper.cs** file.
 1. Insert the following code to call the Microsoft Graph API to create a new file on OneDrive.
     ```csharp
     public static async Task UploadFile(string fileName, System.IO.MemoryStream stream)
@@ -145,9 +145,9 @@ We recommend uploading new documents to OneDrive any time a customer has OneDriv
             return;
         }
     ```
-1. Press F5 (or Debug > Start Debugging). The web application will start.
-1. Choose Click here to sign in, and sign in.
-1. Choose Click here to create a new file on OneDrive.
+1. Press **F5** (or **Debug > Start Debugging**). The web application will start.
+1. Choose **Click here to sign in**, and sign in.
+1. Choose **Click here to create a new file on OneDrive**.
 1. Open a new browser tab and sign in to your OneDrive account. You will see the test.txt file in the root folder.
 
 Now that you have seen how to upload a file to OneDrive, you can reuse this code to upload any Excel document that you create.
@@ -168,8 +168,8 @@ The code sample stores a snippet ID in the new Excel document using the OOXML SD
 
 Typically when the customer opens up an Excel document from your web site, they will expect the document to already contain some data from the web site. There are a couple of ways to write data into the document.
 
-- Use the OOXML SDK to write the data. You can use the SDK to directly write any data into the document. This approach is useful if you want the data to be available the instant the document is opened.
-- Pass a custom query property to your Office add-in. When you generate the document, you embed a custom property for the Office add-in that contains a query string that retrieves all the required data. When your add-in opens, it retrieves the query, runs the query, and uses the Office JS API to insert the result of the query into the document.
+- **Use the OOXML SDK to write the data**. You can use the SDK to directly write any data into the document. This approach is useful if you want the data to be available the instant the document is opened.
+- **Pass a custom query property to your Office add-in**. When you generate the document, you embed a custom property for the Office add-in that contains a query string that retrieves all the required data. When your add-in opens, it retrieves the query, runs the query, and uses the Office JS API to insert the result of the query into the document.
 
 ### Working with the OOXML SDK
 
