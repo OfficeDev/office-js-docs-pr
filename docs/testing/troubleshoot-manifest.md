@@ -1,7 +1,7 @@
 ---
 title: Validate an Office Add-in's manifest
 description: 'Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.'
-ms.date: 04/16/2020
+ms.date: 09/18/2020
 localization_priority: Normal
 ---
 
@@ -34,7 +34,7 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
 2. Open a command prompt and install the validator with the following command.
 
     ```command&nbsp;line
-    npm -g office-addin-manifest
+    npm install -g office-addin-manifest
     ```
 
 3. Run the following command *in the root directory of your project*.
