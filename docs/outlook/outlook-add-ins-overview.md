@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. 
-ms.date: 09/14/2020
+ms.date: 09/18/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
@@ -38,7 +38,7 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 ## Mailbox items available to add-ins
 
-Outlook add-ins are available on messages or appointments while composing or reading, but not other item types. Outlook does not activate add-ins if the current message item, in a compose or read form, is one of the following:
+Outlook add-ins activate when the user is composing or reading a message or appointment, but not other item types. However, add-ins are *not* activated if the current message item, in a compose or read form, is one of the following:
 
 - Protected by Information Rights Management (IRM) or encrypted in other ways for protection. A digitally signed message is an example since digital signing relies on one of these mechanisms.
 
