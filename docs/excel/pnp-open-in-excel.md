@@ -189,11 +189,6 @@ Usually the customer will be authenticated and signed in when working in your we
 1. Read the token from the document when the add-in starts.
 1. The add-in can then connect to your services without requiring any additional auth steps from the customer.
 
-## See it in Action  
-
-- Link to Vena blog post  
-- Link to Ignite video
-
 ## See also
 
 - [Welcome to the Open XML SDK 2.5 for Office](/office/open-xml/open-xml-sdk)
