@@ -199,4 +199,4 @@ Usually the customer will be authenticated and signed in when working in your we
 - [Welcome to the Open XML SDK 2.5 for Office](/office/open-xml/open-xml-sdk)
 - [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md)
 - [Persisting add-in state and settings](../develop/persisting-add-in-state-and-settings.md)
-- [Create a spreadsheet document by providing a file name](/office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name?view=openxml-2.8.1)
+- [Create a spreadsheet document by providing a file name](/office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name)
