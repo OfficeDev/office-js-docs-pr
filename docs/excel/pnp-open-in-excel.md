@@ -164,7 +164,7 @@ The sample modifies an existing Excel document. A more common scenario is that y
 
 ### Read custom properties when your add-in starts
 
-The code sample stores a snippet ID in the new Excel document using the OOXML SDK. Script Lab reads the snippet ID from the Excel document and then displays that snippet code when it opens. You may need to send custom properties to your own add-in (such as a query string, or temporary auth token.) See **Persisting add-in state and settings** for complete details on how to read custom properties when your add-in starts.
+The code sample stores a snippet ID in the new Excel document using the OOXML SDK. Script Lab reads the snippet ID from the Excel document and then displays that snippet code when it opens. You may need to send custom properties to your own add-in (such as a query string, or temporary authentication token.) See **Persisting add-in state and settings** for complete details on how to read custom properties when your add-in starts.
 
 ### Initialize the Excel document with data
 
@@ -183,11 +183,14 @@ You can place the OOXML code in an Azure function to separate the .NET code from
 
 ### Simplify authentication
 
-Usually the customer will be authenticated and signed in when working in your web application. A best practice is to allow them to stay signed in when they open the document so they are not required to sign in again to use your Office Add-in. A good way to handle this is pass a short-lived auth token to the add-in.
+Usually the customer will be authenticated and signed in when working in your web application. A best practice is to allow them to stay signed in when they open the document so they are not required to sign in again to use your Office Add-in. A good way to handle this is pass a short-lived authentication token to the add-in.
 
-1. Use the OOXML SDK to save the auth token as a custom property in the document.
+1. Use the OOXML SDK to save the authentication token as a custom property in the document.
 1. Read the token from the document when the add-in starts.
-1. The add-in can then connect to your services without requiring any additional auth steps from the customer.
+1. The add-in can then connect to your services without requiring any additional authentication steps from the customer.
+
+> [!WARNING]
+> Embedding an authentication token in the document poses a security risk where an unauthorized user could obtain the token. We recommend you use a short-lived authentication token. When the add-in uses the short-lived token, it should immediately request a new authentication token that is not saved in the document.
 
 ## See also
 
