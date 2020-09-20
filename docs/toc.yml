@@ -1162,6 +1162,9 @@
 
 - name: Patterns and practices
   items:
+  - name: Open in Excel
+    href: excel/pnp-open-in-excel.md
+    displayName: Excel
   - name: Batching custom function remote calls
     href: excel/custom-functions-batching.md
     displayName: Excel, Custom Functions
