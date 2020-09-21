@@ -74,7 +74,7 @@ If your organization meets all requirements, complete the following steps to pub
     ![Manage who has access and deployment method in Microsoft 365 admin center](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > Add-ins that utilize [single sign-on (SSO)](../develop/sso-in-office-add-ins.md) will prompt the admin to consent to the scopes listed in the add-in manifest.  If the same backing service is used across multiple add-ins(the same Azure App ID is used with SSO in different add-ins), the scopes for each add-in will be prompted for consent with each deployment. This page will aslo display the list of permissions that the add-in requires.
+    > Add-ins that utilize [single sign-on (SSO)](../develop/sso-in-office-add-ins.md) will prompt the admin to consent to the scopes listed in the add-in manifest.  If the same backing service is used across multiple add-ins (the same Azure App ID is used with SSO in different add-ins), the scopes for each add-in will be prompted for consent with each deployment. This page will also display the list of permissions that the add-in requires.
 
 11. When finished, choose **Deploy**. This process may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other apps in Office 365.
 
