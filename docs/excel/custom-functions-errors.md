@@ -30,16 +30,16 @@ function getCity(zipCode: string): string {
 
 ## The CustomFunctions.Error object
 
-The `CustomFunctions.Error` object is used to return an error back to the cell. When you create the object, specify which error you want to use by choosing one of the following `ErrorCode` enum values.
+The [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) object is used to return an error back to the cell. When you create the object, specify which error you want to use by choosing one of the following `ErrorCode` enum values.
 
 
 |ErrorCode enum value  |Excel cell value  |Meaning  |
 |---------------|---------|---------|
 |`divisionByZero` | `#DIV/0`  | Be aware that JavaScript allows division by zero so you need to write an error handler carefully to detect this condition. |
-|`invalidName`    | `#NAME?`  | There is a typo in the function name. Note: this error is supported as a custom function input error, but not as a custom function output error. | 
-|`invalidNumber`  | `#NUM!`   | There is a problem with a number used in the formula. |
-|`invalidReference` | `#REF!` | The function refers to an invalid cell. Note: this error is supported as a custom function input error, but not as a custom function output error.|
-|`invalidValue`   | `#VALUE!` | A value used in the formula is of the wrong type. |
+|`invalidName`    | `#NAME?`  | There is a typo in the function name. Note that this error is supported as a custom function input error, but not as a custom function output error. | 
+|`invalidNumber`  | `#NUM!`   | There is a problem with a number in the formula. |
+|`invalidReference` | `#REF!` | The function refers to an invalid cell. Note that this error is supported as a custom function input error, but not as a custom function output error.|
+|`invalidValue`   | `#VALUE!` | A value in the formula is of the wrong type. |
 |`notAvailable`   | `#N/A`    | The function or service isn't available. |
 |`nullReference`  | `#NULL!`  | The ranges in the formula don't intersect. |
 
@@ -50,7 +50,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-The `#VALUE!` and `#N/A` errors also support custom error messages. Custom error messages will be displayed in the error indicator menu, which is accessed by hovering over the error flag on each cell with an error. The following example shows how to return a custom error message with the `#VALUE!` error.
+The `#VALUE!` and `#N/A` errors also support custom error messages. Custom error messages are displayed in the error indicator menu, which is accessed by hovering over the error flag on each cell with an error. The following example shows how to return a custom error message with the `#VALUE!` error.
 
 ```typescript
 // You can only return a custom error message with the #VALUE! and #N/A errors.
