@@ -36,9 +36,9 @@ The `CustomFunctions.Error` object is used to return an error back to the cell. 
 |ErrorCode enum value  |Excel cell value  |Meaning  |
 |---------------|---------|---------|
 |`divisionByZero` | `#DIV/0`  | Be aware that JavaScript allows division by zero so you need to write an error handler carefully to detect this condition. |
-|`invalidName`    | `#NAME?`  | There is a typo in the function name. | 
+|`invalidName`    | `#NAME?`  | There is a typo in the function name. Note: this error is supported as a custom function input error, but not as a custom function output error. | 
 |`invalidNumber`  | `#NUM!`   | There is a problem with a number used in the formula. |
-|`invalidReference` | `#REF!` | The function refers to an invalid cell. |
+|`invalidReference` | `#REF!` | The function refers to an invalid cell. Note: this error is supported as a custom function input error, but not as a custom function output error.|
 |`invalidValue`   | `#VALUE!` | A value used in the formula is of the wrong type. |
 |`notAvailable`   | `#N/A`    | The function or service isn't available. |
 |`nullReference`  | `#NULL!`  | The ranges in the formula don't intersect. |
