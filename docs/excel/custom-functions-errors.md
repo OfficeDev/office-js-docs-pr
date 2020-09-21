@@ -50,10 +50,10 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-The `#VALUE!` and `#N/A!` errors also support custom error messages. Custom error messages will be displayed in the error indicator menu, which is accessed by hovering over the error flag on each cell with an error. The following example shows how to return a custom error message with the `#VALUE!` error.
+The `#VALUE!` and `#N/A` errors also support custom error messages. Custom error messages will be displayed in the error indicator menu, which is accessed by hovering over the error flag on each cell with an error. The following example shows how to return a custom error message with the `#VALUE!` error.
 
 ```typescript
-// You can only return a custom error message with the #VALUE! and #N/A! errors.
+// You can only return a custom error message with the #VALUE! and #N/A errors.
 let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "The parameter can only contain lowercase characters.");
 throw error;
 ```
