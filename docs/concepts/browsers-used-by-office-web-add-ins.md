@@ -16,7 +16,7 @@ Which browser is used depends on:
 
 The following table shows which browser is used for the various platforms and operating systems.
 
-|OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
+|OS|Office version|Edge WebView2 (Chromium-based) installed?<sup>5</sup>|Browser|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |any|Office on the web|Not applicable|The browser in which Office is opened.|
 |Mac|any|Not applicable|Safari|
@@ -28,7 +28,7 @@ The following table shows which browser is used for the various platforms and op
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.13127.20082<sup>1</sup>| Doesn't matter|Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| No |Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| Yes|  See note 4 below. |
+|Windows 8.1<br>Windows 10| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13127.20082<sup>1</sup>| Yes<sup>5</sup>|  See note 4 below. |
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
@@ -36,7 +36,10 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
-<sup>4</sup> The browser that is used for this combination of versions depends on the update channel of the Microsoft 365 subscription. If the user is on the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office uses Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office uses Microsoft Edge with the original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021.
+<sup>4</sup> The browser that is used for this combination of versions depends on the update channel of the Microsoft 365 subscription. If the user is on the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office uses Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office uses Microsoft Edge with the original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021. *See also note 5*.
+
+<sup>5</sup> The embeddable WebView2 control must be installed in addition to the installation of Microsoft Edge so that Office can embed it. To install it, see [Microsoft Edge WebView2 (Preview) / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/).
+
 
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you have two options:
