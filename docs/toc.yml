@@ -1162,6 +1162,8 @@
 
 - name: Patterns and practices
   items:
+  - name: Overview
+    href: overview/patterns-and-practices-overview.md
   - name: Open in Excel
     href: excel/pnp-open-in-excel.md
     displayName: Excel
