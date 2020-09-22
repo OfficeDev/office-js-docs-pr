@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: 'Learn more about the Office Common API requirement sets.'
-ms.date: 07/07/2020
+ms.date: 09/17/2020
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -144,6 +144,14 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 |**Office applications**|**Methods in set**|
 |:-----|:-----|
 | Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports coercion to Open Office XML (OOXML) format (Office.CoercionType.Ooxml) when reading and writing data using the Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
+
+---
+
+### OpenBrowserWindowApi
+
+|**Office hosts**|**Methods in set**|
+|:-----|:-----|
+| See [Open Browser Window API requirement sets](open-browser-window-api-requirement-sets.md). | Office.context.ui.openBrowserWindow |
 
 ---
 

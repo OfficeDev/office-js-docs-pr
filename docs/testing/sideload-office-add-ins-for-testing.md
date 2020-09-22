@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
 description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 07/10/2020
+ms.date: 09/21/2020
 localization_priority: Normal
 ---
 
@@ -37,13 +37,7 @@ The following video walks you through the process of sideloading your add-in in 
 6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
 
 > [!NOTE]
->To test your Office Add-in with Microsoft Edge, two configuration steps are required: 
->
-> - In a Windows Command Prompt, run the following line: `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
->
-> - Enter "**about:flags**" in the Microsoft Edge search bar to bring up the Developer Settings options.  Check the "**Allow localhost loopback**" option and restart Microsoft Edge.
-
->    ![The Microsoft Edge Allow localhost loopback option with the box checked.](../images/allow-localhost-loopback.png)
+> To test your Office Add-in with Microsoft Edge, an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`
 
 ## Sideload an Office Add-in in Office 365
 

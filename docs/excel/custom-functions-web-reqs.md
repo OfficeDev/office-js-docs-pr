@@ -24,7 +24,7 @@ If a custom function retrieves data from an external source such as the web, it 
 
 In the following code sample, the `webRequest` function reaches out to the hypothetical Contoso "Number of People in Space" API, which tracks the number of people currently on the International Space Station. The function returns a JavaScript Promise and uses fetch to request information from the API. The resulting data is transformed into JSON and the `names` property is converted into a string, which is used to resolve the Promise.
 
-When developing your own functions, you may want to perform an action if the web request does not complete in a timely manner or consider [batching up multiple API requests](./custom-functions-batching.md).
+When developing your own functions, you may want to perform an action if the web request does not complete in a timely manner or consider [batching up multiple API requests](custom-functions-batching.md).
 
 ```JS
 /**

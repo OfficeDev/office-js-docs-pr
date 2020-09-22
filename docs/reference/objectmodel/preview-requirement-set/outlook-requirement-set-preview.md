@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 09/02/2020
+ms.date: 09/21/2020
 localization_priority: Normal
 ---
 
@@ -149,19 +149,19 @@ Added support for event-based activation functionality in Outlook add-ins. See [
 
 Added `LaunchEvent` extension point support to manifest. It configures event-based activation functionality.
 
-**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))
+**Available in**: Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### [LaunchEvents manifest element](../../manifest/launchevents.md)
 
 Added `LaunchEvents` element to manifest. It supports configuring event-based activation functionality.
 
-**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))
+**Available in**: Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### [Runtimes manifest element](../../manifest/runtimes.md)
 
 Added Outlook support to the `Runtimes` manifest element. It references the HTML and JavaScript files needed for event-based activation functionality.
 
-**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))
+**Available in**: Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -302,20 +302,6 @@ Added a new object that represents the session data of an item.
 Added a new property to manage the session data of an item in Compose mode.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
-
-<br>
-
----
-
----
-
-### Single sign-on (SSO)
-
-#### [OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
-
-Added access to `getAccessToken`, which allows add-ins to [get an access token](../../../outlook/authenticate-a-user-with-an-sso-token.md) for the Microsoft Graph API.
-
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on Mac (connected to a Microsoft 365 subscription), Outlook on the web (modern), Outlook on the web (classic)
 
 ## See also
 

@@ -76,6 +76,8 @@
         href: develop/support-for-task-pane-and-content-add-ins.md
       - name: Persist state and settings
         href: develop/persisting-add-in-state-and-settings.md
+      - name: Bind to regions in a document or spreadsheet
+        href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
     - name: Setup and run your add-in
       items:
       - name: Reference Office.js
@@ -326,6 +328,8 @@
         href: reference/requirement-sets/image-coercion-requirement-sets.md
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
+      - name: Open Browser Window requirement sets
+        href: reference/requirement-sets/open-browser-window-api-requirement-sets.md
       - name: Ribbon API requirement sets
         href: reference/requirement-sets/ribbon-api-requirement-sets.md
       - name: Shared Runtime requirement sets
@@ -553,6 +557,9 @@
         displayName: Excel
       - name: ExcelApi online-only requirement set
         href: reference/requirement-sets/excel-api-online-requirement-set.md
+        displayName: Excel
+      - name: ExcelApi 1.12 requirement set
+        href: reference/requirement-sets/excel-api-1-12-requirement-set.md
         displayName: Excel
       - name: ExcelApi 1.11 requirement set
         href: reference/requirement-sets/excel-api-1-11-requirement-set.md
@@ -1137,9 +1144,6 @@
     - name: Word object model
       href: word/word-add-ins-core-concepts.md
       displayName: Word
-    - name: Bind to regions in a document
-      href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-      displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
       displayName: Word
@@ -1160,6 +1164,9 @@
   items:
   - name: Overview
     href: overview/patterns-and-practices-overview.md
+  - name: Open in Excel
+    href: excel/pnp-open-in-excel.md
+    displayName: Excel
   - name: Batching custom function remote calls
     href: excel/custom-functions-batching.md
     displayName: Excel, Custom Functions
