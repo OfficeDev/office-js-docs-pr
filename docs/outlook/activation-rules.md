@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in activation rules
 description: 'Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in.'
-ms.date: 12/10/2019
+ms.date: 09/22/2020
 localization_priority: Normal
 ---
 
@@ -137,7 +137,7 @@ The `ItemHasRegularExpressionMatch` complex type defines a rule that uses a regu
 The following example shows an `ItemHasRegularExpressionMatch` that activates the add-in when the body of the selected item contains "apple", "banana", or "coconut", ignoring case.
 
 ```xml
-<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
+<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
 For more information about using the `ItemHasRegularExpressionMatch` rule, see [Use regular expression activation rules to show an Outlook add-in](use-regular-expressions-to-show-an-outlook-add-in.md).
