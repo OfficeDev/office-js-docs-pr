@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 10/31/2019
+ms.date: 09/18/2020
 localization_priority: Normal
 ---
 
@@ -77,6 +77,9 @@ var restHost = Office.context.mailbox.restUrl;
 ## Call the API
 
 After your add-in has the access token, item ID, and REST API URL, it can either pass that information to a back-end service which calls the REST API, or it can call it directly using AJAX. The following example calls the Outlook Mail REST API to get the current message.
+
+> [!IMPORTANT]
+> For on-premises Exchange deployments, client-side requests using AJAX or similar libraries fail because CORS isn't supported in that server setup.
 
 ```js
 function getCurrentItem(accessToken) {
