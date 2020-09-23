@@ -1,5 +1,5 @@
 ---
-ms.date: 09/21/2020
+ms.date: 09/23/2020
 description: 'Handle and return errors like #NULL! from your custom function.'
 title: Handle and return errors from your custom function
 localization_priority: Normal
@@ -33,9 +33,9 @@ function getCity(zipCode: string): string {
 The [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) object is used to return an error back to the cell. When you create the object, specify which error you want to use by choosing one of the following `ErrorCode` enum values.
 
 
-|ErrorCode enum value  |Excel cell value  |Meaning  |
+|ErrorCode enum value  |Excel cell value  |Description  |
 |---------------|---------|---------|
-|`divisionByZero` | `#DIV/0`  | Be aware that JavaScript allows division by zero so you need to write an error handler carefully to detect this condition. |
+|`divisionByZero` | `#DIV/0`  | The function is attempting to divide by zero. |
 |`invalidName`    | `#NAME?`  | There is a typo in the function name. Note that this error is supported as a custom function input error, but not as a custom function output error. | 
 |`invalidNumber`  | `#NUM!`   | There is a problem with a number in the formula. |
 |`invalidReference` | `#REF!` | The function refers to an invalid cell. Note that this error is supported as a custom function input error, but not as a custom function output error.|
