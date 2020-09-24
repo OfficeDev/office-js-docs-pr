@@ -37,7 +37,7 @@ The following video walks you through the process of sideloading your add-in in 
 6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
 
 > [!NOTE]
-> To test your Office Add-in with Microsoft Edge with the original WebView (EdgeHTML), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This is not required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md.
+> To test your Office Add-in with Microsoft Edge with the original WebView (EdgeHTML), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This is not required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## Sideload an Office Add-in in Office 365
 
