@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 09/22/2020
+ms.date: 09/24/2020
 localization_priority: Normal
 ---
 
@@ -16,7 +16,7 @@ Which browser is used depends on:
 
 The following table shows which browser is used for the various platforms and operating systems.
 
-|OS|Office version|Edge WebView2 (Chromium-based) installed?<sup>5</sup>|Browser|
+|OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |any|Office on the web|Not applicable|The browser in which Office is opened.|
 |Mac|any|Not applicable|Safari|
@@ -38,7 +38,7 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>4</sup> The browser that is used for this combination of versions depends on the update channel of the Microsoft 365 subscription. If the user is on the [Beta channel](https://insider.office.com/join/windows) (formerly Insiders Fast channel), then Office uses Microsoft Edge with WebView2 (Chromium-based). For any other channel, Office uses Microsoft Edge with the original WebView (EdgeHTML). Support for WebView2 in other channels is expected in early 2021. *See also note 5*.
 
-<sup>5</sup> The embeddable WebView2 control must be installed in addition to the installation of Microsoft Edge so that Office can embed it. To install it, see [Microsoft Edge WebView2 (Preview) / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/).
+<sup>5</sup> The embeddable WebView2 control must be installed in addition to the installation of Microsoft Edge so that Office can embed it. To install it, see [Microsoft Edge WebView2 (Preview) / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 
 > [!IMPORTANT]
