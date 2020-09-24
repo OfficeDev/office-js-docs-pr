@@ -1,7 +1,7 @@
 ---
 title: Authenticate and authorize with the Office dialog API
 description: 'Learn how to use the Office dialog API to enable users to sign-on to Google, Facebook, Microsoft 365, and other services protected by Microsoft Identity Platform.'
-ms.date: 09/20/2020
+ms.date: 09/24/2020
 localization_priority: Priority
 ---
 
