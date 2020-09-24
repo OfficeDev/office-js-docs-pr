@@ -1,7 +1,7 @@
 ---
 title: Alternative ways of passing messages to a dialog box from its host page
 description: 'Learn workarounds to use when the messageChild method is not supported.'
-ms.date: 08/20/2020
+ms.date: 09/24/2020
 
 localization_priority: Normal
 ---
@@ -11,7 +11,7 @@ localization_priority: Normal
 The recommended way to pass data and messages from a parent page to a child dialog box is with the `messageChild` method as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). If your add-in is running on a platform or host that does not support the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md), there are two other ways that you can pass information to the dialog box:
 
 - Add query parameters to the URL that is passed to `displayDialogAsync`.
-- Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage, but *if they have the same domain* (including port number, if any), they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*
+- Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage (that is; the [Window.sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) property), but *if they have the same domain* (including port number, if any), they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*
 
 
 > [!NOTE]
@@ -46,4 +46,4 @@ For a sample that uses this technique, see [Insert Excel charts using Microsoft 
 Code in your dialog box can parse the URL and read the parameter value.
 
 > [!IMPORTANT]
-> Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
+> Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage (that is; the [Window.sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) property). Again, *your code should neither read nor write to this value*.
