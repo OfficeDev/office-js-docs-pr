@@ -33,7 +33,9 @@ In the following example, the phrase "Calculates the volume of a sphere." is the
 
 
 ## JSDoc Tags
-The following JSDoc tags are supported in Excel custom functions:
+
+The following JSDoc tags are supported in Excel custom functions.
+
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) id name
 * [@helpurl](#helpurl) url
@@ -156,6 +158,7 @@ JavaScript Syntax: @param {type} name _description_
 * `description` provides the description which appears in Excel for the function parameter. It is optional.
 
 To denote a custom function parameter as optional:
+
 * Put square brackets around the parameter name. For example: `@param {string} [text] Optional text`.
 
 > [!NOTE]
@@ -184,6 +187,7 @@ TypeScript Syntax: @param name _description_
 See the [Types](#types) section for more information about the function parameter types which may be used.
 
 To denote a custom function parameter as optional, do one of the following:
+
 * Use an optional parameter. For example: `function f(text?: string)`
 * Give the parameter a default value. For example: `function f(text: string = "abc")`
 
