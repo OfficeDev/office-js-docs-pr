@@ -1,7 +1,7 @@
 ---
 title: Enable delegate access scenarios in an Outlook add-in
 description: 'Briefly describes delegate access and discusses how to configure add-in support.'
-ms.date: 09/03/2020
+ms.date: 09/25/2020
 localization_priority: Normal
 ---
 
@@ -79,7 +79,11 @@ The following example shows the `SupportsSharedFolders` element set to `true` in
 You can get an item's shared properties in Compose or Read mode by calling the [item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method. This returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that currently provides the delegate's permissions, the owner's email address, the REST API's base URL, and the target mailbox.
 
 > [!IMPORTANT]
-> In a delegate scenario, your add-in can use REST but not EWS, and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox.
+> - In a delegate scenario, your add-in can use REST but not EWS, and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox.
+> - In Message Compose mode, this API is not supported in Outlook on the web or Windows unless the following conditions are met.
+>    1. The owner shares their **Drafts** folder with the delegate.
+>    2. The delegate saves a draft message then moves it from their own **Drafts** folder to the shared **Drafts** folder.
+>    3. The delegate opens the draft from the shared **Drafts** folder.
 
 The following example shows how to get the shared properties of a message or appointment, check if the delegate has **Write** permission, and make a REST call.
 
@@ -134,6 +138,24 @@ function performOperation() {
 
 > [!TIP]
 > As a delegate, you can use REST to [get the content of an Outlook message attached to an Outlook item or group post](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
+
+## Handle calling REST on shared and non-shared items
+
+If you want to call a REST operation on an item, whether or not the item is shared, you can use the `getSharedPropertiesAsync` API to determine if the item is shared. After that, you can construct the REST URL for the operation using the appropriate object.
+
+```js
+if (item.getSharedPropertiesAsync) {
+  // In Windows, Mac, and the web client, this indicates a shared item so use SharedProperties properties to construct the REST URL.
+  // Add-ins don't activate on shared items in mobile so no need to handle.
+
+  // Perform operation for shared item.
+} else {
+  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
+  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+
+  // Perform operation for non-shared item.
+}
+```
 
 ## See also
 
