@@ -1,5 +1,5 @@
 ---
-ms.date: 05/06/2020
+ms.date: 09/25/2020
 description: 'Use JSDoc tags to dynamically create your custom functions JSON metadata.'
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Normal
@@ -33,7 +33,9 @@ In the following example, the phrase "Calculates the volume of a sphere." is the
 
 
 ## JSDoc Tags
-The following JSDoc tags are supported in Excel custom functions:
+
+The following JSDoc tags are supported in Excel custom functions.
+
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) id name
 * [@helpurl](#helpurl) url
@@ -45,7 +47,7 @@ The following JSDoc tags are supported in Excel custom functions:
 
 ---
 ### @cancelable
-<a id="cancelable"/>
+<a id="cancelable"></a>
 
 Indicates that a custom function performs an action when the function is canceled.
 
@@ -57,7 +59,7 @@ A function can't have both `@cancelable` and `@streaming` tags.
 
 ---
 ### @customfunction
-<a id="customfunction"/>
+<a id="customfunction"></a>
 
 Syntax: @customfunction _id_ _name_
 
@@ -126,7 +128,7 @@ In the following example, the phrase "A function that adds two numbers" is the d
 
 ---
 ### @helpurl
-<a id="helpurl"/>
+<a id="helpurl"></a>
 
 Syntax: @helpurl _url_
 
@@ -145,7 +147,7 @@ In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
 
 ---
 ### @param
-<a id="param"/>
+<a id="param"></a>
 
 #### JavaScript
 
@@ -156,6 +158,7 @@ JavaScript Syntax: @param {type} name _description_
 * `description` provides the description which appears in Excel for the function parameter. It is optional.
 
 To denote a custom function parameter as optional:
+
 * Put square brackets around the parameter name. For example: `@param {string} [text] Optional text`.
 
 > [!NOTE]
@@ -184,6 +187,7 @@ TypeScript Syntax: @param name _description_
 See the [Types](#types) section for more information about the function parameter types which may be used.
 
 To denote a custom function parameter as optional, do one of the following:
+
 * Use an optional parameter. For example: `function f(text?: string)`
 * Give the parameter a default value. For example: `function f(text: string = "abc")`
 
@@ -209,7 +213,7 @@ function add(first: number, second: number): number {
 
 ---
 ### @requiresAddress
-<a id="requiresAddress"/>
+<a id="requiresAddress"></a>
 
 Indicates that the address of the cell where the function is being evaluated should be provided.
 
@@ -217,7 +221,7 @@ The last function parameter must be of type `CustomFunctions.Invocation` or a de
 
 ---
 ### @returns
-<a id="returns"/>
+<a id="returns"></a>
 
 Syntax: @returns {_type_}
 
@@ -242,7 +246,7 @@ function add(first: number, second: number): number {
 
 ---
 ### @streaming
-<a id="streaming"/>
+<a id="streaming"></a>
 
 Used to indicate that a custom function is a streaming function. 
 
@@ -257,7 +261,7 @@ Streaming functions can't be marked as [@volatile](#volatile).
 
 ---
 ### @volatile
-<a id="volatile"/>
+<a id="volatile"></a>
 
 A volatile function is one whose result isn't the same from one moment to the next, even if it takes no arguments or the arguments haven't changed. Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done. For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.
 
@@ -267,7 +271,7 @@ The following function is volatile and uses the `@volatile` tag.
 
 ```js
 /**
- * Simulates rolling a 6-sided dice.
+ * Simulates rolling a 6-sided die.
  * @customfunction
  * @volatile
  */
@@ -305,6 +309,7 @@ A function can return a Promise, that provides the value when the promise is res
 Any other type will be treated as an error.
 
 ## Next steps
+
 Learn about [naming conventions for custom functions](custom-functions-naming.md). Alternatively, learn how to [localize your functions](custom-functions-localize.md) which requires you to [write your JSON file by hand](custom-functions-json.md).
 
 ## See also
