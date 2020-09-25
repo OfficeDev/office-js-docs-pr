@@ -1,5 +1,5 @@
 ---
-ms.date: 05/17/2020
+ms.date: 09/25/2020
 description: Understand Excel custom functions that don't use a task pane and their specific JavaScript runtime.
 title: Runtime for UI-less Excel custom functions
 localization_priority: Normal
@@ -41,7 +41,7 @@ The following methods are available on the `storage` object:
  - `removeItems`
  - `getKeys`
 
-.[!NOTE]
+> [!NOTE]
 > There's no method for clearing all information (such as `clear`). Instead, you should instead use `removeItems` to remove multiple entries at a time.
 
 ### OfficeRuntime.storage example
