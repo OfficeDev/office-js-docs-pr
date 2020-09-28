@@ -80,7 +80,7 @@ You can get an item's shared properties in Compose or Read mode by calling the [
 
 > [!IMPORTANT]
 > - In a delegate scenario, your add-in can use REST but not EWS, and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox.
-> - In Message Compose mode, this API is not supported in Outlook on the web or Windows unless the following conditions are met.
+> - In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getsharedpropertiesasync-options--callback-) is not supported in Outlook on the web or Windows unless the following conditions are met.
 >    1. The owner shares at least one mailbox folder with the delegate.
 >    2. The delegate saves a draft message then moves it from their own **Drafts** folder to the shared folder.
 >    3. The delegate opens the draft from the shared folder then continues composing. **Note**: After the message has been sent, it's usually found in the delegate's **Sent Items** folder.
