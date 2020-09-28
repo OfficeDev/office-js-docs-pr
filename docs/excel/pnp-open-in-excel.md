@@ -181,16 +181,9 @@ There is a JavaScript version of the OOXML SDK available at [Open XML SDK for Ja
 
 You can place the OOXML code in an Azure function to separate the .NET code from the rest of your web application. Then call the Azure function (to generate the Excel document) from your Web application. For more information on Azure functions, see [An introduction to Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview).
 
-### Simplify authentication
+### Use single sign-on
 
-Usually the customer will be authenticated and signed in when working in your web application. A best practice is to allow them to stay signed in when they open the document so they are not required to sign in again to use your Office Add-in. A good way to handle this is pass a short-lived authentication token to the add-in.
-
-1. Use the OOXML SDK to save the authentication token as a custom property in the document.
-1. Read the token from the document when the add-in starts.
-1. The add-in can then connect to your services without requiring any additional authentication steps from the customer.
-
-> [!WARNING]
-> Embedding an authentication token in the document poses a security risk where an unauthorized user could obtain the token. We recommend you use a short-lived authentication token. When the add-in uses the short-lived token, it should immediately request a new authentication token that is not saved in the document.
+To simplify authentication, we recommend your add-in implements single sign-on. For more information, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins)
 
 ## See also
 
