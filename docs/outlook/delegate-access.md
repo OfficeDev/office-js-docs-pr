@@ -83,7 +83,7 @@ You can get an item's shared properties in Compose or Read mode by calling the [
 > - In Message Compose mode, this API is not supported in Outlook on the web or Windows unless the following conditions are met.
 >    1. The owner shares at least one mailbox folder with the delegate.
 >    2. The delegate saves a draft message then moves it from their own **Drafts** folder to the shared folder.
->    3. The delegate opens the draft from the shared folder.
+>    3. The delegate opens the draft from the shared folder then continues composing.
 
 The following example shows how to get the shared properties of a message or appointment, check if the delegate has **Write** permission, and make a REST call.
 
