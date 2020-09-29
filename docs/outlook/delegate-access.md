@@ -1,7 +1,7 @@
 ---
 title: Enable delegate access scenarios in an Outlook add-in
 description: 'Briefly describes delegate access and discusses how to configure add-in support.'
-ms.date: 09/25/2020
+ms.date: 09/29/2020
 localization_priority: Normal
 ---
 
@@ -81,9 +81,13 @@ You can get an item's shared properties in Compose or Read mode by calling the [
 > [!IMPORTANT]
 > - In a delegate scenario, your add-in can use REST but not EWS, and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox.
 > - In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getsharedpropertiesasync-options--callback-) is not supported in Outlook on the web or Windows unless the following conditions are met.
->    1. The owner shares at least one mailbox folder with the delegate.
->    2. The delegate saves a draft message then moves it from their own **Drafts** folder to the shared folder.
->    3. The delegate opens the draft from the shared folder then continues composing. **Note**: After the message has been sent, it's usually found in the delegate's **Sent Items** folder.
+>
+>    - The owner shares at least one mailbox folder with the delegate.
+>    - 1. The delegate saves a draft message then moves it from their own **Drafts** folder to the shared folder. The delegate opens the draft from the shared folder then continues composing.
+>      <br>OR
+>      1. The delegate replies to or forwards an email in the shared folder.
+>
+>      **Note**: After the message has been sent, it's usually found in the delegate's **Sent Items** folder.
 
 The following example shows how to get the shared properties of a message or appointment, check if the delegate has **Write** permission, and make a REST call.
 
