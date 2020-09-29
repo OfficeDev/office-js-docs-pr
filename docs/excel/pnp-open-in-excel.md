@@ -183,7 +183,7 @@ You can place the OOXML code in an Azure function to separate the .NET code from
 
 ### Use single sign-on
 
-To simplify authentication, we recommend your add-in implements single sign-on. For more information, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins)
+To simplify authentication, we recommend your add-in implements single sign-on. For more information, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
 
 ## See also
 
