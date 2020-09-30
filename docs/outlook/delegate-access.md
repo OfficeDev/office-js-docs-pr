@@ -132,6 +132,24 @@ function performOperation() {
 > [!TIP]
 > As a delegate, you can use REST to [get the content of an Outlook message attached to an Outlook item or group post](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
 
+## Handle calling REST on shared and non-shared items
+
+If you want to call a REST operation on an item, whether or not the item is shared, you can use the `getSharedPropertiesAsync` API to determine if the item is shared. After that, you can construct the REST URL for the operation using the appropriate object.
+
+```js
+if (item.getSharedPropertiesAsync) {
+  // In Windows, Mac, and the web client, this indicates a shared item so use SharedProperties properties to construct the REST URL.
+  // Add-ins don't activate on shared items in mobile so no need to handle.
+
+  // Perform operation for shared item.
+} else {
+  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
+  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+
+  // Perform operation for non-shared item.
+}
+```
+
 ## Limitations
 
 Depending on your add-in's scenarios, there are a couple of limitations for you to consider when handling delegate situations.
@@ -153,24 +171,6 @@ In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/offi
     - The delegate saves a draft message then moves it from their own **Drafts** folder to the shared folder. The delegate opens the draft from the shared folder then continues composing.
 
 After the message has been sent, it's usually found in the delegate's **Sent Items** folder.
-
-## Handle calling REST on shared and non-shared items
-
-If you want to call a REST operation on an item, whether or not the item is shared, you can use the `getSharedPropertiesAsync` API to determine if the item is shared. After that, you can construct the REST URL for the operation using the appropriate object.
-
-```js
-if (item.getSharedPropertiesAsync) {
-  // In Windows, Mac, and the web client, this indicates a shared item so use SharedProperties properties to construct the REST URL.
-  // Add-ins don't activate on shared items in mobile so no need to handle.
-
-  // Perform operation for shared item.
-} else {
-  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
-  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
-
-  // Perform operation for non-shared item.
-}
-```
 
 ## See also
 
