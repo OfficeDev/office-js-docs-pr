@@ -225,10 +225,7 @@ function commentAdded() {
 
         return context.sync().then(function () {
             // Print out the added comment's data.
-            console.log(`A comment was added:`);
-            console.log(`    ID: ${event.commentDetails[0].commentId}`);
-            console.log(`    Comment content:${addedComment.content}`);
-            console.log(`    Comment author:${addedComment.authorName}`);
+            console.log(`A comment was added. ID: ${event.commentDetails[0].commentId}. Comment content:${addedComment.content}. Comment author:${addedComment.authorName}`);
             return context.sync();
         });            
     });
@@ -236,7 +233,14 @@ function commentAdded() {
 ```
 
 ### Comment change events 
-The `onChanged` event is triggered when a comment's content is updated, a comment thread is resolved, a comment thread is reopened, a reply is added to a comment thread, a reply is updated in a comment thread, or a reply is deleted in a comment thread.
+The `onChanged` comment event is triggered in the following scenarios: 
+
+- A comment's content is updated.
+- A comment thread is resolved.
+- A comment thread is reopened.
+- A reply is added to a comment thread.
+- A reply is updated in a comment thread.
+- A reply is deleted in a comment thread.
 
 The following sample shows how to register the `onChanged` event handler and then use this event handler to log the changed comment's metadata. 
 
@@ -261,10 +265,7 @@ function commentChanged() {
 
         return context.sync().then(function () {
             // Print out the changed comment's data.
-            console.log(`A comment was changed:`);
-            console.log(`    ID: ${event.commentDetails[0].commentId}`);
-            console.log(`    Updated comment content: ${changedComment.content}`);
-            console.log(`    Comment author: ${changedComment.authorName}`);
+            console.log(`A comment was changed. ID: ${event.commentDetails[0].commentId}`. Updated comment content: ${changedComment.content}`. Comment author: ${changedComment.authorName}`);
             return context.sync();
         });
     });
@@ -290,8 +291,7 @@ function commentDeleted() {
     Excel.run(function (context) => {
         // Print out the deleted comment's ID.
         // Note: This method assumes only a single comment is deleted at a time. 
-        console.log(`A comment was deleted:`);
-        console.log(`    ID: ${event.commentDetails[0].commentId}`);
+        console.log(`A comment was deleted. ID: ${event.commentDetails[0].commentId}`);
     });
 }
 ```
