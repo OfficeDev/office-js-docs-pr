@@ -48,7 +48,7 @@ The following command capabilities are currently supported.
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](/javascript/api/office/office.ui) API.  
 
-### Default Enabled or Disabled Status (preview)
+### Default Enabled or Disabled Status
 
 You can specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting.
 
