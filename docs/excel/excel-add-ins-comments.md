@@ -273,9 +273,9 @@ function commentChanged() {
 ```
 
 ### Comment deletion events
-The `onDeleted` event is triggered when a comment, including its replies, are deleted from the comment collection. Once a comment has been deleted, comment metadata is no longer available. The `commentId` is still available after a comment is deleted. 
+The `onDeleted` event is triggered when a comment is deleted from the comment collection. Once a comment has been deleted, its metadata is no longer available. The `commentId` is still available after a comment is deleted. 
 
-The following sample shows how register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID. 
+The following sample shows how to register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID. 
 
 ```js
 Excel.run(function (context) => {
