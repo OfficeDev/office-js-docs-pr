@@ -46,7 +46,8 @@ Keep the following points in mind:
 
 Office always gives default focus to the tab that is immediately to the right of the **File** tab. By default this is the **Home** tab. If you configure your custom tab to be to before the **Home** tab, with `<InsertBefore>TabHome</InsertBefore>`, then your custom tab will have focus when the document opens.
 
-But be careful before you configure your tab to be before the **Home** tab. Giving excessive prominence to your add-in inconveniences and annoys users and administrators. Do not position a custom tab before the **Home** tab unless your add-in is the primary tool with which users will interact with the document.
+> [!IMPORTANT]
+> Giving excessive prominence to your add-in inconveniences and annoys users and administrators. Do not position a custom tab before the **Home** tab unless your add-in is the primary tool with which users will interact with the document.
 
 ## Behavior on unsupported platforms
 
