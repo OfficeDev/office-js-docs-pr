@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # Position a custom tab on the ribbon (preview)
 
-You can specify where you want your add-ins custom tab to appear on the Office application's ribbon by using markup in the add-in's manifest.
+You can specify where you want your add-in's custom tab to appear on the Office application's ribbon by using markup in the add-in's manifest.
 
 > [!NOTE]
 > This article assumes that you are familiar with the article [Basic concepts for add-in commands](add-in-commands.md). Please review it if you have not done so recently.
@@ -18,9 +18,9 @@ You can specify where you want your add-ins custom tab to appear on the Office a
 > - The add-in feature and markup described in this article is in preview and is *only available in PowerPoint on the web*. We recommend that you try the markup out in test and development environments only. Do not use preview markup in a production environment or within business-critical documents.
 > - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See [Behavior on unsupported platforms](#behavior-on-unsupported-platforms) below.
 
-You specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. You make these specifications by including either a [InsertBefore](../reference/manifest/customtab.md#insertbefore) (left) or [InsertAfter](../reference/manifest/customtab.md#insertafter) element in the [CustomTab](../reference/manifest/customtab.md) (right) element in your add-in's manifest.
+You specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. You make these specifications by including either an [InsertBefore](../reference/manifest/customtab.md#insertbefore) (left) or an [InsertAfter](../reference/manifest/customtab.md#insertafter) element in the [CustomTab](../reference/manifest/customtab.md) (right) element in your add-in's manifest. (You cannot have both elements.)
 
-In the following example, the custom tab is configured to appear *just after* the **Review** tab. Note that the value of the `<InsertAfter>` element is the ID of the built-in Office tab. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
+In the following example, the custom tab is configured to appear *just after* the **Review** tab. Note that the value of the `<InsertAfter>` element is the ID of the built-in Office tab. 
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -38,7 +38,7 @@ Keep the following points in mind:
 
 - The  `<InsertBefore>` and  `<InsertAfter>` elements are optional. If you use neither, then your custom tab will appear as the rightmost tab on the ribbon.
 - The  `<InsertBefore>` and  `<InsertAfter>` elements are mutually exclusive. You cannot use both.
-- If the user installs more than one add-in whose custom tab is configured for the same place, say after the **Review** tab, then the tab for the most recently installed add-in will be located in that place. The tabs of the previously installed add-ins will be moved over one place. For example, the user installs add-ins A, B, and C in that order and all are configured to insert a tab after the **Review** tab, then the tabs will appear in this order: **Review** **AddinCTab** **AddinBTab** **AddinATab**.
+- If the user installs more than one add-in whose custom tab is configured for the same place, say after the **Review** tab, then the tab for the most recently installed add-in will be located in that place. The tabs of the previously installed add-ins will be moved over one place. For example, the user installs add-ins A, B, and C in that order and all are configured to insert a tab after the **Review** tab, then the tabs will appear in this order: **Review**, **AddinCTab**, **AddinBTab**, **AddinATab**.
 - Users can customize the ribbon in the Office application. For example, a user can move or hide your add-in's tab. You cannot prevent this or detect that it has happened.
 - If a user moves one of the built-in tabs, then Office interprets the `<InsertBefore>` and  `<InsertAfter>` elements in terms of *the default location of the built-in tab*. For example, if the user moves the **Review** tab to the right end of the ribbon, Office will interpret the markup in the example above as meaning "put the custom tab just to the right of *where the Review tab would be by default*."
 
@@ -48,10 +48,6 @@ Office always gives default focus to the tab that is immediately to the right of
 
 But be careful before you configure your tab to be before the **Home** tab. Giving excessive prominence to your add-in inconveniences and annoys users and administrators. Do not position a custom tab before the **Home** tab unless your add-in is the primary tool with which users will interact with the document.
 
-## Find the IDs of controls and control groups
-
-[!INCLUDE [publish policies note](../includes/find-control-ids.md)]
-
 ## Behavior on unsupported platforms
 
-If your add-in is installed on a platform that does not support [requirement set AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), then the markup described in this article is ignored and your custom tab will appear as the rightmost tab on the ribbon. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set to the `<Requirements>` section of the manifest. For instructions, see [Set the Requirements element in the manifest](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest).
+If your add-in is installed on a platform that does not support [requirement set AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), then the markup described in this article is ignored and your custom tab will appear as the rightmost tab on the ribbon. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set to the `<Requirements>` section of the manifest. For instructions, see [Set the Requirements element in the manifest](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest). Note that the runtime checks that are described in the article are not applicable to **AddinCommands 1.3** because it contains only manifest markup that is read when the add-in starts up and before a runtime check can occur.
