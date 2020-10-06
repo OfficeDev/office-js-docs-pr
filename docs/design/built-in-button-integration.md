@@ -22,7 +22,7 @@ You can insert built-in Office buttons into your custom control groups on the Of
 
 To insert a built-in Office control group into a tab, add an [OfficeGroup](../reference/manifest/customtab.md#officegroup) element as a child element in the parent `<CustomTab>` element. The `groupId` attribute of the of the `<OfficeGroup>` element is set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
 
-The following is an example. This markup adds the Office Paragraph control group to a custom tab and positions it to appear just after a custom group.
+The following markup example adds the Office Paragraph control group to a custom tab and positions it to appear just after a custom group.
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
