@@ -37,7 +37,7 @@ The following table lists the add-in commands 1.3 requirement set, the Office cl
 | AddinCommands 1.3  | N/A  | coming soon | N/A | coming soon| November 2020 |
 
 > [!IMPORTANT]
-> AddinCommands 1.3 is in preview and is *only available in PowerPoint on the web*. We recommend that you try the markup out in test and development environments only. Do not use preview markup in a production environment or within business-critical documents.
+> AddinCommands 1.3 is in preview and is *only available in PowerPoint on the web*. We recommend that you try out the markup in test and development environments only. Do not use preview markup in a production environment or within business-critical documents.
 
 ## Office versions and build numbers
 

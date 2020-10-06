@@ -8,15 +8,15 @@ localization_priority: Normal
 
 # Integrate built-in Office buttons into custom control groups and tabs (preview)
 
-You can insert built-in Office buttons into your custom control groups on the Office ribbon by using markup in the add-in's manifest. (You cannot insert your custom add-in commands into a built-in Office group.) You can also insert entire built-in Office control groups into your custom ribbon tabs.
+You can insert built-in Office buttons into your custom control groups on the Office ribbon by using markup in the add-in's manifest. (You can't insert your custom add-in commands into a built-in Office group.) You can also insert entire built-in Office control groups into your custom ribbon tabs.
 
 > [!NOTE]
-> This article assumes that you are familiar with the article [Basic concepts for add-in commands](add-in-commands.md). Please review it if you have not done so recently.
+> This article assumes that you are familiar with the article [Basic concepts for add-in commands](add-in-commands.md). Please review it if you haven't done so recently.
 
 > [!IMPORTANT]
 >
-> - The add-in feature and markup described in this article is in preview and is *only available in PowerPoint on the web*. We recommend that you try the markup out in test and development environments only. Do not use preview markup in a production environment or within business-critical documents.
-> - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See [Behavior on unsupported platforms](#behavior-on-unsupported-platforms) below.
+> - The add-in feature and markup described in this article is in preview and is *only available in PowerPoint on the web*. We recommend that you try out the markup in test and development environments only. Do not use preview markup in a production environment or within business-critical documents.
+> - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See the later section [Behavior on unsupported platforms](#behavior-on-unsupported-platforms).
 
 ## Insert a built-in control group into a custom tab
 
@@ -38,9 +38,9 @@ The following is an example. This markup adds the Office Paragraph control group
 
 ## Insert a built-in control into a custom group
 
-To insert a built-in Office control into a custom group, add an [OfficeControl](../reference/manifest/group.md#officecontrol) element as a child element in the parent `<Group>` element. The `controlId` attribute of the of the `<OfficeControl>` element is set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
+To insert a built-in Office control into a custom group, add an [OfficeControl](../reference/manifest/group.md#officecontrol) element as a child element in the parent `<Group>` element. The `controlId` attribute of the `<OfficeControl>` element is set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
 
-The following is an example. This markup adds the Office Superscript control to a custom group and positions it to appear just after a custom button.
+The following markup example adds the Office Superscript control to a custom group and positions it to appear just after a custom button.
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -72,4 +72,4 @@ The following is an example. This markup adds the Office Superscript control to 
 
 ## Behavior on unsupported platforms
 
-If your add-in is installed on a platform that does not support [requirement set AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md)), then the markup described in this article is ignored and the built-in Office controls/groups will not appear in your custom groups/tabs. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set to the `<Requirements>` section of the manifest. For instructions, see [Set the Requirements element in the manifest](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest). Note that the runtime checks that are described in the article are not applicable to **AddinCommands 1.3** because it contains only manifest markup that is read when the add-in starts up and before a runtime check can occur.
+If your add-in is installed on a platform that does not support [requirement set AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), then the markup described in this article is ignored and the built-in Office controls/groups will not appear in your custom groups/tabs. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set in the `<Requirements>` section of the manifest. For instructions, see [Set the Requirements element in the manifest](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest). Note that the runtime checks that are described in the article are not applicable to **AddinCommands 1.3** because it contains only manifest markup that is read when the add-in starts up and before a runtime check can occur.

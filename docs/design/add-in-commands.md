@@ -99,8 +99,8 @@ Apply the following best practices when you develop add-in commands:
     - Place commands on a custom tab if you have more than six top-level commands.
     - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
     - Do not add superfluous buttons to increase the real estate of your add-in.
-    - Do not position a custom tab to the left of the Home tab, or give it focus by default when the document opens, unless your add-in is the primary tool with which users will interact with the document. Giving excessive prominence to your add-in inconveniences and annoys users and administrators.
-    - If your add-in is the primary tool with which users interact with the document and you have a custom ribbon tab, consider integrating into the tab the buttons for the Office functions that users will frequently need.
+    - Do not position a custom tab to the left of the Home tab, or give it focus by default when the document opens, unless your add-in is the primary way users will interact with the document. Giving excessive prominence to your add-in inconveniences and annoys users and administrators.
+    - If your add-in is the primary way users interact with the document and you have a custom ribbon tab, consider integrating into the tab the buttons for the Office functions that users will frequently need.
 
      > [!NOTE]
      > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).

@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # CustomTab element
 
-On the ribbon, you specify the tab and group for your add-in commands. This can either be on the default tab (either **Home**, **Message**, or **Meeting**), or on a custom tab defined by the add-in.
+On the ribbon, specify the tab and group for your add-in commands. This can either be on the default tab (either **Home**, **Message**, or **Meeting**), or on a custom tab defined by the add-in.
 
 On custom tabs, the add-in can have custom or built-in groups. Add-ins are limited to one custom tab.
 
