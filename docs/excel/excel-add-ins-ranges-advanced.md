@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: 'Advanced range object functions and scenarios, such as special cells, remove duplicates, and working with dates.' 
-ms.date: 08/26/2020 
+ms.date: 10/06/2020 
 localization_priority: Normal
 ---
 
@@ -349,6 +349,36 @@ Excel.run(function (context) {
 ```
 
 You can also find the cell responsible for spilling into a given cell by using the [Range.getSpillParent](/javascript/api/excel/excel.range#getspillparent--) method. Note that `getSpillParent` only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells will result in an error being thrown (or a null range being returned for `Range.getSpillParentOrNullObject`).
+
+## Formula precedents
+
+An Excel formula often refers to other cells or groups of cells. These cells or groups of cells are known as "precedents" to the formula. With Range.getDirectPrecedents, your add-in can locate the direct precedents to a formula. `getDirectPrecedents` can trace precedents to a formula within a single worksheet and across worksheets within a single workbook. This API can't trace precedent cells across workbooks. 
+
+The following sample calls `getDirectPrecedents` on the active range. 
+
+> [!NOTE]
+> The active range must contain a formula that references other cells for this sample to work properly. 
+
+```js
+Excel.run(function (context) {
+    // Precedents are cells referenced by the formula in a cell.
+    var range = context.workbook.getActiveCell();
+    var directPrecedents = range.getDirectPrecedents();
+    range.load("address");
+    directPrecedents.areas.load("address");
+    return context.sync();
+
+    console.log(`Direct precedent cells of ${range.address}:`);
+
+    // Use the direct precedents API to loop through precedents of the active cell.
+    for (var i = 0; i < directPrecedents.areas.items.length; i++) {
+      // Highlight and print out the address of each precedent cell.
+      directPrecedents.areas.items[i].format.fill.color = "Yellow";
+      console.log(`  ${directPrecedents.areas.items[i].address}`);
+    }
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
 
 ## See also
 
