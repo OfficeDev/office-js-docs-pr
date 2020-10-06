@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: 'In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.'
-ms.date: 09/09/2020
+ms.date: 10/02/2020
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 localization_priority: Priority
@@ -99,7 +99,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Choose a project type** - `Office Add-in Task Pane project`
 
-    - **Choose a script type** - `Javascript`
+    - **Choose a script type** - `JavaScript`
 
     - **What do you want to name your add-in?** - `Git the gist`
 
@@ -532,21 +532,51 @@ Finally, open the file **webpack.config.js** file in the root directory of the p
       dialog: "./src/settings/dialog.js"
     },
     ```
-  
-2. Locate the `plugins` array within the `config` object and add these two new objects to the end of that array.
+
+1. Locate the `plugins` array within the `config` object. In the `patterns` array of the `new CopyWebpackPlugin` object, add a new entry after the `taskpane.css` entry.
+
+    ```js
+    {
+      to: "dialog.css",
+      from: "./src/settings/dialog.css"
+    },
+    ```
+
+    After you've done this, the `new CopyWebpackPlugin` object will look like this:
+
+    ```js
+      new CopyWebpackPlugin({
+        patterns: [
+        {
+          to: "taskpane.css",
+          from: "./src/taskpane/taskpane.css"
+        },
+        {
+          to: "dialog.css",
+          from: "./src/settings/dialog.css"
+        },
+        {
+          to: "[name]." + buildType + ".[ext]",
+          from: "manifest*.xml",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
+          }
+        }
+      ]}),
+    ```
+
+1. Locate the `plugins` array within the `config` object and add this new object to the end of that array.
 
     ```js
     new HtmlWebpackPlugin({
       filename: "dialog.html",
       template: "./src/settings/dialog.html",
       chunks: ["polyfill", "dialog"]
-    }),
-    new CopyWebpackPlugin([
-      {
-        to: "dialog.css",
-        from: "./src/settings/dialog.css"
-      }
-    ])
+    })
     ```
 
     After you've done this, the new `plugins` array will look like this:
@@ -557,14 +587,30 @@ Finally, open the file **webpack.config.js** file in the root directory of the p
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ['polyfill', 'taskpane']
+        chunks: ["polyfill", "taskpane"]
       }),
-      new CopyWebpackPlugin([
-      {
-        to: "taskpane.css",
-        from: "./src/taskpane/taskpane.css"
-      }
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+        {
+          to: "taskpane.css",
+          from: "./src/taskpane/taskpane.css"
+        },
+        {
+          to: "dialog.css",
+          from: "./src/settings/dialog.css"
+        },
+        {
+          to: "[name]." + buildType + ".[ext]",
+          from: "manifest*.xml",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
+          }
+        }
+      ]}),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
@@ -573,26 +619,20 @@ Finally, open the file **webpack.config.js** file in the root directory of the p
       new HtmlWebpackPlugin({
         filename: "dialog.html",
         template: "./src/settings/dialog.html",
-        chunks: ['polyfill', 'dialog']
-      }),
-      new CopyWebpackPlugin([
-      {
-        to: "dialog.css",
-        from: "./src/settings/dialog.css"
-      }
-      ])
+        chunks: ["polyfill", "dialog"]
+      })
     ],
     ```
 
-3. If the web server is running, close the node command window.
+1. If the web server is running, close the node command window.
 
-4. Run the following command to rebuild the project.
+1. Run the following command to rebuild the project.
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. Run the following command to start the web server.
+1. Run the following command to start the web server.
 
     ```command&nbsp;line
     npm run dev-server

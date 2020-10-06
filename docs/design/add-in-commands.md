@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
-ms.date: 07/10/2020
+ms.date: 10/03/2020
 localization_priority: Priority
 ---
 
@@ -48,12 +48,12 @@ The following command capabilities are currently supported.
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](/javascript/api/office/office.ui) API.  
 
-### Default Enabled or Disabled Status (preview)
+### Default Enabled or Disabled Status
 
 You can specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting.
 
 > [!NOTE]
-> This feature is in preview and is not supported in all Office applications or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
+> This feature is not supported in all Office applications or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
 
 ## Supported platforms
 

@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: 'Learn about the privacy and security aspects of the Office Add-ins platform.'
-ms.date: 09/14/2020
+ms.date: 10/06/2020
 localization_priority: Normal
 ---
 
@@ -63,8 +63,6 @@ You can make your Office Add-ins available to the public by publishing them to A
 - Requires the host server of an Office Add-in to always use Secure Sockets Layer (SSL) to communicate.
 
 - Requires a developer to provide proof of identity, a contractual agreement, and a compliant privacy policy to submit add-ins.
-
-- Ensures that the source of add-ins is accessible in read-only mode.
 
 - Supports a user-review system for available add-ins to promote a self-policing community.
 
