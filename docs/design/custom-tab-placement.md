@@ -40,7 +40,7 @@ Keep the following points in mind.
 - The  `<InsertBefore>` and  `<InsertAfter>` elements are mutually exclusive. You cannot use both.
 - If the user installs more than one add-in whose custom tab is configured for the same place, say after the **Review** tab, then the tab for the most recently installed add-in will be located in that place. The tabs of the previously installed add-ins will be moved over one place. For example, the user installs add-ins A, B, and C in that order and all are configured to insert a tab after the **Review** tab, then the tabs will appear in this order: **Review**, **AddinCTab**, **AddinBTab**, **AddinATab**.
 - Users can customize the ribbon in the Office application. For example, a user can move or hide your add-in's tab. You cannot prevent this or detect that it has happened.
-- If a user moves one of the built-in tabs, then Office interprets the `<InsertBefore>` and  `<InsertAfter>` elements in terms of *the default location of the built-in tab*. For example, if the user moves the **Review** tab to the right end of the ribbon, Office will interpret the markup in the example above as meaning "put the custom tab just to the right of *where the Review tab would be by default*."
+- If a user moves one of the built-in tabs, then Office interprets the `<InsertBefore>` and  `<InsertAfter>` elements in terms of *the default location of the built-in tab*. For example, if the user moves the **Review** tab to the right end of the ribbon, Office will interpret the markup in the example above as meaning "put the custom tab just to the right of *where the **Review** tab would be by default*."
 
 ## Specifying which tab has focus when the document opens
 
