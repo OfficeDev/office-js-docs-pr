@@ -9,7 +9,7 @@ localization_priority: Normal
 
 On the ribbon, you specify the tab and group for your add-in commands. This can either be on the default tab (either **Home**, **Message**, or **Meeting**), or on a custom tab defined by the add-in.
 
-On custom tabs, the add-in can have custom or built-in groups. Each custom group is limited to 6 controls, regardless of which tab it appears on. (Built-in groups may have more than 6 controls.) Add-ins are limited to one custom tab.
+On custom tabs, the add-in can have custom or built-in groups. Add-ins are limited to one custom tab.
 
 The **id** attribute must be unique within the manifest.
 
