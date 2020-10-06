@@ -69,6 +69,7 @@ You can insert the built-in Office ribbon buttons into your custom command group
 > [!NOTE]
 > This feature is not supported in all Office applications or scenarios. For more information, see [Integrate built-in Office buttons into custom tabs](built-in-button-integration.md).
 
+
 ## Supported platforms
 
 Add-in commands are currently supported on the following platforms, except for limitations specified in the subsections of [Command capabilities](#command-capabilities) earlier.
