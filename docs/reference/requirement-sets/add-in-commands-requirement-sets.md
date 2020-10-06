@@ -18,23 +18,18 @@ The initial release of add-in commands doesn't have a corresponding requirement 
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Add-in commands (initial release, no requirement set) | N/A | 16.0.4678.1000 *Supported in Outlook only* | Version 1809 (Build 10827.20150) or later |Version 1603 (Build 6769.0000) or later | N/A | 15.33 or later| January 2016 |
 
-The add-in commands 1.1 requirement set introduces the ability to [autoopen a task pane with documents](../../develop/automatically-open-a-task-pane-with-a-document.md).
+The add-in commands **1.1** requirement set introduces the ability to [autoopen a task pane with documents](../../develop/automatically-open-a-task-pane-with-a-document.md).
 
-The following table lists the add-in commands 1.1 requirement set, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
+The add-in commands **1.3** requirement set introduces manifest markup that enables an add-in to customize the placement of a custom tab on the Office ribbon and to insert built-in Office ribbon controls into custom control groups.
+
+The following table lists the add-in commands requirement sets, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
 
 |  Requirement set  |  Office 2013 on Windows<br>(one-time purchase) | Office 2016 on Windows<br>(one-time purchase) | Office 2019 on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription)   |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| AddinCommands 1.3  | N/A | N/A  | N/A | coming soon | N/A | coming soon | November 2020 |
 | AddinCommands 1.1  | N/A | 16.0.4678.1000 *Supported in Outlook only*  | Version 1809 (Build 10827.20150) or later | Version 1705 (Build 8121.1000) or later | N/A | 15.34 or later\*| May 2017 |
 
 >\* The [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
-
-The add-in commands 1.3 requirement set introduces manifest markup that enables an add-in to customize the placement of a custom tab on the Office ribbon and to insert built-in Office ribbon controls into custom control groups.
-
-The following table lists the add-in commands 1.3 requirement set, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
-
-|  Requirement set  |  Office 2013 and later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription)   |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |  
-|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | N/A  | coming soon | N/A | coming soon| November 2020 |
 
 > [!IMPORTANT]
 > AddinCommands 1.3 is in preview and is *only available in PowerPoint on the web*. We recommend that you try out the markup in test and development environments only. Do not use preview markup in a production environment or within business-critical documents.
