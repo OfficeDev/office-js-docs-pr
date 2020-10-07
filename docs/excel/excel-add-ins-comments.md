@@ -1,7 +1,7 @@
 ---
 title: Work with comments using the Excel JavaScript API
 description: 'Information on using the APIs to add, remove, and edit comments and comment threads.' 
-ms.date: 10/05/2020 
+ms.date: 10/07/2020 
 localization_priority: Normal
 ---
 
@@ -199,10 +199,12 @@ Excel.run(function (context) {
 
 ## Comment events
 
-Your add-in can also listen for comment additions, changes, and deletions. [Comment events](/javascript/api/excel/excel.commentcollection#event-details) occur on the `CommentCollection` object. To listen for comment events, first register the `onAdded`, `onChanged`, or `onDeleted` comment event handler. When a comment event is detected, use this event handler to retrieve data about the added, changed, or deleted comment. 
+Your add-in can listen for comment additions, changes, and deletions. [Comment events](/javascript/api/excel/excel.commentcollection#event-details) occur on the `CommentCollection` object. To listen for comment events, register the `onAdded`, `onChanged`, or `onDeleted` comment event handler. When a comment event is detected, use this event handler to retrieve data about the added, changed, or deleted comment. The `onChanged` event also handles comment reply additions, changes, and deletions. 
 
 ### Comment addition events 
-The `onAdded` event is triggered when a new comment is added to the comment collection. The following sample shows how to register the `onAdded` event handler and then use this event handler to log the added comment's metadata. This sample assumes only a single comment has been added. 
+The `onAdded` event is triggered when a new comment is added to the comment collection. This event isn't triggered when replies are added to a comment thread. See [Comment change events](#comment-change-events) to learn about comment reply events.
+
+The following sample shows how to register the `onAdded` event handler and then use this event handler to log the added comment's metadata. Note that this sample only works if a single comment is added. 
 
 ```js
 Excel.run(function (context) => {
@@ -242,7 +244,7 @@ The `onChanged` comment event is triggered in the following scenarios:
 - A reply is updated in a comment thread.
 - A reply is deleted in a comment thread.
 
-The following sample shows how to register the `onChanged` event handler and then use this event handler to log the changed comment's metadata. This sample assumes only a single comment has been changed. 
+The following sample shows how to register the `onChanged` event handler and then use this event handler to log the changed comment's metadata. Note that this sample only works if a single comment is changed. 
 
 ```js
 Excel.run(function (context) => {
@@ -275,7 +277,7 @@ function commentChanged() {
 ### Comment deletion events
 The `onDeleted` event is triggered when a comment is deleted from the comment collection. Once a comment has been deleted, its metadata is no longer available. The `commentId` is still available after a comment is deleted.  
 
-The following sample shows how to register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID. This sample assumes only a single comment has been deleted.
+The following sample shows how to register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID. Note that this sample only works if a single comment is deleted. 
 
 ```js
 Excel.run(function (context) => {
