@@ -215,7 +215,7 @@ Excel.run(function (context) => {
 });
 
 function commentAdded() {
-    Excel.run(function (context) => {
+    Excel.run(function (context) {
         // Retrieve the added comment using the comment ID.
         // Note: This method assumes only a single comment is added at a time. 
         var addedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
