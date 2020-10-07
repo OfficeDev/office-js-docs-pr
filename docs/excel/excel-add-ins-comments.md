@@ -209,7 +209,7 @@ The `onAdded` event is triggered when a new comment is added to the comment coll
 The following sample shows how to register the `onAdded` event handler and then use this event handler to log the added comment's metadata. Note that this sample only works if a single comment is added. 
 
 ```js
-Excel.run(function (context) => {
+Excel.run(function (context) {
     var comments = context.workbook.worksheets.getActiveWorksheet().comments;
 
     // Register the onAdded comment event handler.
@@ -249,7 +249,7 @@ The `onChanged` comment event is triggered in the following scenarios:
 The following sample shows how to register the `onChanged` event handler and then use this event handler to log the changed comment's metadata. Note that this sample only works if a single comment is changed. 
 
 ```js
-Excel.run(function (context) => {
+Excel.run(function (context) {
     var comments = context.workbook.worksheets.getActiveWorksheet().comments;
 
     // Register the onChanged comment event handler.
@@ -259,7 +259,7 @@ Excel.run(function (context) => {
 });    
 
 function commentChanged() {
-    Excel.run(function (context) => {
+    Excel.run(function (context) {
         // Retrieve the changed comment using the comment ID.
         // Note: This method assumes only a single comment is changed at a time. 
         var changedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
@@ -282,7 +282,7 @@ The `onDeleted` event is triggered when a comment is deleted from the comment co
 The following sample shows how to register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID. Note that this sample only works if a single comment is deleted. 
 
 ```js
-Excel.run(function (context) => {
+Excel.run(function (context) {
     var comments = context.workbook.worksheets.getActiveWorksheet().comments;
 
     // Register the onDeleted comment event handler.
@@ -292,7 +292,7 @@ Excel.run(function (context) => {
 });
 
 function commentDeleted() {
-    Excel.run(function (context) => {
+    Excel.run(function (context) {
         // Print out the deleted comment's ID.
         // Note: This method assumes only a single comment is deleted at a time. 
         console.log(`A comment was deleted. ID: ${event.commentDetails[0].commentId}`);
