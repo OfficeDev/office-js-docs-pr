@@ -350,11 +350,11 @@ Excel.run(function (context) {
 
 You can also find the cell responsible for spilling into a given cell by using the [Range.getSpillParent](/javascript/api/excel/excel.range#getspillparent--) method. Note that `getSpillParent` only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells will result in an error being thrown (or a null range being returned for `Range.getSpillParentOrNullObject`).
 
-## Formula precedents
+## Trace formula precedents
 
 An Excel formula often refers to other cells or groups of cells. These cells or groups of cells are known as "precedents" to the formula. To learn more about Excel features related to relationships between cells, see the [Display the relationships between formulas and cells](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) article. 
 
-With [Range.getDirectPrecedents](/javascript/api/excel/excel.range?view=excel-js-preview#getdirectprecedents--), your add-in can locate the direct precedents to a formula. The `getDirectPrecedents` method can trace precedents to a formula within a single worksheet and across worksheets within a single workbook. This API can't trace precedent cells across workbooks. 
+With [Range.getDirectPrecedents](/javascript/api/excel/excel.range?view=excel-js-preview#getdirectprecedents--), your add-in can locate the direct precedents to a formula. The `getDirectPrecedents` method can trace precedents to a formula within a single worksheet and across worksheets within a single workbook. This method can't trace precedent cells across workbooks. 
 
 The following sample calls the `getDirectPrecedents` method on the active range, loads the addresses of the direct precedent cells, and then loops through each precedent cell and changes its background color to yellow. 
 
