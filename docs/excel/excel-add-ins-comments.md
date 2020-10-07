@@ -201,6 +201,8 @@ Excel.run(function (context) {
 
 Your add-in can listen for comment additions, changes, and deletions. [Comment events](/javascript/api/excel/excel.commentcollection#event-details) occur on the `CommentCollection` object. To listen for comment events, register the `onAdded`, `onChanged`, or `onDeleted` comment event handler. When a comment event is detected, use this event handler to retrieve data about the added, changed, or deleted comment. The `onChanged` event also handles comment reply additions, changes, and deletions. 
 
+See the [Work with Events using the Excel JavaScript API](excel-add-ins-events.md) article for additional information about registering event handlers, handling events, and removing event handlers. 
+
 ### Comment addition events 
 The `onAdded` event is triggered when a new comment is added to the comment collection. This event isn't triggered when replies are added to a comment thread. See [Comment change events](#comment-change-events) to learn about comment reply events.
 
@@ -275,7 +277,7 @@ function commentChanged() {
 ```
 
 ### Comment deletion events
-The `onDeleted` event is triggered when a comment is deleted from the comment collection. Once a comment has been deleted, its metadata is no longer available. The `commentId` is still available after a comment is deleted.  
+The `onDeleted` event is triggered when a comment is deleted from the comment collection. Once a comment has been deleted, its metadata is no longer available. The [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) provide comment IDs, in case your add-in is managing individual comments.
 
 The following sample shows how to register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID. Note that this sample only works if a single comment is deleted. 
 
@@ -302,4 +304,5 @@ function commentDeleted() {
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with workbooks using the Excel JavaScript API](excel-add-ins-workbooks.md)
+- [Work with Events using the Excel JavaScript API](excel-add-ins-events.md)
 - [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
