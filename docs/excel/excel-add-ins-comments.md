@@ -206,7 +206,10 @@ See the [Work with Events using the Excel JavaScript API](excel-add-ins-events.m
 ### Comment addition events 
 The `onAdded` event is triggered when a new comment is added to the comment collection. This event isn't triggered when replies are added to a comment thread. See [Comment change events](#comment-change-events) to learn about comment reply events.
 
-The following sample shows how to register the `onAdded` event handler and then use this event handler to log the added comment's metadata. Note that this sample only works if a single comment is added. 
+The following sample shows how to register the `onAdded` event handler and then use this event handler to log the added comment's metadata. 
+
+> [!NOTE]
+> This sample only works when a single comment is added. 
 
 ```js
 Excel.run(function (context) {
@@ -246,7 +249,10 @@ The `onChanged` comment event is triggered in the following scenarios:
 - A reply is updated in a comment thread.
 - A reply is deleted in a comment thread.
 
-The following sample shows how to register the `onChanged` event handler and then use this event handler to log the changed comment's metadata. Note that this sample only works if a single comment is changed. 
+The following sample shows how to register the `onChanged` event handler and then use this event handler to log the changed comment's metadata.
+
+> [!NOTE]
+> This sample only works when a single comment is changed. 
 
 ```js
 Excel.run(function (context) {
@@ -279,7 +285,10 @@ function commentChanged() {
 ### Comment deletion events
 The `onDeleted` event is triggered when a comment is deleted from the comment collection. Once a comment has been deleted, its metadata is no longer available. The [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) provide comment IDs, in case your add-in is managing individual comments.
 
-The following sample shows how to register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID. Note that this sample only works if a single comment is deleted. 
+The following sample shows how to register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID.
+
+> [!NOTE]
+> This sample only works when a single comment is deleted. 
 
 ```js
 Excel.run(function (context) {
