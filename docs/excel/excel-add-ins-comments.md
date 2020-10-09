@@ -251,7 +251,7 @@ The `onChanged` comment event is triggered in the following scenarios:
 - A reply is updated in a comment thread.
 - A reply is deleted in a comment thread.
 
-The following sample shows how to register the `onChanged` event handler and then use this event handler to log the changed comment's metadata.
+The following sample shows how to register the `onChanged` event handler and then use the `CommentChangedEventArgs` object to retrieve the `commentDetails` array of the changed comment.
 
 > [!NOTE]
 > This sample only works when a single comment is changed. 
@@ -287,7 +287,7 @@ function commentChanged() {
 ### Comment deletion events
 The `onDeleted` event is triggered when a comment is deleted from the comment collection. Once a comment has been deleted, its metadata is no longer available. The [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) object provides comment IDs, in case your add-in is managing individual comments.
 
-The following sample shows how to register the `onDeleted` event handler and then use this event handler to log the deleted comment's ID.
+The following sample shows how to register the `onDeleted` event handler and then use the `CommentDeletedEventArgs` object to retrieve the `commentDetails` array of the deleted comment.
 
 > [!NOTE]
 > This sample only works when a single comment is deleted. 
