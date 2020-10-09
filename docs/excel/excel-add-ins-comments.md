@@ -1,7 +1,7 @@
 ---
 title: Work with comments using the Excel JavaScript API
 description: 'Information on using the APIs to add, remove, and edit comments and comment threads.' 
-ms.date: 10/07/2020 
+ms.date: 10/09/2020 
 localization_priority: Normal
 ---
 
@@ -201,12 +201,14 @@ Excel.run(function (context) {
 
 Your add-in can listen for comment additions, changes, and deletions. [Comment events](/javascript/api/excel/excel.commentcollection#event-details) occur on the `CommentCollection` object. To listen for comment events, register the `onAdded`, `onChanged`, or `onDeleted` comment event handler. When a comment event is detected, use this event handler to retrieve data about the added, changed, or deleted comment. The `onChanged` event also handles comment reply additions, changes, and deletions. 
 
+Each comment event only triggers once when multiple additions, changes, or deletions are performed at the same time. All the [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs), [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventarg), and [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) objects contain arrays of comment IDs to map the event actions back to the comment collections.
+
 See the [Work with Events using the Excel JavaScript API](excel-add-ins-events.md) article for additional information about registering event handlers, handling events, and removing event handlers. 
 
 ### Comment addition events 
 The `onAdded` event is triggered when one or more new comments are added to the comment collection. This event is *not* triggered when replies are added to a comment thread (see [Comment change events](#comment-change-events) to learn about comment reply events).
 
-The following sample shows how to register the `onAdded` event handler and then use this event handler to log the added comment's metadata. 
+The following sample shows how to register the `onAdded` event handler and then use the `CommentAddedEventArgs` object to retrieve the `commentDetails` array of the added comment.
 
 > [!NOTE]
 > This sample only works when a single comment is added. 
