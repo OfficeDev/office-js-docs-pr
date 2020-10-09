@@ -242,7 +242,7 @@ function commentAdded() {
 ```
 
 ### Comment change events 
-The `onChanged` comment event is triggered in the following scenarios: 
+The `onChanged` comment event is triggered in the following scenarios.
 
 - A comment's content is updated.
 - A comment thread is resolved.
