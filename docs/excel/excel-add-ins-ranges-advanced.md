@@ -354,7 +354,10 @@ You can also find the cell responsible for spilling into a given cell by using t
 
 An Excel formula often refers to other cells. These cells are known as "precedents" to the formula. To learn more about Excel features related to relationships between cells, see the [Display the relationships between formulas and cells](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) article. 
 
-With [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), your add-in can locate the direct precedents to a formula. The `getDirectPrecedents` method returns the precedents of a formula that are in the same workbook. This method can't trace precedent cells across workbooks. 
+With [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), your add-in can locate the direct precedents to a formula. The `getDirectPrecedents` method returns the precedents of a formula that are in the same workbook. 
+
+> [!IMPORTANT]
+> The `getDirectPrecedents` method can't trace precedent cells across workbooks. 
 
 The following sample gets the direct precedents for the active range and then changes the background color of those precedent cells to yellow. 
 
