@@ -359,7 +359,7 @@ With [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprec
 The following sample gets the direct precedents for the active range and then changes the background color of those precedent cells to yellow. 
 
 > [!NOTE]
-> The active range must contain a formula that references other cells in the same workbook for this sample to work properly. 
+> The active range must contain a formula that references other cells in the same workbook for the highlighting to work properly. 
 
 ```js
 Excel.run(function (context) {
@@ -368,17 +368,19 @@ Excel.run(function (context) {
     var directPrecedents = range.getDirectPrecedents();
     range.load("address");
     directPrecedents.areas.load("address");
-    return context.sync();
+    
+    return context.sync()
+        .then(function () {
+            console.log(`Direct precedent cells of ${range.address}:`);
 
-    console.log(`Direct precedent cells of ${range.address}:`);
-
-    // Use the direct precedents API to loop through precedents of the active cell.
-    for (var i = 0; i < directPrecedents.areas.items.length; i++) {
-      // Highlight and print out the address of each precedent cell.
-      directPrecedents.areas.items[i].format.fill.color = "Yellow";
-      console.log(`  ${directPrecedents.areas.items[i].address}`);
-    }
-    return context.sync();
+            // Use the direct precedents API to loop through precedents of the active cell.
+            for (var i = 0; i < directPrecedents.areas.items.length; i++) {
+              // Highlight and print out the address of each precedent cell.
+              directPrecedents.areas.items[i].format.fill.color = "Yellow";
+              console.log(`  ${directPrecedents.areas.items[i].address}`);
+            }
+        })
+        .then(context.sync);
 }).catch(errorHandlerFunction);
 ```
 
@@ -387,4 +389,3 @@ Excel.run(function (context) {
 - [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)
-- [Display the relationships between formulas and cells](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507)
