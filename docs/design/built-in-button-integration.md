@@ -20,7 +20,7 @@ You can insert built-in Office buttons into your custom control groups on the Of
 
 ## Insert a built-in control group into a custom tab
 
-To insert a built-in Office control group into a tab, add an [OfficeGroup](../reference/manifest/customtab.md#officegroup) element as a child element in the parent `<CustomTab>` element. The `groupId` attribute of the of the `<OfficeGroup>` element is set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
+To insert a built-in Office control group into a tab, add an [OfficeGroup](../reference/manifest/customtab.md#officegroup) element as a child element in the parent `<CustomTab>` element. The `id` attribute of the of the `<OfficeGroup>` element is set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
 
 The following markup example adds the Office Paragraph control group to a custom tab and positions it to appear just after a custom group.
 
@@ -30,7 +30,7 @@ The following markup example adds the Office Paragraph control group to a custom
     <Group id="myCustomTab.group1">
        <!-- additional markup omitted -->
     </Group>
-    <OfficeGroup groupId="Paragraph" />
+    <OfficeGroup id="Paragraph" />
     <Label resid="customTabLabel1" />
   </CustomTab>
 </ExtensionPoint>
@@ -38,7 +38,7 @@ The following markup example adds the Office Paragraph control group to a custom
 
 ## Insert a built-in control into a custom group
 
-To insert a built-in Office control into a custom group, add an [OfficeControl](../reference/manifest/group.md#officecontrol) element as a child element in the parent `<Group>` element. The `controlId` attribute of the `<OfficeControl>` element is set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
+To insert a built-in Office control into a custom group, add an [OfficeControl](../reference/manifest/group.md#officecontrol) element as a child element in the parent `<Group>` element. The `id` attribute of the `<OfficeControl>` element is set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
 
 The following markup example adds the Office Superscript control to a custom group and positions it to appear just after a custom button.
 
@@ -55,7 +55,7 @@ The following markup example adds the Office Superscript control to a custom gro
         <Control xsi:type="Button" id="Button2">
             <!-- information on the control omitted -->
         </Control>
-        <OfficeControl controlId="Superscript" />
+        <OfficeControl id="Superscript" />
         <!-- other controls, as needed -->
     </Group>
     <Label resid="customTabLabel1" />
@@ -68,7 +68,7 @@ The following markup example adds the Office Superscript control to a custom gro
 
 ## Find the IDs of controls and control groups
 
-[!INCLUDE [publish policies note](../includes/find-control-ids.md)]
+The IDs for supported controls and control groups are in files in the repo [Office Control IDs](https://github.com/OfficeDev/office-control-ids). Follow the instructions in the ReadMe file of that repo.
 
 ## Behavior on unsupported platforms
 
