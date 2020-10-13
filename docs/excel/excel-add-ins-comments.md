@@ -1,7 +1,7 @@
 ---
 title: Work with comments using the Excel JavaScript API
 description: 'Information on using the APIs to add, remove, and edit comments and comment threads.' 
-ms.date: 03/17/2020 
+ms.date: 10/09/2020 
 localization_priority: Normal
 ---
 
@@ -197,8 +197,123 @@ Excel.run(function (context) {
 });
 ```
 
+## Comment events
+
+Your add-in can listen for comment additions, changes, and deletions. [Comment events](/javascript/api/excel/excel.commentcollection#event-details) occur on the `CommentCollection` object. To listen for comment events, register the `onAdded`, `onChanged`, or `onDeleted` comment event handler. When a comment event is detected, use this event handler to retrieve data about the added, changed, or deleted comment. The `onChanged` event also handles comment reply additions, changes, and deletions. 
+
+Each comment event only triggers once when multiple additions, changes, or deletions are performed at the same time. All the [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs), [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventarg), and [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) objects contain arrays of comment IDs to map the event actions back to the comment collections.
+
+See the [Work with Events using the Excel JavaScript API](excel-add-ins-events.md) article for additional information about registering event handlers, handling events, and removing event handlers. 
+
+### Comment addition events 
+The `onAdded` event is triggered when one or more new comments are added to the comment collection. This event is *not* triggered when replies are added to a comment thread (see [Comment change events](#comment-change-events) to learn about comment reply events).
+
+The following sample shows how to register the `onAdded` event handler and then use the `CommentAddedEventArgs` object to retrieve the `commentDetails` array of the added comment.
+
+> [!NOTE]
+> This sample only works when a single comment is added. 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onAdded comment event handler.
+    comments.onAdded.add(commentAdded);
+
+    return context.sync();
+});
+
+function commentAdded() {
+    Excel.run(function (context) {
+        // Retrieve the added comment using the comment ID.
+        // Note: This method assumes only a single comment is added at a time. 
+        var addedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
+
+        // Load the added comment's data.
+        addedComment.load(["content", "authorName"]);
+
+        return context.sync().then(function () {
+            // Print out the added comment's data.
+            console.log(`A comment was added. ID: ${event.commentDetails[0].commentId}. Comment content:${addedComment.content}. Comment author:${addedComment.authorName}`);
+            return context.sync();
+        });            
+    });
+}
+```
+
+### Comment change events 
+The `onChanged` comment event is triggered in the following scenarios.
+
+- A comment's content is updated.
+- A comment thread is resolved.
+- A comment thread is reopened.
+- A reply is added to a comment thread.
+- A reply is updated in a comment thread.
+- A reply is deleted in a comment thread.
+
+The following sample shows how to register the `onChanged` event handler and then use the `CommentChangedEventArgs` object to retrieve the `commentDetails` array of the changed comment.
+
+> [!NOTE]
+> This sample only works when a single comment is changed. 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onChanged comment event handler.
+    comments.onChanged.add(commentChanged);
+
+    return context.sync();
+});    
+
+function commentChanged() {
+    Excel.run(function (context) {
+        // Retrieve the changed comment using the comment ID.
+        // Note: This method assumes only a single comment is changed at a time. 
+        var changedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
+
+        // Load the changed comment's data.
+        changedComment.load(["content", "authorName"]);
+
+        return context.sync().then(function () {
+            // Print out the changed comment's data.
+            console.log(`A comment was changed. ID: ${event.commentDetails[0].commentId}`. Updated comment content: ${changedComment.content}`. Comment author: ${changedComment.authorName}`);
+            return context.sync();
+        });
+    });
+}
+```
+
+### Comment deletion events
+The `onDeleted` event is triggered when a comment is deleted from the comment collection. Once a comment has been deleted, its metadata is no longer available. The [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) object provides comment IDs, in case your add-in is managing individual comments.
+
+The following sample shows how to register the `onDeleted` event handler and then use the `CommentDeletedEventArgs` object to retrieve the `commentDetails` array of the deleted comment.
+
+> [!NOTE]
+> This sample only works when a single comment is deleted. 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onDeleted comment event handler.
+    comments.onDeleted.add(commentDeleted);
+
+    return context.sync();
+});
+
+function commentDeleted() {
+    Excel.run(function (context) {
+        // Print out the deleted comment's ID.
+        // Note: This method assumes only a single comment is deleted at a time. 
+        console.log(`A comment was deleted. ID: ${event.commentDetails[0].commentId}`);
+    });
+}
+```
+
 ## See also
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with workbooks using the Excel JavaScript API](excel-add-ins-workbooks.md)
+- [Work with Events using the Excel JavaScript API](excel-add-ins-events.md)
 - [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
