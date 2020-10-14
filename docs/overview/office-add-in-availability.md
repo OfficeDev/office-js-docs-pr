@@ -1,7 +1,7 @@
 ---
 title: Office client application and platform availability for Office Add-ins
 description: 'Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.'
-ms.date: 07/10/2020
+ms.date: 10/14/2020
 localization_priority: Priority
 ---
 
@@ -1173,4 +1173,4 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 - [Office 2010, 2013, and 2016 update history (MSI)](/officeupdates/office-updates-msi)
 - [Outlook 2010, 2013, and 2016 update history (MSI)](/officeupdates/outlook-updates-msi)
 - [Update history for Office for Mac](/officeupdates/update-history-office-for-mac)
-- [Developing Office Add-ins](../develop/develop-overview.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)

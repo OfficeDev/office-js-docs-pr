@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API programming overview
 description: 'Learn about the OneNote JavaScript API for OneNote add-ins on the web.'
-ms.date: 07/28/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -131,7 +131,7 @@ The following diagram represents what's currently available in the OneNote JavaS
 
 ## See also
 
-- [Developing Office Add-ins](../develop/develop-overview.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
 - [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-ins
 description: 'Learn how to use PowerPoint add-ins to build engaging solutions for presentations across platforms including Windows, iPad, Mac, and in a browser.'
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -189,7 +189,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## See also
 
-- [Developing Office Add-ins](../develop/develop-overview.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
 - [PowerPoint Code Samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [How to save add-in state and settings per document for content and task pane add-ins](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

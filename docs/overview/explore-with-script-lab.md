@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: 'Use Script Lab to explore the Office JS API and to prototype functionality.'
-ms.date: 06/10/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -80,4 +80,4 @@ When you're ready to create your first Office Add-in, try out the quick start fo
 - [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 - [Learn more about Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program)
-- [Developing Office Add-ins](../develop/develop-overview.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)

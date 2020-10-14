@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 06/05/2020
+ms.date: 10/14/2020
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Priority
@@ -1016,5 +1016,5 @@ In this tutorial, you've created an Excel task pane add-in that interacts with t
 ## See also
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Developing Office Add-ins](../develop/develop-overview.md)
+* [Develop Office Add-ins](../develop/develop-overview.md)
 * [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
