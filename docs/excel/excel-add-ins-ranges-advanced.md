@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: 'Advanced range object functions and scenarios, such as special cells, remove duplicates, and working with dates.' 
-ms.date: 10/07/2020 
+ms.date: 10/13/2020 
 localization_priority: Normal
 ---
 
@@ -350,14 +350,14 @@ Excel.run(function (context) {
 
 You can also find the cell responsible for spilling into a given cell by using the [Range.getSpillParent](/javascript/api/excel/excel.range#getspillparent--) method. Note that `getSpillParent` only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells will result in an error being thrown (or a null range being returned for `Range.getSpillParentOrNullObject`).
 
-## Trace formula precedents
+## Get formula precedents
 
-An Excel formula often refers to other cells. These cells are known as "precedents" to the formula. To learn more about Excel features related to relationships between cells, see the [Display the relationships between formulas and cells](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) article. 
+An Excel formula often refers to other cells. When a cell provides data to a formula, it is known as a formula "precedent". To learn more about Excel features related to relationships between cells, see the [Display the relationships between formulas and cells](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) article. 
 
-With [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), your add-in can locate the direct precedents to a formula. The `getDirectPrecedents` method returns the precedents of a formula that are in the same workbook. 
+With [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), your add-in can locate a formula's direct precedent cells. The `getDirectPrecedents` method returns formula precedents that are in the same workbook. In the Excel UI, the *Trace Precedents* button draws an arrow from precedent cells to the selected formula. Unlike the Excel UI button, the `getDirectPrecedents` method does not draw arrows. 
 
 > [!IMPORTANT]
-> The `getDirectPrecedents` method can't trace precedent cells across workbooks. 
+> The `getDirectPrecedents` method can't retrieve precedent cells across workbooks. 
 
 The following sample gets the direct precedents for the active range and then changes the background color of those precedent cells to yellow. 
 
