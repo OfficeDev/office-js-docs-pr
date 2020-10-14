@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview | Microsoft Docs
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 02/13/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -123,3 +123,4 @@ For a more detailed introduction to developing Office Add-ins, see [Developing O
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)

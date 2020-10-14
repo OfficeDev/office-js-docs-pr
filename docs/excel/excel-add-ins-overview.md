@@ -1,7 +1,7 @@
 ---
 title: Excel add-ins overview
 description: 'Excel add-in allow you to extend Excel application functionality across multiple platforms including Windows, Mac, iPad, and in a browser.'
-ms.date: 07/05/2019
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -118,6 +118,7 @@ Get started by [creating your first Excel add-in](../quickstarts/excel-quickstar
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Learn about Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
