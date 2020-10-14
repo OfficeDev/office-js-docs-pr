@@ -356,7 +356,7 @@ An Excel formula often refers to other cells. When a cell provides data to a for
 
 With [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), your add-in can locate a formula's direct precedent cells. `Range.getDirectPrecedents` returns a `WorkbookRangeAreas` object. This object contains the addresses of all the precedents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula precedent. See [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md) for more information on working with the `RangeAreas` object.
 
-In the Excel UI, the *Trace Precedents* button draws an arrow from precedent cells to the selected formula. Unlike the Excel UI button, the `getDirectPrecedents` method does not draw arrows. 
+In the Excel UI, the **Trace Precedents** button draws an arrow from precedent cells to the selected formula. Unlike the Excel UI button, the `getDirectPrecedents` method does not draw arrows. 
 
 > [!IMPORTANT]
 > The `getDirectPrecedents` method can't retrieve precedent cells across workbooks. 
@@ -368,7 +368,7 @@ The following sample gets the direct precedents for the active range and then ch
 
 ```js
 Excel.run(function (context) {
-    // Precedents are cells referenced by the formula in a cell.
+    // Precedents are cells that provide data to the selected formula.
     var range = context.workbook.getActiveCell();
     var directPrecedents = range.getDirectPrecedents();
     range.load("address");
