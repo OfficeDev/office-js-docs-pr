@@ -354,7 +354,9 @@ You can also find the cell responsible for spilling into a given cell by using t
 
 An Excel formula often refers to other cells. When a cell provides data to a formula, it is known as a formula "precedent". To learn more about Excel features related to relationships between cells, see the [Display the relationships between formulas and cells](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) article. 
 
-With [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), your add-in can locate a formula's direct precedent cells. The `getDirectPrecedents` method returns formula precedents that are in the same workbook. In the Excel UI, the *Trace Precedents* button draws an arrow from precedent cells to the selected formula. Unlike the Excel UI button, the `getDirectPrecedents` method does not draw arrows. 
+With [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), your add-in can locate a formula's direct precedent cells. `Range.getDirectPrecedents` returns a `WorkbookRangeAreas` object. This object contains the addresses of all the precedents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula precedent. See [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md) for more information on working with the `RangeAreas` object.
+
+In the Excel UI, the *Trace Precedents* button draws an arrow from precedent cells to the selected formula. Unlike the Excel UI button, the `getDirectPrecedents` method does not draw arrows. 
 
 > [!IMPORTANT]
 > The `getDirectPrecedents` method can't retrieve precedent cells across workbooks. 
