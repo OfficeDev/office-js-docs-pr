@@ -32,7 +32,7 @@ Optional, but if not present there must be at least one **OfficeGroup** element.
 
 ### OfficeGroup
 
-Optional, but if not present there must be at least one **Group** element. Represents a built-in Office control group. The **groupId** attribute specifies the ID of the built-in Office group. To find the ID of a built-in group, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Group** and **OfficeGroup** in the manifest should be the order you want them to appear on the custom tab. They can be intermingled if there are multiple elements, but all must be above the **Label** element.
+Optional, but if not present there must be at least one **Group** element. Represents a built-in Office control group. The **id** attribute specifies the ID of the built-in Office group. To find the ID of a built-in group, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Group** and **OfficeGroup** in the manifest should be the order you want them to appear on the custom tab. They can be intermingled if there are multiple elements, but all must be above the **Label** element.
 
 ### Label (Tab)
 
@@ -53,7 +53,7 @@ Optional. Specifies that the custom tab should be immediately before a specified
   <CustomTab id="TabCustom1">
     <Group id="msgreadCustomTab.grp1">
     </Group>
-    <OfficeGroup groupId="Paragraph" />
+    <OfficeGroup id="Paragraph" />
     <Label resid="customTabLabel1"/>
     <InsertAfter>TabReview</InsertAfter>
   </CustomTab>

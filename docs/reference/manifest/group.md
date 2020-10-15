@@ -57,7 +57,7 @@ Optional, but if not present there must be at least one **OfficeControl**. For d
 
 ### OfficeControl
 
-Optional, but if not present there must be at least one **Control**. Include one or more built-in Office controls in the group with `<OfficeControl>` elements. The `controlId` attribute specifies the ID of the built-in Office control. To find the ID of a control, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.
+Optional, but if not present there must be at least one **Control**. Include one or more built-in Office controls in the group with `<OfficeControl>` elements. The `id` attribute specifies the ID of the built-in Office control. To find the ID of a control, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.
 
 ```xml
 <Group id="msgreadCustomTab.grp1">
@@ -70,7 +70,7 @@ Optional, but if not present there must be at least one **Control**. Include one
     <Control xsi:type="Button" id="Button2">
         <!-- information on the control -->
     </Control>
-    <OfficeControl controlId="Superscript" />
+    <OfficeControl id="Superscript" />
     <!-- other controls, as needed -->
 </Group>
 ```
