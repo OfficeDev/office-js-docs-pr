@@ -95,8 +95,7 @@ If there isn't one already, create a JSON file at the path that you use in devel
             }
         ]
     }
-    `
-
+    ```
 
 ## Create a mapping of functions to actions
 
