@@ -51,19 +51,18 @@ If there isn't one already, create a JSON file at the path that you use in devel
 1. Be sure there is an outermost pair of braces (`{ }`)in the file.
 1. Just inside this outermost object, add the following JSON markup. Note that the file must be proper JSON, not simple a JavaScript object, so the property names must be within quotation marks.
 
-    ```JavaScript
-    { 
-        "shortcuts": [
-
-        ]
+    ```javascript
+    {
+        "shortcuts": [
+        ]
     }
     ```
 
 1. The shortcuts array will contain objects that map key combinations onto action names. Here is an example. The property names you see here, `action`, `key`, and `default` are mandatory. The values of the `action` and `default` properties are all capitalized by convention. In a later step, the action names will themselves be mapped to functions that you will write. In this case, SHOWTASKPANE will be mapped to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE will be mapped to a function that calls the `Office.addin.hide` method. The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
 
-    ```JavaScript
-    { 
-        "shortcuts": [
+    ```javascript
+    {
+        "shortcuts": [
             {
                 "action": "SHOWTASKPANE",
                 "key": {
@@ -75,8 +74,8 @@ If there isn't one already, create a JSON file at the path that you use in devel
                 "key": {
                     "default": "CTRL+SHIFT+DOWN"
                 }
-            }
-        ]
+            }
+        ]
     }
     ```
 
@@ -92,7 +91,7 @@ The last major step is to map your custom functions onto the action names.
 
     ```javascript
     Office.actions.associate('-- acton name goes here--', function () {
-        
+
     });
     ```
 
@@ -131,7 +130,7 @@ An example of a simple add-in that uses several custom keyboard shortcuts is at 
 
 ## Using key combinations that are already used by Office or another add-in
 
-You may want to override a key combination that is used by Office, or you may inadvertently use a combination that is used by Office or by another add-in. In either case, the first time a user presses a key combination that is registered by your add-in and Office or another add-in, then the user will be prompted to choose which action should be taken by the combination. The prompt will include a brief description of each option. For example, if your add-in uses a key combination to turn the selected cell value red, but Office uses the same combination to bold the selected cell value, and another add-in uses it to overwrite the selected cell with imported data; then Office will prompt the user with three options with labels like "Format red", "Bold", and "Overwrite".
+You may want to override a key combination that is used by Office, or you may inadvertently use a combination that is used by Office or by another add-in. In either case, the first time a user presses a key combination that is registered by your add-in and by Office or by another add-in, then the user will be prompted to choose which action should be taken by the combination. The prompt will include a brief description of each option. For example, if your add-in uses a key combination to turn the selected cell value red, but Office uses the same combination to bold the selected cell value, and another add-in uses it to overwrite the selected cell with imported data; then Office will prompt the user with three options with labels like "Format red", "Bold", and "Overwrite".
 
 ### Browser shortcuts that cannot be overridden
 
@@ -142,4 +141,4 @@ You cannot use any of the following keyboard combinations. They are used by brow
 - Ctrl+T
 - Ctrl+Shift+T
 - Ctrl+W
-- Ctrl+PgUp/PgDn  
+- Ctrl+PgUp/PgDn
