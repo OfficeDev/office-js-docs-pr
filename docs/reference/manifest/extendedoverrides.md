@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Description element
 
-Specifies the full URL for a JSON-formatted file that extends the manifest.
+Specifies the full URLs for a JSON-formatted files that extend the manifest. 
 
 **Add-in type:** Task pane
 
@@ -23,20 +23,25 @@ Specifies the full URL for a JSON-formatted file that extends the manifest.
 
 ## Can contain
 
-_none_
+|Element|Content|Mail|TaskPane|
+|:-----|:-----|:-----|:-----|
+|[Tokens](tokens.md)|||x|
 
 ## Attributes
 
 |Attribute|Description|
 |:-----|:-----|
-|Url (required)| The full URL of the extended overrides JSON file.|
-|ResourceUrl (optional) | ????????? |
+|Url (required)| The full URL of the extended overrides JSON file. The URL can use tokens defined by the [Tokens](tokens.md) element.|
+|ResourceUrl (optional) | The full URL of a file that provides supplemental resources, such as localized strings, for the file specified in the `Url` attribute. The URL can use tokens defined by the [Tokens](tokens.md) element.|
 
 ## Example
 
 ```XML
 <OfficeApp ...>
   <!-- other elements omitted -->
-  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json" />
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json">
+    <Tokens>
+    <Tokens>
+  </ExtendedOverrides>
 </OfficeApp>
 ```

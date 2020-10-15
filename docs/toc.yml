@@ -369,6 +369,8 @@
         href: reference/manifest/equivalentaddin.md
       - name: EquivalentAddins
         href: reference/manifest/equivalentaddins.md
+      - name: ExtendedOverrides
+        href: reference/manifest/extendedoverrides.md
       - name: ExtendedPermission
         href: reference/manifest/extendedpermission.md
       - name: ExtendedPermissions
@@ -433,6 +435,10 @@
         href: reference/manifest/targetdialect.md
       - name: TargetDialects
         href: reference/manifest/targetdialects.md
+      - name: Tokens
+        href: reference/manifest/tokens.md
+      - name: Token
+        href: reference/manifest/token.md
       - name: Type
         href: reference/manifest/type.md
       - name: Version
