@@ -10,7 +10,7 @@ localization_priority: Normal
 Keyboard shortcuts, also known as key combinations, enable your add-in's users to work more efficiently and they improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.
 
 > [!IMPORTANT]
-> Keyboard shortcuts are in preview. Please experiment with them in a development or testing environment but do not add them to a production add-in.
+> Keyboard shortcuts are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in.
 
 Keyboard shortcuts are only supported on Excel and only on these platforms and builds:
 
@@ -78,6 +78,25 @@ If there isn't one already, create a JSON file at the path that you use in devel
         ]
     }
     ```
+
+1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination.
+
+    ```javascript
+    {
+        "shortcuts": [
+            {
+                "action": "SHOWTASKPANE",
+                "key": {
+                    "default": "CTRL+SHIFT+UP"
+                    "web": "CTRL+SHIFT+P"
+                    "Win32": "CTRL+SHIFT+R"
+                    "Mac": "CTRL+SHIFT+S"
+                }
+            }
+        ]
+    }
+    `
+
 
 ## Create a mapping of functions to actions
 
