@@ -58,7 +58,9 @@ If there isn't one already, create a JSON file at the path that you use in devel
     }
     ```
 
-1. The shortcuts array will contain objects that map key combinations onto action names. Here is an example. The property names you see here, `action`, `key`, and `default` are mandatory. The values of the `action` and `default` properties are all capitalized by convention. In a later step, the action names will themselves be mapped to functions that you will write. In this case, SHOWTASKPANE will be mapped to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE will be mapped to a function that calls the `Office.addin.hide` method. The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+1. The shortcuts array will contain objects that map key combinations onto action names. Here is an example. The property names you see here, `action`, `key`, and `default` are mandatory. The value of the `action` property can be any string, and the `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.) In a later step, the action names will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method. 
+
+> [!NOTE] The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
 
     ```javascript
     {
@@ -78,6 +80,9 @@ If there isn't one already, create a JSON file at the path that you use in devel
         ]
     }
     ```
+
+    > [!NOTE]
+    > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
 
 1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination.
 
@@ -148,7 +153,16 @@ An example of a simple add-in that uses several custom keyboard shortcuts is at 
 
 ## Using key combinations that are already used by Office or another add-in
 
-You may want to override a key combination that is used by Office, or you may inadvertently use a combination that is used by Office or by another add-in. In either case, the first time a user presses a key combination that is registered by your add-in and by Office or by another add-in, then the user will be prompted to choose which action should be taken by the combination. The prompt will include a brief description of each option. For example, if your add-in uses a key combination to turn the selected cell value red, but Office uses the same combination to bold the selected cell value, and another add-in uses it to overwrite the selected cell with imported data; then Office will prompt the user with three options with labels like "Format red", "Bold", and "Overwrite".
+During the preview period, there is no system for determining what happens when a user presses a key combination that is registered by an add-in and also by Office or by another add-in. Behavior is undefined.
+
+Currently, there is no workaround when two or more add-ins have registered the same keyboard shortcut, but you can minimize conflicts with Excel with these good practices:
+
+- Use only keyboard shortcuts with the following patterns in your add-in.
+
+    - **Alt-*n***, where *n* is a numeral from 1 to 9.
+    - **Ctrl+Shift+Alt+*n***, where *n* is a numeral from 1 to 9.
+
+- If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
 
 ### Browser shortcuts that cannot be overridden
 
