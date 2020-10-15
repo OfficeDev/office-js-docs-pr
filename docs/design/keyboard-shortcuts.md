@@ -58,9 +58,16 @@ If there isn't one already, create a JSON file at the path that you use in devel
     }
     ```
 
-1. The shortcuts array will contain objects that map key combinations onto action names. Here is an example. The property names you see here, `action`, `key`, and `default` are mandatory. The value of the `action` property can be any string, and the `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.) In a later step, the action names will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method. 
+1. The shortcuts array will contain objects that map key combinations onto action names. Here is an example. Note the following about this markup:
 
-> [!NOTE] The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+    - The property names you see here, `action`, `key`, and `default` are mandatory.
+    - The value of the `action` property can be any string, and the `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
+    - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and at least one other key. (An additional modifier key is possible on Mac.)
+    - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
+    - The "+" character indicates that the keys on either side of it are pressed simultaneously.
+    - In a later step, the action names will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method. 
+
+    > [!NOTE] The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
 
     ```javascript
     {
@@ -84,7 +91,7 @@ If there isn't one already, create a JSON file at the path that you use in devel
     > [!NOTE]
     > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
 
-1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination.
+1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. Note that on Mac, you can use the modifier key COMMAND.
 
     ```javascript
     {
@@ -95,7 +102,7 @@ If there isn't one already, create a JSON file at the path that you use in devel
                     "default": "CTRL+SHIFT+UP",
                     "web": "CTRL+SHIFT+P",
                     "Win32": "CTRL+SHIFT+R",
-                    "Mac": "CTRL+SHIFT+S"
+                    "Mac": "COMMAND+SHIFT+S"
                 }
             }
         ]
