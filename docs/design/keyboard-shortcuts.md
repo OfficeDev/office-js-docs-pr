@@ -87,9 +87,9 @@ If there isn't one already, create a JSON file at the path that you use in devel
             {
                 "action": "SHOWTASKPANE",
                 "key": {
-                    "default": "CTRL+SHIFT+UP"
-                    "web": "CTRL+SHIFT+P"
-                    "Win32": "CTRL+SHIFT+R"
+                    "default": "CTRL+SHIFT+UP",
+                    "web": "CTRL+SHIFT+P",
+                    "Win32": "CTRL+SHIFT+R",
                     "Mac": "CTRL+SHIFT+S"
                 }
             }
