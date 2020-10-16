@@ -1,6 +1,6 @@
 ---
 title: Develop Office Add-ins with Visual Studio
-description: 'How to develop Office Add-ins with Visual Studio'
+description: 'How to develop Office Add-ins with Visual Studio.'
 ms.date: 10/14/2020
 localization_priority: Priority
 ---
