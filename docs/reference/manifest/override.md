@@ -16,7 +16,7 @@ There are two types of `<Override>` elements, one is for locale overrides, calle
 
 ## Override element of type LocaleTokenOverride
 
-An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **LocaleTokenOverride**, then the `Locale` attribute is the condition, and the `Value` attribute is the consequent. For example, the following is read "If the Office locale setting is fr-fr, then the display name is "Lecteur vidéo".
+An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **LocaleTokenOverride**, then the `Locale` attribute is the condition, and the `Value` attribute is the consequent. For example, the following is read "If the Office locale setting is fr-fr, then the display name is 'Lecteur vidéo'."
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -55,7 +55,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 |Locale|string|required|Specifies the culture name of the locale for this override in the BCP 47 language tag format, such as  `"en-US"`.|
 |Value|string|required|Specifies value of the setting expressed for the specified locale.|
 
-## Examples
+### Examples
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -89,7 +89,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 
 ## Override element of type RequirementTokenOverride
 
-An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **RequirementTokenOverride**, then the child `<Requirements>` element expresses the condition, and the `Value` attribute is the consequent. For example, the first `<Override>` in the following is read "If the current platform supports FeatureOne version 1.7, then use string "oldAddinVersion" in place of the `${token.requirements}` token in the URL of the grandparent `<ExtendedOverrides>` (instead of the default string 'upgrade')."
+An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **RequirementTokenOverride**, then the child `<Requirements>` element expresses the condition, and the `Value` attribute is the consequent. For example, the first `<Override>` in the following is read "If the current platform supports FeatureOne version 1.7, then use string 'oldAddinVersion' in place of the `${token.requirements}` token in the URL of the grandparent `<ExtendedOverrides>` (instead of the default string 'upgrade')."
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -131,7 +131,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 |:-----|
 |[Token](token.md)|
 
-## Must contain
+### Must contain
 
 |Element|Content|Mail|TaskPane|
 |:-----|:-----|:-----|:-----|

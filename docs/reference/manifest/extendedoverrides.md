@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # ExtendedOverrides element
 
-Specifies the full URLs for a JSON-formatted files that extend the manifest. 
+Specifies the full URLs for JSON-formatted files that extend the manifest.
 
 **Add-in type:** Task pane
 
