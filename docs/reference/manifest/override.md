@@ -70,12 +70,16 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 ```
 
 ```xml
-<Token xsi:type="LocaleToken" Name="locale" DefaultValue="en-us">
-    <Override Locale="es-*" Value="es-es" />
-    <Override Locale="es-mx" Value="es-mx" />
-    <Override Locale="fr-*" Value="fr-fr" />
-    <Override Locale="ja-jp" Value="ja-jp" />
-</Token>
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.locale}/extended-manifest-overrides.json">
+    <Tokens>
+      <Token Name="locale" DefaultValue="en-us" xsi:type="LocaleToken">
+        <Override Locale="es-*" Value="es-es" />
+        <Override Locale="es-mx" Value="es-mx" />
+        <Override Locale="fr-*" Value="fr-fr" />
+        <Override Locale="ja-jp" Value="ja-jp" />
+      </Token>
+    <Tokens>
+  </ExtendedOverrides>
 ```
 
 ### See also
@@ -85,10 +89,10 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 
 ## Override element of type RequirementTokenOverride
 
-An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **RequirementTokenOverride**, then the child `<Requirements>` element expresses the condition, and the `Value` attribute is the consequent. For example, the first `<Override>` in the following is read "If the current platform supports FeatureOne version 1.7, then use string "oldAddinVersion" in place of the `${requirements}` token in the URL of the grandparent `<ExtendedOverrides>`."
+An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **RequirementTokenOverride**, then the child `<Requirements>` element expresses the condition, and the `Value` attribute is the consequent. For example, the first `<Override>` in the following is read "If the current platform supports FeatureOne version 1.7, then use string "oldAddinVersion" in place of the `${token.requirements}` token in the URL of the grandparent `<ExtendedOverrides>` (instead of the default string 'upgrade')."
 
 ```xml
-<ExtendedOverrides Url="http://contoso.com/addinmetadata/${requirements}extended-manifest-overrides.json">
+<ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
     <Tokens>
         <Token Name="requirements" DefaultValue="upgrade" xsi:type="RequirementsToken">
             <Override Value="oldAddinVersion">
@@ -142,35 +146,37 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 ### Example
 
 ```xml
-<Token Name="reqs" DefaultValue="upgrade" xsi:type="RequirementsToken">
-    <Override Value="very-old">
-        <Requirements>
-            <Sets>
-                <Set Name="FeatureOne" MinVersion="1.5" />
-                <Set Name="FeatureTwo" MinVersion="1.1" />
-            </Sets>
-        </Requirements>
-    </Override>
-    <Override Value="old">
-        <Requirements>
-            <Sets>
-                <Set Name="FeatureOne" MinVersion="1.7" />
-                <Set Name="FeatureTwo" MinVersion="1.2" />
-            </Sets>
-        </Requirements>
-    </Override>
-    <Override Value="current">
-        <Requirements>
-            <Sets>
-                <Set Name="FeatureOne" MinVersion="1.8" />
-                <Set Name="FeatureTwo" MinVersion="1.3" />
-            </Sets>
-            <Methods>
-                <Method Name="MethodThree" />
-            </Methods>
-        </Requirements>
-    </Override>
-</Token>
+<ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
+    <Token Name="requirements" DefaultValue="upgrade" xsi:type="RequirementsToken">
+        <Override Value="very-old">
+            <Requirements>
+                <Sets>
+                    <Set Name="FeatureOne" MinVersion="1.5" />
+                    <Set Name="FeatureTwo" MinVersion="1.1" />
+                </Sets>
+            </Requirements>
+        </Override>
+        <Override Value="old">
+            <Requirements>
+                <Sets>
+                    <Set Name="FeatureOne" MinVersion="1.7" />
+                    <Set Name="FeatureTwo" MinVersion="1.2" />
+                </Sets>
+            </Requirements>
+        </Override>
+        <Override Value="current">
+            <Requirements>
+                <Sets>
+                    <Set Name="FeatureOne" MinVersion="1.8" />
+                    <Set Name="FeatureTwo" MinVersion="1.3" />
+                </Sets>
+                <Methods>
+                    <Method Name="MethodThree" />
+                </Methods>
+            </Requirements>
+        </Override>
+    </Token>
+</ExtendedOverrides>
 ```
 
 ### See also

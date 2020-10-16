@@ -39,8 +39,14 @@ Specifies the full URLs for a JSON-formatted files that extend the manifest.
 ```XML
 <OfficeApp ...>
   <!-- other elements omitted -->
-  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json">
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.locale}/extended-manifest-overrides.json">
     <Tokens>
+      <Token Name="locale" DefaultValue="en-us" xsi:type="LocaleToken">
+        <Override Locale="es-*" Value="es-es" />
+        <Override Locale="es-mx" Value="es-mx" />
+        <Override Locale="fr-*" Value="fr-fr" />
+        <Override Locale="ja-jp" Value="ja-jp" />
+      </Token>
     <Tokens>
   </ExtendedOverrides>
 </OfficeApp>

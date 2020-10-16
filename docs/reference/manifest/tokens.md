@@ -32,7 +32,7 @@ Defines tokens that could be used in template URLs.
 ```XML
 <OfficeApp ...>
   <!-- other elements omitted -->
-  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json">
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.locale}/extended-manifest-overrides.json">
     <Tokens>
       <Token Name="locale" DefaultValue="en-us" xsi:type="LocaleToken">
         <Override Locale="es-*" Value="es-es" />
