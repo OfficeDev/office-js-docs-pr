@@ -6,7 +6,7 @@ localization_priority: Normal
 ---
 
 
-# Description element
+# Token element
 
 Defines an individual URL token.
 
@@ -15,7 +15,7 @@ Defines an individual URL token.
 ## Syntax
 
 ```XML
-<Token Name="string" DefaultValue="string" xsi:type=["LocaleToken" | "RequirementsToken"] />
+<Token Name="string" DefaultValue="string" xsi:type=["LocaleToken" | "RequirementsToken"] ></Token>
 ```
 
 ## Contained in

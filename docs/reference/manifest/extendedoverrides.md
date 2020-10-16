@@ -5,7 +5,7 @@ ms.date: 11/06/2020
 localization_priority: Normal
 ---
 
-# Description element
+# ExtendedOverrides element
 
 Specifies the full URLs for a JSON-formatted files that extend the manifest. 
 
@@ -14,7 +14,7 @@ Specifies the full URLs for a JSON-formatted files that extend the manifest.
 ## Syntax
 
 ```XML
-<ExtendedOverrides Url="string" [ResourceUrl="string"] />
+<ExtendedOverrides Url="string" [ResourceUrl="string"] ></ExtendedOverrides>
 ```
 
 ## Contained in

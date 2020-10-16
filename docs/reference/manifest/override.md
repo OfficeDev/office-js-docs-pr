@@ -29,7 +29,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 ### Syntax
 
 ```XML
-<Override Locale="string" Value="string" />
+<Override Locale="string" Value="string"></Override>
 ```
 
 ### Contained in

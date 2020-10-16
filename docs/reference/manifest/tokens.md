@@ -5,7 +5,7 @@ ms.date: 11/06/2020
 localization_priority: Normal
 ---
 
-# Description element
+# Tokens element
 
 Defines tokens that could be used in template URLs.
 
@@ -14,7 +14,7 @@ Defines tokens that could be used in template URLs.
 ## Syntax
 
 ```XML
-<Tokens />
+<Tokens></Tokens>
 ```
 
 ## Contained in
