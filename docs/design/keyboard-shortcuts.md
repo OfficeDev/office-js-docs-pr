@@ -11,23 +11,23 @@ Keyboard shortcuts, also known as key combinations, enable your add-in's users t
 
 > [!IMPORTANT]
 > Keyboard shortcuts are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in.
-
-Keyboard shortcuts are only supported on Excel and only on these platforms and builds:
-
-* Excel on Windows: Version 2009 (Build 13231.20262)
-* Excel on Mac: 16.41.20091302
-* Excel on the web
+>
+>  Keyboard shortcuts are only supported on Excel and only on these platforms and builds:
+>
+>* Excel on Windows: Version 2009 (Build 13231.20262)
+>* Excel on Mac: 16.41.20091302
+>* Excel on the web
 
 > [!NOTE]
 > Keyboard shortcuts work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
 
-There are four major steps to adding keyboard shortcuts to an add-in:
+There are three major steps to adding keyboard shortcuts to an add-in:
 
 1. Configure the add-in's manifest.
-1. Create or edit the extended overrides JSON file to map action names to keyboard combinations.
-1. Add one or more runtime calls of the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map a function to each action name.
+1. Create or edit the extended overrides JSON file to define actions and their keyboard shortcuts.
+1. Add one or more runtime calls of the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map a function to each action.
 
 Each step is described in more detail below.
 
@@ -61,11 +61,12 @@ If there isn't one already, create a JSON file at the path that you use in devel
 1. The shortcuts array will contain objects that map key combinations onto action names. Here is an example. Note the following about this markup:
 
     - The property names you see here, `action`, `key`, and `default` are mandatory.
-    - The value of the `action` property can be any string, and the `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
-    - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and at least one other key. (An additional modifier key is possible on Mac. See the next step.)
+    - The value of the `action` property is a string (max 128 characters), and the `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
+    - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and at least one other key. 
+    - For Macs, ALT is mapped to the OPTION key and CTRL is mapped to the COMMAND key.
     - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
     - The "+" character indicates that the keys on either side of it are pressed simultaneously.
-    - In a later step, the action names will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method. 
+    - In a later step, the actions will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method. 
 
     > [!NOTE]
     > The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
@@ -92,7 +93,7 @@ If there isn't one already, create a JSON file at the path that you use in devel
     > [!NOTE]
     > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
 
-1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. Note that on Mac, you can use the modifier key COMMAND.
+1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. 
 
     ```javascript
     {
@@ -110,18 +111,17 @@ If there isn't one already, create a JSON file at the path that you use in devel
     }
     ```
 
-## Create a mapping of functions to actions
+## Create a mapping of actions to their callback functions
 
-The last major step is to map your custom functions onto the action names.
 
 1. Be sure that the HTML file that the `<FunctionFile>` element in the manifest points to has a `<script>` tag that loads a custom JavaScript file.
-1. In the JavaScript file, use calls of the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map a function to each action name that you used in the JSON file. To begin add the following to the file. Note the following about this code:
+1. In the JavaScript file, use calls of the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map a function to each action that you used in the JSON file. To begin add the following to the file. Note the following about this code:
 
-    - The first parameter is one of the action names from the JSON file.
-    - The second parameter is the function that runs when a user presses the key combination that is mapped to the action name in the JSON file.
+    - The first parameter is one of the actions from the JSON file.
+    - The second parameter is the function that runs when a user presses the key combination that is mapped to the action in the JSON file.
 
     ```javascript
-    Office.actions.associate('-- acton name goes here--', function () {
+    Office.actions.associate('-- action goes here--', function () {
 
     });
     ```
