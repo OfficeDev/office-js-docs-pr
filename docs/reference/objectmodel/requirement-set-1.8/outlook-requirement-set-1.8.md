@@ -1,13 +1,16 @@
 ---
 title: Outlook add-in API requirement set 1.8
-description: 'Requirement set 1.8 for Outlook add-in API'
-ms.date: 05/20/2020
+description: 'Requirement set 1.8 for Outlook add-in API.'
+ms.date: 10/14/2020
 localization_priority: Normal
 ---
 
 # Outlook add-in API requirement set 1.8
 
 The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties and events that you can use in an Outlook add-in.
+
+> [!NOTE]
+> This documentation is for a [requirement set](../../requirement-sets/outlook-api-requirement-sets.md) other than the latest requirement set.
 
 ## What's new in 1.8?
 
