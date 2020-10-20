@@ -11,7 +11,7 @@ As described in the [custom functions overview](custom-functions-overview.md) ar
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-We recommend using JSON auto-generation when possible instead of creating your own JSON file. Auto-generation is less prone to user error and the `yo office` scaffolded files already include this. For more information on the process of JSDoc comment JSON file generation, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+We recommend using JSON auto-generation when possible instead of creating your own JSON file. Auto-generation is less prone to user error and the `yo office` scaffolded files already include this. For more information on the process of JSDoc comment JSON file generation, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 However, you can make a custom functions project from scratch; it requires that you:
 
@@ -237,7 +237,7 @@ Keep in mind the following best practices when creating custom functions in your
 
 - In the JavaScript file, specify a custom function association using `CustomFunctions.associate` after each function.
 
-The following sample shows the JSON metadata that corresponds to the functions defined in the preceding JavaScript code sample. The `id` and `name` property values are in uppercase, which is a best practice when describing your custom functions. You only need to add this JSON if you are preparing your own JSON file manually and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+The following sample shows the JSON metadata that corresponds to the functions defined in the preceding JavaScript code sample. The `id` and `name` property values are in uppercase, which is a best practice when describing your custom functions. You only need to add this JSON if you are preparing your own JSON file manually and not using autogeneration. For more information on autogeneration, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```json
 {
