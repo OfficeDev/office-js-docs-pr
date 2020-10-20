@@ -1,5 +1,5 @@
 ---
-ms.date: 05/06/2020
+ms.date: 10/19/2020
 description: 'Define JSON metadata for custom functions in Excel and associate your function id and name properties.'
 title: Metadata for custom functions in Excel
 localization_priority: Normal
@@ -237,7 +237,7 @@ Keep in mind the following best practices when creating custom functions in your
 
 - In the JavaScript file, specify a custom function association using `CustomFunctions.associate` after each function.
 
-The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. The `id` and `name` property values are in uppercase, which is a best practice when describing your custom functions. You only need to add this JSON if you are preparing your own JSON file manually and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+The following sample shows the JSON metadata that corresponds to the functions defined in the preceding JavaScript code sample. The `id` and `name` property values are in uppercase, which is a best practice when describing your custom functions. You only need to add this JSON if you are preparing your own JSON file manually and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```json
 {
