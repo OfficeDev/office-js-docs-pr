@@ -117,7 +117,6 @@ For a more detailed introduction to developing Office Add-ins, see [Develop Offi
 
 ## See also
 
-- [Develop Office Add-ins](../develop/develop-overview.md)
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)
