@@ -1,29 +1,17 @@
 ---
-title: Implement append-on-send in your Outlook add-in (preview)
+title: Implement append-on-send in your Outlook add-in
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 10/14/2020
 localization_priority: Normal
 ---
 
-# Implement append-on-send in your Outlook add-in (preview)
+# Implement append-on-send in your Outlook add-in
 
 By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.
 
-> [!IMPORTANT]
-> This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with a Microsoft 365 subscription. See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.
->
-> Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
-
-## How to preview the append-on-send feature
-
-We invite you to try out the append-on-send feature! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
-
-To preview this feature:
-
-- Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
-- For Windows, you may need to join the [Office Insider program](https://insider.office.com) to access more recent Office builds.
-- For Outlook on the web, [configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+> [!NOTE]
+> Support for this feature was introduced in requirement set 1.9. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Set up your environment
 
