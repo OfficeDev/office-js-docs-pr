@@ -1,7 +1,7 @@
 ---
-title: Error handling
+title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 06/25/2020
+ms.date: 10/20/2020
 localization_priority: Normal
 ---
 
@@ -47,12 +47,15 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 
 The following table is a list of errors that the API may return.
 
-|error.code | error.message |
+|error.code | Error Message |
 |:----------|:--------------|
 |`AccessDenied` |You cannot perform the requested operation.|
 |`ActivityLimitReached`|Activity limit has been reached.|
 |`ApiNotAvailable`|The requested API is not available.|
+|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel.|
+|`BadPassword`|The password you supplied is not correct.|
 |`Conflict`|Request could not be processed because of a conflict.|
+|`ContentLengthRequired`|A Content-Length header is missing.|
 |`GeneralException`|There was an internal error while processing the request.|
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
 |`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|
@@ -63,8 +66,12 @@ The following table is a list of errors that the API may return.
 |`InvalidSelection`|The current selection is invalid for this operation.|
 |`ItemAlreadyExists`|The resource being created already exists.|
 |`ItemNotFound` |The requested resource doesn't exist.|
-|`NotImplemented`  |The requested feature isn't implemented.|
+|`nonBlankCellOffSheet`|Can't insert new cells because it would push non-empty cells off the end of the worksheet. These cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
+|`NotImplemented`|The requested feature isn't implemented.|
+|`RangeExceedsLimit`|The cell count in range has exceeded the maximum supported number.|
 |`RequestAborted`|The request was aborted during run time.|
+|`RequestPayloadSizeLimitExcceded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/resource-limits-and-performance-optimization#excel-add-ins) article for more information. <br><br>This error occurs in Excel Online.|
+|`ResponsePayloadSizeLimitExcceded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/resource-limits-and-performance-optimization#excel-add-ins) article for more information.  <br><br>This error occurs in Excel Online.|
 |`ServiceNotAvailable`|The service is unavailable.|
 |`Unauthenticated` |Required authentication information is either missing or invalid.|
 |`UnsupportedOperation`|The operation being attempted is not supported.|
