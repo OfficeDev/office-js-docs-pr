@@ -61,7 +61,7 @@ If there isn't one already, create a JSON file at the path that you use in devel
 1. The shortcuts array will contain objects that map key combinations onto action names. Here is an example. Note the following about this markup:
 
     - The property names you see here, `action`, `key`, and `default` are mandatory.
-    - The value of the `action` property is a string (max 128 characters), and the `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
+    - The value of the `action` property is a string, and the `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
     - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and at least one other key. 
     - For Macs, ALT is mapped to the OPTION key and CTRL is mapped to the COMMAND key.
     - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
@@ -111,7 +111,7 @@ If there isn't one already, create a JSON file at the path that you use in devel
     }
     ```
 
-## Create a mapping of actions to their callback functions
+## Create a mapping of actions to their functions
 
 
 1. Be sure that the HTML file that the `<FunctionFile>` element in the manifest points to has a `<script>` tag that loads a custom JavaScript file.
@@ -167,7 +167,7 @@ Currently, there is no workaround when two or more add-ins have registered the s
 
 - Use only keyboard shortcuts with the following patterns in your add-in.
 
-    - **Alt-*n***, where *n* is a numeral from 1 to 9.
+    - **Alt+*n***, where *n* is a numeral from 1 to 9.
     - **Ctrl+Shift+Alt+*n***, where *n* is a numeral from 1 to 9.
 
 - If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
