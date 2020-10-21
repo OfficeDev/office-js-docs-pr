@@ -70,8 +70,8 @@ The following table is a list of errors that the API may return.
 |`NotImplemented`|The requested feature isn't implemented.|
 |`RangeExceedsLimit`|The cell count in range has exceeded the maximum supported number.|
 |`RequestAborted`|The request was aborted during run time.|
-|`RequestPayloadSizeLimitExcceded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information. <br><br>This error occurs in Excel on the web.|
-|`ResponsePayloadSizeLimitExcceded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.  <br><br>This error occurs in Excel on the web.|
+|`RequestPayloadSizeLimitExceeded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information. <br><br>This error occurs in Excel on the web.|
+|`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.  <br><br>This error occurs in Excel on the web.|
 |`ServiceNotAvailable`|The service is unavailable.|
 |`Unauthenticated` |Required authentication information is either missing or invalid.|
 |`UnsupportedOperation`|The operation being attempted is not supported.|
