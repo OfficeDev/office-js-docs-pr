@@ -6,7 +6,7 @@ localization_priority: Normal
 ---
 
 
-# Error handling
+# Error handling with the Excel JavaScript API
 
 When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
