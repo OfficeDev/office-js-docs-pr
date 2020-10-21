@@ -46,30 +46,47 @@ Immediately *below* (not inside) the `<VersionOverrides>` element in the manifes
 
 ## Create or edit the extended overrides JSON file
 
-If there isn't one already, create a JSON file at the path that you use in development for the `Url` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element.
+If there isn't one already, create a JSON file at the path that you use in development for the `Url` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. This file will contain the definitions for our keyboard shortcuts, as well as the actions that will be invoked using the keyboard shortcuts.
 
 1. Be sure there is an outermost pair of braces (`{ }`)in the file.
 1. Just inside this outermost object, add the following JSON markup. Note that the file must be proper JSON, not simple a JavaScript object, so the property names must be within quotation marks.
 
     ```javascript
     {
-        "shortcuts": [
+        "actions": [
+        ],
+        "shortcuts": [
         ]
     }
     ```
 
-1. The shortcuts array will contain objects that map key combinations onto action names. Here is an example. Note the following about this markup:
+1. The actions array will contain objects that define the actions to be invoked. Here is an example. 
+    ```javascript
+    {
+        "actions": [
+            {
+                "id": "SHOWTASKPANE",
+                "type": "ExecuteFunction",
+                "name": "Show taskpane for add-in"
+            },
+            {
+                "id": "HIDETASKPANE",
+                "type": "ExecuteFunction",
+                "name": "Hide taskpane for add-in"
+            }
+        ]
+    }
+    ```
 
-    - The property names you see here, `action`, `key`, and `default` are mandatory.
-    - The value of the `action` property is a string, and the `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
-    - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and at least one other key. 
-    - For Macs, ALT is mapped to the OPTION key and CTRL is mapped to the COMMAND key.
-    - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
-    - The "+" character indicates that the keys on either side of it are pressed simultaneously.
-    - In a later step, the actions will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method. 
 
-    > [!NOTE]
-    > The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+   Note the following about this markup:
+
+   - The property names `id` and `name` are mandatory.
+   - The `id` property is used by extension points (such as shortcuts in next step) to determine what action to invoke using a keyboard shortcut.
+   - The `name` property must be a user friendly string describing the action. It must be a combination of the characters A - Z, a - z, 0 - 9, and the punctuation marks "-", "_", and "+".
+   - The `type` property is optional, currently only `ExecuteFunction` type is supported.
+
+1. The shortcuts array will contain objects that map key combinations onto actions. Here is an example. 
 
     ```javascript
     {
@@ -89,6 +106,21 @@ If there isn't one already, create a JSON file at the path that you use in devel
         ]
     }
     ```
+
+   Note the following about this markup:
+
+    - The property names `action`, `key`, and `default` are mandatory.
+    - The value of the `action` property is a string and must match one of the `id` properties in the action object.
+    - The `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
+    - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and at least one other key. 
+    - For Macs, ALT is mapped to the OPTION key and CTRL is mapped to the COMMAND key.
+    - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
+    - The "+" character indicates that the keys on either side of it are pressed simultaneously.
+    - In a later step, the actions will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method. 
+
+    > [!NOTE]
+    > The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+
 
     > [!NOTE]
     > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
@@ -121,7 +153,7 @@ If there isn't one already, create a JSON file at the path that you use in devel
     - The second parameter is the function that runs when a user presses the key combination that is mapped to the action in the JSON file.
 
     ```javascript
-    Office.actions.associate('-- action goes here--', function () {
+    Office.actions.associate('-- action ID goes here--', function () {
 
     });
     ```
