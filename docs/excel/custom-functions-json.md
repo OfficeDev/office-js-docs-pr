@@ -13,7 +13,7 @@ As described in the [custom functions overview](custom-functions-overview.md) ar
 
 We recommend using JSON autogeneration when possible instead of creating your own JSON file. Autogeneration is less prone to user error and the `yo office` scaffolded files already include this. For more information on JSDoc tags and the JSON autogeneration process, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
-However, you can make a custom functions project from scratch; it requires that you:
+However, you can make a custom functions project from scratch but it requires you to:
 
 - Write your JSON file.
 - Check that your manifest file is connected to your JSON file.
@@ -152,7 +152,7 @@ The `functions` property is an array of custom function objects. The following t
 The `options` object enables you to customize some aspects of how and when Excel executes the function. The following table lists the properties of the `options` object.
 
 | Property          | Data type | Required                               | Description |
-| :---------------- | :-------- | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function cannot be both streaming and cancelable. For more information, see the note near the end of [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
 | `requiresAddress` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked your custom function. To get the address of the cell that invoked your custom function, use context.address in your custom function. Custom functions cannot be set as both streaming and requiresAddress. When using this option, the 'invocation' parameter must be the last parameter passed in options. |
 | `stream`          | boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback method. For more information, see [Streaming functions](custom-functions-web-reqs.md#make-a-streaming-function). |
