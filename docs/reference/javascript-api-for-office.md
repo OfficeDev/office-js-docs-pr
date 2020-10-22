@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: Office JavaScript API reference documentation
 description: 'Learn about the Office JavaScript APIs.'
-ms.date: 12/24/2019
+ms.date: 10/14/2020
 localization_priority: Priority
 ---
 
@@ -16,7 +16,7 @@ An add-in can use the Office JavaScript APIs to interact with objects in Office 
     <li><b>Common</b> APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</li>
 </ul>
 
-You should use application-specific APIs whenever feasible, and use Common APIs only for scenarios that aren't supported by application-specific APIs. For more detailed information about these two API models, see <a href="../develop/develop-overview.md#api-models">Developing Office Add-ins</a>.
+You should use application-specific APIs whenever feasible, and use Common APIs only for scenarios that aren't supported by application-specific APIs. For more detailed information about these two API models, see <a href="../develop/develop-overview.md#api-models">Develop Office Add-ins</a>.
 
 <h2>API reference</h2>
 

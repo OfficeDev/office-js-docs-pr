@@ -1,7 +1,7 @@
 ---
 title: Task pane add-ins for Project
 description: 'Learn about task pane add-ins for Project.'
-ms.date: 10/14/2020
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority

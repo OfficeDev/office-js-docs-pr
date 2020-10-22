@@ -113,11 +113,10 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Next steps
 
-For a more detailed introduction to developing Office Add-ins, see [Developing Office Add-ins](../develop/develop-overview.md).
+For a more detailed introduction to developing Office Add-ins, see [Develop Office Add-ins](../develop/develop-overview.md).
 
 ## See also
 
-- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)

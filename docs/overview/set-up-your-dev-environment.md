@@ -1,6 +1,6 @@
 ---
 title: Set up your development environment
-description:  'Set up your developer environment to build Office Add-ins' 
+description:  'Set up your developer environment to build Office Add-ins.'
 ms.date: 10/14/2020
 localization_priority: Normal
 ---
@@ -66,9 +66,8 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 
 ## See also
 
-- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
-- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
