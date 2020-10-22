@@ -37,18 +37,24 @@ There are three steps to add keyboard shortcuts to an add-in:
 
 ### Configure the add-in to use a shared runtime
 
-The keyboard shortcuts feature requires that the add-in use a shared runtime. To configure the add-in, see [Configure an add-in to use a shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+Adding custom keyboard shortcuts requires your add-in to use the shared runtime. For more information, [Configure an add-in to use a shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ### Link the mapping file to the manifest
 
-Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step. Example: `https://localhost:3000/add-in/extended-overrides.json`. When you are ready for staging and then production, you will need to change this value. Example: `https://contoso.com/addin/extended-overrides.json`.
+Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step. 
+
+    ```xml
+        ...
+        </VersionOverrides>  
+        <ExtendedOverrides Url="https://contoso.com/addin/extendedManifest.json"></ExtendedOverrides>
+    </OfficeApp>
+    ```
 
 ## Create or edit the extended overrides JSON file
 
 If there isn't one already, create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
 
-1. Be sure there is an outermost pair of braces (`{ }`)in the file.
-1. Just inside this outermost object, add the following JSON markup. Note that the file must be proper JSON, not simple a JavaScript object, so the property names must be within quotation marks.
+1. Inside the JSON file, add the following JSON:
 
     ```json
     {
@@ -81,7 +87,7 @@ If there isn't one already, create a JSON file in your project. Be sure the path
    Use the following guidelines when specifying the JSON to describe your custom keyboard shortcuts:
 
    - The property names `id` and `name` are mandatory.
-   - The `id` property is used by extension points (such as shortcuts in next step) to determine what action to invoke using a keyboard shortcut.
+   - The `id` property is used to uniquely identify the action to invoke using a keyboard shortcut.
    - The `name` property must be a user friendly string describing the action. It must be a combination of the characters A - Z, a - z, 0 - 9, and the punctuation marks "-", "_", and "+".
    - The `type` property is optional. Currently only `ExecuteFunction` type is supported.
 
