@@ -41,14 +41,14 @@ Adding custom keyboard shortcuts requires your add-in to use the shared runtime.
 
 ### Link the mapping file to the manifest
 
-Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step. 
+Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
 
-    ```xml
-        ...
-        </VersionOverrides>  
-        <ExtendedOverrides Url="https://contoso.com/addin/extendedManifest.json"></ExtendedOverrides>
-    </OfficeApp>
-    ```
+```xml
+    ...
+    </VersionOverrides>  
+    <ExtendedOverrides Url="https://contoso.com/addin/extendedManifest.json"></ExtendedOverrides>
+</OfficeApp>
+```
 
 ## Create or edit the extended overrides JSON file
 
