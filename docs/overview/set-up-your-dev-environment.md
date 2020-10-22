@@ -67,7 +67,8 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 ## See also
 
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
-- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)

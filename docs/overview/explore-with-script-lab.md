@@ -80,4 +80,6 @@ When you're ready to create your first Office Add-in, try out the quick start fo
 - [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 - [Learn more about Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program)
-- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Developing Office Add-ins](../develop/develop-overview.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+

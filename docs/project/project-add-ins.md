@@ -190,7 +190,8 @@ You can distribute add-ins through a file share, an app catalog in a SharePoint 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)

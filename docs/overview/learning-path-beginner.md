@@ -68,3 +68,4 @@ Congratulations on finishing the beginner's learning path for Office Add-ins! He
   - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
   - [Deploy and publish Office Add-ins](../publish/publish.md)
   - [Resources](../resources/resources-links-help.md)
+  - [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
