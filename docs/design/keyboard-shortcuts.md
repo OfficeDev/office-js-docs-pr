@@ -12,7 +12,7 @@ Keyboard shortcuts, also known as key combinations, enable your add-in's users t
 > [!IMPORTANT]
 > Keyboard shortcuts are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in.
 >
->  Keyboard shortcuts are only supported on Excel and only on these platforms and builds:
+>  Keyboard shortcuts are currently only supported on Excel and only on these platforms and builds:
 >
 >* Excel on Windows: Version 2009 (Build 13231.20262)
 >* Excel on Mac: 16.41.20091302
