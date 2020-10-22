@@ -47,7 +47,7 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 
 The following table is a list of errors that the API may return.
 
-|`error.code` | Error message |
+|Error code | Error message |
 |:----------|:--------------|
 |`AccessDenied` |You cannot perform the requested operation.|
 |`ActivityLimitReached`|Activity limit has been reached.|
@@ -55,7 +55,7 @@ The following table is a list of errors that the API may return.
 |`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md) article for more information.|
 |`BadPassword`|The password you supplied is incorrect.|
 |`Conflict`|Request could not be processed because of a conflict.|
-|`ContentLengthRequired`|A Content-Length header is missing.|
+|`ContentLengthRequired`|A `Content-length` HTTP header is missing.|
 |`GeneralException`|There was an internal error while processing the request.|
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
 |`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|
