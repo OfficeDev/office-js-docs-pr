@@ -1,7 +1,7 @@
 ---
 title: Word add-ins overview
-description: 'Learn the basics of Word Add-ins'
-ms.date: 07/28/2020
+description: 'Learn the basics of Word Add-ins.'
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -79,5 +79,6 @@ After you develop your add-in, you can [publish](../publish/publish.md) it to a 
 ## See also
 
 * [Developing Office Add-ins](../develop/develop-overview.md)
+* [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
 * [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)
