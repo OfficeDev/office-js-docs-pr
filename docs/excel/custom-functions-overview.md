@@ -1,5 +1,5 @@
 ---
-ms.date: 08/13/2020
+ms.date: 10/14/2020
 description: 'Create an Excel custom function for your Office Add-in.'
 title: Create custom functions in Excel
 ms.topic: conceptual
@@ -93,6 +93,7 @@ Want to try out custom functions? Check out the simple [custom functions quick s
 Another easy way to try out custom functions is to use [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), an add-in that allows you to experiment with custom functions right in Excel. You can try out creating your own custom function or play with the provided samples.
 
 ## See also 
+* [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Custom functions requirements](custom-functions-requirement-sets.md)
 * [Naming guidelines](custom-functions-naming.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)

@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins additional resources
 description: 'Useful resources on the topic of Office Add-ins'
-ms.date: 07/14/2020
+ms.date: 10/14/2020
 localization_priority: Normal
 ---
 
@@ -20,3 +20,6 @@ These resources provide additional information and support for developing Office
 |**Pluralsight course about Office Add-ins**| <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">John Brown's course "Fundamentals of Building Office Add-ins with Office JavaScript APIs"</a> teaches you how to develop a PowerPoint Add-in from scratch, including information about how to communicate with Trello and publish the add-in to the Office Store.|
 |**LinkedIn course about Office Add-ins**| <a href="https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322">Bill Ayer's course "Microsoft Office Add-Ins for Developers"</a> gives an overview of the platform and explains many of the major concepts of Office Add-ins.|
 |***Building Office Add-ins using Office.js* book**| <a href="https://leanpub.com/buildingofficeaddins">Michael Zlatkovsky's book *Building Office Add-ins using Office.js*</a> describes the principles and design patterns shared by the 2016 APIs for Excel, Word, and OneNote. Michael is a member of the Office Extensibility team at Microsoft and a Microsoft MVP, but this book is independently authored without input from Microsoft. Neither Microsoft nor Michael collect any profit on this book, as proceeds are donated to disaster-relief and humanitarian charitable causes.|
+
+## See also
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)

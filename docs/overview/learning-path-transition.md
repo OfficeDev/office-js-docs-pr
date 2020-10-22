@@ -1,7 +1,7 @@
 ---
 title: VSTO add-in developer's guide
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
-ms.date: 05/10/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
@@ -81,3 +81,4 @@ Congratulations on finishing the VSTO add-in developer's learning path for Offic
   - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
   - [Deploy and publish Office Add-ins](../publish/publish.md)
   - [Resources](../resources/resources-links-help.md)
+  - [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)

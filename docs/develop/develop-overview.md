@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins
 description: 'An introduction to developing Office Add-ins.'
-ms.date: 09/01/2020
+ms.date: 10/14/2020
 localization_priority: Priority
 ---
 
@@ -118,6 +118,7 @@ Learn more about developing, testing, and publishing Office Add-ins by exploring
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
