@@ -5,7 +5,7 @@ ms.date: 11/06/2020
 localization_priority: Normal
 ---
 
-# Custom keyboard shortcuts in Office Add-ins (preview)
+# Add Custom keyboard shortcuts to your Office Add-ins (preview)
 
 Keyboard shortcuts, also known as key combinations, enable your add-in's users to work more efficiently and they improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.
 
@@ -50,7 +50,7 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 1. Be sure there is an outermost pair of braces (`{ }`)in the file.
 1. Just inside this outermost object, add the following JSON markup. Note that the file must be proper JSON, not simple a JavaScript object, so the property names must be within quotation marks.
 
-    ```javascript
+    ```json
     {
         "actions": [
         ],
@@ -87,7 +87,7 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 
 1. The shortcuts array will contain objects that map key combinations onto actions. Here is an example. 
 
-    ```javascript
+    ```json
     {
         "shortcuts": [
             {
@@ -111,7 +111,7 @@ If there isn't one already, create a JSON file in your project. Be sure the path
     - The property names `action`, `key`, and `default` are required.
     - The value of the `action` property is a string and must match one of the `id` properties in the action object.
     - The `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
-    - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and at least one other key. 
+    - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and only one other key. 
     - For Macs, ALT is mapped to the OPTION key and CTRL is mapped to the COMMAND key.
     - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
     - The "+" character indicates that the keys on either side of it are pressed simultaneously.
@@ -126,7 +126,7 @@ In a later step, the actions will themselves be mapped to functions that you wri
 
 1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. 
 
-    ```javascript
+    ```json
     {
         "shortcuts": [
             {
@@ -145,7 +145,7 @@ In a later step, the actions will themselves be mapped to functions that you wri
 ## Create a mapping of actions to their functions
 
 
-1. Be sure that the HTML file that the `<FunctionFile>` element in the manifest points to has a `<script>` tag that loads a custom JavaScript file.
+1. In your project, open the JavaScript file loaded by your HTML page in the `<FunctionFile>` element.
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code:
 
     - The first parameter is one of the actions from the JSON file.
