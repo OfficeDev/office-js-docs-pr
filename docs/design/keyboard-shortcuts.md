@@ -67,7 +67,6 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 
 1. The actions array will contain objects that define the actions to be invoked. Here is an example. 
     ```json
-    {
         "actions": [
             {
                 "id": "SHOWTASKPANE",
@@ -80,7 +79,6 @@ If there isn't one already, create a JSON file in your project. Be sure the path
                 "name": "Hide task pane for add-in"
             }
         ]
-    }
     ```
 
 
@@ -94,7 +92,6 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 1. The shortcuts array will contain objects that map key combinations onto actions. Here is an example. 
 
     ```json
-    {
         "shortcuts": [
             {
                 "action": "SHOWTASKPANE",
@@ -109,7 +106,6 @@ If there isn't one already, create a JSON file in your project. Be sure the path
                 }
             }
         ]
-    }
     ```
 
     Use the following guidelines when specifying the JSON to describe actions for your keyboard shortcuts:
@@ -132,7 +128,6 @@ In a later step, the actions will themselves be mapped to functions that you wri
 1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. 
 
     ```json
-    {
         "shortcuts": [
             {
                 "action": "SHOWTASKPANE",
@@ -144,7 +139,6 @@ In a later step, the actions will themselves be mapped to functions that you wri
                 }
             }
         ]
-    }
     ```
 
 ## Create a mapping of actions to their functions
