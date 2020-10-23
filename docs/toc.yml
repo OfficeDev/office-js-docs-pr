@@ -1070,10 +1070,10 @@
       displayName: PowerPoint
     - name: API requirement sets
       items:
-        name: Overview
+      - name: Overview
         href: reference/requirement-sets/powerpoint-api-requirement-sets.md
         displayName: PowerPoint
-        name: PowerPoint preview APIs
+      - name: PowerPoint preview APIs
         href: reference/requirement-sets/powerpoint-preview-apis.md
         displayName: PowerPoint
     - name: API reference
