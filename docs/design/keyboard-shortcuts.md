@@ -69,15 +69,15 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 
     ```json
     {
-        "actions": [
+        "actions": [
             {
-                "id": "SHOWTASKPANE",
-                "type": "ExecuteFunction",
+                "id": "SHOWTASKPANE",
+                "type": "ExecuteFunction",
                 "name": "Show task pane for add-in"
             },
             {
-                "id": "HIDETASKPANE",
-                "type": "ExecuteFunction",
+                "id": "HIDETASKPANE",
+                "type": "ExecuteFunction",
                 "name": "Hide task pane for add-in"
             }
         ]
@@ -96,17 +96,17 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 
     ```json
     {
-        "shortcuts": [
+        "shortcuts": [
             {
-                "action": "SHOWTASKPANE",
-                "key": {
-                    "default": "CTRL+SHIFT+UP"
+                "action": "SHOWTASKPANE",
+                "key": {
+                    "default": "CTRL+SHIFT+UP"
                 }
             },
             {
-                "action": "HIDETASKPANE",
-                "key": {
-                    "default": "CTRL+SHIFT+DOWN"
+                "action": "HIDETASKPANE",
+                "key": {
+                    "default": "CTRL+SHIFT+DOWN"
                 }
             }
         ]
@@ -134,11 +134,11 @@ In a later step, the actions will themselves be mapped to functions that you wri
 
     ```json
     {
-        "shortcuts": [
-            {
-                "action": "SHOWTASKPANE",
-                "key": {
-                    "default": "CTRL+SHIFT+UP",
+        "shortcuts": [
+            {
+                "action": "SHOWTASKPANE",
+                "key": {
+                    "default": "CTRL+SHIFT+UP",
                     "web": "CTRL+SHIFT+P",
                     "Win32": "CTRL+SHIFT+R",
                     "Mac": "COMMAND+SHIFT+S"
