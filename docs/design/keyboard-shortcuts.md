@@ -65,18 +65,19 @@ If there isn't one already, create a JSON file in your project. Be sure the path
     }
     ```
 
-1. The actions array will contain objects that define the actions to be invoked. Here is an example. 
+1. The actions array will contain objects that define the actions to be invoked. Here is an example.
+
     ```json
     {
-        "actions": [
-            {
-                "id": "SHOWTASKPANE",
-                "type": "ExecuteFunction",
+        "actions": [
+            {
+                "id": "SHOWTASKPANE",
+                "type": "ExecuteFunction",
                 "name": "Show task pane for add-in"
-            },
-            {
-                "id": "HIDETASKPANE",
-                "type": "ExecuteFunction",
+            },
+            {
+                "id": "HIDETASKPANE",
+                "type": "ExecuteFunction",
                 "name": "Hide task pane for add-in"
             }
         ]
@@ -95,18 +96,18 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 
     ```json
     {
-        "shortcuts": [
-            {
-                "action": "SHOWTASKPANE",
-                "key": {
-                    "default": "CTRL+SHIFT+UP"
-                }
-            },
-            {
-                "action": "HIDETASKPANE",
-                "key": {
-                    "default": "CTRL+SHIFT+DOWN"
-                }
+        "shortcuts": [
+            {
+                "action": "SHOWTASKPANE",
+                "key": {
+                    "default": "CTRL+SHIFT+UP"
+                }
+            },
+            {
+                "action": "HIDETASKPANE",
+                "key": {
+                    "default": "CTRL+SHIFT+DOWN"
+                }
             }
         ]
     }
@@ -133,22 +134,21 @@ In a later step, the actions will themselves be mapped to functions that you wri
 
     ```json
     {
-        "shortcuts": [
-            {
-                "action": "SHOWTASKPANE",
-                "key": {
-                    "default": "CTRL+SHIFT+UP",
+        "shortcuts": [
+            {
+                "action": "SHOWTASKPANE",
+                "key": {
+                    "default": "CTRL+SHIFT+UP",
                     "web": "CTRL+SHIFT+P",
                     "Win32": "CTRL+SHIFT+R",
                     "Mac": "COMMAND+SHIFT+S"
-                }
-            }
+                }
+            }
         ]
     }
     ```
 
 ## Create a mapping of actions to their functions
-
 
 1. In your project, open the JavaScript file loaded by your HTML page in the `<FunctionFile>` element.
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code:
