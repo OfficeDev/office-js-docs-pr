@@ -41,7 +41,7 @@ The following code sample shows how to determine whether the Office application 
 ```js
 if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
   // Perform actions.
-else {
+} else {
   // Provide alternate flow/logic.
 }
 ```
