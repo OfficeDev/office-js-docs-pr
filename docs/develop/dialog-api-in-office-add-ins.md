@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
-description: 'Learn the basics of creating a dialog box in an Office add-in'
-ms.date: 08/20/2020
+description: 'Learn the basics of creating a dialog box in an Office add-in.'
+ms.date: 10/21/2020
 
 localization_priority: Normal
 ---
@@ -11,7 +11,7 @@ localization_priority: Normal
 You can use the [Office dialog API](/javascript/api/office/office.ui) to open dialog boxes in your Office Add-in. This article provides guidance for using the dialog API in your Office Add-in.
 
 > [!NOTE]
-> For information about where the Dialog API is currently supported, see [Dialog API requirement sets](../reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
+> For information about where the Dialog API is currently supported, see [Dialog API requirement sets](../reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Excel, PowerPoint, and Word. Outlook support is included across various Mailbox requirement sets&mdash;see the API reference for more details.
 
 A primary scenario for the Dialog API is to enable authentication with a resource such as Google, Facebook, or Microsoft Graph. For more information, see [Authenticate with the Office dialog API](auth-with-office-dialog-api.md) *after* you are familiar with this article.
 
@@ -210,9 +210,6 @@ function processMessage(arg) {
 ## Pass information to the dialog box
 
 Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using [Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-).
-
-> [!NOTE]
-> These dialog APIs are supported in only Excel, PowerPoint, and Word. Support for Outlook is under development.
 
 ### Use `messageChild()` from the host page
 

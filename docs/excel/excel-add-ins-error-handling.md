@@ -1,12 +1,12 @@
 ---
-title: Error handling
+title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 06/25/2020
+ms.date: 10/22/2020
 localization_priority: Normal
 ---
 
 
-# Error handling
+# Error handling with the Excel JavaScript API
 
 When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
@@ -47,12 +47,15 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 
 The following table is a list of errors that the API may return.
 
-|error.code | error.message |
+|Error code | Error message |
 |:----------|:--------------|
 |`AccessDenied` |You cannot perform the requested operation.|
 |`ActivityLimitReached`|Activity limit has been reached.|
 |`ApiNotAvailable`|The requested API is not available.|
+|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md) article for more information.|
+|`BadPassword`|The password you supplied is incorrect.|
 |`Conflict`|Request could not be processed because of a conflict.|
+|`ContentLengthRequired`|A `Content-length` HTTP header is missing.|
 |`GeneralException`|There was an internal error while processing the request.|
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
 |`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|
@@ -63,8 +66,12 @@ The following table is a list of errors that the API may return.
 |`InvalidSelection`|The current selection is invalid for this operation.|
 |`ItemAlreadyExists`|The resource being created already exists.|
 |`ItemNotFound` |The requested resource doesn't exist.|
-|`NotImplemented`  |The requested feature isn't implemented.|
+|`NonBlankCellOffSheet`|The request to insert new cells can't be completed because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
+|`NotImplemented`|The requested feature isn't implemented.|
+|`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|
 |`RequestAborted`|The request was aborted during run time.|
+|`RequestPayloadSizeLimitExceeded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information. <br><br>This error only occurs in Excel on the web.|
+|`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.  <br><br>This error only occurs in Excel on the web.|
 |`ServiceNotAvailable`|The service is unavailable.|
 |`Unauthenticated` |Required authentication information is either missing or invalid.|
 |`UnsupportedOperation`|The operation being attempted is not supported.|

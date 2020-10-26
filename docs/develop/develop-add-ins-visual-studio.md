@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins with Visual Studio
-description: 'How to develop Office Add-ins with Visual Studio'
-ms.date: 12/31/2019
+description: 'How to develop Office Add-ins with Visual Studio.'
+ms.date: 10/14/2020
 localization_priority: Priority
 ---
 
@@ -48,7 +48,6 @@ While you're developing your add-in in Visual Studio, your add-in runs on your l
 
 ## See also
 
-- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [Design Office Add-ins](../design/add-in-design.md)

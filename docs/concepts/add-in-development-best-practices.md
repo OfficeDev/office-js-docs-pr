@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
 description: 'Apply the best practices when developing to create Office Add-ins.'
-ms.date: 04/22/2020
+ms.date: 10/14/2020
 localization_priority: Normal
 ---
 
@@ -139,3 +139,4 @@ For patterns that you can apply as you develop your first-run experience, see [U
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
