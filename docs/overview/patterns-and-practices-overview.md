@@ -1,7 +1,7 @@
 ---
 title: Overview of Patterns and Practices (PnP) for Office Add-ins
 description: 'Overview of Patterns and Practices (PnP) content for Office Add-in developers.'
-ms.date: 09/11/2020
+ms.date: 10/14/2020
 localization_priority: Priority
 ---
 
@@ -12,3 +12,4 @@ Office Add-ins PnP is a community-driven effort that helps developers extend, bu
 See also
 - [Microsoft 365 & SharePoint Ecosystem](https://developer.microsoft.com/office/blogs/microsoft-365-sharepoint-ecosystem-pnp-august-2020-update/)
 - [PnP-OfficeAddins GitHub repo](https://github.com/OfficeDev/PnP-OfficeAddins)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)

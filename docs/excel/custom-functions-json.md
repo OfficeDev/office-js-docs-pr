@@ -1,25 +1,26 @@
 ---
-ms.date: 05/06/2020
-description: 'Define JSON metadata for custom functions in Excel and associate your function id and name properties.'
-title: Metadata for custom functions in Excel
+ms.date: 10/22/2020
+description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
+title: Create JSON metadata for custom functions in Excel
 localization_priority: Normal
 ---
 
-# Custom functions metadata
+# Create JSON metadata for custom functions
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to register a function, making it available for use. Custom functions are registered when the user runs the add-in for the first time and after that are available to the same user in all workbooks.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-We recommend using JSON auto-generation when possible instead of creating your own JSON file. Auto-generation is less prone to user error and the `yo office` scaffolded files already include this. For more information on the process of JSDoc comment JSON file generation, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+We recommend using JSON autogeneration when possible instead of creating your own JSON file. Autogeneration is less prone to user error and the `yo office` scaffolded files already include this. For more information on JSDoc tags and the JSON autogeneration process, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
-However, you can make a custom functions project from scratch; it requires that you:
+However, you can make a custom functions project from scratch but it requires you to:
 
 - Write your JSON file.
 - Check that your manifest file is connected to your JSON file.
-- Associate your functions' `id` and `name` properties in the script file in order to register your functions
+- Associate your functions' `id` and `name` properties in the script file in order to register your functions.
 
 The following image explains the differences between using `yo office` scaffold files and writing JSON from scratch.
+
 ![Image of differences between using Yo Office and writing your own JSON](../images/custom-functions-json.png)
 
 > [!NOTE]
@@ -150,12 +151,12 @@ The `functions` property is an array of custom function objects. The following t
 
 The `options` object enables you to customize some aspects of how and when Excel executes the function. The following table lists the properties of the `options` object.
 
-| Property          | Data type | Required                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| :---------------- | :-------- | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Property          | Data type | Required                               | Description |
+| :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function cannot be both streaming and cancelable. For more information, see the note near the end of [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `requiresAddress` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked your custom function. To get the address of the cell that invoked your custom function, use context.address in your custom function. Custom functions cannot be set as both streaming and requiresAddress. When using this option, the 'invocation' parameter must be the last parameter passed in options.                                              |
-| `stream`          | boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback method. For more information, see [Streaming functions](custom-functions-web-reqs.md#make-a-streaming-function).                                                                                                                                                                |
-| `volatile`        | boolean   | No <br/><br/>Default value is `false`. | <br /><br /> If `true`, the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. A function cannot be both streaming and volatile. If the `stream` and `volatile` properties are both set to `true`, the volatile option will be ignored.                                                                                                                                                                                                                                                                                             |
+| `requiresAddress` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked your custom function. To get the address of the cell that invoked your custom function, use context.address in your custom function. Custom functions cannot be set as both streaming and requiresAddress. When using this option, the 'invocation' parameter must be the last parameter passed in options. |
+| `stream`          | boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback method. For more information, see [Streaming functions](custom-functions-web-reqs.md#make-a-streaming-function). |
+| `volatile`        | boolean   | No <br/><br/>Default value is `false`. | If `true`, the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. A function cannot be both streaming and volatile. If the `stream` and `volatile` properties are both set to `true`, the volatile option will be ignored. |
 
 ### parameters
 
@@ -236,7 +237,7 @@ Keep in mind the following best practices when creating custom functions in your
 
 - In the JavaScript file, specify a custom function association using `CustomFunctions.associate` after each function.
 
-The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. The `id` and `name` property values are in uppercase, which is a best practice when describing your custom functions. You only need to add this JSON if you are preparing your own JSON file manually and not using autogeneration. For more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+The following sample shows the JSON metadata that corresponds to the functions defined in the preceding JavaScript code sample. The `id` and `name` property values are in uppercase, which is a best practice when describing your custom functions. You only need to add this JSON if you are preparing your own JSON file manually and not using autogeneration. For more information on autogeneration, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```json
 {

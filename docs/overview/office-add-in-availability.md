@@ -1,7 +1,7 @@
 ---
 title: Office client application and platform availability for Office Add-ins
 description: 'Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.'
-ms.date: 07/10/2020
+ms.date: 10/14/2020
 localization_priority: Priority
 ---
 
@@ -378,7 +378,8 @@ To work as expected, your Office Add-in might depend on a specific Office applic
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.9">Mailbox 1.9</a>
     </td>
     <td>Not available</td>
   </tr>
@@ -419,7 +420,8 @@ To work as expected, your Office Add-in might depend on a specific Office applic
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9">Mailbox 1.9</a>
     </td>
     <td>Not available</td>
   </tr>
@@ -1173,4 +1175,4 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 - [Office 2010, 2013, and 2016 update history (MSI)](/officeupdates/office-updates-msi)
 - [Outlook 2010, 2013, and 2016 update history (MSI)](/officeupdates/outlook-updates-msi)
 - [Update history for Office for Mac](/officeupdates/update-history-office-for-mac)
-- [Developing Office Add-ins](../develop/develop-overview.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)

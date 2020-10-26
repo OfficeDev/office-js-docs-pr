@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs.'
-ms.date: 09/15/2020
+ms.date: 10/26/2020
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -21,7 +21,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 ## API list
 
-The following table lists the Excel JavaScript APIs currently in preview. To see a complete list of all Excel JavaScript APIs (including preview APIs and previously released APIs), see [all Excel JavaScript APIs](/javascript/api/excel?view=excel-js-preview&preserve-view=true).
+The following table lists the Excel JavaScript APIs currently in preview. For a complete list of all Excel JavaScript APIs (including preview APIs and previously released APIs), see [all Excel JavaScript APIs](/javascript/api/excel?view=excel-js-preview&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|
