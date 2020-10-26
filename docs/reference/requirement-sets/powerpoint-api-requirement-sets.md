@@ -1,7 +1,7 @@
 ---
 title: PowerPoint JavaScript API requirement sets
 description: 'Learn more about the PowerPoint JavaScript API requirement sets.'
-ms.date: 07/10/2020
+ms.date: 10/26/2020
 ms.prod: powerpoint
 localization_priority: Priority
 ---
@@ -14,6 +14,7 @@ The following table lists the PowerPoint requirement sets, the Office client app
 
 |  Requirement set  |  Office on Windows<br>(connected to a Microsoft 365 subscription)  |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [Preview](powerpoint-preview-apis.md)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://insider.office.com)). |
 | PowerPointApi 1.1 | Version 1810 (Build 11001.20074) or later | 2.17 or later | 16.19 or later | October 2018 |
 
 ## Office versions and build numbers
@@ -24,26 +25,32 @@ For more information about Office versions and build numbers, see:
 
 ## PowerPoint JavaScript API 1.1
 
-PowerPoint JavaScript API 1.1 contains a single API to create a new presentation. For details about the API, see [JavaScript API for PowerPoint](../../powerpoint/powerpoint-add-ins.md).
+PowerPoint JavaScript API 1.1 contains a [single API to create a new presentation](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-). For details about the API, see [Create a presentation](../../powerpoint/powerpoint-add-ins.md#create-a-presentation).
 
-## Runtime requirement support check
+## How to use PowerPoint requirement sets at runtime and in the manifest
 
-At runtime, add-ins can check if a particular application supports an API requirement set by doing the following.
+> [!NOTE]
+> This section assumes you're familiar with the overview of requirement sets at [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md) and [Specify Office applications and API requirements](../../develop/specify-office-hosts-and-api-requirements.md).
+
+Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office application supports the APIs that the add-in needs.
+
+### Checking for requirement set support at runtime
+
+The following code sample shows how to determine whether the Office application where the add-in is running supports the specified API requirement set.
 
 ```js
 if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
   // Perform actions.
-}
-else {
+} else {
   // Provide alternate flow/logic.
 }
 ```
 
-## Manifest-based requirement support check
+### Defining requirement set support in the manifest
 
-Use the `Requirements` element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office application or platform doesn't support the requirement sets or API members specified in the `Requirements` element, the add-in won't run in that application or platform, and won't display in My Add-ins.
+You can use the [Requirements element](../manifest/requirements.md) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office application or platform doesn't support the requirement sets or API methods that are specified in the `Requirements` element of the manifest, the add-in won't run in that application or platform, and it won't display in the list of add-ins that are shown in **My Add-ins**. If your add-in requires a specific requirement set for full functionality, but it can provide value even to users on platforms that do not support the requirement set, we recommend that you check for requirement support at runtime as described above, instead of defining requirement set support in the manifest.
 
-The following code example shows an add-in that loads in all Office client applications that support the OneNoteApi requirement set, version 1.1.
+The following code sample shows the `Requirements` element in an add-in manifest which specifies that the add-in should load in all Office client applications that support PowerPointApi requirement set version 1.1 or greater.
 
 ```xml
 <Requirements>
