@@ -39,13 +39,9 @@ To get started using Fabric Core:
 
 ## Use Fabric Components
 
-Fabric provides a variety of UX components that you can use to build your add-in, including the following types of components:
+Fabric provides a variety of UX components that you can use to build your add-in. We do not expect that all fabric components will be used by a single add-in. Determine the best components for your scenario and user experience (for example, it may be hard to properly display a [Breadcrumb](https://developer.microsoft.com/fabric#/components/breadcrumb) in the task pane).
 
-- Input components - for example, Button, Checkbox, and Toggle.
-- Navigation components - for example, Pivot and Breadcrumb.
-- Notification components - for example, MessageBar and Callout.
-
-We do not expect that all fabric components will be used by an add-in. Here is a list of [Fabric React UX components](https://developer.microsoft.com/fluentui#/controls/web) that we recommend for use in an add-in:
+The following is a list of common [Fabric React UX components](https://developer.microsoft.com/fluentui#/controls/web) that we recommend for use in an add-in:
 
 - [Button](https://developer.microsoft.com/fabric#/components/button)
 - [Checkbox](https://developer.microsoft.com/fabric#/components/checkbox)
