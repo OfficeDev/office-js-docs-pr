@@ -2,6 +2,7 @@
 title: "Tutorial: Add keyboard shortcuts to an Office Add-in"
 description: 'Learn how to add custom keyboard shortcuts to your add-in.'
 ms.date: 11/06/2020
+ms.prod: excel
 localization_priority: Normal
 ---
 
@@ -160,4 +161,4 @@ To try your add-in, open a new workbook in Excel on a browser. In this workbook,
 
 ## Next steps
 
-Learn more about keyboard shortcuts in [Custom keyboard shortcuts in Office Add-ins](../develop/keyboard-shortcuts).
+Learn more about keyboard shortcuts in [Custom keyboard shortcuts in Office Add-ins](../develop/keyboard-shortcuts.md).
