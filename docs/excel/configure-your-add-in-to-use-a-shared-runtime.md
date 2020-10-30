@@ -135,6 +135,7 @@ Don't design your add-in to use multiple task panes if you are planning to use a
 
 - Read the [Call Excel APIs from a custom function](call-excel-apis-from-custom-function.md) article for details on using the Excel JavaScript APIs and custom Excel functions in a shared runtime.
 - Explore the patterns-and-practices sample [Manage ribbon and task pane UI, and run code on doc open](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario) to see a larger example of the shared JavaScript runtime in action.
+- Follow the [Add keyboard shortcuts to an Office Add-in tutorial](../tutorials/keyboard-shortcuts-tutorial.md) to add custom keyboard shortcuts to your project.
 
 ## See also
 
