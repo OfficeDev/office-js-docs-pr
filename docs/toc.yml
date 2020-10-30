@@ -212,7 +212,11 @@
         - name: Task panes
           href: design/task-pane-add-ins.md
       - name: Keyboard shortcuts
-        href: design/keyboard-shortcuts.md
+        items: 
+        - name: Overview
+          href: design/keyboard-shortcuts.md
+        - name: Keyboard shortcuts tutorial
+          href: tutorials/keyboard-shortcuts-tutorial.md
       - name: Localization
         href: develop/localization.md
       - name: Resources
