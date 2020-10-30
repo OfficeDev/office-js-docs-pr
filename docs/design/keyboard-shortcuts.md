@@ -58,7 +58,7 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 
     ```json
     {
-        "actions": [
+        "actions": [
         ],
         "shortcuts": [
         ]
