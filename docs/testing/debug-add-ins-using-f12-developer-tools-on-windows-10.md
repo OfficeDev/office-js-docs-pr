@@ -1,29 +1,46 @@
 ---
-title: Debug add-ins using F12 developer tools on Windows 10
-description: ''
-ms.date: 10/16/2018
+title: Debug add-ins using developer tools on Windows 10
+description: 'Debug add-ins using Microsoft Edge developer tools on Windows 10'
+ms.date: 12/16/2019
+localization_priority: Normal
 ---
 
-# Debug add-ins using F12 developer tools on Windows 10
+# Debug add-ins using developer tools on Windows 10
 
-The F12 developer tools included in Windows 10 help you debug, test, and speed up your webpages. You can also use them to develop and debug Office Add-ins, if you are not using an IDE like Visual Studio, or if you need to investigate a problem while running your add-in outside the IDE. This article describes how to use the Debugger tool from the F12 developer tools in Windows 10 to test your Office Add-in.
+There are developer tools outside of IDEs available to help you debug your add-ins on Windows 10. These are useful when you need to investigate a problem while running your add-in outside the IDE.
+
+The tool that you use depends on whether the add-in is running in Microsoft Edge or Internet Explorer. This is determined by the version of Windows 10 and the version of Office that are installed on the computer. To determine which browser is being used on your development computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!NOTE]
 > The instructions in this article cannot be used to debug an Outlook add-in that uses Execute Functions. To debug an Outlook add-in that uses Execute Functions, we recommend that you attach to Visual Studio in script mode or to some other script debugger.
 
-## Prerequisites
+## When the add-in is running in Microsoft Edge
 
-You need the following software:
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
-- The F12 developer tools, which are included in Windows 10. 
-    
-- The Office client application that hosts your add-in. 
-    
-- Your add-in. 
+### Debug using Microsoft Edge DevTools
 
-## Using the Debugger
+When the add-in is running in Microsoft Edge, you can use the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
 
-You can use the Debugger from the F12 developer tools in Windows 10 to test add-ins from AppSource or add-ins that you have added from other locations. You can start the F12 developer tools after your add-in is running. The F12 tools display in a separate window and do not use Visual Studio.
+1. Run the add-in.
+
+2. Run the Microsoft Edge DevTools.
+
+3. In the tools, open the **Local** tab. Your add-in will be listed by its name.
+
+4. Click the add-in name to open it in the tools.
+
+5. Open the **Debugger** tab. 
+
+6. Choose the folder icon above the **script** (left) pane. From the list of available files shown in the dropdown list, select the JavaScript file that you want to debug.
+
+7. To set a breakpoint, select the line. You will see a red dot to the left of the line and a corresponding line in the **Call stack** (bottom right) pane.
+
+8. Execute functions in the add-in as needed to trigger the breakpoint.
+
+## When the add-in is running in Internet Explorer
+
+When the add-in is running in Internet Explorer, you can use the debugger from the F12 developer tools in Windows 10 to test your add-in. You can start the F12 developer tools after the add-in is running. The F12 tools are displayed in a separate window and do not use Visual Studio.
 
 > [!NOTE]
 > The Debugger is part of the F12 developer tools in Windows 10 and Internet Explorer. Earlier versions of Windows do not include the Debugger. 
@@ -52,7 +69,7 @@ This example uses Word and a free add-in from AppSource.
     
 5. Set the breakpoint.
     
-   To set the breakpoint in **Home.js**, choose line 144, which is in the  `textChanged` function. You will see a red dot to the left of the line and a corresponding line in the **Call stack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
+   To set the breakpoint in **Home.js**, choose line 144, which is in the  `textChanged` function. You will see a red dot to the left of the line and a corresponding line in the **Call stack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
     
    ![Debugger with breakpoint in home.js file](../images/debugger-home-js-02.png)
 
@@ -65,5 +82,5 @@ This example uses Word and a free add-in from AppSource.
 
 ## See also
 
-- [Inspect running JavaScript with the Debugger](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
-- [Using the F12 developer tools](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
+- [Inspect running JavaScript with the Debugger](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
+- [Using the F12 developer tools](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))

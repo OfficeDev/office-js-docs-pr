@@ -1,7 +1,8 @@
 ---
 title: Office UI Fabric in Office Add-ins 
-description: ''
-ms.date: 12/04/2017
+description: 'Get an overview of how to use the Office UI Fabric components in Office Add-ins.'
+ms.date: 04/20/2020
+localization_priority: Normal
 ---
 
 
@@ -14,14 +15,14 @@ If you are building an add-in, we encourage you to use Office UI Fabric to creat
 The following sections explain how to get started using Fabric to meet your requirements. 
 
 ## Use Fabric Core: icons, fonts, colors
-Fabric Core contains basic elements of the design language such as icons, colors, type, and grid. Fabric core is framework independent. Both Fabric React and Fabric JS use Fabric Core.
+Fabric Core contains basic elements of the design language such as icons, colors, type, and grid. Fabric core is framework independent. Fabric Core is used by and included with Fabric React.
 
 To get started using Fabric Core:
 
 1. Add the CDN reference to the HTML on your page.  
 
 	```html
-	<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+	<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css">
 	```   
     
 2. Use Fabric icons and fonts. 
@@ -61,4 +62,4 @@ You can use different JavaScript frameworks, such as Angular or React, to build 
 |**Framework**|**Example**|
 |:------------|:----------|
 |**React**|[Using Office UI Fabric React in Office Add-ins](using-office-ui-fabric-react.md )|
-|**Angular**| See [ngOfficeUIFabric](http://ngofficeuifabric.com/), which is a community project with Angular 1.5 directives, and [Consider wrapping Fabric components with Angular 2 components](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
+|**Angular**| [Consider wrapping Fabric components with Angular 2 components](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|

@@ -1,3 +1,10 @@
+---
+title: TargetDialect element in the manifest file
+description: The TargetDialect element defines a regional language supported by this dictionary, represented as a culture name string.
+ms.date: 03/19/2019
+localization_priority: Normal
+---
+
 # TargetDialect element
 
 Defines a regional language supported by this dictionary, represented as a culture name string.
@@ -22,5 +29,4 @@ Specify the value in the BCP 47 language tag format, such as  `en-US`.
 
 ## See also
 
-- [Create a dictionary task pane add-in](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
-    
+- [Create a dictionary task pane add-in](../../word/dictionary-task-pane-add-ins.md)

@@ -1,15 +1,14 @@
 ---
-title: Work with Charts using the Excel JavaScript API
-description: ''
-ms.date: 12/04/2017
+title: Work with charts using the Excel JavaScript API
+description: 'Code samples demonstrating chart tasks using the Excel JavaScript API.'
+ms.date: 07/17/2019
+localization_priority: Normal
 ---
 
+# Work with charts using the Excel JavaScript API
 
-
-# Work with Charts using the Excel JavaScript API
-
-This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API. 
-For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart?view=office-js) and [Chart Collection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection?view=office-js).
+This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API.
+For the complete list of properties and methods that the `Chart` and `ChartCollection` objects support, see [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection).
 
 ## Create a chart
 
@@ -63,7 +62,7 @@ Excel.run(function (context) {
 
 ## Set chart title
 
-The following code sample sets the title of the first chart in the worksheet to **Sales Data by Year**. 
+The following code sample sets the title of the first chart in the worksheet to **Sales Data by Year**.
 
 ```js
 Excel.run(function (context) {
@@ -124,7 +123,7 @@ Excel.run(function (context) {
 
 ## Set visibility of gridlines in a chart
 
-The following code sample hides the major gridlines for the value axis of the first chart in the worksheet. You can show the major gridlines for the value axis of the chart, by setting `chart.axes.valueAxis.majorGridlines.visible` to **true**.
+The following code sample hides the major gridlines for the value axis of the first chart in the worksheet. You can show the major gridlines for the value axis of the chart, by setting `chart.axes.valueAxis.majorGridlines.visible` to `true`.
 
 ```js
 Excel.run(function (context) {
@@ -165,7 +164,7 @@ Excel.run(function (context) {
 
 ### Update a trendline
 
-The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.
+The following code sample sets the trendline to type `Linear` for the first series in the first chart in the worksheet named **Sample**.
 
 ```js
 Excel.run(function (context) {
@@ -184,6 +183,33 @@ Excel.run(function (context) {
 
 ![Chart with linear trendline in Excel](../images/excel-charts-trendline-linear.png)
 
+## Export a chart as an image
+
+Charts can be rendered as images outside of Excel. `Chart.getImage` returns the chart as a base64-encoded string representing the chart as a JPEG image. The following code shows how to get the image string and log it to the console.
+
+```js
+Excel.run(function (ctx) {
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    var imageAsString = chart.getImage();
+    return context.sync().then(function () {
+        console.log(imageAsString.value);
+        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+    });
+}).catch(errorHandlerFunction);
+```
+
+`Chart.getImage` takes three optional parameters: width, height, and the fitting mode.
+
+```typescript
+getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
+```
+
+These parameters determine the size of the image. Images are always proportionally scaled. The width and height parameters put upper or lower bounds on the scaled image. `ImageFittingMode` has three values with the following behaviors:
+
+- `Fill`: The image's minimum height or width is the specified height or width (whichever is reached first when scaling the image). This is the default behavior when no fitting mode is specified.
+- `Fit`: The image's maximum height or width is the specified height or width (whichever is reached first when scaling the image).
+- `FitAndCenter`: The image's maximum height or width is the specified height or width (whichever is reached first when scaling the image). The resulting image is centered relative to the other dimension.
+
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)

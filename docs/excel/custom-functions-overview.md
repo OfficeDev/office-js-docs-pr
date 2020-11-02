@@ -1,411 +1,99 @@
 ---
-ms.date: 11/29/2018
-description: Create custom functions in Excel using JavaScript.
-title: Create custom functions in Excel (Preview)
+ms.date: 10/14/2020
+description: 'Create an Excel custom function for your Office Add-in.'
+title: Create custom functions in Excel
+ms.topic: conceptual
+ms.custom: scenarios:getting-started
+localization_priority: Priority
 ---
+# Create custom functions in Excel
 
-# Create custom functions in Excel (preview)
-
-Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. This article describes how to create custom functions in Excel.
+Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet. The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.
+The following animated image shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
-<img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
 
-The following code defines the `ADD42` custom function.
+The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 
 ```js
-function add42(a, b) {
-  return a + b + 42;
+/**
+ * Returns the volume of a sphere.
+ * @customfunction
+ * @param {number} radius
+ */
+function sphereVolume(radius) {
+  return Math.pow(radius, 3) * 4 * Math.PI / 3;
 }
 ```
 
 > [!NOTE]
 > The [Known issues](#known-issues) section later in this article specifies current limitations of custom functions.
 
-## Components of a custom functions add-in project
+## How a custom function is defined in code
 
-If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll see the following files in the project that the generator creates:
+If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, it creates files which control your functions and task pane. We'll concentrate on the files that are important to custom functions:
 
 | File | File format | Description |
 |------|-------------|-------------|
-| **./src/customfunctions.js**<br/>or<br/>**./src/customfunctions.ts** | JavaScript<br/>or<br/>TypeScript | Contains the code that defines custom functions. |
-| **./config/customfunctions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions and make them available to end users. |
-| **./index.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
-| **./manifest.xml** | XML | Specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files that are listed previously in this table. |
-
-The following sections provide more information about these files.
+| **./src/functions/functions.js**<br/>or<br/>**./src/functions/functions.ts** | JavaScript<br/>or<br/>TypeScript | Contains the code that defines custom functions. |
+| **./src/functions/functions.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
+| **./manifest.xml** | XML | Specifies the location of multiple files that your custom function use, such as the custom functions JavaScript, JSON, and HTML files. It also lists the locations of task pane files, command files, and specifies which runtime your custom functions should use. |
 
 ### Script file
 
-The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file). 
+The script file (**./src/functions/functions.js** or **./src/functions/functions.ts**) contains the code that defines custom functions and comments which define the function.
 
-For example, the following code defines the custom functions `add` and `increment` and then specifies mapping information for both functions. The `add` function is mapped to the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is mapped to the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about mapping function names in the script file to objects in the JSON metadata file.
+The following code defines the custom function `add`. The code comments are used to generate a JSON metadata file that describes the custom function to Excel. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Next, two parameters are declared, `first` and `second`, followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```js
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number.
+ * @param second Second number.
+ * @returns The sum of the two numbers.
+ */
+
 function add(first, second){
   return first + second;
 }
-
-function increment(incrementBy, callback) {
-  var result = 0;
-  var timer = setInterval(function() {
-    result += incrementBy;
-    callback.setResult(result);
-  }, 1000);
-
-  callback.onCanceled = function() {
-    clearInterval(timer);
-  };
-}
-
-// map `id` values in the JSON metadata file to the JavaScript function names
-CustomFunctionMappings.ADD = add;
-CustomFunctionMappings.INCREMENT = increment;
 ```
-
-### JSON metadata file 
-
-The custom functions metadata file (**./config/customfunctions.json** in the project that the Yo Office generator creates) provides the information that Excel requires to register custom functions and make them available to end users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
-
-> [!TIP]
-> Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
-
-The following code in **customfunctions.json** specifies the metadata for the `add` function and the `increment` function that were described previously. The table that follows this code sample provides detailed information about the individual properties within this JSON object. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about specifying the value of `id` and `name` properties in the JSON metadata file.
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-  "functions": [
-    {
-      "id": "ADD",
-      "name": "ADD",
-      "description": "Add two numbers",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-      },
-      "parameters": [
-        {
-          "name": "first",
-          "description": "first number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        },
-        {
-          "name": "second",
-          "description": "second number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        }
-      ]
-    },
-    {
-      "id": "INCREMENT",
-      "name": "INCREMENT",
-      "description": "Periodically increment a value",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-          "type": "number",
-          "dimensionality": "scalar"
-    },
-    "parameters": [
-        {
-            "name": "increment",
-            "description": "Amount to increment",
-            "type": "number",
-            "dimensionality": "scalar"
-        }
-    ],
-    "options": {
-        "cancelable": true,
-        "stream": true,
-        "volatile": false
-      }
-    }
-  ]
-}
-```
-
-The following table lists the properties that are typically present in the JSON metadata file. For more detailed information about the JSON metadata file, see [Custom functions metadata](custom-functions-json.md).
-
-| Property 	| Description |
-|---------|---------|
-| `id` | A unique ID for the function. This ID can only contain alphanumeric characters and periods and should not be changed after it is set. |
-| `name` | Name of the function that the end user sees in Excel. In Excel, this function name will be prefixed by the custom functions namespace that's specified in the [XML manifest file](#manifest-file). |
-| `helpUrl`	| URL for the page that is shown when a user requests help. |
-| `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
-| `result` 	| Object that defines the type of information that is returned by the function. For detailed information about this object, see [result](custom-functions-json.md#result). |
-| `parameters` | Array that defines the input parameters for the function. For detailed information about this object, see [parameters](custom-functions-json.md#parameters). |
-| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streaming functions](#streaming-functions), [Canceling a function](#canceling-a-function), and [Declaring a volatile function](#declaring-a-volatile-function) later in this article. |
 
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. The following XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions.  
+The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) does several things:
 
-```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <Hosts>
-        <Host xsi:type="Workbook">
-            <AllFormFactors>
-                <ExtensionPoint xsi:type="CustomFunctions">
-                    <Script>
-                        <SourceLocation resid="JS-URL" /> <!--resid points to location of JavaScript file-->
-                    </Script>
-                    <Page>
-                        <SourceLocation resid="HTML-URL"/> <!--resid points to location of HTML file-->
-                    </Page>
-                    <Metadata>
-                        <SourceLocation resid="JSON-URL" /> <!--resid points to location of JSON file-->
-                    </Metadata>
-                    <Namespace resid="namespace" />
-                </ExtensionPoint>
-            </AllFormFactors>
-        </Host>
-    </Hosts>
-    <Resources>
-        <bt:Urls>
-            <bt:Url id="JSON-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.json" /> <!--specifies the location of your JSON file-->
-            <bt:Url id="JS-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.js" /> <!--specifies the location of your JavaScript file-->
-            <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
-        </bt:Urls>
-        <bt:ShortStrings>
-            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. Can only contain alphanumeric characters and periods.-->
-        </bt:ShortStrings>
-    </Resources>
-</VersionOverrides>
-```
+- Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
+- Uses `<ExtensionPoint>` and `<Resources>` elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
+- Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane. Note that using a shared runtime means your add-in will use Internet Explorer 11, not Microsoft Edge.
 
-> [!NOTE]
-> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.
+If you are using the Yo Office generator to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md).
 
-## Functions that return data from external sources
+To see a full working manifest from a sample add-in, see [this Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
 
-If a custom function retrieves data from an external source such as the web, it must:
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
-1. Return a JavaScript Promise to Excel.
+## Coauthoring
 
-2. Resolve the Promise with the final value using the callback function.
+Excel on the web and Windows connected to a Microsoft 365 subscription allow you to coauthor in Excel. If your workbook uses a custom function, your coauthoring colleague is prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function shares results through coauthoring.
 
-Custom functions display a `#GETTING_DATA` temporary result in the cell while Excel waits for the final result. Users can interact normally with the rest of the worksheet while they wait for the result.
-
-In the following code sample, the `getTemperature()` custom function retrieves the current temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function (not specified here) that uses [XHR](custom-functions-runtime.md#xhr-example) to call a temperature web service.
-
-```js
-function getTemperature(thermometerID){
-    return new Promise(function(setResult){
-        sendWebRequest(thermometerID, function(data){
-            setResult(data.temperature);
-        });
-    });
-}
-```
-
-## Streaming functions
-
-Streaming custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
-
-- Excel displays each new value automatically using the `setResult` callback.
-
-- The second input parameter, `handler`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
-
-- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Canceling a function](#canceling-a-function).
-
-```js
-function incrementValue(increment, handler){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
-    handler.setResult(result);
-  }, 1000);
-
-  handler.onCanceled = function(){
-    clearInterval(timer);
-  }
-}
-```
-
-When you specify metadata for a streaming function in the JSON metadata file, you must set the properties `"cancelable": true` and `"stream": true` within the `options` object, as shown in the following example.
-
-```json
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
-
-## Canceling a function
-
-In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
-
-- When the user edits or deletes a cell that references the function.
-
-- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
-
-- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
-
-To enable the ability to cancel a function, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
-
-## Declaring a volatile function
-
-[Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
-
-Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](https://docs.microsoft.com/en-us/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).  
-  
-Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.  
-  
-To declare a function volatile, add `"volatile": true` within the `options` object  for the function in the JSON metadata file, as shown in the following code sample. Note that a function cannot be marked both `"streaming": true` and `"volatile": true`; in the case where both are marked `true` the volatile option will be ignored.  
-
-```json
-{
-  "name": "TOMORROW",
-  "description":  "Returns tomorrow’s date",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-      "type": "string",
-      "dimensionality": "scalar"
-  },
-  "options": {
-      "volatile": true
-  }
-}
-```
-
-## Saving and sharing state
-
-Custom functions can save data in global JavaScript variables, which can be used in subsequent calls. Saved state is useful when users call the same custom function from more than one cell, because all instances of the function can access the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
-
-The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
-
-- The `streamTemperature` function updates the temperature value that's displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.
-
-- Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.
-
-- If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs. 
-
-- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable. Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
-
-```js
-var savedTemperatures;
-
-function streamTemperature(thermometerID, handler){
-  if(!savedTemperatures[thermometerID]){
-    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
-  }
-
-  function getNextTemperature(){
-    handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    var delayTime = 1000; // Amount of milliseconds to delay a request by.
-    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
-
-    handler.onCancelled() = function {
-      clearTimeout(delayTime);
-    }
-  }
-  getNextTemperature();
-}
-
-function refreshTemperature(thermometerID){
-  sendWebRequest(thermometerID, function(data){
-    savedTemperatures[thermometerID] = data.temperature;
-  });
-  setTimeout(function(){
-    refreshTemperature(thermometerID);
-  }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
-}
-```
-
-## Working with ranges of data
-
-Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a 2-dimensional array.
-
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
-
-```js
-function secondHighest(values){
-  let highest = values[0][0], secondHighest = values[0][0];
-  for(var i = 0; i < values.length; i++){
-    for(var j = 1; j < values[i].length; j++){
-      if(values[i][j] >= highest){
-        secondHighest = highest;
-        highest = values[i][j];
-      }
-      else if(values[i][j] >= secondHighest){
-        secondHighest = values[i][j];
-      }
-    }
-  }
-  return secondHighest;
-}
-```
-
-## Handling errors
-
-When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). In the following code sample, `.catch` will handle any errors that occur previously in the code.
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
+For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
 ## Known issues
 
-- Help URLs and parameter descriptions are not yet used by Excel.
-- Custom functions are not currently available on Excel for mobile clients.
-- Volatile functions (those that recalculate automatically whenever unrelated data changes in the spreadsheet) are not yet supported.
-- Deployment via the Office 365 Admin Portal and AppSource are not yet enabled.
-- Custom functions in Excel Online may stop working during a session after a period of inactivity. Refresh the browser page (F5) and re-enter a custom function to restore the feature.
-- You may see the **#GETTING_DATA** temporary result within the cell(s) of a worksheet if you have multiple add-ins running on Excel for Windows. Close all Excel windows and restart Excel.
-- Debugging tools specifically for custom functions may be available in the future. In the meantime, you can debug on Excel Online using F12 developer tools. See more details in [Custom functions best practices](custom-functions-best-practices.md).
+See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
-## Changelog
+## Next steps
 
-- **Nov 7, 2017**: Shipped* the custom functions preview and samples
-- **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later
-- **Nov 28, 2017**: Shipped* support for cancellation on asynchronous functions (requires change for streaming functions)
-- **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process
-- **September 20, 2018**: Shipped support for custom functions JavaScript runtime. For more information, see [Runtime for Excel custom functions](custom-functions-runtime.md).
-- **October 20, 2018**: With the [October Insiders build](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), Custom Functions now requires the 'id' parameter in your [custom functions metadata](custom-functions-json.md) for Windows Desktop and Online. On Mac, this parameter should be ignored.
+Want to try out custom functions? Check out the simple [custom functions quick start](../quickstarts/excel-custom-functions-quickstart.md) or the more in-depth [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md) if you haven't already.
 
+Another easy way to try out custom functions is to use [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), an add-in that allows you to experiment with custom functions right in Excel. You can try out creating your own custom function or play with the provided samples.
 
-\* to the [Office Insider](https://products.office.com/office-insider) channel (formerly called "Insider Fast")
-
-## See also
-
-* [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practices.md)
-* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)
+## See also 
+* [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Custom functions requirements](custom-functions-requirement-sets.md)
+* [Naming guidelines](custom-functions-naming.md)
+* [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)

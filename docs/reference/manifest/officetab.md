@@ -1,6 +1,13 @@
+---
+title: OfficeTab element in the manifest file
+description: The OfficeTab element defines the ribbon tab where your add-in command appears.
+ms.date: 06/20/2019
+localization_priority: Normal
+---
+
 # OfficeTab element
 
-Defines the ribbon tab on which your add-in command appears. This can either be the default tab (either  **Home**,  **Message**, or  **Meeting**), or a custom tab defined by the add-in. This element is required.
+Defines the ribbon tab on which your add-in command appears. This can either be the default tab (either **Home**, **Message**, or **Meeting**), or a custom tab defined by the add-in. This element is required.
 
 ## Child elements
 
@@ -8,7 +15,7 @@ Defines the ribbon tab on which your add-in command appears. This can either be 
 |:-----|:-----|:-----|
 |  Group      | Yes |  Defines a group of commands. You can add only one group per add-in to the default tab.  |
 
-The following are valid tab `id` values by host. Values in **bold** are supported in both desktop and online (for example, Word 2016 or later for Windows and Word Online).
+The following are valid tab `id` values by application. Values in **bold** are supported in both desktop and online (for example, Word 2016 or later on Windows and Word on the web).
 
 ### Outlook
 
@@ -46,7 +53,7 @@ The following are valid tab `id` values by host. Values in **bold** are supporte
 - TabDeveloper
 - TabAddIns
 - TabPrintPreview
-- TabBackgroundRemoval 
+- TabBackgroundRemoval
 
 ### PowerPoint
 
@@ -81,7 +88,7 @@ The following are valid tab `id` values by host. Values in **bold** are supporte
 
 ## Group
 
-A group of UI extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](group.md).
+A group of UI extension points in a tab. A group can have up to six controls. The **id** attribute is required and each **id** must be unique within the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](group.md).
 
 ## OfficeTab example
 

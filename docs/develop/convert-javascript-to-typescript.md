@@ -1,37 +1,41 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
-description: ''
-ms.date: 10/30/2018
+description: 'Learn how to convert an Office Add-in project in Visual Studio to use TypeScript.'
+ms.date: 09/01/2020
+localization_priority: Normal
 ---
 
 # Convert an Office Add-in project in Visual Studio to TypeScript
 
 You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. This article describes this conversion process for an Excel add-in. You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.
 
+> [!IMPORTANT]
+> This article describes the *minimal* steps necessary to ensure that, when you press F5, the code will be transpiled to JavaScript which is then sideloaded automatically into Office. However, the code is not very "TypeScripty". For example, variables are declared with the `var` keyword instead of `let` and they are not declared with a specified type. To take full advantage of the strong typing of TypeScript, consider making further changes to the code. 
+
 > [!NOTE]
-> To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quick start](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+> To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Yeoman generator" section of any [5-minute quick start](/office/dev/add-ins/) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
 ## Prerequisites
 
-- [Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
 
     > [!TIP]
-    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads).
 
-- TypeScript SDK version 2.3 or later (for Visual Studio 2017)
+- TypeScript SDK version 2.3 or later (for Visual Studio 2019)
 
     > [!TIP]
-    > In the [Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components). 
+    > In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components). 
 
 - Excel 2016 or later
 
 ## Create the add-in project
 
-1. Open Visual Studio and on the Visual Studio menu bar, choose  **File** > **New** > **Project**.
+1. In Visual Studio, choose **Create a new project**.
 
-2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type. 
+2. Using the search box, enter **add-in**. Choose **Excel Web Add-in**, then select **Next**.
 
-3. Name the project, and then choose **OK**.
+3. Name your project and select **Create**.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
 
@@ -39,55 +43,34 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 ## Convert the add-in project to TypeScript
 
-1. In **Solution Explorer**, rename the **Home.js** file to **Home.ts**.
+1. Find the **Home.js** file and rename it to **Home.ts**.
+
+2. Find the **./Functions/FunctionFile.js** file and rename it to **FunctionFile.ts**.
+
+3. Find the **./Scripts/MessageBanner.js** file and rename it to **MessageBanner.ts**.
+
+4. From the **Tools** tab, choose **NuGet Package Manager** and then select **Manage NuGet Packages for Solution...**.
+
+5. With the **Browse** tab selected, enter **jquery.TypeScript.DefinitelyTyped**. Install this package, or update it if it's already installed. This will ensure the jQuery TypeScript definitions are included in your project. The packages for jQuery appear in a file generated by Visual Studio, called **packages.config**.
 
     > [!NOTE]
-    > In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
+    > In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.
 
-2. Select **Yes** when prompted to confirm that you want to change file name extension.
+6. In **Home.ts**, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:
 
-3. Create a new file named **Office.d.ts** in the root of the web application project.
-
-4. In a web browser, open the [type definitions file for Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copy the contents of this file to your clipboard.
-
-5. In Visual Studio, open the **Office.d.ts** file, paste the contents of your clipboard into this file, and save the file.
-
-6. Create a new file named **jQuery.d.ts** in the root of the web application project.
-
-7. In a web browser, open the [type definitions file for jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts). Copy the contents of this file to your clipboard.
-
-8. In Visual Studio, open the **jQuery.d.ts** file, paste the contents of your clipboard into this file, and save the file.
-
-9. In Visual Studio, create a new file named **tsconfig.json** in the root of the web application project.
-
-10. Open the **tsconfig.json** file, add the following content to the file, and save the file:
-
-    ```json
-    {
-        "compilerOptions": {
-            "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ]
-        }
-    }
+    ```TypeScript
+    Office.initialize = function (reason) {
+        // add the following line
+        (window as any).Promise = OfficeExtension.Promise;
+        ...
     ```
 
-11. Open the **Home.ts** file and add the following declaration at the top of the file:
+7. In **Home.ts**, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
 
-	```typescript
-	declare var fabric: any;
-	```
-
-12. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
-
-	```typescript
-	if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
-	```
-
-13. In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
-
-    ```typescript
+    ```TypeScript
     function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
             null,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
@@ -99,9 +82,15 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
     }
     ```
 
+8. In **./Scripts/MessageBanner.ts**, find the line `_onResize(null);` and replace it with the following:
+
+    ```TypeScript
+    _onResize();
+    ```
+
 ## Run the converted add-in project
 
-1. In Visual Studio, press F5 or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. In Visual Studio, press **F5** or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -114,8 +103,6 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied. This code includes the minimum number of changes needed in order for your add-in to run.
 
 ```typescript
-declare var fabric: any;
-
 (function () {
     "use strict";
 
@@ -124,14 +111,15 @@ declare var fabric: any;
 
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
+        (window as any).Promise = OfficeExtension.Promise;
         $(document).ready(function () {
-            // Initialize the FabricUI notification mechanism and hide it
-            var element = document.querySelector('.ms-MessageBanner');
-            messageBanner = new fabric.MessageBanner(element);
+            // Initialize the notification mechanism and hide it
+            var element = document.querySelector('.MessageBanner');
+            messageBanner = new components.MessageBanner(element);
             messageBanner.hideBanner();
-            
-            // If not using Excel 2016, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+
+            // If you're using Excel 2013, use fallback logic.
+            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
@@ -143,11 +131,11 @@ declare var fabric: any;
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-                
+
             loadSampleData();
 
             // Add a click event handler for the highlight button.
-            $('#highlight-button').click(hightlightHighestValue);
+            $('#highlight-button').click(highlightHighestValue);
         });
     };
 
@@ -171,7 +159,7 @@ declare var fabric: any;
         .catch(errorHandler);
     }
 
-    function hightlightHighestValue() {
+    function highlightHighestValue() {
         // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
             // Create a proxy object for the selected range and load its properties
@@ -209,7 +197,8 @@ declare var fabric: any;
     }
 
     function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
             null,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
@@ -242,5 +231,5 @@ declare var fabric: any;
 
 ## See also
 
-* [Promise implementation discussion on StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-* [Office Add-in samples on GitHub](https://github.com/officedev)
+- [Promise implementation discussion on StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+- [Office Add-in samples on GitHub](https://github.com/officedev)

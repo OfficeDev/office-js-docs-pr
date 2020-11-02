@@ -1,3 +1,10 @@
+---
+title: Resources element in the manifest file
+description: The Resources element contains icons, strings, and URLs for the VersionOverrides node.
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # Resources element
 
 Contains icons, strings, and URLs for the [VersionOverrides](versionoverrides.md) node. A manifest element specifies a resource by using the **id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **id** must be unique within the manifest and can have a maximum of 32 characters.
@@ -14,10 +21,10 @@ Each resource can have one or more **Override** child elements to define a diffe
 |  **LongStrings**  |  string  | The text for **Description** attributes. Each **String** contains a maximum of 250 characters.|
 
 > [!NOTE]
-> You must use Secure Sockets Layer (SSL) for all URLs in the  **Image** and **Url** elements.
+> You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.
 
 ### Images
-Each icon must have three  **Images** elements, one for each of the three mandatory sizes:
+Each icon must have three **Images** elements, one for each of the three mandatory sizes:
 
 - 16x16
 - 32x32
@@ -31,10 +38,10 @@ The following additional sizes are also supported, but not required:
 - 48x48
 - 64x64
 
-> [!IMPORTANT] 
-> Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.    
+> [!IMPORTANT]
+> Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.
 
-## Resources examples 
+## Resources examples
 
 ```XML
 <Resources>

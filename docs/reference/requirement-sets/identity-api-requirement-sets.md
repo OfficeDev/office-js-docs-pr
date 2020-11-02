@@ -1,32 +1,40 @@
+---
+title: Identity API requirement sets
+description: 'Identity API requirement set information for Office Add-ins.'
+ms.date: 07/30/2020
+ms.prod: non-product-specific
+localization_priority: Normal
+---
+
 # Identity API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-Office Add-ins run across multiple versions of Office. The following table lists the Identity API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
+Office Add-ins run across multiple versions of Office. The following table lists the Identity API requirement sets, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2013 for Windows | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
+|  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | N/A | Preview**&#42;** | Coming soon | Preview**&#42;**| Preview | Preview| Coming soon | Coming soon |
+| IdentityAPI 1.3  | N/A | 2008 (build 13127.20000) or later | Coming soon | 16.40 or later | August, 2020* |
 
-> **&#42;** During the preview phase, the Identity API is supported on Windows 2016 and Mac only for users in the Insiders program using the Fast option. To join the Insiders program, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). To switch to the Fast track, see [Insider Fast](https://answers.microsoft.com/en-us/msoffice/forum/msoffice_officeinsider-mso_win10-msoinsider_reg/its-here-office-insider-fast-for-office-2016-on/dbe8e7bb-9523-44a4-948b-9436fedfd961).
+> \* Initially, the requirement set is supported in Office on the web only for documents that are opened from SharePoint Online and OneDrive.com. Support for other documents will come to Office on the web later in 2020.
+
+## Office versions and build numbers
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
-- [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
+- [Office Online Server overview](/officeonlineserver/office-online-server-overview)
 
-## Office common API requirement sets
+## Office Common API requirement sets
 
-For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
+For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
 
-## IdentityAPI 1.1 
+## IdentityAPI Preview
 
-The Single Sign On IdentityAPI 1.1 is the first version of the API. For details about this API, see the [SSO API reference](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) section of [Enable SSO in an add-in](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins).
+For details about this API, see either the version that uses Promises at [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) or the version that uses callbacks at [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-).
 
 ## See also
 
-- [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Specify Office hosts and API requirements](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office Add-ins XML manifest](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
+- [Specify Office applications and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office Add-ins XML manifest](../../develop/add-in-manifests.md)

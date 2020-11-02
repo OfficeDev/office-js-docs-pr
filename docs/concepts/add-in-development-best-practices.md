@@ -1,7 +1,8 @@
 ---
 title: Best practices for developing Office Add-ins
-description: ''
-ms.date: 01/23/2018
+description: 'Apply the best practices when developing to create Office Add-ins.'
+ms.date: 10/14/2020
+localization_priority: Normal
 ---
 
 
@@ -10,18 +11,17 @@ ms.date: 01/23/2018
 
 Effective add-ins offer unique and compelling functionality that extends Office applications in a visually appealing way. To create a great add-in, provide an engaging first-time experience for your users, design a first-class UI experience, and optimize your add-in's performance. Apply the best practices described in this article to create add-ins that help your users complete their tasks quickly and efficiently.
 
-> [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## Provide clear value
 
 - Create add-ins that help users complete tasks quickly and efficiently. Focus on scenarios that make sense for Office applications. For example:
  - Make core authoring tasks faster and easier, with fewer interruptions.
  - Enable new scenarios within Office.
- - Embed complementary services within Office hosts.
+ - Embed complementary services within Office applications.
  - Improve the Office experience to enhance productivity.
 - Make sure that the value of your add-in is clear to users right away by [creating an engaging first run experience](#create-an-engaging-first-run-experience).
-- Create an [effective AppSource listing](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
+- Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
 
 
 ## Create an engaging first-run experience
@@ -40,13 +40,13 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
    ![A screenshot that shows a content add-in with data next to a content add-in with no data](../images/add-in-title.png)
 
-- Offer [free trials](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). If your add-in requires a subscription, make some functionality available without a subscription.
+- Offer [free trials](/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
 
 - Make signup simple. Prefill information (email, display name) and skip email verifications.
 
 - Avoid pop ups. If you have to use them, guide the user to enable your pop up.
 
-For templates that illustrate patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+For patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](../design/first-run-experience-patterns.md).
 
 ## Use add-in commands
 
@@ -72,11 +72,9 @@ For templates that illustrate patterns that you can apply as you develop your fi
 
 - Design for all platforms and input methods, including mouse/keyboard and [touch](#optimize-for-touch). Ensure that your UI is responsive to different form factors.
 
-For templates that apply design principles that you can use and customize as you develop your add-in, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
-
 ### Optimize for touch
 
-- Use the [Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) property to detect whether the host application your add-in runs on is touch enabled.
+- Use the [Context.touchEnabled](/javascript/api/office/office.context#touchenabled) property to detect whether the Office application that your add-in runs on is touch enabled.
 
   > [!NOTE]
   > This property is not supported in Outlook.
@@ -120,10 +118,11 @@ For templates that apply design principles that you can use and customize as you
 
 - Monitor your service health, and use telemetry to monitor user success.
 
+- Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
 ## Market your add-in
 
-- Publish your add-in to [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) and [promote it](https://docs.microsoft.com/office/dev/store/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
+- Publish your add-in to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) and [promote it](/office/dev/store/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings).
 
 - Use succinct and descriptive add-in titles. Include no more than 128 characters.
 
@@ -133,6 +132,11 @@ For templates that apply design principles that you can use and customize as you
 
 - Create a website to help users find and use your add-in.
 
+## Use JavaScript that supports Internet Explorer
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
+
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)

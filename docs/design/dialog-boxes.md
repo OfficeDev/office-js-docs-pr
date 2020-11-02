@@ -1,7 +1,8 @@
 ---
 title: Dialog boxes in Office Add-ins
-description: ''
-ms.date: 12/04/2017
+description: 'Learn best practices for the visual design of dialogs in Office Add-ins.'
+ms.date: 03/19/2019
+localization_priority: Normal
 ---
 
 
@@ -26,7 +27,5 @@ For a sample that implements a dialog box, see [Office Add-in Dialog API Example
 
 ## See also
 
-- [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-- [Dialog object](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js)
-
-
+- [Dialog object](/javascript/api/office/office.dialog)
+- [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)

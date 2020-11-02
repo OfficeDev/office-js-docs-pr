@@ -1,12 +1,13 @@
 ---
 title: Use document themes in your PowerPoint add-ins
-description: ''
-ms.date: 12/04/2017
+description: 'Learn how to visually coordinate themes such as fonts and colors to apply to presentations, documents, worksheets, and emails.'
+ms.date: 10/14/2019
+localization_priority: Normal
 ---
 
 # Use document themes in your PowerPoint add-ins
 
-An [Office theme](https://support.office.com/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, you use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
+An [Office theme](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, you use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
 
 Using OfficeThemes.css, helps you design add-ins that are coordinated with PowerPoint in two ways:
 
@@ -20,7 +21,7 @@ Every Office document theme defines 12 colors. Ten of these colors are available
 
 ![Color palette](../images/office15-app-color-palette.png)
 
-To view or customize the full set of 12 theme colors in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then point to **Color**, and click  **Customize Colors** to display the **Create New Theme Colors** dialog box.
+To view or customize the full set of 12 theme colors in PowerPoint, in the **Variants** group on the **Design** tab, click the **More** drop-down - then select **Colors** > **Customize Colors** to display the **Create New Theme Colors** dialog box.
 
 ![Create new theme colors dialog box](../images/office15-app-create-new-theme-colors.png)
 
@@ -28,17 +29,17 @@ The first four colors are for text and backgrounds. Text that is created with th
 
 ### Document theme fonts
 
-Every Office document theme also defines two fonts -- one for headings and one for body text. PowerPoint uses these fonts to construct automatic text styles. In addition,  **Quick Styles** galleries for text and **WordArt** use these same theme fonts. These two fonts are available as the first two selections when you select fonts with the font picker.
+Every Office document theme also defines two fonts -- one for headings and one for body text. PowerPoint uses these fonts to construct automatic text styles. In addition, **Quick Styles** galleries for text and **WordArt** use these same theme fonts. These two fonts are available as the first two selections when you select fonts with the font picker.
 
 ![The font picker](../images/office15-app-font-picker.png)
 
-To view or customize theme fonts in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then point to **Fonts**, and click  **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
+To view or customize theme fonts in PowerPoint, in the **Variants** group on the **Design** tab, click the **More** drop-down - then select **Fonts** > **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
 
 ![Create new theme fonts dialog box](../images/office15-app-create-new-theme-fonts.png)
 
 ### Office UI theme fonts and colors
 
-Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. To do that, you use the  **File** > **Account** > **Office Theme** drop-down (from any Office application).
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. To do that, you use the **File** > **Account** > **Office Theme** drop-down (from any Office application).
 
 ![Office theme drop-down](../images/office15-app-office-theme-picker.png)
 
@@ -54,7 +55,10 @@ Use the following steps to add and reference the OfficeThemes.css file to your a
 
 #### To add OfficeThemes.css to your Visual Studio project
 
-1. In **Solution Explorer**, right-click the **Content** folder in the _**project_name**_**Web** project, point to **Add**, and then select **Style Sheet**.
+> [!NOTE]
+> The steps in this procedure only apply to Visual Studio 2015. If you are using Visual Studio 2019, the OfficeThemes.css file is created automatically for any new PowerPoint add-in projects that you create.
+
+1. In **Solution Explorer**, right-click the **Content** folder in the _**project_name**_**Web** project, choose **Add**, and then select **Style Sheet**.
     
 2. Name the new style sheet **OfficeThemes**.
     
@@ -134,9 +138,17 @@ To do this in Visual Studio, follow these steps.
 
 #### To reference OfficeThemes.css in your add-in for PowerPoint
 
-1. In Visual Studio 2015, open or create a new **Office Add-in** project.
-    
-2. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the OfficeThemes.css file:
+1. Choose **Create a new project**.
+
+2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
+
+3. Name your project and select **Create**.
+
+3. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
+
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+
+5. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the OfficeThemes.css file:
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />
@@ -163,7 +175,7 @@ The following shows a simple example of HTML in a content add-in that uses the O
 </body>
 ```
 
-At runtime, when inserted into a presentation that uses the default  **Office Theme**, the content add-in is rendered like this.
+At runtime, when inserted into a presentation that uses the default **Office Theme**, the content add-in is rendered like this.
 
 ![Content app running with Office theme](../images/office15-app-content-app-office-theme.png)
 

@@ -1,3 +1,10 @@
+---
+title: QueryUri element in the manifest file
+description: The QueryUri element specifies the endpoint URL for the dictionary query service.
+ms.date: 03/19/2019
+localization_priority: Normal
+---
+
 # QueryUri element
 
 Specifies the URL of the endpoint for the dictionary query service.
@@ -16,5 +23,4 @@ Specifies the URL of the endpoint for the dictionary query service.
 
 ## See also
 
-- [Create a dictionary task pane add-in](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
-    
+- [Create a dictionary task pane add-in](../../word/dictionary-task-pane-add-ins.md)

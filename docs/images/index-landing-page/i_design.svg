@@ -1,0 +1,38 @@
+<svg id="Titles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e5e5e5;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        stroke: #556a8a;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #2bc7f4;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <title>i_design</title>
+  <rect class="cls-1" x="1" y="51" width="62" height="12"/>
+  <polygon class="cls-2" points="6 2 58 47 6 47 6 2"/>
+  <polygon class="cls-3" points="14 39 14 20 35 39 14 39"/>
+  <line class="cls-4" x1="8" y1="57" x2="8" y2="63"/>
+  <line class="cls-4" x1="16" y1="54" x2="16" y2="63"/>
+  <line class="cls-4" x1="24" y1="57" x2="24" y2="63"/>
+  <line class="cls-4" x1="32" y1="54" x2="32" y2="63"/>
+  <line class="cls-4" x1="40" y1="57" x2="40" y2="63"/>
+  <line class="cls-4" x1="56" y1="57" x2="56" y2="63"/>
+  <line class="cls-4" x1="48" y1="54" x2="48" y2="63"/>
+</svg>

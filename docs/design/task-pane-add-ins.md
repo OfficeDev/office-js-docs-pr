@@ -1,7 +1,8 @@
 ---
 title: Task panes in Office Add-ins
-description: Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.
-ms.date: 12/04/2017
+description: 'Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.'
+ms.date: 07/07/2020
+localization_priority: Normal
 ---
 
 
@@ -18,18 +19,18 @@ Task panes are interface surfaces that typically appear on the right side of the
 |**Do**|**Don't**|
 |:-----|:--------|
 |<ul><li>Include the name of your add-in in the title.</li></ul>|<ul><li>Don't append your company name to the title.</li></ul>|
-|<ul><li>Use short descriptive names in the title.</li></ul>|<ul><li>Don't append strings such as “add-in,” “for Word,” or “for Office” to the title of your add-in.</li></ul>|
+|<ul><li>Use short descriptive names in the title.</li></ul>|<ul><li>Don't append strings such as "add-in," "for Word," or "for Office" to the title of your add-in.</li></ul>|
 |<ul><li>Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.</li></ul>||
 |<ul><li>Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.</li></ul>||
 
 
 ## Variants
 
-The following images show the various task pane sizes with the Office ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
+The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
 
 *Figure 2. Office 2016 desktop task pane sizes*
 
-![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-desktop.png)
+![Image displaying the desktop task pane sizes at 1366x768](../images/office-2016-taskpane-sizes.png)
 
 - Excel - 320x455
 - PowerPoint - 320x531
@@ -38,14 +39,14 @@ The following images show the various task pane sizes with the Office ribbon at 
 
 <br/>
 
-*Figure 3. Office 365 task pane sizes*
+*Figure 3. Office task pane sizes*
 
-![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-online.png)
+![Image displaying the task pane sizes at 1366x768](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350x378
 - PowerPoint - 348x391
 - Word - 329x445
-- Outlook Web App - 320x570
+- Outlook (on the web) - 320x570
 
 ## Personality menu
 
@@ -71,6 +72,5 @@ For a sample that implements a task pane, see [Excel Add-in JS WoodGrove Expense
 ## See also
 
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md) 
-- [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
+- [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)
 

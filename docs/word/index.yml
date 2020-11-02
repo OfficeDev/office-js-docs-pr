@@ -1,0 +1,69 @@
+### YamlMime:Landing
+
+title: Word add-ins documentation # < 60 chars
+summary: With Word add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Word across multiple platforms, including on the web, Windows, Mac, and iPad. Learn how to build, test, debug, and publish Word add-ins. # < 160 chars
+
+metadata:
+  title: Word add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
+  ms.prod: word #Required
+  ms.topic: landing-page # Required
+  ms.date: 06/09/2020 #Required; mm/dd/yyyy format.
+  localization_priority: Priority
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card (optional)
+  - title: About Word add-ins
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What are Word add-ins?
+            url: word-add-ins-programming-overview.md
+      - linkListType: quickstart
+        links:
+          - text: Build your first Word add-in
+            url: ../quickstarts/word-quickstart.md
+          - text: Explore APIs with Script Lab
+            url: ../overview/explore-with-script-lab.md       
+      - linkListType: how-to-guide
+        links:
+          - text: Use the Word JavaScript API to interact with document content and metadata
+            url: ../reference/overview/word-add-ins-reference-overview.md
+          - text: Test and debug a Word add-in
+            url: ../testing/test-debug-office-add-ins.md
+          - text: Deploy and publish a Word add-in
+            url: ../publish/publish.md
+
+  # Card (optional)
+  - title: Key Office Add-ins concepts
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Office Add-ins platform overview
+            url: ../overview/office-add-ins.md
+      - linkListType: concept
+        links:
+          - text: Core concepts for Office Add-ins
+            url: ../overview/core-concepts-office-add-ins.md
+          - text: Design Office Add-ins
+            url: ../design/add-in-design.md
+          - text: Develop Office Add-ins
+            url: ../develop/develop-overview.md
+
+  # Card
+  - title: Resources
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Ask questions
+            url: https://stackoverflow.com/questions/tagged/office-js
+          - text: Request features
+            url: https://officespdev.uservoice.com/
+          - text: Report issues
+            url: https://github.com/officedev/office-js/issues
+          - text: Office Add-ins additional resources
+            url: ../resources/resources-links-help.md

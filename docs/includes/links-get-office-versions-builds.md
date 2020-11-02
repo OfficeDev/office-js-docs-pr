@@ -1,0 +1,2 @@
+- [Version and build numbers of update channel releases for Microsoft 365 clients](/officeupdates/update-history-office365-proplus-by-date)
+- [What version of Office am I using?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)

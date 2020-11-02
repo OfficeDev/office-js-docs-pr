@@ -1,13 +1,16 @@
 ---
-title: Work with ranges using the Excel JavaScript API
-description: ''
-ms.date: 12/04/2018
+title: Work with ranges using the Excel JavaScript API (fundamental)
+description: 'Code samples that show how to perform common tasks with ranges using the Excel JavaScript API.'
+ms.date: 07/28/2020
+localization_priority: Normal
 ---
-
 
 # Work with ranges using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+
+> [!NOTE]
+> For code samples that show how to perform more advanced tasks with ranges, see [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md).
 
 ## Get a range
 
@@ -15,7 +18,7 @@ The following examples show different ways to get a reference to a range within 
 
 ### Get range by address
 
-The following code sample gets the range with address **B2:B5** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.
+The following code sample gets the range with address **B2:C5** from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -32,7 +35,7 @@ Excel.run(function (context) {
 
 ### Get range by name
 
-The following code sample gets the range named **MyRange** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.
+The following code sample gets the range named `MyRange` from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -49,7 +52,7 @@ Excel.run(function (context) {
 
 ### Get used range
 
-The following code sample gets the used range from the worksheet named **Sample**, loads its **address** property, and writes a message to the console. The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them. If the entire worksheet is blank, the **getUsedRange()** method returns a range that consists of only the top-left cell in the worksheet.
+The following code sample gets the used range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console. The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them. If the entire worksheet is blank, the `getUsedRange()` method returns a range that consists of only the top-left cell in the worksheet.
 
 ```js
 Excel.run(function (context) {
@@ -66,7 +69,7 @@ Excel.run(function (context) {
 
 ### Get entire range
 
-The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.
+The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -91,16 +94,16 @@ Excel.run(function (context) {
     var range = sheet.getRange("B4:E4");
 
     range.insert(Excel.InsertShiftDirection.down);
-    
+
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
-**Data before range is inserted**
+### Data before range is inserted
 
 ![Data in Excel before range is inserted](../images/excel-ranges-start.png)
 
-**Data after range is inserted**
+### Data after range is inserted
 
 ![Data in Excel after range is inserted](../images/excel-ranges-after-insert.png)
 
@@ -119,11 +122,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before range is cleared**
+### Data before range is cleared
 
 ![Data in Excel before range is cleared](../images/excel-ranges-start.png)
 
-**Data after range is cleared**
+### Data after range is cleared
 
 ![Data in Excel after range is cleared](../images/excel-ranges-after-clear.png)
 
@@ -142,11 +145,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before range is deleted**
+### Data before range is deleted
 
 ![Data in Excel before range is deleted](../images/excel-ranges-start.png)
 
-**Data after range is deleted**
+### Data after range is deleted
 
 ![Data in Excel after range is deleted](../images/excel-ranges-after-delete.png)
 
@@ -165,13 +168,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Selected range B2:E6**
+### Selected range B2:E6
 
 ![Selected range in Excel](../images/excel-ranges-set-selection.png)
 
 ## Get the selected range
 
-The following code sample gets the selected range, loads its **address** property, and writes a message to the console. 
+The following code sample gets the selected range, loads its `address` property, and writes a message to the console.
 
 ```js
 Excel.run(function (context) {
@@ -205,11 +208,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before cell value is updated**
+#### Data before cell value is updated
 
 ![Data in Excel before cell value is updated](../images/excel-ranges-set-start.png)
 
-**Data after cell value is updated**
+#### Data after cell value is updated
 
 ![Data in Excel after cell value is updated](../images/excel-ranges-set-cell-value.png)
 
@@ -224,7 +227,7 @@ Excel.run(function (context) {
     var data = [
         ["Potato Chips", 10, 1.80],
     ];
-    
+
     var range = sheet.getRange("B5:D5");
     range.values = data;
     range.format.autofitColumns();
@@ -233,11 +236,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before cell values are updated**
+#### Data before cell values are updated
 
 ![Data in Excel before cell values are updated](../images/excel-ranges-set-start.png)
 
-**Data after cell values are updated**
+#### Data after cell values are updated
 
 ![Data in Excel after cell values are updated](../images/excel-ranges-set-cell-values.png)
 
@@ -257,11 +260,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before cell formula is set**
+#### Data before cell formula is set
 
 ![Data in Excel before cell formula is set](../images/excel-ranges-start-set-formula.png)
 
-**Data after cell formula is set**
+#### Data after cell formula is set
 
 ![Data in Excel after cell formula is set](../images/excel-ranges-set-formula.png)
 
@@ -279,7 +282,7 @@ Excel.run(function (context) {
         ["=C5 * D5"],
         ["=SUM(E3:E5)"]
     ];
-    
+
     var range = sheet.getRange("E3:E6");
     range.formulas = data;
     range.format.autofitColumns();
@@ -288,11 +291,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data before cell formulas are set**
+#### Data before cell formulas are set
 
 ![Data in Excel before cell formulas are set](../images/excel-ranges-start-set-formula.png)
 
-**Data after cell formulas are set**
+#### Data after cell formulas are set
 
 ![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
@@ -302,7 +305,7 @@ These examples show how to get values, text, and formulas from a range of cells.
 
 ### Get values from a range of cells
 
-The following code sample gets the range **B2:E6**, loads its **values** property, and writes the values to the console. The **values** property of a range specifies the raw values that the cells contain. Even if some cells in a range contain formulas, the **values** property of the range specifies the raw values for those cells, not any of the formulas.
+The following code sample gets the range **B2:E6**, loads its `values` property, and writes the values to the console. The `values` property of a range specifies the raw values that the cells contain. Even if some cells in a range contain formulas, the `values` property of the range specifies the raw values for those cells, not any of the formulas.
 
 ```js
 Excel.run(function (context) {
@@ -317,11 +320,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range (values in column E are a result of formulas)**
+#### Data in range (values in column E are a result of formulas)
 
 ![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
-**range.values (as logged to the console by the code sample above)**
+#### range.values (as logged to the console by the code sample above)
 
 ```json
 [
@@ -360,7 +363,7 @@ Excel.run(function (context) {
 
 ### Get text from a range of cells
 
-The following code sample gets the range **B2:E6**, loads its **text** property, and writes it to the console.  The **text** property of a range specifies the display values for cells in the range. Even if some cells in a range contain formulas, the **text** property of the range specifies the display values for those cells, not any of the formulas.
+The following code sample gets the range **B2:E6**, loads its `text` property, and writes it to the console. The `text` property of a range specifies the display values for cells in the range. Even if some cells in a range contain formulas, the `text` property of the range specifies the display values for those cells, not any of the formulas.
 
 ```js
 Excel.run(function (context) {
@@ -375,11 +378,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range (values in column E are a result of formulas)**
+#### Data in range (values in column E are a result of formulas)
 
 ![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
-**range.text (as logged to the console by the code sample above)**
+#### range.text (as logged to the console by the code sample above)
 
 ```json
 [
@@ -418,7 +421,7 @@ Excel.run(function (context) {
 
 ### Get formulas from a range of cells
 
-The following code sample gets the range **B2:E6**, loads its **formulas** property, and writes it to the console.  The **formulas** property of a range specifies the formulas for cells in the range that contain formulas and the raw values for cells in the range that do not contain formulas.
+The following code sample gets the range **B2:E6**, loads its `formulas` property, and writes it to the console. The `formulas` property of a range specifies the formulas for cells in the range that contain formulas and the raw values for cells in the range that do not contain formulas.
 
 ```js
 Excel.run(function (context) {
@@ -433,11 +436,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range (values in column E are a result of formulas)**
+#### Data in range (values in column E are a result of formulas)
 
 ![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
-**range.formulas (as logged to the console by the code sample above)**
+#### range.formulas (as logged to the console by the code sample above)
 
 ```json
 [
@@ -487,18 +490,18 @@ Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
 
     var range = sheet.getRange("B2:E2");
-    range.format.fill.color = "#4472C4";;
+    range.format.fill.color = "#4472C4";
     range.format.font.color = "white";
 
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range before font color and fill color are set**
+#### Data in range before font color and fill color are set
 
 ![Data in Excel before format is set](../images/excel-ranges-format-before.png)
 
-**Data in range after font color and fill color are set**
+#### Data in range after font color and fill color are set
 
 ![Data in Excel after format is set](../images/excel-ranges-format-font-and-fill.png)
 
@@ -523,132 +526,70 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Data in range before number format is set**
+#### Data in range before number format is set
 
-![Data in Excel before format is set](../images/excel-ranges-format-font-and-fill.png)
+![Data in Excel before number format is set](../images/excel-ranges-format-font-and-fill.png)
 
-**Data in range after number format is set**
+#### Data in range after number format is set
 
-![Data in Excel after format is set](../images/excel-ranges-format-numbers.png)
+![Data in Excel after number format is set](../images/excel-ranges-format-numbers.png)
+
+## Read or write to an unbounded range
+
+### Read an unbounded range
+
+An unbounded range address is a range address that specifies either entire columns or entire rows. For example:
+
+- Range addresses comprised of entire columns:<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- Range addresses comprised of entire rows:<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+When the API makes a request to retrieve an unbounded range (for example, `getRange('C:C')`), the response will contain `null` values for cell-level properties such as `values`, `text`, `numberFormat`, and `formula`. Other properties of the range, such as `address` and `cellCount`, will contain valid values for the unbounded range.
+
+### Write to an unbounded range
+
+You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on an unbounded range because the input request is too large. For example, the following code snippet is not valid because it attempts to specify `values` for an unbounded range. The API returns an error if you attempt to set cell-level properties for an unbounded range.
+
+```js
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+range.values = 'Due Date';
+```
+
+## Read or write to a large range
+
+If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.
+
+For details on the system limitations, see the "Excel add-ins" section of [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins).
 
 ### Conditional formatting of ranges
 
 Ranges can have formats applied to individual cells based on conditions. For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).
 
-## Work with dates using the Moment-MSDate plug-in
+## Find a cell using string matching
 
-The [Moment JavaScript library](https://momentjs.com/) provides a convenient way to use dates and timestamps. The [Moment-MSDate plug-in](https://www.npmjs.com/package/moment-msdate) converts the format of moments into one preferable for Excel. This is the same format the [NOW function](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) returns.
-
-The following code shows how to set the range at **B4** to a moment's timestamp:
+The `Range` object has a `find` method to search for a specified string within the range. It returns the range of the first cell with matching text. The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console. Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range. If you expect that the specified string may not exist in the range, use the [findOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method instead, so your code gracefully handles that scenario.
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
-	
-	var now = Date.now();
-	var nowMoment = moment(now);
-	var nowMS = nowMoment.toOADate();
-	
-	var dateRange = sheet.getRange("B4");
-	dateRange.values = [[nowMS]];
-	
-	dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
-	
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
+    var table = sheet.tables.getItem("ExpensesTable");
+    var searchRange = table.getRange();
+    var foundRange = searchRange.find("Food", {
+        completeMatch: true, // find will match the whole cell value
+        matchCase: false, // find will not match case
+        searchDirection: Excel.SearchDirection.forward // find will start searching at the beginning of the range
+    });
 
-It is a similar technique to get the date back out of the cell and convert it to a moment or other format, as demonstrated in the following code:
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-
-    var dateRange = sheet.getRange("B4");
-    dateRange.load("values");
-		
-    return context.sync().then(function () {
-        var nowMS = dateRange.values[0][0];
-
-        // log the date as a moment
-        var nowMoment = moment.fromOADate(nowMS);
-        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
-
-        // log the date as a UNIX-style timestamp 
-        var now = nowMoment.unix();
-        console.log(`get (timestamp): ${now}`);
+    foundRange.load("address");
+    return context.sync()
+        .then(function() {
+            console.log(foundRange.address);
     });
 }).catch(errorHandlerFunction);
 ```
 
-Your add-in will have to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
-
-## Copy and paste
-
-> [!NOTE]
-> The copyFrom function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
-
-Range’s copyFrom function replicates the copy-and-paste behavior of the Excel UI. The range object that copyFrom is called on is the destination. 
-The source to be copied is passed as a range or a string address representing a range. 
-The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
-    sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-Range.copyFrom has three optional parameters.
-
-```ts
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
-``` 
-
-`copyType` specifies what data gets copied from the source to the destination. 
-`“Formulas”` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is. 
-`“Values”` copies the data values and, in the case of formulas, the result of the formula. 
-`“Formats”` copies the formatting of the range, including font, color, and other format settings, but no values. 
-`”All”` (the default option) copies both data and formatting, preserving cells’ formulas if found.
-
-`skipBlanks` sets whether blank cells are copied into the destination. When true, `copyFrom` skips blank cells in the source range. 
-Skipped cells will not overwrite the existing data of their corresponding cells in the destination range. The default is false.
-
-The following code sample and images demonstrate this behavior in a simple scenario. 
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
-    sheet.getRange("D1").copyFrom("A1:C1",
-        Excel.RangeCopyType.all,
-        true, // skipBlanks
-        false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
-    sheet.getRange("D2").copyFrom("A2:C2",
-        Excel.RangeCopyType.all,
-        false, // skipBlanks
-        false); // transpose
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-*Before the preceeding function has been run.*
-
-![Data in Excel before range’s copy method has been run.](../images/excel-range-copyfrom-skipblanks-before.png)
-
-*After the preceeding function has been run.*
-
-![Data in Excel after range’s copy method has been run.](../images/excel-range-copyfrom-skipblanks-after.png)
-
-`transpose` determines whether or not the data is transposed, meaning its rows and columns are switched, into the source location. 
-A transposed range is flipped along the main diagonal, so rows **1**, **2**, and **3** will become columns **A**, **B**, and **C**. 
-
+When the `find` method is called on a range representing a single cell, the entire worksheet is searched. The search begins at that cell and goes in the direction specified by `SearchCriteria.searchDirection`, wrapping around the ends of the worksheet if needed.
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-
+- [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)

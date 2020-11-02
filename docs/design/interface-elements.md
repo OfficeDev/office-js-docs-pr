@@ -1,7 +1,8 @@
 ---
 title: Office UI elements for Office Add-ins
-description: ''
-ms.date: 12/04/2017
+description: 'Get an overview of the different kinds of UI elements in an Office Add-in.'
+ms.date: 12/24/2019
+localization_priority: Normal
 ---
 
 
@@ -11,11 +12,11 @@ You can use several types of UI elements to extend the Office UI, including add-
 
 The following image shows the types of Office UI elements that you can create.
 
-![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/overview-with-app-interface-elements.png)
+![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/add-in-ui-elements.png)
 
 ## Add-in commands
 
-Use [add-in commands](add-in-commands.md) to add entry points to your add-in to the Office ribbon. Commands start actions in your add-in either by running JavaScript code, or by launching an HTML container. You can create two types of add-in commands.
+Use [add-in commands](add-in-commands.md) to add entry points to your add-in to the Office app ribbon. Commands start actions in your add-in either by running JavaScript code, or by launching an HTML container. You can create two types of add-in commands.
 
 |**Command type**|**Description**|
 |:---------------|:--------------|

@@ -1,3 +1,10 @@
+---
+title: Navigation patterns for Office Add-ins
+description: 'Learn best practices for using command bars, tab bars, and back buttons, to design the navigation of an Office Add-in.'
+ms.date: 06/26/2018
+localization_priority: Normal
+---
+
 # Navigation patterns
 
 The main features of an add-in are accessed through specific command types and limited screen area. It is important that navigation is intuitive, provides context, and allows the user to move easily throughout the add-in.

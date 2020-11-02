@@ -1,6 +1,13 @@
+---
+title: Methods element in the manifest file
+description: The Methods element specifies the list of Office JavaScript API methods that your Office Add-in requires in order to activate.
+ms.date: 03/19/2019
+localization_priority: Normal
+---
+
 # Methods element
 
-Specifies the list of JavaScript API for Office methods that your Office Add-in requires in order to activate.
+Specifies the list of Office JavaScript API methods that your Office Add-in requires in order to activate.
 
 **Add-in type:** Content, Task pane
 
@@ -22,5 +29,4 @@ Specifies the list of JavaScript API for Office methods that your Office Add-in 
 
 ## Remarks
 
-The  **Methods** and **Method** elements aren't supported in mail add-ins. For more information about requirement sets, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
-
+The **Methods** and **Method** elements aren't supported in mail add-ins. For more information about requirement sets, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).

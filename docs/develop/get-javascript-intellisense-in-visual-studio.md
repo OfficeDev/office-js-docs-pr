@@ -1,13 +1,14 @@
 ---
-title: Get JavaScript IntelliSense in Visual Studio 2017
-description: ''
-ms.date: 12/04/2017
+title: Get JavaScript IntelliSense in Visual Studio 2019
+description: 'Learn how to use JSDoc to create IntelliSense for your JavaScript variables, objects, parameters, and return values.'
+ms.date: 10/11/2019
+localization_priority: Normal
 ---
 
 
-# Get JavaScript IntelliSense in Visual Studio 2017 
+# Get JavaScript IntelliSense in Visual Studio 2019
 
-When you use Visual Studio 2017 to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+When you use Visual Studio 2019 to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
 
 ## Office.js type definitions
 
@@ -17,7 +18,7 @@ You need to provide the definitions of the types in Office.js to Visual Studio. 
 - Use an online version of Office.js by adding a tsconfig.json file to the root of the web application project in the add-in solution. The file should include the following content.
 
     ```json
-        {        
+        {
             "compilerOptions": {
                 "allowJs": true,            // These settings apply to JavaScript files also.
                 "noEmit":  true             // Do not compile the JS (or TS) files in this project.
@@ -43,7 +44,7 @@ The basic technique is to precede the variable (or parameter, and so on) with a 
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![Intellisense for variable](../images/intellisense-vs17-var.png)
+![IntelliSense for variable](../images/intellisense-vs17-var.png)
 
 ### Parameter
 
@@ -53,7 +54,7 @@ function myFunc(paragraphs){
 
 }
 ```
-![Intellisense for parameter](../images/intellisense-vs17-param.png)
+![IntelliSense for parameter](../images/intellisense-vs17-param.png)
 
 ### Return value
 
@@ -63,7 +64,7 @@ function myFunc() {
 
 }
 ```
-![Intellisense for return value](../images/intellisense-vs17-return.png)
+![IntelliSense for return value](../images/intellisense-vs17-return.png)
 
 ### Complex types
 
@@ -75,8 +76,9 @@ function myFunc() {
 
 }
 ```
-![Intellisense for complex type](../images/intellisense-vs17-complex-type.png)
+![IntelliSense for complex type](../images/intellisense-vs17-complex-type.png)
 
 ## See also
 
-- [Create and debug add-ins in Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md)
+- [Develop Office Add-ins with Visual Studio](develop-add-ins-visual-studio.md)
+- [Debug Office Add-ins in Visual Studio](debug-office-add-ins-in-visual-studio.md)

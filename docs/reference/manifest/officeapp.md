@@ -1,3 +1,10 @@
+---
+title: OfficeApp element in the manifest file
+description: The OfficeApp element is the root element of an Office Add-in manifest.
+ms.date: 02/04/2020
+localization_priority: Normal
+---
+
 # OfficeApp element
 
 The root element in the manifest of an Office Add-in.
@@ -21,7 +28,7 @@ The root element in the manifest of an Office Add-in.
 
 ## Must contain
 
-|**Element**|**Content**|**Mail**|**TaskPane**|
+|Element|Content|Mail|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Id](id.md)|x|x|x|
 |[Version](version.md)|x|x|x|
@@ -36,7 +43,7 @@ The root element in the manifest of an Office Add-in.
 
 ## Can contain
 
-|**Element**|**Content**|**Mail**|**TaskPane**|
+|Element|Content|Mail|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|
@@ -49,11 +56,11 @@ The root element in the manifest of an Office Add-in.
 |[Permissions](permissions.md)||x||
 |[DisableEntityHighlighting](disableentityhighlighting.md)||x||
 |[Dictionary](dictionary.md)|||x|
-|[VersionOverrides](versionoverrides.md)||x||
+|[VersionOverrides](versionoverrides.md)|x|x|x|
 
 ## Attributes
 
-|||
+|Attribute|Description|
 |:-----|:-----|
 |xmlns|Defines the Office Add-in manifest namespace and schema version. This attribute should always be set to  `"http://schemas.microsoft.com/office/appforoffice/1.1"`|
 |xmlns:xsi|Defines the XMLSchema instance. This attribute should always be set to  `"http://www.w3.org/2001/XMLSchema-instance"`|

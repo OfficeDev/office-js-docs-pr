@@ -1,3 +1,10 @@
+---
+title: Icon element in the manifest file
+description: Defines Image elements for Button or Menu controls.
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # Icon element
 
 Defines **Image** elements for [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.
@@ -16,7 +23,7 @@ Defines **Image** elements for [Button](control.md#button-control) or [Menu](con
 
 ### Image
 
-An image for the button. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element in the **Images** element in the [Resources](resources.md) element. The **size** attribute indicates the size in pixels of the image. Three image sizes are required (16, 32, and 80 pixels) while five other sizes are supported (20, 24, 40, 48, and 64 pixels).|
+An image for the button. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element in the **Images** element in the [Resources](resources.md) element. The **size** attribute indicates the size in pixels of the image. Three image sizes are required (16, 32, and 80 pixels) while five other sizes are supported (20, 24, 40, 48, and 64 pixels).|
 
 ```xml
 <Icon>

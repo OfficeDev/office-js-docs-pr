@@ -1,9 +1,16 @@
+---
+title: Event element in the manifest file
+description: Defines an event handler in an add-in.
+ms.date: 05/15/2020
+localization_priority: Normal
+---
+
 # Event element
 
 Defines an event handler in an add-in.
 
-> [!NOTE] 
-> The `Event` element is currently only supported by Outlook on the web in Office 365.
+> [!NOTE]
+> For information about support and usage, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).
 
 ## Attributes
 
@@ -30,5 +37,5 @@ Required. MUST be set to `synchronous`.
 Required. Specifies the function name of the event handler. This value must match a function name in the add-in's [function file](functionfile.md).
 
 ```xml
-<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
 ```

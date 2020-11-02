@@ -1,3 +1,10 @@
+---
+title: CitationText element in the manifest file
+description: Specifies the citation boilerplate text for this dictionary.
+ms.date: 03/19/2019
+localization_priority: Normal
+---
+
 # CitationText element
 
 Specifies the citation boilerplate text for this dictionary.
@@ -16,4 +23,4 @@ Specifies the citation boilerplate text for this dictionary.
 
 ## See also
 
-- [Create a dictionary task pane add-in](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [Create a dictionary task pane add-in](../../word/dictionary-task-pane-add-ins.md)

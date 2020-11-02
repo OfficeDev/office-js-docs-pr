@@ -1,4 +1,12 @@
+---
+title: Dictionary element in the manifest file
+description: Defines settings for a task pane add-in that implements additional dictionary support.
+ms.date: 03/19/2019
+localization_priority: Normal
+---
+
 # Dictionary element
+
 Defines settings for a task pane add-in that implements additional dictionary support.
 
 **Add-in type:** Task pane
@@ -17,7 +25,7 @@ Defines settings for a task pane add-in that implements additional dictionary su
 
 ## Can contain
 
-|**Element**|
+|Element|
 |:-----|
 |[TargetDialects](targetdialects.md)|
 |[QueryUri](queryuri.md)|
@@ -27,5 +35,4 @@ Defines settings for a task pane add-in that implements additional dictionary su
 
 ## See also
 
-- [Create a dictionary task pane add-in](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
-    
+- [Create a dictionary task pane add-in](../../word/dictionary-task-pane-add-ins.md)

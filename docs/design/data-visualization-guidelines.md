@@ -1,10 +1,9 @@
 ---
 title: Data visualization style guidelines for Office Add-ins
-description: ''
-ms.date: 12/04/2017
+description: 'Get some good practices for how to visualize data in an Office Add-in.'
+ms.date: 01/14/2019
+localization_priority: Normal
 ---
-
-
 
 # Data visualization style guidelines for Office Add-ins
 
@@ -20,10 +19,9 @@ We recommend that you use [Office UI Fabric](https://developer.microsoft.com/fab
 
 ## Data visualization elements
 
-Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figures.
+Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figure.
 
-![Image of a line chart with title, axes, legend, and plot area labeled](../images/data-visualization-line-chart.png)
-![Image of a column chart with axes, gridlines, legend, and data plot labeled](../images/data-visualization-column-chart.png)
+![Image of a line chart with title, axes, legend, and plot area labeled](../images/excel-charts-visualization.png)
 
 ### Chart titles
 
@@ -34,16 +32,11 @@ Follow these guidelines for chart titles:
 - Incorporate the [Office UI Fabric type ramp](https://developer.microsoft.com/fabric#/styles/typography) to make your charts consistent with the Office UI, which uses Segoe. You can also use a different typeface to differentiate chart content from the UI.
 - Use sans-serif typefaces with large counters.
 
-The following examples show serif and sans-serif typefaces used in chart titles. Notice how the scale contrast and effective use of white space create a strong visual hierarchy.
-
-![Image of a data visualization with serif font](../images/data-visualization-serif.png)
-![Image of a data visualization with sans-serif font](../images/data-visualization-sans-serif.png)
-
 ### Axis labels
 
 Make your axis labels dark enough to read clearly, with adequate contrast ratios between the text and background colors. Make sure that they are not so dark that they compete with data ink.
 
-Light grays are most effective for axis labels. If you’re using Fabric, see the [Neutral Colors palette](https://developer.microsoft.com/fabric#/styles/colors).
+Light grays are most effective for axis labels. If you're using Fabric, see the [Neutral Colors palette](https://developer.microsoft.com/fabric#/styles/colors).
 
 ### Data ink
 
@@ -55,20 +48,19 @@ Choose colors that follow operating system or application themes rather than har
 
 For best practices for use of color in data visualizations, see the following:
 
-
-- [Why rainbow colors aren't the best option for data visualizations](http://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
-- [Color Brewer 2.0: Color Advice for Cartography](http://colorbrewer2.org/)
-- [I Want Hue](http://tools.medialab.sciences-po.fr/iwanthue/)
+- [Why rainbow colors aren't the best option for data visualizations](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
+- [Color Brewer 2.0: Color Advice for Cartography](https://colorbrewer2.org/)
+- [I Want Hue](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### Gridlines
 
 Gridlines are often necessary for accurately reading a chart, but should be presented as a secondary visual element, enhancing the data ink, not competing with it. Make static gridlines thin and light, unless they are designed specifically for high contrast. You can also use interaction to create dynamic, just-in-time gridlines that appear in context when a user interacts with a chart.
 
-Light grays are most effective for gridlines. If you’re using Fabric, see the [Neutral Colors palette](https://developer.microsoft.com/fabric#/styles/colors).
+Light grays are most effective for gridlines. If you're using Fabric, see the [Neutral Colors palette](https://developer.microsoft.com/fabric#/styles/colors).
 
 The following image shows a data visualization with gridlines.
 
-![Image of a data visualization with gridlines](../images/data-visualization-gridlines.png)
+![Image of a data visualization with gridlines](../images/data-visualization.png)
 
 ### Legends
 
@@ -105,7 +97,7 @@ The Office Design team created the following set of design principles, which we 
 - Allow for direct interactions with objects that reveal new insights (sorting via drag, for example).
 - Use simple, direct, familiar interaction models.
 
-For more information about how to design user-friendly interactive data visualizations, see [UI Tenets and Traps](http://uitraps.com/).
+For more information about how to design user-friendly interactive data visualizations, see [UI Tenets and Traps](https://uitraps.com/).
 
 ### Motion design principles
 
@@ -146,6 +138,5 @@ Motion follows data.
 
 ## See also 
 
-- [Data + Design: A Simple Introduction to Preparing and Visualizing Information](https://infoactive.co/data-design)
-- [The Five Best Libraries for Building Data Visualizations](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
+- [The Five Best Libraries for Building Data Visualizations](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [The Visual Display of Quantitative Information](https://www.edwardtufte.com/tufte/books_vdqi)

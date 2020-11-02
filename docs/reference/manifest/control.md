@@ -1,3 +1,10 @@
+---
+title: Control element in the manifest file
+description: Defines a JavaScript function that executes an action or launches a task pane.
+ms.date: 01/10/2020
+localization_priority: Normal
+---
+
 # Control element
 
 Defines a JavaScript function that executes an action or launches a task pane. A **Control** element can be either a button or a menu option. At least one **Control** must be included in a [Group](group.md) element.
@@ -19,13 +26,16 @@ A button performs a single action when the user selects it. It can either execut
 ### Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Yes |  The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.        |
-|  **ToolTip**	|No|The tooltip for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resources.md) element.|		
+|  **Label**     | Yes |  The text for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.        |
+|  **ToolTip**    |No|The tooltip for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resources.md) element.|        
 |  [Supertip](supertip.md)  | Yes |  The supertip for the button.    |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  [Action](action.md)    | Yes |  Specifies the action to perform.  |
+|  [Enabled](enabled.md)    | No |  Specifies whether the control is enabled when the add-in launches.  |
 
 ### ExecuteFunction button example
+
+In the following example, the button is disabled when the add-in launches. It can be programmatically enabled. For more information, see [Enable and Disable Add-in Commands](../../design/disable-add-in-commands.md).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -42,6 +52,7 @@ A button performs a single action when the user selects it. It can either execut
   <Action xsi:type="ExecuteFunction">
     <FunctionName>getSubject</FunctionName>
   </Action>
+  <Enabled>false</Enabled>
 </Control>
 ```
 
@@ -75,7 +86,7 @@ When used with a **PrimaryCommandSurface** or **ContextMenu** [extension point](
 
 - A list of submenu items.
 
-When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with  **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
+When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
 
 The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function.
 
@@ -133,11 +144,11 @@ The following example shows how to define a menu item with two submenu items. Th
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Yes |  The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.      |
-|  **ToolTip**	|No|The tooltip for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resources.md) element.|		
+|  **Label**     | Yes |  The text for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.      |
+|  **ToolTip**    |No|The tooltip for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resources.md) element.|        
 |  [Supertip](supertip.md)  | Yes |  The supertip for this button.    |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
-|  **Items**     | Yes |  A collection of Buttons to display within the menu. Contains the  **Item** elements for each submenu item. Each **Item** element contains the  child elements of the [Button control](#button-control).|
+|  **Items**     | Yes |  A collection of Buttons to display within the menu. Contains the **Item** elements for each submenu item. Each **Item** element contains the  child elements of the [Button control](#button-control).|
 
 ### Menu control examples
 
@@ -232,7 +243,7 @@ The `MobileButton` value for **xsi:type** is defined in VersionOverrides schema 
 ### Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Yes |  The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.        |
+|  **Label**     | Yes |  The text for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.        |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  [Action](action.md)    | Yes |  Specifies the action to perform.  |
 
