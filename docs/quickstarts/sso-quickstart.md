@@ -119,7 +119,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 Complete the following steps to try out an Outlook add-in.
 
-1. When the SSO configuration process completes, run the following command to build the project and start the local web server, and sideload your add-in in the previously selected Office client application.
+1. When the SSO configuration process completes, run the following command to build the project and start the local web server.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
@@ -128,7 +128,7 @@ Complete the following steps to try out an Outlook add-in.
     npm start
     ```
 
-2. Make sure that you're signed in to Outlook with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed.
+2. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed.
 
 3. In Outlook, compose a new message.
 
