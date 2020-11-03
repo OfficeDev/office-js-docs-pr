@@ -101,7 +101,7 @@ Follow these steps for a new or existing project to configure it to use a shared
    > new HtmlWebpackPlugin({
    >     filename: "taskpane.html",
    >     template: "./src/taskpane/taskpane.html",
-   >     chunks: ["polyfill", "taskpane", “functions”]
+   >     chunks: ["polyfill", "taskpane", "functions"]
    > }),
    >```
 
