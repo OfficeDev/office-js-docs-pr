@@ -34,11 +34,11 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Provide teaching UI to guide users and make your UI personal.
 
-   ![A screenshot that shows an add-in task pane with get started steps next to an add-in with no get started steps](../images/contoso-part-catalog-do-dont.png)
+   ![Screenshot showing an add-in task pane with get-started steps next to another task pane without get-started steps.](../images/contoso-part-catalog-do-dont.png)
 
 - If your content add-in binds to data in the user's document, include sample data or a template to show users the data format to use.
 
-   ![A screenshot that shows a content add-in with data next to a content add-in with no data](../images/add-in-title.png)
+   ![Screenshot showing a content add-in with data next to a content add-in with no data.](../images/add-in-title.png)
 
 - Offer [free trials](/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
 
@@ -97,7 +97,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Ensure that all user interactions respond in under one second.
 
--  Provide loading indicators for long-running operations.
+- Provide loading indicators for long-running operations.
 
 - Use a CDN to host images, resources, and common libraries. Load as much as you can from one place.
 

@@ -42,7 +42,7 @@ Office desktop icons are bitmap images. Different sizes will render depending on
 
 Make sure to redraw your icons for each size rather than shrink them to fit.
 
-![Illustration that shows the recommendation to resize icons rather than shrink icons](../images/icon-resizing.png)
+![Illustration showing the recommendation to redraw icons per size rather than shrink icons.](../images/icon-resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
@@ -73,13 +73,13 @@ The following table lists the locations for certain icon sizes.
 
 ## Icon anatomy and layout
 
-Office icons are typically comprised of a base element with action and conceptual modifiers overlayed. Action modifiers represent concepts such as add, open, new, or close. Conceptual modifiers represent status, alteration, or a description of the icon.
+Office icons are typically comprised of a base element with action and conceptual modifiers overlaid. Action modifiers represent concepts such as add, open, new, or close. Conceptual modifiers represent status, alteration, or a description of the icon.
 
 To create commands that align with the Office UI, follow layout guidelines for the base element and modifiers. This ensures that your commands look professional and that your customers will trust your add-in. If you make exceptions to these guidelines, do so intentionally.
 
 The following image shows the layout of base elements and modifiers in an Office icon.
 
-![Image showing an icon base element in the center with a modifier on the lower right and an action modifier on the upper left](../images/icon-layouts.png)
+![Diagram showing an icon base element in the center with a modifier on the lower right and an action modifier on the upper left.](../images/icon-layouts.png)
 
 - Center base elements in the pixel frame with empty padding all around.
 - Place action modifiers on the top left.
