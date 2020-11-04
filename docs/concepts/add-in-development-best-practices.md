@@ -34,11 +34,15 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Provide teaching UI to guide users and make your UI personal.
 
-   ![Screenshot showing an add-in task pane with get-started steps next to another task pane without get-started steps.](../images/contoso-part-catalog-do-dont.png)
+   :::image type="complex" source="../images/contoso-part-catalog-do-dont.png" alt-text="Screenshot comparing an add-in task pane with get-started steps to another task pane without get-started steps":::
+      A "Do" vs. "Don't" comparison. The "Do" example shows an add-in that includes a button users can click to get started. The "Don't" example has no introductory steps or buttons.
+   :::image-end:::
 
 - If your content add-in binds to data in the user's document, include sample data or a template to show users the data format to use.
 
-   ![Screenshot showing a content add-in with data next to a content add-in with no data.](../images/add-in-title.png)
+   :::image type="complex" source="../images/add-in-title.png" alt-text="Screenshot comparing a content add-in with data to a content add-in without data":::
+      A "Do" vs. "Don't" comparison. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example has no sample data.
+   :::image-end:::
 
 - Offer [free trials](/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
 

@@ -79,7 +79,7 @@ To create commands that align with the Office UI, follow layout guidelines for t
 
 The following image shows the layout of base elements and modifiers in an Office icon.
 
-![Diagram showing an icon base element in the center with a modifier on the lower right and an action modifier on the upper left.](../images/icon-layouts.png)
+![Diagram showing an icon base element in the center with a modifier on the lower right and an action modifier on the upper left](../images/icon-layouts.png)
 
 - Center base elements in the pixel frame with empty padding all around.
 - Place action modifiers on the top left.
@@ -112,7 +112,7 @@ All modifiers should have a 1px transparent cutout between each element, includi
 
 Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color:
 
-- Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark. 
+- Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark.
 - If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
 - Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16px and smaller icons are slightly darker and more vibrant than 32px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.
 
