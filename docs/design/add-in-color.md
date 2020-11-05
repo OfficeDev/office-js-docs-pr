@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Color is often used to emphasize brand and reinforce visual hierarchy. It helps identify an interface as well as guide customers through an experience. Inside Office, color is used for the same goals but it is applied purposefully and minimally. At no point does it overwhelm customer content. Even when each Office app is branded with its own dominant color, it is used sparingly.
 
-![Diagram showing the color scheme for Office, Excel, Word, and PowerPoint](../images/office-addins-color-schemes.png)
+![Diagram showing the color scheme for Office, Excel, Word, and PowerPoint. Major colors for Office are black and white, and minor colors are light gray, dark gray, and orange. The dominant color for Excel is green, Word is blue, and PowerPoint is orange.](../images/office-addins-color-schemes.png)
 
 Office UI Fabric includes a set of default theme colors. When Fabric is applied to an Office Add-in as components or in layouts, the same goals apply. Color should communicate hierarchy, purposefully guiding customers to action without interfering with content. Fabric theme colors can introduce a new accent color to the overall interface. This new accent can conflict with Office app branding and interfere with hierarchy. In other words, Fabric can introduce a new accent color to the overall interface when used inside an add-in. This new accent color can distract and interfere with the overall hierarchy. Consider ways to avoid conflicts and interference. Use neutral accents or overwrite Fabric theme colors to match Office app branding or your own brand colors.
 
@@ -21,10 +21,10 @@ Office applications allow customers to personalize their interfaces by applying 
 
 Apply the following general guidelines for color:
 
-* Use color sparingly to communicate hierarchy and reinforce brand.
-* Overuse of a single accent color applied to both interactive and non-interactive elements can lead to confusion. For example, avoid using the same color for selected and unselected items in a navigation menu.
-* Avoid unnecessary conflicts with Office branded app colors.
-* Use your own brand colors to build association with your service or company.
-* Ensure that all text is accessible. Be sure that there is a 4.5:1 contrast ratio between foreground text and background.
-* Be aware of color blindness. Use more than just color to indicate interactivity and hierarchy.
-* Refer to [icon guidelines](../design/add-in-icons.md) to learn more about designing add-in command icons with the Office icon color pallette.
+- Use color sparingly to communicate hierarchy and reinforce brand.
+- Overuse of a single accent color applied to both interactive and non-interactive elements can lead to confusion. For example, avoid using the same color for selected and unselected items in a navigation menu.
+- Avoid unnecessary conflicts with Office branded app colors.
+- Use your own brand colors to build association with your service or company.
+- Ensure that all text is accessible. Be sure that there is a 4.5:1 contrast ratio between foreground text and background.
+- Be aware of color blindness. Use more than just color to indicate interactivity and hierarchy.
+- Refer to [icon guidelines](../design/add-in-icons.md) to learn more about designing add-in command icons with the Office icon color pallette.

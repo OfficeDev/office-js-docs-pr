@@ -42,7 +42,7 @@ Office desktop icons are bitmap images. Different sizes will render depending on
 
 Make sure to redraw your icons for each size rather than shrink them to fit.
 
-![Illustration showing the recommendation to redraw icons per size rather than shrink icons.](../images/icon-resizing.png)
+![Illustration of the recommendation to redraw icons per size rather than shrink icons. For example, you may need to use fewer elements in a small icon rather than just scaling down a bigger image.](../images/icon-resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
@@ -84,7 +84,7 @@ The following image shows the layout of base elements and modifiers in an Office
 - Center base elements in the pixel frame with empty padding all around.
 - Place action modifiers on the top left.
 - Place conceptual modifiers on the bottom right.
-- Limit the number of elements in your icons. At 32px, limit the number of modifiers to a maximum of two. At 16px, limit the number of modifiers to one.
+- Limit the number of elements in your icons. At 32 px, limit the number of modifiers to a maximum of two. At 16 px, limit the number of modifiers to one.
 
 ### Base element padding
 
@@ -92,18 +92,18 @@ Place base elements consistently across sizes. If base elements can't be centere
 
 ### Modifiers
 
-All modifiers should have a 1px transparent cutout between each element, including the background. Elements should not directly overlap. Create whitespace between rules and edges. Modifiers can vary slightly in size, but use these dimensions as a starting point.
+All modifiers should have a 1 px transparent cutout between each element, including the background. Elements should not directly overlap. Create whitespace between rules and edges. Modifiers can vary slightly in size, but use these dimensions as a starting point.
 
-|**Icon size**|**Padding around base element**|**Modifier size**|
+|Icon size|Padding around base element|Modifier size|
 |:---|:---|:---|
-|16px|0|9px|
-|20px|1px|10px|
-|24px|1px|12px|
-|32px|2px|14px|
-|40px|2px|20px|
-|48px|3px|22px|
-|64px|5px|29px|
-|80px|5px|38px|
+|16 px|0|9 px|
+|20 px|1px|10 px|
+|24 px|1px|12 px|
+|32 px|2px|14 px|
+|40 px|2px|20 px|
+|48 px|3px|22 px|
+|64 px|5px|29 px|
+|80 px|5px|38 px|
 
 ## Icon colors
 
@@ -114,30 +114,30 @@ Office icons have a limited color palette. Use the colors listed in the followin
 
 - Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark.
 - If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
-- Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16px and smaller icons are slightly darker and more vibrant than 32px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.
+- Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16 px and smaller icons are slightly darker and more vibrant than 32 px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.
 
-|**Color name**|**RGB**|**Hex**|**Color**|**Category**|
+|Color name|RGB|Hex|Color|Category|
 |:---|:---|:---|:---|:---|
-|Text Gray (80)|80, 80, 80|#505050| ![Text gray 80 color image](../images/color-text-gray-80.png) |Text|
-|Text Gray (95)|95, 95, 95|#5F5F5F| ![Text gray 95 color image](../images/color-text-gray-95.png) |Text|
-|Text Gray (105)|105, 105, 105|#696969| ![Text gray 105 color image](../images/color-text-gray-105.png) |Text|
-|Dark Gray 32|128, 128, 128|#808080| ![Dark gray 32 color image](../images/color-dark-gray-32.png) |32 and above|
-|Medium Gray 32|158, 158, 158|#9E9E9E| ![Medium gray 32 color image](../images/color-medium-gray-32.png) |32 and above|
-|Light Gray ALL|179, 179, 179|#B3B3B3| ![Light gray all color image](../images/color-light-gray-all.png) |All sizes|
-|Dark Gray 16|114, 114, 114|#727272| ![Dark gray 16 color image](../images/color-dark-gray-16.png) |16 and below|
-|Medium Gray 16|144, 144, 144|#909090| ![Medium gray 16 color image](../images/color-medium-gray-16.png) |16 and below|
-|Blue 32|77, 130, 184|#4d82B8| ![Blue 32 color image](../images/color-blue-32.png) |32 and above|
-|Blue 16|74, 125, 177|#4A7DB1| ![Blue 16 color image](../images/color-blue-16.png) |16 and below|
-|Yellow ALL|234, 194, 130|#EAC282| ![Yellow all color image](../images/color-yellow-all.png) |All sizes|
-|Orange 32|231, 142, 70|#E78E46| ![Orange 32 color image](../images/color-orange-32.png) |32 and above|
-|Orange 16|227, 142, 70|#E3751C| ![Orange 16 color image](../images/color-orange-16.png) |16 and below|
-|Pink ALL|230, 132, 151|#E68497| ![Pink all color image](../images/color-pink-all.png) |All sizes|
-|Green 32|118, 167, 151|#76A797| ![Green 32 color image](../images/color-green-32.png) |32 and above|
-|Green 16|104, 164, 144|#68A490| ![Green 16 color image](../images/color-green-16.png) |16 and below|
-|Red 32|216, 99, 68|#D86344| ![Red 32 color image](../images/color-red-32.png) |32 and above|
-|Red 16|214, 85, 50|#D65532| ![Red 16 color image](../images/color-red-16.png) |16 and below|
-|Purple 32|152, 104, 185|#9868B9| ![Purple 32 color image](../images/color-purple-32.png) |32 and above|
-|Purple 16|137, 89, 171|#8959AB| ![Purple 16 color image](../images/color-purple-16.png) |16 and below|
+|Text Gray (80)|80, 80, 80|#505050| ![Gray 80 color for text](../images/color-text-gray-80.png) |Text|
+|Text Gray (95)|95, 95, 95|#5F5F5F| ![Gray 95 color for text](../images/color-text-gray-95.png) |Text|
+|Text Gray (105)|105, 105, 105|#696969| ![Gray 105 color for text](../images/color-text-gray-105.png) |Text|
+|Dark Gray 32|128, 128, 128|#808080| ![Dark gray color for 32 px and larger](../images/color-dark-gray-32.png) |32 px and above|
+|Medium Gray 32|158, 158, 158|#9E9E9E| ![Medium gray color for 32 px and larger](../images/color-medium-gray-32.png) |32 px and above|
+|Light Gray ALL|179, 179, 179|#B3B3B3| ![Light gray color for all image sizes](../images/color-light-gray-all.png) |All sizes|
+|Dark Gray 16|114, 114, 114|#727272| ![Dark gray color for 16 px and smaller](../images/color-dark-gray-16.png) |16 px and below|
+|Medium Gray 16|144, 144, 144|#909090| ![Medium gray color for 16 px and smaller](../images/color-medium-gray-16.png) |16 and below|
+|Blue 32|77, 130, 184|#4d82B8| ![Blue color for 32 px and larger](../images/color-blue-32.png) |32 px and above|
+|Blue 16|74, 125, 177|#4A7DB1| ![Blue color for 16 px and smaller](../images/color-blue-16.png) |16 px and below|
+|Yellow ALL|234, 194, 130|#EAC282| ![Yellow color for all image sizes](../images/color-yellow-all.png) |All sizes|
+|Orange 32|231, 142, 70|#E78E46| ![Orange color for 32 px and larger](../images/color-orange-32.png) |32 px and above|
+|Orange 16|227, 142, 70|#E3751C| ![Orange color for 16 px and smaller](../images/color-orange-16.png) |16 px and below|
+|Pink ALL|230, 132, 151|#E68497| ![Pink color for all image sizes](../images/color-pink-all.png) |All sizes|
+|Green 32|118, 167, 151|#76A797| ![Green color for 32 px and larger](../images/color-green-32.png) |32 px and above|
+|Green 16|104, 164, 144|#68A490| ![Green color for 16 px and smaller](../images/color-green-16.png) |16 px and below|
+|Red 32|216, 99, 68|#D86344| ![Red color for 32 px and larger](../images/color-red-32.png) |32 px and above|
+|Red 16|214, 85, 50|#D65532| ![Red color for 16 px and smaller](../images/color-red-16.png) |16 px and below|
+|Purple 32|152, 104, 185|#9868B9| ![Purple color for 32 px and larger](../images/color-purple-32.png) |32 px and above|
+|Purple 16|137, 89, 171|#8959AB| ![Purple color for 16 px and smaller](../images/color-purple-16.png) |16 px and below|
 
 ## Icons in high contrast modes
 

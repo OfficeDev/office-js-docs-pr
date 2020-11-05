@@ -21,7 +21,7 @@ Use [add-in commands](add-in-commands.md) to add entry points to your add-in to 
 |**Command type**|**Description**|
 |:---------------|:--------------|
 |Ribbon buttons, menus, and tabs|Use to add custom buttons, menus (dropdowns), or tabs to the default ribbon in Office. Use Buttons and menus to trigger an action in Office. Use tabs to group and organize buttons and menus.|
-|Context menus| Use to extend the default context menu. Context menus are displayed when users right-click text in an Office document or a table in Excel.| 
+|Context menus| Use to extend the default context menu. Context menus are displayed when users right-click text in an Office document or a table in Excel.|
 
 ## HTML containers
 
