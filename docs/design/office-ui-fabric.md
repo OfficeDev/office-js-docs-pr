@@ -1,7 +1,7 @@
 ---
 title: Office UI Fabric in Office Add-ins 
 description: 'Get an overview of how to use the Office UI Fabric components in Office Add-ins.'
-ms.date: 10/20/2020
+ms.date: 10/29/2020
 localization_priority: Normal
 ---
 
