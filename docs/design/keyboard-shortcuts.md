@@ -110,13 +110,13 @@ If there isn't one already, create a JSON file in your project. Be sure the path
     > [!NOTE]
     > You can use "CONTROL" in place of "CTRL" throughout this article.
 
-In a later step, the actions will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method.
+    In a later step, the actions will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method.
 
-> [!NOTE]
-> The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+    > [!NOTE]
+    > The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
 
-> [!NOTE]
-> Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
+    > [!NOTE]
+    > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
 
 1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. (Note that on the Mac, you can use "COMMAND" and "OPTION". If your `"default"` contains "CTRL" or "ALT", it is *not* necessary to provide a `"mac"` combination, if the only difference from the `"default"` is the use of "COMMAND" and "OPTION" in place of "CTRL" and "ALT". Office makes this substitution automatically on the Mac.)
 
