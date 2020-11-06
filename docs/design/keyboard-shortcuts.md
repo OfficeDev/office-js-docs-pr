@@ -179,7 +179,7 @@ In a later step, the actions will themselves be mapped to functions that you wri
 
 Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Shift+Up arrow key** and **Ctrl+Shift+Down arrow key**. This is the same behavior as shown in the [Add keyboard shortcuts to an Office Add-in tutorial](../tutorials/keyboard-shortcuts-tutorial.md).
 
-An example of a simple add-in that uses several custom keyboard shortcuts is at [shortcut-sample-revision1](https://github.com/OfficeDev/testing-assets/tree/master/addins/shortcut-sample-revision1).
+An example of a simple add-in that uses several custom keyboard shortcuts is at [excel-keyboard-shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
 
 ## Using key combinations that are already used by Office or another add-in
 
@@ -204,3 +204,8 @@ You cannot use any of the following keyboard combinations. They are used by brow
 - Ctrl+Shift+T
 - Ctrl+W
 - Ctrl+PgUp/PgDn
+
+## Next Steps
+
+- See the tutorial [Add keyboard shortcuts to an Office Add-in tutorial](../tutorials/keyboard-shortcuts-tutorial.md).
+- See the sample add-in [excel-keyboard-shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).

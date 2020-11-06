@@ -161,4 +161,5 @@ To try your add-in, open a new workbook in Excel on a browser. In this workbook,
 
 ## Next steps
 
-Learn more about keyboard shortcuts in [Custom keyboard shortcuts in Office Add-ins](../design/keyboard-shortcuts.md).
+- Learn more about keyboard shortcuts in [Custom keyboard shortcuts in Office Add-ins](../design/keyboard-shortcuts.md).
+- See the sample add-in [excel-keyboard-shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
