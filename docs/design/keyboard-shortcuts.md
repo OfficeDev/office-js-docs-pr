@@ -107,6 +107,9 @@ If there isn't one already, create a JSON file in your project. Be sure the path
     - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
     - The "+" character indicates that the keys on either side of it are pressed simultaneously.
 
+    > [!NOTE]
+    > You can use "CONTROL" in place of "CTRL" throughout this article.
+
 In a later step, the actions will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method.
 
 > [!NOTE]
@@ -115,7 +118,7 @@ In a later step, the actions will themselves be mapped to functions that you wri
 > [!NOTE]
 > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
 
-1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination.
+1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. (Note that on the Mac, you can use "COMMAND" and "OPTION". If your `"default"` contains "CTRL" or "ALT", it is *not* necessary to provide a `"mac"` combination, if the only difference from the `"default"` is the use of "COMMAND" and "OPTION" in place of "CTRL" and "ALT". Office detects makes this substitution automatically on the Mac.)
 
     ```json
         "shortcuts": [
@@ -125,7 +128,7 @@ In a later step, the actions will themselves be mapped to functions that you wri
                     "default": "CTRL+SHIFT+UP",
                     "web": "CTRL+SHIFT+P",
                     "win32": "CTRL+SHIFT+R",
-                    "mac": "COMMAND+SHIFT+S"
+                    "mac": "COMMAND+OPTION+SHIFT+S"
                 }
             }
         ]
@@ -186,8 +189,8 @@ Currently, there is no workaround when two or more add-ins have registered the s
 
 - Use only keyboard shortcuts with the following patterns in your add-in.
 
-    - **Alt+*n***, where *n* is a numeral from 1 to 9.
-    - **Ctrl+Shift+Alt+*n***, where *n* is a numeral from 1 to 9.
+    - **Alt+*x***, where *x* is some other key.
+    - **Ctrl+Shift+Alt+*x***, where *x* is some other key.
 
 - If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
 

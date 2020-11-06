@@ -14,7 +14,7 @@ Specifies the full URLs for JSON-formatted files that extend the manifest.
 ## Syntax
 
 ```XML
-<ExtendedOverrides Url="string" [ResourceUrl="string"] ></ExtendedOverrides>
+<ExtendedOverrides Url="string" [ResourcesUrl="string"] ></ExtendedOverrides>
 ```
 
 ## Contained in
@@ -32,7 +32,7 @@ Specifies the full URLs for JSON-formatted files that extend the manifest.
 |Attribute|Description|
 |:-----|:-----|
 |Url (required)| The full URL of the extended overrides JSON file. This could be a URL template that uses tokens defined by the [Tokens](tokens.md) element.|
-|ResourceUrl (optional) | The full URL of a file that provides supplemental resources, such as localized strings, for the file specified in the `Url` attribute. This could be a URL template that uses tokens defined by the [Tokens](tokens.md) element.|
+|ResourcesUrl (optional) | The full URL of a file that provides supplemental resources, such as localized strings, for the file specified in the `Url` attribute. This could be a URL template that uses tokens defined by the [Tokens](tokens.md) element.|
 
 ## Example
 
