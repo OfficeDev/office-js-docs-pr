@@ -118,7 +118,7 @@ In a later step, the actions will themselves be mapped to functions that you wri
 > [!NOTE]
 > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
 
-1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. (Note that on the Mac, you can use "COMMAND" and "OPTION". If your `"default"` contains "CTRL" or "ALT", it is *not* necessary to provide a `"mac"` combination, if the only difference from the `"default"` is the use of "COMMAND" and "OPTION" in place of "CTRL" and "ALT". Office detects makes this substitution automatically on the Mac.)
+1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. (Note that on the Mac, you can use "COMMAND" and "OPTION". If your `"default"` contains "CTRL" or "ALT", it is *not* necessary to provide a `"mac"` combination, if the only difference from the `"default"` is the use of "COMMAND" and "OPTION" in place of "CTRL" and "ALT". Office makes this substitution automatically on the Mac.)
 
     ```json
         "shortcuts": [
