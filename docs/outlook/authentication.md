@@ -9,7 +9,7 @@ localization_priority: Priority
 
 Your Outlook add-in can access information from anywhere on the Internet, whether from the server that hosts the add-in, from your internal network, or from somewhere else in the cloud. If that information is protected, your add-in needs a way to authenticate your user. Outlook add-ins provide a number of different methods to authenticate, depending on your specific scenario.
 
-## Single sign-on access token (preview)
+## Single sign-on access token
 
 Single sign-on access tokens provide a seamless way for your add-in to authenticate and obtain access tokens to call the [Microsoft Graph API](/graph/overview). This capability reduces friction since the user is not required to enter their credentials.
 
@@ -61,4 +61,4 @@ Callback tokens provide access to the user's mailbox from your server back-end, 
 
 - Needs access to the user's mailbox from your server back-end.
 
-Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) methods. The level of access is controlled by the permissions specified in the add-in manifest.
+Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](https://docs.microsoft.com/javascript/api/outlook/office.mailbox#getcallbacktokenasync-options--callback-) methods. The level of access is controlled by the permissions specified in the add-in manifest.
