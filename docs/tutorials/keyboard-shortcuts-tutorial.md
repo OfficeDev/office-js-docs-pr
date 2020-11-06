@@ -13,7 +13,7 @@ There are three steps to add keyboard shortcuts to an add-in:
 > [!div class="checklist"]
 > * Configure the add-in's manifest.
 > * Create the extended overrides JSON file to define actions and their keyboard shortcuts.
-> * Map a functions to runtime calls with the `associate` method.
+> * Map functions to runtime calls with the `associate` method.
 
 This tutorial assumes you're familiar with using the Yo Office generator to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
 
@@ -38,7 +38,7 @@ Once you have completed the steps in that tutorial, return here to add keyboard 
 
 ## Create the extended overrides JSON file
 
-This file describes your keyboard shortcuts, and the actions they invokes.
+This file describes your keyboard shortcuts, and the actions they invoke.
 
 1. In the base folder of your project, create a JSON file called **extendedManifest.json**.
 1. Inside the **extendedManifest.json** file, add the following JSON:
@@ -121,13 +121,13 @@ This file describes your keyboard shortcuts, and the actions they invokes.
 
 1. Save your changes and rebuild the project.
 
-   ```command line
+   ```command&nbsp;line
    npm run build
    ```
 
 ## Run your Office Add-in
 
-Start the local web server, which runs in Node.js. toggle the visibility of the task pane by pressing **Ctrl+Shift+Up arrow** and **Ctrl+Shift+Down arrow**.
+Start the local web server, which runs in Node.js. Toggle the visibility of the task pane by pressing **Ctrl+Shift+Up arrow** and **Ctrl+Shift+Down arrow**.
 
 # [Excel on Windows](#tab/excel-windows)
 
