@@ -685,7 +685,7 @@
       - name: Custom functions tutorial
         href: tutorials/excel-tutorial-create-custom-functions.md
         displayName: Excel, Custom Functions
-      - name: Shared custom function data with the task pane tutorial
+      - name: Share custom function data with the task pane tutorial
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
     - name: Naming guidelines
