@@ -1,5 +1,5 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: 'Troubleshoot common problems with Excel custom functions.'
 title: Troubleshoot custom functions
 localization_priority: Normal

@@ -1,5 +1,5 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: 'Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel'
 title: Receive and handle data with custom functions
 localization_priority: Normal
@@ -172,7 +172,7 @@ ws.onerror(error){
 ## See also
 
 - [Volatile values in functions](custom-functions-volatile.md)
-- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+- [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 - [Manually create JSON metadata for custom functions](custom-functions-json.md)
 - [Create custom functions in Excel](custom-functions-overview.md)
 - [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

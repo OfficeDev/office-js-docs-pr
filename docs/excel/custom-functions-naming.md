@@ -1,5 +1,5 @@
 ---
-ms.date: 05/17/2020
+ms.date: 11/06/2020
 description: 'Learn requirements for names  of Excel custom functions and avoid common naming pitfalls.'
 title: Naming guidelines for custom functions in Excel
 localization_priority: Normal
