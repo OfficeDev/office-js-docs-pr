@@ -1,11 +1,11 @@
 ---
-ms.date: 10/22/2020
+ms.date: 11/06/2020
 description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
-title: Create JSON metadata for custom functions in Excel
+title: Manually create JSON metadata for custom functions in Excel
 localization_priority: Normal
 ---
 
-# Create JSON metadata for custom functions
+# Manually create JSON metadata for custom functions
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to register a function, making it available for use. Custom functions are registered when the user runs the add-in for the first time and after that are available to the same user in all workbooks.
 
@@ -13,7 +13,7 @@ As described in the [custom functions overview](custom-functions-overview.md) ar
 
 We recommend using JSON autogeneration when possible instead of creating your own JSON file. Autogeneration is less prone to user error and the `yo office` scaffolded files already include this. For more information on JSDoc tags and the JSON autogeneration process, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
-However, you can make a custom functions project from scratch but it requires you to:
+However, you can make a custom functions project from scratch. This process requires you to:
 
 - Write your JSON file.
 - Check that your manifest file is connected to your JSON file.

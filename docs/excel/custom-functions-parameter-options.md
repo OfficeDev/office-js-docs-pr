@@ -248,7 +248,7 @@ Learn how to use [volatile values in your custom functions](custom-functions-vol
 ## See also
 
 * [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-* [Custom functions metadata](custom-functions-json.md)
 * [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+* [Manually create JSON metadata for custom functions](custom-functions-json.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

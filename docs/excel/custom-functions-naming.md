@@ -4,7 +4,7 @@ description: 'Learn requirements for names  of Excel custom functions and avoid 
 title: Naming guidelines for custom functions in Excel
 localization_priority: Normal
 ---
-# Naming guidelines
+# Custom functions naming guidelines
 
 A custom function is identified by an `id` and `name` property in the JSON metadata file.
 
@@ -58,5 +58,5 @@ Learn about [error handling best practices](custom-functions-errors.md).
 
 ## See also
 
-* [Custom functions metadata](custom-functions-json.md)
+* [Manually create JSON metadata for custom functions](custom-functions-json.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

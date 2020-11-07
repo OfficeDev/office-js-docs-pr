@@ -172,7 +172,7 @@ ws.onerror(error){
 ## See also
 
 - [Volatile values in functions](custom-functions-volatile.md)
-- [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-- [Custom functions metadata](custom-functions-json.md)
+- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+- [Manually create JSON metadata for custom functions](custom-functions-json.md)
 - [Create custom functions in Excel](custom-functions-overview.md)
 - [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
