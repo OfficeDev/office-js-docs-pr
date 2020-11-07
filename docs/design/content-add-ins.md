@@ -28,7 +28,7 @@ Personality menus can obstruct navigational and commanding elements located near
 
 For Windows, the personality menu measures 12x32 pixels, as shown.
 
-*Figure 2. Personality menu on Windows* 
+*Figure 2. Personality menu on Windows*
 
 ![12x32-pixel personality menu on Windows desktop](../images/personality-menu-win.png)
 
