@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Priority
@@ -35,7 +35,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![Yeoman generator](../images/yo-office-excel.png)
+![Screenshot of the Yeoman Office Add-in generator command line interface](../images/yo-office-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -196,11 +196,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
+    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted](../images/excel-quickstart-addin-3b.png)
 
 3. In the task pane, choose the **Create Table** button.
 
-    ![Excel tutorial - Create Table](../images/excel-tutorial-create-table-2.png)
+    ![Screenshot of Excel, displaying an add-in taskpane with a Create Table button, and a table in the worksheet populated with Date, Merchant, Category, and Amount data](../images/excel-tutorial-create-table-2.png)
 
 ## Filter and sort a table
 
@@ -327,7 +327,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 4. Choose the **Filter Table** button and the **Sort Table** button, in either order.
 
-    ![Excel tutorial - Filter and Sort Table](../images/excel-tutorial-filter-and-sort-table-2.png)
+    ![Screenshot of Excel, with Filter Table and Sort Table buttons visible in the add-in taskpane](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## Create a chart
 
@@ -422,7 +422,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 4. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
-    ![Excel tutorial - Create Chart](../images/excel-tutorial-create-chart-2.png)
+    ![Screenshot of Excel, with a Create Chart button visible in the add-in taskpane, and a chart in the worksheet displaying grocery and education expense data](../images/excel-tutorial-create-chart-2.png)
 
 ## Freeze a table header
 
@@ -492,7 +492,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 6. Scroll down the worksheet far enough to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
-    ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header-2.png)
+    ![Screenshot displaying an Excel worksheet with a frozen table header](../images/excel-tutorial-freeze-header-2.png)
 
 ## Protect a worksheet
 
@@ -752,7 +752,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 5. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot. 
 
-    ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on-2.png)
+    ![Screenshot of the Excel ribbon with the Toggle Worksheet Protection button highlighted and enabled. Most other buttons appear gray and disabled.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
 6. Choose a cell as you would if you wanted to change its content. Excel displays an error message indicating that the worksheet is protected.
 
@@ -1004,7 +1004,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 6. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
-    ![Excel tutorial - Dialog](../images/excel-tutorial-dialog-open-2.png)
+    ![Screenshot of Excel, with an Open Dialog button visible in the add-in taskpane and a dialog box displayed over the worksheet](../images/excel-tutorial-dialog-open-2.png)
 
 ## Next steps
 
