@@ -12,10 +12,11 @@ There are three steps to add keyboard shortcuts to an add-in:
 
 > [!div class="checklist"]
 > * Configure the add-in's manifest.
-> * Create the extended overrides JSON file to define actions and their keyboard shortcuts.
+> * Create the shortcuts JSON file to define actions and their keyboard shortcuts.
 > * Map functions to runtime calls with the `associate` method.
 
-This tutorial assumes you're familiar with using the Yo Office generator to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
+> [!NOTE]
+> To start with a working version of the add-in with keyboard shortcuts already enabled. Clone and run the [Keyboard Shortcuts PnP](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) and follow along using the instructions below.
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
@@ -32,29 +33,19 @@ Once you have completed the steps in that tutorial, return here to add keyboard 
 ```xml
     ...
     </VersionOverrides>
-    <ExtendedOverrides Url="https://localhost:3000/extendedManifest.json"></ExtendedOverrides>
+    <ExtendedOverrides Url="https://localhost:3000/shortcuts.json"></ExtendedOverrides>
 </OfficeApp>
 ```
 
-## Create the extended overrides JSON file
+## Create the shortcuts JSON file
 
 This file describes your keyboard shortcuts, and the actions they invoke.
 
-1. In the base folder of your project, create a JSON file called **extendedManifest.json**.
-1. Inside the **extendedManifest.json** file, add the following JSON:
+1. In the base folder of your project, create a JSON file called **shortcuts.json**.
+1. Inside the **shortcuts.json** file, the actions array will contain objects that define the actions to be invoked and the shortcuts array will contain objects that map key combinations onto actions. Example:
 
     ```json
     {
-        "actions": [
-        ],
-        "shortcuts": [
-        ]
-    }
-    ```
-
-1. The actions array will contain objects that define the actions to be invoked. Replace the `actions` section of the JSON with the following:
-
-    ```json
         "actions": [
             {
                 "id": "SHOWTASKPANE",
@@ -66,12 +57,7 @@ This file describes your keyboard shortcuts, and the actions they invoke.
                 "type": "ExecuteFunction",
                 "name": "Hide task pane for add-in"
             }
-        ]
-    ```
-
-1. The shortcuts array will contain objects that map key combinations onto actions. Replace the `shortcuts` section of the JSON with the following:
-
-    ```json
+        ],
         "shortcuts": [
             {
                 "action": "SHOWTASKPANE",
@@ -86,6 +72,7 @@ This file describes your keyboard shortcuts, and the actions they invoke.
                 }
             }
         ]
+    }
     ```
 
 ## Create a mapping of actions to their functions
