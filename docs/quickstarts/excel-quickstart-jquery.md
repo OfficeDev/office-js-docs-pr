@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API.
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -31,7 +31,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![Yeoman generator](../images/yo-office-excel.png)
+![Screenshot of the Yeoman Office Add-in generator command line interface](../images/yo-office-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -53,13 +53,13 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
+    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted](../images/excel-quickstart-addin-3b.png)
 
 4. Select any range of cells in the worksheet.
 
 5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![Excel add-in with Run button](../images/excel-quickstart-addin-3c.png)
+    ![Screenshot of Excel, with the add-in taskpane open, and the Run button highlighted in the add-in taskpane](../images/excel-quickstart-addin-3c.png)
 
 ### Next steps
 
@@ -197,13 +197,13 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel add-in Show Taskpane button](../images/excel-quickstart-addin-2a.png)
+    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Excel add-in](../images/excel-quickstart-addin-2c.png)
+    ![Screenshot of Excel, with the add-in taskpane open](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
