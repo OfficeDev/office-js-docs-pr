@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.5
 description: 'Details about the ExcelApi 1.5 requirement set.'
-ms.date: 07/26/2019
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -31,8 +31,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.5. 
 |:---|:---|:---|
 |[CustomXmlPart](/javascript/api/excel/excel.customxmlpart)|[delete()](/javascript/api/excel/excel.customxmlpart#delete--)|Deletes the custom XML part.|
 ||[getXml()](/javascript/api/excel/excel.customxmlpart#getxml--)|Gets the custom XML part's full XML content.|
-||[id](/javascript/api/excel/excel.customxmlpart#id)|The custom XML part's ID. Read-only.|
-||[namespaceUri](/javascript/api/excel/excel.customxmlpart#namespaceuri)|The custom XML part's namespace URI. Read-only.|
+||[id](/javascript/api/excel/excel.customxmlpart#id)|The custom XML part's ID.|
+||[namespaceUri](/javascript/api/excel/excel.customxmlpart#namespaceuri)|The custom XML part's namespace URI.|
 ||[setXml(xml: string)](/javascript/api/excel/excel.customxmlpart#setxml-xml-)|Sets the custom XML part's full XML content.|
 |[CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection)|[add(xml: string)](/javascript/api/excel/excel.customxmlpartcollection#add-xml-)|Adds a new custom XML part to the workbook.|
 ||[getByNamespace(namespaceUri: string)](/javascript/api/excel/excel.customxmlpartcollection#getbynamespace-namespaceuri-)|Gets a new scoped collection of custom XML parts whose namespaces match the given namespace.|
@@ -46,12 +46,13 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.5. 
 ||[getOnlyItem()](/javascript/api/excel/excel.customxmlpartscopedcollection#getonlyitem--)|If the collection contains exactly one item, this method returns it.|
 ||[getOnlyItemOrNullObject()](/javascript/api/excel/excel.customxmlpartscopedcollection#getonlyitemornullobject--)|If the collection contains exactly one item, this method returns it.|
 ||[items](/javascript/api/excel/excel.customxmlpartscopedcollection#items)|Gets the loaded child items in this collection.|
-|[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|Id of the PivotTable. Read-only.|
-|[Runtime](/javascript/api/excel/excel.runtime)||[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Represents the collection of custom XML parts contained by this workbook. Read-only.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|
-||[getNextOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnextornullobject-visibleonly-)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.|
-||[getPrevious(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getprevious-visibleonly-)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|
-||[getPreviousOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getpreviousornullobject-visibleonly-)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|Id of the PivotTable.|
+|[RequestContext](/javascript/api/excel/excel.requestcontext)|[runtime](/javascript/api/excel/excel.requestcontext#runtime)|[Api set: ExcelApi 1.5]|
+|[Runtime](/javascript/api/excel/excel.runtime)||[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Represents the collection of custom XML parts contained by this workbook.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Gets the worksheet that follows this one.|
+||[getNextOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnextornullobject-visibleonly-)|Gets the worksheet that follows this one.|
+||[getPrevious(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getprevious-visibleonly-)|Gets the worksheet that precedes this one.|
+||[getPreviousOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getpreviousornullobject-visibleonly-)|Gets the worksheet that precedes this one.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getFirst(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#getfirst-visibleonly-)|Gets the first worksheet in the collection.|
 ||[getLast(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#getlast-visibleonly-)|Gets the last worksheet in the collection.|
 
