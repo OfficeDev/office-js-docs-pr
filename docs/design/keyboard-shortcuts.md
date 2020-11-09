@@ -11,10 +11,13 @@ Keyboard shortcuts, also known as key combinations, enable your add-in's users t
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
+> [!NOTE]
+> To start with a working version of the add-in with keyboard shortcuts already enabled. Clone and run the [Keyboard Shortcuts PnP](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) and follow along using the instructions below.
+
 There are three steps to add keyboard shortcuts to an add-in:
 
 1. [Configure the add-in's manifest](#configure-the-manifest).
-1. [Create or edit the extended overrides JSON file](#create-or-edit-the-extended-overrides-json-file) to define actions and their keyboard shortcuts.
+1. [Create or edit the shortcuts JSON file](#create-or-edit-the-shortcuts-json-file) to define actions and their keyboard shortcuts.
 1. [Add one or more runtime calls](#create-a-mapping-of-actions-to-their-functions) of the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map a function to each action.
 
 > [!NOTE]
@@ -23,7 +26,7 @@ There are three steps to add keyboard shortcuts to an add-in:
 ## Configure the manifest
 
 > [!NOTE]
-> If your add-in's manifest already has an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element (which would be just below the `<VersionOverrides>` element) then you are already using a feature that leverages extended overrides and you can skip this section. Continue with [Create or edit the extended overrides JSON file](#create-or-edit-the-extended-overrides-json-file).
+> If your add-in's manifest already has an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element (which would be just below the `<VersionOverrides>` element) then you are already using a feature that leverages extended overrides and you can skip this section. Continue with [Create or edit the shortcuts JSON file](#create-or-edit-the-shortcuts-json-file).
 
 ### Configure the add-in to use a shared runtime
 
@@ -36,11 +39,11 @@ Immediately *below* (not inside) the `<VersionOverrides>` element in the manifes
 ```xml
     ...
     </VersionOverrides>  
-    <ExtendedOverrides Url="https://contoso.com/addin/extendedManifest.json"></ExtendedOverrides>
+    <ExtendedOverrides Url="https://contoso.com/addin/shortcuts.json"></ExtendedOverrides>
 </OfficeApp>
 ```
 
-## Create or edit the extended overrides JSON file
+## Create or edit the shortcuts JSON file
 
 If there isn't one already, create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
 
@@ -103,7 +106,8 @@ If there isn't one already, create a JSON file in your project. Be sure the path
     - The value of the `action` property is a string and must match one of the `id` properties in the action object.
     - The `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
     - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and only one other key.
-    - For Macs, ALT is mapped to the OPTION key and CTRL is mapped to the COMMAND key.
+    - For Macs, we also support the COMMAND modifier key.
+    - ALT is mapped to the OPTION key. and CTRL is mapped to the COMMAND key.
     - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
     - The "+" character indicates that the keys on either side of it are pressed simultaneously.
 
@@ -117,22 +121,6 @@ If there isn't one already, create a JSON file in your project. Be sure the path
 
     > [!NOTE]
     > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
-
-1. Optionally, you can vary the key combination for Office on the web, Office on Windows, or Office on Mac with additional properties on the `"key"` property. The following is an example. The `"default"` combination is used on any platform that doesn't have it's own specified combination. (Note that on the Mac, you can use "COMMAND" and "OPTION". If your `"default"` contains "CTRL" or "ALT", it is *not* necessary to provide a `"mac"` combination, if the only difference from the `"default"` is the use of "COMMAND" and "OPTION" in place of "CTRL" and "ALT". Office makes this substitution automatically on the Mac.)
-
-    ```json
-        "shortcuts": [
-            {
-                "action": "SHOWTASKPANE",
-                "key": {
-                    "default": "CTRL+SHIFT+UP",
-                    "web": "CTRL+SHIFT+P",
-                    "win32": "CTRL+SHIFT+R",
-                    "mac": "COMMAND+OPTION+SHIFT+S"
-                }
-            }
-        ]
-    ```
 
 ## Create a mapping of actions to their functions
 
@@ -189,7 +177,6 @@ Currently, there is no workaround when two or more add-ins have registered the s
 
 - Use only keyboard shortcuts with the following patterns in your add-in.
 
-    - **Alt+*x***, where *x* is some other key.
     - **Ctrl+Shift+Alt+*x***, where *x* is some other key.
 
 - If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
