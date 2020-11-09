@@ -107,7 +107,7 @@ If there isn't one already, create a JSON file in your project. Be sure the path
     - The `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention lower case letters are not used in these properties.)
     - The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and only one other key.
     - For Macs, we also support the COMMAND modifier key.
-    - ALT is mapped to the OPTION key. and CTRL is mapped to the COMMAND key.
+    - For Macs, ALT is mapped to the OPTION key. For Windows, COMMAND is mapped to the CTRL key.
     - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
     - The "+" character indicates that the keys on either side of it are pressed simultaneously.
 
