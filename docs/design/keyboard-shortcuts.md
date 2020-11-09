@@ -165,9 +165,11 @@ If there isn't one already, create a JSON file in your project. Be sure the path
     });
     ```
 
-Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Shift+Up arrow key** and **Ctrl+Shift+Down arrow key**. This is the same behavior as shown in the [Add keyboard shortcuts to an Office Add-in tutorial](../tutorials/keyboard-shortcuts-tutorial.md).
+Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Shift+Up arrow key** and **Ctrl+Shift+Down arrow key**. This is the same behavior as shown in the [Add keyboard shortcuts to an Office Add-in tutorial](../tutorials/keyboard-shortcuts-tutorial.md) and the [sample excel keyboard shortcuts add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
 
-An example of a simple add-in that uses several custom keyboard shortcuts is at [excel-keyboard-shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
+## Using shortcuts when the focus is in the taskpane
+Currently, the keyboard shortcuts for an Office add-in can only be invoked when the user's focus is in the worksheet. When the user's focus is inside the Office add-in taskpane, none of the add-in's shortcuts will be invoked. As a workaround, the add-in is able to create their own keyboard handler that can invoke certain actions when the user's focus is inside of the add-in UI (such as the task pane).
+
 
 ## Using key combinations that are already used by Office or another add-in
 
