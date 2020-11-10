@@ -3,7 +3,7 @@
 >
 >  Keyboard shortcuts are currently only supported on Excel and only on these platforms and builds:
 >
->* Excel on Windows: Version 2009 (Build 13231.20262)
+>* Excel on Windows: Version 2010 (Build 13426.100000)
 >* Excel on Mac: 16.41.20091302
 >* Excel on the web
 
