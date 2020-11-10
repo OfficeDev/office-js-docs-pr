@@ -43,20 +43,10 @@ Immediately *below* (not inside) the `<VersionOverrides>` element in the manifes
 
 Create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
 
-1. Inside the JSON file, add the following JSON:
+1. Inside the JSON file, there are two arrays. The actions array will contain objects that define the actions to be invoked and the shortcuts array will contain objects that map key combinations onto actions. Here is an example.add the following JSON:
 
     ```json
     {
-        "actions": [
-        ],
-        "shortcuts": [
-        ]
-    }
-    ```
-
-1. The actions array will contain objects that define the actions to be invoked. Here is an example.
-
-    ```json
         "actions": [
             {
                 "id": "SHOWTASKPANE",
@@ -68,14 +58,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
                 "type": "ExecuteFunction",
                 "name": "Hide task pane for add-in"
             }
-        ]
-    ```
-
-    For more information about the actions objects, see [Constructing the action objects](#constructing-the-action-objects). The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
-
-1. The shortcuts array will contain objects that map key combinations onto actions. Here is an example.
-
-    ```json
+        ],
         "shortcuts": [
             {
                 "action": "SHOWTASKPANE",
@@ -90,9 +73,10 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
                 }
             }
         ]
+    }
     ```
 
-    For more information about the shortcuts objects, including restrictions about property values, see [Constructing the shortcut objects](#constructing-the-shortcut-objects). The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+    For more information about the JSON objects, see [Constructing the action objects](#constructing-the-action-objects) and [Constructing the shortcut objects](#constructing-the-shortcut-objects). The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
 
     > [!NOTE]
     > You can use "CONTROL" in place of "CTRL" throughout this article.
