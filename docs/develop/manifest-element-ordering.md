@@ -59,6 +59,7 @@ The following sections show the manifest elements in the order in which they mus
         <DictionaryName>
         <DictionaryHomePage>
     <VersionOverrides>*
+    <ExtendedOverrides>
 ```
 
 \*See [Task pane add-in element ordering within VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) for the ordering of children elements of VersionOverrides.

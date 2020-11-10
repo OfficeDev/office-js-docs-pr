@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API online-only requirement set
 description: 'Details about the ExcelApiOnline requirement set.'
-ms.date: 09/15/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -35,7 +35,9 @@ Once the API is in a cross-platform requirement set, you should remove or edit t
 
 ## API list
 
-There are currently no APIs in the `ExcelApiOnline` requirement set. All the APIs that were previously a part of this set have graduated to a numbered requirement set and are available across all platforms.
+| Class | Fields | Description |
+|:---|:---|:---|
+|[Range](/javascript/api/excel/excel.range)|[getMergedAreas()](/javascript/api/excel/excel.range#getmergedareas--)|Returns a RangeAreas object that represents the merged areas in this range.|
 
 ## See also
 
