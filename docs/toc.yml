@@ -697,10 +697,10 @@
     - name: Error handling
       href: excel/custom-functions-errors.md
       displayName: Excel, Custom Functions
-    - name: Autogenerate JSON metadata for custom functions
+    - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
-    - name: Call Excel JS APIs from your custom function
+    - name: Call Excel JS APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
     - name: Identify an equivalent XLL
@@ -709,7 +709,7 @@
     - name: Localization
       href: excel/custom-functions-localize.md
       displayName: Excel, Custom Functions
-    - name: Manually create JSON metadata for custom functions
+    - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
     - name: Return a dynamic array
