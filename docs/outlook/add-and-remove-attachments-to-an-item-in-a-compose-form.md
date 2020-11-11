@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: 'You can use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.'
-ms.date: 10/31/2019
+ms.date: 11/11/2020
 localization_priority: Normal
 ---
 
@@ -112,6 +112,11 @@ function addItemAttachment(itemId) {
 > You can use a compose add-in to attach an instance of a recurring appointment in Outlook on the web or mobile devices. However, in a supporting Outlook rich client, attempting to attach an instance would result in attaching the recurring series (the master appointment).
 
 ## Get attachments
+
+APIs to get attachments in compose mode are available from [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md).
+
+- [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
 You can use the [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method to get the attachments of the message or appointment being composed.
 
