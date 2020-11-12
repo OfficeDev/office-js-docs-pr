@@ -1,5 +1,5 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: 'Troubleshoot common problems with Excel custom functions.'
 title: Troubleshoot custom functions
 localization_priority: Normal
@@ -70,7 +70,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-For more information on this process, see [Associating function names with json metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+For more information on this process, see [Associating function names with JSON metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
 ## Reporting feedback
 
@@ -89,5 +89,5 @@ Learn how to [make your custom functions compatible with XLL user-defined functi
 
 ## See also
 
-* [Custom functions metadata autogeneration](custom-functions-json-autogeneration.md)
+* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

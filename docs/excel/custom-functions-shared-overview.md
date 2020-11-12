@@ -5,7 +5,7 @@ title: Run your add-in code in a shared JavaScript runtime
 localization_priority: Priority
 ---
 
-# Overview: Run your add-in code in a shared JavaScript runtimes
+# Overview: Run your add-in code in a shared JavaScript runtime
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 

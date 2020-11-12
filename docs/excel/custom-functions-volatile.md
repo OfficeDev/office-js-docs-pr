@@ -15,7 +15,7 @@ Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. 
 
 Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modeling. For example, [Monte Carlo simulations](https://en.wikipedia.org/wiki/Monte_Carlo_method) require the generation of random inputs to determine an optimal solution.
 
-If choosing to autogenerate your JSON file, declare a volatile function with the JSDoc comment tag `@volatile`. From more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+If choosing to autogenerate your JSON file, declare a volatile function with the JSDoc comment tag `@volatile`. From more information on autogeneration, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 An example of a volatile custom function follows, which simulates rolling a six-sided dice.
 
@@ -37,5 +37,5 @@ function roll6sided() {
 
 ## See also
 
-* [Custom functions metadata](custom-functions-json.md)
+* [Manually create JSON metadata for custom functions](custom-functions-json.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

@@ -1,5 +1,5 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -248,7 +248,7 @@ Learn how to use [volatile values in your custom functions](custom-functions-vol
 ## See also
 
 * [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-* [Custom functions metadata](custom-functions-json.md)
 * [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+* [Manually create JSON metadata for custom functions](custom-functions-json.md)
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

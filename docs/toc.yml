@@ -682,20 +682,34 @@
     - name: Overview
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
-    - name: Get started with Excel custom functions
-      href: quickstarts/excel-custom-functions-quickstart-redirect.md
+    - name: CustomFunctionsRuntime API requirement sets
+      href: excel/custom-functions-requirement-sets.md
       displayName: Excel, Custom Functions
-    - name: Custom functions tutorial
-      href: tutorials/excel-tutorial-create-custom-functions.md
+    - name: Tutorials
+      items:
+      - name: Build your first custom functions add-in
+        href: quickstarts/excel-custom-functions-quickstart-redirect.md
+        displayName: Excel, Custom Functions
+      - name: Custom functions tutorial
+        href: tutorials/excel-tutorial-create-custom-functions.md
+        displayName: Excel, Custom Functions
+      - name: Share custom function data with the task pane tutorial
+        href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+        displayName: Excel, Custom Functions
+    - name: Naming guidelines
+      href: excel/custom-functions-naming.md
       displayName: Excel, Custom Functions
-    - name: Shared custom function data with the task pane tutorial
-      href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
-      displayName: Excel, Custom Functions
-    - name: Call Excel JS APIs from your custom function
-      href: excel/call-excel-apis-from-custom-function.md
+    - name: Parameter options
+      href: excel/custom-functions-parameter-options.md
       displayName: Excel, Custom Functions
     - name: Error handling
       href: excel/custom-functions-errors.md
+      displayName: Excel, Custom Functions
+    - name: Autogenerate JSON metadata
+      href: excel/custom-functions-json-autogeneration.md
+      displayName: Excel, Custom Functions
+    - name: Call Excel JS APIs
+      href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
     - name: Identify an equivalent XLL
       href: excel/make-custom-functions-compatible-with-xll-udf.md
@@ -703,29 +717,14 @@
     - name: Localization
       href: excel/custom-functions-localize.md
       displayName: Excel, Custom Functions
-    - name: Metadata
+    - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
-      displayName: Excel, Custom Functions
-    - name: Metadata generation
-      href: excel/custom-functions-json-autogeneration.md
-      displayName: Excel, Custom Functions
-    - name: Naming guidelines
-      href: excel/custom-functions-naming.md
-      displayName: Excel, Custom Functions
-    - name: Parameter options
-      href: excel/custom-functions-parameter-options.md
-      displayName: Excel, Custom Functions
-    - name: Requirement sets
-      href: excel/custom-functions-requirement-sets.md
       displayName: Excel, Custom Functions
     - name: Return a dynamic array
       href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
     - name: Shared runtime
       href: excel/custom-functions-shared-overview.md
-      displayName: Excel, Custom Functions
-    - name: Troubleshooting
-      href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
     - name: UI-less custom functions
       items: 
@@ -743,6 +742,9 @@
       displayName: Excel, Custom Functions
     - name: Web requests
       href: excel/custom-functions-web-reqs.md
+      displayName: Excel, Custom Functions
+    - name: Troubleshooting
+      href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
 
 - name: OneNote
