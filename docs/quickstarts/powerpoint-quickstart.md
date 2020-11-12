@@ -10,7 +10,7 @@ localization_priority: Priority
 
 In this article, you'll walk through the process of building a PowerPoint task pane add-in.
 
-## Create the add-in 
+## Create the add-in
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -32,7 +32,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `PowerPoint`
 
-![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-powerpoint.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -78,11 +78,11 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of PowerPoint with the Show Taskpane button highlighted](../images/powerpoint_quickstart_addin_1c.png)
+    ![Screenshot of PowerPoint with the Show Taskpane button highlighted](../images/powerpoint_quickstart_addin_1c.png)
 
 4. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
 
-    ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3c.png)
+    ![Screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3c.png)
 
 ### Next steps
 
@@ -105,7 +105,7 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
 5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
-    
+
 ### Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -113,7 +113,7 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 ### Update the code
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -237,15 +237,15 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of PowerPoint with the Show Taskpane ribbon button highlighted](../images/powerpoint_quickstart_addin_1.png)
+    ![Screenshot of PowerPoint with the Show Taskpane ribbon button highlighted](../images/powerpoint_quickstart_addin_1.png)
 
 3. In the task pane, choose the **Insert Image** button to add an image to the selected slide.
 
-    ![A screenshot of PowerPoint with an image of a dog displayed on the slide](../images/powerpoint_quickstart_addin_2.png)
+    ![Screenshot of PowerPoint with an image of a dog displayed on the slide](../images/powerpoint_quickstart_addin_2.png)
 
 4. In the task pane, choose the **Insert Text** button to add text to the selected slide.
 
-    ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` on the slide](../images/powerpoint_quickstart_addin_3.png)
+    ![Screenshot of PowerPoint with an image of a dog and the text 'Hello World` on the slide](../images/powerpoint_quickstart_addin_3.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
@@ -257,5 +257,5 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)

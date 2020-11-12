@@ -43,8 +43,8 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-outlook.png)
-    
+    ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-outlook.png)
+
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
@@ -57,7 +57,7 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 
 ### Explore the project
 
-The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. 
+The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.
 
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
@@ -105,16 +105,16 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of a message window in Outlook with the add-in button highlighted](../images/quick-start-button-1.png)
+    ![Screenshot showing a message window in Outlook with the add-in ribbon button highlighted](../images/quick-start-button-1.png)
 
     > [!NOTE]
     > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.
 
-    ![A screenshot of the add-in's task pane with the Run link highlighted](../images/quick-start-task-pane-2.png)
+    ![Screenshot showing the add-in's task pane with the Run link highlighted](../images/quick-start-task-pane-2.png)
 
-    ![A screenshot of the add-in's task pane displaying message subject](../images/quick-start-task-pane-3.png)
+    ![Screenshot of the add-in's task pane displaying message subject](../images/quick-start-task-pane-3.png)
 
 ### Next steps
 
