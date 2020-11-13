@@ -59,7 +59,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![Screenshot of Excel, with the add-in taskpane open, and the Run button highlighted in the add-in taskpane](../images/excel-quickstart-addin-3c.png)
+    ![Screenshot of Excel, with the add-in task pane open, and the Run button highlighted in the add-in task pane](../images/excel-quickstart-addin-3c.png)
 
 ### Next steps
 
@@ -203,7 +203,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Screenshot of Excel, with the add-in taskpane open](../images/excel-quickstart-addin-2c.png)
+    ![Screenshot of Excel, with the add-in task pane open](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

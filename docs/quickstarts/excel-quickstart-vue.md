@@ -209,7 +209,7 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-   ![Screenshot of Excel, with the add-in taskpane open](../images/excel-quickstart-addin-2c.png)
+   ![Screenshot of Excel, with the add-in task pane open](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 

@@ -57,7 +57,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![Screenshot of Excel, with the add-in taskpane open, and the Run button highlighted in the add-in taskpane](../images/excel-quickstart-addin-3c.png)
+    ![Screenshot of Excel, with the add-in task pane open, and the Run button highlighted in the add-in task pane](../images/excel-quickstart-addin-3c.png)
 
 ## Next steps
 
