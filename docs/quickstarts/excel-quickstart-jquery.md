@@ -10,7 +10,7 @@ localization_priority: Priority
 
 In this article, you'll walk through the process of building an Excel task pane add-in.
 
-## Create the add-in 
+## Create the add-in
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 # [Yeoman generator](#tab/yeomangenerator)
@@ -53,7 +53,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted](../images/excel-quickstart-addin-3b.png)
+    ![Screenshot showing the Excel Home menu, with the Show Taskpane button highlighted](../images/excel-quickstart-addin-3b.png)
 
 4. Select any range of cells in the worksheet.
 

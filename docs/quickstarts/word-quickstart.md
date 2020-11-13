@@ -80,7 +80,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
+    ![Screenshot showing the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
 
 4. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
 
