@@ -71,7 +71,6 @@ We'll construct an example of a **RibbonUpdaterData** object step-by-step. (The 
     - The value of `type` can be either "ExecuteFunction" or "ShowTaskpane".
     - The `functionName` property is only used when the value of `type` is "ExecuteFunction`. It is the name of a function defined in the FunctionFile. For more information about the FunctionFile, see [Basic concepts for Add-in Commands](add-in-commands.md).
 
-
     ```javascript
     {
       id: "executeWriteData",
@@ -80,8 +79,107 @@ We'll construct an example of a **RibbonUpdaterData** object step-by-step. (The 
     }
    ```
 
-1. 
+1. Add the following as the only member of the `tabs` array. About this code, note:
 
+    - The `id` property is required. Use a brief, descriptive ID that is unique among all contextual tabs in your add-in.
+    - The `label` property is required, but the value is *not* the label that the tab will have. Instead, it is a resid (resource ID) that is defined in the [Resources](../reference/manifest/resources.md) section of the manifest. In a later step, you add a resource with this ID to the manifest and assign it a user-friendly string to serve as the label of the contextual tab, such as "Data".
+    - The `visible` property is optional and defaults to `false` when not present. You typically want it to be `false` when you are using a **RibbonUpdaterData** object to define a contextual tab when the add-in starts up. You typically set it to true when you are using a **RibbonUpdaterData** object to make the tab visible in response to some event, such as the user selecting an entity of some type in the document.
+    - The `groups` property is required. It defines the groups of controls that will appear on the tab. It must have at least one member.
+
+    ```javascript
+    {
+      id: "CtxTab1",
+      label: "CtxTab1_label",
+      visible: true,
+      groups: [
+
+      ]
+    }
+    ```
+
+1. In the simple ongoing example, the contextual tab has only a single group. Add the following as the only member of the `groups` array. About this code, note:
+
+    - The `id` property is required. Use a brief, descriptive ID that is unique among all groups in the tab.
+    - The `label` property is required, but the value is *not* the label that the group will have. Instead, it is a resid (resource ID) that is defined in the [Resources](../reference/manifest/resources.md) section of the manifest. In a later step, you add a resource with this ID to the manifest and assign it a user-friendly string to serve as the label of the group, such as "Insertion".
+    - The `icon` property is required. Its value is an array of objects that specify the icons that the group will have on the ribbon depending on the size of the ribbon and the Office application window.
+    - The `controls` property is required. Its value is an array of objects that specify the buttons and other controls in the group.
+
+    ```javascript
+    {
+        id: "CustomGroup111",
+        label: "Group11Title",
+        icon: [
+
+        ],
+        controls: [
+
+        ]
+    }
+    ```
+
+1. Every group must have an icon of at least three sizes, 16x16 px, 32x32 px, and 80x80 px. Office decides which icon to use based on the size of the ribbon and Office application window. Add the following objects to the icon array. (If the window and ribbon sizes are large enough for at least one of the controls on the group to appear, then no group icon at all appears. For an example, watch the **Styles** group on the Word ribbon as you shrink and expand the Word window.) About this code, note:
+
+    - The `size` property is required. The unit of measure is pixels.
+    - The `sourceLocation` property is required. It specifies the full URL to the icon.
+
+    > [IMPORTANT!]
+    > Just as you typically must change the URLs in a the add-in's manifest when you move from developing to production (such as changing the domain from localhost to contoso.com), you must also change the URLs in your contextual tabs JavaScript.
+
+    ```javascript
+    {
+        size: 16,
+        sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"
+    },
+    {
+        size: 32,
+        sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"
+    },
+    {
+        size: 80,
+        sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/Group80x80.png"
+    }
+    ```
+
+1. In the simple ongoing example, the group has only a single button. Add the following object as the only member of the `controls` array. About this code, note:
+
+    - All the properties are required except `enabled` and `tooltip`.
+    - `type` specifies the type of control. The values can be "Button", "Menu", or "MobileButton".
+    - `id` can be up to 125 characters. 
+    - `actionId` must be the ID of an action defined in the `actions` array.
+    - `enabled` (optional) specifies whether the button is enabled when the contextual tab appears starts up. The default if not present is `true`.
+    - `label` refers to the button label. However, the value is *not* the label that the group will have. Instead, it is a resid (resource ID) that is defined in the [Resources](../reference/manifest/resources.md) section of the manifest. In a later step, you add a resource with this ID to the manifest and assign it a user-friendly string to serve as the label of the button, such as "Write Data".
+    - `superTip` represents a rich form of tool tip. Both the `title` and `description` properties of the `superTip` object are resids that are defined in the [Resources](../reference/manifest/resources.md) section of the manifest. In a later step, you add a resource with this ID to the manifest and assign it a user-friendly string.
+    - `icon` specifies the icons for the button. The remarks above about the group icon apply here too. 
+
+    ```javascript
+    {
+        type: "Button",
+        id: "CtxBt112",
+        actionId: "executeWriteData",
+        enabled: false,
+        label: "ExeFunc_CtxBt112",
+        toolTip: "Btn112ToolTip",
+        superTip: {
+            title: "Btn112SuperTipTitle",
+            description: "Btn112SuperTipDesc"
+        },
+        icon: [
+            {
+                size: 16,
+                sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+            },
+            {
+                size: 32,
+                sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"
+            },
+            {
+                size: 80,
+                sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton80x80.png"
+            }
+        ]
+    }
+    ```
+ 
 The following is the complete example **RibbonUpdaterData** object:
 
 ```javascript
@@ -104,44 +202,44 @@ const ribbonUpdater = {
           label: "Group11Title",
           icon: [
             {
-              size: 16,
-              sourceLocation: "https://officedev.github.io/custom-functions/addins/cfsample2/Images/Button16x16.png"
+                size: 16,
+                sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"
             },
             {
-              size: 32,
-              sourceLocation: "https://officedev.github.io/custom-functions/addins/cfsample2/Images/Button32x32.png"
+                size: 32,
+                sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"
             },
             {
-              size: 80,
-              sourceLocation: "https://officedev.github.io/custom-functions/addins/cfsample2/Images/Button80x80.png"
+                size: 80,
+                sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/Group80x80.png"
             }
           ],
           controls: [
             {
-              type: "Button",
-              id: "CtxBt112",
-              enabled: false,
-              icon: [
-                {
-                  size: 16,
-                  sourceLocation: "https://officedev.github.io/custom-functions/addins/cfsample2/Images/Button16x16.png"
+                type: "Button",
+                id: "CtxBt112",
+                actionId: "executeWriteData",
+                enabled: false,
+                label: "ExeFunc_CtxBt112",
+                toolTip: "Btn112ToolTip",
+                superTip: {
+                    title: "Btn112SuperTipTitle",
+                    description: "Btn112SuperTipDesc"
                 },
-                {
-                  size: 32,
-                  sourceLocation: "https://officedev.github.io/custom-functions/addins/cfsample2/Images/Button32x32.png"
-                },
-                {
-                  size: 80,
-                  sourceLocation: "https://officedev.github.io/custom-functions/addins/cfsample2/Images/Button80x80.png"
-                }
-              ],
-              labe: "ExeFunc_CtxBt112",
-              toolTip: "Btn112ToolTip",
-              superTip: {
-                title: "Btn112SuperTipTitle",
-                description: "Btn112SuperTipDesc"
-              },
-              actionId: "executeWriteData"
+                icon: [
+                    {
+                        size: 16,
+                        sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+                    },
+                    {
+                        size: 32,
+                        sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"
+                    },
+                    {
+                        size: 80,
+                        sourceLocation: "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton80x80.png"
+                    }
+                ]
             }
           ]
         }
