@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
-ms.date: 10/03/2020
+ms.date: 11/01/2020
 localization_priority: Priority
 ---
 
@@ -55,9 +55,24 @@ You can specify whether the command is enabled or disabled when your add-in laun
 > [!NOTE]
 > This feature is not supported in all Office applications or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
 
+### Position on the ribbon (preview)
+
+You can specify where a custom tab appears on the Office application's ribbon, such as "just to the right of the Home tab".
+
+> [!NOTE]
+> This feature is not supported in all Office applications or scenarios. For more information, see [Position a custom tab on the ribbon](custom-tab-placement.md).
+
+### Integration of built-in Office buttons (preview)
+
+You can insert the built-in Office ribbon buttons into your custom command groups and custom ribbon tabs.
+
+> [!NOTE]
+> This feature is not supported in all Office applications or scenarios. For more information, see [Integrate built-in Office buttons into custom tabs](built-in-button-integration.md).
+
+
 ## Supported platforms
 
-Add-in commands are currently supported on the following platforms.
+Add-in commands are currently supported on the following platforms, except for limitations specified in the subsections of [Command capabilities](#command-capabilities) earlier.
 
 - Office on Windows (build 16.0.6769+, connected to a Microsoft 365 subscription)
 - Office 2019 on Windows
@@ -84,6 +99,8 @@ Apply the following best practices when you develop add-in commands:
     - Place commands on a custom tab if you have more than six top-level commands.
     - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
     - Do not add superfluous buttons to increase the real estate of your add-in.
+    - Do not position a custom tab to the left of the Home tab, or give it focus by default when the document opens, unless your add-in is the primary way users will interact with the document. Giving excessive prominence to your add-in inconveniences and annoys users and administrators.
+    - If your add-in is the primary way users interact with the document and you have a custom ribbon tab, consider integrating into the tab the buttons for the Office functions that users will frequently need.
 
      > [!NOTE]
      > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
