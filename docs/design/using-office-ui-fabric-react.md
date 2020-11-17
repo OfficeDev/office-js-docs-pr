@@ -31,7 +31,7 @@ You'll use the Yeoman generator for Office Add-ins to create an add-in project t
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![Screenshot showing Yeoman generator options](../images/yo-office-word-react.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-word-react.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
