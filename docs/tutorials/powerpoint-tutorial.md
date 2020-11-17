@@ -12,10 +12,11 @@ localization_priority: Priority
 In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add-in that:
 
 > [!div class="checklist"]
-> * Adds the [Bing](https://www.bing.com) photo of the day to a slide
-> * Adds text to a slide
-> * Gets slide metadata
-> * Navigates between slides
+>
+> - Adds the [Bing](https://www.bing.com) photo of the day to a slide
+> - Adds text to a slide
+> - Gets slide metadata
+> - Navigates between slides
 
 ## Prerequisites
 
@@ -35,13 +36,13 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
 5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-     ![PowerPoint tutorial - Visual Studio Solution Explorer window that shows the 2 projects in the HelloWorld solution](../images/powerpoint-tutorial-solution-explorer.png)
+     ![Screenshot of the Visual Studio Solution Explorer window showing HelloWorld and HelloWorldWeb, the 2 projects in the HelloWorld solution](../images/powerpoint-tutorial-solution-explorer.png)
 
 ### Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### Update code 
+### Update code
 
 Edit the add-in code as follows to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.
 
@@ -107,7 +108,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 1. Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.
 
-    ![PowerPoint tutorial - Visual Studio Solution Explorer window that highlights the Controllers folder in the HelloWorldWeb project](../images/powerpoint-tutorial-solution-explorer-controllers.png)
+    ![Screenshot of the Visual Studio Solution Explorer window showing the Controllers folder highlighted in the HelloWorldWeb project](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
 2. Right-click the **Controllers** folder and select **Add > New Scaffolded Item...**.
 
@@ -194,9 +195,9 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
     }
     ```
 
-9. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note: 
+9. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note:
 
-    - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsyc` request indicates the type of data being inserted. 
+    - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsync` request indicates the type of data being inserted.
 
     - The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.
 
@@ -218,19 +219,19 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![A screenshot of Visual Studio with the Start button highlighted](../images/powerpoint-tutorial-start.png)
+    ![Screenshot showing the Start button highlighted in Visual Studio](../images/powerpoint-tutorial-start.png)
 
 2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of Visual Studio with the Show Taskpane button highlighted in the Home ribbon](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Screenshot displaying the Show Taskpane button highlighted on the Home ribbon in PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.
 
-    ![A screenshot of PowerPoint add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-insert-image-button.png)
+    ![Screenshot of the PowerPoint add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-insert-image-button.png)
 
 4. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![A screenshot of Visual Studio with the Stop button highlighted](../images/powerpoint-tutorial-stop.png)
+    ![Screenshot showing the Stop button highlighted in Visual Studio](../images/powerpoint-tutorial-stop.png)
 
 ## Customize User Interface (UI) elements
 
@@ -256,19 +257,19 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 1. Using Visual Studio, test the PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![A screenshot of Visual Studio with the Start button highlighted](../images/powerpoint-tutorial-start.png)
+    ![Screenshot displaying the Start button highlighted in Visual Studio](../images/powerpoint-tutorial-start.png)
 
 2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of Visual Studio with the Show Taskpane button highlighted in the Home ribbon](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Screenshot displaying the Show Taskpane button highlighted on the PowerPoint Home ribbon](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. Notice that the task pane now contains a header section and title, and no longer contains a footer section.
 
-    ![A screenshot of PowerPoint add-in with Insert Image button](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![Screenshot of the PowerPoint add-in with Insert Image button](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
 4. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![A screenshot of Visual Studio with the Stop button highlighted](../images/powerpoint-tutorial-stop.png)
+    ![Screenshot displaying the Stop button highlighted in Visual Studio](../images/powerpoint-tutorial-stop.png)
 
 ## Insert text
 
@@ -308,24 +309,23 @@ Complete the following steps to add code that inserts text into the title slide 
 
 1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![A screenshot of Visual Studio with the Start button highlighted](../images/powerpoint-tutorial-start.png)
+    ![Screenshot of the Start button highlighted in Visual Studio](../images/powerpoint-tutorial-start.png)
 
 2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of Visual Studio with the Show Taskpane button highlighted in the Home ribbon](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Screenshot highlighting the Show Taskpane button on the Home ribbon in PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide and choose a design for the slide that contains a text box for the title.
 
-    ![A screenshot of PowerPoint with current slide highlighted, and add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![Screenshot of PowerPoint with the current slide highlighted, and the Insert Image button highlighted in the add-in](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
 4. Put your cursor in the text box on the title slide and then in the task pane, choose the **Insert Text** button to add text to the slide.
 
-    ![A screenshot of PowerPoint add-in with the Insert Text button highlighted](../images/powerpoint-tutorial-insert-text.png)
-
+    ![Screenshot of PowerPoint with the Insert Text button highlighted in the add-in](../images/powerpoint-tutorial-insert-text.png)
 
 5. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![A screenshot of Visual Studio with the Stop button highlighted](../images/powerpoint-tutorial-stop.png)
+    ![Screenshot of the Stop button highlighted in Visual Studio](../images/powerpoint-tutorial-stop.png)
 
 ## Get slide metadata
 
@@ -368,19 +368,19 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
 1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![A screenshot of Visual Studio with the Start button highlighted](../images/powerpoint-tutorial-start.png)
+    ![Screenshot highlighting the Start button in Visual Studio](../images/powerpoint-tutorial-start.png)
 
 2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of Visual Studio with the Show Taskpane button highlighted in the Home ribbon](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Screenshot highlighting the Show Taskpane button on the PowerPoint Home ribbon](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. In the task pane, choose the **Get Slide Metadata** button to get the metadata for the selected slide. The slide metadata is written to the popup dialog window at the bottom of the task pane. In this case, the `slides` array within the JSON metadata contains one object that specifies the `id`, `title`, and `index` of the selected slide. If multiple slides had been selected when you retrieved slide metadata, the `slides` array within the JSON metadata would contain one object for each selected slide.
 
-    ![A screenshot of PowerPoint add-in with the Get Slide Metadata button highlighted](../images/powerpoint-tutorial-get-slide-metadata.png)
+    ![Screenshot of PowerPoint with the Get Slide Metadata button highlighted in the add-in](../images/powerpoint-tutorial-get-slide-metadata.png)
 
 4. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![A screenshot of Visual Studio with the Stop button highlighted](../images/powerpoint-tutorial-stop.png)
+    ![Screenshot highlighting the Stop button in Visual Studio](../images/powerpoint-tutorial-stop.png)
 
 ## Navigate between slides
 
@@ -468,34 +468,33 @@ Complete the following steps to add code that navigates between the slides of a 
 
 1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![A screenshot of Visual Studio with the Start button highlighted](../images/powerpoint-tutorial-start.png)
+    ![Screenshot showing the Start button highlighted on the Visual Studio toolbar](../images/powerpoint-tutorial-start.png)
 
 2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of Visual Studio with the Show Taskpane button highlighted in the Home ribbon](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Screenshot showing the Show Taskpane button highlighted on the Home ribbon in PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-
-3. Use the **New Slide** button in the ribbon of the **Home** tab to add two new slides to the document. 
+3. Use the **New Slide** button in the ribbon of the **Home** tab to add two new slides to the document.
 
 4. In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.
 
-    ![A screenshot of PowerPoint add-in with the Go to First Slide button highlighted](../images/powerpoint-tutorial-go-to-first-slide.png)
+    ![Screenshot of PowerPoint with the Go to First Slide button highlighted in the add-in](../images/powerpoint-tutorial-go-to-first-slide.png)
 
 5. In the task pane, choose the **Go to Next Slide** button. The next slide in the document is selected and displayed.
 
-    ![A screenshot of PowerPoint add-in with the Go to Next Slide button highlighted](../images/powerpoint-tutorial-go-to-next-slide.png)
+    ![Screenshot of PowerPoint with the Go to Next Slide button highlighted in the add-in](../images/powerpoint-tutorial-go-to-next-slide.png)
 
 6. In the task pane, choose the **Go to Previous Slide** button. The previous slide in the document is selected and displayed.
 
-    ![A screenshot of PowerPoint add-in with the Go to Previous Slide button highlighted](../images/powerpoint-tutorial-go-to-previous-slide.png)
+    ![Screenshot of PowerPoint with the Go to Previous Slide button highlighted in the add-in](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
 7. In the task pane, choose the **Go to Last Slide** button. The last slide in the document is selected and displayed.
 
-    ![A screenshot of PowerPoint add-in with the Go to Last Slide button highlighted](../images/powerpoint-tutorial-go-to-last-slide.png)
+    ![Screenshot of PowerPoint with the Go to Last Slide button highlighted in the add-in](../images/powerpoint-tutorial-go-to-last-slide.png)
 
 8. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![A screenshot of Visual Studio with the Stop button highlighted](../images/powerpoint-tutorial-stop.png)
+    ![Screenshot showing the Stop button highlighted on the Visual Studio toolbar](../images/powerpoint-tutorial-stop.png)
 
 ## Next steps
 
@@ -506,6 +505,5 @@ In this tutorial, you've created a PowerPoint add-in that inserts an image, inse
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
-
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)

@@ -35,7 +35,6 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
 > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Complete" and skip the sections **Code the client side** and **Code the server side**.
 
-
 ## Register the add-in with Azure AD v2.0 endpoint
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
@@ -66,10 +65,10 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office client application to use your add-in's web APIs with the same rights as the current user. Suggestions:
 
-    - **Admin consent title**: Office can act as the user.
-    - **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights as the current user.
-    - **User consent title**: Office can act as you.
-    - **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
+    * **Admin consent title**: Office can act as the user.
+    * **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights as the current user.
+    * **User consent title**: Office can act as you.
+    * **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
 
 1. Ensure that **State** is set to **Enabled**.
 
@@ -80,11 +79,11 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. In the **Authorized client applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized.
 
-    - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
-    - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
-    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
+    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
+    * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     For each ID, take these steps:
 
@@ -326,21 +325,21 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Replace `TODO 4` with the following. About this code, note that ASP.NET error classes were created before there was such a thing as MFA. As a side-effect of how our server-side logic handles the requests for a second authentication factor, the server-side error sent to the client has a **Message** property but no **ExceptionMessage** property. But all other errors will have a **ExceptionMessage** property, so the client-side code has to parse the response for both. Either one or the other variable will be undefined.
 
     ```javascript
-	var message = JSON.parse(result.responseText).Message;
-	var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
+    var message = JSON.parse(result.responseText).Message;
+    var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     ```
 
 1. Replace `TODO 5` with the following. When Microsoft Graph requires an additional form of authentication, it sends error AADSTS50076. It includes information about the additional requirement in the **Message.Claims** property. To handle this, the code makes a second attempt to get the bootstrap token, but this time it includes the request for an additional factor as the value of the `authChallenge` option, which tells Azure AD to prompt the user for all required forms of authentication.
 
     ```javascript
-	if (message) {
-		if (message.indexOf("AADSTS50076") !== -1) {
-			var claims = JSON.parse(message).Claims;
-			var claimsAsString = JSON.stringify(claims);
-			getDataWithToken({ authChallenge: claimsAsString });
-			return;
-		}
-	}
+    if (message) {
+        if (message.indexOf("AADSTS50076") !== -1) {
+            var claims = JSON.parse(message).Claims;
+            var claimsAsString = JSON.stringify(claims);
+            getDataWithToken({ authChallenge: claimsAsString });
+            return;
+        }
+    }
     ```
 
 1. Replace `TODO 6` with the following.
@@ -351,7 +350,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         // TODO 7: Handle case where bootstrap token has expired.
 
         // TODO 8: Handle all other Azure AD errors.
-	}
+    }
     ```
 
 1. Replace `TODO 7` with the following. Note that on rare occasions the bootstrap token is unexpired when Office validates it, but expires by the time it is sent to Azure AD for exchange. Azure AD will respond with error AADSTS500133. When this happens, the code  recalls the SSO API (but no more than once). This time Office returns a new unexpired bootstrap token.
@@ -567,9 +566,9 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Replace `TODO 3b` with the following code. About this code, note:
 
     * If the call to Azure AD contained at least one scope (permission) for which neither the user nor a tenant administrator has consented (or consent was revoked), Azure AD will return "400 Bad Request" with error `AADSTS65001`. MSAL throws a **MsalUiRequiredException** with this information.
-    *  If the call to Azure AD contained at least one scope that Azure AD does not recognize, AAD returns "400 Bad Request" with error `AADSTS70011`. MSAL throws a **MsalUiRequiredException** with this information.
-    *  The entire description is included because 70011 is returned in other conditions and it should only be handled in this add-in when it means that there is an invalid scope.
-    *  The **MsalUiRequiredException** object is passed to `SendErrorToClient`. This ensures that an **ExceptionMessage** property that contains the error information is included in the HTTP Response.
+    * If the call to Azure AD contained at least one scope that Azure AD does not recognize, AAD returns "400 Bad Request" with error `AADSTS70011`. MSAL throws a **MsalUiRequiredException** with this information.
+    * The entire description is included because 70011 is returned in other conditions and it should only be handled in this add-in when it means that there is an invalid scope.
+    * The **MsalUiRequiredException** object is passed to `SendErrorToClient`. This ensures that an **ExceptionMessage** property that contains the error information is included in the HTTP Response.
 
     ```csharp
     if ((e.Message.StartsWith("AADSTS65001")) || (e.Message.StartsWith("AADSTS70011: The provided value for the input parameter 'scope' is not valid.")))

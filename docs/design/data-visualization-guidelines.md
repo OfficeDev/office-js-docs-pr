@@ -9,8 +9,7 @@ localization_priority: Normal
 
 Good data visualizations help users find insights in their data. They can use those insights to tell stories that inform and persuade. This article provides guidelines to help you design effective data visualizations in your add-ins for Excel and other Office apps.
 
-We recommend that you use [Office UI Fabric](https://developer.microsoft.com/fabric) to create the chrome for your data visualizations. Office UI Fabric includes styles and components that integrate seamlessly with the Office look and feel. 
-
+We recommend that you use [Office UI Fabric](https://developer.microsoft.com/fabric) to create the chrome for your data visualizations. Office UI Fabric includes styles and components that integrate seamlessly with the Office look and feel.
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
 ![Image of a data visualization with Fabric elements applied**](../images/fabric-data-visualization.png) 
@@ -21,7 +20,7 @@ We recommend that you use [Office UI Fabric](https://developer.microsoft.com/fab
 
 Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figure.
 
-![Image of a line chart with title, axes, legend, and plot area labeled](../images/excel-charts-visualization.png)
+![Line chart with title, axes, legend, and plot area labeled](../images/excel-charts-visualization.png)
 
 ### Chart titles
 
@@ -60,7 +59,7 @@ Light grays are most effective for gridlines. If you're using Fabric, see the [N
 
 The following image shows a data visualization with gridlines.
 
-![Image of a data visualization with gridlines](../images/data-visualization.png)
+![Data visualization of line chart with gridlines](../images/data-visualization.png)
 
 ### Legends
 
@@ -113,7 +112,7 @@ Motion follows stimulus. Visual elements should move in the same direction at th
 
 Create a perception of causality. When staging animations:
 
-- Stage one thing at a time. 
+- Stage one thing at a time.
 - Stage changes to axes before changes to data ink.
 - Stage and animate objects as a group if they are moving at the same speed in the same direction.
 - Stage data elements in groups of no more than 4-5 objects. Viewers have difficulty tracking more than 4-5 objects independently.
@@ -122,7 +121,7 @@ Motion adds meaning.
 
 - Animations increase user comprehension of changes to the data, provide context, and act as a non-verbal annotation layer.
 - Motion should occur in a meaningful coordinate space of the visualization.
-- Tailor the animation to the visual. 
+- Tailor the animation to the visual.
 - Avoid gratuitous animations.
 
 Motion follows data.
@@ -136,7 +135,7 @@ Motion follows data.
 - Make all interactive elements, such as push buttons or pick lists, accessible from a keyboard.
 - Send accessibility events to screen readers to announce focus changes, tooltips, and so on.
 
-## See also 
+## See also
 
 - [The Five Best Libraries for Building Data Visualizations](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [The Visual Display of Quantitative Information](https://www.edwardtufte.com/tufte/books_vdqi)

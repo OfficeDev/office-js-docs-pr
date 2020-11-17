@@ -26,7 +26,7 @@ Consider opening a dialog box from a task pane or content add-in or [add-in comm
 
 The following image shows an example of a dialog box.
 
-![Add-in commands](../images/auth-o-dialog-open.png)
+![Screenshot showing dialog with 3 sign-in options displayed in front of Word](../images/auth-o-dialog-open.png)
 
 Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the Office application and with the page in the task pane, if there is one.
 
@@ -94,9 +94,8 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
-> - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box. 
+> - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box.
 > - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
-
 
 In the next example, `googleProfile` is a stringified version of the user's Google profile.
 

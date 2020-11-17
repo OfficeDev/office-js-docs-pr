@@ -11,15 +11,15 @@ localization_priority: Priority
 In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Outlook, Word, or PowerPoint that uses single sign-on (SSO) when possible, and uses an alternate method of user authentication when SSO is not supported.
 
 > [!TIP]
-> Before you attempt to complete this quick start, review [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md) to learn basic concepts about SSO in Office Add-ins. 
- 
+> Before you attempt to complete this quick start, review [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md) to learn basic concepts about SSO in Office Add-ins.
+
 The Yeoman generator simplifies the process of creating an SSO add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For a detailed walkthrough that describes how to manually complete the steps that the Yeoman generator automates, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.
 
 ## Prerequisites
 
-* [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).
+- [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).
 
-* The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:
+- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -27,7 +27,7 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
-* If you're using a Mac and don't have the Azure CLI installed on your machine, you must install [Homebrew](https://brew.sh/). The SSO configuration script that you'll run during this quick start will use Homebrew to install the Azure CLI, and will then use the Azure CLI to configure SSO within Azure.
+- If you're using a Mac and don't have the Azure CLI installed on your machine, you must install [Homebrew](https://brew.sh/). The SSO configuration script that you'll run during this quick start will use Homebrew to install the Azure CLI, and will then use the Azure CLI to configure SSO within Azure.
 
 ## Create the add-in project
 
@@ -41,7 +41,7 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
 - **What do you want to name your add-in?** `My SSO Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-sso-excel.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-sso-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -106,14 +106,14 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
 
-    ![Permissions request dialog](../images/sso-permissions-request.png)
+    ![Screenshot showing permissions requested dialog with Accept button highlighted](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
 6. The add-in retrieves profile information for the signed-in user and writes it to the document. The following image shows an example of profile information written to an Excel worksheet.
 
-    ![User profile information in Excel worksheet](../images/sso-user-profile-info-excel.png)
+    ![Screenshot showing user profile information in Excel worksheet](../images/sso-user-profile-info-excel.png)
 
 ### Outlook
 
@@ -134,20 +134,20 @@ Complete the following steps to try out an Outlook add-in.
 
 4. In the message compose window, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Outlook add-in button](../images/outlook-sso-ribbon-button.png)
+    ![Screenshot showing highlighted add-in ribbon button in Outlook compose message window](../images/outlook-sso-ribbon-button.png)
 
 5. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
 
 6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
 
-    ![Permissions request dialog](../images/sso-permissions-request.png)
+    ![Screenshot of permissions requested dialog with Accept button highlighted](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
 7. The add-in retrieves profile information for the signed-in user and writes it to the body of the email message.
 
-    ![User profile information in Outlook message](../images/sso-user-profile-info-outlook.png)
+    ![Screenshot showing user profile information in Outlook compose message window](../images/sso-user-profile-info-outlook.png)
 
 ## Next steps
 
