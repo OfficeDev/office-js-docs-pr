@@ -16,13 +16,12 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 ## Provide clear value
 
 - Create add-ins that help users complete tasks quickly and efficiently. Focus on scenarios that make sense for Office applications. For example:
- - Make core authoring tasks faster and easier, with fewer interruptions.
- - Enable new scenarios within Office.
- - Embed complementary services within Office applications.
- - Improve the Office experience to enhance productivity.
+  - Make core authoring tasks faster and easier, with fewer interruptions.
+  - Enable new scenarios within Office.
+  - Embed complementary services within Office applications.
+  - Improve the Office experience to enhance productivity.
 - Make sure that the value of your add-in is clear to users right away by [creating an engaging first run experience](#create-an-engaging-first-run-experience).
 - Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
-
 
 ## Create an engaging first-run experience
 
@@ -34,11 +33,11 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Provide teaching UI to guide users and make your UI personal.
 
-   ![A screenshot that shows an add-in task pane with get started steps next to an add-in with no get started steps](../images/contoso-part-catalog-do-dont.png)
+  ![Screenshot showing a "Do" vs. "Don't" comparison. The "Do" example shows an add-in that includes a button users can click to get started. The "Don't" example shows an add-in with no introductory steps or buttons.](../images/contoso-part-catalog-do-dont.png)
 
 - If your content add-in binds to data in the user's document, include sample data or a template to show users the data format to use.
 
-   ![A screenshot that shows a content add-in with data next to a content add-in with no data](../images/add-in-title.png)
+  ![Screenshot showing a "Do" vs. "Don't" comparison. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example shows an add-in without sample data or buttons.](../images/add-in-title.png)
 
 - Offer [free trials](/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
 
@@ -97,7 +96,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Ensure that all user interactions respond in under one second.
 
--  Provide loading indicators for long-running operations.
+- Provide loading indicators for long-running operations.
 
 - Use a CDN to host images, resources, and common libraries. Load as much as you can from one place.
 
@@ -105,7 +104,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - If operations take time to execute, provide feedback to users. Note the thresholds listed in the following table. For additional information, see [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md).
 
-  |**Interaction class**|**Target**|**Upper bound**|**Human perception**|
+  |Interaction class|Target|Upper bound|Human perception|
   |:-----|:-----|:-----|:-----|
   |Instant|<=50 ms|100 ms|No noticeable delay.|
   |Fast|50-100 ms|200 ms|Minimally noticeable delay. No feedback necessary.|

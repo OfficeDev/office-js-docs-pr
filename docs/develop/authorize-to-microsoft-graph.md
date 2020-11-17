@@ -13,7 +13,6 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 > The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 > If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-
 ## Add-in architecture for SSO and Microsoft Graph
 
 In addition to hosting the pages and JavaScript of the web application, the add-in must also host, at the same [fully qualified domain name](/windows/desktop/DNS/f-gly#_dns_fully_qualified_domain_name_fqdn__gly), one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
@@ -24,7 +23,7 @@ The add-in manifest contains markup that specifies how the add-in is registered 
 
 The following diagram shows how the process of signing in and getting access to Microsoft Graph works.
 
-![A diagram that shows the SSO process](../images/sso-access-to-microsoft-graph.png)
+![Diagram showing the SSO process](../images/sso-access-to-microsoft-graph.png)
 
 1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office client application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
 2. If the user is not signed in, the Office client application opens a pop-up window for the user to sign in.

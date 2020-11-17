@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs.'
-ms.date: 11/09/2020
+ms.date: 11/17/2020
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -18,6 +18,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 |:--- |:--- |:--- |
 | Linked data types | Adds support for data types connected to Excel from external sources. | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
 | Named sheet views | Gives programmatic control of per-user worksheet views. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
+| Tasks | Turn comments into tasks assigned to users. | [Task](/javascript/api/excel/excel.task) |
 
 ## API list
 
@@ -25,6 +26,12 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 
 | Class | Fields | Description |
 |:---|:---|:---|
+|[Comment](/javascript/api/excel/excel.comment)|[assignTask(email: string)](/javascript/api/excel/excel.comment#assigntask-email-)|Assigns the task attached to the comment to the given user as the sole assignee.|
+||[getTask()](/javascript/api/excel/excel.comment#gettask--)|Gets the task associated with this comment.|
+||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#gettaskornullobject--)|Gets the task associated with this comment.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(email: string)](/javascript/api/excel/excel.commentreply#assigntask-email-)|Assigns the task attached to the comment to the given user as the sole assignee.|
+||[getTask()](/javascript/api/excel/excel.commentreply#gettask--)|Gets the task associated with this comment.|
+||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#gettaskornullobject--)|Gets the task associated with this comment.|
 |[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#dataprovider)|The name of the data provider for the linked data type.|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastrefreshed)|The local time-zone date and time since the workbook was opened when the linked data type was last refreshed.|
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|The name of the linked data type.|
@@ -88,11 +95,61 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Gets the id of the table in which the filter is applied.|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Gets the type of the event.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Gets the id of the worksheet which contains the table.|
+|[Task](/javascript/api/excel/excel.task)|[addAssignee(email: string)](/javascript/api/excel/excel.task#addassignee-email-)|Adds an assignee to the task.|
+||[applyChanges(taskChanges: Excel.TaskChanges)](/javascript/api/excel/excel.task#applychanges-taskchanges-)|Applies the given changes to the task.|
+||[assignees](/javascript/api/excel/excel.task#assignees)|Gets the users to whom the task is assigned.|
+||[comment](/javascript/api/excel/excel.task#comment)|Gets the comment associated with the task.|
+||[dueDate](/javascript/api/excel/excel.task#duedate)|Gets the date and time the task is due.|
+||[historyRecords](/javascript/api/excel/excel.task#historyrecords)|Gets the history records of the task.|
+||[id](/javascript/api/excel/excel.task#id)|Gets the id of the task.|
+||[percentComplete](/javascript/api/excel/excel.task#percentcomplete)|Gets the completion percentage of the task.|
+||[priority](/javascript/api/excel/excel.task#priority)|Gets the priority of the task.|
+||[startDate](/javascript/api/excel/excel.task#startdate)|Gets the date and time the task should start.|
+||[title](/javascript/api/excel/excel.task#title)|Gets title of the task.|
+||[removeAllAssignees()](/javascript/api/excel/excel.task#removeallassignees--)|Removes all assignees from the task.|
+||[removeAssignee(email: string)](/javascript/api/excel/excel.task#removeassignee-email-)|Removes an assignee from the task.|
+||[setPercentComplete(percentComplete: number)](/javascript/api/excel/excel.task#setpercentcomplete-percentcomplete-)|Changes the completion of the task.|
+||[setPriority(priority: number)](/javascript/api/excel/excel.task#setpriority-priority-)|Changes the priority of the task.|
+||[setStartDateAndDueDate(startDate: Date, dueDate: Date)](/javascript/api/excel/excel.task#setstartdateandduedate-startdate--duedate-)|Changes the start and the due dates of the task.|
+||[setTitle(title: string)](/javascript/api/excel/excel.task#settitle-title-)|Changes the title of the task.|
+|[TaskChanges](/javascript/api/excel/excel.taskchanges)|[dueDate](/javascript/api/excel/excel.taskchanges#duedate)|Sets a new due date for the task, in UTC time zone.|
+||[emailsToAssign](/javascript/api/excel/excel.taskchanges#emailstoassign)|Sets email addresses of the users to assign to the task.|
+||[emailsToUnassign](/javascript/api/excel/excel.taskchanges#emailstounassign)|Sets email addresses of the users to unassign from the task.|
+||[percentComplete](/javascript/api/excel/excel.taskchanges#percentcomplete)|Sets a new completion percentage for the task.|
+||[priority](/javascript/api/excel/excel.taskchanges#priority)|Sets a new priority for the task.|
+||[removeAllPreviousAssignees](/javascript/api/excel/excel.taskchanges#removeallpreviousassignees)|Sets if the change should remove all previous assignees from the task.|
+||[startDate](/javascript/api/excel/excel.taskchanges#startdate)|Sets a new start date for the task, in UTC time zone.|
+||[title](/javascript/api/excel/excel.taskchanges#title)|Sets a new title for the task.|
+|[TaskCollection](/javascript/api/excel/excel.taskcollection)|[getCount()](/javascript/api/excel/excel.taskcollection#getcount--)|Gets the number of tasks in the collection.|
+||[getItem(key: string)](/javascript/api/excel/excel.taskcollection#getitem-key-)|Gets a task using its id.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.taskcollection#getitemat-index-)|Gets a task by its index in the collection.|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.taskcollection#getitemornullobject-key-)|Gets a task using its id.|
+||[items](/javascript/api/excel/excel.taskcollection#items)|Gets the loaded child items in this collection.|
+|[TaskHistoryRecord](/javascript/api/excel/excel.taskhistoryrecord)|[anchorId](/javascript/api/excel/excel.taskhistoryrecord#anchorid)|Represents the ID of the object to which the task is anchored (e.g., commentId for tasks attached to comments).|
+||[assignee](/javascript/api/excel/excel.taskhistoryrecord#assignee)|Represents the user assigned to the task for an "Assign" history record type, or the user to unassign from the task for an "Unassign" history record type.|
+||[attributionUser](/javascript/api/excel/excel.taskhistoryrecord#attributionuser)|Represents the user who created or changed the task.|
+||[dueDate](/javascript/api/excel/excel.taskhistoryrecord#duedate)|Represents the task's due date.|
+||[historyRecordCreatedDate](/javascript/api/excel/excel.taskhistoryrecord#historyrecordcreateddate)|Represents creation date of the task history record.|
+||[id](/javascript/api/excel/excel.taskhistoryrecord#id)|ID for the history record.|
+||[percentComplete](/javascript/api/excel/excel.taskhistoryrecord#percentcomplete)|Represents the task's completion percentage.|
+||[priority](/javascript/api/excel/excel.taskhistoryrecord#priority)|Represents the task's priority.|
+||[startDate](/javascript/api/excel/excel.taskhistoryrecord#startdate)|Represents the task's start date.|
+||[title](/javascript/api/excel/excel.taskhistoryrecord#title)|Represents the task's title.|
+||[type](/javascript/api/excel/excel.taskhistoryrecord#type)|Represents task history record's type.|
+||[undoHistoryId](/javascript/api/excel/excel.taskhistoryrecord#undohistoryid)|Represents the TaskHistoryRecord.id property that was undone for the "Undo" history record type.|
+|[TaskHistoryRecordCollection](/javascript/api/excel/excel.taskhistoryrecordcollection)|[getCount()](/javascript/api/excel/excel.taskhistoryrecordcollection#getcount--)|Gets the number of history records in the collection for the task.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.taskhistoryrecordcollection#getitemat-index-)|Gets a task history record by using its index in the collection.|
+||[items](/javascript/api/excel/excel.taskhistoryrecordcollection#items)|Gets the loaded child items in this collection.|
+|[User](/javascript/api/excel/excel.user)|[displayName](/javascript/api/excel/excel.user#displayname)|Represents the user's display name.|
+||[email](/javascript/api/excel/excel.user#email)|Represents the user's email address.|
+||[uid](/javascript/api/excel/excel.user#uid)|Represents the user's unique ID.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Returns a collection of linked data types that are part of the workbook.|
+||[tasks](/javascript/api/excel/excel.workbook#tasks)|Returns a collection of tasks that are present in the workbook.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Specifies whether the PivotTable's field list pane is shown at the workbook level.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True if the workbook uses the 1904 date system.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|Returns a collection of sheet views that are present in the worksheet.|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Occurs when filter is applied on a specific worksheet.|
+||[tasks](/javascript/api/excel/excel.worksheet#tasks)|Returns a collection of tasks that are present in the worksheet.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Inserts the specified worksheets of a workbook into the current workbook.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Occurs when any worksheet's filter is applied in the workbook.|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Gets the type of the event.|

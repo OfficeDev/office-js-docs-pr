@@ -4,8 +4,8 @@ You can clear the cache by using the personality menu of any task pane add-in.
 - Choose the personality menu. Then choose **Clear Web Cache**.
     > [!NOTE]
     > You must run macOS version 10.13.6 or later to see the personality menu.
-    
-    ![Screen shot of clear web cache option on personality menu.](../images/mac-clear-cache-menu.png)
+
+    ![Screenshot of clear web cache option on personality menu](../images/mac-clear-cache-menu.png)
 
 You can also clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder.
 
@@ -13,5 +13,5 @@ You can also clear the cache manually by deleting the contents of the `~/Library
 > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:
 >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)
 >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)
->    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
->    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
+>    - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+>    - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`

@@ -26,7 +26,7 @@ In this article, you'll walk through the process of building a Project task pane
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Project`
 
-![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-project.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-project.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -34,7 +34,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 ## Explore the project
 
-The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. 
+The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.
 
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.

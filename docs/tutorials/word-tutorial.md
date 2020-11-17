@@ -12,11 +12,12 @@ localization_priority: Priority
 In this tutorial, you'll create a Word task pane add-in that:
 
 > [!div class="checklist"]
-> * Inserts a range of text
-> * Formats text
-> * Replaces text and inserts text in various locations
-> * Inserts images, HTML, and tables
-> * Creates and updates content controls 
+>
+> - Inserts a range of text
+> - Formats text
+> - Replaces text and inserts text in various locations
+> - Inserts images, HTML, and tables
+> - Creates and updates content controls
 
 > [!TIP]
 > If you've already completed the [Build your first Word task pane add-in](../quickstarts/word-quickstart.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Insert a range of text](#insert-a-range-of-text) section to start this tutorial.
@@ -34,7 +35,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-word.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-word.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -87,7 +88,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
    - The `context.sync` method sends all queued commands to Word for execution.
 
-   - The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow. 
+   - The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow.
 
     ```js
     function insertParagraph() {
@@ -150,7 +151,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
+    ![Screenshot displaying the Show Taskpane button highlighted in Word](../images/word-quickstart-addin-2b.png)
 
 3. In the task pane, choose the **Insert Paragraph** button.
 
@@ -158,7 +159,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 5. Choose the **Insert Paragraph** button again. Note that the new paragraph appears above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
-    ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph-2.png)
+    ![Screenshot showing the Insert Paragraph button in the add-in](../images/word-tutorial-insert-paragraph-2.png)
 
 ## Format text
 
@@ -187,7 +188,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     ```js
     function applyStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to style text.
 
             return context.sync();
@@ -199,20 +200,20 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
             }
         });
     }
-    ``` 
+    ```
 
 6. Within the `applyStyle()` function, replace `TODO1` with the following code. Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
-    ``` 
+    ```
 
 ### Apply a custom style to text
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `apply-style` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `apply-style` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
@@ -231,7 +232,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     ```js
     function applyCustomStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply the custom style.
 
             return context.sync();
@@ -243,14 +244,14 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
             }
         });
     }
-    ``` 
+    ```
 
 6. Within the `applyCustomStyle()` function, replace `TODO1` with the following code. Note that the code applies a custom style that does not exist yet. You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in-1) step.
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
-    ``` 
+    ```
 
 7. Verify that you've saved all of the changes you've made to the project.
 
@@ -258,7 +259,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `apply-custom-style` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `apply-custom-style` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
@@ -277,7 +278,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     ```js
     function changeFont() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply a different font.
 
             return context.sync();
@@ -289,7 +290,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
             }
         });
     }
-    ``` 
+    ```
 
 6. Within the `changeFont()` function, replace `TODO1` with the following code. Note that the code gets a reference to the second paragraph by using the `ParagraphCollection.getFirst` method chained to the `Paragraph.getNext` method.
 
@@ -300,7 +301,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
             bold: true,
             size: 18
         });
-    ``` 
+    ```
 
 7. Verify that you've saved all of the changes you've made to the project.
 
@@ -320,7 +321,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 7. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
 
-    ![Word tutorial - Apply Styles and Font](../images/word-tutorial-apply-styles-and-font-2.png)
+    ![Screenshot showing the results of applying the styles and fonts defined for the add-in buttons Apply Style, Apply Custom Style, and Change font](../images/word-tutorial-apply-styles-and-font-2.png)
 
 ## Replace text and insert text
 
@@ -330,7 +331,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `change-font` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `change-font` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
@@ -343,6 +344,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
     ```
+
 5. Add the following function to the end of the file:
 
     ```js
@@ -366,7 +368,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
             }
         });
     }
-    ``` 
+    ```
 
 6. Within the `insertTextIntoRange()` function, replace `TODO1` with the following code. Note:
 
@@ -374,7 +376,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
    - The first parameter of the `Range.insertText` method is the string to insert into the `Range` object.
 
-   - The second parameter specifies where in the range the additional text should be inserted. Besides "End", the other possible options are "Start", "Before", "After", and "Replace". 
+   - The second parameter specifies where in the range the additional text should be inserted. Besides "End", the other possible options are "Start", "Before", "After", and "Replace".
 
    - The difference between "End" and "After" is that "End" inserts the new text inside the end of the existing range, but "After" creates a new range with the string and inserts the new range after the existing range. Similarly, "Start" inserts text inside the beginning of the existing range and "Before" inserts a new range. "Replace" replaces the text of the existing range with the string in the first parameter.
 
@@ -461,7 +463,7 @@ function insertTextIntoRange() {
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-text-into-range` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `insert-text-into-range` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
@@ -541,7 +543,7 @@ function insertTextIntoRange() {
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-text-outside-range` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `insert-text-outside-range` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
@@ -604,7 +606,7 @@ function insertTextIntoRange() {
 
 9. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
 
-    ![Word tutorial - Text Added and Replaced](../images/word-tutorial-text-replace-2.png)
+    ![Screenshot showing the results of choosing the add-in buttons Insert Abbreviation, Add Version Info, and Change Quantity Term](../images/word-tutorial-text-replace-2.png)
 
 ## Insert images, HTML, and tables
 
@@ -612,7 +614,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
 ### Define an image
 
-Complete the following steps to define the image that you'll insert into the document in the next part of this tutorial. 
+Complete the following steps to define the image that you'll insert into the document in the next part of this tutorial.
 
 1. In the root of the project, create a new file named **base64Image.js**.
 
@@ -627,7 +629,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `replace-text` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `replace-text` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
@@ -676,7 +678,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-image` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `insert-image` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
@@ -689,6 +691,7 @@ Complete the following steps to define the image that you'll insert into the doc
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
     ```
+
 5. Add the following function to the end of the file:
 
     ```js
@@ -723,7 +726,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-html` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `insert-html` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
@@ -800,7 +803,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 6. Choose the **Insert Table** button and note that a table is inserted after the second paragraph.
 
-    ![Word tutorial - Insert Image, HTML, and Table](../images/word-tutorial-insert-image-html-table-2.png)
+    ![Screenshot showing the results of choosing the add-in buttons Insert Image, Insert HTML, and Insert Table](../images/word-tutorial-insert-image-html-table-2.png)
 
 ## Create and update content controls
 
@@ -815,7 +818,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-table` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `insert-table` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
@@ -828,6 +831,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
     ```
+
 5. Add the following function to the end of the file:
 
     ```js
@@ -872,7 +876,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `create-content-control` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `create-content-control` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
@@ -927,9 +931,9 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 4. In the document, select the text "Office 365" and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
 
-7. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
+5. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
 
-    ![Word tutorial - Create Content Control and Change its Text](../images/word-tutorial-content-control-2.png)
+    ![Screenshot showing the results of choosing the add-in buttons Create Content Control and Rename Service](../images/word-tutorial-content-control-2.png)
 
 ## Next steps
 
@@ -940,6 +944,5 @@ In this tutorial, you've created a Word task pane add-in that inserts and replac
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
-
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
