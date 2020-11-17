@@ -26,7 +26,7 @@ yo office
 - Choose a script type: **JavaScript**
 - What do you want to name your add-in? **My Office Add-in**
 
-![Screenshot of answering prompts from yo office to create the add-in project.](../images/yo-office-excel-project.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-excel-project.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
