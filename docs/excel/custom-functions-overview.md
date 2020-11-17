@@ -1,5 +1,5 @@
 ---
-ms.date: 10/14/2020
+ms.date: 11/06/2020
 description: 'Create an Excel custom function for your Office Add-in.'
 title: Create custom functions in Excel
 ms.topic: conceptual
@@ -46,7 +46,7 @@ If you use the [Yo Office generator](https://github.com/OfficeDev/generator-offi
 
 The script file (**./src/functions/functions.js** or **./src/functions/functions.ts**) contains the code that defines custom functions and comments which define the function.
 
-The following code defines the custom function `add`. The code comments are used to generate a JSON metadata file that describes the custom function to Excel. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Next, two parameters are declared, `first` and `second`, followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).
+The following code defines the custom function `add`. The code comments are used to generate a JSON metadata file that describes the custom function to Excel. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Next, two parameters are declared, `first` and `second`, followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -94,6 +94,6 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 
 ## See also 
 * [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
-* [Custom functions requirements](custom-functions-requirement-sets.md)
-* [Naming guidelines](custom-functions-naming.md)
+* [Custom functions requirement sets](custom-functions-requirement-sets.md)
+* [Custom functions naming guidelines](custom-functions-naming.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)

@@ -1,7 +1,7 @@
 ---
 title: How to find the proper order of manifest elements
 description: 'Learn how to find the correct order in which to place child elements in a parent element.'
-ms.date: 01/10/2020
+ms.date: 11/01/2020
 localization_priority: Normal
 ---
 
@@ -59,6 +59,7 @@ The following sections show the manifest elements in the order in which they mus
         <DictionaryName>
         <DictionaryHomePage>
     <VersionOverrides>*
+    <ExtendedOverrides>
 ```
 
 \*See [Task pane add-in element ordering within VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) for the ordering of children elements of VersionOverrides.
@@ -203,7 +204,7 @@ The following sections show the manifest elements in the order in which they mus
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <Group>
+                        <Group> (can be below <ControlGroup>)
                             <Label>
                             <Icon>
                                 <Image>
@@ -231,7 +232,9 @@ The following sections show the manifest elements in the order in which they mus
                                         <SourceLocation>
                                         <Title>
                                         <FunctionName>
+                        <ControlGroup> (can be above <Group>)
                         <Label>
+                        <InsertAfter> (or <InsertBefore>)
                     <OfficeMenu>
                         <Control>
                             <Label>

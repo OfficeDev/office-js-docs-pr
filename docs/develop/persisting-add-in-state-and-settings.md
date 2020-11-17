@@ -1,7 +1,7 @@
 ---
 title: Persisting add-in state and settings
 description: 'Learn to persist data in Office Add-in web applications running in the stateless environment of a browser control.'
-ms.date: 05/08/2020
+ms.date: 11/13/2020
 localization_priority: Normal
 ---
 
@@ -13,8 +13,8 @@ Office Add-ins are essentially web applications running in the stateless environ
 To do that, you can:
 
 - Use members of the Office JavaScript API that store data as either:
-    -  Name/value pairs in a property bag stored in a location that depends on add-in type.
-    -  Custom XML stored in the document.
+  - Name/value pairs in a property bag stored in a location that depends on add-in type.
+  - Custom XML stored in the document.
 
 - Use techniques provided by the underlying browser control: browser cookies, or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
 
@@ -50,13 +50,10 @@ This example of the property bag structure contains three defined **string** val
 
 After the settings property bag is saved during the previous add-in session, it can be loaded when the add-in is initialized or at any point after that during the add-in's current session. During the session, the settings are managed in entirely in memory using the `get`, `set`, and `remove` methods of the object that corresponds to the kind of settings you are creating (**Settings**, **CustomProperties**, or **RoamingSettings**).
 
-
 > [!IMPORTANT]
 > To persist any additions, updates, or deletions made during the add-in's current session to the storage location, you must call the `saveAsync` method of the corresponding object used to work with that kind of settings. The `get`, `set`, and `remove` methods operate only on the in-memory copy of the settings property bag. If your add-in is closed without calling `saveAsync`, any changes made to settings during that session will be lost.
 
-
 ## How to save add-in state and settings per document for content and task pane add-ins
-
 
 To persist state or custom settings of a content or task pane add-in for Word, Excel, or PowerPoint, you use the [Settings](/javascript/api/office/office.settings) object and its methods. The property bag created with the methods of the `Settings` object are available only to the instance of the content or task pane add-in that created it, and only from the document in which it is saved.
 
@@ -64,11 +61,9 @@ The `Settings` object is automatically loaded as part of the [Document](/javascr
 
 Because the set and remove methods operate against only the in-memory copy of the settings property bag, to save new or changed settings back to the document the add-in is associated with you must call the [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) method.
 
-
 ### Creating or updating a setting value
 
 The following code example shows how to use the [Settings.set](/javascript/api/office/office.settings#set-name--value-) method to create a setting called `'themeColor'` with a value `'green'`. The first parameter of the set method is the case-sensitive  _name_ (Id) of the setting to set or create. The second parameter is the _value_ of the setting.
-
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -76,28 +71,24 @@ Office.context.document.settings.set('themeColor', 'green');
 
  The setting with the specified name is created if it doesn't already exist, or its value is updated if it does exist. Use the `Settings.saveAsync` method to persist the new or updated settings to the document.
 
-
 ### Getting the value of a setting
 
 The following example shows how use the [Settings.get](/javascript/api/office/office.settings#get-name-) method to get the value of a setting called "themeColor". The only parameter of the `get` method is the case-sensitive _name_ of the setting.
-
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
  The `get` method returns the value that was previously saved for the setting _name_ that was passed in. If the setting doesn't exist, the method returns **null**.
 
-
 ### Removing a setting
 
 The following example shows how to use the [Settings.remove](/javascript/api/office/office.settings#remove-name-) method to remove a setting with the name "themeColor". The only parameter of the `remove` method is the case-sensitive _name_ of the setting.
-
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -105,11 +96,9 @@ Office.context.document.settings.remove('themeColor');
 
 Nothing will happen if the setting does not exist. Use the `Settings.saveAsync` method to persist removal of the setting from the document.
 
-
 ### Saving your settings
 
-To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) method to store them in the document. The only parameter of the `saveAsync` method is _callback_, which is a callback function with a single parameter. 
-
+To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) method to store them in the document. The only parameter of the `saveAsync` method is _callback_, which is a callback function with a single parameter.
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -121,7 +110,7 @@ Office.context.document.settings.saveAsync(function (asyncResult) {
 });
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -132,7 +121,7 @@ The anonymous function passed into the `saveAsync` method as the _callback_ para
 > [!NOTE]
 > This section discusses custom XML parts in the context of the Office Common JavaScript API which is supported in Word. The application-specific Excel JavaScript API also provides access to the custom XML parts. The Excel APIs and programming patterns are somewhat different. For more information, see [Excel CustomXmlPart](/javascript/api/excel/excel.customxmlpart).
 
-There is an addtional storage option when you need to store information that exceeds the size limits of the document Settings or which has a structured character. You can persist custom XML markup in a task pane add-in for Word (and for Excel, but see the note at the top of this section). In Word, you use the [CustomXmlPart](/javascript/api/office/office.customxmlpart) object and its methods (again, see the note above for Excel). The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
+There is an additional storage option when you need to store information that exceeds the size limits of the document Settings or which has a structured character. You can persist custom XML markup in a task pane add-in for Word (and for Excel, but see the note at the top of this section). In Word, you use the [CustomXmlPart](/javascript/api/office/office.customxmlpart) object and its methods (again, see the note above for Excel). The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
 
 ```js
 function createCustomXmlPart() {
@@ -184,7 +173,6 @@ function getReviewers() {
 ## How to save settings in an Outlook add-in
 
 For information about how to save settings in an Outlook add-in, see [Manage state and settings for an Outlook add-in](../outlook/manage-state-and-settings-outlook.md).
-
 
 ## See also
 

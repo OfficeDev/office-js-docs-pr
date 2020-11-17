@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 08/26/2020
+ms.date: 11/07/2020
 localization_priority: Normal
 ---
 
@@ -18,7 +18,7 @@ You can also specify whether the command is enabled or disabled when the Office 
 
 ## Office application and platform support only
 
-The APIs described in this article are only available in Excel, and only in Office on Windows and Mac.
+The APIs described in this article are only available in Excel, and only in Office on Windows, Office on Mac, and Office on the web.
 
 ### Test for platform support with requirement sets
 
@@ -196,12 +196,3 @@ function disableChartFormat() {
     }
 }
 ```
-
-## Test for platform support with requirement sets
-
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
-
-The enable/disable APIs require support of the following requirement set:
-
-- [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md)
-
