@@ -35,8 +35,7 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 The following are the major steps for including a custom contextual tab in an add-in:
 
 1. Configure the add-in to use a shared runtime.
-1. Define the groups and controls that appear on the tab.
-1. Define control strings, such as button names and tooltips in the add-in's manifest.
+1. Define the tab and the groups and controls that appear on it.
 1. Register the contextual tab with Office.
 1. Specify the circumstances when the tab will be visible.
 
@@ -46,14 +45,16 @@ Adding custom contextual tabs requires your add-in to use the shared runtime. Fo
 
 ## Define the groups and controls that appear on the tab
 
-Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are mostly defined at runtime with a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object. (Some strings in a contextual tab, such as the titles of buttons on the tab, are defined in the [Resources](../reference/manifest/resources.md) section of the manifest.
+Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object.
 
 > [NOTE!]
 > The structure of the RibbonUpdaterData object's properties and subproperties (and the property names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
 
-We'll construct an example of a **RibbonUpdaterData** object step-by-step. (The complete example is below.)
 
-1. Begin by creating an object with two array properties named `actions` and `tabs`. The `actions` array is a specification of all of the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs.
+
+We'll construct an example of a **RibbonUpdaterData** object step-by-step. (The complete example in JavaScript and TypeScript is below.)
+
+1. Begin by creating an object with two array properties named `actions` and `tabs`. The `actions` array is a specification of all of the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs, up to a maximum of 10.
 
     ```javascript
     const ribbonUpdater = {
@@ -82,14 +83,14 @@ We'll construct an example of a **RibbonUpdaterData** object step-by-step. (The 
 1. Add the following as the only member of the `tabs` array. About this code, note:
 
     - The `id` property is required. Use a brief, descriptive ID that is unique among all contextual tabs in your add-in.
-    - The `label` property is required, but the value is *not* the label that the tab will have. Instead, it is a resid (resource ID) that is defined in the [Resources](../reference/manifest/resources.md) section of the manifest. In a later step, you add a resource with this ID to the manifest and assign it a user-friendly string to serve as the label of the contextual tab, such as "Data".
-    - The `visible` property is optional and defaults to `false` when not present. You typically want it to be `false` when you are using a **RibbonUpdaterData** object to define a contextual tab when the add-in starts up. You typically set it to true when you are using a **RibbonUpdaterData** object to make the tab visible in response to some event, such as the user selecting an entity of some type in the document.
+    - The `label` property is required. It is a user-friendly string to serve as the label of the contextual tab.
+    - The `visible` property is optional and defaults to `false` when not present. You typically want it to be `false` when you are using a **RibbonUpdaterData** object to define a contextual tab when the add-in starts up. You typically set it to `true` when you are using a **RibbonUpdaterData** object to make the tab visible in response to some event, such as the user selecting an entity of some type in the document.
     - The `groups` property is required. It defines the groups of controls that will appear on the tab. It must have at least one member.
 
     ```javascript
     {
       id: "CtxTab1",
-      label: "CtxTab1_label",
+      label: "Data",
       visible: true,
       groups: [
 
@@ -100,14 +101,14 @@ We'll construct an example of a **RibbonUpdaterData** object step-by-step. (The 
 1. In the simple ongoing example, the contextual tab has only a single group. Add the following as the only member of the `groups` array. About this code, note:
 
     - The `id` property is required. Use a brief, descriptive ID that is unique among all groups in the tab.
-    - The `label` property is required, but the value is *not* the label that the group will have. Instead, it is a resid (resource ID) that is defined in the [Resources](../reference/manifest/resources.md) section of the manifest. In a later step, you add a resource with this ID to the manifest and assign it a user-friendly string to serve as the label of the group, such as "Insertion".
+    - The `label` property is required. It is a user-friendly string to serve as the label of the group.
     - The `icon` property is required. Its value is an array of objects that specify the icons that the group will have on the ribbon depending on the size of the ribbon and the Office application window.
     - The `controls` property is required. Its value is an array of objects that specify the buttons and other controls in the group.
 
     ```javascript
     {
         id: "CustomGroup111",
-        label: "Group11Title",
+        label: "Insertion",
         icon: [
 
         ],
@@ -142,14 +143,14 @@ We'll construct an example of a **RibbonUpdaterData** object step-by-step. (The 
 
 1. In the simple ongoing example, the group has only a single button. Add the following object as the only member of the `controls` array. About this code, note:
 
-    - All the properties are required except `enabled` and `tooltip`.
+    - All the properties are required except `enabled`.
     - `type` specifies the type of control. The values can be "Button", "Menu", or "MobileButton".
     - `id` can be up to 125 characters. 
-    - `actionId` must be the ID of an action defined in the `actions` array.
+    - `actionId` must be the ID of an action defined in the `actions` array. (See above.)
     - `enabled` (optional) specifies whether the button is enabled when the contextual tab appears starts up. The default if not present is `true`.
-    - `label` refers to the button label. However, the value is *not* the label that the group will have. Instead, it is a resid (resource ID) that is defined in the [Resources](../reference/manifest/resources.md) section of the manifest. In a later step, you add a resource with this ID to the manifest and assign it a user-friendly string to serve as the label of the button, such as "Write Data".
-    - `superTip` represents a rich form of tool tip. Both the `title` and `description` properties of the `superTip` object are resids that are defined in the [Resources](../reference/manifest/resources.md) section of the manifest. In a later step, you add a resource with this ID to the manifest and assign it a user-friendly string.
-    - `icon` specifies the icons for the button. The remarks above about the group icon apply here too. 
+    - `label` is a user-friendly string to serve as the label of the button.
+    - `superTip` represents a rich form of tool tip. Both the `title` and `description` properties are required.
+    - `icon` specifies the icons for the button. The remarks above about the group icon apply here too.
 
     ```javascript
     {
@@ -157,11 +158,10 @@ We'll construct an example of a **RibbonUpdaterData** object step-by-step. (The 
         id: "CtxBt112",
         actionId: "executeWriteData",
         enabled: false,
-        label: "ExeFunc_CtxBt112",
-        toolTip: "Btn112ToolTip",
+        label: "Write Data",
         superTip: {
-            title: "Btn112SuperTipTitle",
-            description: "Btn112SuperTipDesc"
+            title: "Data Insertion",
+            description: "Use this button to insert data into the document."
         },
         icon: [
             {
@@ -194,12 +194,12 @@ const ribbonUpdater = {
   tabs: [
     {
       id: "CtxTab1",
-      label: "CtxTab1_label",
+      label: "Data",
       visible: true,
       groups: [
         {
           id: "CustomGroup111",
-          label: "Group11Title",
+          label: "Insertion",
           icon: [
             {
                 size: 16,
@@ -220,11 +220,10 @@ const ribbonUpdater = {
                 id: "CtxBt112",
                 actionId: "executeWriteData",
                 enabled: false,
-                label: "ExeFunc_CtxBt112",
-                toolTip: "Btn112ToolTip",
+                label: "Write Data",
                 superTip: {
-                    title: "Btn112SuperTipTitle",
-                    description: "Btn112SuperTipDesc"
+                    title: "Data Insertion",
+                    description: "Use this button to insert data into the document."
                 },
                 icon: [
                     {
@@ -249,11 +248,76 @@ const ribbonUpdater = {
 }
 ```
 
+We also provide several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the equivalent example in TypeScript and it makes use of these types.
 
+```typescript
+const writeDataAction: Action = {
+                            id: "executeWriteData",
+                            type: "ExecuteFunction",
+                            functionName: "writeData"
+                        };
+const registeredActions: Action[] = [ writeDataAction ];
+const iconsURL: string = "https://cdn.contoso.com/addins/datainsertion/Images/";
+const buttonIcon16: Icon = {
+                        size: 16,
+                        sourceLocation: iconsURL + "WriteDataButton16x16.png"
+                    };
+const buttonIcon32: Icon = {
+                        size: 32,
+                        sourceLocation: iconsURL + "WriteDataButton32x32.png"
+                    };
+const buttonIcon80: Icon = {
+                        size: 80,
+                        sourceLocation: iconsURL + "WriteDataButton80x80.png"
+                    };
+const groupIcon16: Icon = {
+                        size: 16,
+                        sourceLocation: iconsURL + "Group16x16.png"
+                    };
+const groupIcon32: Icon = {
+                        size: 32,
+                        sourceLocation: iconsURL + "Group32x32.png"
+                    };
+const groupIcon80: Icon = {
+                        size: 80,
+                        sourceLocation: iconsURL + "Group80x80.png"
+                    };
+const buttonIcons: Icon[] = [ buttonIcon16, buttonIcon32, buttonIcon80 ];
+const groupIcons: Icon[] = [ groupIcon16, groupIcon32, groupIcon80 ];
+const buttonSuperTip: SuperTip = {
+                    title: "Data Insertion",
+                    description: "Use this button to insert data into the document."
+                };
+const writeDataButton: Button = {
+                            type: "Button",
+                            id: "CtxBt112",
+                            actionId: "executeWriteData",
+                            enabled: false,
+                            label: "Write Data",
+                            superTip: buttonSuperTip,
+                            icon: buttonIcons
+                        };
+const insertionGroupControls: Control[] = [ writeDataButton ];
+const insertionGroup: Group = {
+                            id: "CustomGroup111",
+                            label: "Insertion",
+                            icon: groupIcons,
+                            controls: insertionGroupControls
+                        };
+const dataTabGroups: Groups[] = [ insertionGroup ];
+const dataTab: Tab = {
+                    id: "CtxTab1",
+                    label: "Data",
+                    visible: true,
+                    groups: dataTabGroups
+                };
+const tabs: Tab[] = [ dataTab ];
+const ribbonUpdater: RibbonUpdateData = { registeredActions, tabs };
+```
 
-## Register the contextual tab with Office
+## Register the contextual tab with Office with requestCreateControls
 
-## Specify the circumstances when the tab will be visible
+## Specify the circumstances when the tab will be visible with requestUpdate
 
 ## Best practice: Test for control status errors
 
