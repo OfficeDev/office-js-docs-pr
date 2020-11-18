@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Debug Office Add-ins in Visual Studio
 
-This article describes how to use Visual Studio 2019 to debug an Office Add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly. 
+This article describes how to use Visual Studio 2019 to debug an Office Add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly.
 
 > [!NOTE]
 > You can't use Visual Studio to debug add-ins in Office on the web or Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
@@ -34,7 +34,7 @@ Open the **Properties** window for the add-in project to review project properti
 
 The following table describes the properties of the add-in project.
 
-|**Property**|**Description**|
+|Property|Description|
 |:-----|:-----|
 |**Start Action**|Specifies the debug mode for your add-in. Currently only **Office Desktop Client** mode is supported for Office Add-in projects.|
 |**Start Document**<br/>(Excel, PowerPoint, and Word add-ins only)|Specifies what document to open when you start the project.|
@@ -60,7 +60,7 @@ Open the **Properties** window for the web application project to review project
 
 The following table describes the properties of the web application project that are most relevant to Office Add-in projects.
 
-|**Property**|**Description**|
+|Property|Description|
 |:-----|:-----|
 |**SSL Enabled**|Specifies whether SSL is enabled on the site. This property should be set to **True** for Office Add-in projects.|
 |**SSL URL**|Specifies the secure HTTPS URL for the site. Read-only.|
@@ -124,7 +124,7 @@ If your add-in isn't visible within the document that's displayed in the Office 
 
 1. In Excel, PowerPoint, or Word, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
 
-    ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
 2. In the list of available add-ins, find the **Developer Add-ins** section and select the your add-in to register it.
 

@@ -24,7 +24,7 @@ In this article, you'll walk through the process of building a OneNote task pane
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `OneNote`
 
-![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-onenote.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-onenote.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -32,7 +32,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 ## Explore the project
 
-The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. 
+The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.
 
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
@@ -97,19 +97,19 @@ try {
 
     - If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.
 
-    - If you're signed in with your work or education account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**. 
+    - If you're signed in with your work or education account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**.
 
     The following image shows the **MY ADD-INS** tab for consumer notebooks.
 
-    <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
+    <img alt="Screenshot of the Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-5. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**. 
+5. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
 
 6. From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
 
 7. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
 
-    ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in-4.png)
+    ![Screenshot showing the add-in built from this walkthrough: Show Taskpane ribbon button and task pane in OneNote](../images/onenote-first-add-in-4.png)
 
 ## Next steps
 
@@ -120,9 +120,8 @@ Congratulations, you've successfully created a OneNote task pane add-in! Next, l
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-

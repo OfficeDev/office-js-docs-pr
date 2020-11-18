@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in.
 
-This article describes how to create an add-in that's built with React and uses Fabric React components. 
+This article describes how to create an add-in that's built with React and uses Fabric React components.
 
 > [!NOTE]
 > [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) is included with Fabric React, which means your add-in will also have access to Fabric Core after you've completed the steps in this article.
@@ -31,7 +31,7 @@ You'll use the Yeoman generator for Office Add-ins to create an add-in project t
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![Yeoman generator](../images/yo-office-word-react.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-word-react.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -73,8 +73,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fabric React.
 
-    ![Screenshot of the Word application with the Show Taskpane ribbon button highlighted and the Run... button and preceeding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
-
+    ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 
 ## Create a React component that uses Fabric React
 
@@ -160,15 +159,15 @@ Add the `ButtonPrimaryExample` component to your add-in by opening **src\compone
     }
     ```
 
-  4. Save the changes you've made to **App.tsx**.
+4. Save the changes you've made to **App.tsx**.
 
 ## See the result
 
 In Word, the add-in task pane automatically updates when you save changes to **App.tsx**. The default text and button at the bottom of the task pane now shows the UI that's defined by the `ButtonPrimaryExample` component. Choose the **Insert text...** button to insert text into the document.
 
-![Screenshot of the Word application with the Insert text... button and preceeding text highlighted](../images/word-task-pane-with-react-component.png)
+![Screenshot showing the Word application with the "Insert text..." button and immediately preceding text highlighted](../images/word-task-pane-with-react-component.png)
 
-Congratulations, you've successfully created a task pane add-in using React and Office UI Fabric React! 
+Congratulations, you've successfully created a task pane add-in using React and Office UI Fabric React!
 
 ## See also
 

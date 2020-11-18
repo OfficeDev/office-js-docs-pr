@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: 'In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.'
-ms.date: 07/10/2020
+ms.date: 11/09/2020
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 localization_priority: Priority
@@ -34,7 +34,7 @@ In this tutorial, you will:
     * **Choose a script type:** `JavaScript`
     * **What do you want to name your add-in?** `starcount`
 
-    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/starcountPrompt.png)
+    ![Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects](../images/starcountPrompt.png)
     
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -77,7 +77,7 @@ To use your custom functions add-in, open a new workbook in Excel on the web. In
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
 
-   ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+   ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted](../images/excel-cf-online-register-add-in-1.png)
    
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 
@@ -146,16 +146,16 @@ Integrating data from the Web is a great way to extend Excel through custom func
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
+    ![Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
-    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)
+    ![Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)
 
 
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
-    ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+    ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted](../images/excel-cf-online-register-add-in-1.png)
 
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 
@@ -216,15 +216,15 @@ function clock(invocation) {
 1. Close Excel and then reopen Excel.
 
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)
+    ![Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted](../images/select-insert.png)
 
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
-    ![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)
+    ![Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)
 
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
-    ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+    ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted](../images/excel-cf-online-register-add-in-1.png)
 
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 

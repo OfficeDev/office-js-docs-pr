@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Priority
@@ -12,12 +12,13 @@ localization_priority: Priority
 In this tutorial, you'll create an Excel task pane add-in that:
 
 > [!div class="checklist"]
-> * Creates a table
-> * Filters and sorts a table
-> * Creates a chart
-> * Freezes a table header
-> * Protects a worksheet
-> * Opens a dialog
+>
+> - Creates a table
+> - Filters and sorts a table
+> - Creates a chart
+> - Freezes a table header
+> - Protects a worksheet
+> - Opens a dialog
 
 > [!TIP]
 > If you've already completed the [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Create a table](#create-a-table) section to start this tutorial.
@@ -35,7 +36,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![Yeoman generator](../images/yo-office-excel.png)
+![Screenshot of the Yeoman Office Add-in generator command line interface](../images/yo-office-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -154,7 +155,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
         > [!NOTE]
         > Excel.js collection objects, such as `TableCollection`, `WorksheetCollection`, and `TableColumnCollection` have an `items` property that is an array of the child object types, such as `Table` or `Worksheet` or `TableColumn`; but a `*Collection` object is not itself an array.
 
-    - The code then formats the range of the **Amount** column as Euros to the second decimal. 
+    - The code then formats the range of the **Amount** column as Euros to the second decimal.
 
     - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
 
@@ -196,11 +197,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
+    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted](../images/excel-quickstart-addin-3b.png)
 
 3. In the task pane, choose the **Create Table** button.
 
-    ![Excel tutorial - Create Table](../images/excel-tutorial-create-table-2.png)
+    ![Screenshot of Excel, displaying an add-in task pane with a Create Table button, and a table in the worksheet populated with Date, Merchant, Category, and Amount data](../images/excel-tutorial-create-table-2.png)
 
 ## Filter and sort a table
 
@@ -255,13 +256,13 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     var categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
-    ``` 
+    ```
 
 ### Sort the table
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `filter-table` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `filter-table` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
@@ -327,7 +328,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 4. Choose the **Filter Table** button and the **Sort Table** button, in either order.
 
-    ![Excel tutorial - Filter and Sort Table](../images/excel-tutorial-filter-and-sort-table-2.png)
+    ![Screenshot of Excel, with Filter Table and Sort Table buttons visible in the add-in task pane](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## Create a chart
 
@@ -395,9 +396,9 @@ In this step of the tutorial, you'll create a chart using data from the table th
     ```
 
 8. Within the `createChart()` function, replace `TODO3` with the following code. Most of this code is self-explanatory. Note:
-   
+
    - The parameters to the `setPosition` method specify the upper left and lower right cells of the worksheet area that should contain the chart. Excel can adjust things like line width to make the chart look good in the space it has been given.
-   
+
    - A "series" is a set of data points from a column of the table. Since there is only one non-string column in the table, Excel infers that the column is the only column of data points to chart. It interprets the other columns as chart labels. So there will be just one series in the chart and it will have index 0. This is the one to label with "Value in &euro;".
 
     ```js
@@ -422,7 +423,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 4. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
-    ![Excel tutorial - Create Chart](../images/excel-tutorial-create-chart-2.png)
+    ![Screenshot of Excel, with a Create Chart button visible in the add-in task pane, and a chart in the worksheet displaying grocery and education expense data](../images/excel-tutorial-create-chart-2.png)
 
 ## Freeze a table header
 
@@ -432,7 +433,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `create-chart` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `create-chart` button, and add the following markup after that line:
 
     ```html
     <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
@@ -492,7 +493,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 6. Scroll down the worksheet far enough to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
-    ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header-2.png)
+    ![Screenshot displaying an Excel worksheet with a frozen table header](../images/excel-tutorial-freeze-header-2.png)
 
 ## Protect a worksheet
 
@@ -507,7 +508,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
         <Label resid="<!--TODO2: Button label -->" />
-        <Supertip>            
+        <Supertip>
             <Title resid="<!-- TODO3: Button tool tip title -->" />
             <Description resid="<!-- TODO4: Button tool tip description -->" />
         </Supertip>
@@ -534,26 +535,26 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. The `SuperTip` element defines the tool tip for the button. The tool tip title should be the same as the button label, so we use the very same resource ID: "ProtectionButtonLabel". The tool tip description will be "Click to turn protection of the worksheet on and off". But the `resid` should be "ProtectionButtonToolTip". So, when you are done, the `SuperTip` element should look like this: 
+5. The `SuperTip` element defines the tool tip for the button. The tool tip title should be the same as the button label, so we use the very same resource ID: "ProtectionButtonLabel". The tool tip description will be "Click to turn protection of the worksheet on and off". But the `resid` should be "ProtectionButtonToolTip". So, when you are done, the `SuperTip` element should look like this:
 
     ```xml
-    <Supertip>            
+    <Supertip>
         <Title resid="ProtectionButtonLabel" />
         <Description resid="ProtectionButtonToolTip" />
     </Supertip>
     ```
 
-   > [!NOTE] 
-   > In a production add-in, you would not want to use the same icon for two different buttons; but to simplify this tutorial, we'll do that. So the `Icon` markup in our new `Control` is just a copy of the `Icon` element from the existing `Control`. 
+   > [!NOTE]
+   > In a production add-in, you would not want to use the same icon for two different buttons; but to simplify this tutorial, we'll do that. So the `Icon` markup in our new `Control` is just a copy of the `Icon` element from the existing `Control`.
 
 6. The `Action` element inside the original `Control` element has its type set to `ShowTaskpane`, but our new button isn't going to open a task pane; it's going to run a custom function that you create in a later step. So, replace `TODO5` with `ExecuteFunction`, which is the action type for buttons that trigger custom functions. The opening tag for the `Action` element should look like this:
- 
+
     ```xml
     <Action xsi:type="ExecuteFunction">
     ```
 
 7. The original `Action` element has child elements that specify a task pane ID and a URL of the page that should be opened in the task pane. But an `Action` element of the `ExecuteFunction` type has a single child element that names the function that the control executes. You'll create that function in a later step, and it will be called `toggleProtection`. So, replace `TODO6` with the following markup:
- 
+
     ```xml
     <FunctionName>toggleProtection</FunctionName>
     ```
@@ -563,7 +564,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
         <Label resid="ProtectionButtonLabel" />
-        <Supertip>            
+        <Supertip>
             <Title resid="ProtectionButtonLabel" />
             <Description resid="ProtectionButtonToolTip" />
         </Supertip>
@@ -603,7 +604,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     ```js
     function toggleProtection(args) {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to reverse the protection status of the current worksheet.
 
             return context.sync();
@@ -637,7 +638,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     } else {
         sheet.protection.protect();
     }
-    ``` 
+    ```
 
 ### Add code to fetch document properties into the task pane's script objects
 
@@ -652,10 +653,10 @@ In each function that you've created in this tutorial until now, you queued comm
 These steps must be completed whenever your code needs to *read* information from the Office document.
 
 1. Within the `toggleProtection` function, replace `TODO2` with the following code. Note:
-   
+
    - Every Excel object has a `load` method. You specify the properties of the object that you want to read in the parameter as a string of comma-delimited names. In this case, the property you need to read is a subproperty of the `protection` property. You reference the subproperty almost exactly as you would anywhere else in your code, with the exception that you use a forward slash ('/') character instead of a "." character.
 
-   - To ensure that the toggle logic, which reads `sheet.protection.protected`, does not run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it will be moved (in the next step) into a `then` function that won't run until the `sync` has completed. 
+   - To ensure that the toggle logic, which reads `sheet.protection.protected`, does not run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it will be moved (in the next step) into a `then` function that won't run until the `sync` has completed.
 
     ```js
     sheet.load('protection/protected');
@@ -667,7 +668,7 @@ These steps must be completed whenever your code needs to *read* information fro
         )
         // TODO4: Move the final call of `context.sync` here and ensure that it
         //        does not run until the toggle logic has been queued.
-    ``` 
+    ```
 
 2. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Excel.run`. You will add a new final `context.sync`, in a later step.
 
@@ -687,8 +688,8 @@ These steps must be completed whenever your code needs to *read* information fro
 
     ```js
     function toggleProtection(args) {
-        Excel.run(function (context) {            
-          var sheet = context.workbook.worksheets.getActiveWorksheet();          
+        Excel.run(function (context) {
+          var sheet = context.workbook.worksheets.getActiveWorksheet();
           sheet.load('protection/protected');
 
           return context.sync()
@@ -719,22 +720,22 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. Close all Office applications, including Excel.
 
-2. Delete the Office cache by deleting the contents (all the files and subfolders) of the cache folder. This is necessary to completely clear the old version of the add-in from the
+2. Delete the Office cache by deleting the contents (all the files and subfolders) of the cache folder. This is necessary to completely clear the old version of the add-in from the client application.
 
     - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
     - For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
-    
-        > [!NOTE]
-        > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)
-        >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
-        >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
+
+      > [!NOTE]
+      > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:
+      >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)
+      >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)
+      >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+      >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
 3. If the local web server is already running, stop it by closing the node command window.
 
-4. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in: 
+4. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in:
 
     - To test your add-in in Excel, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.
 
@@ -750,9 +751,9 @@ These steps must be completed whenever your code needs to *read* information fro
 
         To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-5. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot. 
+5. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot.
 
-    ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on-2.png)
+    ![Screenshot of the Excel ribbon with the Toggle Worksheet Protection button highlighted and enabled. Most other buttons appear gray and disabled.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
 6. Choose a cell as you would if you wanted to change its content. Excel displays an error message indicating that the worksheet is protected.
 
@@ -1004,7 +1005,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 6. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
-    ![Excel tutorial - Dialog](../images/excel-tutorial-dialog-open-2.png)
+    ![Screenshot of Excel, with an Open Dialog button visible in the add-in task pane and a dialog box displayed over the worksheet](../images/excel-tutorial-dialog-open-2.png)
 
 ## Next steps
 
@@ -1015,6 +1016,6 @@ In this tutorial, you've created an Excel task pane add-in that interacts with t
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
-* [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)

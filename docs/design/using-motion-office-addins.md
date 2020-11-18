@@ -11,7 +11,6 @@ When you design an Office Add-in, you can use motion to enhance the user experie
 
 Because Office is focused on productivity, the Office animation language supports the goal of helping customers get things done. It strikes a balance between performant response, reliable choreography, and detailed delight. Add-ins embedded in Office sit within this existing animation language. Given this context, it is important to consider the following guidelines when applying motion.
 
-
 ## Create motion with a purpose
 
 Motion should have a purpose that communicates additional value to the user. Consider the tone and purpose of your content when choosing animations. Handle critical messages differently than exploratory navigations.
@@ -25,7 +24,7 @@ Standard elements used in an add-in can incorporate motion to help focus the use
 |Identify key elements in the add-in that should have motion. Commonly animated elements in an add-in are panels, overlays, modals, tool tips, menus, and teaching call outs.| Don't overwhelm the user by animating every element. Avoid applying multiple motions that attempt to lead or focus the user on many elements at once. |
 |Use simple, subtle motion that behaves in expected ways. Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI. | Don't create wait time for a motion. Motion in add-ins should not hinder task completion.|
 
-![gif that shows a panel opening with minimal moving elements next to a gif that shows a panel opening with lots of moving elements](../images/add-in-motion-purpose.gif)
+![GIF that shows a panel opening with minimal moving elements against a GIF that shows a panel opening with many moving elements](../images/add-in-motion-purpose.gif)
 
 ## Use expected motions
 
@@ -41,7 +40,7 @@ Use it to fit seamlessly in Office. It will help you create experiences that are
 |Ensure that there is a consistent application of motion across like elements.| Don't use different motions to animate the same component or object.|
 |Create consistency with use of direction in animation. For example, a panel that opens from the right should close to the right.|Don't animate an element using multiple directions.
 
-![gif that shows a modal opening in an expected manner next to a gif that shows a modal opening in an unexpected manner](../images/add-in-motion-expected.gif)
+![GIF that shows a modal opening in an expected manner against a GIF that shows a modal opening in an unexpected manner](../images/add-in-motion-expected.gif)
 
 ## Avoid out of character motion for an element
 
@@ -54,7 +53,7 @@ Consider the size of the HTML canvas (task pane, dialog box, or content add-in) 
 | Use [recommended motion durations](https://developer.microsoft.com/fabric#/styles/web/motion). | Don't use exaggerated animations. Avoid creating experiences that embellish and distract your customers.
 | Follow [recommended easing curves](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Don't move elements in a jerky or disjointed manner. Avoid anticipations, bounces, rubberband, or other effects that emulate natural world physics.|
 
-![gif that shows tiles loading using a gentle fade in next to a gif that shows tiles loading with bounce](../images/add-in-motion-character.gif)
+![GIF that shows tiles loading using a gentle fade in against a GIF that shows tiles loading with bounce](../images/add-in-motion-character.gif)
 
 ## See also
 

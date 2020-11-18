@@ -56,16 +56,16 @@ This tutorial uses the [VSTO Add-in shared library for Office add-in](https://gi
 > The sample uses C# but you can apply the techniques in this tutorial to a VSTO Add-in written in any .NET language.
 
 1. Download the [VSTO Add-in shared library for Office add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution to a working folder on your computer.
-2. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
-3. On the **Debug** menu, choose **Start Debugging**.
-3. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Properties**.
-4. Choose the **Signing** category in the properties.
-5. Choose **Sign the ClickOnce manifests**, and then chose **Create Test Certificate**.
-6. In the **Create Test Certificate** dialog, enter and confirm a password. Then choose **OK**.
+1. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
+1. On the **Debug** menu, choose **Start Debugging**.
+1. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Properties**.
+1. Choose the **Signing** category in the properties.
+1. Choose **Sign the ClickOnce manifests**, and then chose **Create Test Certificate**.
+1. In the **Create Test Certificate** dialog, enter and confirm a password. Then choose **OK**.
 
-The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show Unicode** button. The add-in will display a list of each character in the text along with its corresponding Unicode number.
+The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show unicode** button. In the **Result** section, the add-in will display a list of each character in the text along with its corresponding Unicode number.
 
-![Screenshot of the Cell analyzer VSTO add-in running in Excel](../images/pnp-cell-analyzer-vsto-add-in.png)
+![Screenshot of the Cell Analyzer VSTO add-in running in Excel with the "Show unicode" button and empty Result section](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## Analyze types of code in the VSTO Add-in
 
@@ -109,7 +109,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
 
         result += $"{c}: {unicode}\r\n";
     }
-    
+
     // *** UI CODE ***
     //Output the result
     txtResult.Text = result;
@@ -172,7 +172,7 @@ Now you need to update the VSTO Add-in to use the class library. This is importa
 2. Select **CellAnalyzerSharedLibrary**, and choose **OK**.
 3. In **Solution Explorer** expand the **Cell-Analyzer** project, right-click the **CellAnalyzerPane.cs** file, and choose **View Code**.
 4. In the `btnUnicode_Click` method, delete the following lines of code.
-    
+
     ```csharp
     //Convert to Unicode listing
     string result = "";
@@ -182,14 +182,14 @@ Now you need to update the VSTO Add-in to use the class library. This is importa
       result += $"{c}: {unicode}\r\n";
     }
     ```
-    
+
 5. Update the line of code under the `//Output the result` comment to read as follows:
-    
+
     ```csharp
     //Output the result
     txtResult.Text = CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(cellValue);
     ```
-    
+
 6. On the **Debug** menu, choose **Start Debugging**. The custom task pane should work as expected. Enter some text in a cell, and then test that you can convert it to a Unicode list with the add-in.
 
 ## Create a REST API wrapper
@@ -211,7 +211,7 @@ The VSTO Add-in can use the shared class library directly since they are both .N
 11. In the **Add New Scaffolded Item** dialog, choose **API Controller - Empty** and then **Add**.
 12. In the **Add Empty API Controller** dialog, name the controller **AnalyzeUnicodeController**, and then choose **Add**.
 13. Open the **AnalyzeUnicodeController.cs** file and add the following code as a method to the `AnalyzeUnicodeController` class.
-    
+
     ```csharp
     [HttpGet]
     public ActionResult<string> AnalyzeUnicode(string value)
@@ -223,7 +223,7 @@ The VSTO Add-in can use the shared class library directly since they are both .N
       return CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(value);
     }
     ```
-    
+
 14. Right-click the **CellAnalyzerRESTAPI** project, and choose **Set as Startup Project**.
 15. On the **Debug** menu, choose **Start Debugging**.
 16. A browser will launch. Enter the following URL to test that the REST API is working: `https://localhost:<ssl port number>/api/analyzeunicode?value=test`. You can reuse the port number from the URL in the browser that Visual Studio launched. You should see a string returned with Unicode values for each character.
@@ -252,6 +252,7 @@ To keep things simple, keep all the code in one solution. Add the Office add-in 
 5. In the **Choose the add-in type** dialog, select **Add new functionalities to Excel**, and choose **Finish**.
 
 Two projects will be created:
+
 - **CellAnalyzerOfficeAddin** - This project configures the manifest XML files that describes the add-in so Office can load it correctly. It contains the ID, name, description, and other information about the add-in.
 - **CellAnalyzerOfficeAddinWeb** - This project contains web resources for your add-in, such as HTML, CSS, and scripts. It also configures an IIS Express instance to host your add-in as a web application.
 
@@ -259,15 +260,15 @@ Two projects will be created:
 
 1. In **Solution Explorer**, expand the **CellAnalyzerOfficeAddinWeb** project.
 2. Open the **Home.html** file, and replace the `<body>` contents with the following HTML.
-    
+
     ```html
     <button id="btnShowUnicode" onclick="showUnicode()">Show Unicode</button>
     <p>Result:</p>
     <div id="txtResult"></div>
     ```
-    
-3. Open the **Home.js** file, and replace the entire contents with the following code. 
-    
+
+3. Open the **Home.js** file, and replace the entire contents with the following code.
+
     ```js
     (function () {
       "use strict";
@@ -277,7 +278,7 @@ Two projects will be created:
         });
       };
     })();
-    
+
     function showUnicode() {
       Excel.run(function (ctx) {
         const range = ctx.workbook.getSelectedRange();
@@ -299,7 +300,7 @@ Two projects will be created:
       });
     }
     ```
-    
+
 4. In the previous code, enter the **sslPort** number you saved previously from the **launchSettings.json** file.
 
 In the previous code the returned string will be processed to replace carriage return line feeds with `<br>` HTML tags. You may occasionally run into situations where a return value that works perfectly fine for .NET in the VSTO Add-in will need to be adjusted on the Office add-in side to work as expected. In this case the REST API and shared class library are only concerned with returning the string. The `showUnicode()` method is responsible for formatting return values correctly for presentation.
@@ -313,7 +314,7 @@ The Office.js library requires CORS on outgoing calls, such as the one made from
 3. In the properties window, copy the value of the **SSL URL**, and save it somewhere. This is the URL that you need to allow through CORS.
 4. In the **CellAnalyzerRESTAPI** project, open the **Startup.cs** file.
 5. Add the following code to the top of the `ConfigureServices` method. Be sure to substitute the URL SSL you copied previously for the `builder.WithOrigins` call.
-    
+
     ```csharp
     services.AddCors(options =>
     {
@@ -326,18 +327,18 @@ The Office.js library requires CORS on outgoing calls, such as the one made from
       });
     });
     ```
-    
+
     > [!NOTE]
     > Leave the trailing `/` from the end of the URL when you use it in the `builder.WithOrigins` method. For example, it should appear similar to `https://localhost:44000`. Otherwise you will get a CORS error at runtime.
-    
+
 6. Add the following field to the `Startup` class:
-    
+
     ```csharp
     readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
     ```
-    
+
 7. Add the following code to the `configure` method just before the line of code for `app.UseEndpoints`.
-    
+
     ```csharp
     app.UseCors(MyAllowSpecificOrigins);
     ```
@@ -381,7 +382,7 @@ public class Startup
         {
             app.UseDeveloperExceptionPage();
         }
-            
+
         app.UseHttpsRedirection();
 
         app.UseRouting();
@@ -403,11 +404,11 @@ public class Startup
 1. In **Solution Explorer**, right-click the top node **Solution 'Cell-Analyzer'**, and choose **Set Startup Projects**.
 2. In the **Solution 'Cell-Analyzer' Property Pages** dialog, select **Multiple startup projects**.
 3. Set the **Action** property to **Start** for each of the following projects.
-    
+
     - CellAnalyzerRESTAPI
     - CellAnalyzerOfficeAddin
     - CellAnalyzerOfficeAddinWeb
-    
+
 4. Choose **OK**.
 5. From the **Debug** menu, choose **Start Debugging**.
 
@@ -431,17 +432,19 @@ You can now test the service. Open a browser and enter a URL that goes directly 
 The final step is to update the code in the Office add-in to use the Azure App Service instead of localhost.
 
 1. In **Solution Explorer**, expand the **CellAnalyzerOfficeAddinWeb** project, and open the **Home.js** file.
-2. Change the `url` constant to use the URL for your Azure App Service as shown in the following line of code. Replace `<myappservice>` with the unique name you created for the new App Service.
+1. Change the `url` constant to use the URL for your Azure App Service as shown in the following line of code. Replace `<myappservice>` with the unique name you created for the new App Service.
+
     ```JavaScript
     const url = "https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=" + range.values[0][0];
     ```
-3. In **Solution Explorer**, right-click the top node **Solution 'Cell-Analyzer'**, and choose **Set Startup Projects**.
-4. In the **Solution 'Cell-Analyzer' Property Pages** dialog, select **Multiple startup projects**.
-5. Enable the **Start** action for each of the following projects:
+
+1. In **Solution Explorer**, right-click the top node **Solution 'Cell-Analyzer'**, and choose **Set Startup Projects**.
+1. In the **Solution 'Cell-Analyzer' Property Pages** dialog, select **Multiple startup projects**.
+1. Enable the **Start** action for each of the following projects:
     - CellAnalyzerOfficeAddinWeb
     - CellAnalyzerOfficeAddin
-6. Choose **OK**.
-7. From the **Debug** menu, choose **Start Debugging**.
+1. Choose **OK**.
+1. From the **Debug** menu, choose **Start Debugging**.
 
 Excel will run and sideload the Office add-in. To test that the App Service is working correctly, enter a text value into a cell, and choose **Show Unicode** in the Office add-in. It should call the service and display the unicode values for the text characters.
 
