@@ -819,8 +819,8 @@ function insertDefaultGist(event) {
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
       settingsDialog = result.value;
-      settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, receiveMessage);
-      settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, dialogClosed);
+      settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+      settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
     });
   }
 }
@@ -1245,8 +1245,8 @@ In the project that you've created, the task pane JavaScript is specified in the
 
         Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
           settingsDialog = result.value;
-          settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, receiveMessage);
-          settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, dialogClosed);
+          settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+          settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
         });
       })
     });
