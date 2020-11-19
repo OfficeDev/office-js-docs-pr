@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 04/20/2020
+ms.date: 11/18/2020
 localization_priority: Normal
 ---
 
@@ -221,7 +221,13 @@ Excel.run(function (context) {
 });
 ```
 
-## Slicers
+## Filter a PivotTable
+
+PivotTables offer three data filtering methods through the Excel UI: [slicers, AutoFiltering, and manual filtering](https://support.microsoft.com/office/filter-data-in-a-pivottable-cc1ed287-3a97-4e95-b377-ddfafe79fa8f). Slicers can be applied to both PivotTables and regular Excel tables. AutoFiltering works in conjunction with slicers. Manual PivotTable filtering allows you to add filters, or PivotFilters, to the PivotTable's **Filter** field. Slicer APIs, like their Excel UI counterparts, allow for style and formatting customization. PivotFilter APIs do not offer style flexibility. 
+
+See [Filter with slicers](#filter-with-slicers) and [Filter with PivotFilters](#filter-with-pivotfilters) to learn more about API integration options for these data filtering methods.
+
+### Filter with slicers
 
 [Slicers](/javascript/api/excel/excel.slicer) allow data to be filtered from an Excel PivotTable or table. A slicer uses values from a specified column or PivotField to filter corresponding rows. These values are stored as [SlicerItem](/javascript/api/excel/excel.sliceritem) objects in the `Slicer`. Your add-in can adjust these filters, as can users ([through the Excel UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). The slicer sits on top of the worksheet in the drawing layer, as shown in the following screenshot.
 
@@ -230,7 +236,7 @@ Excel.run(function (context) {
 > [!NOTE]
 > The techniques described in this section focus on how to use slicers connected to PivotTables. The same techniques also apply to using slicers connected to tables.
 
-### Create a slicer
+#### Create a slicer
 
 You can create a slicer in a workbook or worksheet by using the `Workbook.slicers.add` method or `Worksheet.slicers.add` method. Doing so adds a slicer to the [SlicerCollection](/javascript/api/excel/excel.slicercollection) of the specified `Workbook` or `Worksheet` object. The `SlicerCollection.add` method has three parameters:
 
@@ -252,7 +258,7 @@ Excel.run(function (context) {
 });
 ```
 
-### Filter items with a slicer
+#### Filter items with a slicer
 
 The slicer filters the PivotTable with items from the `sourceField`. The `Slicer.selectItems` method sets the items that remain in the slicer. These items are passed to the method as a `string[]`, representing the keys of the items. Any rows containing those items remain in the PivotTable's aggregation. Subsequent calls to `selectItems` set the list to the keys specified in those calls.
 
@@ -280,7 +286,7 @@ Excel.run(function (context) {
 });
 ```
 
-### Style and format a slicer
+#### Style and format a slicer
 
 You add-in can adjust a slicer's display settings through `Slicer` properties. The following code sample sets the style to **SlicerStyleLight6**, sets the text at the top of the slicer to **Fruit Types**, places the slicer at the position **(395, 15)** on the drawing layer, and sets the slicer's size to **135x150** pixels.
 
@@ -297,7 +303,7 @@ Excel.run(function (context) {
 });
 ```
 
-### Delete a slicer
+#### Delete a slicer
 
 To delete a slicer, call the `Slicer.delete` method. The following code sample deletes the first slicer from the current worksheet.
 
@@ -307,6 +313,44 @@ Excel.run(function (context) {
     sheet.slicers.getItemAt(0).delete();
     return context.sync();
 });
+```
+
+## Filter with PivotFilters
+
+PivotFilters are the manual filtering options available for PivotTables. PivotFilters allow you to add filters based on a PivotTable's four hierarchy categories (filters, columns, rows, and values). In the PivotTable object model, [PivotFilters](/javascript/api/excel/excel.pivotfilters) are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is being used for pivoting.
+
+The following code sample applies a PivotFilter to a **Date** hierarchy, hiding any data prior to a specified date. 
+
+```js
+async function dateFilter() {
+  await Excel.run(async (context) => {
+    // Add a date-based PivotFilter.
+
+    // Get the PivotTable.
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+
+    // PivotFilters can only be applied to PivotHierarchies that are being used for pivoting.
+    // If it's not already there, add "Date Updated" to the hierarchies.
+    let dateHierarchy = pivotTable.rowHierarchies.getItemOrNullObject("Date Updated");
+    await context.sync();
+    if (dateHierarchy.isNullObject) {
+      dateHierarchy = pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Date Updated"));
+    }
+
+    // Apply a date filter to filter out anything logged before August.
+    const filterField = dateHierarchy.fields.getItem("Date Updated");
+    const dateFilter = {
+      condition: Excel.DateFilterCondition.afterOrEqualTo,
+      comparator: {
+        date: "2020-08-01",
+        specificity: Excel.FilterDatetimeSpecificity.month
+      }
+    };
+    filterField.applyFilter({ dateFilter: dateFilter });
+
+    await context.sync();
+  });
+}
 ```
 
 ## Change aggregation function
