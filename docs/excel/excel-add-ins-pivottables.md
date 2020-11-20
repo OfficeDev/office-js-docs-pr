@@ -317,40 +317,37 @@ Excel.run(function (context) {
 
 ### Filter with PivotFilters
 
-[PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is being used for pivoting.
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is used to pivot data within the table.
 
-The following code sample applies a `PivotFilter` to a **Date** hierarchy, hiding any data prior to a specified date. 
+The following code sample applies a `PivotFilter` to a **Date** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` is contained within a `rowHierarchies` PivotHierarchy category.
 
 ```js
-async function dateFilter() {
-  await Excel.run(async (context) => {
-    // Add a date-based PivotFilter.
-
+Excel.run(function (context) {
     // Get the PivotTable.
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var dateHierarchy = pivotTable.rowHierarchies.getItemOrNullObject("Date Updated");
+    
+    return context.sync().then(function () {
+        // PivotFilters can only be applied to PivotHierarchies that are being used for pivoting.
+        // If it's not already there, add "Date Updated" to the hierarchies.
+        if (dateHierarchy.isNullObject) {
+          dateHierarchy = pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Date Updated"));
+        }
 
-    // PivotFilters can only be applied to PivotHierarchies that are being used for pivoting.
-    // If it's not already there, add "Date Updated" to the hierarchies.
-    let dateHierarchy = pivotTable.rowHierarchies.getItemOrNullObject("Date Updated");
-    await context.sync();
-    if (dateHierarchy.isNullObject) {
-      dateHierarchy = pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Date Updated"));
-    }
-
-    // Apply a date filter to filter out anything logged before August.
-    const filterField = dateHierarchy.fields.getItem("Date Updated");
-    const dateFilter = {
-      condition: Excel.DateFilterCondition.afterOrEqualTo,
-      comparator: {
-        date: "2020-08-01",
-        specificity: Excel.FilterDatetimeSpecificity.month
-      }
-    };
-    filterField.applyFilter({ dateFilter: dateFilter });
-
-    await context.sync();
-  });
-}
+        // Apply a date filter to filter out anything logged before August.
+        var filterField = dateHierarchy.fields.getItem("Date Updated");
+        var dateFilter = {
+          condition: Excel.DateFilterCondition.afterOrEqualTo,
+          comparator: {
+            date: "2020-08-01",
+            specificity: Excel.FilterDatetimeSpecificity.month
+          }
+        };
+        filterField.applyFilter({ dateFilter: dateFilter });
+        
+        return context.sync();
+    });
+});
 ```
 
 ## Change aggregation function
