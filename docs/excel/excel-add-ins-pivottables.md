@@ -223,9 +223,9 @@ Excel.run(function (context) {
 
 ## Filter a PivotTable
 
-PivotTables offer three data filtering methods through the Excel UI: [slicers, AutoFiltering, and manual filtering](https://support.microsoft.com/office/filter-data-in-a-pivottable-cc1ed287-3a97-4e95-b377-ddfafe79fa8f). Slicers can be applied to both PivotTables and regular Excel tables. AutoFiltering works in conjunction with slicers. Manual PivotTable filtering allows you to add filters, or PivotFilters, to the PivotTable's **Filter** field. Slicer APIs, like their Excel UI counterparts, allow for style and formatting customization. PivotFilter APIs do not offer style flexibility. 
+The Excel JavaScript API offers two methods for filtering a PivotTable: slicers and PivotFilters. Slicers can be applied to both PivotTables and regular Excel tables. PivotFilters allow you to filter data based on a PivotTable's four [PivotHierarchy](#hierarchies) categories (filters, columns, rows, and values). The [Slicer](/javascript/api/excel/excel.slicer) class, like its Excel UI counterpart, allows for style and formatting customization. [PivotFilters](/javascript/api/excel/excel.pivotfilters) do not offer style or formatting flexibility. 
 
-See [Filter with slicers](#filter-with-slicers) and [Filter with PivotFilters](#filter-with-pivotfilters) to learn more about API integration options for these data filtering methods.
+See [Filter with slicers](#filter-with-slicers) and [Filter with PivotFilters](#filter-with-pivotfilters) to learn more about Excel JavaScript API integration options for these data filtering methods.
 
 ### Filter with slicers
 
@@ -315,9 +315,9 @@ Excel.run(function (context) {
 });
 ```
 
-## Filter with PivotFilters
+### Filter with PivotFilters
 
-PivotFilters are the manual filtering options available for PivotTables. PivotFilters allow you to add filters based on a PivotTable's four hierarchy categories (filters, columns, rows, and values). In the PivotTable object model, [PivotFilters](/javascript/api/excel/excel.pivotfilters) are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is being used for pivoting.
+PivotFilters allow you to add filters to a PivotTable based on four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, [PivotFilters](/javascript/api/excel/excel.pivotfilters) are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is being used for pivoting.
 
 The following code sample applies a PivotFilter to a **Date** hierarchy, hiding any data prior to a specified date. 
 
