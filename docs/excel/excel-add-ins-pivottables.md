@@ -223,7 +223,7 @@ Excel.run(function (context) {
 
 ## Filter a PivotTable
 
-The Excel JavaScript API offers two methods for filtering a PivotTable: slicers and PivotFilters. [Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. [PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). The `Slicer` class, like its Excel UI counterpart, allows for style and formatting customization. `PivotFilters` do not offer style or formatting flexibility. 
+The Excel JavaScript API offers two methods for filtering a PivotTable: slicers and PivotFilters. [Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. [PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). The `Slicer` class, like [its Excel UI counterpart](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d), allows for style and formatting customization. `PivotFilters` do not offer style or formatting flexibility. 
 
 See [Filter with slicers](#filter-with-slicers) and [Filter with PivotFilters](#filter-with-pivotfilters) to learn more about Excel JavaScript API integration options for these data filtering methods.
 
@@ -319,11 +319,11 @@ Excel.run(function (context) {
 
 [PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is used to pivot data within the table.
 
-The following code sample applies a `PivotFilter` to a **Date** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` is contained within a `rowHierarchies` PivotHierarchy category.
+The following code sample applies a `PivotFilter` to a **Date Updated** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
 
 ```js
 Excel.run(function (context) {
-    // Get the PivotTable.
+    // Get the PivotTable and the date hierarchy.
     var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     var dateHierarchy = pivotTable.rowHierarchies.getItemOrNullObject("Date Updated");
     
