@@ -19,16 +19,22 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 >
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds:
 >
->* Excel on Windows (Microsoft 365 only, not perpetual license): Version ???? (Build ?????.?????) Your Microsoft 365 subscription may need to be on the [Current Channel (Preview)](https://insider.office.com/en-us/join/windows) formerly called "Monthly Channel (Targeted)" or "Insider Slow".
+> * Excel on Windows (Microsoft 365 only, not perpetual license): Version ???? (Build ?????.?????) Your Microsoft 365 subscription may need to be on the [Current Channel (Preview)](https://insider.office.com/en-us/join/windows) formerly called "Monthly Channel (Targeted)" or "Insider Slow".
 
 > [!NOTE]
 > Custom contextual tabs work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+> - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 
 ## Behavior of custom contextual tabs
 
+The user experience for custom contextual tabs follows the pattern of built-in Office contextual tabs. The following are the basic principles for the placement custom contextual tabs:
 
+- When a custom contextual tab is visible, it appears on the right end of the ribbon.
+- If one or more built-in contextual tabs and one or more custom contextual tabs from add-ins are visible at the same time, the custom contextual tabs are always to the right of all of the built-in contextual tabs.
+- If your add-in has more than one contextual tab and there are contexts in which more than one is visible, they appear in the order (left-to-right) in which they are defined in your add-in. See [Define the groups and controls that appear on the tab](#define-the-groups-and-controls-that-appear-on-the-tab) for details about how you define them.
+- If more than one add-in has a contextual tab that is visible in a specific context, then they appear in the order (left-to-right) in which the add-ins were installed.
 
 ## Major steps for including a contextual tab in an add-in
 
@@ -85,7 +91,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     - The `id` property is required. Use a brief, descriptive ID that is unique among all contextual tabs in your add-in.
     - The `label` property is required. It is a user-friendly string to serve as the label of the contextual tab.
     - The `groups` property is required. It defines the groups of controls that will appear on the tab. It must have at least one member.
-    
+
     > [NOTE!]
     > The tab object can also have an optional `visible` property that specifies whether the tab is visible immediately when the add-in starts up. Since contextual tabs are normally hidden until a user event triggers their visibility (such as the user selecting an entity of some type in the document), the `visible` property defaults to `false` when not present. In a later section, we show how to set the property to `true` in response to an event.
 
@@ -255,7 +261,7 @@ The following is the complete example of the JSON blob:
 
 The contextual tab is registered with Office by calling the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestcreateconrtols-input-) method in either the function that is assigned to `Office.initialize` or with the `Office.onReady` method. For more about these methods and initializing the add-in, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
-The following is an example. Note that the JSON string must be converted to a JavaScript object with the `JSON.parse` methd before it can be passed to a JavaScript function.
+The following is an example. Note that the JSON string must be converted to a JavaScript object with the `JSON.parse` method before it can be passed to a JavaScript function.
 
 ```javascript
 const contextualTabJSON = ' ... ' // Assign the JSON string such as the one at the end of the preceding section.
@@ -268,13 +274,17 @@ Office.onReady(async () => {
 
 ## Specify the circumstances when the tab will be visible with requestUpdate
 
-Typically, a contextual tab should appear when a user-initiated event changes the add-in context. Consider a scenario in which the tab should be visible when, and only when, a chart (on the default worksheet of an Excel workbook) is activated. 
+Typically, a contextual tab should appear when a user-initiated event changes the add-in context. Consider a scenario in which the tab should be visible when, and only when, a chart (on the default worksheet of an Excel workbook) is activated.
 
 Begin by assigning handlers. This is commonly done in the **Office.onReady** method as in the following example which assigns handlers (created in a later step) to the **onActivated** and **onDeactivated** events of all the charts in the worksheet.
 
 ```javascript
+const contextualTabJSON = ' ... ' // Assign the JSON string such as the one at the end of the preceding section.
+const contextualTab = JSON.parse(contextualTabJSON);
+
 Office.onReady(async () => {
-    await Excel.run(context => {
+    await Office.ribbon.requestCreateControls(contextualTab);
+    await Excel.run(context => {
         var charts = context.workbook.worksheets
             .getActiveWorksheet()
             .charts;
@@ -283,6 +293,80 @@ Office.onReady(async () => {
         return context.sync();
     });
 });
+```
+
+Next, define the handlers. The following is a simple example of a `showDataTab`, but see [Best practice: Test for control status errors](#best-practice-test-for-control-status-errors) below for a more robust version of the function. About this code, note: 
+
+- Office controls when it updates the state of the ribbon. The  [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) method queues a request to update. The method will resolve the Promise object as soon as it has queued the request, not when the ribbon actually updates.
+- The parameter for the **requestUpdate** method is a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the tab by its ID *exactly as specified in the JSON*; and (2) specifies visibility of the tab.
+- If you have more than one custom contextual tab that should be visible in the same context, you simply add additional tab objects to the `tabs` array.
+
+```javascript
+async function showDataTab() {
+    await Office.ribbon.requestUpdate({
+        tabs: [
+            {
+                id: "CtxTab1",
+                visibility: true
+            }
+        ]});
+}
+```
+
+The handler to hide the tab is nearly identical, except that it sets the `visiblity` property back to `false`.
+
+The Office JavaScript library also provides several interfaces (types) to make it easier to construct the **RibbonUpdateData** object. The following is the `showDataTab` function in TypeScript and it makes use of these types.
+
+```typescript
+const showDataTab = async () => {
+    const myContextualTab: Tab = {id: "CtxTab1", visibility: true};
+    const ribbonUpdater: RibbonUpdaterData = { tabs: [ myContextualTab ]};
+    await Office.ribbon.requestUpdate(ribbonUpdater);
+}
+```
+
+### Toggle tab visibility and the enabled status of a button at the same time
+
+The **requestUpdate** method is also used to toggle the enabled or disabled status of a custom button on either a custom contextual tab or a custom regular (non-contextual) tab. For details about this, see [Enable and Disable Add-in Commands](disable-add-in-commands.md). There may be scenarios in which you want to change both the visibility of a tab and the enabled status of a button at the same time. You can do this with a single call of **requestUpdate**. The following is an example in which a button on a non-contextual tab is enabled at the same time as a contextual tab is made visible.
+
+```javascript
+function myContextChanges() {
+    Office.ribbon.requestUpdate({
+        tabs: [
+            {
+                id: "CtxTab1",
+                visibility: true
+            },
+            {
+                id: "OfficeAppTab1",
+                controls: [
+                {
+                    id: "MyButton",
+                    enabled: true
+                }
+            ]}
+        ]});
+}
+```
+
+In the following example, the button that is enabled is on the very same contextual tab that is being made visible.
+
+```javascript
+function myContextChanges() {
+    Office.ribbon.requestUpdate({
+        tabs: [
+            {
+                id: "CtxTab1",
+                visibility: true,
+                controls: [
+                    {
+                        id: "MyButton",
+                        enabled: true
+                    }
+                ]
+            }
+        ]});
+}
 ```
 
 ## Best practice: Test for control status errors

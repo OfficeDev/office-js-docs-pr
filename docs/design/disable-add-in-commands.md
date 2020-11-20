@@ -139,6 +139,10 @@ function enableChartFormat() {
 
 Fourth, define the `disableChartFormat` handler. It would be identical to `enableChartFormat` except that the **enabled** property of the button object would be set to `false`.
 
+### Toggle tab visibility and the enabled status of a button at the same time
+
+The **requestUpdate** method is also used to toggle the visibility of a custom contextual tab. For details about this and example code, see [Enable and Disable Add-in Commands](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
+
 ## Best practice: Test for control status errors
 
 In some circumstances, the ribbon does not repaint after `requestUpdate` is called, so the control's clickable status does not change. For this reason it is a best practice for the add-in to keep track of the status of its controls. The add-in should conform to these rules:
