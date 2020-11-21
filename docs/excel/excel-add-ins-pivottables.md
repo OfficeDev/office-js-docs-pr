@@ -223,9 +223,121 @@ Excel.run(function (context) {
 
 ## Filter a PivotTable
 
-The Excel JavaScript API offers two methods for filtering a PivotTable: slicers and PivotFilters. [Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. [PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). The `Slicer` class, like [its Excel UI counterpart](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d), allows for style and formatting customization. `PivotFilters` do not offer style or formatting flexibility. 
+The Excel JavaScript API offers two methods for filtering a PivotTable: PivotFilters and slicers. [PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). [Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. The `Slicer` class, like [its Excel UI counterpart](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d), allows for style and formatting customization. `PivotFilters` do not offer style or formatting flexibility. 
 
-See [Filter with slicers](#filter-with-slicers) and [Filter with PivotFilters](#filter-with-pivotfilters) to learn more about Excel JavaScript API integration options for these data filtering methods.
+See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slicers](#filter-with-slicers) to learn more about Excel JavaScript API integration options for these data filtering methods.
+
+### Filter with PivotFilters
+
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is used to pivot data within the table.
+
+#### Types of PivotFilters
+| Filter type | Purpose | Excel JavaScript API reference |
+|:--- |:--- |:--- |
+| Date | Filter data based on a calendar date. | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
+| Label | Filter based on text matching. | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
+| Manual | Filter data based on a custom input. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
+| Value | Filter data for number comparisons. | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
+
+#### Create a PivotFilter
+The following code sample applies a `PivotFilter` to a **Date Updated** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
+
+Apply a date filter with [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter). 
+
+```js
+Excel.run(function (context) {
+    // Get the PivotTable and the date hierarchy.
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var dateHierarchy = pivotTable.rowHierarchies.getItemOrNullObject("Date Updated");
+    
+    return context.sync().then(function () {
+        // PivotFilters can only be applied to PivotHierarchies that are being used for pivoting.
+        // If it's not already there, add "Date Updated" to the hierarchies.
+        if (dateHierarchy.isNullObject) {
+          dateHierarchy = pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Date Updated"));
+        }
+
+        // Apply a date filter to filter out anything logged before August.
+        var filterField = dateHierarchy.fields.getItem("Date Updated");
+        var dateFilter = {
+          condition: Excel.DateFilterCondition.afterOrEqualTo,
+          comparator: {
+            date: "2020-08-01",
+            specificity: Excel.FilterDatetimeSpecificity.month
+          }
+        };
+        filterField.applyFilter({ dateFilter: dateFilter });
+        
+        return context.sync();
+    });
+});
+```
+
+Apply a label filter with [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter). 
+
+```js
+    // Get the "Type" field.
+    const field = pivotTable.hierarchies.getItem("Type").fields.getItem("Type");
+
+    // Filter out any types that start with "L" ("Lemons" and "Limes" in this case).
+    const filter: Excel.PivotLabelFilter = {
+      condition: Excel.LabelFilterCondition.beginsWith,
+      substring: "L",
+      exclusive: true
+    };
+
+    // Apply the label filter to the field.
+    field.applyFilter({ labelFilter: filter });
+```
+
+Apply a manual filter with [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter).
+
+```js
+    // Apply a manual filter to include only a specific PivotItem (the string "Organic").
+    const filterField = classHierarchy.fields.getItem("Classification");
+    const manualFilter = { selectedItems: ["Organic"] };
+    filterField.applyFilter({ manualFilter: manualFilter });
+```
+
+Apply a value filter with [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter).
+
+```js
+    // Get the "Farm" field.
+    const field = pivotTable.hierarchies.getItem("Farm").fields.getItem("Farm");
+    
+    // Filter to only include rows with more than 500 wholesale crates sold.
+    const filter: Excel.PivotValueFilter = {
+      condition: Excel.ValueFilterCondition.greaterThan,
+      comparator: 500,
+      value: "Sum of Crates Sold Wholesale"
+    };
+    
+    // Apply the value filter to the field.
+    field.applyFilter({ valueFilter: filter });
+```
+
+
+
+#### Remove a PivotFilter
+
+```js
+async function clearFilters() {
+  await Excel.run(async (context) => {
+    // Clear all the PivotFilters.
+
+    // Get the PivotTable.
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    pivotTable.hierarchies.load("name");
+    await context.sync();
+
+    // Clear the filters on each PivotField.
+    pivotTable.hierarchies.items.forEach((hierarchy) => {
+      hierarchy.fields.getItem(hierarchy.name).clearAllFilters();
+    });
+    await context.sync();
+  });
+}
+```
 
 ### Filter with slicers
 
@@ -312,41 +424,6 @@ Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.slicers.getItemAt(0).delete();
     return context.sync();
-});
-```
-
-### Filter with PivotFilters
-
-[PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is used to pivot data within the table.
-
-The following code sample applies a `PivotFilter` to a **Date Updated** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
-
-```js
-Excel.run(function (context) {
-    // Get the PivotTable and the date hierarchy.
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-    var dateHierarchy = pivotTable.rowHierarchies.getItemOrNullObject("Date Updated");
-    
-    return context.sync().then(function () {
-        // PivotFilters can only be applied to PivotHierarchies that are being used for pivoting.
-        // If it's not already there, add "Date Updated" to the hierarchies.
-        if (dateHierarchy.isNullObject) {
-          dateHierarchy = pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Date Updated"));
-        }
-
-        // Apply a date filter to filter out anything logged before August.
-        var filterField = dateHierarchy.fields.getItem("Date Updated");
-        var dateFilter = {
-          condition: Excel.DateFilterCondition.afterOrEqualTo,
-          comparator: {
-            date: "2020-08-01",
-            specificity: Excel.FilterDatetimeSpecificity.month
-          }
-        };
-        filterField.applyFilter({ dateFilter: dateFilter });
-        
-        return context.sync();
-    });
 });
 ```
 
