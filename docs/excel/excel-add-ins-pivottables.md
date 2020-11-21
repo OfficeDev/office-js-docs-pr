@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 11/19/2020
+ms.date: 11/20/2020
 localization_priority: Normal
 ---
 
@@ -232,17 +232,19 @@ See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slice
 [PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is used to pivot data within the table.
 
 #### Types of PivotFilters
-| Filter type | Purpose | Excel JavaScript API reference |
+
+| Filter type | Filter purpose | Excel JavaScript API reference |
 |:--- |:--- |:--- |
-| Date | Filter data based on a calendar date. | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
-| Label | Filter based on text matching. | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
-| Manual | Filter data based on a custom input. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
-| Value | Filter data for number comparisons. | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
+| DateFilter | Filter PivotTable data based on a calendar date. | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
+| LabelFilter | Filter PivotTable data based on text comparison. | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
+| ManualFilter | Filter PivotTable data based on a custom input. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
+| ValueFilter | Filter PivotTable data based on a number comparison. | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
+
+The following four code samples show how to use each PivotFilter. 
 
 #### Create a PivotFilter
-The following code sample applies a `PivotFilter` to a **Date Updated** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
 
-Apply a date filter with [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter). 
+The following code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to a **Date Updated** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
 
 ```js
 Excel.run(function (context) {
@@ -273,70 +275,70 @@ Excel.run(function (context) {
 });
 ```
 
-Apply a label filter with [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter). 
+> [!NOTE]
+> The following three code snippets display only excerpts and are not complete code samples. See the preceding code sample for a complete `PivotFilter` implementation example.
+
+The following code snippet demonstrates how to apply a [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) to the **Type** hierarchy, using the `LabelFilterCondition.beginsWith` property to exclude specific labels. 
 
 ```js
     // Get the "Type" field.
-    const field = pivotTable.hierarchies.getItem("Type").fields.getItem("Type");
+    var filterField = pivotTable.hierarchies.getItem("Type").fields.getItem("Type");
 
     // Filter out any types that start with "L" ("Lemons" and "Limes" in this case).
-    const filter: Excel.PivotLabelFilter = {
+    var filter: Excel.PivotLabelFilter = {
       condition: Excel.LabelFilterCondition.beginsWith,
       substring: "L",
       exclusive: true
     };
 
     // Apply the label filter to the field.
-    field.applyFilter({ labelFilter: filter });
+    filterField.applyFilter({ labelFilter: filter });
 ```
 
-Apply a manual filter with [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter).
+The following code snippet applies a manual filter with [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) to the the **Classification** hierarchy, including only data with the classification **Organic**. 
 
 ```js
     // Apply a manual filter to include only a specific PivotItem (the string "Organic").
-    const filterField = classHierarchy.fields.getItem("Classification");
-    const manualFilter = { selectedItems: ["Organic"] };
+    var filterField = classHierarchy.fields.getItem("Classification");
+    var manualFilter = { selectedItems: ["Organic"] };
     filterField.applyFilter({ manualFilter: manualFilter });
 ```
 
-Apply a value filter with [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter).
+To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), as shown in the following code snippet. The `PivotValueFilter` compares the data in the **Farm** hierarchy to the data in the **Crates Sold Wholesale** hierarchy, only including farms whose sum of crates sold exceeds the specified filter value. 
 
 ```js
     // Get the "Farm" field.
-    const field = pivotTable.hierarchies.getItem("Farm").fields.getItem("Farm");
+    var filterField = pivotTable.hierarchies.getItem("Farm").fields.getItem("Farm");
     
     // Filter to only include rows with more than 500 wholesale crates sold.
-    const filter: Excel.PivotValueFilter = {
+    var filter: Excel.PivotValueFilter = {
       condition: Excel.ValueFilterCondition.greaterThan,
       comparator: 500,
       value: "Sum of Crates Sold Wholesale"
     };
     
     // Apply the value filter to the field.
-    field.applyFilter({ valueFilter: filter });
+    filterField.applyFilter({ valueFilter: filter });
 ```
 
+#### Remove PivotFilters
 
-
-#### Remove a PivotFilter
+To remove PivotFilters, use the `clearAllFilters` method, as shown in the following sample. 
 
 ```js
-async function clearFilters() {
-  await Excel.run(async (context) => {
-    // Clear all the PivotFilters.
-
+Excel.run(function (context) {
     // Get the PivotTable.
     const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.hierarchies.load("name");
-    await context.sync();
-
-    // Clear the filters on each PivotField.
-    pivotTable.hierarchies.items.forEach((hierarchy) => {
-      hierarchy.fields.getItem(hierarchy.name).clearAllFilters();
+    
+    return context.sync().then(function () {
+        // Clear the filters on each PivotField.
+        pivotTable.hierarchies.items.forEach((hierarchy) {
+          hierarchy.fields.getItem(hierarchy.name).clearAllFilters();
+        });
+        return context.sync();
     });
-    await context.sync();
-  });
-}
+});
 ```
 
 ### Filter with slicers
