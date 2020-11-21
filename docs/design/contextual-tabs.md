@@ -53,7 +53,7 @@ Adding custom contextual tabs requires your add-in to use the shared runtime. Fo
 
 Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. With code that runs when the add-in starts, you parse the blob into a JavaScript object, and then pass the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestcreateconrtols-input-) method. 
 
-> [NOTE!]
+> [!NOTE]
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
 
 We'll construct an example of a contextual tabs JSON blob step-by-step. (The full schema for the contextual tab JSON is at: .)
@@ -92,7 +92,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     - The `label` property is required. It is a user-friendly string to serve as the label of the contextual tab.
     - The `groups` property is required. It defines the groups of controls that will appear on the tab. It must have at least one member.
 
-    > [NOTE!]
+    > [!NOTE]
     > The tab object can also have an optional `visible` property that specifies whether the tab is visible immediately when the add-in starts up. Since contextual tabs are normally hidden until a user event triggers their visibility (such as the user selecting an entity of some type in the document), the `visible` property defaults to `false` when not present. In a later section, we show how to set the property to `true` in response to an event.
 
     ```json
@@ -132,7 +132,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     = The `size` property unit of measure is pixels. Icons are always square, so the number is both the height and the width.
     - The `sourceLocation` property specifies the full URL to the icon.
 
-    > [IMPORTANT!]
+    > [!IMPORTANT]
     > Just as you typically must change the URLs in a the add-in's manifest when you move from development to production (such as changing the domain from localhost to contoso.com), you must also change the URLs in your contextual tabs JSON.
 
     ```json
