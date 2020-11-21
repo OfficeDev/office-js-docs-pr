@@ -264,26 +264,25 @@ The contextual tab is registered with Office by calling the [Office.ribbon.reque
 The following is an example. Note that the JSON string must be converted to a JavaScript object with the `JSON.parse` method before it can be passed to a JavaScript function.
 
 ```javascript
-const contextualTabJSON = ' ... ' // Assign the JSON string such as the one at the end of the preceding section.
-const contextualTab = JSON.parse(contextualTabJSON);
-
 Office.onReady(async () => {
+    const contextualTabJSON = ' ... ' // Assign the JSON string such as the one at the end of the preceding section.
+    const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 });
 ```
 
-## Specify the circumstances when the tab will be visible with requestUpdate
+## Specify the contexts when the tab will be visible with requestUpdate
 
 Typically, a contextual tab should appear when a user-initiated event changes the add-in context. Consider a scenario in which the tab should be visible when, and only when, a chart (on the default worksheet of an Excel workbook) is activated.
 
 Begin by assigning handlers. This is commonly done in the **Office.onReady** method as in the following example which assigns handlers (created in a later step) to the **onActivated** and **onDeactivated** events of all the charts in the worksheet.
 
 ```javascript
-const contextualTabJSON = ' ... ' // Assign the JSON string such as the one at the end of the preceding section.
-const contextualTab = JSON.parse(contextualTabJSON);
-
 Office.onReady(async () => {
+    const contextualTabJSON = ' ... ' // Assign the JSON string.
+    const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
+
     await Excel.run(context => {
         var charts = context.workbook.worksheets
             .getActiveWorksheet()
