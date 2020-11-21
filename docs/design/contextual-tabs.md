@@ -1,11 +1,11 @@
 ---
-title: Custom contextual tabs in Office Add-ins
+title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
 ms.date: 11/20/2020
 localization_priority: Normal
 ---
 
-# Custom contextual tabs in Office Add-ins (preview)
+# Create custom contextual tabs in Office Add-ins (preview)
 
 A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when an object in the Office document, such as an image or a table has focus; for example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office add-in and specify when they are visible or hidden.
 
@@ -295,7 +295,7 @@ Office.onReady(async () => {
 });
 ```
 
-Next, define the handlers. The following is a simple example of a `showDataTab`, but see [Best practice: Test for control status errors](#best-practice-test-for-control-status-errors) below for a more robust version of the function. About this code, note: 
+Next, define the handlers. The following is a simple example of a `showDataTab`, but see [Error Handling](#error-handling) below for a more robust version of the function. About this code, note:
 
 - Office controls when it updates the state of the ribbon. The  [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) method queues a request to update. The method will resolve the Promise object as soon as it has queued the request, not when the ribbon actually updates.
 - The parameter for the **requestUpdate** method is a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the tab by its ID *exactly as specified in the JSON*; and (2) specifies visibility of the tab.
@@ -369,55 +369,20 @@ function myContextChanges() {
 }
 ```
 
-## Best practice: Test for control status errors
-
-In some circumstances, the ribbon does not repaint after `requestUpdate` is called, so the control's clickable status does not change. For this reason it is a best practice for the add-in to keep track of the status of its controls. The add-in should conform to these rules:
-
-1. Whenever `requestUpdate` is called, the code should record the intended state of the custom buttons and menu items.
-2. When a custom control is clicked, the first code in the handler, should check to see if the button should have been clickable. If shouldn't have been, the code should report or log an error and try again to set the buttons to the intended state.
-
-The following example shows a function that disables a button and records the button's status. Note that `chartFormatButtonEnabled` is a global boolean variable that is initialized to the same value as the [Enabled](../reference/manifest/enabled.md) element for the button in the manifest.
-
-```javascript
-function disableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: false};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
-    var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
-
-    chartFormatButtonEnabled = false;
-}
-```
-
-The following example shows how the button's handler tests for an incorrect state of the button. Note that `reportError` is a function that shows or logs an error.
-
-```javascript
-function chartFormatButtonHandler() {
-    if (chartFormatButtonEnabled) {
-
-        // Do work here
-
-    } else {
-        // Report the error and try again to disable.
-        reportError("That action is not possible at this time.");
-        disableChartFormat();
-    }
-}
-```
-
 ## Error handling
 
 In some scenarios, Office is unable to update the ribbon and will return an error. For example, if the add-in is upgraded and the upgraded add-in has a different set of custom add-in commands, then the Office application must be closed and reopened. Until it is, the `requestUpdate` method will return the error `HostRestartNeeded`. The following is an example of how to handle this error. In this case, the `reportError` method displays the error to the user.
 
 ```javascript
-function disableChartFormat() {
+function showDataTab() {
     try {
-        var button = {id: "ChartFormatButton", enabled: false};
-        var parentTab = {id: "CustomChartTab", controls: [button]};
-        var ribbonUpdater = {tabs: [parentTab]};
-        await Office.ribbon.requestUpdate(ribbonUpdater);
-
-        chartFormatButtonEnabled = false;
+        await Office.ribbon.requestUpdate({
+            tabs: [
+                {
+                    id: "CtxTab1",
+                    visibility: true
+                }
+            ]});
     }
     catch(error) {
         if (error.code == "HostRestartNeeded"){
