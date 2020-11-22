@@ -56,7 +56,8 @@ Unlike custom core tabs, which are defined with XML in the manifest, custom cont
 > [!NOTE]
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
 
-We'll construct an example of a contextual tabs JSON blob step-by-step. (The full schema for the contextual tab JSON is at: .)
+We'll construct an example of a contextual tabs JSON blob step-by-step. (The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/dynamic-ribbon.schema.json). This link may not be working in the early preview period for contextual tabs. If the link is not working, you can find the latest draft of the schema at [draft dynamic-ribbon.schema.json](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json).)
+
 
 1. Begin by creating a JSON string with two array properties named `actions` and `tabs`. The `actions` array is a specification of all of the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs, up to a maximum of 10.
 
@@ -129,7 +130,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
 1. Every group must have an icon of at least three sizes, 16x16 px, 32x32 px, and 80x80 px. Office decides which icon to use based on the size of the ribbon and Office application window. Add the following objects to the icon array. (If the window and ribbon sizes are large enough for at least one of the *controls* on the group to appear, then no group icon at all appears. For an example, watch the **Styles** group on the Word ribbon as you shrink and expand the Word window.) About this markup, note:
 
     - Both the properties are required.
-    = The `size` property unit of measure is pixels. Icons are always square, so the number is both the height and the width.
+    - The `size` property unit of measure is pixels. Icons are always square, so the number is both the height and the width.
     - The `sourceLocation` property specifies the full URL to the icon.
 
     > [!IMPORTANT]
@@ -160,7 +161,6 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     - `superTip` represents a rich form of tool tip. Both the `title` and `description` properties are required.
     - `icon` specifies the icons for the button. The remarks above about the group icon apply here too.
     - `enabled` (optional) specifies whether the button is enabled when the contextual tab appears starts up. The default if not present is `true`. 
-
 
     ```json
     {
