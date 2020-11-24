@@ -1,3 +1,4 @@
+items:
 - name: Office Add-ins Documentation
   href: index.yml
 
@@ -692,7 +693,7 @@
     - name: Tutorials
       items:
       - name: Build your first custom functions add-in
-        href: quickstarts/excel-custom-functions-quickstart-redirect.md
+        href: quickstarts/excel-custom-functions-quickstart.md
         displayName: Excel, Custom Functions
       - name: Custom functions tutorial
         href: tutorials/excel-tutorial-create-custom-functions.md
