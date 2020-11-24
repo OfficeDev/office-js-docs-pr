@@ -25,7 +25,6 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 > Custom contextual tabs work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
-> - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 
 ## Behavior of custom contextual tabs
 
