@@ -34,7 +34,7 @@ The user experience for custom contextual tabs follows the pattern of built-in O
 - If one or more built-in contextual tabs and one or more custom contextual tabs from add-ins are visible at the same time, the custom contextual tabs are always to the right of all of the built-in contextual tabs.
 - If your add-in has more than one contextual tab and there are contexts in which more than one is visible, they appear in the order in which they are defined in your add-in. (The direction is the same direction as the Office language; that is, is left-to-right in left-to-right languages, but right-to-left in right-to-left languages.) See [Define the groups and controls that appear on the tab](#define-the-groups-and-controls-that-appear-on-the-tab) for details about how you define them.
 - If more than one add-in has a contextual tab that is visible in a specific context, then they appear in the order in which the add-ins were installed.
-- Custom *contextual* tabs, unlike custom core tabs, are not added permanently to the Office application's ribbon. They are present only in Office documents on which your add-in has run.
+- Custom *contextual* tabs, unlike custom core tabs, are not added permanently to the Office application's ribbon. They are present only in Office documents on which your add-in has run and only when your add-in has been launched.
 
 ## Major steps for including a contextual tab in an add-in
 
@@ -51,7 +51,7 @@ Adding custom contextual tabs requires your add-in to use the shared runtime. Fo
 
 ## Define the groups and controls that appear on the tab
 
-Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestcreatecontrols-input-) method. Custom contextual tabs are only present in documents on which your add-in has run. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method can be run only once on a specific document.
+Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestcreatecontrols-input-) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method can be run only once in a session of your add-in. If it is called again, an error is thrown.
 
 > [!NOTE]
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
@@ -249,7 +249,7 @@ The following is the complete example of the JSON blob:
 The contextual tab is registered with Office by calling the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestcreatecontrols-input-) method. This is typically done in either the function that is assigned to `Office.initialize` or with the `Office.onReady` method. For more about these methods and initializing the add-in, see [Initialize your Office Add-in](../develop/initialize-add-in.md). You can, however, call the method anytime after initialization.
 
 > [!IMPORTANT]
-> The `requestCreateControls` method can be called only once on a given document from a specific add-in. 
+> The `requestCreateControls` method can be called only once in a given session of an add-in. An error is thrown if it is called again.
 
 The following is an example. Note that the JSON string must be converted to a JavaScript object with the `JSON.parse` method before it can be passed to a JavaScript function.
 
