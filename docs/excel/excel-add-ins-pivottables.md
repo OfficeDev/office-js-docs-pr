@@ -329,12 +329,12 @@ To remove all PivotFilters, apply the `clearAllFilters` method, as shown in the 
 ```js
 Excel.run(function (context) {
     // Get the PivotTable.
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.hierarchies.load("name");
     
     return context.sync().then(function () {
         // Clear the filters on each PivotField.
-        pivotTable.hierarchies.items.forEach((hierarchy) {
+        pivotTable.hierarchies.items.forEach(function (hierarchy) {
           hierarchy.fields.getItem(hierarchy.name).clearAllFilters();
         });
         return context.sync();
