@@ -223,7 +223,7 @@ Excel.run(function (context) {
 
 ## Filter a PivotTable
 
-The Excel JavaScript API offers two methods for filtering a PivotTable: PivotFilters and slicers. [PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). [Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. The `Slicer` class, like [its Excel UI counterpart](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d), allows for style and formatting customization. `PivotFilters` do not offer style or formatting flexibility. 
+The Excel JavaScript API offers two methods for filtering PivotTable data: PivotFilters and slicers. [PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). [Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. The `Slicer` class, like [its Excel UI counterpart](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d), allows for style and formatting customization. `PivotFilters` do not offer style or formatting flexibility. 
 
 See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slicers](#filter-with-slicers) to learn more about Excel JavaScript API integration options for these data filtering methods.
 
@@ -240,11 +240,11 @@ See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slice
 | ManualFilter | Custom input filtering. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
 | ValueFilter | Number comparison filtering. | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
 
-The following four code samples show how to use each PivotFilter described in the preceding table. 
+The following four [Create a PivotFilter](#create-a-pivotfilter) code samples show how to use each filter described in the preceding table. 
 
 #### Create a PivotFilter
 
-The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to a **Date Updated** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
+The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
 
 ```js
 Excel.run(function (context) {
@@ -323,7 +323,7 @@ To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/e
 
 #### Remove PivotFilters
 
-To remove PivotFilters, apply the `clearAllFilters` method, as shown in the following code sample. 
+To remove all PivotFilters, apply the `clearAllFilters` method, as shown in the following code sample. 
 
 ```js
 Excel.run(function (context) {
