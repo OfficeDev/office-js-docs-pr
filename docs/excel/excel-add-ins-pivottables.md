@@ -240,11 +240,12 @@ See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slice
 | ManualFilter | Custom input filtering. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
 | ValueFilter | Number comparison filtering. | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
 
-The following four [Create a PivotFilter](#create-a-pivotfilter) code samples show how to use each filter described in the preceding table. 
-
 #### Create a PivotFilter
 
-The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** hierarchy, hiding any data prior to a specified date. The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
+The following four code samples show how to use each filter described in the preceding [Types of PivotFilters](#types-of-pivotfilters) table. The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** hierarchy, hiding any data prior to a specified date. 
+
+> [!IMPORTANT] 
+> The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
 
 ```js
 Excel.run(function (context) {
