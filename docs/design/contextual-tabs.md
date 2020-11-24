@@ -19,7 +19,7 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 >
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds:
 >
-> - Excel on Windows (Microsoft 365 only, not perpetual license): Version 2012 (Build 13519.20000) Your Microsoft 365 subscription may need to be on the [Current Channel (Preview)](https://insider.office.com/join/windows) formerly called "Monthly Channel (Targeted)" or "Insider Slow".
+> - Excel on Windows (Microsoft 365 only, not perpetual license): Version 2012 (Build 13519.20000). Your Microsoft 365 subscription may need to be on the [Current Channel (Preview)](https://insider.office.com/join/windows) formerly called "Monthly Channel (Targeted)" or "Insider Slow".
 
 > [!NOTE]
 > Custom contextual tabs work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
@@ -57,7 +57,7 @@ Unlike custom core tabs, which are defined with XML in the manifest, custom cont
 > [!NOTE]
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
 
-We'll construct an example of a contextual tabs JSON blob step-by-step. (The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). This link may not be working in the early preview period for contextual tabs. If the link is not working, you can find the latest draft of the schema at [draft dynamic-ribbon.schema.json](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json).) If you are working in Visual Studio Code, you can use this file to get Intellisense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
+We'll construct an example of a contextual tabs JSON blob step-by-step. (The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). This link may not be working in the early preview period for contextual tabs. If the link is not working, you can find the latest draft of the schema at [draft dynamic-ribbon.schema.json](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json).) If you are working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
 
 1. Begin by creating a JSON string with two array properties named `actions` and `tabs`. The `actions` array is a specification of all the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs, *up to a maximum of 10*.
@@ -77,7 +77,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
 
     - The `id` and `type` properties are mandatory.
     - The value of `type` can be either "ExecuteFunction" or "ShowTaskpane".
-    - The `functionName` property is only used when the value of `type` is "ExecuteFunction`. It is the name of a function defined in the FunctionFile. For more information about the FunctionFile, see [Basic concepts for Add-in Commands](add-in-commands.md).
+    - The `functionName` property is only used when the value of `type` is `ExecuteFunction`. It is the name of a function defined in the FunctionFile. For more information about the FunctionFile, see [Basic concepts for Add-in Commands](add-in-commands.md).
     - In a later step, you will map this action to a button on the contextual tab.
 
     ```json
@@ -116,7 +116,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     - The `controls` property's value is an array of objects that specify the buttons and other controls in the group. There must be at least one and *no more than 6 in a group*.
 
     > [!IMPORTANT]
-    > *The total number of controls on the whole tab can be no more than 20.* For example; you could have 3 groups with 6 controls each, and a fourth group with 2 controls, but you cannot have 4 groups with 6 controls each.  
+    > *The total number of controls on the whole tab can be no more than 20.* For example, you could have 3 groups with 6 controls each, and a fourth group with 2 controls, but you cannot have 4 groups with 6 controls each.  
 
     ```json
     {
@@ -151,7 +151,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     }
     ```
 
-1. In the simple ongoing example, the group has only a single button. Add the following object as the only member of the `controls` array. About this markup, note:
+1. In our simple ongoing example, the group has only a single button. Add the following object as the only member of the `controls` array. About this markup, note:
 
     - All the properties, except `enabled`, are required.
     - `type` specifies the type of control. The values can be "Button", "Menu", or "MobileButton".
@@ -256,7 +256,7 @@ The following is an example. Note that the JSON string must be converted to a Ja
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... ' // Assign the JSON string such as the one at the end of the preceding section.
+    const contextualTabJSON = ' ... '; // Assign the JSON string such as the one at the end of the preceding section.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 });
@@ -270,7 +270,7 @@ Begin by assigning handlers. This is commonly done in the `Office.onReady` metho
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... ' // Assign the JSON string.
+    const contextualTabJSON = ' ... '; // Assign the JSON string.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 
@@ -303,7 +303,7 @@ async function showDataTab() {
 }
 ```
 
-The handler to hide the tab is nearly identical, except that it sets the `visiblity` property back to `false`.
+The handler to hide the tab is nearly identical, except that it sets the `visible` property back to `false`.
 
 The Office JavaScript library also provides several interfaces (types) to make it easier to construct the`RibbonUpdateData` object. The following is the `showDataTab` function in TypeScript and it makes use of these types.
 
@@ -376,7 +376,7 @@ function showDataTab() {
     }
     catch(error) {
         if (error.code == "HostRestartNeeded"){
-            reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
+            reportError("Contoso Awesome Add-in has been upgraded. Please save your work, then close and reopen the Office application.");
         }
     }
 }
