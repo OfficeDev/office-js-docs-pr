@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: 'In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.'
-ms.date: 11/12/2020
+ms.date: 11/20/2020
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 localization_priority: Priority
@@ -25,7 +25,7 @@ In this tutorial, you will:
 
 - [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
 
-- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:
+- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt.
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -50,7 +50,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - In the **Filename including extension...** field, enter **test.md**.
 
-    - Add the following markdown to the multiline textbox:
+    - Add the following markdown to the multiline textbox.
 
         ```markdown
         # Hello World
@@ -74,7 +74,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - In the **Filename including extension...** field, enter **test.html**.
 
-    - Add the following markdown to the multiline textbox:
+    - Add the following markdown to the multiline textbox.
 
         ```HTML
         <html>
@@ -118,13 +118,13 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
     cd "Git the gist"
     ```
 
-1. This add-in will use the following libraries:
+1. This add-in will use the following libraries.
 
     - [Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML
     - [URI.js](https://github.com/medialize/URI.js) library to build relative URLs.
     - [jquery](https://jquery.com/) library to simplify DOM interactions.
 
-     To install these tools for your project, run the following command in the root directory of the project:
+     To install these tools for your project, run the following command in the root directory of the project.
 
     ```command&nbsp;line
     npm install showdown urijs jquery --save
@@ -136,7 +136,7 @@ The manifest for an add-in controls how it appears in Outlook. It defines the wa
 
 #### Specify basic information
 
-Make the following updates in the **manifest.xml** file to specify some basic information about the add-in:
+Make the following updates in the **manifest.xml** file to specify some basic information about the add-in.
 
 1. Locate the `ProviderName` element and replace the default value with your company name.
 
@@ -183,7 +183,7 @@ Open the **manifest.xml** file and locate the `ExtensionPoint` element with type
 
 ### Add the MessageComposeCommandSurface extension point
 
-Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup:
+Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup.
 
 - The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
 
@@ -242,7 +242,7 @@ The previous code references labels, tooltips, and URLs that you need to define 
 
 1. Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).
 
-1. In that same location, add the following markup to replace the `Resources` element you just removed:
+1. In that same location, add the following markup to replace the `Resources` element you just removed.
 
     ```xml
     <Resources>
@@ -819,8 +819,8 @@ function insertDefaultGist(event) {
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
       settingsDialog = result.value;
-      settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, receiveMessage);
-      settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, dialogClosed);
+      settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+      settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
     });
   }
 }
@@ -1245,8 +1245,8 @@ In the project that you've created, the task pane JavaScript is specified in the
 
         Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
           settingsDialog = result.value;
-          settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, receiveMessage);
-          settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, dialogClosed);
+          settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+          settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
         });
       })
     });
@@ -1268,9 +1268,9 @@ In the project that you've created, the task pane JavaScript is specified in the
   }
 
   function onGistSelected() {
+    $('#insert-button').removeAttr('disabled');
     $('.ms-ListItem').removeClass('is-selected').removeAttr('checked');
     $(this).children('.ms-ListItem').addClass('is-selected').attr('checked', 'checked');
-    $('#insert-button').removeAttr('disabled');
   }
 
   function showError(error) {
@@ -1309,7 +1309,7 @@ Save all of your changes and run `npm run dev-server` from the command prompt, i
 
 ## Next steps
 
-In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message. To learn more about developing Outlook add-ins, continue to the following article:
+In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message. To learn more about developing Outlook add-ins, continue to the following article.
 
 > [!div class="nextstepaction"]
 > [Outlook add-in APIs](../outlook/apis.md)

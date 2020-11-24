@@ -976,7 +976,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     ```js
     function (result) {
         dialog = result.value;
-        dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, processMessage);
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
     }
     ```
 
