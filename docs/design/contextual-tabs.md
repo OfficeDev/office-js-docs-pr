@@ -33,8 +33,8 @@ The user experience for custom contextual tabs follows the pattern of built-in O
 - When a custom contextual tab is visible, it appears on the right end of the ribbon.
 - If one or more built-in contextual tabs and one or more custom contextual tabs from add-ins are visible at the same time, the custom contextual tabs are always to the right of all of the built-in contextual tabs.
 - If your add-in has more than one contextual tab and there are contexts in which more than one is visible, they appear in the order in which they are defined in your add-in. (The direction is the same direction as the Office language; that is, is left-to-right in left-to-right languages, but right-to-left in right-to-left languages.) See [Define the groups and controls that appear on the tab](#define-the-groups-and-controls-that-appear-on-the-tab) for details about how you define them.
-- If more than one add-in has a contextual tab that is visible in a specific context, then they appear in the order in which the add-ins were installed.
-- Custom *contextual* tabs, unlike custom core tabs, are not added permanently to the Office application's ribbon. They are present only in Office documents on which your add-in has run and only when your add-in has been launched.
+- If more than one add-in has a contextual tab that is visible in a specific context, then they appear in the order in which the add-ins were launched.
+- Custom *contextual* tabs, unlike custom core tabs, are not added permanently to the Office application's ribbon. They are present only in Office documents on which your add-in is running.
 
 ## Major steps for including a contextual tab in an add-in
 
