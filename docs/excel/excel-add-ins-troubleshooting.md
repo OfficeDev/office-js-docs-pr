@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Excel Add-ins
 description: 'Learn how to troubleshoot development errors in Excel Add-ins.'
-ms.date: 09/08/2020
+ms.date: 11/25/2020
 localization_priority: Normal
 ---
 
@@ -36,6 +36,10 @@ The following APIs are affected by this workbook switch:
 
 > [!NOTE]
 > This only applies to multiple Excel workbooks open on Windows or Mac.
+
+## Range return character limit
+
+The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have a return limit of 8192 characters. When this limit is exceeded, the return value is truncated to 8192 characters.
 
 ## Coauthoring
 

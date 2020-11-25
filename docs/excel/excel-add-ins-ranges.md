@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (fundamental)
 description: 'Code samples that show how to perform common tasks with ranges using the Excel JavaScript API.'
-ms.date: 07/28/2020
+ms.date: 11/25/2020
 localization_priority: Normal
 ---
 
@@ -32,6 +32,9 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+> [!NOTE]
+> The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have a return limit of 8192 characters. When this limit is exceeded, the return value is truncated to 8192 characters.
 
 ### Get range by name
 
