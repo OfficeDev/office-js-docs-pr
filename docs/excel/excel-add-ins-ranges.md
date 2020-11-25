@@ -34,7 +34,7 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have a return limit of 8192 characters. When this limit is exceeded, the return value is truncated to 8192 characters.
+> The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have an address string limit of 8192 characters. When this limit is exceeded, the address string is truncated to 8192 characters.
 
 ### Get range by name
 
