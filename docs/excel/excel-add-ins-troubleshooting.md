@@ -41,6 +41,31 @@ The following APIs are affected by this workbook switch:
 
 See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for patterns to use with events in a coauthoring environment. The article also discusses potential merge conflicts when using certain APIs, such as [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-).
 
+## Binding events ID discrepancy
+
+Both [BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) and [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding) return a temporary `Binding` object that contains the ID of the `Binding` object that raised the event. Use this ID with `BindingCollection.getItem(id)` to retrieve the `Binding` object that raised the event.
+
+The following code sample shows how to use the ID of the temporary `Binding` object to retrieve the `Binding` object that raised the event.
+
+```js
+Excel.run(function (context) {
+    // Get the temporary binding object and load its ID
+    var tempBindingObject = eventArgs.binding;
+    tempBindingObject.load("id");
+
+    // Use the temporary binding object's ID to retrieve the original binding object
+    var originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
+
+    return context.sync().then(function () {
+        console.log(`Temporary binding ID: ${tempBindingObject.id}`);
+
+        // Get the address of the original binding object
+        var originalBindingAddress = getAddressFromId(originalBindingObject.id);
+        console.log(`Original binding address: ${originalBindingAddress}`);
+    });
+});
+```
+
 ## See also
 
 - [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)
