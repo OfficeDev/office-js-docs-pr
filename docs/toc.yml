@@ -93,9 +93,6 @@ items:
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
         displayName: manifest
-      - name: Show or hide an Office Add-in task panein a shared runtime
-        href: excel/show-hide-add-in.md
-        displayName: Excel
     - name: Manifest
       items:
       - name: Overview
@@ -223,6 +220,8 @@ items:
           href: design/task-pane-add-ins.md
       - name: Keyboard shortcuts
         href: design/keyboard-shortcuts.md
+      - name: Show or hide an Office Add-in task pane
+        href: excel/show-hide-add-in.md
       - name: Localization
         href: develop/localization.md
       - name: Resources
