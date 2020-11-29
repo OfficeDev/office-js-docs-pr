@@ -93,6 +93,9 @@ items:
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
         displayName: manifest
+      - name: Show or hide an Office Add-in task panein a shared runtime
+        href: excel/show-hide-add-in.md
+        displayName: Excel
     - name: Manifest
       items:
       - name: Overview
@@ -668,9 +671,6 @@ items:
       displayName: Excel
     - name: Shapes
       href: excel/excel-add-ins-shapes.md
-      displayName: Excel
-    - name: Show or hide an Office Add-in in a shared runtime
-      href: excel/show-hide-add-in.md
       displayName: Excel
     - name: Tables
       href: excel/excel-add-ins-tables.md

@@ -1,31 +1,13 @@
 ---
-title: Show or hide an Office Add-in in a shared runtime
+title: Show or hide the task pane of your Office Add-in
 description: 'Learn how to programmatically hide or show the user interface of an add-in while it runs continuously'
-ms.date: 05/17/2020
+ms.date: 11/30/2020
 localization_priority: Normal
 ---
 
-# Show or hide an Office Add-in in a shared runtime
+# Show or hide the task pane of your Office Add-in
 
-An Office Add-in can include any of the following parts:
-
-- A task pane
-- A UI-less function file (custom functions which do not use a task pane or other user interface elements)
-- An Excel custom function
-
-By default, each part runs in its own separate JavaScript runtime, with its own global object and global variables.
-
-It's possible for add-ins with two or more parts to share a common JavaScript runtime. This shared runtime feature enables new APIs that hide and reopen the task pane while the add-in runs.
-
-## Configure an add-in to use a shared runtime
-
-To configure the add-in to use a shared runtime, see [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
-
-## Show and hide the task pane
-
-The new APIs are in the `Office.addin` property. To show the task pane, your code calls `Office.addin.showAsTaskpane()`. Office will display in a task pane the page that you assigned to the resource ID (`resid`) for the task pane. This is the `resid` that you assigned to the `<SourceLocation>` of the `<Action xsi:type="ShowTaskpane">` in the manifest. (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).)
-
-This is an asynchronous method, so your code should await it when the subsequent code should not run until it completes. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using. The following assumes that there is an Excel worksheet named **CurrentQuarterSales**. The add-in should make the task pane visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onactivated) event which has been registered for the worksheet.
+You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` function.
 
 ```javascript
 function onCurrentQuarter() {
@@ -37,7 +19,9 @@ function onCurrentQuarter() {
 }
 ```
 
-To hide the task pane, your code calls `Office.addin.hide()`. The following example is a handler that is registered for the [Office.Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#ondeactivated) event.
+The previous code assumes that there is an Excel worksheet named **CurrentQuarterSales**. The add-in will make the task pane visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onactivated) event which has been registered for the worksheet.
+
+You can also hide the task pane by calling the `Office.addin.hide()` function.
 
 ```javascript
 function onCurrentQuarterDeactivated() {
@@ -45,7 +29,19 @@ function onCurrentQuarterDeactivated() {
 }
 ```
 
-### Preservation of state and event listeners
+The previous code is a handler that is registered for the [Office.Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#ondeactivated) event.
+
+## Additional details on showing the task pane
+
+When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the page that you assigned to the resource ID (`resid`) for the task pane. This is the `resid` that you assigned to the `<SourceLocation>` of the `<Action xsi:type="ShowTaskpane">` in the manifest. (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).)
+
+Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code should to continue running until the function is complete. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using. 
+
+## Configure your add-in to use the shared runtime
+
+To use the `showAsTaskpane()` and `hide()` methods your add-in must use the shared runtime. For more information, see [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
+
+## Preservation of state and event listeners
 
 The `hide()` and `showAsTaskpane()` methods only change the *visibility* of the task pane. They do not unload or reload it (or reinitialize its state).
 
@@ -57,7 +53,7 @@ In addition, any event listeners that are registered in the task pane continue t
 
 Consider the following scenario: The task pane has a registered handler for the Excel `Worksheet.onActivated` and `Worksheet.onDeactivated` events for a sheet named **Sheet1**. The activated handler causes a green dot to appear in the task pane. The deactivated handler turns the dot red (which is its default state). Suppose then that code calls `hide()` when **Sheet1** is not activated and the dot is red. While the task pane is hidden, **Sheet1** is activated. Later code calls `showAsTaskpane()` in response to some event. When the task pane opens, the dot is green because the event listeners and handlers ran even though the task pane was hidden.
 
-### Handle visibility changed event
+## Handle the visibility changed event
 
 When your code changes the visibility of the task pane with `showAsTaskpane()` or `hide()`, Office triggers the `VisibilityModeChanged` event. It can be useful to handle this event. For example, suppose the task pane displays a list of all the sheets in a workbook. If a new worksheet is added while the task pane is hidden, making the task pane visible would not, in itself, add the new worksheet name to the list. But your code can respond to the `VisibilityModeChanged` event to reload the [Worksheet.name](/javascript/api/excel/excel.worksheet#name) property of all the worksheets in the [Workbook.worksheets](/javascript/api/excel/excel.workbook#worksheets) collection as shown in the example code below.
 
