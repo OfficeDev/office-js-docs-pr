@@ -1,115 +1,166 @@
 ---
-ms.date: 08/25/2020
-title: "Configure your Excel add-in to share the browser runtime"
-ms.prod: excel
-description: 'Configure your Excel add-in to share the browser runtime and run ribbon, task pane, and custom function code in the same runtime.'
+ms.date: 11/30/2020
+title: "Configure your Office Add-in to use a shared JavaScript runtime"
+ms.prod: excel,powerpoint
+description: 'Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.'
 localization_priority: Priority
 ---
 
-# Configure your Excel add-in to use a shared JavaScript runtime
+# Configure your Office Add-in to use a shared JavaScript runtime
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not having access to all CORS functionality from a custom function.
-
-However, you can configure your Excel add-in to share code in a shared JavaScript runtime. This enables better coordination across your add-in and access to the DOM and CORS from all parts of your add-in. It also enables you to run code when the document opens, or to run code while the task pane is closed. To configure your add-in to use a shared runtime, follow the instructions in this article.
+You can configure your Office Add-in to run all of its code in a single shared JavaScript runtime (also known as a shared runtime). This enables better coordination across your add-in and access to the DOM and CORS from all parts of your add-in. It also enables additional features such as running code when the document opens, or enabling or disabling ribbon buttons. To configure your add-in to use a shared JavaScript runtime, follow the instructions in this article.
 
 ## Create the add-in project
 
-If you are starting a new project, follow these steps to use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts with the following answers:
+If you are starting a new project, follow these steps to use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create an Excel or PowerPoint add-in project.
+
+Run the following command to generate an Excel add-in with custom functions:
 
 ```command line
-yo office
+yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js
 ```
 
-- Choose a project type: **Excel Custom Functions Add-in project**
-- Choose a script type: **JavaScript**
-- What do you want to name your add-in? **My Office Add-in**
+Run the following command to generate a PowerPoint add-in:
 
-![Screenshot of answering prompts from yo office to create the add-in project.](../images/yo-office-excel-project.png)
+```command line
+yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js
+```
 
-After you complete the wizard, the generator creates the project and installs supporting Node components.
+The generator will create the project and install supporting Node components.
 
 ## Configure the manifest
 
-Follow these steps for a new or existing project to configure it to use a shared runtime.
+Follow these steps for a new or existing project to configure it to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
-1. Start Visual Studio Code and open the **My Office Add-in** project.
+1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 2. Open the **manifest.xml** file.
-3. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section. The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed. The resid is `ContosoAddin.Url` which references a string in the resources section later. You can use any resid value you want, but it should match the resid of the other elements in your add-in elements.
+3. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The resid is `TaskPane.Url` which references that taskpane.html file location in the ` <bt:Urls>` section later.
 
    ```xml
-   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+   <VersionOverrides ...>
      <Hosts>
-       <Host xsi:type="Workbook">
+       <Host ...>
+       ...
        <Runtimes>
-         <Runtime resid="ContosoAddin.Url" lifetime="long" />
+         <Runtime resid="Taskpane.Url" lifetime="long" />
        </Runtimes>
-       <AllFormFactors>
+       ...
    ```
 
-4. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**. This resid matches the `<Runtime>` resid element. Note that if you don't have custom functions, you will not have a **Page** entry and can skip this step.
+4. If you generated an Excel add-in with custom functions, find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
    ...
    <Page>
-   <SourceLocation resid="ContosoAddin.Url"/>
+     <SourceLocation resid="Taskpane.Url"/>
    </Page>
    ...
    ```
 
-5. In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **ContosoAddin.Url**. Note that if you don't have action commands, you won't have a **FunctionFile** entry, and can skip this step.
+5. Find the `<FunctionFile ...>` tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a **FunctionFile** entry, and can skip this step.
 
-   ```xml
-   <DesktopFormFactor>
-   <GetStarted>
-   ...
-   </GetStarted>
-   <FunctionFile resid="ContosoAddin.Url"/>
-   ```
+    ```xml
+    </GetStarted>
+    ...
+    <FunctionFile resid="Taskpane.Url"/>
+    ...
+    ```
 
-6. In the `<Action>` section, change the source location from **Taskpane.Url** to **ContosoAddin.Url**. Note that if you don't have a task pane, you won't have a **ShowTaskpane** action, and can skip this step.
+6. Save the **manifest.xml** file.
 
-   ```xml
-   <Action xsi:type="ShowTaskpane">
-   <TaskpaneId>ButtonId1</TaskpaneId>
-   <SourceLocation resid="ContosoAddin.Url"/>
-   </Action>
-   ```
+## Configure the webpack.config.js file
 
-7. Add a new **Url id** for **ContosoAddin.Url** that points to **taskpane.html**.
+The webpack.config.js will build multiple runtime loaders. You need to modify it to just load the shared JavaScript runtime via the taskpane.html file.
 
-   ```xml
-   <bt:Urls>
-   <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
-   ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/dist/taskpane.html"/>
-   ...
-   ```
+1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
+2. Open the **webpack.config.js** file.
+3. If your **webpack.config.js** file has the following **functions.html** plugin code, remove it:
 
-8. Make sure the taskpane.html has a `<script>` tag that references the dist/functions.js file. The following is an example.
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "functions.html",
+        template: "./src/functions/functions.html",
+        chunks: ["polyfill", "functions"]
+      })
+    ```
 
-   ```html
-   <script type="text/javascript" src="/dist/functions.js" ></script>
-   ```
+4. If your **webpack.config.js** file has the following **commands.html** plugin code, remove it:
 
-   > [!NOTE]
-   > If the add-in uses Webpack and the HtmlWebpackPlugin to insert script tags, as add-ins created by the Yeoman generator do (see [Create the add-in project](#create-the-add-in-project) above), then you must ensure that the functions.js module is included in the `chunks` array as in the following example.
-   >
-   > ```javascript
-   > new HtmlWebpackPlugin({
-   >     filename: "taskpane.html",
-   >     template: "./src/taskpane/taskpane.html",
-   >     chunks: ["polyfill", "taskpane", "functions"]
-   > }),
-   >```
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "commands.html",
+        template: "./src/commands/commands.html",
+        chunks: ["polyfill", "commands"]
+      })
+    ```
 
-9. Save your changes and rebuild the project.
+5. If your project used either the **functions** or **commands** chunks, add them to the chunks list as shown below (the following code is for if your project used both chunks):
+
+    ```javascript
+      new HtmlWebpackPlugin({
+        filename: "taskpane.html",
+        template: "./src/taskpane/taskpane.html",
+        chunks: ["polyfill", "taskpane", "commands", "functions"]
+      })
+    ```
+
+6. Save your changes and rebuild the project.
 
    ```command line
    npm run build
    ```
+
+> [!NOTE]
+> If your project has a **functions.html** file or **commands.html** file, they can be removed. The **taskpane.html** will load the **functions.js** and **commands.js** code into the shared JavaScript runtime via the webpack updates you just made.
+
+## Test your Office Add-in changes
+
+You can test that you are using the shared JavaScript runtime correctly by using the following instructions.
+
+1. Open the **manifest.xml** file.
+2. Find the `<Control xsi:type="Button" id="TaskpaneButton">` section and change the following `<Action ...>` XML.
+    
+    from:
+    
+    ```xml
+    <Action xsi:type="ShowTaskpane">
+      <TaskpaneId>ButtonId1</TaskpaneId>
+      <SourceLocation resid="Taskpane.Url"/>
+   </Action>
+    ```
+    
+    to:
+    
+    ```xml
+    <Action xsi:type="ExecuteFunction">
+		  <FunctionName>action</FunctionName>
+		</Action>
+    ```
+3. Open the **./src/commands/commands.js** file.
+4. Replace the **action** function with the code below. This will update the function to open and modify the task pane button to increment a counter. Opening and accessing the task pane DOM from a command only works with the shared JavaScript runtime.
+    
+    ```javascript
+    var _count=0;
+    
+    function action(event) {
+      // Your code goes here
+      _count++;
+      Office.addin.showAsTaskpane();
+      document.getElementById("run").textContent="Go"+_count;
+    
+      // Be sure to indicate when the add-in command function is complete
+      event.completed();
+    }
+    ```
+
+5. Save your changes and run the project.
+
+   ```command line
+   npm start
+   ```
+
+Each time you choose the add-ins button, it will change the **run** button text to **go** and increment a counter after it.
 
 ## Runtime lifetime
 
@@ -140,3 +191,5 @@ Don't design your add-in to use multiple task panes if you are planning to use a
 ## See also
 
 - [Overview: Run your add-in code in a shared JavaScript runtime](custom-functions-shared-overview.md)
+> [!NOTE]
+> Information the user should notice even if skimming
