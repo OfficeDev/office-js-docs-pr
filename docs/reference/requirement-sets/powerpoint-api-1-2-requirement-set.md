@@ -1,18 +1,16 @@
 ---
-title: PowerPoint JavaScript preview APIs
-description: 'Details about upcoming PowerPoint JavaScript APIs.'
-ms.date: 11/09/2020
+title: PowerPoint JavaScript API requirement set 1.2
+description: 'Details about the PowerPointApi 1.2 requirement set.'
+ms.date: 12/04/2020
 ms.prod: powerpoint
 localization_priority: Normal
 ---
 
-# PowerPoint JavaScript preview APIs
+# What's new in PowerPoint JavaScript API 1.2
 
-New PowerPoint JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.
+PowerPointApi added support for inserting slides from another presentation into the current presentation and for deleting slides.
 
 The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
-
-[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
@@ -20,7 +18,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 ## API list
 
-The following table lists the PowerPoint JavaScript APIs currently in preview. For a complete list of all PowerPoint JavaScript APIs (including preview APIs and previously released APIs), see [all PowerPoint JavaScript APIs](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true).
+The following table lists the PowerPoint JavaScript API requirement set 1.2. For a complete list of all PowerPoint JavaScript APIs (including preview APIs and previously released APIs), see [all PowerPoint JavaScript APIs](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|

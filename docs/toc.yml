@@ -1093,8 +1093,8 @@ items:
       - name: PowerPointApi 1.1 requirement set
         href: reference/requirement-sets/powerpoint-api-1-1-requirement-set.md
         displayName: PowerPoint
-      - name: PowerPoint preview APIs
-        href: reference/requirement-sets/powerpoint-preview-apis.md
+      - name: PowerPointApi 1.2 requirement set
+        href: reference/requirement-sets/powerpoint-api-1-2-requirement-set.md
         displayName: PowerPoint
     - name: API reference
       href: reference/powerpoint-api-reference.md
