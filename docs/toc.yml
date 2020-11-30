@@ -192,6 +192,8 @@ items:
             href: design/add-in-commands.md
           - name: Create add-in commands
             href: develop/create-addin-commands.md
+          - name: Create custom contextual tabs
+            href: design/contextual-tabs.md
           - name: Enable and Disable Add-in Commands
             href: design/disable-add-in-commands.md
           - name: Integrate built-in Office buttons into custom tabs

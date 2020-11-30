@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 11/07/2020
+ms.date: 11/20/2020
 localization_priority: Normal
 ---
 
@@ -138,6 +138,10 @@ function enableChartFormat() {
 ```
 
 Fourth, define the `disableChartFormat` handler. It would be identical to `enableChartFormat` except that the **enabled** property of the button object would be set to `false`.
+
+### Toggle tab visibility and the enabled status of a button at the same time
+
+The **requestUpdate** method is also used to toggle the visibility of a custom contextual tab. For details about this and example code, see [Enable and Disable Add-in Commands](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
 
 ## Best practice: Test for control status errors
 
