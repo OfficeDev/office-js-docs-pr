@@ -14,7 +14,7 @@ The following table lists the PowerPoint requirement sets, the Office client app
 
 |  Requirement set  |  Office on Windows<br>(connected to a Microsoft 365 subscription)  |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | Version 2011 (Build 13426.20184) or later| N/A | 16.43 or later | October, 2020 |
+| [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | Version 2011 (Build 13426.20184) or later| not yet<br>supported | 16.43 or later | October, 2020 |
 | [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | Version 1810 (Build 11001.20074) or later | 2.17 or later | 16.19 or later | October 2018 |
 
 ## Office versions and build numbers
@@ -29,7 +29,7 @@ PowerPoint JavaScript API 1.1 contains a [single API to create a new presentatio
 
 ## PowerPoint JavaScript API 1.2
 
-PowerPoint JavaScript API 1.2 adds support for inserting slides from another PowerPoint presentation into the current presentation and for deleting slides. For details about the APIs, see [Insert slides into a PowerPoint presentation](../../powerpoint/insert-slides-into-presentation.md).
+PowerPoint JavaScript API 1.2 adds support for inserting slides from another PowerPoint presentation into the current presentation and for deleting slides. For details about the APIs, see [Insert and delete slides in a PowerPoint presentation](../../powerpoint/insert-slides-into-presentation.md).
 
 ## How to use PowerPoint requirement sets at runtime and in the manifest
 
