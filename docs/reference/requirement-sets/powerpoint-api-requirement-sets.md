@@ -1,7 +1,7 @@
 ---
 title: PowerPoint JavaScript API requirement sets
 description: 'Learn more about the PowerPoint JavaScript API requirement sets.'
-ms.date: 10/26/2020
+ms.date: 12/04/2020
 ms.prod: powerpoint
 localization_priority: Priority
 ---
@@ -15,7 +15,7 @@ The following table lists the PowerPoint requirement sets, the Office client app
 |  Requirement set  |  Office on Windows<br>(connected to a Microsoft 365 subscription)  |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Preview](powerpoint-preview-apis.md)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://insider.office.com)). |
-| PowerPointApi 1.1 | Version 1810 (Build 11001.20074) or later | 2.17 or later | 16.19 or later | October 2018 |
+| [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | Version 1810 (Build 11001.20074) or later | 2.17 or later | 16.19 or later | October 2018 |
 
 ## Office versions and build numbers
 
@@ -26,6 +26,10 @@ For more information about Office versions and build numbers, see:
 ## PowerPoint JavaScript API 1.1
 
 PowerPoint JavaScript API 1.1 contains a [single API to create a new presentation](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-). For details about the API, see [Create a presentation](../../powerpoint/powerpoint-add-ins.md#create-a-presentation).
+
+## PowerPoint JavaScript API 1.2
+
+PowerPoint JavaScript API 1.2 adds support for inserting slides from another PowerPoint presentation into the current presentation. For details about the APIs, see [Insert slides into a PowerPoint presentation](../../powerpoint/insert-slides-into-presentation.md).
 
 ## How to use PowerPoint requirement sets at runtime and in the manifest
 
