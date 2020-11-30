@@ -16,4 +16,4 @@ The following table lists the APIs in PowerPoint JavaScript API requirement set 
 
 | Class | Method | Description |
 |:---|:---|:---|
-|[PowerPoint](/javascript/api/excel/excel.chartaxistitle)|[createPresentation](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-)|Specifies the angle to which the text is oriented for the chart axis title.|
+|[PowerPoint](/javascript/api/excel/powerpoint)|[createPresentation](/javascript/api/powerpoint#powerpoint-createpresentation-base64file--options)|Creates a new presentation and opens it in another PowerPoint window.|
