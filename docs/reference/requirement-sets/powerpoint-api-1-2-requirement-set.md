@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # What's new in PowerPoint JavaScript API 1.2
 
-PowerPointApi added support for inserting slides from another presentation into the current presentation and for deleting slides.
+PowerPointApi 1.2 added support for inserting slides from another presentation into the current presentation and for deleting slides.
 
 The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
 
