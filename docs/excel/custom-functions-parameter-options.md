@@ -1,5 +1,5 @@
 ---
-ms.date: 11/06/2020
+ms.date: 11/30/2020
 description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -238,6 +238,37 @@ In the following code sample, the `invocation` context is explicitly stated for 
  */
 function add(first, second, invocation) {
   return first + second;
+}
+```
+
+## Detect the address of a parameter
+
+As of [Custom Functions Runtime 1.3](/office/dev/add-ins/excel/custom-functions-requirement-sets), you can use [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) retrieve the address of a custom function parameter. The [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) property of `Invocation` allows a function to return the addresses of all input parameters. 
+
+This could be useful in scenarios where input data types may vary. The address of an input parameter could be used to check the number format of the input value. This value could then be adjusted prior to input, if necessary. The address of an input parameter could also be used to detect if the input has any related properties that may be relevant to subsequent calculations. 
+
+When a custom function calling `Invocation.parameterAddresses` runs, the parameter address is returned following the format `SheetName!CellNumber` in the cell that invoked the function. For example, if the input parameter is located on a sheet called Costs in cell D8, the returned parameter address value would be `Costs!D8`. If there are multiple parameters, the addresses are returned across multiple cells, descending vertically from the cell that invoked the function. 
+
+>[!NOTE]
+> The `parameterAddresses` property currently only works with manually-created JSON metadata. It does not work with with the JSON autogeneration process. 
+
+```js
+/**
+ * Return the address of two parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter
+ * @param {invocation} invocation Invoke address requirement. 
+ * @requiresParameterAddresses
+ */
+function GetParameterAdds(firstParameter, secondParameter, thirdParameter, invocationContext) {
+  var items = [
+    [invocationContext.parameterAddresses[0]],
+    [invocationContext.parameterAddresses[1]],
+    [invocationContext.parameterAddresses[2]]
+  ];
+  return items;
 }
 ```
 
