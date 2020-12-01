@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 07/09/2020
+ms.date: 12/01/2020
 localization_priority: Normal
 ---
 
@@ -70,12 +70,18 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Select the **Get Add-ins** button on the ribbon.
 
-    ![Outlook 2016 ribbon pointing to Store button](../images/outlook-sideload-desktop-store.png)
+    ![Outlook 2016 ribbon pointing to Get Add-ins button](../images/outlook-sideload-desktop-store.png)
 
-    > [!NOTE]
-    > If you don't see the **Get Add-ins** button in your version of Outlook, select the **Store** button on the ribbon instead.
+    > [!IMPORTANT]
+    > If you don't see the **Get Add-ins** button in your version of Outlook, select:
+    >
+    > - **Store** button on the ribbon, if available.
+    >
+    >   OR
+    >
+    > - **File** menu, then select the **Manage Add-ins** button on the **Info** tab to open the **Add-ins** dialog in Outlook on the web.<br>You can see more about the web experience in the previous section [Sideload an add-in in Outlook on the web](#sideload-an-add-in-in-outlook-on-the-web).
 
-1. Select **Add-Ins**, and then select **My add-ins**.
+1. If there are tabs near the top of the dialog, ensure that the **Add-ins** tab is selected. Choose **My add-ins**.
 
     ![Outlook 2016 store dialog with My add-ins selected](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -89,7 +95,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Open Outlook 2013 on Windows.
 
-1. Select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab. Outlook will open a browser.
+1. Select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab. Outlook will open the web version in a browser.
 
 1. Follow the steps in the [Sideload an add-in in Outlook on the web](#sideload-an-add-in-in-outlook-on-the-web) section according to your version of Outlook on the web.
 
