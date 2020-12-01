@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 11/24/2020
+ms.date: 11/01/2020
 localization_priority: Normal
 ---
 
@@ -242,10 +242,12 @@ See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slice
 
 #### Create a PivotFilter
 
-The following four code samples show how to use each of the four types of PivotFilters. The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** hierarchy, hiding any data prior to a specified date. 
+##### PivotDateFilter
+
+The following four code samples show how to use each of the four types of PivotFilters. The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** hierarchy, hiding any data prior to **2020-08-01**. 
 
 > [!IMPORTANT] 
-> The `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
+> A PivotFilter cannot be applied to a PivotHierarchy unless that hierarchy is used to pivot data within the table. In the following code sample, the `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
 
 ```js
 Excel.run(function (context) {
@@ -279,7 +281,9 @@ Excel.run(function (context) {
 > [!NOTE]
 > The three subsequent code snippets display only filter-specific excerpts and are not complete code samples. See the preceding code sample for a complete `PivotFilter` implementation example.
 
-The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) to the **Type** hierarchy, using the `LabelFilterCondition.beginsWith` property to exclude specific labels. 
+##### PivotLabelFilter
+
+The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) to the **Type** hierarchy, using the `LabelFilterCondition.beginsWith` property to exclude labels that start with the letter **L**. 
 
 ```js
     // Get the "Type" field.
@@ -296,6 +300,8 @@ The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascri
     filterField.applyFilter({ labelFilter: filter });
 ```
 
+##### PivotManualFilter
+
 The third code snippet applies a manual filter with [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) to the the **Classification** hierarchy, filtering out data that doesn't include the classification **Organic**. 
 
 ```js
@@ -304,6 +310,8 @@ The third code snippet applies a manual filter with [PivotManualFilter](/javascr
     var manualFilter = { selectedItems: ["Organic"] };
     filterField.applyFilter({ manualFilter: manualFilter });
 ```
+
+##### PivotValueFilter
 
 To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), as shown in the final code snippet. The `PivotValueFilter` compares the data in the **Farm** hierarchy to the data in the **Crates Sold Wholesale** hierarchy, including only farms whose sum of crates sold exceeds the specified filter value. 
 
