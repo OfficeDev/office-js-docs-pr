@@ -286,7 +286,7 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> The three subsequent code snippets display only filter-specific excerpts and are not complete code samples. See the preceding code sample for a complete `PivotFilter` implementation example.
+> The three subsequent code snippets only display filter-specific excerpts, instead of full `Excel.run` calls.
 
 ##### PivotLabelFilter
 
