@@ -76,6 +76,10 @@ The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange
 
 The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to a bug in the Excel on the web UI, setting the `useStandardHeight` property to `true` will calculate height imprecisely on this platform. For example, a standard height of **14** will be modified to **14.25** in Excel on the web.
 
+### Range `getImage` method
+
+The Range [getImage](/javascript/api/excel/excel.range#getImage__) method isn't currently supported in Excel for Mac. See [OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) for the current status.
+
 ## See also
 
 - [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)
