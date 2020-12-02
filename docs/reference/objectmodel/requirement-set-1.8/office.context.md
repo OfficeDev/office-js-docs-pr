@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.8
 description: 'Office.Context object members available for Outlook add-ins using Mailbox API requirement set 1.8.'
-ms.date: 11/24/2020
+ms.date: 12/02/2020
 localization_priority: Normal
 ---
 
@@ -25,9 +25,9 @@ Office.context provides shared interfaces that are used by add-ins in all of the
 | [contentLanguage](#contentlanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.8&preserve-view=true) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
+| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.8&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [mailbox](office.context.mailbox.md) | Compose<br>Read | [Mailbox](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.8&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -154,7 +154,7 @@ function write(message){
 Gets the Office application that is hosting the add-in.
 
 > [!NOTE]
-> Alternatively, you can use the `Office.context.diagnostics` property to get this information.
+> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get this information.
 
 ##### Type
 
@@ -164,7 +164,7 @@ Gets the Office application that is hosting the add-in.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.2|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5|
 |[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
@@ -182,6 +182,9 @@ console.log(JSON.stringify(Office.context.host));
 
 Provides the platform on which the add-in is running.
 
+> [!NOTE]
+> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get this information.
+
 ##### Type
 
 *   [PlatformType](/javascript/api/office/office.platformtype)
@@ -190,7 +193,7 @@ Provides the platform on which the add-in is running.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5|
 |[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
 ##### Example
