@@ -1,5 +1,5 @@
 ---
-ms.date: 11/30/2020
+ms.date: 12/02/2020
 title: "Configure your Office Add-in to use a shared JavaScript runtime"
 ms.prod: non-product-specific
 description: 'Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.'
@@ -9,7 +9,6 @@ localization_priority: Priority
 # Configure your Office Add-in to use a shared JavaScript runtime
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-requirements-note.md)]
-
 
 You can configure your Office Add-in to run all of its code in a single shared JavaScript runtime (also known as a shared runtime). This enables better coordination across your add-in and access to the DOM and CORS from all parts of your add-in. It also enables additional features such as running code when the document opens, or enabling or disabling ribbon buttons. To configure your add-in to use a shared JavaScript runtime, follow the instructions in this article.
 

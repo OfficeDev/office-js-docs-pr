@@ -222,6 +222,8 @@ items:
           href: design/task-pane-add-ins.md
       - name: Keyboard shortcuts
         href: design/keyboard-shortcuts.md
+      - name: Run code on document open
+        href: excel/run-code-on-document-open.md
       - name: Show or hide an Office Add-in task pane
         href: excel/show-hide-add-in.md
       - name: Localization
@@ -663,9 +665,6 @@ items:
       displayName: Excel
     - name: Ranges (advanced)
       href: excel/excel-add-ins-ranges-advanced.md
-      displayName: Excel
-    - name: Run code on document open
-      href: excel/run-code-on-document-open.md
       displayName: Excel
     - name: Shapes
       href: excel/excel-add-ins-shapes.md
