@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 11/01/2020
+ms.date: 12/01/2020
 localization_priority: Normal
 ---
 
@@ -24,6 +24,7 @@ The [PivotTable](/javascript/api/excel/excel.pivottable) is the central object f
 - These [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) can be added to specific hierarchy collections to define how the PivotTable pivots data (as explained in the [following section](#hierarchies)).
 - A [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contains a [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) that has exactly one [PivotField](/javascript/api/excel/excel.pivotfield). If the design expands to include OLAP PivotTables, this may change.
 - A [PivotField](/javascript/api/excel/excel.pivotfield) contains a [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) that has multiple [PivotItems](/javascript/api/excel/excel.pivotitem).
+- A [PivotField](/javascript/api/excel/excel.pivotfield) can have one or more [PivotFilters](/javascript/api/excel/excel.pivotfilters), as long as the field's [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) is assigned to a hierarchy category. 
 - A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotLayout](/javascript/api/excel/excel.pivotlayout) that defines where the [PivotFields](/javascript/api/excel/excel.pivotfield) and [PivotItems](/javascript/api/excel/excel.pivotitem) are displayed in the worksheet.
 
 Let's look at how these relationships apply to some example data. The following data describes fruit sales from various farms. It will be the example throughout this article.
@@ -229,7 +230,7 @@ See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slice
 
 ### Filter with PivotFilters
 
-[PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on the four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are contained within [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy). A PivotFilter can only be applied to a PivotHierarchy that is used to pivot data within the table.
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on the four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, a `PivotFilter` is assigned to a [PivotField](/javascript/api/excel/excel.pivotfield), and each `PivotField` can have one or more `PivotFilters`. To apply a PivotFilter to a PivotField, the field's corresponding [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) must be assigned to a hierarchy category. 
 
 #### Types of PivotFilters
 
@@ -242,12 +243,14 @@ See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slice
 
 #### Create a PivotFilter
 
+To filter PivotTable data with a PivotFilter, apply the filter to a [PivotField](/javascript/api/excel/excel.pivotfield). The following four code samples show how to use each of the four types of PivotFilters. 
+
 ##### PivotDateFilter
 
-The following four code samples show how to use each of the four types of PivotFilters. The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** hierarchy, hiding any data prior to **2020-08-01**. 
+The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** PivotField, hiding any data prior to **2020-08-01**. 
 
 > [!IMPORTANT] 
-> A PivotFilter cannot be applied to a PivotHierarchy unless that hierarchy is used to pivot data within the table. In the following code sample, the `dateHierarchy` must be added to the PivotTable's `rowHierarchies` before it can be used for filtering.
+> A PivotFilter cannot be applied to a PivotField unless that field's PivotHierarchy is assigned to a hierarchy category. In the following code sample, the `dateHierarchy` must be added to the PivotTable's `rowHierarchies` category before it can be used for filtering.
 
 ```js
 Excel.run(function (context) {
@@ -283,7 +286,7 @@ Excel.run(function (context) {
 
 ##### PivotLabelFilter
 
-The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) to the **Type** hierarchy, using the `LabelFilterCondition.beginsWith` property to exclude labels that start with the letter **L**. 
+The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) to the **Type** PivotField, using the `LabelFilterCondition.beginsWith` property to exclude labels that start with the letter **L**. 
 
 ```js
     // Get the "Type" field.
@@ -302,7 +305,7 @@ The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascri
 
 ##### PivotManualFilter
 
-The third code snippet applies a manual filter with [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) to the the **Classification** hierarchy, filtering out data that doesn't include the classification **Organic**. 
+The third code snippet applies a manual filter with [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) to the the **Classification** field, filtering out data that doesn't include the classification **Organic**. 
 
 ```js
     // Apply a manual filter to include only a specific PivotItem (the string "Organic").
@@ -313,7 +316,7 @@ The third code snippet applies a manual filter with [PivotManualFilter](/javascr
 
 ##### PivotValueFilter
 
-To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), as shown in the final code snippet. The `PivotValueFilter` compares the data in the **Farm** hierarchy to the data in the **Crates Sold Wholesale** hierarchy, including only farms whose sum of crates sold exceeds the specified filter value. 
+To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), as shown in the final code snippet. The `PivotValueFilter` compares the data in the **Farm** PivotField to the data in the **Crates Sold Wholesale** PivotField, including only farms whose sum of crates sold exceeds the value **500**. 
 
 ```js
     // Get the "Farm" field.
@@ -332,7 +335,7 @@ To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/e
 
 #### Remove PivotFilters
 
-To remove all PivotFilters, apply the `clearAllFilters` method, as shown in the following code sample. 
+To remove all PivotFilters, apply the `clearAllFilters` method to each PivotField, as shown in the following code sample. 
 
 ```js
 Excel.run(function (context) {
