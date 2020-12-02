@@ -72,6 +72,10 @@ Excel.run(function (context) {
 
 The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have an address string limit of 8192 characters. When this limit is exceeded, the address string is truncated to 8192 characters.
 
+### Cell format `useStandardHeight` issue
+
+The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to a bug in the Excel on the web UI, setting the `useStandardHeight` property to `true` will calculate height imprecisely on this platform. For example, a standard height of **14** will be modified to **14.25** in Excel on the web.
+
 ## See also
 
 - [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)
