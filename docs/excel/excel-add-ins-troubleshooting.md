@@ -68,6 +68,10 @@ Excel.run(function (context) {
 });
 ```
 
+### Range return character limit
+
+The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have an address string limit of 8192 characters. When this limit is exceeded, the address string is truncated to 8192 characters.
+
 ## See also
 
 - [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)
