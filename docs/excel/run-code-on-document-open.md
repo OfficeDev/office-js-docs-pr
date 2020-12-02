@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Run code in your Office Add-in when the document opens
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-requirements-note.md)]
+[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
