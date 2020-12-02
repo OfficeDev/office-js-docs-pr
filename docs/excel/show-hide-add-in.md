@@ -1,11 +1,13 @@
 ---
 title: Show or hide the task pane of your Office Add-in
 description: 'Learn how to programmatically hide or show the user interface of an add-in while it runs continuously'
-ms.date: 11/30/2020
+ms.date: 12/02/2020
 localization_priority: Normal
 ---
 
 # Show or hide the task pane of your Office Add-in
+
+[!include[Shared JavaScript runtime requirements](../includes/shared-requirements-note.md)]
 
 You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` function.
 
@@ -19,7 +21,7 @@ function onCurrentQuarter() {
 }
 ```
 
-The previous code assumes that there is an Excel worksheet named **CurrentQuarterSales**. The add-in will make the task pane visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onactivated) event which has been registered for the worksheet.
+The previous code assumes a scenario where there is an Excel worksheet named **CurrentQuarterSales**. The add-in will make the task pane visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onactivated) event which has been registered for the worksheet.
 
 You can also hide the task pane by calling the `Office.addin.hide()` function.
 
@@ -35,7 +37,7 @@ The previous code is a handler that is registered for the [Office.Worksheet.onDe
 
 When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the page that you assigned to the resource ID (`resid`) for the task pane. This is the `resid` that you assigned to the `<SourceLocation>` of the `<Action xsi:type="ShowTaskpane">` in the manifest. (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).)
 
-Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code should to continue running until the function is complete. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using. 
+Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code will continue running until the function is complete. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using.
 
 ## Configure your add-in to use the shared runtime
 
@@ -84,9 +86,11 @@ var removeVisibilityModeHandler =
 removeVisibilityModeHandler();
 ```
 
-The `onVisibilityModeChanged` method is asynchronous which means that if your code calls the *deregister* handler that `onVisibilityModeChanged` returns, you should ensure that `onVisibilityModeChanged` has completed before calling the deregister handler. One way to do that is to use the `await` keyword on the method call as in the following example.
+The `onVisibilityModeChanged` method is asynchronous and returns a promise, which means that your code needs to await the promise before it can call the **deregister** handler.
 
 ```javascript
+//await the promise from onVisibilityModeChanged and assign
+//the returned deregister handler to removeVisibilityModeHandler.
 var removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
@@ -95,33 +99,15 @@ var removeVisibilityModeHandler =
     });
 ```
 
-If you want to use only pre-ES2015 JavaScript, your code can use the `then` method to wait until the returned Promise object has resolved and assign the returned function to a global variable as in the following example.
+The deregister function is also asynchronous and returns a promise. So, if you have code that should not run until after the deregistration is complete, then you should await the promise returned by the deregister function.
 
 ```javascript
-var removeVisibilityModeHandler;
-
-Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
-            // Code that runs whenever the task pane is made visible.
-        }
-}).then(function(removeHandler) {
-        removeVisibilityModeHandler = removeHandler;
-    });
-
-// In some later code path, deregister with:
-removeVisibilityModeHandler();
-```
-
-The deregister function is itself asynchronous. So, if you have code that should not run until after the deregistration is complete, then the deregister function should also be awaited with either the `await` keyword or with a `then` method as in the following examples.
-
-To deregister the handler:
-
-```javascript
+//await the promise from the deregister handler before continuing
 await removeVisibilityModeHandler();
 // subsequent code here
-
-// or use pre-ES2015 syntax:
-removeVisibilityModeHandler().then(function () {
-        // subsequent code here
-    })
 ```
+
+## See also
+
+- [Configure your Office Add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md)
+- [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)
