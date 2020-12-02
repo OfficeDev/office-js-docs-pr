@@ -7,7 +7,9 @@ localization_priority: Normal
 
 # Show or hide the task pane of your Office Add-in
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-requirements-note.md)]
+
+
+[!include[Shared JavaScript runtime requirements](./includes/shared-requirements-note.md)]
 
 You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` function.
 
