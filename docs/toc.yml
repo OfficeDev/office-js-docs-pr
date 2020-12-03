@@ -727,9 +727,6 @@ items:
     - name: Return a dynamic array
       href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
-    - name: Shared runtime
-      href: excel/custom-functions-shared-overview.md
-      displayName: Excel, Custom Functions
     - name: UI-less custom functions
       items: 
         - name: Authentication for UI-less functions
