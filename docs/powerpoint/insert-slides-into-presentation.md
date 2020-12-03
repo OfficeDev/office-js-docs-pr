@@ -158,7 +158,7 @@ await PowerPoint.run(async function(context) {
 ```
 
 > [!NOTE]
-> The slides will be inserted in the order in the same relative order in which they appear in the source presentation, regardless of the order in which they appear in the array.
+> The slides will be inserted in the same relative order in which they appear in the source presentation, regardless of the order in which they appear in the array.
 
 There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. Also, because *a slide can be manually copied from one presentation to another*, your add-in shouldn't be designed in such a way that the user must have the source presentation open in addition to the target presentation (where the add-ins running) because this would make the slide insertion feature of the add-in pointless. For these reasons, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or an image, and then correlate each title or image with the slide's ID.
 
