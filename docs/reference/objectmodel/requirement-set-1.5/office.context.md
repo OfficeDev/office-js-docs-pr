@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.5
 description: 'Office.Context object members available for Outlook add-ins using Mailbox API requirement set 1.5.'
-ms.date: 12/02/2020
+ms.date: 12/03/2020
 localization_priority: Normal
 ---
 
@@ -154,7 +154,7 @@ function write(message){
 Gets the Office application that is hosting the add-in.
 
 > [!NOTE]
-> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get this information.
+> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get the host.
 
 ##### Type
 
@@ -183,7 +183,7 @@ console.log(JSON.stringify(Office.context.host));
 Provides the platform on which the add-in is running.
 
 > [!NOTE]
-> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get this information.
+> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get the platform.
 
 ##### Type
 

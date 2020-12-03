@@ -1,7 +1,7 @@
 ---
 title: Office.context - preview requirement set
 description: 'Office.Context object members available for Outlook add-ins using Mailbox API preview requirement set.'
-ms.date: 12/02/2020
+ms.date: 12/03/2020
 localization_priority: Normal
 ---
 
@@ -189,7 +189,7 @@ function write(message){
 Gets the Office application that is hosting the add-in.
 
 > [!NOTE]
-> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get this information.
+> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get the host.
 
 ##### Type
 
@@ -267,7 +267,7 @@ function applyOfficeTheme(){
 Provides the platform on which the add-in is running.
 
 > [!NOTE]
-> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get this information.
+> Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get the platform.
 
 ##### Type
 
