@@ -33,7 +33,7 @@ There are many ways to convert a file to base64. Which programming language and 
 
     ![Screenshot showing an HTML file type input control preceded by an instructional sentence reading "Select a PowerPoint presentation from which to insert slides". The control consists of a button labelled "Choose file" followed by the sentence "No file chosen".](../images/powerpoint-html-file-input-control.png)
 
-2. Add the following code to the add-in's JavaScript to assign a function to the input control's `change` event. (You create the `storeFileAsBase64` in the next step.)
+2. Add the following code to the add-in's JavaScript to assign a function to the input control's `change` event. (You create the `storeFileAsBase64` function in the next step.)
 
     ```javascript
     $("#file").change(storeFileAsBase64);
@@ -76,7 +76,7 @@ async function insertAllSlides() {
 }
 ```
 
-You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting (and more), by passing a [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions?view=powerpoint-js-preview) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
+You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting (and more), by passing an [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
 
 - There are two possible values for the `formatting` property: "UseDestinationTheme" and "KeepSourceFormatting". Optionally, you can use the full name of the `InsertSlideFormatting` enum, such as `PowerPoint.InsertSlideFormatting.useDestinationTheme`.
 - The function will insert the slides from the source presentation immediately after the slide specified by the `targetSlideId` property. The value of this property is a string of one of three possible forms: ***nnn*#**, **#*mmmmmmmmm***, or ***nnn*#*mmmmmmmmm***, where *nnn* is the slide's ID (typically 3 digits) and *mmmmmmmmm* is the slide's creation ID (typically 9 digits). Some examples are `267#763315295`, `267#`, and `#763315295`.
@@ -98,7 +98,7 @@ async function insertSlidesDestinationFormatting() {
 
 Of course, you typically won't know at coding time the ID or creation ID of the target slide. More commonly, an add-in will ask users to select the target slide. The following steps show how to get the ***nnn*#** ID of the currently selected slide and use it as the target slide.
 
-1. Create a function that gets the ID of the currently selected slide by using the `getSelectedDataAsync` method of the Common JavaScript APIs. The following is an example. Note that the call to `getSelectedDataAsync` is embedded in a Promise-returning function. It is a good practice to do this because the Promise-returning function is easy to call (and optionally await) inside the `run()` method of an application-specific API. By awaiting the Promise-returning function, you are assured that the callback function of the Common API method has completed before the next line in the `run()` method executes.
+1. Create a function that gets the ID of the currently selected slide by using the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs. The following is an example. Note that the call to `getSelectedDataAsync` is embedded in a Promise-returning function. It is a good practice to do this because the Promise-returning function is easy to call (and await) inside the `run()` method of an application-specific API. By awaiting the Promise-returning function, you are assured that the callback function of the Common API method has completed before the next line in the `run()` method executes.
 
  
     ```javascript
@@ -120,39 +120,39 @@ Of course, you typically won't know at coding time the ID or creation ID of the 
     }
     ```
 
-1. Call your new function inside the `PowerPoint.run()` of the main function and pass the ID that it returns (concatenated with the "#" symbol) as the value of the `targetSlideId` property of the `InsertSlideOptions` parameter. The following is an example.
+1. Call your new function inside the [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) of the main function and pass the ID that it returns (concatenated with the "#" symbol) as the value of the `targetSlideId` property of the `InsertSlideOptions` parameter. The following is an example.
 
     ```javascript
     async function insertAfterSelectedSlide() {
-    await PowerPoint.run(async function(context) {
+        await PowerPoint.run(async function(context) {
 
-        const selectedSlideID = await getSelectedSlideID();
+            const selectedSlideID = await getSelectedSlideID();
 
-        context.presentation.insertSlidesFromBase64(chosenFileBase64, {
-          formatting: "UseDestinationTheme",
-          targetSlideId: selectedSlideID + "#"
+            context.presentation.insertSlidesFromBase64(chosenFileBase64, {
+                formatting: "UseDestinationTheme",
+                targetSlideId: selectedSlideID + "#"
+            });
+
+            await context.sync();
         });
-
-        await context.sync();
-      });
     }
     ```
 
 ### Selecting which slides to insert
 
-You can also use the `InsertSlideOptions` parameter to control which slides from the source presentation are inserted and in what order. You do this by assigning an array of the source presentation's slide IDs to the `sourceSlideIds` property. The following is an example that inserts three slides. Note that the format of the strings in the array must follow the same patterns as the value of the `targetSlideId` property.
+You can also use the [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) parameter to control which slides from the source presentation are inserted. You do this by assigning an array of the source presentation's slide IDs to the `sourceSlideIds` property. The following is an example that inserts four slides. Note that each string in the array must follow one or another of the patterns used for the `targetSlideId` property.
 
 ```javascript
 async function insertAfterSelectedSlide() {
-await PowerPoint.run(async function(context) {
-    const selectedSlideID = await getSelectedSlideID();
-    context.presentation.insertSlidesFromBase64(chosenFileBase64, {
-        formatting: "UseDestinationTheme",
-        targetSlideId: selectedSlideID + "#",
-        sourceSlideIds: ["267#763315295", "256#", "#926310875"]
-    });
+    await PowerPoint.run(async function(context) {
+        const selectedSlideID = await getSelectedSlideID();
+        context.presentation.insertSlidesFromBase64(chosenFileBase64, {
+            formatting: "UseDestinationTheme",
+            targetSlideId: selectedSlideID + "#",
+            sourceSlideIds: ["267#763315295", "256#", "#926310875", "1270#"]
+        });
 
-    await context.sync();
+        await context.sync();
     });
 }
 ```
@@ -160,13 +160,13 @@ await PowerPoint.run(async function(context) {
 > [!NOTE]
 > The slides will be inserted in the same relative order in which they appear in the source presentation, regardless of the order in which they appear in the array.
 
-There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. Also, because *a slide can be manually copied from one presentation to another*, your add-in shouldn't be designed in such a way that the user must have the source presentation open in addition to the target presentation (where the add-ins running) because this would make the slide insertion feature of the add-in pointless. For these reasons, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or an image, and then correlate each title or image with the slide's ID.
+There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. Also, because *a slide can be manually copied from one presentation to another* any way, so you should usually avoid designing the add-in in such a way that the user must have the source presentation open in addition to the target presentation (where the add-in is running). For these reasons, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
 
 Accordingly, the `sourceSlideIds` property is primarily used in presentation template scenarios: There is a small number of known presentations which serve as pools of slides that can be inserted by using the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as titles or images) with slide IDs.
 
 ## Delete slides
 
-You can delete a slide by getting a reference to the `Slide` object that represents the slide and call the [Slide.delete](/javascript/api/powerpoint/powerpoint.slide?view=powerpoint-js-preview#delete__) method. The following is an example in which the 4th slide (with zero-based index "3") is deleted.
+You can delete a slide by getting a reference to the [Slide](/javascript/api/powerpoint/powerpoint.slide) object that represents the slide and call the `Slide.delete` method. The following is an example in which the 4th slide (with zero-based index "3") is deleted.
 
 ```javascript
 async function deleteSlide() {

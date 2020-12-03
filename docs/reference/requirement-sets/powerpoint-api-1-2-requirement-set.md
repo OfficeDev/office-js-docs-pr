@@ -14,7 +14,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Insert and Delete Slides | Allows the insertion of existing slides into the current presentation from another presentation, as well as the ability to delete sildes. | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
+| Insert and Delete Slides | Allows the insertion of existing slides into the current presentation from another presentation, as well as the ability to delete slides. | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
 
 ## API list
 
