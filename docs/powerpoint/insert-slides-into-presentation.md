@@ -16,7 +16,7 @@ There are two major steps to inserting slides from one presentation into another
 
 ## Convert the source presentation to base64
 
-There are many ways to convert a file to base64. Which programming language and library you use, and whether to convert on the server-side of your add-in or the client-side is determined by your scenario. Most commonly, you'll do the conversion in JavaScript on the client-side by using a [FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) object. The following is an example.
+There are many ways to convert a file to base64. Which programming language and library you use, and whether to convert on the server-side of your add-in or the client-side is determined by your scenario. Most commonly, you'll do the conversion in JavaScript on the client-side by using a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) object. The following is an example.
 
 1. Begin by getting a reference to the source PowerPoint file. In this example, we will use an `<input>` control of type `file` to prompt the user to choose a file. Add the following markup to the add-in page.
 
@@ -79,7 +79,7 @@ async function insertAllSlides() {
 You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting (and more), by passing a [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions?view=powerpoint-js-preview) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
 
 - There are two possible values for the `formatting` property: "UseDestinationTheme" and "KeepSourceFormatting". Optionally, you can use the full name of the `InsertSlideFormatting` enum, such as `PowerPoint.InsertSlideFormatting.useDestinationTheme`.
-- The function will insert the slides from the source presentation immediately after the slide specified by the `targetSlideId` property. The value of this property is a string of one of three possible forms: ***nnn*#**, **#*mmmmmmmmm***, or ***nnn*#*mmmmmmmmm***, where *nnn* is the slide's ID (typically 3 digits) and *mmmmmmmmm* is the slide's creation ID (typically, 9 digits). Some examples are `267#763315295`, `267#`, and `#763315295`.
+- The function will insert the slides from the source presentation immediately after the slide specified by the `targetSlideId` property. The value of this property is a string of one of three possible forms: ***nnn*#**, **#*mmmmmmmmm***, or ***nnn*#*mmmmmmmmm***, where *nnn* is the slide's ID (typically 3 digits) and *mmmmmmmmm* is the slide's creation ID (typically 9 digits). Some examples are `267#763315295`, `267#`, and `#763315295`.
 
 ```javascript
 async function insertSlidesDestinationFormatting() {
@@ -129,7 +129,7 @@ Of course, you typically won't know at coding time the ID or creation ID of the 
         const selectedSlideID = await getSelectedSlideID();
 
         context.presentation.insertSlidesFromBase64(chosenFileBase64, {
-          formatting: PowerPoint.InsertSlideFormatting.useDestinationTheme,
+          formatting: "UseDestinationTheme",
           targetSlideId: selectedSlideID + "#"
         });
 
@@ -140,7 +140,41 @@ Of course, you typically won't know at coding time the ID or creation ID of the 
 
 ### Selecting which slides to insert
 
+You can also use the `InsertSlideOptions` parameter to control which slides from the source presentation are inserted and in what order. You do this by assigning an array of the source presentation's slide IDs to the `sourceSlideIds` property. The following is an example that inserts three slides. Note that the format of the strings in the array must follow the same patterns as the value of the `targetSlideId` property.
 
+```javascript
+async function insertAfterSelectedSlide() {
+await PowerPoint.run(async function(context) {
+    const selectedSlideID = await getSelectedSlideID();
+    context.presentation.insertSlidesFromBase64(chosenFileBase64, {
+        formatting: "UseDestinationTheme",
+        targetSlideId: selectedSlideID + "#",
+        sourceSlideIds: ["267#763315295", "256#", "#926310875"]
+    });
+
+    await context.sync();
+    });
+}
+```
+
+> [!NOTE]
+> The slides will be inserted in the order in the same relative order in which they appear in the source presentation, regardless of the order in which they appear in the array.
+
+There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. Also, because *a slide can be manually copied from one presentation to another*, your add-in shouldn't be designed in such a way that the user must have the source presentation open in addition to the target presentation (where the add-ins running) because this would make the slide insertion feature of the add-in pointless. For these reasons, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or an image, and then correlate each title or image with the slide's ID.
+
+Accordingly, the `sourceSlideIds` property is primarily used in presentation template scenarios: There is a small number of known presentations which serve as pools of slides that can be inserted by using the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as titles or images) with slide IDs.
 
 ## Delete slides
+
+You can delete a slide by getting a reference to the `Slide` object that represents the slide and call the [Slide.delete](/javascript/api/powerpoint/powerpoint.slide?view=powerpoint-js-preview#delete__) method. The following is an example in which the 4th slide (with zero-based index "3") is deleted.
+
+```javascript
+async function deleteSlide() {
+  await PowerPoint.run(async function(context) {
+    const slide = context.presentation.slides.getItemAt(3);
+    slide.delete();
+    await context.sync();
+  });
+}
+```
 
