@@ -360,7 +360,7 @@ function myContextChanges() {
 
 ## Localizing the JSON blob
 
-The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized as described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example:
+The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example:
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -404,7 +404,7 @@ function GetContextualTabsJsonSupportedLocale () {
 }
 ```
 
-Then your code calls the function to get the localized blob that is passed to `requestCreateControls` as in the following example:
+Then your code calls the function to get the localized blob that is passed to `requestCreateControls`, as in the following example:
 
 ```javascript
 var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
