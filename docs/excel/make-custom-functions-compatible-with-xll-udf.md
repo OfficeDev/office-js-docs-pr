@@ -56,7 +56,7 @@ The following table compares features across XLL user-defined functions, XLL com
 | **Supported platforms** | Windows | Windows, macOS, web browser | Windows, macOS, web browser |
 | **Supported file formats** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | **Formula autocomplete** | No | Yes | Yes |
-| **Streaming** | Possible via xlfRTD and XLL callback. | No | Yes |
+| **Streaming** | Possible via xlfRTD and XLL callback. | Yes | Yes |
 | **Localization of functions** | No | No. The Name and ID must match the existing XLL's functions. | Yes |
 | **Volatile functions** | Yes | Yes | Yes |
 | **Multi-threaded recalculation support** | Yes | Yes | Yes |
