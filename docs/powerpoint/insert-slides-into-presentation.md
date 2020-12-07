@@ -7,18 +7,18 @@ localization_priority: Normal
 
 # Insert and delete slides in a PowerPoint presentation
 
-A PowerPoint add-in can insert slides from one presentation (in base64 format) into the current presentation by using PowerPoint's application-specific JavaScript library. You can control whether the inserted slides keep the formatting of the source presentation or the formatting of the target presentation. You can also delete slides from the presentation.
+A PowerPoint add-in can insert slides from one presentation into the current presentation by using PowerPoint's application-specific JavaScript library. You can control whether the inserted slides keep the formatting of the source presentation or the formatting of the target presentation. You can also delete slides from the presentation.
 
 The slide insertion APIs are primarily used in presentation template scenarios: There is a small number of known presentations which serve as pools of slides that can be inserted by using the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as slide titles or images) with slide IDs. The APIs can also be used in scenarios where the user can insert slides from any arbitrary presentation, but in that scenario the user is effectively limited to inserting *all* the slides from the source presentation. See [Selecting which slides to insert](#selecting-which-slides-to-insert) for more information about this.
 
-There are two major steps to inserting slides from one presentation into another.
+There are two steps to inserting slides from one presentation into another.
 
 1. Convert the source presentation file (.pptx) into a base64-formatted string.
 1. Use the `insertSlidesFromBase64` method to insert one or more slides from the base64 file into the current presentation.
 
 ## Convert the source presentation to base64
 
-There are many ways to convert a file to base64. Which programming language and library you use, and whether to convert on the server-side of your add-in or the client-side is determined by your scenario. Most commonly, you'll do the conversion in JavaScript on the client-side by using a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) object. The following is an example.
+There are many ways to convert a file to base64. Which programming language and library you use, and whether to convert on the server-side of your add-in or the client-side is determined by your scenario. Most commonly, you'll do the conversion in JavaScript on the client-side by using a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) object. The following example shows this practice.
 
 1. Begin by getting a reference to the source PowerPoint file. In this example, we will use an `<input>` control of type `file` to prompt the user to choose a file. Add the following markup to the add-in page.
 
@@ -44,7 +44,7 @@ There are many ways to convert a file to base64. Which programming language and 
     $("#file").change(storeFileAsBase64);
     ```
 
-3. Add the following code. About this code, note the following:
+3. Add the following code. Note the following about this code,:
 
     - The `reader.readAsDataURL` method converts the file to base64 and stores it in the `reader.result` property. When the method completes, it triggers the `onload` event handler.
     - The `onload` event handler trims metadata off of the encoded file and stores the encoded string in a global variable.
@@ -70,7 +70,7 @@ There are many ways to convert a file to base64. Which programming language and 
 
 ## Insert slides with insertSlidesFromBase64
 
-You insert slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
+Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
 
 ```javascript
 async function insertAllSlides() {
@@ -81,9 +81,9 @@ async function insertAllSlides() {
 }
 ```
 
-You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting (and more), by passing an [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
+You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting , by passing an [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
 
-- There are two possible values for the `formatting` property: "UseDestinationTheme" and "KeepSourceFormatting". Optionally, you can use the full name of the `InsertSlideFormatting` enum, such as `PowerPoint.InsertSlideFormatting.useDestinationTheme`.
+- There are two possible values for the `formatting` property: "UseDestinationTheme" and "KeepSourceFormatting". Optionally, you can use the `InsertSlideFormatting` enum, (e.g., `PowerPoint.InsertSlideFormatting.useDestinationTheme`).
 - The function will insert the slides from the source presentation immediately after the slide specified by the `targetSlideId` property. The value of this property is a string of one of three possible forms: ***nnn*#**, **#*mmmmmmmmm***, or ***nnn*#*mmmmmmmmm***, where *nnn* is the slide's ID (typically 3 digits) and *mmmmmmmmm* is the slide's creation ID (typically 9 digits). Some examples are `267#763315295`, `267#`, and `#763315295`.
 
 ```javascript
@@ -184,4 +184,3 @@ async function deleteSlide() {
   });
 }
 ```
-
