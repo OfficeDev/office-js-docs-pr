@@ -9,9 +9,11 @@ localization_priority: Normal
 
 A PowerPoint add-in can insert slides from one presentation (in base64 format) into the current presentation by using PowerPoint's application-specific JavaScript library. You can control whether the inserted slides keep the formatting of the source presentation or the formatting of the target presentation. You can also delete slides from the presentation.
 
+The slide insertion APIs are primarily used in presentation template scenarios: There is a small number of known presentations which serve as pools of slides that can be inserted by using the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as slide titles or images) with slide IDs. The APIs can also be used in scenarios where the user can insert slides from any arbitrary presentation, but in that scenario the user is effectively limited to inserting *all* the slides from the source presentation. See [Selecting which slides to insert](#selecting-which-slides-to-insert) for more information about this.
+
 There are two major steps to inserting slides from one presentation into another.
 
-1. Convert the source presentation file (.pptx) into a base64-formatted file.
+1. Convert the source presentation file (.pptx) into a base64-formatted string.
 1. Use the `insertSlidesFromBase64` method to insert one or more slides from the base64 file into the current presentation.
 
 ## Convert the source presentation to base64
@@ -101,7 +103,7 @@ async function insertSlidesDestinationFormatting() {
 
 Of course, you typically won't know at coding time the ID or creation ID of the target slide. More commonly, an add-in will ask users to select the target slide. The following steps show how to get the ***nnn*#** ID of the currently selected slide and use it as the target slide.
 
-1. Create a function that gets the ID of the currently selected slide by using the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs. The following is an example. Note that the call to `getSelectedDataAsync` is embedded in a Promise-returning function. It is a good practice to do this because the Promise-returning function is easy to call (and await) inside the `run()` method of an application-specific API. By awaiting the Promise-returning function, you are assured that the callback function of the Common API method has completed before the next line in the `run()` method executes.
+1. Create a function that gets the ID of the currently selected slide by using the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs. The following is an example. Note that the call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
 
  
     ```javascript
@@ -163,17 +165,19 @@ async function insertAfterSelectedSlide() {
 > [!NOTE]
 > The slides will be inserted in the same relative order in which they appear in the source presentation, regardless of the order in which they appear in the array.
 
-There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. Also, because *a slide can be manually copied from one presentation to another* any way, so you should usually avoid designing the add-in in such a way that the user must have the source presentation open in addition to the target presentation (where the add-in is running). For these reasons, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
+There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. For this reason, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
 
-Accordingly, the `sourceSlideIds` property is primarily used in presentation template scenarios: There is a small number of known presentations which serve as pools of slides that can be inserted by using the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as titles or images) with slide IDs.
+Accordingly, the `sourceSlideIds` property is primarily used in presentation template scenarios: The add-in is designed to work with a specific set of presentations that serve as pools of slides that can be inserted. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as titles or images) with slide IDs or slide creation IDs that has been constructed from the set of possible source presentations.
 
 ## Delete slides
 
-You can delete a slide by getting a reference to the [Slide](/javascript/api/powerpoint/powerpoint.slide) object that represents the slide and call the `Slide.delete` method. The following is an example in which the 4th slide (with zero-based index "3") is deleted.
+You can delete a slide by getting a reference to the [Slide](/javascript/api/powerpoint/powerpoint.slide) object that represents the slide and call the `Slide.delete` method. The following is an example in which the 4th slide is deleted.
 
 ```javascript
 async function deleteSlide() {
   await PowerPoint.run(async function(context) {
+
+    // The slide index is zero-based. 
     const slide = context.presentation.slides.getItemAt(3);
     slide.delete();
     await context.sync();
