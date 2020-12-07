@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 12/03/2020
+ms.date: 12/07/2020
 localization_priority: Normal
 ---
 
@@ -229,8 +229,6 @@ The primary method for filtering PivotTable data is with PivotFilters. Slicers o
 [PivotFilters](/javascript/api/excel/excel.pivotfilters) filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). There are four types of PivotFilters, allowing calendar date-based filtering, string parsing, number comparison, and filtering based on a custom input. 
 
 [Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. When applied to a PivotTable, slicers function like a [PivotManualFilter](#pivotmanualfilter) and allow filtering based on a custom input. Unlike PivotFilters, slicers have an [Excel UI component](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d). With the `Slicer` class, you create this UI component, manage filtering, and control its visual appearance. 
-
-See [Filter with PivotFilters](#filter-with-pivotfilters) and [Filter with slicers](#filter-with-slicers) to learn more about filtering data with Excel JavaScript APIs.
 
 ### Filter with PivotFilters
 
