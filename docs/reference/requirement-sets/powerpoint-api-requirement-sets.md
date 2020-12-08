@@ -1,7 +1,7 @@
 ---
 title: PowerPoint JavaScript API requirement sets
 description: 'Learn more about the PowerPoint JavaScript API requirement sets.'
-ms.date: 12/04/2020
+ms.date: 10/26/2020
 ms.prod: powerpoint
 localization_priority: Priority
 ---
@@ -14,8 +14,8 @@ The following table lists the PowerPoint requirement sets, the Office client app
 
 |  Requirement set  |  Office on Windows<br>(connected to a Microsoft 365 subscription)  |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | Version 2011 (Build 13426.20184) or later| not yet<br>supported | 16.43 or later | October 2020 |
-| [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | Version 1810 (Build 11001.20074) or later | 2.17 or later | 16.19 or later | October 2018 |
+| [Preview](powerpoint-preview-apis.md)  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://insider.office.com)). |
+| PowerPointApi 1.1 | Version 1810 (Build 11001.20074) or later | 2.17 or later | 16.19 or later | October 2018 |
 
 ## Office versions and build numbers
 
@@ -26,10 +26,6 @@ For more information about Office versions and build numbers, see:
 ## PowerPoint JavaScript API 1.1
 
 PowerPoint JavaScript API 1.1 contains a [single API to create a new presentation](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-). For details about the API, see [Create a presentation](../../powerpoint/powerpoint-add-ins.md#create-a-presentation).
-
-## PowerPoint JavaScript API 1.2
-
-PowerPoint JavaScript API 1.2 adds support for inserting slides from another PowerPoint presentation into the current presentation and for deleting slides. For details about the APIs, see [Insert and delete slides in a PowerPoint presentation](../../powerpoint/insert-slides-into-presentation.md).
 
 ## How to use PowerPoint requirement sets at runtime and in the manifest
 
@@ -52,7 +48,7 @@ if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
 
 ### Defining requirement set support in the manifest
 
-You can use the [Requirements element](../manifest/requirements.md) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office application or platform doesn't support the requirement sets or API methods that are specified in the `Requirements` element of the manifest, the add-in won't run in that application or platform, and it won't display in the list of add-ins that are shown in **My Add-ins**. If your add-in requires a specific requirement set for full functionality, but it can provide value even to users on platforms that don't support the requirement set, we recommend that you check for requirement support at runtime as described above, instead of defining requirement set support in the manifest.
+You can use the [Requirements element](../manifest/requirements.md) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office application or platform doesn't support the requirement sets or API methods that are specified in the `Requirements` element of the manifest, the add-in won't run in that application or platform, and it won't display in the list of add-ins that are shown in **My Add-ins**. If your add-in requires a specific requirement set for full functionality, but it can provide value even to users on platforms that do not support the requirement set, we recommend that you check for requirement support at runtime as described above, instead of defining requirement set support in the manifest.
 
 The following code sample shows the `Requirements` element in an add-in manifest which specifies that the add-in should load in all Office client applications that support PowerPointApi requirement set version 1.1 or greater.
 
