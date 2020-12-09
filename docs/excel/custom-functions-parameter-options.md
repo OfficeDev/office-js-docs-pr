@@ -1,5 +1,5 @@
 ---
-ms.date: 11/06/2020
+ms.date: 12/09/2020
 description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -114,7 +114,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Your custom function may accept a range of cell data as an input parameter. A function can also return a range of data. Excel will pass a range of cell data as a two-dimensional array.
 
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, the parameter's `type` property is set to `matrix`.
+For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, and the JSDOC syntax `number[][]` sets the parameter's `type` property to `matrix` in the JSON metadata for this function. 
 
 ```js
 /**
