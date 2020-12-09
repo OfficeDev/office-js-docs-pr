@@ -327,7 +327,7 @@ For compliance reasons, administrators may need to ensure that users cannot send
 
 |Key's state|Result|
 |---|---|
-|false|The current installed versions of the on-send add-ins (not necessarily the latest version) run on message or meeting items being sent. This is the default state/behavior.|
+|false|The currently installed versions of the on-send add-ins (not necessarily the latest versions) run on message or meeting items being sent. This is the default state/behavior.|
 |true|After the latest versions of the on-send add-ins are installed from Exchange, the add-ins run on message or meeting items being sent. Otherwise, send is blocked and the **Send** button is disabled.|
 
 ---
