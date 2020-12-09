@@ -109,7 +109,7 @@ Added Outlook support to the `Runtimes` manifest element. It references the HTML
 
 Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (classic)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 <br>
 
@@ -157,7 +157,7 @@ Added a new enum `ComposeType` available in Compose mode.
 
 ### Notification messages with actions
 
-This feature allows your add-in to include a notification message with a custom action besides the default **Dismiss** action.
+This feature allows your add-in to include a notification message with a custom action besides the default **Dismiss** action. In modern Outlook on the web, this feature is available in Compose mode only.
 
 #### [Office.NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions)
 
