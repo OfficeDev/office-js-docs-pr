@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 11/25/2020
+ms.date: 12/09/2020
 localization_priority: Normal
 ---
 
@@ -294,8 +294,8 @@ For compliance reasons, administrators may need to ensure that users cannot send
 
 |Policy status|Result|
 |---|---|
-|Disabled|Send allowed. Message or meeting item can be sent without running the on-send add-in, even if the add-in has not been updated from Exchange yet.|
-|Enabled|Send allowed only when the add-in has been updated from Exchange; otherwise, send is blocked.|
+|Disabled|The currently downloaded manifests of the on-send add-ins (not necessarily the latest versions) run on message or meeting items being sent. This is the default status/behavior.|
+|Enabled|After the latest manifests of the on-send add-ins are downloaded from Exchange, the add-ins are run on message or meeting items being sent. Otherwise, send is blocked.|
 
 #### Manage the on-send policy
 
@@ -327,8 +327,8 @@ For compliance reasons, administrators may need to ensure that users cannot send
 
 |Key's state|Result|
 |---|---|
-|false|Send allowed. Message or meeting item can be sent without running the on-send add-in, even if the add-in has not been updated from Exchange yet.|
-|true|Send allowed only when add-ins have been updated from Exchange; otherwise, send is blocked and the **Send** button is disabled.|
+|false|The currently downloaded manifests of the on-send add-ins (not necessarily the latest versions) run on message or meeting items being sent. This is the default state/behavior.|
+|true|After the latest manifests of the on-send add-ins are downloaded from Exchange, the add-ins are run on message or meeting items being sent. Otherwise, send is blocked and the **Send** button is disabled.|
 
 ---
 

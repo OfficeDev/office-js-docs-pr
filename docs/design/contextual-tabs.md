@@ -112,7 +112,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     - The `id` property must be unique among all the groups in the tab. Use a brief, descriptive ID.
     - The `label` is a user-friendly string to serve as the label of the group.
     - The `icon` property's value is an array of objects that specify the icons that the group will have on the ribbon depending on the size of the ribbon and the Office application window.
-    - The `controls` property's value is an array of objects that specify the buttons and other controls in the group. There must be at least one and *no more than 6 in a group*.
+    - The `controls` property's value is an array of objects that specify the buttons and menus in the group. There must be at least one and *no more than 6 in a group*.
 
     > [!IMPORTANT]
     > *The total number of controls on the whole tab can be no more than 20.* For example, you could have 3 groups with 6 controls each, and a fourth group with 2 controls, but you cannot have 4 groups with 6 controls each.  
@@ -130,7 +130,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     }
     ```
 
-1. Every group must have an icon of at least two sizes, 32x32 px and 80x80 px. Optionally, you can also have icons of sizes 16x16, 20x20, 24x24, 40x40, 48x48 and 64x64. Office decides which icon to use based on the size of the ribbon and Office application window. Add the following objects to the icon array. (If the window and ribbon sizes are large enough for at least one of the *controls* on the group to appear, then no group icon at all appears. For an example, watch the **Styles** group on the Word ribbon as you shrink and expand the Word window.) About this markup, note:
+1. Every group must have an icon of at least two sizes, 32x32 px and 80x80 px. Optionally, you can also have icons of sizes 16x16 px, 20x20 px, 24x24 px, 40x40 px, 48x48 px, and 64x64 px. Office decides which icon to use based on the size of the ribbon and Office application window. Add the following objects to the icon array. (If the window and ribbon sizes are large enough for at least one of the *controls* on the group to appear, then no group icon at all appears. For an example, watch the **Styles** group on the Word ribbon as you shrink and expand the Word window.) About this markup, note:
 
     - Both the properties are required.
     - The `size` property unit of measure is pixels. Icons are always square, so the number is both the height and the width.
@@ -188,7 +188,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
 The following is the complete example of the JSON blob:
 
 ```json
-'{
+`{
   "actions": [
     {
       "id": "executeWriteData",
@@ -241,7 +241,7 @@ The following is the complete example of the JSON blob:
       ]
     }
   ]
-}'
+}`
 ```
 
 ## Register the contextual tab with Office with requestCreateControls
@@ -255,7 +255,7 @@ The following is an example. Note that the JSON string must be converted to a Ja
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... '; // Assign the JSON string such as the one at the end of the preceding section.
+    const contextualTabJSON = ` ... `; // Assign the JSON string such as the one at the end of the preceding section.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 });
@@ -284,7 +284,7 @@ Office.onReady(async () => {
 });
 ```
 
-Next, define the handlers. The following is a simple example of a `showDataTab`, but see [Error Handling](#error-handling) later in this article for a more robust version of the function. About this code, note:
+Next, define the handlers. The following is a simple example of a `showDataTab`, but see [Handling the HostRestartNeeded error](#handling-the-hostrestartneeded-error) later in this article for a more robust version of the function. About this code, note:
 
 - Office controls when it updates the state of the ribbon. The  [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) method queues a request to update. The method will resolve the `Promise` object as soon as it has queued the request, not when the ribbon actually updates.
 - The parameter for the `requestUpdate` method is a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the tab by its ID *exactly as specified in the JSON* and (2) specifies visibility of the tab.
@@ -358,7 +358,59 @@ function myContextChanges() {
 }
 ```
 
-## Error handling
+## Localizing the JSON blob
+
+The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example:
+
+```javascript
+function GetContextualTabsJsonSupportedLocale () {
+    var displayLanguage = Office.context.displayLanguage;
+
+        switch (displayLanguage) {
+            case 'en-US':
+                return `{
+                    "actions": [
+                        // actions omitted
+                     ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Data",
+                          "groups": [
+                              // groups omitted
+                          ]
+                        }
+                    ]
+                }`;
+
+            case 'fr-FR':
+                return `{
+                    "actions": [
+                        // actions omitted 
+                    ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Données",
+                          "groups": [
+                              // groups omitted
+                          ]
+                       }
+                    ]
+               }`;
+
+            // Other cases omitted
+       }
+}
+```
+
+Then your code calls the function to get the localized blob that is passed to `requestCreateControls`, as in the following example:
+
+```javascript
+var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+```
+
+## Handling the HostRestartNeeded error
 
 In some scenarios, Office is unable to update the ribbon and will return an error. For example, if the add-in is upgraded and the upgraded add-in has a different set of custom add-in commands, then the Office application must be closed and reopened. Until it is, the `requestUpdate` method will return the error `HostRestartNeeded`. The following is an example of how to handle this error. In this case, the `reportError` method displays the error to the user.
 
