@@ -294,8 +294,8 @@ For compliance reasons, administrators may need to ensure that users cannot send
 
 |Policy status|Result|
 |---|---|
-|Disabled|The currently installed versions of the on-send add-ins (not necessarily the latest versions) run on message or meeting items being sent. This is the default status/behavior.|
-|Enabled|After the latest versions of the on-send add-ins are installed from Exchange, the add-ins run on message or meeting items being sent. Otherwise, send is blocked.|
+|Disabled|The currently downloaded manifests of the on-send add-ins (not necessarily the latest versions) run on message or meeting items being sent. This is the default status/behavior.|
+|Enabled|After the latest manifests of the on-send add-ins are downloaded from Exchange, the add-ins are run on message or meeting items being sent. Otherwise, send is blocked.|
 
 #### Manage the on-send policy
 
@@ -327,8 +327,8 @@ For compliance reasons, administrators may need to ensure that users cannot send
 
 |Key's state|Result|
 |---|---|
-|false|The currently installed versions of the on-send add-ins (not necessarily the latest versions) run on message or meeting items being sent. This is the default state/behavior.|
-|true|After the latest versions of the on-send add-ins are installed from Exchange, the add-ins run on message or meeting items being sent. Otherwise, send is blocked and the **Send** button is disabled.|
+|false|The currently downloaded manifests of the on-send add-ins (not necessarily the latest versions) run on message or meeting items being sent. This is the default state/behavior.|
+|true|After the latest manifests of the on-send add-ins are downloaded from Exchange, the add-ins are run on message or meeting items being sent. Otherwise, send is blocked and the **Send** button is disabled.|
 
 ---
 
