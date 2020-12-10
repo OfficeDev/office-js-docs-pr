@@ -114,7 +114,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Your custom function may accept a range of cell data as an input parameter. A function can also return a range of data. Excel will pass a range of cell data as a two-dimensional array.
 
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, and the JSDOC syntax `number[][]` sets the parameter's `type` property to `matrix` in the JSON metadata for this function. 
+For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, and the JSDOC syntax `number[][]` sets the parameter's `dimensionality` property to `matrix` in the JSON metadata for this function. 
 
 ```js
 /**
