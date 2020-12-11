@@ -17,10 +17,6 @@
         "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
       },
       {   
-        "source_path": "docs/quickstarts/excel-custom-functions-quickstart-redirect.md", 
-        "redirect_url": "/office/dev/add-ins/quickstarts/excel-custom-functions-quickstart"
-      },
-      {   
         "source_path": "docs/quickstarts/onenote-quickstart-redirect.md", 
         "redirect_url": "/office/dev/add-ins/quickstarts/onenote-quickstart"
       },
