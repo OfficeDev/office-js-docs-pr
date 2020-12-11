@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Excel Add-ins
 description: 'Learn how to troubleshoot development errors in Excel Add-ins.'
-ms.date: 12/02/2020
+ms.date: 12/10/2020
 localization_priority: Normal
 ---
 
@@ -68,10 +68,6 @@ Excel.run(function (context) {
 });
 ```
 
-### Range return character limit
-
-The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have an address string limit of 8192 characters. When this limit is exceeded, the address string is truncated to 8192 characters.
-
 ### Cell format `useStandardHeight` issue
 
 The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to a bug in the Excel on the web UI, setting the `useStandardHeight` property to `true` will calculate height imprecisely on this platform. For example, a standard height of **14** will be modified to **14.25** in Excel on the web.
@@ -79,6 +75,10 @@ The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStan
 ### Range `getImage` method
 
 The Range [getImage](/javascript/api/excel/excel.range#getImage__) method isn't currently supported in Excel for Mac. See [OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) for the current status.
+
+### Range return character limit
+
+The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have an address string limit of 8192 characters. When this limit is exceeded, the address string is truncated to 8192 characters.
 
 ## See also
 
