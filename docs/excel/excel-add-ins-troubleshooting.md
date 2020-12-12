@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Excel Add-ins
 description: 'Learn how to troubleshoot development errors in Excel Add-ins.'
-ms.date: 12/10/2020
+ms.date: 12/11/2020
 localization_priority: Normal
 ---
 
@@ -51,21 +51,42 @@ The following code sample shows how to use the ID of the temporary `Binding` obj
 
 ```js
 Excel.run(function (context) {
-    // Get the temporary binding object and load its ID
-    var tempBindingObject = eventArgs.binding;
-    tempBindingObject.load("id");
-
-    // Use the temporary binding object's ID to retrieve the original binding object
-    var originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
+    // Get the worksheet and range. 
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var cell = sheet.getRange("A1");
+    cell.load("address");
 
     return context.sync().then(function () {
-        console.log(`Temporary binding ID: ${tempBindingObject.id}`);
+        // Add the binding to cell "A1". 
+        var binding = context.workbook.bindings.add(cell, Excel.BindingType.range, `${cell}`);
 
-        // Get the address of the original binding object
-        var originalBindingAddress = getAddressFromId(originalBindingObject.id);
-        console.log(`Original binding address: ${originalBindingAddress}`);
+        // Register an event listener to detect changes to cell "A1"
+        // and then trigger the bindingCallback method. 
+        binding.onDataChanged.add(bindingCallback);
+
+        return context.sync();
     });
 });
+
+function bindingCallback(eventArgs) {
+    return Excel.run(function (context) {
+        // Get the temporary binding object and load its ID. 
+        var tempBindingObject = eventArgs.binding;
+        tempBindingObject.load("id");
+
+        // Use the temporary binding object's ID to retrieve the original binding object. 
+        var originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
+
+        // Get the address of the original binding object. 
+        var bindingObject = originalBindingObject.getRange();
+        bindingObject.load("address");
+
+        return context.sync().then(function () {
+            // Print out the address of the binding object. 
+            console.log(bindingObject.address);
+        });
+    });
+}
 ```
 
 ### Cell format `useStandardHeight` issue
