@@ -47,20 +47,15 @@ See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for pattern
 
 Both [BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) and [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding) return a temporary `Binding` object that contains the ID of the `Binding` object that raised the event. Use this ID with `BindingCollection.getItem(id)` to retrieve the `Binding` object that raised the event.
 
-The following code sample shows how to use the ID of the temporary `Binding` object to retrieve the `Binding` object that raised the event.
+The following code sample first shows how to assign an event listener to a binding, and then call the `bindingCallback` method when the `onDataChanged` event is triggered. In the `bindingCallback` method, the code sample then demonstrates how to use the ID of the temporary `Binding` object to retrieve the `Binding` object that raised the event.
 
 ```js
 Excel.run(function (context) {
-    // Get the worksheet and range. 
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var cell = sheet.getRange("A1");
-    cell.load("address");
+    // Retrieve your binding.
+    var binding = context.workbook.bindings.getItemAt(0);
 
     return context.sync().then(function () {
-        // Add the binding to cell "A1". 
-        var binding = context.workbook.bindings.add(cell, Excel.BindingType.range, `${cell}`);
-
-        // Register an event listener to detect changes to cell "A1"
+        // Register an event listener to detect changes to your binding
         // and then trigger the bindingCallback method. 
         binding.onDataChanged.add(bindingCallback);
 
