@@ -47,7 +47,7 @@ See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for pattern
 
 Both [BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) and [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding) return a temporary `Binding` object that contains the ID of the `Binding` object that raised the event. Use this ID with `BindingCollection.getItem(id)` to retrieve the `Binding` object that raised the event.
 
-The following code sample first shows how to assign an event listener to a binding, and then call the `bindingCallback` method when the `onDataChanged` event is triggered. In the `bindingCallback` method, the code sample then demonstrates how to use the ID of the temporary `Binding` object to retrieve the `Binding` object that raised the event.
+The following code sample first shows how to assign an event listener to a binding, and then call the `getBindingId` method when the `onDataChanged` event is triggered. In the `getBindingId` method, the code sample then demonstrates how to use the ID of the temporary `Binding` object to retrieve the `Binding` object that raised the event.
 
 ```js
 Excel.run(function (context) {
@@ -56,14 +56,14 @@ Excel.run(function (context) {
 
     return context.sync().then(function () {
         // Register an event listener to detect changes to your binding
-        // and then trigger the bindingCallback method. 
-        binding.onDataChanged.add(bindingCallback);
+        // and then trigger the `getBindingId` method on change. 
+        binding.onDataChanged.add(getBindingId);
 
         return context.sync();
     });
 });
 
-function bindingCallback(eventArgs) {
+function getBindingId(eventArgs) {
     return Excel.run(function (context) {
         // Get the temporary binding object and load its ID. 
         var tempBindingObject = eventArgs.binding;
@@ -72,14 +72,7 @@ function bindingCallback(eventArgs) {
         // Use the temporary binding object's ID to retrieve the original binding object. 
         var originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
 
-        // Get the address of the original binding object. 
-        var bindingObject = originalBindingObject.getRange();
-        bindingObject.load("address");
-
-        return context.sync().then(function () {
-            // Print out the address of the binding object. 
-            console.log(bindingObject.address);
-        });
+        // You now have the binding object that raised the event: `originalBindingObject`. 
     });
 }
 ```
