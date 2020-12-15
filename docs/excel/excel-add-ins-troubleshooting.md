@@ -43,7 +43,7 @@ See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for pattern
 
 ## Known Issues
 
-### Binding events ID discrepancy
+### Binding events return temporary `Binding` obects
 
 Both [BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) and [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding) return a temporary `Binding` object that contains the ID of the `Binding` object that raised the event. Use this ID with `BindingCollection.getItem(id)` to retrieve the `Binding` object that raised the event.
 
@@ -81,7 +81,7 @@ function getBindingId(eventArgs) {
 
 The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to an issue in the Excel on the web UI, setting the `useStandardHeight` property to `true` will calculate height imprecisely on this platform. For example, a standard height of **14** will be modified to **14.25** in Excel on the web.
 
-In addition, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect. 
+On all platforms, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect. 
 
 ### Range `getImage` method unsupported on Excel for Mac
 
