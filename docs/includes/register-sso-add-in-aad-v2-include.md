@@ -7,7 +7,7 @@
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
     * Set **Name** to **$ADD-IN-NAME$**.
-    * Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
+    * Set **Supported account types** to **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
     * Leave **Redirect URI** empty.
     * Choose **Register**.
 
@@ -32,10 +32,10 @@
 
 1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office client application to use your add-in's web APIs with the same rights as the current user. Suggestions:
 
-    - **Admin consent title:** Office can act as the user.
+    - **Admin consent display name:** Office can act as the user.
     - **Admin consent description:** Enable Office to call the add-in's web APIs with the same rights as the current user.
-    - **User consent title:** Office can act as you.
-    - **Admin consent description:** Enable Office to call the add-in's web APIs with the same rights that you have.
+    - **User consent display name:** Office can act as you.
+    - **User consent description:** Enable Office to call the add-in's web APIs with the same rights that you have.
 
 1. Ensure that **State** is set to **Enabled**.
 
@@ -58,9 +58,11 @@
 
       b. Select **Add application**.
 
-1. Select **Authentication** under **Manage**. In the **Redirect URIs** section, select **Web** in the **Type** dropdown then set the **Redirect URI** value to `https://$FQDN-WITHOUT-PROTOCOL$`.
+1. Select **Authentication** under **Manage**. Then choose **Add a platform**. 
 
-1. Select **Save** at the top of the form.
+1. In the **Configure platforms** pane, select **Web** and then set the **Redirect URI** value to `https://$FQDN-WITHOUT-PROTOCOL$`.
+
+1. Choose **Configure**.
 
 1. Select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
 

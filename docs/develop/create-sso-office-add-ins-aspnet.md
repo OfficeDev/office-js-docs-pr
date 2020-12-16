@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 07/30/2020
+ms.date: 12/15/2020
 localization_priority: Normal
 ---
 
@@ -65,10 +65,10 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office client application to use your add-in's web APIs with the same rights as the current user. Suggestions:
 
-    * **Admin consent title**: Office can act as the user.
+    * **Admin consent display name**: Office can act as the user.
     * **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights as the current user.
-    * **User consent title**: Office can act as you.
-    * **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
+    * **User consent display name**: Office can act as you.
+    * **User consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
 
 1. Ensure that **State** is set to **Enabled**.
 
@@ -116,7 +116,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Under **Common Properties**, select **Startup Project**, and then **Multiple startup projects**. Ensure that the **Action** for both projects is set to **Start**, and that the project that ends in "...WebAPI" is listed first. Close the dialog.
 
-1. Back in **Solution Explorer**, select (don't right-click) the **Office-Add-in-Microsoft-Graph-ASPNETWebAPI** project. The **Properties** pane opens. Ensure that **SSL Enabled** is **True**. Verify that the **SSL URL** is `http://localhost:44355/`.
+1. Back in **Solution Explorer**, select (don't right-click) the **Office-Add-in-ASPNET-SSO-WebAPI** project. The **Properties** pane opens. Ensure that **SSL Enabled** is **True**. Verify that the **SSL URL** is `http://localhost:44355/`.
 
 1. In "Web.config", use the values that you copied in earlier. Set both the **ida:ClientID** and the **ida:Audience** to your **Application (client) ID**, and set **ida:Password** to your client secret.
 
@@ -125,7 +125,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. If you didn't choose "Accounts in this organizational directory only" for **SUPPORTED ACCOUNT TYPES** when you registered the add-in, save and close the web.config. Otherwise, save but leave it open.
 
-1. Still in **Solution Explorer**, choose the **Office-Add-in-Microsoft-Graph-ASPNET** project and open the add-in manifest file “Office-Add-in-ASPNET-SSO.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup:
+1. Still in **Solution Explorer**, choose the **Office-Add-in-ASPNET-SSO** project and open the add-in manifest file “Office-Add-in-ASPNET-SSO.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup:
 
     ```xml
     <WebApplicationInfo>
