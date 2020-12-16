@@ -224,12 +224,12 @@ For hand-authored JSON, ensure your parameter is specified as `"repeating": true
 
 ## Invocation parameter
 
-Every custom function is automatically passed an `invocation` argument as the last input parameter, even if it's not explicitly declared. This `invocation` parameter corresponds to the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object. The `Invocation` object can be used to retrieve additional context, such as the address of the cell that invoked your custom function. To access the `Invocation` object, you must declare the `invocation` parameter as the last parameter in your custom function. The `invocation` parameter can also be used to send information to Excel; see [Making a streaming function](custom-functions-web-reqs.md#make-a-streaming-function) to learn more.
+Every custom function is automatically passed an `invocation` argument as the last input parameter, even if it's not explicitly declared. This `invocation` parameter corresponds to the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object. The `Invocation` object can be used to retrieve additional context, such as the address of the cell that invoked your custom function. To access the `Invocation` object, you must declare the `invocation` parameter as the last parameter in your custom function. 
 
 > [!NOTE]
 > The `invocation` parameter doesn't appear as a custom function argument for users in Excel.
 
-The following sample shows how to use the `invocation` parameter to return the address of the cell that invoked your custom function. This sample uses the [address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) property of the `Invocation` object. To access the `Invocation` object, first declare `CustomFunctions.Invocation` as a parameter in your JSDoc. Next, declare `@requiresAddress` in your JSDoc to access the `address` property of the `Invocation` object. Within the function, retrieve and then return the `address` property. 
+The following sample shows how to use the `invocation` parameter to return the address of the cell that invoked your custom function. This sample uses the [address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) property of the `Invocation` object. To access the `Invocation` object, first declare `CustomFunctions.Invocation` as a parameter in your JSDoc. Next, declare `@requiresAddress` in your JSDoc to access the `address` property of the `Invocation` object. Finally, within the function, retrieve and then return the `address` property. 
 
 ```js
 /**
@@ -241,12 +241,14 @@ The following sample shows how to use the `invocation` parameter to return the a
  * @requiresAddress
  */
 function getAddress(first, second, invocation) {
-  const address = invocation.address;
+  var address = invocation.address;
   return address;
 }
 ```
 
 In Excel, a custom function calling the `address` property of the `Invocation` object will return the address following the format `SheetName!CellNumber` in the cell that invoked the function. For example, if the input parameter is located on a sheet called Prices in cell F6, the returned parameter address value would be `Prices!F6`. 
+
+The `invocation` parameter can also be used to send information to Excel. See [Making a streaming function](custom-functions-web-reqs.md#make-a-streaming-function) to learn more.
 
 ## Detect the address of a parameter
 
