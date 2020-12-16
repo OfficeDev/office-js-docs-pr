@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 07/30/2020
+ms.date: 12/15/2020
 localization_priority: Normal
 ---
 
@@ -65,10 +65,10 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office client application to use your add-in's web APIs with the same rights as the current user. Suggestions:
 
-    * **Admin consent display name:**: Office can act as the user.
+    * **Admin consent display name**: Office can act as the user.
     * **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights as the current user.
-    * **User consent display name:**: Office can act as you.
-    * **User consent description:**: Enable Office to call the add-in's web APIs with the same rights that you have.
+    * **User consent display name**: Office can act as you.
+    * **User consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
 
 1. Ensure that **State** is set to **Enabled**.
 
