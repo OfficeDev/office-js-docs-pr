@@ -1096,6 +1096,9 @@ items:
     - name: API reference
       href: reference/powerpoint-api-reference.md
       displayName: PowerPoint
+    - name: Insert and delete slides in a presentation
+      href: powerpoint/insert-slides-into-presentation.md
+      displayName: PowerPoint
     - name: Get the whole document from an add-in
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
       displayName: PowerPoint

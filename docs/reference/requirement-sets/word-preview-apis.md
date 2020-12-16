@@ -10,6 +10,7 @@ localization_priority: Normal
 
 New Word JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.
 
+[!INCLUDE [Information about using Word preview APIs](../../includes/word-preview-apis-note.md)]
 [!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 ## API list
