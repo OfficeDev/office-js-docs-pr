@@ -16,13 +16,13 @@ You can configure your Office Add-in to run all of its code in a single shared J
 
 If you are starting a new project, follow these steps to use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create an Excel or PowerPoint add-in project.
 
-Run the following command to generate an Excel add-in with custom functions:
+Run the following command to generate an Excel add-in with custom functions.
 
 ```command line
 yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js
 ```
 
-Run the following command to generate a PowerPoint add-in:
+Run the following command to generate a PowerPoint add-in.
 
 ```command line
 yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js
@@ -36,7 +36,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 2. Open the **manifest.xml** file.
-3. Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The resid is `TaskPane.Url` which references that taskpane.html file location in the ` <bt:Urls>` section later.
+3. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` is `TaskPane.Url` which references that taskpane.html file location in the ` <bt:Urls>` section later.
 
    ```xml
    <VersionOverrides ...>
@@ -77,7 +77,7 @@ The webpack.config.js will build multiple runtime loaders. You need to modify it
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 2. Open the **webpack.config.js** file.
-3. If your **webpack.config.js** file has the following **functions.html** plugin code, remove it:
+3. If your **webpack.config.js** file has the following **functions.html** plugin code, remove it.
 
     ```javascript
     new HtmlWebpackPlugin({
@@ -87,7 +87,7 @@ The webpack.config.js will build multiple runtime loaders. You need to modify it
       })
     ```
 
-4. If your **webpack.config.js** file has the following **commands.html** plugin code, remove it:
+4. If your **webpack.config.js** file has the following **commands.html** plugin code, remove it.
 
     ```javascript
     new HtmlWebpackPlugin({
@@ -97,7 +97,7 @@ The webpack.config.js will build multiple runtime loaders. You need to modify it
       })
     ```
 
-5. If your project used either the **functions** or **commands** chunks, add them to the chunks list as shown below (the following code is for if your project used both chunks):
+5. If your project used either the **functions** or **commands** chunks, add them to the chunks list as shown next (the following code is for if your project used both chunks).
 
     ```javascript
       new HtmlWebpackPlugin({
@@ -129,15 +129,15 @@ You can test that you are using the shared JavaScript runtime correctly by using
     <Action xsi:type="ShowTaskpane">
       <TaskpaneId>ButtonId1</TaskpaneId>
       <SourceLocation resid="Taskpane.Url"/>
-   </Action>
+    </Action>
     ```
     
     to:
     
     ```xml
     <Action xsi:type="ExecuteFunction">
-		  <FunctionName>action</FunctionName>
-		</Action>
+    <FunctionName>action</FunctionName>
+    </Action>
     ```
 3. Open the **./src/commands/commands.js** file.
 4. Replace the **action** function with the code below. This will update the function to open and modify the task pane button to increment a counter. Opening and accessing the task pane DOM from a command only works with the shared JavaScript runtime.
@@ -182,7 +182,7 @@ When you add the `Runtime` element, you also specify a lifetime with a value of 
 
 ## About the shared JavaScript runtime
 
-When running Office Add-ins on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
+On Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
 
 However, you can configure your Office Add-in to share code in the same JavaScript runtime (also referred to as a shared runtime). This enables better coordination across your add-in and access to the task pane DOM and CORS from all parts of your add-in.
 

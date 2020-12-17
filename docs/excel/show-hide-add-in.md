@@ -1,6 +1,6 @@
 ---
 title: Show or hide the task pane of your Office Add-in
-description: 'Learn how to programmatically hide or show the user interface of an add-in while it runs continuously'
+description: 'Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.'
 ms.date: 12/02/2020
 localization_priority: Normal
 ---
@@ -89,8 +89,8 @@ removeVisibilityModeHandler();
 The `onVisibilityModeChanged` method is asynchronous and returns a promise, which means that your code needs to await the promise before it can call the **deregister** handler.
 
 ```javascript
-//await the promise from onVisibilityModeChanged and assign
-//the returned deregister handler to removeVisibilityModeHandler.
+// await the promise from onVisibilityModeChanged and assign
+// the returned deregister handler to removeVisibilityModeHandler.
 var removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
@@ -102,7 +102,7 @@ var removeVisibilityModeHandler =
 The deregister function is also asynchronous and returns a promise. So, if you have code that should not run until after the deregistration is complete, then you should await the promise returned by the deregister function.
 
 ```javascript
-//await the promise from the deregister handler before continuing
+// await the promise from the deregister handler before continuing
 await removeVisibilityModeHandler();
 // subsequent code here
 ```

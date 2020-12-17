@@ -1,6 +1,6 @@
 ---
 title: Run code in your Office Add-in when the document opens
-description: 'Run code in your Office Add-in add-in when the document opens.'
+description: 'Learn how to run code in your Office Add-in add-in when the document opens.'
 ms.date: 12/02/2020
 localization_priority: Normal
 ---
@@ -11,7 +11,7 @@ localization_priority: Normal
 
 You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
-[!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
+[!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
 ## Configure your add-in to load when the document opens
 
@@ -47,7 +47,7 @@ When your add-in is configured to load on document open, it will run immediately
 The following Excel add-in code shows how to register an event handler for change events from the active worksheet. If you configure your add-in to load on document open, this code will register the event handler when the document is opened. You can handle change events before the task pane is opened.
 
 ```JavaScript
-//This is called as soon as the document opens.
+// This is called as soon as the document opens.
 //Put your startup code here.
 Office.initialize = () => {
   // Add the event handler
@@ -79,8 +79,8 @@ async function onChange(event) {
 The following PowerPoint add-in code shows how to register an event handler for selection change events from the PowerPoint document. If you configure your add-in to load on document open, this code will register the event handler when the document is opened. You can handle change events before the task pane is opened.
 
 ```JavaScript
-//This is called as soon as the document opens.
-//Put your startup code here.
+// This is called as soon as the document opens.
+// Put your startup code here.
 Office.onReady(info => {
   if (info.host === Office.HostType.PowerPoint) {
     Office.context.document.addHandlerAsync(Office.EventType.DocumentSelectionChanged, onChange);
