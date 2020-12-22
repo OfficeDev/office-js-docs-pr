@@ -1,5 +1,5 @@
 ---
-ms.date: 11/06/2020
+ms.date: 12/22/2020
 description: 'Use JSDoc tags to dynamically create your custom functions JSON metadata.'
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Normal
@@ -58,7 +58,7 @@ If the last function parameter is of type `CustomFunctions.CancelableInvocation`
 
 A function can't have both `@cancelable` and `@streaming` tags.
 
----
+
 <a id="customfunction"></a>
 
 ### @customfunction
@@ -128,7 +128,6 @@ In the following example, the phrase "A function that adds two numbers" is the d
  */
 ```
 
----
 <a id="helpurl"></a>
 
 ### @helpurl
@@ -148,7 +147,6 @@ In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
  */
 ```
 
----
 <a id="param"></a>
 
 ### @param
@@ -215,16 +213,33 @@ function add(first: number, second: number): number {
 }
 ```
 
----
 <a id="requiresAddress"></a>
 
 ### @requiresAddress
+
+Syntax: @requiresAddress
 
 Indicates that the address of the cell where the function is being evaluated should be provided.
 
 The last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `address` property will contain the address.
 
----
+The following sample shows how to use the `invocation` parameter in combination with `@requiresAddress` to return the address of the cell that invoked your custom function. See [Invocation parameter](custom-functions-parameter-options.md#invocation-parameter) for more information.
+
+```js
+/**
+ * Return the address of the cell that invoked the custom function. 
+ * @customfunction
+ * @param {number} first First parameter.
+ * @param {number} second Second parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresAddress 
+ */
+function getAddress(first, second, invocation) {
+  var address = invocation.address;
+  return address;
+}
+```
+
 <a id="returns"></a>
 
 ### @returns
@@ -250,7 +265,6 @@ function add(first: number, second: number): number {
 }
 ```
 
----
 <a id="streaming"></a>
 
 ### @streaming
@@ -266,7 +280,6 @@ Exceptions thrown by a streaming function are ignored. `setResult()` may be call
 
 Streaming functions can't be marked as [@volatile](#volatile).
 
----
 <a id="volatile"></a>
 
 ### @volatile
