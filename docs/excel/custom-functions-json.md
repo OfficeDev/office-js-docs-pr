@@ -1,5 +1,5 @@
 ---
-ms.date: 12/21/2020
+ms.date: 12/22/2020
 description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
 title: Manually create JSON metadata for custom functions in Excel
 localization_priority: Normal
@@ -179,7 +179,7 @@ The `result` object defines the type of information that is returned by the func
 | Property         | Data type | Required | Description                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
 | `dimensionality` | string    | No       | Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
-| `type` | string    | No       | Can either be `"number"` or `"string"`. |
+| `type` | string    | No       | The data type of the result. Can be `"boolean"`, `"number"`, `"string"`, or `"any"`, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to `"any"`. |
 
 ## Associating function names with JSON metadata
 
