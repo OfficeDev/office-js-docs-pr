@@ -271,13 +271,13 @@ The following function takes in three input parameters, retrieves the `parameter
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
  * @requiresParameterAddresses
  */
-function GetParameterAdds(firstParameter, secondParameter, thirdParameter, invocation) {
-  var items = [
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
     [invocation.parameterAddresses[0]],
     [invocation.parameterAddresses[1]],
     [invocation.parameterAddresses[2]]
   ];
-  return items;
+  return addresses;
 }
 ```
 
