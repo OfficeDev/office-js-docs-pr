@@ -1,5 +1,5 @@
 ---
-ms.date: 12/18/2020
+ms.date: 12/21/2020
 description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -256,10 +256,10 @@ In combination with the [invocation parameter](#invocation-parameter), you can u
 
 This is useful in scenarios where input data types may vary. The address of an input parameter can be used to check the number format of the input value. The number format can then be adjusted prior to input, if necessary. The address of an input parameter can also be used to detect whether the input value has any related properties that may be relevant to subsequent calculations. 
 
-When a custom function calling the `parameterAddresses` property of the `Invocation` object runs, the parameter address is returned following the format `SheetName!CellNumber` in the cell that invoked the function. For example, if the input parameter is located on a sheet called Costs in cell D8, the returned parameter address value will be `Costs!D8`. If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function. 
-
 >[!IMPORTANT]
-> The `parameterAddresses` property currently only works with manually-created JSON metadata. It does not work with with the JSON autogeneration process. It does not work with Script Lab. 
+> The `parameterAddresses` property currently only works with [manually-created JSON metadata](custom-functions-json.md). To return parameter addresses, the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.
+
+The following function takes in three input parameters, retrieves the `parameterAddresses`property of the `Invocation` object for each parameter, and then returns the addresses. 
 
 ```js
 /**
@@ -280,6 +280,8 @@ function GetParameterAdds(firstParameter, secondParameter, thirdParameter, invoc
   return items;
 }
 ```
+
+When a custom function calling the `parameterAddresses` property of the `Invocation` object runs, the parameter address is returned following the format `SheetName!CellNumber` in the cell that invoked the function. For example, if the input parameter is located on a sheet called Costs in cell D8, the returned parameter address value will be `Costs!D8`. If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function. 
 
 ## Next steps
 
