@@ -1,5 +1,5 @@
 ---
-ms.date: 12/07/2020
+ms.date: 12/21/2020
 description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
 title: Manually create JSON metadata for custom functions in Excel
 localization_priority: Normal
@@ -154,7 +154,8 @@ The `options` object enables you to customize some aspects of how and when Excel
 | Property          | Data type | Required                               | Description |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function can't use both the `stream` and `cancelable` properties. |
-| `requiresAddress` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked your custom function. The `address` property of the [invocation](custom-functions-parameter-options.md#invocation-parameter) parameter contains the address of the cell that invoked your custom function. A function can't use both the `stream` and `requiresAddress` properties. |
+| `requiresAddress` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked your custom function. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your custom function. A function can't use both the `stream` and `requiresAddress` properties. |
+| `requiresParameterAddresses` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the addresses of the function's input parameters. This property must be used in combination with the `dimensionality` property of the [result](#result) object, and `dimensionality` must be set to `matrix`. See [Detect the address of a parameter](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. |
 | `stream`          | boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback method. For more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
 | `volatile`        | boolean   | No <br/><br/>Default value is `false`. | If `true`, the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. A function can't use both the `stream` and `volatile` properties. If the `stream` and `volatile` properties are both set to `true`, the volatile property will be ignored. |
 
@@ -178,6 +179,7 @@ The `result` object defines the type of information that is returned by the func
 | Property         | Data type | Required | Description                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
 | `dimensionality` | string    | No       | Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
+| `type` | string    | No       | Can either be `"number"` or `"string"`. |
 
 ## Associating function names with JSON metadata
 
