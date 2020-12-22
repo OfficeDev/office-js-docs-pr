@@ -259,11 +259,11 @@ This is useful in scenarios where input data types may vary. The address of an i
 >[!IMPORTANT]
 > The `parameterAddresses` property currently only works with [manually-created JSON metadata](custom-functions-json.md). To return parameter addresses, the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.
 
-The following function takes in three input parameters, retrieves the `parameterAddresses`property of the `Invocation` object for each parameter, and then returns the addresses. 
+The following custom function takes in three input parameters, retrieves the `parameterAddresses` property of the `Invocation` object for each parameter, and then returns the addresses. 
 
 ```js
 /**
- * Return the address of two parameters. 
+ * Return the address of three parameters. 
  * @customfunction
  * @param {string} firstParameter First parameter.
  * @param {string} secondParameter Second parameter.
@@ -281,7 +281,7 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 }
 ```
 
-When a custom function calling the `parameterAddresses` property of the `Invocation` object runs, the parameter address is returned following the format `SheetName!CellNumber` in the cell that invoked the function. For example, if the input parameter is located on a sheet called Costs in cell D8, the returned parameter address value will be `Costs!D8`. If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function. 
+When a custom function calling the `parameterAddresses` property runs, the parameter address is returned following the format `SheetName!CellNumber` in the cell that invoked the function. For example, if the input parameter is located on a sheet called Costs in cell D8, the returned parameter address value will be `Costs!D8`. If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function. 
 
 ## Next steps
 
