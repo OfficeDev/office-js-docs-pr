@@ -166,9 +166,9 @@ The `parameters` property is an array of parameter objects. The following table 
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  No |  A description of the parameter. This is displayed in Excel's IntelliSense.  |
-|  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
+|  `dimensionality`  |  string  |  No  |  Must be either `scalar` (a non-array value) or `matrix` (a 2-dimensional array).  |
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's IntelliSense.  |
-|  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
+|  `type`  |  string  |  No  |  The data type of the parameter. Can be `boolean`, `number`, `string`, or `any`, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to `any`. |
 |  `optional`  | boolean | No | If `true`, the parameter is optional. |
 |`repeating`| boolean | No | If `true`, parameters populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
 
@@ -178,8 +178,8 @@ The `result` object defines the type of information that is returned by the func
 
 | Property         | Data type | Required | Description                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | No       | Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
-| `type` | string    | No       | The data type of the result. Can be `"boolean"`, `"number"`, `"string"`, or `"any"`, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to `"any"`. |
+| `dimensionality` | string    | No       | Must be either `scalar` (a non-array value) or `matrix` (a 2-dimensional array). |
+| `type` | string    | No       | The data type of the result. Can be `boolean`, `number`, `string`, or `any`, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to `any`. |
 
 ## Associating function names with JSON metadata
 
