@@ -58,7 +58,6 @@ If the last function parameter is of type `CustomFunctions.CancelableInvocation`
 
 A function can't have both `@cancelable` and `@streaming` tags.
 
-
 <a id="customfunction"></a>
 
 ### @customfunction
