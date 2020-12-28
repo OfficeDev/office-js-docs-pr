@@ -36,7 +36,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 2. Open the **manifest.xml** file.
-3. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` is `TaskPane.Url` which references that taskpane.html file location in the ` <bt:Urls>` section later.
+3. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location in the ` <bt:Urls>` section later.
 
    ```xml
    <VersionOverrides ...>
@@ -73,7 +73,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 ## Configure the webpack.config.js file
 
-The webpack.config.js will build multiple runtime loaders. You need to modify it to just load the shared JavaScript runtime via the taskpane.html file.
+The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared JavaScript runtime via the **taskpane.html** file.
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 2. Open the **webpack.config.js** file.
@@ -118,7 +118,7 @@ The webpack.config.js will build multiple runtime loaders. You need to modify it
 
 ## Test your Office Add-in changes
 
-You can test that you are using the shared JavaScript runtime correctly by using the following instructions.
+You can confirm that you are using the shared JavaScript runtime correctly by using the following instructions.
 
 1. Open the **manifest.xml** file.
 2. Find the `<Control xsi:type="Button" id="TaskpaneButton">` section and change the following `<Action ...>` XML.
@@ -186,7 +186,7 @@ On Windows or Mac, your add-in will run code for ribbon buttons, custom function
 
 However, you can configure your Office Add-in to share code in the same JavaScript runtime (also referred to as a shared runtime). This enables better coordination across your add-in and access to the task pane DOM and CORS from all parts of your add-in.
 
-Configuring a shared runtime enables the following scenarios:
+Configuring a shared runtime enables the following scenarios.
 
 - Your Office Add-in can use additional UI features:
     - [Add Custom keyboard shortcuts to your Office Add-ins (preview)](../design/keyboard-shortcuts.md)
@@ -200,7 +200,7 @@ Configuring a shared runtime enables the following scenarios:
 
 For Office on Windows, the shared runtime requires a Microsoft Internet Explorer 11 browser instance, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
 
-![Custom functions running in a shared runtime with ribbon buttons and the task pane in Excel](../images/custom-functions-in-browser-runtime.png)
+![Diagram of a custom function, task pane, and ribbon buttons all running in a shared IE/Edge browser runtime in Excel](../images/custom-functions-in-browser-runtime.png)
 
 ### Debugging
 
@@ -217,7 +217,7 @@ We'd love to hear your feedback on this feature. If you find any bugs, issues, o
 ## See also
 
 - [Call Excel APIs from a custom function](call-excel-apis-from-custom-function.md)
-- [Add Custom keyboard shortcuts to your Office Add-ins (preview)](../design/keyboard-shortcuts.md)
+- [Add custom keyboard shortcuts to your Office Add-ins (preview)](../design/keyboard-shortcuts.md)
 - [Create custom contextual tabs in Office Add-ins (preview)](../design/contextual-tabs.md)
 - [Enable and Disable Add-in Commands](../design/disable-add-in-commands.md)
 - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)

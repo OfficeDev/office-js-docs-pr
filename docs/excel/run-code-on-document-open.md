@@ -48,7 +48,7 @@ The following Excel add-in code shows how to register an event handler for chang
 
 ```JavaScript
 // This is called as soon as the document opens.
-//Put your startup code here.
+// Put your startup code here.
 Office.initialize = () => {
   // Add the event handler
   Excel.run(async context => {

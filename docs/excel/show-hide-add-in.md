@@ -35,7 +35,8 @@ The previous code is a handler that is registered for the [Office.Worksheet.onDe
 
 ## Additional details on showing the task pane
 
-When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the page that you assigned to the resource ID (`resid`) for the task pane. This is the `resid` that you assigned to the `<SourceLocation>` of the `<Action xsi:type="ShowTaskpane">` in the manifest. (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).)
+When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your **manifest.xml** file and locating `<SourceLocation>` inside the `<Action xsi:type="ShowTaskpane">` element.
+(See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)
 
 Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code will continue running until the function is complete. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using.
 
@@ -86,7 +87,7 @@ var removeVisibilityModeHandler =
 removeVisibilityModeHandler();
 ```
 
-The `onVisibilityModeChanged` method is asynchronous and returns a promise, which means that your code needs to await the promise before it can call the **deregister** handler.
+The `onVisibilityModeChanged` method is asynchronous and returns a promise, which means that your code needs to await the fulfillment of the promise before it can call the **deregister** handler.
 
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
