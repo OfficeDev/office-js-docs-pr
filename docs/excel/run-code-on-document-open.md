@@ -102,3 +102,4 @@ async function onChange(event) {
 
 - [Configure your Office Add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Work with Events using the Excel JavaScript API](excel-add-ins-events.md)

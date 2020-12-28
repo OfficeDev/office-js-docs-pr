@@ -1,5 +1,5 @@
 ---
-ms.date: 12/02/2020
+ms.date: 12/28/2020
 title: "Configure your Office Add-in to use a shared JavaScript runtime"
 ms.prod: non-product-specific
 description: 'Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.'
@@ -162,7 +162,7 @@ You can test that you are using the shared JavaScript runtime correctly by using
    npm start
    ```
 
-Each time you choose the add-ins button, it will change the **run** button text to **go** and increment a counter after it.
+Each time you select the add-ins button, it will change the **run** button text to **go** and increment a counter after it.
 
 ## Runtime lifetime
 
