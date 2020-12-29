@@ -36,7 +36,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 2. Open the **manifest.xml** file.
-3. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location in the ` <bt:Urls>` section later.
+3. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
 
    ```xml
    <VersionOverrides ...>
