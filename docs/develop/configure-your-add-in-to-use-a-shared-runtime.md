@@ -216,7 +216,7 @@ We'd love to hear your feedback on this feature. If you find any bugs, issues, o
 
 ## See also
 
-- [Call Excel APIs from a custom function](call-excel-apis-from-custom-function.md)
+- [Call Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md)
 - [Add custom keyboard shortcuts to your Office Add-ins (preview)](../design/keyboard-shortcuts.md)
 - [Create custom contextual tabs in Office Add-ins (preview)](../design/contextual-tabs.md)
 - [Enable and Disable Add-in Commands](../design/disable-add-in-commands.md)
