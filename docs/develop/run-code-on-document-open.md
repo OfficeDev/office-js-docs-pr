@@ -1,7 +1,7 @@
 ---
 title: Run code in your Office Add-in when the document opens
 description: 'Learn how to run code in your Office Add-in add-in when the document opens.'
-ms.date: 12/02/2020
+ms.date: 12/28/2020
 localization_priority: Normal
 ---
 
