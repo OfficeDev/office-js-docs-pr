@@ -16,17 +16,13 @@ You can configure your Office Add-in to run all of its code in a single shared J
 
 If you are starting a new project, follow these steps to use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create an Excel or PowerPoint add-in project.
 
-Run the following command to generate an Excel add-in with custom functions.
+Do one of the following:
 
-```command line
-yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js
-```
-
-Run the following command to generate a PowerPoint add-in.
-
-```command line
-yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js
-```
+- To generate an Excel add-in with custom functions, run the command `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js`
+    
+    or
+    
+- To generate a PowerPoint add-in, run the command `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js`
 
 The generator will create the project and install supporting Node components.
 
