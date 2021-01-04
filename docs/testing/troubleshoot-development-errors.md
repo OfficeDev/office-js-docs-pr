@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: 'Learn how to troubleshoot development errors in Office Add-ins.'
-ms.date: 09/08/2020
+ms.date: 01/04/2021
 localization_priority: Normal
 ---
 
@@ -59,6 +59,17 @@ Check the reference documentation for the property to see if it is read only. Al
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
 ```
+
+## Getting error: "This add-in is no longer available"
+
+The following are some of the causes of this error. If you discover additional causes, please tell us with the feedback tool at the bottom of the page.
+
+- If you are using Visual Studio, there may be a problem with the sideloading. Close all instances of the Office host and Visual Studio. Restart Visual Studio and try pressing F5 again.
+- The add-in's manifest has been removed from its deployment location, such as Centralized Deployment, a SharePoint catalog, or a network share.
+- The value of the [ID](../reference/manifest/id.md) element in the manifest has been changed directly in the deployed copy. If for any reason, you want to change this ID, first remove the add-in from the Office host, then replace the original manifest with the changed manifest. You many need to clear the Office cache to remove all traces of the original. See the section [Changes to add-in commands including ribbon buttons and menu items do not take effect](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) earlier in this article.
+- The add-in's manifest has a `resid` that is not defined anywhere in the [Resources](../reference/manifest/resoures.md) section of the manifest, or there is a mismatch in the spelling of the `resid` between where it is used and where it is defined in the `<Resources>` section.
+- There is a `resid` attribute somewhere in the manifest with more than 32 characters. A `resid` attribute, and the `id` attribute of the corresponding resource in the `<Resources>` section, cannot be more than 32 characters.
+- The add-in has a custom Add-in Command but you are trying to run it on a platform that does not support them. For more information, see [Add-in commands requirement sets](../reference/requirement-sets/add-in-commands-requirement-sets.md).
 
 ## Add-in doesn't work on Edge but it works on other browsers
 

@@ -13,7 +13,7 @@ Defines the location of a resource needed by the Script or Page elements used by
 
 | Attribute | Required | Description                                                                          |
 |-----------|----------|--------------------------------------------------------------------------------------|
-| resid     | Yes      | The name of a URL resource defined in the &lt;Resources&gt; section of the manifest. |
+| resid     | Yes      | The name of a URL resource defined in the &lt;Resources&gt; section of the manifest. Can be no more than 32 characters. |
 
 ## Child elements
 

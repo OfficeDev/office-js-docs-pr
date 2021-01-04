@@ -36,7 +36,7 @@ Optional, but if not present there must be at least one **Group** element. Repre
 
 ### Label (Tab)
 
-Required. The label of the custom tab. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
+Required. The label of the custom tab. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
 
 ### InsertAfter
 
