@@ -9,6 +9,8 @@ localization_priority: Normal
 
 Specifies whether a [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) control is enabled when the add-in launches. The **Enabled** element is a child element of [Control](control.md). If it is omitted, the default is `true`.
 
+This element is only valid in Excel; that is, when the `Name` attribute of the [Host](host.md) element is "Workbook".
+
 The parent control can also be programmatically enabled and disabled. For more information, see [Enable and Disable Add-in Commands](../../design/disable-add-in-commands.md).
 
 ## Example
