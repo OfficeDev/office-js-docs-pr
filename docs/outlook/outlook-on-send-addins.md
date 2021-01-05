@@ -194,7 +194,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### [Web browser - modern Outlook](#tab/modern)
 
-Add-ins for Outlook on the web (modern) that use the on-send feature should run for any users who have them installed. However, if users are required to run on-send add-ins to meet compliance standards, then the mailbox policy must have the *OnSendAddinsEnabled* flag set to **true** so that editing the item is not allowed while the add-ins are processing on send.
+Add-ins for Outlook on the web (modern) that use the on-send feature should run for any users who have them installed. However, if users are required to run on-send add-ins to meet compliance standards, then the mailbox policy must have the *OnSendAddinsEnabled* flag set to `true` so that editing the item is not allowed while the add-ins are processing on send.
 
 To install a new add-in, run the following Exchange Online PowerShell cmdlets.
 
