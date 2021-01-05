@@ -42,7 +42,7 @@ For information about Common API requirement sets, see [Office Common API requir
 
 ## Dialog API 1.1 and 1.2
 
-The Dialog API 1.1 is the first version of the API. Requirement set 1.2 adds support for sending data from the parent page to the dialog box with the `Office.ui.messageChild` method. For details about these APIs, see the [Dialog API](/javascript/api/office/office.ui) reference topic.
+The Dialog API 1.1 is the first version of the API. Requirement set 1.2 adds support for sending data from the parent page to the dialog box with the [Office.dialog.messageChild](/javascript/api/office/office.dialog#messageChild_message_) method. For details about these APIs, see the [Dialog API](/javascript/api/office/office.ui) reference topic.
 
 ## See also
 

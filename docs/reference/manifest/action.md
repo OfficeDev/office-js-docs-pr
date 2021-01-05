@@ -45,7 +45,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 
 ## SourceLocation
 
-Required element when **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.
+Required element when **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -99,7 +99,7 @@ The following examples show two actions that use a different **TaskpaneId**. To 
 
 Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action.
 
-The following example shows an action that uses the **Title** element. Note that you don't assign the **Title** to a string directly. Instead, you assign it a resource ID (resid), that is defined in the **Resources** section of the manifest.
+The following example shows an action that uses the **Title** element. Note that you don't assign the **Title** to a string directly. Instead, you assign it a resource ID (resid), that is defined in the **Resources** section of the manifest and can be no more than 32 characters.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
