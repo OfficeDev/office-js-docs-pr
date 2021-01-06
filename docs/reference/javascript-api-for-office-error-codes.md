@@ -1,15 +1,15 @@
 ---
-title: Office JavaScript API error codes
-description: This article documents the error messages you might encounter while using the Office JavaScript API.
-ms.date: 08/11/2020
+title: Office Common API error codes
+description: This article documents the error messages you might encounter while using the Office Common API.
+ms.date: 01/06/2021
 localization_priority: Normal
 ---
 
-# Office JavaScript API error codes
+# Office Common API error codes
 
-This article documents the error messages you might encounter while using the Office JavaScript API (Office.js).
+This article documents the error messages you might encounter while using the Common API model. These error codes don't apply to application-specific APIs, such as the Excel JavaScript API or the Word JavaScript API.
 
-**Applies to:** Office Add-ins | SharePoint Add-ins | Excel | Outlook | PowerPoint | Project | Word
+See [API models](../develop/understanding-the-javascript-api-for-office.md#api-models) to learn more about the differences between the Common API and application-specific API models. 
 
 ## Error codes
 
@@ -135,3 +135,5 @@ The following table summarizes binding behavior in Word.
 ## See also
 
 - [Office Add-ins development lifecycle](../overview/office-add-ins.md)
+- [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
+- [Error handling with the Excel JavaScript API](../excel/excel-add-ins-error-handling.md)
