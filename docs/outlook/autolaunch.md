@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 11/24/2020
+ms.date: 01/06/2021
 localization_priority: Normal
 ---
 
@@ -162,15 +162,26 @@ In this scenario, you'll add handling for composing new items.
 
     ```js
     function onMessageComposeHandler(event) {
-      setSubject();
-      event.completed();
+      setSubject(event);
     }
     function onAppointmentComposeHandler(event) {
-      setSubject();
-      event.completed();
+      setSubject(event);
     }
-    function setSubject() {
-      Office.context.mailbox.item.subject.setAsync("Set by an event-based add-in!");
+    function setSubject(event) {
+      Office.context.mailbox.item.subject.setAsync(
+        "Set by an event-based add-in!",
+        {
+          "asyncContext" : event
+        },
+        function (asyncResult) {
+          // Handle success or error.
+          if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+            console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
+          }
+    
+          // Call event.completed() after all work is done.
+          asyncResult.asyncContext.completed();
+        });
     }
     ```
 
