@@ -1,7 +1,7 @@
 ---
 title: Office client application and platform availability for Office Add-ins
 description: 'Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.'
-ms.date: 11/02/2020
+ms.date: 01/06/2021
 localization_priority: Priority
 ---
 
@@ -340,19 +340,19 @@ To work as expected, your Office Add-in might depend on a specific Office applic
   <tr>
     <td>Office on the web</td>
     <td>- Custom Functions</td>
-    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.3</a></td>
     <td></td>
   </tr>
   <tr>
     <td>Office on Windows<br>(connected to a Microsoft 365 subscription)</td>
     <td>- Custom Functions</td>
-    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.3</a></td>
     <td></td>
   </tr>
   <tr>
     <td>Office on Mac<br>(connected to a Microsoft 365 subscription)</td>
     <td>- Custom Functions</td>
-    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.3</a></td>
     <td></td>
   </tr>
 </table>
