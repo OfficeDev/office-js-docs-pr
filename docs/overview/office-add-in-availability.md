@@ -31,7 +31,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>
       - TaskPane<br>
       - Content<br>
-      - Custom Functions<br>
+      - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
     <td>
@@ -69,7 +69,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>
       - TaskPane<br>
       - Content<br>
-      - Custom Functions<br>
+      - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
     <td>
@@ -227,7 +227,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>
       - TaskPane<br>
       - Content<br>
-      - Custom Functions<br>
+      - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
     <td>
@@ -339,7 +339,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
   </tr>
   <tr>
     <td>Office on the web</td>
-    <td>- Custom Functions</td>
+    <td>- CustomFunctions</td>
     <td>
       - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a><br>
       - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.2</a><br>
@@ -359,7 +359,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
   </tr>
   <tr>
     <td>Office on Mac<br>(connected to a Microsoft 365 subscription)</td>
-    <td>- Custom Functions</td>
+    <td>- CustomFunctions</td>
     <td>
       - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a><br>
       - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.2</a><br>
