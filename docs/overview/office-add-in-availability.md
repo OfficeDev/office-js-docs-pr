@@ -349,7 +349,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
   </tr>
   <tr>
     <td>Office on Windows<br>(connected to a Microsoft 365 subscription)</td>
-    <td>- Custom Functions</td>
+    <td>- CustomFunctions</td>
     <td>
       - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a><br>
       - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.2</a><br>
