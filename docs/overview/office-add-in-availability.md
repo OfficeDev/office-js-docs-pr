@@ -332,10 +332,10 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 
 <table style="width:80%">
   <tr>
-    <th>Platform</th>
-    <th>Extension points</th>
-    <th>API requirement sets</th>
-    <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
+    <th style="width:20%">Platform</th>
+    <th style="width:20%">Extension points</th>
+    <th style="width:20%">API requirement sets</th>
+    <th style="width:20%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
     <td>Office on the web</td>
