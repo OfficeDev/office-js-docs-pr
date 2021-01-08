@@ -529,7 +529,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. The next three `TODO`s set resource IDs, or `resid`s. A resource is a string, and you'll create these three strings in a later step. For now, you need to give IDs to the resources. The button label should read "Toggle Protection", but the *ID* of this string should be "ProtectionButtonLabel", so the `Label` element should look like this:
+4. The next three `TODO`s set resource IDs, or `resid`s. A resource is a string (with a maximum length of 32 characters), and you'll create these three strings in a later step. For now, you need to give IDs to the resources. The button label should read "Toggle Protection", but the *ID* of this string should be "ProtectionButtonLabel", so the `Label` element should look like this:
 
     ```xml
     <Label resid="ProtectionButtonLabel" />

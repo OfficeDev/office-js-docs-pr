@@ -1,7 +1,7 @@
 ---
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 10/22/2020
+ms.date: 01/06/2021
 localization_priority: Normal
 ---
 
@@ -57,6 +57,7 @@ The following table is a list of errors that the API may return.
 |`Conflict`|Request could not be processed because of a conflict.|
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.|
 |`GeneralException`|There was an internal error while processing the request.|
+|`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
 |`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|
 |`InvalidBinding`  |This object binding is no longer valid due to previous updates.|

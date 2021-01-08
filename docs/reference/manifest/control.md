@@ -26,8 +26,8 @@ A button performs a single action when the user selects it. It can either execut
 ### Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Yes |  The text for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.        |
-|  **ToolTip**    |No|The tooltip for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resources.md) element.|        
+|  **Label**     | Yes |  The text for the button. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.        |
+|  **ToolTip**    |No|The tooltip for the button. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resources.md) element.|        
 |  [Supertip](supertip.md)  | Yes |  The supertip for the button.    |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  [Action](action.md)    | Yes |  Specifies the action to perform.  |
@@ -144,8 +144,8 @@ The following example shows how to define a menu item with two submenu items. Th
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Yes |  The text for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.      |
-|  **ToolTip**    |No|The tooltip for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resources.md) element.|        
+|  **Label**     | Yes |  The text for the button. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.      |
+|  **ToolTip**    |No|The tooltip for the button. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resources.md) element.|        
 |  [Supertip](supertip.md)  | Yes |  The supertip for this button.    |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  **Items**     | Yes |  A collection of Buttons to display within the menu. Contains the **Item** elements for each submenu item. Each **Item** element contains the  child elements of the [Button control](#button-control).|
@@ -243,7 +243,7 @@ The `MobileButton` value for **xsi:type** is defined in VersionOverrides schema 
 ### Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Yes |  The text for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.        |
+|  **Label**     | Yes |  The text for the button. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.        |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  [Action](action.md)    | Yes |  Specifies the action to perform.  |
 

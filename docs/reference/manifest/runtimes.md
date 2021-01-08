@@ -11,7 +11,7 @@ Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element.
 > [!NOTE]
 > When running in Office on Windows, your add-in uses the Internet Explorer 11 browser.
 
-In Excel, this element enables the ribbon, task pane, and custom functions to use the same runtime. For more information, see [Configure your Excel add-in to use a shared JavaScript runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+In Excel, this element enables the ribbon, task pane, and custom functions to use the same runtime. For more information, see [Configure your Excel add-in to use a shared JavaScript runtime](../../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 In Outlook, this element enables event-based add-in activation. For more information, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
 

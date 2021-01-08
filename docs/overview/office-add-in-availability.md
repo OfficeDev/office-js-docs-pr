@@ -1,7 +1,7 @@
 ---
 title: Office client application and platform availability for Office Add-ins
 description: 'Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.'
-ms.date: 11/02/2020
+ms.date: 01/06/2021
 localization_priority: Priority
 ---
 
@@ -31,7 +31,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>
       - TaskPane<br>
       - Content<br>
-      - Custom Functions<br>
+      - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
     <td>
@@ -69,7 +69,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>
       - TaskPane<br>
       - Content<br>
-      - Custom Functions<br>
+      - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
     <td>
@@ -227,7 +227,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>
       - TaskPane<br>
       - Content<br>
-      - Custom Functions<br>
+      - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
     <td>
@@ -332,27 +332,39 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 
 <table style="width:80%">
   <tr>
-    <th style="width:10%">Platform</th>
-    <th style="width:10%">Extension points</th>
-    <th style="width:20%">API requirement sets</th>
-    <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
+    <th>Platform</th>
+    <th>Extension points</th>
+    <th>API requirement sets</th>
+    <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
     <td>Office on the web</td>
-    <td>- Custom Functions</td>
-    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>- CustomFunctions</td>
+    <td>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a><br>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.2</a><br>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.3</a>
+    </td>
     <td></td>
   </tr>
   <tr>
     <td>Office on Windows<br>(connected to a Microsoft 365 subscription)</td>
-    <td>- Custom Functions</td>
-    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>- CustomFunctions</td>
+    <td>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a><br>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.2</a><br>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.3</a>
+    </td>
     <td></td>
   </tr>
   <tr>
     <td>Office on Mac<br>(connected to a Microsoft 365 subscription)</td>
-    <td>- Custom Functions</td>
-    <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>- CustomFunctions</td>
+    <td>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a><br>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.2</a><br>
+      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.3</a>
+    </td>
     <td></td>
   </tr>
 </table>
