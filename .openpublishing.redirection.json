@@ -269,6 +269,11 @@
         "redirect_document_id": true 
       },
       {
+        "source_path": "docs/excel/configure-your-add-in-to-use-a-shared-runtime.md", 
+        "redirect_url": "/office/dev/add-ins/develop/configure-your-add-in-to-use-a-shared-runtime", 
+        "redirect_document_id": true 
+      },
+      {
         "source_path": "docs/excel/run-code-on-document-open.md", 
         "redirect_url": "/office/dev/add-ins/develop/run-code-on-document-open", 
         "redirect_document_id": true 
