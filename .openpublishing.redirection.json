@@ -262,7 +262,22 @@
         "source_path": "docs/excel/excel-add-ins-extend-excel.md", 
         "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-overview", 
         "redirect_document_id": true 
-      }, 
+      },
+      {
+        "source_path": "docs/excel/custom-functions-shared-overview.md", 
+        "redirect_url": "/office/dev/add-ins/develop/configure-your-add-in-to-use-a-shared-runtime", 
+        "redirect_document_id": true 
+      },
+      {
+        "source_path": "docs/excel/run-code-on-document-open.md", 
+        "redirect_url": "/office/dev/add-ins/develop/run-code-on-document-open", 
+        "redirect_document_id": true 
+      },
+      {
+        "source_path": "docs/excel/show-hide-add-in.md", 
+        "redirect_url": "/office/dev/add-ins/develop/show-hide-add-in", 
+        "redirect_document_id": true 
+      },
       {   
         "source_path": "docs/excel/excel-add-ins-excel-add-ins-advanced-concepts.md", 
         "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts", 
