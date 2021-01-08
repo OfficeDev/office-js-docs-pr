@@ -37,5 +37,5 @@ The following table lists the PowerPoint JavaScript API requirement set 1.2. For
 
 ## See also
 
-- [PowerPoint JavaScript API Reference Documentation](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)
+- [PowerPoint JavaScript API Reference Documentation](/javascript/api/powerpoint?view=powerpoint-js-1.2&preserve-view=true)
 - [PowerPoint JavaScript API requirement sets](powerpoint-api-requirement-sets.md)
