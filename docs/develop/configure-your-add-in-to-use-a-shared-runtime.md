@@ -32,7 +32,17 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 2. Open the **manifest.xml** file.
-3. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
+3. If you generated an Excel add-in, update the requirements section to use the shared runtime instead of the custom function runtime. The XML should appear as follows.
+    
+    ```xml
+    <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="SharedRuntime" MinVersion="1.1"/>
+    </Sets>
+    </Requirements>
+    ```
+        
+4. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
 
    ```xml
    <VersionOverrides ...>
@@ -45,7 +55,7 @@ Follow these steps for a new or existing project to configure it to use a shared
        ...
    ```
 
-4. If you generated an Excel add-in with custom functions, find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
+5. If you generated an Excel add-in with custom functions, find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
@@ -56,7 +66,7 @@ Follow these steps for a new or existing project to configure it to use a shared
    ...
    ```
 
-5. Find the `<FunctionFile ...>` tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a **FunctionFile** entry, and can skip this step.
+6. Find the `<FunctionFile ...>` tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a **FunctionFile** entry, and can skip this step.
 
     ```xml
     </GetStarted>
@@ -65,7 +75,7 @@ Follow these steps for a new or existing project to configure it to use a shared
     ...
     ```
 
-6. Save the **manifest.xml** file.
+7. Save the **manifest.xml** file.
 
 ## Configure the webpack.config.js file
 
@@ -196,7 +206,7 @@ Configuring a shared runtime enables the following scenarios.
 
 For Office on Windows, the shared runtime requires a Microsoft Internet Explorer 11 browser instance, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
 
-![Diagram of a custom function, task pane, and ribbon buttons all running in a shared IE/Edge browser runtime in Excel](../images/custom-functions-in-browser-runtime.png)
+![Diagram of a custom function, task pane, and ribbon buttons all running in a shared IE browser runtime in Excel](../images/custom-functions-in-browser-runtime.png)
 
 ### Debugging
 
