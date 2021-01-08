@@ -42,7 +42,7 @@ Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code will 
 
 ## Configure your add-in to use the shared runtime
 
-To use the `showAsTaskpane()` and `hide()` methods your add-in must use the shared runtime. For more information, see [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
+To use the `showAsTaskpane()` and `hide()` methods, your add-in must use the shared runtime. For more information, see [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## Preservation of state and event listeners
 

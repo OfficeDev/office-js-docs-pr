@@ -26,7 +26,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 
 ## Configure your add-in for no load behavior on document open
 
-The following code configures your add-in not to start when the document is opened. Instead it will start when the user engages it in some way (such as choosing a ribbon button, or opening the task pane.)
+The following code configures your add-in not to start when the document is opened. Instead, it will start when the user engages it in some way, such as choosing a ribbon button or opening the task pane.
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.none);
@@ -34,7 +34,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 
 ## Get the current load behavior
 
-To determine what the current startup behavior is, run the following function, which returns an Office.StartupBehavior object.
+To determine what the current startup behavior is, run the following function, which returns an `Office.StartupBehavior` object.
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();
@@ -50,7 +50,7 @@ The following Excel add-in code shows how to register an event handler for chang
 // This is called as soon as the document opens.
 // Put your startup code here.
 Office.initialize = () => {
-  // Add the event handler
+  // Add the event handler.
   Excel.run(async context => {
     let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.onChanged.add(onChange);

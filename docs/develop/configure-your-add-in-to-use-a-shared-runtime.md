@@ -142,7 +142,7 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
     
     ```xml
     <Action xsi:type="ExecuteFunction">
-    <FunctionName>action</FunctionName>
+      <FunctionName>action</FunctionName>
     </Action>
     ```
 3. Open the **./src/commands/commands.js** file.
@@ -152,12 +152,12 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
     var _count=0;
     
     function action(event) {
-      // Your code goes here
+      // Your code goes here.
       _count++;
       Office.addin.showAsTaskpane();
       document.getElementById("run").textContent="Go"+_count;
     
-      // Be sure to indicate when the add-in command function is complete
+      // Be sure to indicate when the add-in command function is complete.
       event.completed();
     }
     ```
@@ -175,7 +175,7 @@ Each time you select the add-ins button, it will change the **run** button text 
 When you add the `Runtime` element, you also specify a lifetime with a value of `long` or `short`. Set this value to `long` to take advantage of features such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions.
 
 >[!NOTE]
-> The default lifetime value is `short`, but we recommend using `long` in Excel add-ins. If you set your runtime to `short` in this example, your Excel add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
+> The default lifetime value is `short`, but we recommend using `long` in Excel add-ins. If you set your runtime to `short` in this example, your Excel add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
 
 ```xml
 <Runtimes>
