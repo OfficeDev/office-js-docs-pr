@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 01/05/2021
+ms.date: 01/08/2021
 localization_priority: Normal
 ---
 
@@ -389,7 +389,12 @@ The on-send add-ins will run during send if the Exchange server is online and re
 
 ### User can edit item while on-send add-ins are working on it
 
-While on-send add-ins are processing an item, the user can edit the item by adding, for example, inappropriate text or attachments. If you want to prevent the user from editing the item while your add-in is processing on send, you can implement a workaround using a dialog. In your on-send handler:
+While on-send add-ins are processing an item, the user can edit the item by adding, for example, inappropriate text or attachments. If you want to prevent the user from editing the item while your add-in is processing on send, you can implement a workaround using a dialog. This workaround can be used in Outlook on the web (classic), Windows, and Mac.
+
+> [!IMPORTANT]
+> Modern Outlook on the web: To prevent the user from editing the item while your add-in is processing on send, you should set the *OnSendAddinsEnabled* flag to `true` as described in the [Install Outlook add-ins that use on-send](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send) section earlier in this article.
+
+In your on-send handler:
 
 1. Call [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displaydialogasync-startaddress--options--callback-) to open a dialog so that mouse clicks and keystrokes are disabled.
 
@@ -398,9 +403,6 @@ While on-send add-ins are processing an item, the user can edit the item by addi
 
 1. Implement processing of the item.
 1. Close the dialog. Also, handle what happens if the user closes the dialog.
-
-> [!IMPORTANT]
-> Modern Outlook on the web: To prevent the user from editing the item while your add-in is processing on send, you should set the *OnSendAddinsEnabled* flag to `true` as described in the [Install Outlook add-ins that use on-send](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send) section earlier in this article.
 
 ## Code examples
 
