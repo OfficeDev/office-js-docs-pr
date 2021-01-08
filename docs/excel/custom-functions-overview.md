@@ -1,5 +1,5 @@
 ---
-ms.date: 12/29/2020
+ms.date: 01/08/2020
 description: 'Create an Excel custom function for your Office Add-in.'
 title: Create custom functions in Excel
 ms.topic: conceptual
@@ -30,7 +30,7 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you will need to set up a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you will need to set up a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
 
 ## How a custom function is defined in code
 
