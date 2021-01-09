@@ -93,4 +93,4 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 * [Custom functions requirement sets](custom-functions-requirement-sets.md)
 * [Custom functions naming guidelines](custom-functions-naming.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
-* [Configure your Office Add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md)
+* [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
