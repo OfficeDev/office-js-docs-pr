@@ -68,7 +68,7 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
 The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry.
 
-![Screenshot of the registry editor with a RuntimeLogging registry key](http://i.imgur.com/Sa9TyI6.png)
+![Screenshot of the registry editor with a RuntimeLogging registry key](../images/runtime-logging-registry.png))
 
 ## Runtime logging on Mac
 
@@ -123,10 +123,6 @@ To use runtime logging to troubleshoot issues loading an add-in:
 2. If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.
 
 3. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.
-
-In the following example, the log file identifies a control that points to a resource file that doesn't exist. For this example, the fix would be to correct the typo in the manifest or to add the missing resource.
-
-![Screenshot of a log file with an entry that specifies a Resource ID that is not found](../images/runtime-logging-registry.png)
 
 ## Known issues with runtime logging
 
