@@ -1,5 +1,5 @@
 ---
-ms.date: 12/29/2020
+ms.date: 01/08/2020
 description: 'Troubleshoot common problems with Excel custom functions.'
 title: Troubleshoot custom functions
 localization_priority: Normal
@@ -74,7 +74,7 @@ For more information on this process, see [Associating function names with JSON 
 
 ## Known issues
 
-See a list of additional known issues by checking the [Excel Custom Functions GitHub repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
+Known issues are tracked and reported in the [Excel Custom Functions GitHub repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## Reporting feedback
 
