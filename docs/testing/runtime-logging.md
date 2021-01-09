@@ -126,7 +126,7 @@ To use runtime logging to troubleshoot issues loading an add-in:
 
 In the following example, the log file identifies a control that points to a resource file that doesn't exist. For this example, the fix would be to correct the typo in the manifest or to add the missing resource.
 
-![Screenshot of a log file with an entry that specifies a Resource ID that is not found](http://i.imgur.com/f8bouLA.png)
+![Screenshot of a log file with an entry that specifies a Resource ID that is not found](../images/runtime-logging-registry.png)
 
 ## Known issues with runtime logging
 
