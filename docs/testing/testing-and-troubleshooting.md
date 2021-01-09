@@ -64,7 +64,7 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 "The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser so that [URL] and the domain shown in your address bar are in the same security zone."
 
-![A screen shot of the dialog box error message](../dialog-prevented.png)
+![A screen shot of the dialog box error message](../images/dialog-prevented.png)
 
 |**Affected browsers**|**Affected platforms**|
 |:--------------------|:---------------------|
