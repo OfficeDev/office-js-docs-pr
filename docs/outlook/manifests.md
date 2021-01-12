@@ -349,7 +349,7 @@ The **FormSettings** element is used by older Outlook clients, which only suppor
 
 These settings are directly related to the activation rules in the **Rule** element. For example, if an add-in specifies that it should appear on a message in compose mode, an **ItemEdit** form must be specified.
 
-For more details, please refer to the [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md).
+For more details, please refer to the [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md).
 
 ## App domains
 

@@ -192,7 +192,7 @@ To get **CustomProperties** using EWS or REST, you should first determine the na
 
 #### How custom properties are stored on an item
 
-Custom properties set by an add-in are not equivalent to normal MAPI-based properties. Add-in APIs serialize all your add-in's `CustomProperties` as a JSON payload and then save them in a single MAPI-based extended property whose name is `cecp-<app-guid>` (`<app-guid>` is your add-in's ID) and property set GUID is `{00020329-0000-0000-C000-000000000046}`. (For more information about this object, see [MS-OXCEXT 2.2.5 Mail App Custom Properties](https://msdn.microsoft.com/library/hh968549(v=exchg.80).aspx).) You can then use EWS or REST to get this MAPI-based property.
+Custom properties set by an add-in are not equivalent to normal MAPI-based properties. Add-in APIs serialize all your add-in's `CustomProperties` as a JSON payload and then save them in a single MAPI-based extended property whose name is `cecp-<app-guid>` (`<app-guid>` is your add-in's ID) and property set GUID is `{00020329-0000-0000-C000-000000000046}`. (For more information about this object, see [MS-OXCEXT 2.2.5 Mail App Custom Properties](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481).) You can then use EWS or REST to get this MAPI-based property.
 
 #### Get custom properties using EWS
 
