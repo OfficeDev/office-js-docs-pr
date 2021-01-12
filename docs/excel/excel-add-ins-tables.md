@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with tables using the Excel JavaScript API.'
-ms.date: 09/09/2019
+ms.date: 01/11/2021
 localization_priority: Normal
 ---
 
@@ -55,6 +55,9 @@ The following code sample adds seven new rows to the table named **ExpensesTable
 
 > [!NOTE]
 > The `index` property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A `TableRow` object does not contain an `id` property that can be used as a unique key to identify the row.
+
+> [!WARNING]
+> Adding rows to a table from a content add-in will result in a fatal memory flaw. See [GitHub Issue #1415](https://github.com/OfficeDev/office-js/issues/1415) for current status and additional information. 
 
 ```js
 Excel.run(function (context) {
