@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 11/20/2020
+ms.date: 01/11/2021
 localization_priority: Normal
 ---
 
@@ -99,7 +99,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. (The ful
     ```json
     {
       "id": "CtxTab1",
-      "label": "Data",
+      "label": "Contoso Data",
       "groups": [
 
       ]
@@ -199,7 +199,7 @@ The following is the complete example of the JSON blob:
   "tabs": [
     {
       "id": "CtxTab1",
-      "label": "Data",
+      "label": "Contoso Data",
       "groups": [
         {
           "id": "CustomGroup111",
@@ -269,7 +269,7 @@ Begin by assigning handlers. This is commonly done in the `Office.onReady` metho
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... '; // Assign the JSON string.
+    const contextualTabJSON = ` ... `; // Assign the JSON string.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 
@@ -308,8 +308,8 @@ The Office JavaScript library also provides several interfaces (types) to make i
 
 ```typescript
 const showDataTab = async () => {
-    const myContextualTab: Tab = {id: "CtxTab1", visible: true};
-    const ribbonUpdater: RibbonUpdaterData = { tabs: [ myContextualTab ]};
+    const myContextualTab: Office.Tab = {id: "CtxTab1", visible: true};
+    const ribbonUpdater: Office.RibbonUpdaterData = { tabs: [ myContextualTab ]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
@@ -328,11 +328,17 @@ function myContextChanges() {
             },
             {
                 id: "OfficeAppTab1",
-                controls: [
-                {
-                    id: "MyButton",
-                    enabled: true
-                }
+                groups: [
+                    {
+                        id: "CustomGroup111",
+                        controls: [
+                            {
+                                id: "MyButton",
+                                enabled: true
+                            }
+                        ]
+                    }
+                ]
             ]}
         ]});
 }
@@ -347,14 +353,20 @@ function myContextChanges() {
             {
                 id: "CtxTab1",
                 visible: true,
-                controls: [
+                groups: [
                     {
-                        id: "MyButton",
-                        enabled: true
-                    }
-                ]
+                        id: "CustomGroup111",
+                        controls: [
+                            {
+                                id: "MyButton",
+                                enabled: true
+                           }
+                       ]
+                   }
+               ]
             }
-        ]});
+        ]
+    });
 }
 ```
 
@@ -375,7 +387,7 @@ function GetContextualTabsJsonSupportedLocale () {
                     "tabs": [
                         {
                           "id": "CtxTab1",
-                          "label": "Data",
+                          "label": "Contoso Data",
                           "groups": [
                               // groups omitted
                           ]
@@ -391,7 +403,7 @@ function GetContextualTabsJsonSupportedLocale () {
                     "tabs": [
                         {
                           "id": "CtxTab1",
-                          "label": "Données",
+                          "label": "Contoso Données",
                           "groups": [
                               // groups omitted
                           ]
