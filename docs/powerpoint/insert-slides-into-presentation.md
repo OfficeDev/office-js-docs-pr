@@ -1,15 +1,13 @@
 ---
 title: Insert and delete slides in a PowerPoint presentation
 description: 'Learn how to insert slides from one presentation into another and how to delete slides.'
-ms.date: 12/04/2020
+ms.date: 01/08/2021
 localization_priority: Normal
 ---
 
-# Insert and delete slides in a PowerPoint presentation (preview)
+# Insert and delete slides in a PowerPoint presentation
 
 A PowerPoint add-in can insert slides from one presentation into the current presentation by using PowerPoint's application-specific JavaScript library. You can control whether the inserted slides keep the formatting of the source presentation or the formatting of the target presentation. You can also delete slides from the presentation.
-
-[!include[General preview API prerequisites](../includes/using-preview-apis-host.md)]
 
 The slide insertion APIs are primarily used in presentation template scenarios: There are a small number of known presentations which serve as pools of slides that can be inserted by the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as slide titles or images) with slide IDs. The APIs can also be used in scenarios where the user can insert slides from any arbitrary presentation, but in that scenario the user is effectively limited to inserting *all* the slides from the source presentation. See [Selecting which slides to insert](#selecting-which-slides-to-insert) for more information about this.
 

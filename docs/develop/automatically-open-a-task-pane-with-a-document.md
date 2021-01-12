@@ -120,7 +120,7 @@ The `webextension` part also includes a reference to the store or catalog with a
 > [!NOTE]
 > To find the asset ID and version of an add-in in AppSource, go to the AppSource landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
 
-For more information about the webextension markup, see [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/library/hh695383(v=office.12).aspx).
+For more information about the webextension markup, see [[MS-OWEXML] 2.2.5. WebExtensionReference](/openspecs/office_standards/ms-owexml/d4081e0b-5711-45de-b708-1dfa1b943ad1).
 
 The following example shows how to add the `taskpane` part.
 
