@@ -340,7 +340,8 @@ function myContextChanges() {
                     }
                 ]
             ]}
-        ]});
+        ]
+    });
 }
 ```
 
