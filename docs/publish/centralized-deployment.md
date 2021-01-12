@@ -1,7 +1,7 @@
 ---
 title: Publish Office Add-ins using Centralized Deployment via the Microsoft 365 admin center
 description: 'Learn how to use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.'
-ms.date: 12/11/2020
+ms.date: 01/12/2021
 localization_priority: Normal
 ---
 
