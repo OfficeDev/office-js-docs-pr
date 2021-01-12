@@ -119,7 +119,7 @@ After an Office Add-in has been published via Centralized Deployment, any change
   >
   > ![Screenshot shows the Update add-in dialog in Microsoft 365 admin center](../images/update-add-in-admin-center.png)
 
-- **Office Store add-in**: If an admin selected an add-in from the Office Store when implementing Centralized Deployment via the Microsoft 365 admin center, and the add-in updates in the Office Store, the add-in will update later via Centralized Deployment. It can take up to 72 hours for the Store add-in updates to flow for all end users. After this duration, the next time the relevant Office applications restart for these users, the add-in will update. Users can also trigger a Manual Refresh to get the latest Store add-in version by selecting **Insert Tab** > **Add-ins** > **Admin Managed Tab** > **Hit Refresh**.
+- **Office Store add-in**: If an admin selected an add-in from the Office Store when implementing Centralized Deployment via the Microsoft 365 admin center, and the add-in updates in the Office Store, the add-in will update later via Centralized Deployment. It can take up to 24 hours for the Store add-in updates to flow for all end users. After this duration, the next time the relevant Office applications restart for these users, the add-in will update. Users can also trigger a Manual Refresh to get the latest Store add-in version by selecting **Insert Tab** > **Add-ins** > **Admin Managed Tab** > **Hit Refresh**.
 
 ## End user experience with add-ins
 
