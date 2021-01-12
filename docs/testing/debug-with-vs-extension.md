@@ -24,7 +24,7 @@ These instructions assume you have experience using the command line, understand
 
 ## Install and use the debugger
 
-1. If you need to create an add-in project, [use the Yo Office generator to create one](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
+1. If you need to create an add-in project, [use the Yo Office generator to create one](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
 
 > [!NOTE]
 > If you already have a project, skip step 1 and move to step 2.

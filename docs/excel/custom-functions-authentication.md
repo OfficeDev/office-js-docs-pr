@@ -142,4 +142,4 @@ Learn how to [debug UI-less custom functions](custom-functions-debugging.md).
 ## See also
 
 * [Runtime for UI-less Excel custom functions](custom-functions-runtime.md)
-* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)
+* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

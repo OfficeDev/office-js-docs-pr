@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # Ribbon API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 The Ribbon API set supports programmatic control of when custom Add-in Commands (that is, custom ribbon buttons and menu items) are enabled and disabled.
 
@@ -55,6 +55,6 @@ The Ribbon API 1.1 is the first version of the API. For details about the API, s
 
 ## See also
 
-- [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Specify Office applications and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)
+- [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
+- [Specify Office applications and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office Add-ins XML manifest](../../develop/add-in-manifests.md)
