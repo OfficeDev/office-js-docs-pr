@@ -529,7 +529,7 @@ items:
     - name: Browsers used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Error codes
+    - name: Office Common API error codes
       href: reference/javascript-api-for-office-error-codes.md
     - name: Unsupported window objects
       href: reference/window-objects-unsupported-in-add-ins.md

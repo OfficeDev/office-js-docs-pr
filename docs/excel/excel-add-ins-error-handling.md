@@ -1,7 +1,7 @@
 ---
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 01/06/2021
+ms.date: 01/13/2021
 localization_priority: Normal
 ---
 
@@ -78,7 +78,11 @@ The following table is a list of errors that the API may return.
 |`UnsupportedOperation`|The operation being attempted is not supported.|
 |`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|
 
+> [!NOTE]
+> The preceding table lists error messages you may encounter while using the Excel JavaScript API. If you are working with the Common API instead of the application-specific Excel JavaScript API, see [Office Common API error codes](../reference/javascript-api-for-office-error-codes.md) to learn about relevant error messages.
+
 ## See also
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error object (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)
+- [Office Common API error codes](../reference/javascript-api-for-office-error-codes.md)
