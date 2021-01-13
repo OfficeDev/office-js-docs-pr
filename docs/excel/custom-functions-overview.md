@@ -1,5 +1,5 @@
 ---
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 description: 'Create an Excel custom function for your Office Add-in.'
 title: Create custom functions in Excel
 ms.topic: conceptual
@@ -29,8 +29,8 @@ function sphereVolume(radius) {
 }
 ```
 
-> [!NOTE]
-> The [Known issues](#known-issues) section later in this article specifies current limitations of custom functions.
+> [!TIP]
+> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you will need to set up a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
 
 ## How a custom function is defined in code
 
@@ -70,7 +70,7 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 - Uses `<ExtensionPoint>` and `<Resources>` elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
 - Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane. Note that using a shared runtime means your add-in will use Internet Explorer 11, not Microsoft Edge.
 
-If you are using the Yo Office generator to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md).
+If you are using the Yo Office generator to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 To see a full working manifest from a sample add-in, see [this Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
 
@@ -81,10 +81,6 @@ To see a full working manifest from a sample add-in, see [this Github repository
 Excel on the web and Windows connected to a Microsoft 365 subscription allow you to coauthor in Excel. If your workbook uses a custom function, your coauthoring colleague is prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function shares results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
-
-## Known issues
-
-See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## Next steps
 
@@ -97,3 +93,4 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 * [Custom functions requirement sets](custom-functions-requirement-sets.md)
 * [Custom functions naming guidelines](custom-functions-naming.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
+* [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

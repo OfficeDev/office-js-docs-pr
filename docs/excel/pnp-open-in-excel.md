@@ -179,7 +179,7 @@ The OOXML SDK is based on .NET. If your web application does not .NET, you’ll 
 
 There is a JavaScript version of the OOXML SDK available at [Open XML SDK for JavaScript](https://archive.codeplex.com/?p=openxmlsdkjs).
 
-You can place the OOXML code in an Azure function to separate the .NET code from the rest of your web application. Then call the Azure function (to generate the Excel document) from your Web application. For more information on Azure functions, see [An introduction to Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview).
+You can place the OOXML code in an Azure function to separate the .NET code from the rest of your web application. Then call the Azure function (to generate the Excel document) from your Web application. For more information on Azure functions, see [An introduction to Azure Functions](/azure/azure-functions/functions-overview).
 
 ### Use single sign-on
 

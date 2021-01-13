@@ -1,5 +1,5 @@
 ---
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 description: 'Troubleshoot common problems with Excel custom functions.'
 title: Troubleshoot custom functions
 localization_priority: Normal
@@ -31,7 +31,7 @@ Generally, these errors correspond to the errors you might already be familiar w
 
 Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see [Clear the Office cache](../testing/clear-cache.md).
 
-## Common issues
+## Common problems and solutions
 
 ### Can't open add-in from localhost: use a local loopback exception
 
@@ -71,6 +71,10 @@ CustomFunctions.associate("ADD", add);
 ```
 
 For more information on this process, see [Associating function names with JSON metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+
+## Known issues
+
+Known issues are tracked and reported in the [Excel Custom Functions GitHub repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## Reporting feedback
 

@@ -68,7 +68,7 @@ Congratulations, you've successfully created an Excel task pane add-in using Rea
 
 ## See also
 
-* [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
+* [Excel add-in tutorial](../tutorials/excel-tutorial.md)
 * [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
