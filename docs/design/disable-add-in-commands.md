@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 11/20/2020
+ms.date: 01/12/2021
 localization_priority: Normal
 ---
 
@@ -71,10 +71,10 @@ By default, any Add-in Command is enabled when the Office application launches. 
 
 The essential steps to changing the enabled status of an Add-in Command are:
 
-1. Create a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the command, and its parent tab, by their IDs as specified in the manifest; and (2) specifies the enabled or disabled state of the command.
+1. Create a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the command, and its parent group and tab, by their IDs as declared in the manifest; and (2) specifies the enabled or disabled state of the command.
 2. Pass the **RibbonUpdaterData** object to the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) method.
 
-The following is a simple example. Note that "MyButton" and "OfficeAddinTab1" are copied from the manifest.
+The following is a simple example. Note that "MyButton", "OfficeAddinTab1", and "CustomGroup111" are copied from the manifest.
 
 ```javascript
 function enableButton() {
@@ -82,13 +82,20 @@ function enableButton() {
         tabs: [
             {
                 id: "OfficeAppTab1", 
-                controls: [
-                {
-                    id: "MyButton", 
-                    enabled: true
-                }
-            ]}
-        ]});
+                groups: [
+                    {
+                      id: "CustomGroup111",
+                      controls: [
+                        {
+                            id: "MyButton", 
+                            enabled: true
+                        }
+                      ]
+                    }
+                ]
+            }
+        ]
+    });
 }
 ```
 
@@ -97,7 +104,8 @@ We also provide several interfaces (types) to make it easier to construct the **
 ```typescript
 const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
-    const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
+    const parentGroup: Group = {id: "CustomGroup111", controls: [button]};
+    const parentTab: Tab = {id: "OfficeAddinTab1", groups: [parentGroup]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -130,8 +138,18 @@ Third, define the `enableChartFormat` handler. The following is a simple example
 
 ```javascript
 function enableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: true};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var button = {
+                  id: "ChartFormatButton", 
+                  enabled: true
+                 };
+    var parentGroup = {
+                       id: "MyGroup",
+                       controls: [button]
+                      };
+    var parentTab = {
+                     id: "CustomChartTab", 
+                     groups: [parentGroup]
+                    };
     var ribbonUpdater = {tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -141,7 +159,7 @@ Fourth, define the `disableChartFormat` handler. It would be identical to `enabl
 
 ### Toggle tab visibility and the enabled status of a button at the same time
 
-The **requestUpdate** method is also used to toggle the visibility of a custom contextual tab. For details about this and example code, see [Enable and Disable Add-in Commands](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
+The **requestUpdate** method is also used to toggle the visibility of a custom contextual tab. For details about this and example code, see [Create custom contextual tabs in Office Add-ins](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
 
 ## Best practice: Test for control status errors
 
@@ -154,8 +172,18 @@ The following example shows a function that disables a button and records the bu
 
 ```javascript
 function disableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: false};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var button = {
+                  id: "ChartFormatButton", 
+                  enabled: false
+                 };
+    var parentGroup = {
+                       id: "MyGroup",
+                       controls: [button]
+                      };
+    var parentTab = {
+                     id: "CustomChartTab", 
+                     groups: [parentGroup]
+                    };
     var ribbonUpdater = {tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 
@@ -186,8 +214,18 @@ In some scenarios, Office is unable to update the ribbon and will return an erro
 ```javascript
 function disableChartFormat() {
     try {
-        var button = {id: "ChartFormatButton", enabled: false};
-        var parentTab = {id: "CustomChartTab", controls: [button]};
+        var button = {
+                      id: "ChartFormatButton", 
+                      enabled: false
+                     };
+        var parentGroup = {
+                           id: "MyGroup",
+                           controls: [button]
+                          };
+        var parentTab = {
+                         id: "CustomChartTab", 
+                         groups: [parentGroup]
+                        };
         var ribbonUpdater = {tabs: [parentTab]};
         await Office.ribbon.requestUpdate(ribbonUpdater);
 
