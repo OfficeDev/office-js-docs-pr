@@ -1,7 +1,7 @@
 ---
 title: Office Common API error codes
 description: This article documents the error messages you might encounter while using the Office Common API.
-ms.date: 01/06/2021
+ms.date: 01/13/2021
 localization_priority: Normal
 ---
 
@@ -137,3 +137,4 @@ The following table summarizes binding behavior in Word.
 - [Office Add-ins development lifecycle](../overview/office-add-ins.md)
 - [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
 - [Error handling with the Excel JavaScript API](../excel/excel-add-ins-error-handling.md)
+- [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
