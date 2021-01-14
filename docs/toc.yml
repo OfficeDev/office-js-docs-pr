@@ -549,7 +549,7 @@ items:
   - name: Build your first Excel add-in
     items:
     - name: Task pane
-      href: ./quickstarts/excel-quickstart-jquery.md
+      href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
     - name: Task pane (Angular)
       href: quickstarts/excel-quickstart-angular.md
@@ -757,7 +757,7 @@ items:
     href: onenote/onenote-add-ins-programming-overview.md
     displayName: OneNote
   - name: Build your first OneNote add-in
-    href: ./quickstarts/onenote-quickstart.md
+    href: quickstarts/onenote-quickstart.md
     displayName: OneNote
   - name: OneNote JavaScript API
     items:
@@ -1069,7 +1069,7 @@ items:
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
   - name: Build your first PowerPoint add-in
-    href: ./quickstarts/powerpoint-quickstart.md
+    href: quickstarts/powerpoint-quickstart.md
     displayName: PowerPoint
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.md
@@ -1115,7 +1115,7 @@ items:
     href: project/project-add-ins.md
     displayName: Project
   - name: Build your first Project add-in
-    href: ./quickstarts/project-quickstart.md
+    href: quickstarts/project-quickstart.md
     displayName: Project
   - name: JavaScript API for Project
     items:
@@ -1150,7 +1150,7 @@ items:
     href: word/word-add-ins-programming-overview.md
     displayName: Word
   - name: Build your first Word add-in
-    href: ./quickstarts/word-quickstart.md
+    href: quickstarts/word-quickstart.md
     displayName: Word
   - name: Word add-in tutorial
     href: tutorials/word-tutorial.md
