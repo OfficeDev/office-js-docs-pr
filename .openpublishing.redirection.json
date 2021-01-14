@@ -5,32 +5,8 @@
         "redirect_url": "/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
       },
       {
-        "source_path": "docs/quickstarts/sso-quickstart-redirect.md", 
-        "redirect_url": "/office/dev/add-ins/quickstarts/sso-quickstart"
-      },
-      {
         "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md", 
         "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
-      },
-      {   
-        "source_path": "docs/quickstarts/excel-quickstart-jquery-redirect.md", 
-        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
-      },
-      {   
-        "source_path": "docs/quickstarts/onenote-quickstart-redirect.md", 
-        "redirect_url": "/office/dev/add-ins/quickstarts/onenote-quickstart"
-      },
-      {   
-        "source_path": "docs/quickstarts/powerpoint-quickstart-redirect.md", 
-        "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart"
-      },
-      {   
-        "source_path": "docs/quickstarts/project-quickstart-redirect.md", 
-        "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
-      },
-      {   
-        "source_path": "docs/quickstarts/word-quickstart-redirect.md", 
-        "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
       },
       {   
         "source_path": "docs/overview/index.md", 
@@ -44,68 +20,8 @@
         "source_path": "docs/testing/sideload-office-addin-using-sideload-command.md",
         "redirect_url": "/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins"
       },
-      {
-        "source_path": "docs/reference/excel-api-reference.md",
-        "redirect_url": "/javascript/api/excel?view=excel-js-preview"
-      },
-      {
-        "source_path": "docs/reference/onenote-api-reference.md",
-        "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-preview.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-preview"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-1.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.1"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-2.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.2"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-3.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.3"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-4.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.4"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-5.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.5"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-6.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.6"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-7.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.7"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-8.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.8"
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-9.md",
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.9"
-      },
 
 
-      {
-        "source_path": "docs/reference/powerpoint-api-reference.md",
-        "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"
-      },
-      {
-        "source_path": "docs/reference/visio-api-reference.md",
-        "redirect_url": "/javascript/api/visio?view=visio-js-1.1"
-      },
-      {
-        "source_path": "docs/reference/word-api-reference.md",
-        "redirect_url": "/javascript/api/word?view=word-js-preview"
-      },
       {
         "source_path": "docs/reference/common-api-reference.md",
         "redirect_url": "/javascript/api/office?view=common-js"
