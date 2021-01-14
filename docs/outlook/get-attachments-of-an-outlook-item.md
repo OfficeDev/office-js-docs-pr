@@ -1,15 +1,23 @@
 ---
 title: Get attachments in an Outlook add-in
 description: Your add-in can use the attachments API to send information about the attachments to a remote service.
-ms.date: 08/20/2020
+ms.date: 01/14/2020
 localization_priority: Normal
 ---
 
 # Get attachments of an Outlook item from the server
 
-An Outlook add-in cannot pass the attachments of a selected item directly to the remote service that runs on your server. Instead, the add-in can use the attachments API to send information about the attachments to the remote service. The service can then contact the Exchange server directly to retrieve the attachments.
+You can get the attachments of an Outlook item in a couple of ways but which option you use depends on your scenario.
 
-To send attachment information to the remote service, you use the following properties and function:
+1. Send the attachment information to your remote service.
+
+    Your add-in can use the attachments API to send information about the attachments to the remote service. The service can then contact the Exchange server directly to retrieve the attachments.
+
+1. Use the [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API, available from requirement set 1.8. Supported formats: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
+
+    This API may be handy if EWS/REST is unavailable (for example, due to the admin configuration of your Exchange server), or your add-in wants to use the base64 content directly in HTML or JavaScript. Also, the `getAttachmentContentAsync` API is available in compose scenarios where the attachment may not have synced to Exchange yet; see [Manage an item's attachments in a compose form in Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) to learn more.
+
+This article elaborates on the first option. To send attachment information to the remote service, use the following properties and function.
 
 - [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) property &ndash; Provides the URL of Exchange Web Services (EWS) on the Exchange server that hosts the mailbox. Your service uses this URL to call the [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) method, or the [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS operation.
 
@@ -19,7 +27,7 @@ To send attachment information to the remote service, you use the following prop
 
 ## Using the attachments API
 
-To use the attachments API to get attachments from an Exchange mailbox, perform the following steps:
+To use the attachments API to get attachments from an Exchange mailbox, perform the following steps.
 
 1. Show the add-in when the user is viewing a message or appointment that contains an attachment.
 
