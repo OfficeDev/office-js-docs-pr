@@ -1,7 +1,7 @@
 ---
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 01/13/2021
+ms.date: 01/15/2021
 localization_priority: Normal
 ---
 
@@ -67,7 +67,7 @@ The following table is a list of errors that the API may return.
 |`InvalidSelection`|The current selection is invalid for this operation.|
 |`ItemAlreadyExists`|The resource being created already exists.|
 |`ItemNotFound` |The requested resource doesn't exist.|
-|`NonBlankCellOffSheet`|The request to insert new cells can't be completed because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
+|`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
 |`NotImplemented`|The requested feature isn't implemented.|
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|
 |`RequestAborted`|The request was aborted during run time.|
