@@ -77,7 +77,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 2. Using the search box, enter **add-in**. Choose **Excel Web Add-in**, then select **Next**.
 
-3. Name your project and select **Create**.
+3. Name your project **ExcelWebAddIn1** and select **Create**.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
 
@@ -171,7 +171,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 ### Update the manifest
 
-1. [Explore the Visual Studio solution](#explore-the-visual-studio-solution) describes the two projects created by your Visual Studio solution. In **Solution Explorer**, go to the add-in project, which is labeled **ExcelWebAddIn**, and open the **ExcelWebAddInManifest** directory. This directory contains your manifest file, **ExcelWebAddin.xml**. The XML manifest file defines the add-in's settings and capabilities.
+1. In **Solution Explorer**, go to the **ExcelWebAddIn1** add-in project and open the **ExcelWebAddIn1Manifest** directory. This directory contains your manifest file, **ExcelWebAddIn1.xml**. The XML manifest file defines the add-in's settings and capabilities. See the preceding section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) for more information about the two projects created by your Visual Studio solution. 
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
