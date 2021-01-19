@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API.
-ms.date: 11/09/2020
+ms.date: 1/19/2021
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -171,7 +171,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 ### Update the manifest
 
-1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
+1. [Explore the Visual Studio solution](#explore-the-visual-studio-solution) describes the two projects created by your Visual Studio solution. In **Solution Explorer**, go to the add-in project, which is labeled **ExcelWebAddIn**, and open the **ExcelWebAddInManifest** directory. This directory contains your manifest file, **ExcelWebAddin.xml**. The XML manifest file defines the add-in's settings and capabilities.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
