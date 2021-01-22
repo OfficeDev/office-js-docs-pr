@@ -87,7 +87,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
-- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface)
 - [LaunchEvent](#launchevent-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
@@ -254,12 +254,12 @@ This extension point puts buttons in the command surface for the mail read view 
 </ExtensionPoint>
 ```
 
-### MobileOnlineMeetingCommandSurface (preview)
-
-> [!NOTE]
-> This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Android with a Microsoft 365 subscription.
+### MobileOnlineMeetingCommandSurface
 
 This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting. To learn more about this scenario, see the [Create an Outlook mobile add-in for an online-meeting provider](../../outlook/online-meeting.md) article.
+
+> [!NOTE]
+> This extension point is only supported on Android with a Microsoft 365 subscription.
 
 #### Child elements
 
