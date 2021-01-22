@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 01/06/2021
+ms.date: 02/01/2021
 localization_priority: Normal
 ---
 
@@ -19,7 +19,7 @@ Without the event-based activation feature, a user has to explicitly launch an a
 By the end of this walkthrough, you'll have an add-in that runs whenever a new message is created.
 
 > [!IMPORTANT]
-> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web with a Microsoft 365 subscription. See [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article for more details.
+> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with a Microsoft 365 subscription. See [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article for more details.
 >
 > Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
 
@@ -30,7 +30,8 @@ We invite you to try out the event-based activation feature! Let us know your sc
 To preview this feature:
 
 - Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
-- [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+- For Outlook on the web: [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+- For Outlook on Windows: The minimum required build is 16.0.13801.10000. You may need to join the [Office Insider program](https://insider.office.com) for access to more recent Office builds.
 
 ## Set up your environment
 
@@ -129,7 +130,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/runtime.js" />
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/eventHandlersWin32.js" /> <!-- This is not needed for Outlook on the web. -->
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -155,6 +156,8 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web uses an HTML
 You have to implement handling for your selected events.
 
 In this scenario, you'll add handling for composing new items.
+
+### For Outlook on the web
 
 1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
 
@@ -192,6 +195,43 @@ In this scenario, you'll add handling for composing new items.
     g.onAppointmentComposeHandler = onAppointmentComposeHandler;
     ```
 
+### For Outlook on Windows
+
+1. From the same quick start project in your code editor, create a new file **eventHandlersWin32.js** in the **./src/commands** folder.
+
+1. Open the file and insert the following JavaScript code.
+
+    ```js
+    function onMessageComposeHandler(event) {
+      setSubject(event);
+    }
+    function onAppointmentComposeHandler(event) {
+      setSubject(event);
+    }
+    function setSubject(event) {
+      Office.context.mailbox.item.subject.setAsync(
+        "Added by an event-based add-in!",
+        {
+          "asyncContext" : event
+        },
+        function (asyncResult) {
+          // Handle success or error.
+          if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+            console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
+          }
+    
+          // Call event.completed() after all work is done.
+          asyncResult.asyncContext.completed();
+        });
+    }
+
+    // 1st parameter: Key name of the method in the manifest; 2nd parameter: The implementation in this .js file.
+    Office.actions.associate("OnMessageComposeHandler", OnMessageComposeHandler);
+    Office.actions.associate("OnAppointmentComposeHandler", OnAppointmentComposeHandler);
+    ```
+
+TODO: (elizs): Need to show how to update webpack.config.js to handle/incorporate Win32 JS?
+
 ## Try it out
 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
@@ -204,7 +244,10 @@ In this scenario, you'll add handling for composing new items.
 
 1. In Outlook on the web, create a new message.
 
-    ![A screenshot of a message window in Outlook on the web with the subject set on compose.](../images/outlook-web-autolaunch.png)
+    ![Screenshot of a message window in Outlook on the web with the subject set on compose](../images/outlook-web-autolaunch.png)
+
+1. In Outlook on Windows, create a new message.
+    ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win32-autolaunch.png)
 
 ## Event-based activation behavior and limitations
 
