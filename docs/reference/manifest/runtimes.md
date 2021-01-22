@@ -1,7 +1,7 @@
 ---
 title: Runtimes in the manifest file 
 description: The Runtimes element specifies your add-in's runtime.
-ms.date: 06/01/2020
+ms.date: 02/01/2021
 localization_priority: Normal
 ---
 # Runtimes element
@@ -18,7 +18,7 @@ In Outlook, this element enables event-based add-in activation. For more informa
 **Add-in type:** Task pane, Mail
 
 > [!IMPORTANT]
-> **Outlook**: The event-based activation feature is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
+> **Outlook**: The event-based activation feature is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web and Windows. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## Syntax
 
