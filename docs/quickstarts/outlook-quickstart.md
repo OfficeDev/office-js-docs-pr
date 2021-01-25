@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 09/22/2020
+ms.date: 01/22/2021
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -37,13 +37,13 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 
     - **Choose a project type** - `Office Add-in Task Pane project`
 
-    - **Choose a script type** - `Javascript`
+    - **Choose a script type** - `JavaScript`
 
     - **What do you want to name your add-in?** - `My Office Add-in`
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-outlook.png)
+    ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-outlook-1.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
