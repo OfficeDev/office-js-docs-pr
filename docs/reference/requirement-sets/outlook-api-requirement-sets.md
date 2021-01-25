@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: 'Learn more about the Outlook JavaScript API requirement sets.'
-ms.date: 01/20/2021
+ms.date: 01/25/2021
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -33,7 +33,7 @@ Setting a minimum requirement set version in the manifest controls which Outlook
 
 Setting a requirement set does not limit the available APIs that the add-in can use. For example, if the add-in specifies requirement set "Mailbox 1.1", but it is running in an Outlook client which supports "Mailbox 1.3", the add-in can use APIs from requirement set "Mailbox 1.3".
 
-To use a newer API, developers can check if a particular application supports the requirement set by doing the following.
+To use a newer API, developers can check if a particular application supports the requirement set by doing the following:
 
 ```js
 if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {
@@ -100,7 +100,7 @@ Add-ins are supported in Outlook on the following platforms.
 > [!NOTE]
 > <sup>1</sup> Support for **1.8** in Outlook on Windows with a Microsoft 365 subscription or a retail one-time purchase is available from version 1910 (build 12130.20272). Support for **1.9** in Outlook on Windows with a Microsoft 365 subscription is available from version 2008 (build 13127.20296). For more details according to your version, see the update history page for [Office 2019](/officeupdates/update-history-office-2019) or [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 >
-> <sup>2</sup> To reference Identity API requirement set 1.3 in your add-in code, you must call `isSetSupported('IdentityAPI', '1.3')`. To directly use an API introduced in that requirement set, you can check that it's not `undefined`. See [Using APIs from later requirement sets](#using-apis-from-later-requirement-sets) for examples.
+> <sup>2</sup> To reference Identity API requirement set 1.3 in your add-in code, you must check if it's supported by first calling `isSetSupported('IdentityAPI', '1.3')`; declaring it in your add-in's manifest isn't supported. To directly use an API introduced in that requirement set, you can check that it's not `undefined`. See [Using APIs from later requirement sets](#using-apis-from-later-requirement-sets) for example checks.
 >
 > <sup>3</sup> Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). Support for 1.4 in Outlook 2013 was added as part of the [September 13, 2016, update for Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). Support for 1.4 in Outlook 2016 (one-time purchase) was added as part of the [July 3, 2018, update for Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
 >
