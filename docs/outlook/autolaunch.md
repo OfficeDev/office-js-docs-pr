@@ -251,7 +251,7 @@ TODO: (elizs): Need to show how to update webpack.config.js to handle/incorporat
 
 ## Event-based activation behavior and limitations
 
-Add-ins that activate based on events are designed to be short-running, up to 330 seconds only. We recommend you have your add-in call the `event.completed` method to signal it has completed processing the launch event. The add-in also ends when the user closes the compose window.
+Add-ins that activate based on events are designed to be short-running, up to approximately 300 seconds. We recommend you have your add-in call the `event.completed` method to signal it has completed processing the launch event. The add-in also ends when the user closes the compose window.
 
 If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running. Any additional add-ins are pushed to a queue then run as previously active add-ins are completed or deactivated.
 
