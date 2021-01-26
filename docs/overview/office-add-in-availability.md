@@ -597,7 +597,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 </table>
 
 > [!NOTE]
-> <sup>1</sup> To reference Identity API requirement set 1.3 in your add-in code, you must check if it's supported by first calling `isSetSupported('IdentityAPI', '1.3')`; declaring it in your add-in's manifest isn't supported. To directly use an API introduced in that requirement set, you can check that it's not `undefined`. See [Using APIs from later requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets) for example checks.
+> <sup>1</sup> To require Identity API set 1.3 in your add-in code, check if it's supported by calling `isSetSupported('IdentityAPI', '1.3')`. Declaring it in your add-in's manifest isn't supported. You can also determine if the API is supported by checking that it's not `undefined`. For further details, see [Using APIs from later requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
 >
 > <sup>2</sup> Added with post-release updates.
 
