@@ -16,7 +16,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Slide management | Adds support for getting references to slides, slide layouts, and slide masters. | [Slide](/javascript/api/powerpoint/powerpoint.slide)<br>[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)<br>[SlideMaster](/javascript/api/powerpoint/powerpoint.slidemaster)|
+| Slide management | Adds support for adding slides as well as managing slide layouts and slide masters. | [Slide](/javascript/api/powerpoint/powerpoint.slide)<br>[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)<br>[SlideMaster](/javascript/api/powerpoint/powerpoint.slidemaster)|
 | Shapes | Adds support for getting references to the shapes in a slide. | [Shape](/javascript/api/powerpoint/powerpoint.shape) |
 
 ## API list
