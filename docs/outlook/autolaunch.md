@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 01/06/2021
+ms.date: 01/25/2021
 localization_priority: Normal
 ---
 
@@ -208,7 +208,7 @@ In this scenario, you'll add handling for composing new items.
 
 ## Event-based activation behavior and limitations
 
-Add-ins that activate based on events are designed to be short-running, up to 330 seconds only. We recommend you have your add-in call the `event.completed` method to signal it has completed processing the launch event. The add-in also ends when the user closes the compose window.
+Add-ins that activate based on events are designed to be short-running, up to approximately 300 seconds. We recommend you have your add-in call the `event.completed` method to signal it has completed processing the launch event. The add-in also ends when the user closes the compose window.
 
 If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running. Any additional add-ins are pushed to a queue then run as previously active add-ins are completed or deactivated.
 
