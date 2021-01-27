@@ -1,7 +1,7 @@
 ---
 title: PowerPoint JavaScript API requirement set 1.2
 description: 'Details about the PowerPointApi 1.2 requirement set.'
-ms.date: 01/08/2021
+ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
 ---
@@ -14,7 +14,7 @@ The first table provides a concise summary of the APIs, while the subsequent tab
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Insert and Delete Slides | Allows the insertion of existing slides into the current presentation from another presentation, as well as the ability to delete slides. | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
+| [Insert and Delete Slides](../../powerpoint/insert-slides-into-presentation.md) | Allows the insertion of existing slides into the current presentation from another presentation, as well as the ability to delete slides. | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
 
 ## API list
 
