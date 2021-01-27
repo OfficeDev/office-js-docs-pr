@@ -53,3 +53,8 @@ The following table lists the PowerPoint JavaScript APIs currently in preview. F
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.slidemastercollection#getitemat-index-)|Gets a Slide Master using its zero-based index in the collection.|
 ||[getItemOrNullObject(id: string)](/javascript/api/powerpoint/powerpoint.slidemastercollection#getitemornullobject-id-)|Gets a Slide Master using its unique ID.|
 ||[items](/javascript/api/powerpoint/powerpoint.slidemastercollection#items)|Gets the loaded child items in this collection.|
+
+## See also
+
+- [PowerPoint JavaScript API Reference Documentation](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)
+- [PowerPoint JavaScript API requirement sets](powerpoint-api-requirement-sets.md)
