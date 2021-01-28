@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/01/2021
+ms.date: 02/02/2021
 localization_priority: Normal
 ---
 
@@ -197,7 +197,7 @@ In this scenario, you'll add handling for composing new items.
 
 ### For Outlook on Windows
 
-1. From the same quick start project in your code editor, create a new file **eventHandlersWin32.js** in the **./src/commands** folder.
+1. From the same quick start project in your code editor, create a new file **eventHandlersWin.js** in the **./src/commands** folder.
 
 1. Open the file and insert the following JavaScript code.
 
@@ -226,11 +226,9 @@ In this scenario, you'll add handling for composing new items.
     }
 
     // 1st parameter: Key name of the method in the manifest; 2nd parameter: The implementation in this .js file.
-    Office.actions.associate("OnMessageComposeHandler", OnMessageComposeHandler);
-    Office.actions.associate("OnAppointmentComposeHandler", OnAppointmentComposeHandler);
+    Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
+    Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
     ```
-
-TODO: (elizs): Need to show how to update webpack.config.js to handle/incorporate Win32 JS?
 
 ## Try it out
 
