@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 12/07/2020
+ms.date: 01/26/2021
 localization_priority: Normal
 ---
 
@@ -245,14 +245,14 @@ The primary method for filtering PivotTable data is with PivotFilters. Slicers o
 
 #### Create a PivotFilter
 
-To filter PivotTable data with a Pivot*Filter (such as a PivotDateFilter), apply the filter to a [PivotField](/javascript/api/excel/excel.pivotfield). The following four code samples show how to use each of the four types of PivotFilters. 
+To filter PivotTable data with a `Pivot*Filter` (such as a `PivotDateFilter`), apply the filter to a [PivotField](/javascript/api/excel/excel.pivotfield). The following four code samples show how to use each of the four types of PivotFilters. 
 
 ##### PivotDateFilter
 
 The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** PivotField, hiding any data prior to **2020-08-01**. 
 
 > [!IMPORTANT] 
-> A Pivot*Filter can't be applied to a PivotField unless that field's PivotHierarchy is assigned to a hierarchy category. In the following code sample, the `dateHierarchy` must be added to the PivotTable's `rowHierarchies` category before it can be used for filtering.
+> A `Pivot*Filter` can't be applied to a PivotField unless that field's PivotHierarchy is assigned to a hierarchy category. In the following code sample, the `dateHierarchy` must be added to the PivotTable's `rowHierarchies` category before it can be used for filtering.
 
 ```js
 Excel.run(function (context) {
