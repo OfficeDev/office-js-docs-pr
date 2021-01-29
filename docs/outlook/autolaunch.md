@@ -232,7 +232,7 @@ If the user has multiple add-ins that subscribed to the same event, the Outlook 
 
 The user can switch or navigate away from the current mail item where the add-in started running. The add-in that was launched will finish its operation in the background.
 
-Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs.
+Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs:
 
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
@@ -245,6 +245,8 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
 - Under `Office.context.auth`:
   - `getAccessToken`
   - `getAccessTokenAsync`
+
+In Outlook on Windows, cookie-based authentication won't work for event-based add-ins.
 
 ## See also
 
