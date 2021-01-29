@@ -130,7 +130,8 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/eventHandlersWin32.js" /> <!-- This is not needed for Outlook on the web. -->
+        <!-- Needed for Outlook Desktop. -->
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/eventhandlers-win.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -197,7 +198,7 @@ In this scenario, you'll add handling for composing new items.
 
 ### For Outlook on Windows
 
-1. From the same quick start project in your code editor, create a new file **eventHandlersWin.js** in the **./src/commands** folder.
+1. From the same quick start project in your code editor, create a new file **eventhandlers-win.js** in the **./src/commands** folder.
 
 1. Open the file and insert the following JavaScript code.
 
@@ -242,10 +243,11 @@ In this scenario, you'll add handling for composing new items.
 
 1. In Outlook on the web, create a new message.
 
-    ![Screenshot of a message window in Outlook on the web with the subject set on compose](../images/outlook-web-autolaunch.png)
+    ![Screenshot of a message window in Outlook on the web with the subject set on compose](../images/outlook-web-autolaunch-1.png)
 
 1. In Outlook on Windows, create a new message.
-    ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win32-autolaunch.png)
+
+    ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win-autolaunch.png)
 
 ## Event-based activation behavior and limitations
 
