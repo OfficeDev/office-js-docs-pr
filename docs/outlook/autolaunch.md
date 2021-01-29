@@ -130,8 +130,8 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Needed for Outlook Desktop. -->
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/eventhandlers-win.js" />
+        <!-- Entry needed for Outlook Desktop. -->
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/commands.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -157,8 +157,6 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web uses an HTML
 You have to implement handling for your selected events.
 
 In this scenario, you'll add handling for composing new items.
-
-### For Outlook on the web
 
 1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
 
@@ -189,47 +187,24 @@ In this scenario, you'll add handling for composing new items.
     }
     ```
 
-1. At the end of the file, add the following statements.
+1. For the functions to work in **Outlook on the web**, add the following statements at the end of the file.
 
     ```js
     g.onMessageComposeHandler = onMessageComposeHandler;
     g.onAppointmentComposeHandler = onAppointmentComposeHandler;
     ```
 
-### For Outlook on Windows
-
-1. From the same quick start project in your code editor, create a new file **eventhandlers-win.js** in the **./src/commands** folder.
-
-1. Open the file and insert the following JavaScript code.
+1. For the functions to work in **Outlook on Windows**, add the following JavaScript code at the end of the file.
 
     ```js
-    function onMessageComposeHandler(event) {
-      setSubject(event);
+    if (Office.actions) {
+      // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
+      Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
+      Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
     }
-    function onAppointmentComposeHandler(event) {
-      setSubject(event);
-    }
-    function setSubject(event) {
-      Office.context.mailbox.item.subject.setAsync(
-        "Added by an event-based add-in!",
-        {
-          "asyncContext" : event
-        },
-        function (asyncResult) {
-          // Handle success or error.
-          if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
-            console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
-          }
-    
-          // Call event.completed() after all work is done.
-          asyncResult.asyncContext.completed();
-        });
-    }
-
-    // 1st parameter: Key name of the method in the manifest; 2nd parameter: The implementation in this .js file.
-    Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
-    Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
     ```
+
+    **Note**: Checking for `Office.actions` ensures that Outlook on the web ignores these statements.
 
 ## Try it out
 
