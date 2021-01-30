@@ -27,7 +27,7 @@ Required. Unique identifier for the group. It is a string with a maximum of 125 
 |  [Icon](icon.md)      | Yes |  The image for a group.  |
 |  [Control](#control)    | No |  Represents a Control object. Can be zero or more.  |
 |  [OfficeControl](#officecontrol)  | No | Represents one of the built-in Office controls. Can be zero or more. |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies that the group shouldn't appear on host and platform combinations that support custom contextual tabs.  |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the group should appear on host and platform combinations that support custom contextual tabs.  |
 
 ### Label
 

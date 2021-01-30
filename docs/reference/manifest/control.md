@@ -32,7 +32,7 @@ A button performs a single action when the user selects it. It can either execut
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  [Action](action.md)    | Yes |  Specifies the action to perform.  |
 |  [Enabled](enabled.md)    | No |  Specifies whether the control is enabled when the add-in launches.  |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies that the button shouldn't appear on host and platform combinations that support custom contextual tabs. If used, it must be the *first* child element. |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the button should appear on host and platform combinations that support custom contextual tabs. If used, it must be the *first* child element. |
 
 ### ExecuteFunction button example
 
@@ -151,7 +151,7 @@ The following example shows how to define a menu item with two submenu items. Th
 |  [Supertip](supertip.md)  | Yes |  The supertip for this button.    |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  **Items**     | Yes |  A collection of Buttons to display within the menu. Contains the **Item** elements for each submenu item. Each **Item** element contains the  child elements of the [Button control](#button-control).|
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies that the menu shouldn't appear on host and platform combinations that support custom contextual tabs. If used, it must be the *first* child element. |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the menu should appear on host and platform combinations that support custom contextual tabs. If used, it must be the *first* child element. |
 
 ### Menu control examples
 
