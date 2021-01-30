@@ -504,6 +504,8 @@ items:
           href: reference/manifest/officemenu.md
         - name: OfficeTab
           href: reference/manifest/officetab.md
+        - name: OverriddenByRibbonApi
+          href: reference/manifest/overriddenbyribbonapi.md
         - name: Page
           href: reference/manifest/page.md
         - name: Resources

@@ -1,7 +1,7 @@
 ---
 title: Group element in the manifest file
 description: Defines a group of UI controls in a tab. 
-ms.date: 11/01/2020
+ms.date: 01/29/2021
 localization_priority: Normal
 ---
 
@@ -27,6 +27,7 @@ Required. Unique identifier for the group. It is a string with a maximum of 125 
 |  [Icon](icon.md)      | Yes |  The image for a group.  |
 |  [Control](#control)    | No |  Represents a Control object. Can be zero or more.  |
 |  [OfficeControl](#officecontrol)  | No | Represents one of the built-in Office controls. Can be zero or more. |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies that the group shouldn't appear on host and platform combinations that support custom contextual tabs.  |
 
 ### Label
 
@@ -73,4 +74,22 @@ Optional, but if not present there must be at least one **Control**. Include one
     <OfficeControl id="Superscript" />
     <!-- other controls, as needed -->
 </Group>
+```
+
+### OverriddenByRibbonApi
+
+Optional (boolean). Specifies whether the **Group** will be hidden on host and platform combinations that support an API that installs a custom contextual tab on the ribbon at runtime. The default value, if not present is `false`. If used, **OverriddenByRibbonApi** must be the *first* child of **Group**. For more information, see [OverriddenByRibbonApi](overriddenbyribbonapi.md).
+
+```xml
+<ExtensionPoint xsi:type="MessageReadCommandSurface">
+  <CustomTab id="TabCustom1">
+    <Group id="msgreadCustomTab.grp1">
+      <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
+       <!-- other child elements of the group -->
+    </Group>
+    <OfficeGroup id="Paragraph" />
+    <Label resid="customTabLabel1"/>
+    <InsertAfter>TabReview</InsertAfter>
+  </CustomTab>
+</ExtensionPoint>
 ```

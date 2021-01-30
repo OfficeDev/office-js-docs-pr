@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
-ms.date: 11/01/2020
+ms.date: 01/29/2021
 localization_priority: Priority
 ---
 
@@ -69,6 +69,12 @@ You can insert the built-in Office ribbon buttons into your custom command group
 > [!NOTE]
 > This feature is not supported in all Office applications or scenarios. For more information, see [Integrate built-in Office buttons into custom tabs](built-in-button-integration.md).
 
+### Contextual tabs (preview)
+
+You can specify that a tab is only visible on the ribbon in certain contexts, such as when a chart is selected in Excel.
+
+> [!NOTE]
+> This feature is not supported in all Office applications or scenarios. For more information, see [Create custom contextual tabs in Office Add-ins](contextual-tabs.md).
 
 ## Supported platforms
 
@@ -101,6 +107,7 @@ Apply the following best practices when you develop add-in commands:
   - Do not add superfluous buttons to increase the real estate of your add-in.
   - Do not position a custom tab to the left of the Home tab, or give it focus by default when the document opens, unless your add-in is the primary way users will interact with the document. Giving excessive prominence to your add-in inconveniences and annoys users and administrators.
   - If your add-in is the primary way users interact with the document and you have a custom ribbon tab, consider integrating into the tab the buttons for the Office functions that users will frequently need.
+  - If the functionality that is provided with a custom tab should only be available in certain contexts, use [custom contextual tabs](contextual-tabs.md). But implement a [fallback experience for when your add-in runs on platforms that don't support custom contextual tabs](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
   > [!NOTE]
   > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
