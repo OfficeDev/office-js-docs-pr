@@ -19,7 +19,7 @@ The purpose of this element is to create a fallback experience in an add-in that
 - If the add-in runs on a host and platform that supports custom contextual tabs, then the custom tab won't appear on the ribbon. Instead, the custom contextual tab will be installed when the add-in calls the `requestCreateControls` method.
 - If the add-in runs on a host or platform that *doesn't* support custom contextual tabs, then the custom core tab will appear on the ribbon.
 
-There are more complex strategies for using this element. For details, see [Implement an alternate UI experience when custom contextual tabs aren't supported](../../design/contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)].
+There are more complex strategies for using this element. For details, see [Implement an alternate UI experience when custom contextual tabs aren't supported](../../design/contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
 ## Example
 
