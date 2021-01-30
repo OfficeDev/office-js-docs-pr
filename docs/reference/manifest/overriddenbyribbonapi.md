@@ -1,6 +1,6 @@
 ---
 title: OverriddenByRibbonApi element in the manifest file
-description: 'Learn how to specify that a custom tab, group, control, or menu item shouldn't appear when it is also part of a custom contextual tab.'
+description: Learn how to specify that a custom tab, group, control, or menu item shouldn't appear when it is also part of a custom contextual tab.
 ms.date: 01/29/2021
 localization_priority: Normal
 ---
