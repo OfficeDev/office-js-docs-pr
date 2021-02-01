@@ -221,7 +221,7 @@ You cannot use any of the following keyboard combinations. They are used by brow
 
 ## Localizing the keyboard shortcuts JSON
 
-If your add-in supports multiple locales, you will need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](localization.md#localize-extended-overrides).
+If your add-in supports multiple locales, you will need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
 
 ## Next Steps
 
