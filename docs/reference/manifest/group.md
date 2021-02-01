@@ -42,8 +42,8 @@ Required. If a tab contains a lot of groups and the program window is resized, t
 Optional, but if not present there must be at least one **OfficeControl**. For details about the types of controls that are supported, see the [Control](control.md) element. The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.
 
 ```xml
-<Group id="msgreadCustomTab.grp1">
-    <Label resid="residCustomTabGroupLabel"/>
+<Group id="contosoCustomTab.grp1">
+    <Label resid="CustomTabGroupLabel"/>
     <Icon>
         <bt:Image size="16" resid="blue-icon-16" />
         <bt:Image size="32" resid="blue-icon-32" />
@@ -61,8 +61,8 @@ Optional, but if not present there must be at least one **OfficeControl**. For d
 Optional, but if not present there must be at least one **Control**. Include one or more built-in Office controls in the group with `<OfficeControl>` elements. The `id` attribute specifies the ID of the built-in Office control. To find the ID of a control, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.
 
 ```xml
-<Group id="msgreadCustomTab.grp1">
-    <Label resid="residCustomTabGroupLabel"/>
+<Group id="contosoCustomTab.grp1">
+    <Label resid="CustomTabGroupLabel"/>
     <Icon>
         <bt:Image size="16" resid="blue-icon-16" />
         <bt:Image size="32" resid="blue-icon-32" />
@@ -81,9 +81,9 @@ Optional, but if not present there must be at least one **Control**. Include one
 Optional (boolean). Specifies whether the **Group** will be hidden on host and platform combinations that support an API that installs a custom contextual tab on the ribbon at runtime. The default value, if not present is `false`. If used, **OverriddenByRibbonApi** must be the *first* child of **Group**. For more information, see [OverriddenByRibbonApi](overriddenbyribbonapi.md).
 
 ```xml
-<ExtensionPoint xsi:type="MessageReadCommandSurface">
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="TabCustom1">
-    <Group id="msgreadCustomTab.grp1">
+    <Group id="ContosoCustomTab.grp1">
       <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
        <!-- other child elements of the group -->
     </Group>

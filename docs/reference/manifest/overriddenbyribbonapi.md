@@ -24,10 +24,10 @@ There are more complex strategies for using this element. For details, see [Impl
 ## Example
 
 ```xml
-<ExtensionPoint xsi:type="MessageReadCommandSurface">
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="TabCustom1">
     <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-    <Group id="msgreadCustomTab.grp1">
+    <Group id="ContosoCustomTab.grp1">
     </Group>
     <OfficeGroup id="Paragraph" />
     <Label resid="customTabLabel1"/>
