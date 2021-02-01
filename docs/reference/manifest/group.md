@@ -85,11 +85,9 @@ Optional (boolean). Specifies whether the **Group** will be hidden on host and p
   <CustomTab id="TabCustom1">
     <Group id="ContosoCustomTab.grp1">
       <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-       <!-- other child elements of the group -->
+      <!-- other child elements of the group -->
     </Group>
-    <OfficeGroup id="Paragraph" />
     <Label resid="customTabLabel1"/>
-    <InsertAfter>TabReview</InsertAfter>
   </CustomTab>
 </ExtensionPoint>
 ```

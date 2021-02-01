@@ -28,10 +28,11 @@ There are more complex strategies for using this element. For details, see [Impl
   <CustomTab id="TabCustom1">
     <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
     <Group id="ContosoCustomTab.grp1">
+      <Control  xsi:type="Button" id="MyButton">
+        <!-- child elements omitted -->
+      </Control>
     </Group>
-    <OfficeGroup id="Paragraph" />
     <Label resid="customTabLabel1"/>
-    <InsertAfter>TabReview</InsertAfter>
   </CustomTab>
 </ExtensionPoint>
 ```
