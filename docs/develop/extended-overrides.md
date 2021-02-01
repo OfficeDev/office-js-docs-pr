@@ -34,7 +34,7 @@ Use the manifest to tell Office where to find the JSON file. Immediately *below*
 </OfficeApp>
 ```
 
-The following is an example of a very simple extended overrides JSON file. It assigns keyboard shortcut CTRL+SHIFT+UP to a function (defined elsewhere) that opens the add-in's task pane.
+The following is an example of a very simple extended overrides JSON file. It assigns keyboard shortcut CTRL+SHIFT+A to a function (defined elsewhere) that opens the add-in's task pane.
 
 ```json
 {
@@ -56,7 +56,7 @@ The following is an example of a very simple extended overrides JSON file. It as
 }
 ```
 
-## Localizing the extended manifest file
+## Localizing the extended overrides file
 
 If your add-in supports multiple locales, you can use the `ResourceUrl` attribute of the `<ExtendedOverrides>` element to point Office to a file of localized resources. The following is an example.
 

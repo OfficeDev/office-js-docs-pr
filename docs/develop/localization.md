@@ -151,7 +151,7 @@ Some extensibility features of Office Add-ins, such as keyboard shortcuts, are c
 
 There are two ways to localize the strings and URLs in an extended overrides file.
 
-### Method 1: Use resource tokens in the extended manifest file
+### Method 1: Use resource tokens in the extended overrides file
 
 We recommend this method as the most efficient for most add-ins. You can use the `ResourceUrl` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element to point Office to a file of localized resources. The following is an example.
 
@@ -214,7 +214,7 @@ The resource file, which is also JSON-formatted, has a top-level `resources` pro
 }
 ```
 
-Note that there is no `default` property in the file that is a peer to the `en-us` and `fr-fr` sections. This is because the default strings, which are used when the locale of the Office host application doesn't match any of the *ll-cc* properties in the resources file, *must be defined in the extended manifest file itself*. This ensures that Office doesn't have to download the resource file when the locale of the Office application matches the default locale of the add-in (as specified in the manifest). The following is a corrected version of the preceding example of an extended overrides file that uses resource tokens.
+Note that there is no `default` property in the file that is a peer to the `en-us` and `fr-fr` sections. This is because the default strings, which are used when the locale of the Office host application doesn't match any of the *ll-cc* properties in the resources file, *must be defined in the extended overrides file itself*. Defining the default strings directly in the extended overrides file ensures that Office doesn't have to download the resource file when the locale of the Office application matches the default locale of the add-in (as specified in the manifest). The following is a corrected version of the preceding example of an extended overrides file that uses resource tokens.
 
 ```json
 {
@@ -246,7 +246,7 @@ Note that there is no `default` property in the file that is a peer to the `en-u
 }
 ```
 
-### Method 2: Create separate extended override files for each locale
+### Method 2: Create separate extended override files for various locales or sets of locales
 
 If you prefer, you can create separate extended override files for each locale, rather than use a resource file. Although the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element has only one `Url` attribute, it is possible for the attribute to refer to more than one file. This is because the value of the attribute doesn't have to be a literal URL. It can be a URL template with a locale placeholder, called a token. The following is an example. Note that the format of the token is **${token.*name-of-token*}**.
 
@@ -279,7 +279,7 @@ There are hundreds of possible locales, and it is not likely to be cost effectiv
 </OfficeApp>
 ```
 
-Now you need to tell Office what string to insert in the URL when you *do* have an extended overrides file for the Office host application's locale. You do this with a series of [Override](..reference/manifest/override.md) elements. In the following example, there are two extended overrides files (in addition to the one for the default en-us). Note that: 
+Now you need to tell Office what string to insert in the URL when you *do* have an extended overrides file for the Office host application's locale. You do this with a series of [Override](../reference/manifest/override.md) elements. In the following example, there are two extended overrides files (in addition to the one for the default `en-us`). Note that:
 
 - The `Locale` attribute is the one that Office will try to match with the Office host application's locale.
 - The `Value` attribute is the string that Office will insert in the URL when it finds a match.
@@ -298,7 +298,7 @@ Now you need to tell Office what string to insert in the URL when you *do* have 
 </OfficeApp>
 ```
 
-You can use the wildcard character, "\*", in the `Locale` attribute. This is useful when you want to insert the same string into the URL for multiple locales. For example, suppose you have an extended overrides file that has be localized to es-es (Spanish in Spain) and you want it to be used in all Spanish-speaking countries. Without the wildcard character, you would need a different `<Override>` element for every Spanish locale; es-es, es-mx, es-ar, es-bo, etc. as in the following example.
+You can use the wildcard character, "\*", in the `Locale` attribute. This is useful when you want to insert the same string into the URL for multiple locales. For example, suppose you have an extended overrides file that has be localized to `es-es` (Spanish in Spain) and you want it to be used in all Spanish-speaking countries. Without the wildcard character, you would need a different `<Override>` element for every Spanish locale; `es-es`, `es-mx`, `es-ar`, `es-bo`, etc. as in the following example.
 
 ```xml
 <Token xsi:type="LocaleToken" name="locale" default="en-us">
@@ -321,7 +321,7 @@ But by using the wildcard character, you can have just a single `<Override>` ele
 </Token>
 ```
 
-Suppose that you want to make an exception for es-mx (Spanish in Mexico) and you have an extended overrides file for it as well as for es-es. You can ensure that Mexican Spanish is used when Mexico is the locale, but Spanish in Spain is used by all other Spanish locales by placing an `<Override>` element for Mexico *below* the element for the other Spanish locales, as in the following example.
+Suppose that you want to make an exception for `es-mx` (Spanish in Mexico) and you have an extended overrides file for it as well as for `es-es`. You can ensure that Mexican Spanish is used when Mexico is the locale, but Spanish in Spain is used by all other Spanish locales by placing an `<Override>` element for Mexico *below* the element for the other Spanish locales, as in the following example.
 
 ```xml
 <Token xsi:type="LocaleToken" name="locale" default="en-us">
