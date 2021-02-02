@@ -57,5 +57,5 @@ Select **OK**.
 ## See also
 
 * [Test and debug Office Add-ins](test-debug-office-add-ins.md)
-* [Microsoft Office Add-in Debugger Extension for Visual Studio Code](./debug-with-vs-extension)
+* [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 * [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
