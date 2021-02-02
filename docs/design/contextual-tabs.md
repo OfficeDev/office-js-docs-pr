@@ -486,6 +486,8 @@ This simple strategy uses a custom core tab that mirrors a custom contextual tab
 </OfficeApp>
 ```
 
+For more examples, see [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
+
 When a parent tab, group, or menu is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, then it isn't visible, and all of it's child markup is ignored, when custom contextual tabs aren't supported. So, it doesn't matter if any of those child elements have the `<OverriddenByRibbonApi>` element or what its value is. The implication of this is that if a menu item, or control, or group must be visible in all contexts, then not only should it not be marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, but *its ancestor menu, group, and tab must also not be marked this way*.
 
 > [!IMPORTANT]
