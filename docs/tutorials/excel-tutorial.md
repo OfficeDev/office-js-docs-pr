@@ -392,7 +392,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
    - The third parameter determines whether a series of data points from the table should be charted row-wise or column-wise. The option `auto` tells Excel to decide the best method.
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
+    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
 8. Within the `createChart()` function, replace `TODO3` with the following code. Most of this code is self-explanatory. Note:
@@ -404,7 +404,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
     ```js
     chart.setPosition("A15", "F30");
     chart.title.text = "Expenses";
-    chart.legend.position = "right"
+    chart.legend.position = "Right"
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
