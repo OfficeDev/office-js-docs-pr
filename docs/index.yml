@@ -1,111 +1,139 @@
-### YamlMime:Landing
+### YamlMime:Hub
 
 title: Office Add-ins documentation # < 60 chars
 summary: Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents and in Outlook mail messages and calendar items. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on the web, Windows, Mac, Android, and iOS. # < 160 chars
+brand: office
 
 metadata:
   title: Office Add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Learn how to build Office Add-ins. # Required; article description that is displayed in search results. < 160 chars.
-  ms.prod: non-product-specific #Required
-  ms.topic: landing-page # Required
+  services: service 
+  ms.service: service
+  ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 07/31/2020 #Required; mm/dd/yyyy format.
+  ms.date: 02/03/2021 #Required; mm/dd/yyyy format.
 
-# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
+# highlightedContent section
+# Maximum of 8 items
+highlightedContent:
+  items:
+    # Card 1
+    - itemType: overview
+      title: Office Add-ins platform overview
+      url: overview/office-add-ins.md
+    # Card 2
+    - itemType: learn
+      title: MS Learn(:) Introduction to Office client customization with add-ins
+      url: https://docs.microsoft.com/learn/modules/intro-office-add-ins/
+    # Card 3
+    - itemType: learn
+      title: MS Learn(:) Extend Office clients with Office add-ins
+      url: https://docs.microsoft.com/learn/paths/m365-office-add-in-associate/
+    # Card 4
+    - itemType: whats-new
+      title: Microsoft 365 Developer Blog
+      url: https://developer.microsoft.com/office/blogs/technology/add-ins/
+    # Card 5
+    - itemType: 
+      title: 
+      url: 
+    # Card 6
+    - itemType: 
+      title: 
+      url: 
+    # Card 7
+    - itemType: 
+      title: 
+      url: 
+    # Card 8
+    - itemType: 
+      title: 
+      url: 
 
-landingContent:
-# Cards and links should be based on top customer tasks or top subjects
-# Start card title with a verb
-  # Card (optional)
-  - title: About Office Add-ins
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Office Add-ins platform overview
-            url: overview/office-add-ins.md
-      - linkListType: learn
-        links: 
-          - text: Introduction to Office client customization with add-ins
-            url: /learn/modules/intro-office-add-ins/
-          - text: Extend Office clients with Office Add-ins
-            url: /learn/paths/m365-office-add-in-associate/
-      - linkListType: overview
-        links:
-          - text: Excel add-ins documentation
-            url: excel/index.yml
-          - text: OneNote add-ins documentation
-            url: onenote/index.yml
-          - text: Outlook add-ins documentation
-            url: outlook/index.yml
-          - text: PowerPoint add-ins documentation
-            url: powerpoint/index.yml
-          - text: Project add-ins documentation
-            url: project/index.yml
-          - text: Word add-ins documentation
-            url: word/index.yml
+# conceptualContent section (optional)
+conceptualContent:
+# itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
+  title: sectiontitle # < 60 chars (optional)
+  summary: sectionsummary # < 160 chars (optional)
+  items:
+    # Card 1 
+    - title: Explore
+      links:
+        - url: overview/learning-path-beginner.md
+          itemType: get-started
+          text: Get started
+        - url: overview/explore-with-script-lab.md
+          itemType: learn
+          text: Test and experiment with Script Lab
+        - url: quickstarts/excel-quickstart-jquery.md
+          itemType: quickstart
+          text: Set up an Excel add-in in 5 minutes
+        - url: quickstarts/outlook-quickstart.md
+          itemType: quickstart
+          text: Set up an Outlook add-in in 5 minutes
 
-  # Card (optional)
-  - title: Get started
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Get started with Office Add-ins
-            url: overview/learning-path-beginner.md
-          - text: Explore Office JavaScript API using Script Lab
-            url: overview/explore-with-script-lab.md
-      - linkListType: quickstart
-        links:
-          - text: Excel add-in quick start
-            url: quickstarts/excel-quickstart-jquery.md
-          - text: Excel custom functions quick start
-            url: quickstarts/excel-custom-functions-quickstart.md
-          - text: OneNote add-in quick start
-            url: quickstarts/onenote-quickstart.md
-          - text: Outlook add-in quick start
-            url: quickstarts/outlook-quickstart.md
-          - text: PowerPoint add-in quick start
-            url: quickstarts/powerpoint-quickstart.md
-          - text: Project add-in quick start
-            url: quickstarts/project-quickstart.md
-          - text: Word add-in quick start
-            url: quickstarts/word-quickstart.md
-          - text: Single sign-on (SSO) quick start
-            url: quickstarts/sso-quickstart.md
+    # Card 2
+    - title: Build
+      links:
+        - url: tutorials/excel-tutorial.md
+          itemType: tutorial
+          text: Develop a full Excel add-in
+        - url: tutorials/outlook-tutorial.md
+          itemType: tutorial
+          text: Discover the Outlook add-in tutorial
+        - url: overview/patterns-and-practices-overview.md
+          itemType: sample
+          text: Use common Patterns and Practices
+        - url: https://docs.microsoft.com/javascript/api/overview?view=excel-js-preview
+          itemType: reference
+          text: Read Reference Documentation
 
-  # Card
-  - title: Tutorials
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Excel add-in tutorial
-            url: tutorials/excel-tutorial.md
-          - text: Excel custom functions tutorial
-            url: tutorials/excel-tutorial-create-custom-functions.md
-          - text: Outlook add-in tutorial
-            url: tutorials/outlook-tutorial.md
-          - text: PowerPoint add-in tutorial
-            url: tutorials/powerpoint-tutorial.md
-          - text: Word add-in tutorial
-            url: tutorials/word-tutorial.md
-
-   # Card
-  - title: Resources
-    linkLists:
-      - linkListType: reference
-        links:
-          - text: Ask questions
-            url: https://stackoverflow.com/questions/tagged/office-js
-          - text: Report issues
-            url: https://github.com/officedev/office-js/issues
-          - text: Request features
-            url: https://officespdev.uservoice.com/
-          - text: COM or VSTO add-ins documentation
-            url: /office/client-developer/office-client-development
-          - text: Office Add-ins PnP samples repo
-            url: https://github.com/OfficeDev/PnP-OfficeAddins
-          - text: Office Add-ins blogs
-            url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
-          - text: Additional resources
-            url: resources/resources-links-help.md
-            
+    # Card 3
+    - title: Test and debug
+      links:
+        - url: testing/test-debug-office-add-ins.md
+          itemType: overview
+          text: Check out the debugging overview
+        - url: testing/testing-and-troubleshooting.md
+          itemType: concept
+          text: Troubleshoot user errors
+        - url: testing/troubleshoot-manifest.md
+          itemType: concept
+          text: Verify an add-in's manifest
+    # Card 4
+    - title: Deploy
+      links:
+        - url: file1.md OR https://docs.microsoft.com/file1
+          itemType: itemType
+          text: linktext1
+        - url: file2.md OR https://docs.microsoft.com/file2
+          itemType: itemType
+          text: linktext2
+        - url: file3.md OR https://docs.microsoft.com/file3
+          itemType: itemType
+          text: linktext3
+    # Card 5
+    - title: Publish
+      links:
+        - url: file1.md OR https://docs.microsoft.com/file1
+          itemType: itemType
+          text: linktext1
+        - url: file2.md OR https://docs.microsoft.com/file2
+          itemType: itemType
+          text: linktext2
+        - url: file3.md OR https://docs.microsoft.com/file3
+          itemType: itemType
+          text: linktext3
+    # Card 6
+    - title: Engage
+      links:
+        - url: file1.md OR https://docs.microsoft.com/file1
+          itemType: itemType
+          text: linktext1
+        - url: file2.md OR https://docs.microsoft.com/file2
+          itemType: itemType
+          text: linktext2
+        - url: file3.md OR https://docs.microsoft.com/file3
+          itemType: itemType
+          text: linktext3
