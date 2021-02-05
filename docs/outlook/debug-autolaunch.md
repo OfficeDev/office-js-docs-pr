@@ -54,7 +54,7 @@ To preview this capability:
     code .
     ```
 
-1. Open the file **./.vscode/launch.json** and add the following excerpt to your list of configurations. Save your changes.
+1. In VS Code, open the file **./.vscode/launch.json** and add the following excerpt to your list of configurations. Save your changes.
 
     ```json
     {
@@ -87,8 +87,10 @@ To preview this capability:
 
 ## Stop debugging
 
-- To stop debugging for the rest of the current Outlook desktop session, choose the **Cancel** button in the **Debug Event-based handler** dialog. To re-enable debugging, reopen Outlook desktop.
-- To stop debugging for subsequent Outlook sessions and prevent the **Debug Event-based handler** dialog from popping up, delete the registry key or set its value to 0: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]`
+To stop debugging for:
+
+- The rest of the current Outlook desktop session, choose the **Cancel** button in the **Debug Event-based handler** dialog. To re-enable debugging, reopen Outlook desktop.
+- Subsequent Outlook sessions and prevent the **Debug Event-based handler** dialog from popping up, delete the registry key or set its value to 0: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]`
 
 ## See also
 
