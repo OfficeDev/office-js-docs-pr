@@ -14,7 +14,7 @@ Specifies the version of your Office Add-in. The version number can be 1, 2, 3, 
 ## Syntax
 
 ```XML
-<Version>n(.n.n.n)</Version>
+<Version>n[.n.n.n]</Version>
 ```
 
 ## Contained in
