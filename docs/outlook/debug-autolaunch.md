@@ -15,7 +15,7 @@ This article is meant to provide debugging guidance as you implement [event-base
 
 In this article, we'll discuss the key steps to enable debugging. Note that this flow assumes that you created your add-in by following the steps of the [walkthrough built on Yeoman generator for Office Add-ins](autolaunch.md).
 
-- [Mark the add-in for debugging](#mark-the-add-in-for-debugging)
+- [Mark the add-in for debugging](#mark-your-add-in-for-debugging)
 - [Configure Visual Studio Code](#configure-visual-studio-code)
 - [Attach VS Code](#attach-vs-code)
 - [Debug](#debug)
