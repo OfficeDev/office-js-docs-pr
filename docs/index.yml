@@ -35,21 +35,21 @@ highlightedContent:
       title: Microsoft 365 Developer Blog
       url: https://developer.microsoft.com/office/blogs/technology/add-ins/
     # Card 5
-    - itemType: 
-      title: 
+    - itemType: learn
+      title: Beginner's guide
       url: 
     # Card 6
-    - itemType: 
-      title: 
-      url: 
+    - itemType: learn
+      title: Office Add-ins JavaScript API reference documentation
+      url: https://docs.microsoft.com/javascript/api/overview
     # Card 7
-    - itemType: 
-      title: 
-      url: 
+    - itemType: concept
+      title: Patterns and Practices GitHub repository
+      url: https://github.com/OfficeDev/PnP-OfficeAddins/
     # Card 8
-    - itemType: 
-      title: 
-      url: 
+    - itemType: get-started 
+      title: Community Portal
+      url: ""
 
 # conceptualContent section (optional)
 conceptualContent:
@@ -85,7 +85,7 @@ conceptualContent:
         - url: overview/patterns-and-practices-overview.md
           itemType: sample
           text: Use common Patterns and Practices
-        - url: https://docs.microsoft.com/javascript/api/overview?view=excel-js-preview
+        - url: https://docs.microsoft.com/javascript/api/overview
           itemType: reference
           text: Read Reference Documentation
 
@@ -104,36 +104,30 @@ conceptualContent:
     # Card 4
     - title: Deploy
       links:
-        - url: file1.md OR https://docs.microsoft.com/file1
-          itemType: itemType
-          text: linktext1
-        - url: file2.md OR https://docs.microsoft.com/file2
-          itemType: itemType
-          text: linktext2
-        - url: file3.md OR https://docs.microsoft.com/file3
-          itemType: itemType
-          text: linktext3
+        - url: publish/publish.md
+          itemType: deploy
+          text: Explore deployment options 
+        - url: publish/centralized-deployment.md
+          itemType: deploy
+          text: Learn about Centralized Deployment
     # Card 5
     - title: Publish
       links:
-        - url: file1.md OR https://docs.microsoft.com/file1
-          itemType: itemType
-          text: linktext1
-        - url: file2.md OR https://docs.microsoft.com/file2
-          itemType: itemType
-          text: linktext2
-        - url: file3.md OR https://docs.microsoft.com/file3
-          itemType: itemType
-          text: linktext3
+        - url: https://docs.microsoft.com/office/dev/store/
+          itemType: overview
+          text: Validate your Office Add-in
+        - url: https://docs.microsoft.com/office/dev/store/add-in-submission-guide
+          itemType: how-to-guide
+          text: Review the Microsoft 365 App Store submission guide
     # Card 6
     - title: Engage
       links:
-        - url: file1.md OR https://docs.microsoft.com/file1
-          itemType: itemType
-          text: linktext1
-        - url: file2.md OR https://docs.microsoft.com/file2
-          itemType: itemType
-          text: linktext2
-        - url: file3.md OR https://docs.microsoft.com/file3
-          itemType: itemType
-          text: linktext3
+        - url: https://developer.microsoft.com/office
+          itemType: whats-new
+          text: Join the Developer Program 
+        - url: https://office365.uservoice.com/
+          itemType: architecture
+          text: Request Features
+        - url: https://stackoverflow.com/questions/tagged/office-js
+          itemType: learn
+          text: Ask questions about Office.js on Stack Overflow
