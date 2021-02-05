@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/03/2021
+ms.date: 02/05/2021
 localization_priority: Normal
 ---
 
@@ -46,7 +46,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML then save your changes.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -207,6 +207,8 @@ In this scenario, you'll add handling for composing new items.
 
     **Note**: Checking for `Office.actions` ensures that Outlook on the web ignores these statements.
 
+1. Save your changes.
+
 ## Try it out
 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
@@ -224,6 +226,10 @@ In this scenario, you'll add handling for composing new items.
 1. In Outlook on Windows, create a new message.
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win-autolaunch.png)
+
+## Debug
+
+As you implement your own functionality, you may need to debug your code. For guidance on how to debug event-based add-in activation, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
 ## Event-based activation behavior and limitations
 
@@ -250,3 +256,4 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
 ## See also
 
 [Outlook add-in manifests](manifests.md)
+[How to debug event-based add-ins](debug-autolaunch.md)
