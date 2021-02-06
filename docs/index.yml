@@ -37,7 +37,7 @@ highlightedContent:
     # Card 5
     - itemType: learn
       title: Beginner's guide
-      url: 
+      url: overview/learning-path-beginner.md
     # Card 6
     - itemType: learn
       title: Office Add-ins JavaScript API reference documentation
