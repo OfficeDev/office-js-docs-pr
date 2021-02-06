@@ -35,7 +35,7 @@ highlightedContent:
       title: Microsoft 365 Developer Blog
       url: https://developer.microsoft.com/office/blogs/technology/add-ins/
     # Card 5
-    - itemType: concept
+    - itemType: how-to-guide
       title: Beginner's guide
       url: overview/learning-path-beginner.md
     # Card 6
@@ -64,7 +64,7 @@ conceptualContent:
           itemType: get-started
           text: Get started
         - url: overview/explore-with-script-lab.md
-          itemType: learn
+          itemType: sample
           text: Test and experiment with Script Lab
         - url: quickstarts/outlook-quickstart.md
           itemType: quickstart
@@ -98,7 +98,7 @@ conceptualContent:
           itemType: concept
           text: Troubleshoot user errors
         - url: testing/troubleshoot-manifest.md
-          itemType: concept
+          itemType: architecture
           text: Verify an add-in's manifest
     # Card 4
     - title: Deploy
