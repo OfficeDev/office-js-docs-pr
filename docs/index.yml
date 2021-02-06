@@ -47,9 +47,9 @@ highlightedContent:
       title: Patterns and Practices GitHub repository
       url: https://github.com/OfficeDev/PnP-OfficeAddins/
     # Card 8
-    - itemType: get-started 
-      title: Community Portal
-      url: ""
+    - itemType: quickstart 
+      title: Set up an Excel add-in in 5 minutes
+      url: quickstarts/excel-quickstart-jquery.md
 
 # conceptualContent section (optional)
 conceptualContent:
@@ -66,13 +66,12 @@ conceptualContent:
         - url: overview/explore-with-script-lab.md
           itemType: learn
           text: Test and experiment with Script Lab
-        - url: quickstarts/excel-quickstart-jquery.md
-          itemType: quickstart
-          text: Set up an Excel add-in in 5 minutes
         - url: quickstarts/outlook-quickstart.md
           itemType: quickstart
           text: Set up an Outlook add-in in 5 minutes
-
+        - url: quickstarts/powerpoint-quickstart.md
+          itemType: quickstart
+          text: Set up a PowerPoint add-in in 5 minutes
     # Card 2
     - title: Build
       links:
