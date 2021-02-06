@@ -35,7 +35,7 @@ highlightedContent:
       title: Microsoft 365 Developer Blog
       url: https://developer.microsoft.com/office/blogs/technology/add-ins/
     # Card 5
-    - itemType: learn
+    - itemType: concept
       title: Beginner's guide
       url: overview/learning-path-beginner.md
     # Card 6
@@ -43,7 +43,7 @@ highlightedContent:
       title: API reference documentation
       url: https://docs.microsoft.com/javascript/api/overview
     # Card 7
-    - itemType: concept
+    - itemType: sample
       title: Patterns and Practices GitHub repository
       url: https://github.com/OfficeDev/PnP-OfficeAddins/
     # Card 8
