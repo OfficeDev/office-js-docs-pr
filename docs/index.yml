@@ -24,11 +24,11 @@ highlightedContent:
       url: overview/office-add-ins.md
     # Card 2
     - itemType: learn
-      title: MS Learn(:) Introduction to Office client customization with add-ins
+      title: "MS Learn: Introduction to Office client customization with add-ins"
       url: https://docs.microsoft.com/learn/modules/intro-office-add-ins/
     # Card 3
     - itemType: learn
-      title: MS Learn(:) Extend Office clients with Office add-ins
+      title: "MS Learn: Extend Office clients with Office add-ins"
       url: https://docs.microsoft.com/learn/paths/m365-office-add-in-associate/
     # Card 4
     - itemType: whats-new
