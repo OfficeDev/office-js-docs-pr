@@ -40,7 +40,7 @@ highlightedContent:
       url: overview/learning-path-beginner.md
     # Card 6
     - itemType: reference
-      title: Reference documentation
+      title: API reference documentation
       url: https://docs.microsoft.com/javascript/api/overview
     # Card 7
     - itemType: concept
@@ -87,7 +87,7 @@ conceptualContent:
           text: Use common Patterns and Practices
         - url: https://docs.microsoft.com/javascript/api/overview
           itemType: reference
-          text: Read Reference Documentation
+          text: Read API reference documentation
 
     # Card 3
     - title: Test and debug
