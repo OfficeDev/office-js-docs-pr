@@ -39,8 +39,8 @@ highlightedContent:
       title: Beginner's guide
       url: overview/learning-path-beginner.md
     # Card 6
-    - itemType: learn
-      title: Office Add-ins JavaScript API reference documentation
+    - itemType: reference
+      title: Reference documentation
       url: https://docs.microsoft.com/javascript/api/overview
     # Card 7
     - itemType: concept
@@ -54,8 +54,8 @@ highlightedContent:
 # conceptualContent section (optional)
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
-  title: sectiontitle # < 60 chars (optional)
-  summary: sectionsummary # < 160 chars (optional)
+  title: Your Developer Journey # < 60 chars (optional)
+  summary: "" # < 160 chars (optional)
   items:
     # Card 1 
     - title: Explore
@@ -129,5 +129,5 @@ conceptualContent:
           itemType: architecture
           text: Request Features
         - url: https://stackoverflow.com/questions/tagged/office-js
-          itemType: learn
+          itemType: reference
           text: Ask questions about Office.js on Stack Overflow
