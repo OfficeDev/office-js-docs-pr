@@ -1,7 +1,7 @@
 ---
 title: Control element in the manifest file
 description: Defines a JavaScript function that executes an action or launches a task pane.
-ms.date: 01/10/2020
+ms.date: 01/29/2021
 localization_priority: Normal
 ---
 
@@ -32,6 +32,7 @@ A button performs a single action when the user selects it. It can either execut
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  [Action](action.md)    | Yes |  Specifies the action to perform.  |
 |  [Enabled](enabled.md)    | No |  Specifies whether the control is enabled when the add-in launches.  |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the button should appear on application and platform combinations that support custom contextual tabs. If used, it must be the *first* child element. |
 
 ### ExecuteFunction button example
 
@@ -39,6 +40,7 @@ In the following example, the button is disabled when the add-in launches. It ca
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
+  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
   <Label resid="funcReadButtonLabel" />
   <Supertip>
     <Title resid="funcReadSuperTipTitle" />
@@ -149,11 +151,13 @@ The following example shows how to define a menu item with two submenu items. Th
 |  [Supertip](supertip.md)  | Yes |  The supertip for this button.    |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
 |  **Items**     | Yes |  A collection of Buttons to display within the menu. Contains the **Item** elements for each submenu item. Each **Item** element contains the  child elements of the [Button control](#button-control).|
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the menu should appear on application and platform combinations that support custom contextual tabs. If used, it must be the *first* child element. |
 
 ### Menu control examples
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
+  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
   <Supertip>
@@ -216,6 +220,7 @@ The following example shows how to define a menu item with two submenu items. Th
   </Icon>
   <Items>
     <Item id="msgReadMenuItem1">
+      <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
       <Label resid="menuItem1ReadLabel" />
       <Supertip>
         <Title resid="menuItem1ReadLabel" />
