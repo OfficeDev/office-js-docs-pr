@@ -25,7 +25,7 @@ The **id** attribute must be unique within the manifest.
 |  [Label](#label-tab)      | Yes |  The label for the CustomTab or a Group.  |
 |  [InsertAfter](#insertafter)      | No |  Specifies that the custom tab should be immediately after a specified built-in Office tab.  |
 |  [InsertBefore](#insertbefore)      | No |  Specifies that the custom tab should be immediately before a specified built-in Office tab.  |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the custom tab should appear on host and platform combinations that support custom contextual tabs.  |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the custom tab should appear on application and platform combinations that support custom contextual tabs.  |
 
 ### Group
 
@@ -49,7 +49,7 @@ Optional. Specifies that the custom tab should be immediately before a specified
 
 ### OverriddenByRibbonApi
 
-Optional (boolean). Specifies whether the **CustomTab** will be hidden on host and platform combinations that support an API that installs a custom contextual tab on the ribbon at runtime. The default value, if not present is `false`. If used, **OverriddenByRibbonApi** must be the *first* child of **CustomTab**. For more information, see [OverriddenByRibbonApi](overriddenbyribbonapi.md).
+Optional (boolean). Specifies whether the **CustomTab** will be hidden on application and platform combinations that support an API that installs a custom contextual tab on the ribbon at runtime. The default value, if not present, is `false`. If used, **OverriddenByRibbonApi** must be the *first* child of **CustomTab**. For more information, see [OverriddenByRibbonApi](overriddenbyribbonapi.md).
 
 ## CustomTab example
 
