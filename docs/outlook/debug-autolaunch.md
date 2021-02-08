@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in (preview)
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 02/05/2021
+ms.date: 02/08/2021
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ localization_priority: Normal
 This article is meant to provide debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature is currently in preview.
 
 > [!IMPORTANT]
-> This debugging capability is only supported for preview in Outlook on the web and Windows with a Microsoft 365 subscription. See [How to preview debugging for the event-based activation feature](#how-to-preview-debugging-for-the-event-based-activation-feature) in this article for more details.
+> This debugging capability is only supported for preview in Outlook on Windows with a Microsoft 365 subscription. See [How to preview debugging for the event-based activation feature](#how-to-preview-debugging-for-the-event-based-activation-feature) in this article for more details.
 
 In this article, we'll discuss the key steps to enable debugging. Note that this flow assumes that you created your add-in by following the steps of the [walkthrough built on Yeoman generator for Office Add-ins](autolaunch.md).
 
@@ -41,7 +41,7 @@ To preview this capability:
 
     In addition to building the code and starting the local server, this command should set a registry key for this add-in to 1: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]\UseDirectDebugger`. `[Add-in Id]` is the Id in the add-in manifest.
 
-1. Open Outlook desktop (or reopen if it's already open).
+1. Start Outlook desktop (or restart Outlook if it's already open).
 1. Compose a new message or appointment. You should see the following dialog. Do *not* interact with the dialog yet.
 
     ![Screenshot of Debug Event-based handler dialog](../images/outlook-win-autolaunch-debug-dialog.png)
@@ -72,7 +72,7 @@ To preview this capability:
 
 1. To find the add-in's **bundle.js**, open the `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef` folder in Windows Explorer then search for your add-in's Id (found in the manifest). Open the folder prefixed with this GUID then copy the full path. In VS Code, open **bundle.js** from that folder.
 
-    `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook profile code]\Javascript\[Add-in Id_...]\bundle.js`
+    `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in Id]_[Add-in Version]_[locale]\bundle.js`
 
 1. Place breakpoints in bundle.js where you want the debugger to stop.
 1. In the **DEBUG** dropdown, select the name **Direct Debugging** then select the **Run** button.
@@ -89,8 +89,8 @@ To preview this capability:
 
 To stop debugging for:
 
-- The rest of the current Outlook desktop session, choose the **Cancel** button in the **Debug Event-based handler** dialog. To re-enable debugging, reopen Outlook desktop.
-- Subsequent Outlook sessions and prevent the **Debug Event-based handler** dialog from popping up, delete the registry key or set its value to 0: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]`
+- The rest of the current Outlook desktop session, choose the **Cancel** button in the **Debug Event-based handler** dialog. To re-enable debugging, restart Outlook desktop.
+- Subsequent Outlook sessions and prevent the **Debug Event-based handler** dialog from popping up, delete the associated registry key or set its value to 0: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]\UseDirectDebugger`.
 
 ## See also
 
