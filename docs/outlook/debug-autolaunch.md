@@ -70,7 +70,13 @@ To preview this capability:
 
 ## Attach VS Code
 
-1. To find the add-in's **bundle.js**, open the `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef` folder in Windows Explorer then search for your add-in's Id (found in the manifest). Open the folder prefixed with this GUID then copy the full path. In VS Code, open **bundle.js** from that folder.
+1. To find the add-in's **bundle.js**, open the following folder in Windows Explorer and search for your add-in's Id (found in the manifest).
+
+    ```text
+    %LOCALAPPDATA%\Microsoft\Office\16.0\Wef
+    ```
+
+    Open the folder prefixed with this Id and copy its full path. In VS Code, open **bundle.js** from that folder.
 
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in Id]_[Add-in Version]_[locale]\bundle.js`
 
