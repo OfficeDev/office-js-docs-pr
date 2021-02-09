@@ -44,7 +44,7 @@ highlightedContent:
       url: https://docs.microsoft.com/javascript/api/overview
     # Card 7
     - itemType: sample
-      title: GitHub: Patterns and Practices for Office Add-ins
+      title: "GitHub: Patterns and Practices for Office Add-ins"
       url: https://github.com/OfficeDev/PnP-OfficeAddins/
     # Card 8
     - itemType: quickstart 
