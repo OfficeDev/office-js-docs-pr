@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: 'Supported Office.js platforms using JavaScript API'
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 localization_priority: Priority
 ---
 
@@ -57,4 +57,4 @@ There are various ways to specify which Office applications and requirement sets
 - [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md)
 - [Install the latest version of Office](../develop/install-latest-office-version.md)
 - [Overview of update channels for Microsoft 365 Apps](/deployoffice/overview-of-update-channels-for-office-365-proplus)
-- [Get the most from Office with Office 365](https://products.office.com/compare-all-microsoft-office-products?tab=2)
+- [Reimagine productivity with Microsoft 365 and Microsoft Teams](https://products.office.com/compare-all-microsoft-office-products?tab=2)

@@ -1,34 +1,34 @@
 ---
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 ms.prod: non-product-specific
-description: 'Tutorial on how to share code between a VSTO Add-in and an Office add-in.'
-title: 'Tutorial: Share code between both a VSTO Add-in and an Office add-in by using a shared code library'
+description: 'Tutorial on how to share code between a VSTO Add-in and an Office Add-in.'
+title: 'Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library'
 localization_priority: Priority
 ---
 
-# Tutorial: Share code between both a VSTO Add-in and an Office add-in with a shared code library
+# Tutorial: Share code between both a VSTO Add-in and an Office Add-in with a shared code library
 
 Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO Add-ins on Mac, online, or mobile platforms.
 
-Office Add-ins use HTML, JavaScript, and additional web technologies to build Office solutions on all platforms. Migrating your existing VSTO Add-in to an Office add-in is a great way to make your solution available across all platforms.
+Office Add-ins use HTML, JavaScript, and additional web technologies to build Office solutions on all platforms. Migrating your existing VSTO Add-in to an Office Add-in is a great way to make your solution available across all platforms.
 
-You may want to maintain both your VSTO Add-in and a new Office add-in that both have the same functionality. This enables you to continue servicing your customers that use the VSTO Add-in on Office on Windows. This also enables you to provide the same functionality in an Office add-in for customers across all platforms. You can also [Make your Office add-in compatible with the existing VSTO Add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+You may want to maintain both your VSTO Add-in and a new Office Add-in that both have the same functionality. This enables you to continue servicing your customers that use the VSTO Add-in on Office on Windows. This also enables you to provide the same functionality in an Office Add-in for customers across all platforms. You can also [Make your Office Add-in compatible with the existing VSTO Add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
-However it is best to avoid rewriting all the code from your VSTO Add-in for the Office add-in. This tutorial shows how to avoid rewriting code by using a shared code library for both add-ins.
+However it is best to avoid rewriting all the code from your VSTO Add-in for the Office Add-in. This tutorial shows how to avoid rewriting code by using a shared code library for both add-ins.
 
 ## Shared code library
 
-This tutorial will walk you through the steps of identifying and sharing common code between your VSTO Add-in and a modern Office add-in. It uses a very simple VSTO Add-in example for the steps so that you can focus on the skills and techniques you will need for working with your own VSTO Add-ins.
+This tutorial will walk you through the steps of identifying and sharing common code between your VSTO Add-in and a modern Office Add-in. It uses a very simple VSTO Add-in example for the steps so that you can focus on the skills and techniques you will need for working with your own VSTO Add-ins.
 
-The following diagram shows how the shared code library works for migration. Common code is refactored into a new shared code library. The code can remain written in its original language, such as C# or VB. This means you can continue using the code in the existing VSTO Add-in by creating a project reference. When you create the Office add-in, it will also use the shared code library by calling into it through REST APIs.
+The following diagram shows how the shared code library works for migration. Common code is refactored into a new shared code library. The code can remain written in its original language, such as C# or VB. This means you can continue using the code in the existing VSTO Add-in by creating a project reference. When you create the Office Add-in, it will also use the shared code library by calling into it through REST APIs.
 
-![Diagram of VSTO Add-in and Office add-in using a shared code library](../images/vsto-migration-shared-code-library.png)
+![Diagram of VSTO Add-in and Office Add-in using a shared code library](../images/vsto-migration-shared-code-library.png)
 
 Skills and techniques in this tutorial:
 
 - Create a shared class library by refactoring code into a .NET class library.
 - Create a REST API wrapper using ASP.NET Core for the shared class library.
-- Call the REST API from the Office add-in to access shared code.
+- Call the REST API from the Office Add-in to access shared code.
 
 ## Prerequisites
 
@@ -45,17 +45,17 @@ To set up your development environment:
 
 You also need the following:
 
-- A Microsoft 365 account. You can join the [Microsoft 365 developer program](https://aka.ms/devprogramsignup) that includes a free 1 year subscription to Office 365.
+- A Microsoft 365 account. You can join the [Microsoft 365 developer program](https://aka.ms/devprogramsignup) that includes a renewable 90 day subscription to Microsoft 365 that includes Office apps.
 - A Microsoft Azure Tenant. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## The Cell analyzer VSTO Add-in
 
-This tutorial uses the [VSTO Add-in shared library for Office add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution. The **/start** folder contains the VSTO Add-in solution that you will migrate. Your goal is to migrate the VSTO Add-in to a modern Office add-in by sharing code when possible.
+This tutorial uses the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution. The **/start** folder contains the VSTO Add-in solution that you will migrate. Your goal is to migrate the VSTO Add-in to a modern Office Add-in by sharing code when possible.
 
 > [!NOTE]
 > The sample uses C# but you can apply the techniques in this tutorial to a VSTO Add-in written in any .NET language.
 
-1. Download the [VSTO Add-in shared library for Office add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution to a working folder on your computer.
+1. Download the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution to a working folder on your computer.
 1. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
 1. On the **Debug** menu, choose **Start Debugging**.
 1. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Properties**.
@@ -73,11 +73,11 @@ The first technique to apply is to analyze the add-in for which parts of code ca
 
 ### UI code
 
-UI code interacts with the user. In VSTO UI code works through Windows Forms. Office Add-ins use HTML, CSS, and JavaScript for UI. Because of these differences you cannot share UI code to the Office add-in. UI will need to be recreated in JavaScript.
+UI code interacts with the user. In VSTO UI code works through Windows Forms. Office Add-ins use HTML, CSS, and JavaScript for UI. Because of these differences you cannot share UI code to the Office Add-in. UI will need to be recreated in JavaScript.
 
 ### Document code
 
-In VSTO code interacts with the document through .NET objects such as `Microsoft.Office.Interop.Excel.Range`. But Office Add-ins use the Office.js library. Although these are similar, they are not exactly the same. So again, you cannot share document interaction code to the Office add-in.
+In VSTO code interacts with the document through .NET objects such as `Microsoft.Office.Interop.Excel.Range`. But Office Add-ins use the Office.js library. Although these are similar, they are not exactly the same. So again, you cannot share document interaction code to the Office Add-in.
 
 ### Logic code
 
@@ -116,7 +116,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
 }
 ```
 
-Using this approach you can see that one section of code can be shared to the Office add-in. The following code will need to be refactored into a separate class library.
+Using this approach you can see that one section of code can be shared to the Office Add-in. The following code will need to be refactored into a separate class library.
 
 ```csharp
 // *** ALGORITHM CODE ***
@@ -166,7 +166,7 @@ public class CellOperations
 
 ### Use the shared class library in the VSTO Add-in
 
-Now you need to update the VSTO Add-in to use the class library. This is important that both the VSTO Add-in and Office add-in use the same shared class library so that future bug fixes or features are made in one location.
+Now you need to update the VSTO Add-in to use the class library. This is important that both the VSTO Add-in and Office Add-in use the same shared class library so that future bug fixes or features are made in one location.
 
 1. In **Solution Explorer** right-click the **Cell-Analyzer** project, and choose **Add Reference**.
 2. Select **CellAnalyzerSharedLibrary**, and choose **OK**.
@@ -194,7 +194,7 @@ Now you need to update the VSTO Add-in to use the class library. This is importa
 
 ## Create a REST API wrapper
 
-The VSTO Add-in can use the shared class library directly since they are both .NET projects. However the Office add-in won't be able to use .NET since it uses JavaScript. Next you will need to create a REST API wrapper. This enables the Office add-in to call a REST API, which then passes the call along to the shared class library.
+The VSTO Add-in can use the shared class library directly since they are both .NET projects. However the Office Add-in won't be able to use .NET since it uses JavaScript. Next you will need to create a REST API wrapper. This enables the Office Add-in to call a REST API, which then passes the call along to the shared class library.
 
 1. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Add > New Project**.
 2. In the **Add a new project dialog**, choose **ASP.NET Core Web Application**, and choose **Next**.
@@ -228,9 +228,9 @@ The VSTO Add-in can use the shared class library directly since they are both .N
 15. On the **Debug** menu, choose **Start Debugging**.
 16. A browser will launch. Enter the following URL to test that the REST API is working: `https://localhost:<ssl port number>/api/analyzeunicode?value=test`. You can reuse the port number from the URL in the browser that Visual Studio launched. You should see a string returned with Unicode values for each character.
 
-## Create the Office add-in
+## Create the Office Add-in
 
-When you create the Office add-in, it will make a call to the REST API. But first, you need to get the port number of the REST API server and save it for later.
+When you create the Office Add-in, it will make a call to the REST API. But first, you need to get the port number of the REST API server and save it for later.
 
 ### Save the SSL port number
 
@@ -238,9 +238,9 @@ When you create the Office add-in, it will make a call to the REST API. But firs
 2. In the **CellAnalyzerRESTAPI** project, expand **Properties**, and open the **launchSettings.json** file.
 3. Find the line of code with the **sslPort** value, copy the port number, and save it somewhere.
 
-### Add the Office add-in project
+### Add the Office Add-in project
 
-To keep things simple, keep all the code in one solution. Add the Office add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
+To keep things simple, keep all the code in one solution. Add the Office Add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
 
 1. In **Solution Explorer**, right-click the **Cell-Analyzer** solution, and choose **Add > New Project**.
 2. In the **Add a new project dialog**, choose **Excel Web Add-in**, and choose **Next**.
@@ -256,7 +256,7 @@ Two projects will be created:
 - **CellAnalyzerOfficeAddin** - This project configures the manifest XML files that describes the add-in so Office can load it correctly. It contains the ID, name, description, and other information about the add-in.
 - **CellAnalyzerOfficeAddinWeb** - This project contains web resources for your add-in, such as HTML, CSS, and scripts. It also configures an IIS Express instance to host your add-in as a web application.
 
-### Add UI and functionality to the Office add-in
+### Add UI and functionality to the Office Add-in
 
 1. In **Solution Explorer**, expand the **CellAnalyzerOfficeAddinWeb** project.
 2. Open the **Home.html** file, and replace the `<body>` contents with the following HTML.
@@ -303,11 +303,11 @@ Two projects will be created:
 
 4. In the previous code, enter the **sslPort** number you saved previously from the **launchSettings.json** file.
 
-In the previous code the returned string will be processed to replace carriage return line feeds with `<br>` HTML tags. You may occasionally run into situations where a return value that works perfectly fine for .NET in the VSTO Add-in will need to be adjusted on the Office add-in side to work as expected. In this case the REST API and shared class library are only concerned with returning the string. The `showUnicode()` method is responsible for formatting return values correctly for presentation.
+In the previous code the returned string will be processed to replace carriage return line feeds with `<br>` HTML tags. You may occasionally run into situations where a return value that works perfectly fine for .NET in the VSTO Add-in will need to be adjusted on the Office Add-in side to work as expected. In this case the REST API and shared class library are only concerned with returning the string. The `showUnicode()` method is responsible for formatting return values correctly for presentation.
 
-### Allow CORS from the Office add-in
+### Allow CORS from the Office Add-in
 
-The Office.js library requires CORS on outgoing calls, such as the one made from the `ajax` call to the REST API server. Use the following steps to allow calls from the Office add-in to the REST API.
+The Office.js library requires CORS on outgoing calls, such as the one made from the `ajax` call to the REST API server. Use the following steps to allow calls from the Office Add-in to the REST API.
 
 1. In **Solution Explorer**, select the **CellAnalyzerOfficeAddinWeb** project.
 2. From the **View** menu, choose **Properties Window** (if the window is not already displayed).
@@ -412,7 +412,7 @@ public class Startup
 4. Choose **OK**.
 5. From the **Debug** menu, choose **Start Debugging**.
 
-Excel will run and sideload the Office add-in. You can test that the localhost REST API service is working correctly by entering a text value into a cell, and choosing the **Show Unicode** button in the Office add-in. It should call the REST API and display the unicode values for the text characters.
+Excel will run and sideload the Office Add-in. You can test that the localhost REST API service is working correctly by entering a text value into a cell, and choosing the **Show Unicode** button in the Office Add-in. It should call the REST API and display the unicode values for the text characters.
 
 ## Publish to an Azure App Service
 
@@ -427,9 +427,9 @@ You eventually want to publish the REST API project to the cloud. In the followi
 
 You can now test the service. Open a browser and enter a URL that goes directly to the new service. For example, use `https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=test` where *myappservice* is the unique name you created for the new App Service.
 
-### Use the Azure App Service from the Office add-in
+### Use the Azure App Service from the Office Add-in
 
-The final step is to update the code in the Office add-in to use the Azure App Service instead of localhost.
+The final step is to update the code in the Office Add-in to use the Azure App Service instead of localhost.
 
 1. In **Solution Explorer**, expand the **CellAnalyzerOfficeAddinWeb** project, and open the **Home.js** file.
 1. Change the `url` constant to use the URL for your Azure App Service as shown in the following line of code. Replace `<myappservice>` with the unique name you created for the new App Service.
@@ -446,8 +446,8 @@ The final step is to update the code in the Office add-in to use the Azure App S
 1. Choose **OK**.
 1. From the **Debug** menu, choose **Start Debugging**.
 
-Excel will run and sideload the Office add-in. To test that the App Service is working correctly, enter a text value into a cell, and choose **Show Unicode** in the Office add-in. It should call the service and display the unicode values for the text characters.
+Excel will run and sideload the Office Add-in. To test that the App Service is working correctly, enter a text value into a cell, and choose **Show Unicode** in the Office Add-in. It should call the service and display the unicode values for the text characters.
 
 ## Conclusion
 
-In this tutorial you learned how to create an Office add-in that uses shared code with the original VSTO add-in. You learned how to maintain both VSTO code for Office on Windows, and an Office add-in for Office on other platforms. You refactored VSTO C# code into a shared library and deployed it to an Azure App Service. You created an Office add-in that uses the shared library so that you don't have to rewrite the code in JavaScript.
+In this tutorial you learned how to create an Office Add-in that uses shared code with the original VSTO add-in. You learned how to maintain both VSTO code for Office on Windows, and an Office Add-in for Office on other platforms. You refactored VSTO C# code into a shared library and deployed it to an Azure App Service. You created an Office Add-in that uses the shared library so that you don't have to rewrite the code in JavaScript.

@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
 description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 09/24/2020
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
@@ -39,7 +39,7 @@ The following video walks you through the process of sideloading your add-in in 
 > [!NOTE]
 > To test your Office Add-in with Microsoft Edge with the original WebView (EdgeHTML), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This is not required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-## Sideload an Office Add-in in Office 365
+## Sideload an Office Add-in
 
 1. Sign in to your Microsoft 365 account.
 
