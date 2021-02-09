@@ -44,7 +44,7 @@ highlightedContent:
       url: https://docs.microsoft.com/javascript/api/overview
     # Card 7
     - itemType: sample
-      title: Patterns and Practices GitHub repository
+      title: GitHub: Patterns and Practices for Office Add-ins
       url: https://github.com/OfficeDev/PnP-OfficeAddins/
     # Card 8
     - itemType: quickstart 
@@ -54,7 +54,7 @@ highlightedContent:
 # conceptualContent section (optional)
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
-  title: Your Developer Journey # < 60 chars (optional)
+  title: Your developer journey # < 60 chars (optional)
   summary: "" # < 160 chars (optional)
   items:
     # Card 1 
@@ -126,7 +126,7 @@ conceptualContent:
           text: Join the Developer Program 
         - url: https://office365.uservoice.com/
           itemType: architecture
-          text: Request Features
+          text: Request features
         - url: https://stackoverflow.com/questions/tagged/office-js
           itemType: reference
           text: Ask questions about Office.js on Stack Overflow
