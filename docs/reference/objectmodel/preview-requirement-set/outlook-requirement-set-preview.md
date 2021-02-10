@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 02/02/2021
+ms.date: 02/05/2021
 localization_priority: Normal
 ---
 
@@ -215,13 +215,13 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 Added a new object that represents the session data of an item.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 #### [Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
 Added a new property to manage the session data of an item in Compose mode.
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 ## See also
 
