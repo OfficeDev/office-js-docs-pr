@@ -1,6 +1,6 @@
 ---
 title: Microsoft Office Add-in Debugger Extension for Visual Studio Code
-description: 'Use the Visual Studio Code extension Microsoft Office Add-in Debugger to debug your Office add-in.'
+description: 'Use the Visual Studio Code extension Microsoft Office Add-in Debugger to debug your Office Add-in.'
 ms.date: 02/01/2021
 localization_priority: Normal
 ---

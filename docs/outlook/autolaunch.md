@@ -194,13 +194,11 @@ In this scenario, you'll add handling for composing new items.
 
 ## Try it out
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will sideload.
+1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will be sideloaded.
 
     ```command&nbsp;line
     npm start
     ```
-
-1. Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
 
 1. In Outlook on the web, create a new message.
 

@@ -11,7 +11,7 @@ You can use sideloading to install an Outlook add-in for testing without having 
 
 ## Sideload automatically
 
-There are many ways to sideload an Outlook add-in, but if you created your Outlook add-in using [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), sideloading is best done through the command line. This will take advantage of our tooling and sideload across all of your supported devices in one command.
+If you created your Outlook add-in using [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), sideloading is best done through the command line. This will take advantage of our tooling and sideload across all of your supported devices in one command.
 
 1. Using the command line, navigate to the root directory of your Yeoman generated add-in project. Run the command `npm start`.
 
@@ -20,11 +20,11 @@ There are many ways to sideload an Outlook add-in, but if you created your Outlo
 > [!IMPORTANT]
 > If the manifest contains an error or the path to the manifest is invalid, you'll receive an error message.
 
-3. If you manifest contains no errors and the path is valid, your add-in will now be sideloaded and available on both your desktop and in Outlook on the web. It will also be installed across all your supported devices.
+3. If your manifest contains no errors and the path is valid, your add-in will now be sideloaded and available on both your desktop and in Outlook on the web. It will also be installed across all your supported devices.
 
 ## Sideload manually
 
-Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in in a number of ways.
+Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in based on the Outlook client.
 
 ### Outlook on the web
 
@@ -118,8 +118,8 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ## Remove a sideloaded add-in
 
-On all versions of Outlook, removing a sideloaded add-in starts at the dialog box called **My Add-ins** which lists your installed add-ins. You'll then need to choose the ellipsis (`...`) for the add-in and choose **Remove**.
+On all versions of Outlook, the key to removing a sideloaded add-in is the **My Add-ins** dialog which lists your installed add-ins. Choose the ellipsis (`...`) for the add-in then select **Remove**.
 
-The navigation to this dialog box differs by Outlook version. For example, on desktop, you will find it within the **Home** tab in the ribbon. Within **Home**, select **Get Add-ins**. This prompts the dialog box, where you will select **My Add-ins**. From here, you can use the ellipsis and remove the add-in.
+The navigation to this dialog box differs by Outlook client. For example, on desktop, you will find it within the **Home** tab on the ribbon. Within **Home**, select **Get Add-ins**. This displays the dialog box, where you will select **My Add-ins**. From here, you can use the ellipsis and remove the add-in.
 
-To navigate to the **My Add-ins** dialog box for your version of Outlook, use the last steps listed for manual sideloading in the previous sections of this article.
+To navigate to the **My Add-ins** dialog box for your Outlook client, use the last steps listed for [manual sideloading](#sideload-manually) in the previous sections of this article.

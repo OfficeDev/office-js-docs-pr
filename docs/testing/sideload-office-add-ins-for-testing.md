@@ -11,35 +11,34 @@ When you sideload an add-in, you're able to install the add-in without first put
 
 When you sideload an add-in, the add-in's manifest is stored in the browser's local storage, so if you clear the browser's cache, or switch to a different browser, you have to sideload the add-in again.
 
-Sideloading can be done in either Microsoft 365 or Office on the web. The procedure is slightly different for the two platforms.
+Sideloading varies between host applications (for example, Excel). 
 
 > [!NOTE]
-> Sideloading as described in this article is supported on Excel, OneNote, PowerPoint and Word. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
+> Sideloading as described in this article is supported on Excel, OneNote, PowerPoint, and Word. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 ## Sideload an Office Add-in in Office on the web
 
-This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word** only. For other host applications, see [the manual sideloading instructions following this section](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually). The below project assumes that you are using a project created with [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word** only. For other host applications, see [the manual sideloading instructions in the following section](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually). This example project assumes that you are using a project created with [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
 1. Open [Office on the web](https://office.live.com/). Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share** in the ribbon, select **Copy Link**, and copy the URL.
 
-2. In the root directory of your yo office project files, open the **package.json** file. Within the **scripts** section of this file, create a **"document"** property. Paste the URL you copied in as the value for the "document" property. For example, yours will look something like this:
+2. In the root directory of your yo office project files, open the **package.json** file. Within the **scripts** section of this file, create a `"document"` property. Paste the URL you copied as the value for the `"document"` property. For example, yours will look something like this:
 
-```json
-  "scripts": {
-    "document": "<YOUR URL>",
-    ...
-  }
-```
+  ```json
+    "scripts": {
+      "document": "<YOUR URL>",
+      ...
+    }
 
->[!TIP]
->If you are creating an add-in not using our Yeoman generator, you can add query parameters to your document's URL, by appending the following to the existing URL:
+  > [!TIP]
+  > If you are creating an add-in not using our Yeoman generator, you can add query parameters to your document's URL, by appending the following to the existing URL:
 
-- The dev server port, such as `&wdaddindevserverport=3000`.
-- The manifest file name, such as `&wdaddinmanifestfile=manifest1.xml`.
-- The manifest GUID, such as `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`.
+    - The dev server port, such as `&wdaddindevserverport=3000`.
+    - The manifest file name, such as `&wdaddinmanifestfile=manifest1.xml`.
+    - The manifest GUID, such as `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`.
 
-> If you are using the Yeoman generator, adding this information is not necessary as the Yeoman tooling appends this information automatically.
-> Note that in both cases, however, you can only load manifests from localhost.
+  > If you are using the Yeoman generator, adding this information is not necessary as the Yeoman tooling appends this information automatically.
+  > Note that in both cases, however, you can only load manifests from localhost.
 
 3. In the command line starting at the root directory of your project, run the following command: `npm run start:web`.
 
@@ -74,7 +73,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 2. Open the App Launcher on the left end of the toolbar and select **Excel**, **Word**, or **PowerPoint**, and then create a new document.
 
-3. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office on the web manually**.
+3. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office on the web**.
 
 ## Sideload an add-in when using Visual Studio
 
@@ -94,10 +93,10 @@ If you're using Visual Studio to develop your add-in, the process to sideload is
 
 ## Remove a sideloaded add-in
 
-You can remove a previously sideloaded add-in by clearing your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), [you may need to clear the Office cache](clear-cache.md) and then re-sideload the add-in using updated manifest. Doing so will allow Office to render the add-in as it's described by the updated manifest.
+You can remove a previously sideloaded add-in by clearing your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to [clear the Office cache](clear-cache.md) and then re-sideload the add-in using the updated manifest. Doing so will allow Office to render the add-in as it's described by the updated manifest.
 
 ## See also
 
 - [Sideload Office Add-ins on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [Sideload Outlook Add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
+- [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
 - [Clear the Office cache](clear-cache.md)
