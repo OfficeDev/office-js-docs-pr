@@ -1,13 +1,13 @@
 ---
 title: Microsoft Office Add-in Debugger Extension for Visual Studio Code
 description: 'Use the Visual Studio Code extension Microsoft Office Add-in Debugger to debug your Office Add-in.'
-ms.date: 05/14/2020
+ms.date: 02/01/2021
 localization_priority: Normal
 ---
 
 # Microsoft Office Add-in Debugger Extension for Visual Studio Code
 
-The Microsoft Office Add-in Debugger Extension for Visual Studio Code allows you to debug your Office Add-in against the Edge runtime.
+The Microsoft Office Add-in Debugger Extension for Visual Studio Code allows you to debug your Office Add-in against the Microsoft Edge with the original webView (EdgeHTML) runtime. For instructions about debugging against Microsoft Edge WebView2 (Chromium-based), [see this article](./debug-desktop-using-edge-chromium.md)
 
 This debugging mode is dynamic, allowing you to set breakpoints while code is running. You can see changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you can see the results of multiple changes to your code. The following image shows this extension in action.
 
@@ -82,4 +82,4 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 
 * [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-* [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
+* [Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)](debug-desktop-using-edge-chromium.md)
