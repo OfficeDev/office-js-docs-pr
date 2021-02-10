@@ -45,7 +45,7 @@ To set up your development environment:
 
 You also need the following:
 
-- A Microsoft 365 account. You can join the [Microsoft 365 developer program](https://aka.ms/devprogramsignup) that includes a renewable 90 day subscription to Microsoft 365 that includes Office apps.
+- A Microsoft 365 account. You can join the [Microsoft 365 developer program](https://aka.ms/devprogramsignup) that provides a renewable 90-day Microsoft 365 subscription that includes Office apps.
 - A Microsoft Azure Tenant. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## The Cell analyzer VSTO Add-in
