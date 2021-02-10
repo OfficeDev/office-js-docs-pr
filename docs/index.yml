@@ -18,38 +18,39 @@ metadata:
 # Maximum of 8 items
 highlightedContent:
   items:
-    # Card 1
+      # Card 1
     - itemType: overview
       title: Office Add-ins platform overview
       url: overview/office-add-ins.md
-    # Card 2
-    - itemType: learn
-      title: "Microsoft Learn: Introduction to Office client customization with add-ins"
-      url: https://docs.microsoft.com/learn/modules/intro-office-add-ins/
-    # Card 3
-    - itemType: learn
-      title: "Microsoft Learn: Extend Office clients with Office Add-ins"
-      url: https://docs.microsoft.com/learn/paths/m365-office-add-in-associate/
-    # Card 4
-    - itemType: whats-new
-      title: Microsoft 365 Developer Blog
-      url: https://developer.microsoft.com/office/blogs/technology/add-ins/
-    # Card 5
-    - itemType: how-to-guide
-      title: Beginner's guide
-      url: overview/learning-path-beginner.md
-    # Card 6
-    - itemType: reference
-      title: API reference documentation
-      url: https://docs.microsoft.com/javascript/api/overview
-    # Card 7
-    - itemType: sample
-      title: "GitHub: Patterns and Practices for Office Add-ins"
-      url: https://github.com/OfficeDev/PnP-OfficeAddins/
-    # Card 8
+      # Card 2
     - itemType: quickstart 
       title: Set up an Excel add-in in 5 minutes
       url: quickstarts/excel-quickstart-jquery.md
+      # Card 3
+    - itemType: learn
+      title: "Microsoft Learn: Introduction to Office client customization with add-ins"
+      url: https://docs.microsoft.com/learn/modules/intro-office-add-ins/
+    # Card 4
+    - itemType: learn
+      title: "Microsoft Learn: Extend Office clients with Office Add-ins"
+      url: https://docs.microsoft.com/learn/paths/m365-office-add-in-associate/
+    # Card 5
+    - itemType: whats-new
+      title: Microsoft 365 Developer Blog
+      url: https://developer.microsoft.com/office/blogs/technology/add-ins/
+    # Card 6
+    - itemType: how-to-guide
+      title: Beginner's guide
+      url: overview/learning-path-beginner.md
+    # Card 7
+    - itemType: reference
+      title: API reference documentation
+      url: https://docs.microsoft.com/javascript/api/overview
+    # Card 8
+    - itemType: sample
+      title: "GitHub: Patterns and Practices for Office Add-ins"
+      url: https://github.com/OfficeDev/PnP-OfficeAddins/
+
 
 # conceptualContent section (optional)
 conceptualContent:
@@ -130,3 +131,6 @@ conceptualContent:
         - url: https://stackoverflow.com/questions/tagged/office-js
           itemType: reference
           text: Ask questions about Office.js on Stack Overflow
+        - url: https://github.com/OfficeDev/office-js/issues
+          itemType: reference
+          text: Report a bug or issue
