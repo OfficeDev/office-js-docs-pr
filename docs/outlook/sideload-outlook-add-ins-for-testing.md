@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 12/01/2020
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
@@ -26,9 +26,9 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### Sideload an add-in in the new Outlook on the web
 
-1. Go to [Outlook in Office 365](https://outlook.office.com).
+1. Go to [Outlook on the web](https://outlook.office.com).
 
-1. In Outlook on the web, create a new message.
+1. Create a new message.
 
 1. Choose **...** from the bottom of the new message and then select **Get Add-ins** from the menu that appears.
 
@@ -46,7 +46,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### Sideload an add-in in classic Outlook on the web
 
-1. Go to [Outlook in Office 365](https://outlook.office.com).
+1. Go to [Outlook on the web](https://outlook.office.com).
 
 1. Choose the gear icon in the top-right section of the toolbar and select **Manage add-ins**.
 

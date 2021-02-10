@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 10/14/2020
+ms.date: 02/09/2021
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 localization_priority: Priority
@@ -501,7 +501,7 @@ function insertTextIntoRange() {
 
 6. Within the `insertTextBeforeRange()` function, replace `TODO1` with the following code. Note:
 
-   - The method is intended to add a range whose text is "Office 2019, " before the range with text "Office 365". It makes a simplifying assumption that the string is present and the user has selected it.
+   - The method is intended to add a range whose text is "Office 2019, " before the range with text "Microsoft 365". It makes a simplifying assumption that the string is present and the user has selected it.
 
    - The first parameter of the `Range.insertText` method is the string to add.
 
@@ -598,9 +598,9 @@ function insertTextIntoRange() {
 
 5. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
 
-6. Within the document, select the phrase "Office 365". *Be careful not to include the preceding or following space in the selection.*
+6. Within the document, select the phrase "Microsoft 365". *Be careful not to include the preceding or following space in the selection.*
 
-7. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
+7. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Microsoft 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
 
 8. Within the document, select the word "several". *Be careful not to include the preceding or following space in the selection.*
 
@@ -853,7 +853,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 6. Within the `createContentControl()` function, replace `TODO1` with the following code. Note:
 
-   - This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
+   - This code is intended to wrap the phrase "Microsoft 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
 
    - The `ContentControl.title` property specifies the visible title of the content control.
 
@@ -927,9 +927,9 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 2. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
-3. In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph with "Office 365" at the top of the document.
+3. In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph with "Microsoft 365" at the top of the document.
 
-4. In the document, select the text "Office 365" and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
+4. In the document, select the text "Microsoft 365" and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
 
 5. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
 

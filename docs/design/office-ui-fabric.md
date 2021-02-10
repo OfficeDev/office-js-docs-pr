@@ -1,13 +1,13 @@
 ---
 title: Office UI Fabric in Office Add-ins 
 description: 'Get an overview of how to use the Office UI Fabric components in Office Add-ins.'
-ms.date: 10/29/2020
+ms.date: 2/09/2021
 localization_priority: Normal
 ---
 
 # Office UI Fabric in Office Add-ins
 
-Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. Fabric provides visuals-focused components that you can extend, rework, and use in your Office Add-in. Because Fabric uses the Office Design Language, Fabric's UX components look like a natural extension of Office.
+Office UI Fabric is a JavaScript front-end framework for building user experiences for Office. Fabric provides visuals-focused components that you can extend, rework, and use in your Office Add-in. Because Fabric uses the Office Design Language, Fabric's UX components look like a natural extension of Office.
 
 If you are building an add-in, we encourage you to use Office UI Fabric to create your user experience. Using Office UI Fabric is optional.
 

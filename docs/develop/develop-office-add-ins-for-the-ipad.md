@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # Special requirements for add-ins on the iPad
 
-If your add-in uses only Office APIs that are supported on the iPad, then customers can install it on iPads. (See [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md) for more information.) *If the add-in will be marketed through [AppSource](https://appsource.microsoft.com)*, then there are some practices you must follow for add-ins that can be installed on iPads, in addition to [the best practices that apply to all Office add-ins](../concepts/add-in-development-best-practices.md).
+If your add-in uses only Office APIs that are supported on the iPad, then customers can install it on iPads. (See [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md) for more information.) *If the add-in will be marketed through [AppSource](https://appsource.microsoft.com)*, then there are some practices you must follow for add-ins that can be installed on iPads, in addition to [the best practices that apply to all Office Add-ins](../concepts/add-in-development-best-practices.md).
 
 The following table lists the tasks to perform.
 
