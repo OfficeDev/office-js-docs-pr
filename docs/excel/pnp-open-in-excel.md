@@ -1,7 +1,7 @@
 ---
 title: Open Excel from your web page and embed your Office Add-in
 description: 'Open Excel from your web page and embed your Office Add-in.'
-ms.date: 09/15/2020
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
@@ -91,7 +91,7 @@ We recommend uploading new documents to OneDrive if your customer uses OneDrive.
 
 ### Use a quick-start to build a new Microsoft Graph web application
 
-1. Go to [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) and follow the steps to create and open a quick start code sample that interacts with Office 365 services.
+1. Go to [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) and follow the steps to create and open a quick start code sample that interacts with Office services.
 1. In **step 1: Pick you language or platform**, choose **ASP.NET MVC**. Although the steps in this procedure use the ASP.NET MVC option, the steps follow a pattern that apply to any language or platform.
 1. In **step 2: Get an app ID and secret**, choose **Get an app ID and secret**.
 1. Sign in to your Microsoft 365 account.  
@@ -171,7 +171,7 @@ The code sample stores a snippet ID in the new Excel document using the OOXML SD
 Typically, when the customer opens up an Excel document from your web site, they expect the document to contain some data from the web site. There are a couple of ways to write data into the document.
 
 - **Use the OOXML SDK to write the data**. You can use the SDK to directly write any data into the document. This approach is useful if you want the data to be available the instant the document is opened.
-- **Pass a custom query property to your Office add-in**. When you generate the document, you embed a custom property for the Office add-in that contains a query string that retrieves all the required data. When your add-in opens, it retrieves the query, runs the query, and uses the Office JS API to insert the result of the query into the document.
+- **Pass a custom query property to your Office Add-in**. When you generate the document, you embed a custom property for the Office Add-in that contains a query string that retrieves all the required data. When your add-in opens, it retrieves the query, runs the query, and uses the Office JS API to insert the result of the query into the document.
 
 ### Working with the OOXML SDK
 

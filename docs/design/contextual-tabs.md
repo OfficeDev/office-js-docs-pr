@@ -1,13 +1,13 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 01/20/2021
+ms.date: 01/29/2021
 localization_priority: Normal
 ---
 
 # Create custom contextual tabs in Office Add-ins (preview)
 
-A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
+A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office Add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
 
 > [!NOTE]
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
@@ -284,7 +284,7 @@ Office.onReady(async () => {
 });
 ```
 
-Next, define the handlers. The following is a simple example of a `showDataTab`, but see [Handling the HostRestartNeeded error](#handling-the-hostrestartneeded-error) later in this article for a more robust version of the function. About this code, note:
+Next, define the handlers. The following is a simple example of a `showDataTab`, but see [Handling the HostRestartNeeded error](#handle-the-hostrestartneeded-error) later in this article for a more robust version of the function. About this code, note:
 
 - Office controls when it updates the state of the ribbon. The  [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) method queues a request to update. The method will resolve the `Promise` object as soon as it has queued the request, not when the ribbon actually updates.
 - The parameter for the `requestUpdate` method is a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the tab by its ID *exactly as specified in the JSON* and (2) specifies visibility of the tab.
@@ -423,9 +423,83 @@ Then your code calls the function to get the localized blob that is passed to `r
 var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 ```
 
-## Handling the HostRestartNeeded error
+## Best practices for custom contextual tabs
 
-In some scenarios, Office is unable to update the ribbon and will return an error. For example, if the add-in is upgraded and the upgraded add-in has a different set of custom add-in commands, then the Office application must be closed and reopened. Until it is, the `requestUpdate` method will return the error `HostRestartNeeded`. The following is an example of how to handle this error. In this case, the `reportError` method displays the error to the user.
+### Implement an alternate UI experience when custom contextual tabs are not supported
+
+Some combinations of platform, Office application, and Office build don't support `requestCreateControls`. Your add-in should be designed to provide an alternate experience to users who are running the add-in on one of those combinations. The following sections describe two ways of providing a fallback experience.
+
+#### Use noncontextual tabs or controls
+
+There is a manifest element, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs. 
+
+The simplest strategy for using this element is that you define in the manifest one or more custom core tabs (that is, *noncontextual* custom tabs) that duplicate the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the [CustomTab](../reference/manifest/customtab.md). The effect of doing so is the following:
+
+- If the add-in runs on an application and platform that support custom contextual tabs, then the custom core tab won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
+- If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the custom core tab does appear on the ribbon.
+
+The following is an example of this simple strategy.
+
+```xml
+<OfficeApp ...>
+  ...
+  <VersionOverrides ...>
+    ...
+    <Hosts>
+      <Host ...>
+        ...
+        <DesktopFormFactor>
+          <ExtensionPoint ...>
+            <CustomTab ...>
+              <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
+              ...
+              <Group ...>
+                ...
+                <Control ... id="MyButton">
+                  ...
+                  <Action ...>
+...
+</OfficeApp>
+```
+
+This simple strategy uses a custom core tab that mirrors a custom contextual tab with it's child groups and controls, but you can use a more complex strategy. The `<OverriddenByRibbonApi>` element can also be added as (the first) child element to the [Group](../reference/manifest/group.md) and [Control](../reference/manifest/control.md) elements (both [button type](../reference/manifest/control.md#button-control) and [menu type](../reference/manifest/control.md#menu-dropdown-button-controls)), and menu `<Item>` elements. This fact enables you to distribute the groups and controls that would otherwise appear on the contextual tab among various groups, buttons, and menus in various custom core tabs. The following is an example. Note that "MyButton" will appear on the custom core tab only when custom contextual tabs are not supported. But the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
+
+```xml
+<OfficeApp ...>
+  ...
+  <VersionOverrides ...>
+    ...
+    <Hosts>
+      <Host ...>
+        ...
+        <DesktopFormFactor>
+          <ExtensionPoint ...>
+            <CustomTab ...>              
+              ...
+              <Group ...>
+                ...
+                <Control ... id="MyButton">
+                  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
+                  ...
+                  <Action ...>
+...
+</OfficeApp>
+```
+
+For more examples, see [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
+
+When a parent tab, group, or menu is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, then it isn't visible, and all of it's child markup is ignored, when custom contextual tabs aren't supported. So, it doesn't matter if any of those child elements have the `<OverriddenByRibbonApi>` element or what its value is. The implication of this is that if a menu item, control, or group must be visible in all contexts, then not only should it not be marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, but *its ancestor menu, group, and tab must also not be marked this way*.
+
+> [!IMPORTANT]
+> Don't mark *all* of the child elements of a tab, group, or menu with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`. This is pointless if the parent element is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` for reasons given in the preceding paragraph. Moreover, if you leave out the `<OverriddenByRibbonApi>` on the parent (or set it to `false`), then the parent will appear regardless of whether custom contextual tabs are supported, but it will be empty when they are supported. So, if all the child elements shouldn't appear when custom contextual tabs are supported, mark the parent, and only the parent, with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`.
+
+#### Use APIs that show or hide a task pane in specified contexts
+
+As an alternative to `<OverriddenByRibbonApi>`, your add-in can define a task pane with UI controls that duplicate the functionality of the controls on a custom contextual tab. Then use the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) and [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) methods to show the task pane when, and only when, the contextual tab would have been shown if it was supported. For details on how to use these methods, see [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md).
+
+### Handle the HostRestartNeeded error
+
+In some scenarios, Office is unable to update the ribbon and will return an error. For example, if the add-in is upgraded and the upgraded add-in has a different set of custom add-in commands, then the Office application must be closed and reopened. Until it is, the `requestUpdate` method will return the error `HostRestartNeeded`. Your code should handle this error. The following is an example of how. In this case, the `reportError` method displays the error to the user.
 
 ```javascript
 function showDataTab() {

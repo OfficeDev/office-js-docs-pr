@@ -28,7 +28,7 @@ For these reasons, much of this article duplicates our learning path for complet
 We know you're eager to start coding, but there are some things about Office Add-ins that you should read before you open your IDE or code editor.
 
 - [Office Add-ins Platform Overview](office-add-ins.md): Find out what Office Web Add-ins are and how they differ from older ways of extending Office, such as VSTO add-ins.
-- [Develop Office Add-ins](../develop/develop-overview.md): Get an overview of Office add-in development and lifecycle including tooling, creating an add-in UI, and using the JavaScript APIs to interact with the Office document.
+- [Develop Office Add-ins](../develop/develop-overview.md): Get an overview of Office Add-in development and lifecycle including tooling, creating an add-in UI, and using the JavaScript APIs to interact with the Office document.
 
 There are a lot of links in those articles, but if you're transitioning to Office Web Add-ins, we recommend that you come back here when you've read them and continue with the next section.
 
@@ -59,7 +59,7 @@ Get an understanding of the purposes of the web add-in manifest and an introduct
 
 ## Step 6 (for VSTO developers only): Reuse your VSTO code
 
-You can reuse some of your VSTO add-in code in an Office web add-in by moving it to your web application's back end on the server and making it available to your JavaScript or TypeScript as a web API. For guidance, see [Tutorial: Share code between both a VSTO Add-in and an Office add-in by using a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
+You can reuse some of your VSTO add-in code in an Office web add-in by moving it to your web application's back end on the server and making it available to your JavaScript or TypeScript as a web API. For guidance, see [Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
 
 ## Next Steps
 

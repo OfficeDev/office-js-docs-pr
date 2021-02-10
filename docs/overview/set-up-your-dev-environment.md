@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  'Set up your developer environment to build Office Add-ins.'
-ms.date: 10/14/2020
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
@@ -40,9 +40,9 @@ npm -v
 
 You may wish to use a Node version manager to allow you to switch between multiple versions of Node.js and npm, but this is not strictly necessary. For details on how to do this, [see npm's instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-## Get Office 365
+## Get Microsoft 365
 
-If you don't already have a Microsoft 365 account, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+If you don't already have a Microsoft 365 account, you can get a free, 90-day renewable Microsoft 365 subscription that includes all Office apps by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 ## Install a code editor
 
@@ -56,7 +56,7 @@ You can use any code editor or IDE that supports client-side development to buil
 
 Try creating your own add-in or use Script Lab to try built-in samples.
 
-### Create an Office add-in
+### Create an Office Add-in
 
 You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.yml). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try the [tutorial](../index.yml).
 

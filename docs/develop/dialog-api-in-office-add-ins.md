@@ -1,6 +1,6 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
-description: 'Learn the basics of creating a dialog box in an Office add-in.'
+description: 'Learn the basics of creating a dialog box in an Office Add-in.'
 ms.date: 01/28/2021
 
 localization_priority: Normal

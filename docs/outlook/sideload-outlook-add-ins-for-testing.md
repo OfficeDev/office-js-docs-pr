@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 02/01/2021
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
@@ -43,9 +43,9 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### New Outlook on the web
 
-1. Go to [Outlook in Office 365](https://outlook.office.com).
+1. Go to [Outlook on the web](https://outlook.office.com).
 
-1. In Outlook on the web, create a new message.
+1. Create a new message.
 
 1. Choose **...** from the bottom of the new message and then select **Get Add-ins** from the menu that appears.
 
@@ -63,7 +63,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### Classic Outlook on the web
 
-1. Go to [Outlook in Office 365](https://outlook.office.com).
+1. Go to [Outlook on the web](https://outlook.office.com).
 
 1. Choose the gear icon in the top-right section of the toolbar and select **Manage add-ins**.
 
@@ -120,6 +120,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 On all versions of Outlook, the key to removing a sideloaded add-in is the **My Add-ins** dialog which lists your installed add-ins. Choose the ellipsis (`...`) for the add-in then select **Remove**.
 
-The navigation to this dialog box differs by Outlook client. For example, on desktop, you will find it within the **Home** tab on the ribbon. Within **Home**, select **Get Add-ins**. This displays the dialog box, where you will select **My Add-ins**. From here, you can use the ellipsis and remove the add-in.
-
 To navigate to the **My Add-ins** dialog box for your Outlook client, use the last steps listed for [manual sideloading](#sideload-manually) in the previous sections of this article.
+
+To remove a sideloaded add-in from Outlook, use the steps previously described in this article to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the the add-in and then choose **Remove** to remove that specific add-in.
+

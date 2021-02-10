@@ -1,7 +1,7 @@
 ---
 title: Create Outlook add-ins for compose forms
 description: 'Learn about scenarios and capabilities of Outlook add-ins for compose forms.'
-ms.date: 04/15/2019
+ms.date: 02/09/2021
 localization_priority: Priority
 ---
 
@@ -51,4 +51,4 @@ Compose add-ins are implemented as [Add-in commands for Outlook](add-in-commands
 
 ## See also
 
-- [Get Started with Outlook add-ins for Office 365](../quickstarts/outlook-quickstart.md)
+- [Get Started with Outlook add-ins for Office](../quickstarts/outlook-quickstart.md)

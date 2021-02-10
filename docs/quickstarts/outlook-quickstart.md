@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 02/01/2021
+ms.date: 02/09/2021
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -129,7 +129,7 @@ Congratulations, you've successfully created your first Outlook task pane add-in
     > [!NOTE]
     > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.
 
-- Office 365
+- Microsoft 365
 
     > [!NOTE]
     > If you do not have a Microsoft 365 subscription, you can get a free one by signing up for the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
