@@ -46,7 +46,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### Sideload an add-in in classic Outlook on the web
 
-1. Go to [https://outlook.office.com](https://outlook.office.com).
+1. Go to [Outlook on the web](https://outlook.office.com).
 
 1. Choose the gear icon in the top-right section of the toolbar and select **Manage add-ins**.
 
