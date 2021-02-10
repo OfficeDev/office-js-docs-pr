@@ -18,7 +18,7 @@ Sideloading varies between host applications (for example, Excel).
 
 ## Sideload an Office Add-in in Office on the web
 
-This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word** only. For other host applications, see [the manual sideloading instructions in the following section](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually). This example project assumes that you are using a project created with [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word** only. For other host applications, see the manual sideloading instructions in the following section. This example project assumes that you are using a project created with [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
 1. Open [Office on the web](https://office.live.com/). Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share** in the ribbon, select **Copy Link**, and copy the URL.
 
@@ -29,6 +29,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
       "document": "<YOUR URL>",
       ...
     }
+  ```
 
   > [!TIP]
   > If you are creating an add-in not using our Yeoman generator, you can add query parameters to your document's URL, by appending the following to the existing URL:
