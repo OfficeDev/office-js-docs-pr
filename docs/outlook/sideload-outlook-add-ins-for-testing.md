@@ -26,9 +26,9 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### Sideload an add-in in the new Outlook on the web
 
-1. Go to [https://outlook.office.com](https://outlook.office.com).
+1. Go to [Outlook on the web](https://outlook.office.com).
 
-1. In Outlook on the web, create a new message.
+1. Create a new message.
 
 1. Choose **...** from the bottom of the new message and then select **Get Add-ins** from the menu that appears.
 
