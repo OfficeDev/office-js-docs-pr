@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in (preview)
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 02/08/2021
+ms.date: 02/11/2021
 localization_priority: Normal
 ---
 
@@ -13,12 +13,14 @@ This article is meant to provide debugging guidance as you implement [event-base
 > [!IMPORTANT]
 > This debugging capability is only supported for preview in Outlook on Windows with a Microsoft 365 subscription. See [How to preview debugging for the event-based activation feature](#how-to-preview-debugging-for-the-event-based-activation-feature) in this article for more details.
 
-In this article, we'll discuss the key steps to enable debugging. Note that this flow assumes that you created your add-in by following the steps of the [walkthrough built on Yeoman generator for Office Add-ins](autolaunch.md).
+In this article, we'll discuss the key stages to enable debugging.
 
 - [Mark the add-in for debugging](#mark-your-add-in-for-debugging)
 - [Configure Visual Studio Code](#configure-visual-studio-code)
 - [Attach VS Code](#attach-vs-code)
 - [Debug](#debug)
+
+You have several options for creating your add-in project. In a couple of stages, the steps vary depending on the option you're using. Where this is the case, if you used the Yeoman generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **yo office** steps, else follow the **Other** steps.
 
 ## How to preview debugging for the event-based activation feature
 
@@ -28,13 +30,19 @@ To preview this capability for Outlook on Windows, the minimum required build is
 
 ## Mark your add-in for debugging
 
-1. In a command line window, navigate to the root of your add-in folder then run the following command.
+1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]\UseDirectDebugger`. `[Add-in Id]` is the Id in the add-in manifest.
+
+    **yo office**: In a command line window, navigate to the root of your add-in folder then run the following command.
 
     ```command&nbsp;line
     npm start
     ```
 
-    In addition to building the code and starting the local server, this command should set a registry key for this add-in to 1: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]\UseDirectDebugger`. `[Add-in Id]` is the Id in the add-in manifest.
+    In addition to building the code and starting the local server, this command should set a registry key for this add-in to `1`.
+
+    **Other**: Add the `UseDirectDebugger` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in Id]\`. Replace `[Add-in Id]` with the Id in the add-in manifest. Set the registry key to 1.
+
+    [!include[Developer registry key](../includes/developer-registry-key.md)]
 
 1. Start Outlook desktop (or restart Outlook if it's already open).
 1. Compose a new message or appointment. You should see the following dialog. Do *not* interact with the dialog yet.
@@ -43,6 +51,8 @@ To preview this capability for Outlook on Windows, the minimum required build is
 
 ## Configure Visual Studio Code
 
+### yo office
+
 1. Back in the command line window, open VS Code.
 
     ```command&nbsp;line
@@ -50,6 +60,34 @@ To preview this capability for Outlook on Windows, the minimum required build is
     ```
 
 1. In VS Code, open the file **./.vscode/launch.json** and add the following excerpt to your list of configurations. Save your changes.
+
+    ```json
+    {
+      "name": "Direct Debugging",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "protocol": "inspector",
+      "timeout": 600000,
+      "trace": true
+    }
+    ```
+
+### Other
+
+1. Create a new folder called **Debugging** (perhaps in your **Desktop** folder).
+1. Open VS Code.
+1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
+1. Select the **Debug** item in the left menu.
+
+    ![Screenshot of Debug icon in left menu of VS Code](../images/vs-code-debug.png)
+
+1. Select **create a launch.json file** link.
+
+    ![Screenshot of link to create a launch.json file in VS Code](../images/vs-code-create-launch.json.png)
+
+1. In the menu, select **Edge: Launch** to create a launch.json file.
+1. Add the following excerpt to your list of configurations. Save your changes.
 
     ```json
     {

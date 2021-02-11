@@ -55,11 +55,8 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
 2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.
 
-    > [!NOTE]
-    > If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, complete the following steps to create it.
-    >
-    > 1. Right-click the **WEF** key (folder) and select **New** > **Key**.
-    > 1. Name the new key **Developer**.
+    [!include[Developer registry key](../includes/developer-registry-key.md)]
+
 
 3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).
 
