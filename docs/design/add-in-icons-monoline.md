@@ -1,13 +1,13 @@
 ---
 title: Monoline style icon guidelines for Office Add-ins
 description: 'Get guidelines for using Monoline style icon icons in Office Add-ins.'
-ms.date: 12/09/2019
+ms.date: 2/09/2021
 localization_priority: Normal
 ---
 
 # Monoline style icon guidelines for Office Add-ins
 
-Monoline style iconography are used in Office 365. If you would prefer that your icons match the Fresh style of non-subscription Office 2013+, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
+Monoline style iconography are used in Office apps. If you would prefer that your icons match the Fresh style of non-subscription Office 2013+, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
 
 ## Office Monoline visual style
 

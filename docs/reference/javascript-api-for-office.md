@@ -117,7 +117,7 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
                     </div>
                     <div class="cardText">
                         <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office add-in.</a></p>
+                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office Add-in.</a></p>
                     </div>
                 </div>
             </div>

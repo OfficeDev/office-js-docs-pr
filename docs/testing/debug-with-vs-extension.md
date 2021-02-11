@@ -1,13 +1,13 @@
 ---
 title: Microsoft Office Add-in Debugger Extension for Visual Studio Code
-description: 'Use the Visual Studio Code extension Microsoft Office Add-in Debugger to debug your Office add-in.'
-ms.date: 05/14/2020
+description: 'Use the Visual Studio Code extension Microsoft Office Add-in Debugger to debug your Office Add-in.'
+ms.date: 02/01/2021
 localization_priority: Normal
 ---
 
 # Microsoft Office Add-in Debugger Extension for Visual Studio Code
 
-The Microsoft Office Add-in Debugger Extension for Visual Studio Code allows you to debug your Office Add-in against the Edge runtime.
+The Microsoft Office Add-in Debugger Extension for Visual Studio Code allows you to debug your Office Add-in against the Microsoft Edge with the original webView (EdgeHTML) runtime. For instructions about debugging against Microsoft Edge WebView2 (Chromium-based), [see this article](./debug-desktop-using-edge-chromium.md)
 
 This debugging mode is dynamic, allowing you to set breakpoints while code is running. You can see changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you can see the results of multiple changes to your code. The following image shows this extension in action.
 
@@ -20,7 +20,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 - Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
-These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
+These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
 
 ## Install and use the debugger
 
@@ -62,7 +62,7 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 }
 ```
 
-7. In the section of JSON you just copied, find the "url" section. In this URL, you will need to replace the uppercase HOST text with the application that is hosting your Office add-in. For example, if your Office add-in is for Excel, your URL value would be "https://localhost:3000/taskpane.html?_host_Info=<strong>Excel</strong>$Win32$16.01$en-US$\$\$\$0".
+7. In the section of JSON you just copied, find the "url" section. In this URL, you will need to replace the uppercase HOST text with the application that is hosting your Office Add-in. For example, if your Office Add-in is for Excel, your URL value would be "https://localhost:3000/taskpane.html?_host_Info=<strong>Excel</strong>$Win32$16.01$en-US$\$\$\$0".
 
 8. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in the Office client, open the task pane.
 
@@ -82,4 +82,4 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 
 * [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-* [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
+* [Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)](debug-desktop-using-edge-chromium.md)

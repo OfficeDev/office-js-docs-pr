@@ -36,7 +36,7 @@ Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and
 
 [!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
 
-## Understanding the two parts of an Office add-in
+## Understanding the two parts of an Office Add-in
 
 An Office Add-in consists of two parts:
 

@@ -1,7 +1,7 @@
 ---
 title: How to find the proper order of manifest elements
 description: 'Learn how to find the correct order in which to place child elements in a parent element.'
-ms.date: 11/01/2020
+ms.date: 01/29/2021
 localization_priority: Normal
 ---
 
@@ -204,34 +204,38 @@ The following sections show the manifest elements in the order in which they mus
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
+                        <OverriddenByRibbonApi>
                         <Group> (can be below <ControlGroup>)
+                            <OverriddenByRibbonApi>
                             <Label>
                             <Icon>
                                 <Image>
                             <Control>
-                            <Label>
-                            <Supertip>
-                                <Title>
-                                <Description>
-                            <Icon>
-                                <Image>  
-                            <Action>
-                                <TaskpaneId>
-                                <SourceLocation>
-                                <Title>
-                                <FunctionName>
-                            <Enabled>
-                            <Items>
-                                <Item>
-                                    <Label>
-                                    <Supertip>
-                                        <Title>
-                                        <Description>
-                                    <Action>
-                                        <TaskpaneId>
-                                        <SourceLocation>
-                                        <Title>
-                                        <FunctionName>
+                                <OverriddenByRibbonApi>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>  
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                                <Enabled>
+                                <Items>
+                                    <Item>
+                                        <OverriddenByRibbonApi>
+                                        <Label>
+                                        <Supertip>
+                                            <Title>
+                                            <Description>
+                                        <Action>
+                                            <TaskpaneId>
+                                            <SourceLocation>
+                                            <Title>
+                                            <FunctionName>
                         <ControlGroup> (can be above <Group>)
                         <Label>
                         <InsertAfter> (or <InsertBefore>)
@@ -503,4 +507,5 @@ The following sections show the manifest elements in the order in which they mus
 
 ## See also
 
-- [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
+- [Reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
+- [Official schema definitions](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
