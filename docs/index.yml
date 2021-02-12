@@ -29,11 +29,11 @@ highlightedContent:
       # Card 3
     - itemType: learn
       title: "Microsoft Learn: Introduction to Office client customization with add-ins"
-      url: https://docs.microsoft.com/learn/modules/intro-office-add-ins/
+      url: /learn/modules/intro-office-add-ins/
     # Card 4
     - itemType: learn
       title: "Microsoft Learn: Extend Office clients with Office Add-ins"
-      url: https://docs.microsoft.com/learn/paths/m365-office-add-in-associate/
+      url: /learn/paths/m365-office-add-in-associate/
     # Card 5
     - itemType: whats-new
       title: Microsoft 365 Developer Blog
@@ -45,7 +45,7 @@ highlightedContent:
     # Card 7
     - itemType: reference
       title: Office JavaScript API reference documentation
-      url: /javascript/api/overview
+      url: /javascript/api/overview/
     # Card 8
     - itemType: sample
       title: "GitHub: Patterns and Practices for Office Add-ins"
@@ -85,7 +85,7 @@ conceptualContent:
         - url: overview/patterns-and-practices-overview.md
           itemType: sample
           text: Use common Patterns and Practices
-        - url: https://docs.microsoft.com/javascript/api/overview
+        - url: /javascript/api/overview/
           itemType: reference
           text: Read API reference documentation
 
@@ -113,10 +113,10 @@ conceptualContent:
     # Card 5
     - title: Publish
       links:
-        - url: https://docs.microsoft.com/office/dev/store/
+        - url: /office/dev/store/
           itemType: overview
           text: Validate your Office Add-in
-        - url: https://docs.microsoft.com/office/dev/store/add-in-submission-guide
+        - url: /office/dev/store/add-in-submission-guide/
           itemType: how-to-guide
           text: Review the Microsoft 365 App Store submission guide
     # Card 6
