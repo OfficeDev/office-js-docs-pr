@@ -85,7 +85,7 @@ The `Hosts` element can contain one or more `Host` elements. The `Host` element 
 | Workbook      | Excel on the web, Windows, Mac, iPad          |
 
 > [!NOTE]
-> The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on the web and Windows can be used to run your add-in.
+> The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on the web and on Windows can be used to run your add-in.
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
