@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
 description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 02/09/2021
+ms.date: 02/11/2021
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ When you sideload an add-in, you're able to install the add-in without first put
 
 When you sideload an add-in, the add-in's manifest is stored in the browser's local storage, so if you clear the browser's cache, or switch to a different browser, you have to sideload the add-in again.
 
-Sideloading varies between host applications (for example, Excel). 
+Sideloading varies between host applications (for example, Excel).
 
 > [!NOTE]
 > Sideloading as described in this article is supported on Excel, OneNote, PowerPoint, and Word. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
@@ -24,22 +24,22 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 2. In the root directory of your yo office project files, open the **package.json** file. Within the **scripts** section of this file, create a `"document"` property. Paste the URL you copied as the value for the `"document"` property. For example, yours will look something like this:
 
-  ```json
-    "scripts": {
-      "document": "<YOUR URL>",
-      ...
-    }
-  ```
+    ```json
+      "scripts": {
+        "document": "<YOUR URL>",
+        ...
+      }
+    ```
 
-  > [!TIP]
-  > If you are creating an add-in not using our Yeoman generator, you can add query parameters to your document's URL, by appending the following to the existing URL:
+    > [!TIP]
+    > If you are creating an add-in not using our Yeoman generator, you can add query parameters to your document's URL, by appending the following to the existing URL:
 
     - The dev server port, such as `&wdaddindevserverport=3000`.
     - The manifest file name, such as `&wdaddinmanifestfile=manifest1.xml`.
     - The manifest GUID, such as `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`.
 
-  > If you are using the Yeoman generator, adding this information is not necessary as the Yeoman tooling appends this information automatically.
-  > Note that in both cases, however, you can only load manifests from localhost.
+    > If you are using the Yeoman generator, adding this information is not necessary as the Yeoman tooling appends this information automatically.
+    > Note that in both cases, however, you can only load manifests from localhost.
 
 3. In the command line starting at the root directory of your project, run the following command: `npm run start:web`.
 
@@ -55,15 +55,15 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. Open [Office on the web](https://office.live.com/). Open a document in **Excel**, **Word**, or **PowerPoint**. On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
 
-4. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
+1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
 
     ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
 
-5. **Browse** to the add-in manifest file, and then select **Upload**.
+1. **Browse** to the add-in manifest file, and then select **Upload**.
 
     ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
 
-6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
+1. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
 
 > [!NOTE]
 > To test your Office Add-in with Microsoft Edge with the original WebView (EdgeHTML), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This is not required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
