@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/03/2021
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -233,17 +233,19 @@ The user can switch or navigate away from the current mail item where the add-in
 
 Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs:
 
+- Under `Office.context.auth`:
+  - `getAccessToken`
+  - `getAccessTokenAsync`
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`
   - `displayNewAppointmentForm`
   - `displayNewMessageForm`
+- Under `Office.context.mailbox.item`:
+  - `close`
 - Under `Office.context.ui`:
   - `displayDialogAsync`
   - `messageParent`
-- Under `Office.context.auth`:
-  - `getAccessToken`
-  - `getAccessTokenAsync`
 
 ## See also
 
