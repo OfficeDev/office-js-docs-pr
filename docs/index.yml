@@ -45,7 +45,7 @@ highlightedContent:
     # Card 7
     - itemType: reference
       title: Office JavaScript API reference documentation
-      url: https://docs.microsoft.com/javascript/api/overview
+      url: /javascript/api/overview
     # Card 8
     - itemType: sample
       title: "GitHub: Patterns and Practices for Office Add-ins"
