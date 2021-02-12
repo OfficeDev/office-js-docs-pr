@@ -1,7 +1,7 @@
 ---
 title: Publish Office Add-ins using Centralized Deployment via the Microsoft 365 admin center
 description: 'Learn how to use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.'
-ms.date: 01/12/2021
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
@@ -76,7 +76,7 @@ If your organization meets all requirements, complete the following steps to pub
     > [!NOTE]
     > Add-ins that utilize [single sign-on (SSO)](../develop/sso-in-office-add-ins.md) will prompt the admin to consent to the scopes listed in the add-in manifest.  If the same backing service is used across multiple add-ins (the same Azure App ID is used with SSO in different add-ins), the scopes for each add-in will be prompted for consent with each deployment. This page will also display the list of permissions that the add-in requires.
 
-11. When finished, choose **Deploy**. This process may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other apps in Office 365.
+11. When finished, choose **Deploy**. This process may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other Office apps.
 
     > [!NOTE]
     > When an administrator chooses **Deploy**, consent is given for all users.

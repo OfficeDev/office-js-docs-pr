@@ -1,7 +1,7 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint app catalog
 description: To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the app catalog for their organization.
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
@@ -16,7 +16,7 @@ An app catalog is a dedicated site collection in a SharePoint web application or
 
 ## Create an app catalog
 
-Complete the steps in one of the following sections to create an app catalog with on-premises SharePoint Server or on Office 365.
+Complete the steps in one of the following sections to create an app catalog with on-premises SharePoint Server or on Microsoft 365.
 
 ### To create an app catalog for on-premises SharePoint Server
 
@@ -32,7 +32,7 @@ To create the SharePoint app catalog, follow the instructions at [Create the App
 
 Complete the steps in one of the following sections to publish an Office Add-in to an app catalog on Microsoft 365 or on-premises SharePoint Server.
 
-### To publish an Office add-in to a SharePoint app catalog on Microsoft 365
+### To publish an Office Add-in to a SharePoint app catalog on Microsoft 365
 
 1. Go to the [Active sites page of the new SharePoint admin center](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true) and sign in with an account that has [admin permissions](/sharepoint/sharepoint-admin-role) for your organization.
 

@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Create custom contextual tabs in Office Add-ins (preview)
 
-A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
+A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office Add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
 
 > [!NOTE]
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.

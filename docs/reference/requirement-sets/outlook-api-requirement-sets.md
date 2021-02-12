@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: 'Learn more about the Outlook JavaScript API requirement sets.'
-ms.date: 01/26/2021
+ms.date: 02/08/2021
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -107,7 +107,7 @@ Add-ins are supported in Outlook on the following platforms.
 >
 > <sup>3</sup> Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). Support for 1.4 in Outlook 2013 was added as part of the [September 13, 2016, update for Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). Support for 1.4 in Outlook 2016 (one-time purchase) was added as part of the [July 3, 2018, update for Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
 >
-> <sup>4</sup> Preview support for the new Outlook on Mac is available from version 16.38.506. For more information, see the [New Outlook on Mac](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#new-outlook-on-mac-preview) section.
+> <sup>4</sup> Support for the new Mac UI (preview) is available from Outlook version 16.38.506. For more information, see the [Add-in support in Outlook on new Mac UI](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#add-in-support-in-outlook-on-new-mac-ui-preview) section.
 >
 > <sup>5</sup> Currently, there are additional considerations when designing and implementing add-ins for mobile clients. For example, the only supported mode is Message Read. For more details, see [code considerations when adding support for add-in commands for Outlook Mobile](../../outlook/add-mobile-support.md#code-considerations).
 

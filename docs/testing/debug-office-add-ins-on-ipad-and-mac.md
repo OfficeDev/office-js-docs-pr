@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins on a Mac
-description: 'Learn how to use a Mac to debug Office Add-ins'
-ms.date: 11/26/2019
+description: 'Learn how to use a Mac to debug Office Add-ins.'
+ms.date: 10/16/2020
 localization_priority: Normal
 ---
 
@@ -13,7 +13,7 @@ Because add-ins are developed using HTML and JavaScript, they are designed to wo
 
 If you have add-in that shows UI in a task pane or in a content add-in, you can debug an Office Add-in using Safari Web Inspector.
 
-To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND Mac Office Version: 16.9.1 (Build 18012504) or later. If you don't have an Office Mac build, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND Mac Office version 16.9.1 (build 18012504) or later. If you don't have an Office Mac build, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property for the relevant Office application as follows:
 
@@ -24,6 +24,9 @@ To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property f
 - `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+    > [!IMPORTANT]
+    > Mac App Store builds of Office do not support the `OfficeWebAddinDeveloperExtras` flag.
 
 Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-ipad-and-mac.md). Right-click the add-in and you should see an **Inspect Element** option in the context menu. Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
 
