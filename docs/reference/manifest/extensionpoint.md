@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 02/01/2021
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -259,7 +259,7 @@ This extension point puts buttons in the command surface for the mail read view 
 This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting. To learn more about this scenario, see the [Create an Outlook mobile add-in for an online-meeting provider](../../outlook/online-meeting.md) article.
 
 > [!NOTE]
-> This extension point is only supported on Android with a Microsoft 365 subscription.
+> This extension point is only supported on Android and iOS with a Microsoft 365 subscription.
 
 #### Child elements
 

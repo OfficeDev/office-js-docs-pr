@@ -2,7 +2,7 @@
 title: Create an Outlook mobile add-in for an online-meeting provider
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 06/25/2020
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ localization_priority: Normal
 Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook) mobile. However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can streamline the online meeting creation experience for their Outlook add-in users.
 
 > [!IMPORTANT]
-> This feature is only supported on Android with a Microsoft 365 subscription.
+> This feature is only supported on Android and iOS with a Microsoft 365 subscription.
 
 In this article, you'll learn how to set up your Outlook mobile add-in to enable users to organize and join a meeting using your online-meeting service. Throughout this article, we'll be using a fictional online-meeting service provider, "Contoso".
 
@@ -253,7 +253,6 @@ The following APIs are available for this feature.
 Several restrictions apply.
 
 - Applicable only to online-meeting service providers.
-- At present, Android is the only supported client. Support on iOS is coming soon.
 - Only admin-installed add-ins will appear on the meeting compose screen, replacing the default Teams or Skype option. User-installed add-ins won't activate.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 - Only one UI-less command is supported in Appointment Organizer (compose) mode.
