@@ -63,7 +63,7 @@ conceptualContent:
       links:
         - url: overview/learning-path-beginner.md
           itemType: get-started
-          text: Get started
+          text: Get started with Office Add-ins
         - url: overview/explore-with-script-lab.md
           itemType: sample
           text: Test and experiment with Script Lab
