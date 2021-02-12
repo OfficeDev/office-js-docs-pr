@@ -30,7 +30,7 @@ To preview this capability for Outlook on Windows, the minimum required build is
 
 ## Mark your add-in for debugging
 
-1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]\UseDirectDebugger`. `[Add-in Id]` is the Id in the add-in manifest.
+1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. `[Add-in ID]` is the **Id** in the add-in manifest.
 
     **yo office**: In a command line window, navigate to the root of your add-in folder then run the following command.
 
@@ -40,7 +40,7 @@ To preview this capability for Outlook on Windows, the minimum required build is
 
     In addition to building the code and starting the local server, this command should set the `UseDirectDebugger` registry key for this add-in to `1`.
 
-    **Other**: Add the `UseDirectDebugger` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in Id]\`. Replace `[Add-in Id]` with the Id in the add-in manifest. Set the registry key to `1`.
+    **Other**: Add the `UseDirectDebugger` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Replace `[Add-in ID]` with the **Id** from the add-in manifest. Set the registry key to `1`.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
@@ -103,15 +103,15 @@ To preview this capability for Outlook on Windows, the minimum required build is
 
 ## Attach VS Code
 
-1. To find the add-in's **bundle.js**, open the following folder in Windows Explorer and search for your add-in's Id (found in the manifest).
+1. To find the add-in's **bundle.js**, open the following folder in Windows Explorer and search for your add-in's **Id** (found in the manifest).
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef
     ```
 
-    Open the folder prefixed with this Id and copy its full path. In VS Code, open **bundle.js** from that folder. The pattern of the file path should be as follows:
+    Open the folder prefixed with this ID and copy its full path. In VS Code, open **bundle.js** from that folder. The pattern of the file path should be as follows:
 
-    `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in Id]_[Add-in Version]_[locale]\bundle.js`
+    `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. Place breakpoints in bundle.js where you want the debugger to stop.
 1. In the **DEBUG** dropdown, select the name **Direct Debugging** then select the **Run** button.
@@ -129,7 +129,7 @@ To preview this capability for Outlook on Windows, the minimum required build is
 To stop debugging for:
 
 - The rest of the current Outlook desktop session, choose the **Cancel** button in the **Debug Event-based handler** dialog. To re-enable debugging, restart Outlook desktop.
-- Subsequent Outlook sessions and prevent the **Debug Event-based handler** dialog from popping up, delete the associated registry key or set its value to 0: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in Id]\UseDirectDebugger`.
+- Subsequent Outlook sessions and prevent the **Debug Event-based handler** dialog from popping up, delete the associated registry key or set its value to 0: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`.
 
 ## See also
 
