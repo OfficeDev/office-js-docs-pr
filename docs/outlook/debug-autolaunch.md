@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in (preview)
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 02/11/2021
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -38,9 +38,9 @@ To preview this capability for Outlook on Windows, the minimum required build is
     npm start
     ```
 
-    In addition to building the code and starting the local server, this command should set a registry key for this add-in to `1`.
+    In addition to building the code and starting the local server, this command should set the `UseDirectDebugger` registry key for this add-in to `1`.
 
-    **Other**: Add the `UseDirectDebugger` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in Id]\`. Replace `[Add-in Id]` with the Id in the add-in manifest. Set the registry key to 1.
+    **Other**: Add the `UseDirectDebugger` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in Id]\`. Replace `[Add-in Id]` with the Id in the add-in manifest. Set the registry key to `1`.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
@@ -82,7 +82,7 @@ To preview this capability for Outlook on Windows, the minimum required build is
 
     ![Screenshot of Debug icon in left menu of VS Code](../images/vs-code-debug.png)
 
-1. Select **create a launch.json file** link.
+1. Select the **create a launch.json file** link.
 
     ![Screenshot of link to create a launch.json file in VS Code](../images/vs-code-create-launch.json.png)
 
@@ -109,7 +109,7 @@ To preview this capability for Outlook on Windows, the minimum required build is
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef
     ```
 
-    Open the folder prefixed with this Id and copy its full path. In VS Code, open **bundle.js** from that folder.
+    Open the folder prefixed with this Id and copy its full path. In VS Code, open **bundle.js** from that folder. The pattern of the file path should be as follows:
 
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in Id]_[Add-in Version]_[locale]\bundle.js`
 
