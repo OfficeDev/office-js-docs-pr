@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 02/01/2021
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -220,6 +220,9 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 
 This extension point puts buttons on the ribbon for the module extension.
 
+> [!IMPORTANT]
+> Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available with this extension point.
+
 #### Child elements
 
 |  Element |  Description  |
@@ -260,6 +263,8 @@ This extension point puts a mode-appropriate toggle in the command surface for a
 
 > [!NOTE]
 > This extension point is only supported on Android with a Microsoft 365 subscription.
+>
+> Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available with this extension point.
 
 #### Child elements
 
@@ -304,6 +309,9 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
 
 This extension point enables an add-in to activate based on supported events in the desktop form factor. Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`. To learn more about this scenario, see the [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md) article.
 
+> [!IMPORTANT]
+> Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available with this extension point.
+
 #### Child elements
 
 |  Element |  Description  |
@@ -328,6 +336,9 @@ This extension point enables an add-in to activate based on supported events in 
 
 This extension point adds an event handler for a specified event. For more information about using this extension point, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).
 
+> [!IMPORTANT]
+> Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available with this extension point.
+
 | Element | Description  |
 |:-----|:-----|
 |  [Event](event.md) |  Specifies the event and event handler function.  |
@@ -343,6 +354,9 @@ This extension point adds an event handler for a specified event. For more infor
 ### DetectedEntity
 
 This extension point adds a contextual add-in activation on a specified entity type.
+
+> [!IMPORTANT]
+> Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available with this extension point.
 
 The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
 
