@@ -77,7 +77,7 @@ Custom UI and task panes are specified in the add-in manifest.  
 
 #### Custom buttons and menu commands  
 
-You can add custom ribbon buttons and menu items to the ribbon in Office on the web and Windows. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
+You can add custom ribbon buttons and menu items to the ribbon in Office on the web and on Windows. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
 *Figure 3. Add-in commands in the ribbon*
 

@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 01/08/2021
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
@@ -71,6 +71,8 @@ The on-send feature currently has the following limitations.
 - **Manifest** &ndash; Only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **Send Later** (Mac only) &ndash; If there are on-send add-ins, the **Send Later** feature will be unavailable.
+
+Also, it's not recommended that you call `item.close()` in the on-send event handler as closing the item should happen automatically after the event is completed.
 
 ### Mailbox type/mode limitations
 

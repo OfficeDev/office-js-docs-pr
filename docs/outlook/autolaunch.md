@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/03/2021
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -19,7 +19,7 @@ Without the event-based activation feature, a user has to explicitly launch an a
 By the end of this walkthrough, you'll have an add-in that runs whenever a new message is created.
 
 > [!IMPORTANT]
-> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with a Microsoft 365 subscription. See [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article for more details.
+> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. See [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article for more details.
 >
 > Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
 
@@ -233,17 +233,19 @@ The user can switch or navigate away from the current mail item where the add-in
 
 Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs:
 
+- Under `Office.context.auth`:
+  - `getAccessToken`
+  - `getAccessTokenAsync`
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`
   - `displayNewAppointmentForm`
   - `displayNewMessageForm`
+- Under `Office.context.mailbox.item`:
+  - `close`
 - Under `Office.context.ui`:
   - `displayDialogAsync`
   - `messageParent`
-- Under `Office.context.auth`:
-  - `getAccessToken`
-  - `getAccessTokenAsync`
 
 ## See also
 
