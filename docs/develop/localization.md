@@ -1,6 +1,6 @@
 ---
 title: Localization for Office Add-ins
-description: 'You can use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.'
+description: 'Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.'
 ms.date: 01/30/2021
 localization_priority: Normal
 ---
@@ -147,7 +147,7 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 
 ## Localize extended overrides
 
-Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you are familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element.
+Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element.
 
 There are two ways to localize the strings and URLs in an extended overrides file.
 
@@ -189,7 +189,7 @@ The extended overrides file then uses tokens instead of strings. The tokens name
 }
 ```
 
-The resource file, which is also JSON-formatted, has a top-level `resources` property that is divided into subproperties by locale. For each locale a string is assigned to each token that was used in the extended overrides file. The following is an example which has strings for `en-us` and `fr-fr`. Note that in this example, the keyboard shortcut is the same in both locales, but that won't always be the case, especially when you are localizing for locales that have a different alphabet or writing system, and hence a different keyboard.
+The resource file, which is also JSON-formatted, has a top-level `resources` property that is divided into subproperties by locale. For each locale, a string is assigned to each token that was used in the extended overrides file. The following is an example which has strings for `en-us` and `fr-fr`. In this example, the keyboard shortcut is the same in both locales, but that won't always be the case, especially when you are localizing for locales that have a different alphabet or writing system, and hence a different keyboard.
 
 ```json
 {
@@ -214,7 +214,7 @@ The resource file, which is also JSON-formatted, has a top-level `resources` pro
 }
 ```
 
-Note that there is no `default` property in the file that is a peer to the `en-us` and `fr-fr` sections. This is because the default strings, which are used when the locale of the Office host application doesn't match any of the *ll-cc* properties in the resources file, *must be defined in the extended overrides file itself*. Defining the default strings directly in the extended overrides file ensures that Office doesn't have to download the resource file when the locale of the Office application matches the default locale of the add-in (as specified in the manifest). The following is a corrected version of the preceding example of an extended overrides file that uses resource tokens.
+There is no `default` property in the file that is a peer to the `en-us` and `fr-fr` sections. This is because the default strings, which are used when the locale of the Office host application doesn't match any of the *ll-cc* properties in the resources file, *must be defined in the extended overrides file itself*. Defining the default strings directly in the extended overrides file ensures that Office doesn't download the resource file when the locale of the Office application matches the default locale of the add-in (as specified in the manifest). The following is a corrected version of the preceding example of an extended overrides file that uses resource tokens.
 
 ```json
 {
@@ -259,7 +259,7 @@ If you prefer, you can create separate extended override files for each locale, 
 </OfficeApp>
 ```
 
-The basic system (subject to some complications described later) is that when the add-in is installed (or upgraded), Office will replace the `${token.locale}` with the locale of the Office host application. So, in the example, if the Office locale is fr-fr, then Office will download an extended overrides file named `fr-fr-extended-overrides.json`, but if the locale is es-mx, then it will download an extended overrides file named `es-mx-extended-overrides.json`. (You can also use the token as a folder name instead of, or in addition to, using it as part of a file name.)
+The basic system (subject to some complications described later) is that when the add-in is installed (or upgraded), Office replaces the `${token.locale}` with the locale of the Office host application. So, in the example, if the Office locale is `fr-fr`, then Office downloads an extended overrides file named `fr-fr-extended-overrides.json`, but if the locale is `es-mx`, then Office downloads an extended overrides file named `es-mx-extended-overrides.json`. (You can also use the token as a folder name instead of, or in addition to, using it as part of a file name.)
 
 There are hundreds of possible locales, and it is not likely to be cost effective for you to produce a separate extended override file for each of them. So, you need a way to control what Office will insert into the URL when the Office host application's locale is one of those for which you haven't created an extended override file. The first step is to specify a default value that Office should use. You do this with a [Token](../reference/manifest/token.md) element as in the following example. Note that:
 
@@ -279,7 +279,7 @@ There are hundreds of possible locales, and it is not likely to be cost effectiv
 </OfficeApp>
 ```
 
-Now you need to tell Office what string to insert in the URL when you *do* have an extended overrides file for the Office host application's locale. You do this with a series of [Override](../reference/manifest/override.md) elements. In the following example, there are two extended overrides files (in addition to the one for the default `en-us`). Note that:
+Next, tell Office what string to insert in the URL when you *do* have an extended overrides file for the Office host application's locale. You do this with a series of [Override](../reference/manifest/override.md) elements. In the following example, there are two extended overrides files (in addition to the one for the default `en-us`). Note that:
 
 - The `Locale` attribute is the one that Office will try to match with the Office host application's locale.
 - The `Value` attribute is the string that Office will insert in the URL when it finds a match.
@@ -298,7 +298,7 @@ Now you need to tell Office what string to insert in the URL when you *do* have 
 </OfficeApp>
 ```
 
-You can use the wildcard character, "\*", in the `Locale` attribute. This is useful when you want to insert the same string into the URL for multiple locales. For example, suppose you have an extended overrides file that has be localized to `es-es` (Spanish in Spain) and you want it to be used in all Spanish-speaking countries. Without the wildcard character, you would need a different `<Override>` element for every Spanish locale; `es-es`, `es-mx`, `es-ar`, `es-bo`, etc. as in the following example.
+You can use the wildcard character, "\*", in the `Locale` attribute. This is useful when you want to insert the same string into the URL for multiple locales. For example, you have an extended overrides file that needs to be localized to `es-es` (Spanish in Spain) and you want to use it in all Spanish-speaking countries. Without the wildcard character, you need a different `<Override>` element for every Spanish locale; `es-es`, `es-mx`, `es-ar`, `es-bo`, etc. as in the following example.
 
 ```xml
 <Token xsi:type="LocaleToken" name="locale" default="en-us">
@@ -321,7 +321,7 @@ But by using the wildcard character, you can have just a single `<Override>` ele
 </Token>
 ```
 
-Suppose that you want to make an exception for `es-mx` (Spanish in Mexico) and you have an extended overrides file for it as well as for `es-es`. You can ensure that Mexican Spanish is used when Mexico is the locale, but Spanish in Spain is used by all other Spanish locales by placing an `<Override>` element for Mexico *below* the element for the other Spanish locales, as in the following example.
+Suppose that you want to make an exception for `es-mx` (Spanish in Mexico) and you have an extended overrides file for it as well as for `es-es`. To ensure that Mexican Spanish is used when Mexico is the locale, but Spanish in Spain is used by all other Spanish locales, place an `<Override>` element for Mexico *below* the element for the other Spanish locales, as in the following example.
 
 ```xml
 <Token xsi:type="LocaleToken" name="locale" default="en-us">
@@ -336,7 +336,7 @@ The reason that the element for Mexico goes below is because when Office does it
 
 ## Match date/time format with client locale
 
-You can get the locale of the user interface of the Office client application by using the [displayLanguage] property. You can then display date and time values in a format consistent with the current locale of the Office application. One way to do that is to prepare a resource file that specifies the date/time display format to use for each locale that your Office Add-in supports. At run time, your add-in can use the resource file and match the appropriate date/time format with the locale obtained from the [displayLanguage] property.
+You can get the locale of the user interface of the Office client application by using the **[displayLanguage]** property. You can then display date and time values in a format consistent with the current locale of the Office application. One way to do that is to prepare a resource file that specifies the date/time display format to use for each locale that your Office Add-in supports. At run time, your add-in can use the resource file and match the appropriate date/time format with the locale obtained from the **[displayLanguage]** property.
 
 You can get the locale of the data of the Office client application by using the [contentLanguage] property. Based on this value, you can then appropriately interpret or display date/time strings. For example, the `jp-JP` locale expresses data/time values as `yyyy/MM/dd`, and the `fr-FR` locale, `dd/MM/yyyy`.
 

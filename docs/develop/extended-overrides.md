@@ -10,7 +10,7 @@ localization_priority: Normal
 Some extensibility features of Office Add-ins are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest.
 
 > [!NOTE]
-> This article assumes that you are familiar with Office add-in manifests and their role in add-ins. Please read [Office Add-ins XML manifest](add-in-manifests.md), if you have not done so recently.
+> This article assumes that you're familiar with Office add-in manifests and their role in add-ins. Please read [Office Add-ins XML manifest](add-in-manifests.md), if you haven't recently.
 
 The following table specifies the extensibility features that require an extended override along with links to documentation of the feature.
 
@@ -21,7 +21,7 @@ The following table specifies the extensibility features that require an extende
 The schema that defines the JSON format is [extended-manifest schema](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!TIP]
-> This article is somewhat abstract. Consider reading one of the articles in the table to give concreteness to the concepts.
+> This article is somewhat abstract. Consider reading one of the articles in the table to add clarity to the concepts.
 
 ## Tell Office where to find the JSON file
 
@@ -56,7 +56,7 @@ The following is an example of a very simple extended overrides JSON file. It as
 }
 ```
 
-## Localizing the extended overrides file
+## Localize the extended overrides file
 
 If your add-in supports multiple locales, you can use the `ResourceUrl` attribute of the `<ExtendedOverrides>` element to point Office to a file of localized resources. The following is an example.
 
@@ -70,4 +70,3 @@ If your add-in supports multiple locales, you can use the `ResourceUrl` attribut
 ```
 
 For more details about how to create and use the resources file, how to refer to its resources in the extended overrides file, and for additional options not discussed here, see [Localize extended overrides](localization.md#localize-extended-overrides).
-
