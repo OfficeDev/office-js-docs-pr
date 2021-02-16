@@ -262,7 +262,7 @@ This extension point puts buttons in the command surface for the mail read view 
 This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor. A meeting organizer can create an online meeting. An attendee can subsequently join the online meeting. To learn more about this scenario, see the [Create an Outlook mobile add-in for an online-meeting provider](../../outlook/online-meeting.md) article.
 
 > [!NOTE]
-> This extension point is only supported on Android with a Microsoft 365 subscription.
+> This extension point is only supported on Android and iOS with a Microsoft 365 subscription.
 >
 > Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available with this extension point.
 
