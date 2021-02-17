@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in (preview)
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 02/17/2021
 localization_priority: Normal
 ---
 
@@ -80,7 +80,7 @@ To preview this capability for Outlook on Windows, the minimum required build is
 1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
 1. On the Activity Bar, select the **Debug** item (Ctrl+Shift+D).
 
-    ![Screenshot of Debug icon on the Side Bar](../images/vs-code-debug.png)
+    ![Screenshot of Debug icon on the Activity Bar](../images/vs-code-debug.png)
 
 1. Select the **create a launch.json file** link.
 
