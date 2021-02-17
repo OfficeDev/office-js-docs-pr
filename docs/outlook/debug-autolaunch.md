@@ -17,7 +17,7 @@ In this article, we discuss the key stages to enable debugging.
 
 - [Mark the add-in for debugging](#mark-your-add-in-for-debugging)
 - [Configure Visual Studio Code](#configure-visual-studio-code)
-- [Attach VS Code](#attach-vs-code)
+- [Attach Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
 You have several options for creating your add-in project. Depending on the option you're using, the steps may vary. Where this is the case, if you used the Yeoman generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **yo office** steps, otherwise follow the **Other** steps.
