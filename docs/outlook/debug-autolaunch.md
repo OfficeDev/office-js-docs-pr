@@ -126,7 +126,6 @@ To preview this capability for Outlook on Windows, the minimum required build is
 
 ## Stop debugging
 
-
 To stop debugging for the rest of the current Outlook desktop session, in the **Debug Event-based handler** dialog, choose **Cancel**. To re-enable debugging, restart Outlook desktop.
 - Subsequent Outlook sessions and prevent the **Debug Event-based handler** dialog from popping up, delete the associated registry key or set its value to 0: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`.
 
