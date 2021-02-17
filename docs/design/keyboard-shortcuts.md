@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: 'Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.'
-ms.date: 02/02/2021
+ms.date: 12/17/2020
 localization_priority: Normal
 ---
 
@@ -219,11 +219,6 @@ You cannot use any of the following keyboard combinations. They are used by brow
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## Localize the keyboard shortcuts JSON
-
-If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
-
 ## Next Steps
 
 - See the sample add-in [excel-keyboard-shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
-- Get an overview of working with extended overrides in [Work with extended overrides of the manifest](../develop/extended-overrides.md).
