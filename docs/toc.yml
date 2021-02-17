@@ -1063,6 +1063,8 @@ items:
         href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
       - name: Troubleshoot add-in activation
         href: outlook/troubleshoot-outlook-add-in-activation.md
+      - name: Debug event-based activation
+        href: outlook/debug-autolaunch.md
   
 - name: PowerPoint
   items:
