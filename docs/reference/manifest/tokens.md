@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Tokens element
 
-Defines tokens that could be used in template URLs.
+Defines tokens that could be used in template URLs. For more information about the use of this element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
 
 **Add-in type:** Task pane
 
