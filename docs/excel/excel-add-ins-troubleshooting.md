@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Excel Add-ins
 description: 'Learn how to troubleshoot development errors in Excel Add-ins.'
-ms.date: 12/14/2020
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -79,7 +79,7 @@ function getBindingId(eventArgs) {
 
 ### Cell format `useStandardHeight` and `useStandardWidth` issues
 
-The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to an issue in the Excel on the web UI, setting the `useStandardHeight` property to `true` will calculate height imprecisely on this platform. For example, a standard height of **14** will be modified to **14.25** in Excel on the web.
+The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to an issue in the Excel on the web UI, setting the `useStandardHeight` property to `true` calculates height imprecisely on this platform. For example, a standard height of **14** is modified to **14.25** in Excel on the web.
 
 On all platforms, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect. 
 

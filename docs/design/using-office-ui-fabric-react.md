@@ -1,13 +1,13 @@
 ---
 title: Use Office UI Fabric React in Office Add-ins
 description: 'Learn how to use Office UI Fabric React in Office Add-ins.'
-ms.date: 09/09/2020
+ms.date: 02/09/2021
 localization_priority: Normal
 ---
 
 # Use Office UI Fabric React in Office Add-ins
 
-Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in.
+Office UI Fabric is a JavaScript front-end framework for building user experiences for Office. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in.
 
 This article describes how to create an add-in that's built with React and uses Fabric React components.
 

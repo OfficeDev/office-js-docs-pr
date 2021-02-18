@@ -1,7 +1,7 @@
 ---
 title: LaunchEvents in the manifest file (preview)
 description: The LaunchEvents element configures your add-in to activate based on supported events.
-ms.date: 05/18/2020
+ms.date: 02/01/2021
 localization_priority: Normal
 ---
 
@@ -12,7 +12,7 @@ Configures your add-in to activate based on supported events. Child of the [`<Ex
 **Add-in type:** Mail
 
 > [!IMPORTANT]
-> Event-based activation is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
+> Event-based activation is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web and on Windows. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## Syntax
 

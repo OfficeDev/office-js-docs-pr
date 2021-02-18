@@ -193,11 +193,11 @@ The following is an example:
 The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office add-ins.
+> Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office Add-ins.
 
 ### Using shortcuts when the focus is in the task pane
 
-Currently, the keyboard shortcuts for an Office add-in can only be invoked when the user's focus is in the worksheet. When the user's focus is inside the Office UI (such as the task pane), none of the add-in's shortcuts are ignored. As a workaround, the add-in can define keyboard handlers that can invoke certain actions when the user's focus is inside of the add-in UI.
+Currently, the keyboard shortcuts for an Office Add-in can only be invoked when the user's focus is in the worksheet. When the user's focus is inside the Office UI (such as the task pane), none of the add-in's shortcuts are ignored. As a workaround, the add-in can define keyboard handlers that can invoke certain actions when the user's focus is inside of the add-in UI.
 
 ## Using key combinations that are already used by Office or another add-in
 
