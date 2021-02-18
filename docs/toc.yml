@@ -1217,6 +1217,8 @@ items:
     href: develop/authentication-pnp.md
   - name: Handle high DPI and DPI scaling in your Office solution
     href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+    name: Office Add-ins community call
+  - href: overview/office-add-ins-community-call.md
 
 - name: VSTO and COM transition resources
   items: 
