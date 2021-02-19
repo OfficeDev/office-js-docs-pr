@@ -101,8 +101,6 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
-      - name: Extended overrides
-        href: develop/extended-overrides.md
       - name: Find the proper order of manifest elements
         href: develop/manifest-element-ordering.md
       - name: Update API and manifest version
@@ -1063,6 +1061,8 @@ items:
         href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
       - name: Troubleshoot add-in activation
         href: outlook/troubleshoot-outlook-add-in-activation.md
+      - name: Debug event-based activation
+        href: outlook/debug-autolaunch.md
   
 - name: PowerPoint
   items:

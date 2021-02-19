@@ -1,7 +1,7 @@
 ---
 title: Action element in the manifest file
 description: This element specifies the action to perform when the user selects a button or menu control.
-ms.date: 07/07/2020
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -24,7 +24,6 @@ Specifies the action to perform when the user selects a  [Button](control.md#but
 |  [TaskpaneId](#taskpaneid) | Specifies the ID of the task pane container.|
 |  [Title](#title) | Specifies the custom title for the task pane.|
 |  [SupportsPinning](#supportspinning) | Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.|
-  
 
 ## xsi:type
 
@@ -32,6 +31,9 @@ This attribute specifies the kind of action performed when the user selects the 
 
 - `ExecuteFunction`
 - `ShowTaskpane`
+
+> [!IMPORTANT]
+> Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available when **xsi:type** is `ExecuteFunction`.
 
 ## FunctionName
 
@@ -128,6 +130,7 @@ Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOve
 
 > [!IMPORTANT]
 > Although the `SupportsPinning` element was introduced in [requirement set 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only supported for Microsoft 365 subscribers using the following.
+>
 > - Outlook 2016 or later on Windows (build 7628.1000 or later)
 > - Outlook 2016 or later on Mac (build 16.13.503 or later)
 > - Modern Outlook on the web
