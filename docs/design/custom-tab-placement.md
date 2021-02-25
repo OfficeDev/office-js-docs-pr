@@ -1,12 +1,12 @@
 ---
 title: Position a custom tab on the ribbon
 description: 'Learn how to control where a custom tab appears on the Office ribbon and whether it has focus by default.'
-ms.date: 11/01/2020
+ms.date: 02/25/2021
 localization_priority: Normal
 ---
 
 
-# Position a custom tab on the ribbon (preview)
+# Position a custom tab on the ribbon
 
 You can specify where you want your add-in's custom tab to appear on the Office application's ribbon by using markup in the add-in's manifest.
 
@@ -15,7 +15,7 @@ You can specify where you want your add-in's custom tab to appear on the Office 
 
 > [!IMPORTANT]
 >
-> - The add-in feature and markup described in this article is in preview and is *only available in PowerPoint on the web*. We recommend that you try out the markup in test and development environments only. Do not use preview markup in a production environment or within business-critical documents.
+> - The add-in feature and markup described in this article is *only available in PowerPoint on the web*.
 > - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See [Behavior on unsupported platforms](#behavior-on-unsupported-platforms) below.
 
 Specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. Make these specifications by including either an [InsertBefore](../reference/manifest/customtab.md#insertbefore) (left) or an [InsertAfter](../reference/manifest/customtab.md#insertafter) (right) element in the [CustomTab](../reference/manifest/customtab.md) element of your add-in's manifest. (You cannot have both elements.)
