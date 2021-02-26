@@ -36,7 +36,7 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
-<sup>4</sup> The rollout of WebView2 for Office add-ins is currently in progress. As a result, EdgeHTML might still be used for your add-in even when the computer has the required versions of Windows and Office, and the WebView2 control is installed on the computer. For monthly channel users, we expect this rollout to complete by the end of March, 2021. The rollout will be later for Semi-Annual Channel customers. We will update this page as soon as we have that information available.
+<sup>4</sup> The rollout of WebView2 for Office Add-ins is currently in progress. As a result, Microsoft Edge with original WebView (EdgeHTML) might still be used for your add-in even when the computer has the required versions of Windows and Office, and the WebView2 control is installed on the computer. For monthly channel users, we expect this rollout to complete by the end of March 2021. The rollout will be later for Semi-Annual Channel customers. We will update this page as soon as we have that information available.
 
 <sup>5</sup> The embeddable WebView2 control must be installed in addition to the installation of Microsoft Edge so that Office can embed it. To install it, see [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
