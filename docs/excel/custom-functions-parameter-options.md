@@ -267,7 +267,7 @@ The following custom function takes in three input parameters, retrieves the `pa
  * @customfunction
  * @param {string} firstParameter First parameter.
  * @param {string} secondParameter Second parameter.
- * @param {string} thirdParameter Third parameter
+ * @param {string} thirdParameter Third parameter.
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
  * @returns {any[][]} The parameter addresses, as a 2-dimensional array. 
  * @requiresParameterAddresses
