@@ -1,5 +1,5 @@
 ---
-ms.date: 02/04/2021
+ms.date: 03/04/2021
 description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -269,6 +269,7 @@ The following custom function takes in three input parameters, retrieves the `pa
  * @param {string} secondParameter Second parameter.
  * @param {string} thirdParameter Third parameter
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {any[][]} The parameter addresses, as a 2-dimensional array. 
  * @requiresParameterAddresses
  */
 function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
