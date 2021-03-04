@@ -1,7 +1,7 @@
 ---
 title: Call Microsoft Excel APIs from a custom function
 description: 'Learn which Microsoft Excel APIs you can call from your custom function.'
-ms.date: 03/03/2021
+ms.date: 03/04/2021
 localization_priority: Normal
 ---
 
@@ -19,7 +19,7 @@ Call Office.js Excel APIs from your custom functions to get range data and obtai
 
 To call into the Office.js APIs you first need a context. Use the [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) object to get a context. Then use the context to call the APIs you need in the workbook.
 
-The following code sample shows how to use `Excel.RequestContext` to access a cell through a custom function and then return the value of that cell. In this sample, the `address` is passed into the Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) and must be entered as a string. So for example, the custom function entered into the Excel UI should follow the pattern `=CONTOSO.GETRANGEVALUE("A1")`, where `"A1"` is the address of the cell from which you'll retrieve the value.
+The following code sample shows how to use `Excel.RequestContext` to access a cell through a custom function and then return the value of that cell. In this sample, the `address` is passed into the Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) method and must be entered as a string. For example, the custom function entered into the Excel UI must follow the pattern `=CONTOSO.GETRANGEVALUE("A1")`, where `"A1"` is the address of the cell from which you'll retrieve the value.
 
 > [!NOTE]
 > This code sample only works properly if you're using a shared JavaScript runtime. To set up a shared JavaScript runtime, see [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
@@ -27,19 +27,19 @@ The following code sample shows how to use `Excel.RequestContext` to access a ce
 ```JavaScript
 /**
  * @customfunction
- * @param {string} address The address of the input cell.
- * @returns The value of the input cell.
+ * @param {string} address The address of the cell from which to retrieve the value.
+ * @returns The value of the cell at the input address.
  **/
 async function getRangeValue(address) {
  // Retrieve the context object. 
  var context = new Excel.RequestContext();
  
- // Use the context object to access a cell. 
+ // Use the context object to access the cell at the input address. 
  var range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
  range.load();
  await context.sync();
  
- // Return the value of the input cell.
+ // Return the value of the cell at the input address.
  return range.values[0][0];
 }
 ```
@@ -66,3 +66,4 @@ Instead, make changes to Excel from the context of a ribbon button, or task pane
 ## See also
 
 - [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
