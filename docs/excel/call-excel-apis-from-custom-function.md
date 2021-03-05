@@ -1,23 +1,23 @@
 ---
-title: Call Microsoft Excel APIs from a custom function
-description: 'Learn which Microsoft Excel APIs you can call from your custom function.'
+title: Call Excel JavaScript APIs from a custom function
+description: 'Learn which Excel JavaScript APIs you can call from your custom function.'
 ms.date: 03/05/2021
 localization_priority: Normal
 ---
 
-# Call Microsoft Excel APIs from a custom function
+# Call Excel JavaScript APIs from a custom function
 
-Call Office.js Excel APIs from your custom functions to get range data and obtain more context for your calculations. Calling Office.js APIs through a custom function can be helpful when:
+Call Excel JavaScript APIs from your custom functions to get range data and obtain more context for your calculations. Calling Excel JavaScript APIs through a custom function can be helpful when:
 
 - A custom function needs to get information from Excel before calculation. This information might include document properties, range formats, custom XML parts, a workbook name, or other Excel-specific information.
 - A custom function will set the cell's number format for the return values after calculation.
 
 > [!IMPORTANT]
-> To call Office.js Excel APIs from your custom function, you'll need to use a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+> To call Excel JavaScript APIs from your custom function, you'll need to use a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
 
 ## Code sample
 
-To call into the Office.js APIs you first need a context. Use the [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) object to get a context. Then use the context to call the APIs you need in the workbook.
+To call into the Excel JavaScript APIs you first need a context. Use the [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) object to get a context. Then use the context to call the APIs you need in the workbook.
 
 The following code sample shows how to use `Excel.RequestContext` in a custom function to get a value from a cell in the workbook. In this sample, the `address` parameter is passed into the Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) method and must be entered as a string. For example, the custom function entered into the Excel UI must follow the pattern `=CONTOSO.GETRANGEVALUE("A1")`, where `"A1"` is the address of the cell from which you'll retrieve the value.
 
@@ -41,9 +41,9 @@ async function getRangeValue(address) {
 }
 ```
 
-## Limitations of calling Office.js through a custom function
+## Limitations of calling Excel JavaScript APIs through a custom function
 
-Don't call Office.js APIs from a custom function that change the environment of Excel. This means your custom functions should not do any of the following:
+Don't call Excel JavaScript APIs from a custom function that change the environment of Excel. This means your custom functions should not do any of the following:
 
 - Insert, delete, or format cells on the spreadsheet.
 - Change another cell's value.
