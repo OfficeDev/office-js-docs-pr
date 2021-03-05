@@ -31,7 +31,7 @@ Specifies the full URLs for JSON-formatted files that extend the manifest. For d
 
 |Attribute|Description|
 |:-----|:-----|
-|Url (required)| The full URL of the extended overrides JSON file. In the future, this value could be a URL template that uses tokens defined by the [Tokens](tokens.md) element. See [Examples](#examples)|
+|Url (required)| The full URL of the extended overrides JSON file. In the future, this value could be a URL template that uses tokens defined by the [Tokens](tokens.md) element. See [Examples](#examples).|
 |ResourcesUrl (optional) | The full URL of a file that provides supplemental resources, such as localized strings, for the file specified in the `Url` attribute. This could be a URL template that uses tokens defined by the [Tokens](tokens.md) element.|
 
 ## Examples
