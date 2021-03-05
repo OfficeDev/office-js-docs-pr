@@ -17,9 +17,9 @@ Call Excel JavaScript APIs from your custom functions to get range data and obta
 
 ## Code sample
 
-To call into the Excel JavaScript APIs you first need a context. Use the [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) object to get a context. Then use the context to call the APIs you need in the workbook.
+To call Excel JavaScript APIs from a custom function, you first need a context. Use the [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) object to get a context. Then use the context to call the APIs you need in the workbook.
 
-The following code sample shows how to use `Excel.RequestContext` in a custom function to get a value from a cell in the workbook. In this sample, the `address` parameter is passed into the Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) method and must be entered as a string. For example, the custom function entered into the Excel UI must follow the pattern `=CONTOSO.GETRANGEVALUE("A1")`, where `"A1"` is the address of the cell from which you'll retrieve the value.
+The following code sample shows how to use `Excel.RequestContext` to get a value from a cell in the workbook. In this sample, the `address` parameter is passed into the Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) method and must be entered as a string. For example, the custom function entered into the Excel UI must follow the pattern `=CONTOSO.GETRANGEVALUE("A1")`, where `"A1"` is the address of the cell from which to retrieve the value.
 
 ```JavaScript
 /**
