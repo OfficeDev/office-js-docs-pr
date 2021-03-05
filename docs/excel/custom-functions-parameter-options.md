@@ -269,7 +269,7 @@ The following custom function takes in three input parameters, retrieves the `pa
  * @param {string} secondParameter Second parameter.
  * @param {string} thirdParameter Third parameter.
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
- * @returns {any[][]} The parameter addresses, as a 2-dimensional array. 
+ * @returns {any[][]} The addresses of the parameters, as a 2-dimensional array. 
  * @requiresParameterAddresses
  */
 function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
