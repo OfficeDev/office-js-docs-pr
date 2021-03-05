@@ -149,7 +149,7 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 
 Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element.
 
-se the `ResourceUrl` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element to point Office to a file of localized resources. The following is an example.
+Use the `ResourceUrl` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element to point Office to a file of localized resources. The following is an example.
 
 ```xml
     ...
@@ -160,7 +160,7 @@ se the `ResourceUrl` attribute of the [ExtendedOverrides](../reference/manifest/
 </OfficeApp>
 ```
 
-The extended overrides file then uses tokens instead of strings. The tokens name strings in the resource file. The following is a simple example that assigns a keyboard shortcut to function (defined elsewhere) that displays the add-in's task pane. Note about this markup:
+The extended overrides file then uses tokens instead of strings. The tokens name strings in the resource file. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note about this markup:
 
 - The example isn't quite valid. (We add a required additional property to it below.)
 - The tokens must have the format **${resource.*name-of-resource*}**.
