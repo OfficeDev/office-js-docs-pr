@@ -1,7 +1,7 @@
 ---
 title: Call Microsoft Excel APIs from a custom function
 description: 'Learn which Microsoft Excel APIs you can call from your custom function.'
-ms.date: 03/04/2021
+ms.date: 03/05/2021
 localization_priority: Normal
 ---
 
@@ -19,10 +19,7 @@ Call Office.js Excel APIs from your custom functions to get range data and obtai
 
 To call into the Office.js APIs you first need a context. Use the [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) object to get a context. Then use the context to call the APIs you need in the workbook.
 
-The following code sample shows how to use `Excel.RequestContext` to access a cell through a custom function and then return the value of that cell. In this sample, the `address` is passed into the Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) method and must be entered as a string. For example, the custom function entered into the Excel UI must follow the pattern `=CONTOSO.GETRANGEVALUE("A1")`, where `"A1"` is the address of the cell from which you'll retrieve the value.
-
-> [!NOTE]
-> This code sample only works properly if you're using a shared JavaScript runtime. To set up a shared JavaScript runtime, see [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+The following code sample shows how to use `Excel.RequestContext` in a custom function to get a value from a cell in the workbook. In this sample, the `address` parameter is passed into the Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) method and must be entered as a string. For example, the custom function entered into the Excel UI must follow the pattern `=CONTOSO.GETRANGEVALUE("A1")`, where `"A1"` is the address of the cell from which you'll retrieve the value.
 
 ```JavaScript
 /**
