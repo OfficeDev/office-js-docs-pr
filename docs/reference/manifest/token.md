@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # Token element
 
-Defines an individual URL token.
+Defines an individual URL token. For more information about the use of this element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
 
 **Add-in type:** Task pane
 
