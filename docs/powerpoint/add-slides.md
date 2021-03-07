@@ -72,11 +72,11 @@ If your add-in can be used in scenarios in which the new slide should use the sa
         return new OfficeExtension.Promise<number>(function(resolve, reject) {
             Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange, function(asyncResult) {
                 try {
-                        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                            reject(console.error(asyncResult.error.message));
-                        } else {
-                            resolve(asyncResult.value.slides[0].index);
-                        }
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(console.error(asyncResult.error.message));
+                    } else {
+                        resolve(asyncResult.value.slides[0].index);
+                    }
                 } 
                 catch (error) {
                     reject(console.log(error));
