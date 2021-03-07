@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Add and delete slides in PowerPoint (preview)
 
-A PowerPoint add-in can add slides to the presentation and optionally specify which slide master, and which layout of the master, is used for the new slide. You can also delete slides.
+A PowerPoint add-in can add slides to the presentation and optionally specify which slide master, and which layout of the master, is used for the new slide. The add-in can also delete slides.
 
 > [!IMPORTANT]
 > The APIs for adding slides are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in. The API for *deleting* slides has been released.
@@ -58,12 +58,14 @@ Accordingly, the `AddSlideOptions` parameter is primarily used in scenarios in w
 
 #### Have the user choose a matching slide
 
-If your add-in can be used in scenarios in which the new slide should always use the same combination of slide master and layout that is used by a user-selected existing slide, then your add-in can (1) prompt the user to select a slide and (2) read the IDs of the slide master and layout. The following steps show how to read the IDs and add a slide with a matching master and layout.
+If your add-in can be used in scenarios in which the new slide should use the same combination of slide master and layout that is used by an *existing* slide, then your add-in can (1) prompt the user to select a slide and (2) read the IDs of the slide master and layout. The following steps show how to read the IDs and add a slide with a matching master and layout.
 
 1. Create a method to get the index of the selected slide. The following is an example. Note about this code:
 
-  - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs.
-  - The call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common-APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
+    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs.
+    - The call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common-APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
+    - `getSelectedDataAsync` returns an array because multiple slides can be selected. In this scenario, the user has selected just one, so the code gets the first (0th) slide, which is the only one selected.
+    - The `index` value of the slide is the 1-based value the user sees beside the slide in the thumbnails pane.
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -73,9 +75,6 @@ If your add-in can be used in scenarios in which the new slide should always use
                         if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                             reject(console.error(asyncResult.error.message));
                         } else {
-                            // Multiple slides can be selected, so the result value is
-                            // is an array. We want the first (only) one. The index value
-                            // is the 1-based value the user sees in the thumbnails pane.
                             resolve(asyncResult.value.slides[0].index);
                         }
                 } 
@@ -87,7 +86,7 @@ If your add-in can be used in scenarios in which the new slide should always use
     }
     ```
 
-1. Call your new function inside the [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) of the main function that adds the slide. The following is an example.
+2. Call your new function inside the [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) of the main function that adds the slide. The following is an example.
 
     ```javascript
     async function addSlideWithMatchingLayout() {
