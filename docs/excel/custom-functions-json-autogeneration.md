@@ -1,5 +1,5 @@
 ---
-ms.date: 12/22/2020
+ms.date: 03/08/2021
 description: 'Use JSDoc tags to dynamically create your custom functions JSON metadata.'
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Normal
@@ -41,6 +41,7 @@ The following JSDoc tags are supported in Excel custom functions.
 * [@helpurl](#helpurl) url
 * [@param](#param) _{type}_ name description
 * [@requiresAddress](#requiresAddress)
+* [@requiresParameterAddresses](#requiresParameterAddresses)
 * [@returns](#returns) _{type}_
 * [@streaming](#streaming)
 * [@volatile](#volatile)
@@ -234,6 +235,36 @@ The following sample shows how to use the `invocation` parameter in combination 
 function getAddress(first, second, invocation) {
   var address = invocation.address;
   return address;
+}
+```
+
+<a id="requiresParameterAddresses"></a>
+### @requiresParameterAddresses
+
+Indicates that the function should return the addresses of input parameters. 
+
+Like `@requiresAddress`, to use `@requiresParameterAddresses` the last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `parameterAddresses` property will contain the addresses of the input parameters.
+
+The following sample shows how to use the `invocation` parameter in combination with `@requiresParameterAddresses` to return the addresses of three input parameters. See [Detect the address of a parameter](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) for more information. 
+
+```js
+/**
+ * Return the addresses of three parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array.
+ * @requiresParameterAddresses
+ */
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
+    [invocation.parameterAddresses[0]],
+    [invocation.parameterAddresses[1]],
+    [invocation.parameterAddresses[2]]
+  ];
+  return addresses;
 }
 ```
 
