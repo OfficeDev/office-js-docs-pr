@@ -48,7 +48,6 @@ The following JSDoc tags are supported in Excel custom functions.
 
 ---
 <a id="cancelable"></a>
-
 ### @cancelable
 
 Indicates that a custom function performs an action when the function is canceled.
@@ -129,7 +128,6 @@ In the following example, the phrase "A function that adds two numbers" is the d
 ```
 
 <a id="helpurl"></a>
-
 ### @helpurl
 
 Syntax: @helpurl _url_
@@ -148,7 +146,6 @@ In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
 ```
 
 <a id="param"></a>
-
 ### @param
 
 #### JavaScript
@@ -219,7 +216,7 @@ function add(first: number, second: number): number {
 
 Indicates that the address of the cell where the function is being evaluated should be provided.
 
-The last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `address` property will contain the address.
+The last function parameter must be of type `CustomFunctions.Invocation` or a derived type to use `@requiresAddress`. When the function is called, the `address` property will contain the address.
 
 The following sample shows how to use the `invocation` parameter in combination with `@requiresAddress` to return the address of the cell that invoked your custom function. See [Invocation parameter](custom-functions-parameter-options.md#invocation-parameter) for more information.
 
@@ -243,7 +240,7 @@ function getAddress(first, second, invocation) {
 
 Indicates that the function should return the addresses of input parameters. 
 
-Like `@requiresAddress`, to use `@requiresParameterAddresses` the last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `parameterAddresses` property will contain the addresses of the input parameters.
+The last function parameter must be of type `CustomFunctions.Invocation` or a derived type to use  `@requiresParameterAddresses`. When the function is called, the `parameterAddresses` property will contain the addresses of the input parameters.
 
 The following sample shows how to use the `invocation` parameter in combination with `@requiresParameterAddresses` to return the addresses of three input parameters. See [Detect the address of a parameter](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) for more information. 
 
@@ -269,7 +266,6 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 ```
 
 <a id="returns"></a>
-
 ### @returns
 
 Syntax: @returns {_type_}
@@ -294,7 +290,6 @@ function add(first: number, second: number): number {
 ```
 
 <a id="streaming"></a>
-
 ### @streaming
 
 Used to indicate that a custom function is a streaming function. 
@@ -309,7 +304,6 @@ Exceptions thrown by a streaming function are ignored. `setResult()` may be call
 Streaming functions can't be marked as [@volatile](#volatile).
 
 <a id="volatile"></a>
-
 ### @volatile
 
 A volatile function is one whose result isn't the same from one moment to the next, even if it takes no arguments or the arguments haven't changed. Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done. For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.
