@@ -1,5 +1,5 @@
 ---
-ms.date: 03/04/2021
+ms.date: 03/08/2021
 description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -212,7 +212,7 @@ function addSingleRange(singleRange) {
 
 ### Repeating range parameter
 
-A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter ADD(5,B2,C3,8,E5:E8). Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices. For a sample, see the main sample listed for repeating parameters(#repeating-parameters).
+A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter ADD(5,B2,C3,8,E5:E8). Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices. For a sample, see the main sample listed for [repeating parameters](#repeating-parameters).
 
 
 ### Declaring repeating parameters
