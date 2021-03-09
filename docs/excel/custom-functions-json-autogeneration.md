@@ -347,7 +347,7 @@ A streaming function can indicate an error by calling `setResult()` with an Erro
 
 ### Promise
 
-A function can return a promise that provides the value when the promise is resolved. If the promise is rejected, then it will throw an error.
+A custom function can return a promise that provides the value when the promise is resolved. If the promise is rejected, then the custom function will throw an error.
 
 ### Other types
 
