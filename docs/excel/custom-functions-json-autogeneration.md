@@ -163,7 +163,7 @@ To denote a custom function parameter as optional:
 > [!NOTE]
 > The default value for optional parameters is `null`.
 
-The following example shows a ADD function that adds two or three numbers, with the third number as an optional parameter.
+The following example shows an ADD function that adds two or three numbers, with the third number as an optional parameter.
 
 ```js
 /**
@@ -335,7 +335,7 @@ A single value may be represented using one of the following types: `boolean`, `
 
 ### Matrix type
 
-Use a two-dimensional array type to have the parameter or return value be a matrix of values. For example, the type `number[][]` indicates a matrix of numbers. `string[][]` indicates a matrix of strings.
+Use a two-dimensional array type to have the parameter or return value be a matrix of values. For example, the type `number[][]` indicates a matrix of numbers and `string[][]` indicates a matrix of strings.
 
 ### Error type
 
@@ -345,7 +345,7 @@ A streaming function can indicate an error by calling `setResult()` with an Erro
 
 ### Promise
 
-A function can return a Promise, that provides the value when the promise is resolved. If the promise is rejected, then it will throw an error.
+A function can return a promise that provides the value when the promise is resolved. If the promise is rejected, then it will throw an error.
 
 ### Other types
 
