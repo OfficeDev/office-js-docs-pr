@@ -30,11 +30,11 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 | Class | Fields | Description |
 |:---|:---|:---|
 |[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria(columnIndex: number)](/javascript/api/excel/excel.autofilter#clearcolumncriteria-columnindex-)|Clears the filter criteria of the AutoFilter.|
-|[ChartCollection](/javascript/api/excel/excel.chartcollection)||[ChartCollectionCustom](/javascript/api/excel/excel.chartcollectioncustom)||[ChartFill](/javascript/api/excel/excel.chartfill)||[ChartFillCustom](/javascript/api/excel/excel.chartfillcustom)||[Comment](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|Assigns the task attached to the comment to the given user as an assignee.|
+|[Comment](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|Assigns the task attached to the comment to the given user as an assignee.|
 ||[getTask()](/javascript/api/excel/excel.comment#gettask--)|Gets the task associated with this comment.|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#gettaskornullobject--)|Gets the task associated with this comment.|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject(commentId: string)](/javascript/api/excel/excel.commentcollection#getitemornullobject-commentid-)|Gets a comment from the collection based on its ID.|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)||[CommentCollectionCustom](/javascript/api/excel/excel.commentcollectioncustom)||[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.commentreply#assigntask-assignee-)|Assigns the task attached to the comment to the given user as the sole assignee.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.commentreply#assigntask-assignee-)|Assigns the task attached to the comment to the given user as the sole assignee.|
 ||[getTask()](/javascript/api/excel/excel.commentreply#gettask--)|Gets the task associated with this comment reply's thread.|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#gettaskornullobject--)|Gets the task associated with this comment reply's thread.|
 |[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[getItemOrNullObject(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitemornullobject-commentreplyid-)|Returns a comment reply identified by its ID.|
@@ -137,7 +137,7 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[getMergedAreasOrNullObject()](/javascript/api/excel/excel.range#getmergedareasornullobject--)|Returns a RangeAreas object that represents the merged areas in this range.|
 ||[getPrecedents()](/javascript/api/excel/excel.range#getprecedents--)|Returns a `WorkbookRangeAreas` object that represents the range containing all the precedents of a cell in the same worksheet or in multiple worksheets.|
 ||[getRangeEdge(direction: Excel.KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getrangeedge-direction--activecell-)|Returns a range object that is the edge cell of the data region that corresponds to the provided direction.|
-|[Range](/javascript/api/excel/excel.range)||[RangeCustom](/javascript/api/excel/excel.rangecustom)||[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshmode)|The linked data type refresh mode.|
+|[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshmode)|The linked data type refresh mode.|
 ||[serviceId](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceid)|The unique ID of the object whose refresh mode was changed.|
 ||[source](/javascript/api/excel/excel.refreshmodechangedeventargs#source)|Gets the source of the event.|
 ||[type](/javascript/api/excel/excel.refreshmodechangedeventargs#type)|Gets the type of the event.|
@@ -158,7 +158,7 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[resize(newRange: Range \| string)](/javascript/api/excel/excel.table#resize-newrange-)|Resize the table to the new range.|
 ||[setStyle(style: string \| TableStyle \| BuiltInTableStyle)](/javascript/api/excel/excel.table#setstyle-style-)|Sets the style applied to the table.|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|Occurs when a filter is applied on any table in a workbook, or a worksheet.|
-|[TableCollection](/javascript/api/excel/excel.tablecollection)||[TableCollectionCustom](/javascript/api/excel/excel.tablecollectioncustom)||[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Gets the ID of the table in which the filter is applied.|
+|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Gets the ID of the table in which the filter is applied.|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Gets the type of the event.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Gets the ID of the worksheet which contains the table.|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getitemornullobject-key-)|Gets a table by name or ID.|
