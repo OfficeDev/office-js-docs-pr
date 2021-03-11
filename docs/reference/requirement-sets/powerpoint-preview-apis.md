@@ -28,7 +28,9 @@ The following table lists the PowerPoint JavaScript APIs currently in preview. F
 |[AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions)|[layoutId](/javascript/api/powerpoint/powerpoint.addslideoptions#layoutid)|Specifies the ID of a Slide Layout to be used for the new slide.|
 ||[slideMasterId](/javascript/api/powerpoint/powerpoint.addslideoptions#slidemasterid)|Specifies the ID of a Slide Master to be used for the new slide.|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[slideMasters](/javascript/api/powerpoint/powerpoint.presentation#slidemasters)|Returns the collection of `SlideMaster` objects that are in the presentation.|
+||[tags](/javascript/api/powerpoint/powerpoint.presentation#tags)|Returns a collection of tags attached to the presentation.|
 |[Shape](/javascript/api/powerpoint/powerpoint.shape)|[id](/javascript/api/powerpoint/powerpoint.shape#id)|Gets the unique ID of the shape.|
+||[tags](/javascript/api/powerpoint/powerpoint.shape#tags)|Returns a collection of tags in the shape.|
 |[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.shapecollection#getcount--)|Gets the number of shapes in the collection.|
 ||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.shapecollection#getitem-key-)|Gets a shape using its unique ID.|
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.shapecollection#getitemat-index-)|Gets a shape using its zero-based index in the collection.|
@@ -37,6 +39,7 @@ The following table lists the PowerPoint JavaScript APIs currently in preview. F
 |[Slide](/javascript/api/powerpoint/powerpoint.slide)|[layout](/javascript/api/powerpoint/powerpoint.slide#layout)|Gets the layout of the slide.|
 ||[shapes](/javascript/api/powerpoint/powerpoint.slide#shapes)|Returns a collection of shapes in the slide.|
 ||[slideMaster](/javascript/api/powerpoint/powerpoint.slide#slidemaster)|Gets the `SlideMaster` object that represents the slide's default content.|
+||[tags](/javascript/api/powerpoint/powerpoint.slide#tags)|Returns a collection of tags in the slide.|
 |[SlideCollection](/javascript/api/powerpoint/powerpoint.slidecollection)|[add(options?: PowerPoint.AddSlideOptions)](/javascript/api/powerpoint/powerpoint.slidecollection#add-options-)|Adds a new slide at the end of the collection.|
 |[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)|[id](/javascript/api/powerpoint/powerpoint.slidelayout#id)|Gets the unique ID of the slide layout.|
 ||[name](/javascript/api/powerpoint/powerpoint.slidelayout#name)|Gets the name of the slide layout.|
@@ -53,6 +56,15 @@ The following table lists the PowerPoint JavaScript APIs currently in preview. F
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.slidemastercollection#getitemat-index-)|Gets a Slide Master using its zero-based index in the collection.|
 ||[getItemOrNullObject(id: string)](/javascript/api/powerpoint/powerpoint.slidemastercollection#getitemornullobject-id-)|Gets a Slide Master using its unique ID.|
 ||[items](/javascript/api/powerpoint/powerpoint.slidemastercollection#items)|Gets the loaded child items in this collection.|
+|[Tag](/javascript/api/powerpoint/powerpoint.tag)|[key](/javascript/api/powerpoint/powerpoint.tag#key)|Gets the unique ID of the tag.|
+||[value](/javascript/api/powerpoint/powerpoint.tag#value)|Gets the value of the tag.|
+|[TagCollection](/javascript/api/powerpoint/powerpoint.tagcollection)|[add(key: string, value: string)](/javascript/api/powerpoint/powerpoint.tagcollection#add-key--value-)|Adds a new tag at the end of the collection.|
+||[delete(key: string)](/javascript/api/powerpoint/powerpoint.tagcollection#delete-key-)|Deletes the tag with the given `key` in this collection.|
+||[getCount()](/javascript/api/powerpoint/powerpoint.tagcollection#getcount--)|Gets the number of tags in the collection.|
+||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.tagcollection#getitem-key-)|Gets a tag using its unique ID.|
+||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.tagcollection#getitemat-index-)|Gets a tag using its zero-based index in the collection.|
+||[getItemOrNullObject(key: string)](/javascript/api/powerpoint/powerpoint.tagcollection#getitemornullobject-key-)|Gets a tag using its unique ID.|
+||[items](/javascript/api/powerpoint/powerpoint.tagcollection#items)|Gets the loaded child items in this collection.|
 
 ## See also
 
