@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 12/15/2020
+ms.date: 03/11/2021
 localization_priority: Normal
 ---
 
@@ -118,7 +118,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Back in **Solution Explorer**, select (don't right-click) the **Office-Add-in-ASPNET-SSO-WebAPI** project. The **Properties** pane opens. Ensure that **SSL Enabled** is **True**. Verify that the **SSL URL** is `http://localhost:44355/`.
 
-1. In "Web.config", use the values that you copied in earlier. Set both the **ida:ClientID** and the **ida:Audience** to your **Application (client) ID**, and set **ida:Password** to your client secret.
+1. In "Web.config", use the values that you copied in earlier. Set both the **ida:ClientID** and the **ida:Audience** to your **Application (client) ID**, and set **ida:Password** to your client secret. Also, set **ida:Domain** to `http://localhost:44355/`. 
 
     > [!NOTE]
     > The **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
@@ -517,7 +517,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     UserAssertion userAssertion = new UserAssertion(bootstrapContext);
 
     var cca = ConfidentialClientApplicationBuilder.Create(ConfigurationManager.AppSettings["ida:ClientID"])
-                                                    .WithRedirectUri("https://localhost:44355")
+                                                    .WithRedirectUri(ConfigurationManager.AppSettings["ida:Domain"])
                                                     .WithClientSecret(ConfigurationManager.AppSettings["ida:Password"])
                                                     .WithAuthority(ConfigurationManager.AppSettings["ida:Authority"])
                                                     .Build();
@@ -606,3 +606,9 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Press F5.
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** in the **SSO ASP.NET** group to open the task pane add-in.
 1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account, or a Microsoft account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.
+
+## Updating the add-in when you go to staging and production
+
+Like all Office Web Add-ins, when you are ready to move to a staging or production server, you must update the `localhost:44355` domain in the manifest with the new domain. Similarly, you must update the domain in the web.config file.
+
+Since the domain appears in the AAD registration, you need to update that registration to use the new domain in place of `localhost:44355` wherever it appears.
