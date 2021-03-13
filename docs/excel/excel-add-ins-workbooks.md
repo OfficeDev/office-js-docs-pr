@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 08/24/2020
+ms.date: 03/12/2021
 localization_priority: Normal
 ---
 
@@ -70,15 +70,19 @@ reader.readAsDataURL(myFile.files[0]);
 ### Insert a copy of an existing workbook into the current one (preview)
 
 > [!NOTE]
-> The `WorksheetCollection.addFromBase64` method is currently only available in public preview and only for Office on Windows and Mac. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> The `Workbook.insertWorksheetsFromBase64` method is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
 
-The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A workbook's [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) has the `addFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as base64-encoded string, just like the `Excel.createWorkbook` call.
+The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A [Workbook](/javascript/api/excel/excel.workbook) has the `insertWorksheetsFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as a base64-encoded string, just like the `Excel.createWorkbook` call. 
 
 ```TypeScript
-addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-The following example shows a workbook's worksheets being inserted in the current workbook, directly after the active worksheet. Note that `null` is passed for the `sheetNamesToInsert?: string[]` parameter. This means all the worksheets are being inserted.
+The following example shows an existing workbook's worksheets being inserted in the current workbook, directly after the active worksheet. Note that the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property is passed `[]` as the parameter. This means that all the worksheets from the existing workbook should be inserted into the current workbook.
+
+> [!IMPORTANT]
+> The `insertWorksheetsFromBase64` method has limitations in Excel on the web and iOS. Certain features are unsupported and the API will throw an error. 
 
 ```js
 var myFile = document.getElementById("file");
@@ -86,18 +90,22 @@ var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
-        // strip off the metadata before the base64-encoded string
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var workbookContents = reader.result.toString().substr(startIndex + 7);
-
-        var sheets = context.workbook.worksheets;
-        sheets.addFromBase64(
-            workbookContents,
-            null, // get all the worksheets
-            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
-            sheets.getActiveWorksheet() // insert them after the active worksheet
-        );
-        return context.sync();
+        // Remove the metadata before the base64-encoded string.
+        const startIndex = reader.result.toString().indexOf("base64,");
+        const workbookContents = reader.result.toString().substr(startIndex + 7);
+            
+        // Retrieve the workbook.
+        const workbook = context.workbook;
+            
+        // Set up the insert options. 
+        var options = { 
+            sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
+            positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
+            relativeTo: "Sheet1" }; // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+            
+         // Insert the workbook. 
+         workbook.insertWorksheetsFromBase64(workbookContents, options);
+         return context.sync();
     });
 };
 
