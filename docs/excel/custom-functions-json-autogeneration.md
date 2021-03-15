@@ -1,5 +1,5 @@
 ---
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 description: 'Use JSDoc tags to dynamically create your custom functions JSON metadata.'
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Normal
@@ -240,7 +240,7 @@ function getAddress(first, second, invocation) {
 
 Indicates that the function should return the addresses of input parameters. 
 
-The last function parameter must be of type `CustomFunctions.Invocation` or a derived type to use  `@requiresParameterAddresses`. The JSDoc must also include an `@returns` tag specifying that the return value be a matrix, such as `@returns {string[][]}` or `@returns {number[][]}`. See [Matrix types](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) for additional information. 
+The last function parameter must be of type `CustomFunctions.Invocation` or a derived type to use  `@requiresParameterAddresses`. The JSDoc comment must also include an `@returns` tag specifying that the return value be a matrix, such as `@returns {string[][]}` or `@returns {number[][]}`. See [Matrix types](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) for additional information. 
 
 When the function is called, the `parameterAddresses` property will contain the addresses of the input parameters.
 
