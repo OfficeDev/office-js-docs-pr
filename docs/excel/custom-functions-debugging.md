@@ -46,7 +46,7 @@ You can use VS Code to debug UI-less custom functions in Office Excel on the des
 
 4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 5. From the Run drop-down menu, choose **Excel Desktop (Edge Chromium)**.
-6. Press **F5** (or select **Run -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
+6. Select **F5** (or select **Run -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
 
 ### Start debugging
 
