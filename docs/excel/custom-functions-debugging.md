@@ -72,7 +72,7 @@ You can use VS Code to debug UI-less custom functions in Excel on the Microsoft 
 5. From the Debug options, choose **Office Online (Edge Chromium)**.
 6. Open Excel in the Microsoft Edge browser and create a new workbook.
 7. Choose **Share** in the ribbon and copy the link for the URL for this new workbook.
-8. Press **F5** (or select **Run > Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
+8. Select **F5** (or select **Run > Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
 9. Paste in the URL for your workbook and press Enter.
 
 ### Sideload your add-in
