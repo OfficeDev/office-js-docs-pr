@@ -142,6 +142,8 @@ items:
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Request permissions for API use in add-ins
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+      - name: ITP and third-party cookies
+        href: develop/itp-and-third-party-cookies.md
     - name: UI and UX
       items:
       - name: Overview
