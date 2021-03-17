@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 03/09/2021
+ms.date: 03/17/2021
 localization_priority: Normal
 ---
 
@@ -301,7 +301,7 @@ For compliance reasons, administrators may need to ensure that users cannot send
 
 #### Manage the on-send policy
 
-By default, the on-send policy is disabled. Administrators can enable the on-send policy by ensuring the user's group policy setting **Disable send when web extensions can't load** is set to **Enabled**. To disable the policy for a user, the administrator should set it to **Disabled**. To manage this policy setting, you can do the following.
+By default, the on-send policy is disabled. Administrators can enable the on-send policy by ensuring the user's group policy setting **Disable send when web extensions can't load** is set to **Enabled**. To disable the policy for a user, the administrator should set it to **Disabled**. To manage this policy setting, you can do the following:
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).
 1. Open the Local Group Policy Editor (**gpedit.msc**).
@@ -314,7 +314,7 @@ By default, the on-send policy is disabled. Administrators can enable the on-sen
 
 Add-ins for Outlook on Mac that use the on-send feature should run for any users who have them installed. However, if users are required to run the add-in to meet compliance standards, then the following mailbox setting must be applied on each user's machine. This setting or key is CFPreference-compatible, which means that it can be set by using enterprise management software for Mac, such as Jamf Pro.
 
-|||
+||Value|
 |:---|:---|
 |**Domain**|com.microsoft.outlook|
 |**Key**|OnSendAddinsWaitForLoad|
