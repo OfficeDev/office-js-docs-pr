@@ -1,7 +1,7 @@
 ---
 title: Image Coercion requirement sets
 description: 'Support for Image Coercion requirement sets with Office Add-ins across Excel, PowerPoint, and Word.'
-ms.date: 08/13/2019
+ms.date: 02/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -38,7 +38,6 @@ ImageCoercion 1.2 enables conversion to SVG format (`Office.CoercionType.XmlSvg`
 - PowerPoint on the web
 - Word on Windows (connected to a Microsoft 365 subscription)
 - Word on Mac (connected to a Microsoft 365 subscription)
-- Word on the web
 
 ## Office Common API requirement sets
 

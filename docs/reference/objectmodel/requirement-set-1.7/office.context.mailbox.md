@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.7
 description: 'Outlook Mailbox API requirement set 1.7 version of the Mailbox object model.'
-ms.date: 09/22/2020
+ms.date: 02/22/2021
 localization_priority: Normal
 ---
 
@@ -51,6 +51,9 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 ## Events
 
 You can subscribe to and unsubscribe from the following events using [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#addhandlerasync-eventtype--handler--options--callback-) and [removeHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#removehandlerasync-eventtype--options--callback-) respectively.
+
+> [!IMPORTANT]
+> Events are available only with task pane.
 
 | Event | Description | Minimum<br>requirement set |
 |---|---|:---:|

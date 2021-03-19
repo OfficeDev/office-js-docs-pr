@@ -32,7 +32,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 

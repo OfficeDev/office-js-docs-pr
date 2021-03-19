@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 01/20/2021
+ms.date: 02/24/2021
 localization_priority: Normal
 ---
 
@@ -27,8 +27,8 @@ The following table shows which browser is used for the various platforms and op
 |Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.13530.20424<sup>1</sup>| Doesn't matter|Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
-|Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| No |Microsoft Edge<sup>2, 3</sup> with original WebView (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| Yes<sup>4</sup>|  Microsoft Edge<sup>2, 3</sup> with WebView2 (Chromium-based) |
+|Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| No |Microsoft Edge<sup>2, 3, 4</sup> with original WebView (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| Yes<sup>5</sup>|  Microsoft Edge<sup>2, 3, 4</sup> with WebView2 (Chromium-based) |
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
@@ -36,7 +36,11 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>3</sup> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
-<sup>4</sup> The embeddable WebView2 control must be installed in addition to the installation of Microsoft Edge so that Office can embed it. To install it, see [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4</sup> The rollout of WebView2 for Office Add-ins is currently in progress. As a result, Microsoft Edge with original WebView (EdgeHTML) might still be used for your add-in even when the computer has the required versions of Windows and Office, and the WebView2 control is installed on the computer. For monthly channel users, we expect this rollout to complete by the end of March 2021. The rollout will be later for Semi-Annual Channel customers. We will update this page as soon as we have that information available.
+
+<sup>5</sup> The embeddable WebView2 control must be installed in addition to the installation of Microsoft Edge so that Office can embed it. To install it, see [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+
+
 
 
 > [!IMPORTANT]

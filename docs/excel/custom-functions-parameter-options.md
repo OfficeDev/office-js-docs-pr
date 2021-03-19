@@ -1,5 +1,5 @@
 ---
-ms.date: 02/04/2021
+ms.date: 03/08/2021
 description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
 title: Options for Excel custom functions
 localization_priority: Normal
@@ -212,7 +212,7 @@ function addSingleRange(singleRange) {
 
 ### Repeating range parameter
 
-A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter ADD(5,B2,C3,8,E5:E8). Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices. For a sample, see the main sample listed for repeating parameters(#repeating-parameters).
+A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter ADD(5,B2,C3,8,E5:E8). Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices. For a sample, see the main sample listed for [repeating parameters](#repeating-parameters).
 
 
 ### Declaring repeating parameters
@@ -263,12 +263,13 @@ The following custom function takes in three input parameters, retrieves the `pa
 
 ```js
 /**
- * Return the address of three parameters. 
+ * Return the addresses of three parameters. 
  * @customfunction
  * @param {string} firstParameter First parameter.
  * @param {string} secondParameter Second parameter.
- * @param {string} thirdParameter Third parameter
+ * @param {string} thirdParameter Third parameter.
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array. 
  * @requiresParameterAddresses
  */
 function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {

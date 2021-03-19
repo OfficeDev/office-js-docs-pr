@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: 'Outlook Mailbox API preview requirement set version of the Item object model.'
-ms.date: 10/14/2020
+ms.date: 02/12/2021
 localization_priority: Normal
 ---
 
@@ -178,6 +178,9 @@ localization_priority: Normal
 ## Events
 
 You can subscribe to and unsubscribe from the following events using `addHandlerAsync` and `removeHandlerAsync` respectively.
+
+> [!IMPORTANT]
+> Events are available only with task pane.
 
 | Event | Description | Minimum<br>requirement set |
 |---|---|:---:|

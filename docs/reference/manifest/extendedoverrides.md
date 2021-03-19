@@ -1,13 +1,13 @@
 ---
 title: ExtendedOverrides element in the manifest file
 description: Specifies the URLs for a JSON-formatted extension of the manifest.
-ms.date: 11/06/2020
+ms.date: 02/23/2021
 localization_priority: Normal
 ---
 
 # ExtendedOverrides element
 
-Specifies the full URLs for JSON-formatted files that extend the manifest.
+Specifies the full URLs for JSON-formatted files that extend the manifest. For detailed information about the use of this element and its descendent elements, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
 
 **Add-in type:** Task pane
 
@@ -31,10 +31,21 @@ Specifies the full URLs for JSON-formatted files that extend the manifest.
 
 |Attribute|Description|
 |:-----|:-----|
-|Url (required)| The full URL of the extended overrides JSON file. This could be a URL template that uses tokens defined by the [Tokens](tokens.md) element.|
+|Url (required)| The full URL of the extended overrides JSON file. In the future, this value could be a URL template that uses tokens defined by the [Tokens](tokens.md) element. See [Examples](#examples).|
 |ResourcesUrl (optional) | The full URL of a file that provides supplemental resources, such as localized strings, for the file specified in the `Url` attribute. This could be a URL template that uses tokens defined by the [Tokens](tokens.md) element.|
 
-## Example
+## Examples
+
+```XML
+<OfficeApp ...>
+  <!-- other elements omitted -->
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json"
+                     ResourceUrl="https://contoso.com/addin/my-resources.json">
+  </ExtendedOverrides>
+</OfficeApp>
+```
+
+In the future, this value could be a URL template that uses tokens defined by the [Tokens](tokens.md) element. The following is an example.
 
 ```XML
 <OfficeApp ...>
