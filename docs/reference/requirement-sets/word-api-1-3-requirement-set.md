@@ -1,14 +1,14 @@
 ---
 title: Word JavaScript API requirement set 1.3
-description: 'Details about the WordApi 1.3 requirement set'
-ms.date: 11/09/2020
+description: 'Details about the WordApi 1.3 requirement set.'
+ms.date: 03/09/2021
 ms.prod: word
 localization_priority: Normal
 ---
 
 # What's new in Word JavaScript API 1.3
 
-WordApi 1.3 added more support for content controls, custom XML, and document-level settings.
+WordApi 1.3 added more support for content controls and document-level settings.
 
 ## API list
 
