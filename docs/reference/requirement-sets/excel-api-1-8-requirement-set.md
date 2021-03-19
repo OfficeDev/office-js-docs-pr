@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.8
 description: 'Details about the ExcelApi 1.8 requirement set.'
-ms.date: 11/09/2020
+ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -271,7 +271,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.8. 
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getrange-ctx-)|Gets the range that represents the changed area of a table on a specific worksheet.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getrangeornullobject-ctx-)|Gets the range that represents the changed area of a table on a specific worksheet.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readonly)|True if the workbook is open in Read-only mode.|
-|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#oncalculated)|Occurs when the worksheet is calculated.|
+|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)|||
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#oncalculated)|Occurs when the worksheet is calculated.|
 ||[showGridlines](/javascript/api/excel/excel.worksheet#showgridlines)|Specifies if gridlines are visible to the user.|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#showheadings)|Specifies if headings are visible to the user.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[type](/javascript/api/excel/excel.worksheetcalculatedeventargs#type)|Gets the type of the event.|
