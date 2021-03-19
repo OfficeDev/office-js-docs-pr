@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: 'Learn about the privacy and security aspects of the Office Add-ins platform.'
-ms.date: 10/06/2020
+ms.date: 03/19/2021
 localization_priority: Normal
 ---
 
