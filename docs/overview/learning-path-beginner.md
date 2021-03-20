@@ -1,7 +1,7 @@
 ---
-title: Beginner's guide
+title: Beginner's guide to Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
-ms.date: 10/14/2020
+ms.date: 02/12/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
