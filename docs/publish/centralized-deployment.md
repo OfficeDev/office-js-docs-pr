@@ -1,7 +1,7 @@
 ---
 title: Publish Office Add-ins using Centralized Deployment via the Microsoft 365 admin center
 description: 'Learn how to use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.'
-ms.date: 02/09/2021
+ms.date: 03/22/2021
 localization_priority: Normal
 ---
 
@@ -45,12 +45,13 @@ Before you begin, confirm that your organization meets all requirements for usin
 If your organization meets all requirements, complete the following steps to publish an Office Add-in via Centralized Deployment:
 
 1. Sign in to Microsoft 365 with your work or education account.
-2. Select the app launcher icon in the upper-left and choose **Admin**.
-3. In the navigation menu, press **Show more**, then choose **Settings** > **Services & add-ins**.
-4. If you see a message on the top of the page announcing the new Microsoft 365 admin center, choose the message to go to the Admin Center Preview (see [About the Microsoft 365 admin center](/microsoft-365/admin/admin-overview/about-the-admin-center)).
-5. Choose **Deploy Add-In** at the top of the page.
-6. Choose **Next** after reviewing the requirements.
-7. Choose one of the following options on the **Centralized Deployment** page:
+1. Select the app launcher icon in the upper-left and choose **Admin**.
+1. In the navigation menu, select **Show more**, then choose **Settings** > **Integrated apps**.
+1. At the top of the page, choose **Add-ins**.
+1. If you see a message on the top of the page announcing the new Microsoft 365 admin center, choose the message to go to the Admin Center Preview (see [About the Microsoft 365 admin center](/microsoft-365/admin/admin-overview/about-the-admin-center)).
+1. Choose **Deploy Add-In** at the top of the page.
+1. Choose **Next** after reviewing the requirements.
+1. Choose one of the following options on the **Centralized Deployment** page:
 
     - **I want to add an Add-In from the Office Store.**
     - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
