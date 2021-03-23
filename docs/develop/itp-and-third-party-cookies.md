@@ -55,7 +55,7 @@ In the Safari browser, end users can toggle the **Prevent cross-site tracking** 
 
 ## See also
 
-- [Handle ITP in Safari and other browsers where third-party cookies are blocked](https://docs.microsoft.com/azure/active-directory/develop/reference-third-party-cookies-spas)
+- [Handle ITP in Safari and other browsers where third-party cookies are blocked](/azure/active-directory/develop/reference-third-party-cookies-spas)
 - [Tracking Prevention in WebKit](https://webkit.org/tracking-prevention/)
 - [Chrome’s “Privacy Sandbox”](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
 - [Introducing the Storage Access API](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)

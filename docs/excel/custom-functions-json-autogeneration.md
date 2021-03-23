@@ -240,11 +240,11 @@ function getAddress(first, second, invocation) {
 
 Indicates that the function should return the addresses of input parameters. 
 
-The last function parameter must be of type `CustomFunctions.Invocation` or a derived type to use  `@requiresParameterAddresses`. The JSDoc comment must also include an `@returns` tag specifying that the return value be a matrix, such as `@returns {string[][]}` or `@returns {number[][]}`. See [Matrix types](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) for additional information. 
+The last function parameter must be of type `CustomFunctions.Invocation` or a derived type to use  `@requiresParameterAddresses`. The JSDoc comment must also include an `@returns` tag specifying that the return value be a matrix, such as `@returns {string[][]}` or `@returns {number[][]}`. See [Matrix types](#matrix-type) for additional information. 
 
 When the function is called, the `parameterAddresses` property will contain the addresses of the input parameters.
 
-The following sample shows how to use the `invocation` parameter in combination with `@requiresParameterAddresses` to return the addresses of three input parameters. See [Detect the address of a parameter](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) for more information. 
+The following sample shows how to use the `invocation` parameter in combination with `@requiresParameterAddresses` to return the addresses of three input parameters. See [Detect the address of a parameter](./custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. 
 
 ```js
 /**
