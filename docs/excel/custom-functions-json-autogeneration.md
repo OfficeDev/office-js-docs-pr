@@ -244,7 +244,7 @@ The last function parameter must be of type `CustomFunctions.Invocation` or a de
 
 When the function is called, the `parameterAddresses` property will contain the addresses of the input parameters.
 
-The following sample shows how to use the `invocation` parameter in combination with `@requiresParameterAddresses` to return the addresses of three input parameters. See [Detect the address of a parameter](./custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. 
+The following sample shows how to use the `invocation` parameter in combination with `@requiresParameterAddresses` to return the addresses of three input parameters. See [Detect the address of a parameter](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. 
 
 ```js
 /**
