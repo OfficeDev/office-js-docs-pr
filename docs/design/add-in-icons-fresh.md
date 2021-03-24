@@ -1,7 +1,7 @@
 ---
 title: Fresh style icon guidelines for Office Add-ins
 description: 'Get guidelines for using Fresh style icon icons in Office Add-ins.'
-ms.date: 12/09/2019
+ms.date: 03/24/2021
 localization_priority: Normal
 ---
 
@@ -43,33 +43,6 @@ Office desktop icons are bitmap images. Different sizes will render depending on
 Make sure to redraw your icons for each size rather than shrink them to fit.
 
 ![Illustration of the recommendation to redraw icons per size rather than shrink icons. For example, you may need to use fewer elements in a small icon rather than just scaling down a bigger image.](../images/icon-resizing.png)
-
-<!--
-The following table shows the icon sizes that render for different modes at different DPI settings.
-
-|DPI |**Small**||**Medium**||**Large**||**Extra large**|
-|:---|:---|:---|:---|:---|:---|:---|:---|
-|    |**Mouse**|**Touch**|**Mouse**|**Touch**|**Mouse**|**Touch**|-|
-|100%|16px|20px|24px||32px|40px|48px|
-|125%|20px|24px|||40px|48px|60px|
-|150%|24px|24px|36px||48px|48px|72px|
-|200%|32px|40px|48px||64px|80px|96px|
-|250%|40px||||80px||120px|
-|300%|48px||||96px||144px
-
-> [!NOTE]
-> At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
-
-The following table lists the locations for certain icon sizes.
-
-|Location|100% DPI|200% DPI|250% DPI|
-|:-------|:-------|:-------|:-------|
-|Small ribbon button|16px|32px|40px|
-|Contextual menu|16px|32px|40px|
-|Quick access toolbar (QAT)|16px|32px|40px|
-|Large ribbon icon|32px|64px|80px|
-
--->
 
 ## Icon anatomy and layout
 
@@ -148,3 +121,10 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 - Use colors from our icon palette.
 - Avoid the use of gradients.
 - Avoid large blocks of color with similar values.
+
+## See also
+
+- [Icon manifest element](../reference/manifest/icon.md)
+- [IconUrl manifest element](../reference/manifest/iconurl.md)
+- [HighResolutionIconUrl manifest element](../reference/manifest/highresolutioniconurl.md)
+- [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)
