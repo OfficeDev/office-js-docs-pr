@@ -1,7 +1,7 @@
 ---
 title: Persisting add-in state and settings
 description: 'Learn to persist data in Office Add-in web applications running in the stateless environment of a browser control.'
-ms.date: 11/13/2020
+ms.date: 03/23/2020
 localization_priority: Normal
 ---
 
@@ -17,8 +17,10 @@ To do that, you can:
   - Custom XML stored in the document.
 
 - Use techniques provided by the underlying browser control: browser cookies, or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
+    > [!NOTE]
+    > The user can block browser-based storage techniques depending on the settings they choose.
 
-This article focuses on how to use the Office JavaScript API to persist add-in state. For examples of using browser cookies and web storage, see the [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
+This article focuses on how to use the Office JavaScript API to persist add-in state to the current document. If you need to persist state across documents, such as tracking user preferences across any documents they open, you will need to use a different approach. For example, you could use [SSO](../quickstarts/sso-quickstart.md) to obtain the user identity, and then save user ID and their settings to an online database.
 
 ## Persisting add-in state and settings with the Office JavaScript API
 
