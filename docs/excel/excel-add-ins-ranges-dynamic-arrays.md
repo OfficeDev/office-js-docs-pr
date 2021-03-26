@@ -1,0 +1,44 @@
+---
+title: Work dynamic arrays and range spilling using the Excel JavaScript API (advanced)
+description: '' 
+ms.date: 03/26/2021 
+localization_priority: Normal
+---
+
+# Work with ranges using the Excel JavaScript API (advanced)
+
+This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+
+## Handle dynamic arrays and spilling
+
+Some Excel formulas return [Dynamic arrays](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). These fill the values of multiple cells outside of the formula's original cell. This value overflow is referred to as a "spill". Your add-in can find the range used for a spill with the [Range.getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) method. There is also a [*OrNullObject version](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject`.
+
+The following sample shows a basic formula that copies the contents of a range into a cell, which spills into neighboring cells. The add-in then logs the range that contains the spill.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Set G4 to a formula that returns a dynamic array.
+    var targetCell = sheet.getRange("G4");
+    targetCell.formulas = [["=A4:D4"]];
+
+    // Get the address of the cells that the dynamic array spilled into.
+    var spillRange = targetCell.getSpillingToRange();
+    spillRange.load("address");
+
+    // Sync and log the spilled-to range.
+    return context.sync().then(function () {
+        // This will log the range as "G4:J4".
+        console.log(`Copying the table headers spilled into ${spillRange.address}.`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+You can also find the cell responsible for spilling into a given cell by using the [Range.getSpillParent](/javascript/api/excel/excel.range#getspillparent--) method. Note that `getSpillParent` only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells will result in an error being thrown (or a null range being returned for `Range.getSpillParentOrNullObject`).
+
+## See also
+
+- [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)
