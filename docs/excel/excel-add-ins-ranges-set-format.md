@@ -1,0 +1,71 @@
+---
+title: Set the format of a range using the Excel JavaScript API
+description: 'Code samples that show how to set the format of a range using the Excel JavaScript API.'
+ms.date: 03/26/2021
+localization_priority: Normal
+---
+
+# Work with ranges using the Excel JavaScript API
+
+## Set range format
+
+The following examples show how to set font color, fill color, and number format for cells in a range.
+
+### Set font color and fill color
+
+The following code sample sets the font color and fill color for cells in range **B2:E2**.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    var range = sheet.getRange("B2:E2");
+    range.format.fill.color = "#4472C4";
+    range.format.font.color = "white";
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+#### Data in range before font color and fill color are set
+
+![Data in Excel before format is set](../images/excel-ranges-format-before.png)
+
+#### Data in range after font color and fill color are set
+
+![Data in Excel after format is set](../images/excel-ranges-format-font-and-fill.png)
+
+### Set number format
+
+The following code sample sets the number format for the cells in range **D3:E5**.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    var formats = [
+        ["0.00", "0.00"],
+        ["0.00", "0.00"],
+        ["0.00", "0.00"]
+    ];
+
+    var range = sheet.getRange("D3:E5");
+    range.numberFormat = formats;
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+#### Data in range before number format is set
+
+![Data in Excel before number format is set](../images/excel-ranges-format-font-and-fill.png)
+
+#### Data in range after number format is set
+
+![Data in Excel after number format is set](../images/excel-ranges-format-numbers.png)
+
+
+## See also
+
+- [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
