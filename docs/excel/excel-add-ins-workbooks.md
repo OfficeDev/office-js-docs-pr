@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 03/12/2021
+ms.date: 03/26/2021
 localization_priority: Normal
 ---
 
@@ -79,10 +79,10 @@ The previous example shows a new workbook being created from an existing workboo
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-The following example shows an existing workbook's worksheets being inserted in the current workbook, directly after the active worksheet. Note that the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property is passed `[]` as the parameter. This means that all the worksheets from the existing workbook should be inserted into the current workbook.
+The following example shows an existing workbook's worksheets being inserted in the current workbook, directly after the active worksheet. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property. This means that all the worksheets from the existing workbook should be inserted into the current workbook.
 
 > [!IMPORTANT]
-> The `insertWorksheetsFromBase64` method has limitations in Excel on the web and iOS. Certain features are unsupported and the API will throw an error. 
+> The `insertWorksheetsFromBase64` method is only supported for Excel on Windows, Mac, and the web. In addition, in Excel on the web this method has limitations. Using the `insertWorksheetsFromBase64` method to insert worksheets in Excel on the web will fail if the source worksheet contains PivotTable, Chart, Comment, or Slicer elements. 
 
 ```js
 var myFile = document.getElementById("file");
