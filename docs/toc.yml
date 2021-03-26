@@ -639,52 +639,52 @@ items:
     - name: Cells and ranges
       items:
       - name: Get a range 
-        href: excel/
+        href: excel/excel-add-ins-ranges-get.md
         displayName: Excel
       - name: Insert a range of cells
-        href: excel/
+        href: excel/excel-add-ins-ranges-insert.md
         displayName: Excel
       - name: Clear or delete a range of cells
-        href: excel/
+        href: excel/excel-add-ins-ranges-clear-delete.md
         displayName: Excel
       - name: Set or get the selected range 
-        href: excel/
+        href: excel/excel-add-ins-ranges-set-get.md
         displayName: Excel
       - name: Set or get values, text, or formulas
-        href: excel/
+        href: excel/excel-add-ins-ranges-set-get-values.md
         displayName: Excel
       - name: Set range format 
-        href: excel/
+        href: excel/excel-add-ins-ranges-set-format.md
         displayName: Excel
       - name: Read or write to an unbounded range
-        href: excel/
+        href: excel/excel-add-ins-ranges-unbounded.md
         displayName: Excel
       - name: Read or write to a large range
-        href: excel/
+        href: excel/excel-add-ins-ranges-large.md
         displayName: Excel
       - name: Find a cell using string matching
-        href: excel/
+        href: excel/excel-add-ins-ranges-string-match.md
         displayName: Excel
       - name: Work with dates using the Moment-MSDate plug-in
-        href: excel/
+        href: excel/excel-add-ins-ranges-dates.md
         displayName: Excel
       - name: Find special cells within a range
-        href: excel/
+        href: excel/excel-add-ins-ranges-special-cells.md
         displayName: Excel
       - name: Cut, copy, and paste
-        href: excel/
+        href: excel/excel-add-ins-ranges-cut-copy-paste.md
         displayName: Excel
       - name: Remove duplicates
-        href: excel/
+        href: excel/excel-add-ins-ranges-remove-duplicates.md
         displayName: Excel
       - name: Group data for an outline
-        href: excel/
+        href: excel/excel-add-ins-ranges-group.md
         displayName: Excel
       - name: Handle dynamic arrays and spilling
-        href: excel/
+        href: excel/excel-add-ins-ranges-dynamic-arrays.md
         displayName: Excel
       - name: Get formula precedents
-        href: excel/
+        href: excel/excel-add-ins-ranges-precedents.md
         displayName: Excel
       - name: Multiple ranges
         href: excel/excel-add-ins-multiple-ranges.md
