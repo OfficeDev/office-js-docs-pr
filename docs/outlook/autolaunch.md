@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 03/29/2021
 localization_priority: Normal
 ---
 
@@ -224,6 +224,13 @@ In this scenario, you'll add handling for composing new items.
 1. In Outlook on Windows, create a new message.
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win-autolaunch.png)
+
+    > [!NOTE]
+    > If your add-in loads inconsistently, try running the following command to add a loopback exemption.
+    >
+    > ```command&nbsp;line
+    > call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    > ```
 
 ## Debug
 
