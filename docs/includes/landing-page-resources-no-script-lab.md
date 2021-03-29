@@ -23,11 +23,11 @@
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="../images/index/i_feedback.svg" alt="API feature requests" /></a>
+                            <a href="/answers/products/m365" target="_blank"><img src="../images/index/i_feedback.svg" alt="API feature requests" /></a>
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Request features</h3></a>
+                        <a href="/answers/products/m365" target="_blank"><h3>Request features</h3></a>
                     </div>
                 </div>
             </div>
