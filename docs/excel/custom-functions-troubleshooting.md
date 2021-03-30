@@ -1,5 +1,5 @@
 ---
-ms.date: 01/08/2020
+ms.date: 03/30/2021
 description: 'Troubleshoot common problems with Excel custom functions.'
 title: Troubleshoot custom functions
 localization_priority: Normal
@@ -33,9 +33,9 @@ Information about custom functions is cached by Office. Sometimes while developi
 
 ## Common problems and solutions
 
-### Can't open add-in from localhost: use a local loopback exception
+### Can't open add-in from localhost: Use a local loopback exemption
 
-If you see the error "We can't open this add-in from localhost," you will need to enable a local loopback exception. For details on how to do this, see [this Microsoft support article](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
+If you see the error "We can't open this add-in from localhost," you will need to enable a local loopback exemption. For details on how to do this, see [this Microsoft support article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### Runtime logging reports "TypeError: Network request failed" on Excel on Windows
 
