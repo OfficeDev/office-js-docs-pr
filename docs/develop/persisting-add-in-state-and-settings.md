@@ -20,7 +20,7 @@ To do that, you can:
     > [!NOTE]
     > The user can block browser-based storage techniques depending on the settings they choose.
 
-This article focuses on how to use the Office JavaScript API to persist add-in state to the current document. If you need to persist state across documents, such as tracking user preferences across any documents they open, you will need to use a different approach. For example, you could use [SSO](../quickstarts/sso-quickstart.md) to obtain the user identity, and then save user ID and their settings to an online database.
+This article focuses on how to use the Office JavaScript API to persist add-in state to the current document. If you need to persist state across documents, such as tracking user preferences across any documents they open, you will need to use a different approach. For example, you could use [SSO](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) to obtain the user identity, and then save the user ID and their settings to an online database.
 
 ## Persisting add-in state and settings with the Office JavaScript API
 
