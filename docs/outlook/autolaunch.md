@@ -229,8 +229,8 @@ In this scenario, you'll add handling for composing new items.
     > If you see the error "We can't open this add-in from localhost," you'll need to enable a loopback exemption.
     >
     > 1. Close Outlook.
-    > 2. Open the **Task Manager** and ensure that **msoadfs.exe** process is not running.
-    > 3. Run the following command:
+    > 2. Open the **Task Manager** and ensure that the **msoadfs.exe** process is not running.
+    > 3. Run the following command.
     >
     >     ```command&nbsp;line
     >     call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
