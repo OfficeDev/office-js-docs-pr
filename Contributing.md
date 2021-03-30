@@ -15,8 +15,8 @@ Here are some ways you can contribute to this documentation:
 
 * To make small changes to an article, [Contribute using GitHub](#contribute-using-github).
 * To make large changes, or changes that involve code, [Contribute using Git](#contribute-using-git).
-* Report documentation bugs via GitHub Issues.
-* Request new documentation at the [Microsoft 365 on Q&A](https://docs.microsoft.com/answers/products/m365) site.
+* Report documentation bugs by going to the **Feedback** section at the bottom of the affected article, then selecting **This page** to create a GitHub issue. If that's not available, then create a new issue directly on [GitHub](https://github.com/OfficeDev/office-js-docs-pr/issues).
+* Request new documentation with [GitHub Issues](https://github.com/OfficeDev/office-js-docs-pr/issues).
 
 ## Contribute using GitHub
 
@@ -24,7 +24,7 @@ Use GitHub to contribute to this documentation without having to clone the repo 
 
 **Note**: Using this method allows you to contribute to one article at a time.
 
-### To Contribute using GitHub
+### To contribute using GitHub
 
 1. Find the article you want to contribute to on GitHub.
 2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join)).
@@ -44,7 +44,7 @@ Use Git to contribute substantive changes, such as:
 * Contributing large changes to text.
 * Adding new topics.
 
-### To Contribute using Git
+### To contribute using Git
 
 1. If you don't have a GitHub account, set one up at [GitHub](https://github.com/join).
 2. After you have an account, install Git on your computer. Follow the steps in the [Set up Git] tutorial.
@@ -66,10 +66,10 @@ Pull requests are typically reviewed within 10 business days.
 
 ### To set up your fork of the repository
 
-1.	Set up a GitHub account so you can contribute to this project. If you haven't done this, go to [GitHub](https://github.com/join) and do it now.
-2.	Install Git on your computer. Follow the steps in the [Set up Git] tutorial.
-3.	Create your own fork of this repository. To do this, at the top of the page,  choose the **Fork** button.
-4.	Copy your fork to your computer. To do this, open Git Bash. At the command prompt enter:
+1. Set up a GitHub account so you can contribute to this project. If you haven't done this, go to [GitHub](https://github.com/join) and do it now.
+2. Install Git on your computer. Follow the steps in the [Set up Git] tutorial.
+3. Create your own fork of this repository. To do this, at the top of the page,  choose the **Fork** button.
+4. Copy your fork to your computer. To do this, open Git Bash. At the command prompt enter:
 
         git clone https://github.com/<your user name>/<repo name>.git
 
@@ -100,10 +100,10 @@ To make the contribution process as seamless as possible, follow these steps.
 
 #### To create a new branch
 
-1.	Open Git Bash.
-2.	At the Git Bash command prompt, type `git pull upstream master:<new branch name>`. This creates a new branch locally that is copied from the latest OfficeDev master branch.
-3.	At the Git Bash command prompt, type `git push origin <new branch name>`. This alerts GitHub to the new branch. You should now see the new branch in your fork of the repository on GitHub.
-4.	At the Git Bash command prompt, type `git checkout <new branch name>` to switch to your new branch.
+1. Open Git Bash.
+2. At the Git Bash command prompt, type `git pull upstream master:<new branch name>`. This creates a new branch locally that is copied from the latest OfficeDev master branch.
+3. At the Git Bash command prompt, type `git push origin <new branch name>`. This alerts GitHub to the new branch. You should now see the new branch in your fork of the repository on GitHub.
+4. At the Git Bash command prompt, type `git checkout <new branch name>` to switch to your new branch.
 
 #### Add new content or edit existing content
 
@@ -128,13 +128,13 @@ When you're finished with your work and are ready to have it merged into the mai
 
 #### To submit a pull request to the main repository
 
-1.	In the Git Bash command prompt, type `git push origin <new branch name>`. In your local repository, `origin` refers to your GitHub repository that you cloned the local repository from. This command pushes the current state of your new branch, including all commits made in the previous steps, to your GitHub fork.
-2.	On the GitHub site, navigate in your fork to the new branch.
-3.	Choose the **Pull Request** button at the top of the page.
-4.	Verify the Base branch is `OfficeDev/<repo name>@master` and the Head branch is `<your username>/<repo name>@<branch name>`.
-5.	Choose the **Update Commit Range** button.
-6.	Add a title to your pull request, and describe all the changes you're making.
-7.	Submit the pull request.
+1. In the Git Bash command prompt, type `git push origin <new branch name>`. In your local repository, `origin` refers to your GitHub repository that you cloned the local repository from. This command pushes the current state of your new branch, including all commits made in the previous steps, to your GitHub fork.
+2. On the GitHub site, navigate in your fork to the new branch.
+3. Choose the **Pull Request** button at the top of the page.
+4. Verify the Base branch is `OfficeDev/<repo name>@master` and the Head branch is `<your username>/<repo name>@<branch name>`.
+5. Choose the **Update Commit Range** button.
+6. Add a title to your pull request, and describe all the changes you're making.
+7. Submit the pull request.
 
 One of the site administrators will process your pull request. Your pull request will surface on the OfficeDev/<repo name> site under Issues. When the pull request is accepted, the issue will be resolved.
 
