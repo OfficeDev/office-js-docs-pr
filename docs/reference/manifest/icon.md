@@ -1,7 +1,7 @@
 ---
 title: Icon element in the manifest file
 description: Defines Image elements for Button or Menu controls.
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 localization_priority: Normal
 ---
 
@@ -32,6 +32,9 @@ An image for the button. The **resid** attribute can be no more than 32 characte
   <bt:Image size="80" resid="blue-icon-80" />
 </Icon>
 ```
+
+> [!IMPORTANT]
+> If this image is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
 
 ## Additional requirements for mobile form factors
 

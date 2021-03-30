@@ -1,7 +1,7 @@
 ---
 title: Resources element in the manifest file
 description: The Resources element contains icons, strings, and URLs for the VersionOverrides node.
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 localization_priority: Normal
 ---
 
@@ -24,6 +24,7 @@ Each resource can have one or more **Override** child elements to define a diffe
 > You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.
 
 ### Images
+
 Each icon must have three **Images** elements, one for each of the three mandatory sizes:
 
 - 16x16
@@ -39,7 +40,9 @@ The following additional sizes are also supported, but not required:
 - 64x64
 
 > [!IMPORTANT]
-> Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.
+>
+> - If this image is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
+> - Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.
 
 ## Resources examples
 
