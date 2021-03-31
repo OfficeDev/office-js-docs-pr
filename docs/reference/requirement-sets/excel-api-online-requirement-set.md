@@ -8,12 +8,12 @@ localization_priority: Normal
 
 # Excel JavaScript API online-only requirement set
 
-The `ExcelApiOnline` requirement set is a special requirement set that includes features that are only available for Excel on the web. APIs in this requirement set are considered to be production APIs (not subject to undocumented behavioral or structural changes) for the Excel on the web application. `ExcelApiOnline` are considered to be "preview" APIs for other platforms (Windows, Mac, iOS) and may not be supported by any of those platforms.
+The `ExcelApiOnline` requirement set is a special requirement set that includes features that are only available for Excel on the web. APIs in this requirement set are considered to be production APIs (not subject to undocumented behavioral or structural changes) for the Excel on the web application. `ExcelApiOnline` APIs are considered to be "preview" APIs for other platforms (Windows, Mac, iOS) and may not be supported by any of those platforms.
 
-When APIs in the `ExcelApiOnline` requirement set are supported across all platforms, they will added to the next released requirement set (`ExcelApi 1.[NEXT]`). Once that new requirement is public, those APIs will be removed from `ExcelApiOnline`. Think of this as a similar promotion process as an API moving from preview to release.
+When APIs in the `ExcelApiOnline` requirement set are supported across all platforms, they will added to the next released requirement set (`ExcelApi 1.[NEXT]`). Once that new requirement is public, those APIs will be removed from `ExcelApiOnline`. Think of this as a similar promotion process to an API moving from preview to release.
 
 > [!IMPORTANT]
-> `ExcelApiOnline` is superset of the latest numbered requirement set.
+> `ExcelApiOnline` is a superset of the latest numbered requirement set.
 
 > [!IMPORTANT]
 > `ExcelApiOnline 1.1` is the only version of the online-only APIs. This is because Excel on the web will always have a single version available to users that is the latest version.
@@ -34,6 +34,12 @@ Once the API is in a cross-platform requirement set, you should remove or edit t
 > Your manifest cannot specify `ExcelApiOnline 1.1` as an activation requirement. It is not a valid value to use in the [Set element](../manifest/set.md).
 
 ## API list
+
+The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
+
+| Feature area | Description | Relevant objects |
+|:--- |:--- |:--- |
+| Named sheet views | Gives programmatic control of per-user worksheet views. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
 
 | Class | Fields | Description |
 |:---|:---|:---|
