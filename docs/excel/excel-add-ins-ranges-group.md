@@ -1,15 +1,11 @@
 ---
 title: Group ranges using the Excel JavaScript API
-description: 'Group rows or columns of a range together to create an outline using the Excel JavaScript API.' 
+description: 'Learn how to group rows or columns of a range together to create an outline using the Excel JavaScript API.' 
 ms.date: 03/26/2021 
 localization_priority: Normal
 ---
 
-# Work with ranges using the Excel JavaScript API (advanced)
-
-This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
-
-## Group data for an outline
+# Group range data for an outline using the Excel JavaScript API
 
 Rows or columns of a range can be grouped together to create an [outline](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). These groups can be collapsed and expanded to hide and show the corresponding cells. This makes quick analysis of top-line data easier. Use [Range.group](/javascript/api/excel/excel.range#group-groupoption-) to make these outline groups.
 

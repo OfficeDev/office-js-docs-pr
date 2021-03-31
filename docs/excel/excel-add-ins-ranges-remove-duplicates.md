@@ -1,15 +1,11 @@
 ---
-title: Remove duplicate ranges using the Excel JavaScript API
-description: '' 
+title: Remove duplicates using the Excel JavaScript API
+description: 'A code sample that shows how to use the Excel JavaScript API to remove duplicate values.' 
 ms.date: 03/26/2021 
 localization_priority: Normal
 ---
 
-# Work with ranges using the Excel JavaScript API (advanced)
-
-This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
-
-## Remove duplicates
+# Remove duplicates using the Excel JavaScript API
 
 The [Range.removeDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-) method removes rows with duplicate entries in the specified columns. The method goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
 

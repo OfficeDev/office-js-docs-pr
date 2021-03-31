@@ -5,9 +5,7 @@ ms.date: 03/26/2021
 localization_priority: Normal
 ---
 
-# Work with ranges using the Excel JavaScript API
-
-## Find a cell using string matching
+# Find a cell using string matching with the Excel JavaScript API
 
 The `Range` object has a `find` method to search for a specified string within the range. It returns the range of the first cell with matching text. The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console. Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range. If you expect that the specified string may not exist in the range, use the [findOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method instead, so your code gracefully handles that scenario.
 

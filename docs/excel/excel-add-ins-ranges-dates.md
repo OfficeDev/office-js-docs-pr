@@ -5,11 +5,7 @@ ms.date: 03/26/2021
 localization_priority: Normal
 ---
 
-# Work with ranges using the Excel JavaScript API (advanced)
-
-This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
-
-## Work with dates using the Moment-MSDate plug-in
+# Work with dates using the Excel JavaScript API and the Moment-MSDate plug-in
 
 The [Moment JavaScript library](https://momentjs.com/) provides a convenient way to use dates and timestamps. The [Moment-MSDate plug-in](https://www.npmjs.com/package/moment-msdate) converts the format of moments into one preferable for Excel. This is the same format the [NOW function](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) returns.
 

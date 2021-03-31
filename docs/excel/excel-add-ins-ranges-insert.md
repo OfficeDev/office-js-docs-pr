@@ -1,13 +1,11 @@
 ---
 title: Insert ranges using the Excel JavaScript API
-description: ''
+description: 'Learn how to insert a range of cells with the Excel JavaScript API.'
 ms.date: 03/26/2021
 localization_priority: Normal
 ---
 
-# Work with ranges using the Excel JavaScript API
-
-## Insert a range of cells
+# Insert a range of cells using the Excel JavaScript API
 
 The following code sample inserts a range of cells in location **B4:E4** and shifts other cells down to provide space for the new cells.
 
@@ -22,11 +20,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### Data before range is inserted
+## Data before range is inserted
 
 ![Data in Excel before range is inserted](../images/excel-ranges-start.png)
 
-### Data after range is inserted
+## Data after range is inserted
 
 ![Data in Excel after range is inserted](../images/excel-ranges-after-insert.png)
 

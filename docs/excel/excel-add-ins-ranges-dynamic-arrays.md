@@ -1,15 +1,11 @@
 ---
-title: Work dynamic arrays and range spilling using the Excel JavaScript API (advanced)
-description: '' 
+title: Handle dynamic arrays and range spilling using the Excel JavaScript API
+description: 'Learn how to handle dynamic arrays and range spilling with the Excel JavaScript API.' 
 ms.date: 03/26/2021 
 localization_priority: Normal
 ---
 
-# Work with ranges using the Excel JavaScript API (advanced)
-
-This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
-
-## Handle dynamic arrays and spilling
+# Handle dynamic arrays and spilling using the Excel JavaScript API
 
 Some Excel formulas return [Dynamic arrays](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). These fill the values of multiple cells outside of the formula's original cell. This value overflow is referred to as a "spill". Your add-in can find the range used for a spill with the [Range.getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) method. There is also a [*OrNullObject version](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject`.
 

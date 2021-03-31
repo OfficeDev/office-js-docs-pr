@@ -1,15 +1,11 @@
 ---
 title: Find special cells within a range using the Excel JavaScript API
-description: '' 
+description: 'Learn how to use the Excel JavaScript API to find special cells, such as cells with formulas, errors, or numbers.' 
 ms.date: 03/26/2021 
 localization_priority: Normal
 ---
 
-# Work with ranges using the Excel JavaScript API (advanced)
-
-This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
-
-## Find special cells within a range
+# Find special cells within a range using the Excel JavaScript API
 
 The [Range.getSpecialCells](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-) and [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-) methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
 
@@ -64,14 +60,14 @@ Excel.run(function (context) {
 
 For simplicity, all other examples in this article use the `getSpecialCells` method instead of  `getSpecialCellsOrNullObject`.
 
-### Narrow the target cells with cell value types
+## Narrow the target cells with cell value types
 
 The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods accept an optional second parameter used to further narrow down the targeted cells. This second parameter is an `Excel.SpecialCellValueType` you use to specify that you only want cells that contain certain types of values.
 
 > [!NOTE]
 > The `Excel.SpecialCellValueType` parameter can only be used if the `Excel.SpecialCellType` is `Excel.SpecialCellType.formulas` or `Excel.SpecialCellType.constants`.
 
-#### Test for a single cell value type
+### Test for a single cell value type
 
 The `Excel.SpecialCellValueType` enum has these four basic types (in addition to the other combined values described later in this section):
 
@@ -98,7 +94,7 @@ Excel.run(function (context) {
 })
 ```
 
-#### Test for multiple cell value types
+### Test for multiple cell value types
 
 Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued (`Excel.SpecialCellValueType.logical`) cells. The `Excel.SpecialCellValueType` enum has values with combined types. For example, `Excel.SpecialCellValueType.logicalText` targets all boolean and all text-valued cells. `Excel.SpecialCellValueType.all` is the default value, which does not limit the cell value types returned. The following example colors all cells with formulas that produce number or boolean value.
 

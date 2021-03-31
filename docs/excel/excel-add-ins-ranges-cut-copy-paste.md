@@ -1,17 +1,13 @@
 ---
-title: Cut, copy, and paste ranges using the Excel JavaScript API (advanced)
-description: '' 
+title: Cut, copy, and paste ranges using the Excel JavaScript API
+description: 'Code samples that show how to cut, copy, and paste ranges using the Excel JavaScript API.' 
 ms.date: 03/26/2021 
 localization_priority: Normal
 ---
 
-# Work with ranges using the Excel JavaScript API (advanced)
+# Cut, copy, and paste ranges using the Excel JavaScript API
 
-This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
-
-## Cut, copy, and paste
-
-### Copy and paste
+## Copy and paste
 
 The [Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) method replicates the **Copy** and **Paste** actions of the Excel UI. The range object that `copyFrom` is called on is the destination. The source to be copied is passed as a range or a string address representing a range.
 
@@ -72,7 +68,7 @@ Excel.run(function (context) {
 
 ![Data in Excel after range's copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
 
-### Cut and paste (move) cells
+## Cut and paste (move) cells
 
 The [Range.moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) method moves cells to a new location in the workbook. This cell movement behavior works the same as when cells are moved by [dragging the range border](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) or when taking the **Cut** and **Paste** actions. Both the formatting and values of the range are moved to the location specified as the `destinationRange` parameter.
 
