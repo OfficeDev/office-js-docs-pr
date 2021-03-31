@@ -34,7 +34,7 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>2</sup> When Microsoft Edge is being used, the Windows 10 Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the `<DisplayName>` value in the add-in's manifest.
 
-<sup>3</sup> If your add-in includes the `<Runtimes>` element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then it uses that browser. Otherwise, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> If your add-in includes the `<Runtimes>` element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser. Otherwise, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
 
 <sup>4</sup> The embeddable WebView2 control must be installed in addition to the installation of Microsoft Edge so that Office can embed it. To install it, see [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
