@@ -18,6 +18,12 @@ When APIs in the `ExcelApiOnline` requirement set are supported across all platf
 > [!IMPORTANT]
 > `ExcelApiOnline 1.1` is the only version of the online-only APIs. This is because Excel on the web will always have a single version available to users that is the latest version.
 
+The following table provides a concise summary of the APIs, while the subsequent [API List](#api-list) table gives a detailed list of the current `ExcelApiOnline` APIs.
+
+| Feature area | Description | Relevant objects |
+|:--- |:--- |:--- |
+| Named sheet views | Gives programmatic control of per-user worksheet views. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
+
 ## Recommended usage
 
 Because `ExcelApiOnline` APIs are only supported by Excel on the web, your add-in should check if the requirement set is supported before calling these APIs. This avoids calling an online-only API on a different platform.
@@ -35,11 +41,7 @@ Once the API is in a cross-platform requirement set, you should remove or edit t
 
 ## API list
 
-The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
-
-| Feature area | Description | Relevant objects |
-|:--- |:--- |:--- |
-| Named sheet views | Gives programmatic control of per-user worksheet views. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
+The following table lists the Excel JavaScript APIs currently included in the `ExcelApiOnline` requirement set. For a complete list of all Excel JavaScript APIs (including `ExcelApiOnline` APIs and previously released APIs), see [all Excel JavaScript APIs](/javascript/api/excel?view=excel-js-online&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|
