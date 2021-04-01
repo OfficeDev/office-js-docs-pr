@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 03/30/2021
 localization_priority: Normal
 ---
 
@@ -224,6 +224,19 @@ In this scenario, you'll add handling for composing new items.
 1. In Outlook on Windows, create a new message.
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win-autolaunch.png)
+
+    > [!NOTE]
+    > If you see the error "We can't open this add-in from localhost," you'll need to enable a loopback exemption.
+    >
+    > 1. Close Outlook.
+    > 2. Open the **Task Manager** and ensure that the **msoadfs.exe** process is not running.
+    > 3. Run the following command.
+    >
+    >     ```command&nbsp;line
+    >     call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >     ```
+    >
+    > 4. Restart Outlook.
 
 ## Debug
 
