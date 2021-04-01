@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Cut, copy, and paste ranges using the Excel JavaScript API
 
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
 ## Copy and paste
 
 The [Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) method replicates the **Copy** and **Paste** actions of the Excel UI. The range object that `copyFrom` is called on is the destination. The source to be copied is passed as a range or a string address representing a range.

@@ -9,6 +9,8 @@ localization_priority: Normal
 
 The following examples show how to set font color, fill color, and number format for cells in a range.
 
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
 ## Set font color and fill color
 
 The following code sample sets the font color and fill color for cells in range **B2:E2**.

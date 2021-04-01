@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Clear or delete ranges using the Excel JavaScript API
 
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
 ## Clear a range of cells
 
 The following code sample clears all contents and formatting of cells in the range **E2:E5**.  

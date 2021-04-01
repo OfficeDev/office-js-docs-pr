@@ -1,0 +1,2 @@
+> [!NOTE]
+> The Excel JavaScript API doesn't have a "Cell" object or class. Instead, the Excel JavaScript API defines all Microsoft Excel cells as `Range` objects. An individual Microsoft Excel cell is a `Range` object with one cell. A single `Range` object can also contain multiple contiguous cells. See [Work with cells using the Excel JavaScript API](/office/dev/add-ins/excel/excel-add-ins-cells) to learn more.

@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Set and get ranges using the Excel JavaScript API
 
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
 ## Set the selected range
 
 The following code sample selects the range **B2:E6** in the active worksheet.

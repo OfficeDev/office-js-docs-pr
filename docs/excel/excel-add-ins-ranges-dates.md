@@ -9,6 +9,8 @@ localization_priority: Normal
 
 The [Moment JavaScript library](https://momentjs.com/) provides a convenient way to use dates and timestamps. The [Moment-MSDate plug-in](https://www.npmjs.com/package/moment-msdate) converts the format of moments into one preferable for Excel. This is the same format the [NOW function](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) returns.
 
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
 The following code shows how to set the range at **B4** to a moment's timestamp:
 
 ```js

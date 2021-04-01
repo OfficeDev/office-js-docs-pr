@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Set and get range values, text, or formulas using the Excel JavaScript API
 
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
 ## Set values or formulas
 
 The following examples show how to set values and formulas for a single cell or a range of cells.
