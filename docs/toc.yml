@@ -686,7 +686,7 @@ items:
       - name: Get formula precedents
         href: excel/excel-add-ins-ranges-precedents.md
         displayName: Excel
-      - name: Multiple ranges
+      - name: Work with multiple ranges
         href: excel/excel-add-ins-multiple-ranges.md
         displayName: Excel
     - name: Charts

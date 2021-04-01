@@ -17,5 +17,7 @@ Ranges can have formats applied to individual cells based on conditions. For mor
 
 ## See also
 
-- [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
+- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Read or write to an unbounded range using the Excel JavaScript API](excel-add-ins-ranges-unbounded.md)
+- [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)

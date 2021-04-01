@@ -41,5 +41,6 @@ The [RangeAreas](/javascript/api/excel/excel.rangeareas) object lets your add-in
 
 ## See also
 
-- [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
+- [Get a range using the Excel JavaScript API](excel-add-ins-ranges-get.md)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)

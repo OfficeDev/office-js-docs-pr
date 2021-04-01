@@ -7,6 +7,8 @@ localization_priority: Normal
 
 # Insert a range of cells using the Excel JavaScript API
 
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
 The following code sample inserts a range of cells in location **B4:E4** and shifts other cells down to provide space for the new cells.
 
 ```js
@@ -28,8 +30,8 @@ Excel.run(function (context) {
 
 ![Data in Excel after range is inserted](../images/excel-ranges-after-insert.png)
 
-
 ## See also
 
-- [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
+- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Clear or delete a ranges using the Excel JavaScript API](excel-add-ins-ranges-clear-delete.md)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)

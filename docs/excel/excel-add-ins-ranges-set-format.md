@@ -66,5 +66,7 @@ Excel.run(function (context) {
 
 ## See also
 
-- [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
+- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Set and get ranges using the Excel JavaScript API](excel-add-ins-ranges-set-get.md)
+- [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
