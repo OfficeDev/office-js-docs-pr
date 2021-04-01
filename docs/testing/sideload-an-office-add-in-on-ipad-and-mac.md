@@ -81,7 +81,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
     - For Word:  `/Users/<username>/Library/Containers/Microsoft Word/Data/Documents/wef`
     - For Excel:  `/Users/<username>/Library/Containers/Microsoft Excel/Data/Documents/wef`
-    - For PowerPoint: `/Users/<username>/Library/Containers/Microsoft Powerpoint/Data/Documents/wef`
+    - For PowerPoint: `/Users/<username>/Library/Containers/Microsoft PowerPoint/Data/Documents/wef`
 
 2. Open the folder in **Finder** using the command `open .` (including the period or dot). Copy your add-in's manifest file to this folder.
 
