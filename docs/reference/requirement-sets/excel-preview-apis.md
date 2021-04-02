@@ -12,7 +12,7 @@ New Excel JavaScript APIs are first introduced in "preview" and later become par
 
 [!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
-The following table provides a concise summary of the APIs, while the subsequent API list table gives a detailed list.
+The following table provides a concise summary of the APIs, while the subsequent [API list](#api-list) table gives a detailed list.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
