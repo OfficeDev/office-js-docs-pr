@@ -93,7 +93,7 @@ This sample creates the following data in the current worksheet:
 
 ![A sales record showing value rows, a formula column, and formatted headers.](../images/excel-overview-range-sample.png)
 
-For more information, see [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-get-set-values.md).
+For more information, see [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md).
 
 ### Charts, tables, and other data objects
 
