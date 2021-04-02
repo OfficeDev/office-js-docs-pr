@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API overview
 description: 'Learn more about the Excel JavaScript API'
-ms.date: 07/28/2020
+ms.date: 04/01/2021
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -24,9 +24,10 @@ For hands-on experience using the Excel JavaScript API to access objects in Exce
 
 ## Learn API capabilities
 
-Each major Excel API feature has an article exploring what that feature can do and the relevant object model.
+Each major Excel API feature has an article or set of articles exploring what that feature can do and the relevant object model.
 
 * [Charts](../../excel/excel-add-ins-charts.md)
+* [Cells](../../excel/excel-add-ins-cells.md) and [Ranges](../../excel/excel-add-ins-ranges-get.md) 
 * [Comments](../../excel/excel-add-ins-comments.md)
 * [Conditional formatting](../../excel/excel-add-ins-conditional-formatting.md)
 * [Custom functions](../../excel/custom-functions-overview.md)
@@ -34,7 +35,6 @@ Each major Excel API feature has an article exploring what that feature can do a
 * [Events](../../excel/excel-add-ins-events.md)
 * [Multiple ranges (RangeArea)](../../excel/excel-add-ins-multiple-ranges.md)
 * [PivotTables](../../excel/excel-add-ins-pivottables.md)
-* [Ranges](../../excel/excel-add-ins-ranges.md) and [Advanced Range APIs](../../excel/excel-add-ins-ranges-advanced.md)
 * [Shapes](../../excel/excel-add-ins-shapes.md)
 * [Tables](../../excel/excel-add-ins-tables.md)
 * [Workbooks and Application-level APIs](../../excel/excel-add-ins-workbooks.md)

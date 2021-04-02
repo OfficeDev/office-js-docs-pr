@@ -1,7 +1,7 @@
 ---
 title: Work with multiple ranges simultaneously in Excel add-ins
 description: 'Learn how the Excel JavaScript library enables your add-in to perform operations, and set properties, on multiple ranges simultaneously.'
-ms.date: 04/30/2019
+ms.date: 04/01/2021
 localization_priority: Normal
 ---
 
@@ -114,7 +114,7 @@ This example applies to scenarios in which you can hard code the range addresses
 
 ## Get special cells from multiple ranges
 
-The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAreas` object work analogously to methods of the same name on the `Range` object. These methods return the cells with the specified characteristic from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) section for more details on special cells.
+The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAreas` object work analogously to methods of the same name on the `Range` object. These methods return the cells with the specified characteristic from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-special-cells.md) article for more details on special cells.
 
 When calling the `getSpecialCells` or `getSpecialCellsOrNullObject` method on a `RangeAreas` object:
 
@@ -175,5 +175,4 @@ Excel.run(function (context) {
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md)
-- [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md)
-- [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
+- [Read or write to a large range using the Excel JavaScript API](excel-add-ins-ranges-large.md)

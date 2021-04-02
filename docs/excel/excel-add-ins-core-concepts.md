@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript object model in Office Add-ins
 description: 'Learn the key object types in the Excel JavaScript APIs and how to use them to build add-ins for Excel.'
-ms.date: 09/03/2020
+ms.date: 04/01/2021
 localization_priority: Priority
 ---
 
@@ -92,8 +92,6 @@ Excel.run(function (context) {
 This sample creates the following data in the current worksheet:
 
 ![A sales record showing value rows, a formula column, and formatted headers.](../images/excel-overview-range-sample.png)
-
-For more information, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
 
 ### Charts, tables, and other data objects
 

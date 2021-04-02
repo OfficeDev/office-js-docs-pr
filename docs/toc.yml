@@ -636,7 +636,34 @@ items:
     - name: Cells
       href: excel/excel-add-ins-cells.md
       displayName: Excel
-    - name: Cells and ranges
+    - name: Charts
+      href: excel/excel-add-ins-charts.md
+      displayName: Excel
+    - name: Coauthoring in Excel add-ins
+      href: excel/co-authoring-in-excel-add-ins.md
+      displayName: Excel
+    - name: Comments
+      href: excel/excel-add-ins-comments.md
+      displayName: Excel
+    - name: Data validation
+      href: excel/excel-add-ins-data-validation.md
+      displayName: Excel
+    - name: Delay execution while cell is being edited
+      href: excel/excel-add-ins-delay-in-cell-edit.md
+      displayName: Excel
+    - name: Error handling
+      href: excel/excel-add-ins-error-handling.md
+      displayName: Excel
+    - name: Events
+      href: excel/excel-add-ins-events.md
+      displayName: Excel
+    - name: Performance optimization
+      href: excel/performance.md
+      displayName: Excel
+    - name: PivotTables
+      href: excel/excel-add-ins-pivottables.md
+      displayName: Excel
+    - name: Ranges and cells
       items:
       - name: Get a range 
         href: excel/excel-add-ins-ranges-get.md
@@ -655,6 +682,9 @@ items:
         displayName: Excel
       - name: Set range format 
         href: excel/excel-add-ins-ranges-set-format.md
+        displayName: Excel
+      - name: Conditional formatting of ranges
+        href: excel/excel-add-ins-conditional-formatting.md
         displayName: Excel
       - name: Read or write to an unbounded range
         href: excel/excel-add-ins-ranges-unbounded.md
@@ -689,36 +719,6 @@ items:
       - name: Work with multiple ranges
         href: excel/excel-add-ins-multiple-ranges.md
         displayName: Excel
-    - name: Charts
-      href: excel/excel-add-ins-charts.md
-      displayName: Excel
-    - name: Coauthoring in Excel add-ins
-      href: excel/co-authoring-in-excel-add-ins.md
-      displayName: Excel
-    - name: Comments
-      href: excel/excel-add-ins-comments.md
-      displayName: Excel
-    - name: Conditional formatting of ranges
-      href: excel/excel-add-ins-conditional-formatting.md
-      displayName: Excel
-    - name: Data validation
-      href: excel/excel-add-ins-data-validation.md
-      displayName: Excel
-    - name: Delay execution while cell is being edited
-      href: excel/excel-add-ins-delay-in-cell-edit.md
-      displayName: Excel
-    - name: Error handling
-      href: excel/excel-add-ins-error-handling.md
-      displayName: Excel
-    - name: Events
-      href: excel/excel-add-ins-events.md
-      displayName: Excel
-    - name: Performance optimization
-      href: excel/performance.md
-      displayName: Excel
-    - name: PivotTables
-      href: excel/excel-add-ins-pivottables.md
-      displayName: Excel
     - name: Shapes
       href: excel/excel-add-ins-shapes.md
       displayName: Excel
