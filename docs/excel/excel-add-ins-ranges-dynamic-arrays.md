@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Handle dynamic arrays and spilling using the Excel JavaScript API
 
-This article provides a code sample that shows how to handle dynamic arrays and range spilling using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+This article provides a code sample that shows how to handle dynamic arrays and range spilling using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
 
 ## Dynamic arrays
 

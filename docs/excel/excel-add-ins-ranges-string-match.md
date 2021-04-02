@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Find a string within a range using the Excel JavaScript API
 
-This article provides an example that shows how to find a string within a range using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+This article provides an example that shows how to find a string within a range using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 

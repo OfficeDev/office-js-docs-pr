@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Find special cells within a range using the Excel JavaScript API
 
-This article provides code samples that show how to find special cells within a range using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+This article provides code samples that show how to find special cells within a range using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
 
 ## Find ranges with special cells
 

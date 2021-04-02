@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Read or write to an unbounded range using the Excel JavaScript API
 
-This article describes how to read and write to an unbounded range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+This article describes how to read and write to an unbounded range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
 
 ## Read an unbounded range
 
