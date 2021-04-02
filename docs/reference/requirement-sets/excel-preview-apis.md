@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs.'
-ms.date: 03/31/2021
+ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -10,9 +10,9 @@ localization_priority: Normal
 
 New Excel JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.
 
-The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.
-
 [!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
+
+The following table provides a concise summary of the APIs, while the subsequent API list table gives a detailed list.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
