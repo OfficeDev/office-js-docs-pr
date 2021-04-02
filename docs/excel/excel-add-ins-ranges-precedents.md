@@ -1,11 +1,13 @@
 ---
 title: Work with formula precedents using the Excel JavaScript API
 description: 'A code sample that shows how to use the Excel JavaScript API to retrieve formula precedents.' 
-ms.date: 03/26/2021 
+ms.date: 04/02/2021 
 localization_priority: Normal
 ---
 
 # Get formula precedents using the Excel JavaScript API
+
+This article provides a code sample that shows how to retrieve formula precedents using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
 An Excel formula often refers to other cells. When a cell provides data to a formula, it is known as a formula "precedent". To learn more about Excel features related to relationships between cells, see the [Display the relationships between formulas and cells](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) article. 
 

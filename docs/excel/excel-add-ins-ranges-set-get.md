@@ -1,11 +1,13 @@
 ---
 title: Set and get ranges using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to set and get ranges using.'
-ms.date: 03/26/2021
+ms.date: 04/02/2021
 localization_priority: Normal
 ---
 
 # Set and get ranges using the Excel JavaScript API
+
+This article provides examples that show how to set and get ranges with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 

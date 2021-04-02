@@ -1,15 +1,17 @@
 ---
 title: Work with dates using the Excel JavaScript API 
 description: 'Use the Moment-MSDate plug-in with the Excel JavaScript API to work with dates.' 
-ms.date: 03/26/2021 
+ms.date: 04/02/2021 
 localization_priority: Normal
 ---
 
 # Work with dates using the Excel JavaScript API and the Moment-MSDate plug-in
 
-The [Moment JavaScript library](https://momentjs.com/) provides a convenient way to use dates and timestamps. The [Moment-MSDate plug-in](https://www.npmjs.com/package/moment-msdate) converts the format of moments into one preferable for Excel. This is the same format the [NOW function](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) returns.
+This article provides code samples that show how to work with dates using the Excel JavaScript API and the Moment-MSDate plug-in. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
+The [Moment JavaScript library](https://momentjs.com/) provides a convenient way to use dates and timestamps. The [Moment-MSDate plug-in](https://www.npmjs.com/package/moment-msdate) converts the format of moments into one preferable for Excel. This is the same format the [NOW function](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) returns.
 
 The following code shows how to set the range at **B4** to a moment's timestamp:
 

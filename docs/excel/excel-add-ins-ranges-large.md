@@ -1,11 +1,13 @@
 ---
 title: Read or write to large ranges using the Excel JavaScript API
 description: 'Learn how to read or write to large ranges with the Excel JavaScript API.'
-ms.date: 03/26/2021
+ms.date: 04/02/2021
 localization_priority: Normal
 ---
 
 # Read or write to a large range using the Excel JavaScript API
+
+This article describes how read and write to a large range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
 If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.
 
