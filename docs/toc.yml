@@ -648,9 +648,6 @@ items:
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
-    - name: Delay execution while cell is being edited
-      href: excel/excel-add-ins-delay-in-cell-edit.md
-      displayName: Excel
     - name: Error handling
       href: excel/excel-add-ins-error-handling.md
       displayName: Excel
@@ -715,6 +712,9 @@ items:
         displayName: Excel
       - name: Get formula precedents
         href: excel/excel-add-ins-ranges-precedents.md
+        displayName: Excel
+      - name: Delay execution while cell is being edited
+        href: excel/excel-add-ins-delay-in-cell-edit.md
         displayName: Excel
       - name: Work with multiple ranges
         href: excel/excel-add-ins-multiple-ranges.md
