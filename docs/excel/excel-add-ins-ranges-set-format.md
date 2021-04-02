@@ -9,8 +9,6 @@ localization_priority: Normal
 
 This article provides examples that show how to set font color, fill color, and number format for cells in a range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
-The following examples show how to set font color, fill color, and number format for cells in a range.
-
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## Set font color and fill color

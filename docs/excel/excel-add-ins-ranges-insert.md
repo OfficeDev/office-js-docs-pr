@@ -11,6 +11,8 @@ This article provides a code sample that shows how to insert a range of cells wi
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
+## Insert a range of cells
+
 The following code sample inserts a range of cells in location **B4:E4** and shifts other cells down to provide space for the new cells.
 
 ```js
@@ -24,11 +26,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Data before range is inserted
+### Data before range is inserted
 
 ![Data in Excel before range is inserted](../images/excel-ranges-start.png)
 
-## Data after range is inserted
+### Data after range is inserted
 
 ![Data in Excel after range is inserted](../images/excel-ranges-after-insert.png)
 
