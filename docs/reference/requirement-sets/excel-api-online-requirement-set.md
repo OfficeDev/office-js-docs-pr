@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API online-only requirement set
 description: 'Details about the ExcelApiOnline requirement set.'
-ms.date: 03/31/2021
+ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -18,7 +18,7 @@ When APIs in the `ExcelApiOnline` requirement set are supported across all platf
 > [!IMPORTANT]
 > `ExcelApiOnline 1.1` is the only version of the online-only APIs. This is because Excel on the web will always have a single version available to users that is the latest version.
 
-The following table provides a concise summary of the APIs, while the subsequent [API List](#api-list) table gives a detailed list of the current `ExcelApiOnline` APIs.
+The following table provides a concise summary of the APIs, while the subsequent [API list](#api-list) table gives a detailed list of the current `ExcelApiOnline` APIs.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
