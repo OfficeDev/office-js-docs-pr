@@ -40,6 +40,6 @@ When the `find` method is called on a range representing a single cell, the enti
 
 ## See also
 
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
 - [Find special cells within a range using the Excel JavaScript API](excel-add-ins-ranges-special-cells.md)
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)

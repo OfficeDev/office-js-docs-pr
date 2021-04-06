@@ -36,6 +36,6 @@ Excel.run(function (context) {
 
 ## See also
 
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
 - [Clear or delete a ranges using the Excel JavaScript API](excel-add-ins-ranges-clear-delete.md)
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)

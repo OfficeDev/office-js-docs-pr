@@ -117,7 +117,7 @@ Excel.run(function (context) {
 
 ## See also
 
-- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Find a string within a range using the Excel JavaScript API](excel-add-ins-ranges-string-match.md)
+- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Find a string using the Excel JavaScript API](excel-add-ins-ranges-string-match.md)
 - [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)
