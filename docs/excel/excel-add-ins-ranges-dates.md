@@ -34,7 +34,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-It is a similar technique to get the date back out of the cell and convert it to a moment or other format, as demonstrated in the following code:
+It is a similar technique to get the date back out of the cell and convert it to a `Moment` or other format, as demonstrated in the following code:
 
 ```js
 Excel.run(function (context) {
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-Your add-in will have to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
+Your add-in has to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
 
 
 ## See also

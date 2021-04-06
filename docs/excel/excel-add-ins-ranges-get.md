@@ -47,7 +47,7 @@ Excel.run(function (context) {
 
 ## Get used range
 
-The following code sample gets the used range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console. The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them. If the entire worksheet is blank, the `getUsedRange()` method returns a range that consists of only the top-left cell in the worksheet.
+The following code sample gets the used range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console. The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them. If the entire worksheet is blank, the `getUsedRange()` method returns a range that consists of only the top-left cell.
 
 ```js
 Excel.run(function (context) {

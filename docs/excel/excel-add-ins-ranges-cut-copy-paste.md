@@ -13,7 +13,7 @@ This article provides code samples that show how to cut, copy, and paste ranges 
 
 ## Copy and paste
 
-The [Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) method replicates the **Copy** and **Paste** actions of the Excel UI. The range object that `copyFrom` is called on is the destination. The source to be copied is passed as a range or a string address representing a range.
+The [Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) method replicates the **Copy** and **Paste** actions of the Excel UI. The destination is the `Range` object that `copyFrom` is called on. The source to be copied is passed as a range or a string address representing a range.
 
 The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 

@@ -5,9 +5,9 @@ ms.date: 04/02/2021
 localization_priority: Normal
 ---
 
-# Group range data for an outline using the Excel JavaScript API
+# Group ranges for an outline using the Excel JavaScript API
 
-This article provides a code sample that shows how to group range data for an outline using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides a code sample that shows how to group ranges for an outline using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
 
 ## Group rows or columns of a range for an outline
 

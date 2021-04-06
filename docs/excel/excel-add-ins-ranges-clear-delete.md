@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Clear or delete ranges using the Excel JavaScript API
 
-This article provides examples that show how to clear and delete ranges with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides examples that show how to clear and delete ranges with the Excel JavaScript API. For the complete list of properties and methods supported by the `Range` object, see the [Excel.Range class](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -36,7 +36,7 @@ Excel.run(function (context) {
 
 ## Delete a range of cells
 
-The following code sample deletes the cells in the range **B4:E4** and shift other cells up to fill the space that was vacated by the deleted cells.
+The following code sample deletes the cells in the range **B4:E4** and shifts other cells up to fill the space that was vacated by the deleted cells.
 
 ```js
 Excel.run(function (context) {
