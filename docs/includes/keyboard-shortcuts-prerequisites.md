@@ -1,6 +1,4 @@
 > [!IMPORTANT]
-> Keyboard shortcuts are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in.
->
 > Keyboard shortcuts are currently only supported on Excel and only on these platforms and builds:
 >
 >* Excel on Windows: Version 2010 (Build 13426.20000)

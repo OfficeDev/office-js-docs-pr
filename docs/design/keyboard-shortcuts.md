@@ -63,13 +63,13 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
             {
                 "action": "SHOWTASKPANE",
                 "key": {
-                    "default": "CTRL+SHIFT+UP"
+                    "default": "CTRL+ALT+UP"
                 }
             },
             {
                 "action": "HIDETASKPANE",
                 "key": {
-                    "default": "CTRL+SHIFT+DOWN"
+                    "default": "CTRL+ALT+DOWN"
                 }
             }
         ]
@@ -132,7 +132,7 @@ Following the previous steps lets your add-in toggle the visibility of the task 
 
 ### Constructing the action objects
 
-Use the following guidelines when specifying the objects in the `action` array of the shortcuts.json:
+Use the following guidelines when specifying the objects in the `actions` array of the shortcuts.json:
 
 - The property names `id` and `name` are mandatory.
 - The `id` property is used to uniquely identify the action to invoke using a keyboard shortcut.
@@ -178,13 +178,13 @@ The following is an example:
         {
             "action": "SHOWTASKPANE",
             "key": {
-                "default": "CTRL+SHIFT+UP"
+                "default": "CTRL+ALT+UP"
             }
         },
         {
             "action": "HIDETASKPANE",
             "key": {
-                "default": "CTRL+SHIFT+DOWN"
+                "default": "CTRL+ALT+DOWN"
             }
         }
     ]
@@ -195,22 +195,58 @@ The complete schema for the shortcuts JSON is at [extended-manifest.schema.json]
 > [!NOTE]
 > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office Add-ins.
 
-### Using shortcuts when the focus is in the task pane
-
-Currently, the keyboard shortcuts for an Office Add-in can only be invoked when the user's focus is in the worksheet. When the user's focus is inside the Office UI (such as the task pane), none of the add-in's shortcuts are ignored. As a workaround, the add-in can define keyboard handlers that can invoke certain actions when the user's focus is inside of the add-in UI.
-
 ## Using key combinations that are already used by Office or another add-in
 
-During the preview period, there is no system for determining what happens when a user presses a key combination that is registered by an add-in and also by Office or by another add-in. Behavior is undefined.
+There are many keyboard shortcuts that are already being used by Office. Ideally, you want to avoid registering keyboard shortcuts for your add-in that are already being used, but there may be some instances where it is necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
-Currently, there is no workaround when two or more add-ins have registered the same keyboard shortcut, but you can minimize conflicts with Excel with these good practices:
+In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut, note that the action name that is displayed in this dialog is the `name` property in the action object in `shortcuts.json` file.
+
+<insert pic of conflict UI>
+
+The user can select which action the keyboard shortcut will take, after making the selection, the preference will be saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the "Reset Office Add-ins Shortcut Preferences" command from the Tell Me search box:
+
+<insert pic of tell me action>
+
+For the best user experience, we recommend that you minimize conflicts with Excel with these good practices:
 
 - Use only keyboard shortcuts with the following pattern in your add-in: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
 - If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
+- When the keyboard focus is inside the add-in UI, **Ctrl+Spacebar** and **Ctrl+Shift+F10** will not work as these are esssential accessibility shortcuts.
+
+## Customize the keyboard shortcuts per platform
+
+It is possible to customize shortcuts to be platform specific. The following is an example of the shortcuts object that is customizing the shortcuts for each of the following platforms: `windows`, `mac`, `web`. Note that you must still have a `default` shortcut key for each shortcut.
+
+In the following example, the `default` key is the fallback key for any platform that is not specified, the only platform not specified is Windows, so the `default` key will only apply to Windows.
+
+```json
+    "shortcuts": [
+        {
+            "action": "SHOWTASKPANE",
+            "key": {
+                "default": "CTRL+ALT+UP",
+                "mac": "COMMAND+SHIFT+UP",
+                "web": "CTRL+ALT+1",
+            }
+        },
+        {
+            "action": "HIDETASKPANE",
+            "key": {
+                "default": "CTRL+ALT+DOWN",
+                "mac": "COMMAND+SHIFT+DOWN",
+                "web": "CTRL+ALT+2"
+            }
+        }
+    ]
+```
+
+## Localize the keyboard shortcuts JSON
+
+If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
 
 ## Browser shortcuts that cannot be overridden
 
-You cannot use any of the following keyboard combinations. They are used by browsers and cannot be overridden. This list is a work in progress. If you discover other combinations that cannot be overridden, please let us know by using the feedback tool at the bottom of this page.
+When using custom keyboard shortcuts on the web, some keyboard shortcuts that are used by the browser cannot be overridden by add-ins. This list is a work in progress. If you discover other combinations that cannot be overridden, please let us know by using the feedback tool at the bottom of this page.
 
 - Ctrl+N
 - Ctrl+Shift+N
@@ -218,10 +254,6 @@ You cannot use any of the following keyboard combinations. They are used by brow
 - Ctrl+Shift+T
 - Ctrl+W
 - Ctrl+PgUp/PgDn
-
-## Localize the keyboard shortcuts JSON
-
-If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
 
 ## Next Steps
 
