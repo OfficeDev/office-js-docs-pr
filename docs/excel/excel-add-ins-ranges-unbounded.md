@@ -23,6 +23,7 @@ When the API makes a request to retrieve an unbounded range (for example, `getRa
 You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on an unbounded range because the input request is too large. For example, the following code snippet is not valid because it attempts to specify `values` for an unbounded range. The API returns an error if you attempt to set cell-level properties for an unbounded range.
 
 ```js
+// Note: This code sample attempts to specify `values` for an unbounded range, which is not a valid request. The sample will return an error. 
 var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
