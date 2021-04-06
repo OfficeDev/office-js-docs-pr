@@ -1,5 +1,5 @@
 ---
-title: Find a string within a range using the Excel JavaScript API
+title: Find a string using the Excel JavaScript API
 description: 'A code sample that shows how to find a string within a range using the Excel JavaScript API.'
 ms.date: 04/02/2021
 localization_priority: Normal

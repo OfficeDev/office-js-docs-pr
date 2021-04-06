@@ -9,7 +9,7 @@ localization_priority: Normal
 
 The Excel JavaScript API doesn't have a "Cell" object or class. Instead, all Excel cells are `Range` objects. An individual cell in the Excel UI translates to a `Range` object with one cell in the Excel JavaScript API.
 
-A single `Range` object can also contain multiple contiguous cells. Contiguous cells are those which form a row, a column, or both. Contiguous cells form an unbroken line. See [Work with discontiguous cells using the RangeAreas object](#work-with-discontiguous-cells-using-the-rangeareas-object) to learn about working with cells that are not contiguous.
+A `Range` object can also contain multiple, contiguous cells. Contiguous cells form an unbroken rectangle (including single rows or columns). See [Work with discontiguous cells using the RangeAreas object](#work-with-discontiguous-cells-using-the-rangeareas-object) to learn about working with cells that are not contiguous.
 
 For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
 
