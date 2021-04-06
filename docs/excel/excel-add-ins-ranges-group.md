@@ -1,7 +1,7 @@
 ---
 title: Group ranges using the Excel JavaScript API
 description: 'Learn how to group rows or columns of a range together to create an outline using the Excel JavaScript API.' 
-ms.date: 04/02/2021 
+ms.date: 04/05/2021 
 localization_priority: Normal
 ---
 
@@ -41,10 +41,11 @@ Excel.run(function (context) {
     sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
     return context.sync();
 }).catch(errorHandlerFunction);
-
 ```
 
 ![A range with a two-level, two-dimension outline](../images/excel-outline.png)
+
+## Remove grouping from rows or columns of a range
 
 To ungroup a row or column group, use the [Range.ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) method. This removes the outermost level from the outline. If multiple groups of the same row or column type are at the same level within the specified range, all of those groups are ungrouped.
 
