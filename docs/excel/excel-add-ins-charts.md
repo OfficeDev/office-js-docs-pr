@@ -81,7 +81,7 @@ Excel.run(function (context) {
 
 ## Set properties of an axis in a chart
 
-Charts that use the [Cartesian coordinate system](https://wikipedia.org/wiki/Cartesian_coordinate_system) such as column charts, bar charts, and scatter charts contain a category axis and a value axis. These examples show how to set the title and display unit of an axis in a chart.
+Charts that use the [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) such as column charts, bar charts, and scatter charts contain a category axis and a value axis. These examples show how to set the title and display unit of an axis in a chart.
 
 ### Set axis title
 

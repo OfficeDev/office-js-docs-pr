@@ -197,7 +197,7 @@ An ill-intentioned user could attack the origin of an add-in by entering malicio
 
 ### Tips to prevent "Clickjacking"
 
-Because Office Add-ins are rendered in an iframe when running in a browser with Office client applications, use the following tips to minimize the risk of [clickjacking](https://wikipedia.org/wiki/Clickjacking) -- a technique used by hackers to fool users into revealing confidential information.
+Because Office Add-ins are rendered in an iframe when running in a browser with Office client applications, use the following tips to minimize the risk of [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) -- a technique used by hackers to fool users into revealing confidential information.
 
 First, identify sensitive actions that your add-in can perform. These include any actions that an unauthorized user could use with malicious intent, such as initiating a financial transaction or publishing sensitive data. For example, your add-in might let the user send a payment to a user-defined recipient.
 
