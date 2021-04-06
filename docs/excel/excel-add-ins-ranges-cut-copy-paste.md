@@ -1,7 +1,8 @@
 ---
 title: Cut, copy, and paste ranges using the Excel JavaScript API
 description: 'Learn how to cut, copy, and paste ranges using the Excel JavaScript API.' 
-ms.date: 04/02/2021 
+ms.date: 04/02/2021
+ms.prod: excel
 localization_priority: Normal
 ---
 

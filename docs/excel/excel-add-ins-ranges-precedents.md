@@ -1,7 +1,8 @@
 ---
 title: Work with formula precedents using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to retrieve formula precedents.' 
-ms.date: 04/02/2021 
+ms.date: 04/02/2021
+ms.prod: excel
 localization_priority: Normal
 ---
 
