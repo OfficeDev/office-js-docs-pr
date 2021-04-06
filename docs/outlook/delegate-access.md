@@ -177,5 +177,5 @@ After the message has been sent, it's usually found in the delegate's **Sent Ite
 - [Allow someone else to manage your mail and calendar](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Calendar sharing in Microsoft 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)
 - [How to order manifest elements](../develop/manifest-element-ordering.md)
-- [Mask (computing)](https://en.wikipedia.org/wiki/Mask_(computing))
+- [Mask (computing)](https://wikipedia.org/wiki/Mask_(computing))
 - [JavaScript bitwise operators](https://www.w3schools.com/js/js_bitwise.asp)

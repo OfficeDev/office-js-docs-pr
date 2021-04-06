@@ -14,7 +14,7 @@ Many identity authorities, also called Secure Token Services (STS), prevent thei
 
 The dialog box that is opened with this API has the following characteristics:
 
-- It is [nonmodal](https://en.wikipedia.org/wiki/Dialog_box).
+- It is [nonmodal](https://wikipedia.org/wiki/Dialog_box).
 - It is a completely separate browser instance from the task pane, meaning:
   - It has its own JavaScript runtime environment and window object and global variables.
   - There is no shared execution environment with the task pane.
