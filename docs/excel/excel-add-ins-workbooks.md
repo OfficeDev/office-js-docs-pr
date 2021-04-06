@@ -79,7 +79,7 @@ The previous example shows a new workbook being created from an existing workboo
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-The following example inserts another workbook in the current workbook. The new worksheets are inserted after the active worksheet. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property. This means that all the worksheets from the existing workbook are inserted into the current workbook.
+The following example inserts another workbook into the current workbook. The new worksheets are inserted after the active worksheet. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property. This means that all the worksheets from the existing workbook are inserted into the current workbook.
 
 > [!IMPORTANT]
 > The `insertWorksheetsFromBase64` method is supported for Excel on Windows, Mac, and the web. It's not supported for iOS. Additionally, in Excel on the web this method doesn't support source worksheets with PivotTable, Chart, Comment, or Slicer elements. If those objects are present, the `insertWorksheetsFromBase64` method Excel on the web returns the `UnsupportedFeature` error. 
