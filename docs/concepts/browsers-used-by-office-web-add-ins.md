@@ -53,7 +53,7 @@ The following table shows which browser is used for the various platforms and op
 
 ### Service Workers are not working
 
-Office Add-ins do not support Service Workers when the original Microsoft Edge WebView, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML) is used. They are supported with the [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2).
+Office Add-ins do not support Service Workers when the original Microsoft Edge WebView, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), is used. They are supported with the [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2).
 
 ### Scroll bar does not appear in task pane
 
