@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about Excel add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.prod: excel #Required
   ms.topic: landing-page # Required
-  ms.date: 06/09/2020 #Required; mm/dd/yyyy format.
+  ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
   localization_priority: Priority
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -64,7 +64,7 @@ landingContent:
           - text: Ask questions
             url: https://stackoverflow.com/questions/tagged/office-js
           - text: Request features
-            url: https://officespdev.uservoice.com/
+            url: /answers/products/m365
           - text: Report issues
             url: https://github.com/officedev/office-js/issues
           - text: Office Add-ins additional resources

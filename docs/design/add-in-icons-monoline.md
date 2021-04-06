@@ -1,7 +1,7 @@
 ---
 title: Monoline style icon guidelines for Office Add-ins
-description: 'Get guidelines for using Monoline style icon icons in Office Add-ins.'
-ms.date: 2/09/2021
+description: 'Guidelines for using Monoline style icons in Office Add-ins.'
+ms.date: 03/30/2021
 localization_priority: Normal
 ---
 
@@ -54,6 +54,9 @@ Monoline is a clean minimal style. Everything uses flat color, which means there
 We recommend that you produce each icon in all these sizes to support high DPI devices. The absolutely *required* sizes are 16 px, 20 px, and 32 px, as those are the 100% sizes.
 
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
+
+> [!IMPORTANT]
+> For an image that is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
 
 ### Layout
 
@@ -198,3 +201,10 @@ Avoid using text characters in icons. Since Office products are used around the 
 ### Icon file format
 
 The final icons should be saved as .png image files. Use PNG format with a transparent background and have 32-bit depth.
+
+## See also
+
+- [Icon manifest element](../reference/manifest/icon.md)
+- [IconUrl manifest element](../reference/manifest/iconurl.md)
+- [HighResolutionIconUrl manifest element](../reference/manifest/highresolutioniconurl.md)
+- [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)
