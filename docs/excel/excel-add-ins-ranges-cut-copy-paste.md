@@ -65,11 +65,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-*Before the preceding function has been run.*
+### Data before range is copied and pasted
 
 ![Data in Excel before range's copy method has been run](../images/excel-range-copyfrom-skipblanks-before.png)
 
-*After the preceding function has been run.*
+### Data after range is copied and pasted
 
 ![Data in Excel after range's copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
 

@@ -38,11 +38,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-*Before the preceding function has been run.*
+### Data before duplicate entries are removed
 
 ![Data in Excel before range's remove duplicates method has been run](../images/excel-ranges-remove-duplicates-before.png)
 
-*After the preceding function has been run.*
+### Data after duplicate entries are removed
 
 ![Data in Excel after range's remove duplicates method has been run](../images/excel-ranges-remove-duplicates-after.png)
 
