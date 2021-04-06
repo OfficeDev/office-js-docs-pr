@@ -45,7 +45,7 @@ The following table shows which browser is used for the various platforms and op
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you have two options:
 >
 > - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
-> - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
+> - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
 >
 > Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
@@ -53,7 +53,7 @@ The following table shows which browser is used for the various platforms and op
 
 ### Service Workers are not working
 
-Office Add-ins do not support Service Workers when the original [Microsoft Edge WebView](/microsoft-edge/hosting/webview) is used. They are supported with the [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2).
+Office Add-ins do not support Service Workers when the original Microsoft Edge WebView, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), is used. They are supported with the [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2).
 
 ### Scroll bar does not appear in task pane
 
