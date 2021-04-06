@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API overview
 description: 'Learn more about the Excel JavaScript API'
-ms.date: 04/02/2021
+ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -27,7 +27,6 @@ For hands-on experience using the Excel JavaScript API to access objects in Exce
 Each major Excel API feature has an article or set of articles exploring what that feature can do and the relevant object model.
 
 * [Charts](../../excel/excel-add-ins-charts.md)
-* [Cells](../../excel/excel-add-ins-cells.md) and [Ranges](../../excel/excel-add-ins-ranges-get.md)
 * [Comments](../../excel/excel-add-ins-comments.md)
 * [Conditional formatting](../../excel/excel-add-ins-conditional-formatting.md)
 * [Custom functions](../../excel/custom-functions-overview.md)
