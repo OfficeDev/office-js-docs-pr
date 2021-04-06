@@ -1,7 +1,7 @@
 ---
 title: Fresh style icon guidelines for Office Add-ins
-description: 'Get guidelines for using Fresh style icon icons in Office Add-ins.'
-ms.date: 03/24/2021
+description: 'Guidelines for using Fresh style icons in Office Add-ins.'
+ms.date: 03/30/2021
 localization_priority: Normal
 ---
 
@@ -39,6 +39,9 @@ Office desktop icons are bitmap images. Different sizes will render depending on
 - 48 px
 - 64 px (Recommended, best for Mac)
 - 80 px (Required)
+
+> [!IMPORTANT]
+> For an image that is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
 
 Make sure to redraw your icons for each size rather than shrink them to fit.
 
