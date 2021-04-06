@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Group ranges for an outline using the Excel JavaScript API
 
-This article provides a code sample that shows how to group ranges for an outline using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides a code sample that shows how to group ranges for an outline using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
 ## Group rows or columns of a range for an outline
 
@@ -15,7 +15,7 @@ Rows or columns of a range can be grouped together to create an [outline](https:
 
 An outline can have a hierarchy, where smaller groups are nested under larger groups. This allows the outline to be viewed at different levels. Changing the visible outline level can be done programmatically through the [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) method. Note that Excel only supports eight levels of outline groups.
 
-The following code sample shows how to create an outline with two levels of groups for both the rows and columns. The subsequent image shows the groupings of that outline. Note that in the code sample, the ranges being grouped do not include the row or column of the outline control (the "Totals" for this example). A group defines what will be collapsed, not the row or column with the control.
+The following code sample creates an outline with two levels of groups for both the rows and columns. The subsequent image shows the groupings of that outline. In the code sample, the ranges being grouped do not include the row or column of the outline control (the "Totals" for this example). A group defines what will be collapsed, not the row or column with the control.
 
 ```js
 Excel.run(function (context) {

@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Get a range using the Excel JavaScript API
 
-This article provides examples that show different ways to get a range within a worksheet using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides examples that show different ways to get a range within a worksheet using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 

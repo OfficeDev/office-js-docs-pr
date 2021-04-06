@@ -1,19 +1,19 @@
 ---
 title: Set and get range values, text, or formulas using the Excel JavaScript API
-description: 'Code samples that show how to use the Excel JavaScript API to set and get range values, text, or formulas.'
+description: 'Learn how to use the Excel JavaScript API to set and get range values, text, or formulas.'
 ms.date: 04/02/2021
 localization_priority: Normal
 ---
 
 # Set and get range values, text, or formulas using the Excel JavaScript API
 
-This article shows how to set and get range values, text, or formulas with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides code samples that set and get range values, text, or formulas with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## Set values or formulas
 
-The following examples show how to set values and formulas for a single cell or a range of cells.
+The following code samples set values and formulas for a single cell or a range of cells.
 
 ### Set value for a single cell
 
@@ -124,7 +124,7 @@ Excel.run(function (context) {
 
 ## Get values, text, or formulas
 
-These examples show how to get values, text, and formulas from a range of cells.
+These code samples get values, text, and formulas from a range of cells.
 
 ### Get values from a range of cells
 

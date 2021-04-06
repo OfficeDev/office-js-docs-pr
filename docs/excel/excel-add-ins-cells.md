@@ -9,15 +9,15 @@ localization_priority: Normal
 
 The Excel JavaScript API doesn't have a "Cell" object or class. Instead, all Excel cells are `Range` objects. An individual cell in the Excel UI translates to a `Range` object with one cell in the Excel JavaScript API.
 
-A `Range` object can also contain multiple, contiguous cells. Contiguous cells form an unbroken rectangle (including single rows or columns). See [Work with discontiguous cells using the RangeAreas object](#work-with-discontiguous-cells-using-the-rangeareas-object) to learn about working with cells that are not contiguous.
+A `Range` object can also contain multiple, contiguous cells. Contiguous cells form an unbroken rectangle (including single rows or columns). To learn about working with cells that are not contiguous, see [Work with discontiguous cells using the RangeAreas object](#work-with-discontiguous-cells-using-the-rangeareas-object).
 
-For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
 ## Excel JavaScript APIs that mention cells
 
-Even though the Excel JavaScript API doesn't have a "Cell" object or class, a number of API names mention cells. These APIs tend to control cell properties like color, text formatting, and font.
+Even though the Excel JavaScript API doesn't have a "Cell" object or class, a number of API names mention cells. These APIs control cell properties like color, text formatting, and font.
 
-The following is a list of Excel JavaScript APIs that refer to cells.
+The following list of Excel JavaScript APIs refer to cells.
 
 - [CellBorder](/javascript/api/excel/excel.cellborder)
 - [CellBorderCollection](/javascript/api/excel/excel.cellbordercollection)

@@ -114,7 +114,7 @@ This example applies to scenarios in which you can hard code the range addresses
 
 ## Get special cells from multiple ranges
 
-The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAreas` object work analogously to methods of the same name on the `Range` object. These methods return the cells with the specified characteristic from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-special-cells.md) article for more details on special cells.
+The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAreas` object work analogously to methods of the same name on the `Range` object. These methods return the cells with the specified characteristic from all of the ranges in the `RangeAreas.areas` collection. For more details on special cells, see [Find special cells within a range](excel-add-ins-ranges-special-cells.md).
 
 When calling the `getSpecialCells` or `getSpecialCellsOrNullObject` method on a `RangeAreas` object:
 

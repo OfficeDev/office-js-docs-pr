@@ -1,13 +1,13 @@
 ---
 title: Set the format of a range using the Excel JavaScript API
-description: 'Code samples that show how to use the Excel JavaScript API to set the format of a range.'
+description: 'Learn how to use the Excel JavaScript API to set the format of a range.'
 ms.date: 04/02/2021
 localization_priority: Normal
 ---
 
 # Set range format using the Excel JavaScript API
 
-This article provides examples that show how to set font color, fill color, and number format for cells in a range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides code samples that set font color, fill color, and number format for cells in a range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 

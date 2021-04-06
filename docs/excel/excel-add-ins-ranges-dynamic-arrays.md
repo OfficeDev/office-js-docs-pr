@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Handle dynamic arrays and spilling using the Excel JavaScript API
 
-This article provides a code sample that shows how to handle dynamic arrays and range spilling using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides a code sample that handles dynamic arrays and range spilling using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
 ## Dynamic arrays
 
@@ -37,7 +37,7 @@ Excel.run(function (context) {
 
 ## Range spilling
 
-You can also find the cell responsible for spilling into a given cell by using the [Range.getSpillParent](/javascript/api/excel/excel.range#getspillparent--) method. Note that `getSpillParent` only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells will result in an error being thrown (or a null range being returned for `Range.getSpillParentOrNullObject`).
+Find the cell responsible for spilling into a given cell by using the [Range.getSpillParent](/javascript/api/excel/excel.range#getspillparent--) method. Note that `getSpillParent` only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells will result in an error being thrown (or a null range being returned for `Range.getSpillParentOrNullObject`).
 
 ## See also
 

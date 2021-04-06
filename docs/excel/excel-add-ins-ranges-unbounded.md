@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Read or write to an unbounded range using the Excel JavaScript API
 
-This article describes how to read and write to an unbounded range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article describes how to read and write to an unbounded range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
 An unbounded range address is a range address that specifies either entire columns or entire rows. For example:
 
@@ -20,7 +20,7 @@ When the API makes a request to retrieve an unbounded range (for example, `getRa
 
 ## Write to an unbounded range
 
-You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on an unbounded range because the input request is too large. For example, the following code snippet is not valid because it attempts to specify `values` for an unbounded range. The API returns an error if you attempt to set cell-level properties for an unbounded range.
+You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on an unbounded range because the input request is too large. For example, the following code example is not valid because it attempts to specify `values` for an unbounded range. The API returns an error if you attempt to set cell-level properties for an unbounded range.
 
 ```js
 // Note: This code sample attempts to specify `values` for an unbounded range, which is not a valid request. The sample will return an error. 

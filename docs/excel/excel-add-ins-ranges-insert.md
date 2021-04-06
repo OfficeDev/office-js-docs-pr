@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Insert a range of cells using the Excel JavaScript API
 
-This article provides a code sample that shows how to insert a range of cells with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides a code sample that inserts a range of cells with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see the [Excel.Range class](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
