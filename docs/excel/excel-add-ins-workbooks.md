@@ -1,7 +1,8 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
-description: 'Code samples that show how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
+description: 'Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
 ms.date: 04/05/2021
+ms.prod: excel
 localization_priority: Normal
 ---
 
@@ -363,4 +364,3 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
-- [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md)
