@@ -1,7 +1,7 @@
 ---
 title: Shared runtime requirement sets
 description: 'Specifies the platforms and Office applications that support the SharedRuntime APIs.'
-ms.date: 04/06/2021
+ms.date: 04/07/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -18,8 +18,7 @@ The following table lists the SharedRuntime 1.1 requirement set, the Office clie
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | SharedRuntime 1.1  | N/A | Version 2002 (Build 12527.20092) or later | N/A | 16.35 or later | February 2020 | N/A |
 
-> [!IMPORTANT]
-> The SharedRuntime requirement set is supported only on Excel.
+[!include[Shared JavaScript runtime requirements](../../includes/shared-runtime-requirements-note.md)]
 
 ## Office versions and build numbers
 
