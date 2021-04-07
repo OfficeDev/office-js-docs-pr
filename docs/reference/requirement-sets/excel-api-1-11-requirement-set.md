@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.11
 description: 'Details about the ExcelApi 1.11 requirement set.'
-ms.date: 11/09/2020
+ms.date: 04/01/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -15,7 +15,7 @@ The ExcelApi 1.11 improved support for comments and workbook-level controls (suc
 | Comment [Mentions](../../excel/excel-add-ins-comments.md#mentions) |Tags and notifies other workbook users through comments. | [Comment](/javascript/api/excel/excel.comment), [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
 | Comment [Resolution](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | Resolve comment threads and get the resolution status. | [Comment](/javascript/api/excel/excel.comment) |
 | [Culture settings](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | Gets cultural system settings for the workbook, such as number formatting. | [CultureInfo](/javascript/api/excel/excel.cultureinfo), [NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [Application](/javascript/api/excel/excel.application) |
-| [Cut and paste (moveTo)](../../excel/excel-add-ins-ranges-advanced.md#cut-copy-and-paste) | Replicates the cut-and-paste functionality in Excel for a Range. | [Range](/javascript/api/excel/excel.range) |
+| [Cut and paste (moveTo)](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | Replicates the cut-and-paste functionality in Excel for a Range. | [Range](/javascript/api/excel/excel.range) |
 | Workbook [Save](../../excel/excel-add-ins-workbooks.md#save-the-workbook) and [Close](../../excel/excel-add-ins-workbooks.md#close-the-workbook) | Save and close workbooks. | [Workbook](/javascript/api/excel/excel.workbook) |
 | Worksheet events | Additional events and event information for worksheet calculations and hidden rows. | [WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs), [WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs) |
 
