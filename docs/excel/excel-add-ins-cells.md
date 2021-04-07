@@ -1,7 +1,7 @@
 ---
 title: Work with cells using the Excel JavaScript API.
 description: 'Learn the Excel JavaScript API definition of a cell, and learn how to work with cells.'
-ms.date: 04/02/2021
+ms.date: 04/07/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -23,14 +23,9 @@ The following list of Excel JavaScript APIs refer to cells.
 - [CellBorder](/javascript/api/excel/excel.cellborder)
 - [CellBorderCollection](/javascript/api/excel/excel.cellbordercollection)
 - [CellProperties](/javascript/api/excel/excel.cellproperties)
-- [CellPropertiesBorderLoadOptions](/javascript/api/excel/excel.cellpropertiesborderloadoptions)
 - [CellPropertiesFill](/javascript/api/excel/excel.cellpropertiesfill)
-- [CellPropertiesFillLoadOptions](/javascript/api/excel/excel.cellpropertiesfillloadoptions)
 - [CellPropertiesFont](/javascript/api/excel/excel.cellpropertiesfont)
-- [CellPropertiesFontLoadOptions](/javascript/api/excel/excel.cellpropertiesfontloadoptions)
 - [CellPropertiesFormat](/javascript/api/excel/excel.cellpropertiesformat)
-- [CellPropertiesFormatLoadOptions](/javascript/api/excel/excel.cellpropertiesformatloadoptions)
-- [CellPropertiesLoadOptions](/javascript/api/excel/excel.cellpropertiesloadoptions)
 - [CellPropertiesProtection](/javascript/api/excel/excel.cellpropertiesprotection)
 - [CellValueConditionalFormat](/javascript/api/excel/excel.cellvalueconditionalformat)
 - [ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule)
