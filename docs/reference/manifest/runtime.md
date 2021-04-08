@@ -1,7 +1,7 @@
 ---
 title: Runtime in the manifest file
 description: The Runtime element configures your add-in to use a shared JavaScript runtime for its various components, for example, ribbon, task pane, custom functions.
-ms.date: 04/07/2021
+ms.date: 04/08/2021
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ Configures your add-in to use a shared JavaScript runtime so that various compon
 
 **Add-in type:** Task pane, Mail
 
-[!include[Shared JavaScript runtime requirements](../../includes/shared-runtime-requirements-note.md)]
+[!include[Runtimes support](../../includes/runtimes-note.md)]
 
 ## Syntax
 

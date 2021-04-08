@@ -1,7 +1,7 @@
 ---
 title: Runtimes in the manifest file 
 description: The Runtimes element specifies your add-in's runtime.
-ms.date: 04/07/2021
+ms.date: 04/08/2021
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element.
 
 **Add-in type:** Task pane, Mail
 
-[!include[Shared JavaScript runtime requirements](../../includes/shared-runtime-requirements-note.md)]
+[!include[Runtimes support](../../includes/runtimes-note.md)]
 
 ## Syntax
 

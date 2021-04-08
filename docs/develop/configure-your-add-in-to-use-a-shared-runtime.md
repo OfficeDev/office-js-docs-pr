@@ -1,5 +1,5 @@
 ---
-ms.date: 04/07/2021
+ms.date: 04/08/2021
 title: "Configure your Office Add-in to use a shared JavaScript runtime"
 ms.prod: non-product-specific
 description: 'Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.'
@@ -219,7 +219,7 @@ Don't design your add-in to use multiple task panes if you are planning to use a
 
 ## Give us feedback
 
-We'd love to hear your feedback on this feature. If you find any bugs, issues, or have requests on this feature, please let us know by going to the **Feedback** section at the bottom of the page, then selecting **This page** to create a GitHub issue.
+We'd love to hear your feedback on this feature. If you find any bugs, issues, or have requests on this feature, please let us know by creating a GitHub issue in the [office-js repo](https://github.com/OfficeDev/office-js).
 
 ## See also
 
