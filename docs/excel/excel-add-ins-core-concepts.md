@@ -1,7 +1,8 @@
 ---
 title: Excel JavaScript object model in Office Add-ins
 description: 'Learn the key object types in the Excel JavaScript APIs and how to use them to build add-ins for Excel.'
-ms.date: 09/03/2020
+ms.date: 04/05/2021
+ms.prod: excel
 localization_priority: Priority
 ---
 
@@ -38,6 +39,8 @@ To understand the Excel APIs, you must understand how the components of a workbo
 * A **Range** represents a group of contiguous cells.
 * **Ranges** are used to create and place **Tables**, **Charts**, **Shapes**, and other data visualization or organization objects.
 * **Workbooks** contain collections of some of those data objects (such as **Tables**) for the entire **Workbook**.
+
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ### Ranges
 
@@ -93,7 +96,7 @@ This sample creates the following data in the current worksheet:
 
 ![A sales record showing value rows, a formula column, and formatted headers.](../images/excel-overview-range-sample.png)
 
-For more information, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
+For more information, see [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md).
 
 ### Charts, tables, and other data objects
 
