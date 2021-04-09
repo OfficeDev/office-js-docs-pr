@@ -221,8 +221,8 @@ The following example makes empty data cells display the string "--", formats th
 
 ```js
 Excel.run(function (context) {
-    const pivotTable = context.workbook.pivotTables.getItem("Farm Sales");
-    const pivotLayout = pivotTable.layout;
+    var pivotTable = context.workbook.pivotTables.getItem("Farm Sales");
+    var pivotLayout = pivotTable.layout;
 
     // This sets a default value for an empty cell in the PivotTable. This does not include cells left blank by the layout.
     pivotLayout.emptyCellText = "--";
