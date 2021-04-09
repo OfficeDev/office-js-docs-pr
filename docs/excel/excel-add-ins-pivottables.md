@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 01/26/2021
+ms.date: 04/09/2021
 localization_priority: Normal
 ---
 
@@ -23,9 +23,9 @@ The [PivotTable](/javascript/api/excel/excel.pivottable) is the central object f
 - A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) that has multiple [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
 - These [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) can be added to specific hierarchy collections to define how the PivotTable pivots data (as explained in the [following section](#hierarchies)).
 - A [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contains a [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) that has exactly one [PivotField](/javascript/api/excel/excel.pivotfield). If the design expands to include OLAP PivotTables, this may change.
-- A [PivotField](/javascript/api/excel/excel.pivotfield) can have one or more [PivotFilters](/javascript/api/excel/excel.pivotfilters) applied, as long as the field's [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) is assigned to a hierarchy category. 
+- A [PivotField](/javascript/api/excel/excel.pivotfield) can have one or more [PivotFilters](/javascript/api/excel/excel.pivotfilters) applied, as long as the field's [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) is assigned to a hierarchy category.
 - A [PivotField](/javascript/api/excel/excel.pivotfield) contains a [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) that has multiple [PivotItems](/javascript/api/excel/excel.pivotitem).
-- A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotLayout](/javascript/api/excel/excel.pivotlayout) that defines where the [PivotFields](/javascript/api/excel/excel.pivotfield) and [PivotItems](/javascript/api/excel/excel.pivotitem) are displayed in the worksheet.
+- A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotLayout](/javascript/api/excel/excel.pivotlayout) that defines where the [PivotFields](/javascript/api/excel/excel.pivotfield) and [PivotItems](/javascript/api/excel/excel.pivotitem) are displayed in the worksheet. The layout also controls some display settings for the PivotTable.
 
 Let's look at how these relationships apply to some example data. The following data describes fruit sales from various farms. It will be the example throughout this article.
 
@@ -177,7 +177,7 @@ The following diagram shows which layout function calls correspond to which rang
 
 ### Get data from the PivotTable
 
-The layout defines how the PivotTable is displayed in the worksheet. This means the `PivotLayout` object controls the ranges used for PivotTable elements. Use the ranges provided by the layout to get data collected and aggregated by the PivotTable. In particular, use `PivotLayout.getDataBodyRange` to access what the PivotTable produces.
+The layout defines how the PivotTable is displayed in the worksheet. This means the `PivotLayout` object controls the ranges used for PivotTable elements. Use the ranges provided by the layout to get data collected and aggregated by the PivotTable. In particular, use `PivotLayout.getDataBodyRange` to access the data produced by the PivotTable.
 
 The following code demonstrates how to get the last row of the PivotTable data by going through the layout (the **Grand Total** of both the **Sum of Crates Sold at Farm** and **Sum of Crates Sold Wholesale** columns in the earlier example). Those values are then summed together for a final total, which is displayed in cell **E30** (outside of the PivotTable).
 
@@ -211,6 +211,34 @@ The following examples use the outline and tabular styles, respectively. The cod
 
 ![A PivotTable using the tabular layout.](../images/excel-pivots-tabular-layout.png)
 
+### Other PivotLayout functions
+
+By default, PivotTables adjust row and column sizes as needed. This is done when the PivotTable is refreshed. `PivotLayout.autoFormat` specifies that behavior. Any row or column size changes made by your add-in persist when `autoFormat` is `false`. Additionally, the default settings of a PivotTable keep any custom formatting in the PivotTable (such as fills and font changes). Set `PivotLayout.preserveFormatting` to `false` to apply the default format when refreshed.
+
+A `PivotLayout`also controls header and total row settings, how empty data cells are displayed, and [alt text](https://support.microsoft.com/topic/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669) options. The [PivotLayout](/javascript/api/excel/excel.pivotlayout) reference provides a complete list of these features.
+
+The following example makes empty data cells display the string "--", formats the body range to a consistent horizontal alignment, and ensures the formatting changes will stay after the PivotTable is refreshed.
+
+```js
+Excel.run(function (context) {
+    const pivotTable = context.workbook.pivotTables.getItem("Farm Sales");
+    const pivotLayout = pivotTable.layout;
+
+    // This sets a default value for an empty cell in the PivotTable. This does not include cells left blank by the layout.
+    pivotLayout.emptyCellText = "--";
+
+    // Set the text alignment to match the rest of the PivotTable.
+    pivotLayout.getDataBodyRange().format.horizontalAlignment = Excel.HorizontalAlignment.right;
+
+    // This turns ensures empty cells are filled with a default value.
+    pivotLayout.fillEmptyCells = true;
+
+    // This ensure the PivotTable keeps any formatting that's been set after it is refreshed and recalculated.
+    pivotLayout.preserveFormatting = true;
+    return context.sync();
+});
+```
+
 ## Delete a PivotTable
 
 PivotTables are deleted by using their name.
@@ -224,15 +252,15 @@ Excel.run(function (context) {
 
 ## Filter a PivotTable
 
-The primary method for filtering PivotTable data is with PivotFilters. Slicers offer an alternate, less flexible filtering method. 
+The primary method for filtering PivotTable data is with PivotFilters. Slicers offer an alternate, less flexible filtering method.
 
-[PivotFilters](/javascript/api/excel/excel.pivotfilters) filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). There are four types of PivotFilters, allowing calendar date-based filtering, string parsing, number comparison, and filtering based on a custom input. 
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) filter data based on a PivotTable's four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). There are four types of PivotFilters, allowing calendar date-based filtering, string parsing, number comparison, and filtering based on a custom input.
 
-[Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. When applied to a PivotTable, slicers function like a [PivotManualFilter](#pivotmanualfilter) and allow filtering based on a custom input. Unlike PivotFilters, slicers have an [Excel UI component](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d). With the `Slicer` class, you create this UI component, manage filtering, and control its visual appearance. 
+[Slicers](/javascript/api/excel/excel.slicer) can be applied to both PivotTables and regular Excel tables. When applied to a PivotTable, slicers function like a [PivotManualFilter](#pivotmanualfilter) and allow filtering based on a custom input. Unlike PivotFilters, slicers have an [Excel UI component](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d). With the `Slicer` class, you create this UI component, manage filtering, and control its visual appearance.
 
 ### Filter with PivotFilters
 
-[PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on the four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are applied to a [PivotField](/javascript/api/excel/excel.pivotfield), and each `PivotField` can have one or more assigned `PivotFilters`. To apply PivotFilters to a PivotField, the field's corresponding [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) must be assigned to a hierarchy category. 
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) allow you to filter PivotTable data based on the four [hierarchy categories](#hierarchies) (filters, columns, rows, and values). In the PivotTable object model, `PivotFilters` are applied to a [PivotField](/javascript/api/excel/excel.pivotfield), and each `PivotField` can have one or more assigned `PivotFilters`. To apply PivotFilters to a PivotField, the field's corresponding [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) must be assigned to a hierarchy category.
 
 #### Types of PivotFilters
 
@@ -245,13 +273,13 @@ The primary method for filtering PivotTable data is with PivotFilters. Slicers o
 
 #### Create a PivotFilter
 
-To filter PivotTable data with a `Pivot*Filter` (such as a `PivotDateFilter`), apply the filter to a [PivotField](/javascript/api/excel/excel.pivotfield). The following four code samples show how to use each of the four types of PivotFilters. 
+To filter PivotTable data with a `Pivot*Filter` (such as a `PivotDateFilter`), apply the filter to a [PivotField](/javascript/api/excel/excel.pivotfield). The following four code samples show how to use each of the four types of PivotFilters.
 
 ##### PivotDateFilter
 
-The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** PivotField, hiding any data prior to **2020-08-01**. 
+The first code sample applies a [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) to the **Date Updated** PivotField, hiding any data prior to **2020-08-01**.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > A `Pivot*Filter` can't be applied to a PivotField unless that field's PivotHierarchy is assigned to a hierarchy category. In the following code sample, the `dateHierarchy` must be added to the PivotTable's `rowHierarchies` category before it can be used for filtering.
 
 ```js
@@ -288,7 +316,7 @@ Excel.run(function (context) {
 
 ##### PivotLabelFilter
 
-The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) to the **Type** PivotField, using the `LabelFilterCondition.beginsWith` property to exclude labels that start with the letter **L**. 
+The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) to the **Type** PivotField, using the `LabelFilterCondition.beginsWith` property to exclude labels that start with the letter **L**.
 
 ```js
     // Get the "Type" field.
@@ -307,7 +335,7 @@ The second code snippet demonstrates how to apply a [PivotLabelFilter](/javascri
 
 ##### PivotManualFilter
 
-The third code snippet applies a manual filter with [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) to the the **Classification** field, filtering out data that doesn't include the classification **Organic**. 
+The third code snippet applies a manual filter with [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) to the the **Classification** field, filtering out data that doesn't include the classification **Organic**.
 
 ```js
     // Apply a manual filter to include only a specific PivotItem (the string "Organic").
@@ -318,7 +346,7 @@ The third code snippet applies a manual filter with [PivotManualFilter](/javascr
 
 ##### PivotValueFilter
 
-To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), as shown in the final code snippet. The `PivotValueFilter` compares the data in the **Farm** PivotField to the data in the **Crates Sold Wholesale** PivotField, including only farms whose sum of crates sold exceeds the value **500**. 
+To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), as shown in the final code snippet. The `PivotValueFilter` compares the data in the **Farm** PivotField to the data in the **Crates Sold Wholesale** PivotField, including only farms whose sum of crates sold exceeds the value **500**.
 
 ```js
     // Get the "Farm" field.
@@ -337,7 +365,7 @@ To compare numbers, use a value filter with [PivotValueFilter](/javascript/api/e
 
 #### Remove PivotFilters
 
-To remove all PivotFilters, apply the `clearAllFilters` method to each PivotField, as shown in the following code sample. 
+To remove all PivotFilters, apply the `clearAllFilters` method to each PivotField, as shown in the following code sample.
 
 ```js
 Excel.run(function (context) {
