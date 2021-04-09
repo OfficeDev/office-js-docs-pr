@@ -1,12 +1,14 @@
 ---
-ms.date: 07/10/2020
+ms.date: 04/08/2021
 description: Learn how to debug your Excel custom functions that don't use a task pane.
 title: UI-less custom functions debugging
 localization_priority: Normal
 ---
 # UI-less custom functions debugging
 
-Debugging for custom functions that don't use a task pane or other user interface elements (UI-less custom functions) can be accomplished by multiple means, depending on what platform you're using.
+Debugging for custom functions that don't use a task pane or other user interface elements (UI-less custom functions) can be accomplished by multiple means, depending on what platform you're using. 
+
+A UI-less custom function uses `OfficeRuntime`, a JavaScript runtime that is designed to optimize performance of calculations. To learn more about UI-less custom functions, see [Runtime for UI-less Excel custom functions](custom-functions-runtime.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -27,7 +29,7 @@ On Mac:
 
 ## Requirements
 
-Before starting to debug, you should use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
+This debugging process only works for UI-less custom functions, which are custom functions that use the `OfficeRuntime` JavaScript runtime. This debugging process doesn't work with custom functions that use the `SharedRuntime` JavaScript runtime, or with custom functions that use the `CustomFunctionsRuntime` JavaScript runtime. 
 
 ## Use the VS Code debugger for Excel Desktop
 
