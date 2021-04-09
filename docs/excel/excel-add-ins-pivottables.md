@@ -217,6 +217,9 @@ By default, PivotTables adjust row and column sizes as needed. This is done when
 
 A `PivotLayout`also controls header and total row settings, how empty data cells are displayed, and [alt text](https://support.microsoft.com/topic/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669) options. The [PivotLayout](/javascript/api/excel/excel.pivotlayout) reference provides a complete list of these features.
 
+> [!NOTE]
+> Some of the PivotLayout functionality mentioned here is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
 The following example makes empty data cells display the string "--", formats the body range to a consistent horizontal alignment, and ensures the formatting changes will stay after the PivotTable is refreshed.
 
 ```js
