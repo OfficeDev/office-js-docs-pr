@@ -27,7 +27,7 @@ On Mac:
 
 ## Requirements
 
-This debugging process works **only** for UI-less custom functions, which don't use a task pane or other UI elements. A UI-less custom function can be created by following the steps in the [Create custom functions in Excel](custom-functions-overview.md) tutorial, and then removing all of the task pane and UI elements that are installed by the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).
+This debugging process works **only** for UI-less custom functions, which don't use a task pane or other UI elements. A UI-less custom function can be created by following the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial, and then removing all of the task pane and UI elements that are installed by the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).
 
 Note that this debugging process is not compatible with custom functions projects using [Shared Runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
