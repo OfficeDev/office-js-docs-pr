@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: 'Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.'
-ms.date: 02/02/2021
+ms.date: 04/13/2021
 localization_priority: Normal
 ---
 
@@ -201,11 +201,11 @@ There are many keyboard shortcuts that are already being used by Office. Ideally
 
 In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut, note that the action name that is displayed in this dialog is the `name` property in the action object in `shortcuts.json` file.
 
-<insert pic of conflict UI>
+![Illustration showing a conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
 
 The user can select which action the keyboard shortcut will take, after making the selection, the preference will be saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the "Reset Office Add-ins Shortcut Preferences" command from the Tell Me search box:
 
-<insert pic of tell me action>
+![Illustration showing the reset office add-in shortcut preferences action in the tell me search box for Excel.](../images/add-in-reset-shortcuts-action.png)
 
 For the best user experience, we recommend that you minimize conflicts with Excel with these good practices:
 
