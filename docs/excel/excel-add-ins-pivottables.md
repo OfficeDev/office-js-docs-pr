@@ -215,28 +215,28 @@ The following examples use the outline and tabular styles, respectively. The cod
 
 By default, PivotTables adjust row and column sizes as needed. This is done when the PivotTable is refreshed. `PivotLayout.autoFormat` specifies that behavior. Any row or column size changes made by your add-in persist when `autoFormat` is `false`. Additionally, the default settings of a PivotTable keep any custom formatting in the PivotTable (such as fills and font changes). Set `PivotLayout.preserveFormatting` to `false` to apply the default format when refreshed.
 
-A `PivotLayout`also controls header and total row settings, how empty data cells are displayed, and [alt text](https://support.microsoft.com/topic/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669) options. The [PivotLayout](/javascript/api/excel/excel.pivotlayout) reference provides a complete list of these features.
+A `PivotLayout` also controls header and total row settings, how empty data cells are displayed, and [alt text](https://support.microsoft.com/topic/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669) options. The [PivotLayout](/javascript/api/excel/excel.pivotlayout) reference provides a complete list of these features.
 
 > [!NOTE]
 > Some of the PivotLayout functionality mentioned here is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-The following example makes empty data cells display the string "--", formats the body range to a consistent horizontal alignment, and ensures the formatting changes will stay after the PivotTable is refreshed.
+The following code sample makes empty data cells display the string `"--"`, formats the body range to a consistent horizontal alignment, and ensures that the formatting changes remain even after the PivotTable is refreshed.
 
 ```js
 Excel.run(function (context) {
     var pivotTable = context.workbook.pivotTables.getItem("Farm Sales");
     var pivotLayout = pivotTable.layout;
 
-    // This sets a default value for an empty cell in the PivotTable. This does not include cells left blank by the layout.
+    // Set a default value for an empty cell in the PivotTable. This doesn't include cells left blank by the layout.
     pivotLayout.emptyCellText = "--";
 
     // Set the text alignment to match the rest of the PivotTable.
     pivotLayout.getDataBodyRange().format.horizontalAlignment = Excel.HorizontalAlignment.right;
 
-    // This turns ensures empty cells are filled with a default value.
+    // Ensure empty cells are filled with a default value.
     pivotLayout.fillEmptyCells = true;
 
-    // This ensure the PivotTable keeps any formatting that's been set after it is refreshed and recalculated.
+    // Ensure that the format settings persist, even after the PivotTable is refreshed and recalculated.
     pivotLayout.preserveFormatting = true;
     return context.sync();
 });
