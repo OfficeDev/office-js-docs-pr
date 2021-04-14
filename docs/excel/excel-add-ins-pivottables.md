@@ -211,6 +211,28 @@ The following examples use the outline and tabular styles, respectively. The cod
 
 ![A PivotTable using the tabular layout.](../images/excel-pivots-tabular-layout.png)
 
+#### LayoutType switch sample
+
+```js
+Excel.run(function (context) {
+    // This changes the PivotLayout.type to a new type.
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    pivotTable.layout.load("layoutType");
+    return context.sync().then(function () {
+        // Cycle between the three layout types.
+        if (pivotTable.layout.layoutType === "Compact") {
+            pivotTable.layout.layoutType = "Outline";
+        } else if (pivotTable.layout.layoutType === "Outline") {
+            pivotTable.layout.layoutType = "Tabular";
+        } else {
+            pivotTable.layout.layoutType = "Compact";
+        }
+    
+        return context.sync();
+    });
+});
+```
+
 ### Other PivotLayout functions
 
 By default, PivotTables adjust row and column sizes as needed. This is done when the PivotTable is refreshed. `PivotLayout.autoFormat` specifies that behavior. Any row or column size changes made by your add-in persist when `autoFormat` is `false`. Additionally, the default settings of a PivotTable keep any custom formatting in the PivotTable (such as fills and font changes). Set `PivotLayout.preserveFormatting` to `false` to apply the default format when refreshed.
