@@ -211,7 +211,7 @@ The following examples use the outline and tabular styles, respectively. The cod
 
 ![A PivotTable using the tabular layout.](../images/excel-pivots-tabular-layout.png)
 
-#### LayoutType switch sample
+#### PivotLayout type switch code sample
 
 ```js
 Excel.run(function (context) {
