@@ -215,7 +215,7 @@ The following examples use the outline and tabular styles, respectively. The cod
 
 ```js
 Excel.run(function (context) {
-    // This changes the PivotLayout.type to a new type.
+    // Change the PivotLayout.type to a new type.
     var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.layout.load("layoutType");
     return context.sync().then(function () {
