@@ -19,13 +19,13 @@ There are two main scenarios for using tags:
 
 ## Tagging slides and shapes
 
-A tag is a key-value pair, where the value is always of type `string` and is represented by a [Tag](/javascript/api/powerpoint/powerpoint.tag) object. Each type of parent object, [Presentation](/javascript/api/powerpoint/powerpoint.presentation), [Slide](/javascript/api/powerpoint/powerpoint.slide), and [Shape](/javascript/api/powerpoint/powerpoint.shape) object has a `tags` property of type [TagsCollection](/javascript/api/powerpoint/powerpoint.tagcollection).
+A tag is a key-value pair, where the value is always of type `string` and is represented by a [Tag](/javascript/api/powerpoint/powerpoint.tag) object. Each type of parent object, such as a [Presentation](/javascript/api/powerpoint/powerpoint.presentation), [Slide](/javascript/api/powerpoint/powerpoint.slide), or [Shape](/javascript/api/powerpoint/powerpoint.shape) object, has a `tags` property of type [TagsCollection](/javascript/api/powerpoint/powerpoint.tagcollection).
 
 ### Adding, updating, and deleting tags
 
 To add a tag to an object, call the [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) method of the parent object's `tags` property. The following is an example of adding a two tags to the first slide of a presentation. About this code, note:
 
-- The first parameter of the `add` method is the key.
+- The first parameter of the `add` method is the key in the key-value pair. 
 - The second parameter is the value.
 - The key is in uppercase letters. This isn't strictly mandatory for the `add` method; however, the key is always stored by PowerPoint as uppercase, and *some tag-related methods do require that the key be expressed in uppercase*, so we recommend as a best practice that you always use uppercase in your code for a tag key.
 
@@ -81,9 +81,9 @@ Consider the following scenario: Contoso Consulting has a presentation they show
 2. Create a method to get the index of the selected slide. The following is an example. Note about this code:
 
     - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs.
-    - The call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
+    - The call to `getSelectedDataAsync` is embedded in a promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` returns an array because multiple slides can be selected. In this scenario, the user has selected just one, so the code gets the first (0th) slide, which is the only one selected.
-    - The `index` value of the slide is the 1-based value the user sees beside the slide in the thumbnails pane.
+    - The `index` value of the slide is the 1-based value the user sees beside the slide in the PowerPoint UI thumbnails pane.
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -133,7 +133,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
 
 ## Setting custom metadata on the presentation
 
-Add-ins can also apply tags to the presentation as a whole. This enables you to use tags for document-level metadata similar to how [CustomProperty](/javascript/api/word/word.customproperty)s are used in Word. But unlike Word `CustomProperty`s, the value of a PowerPoint tag can only be of type `string`.
+Add-ins can also apply tags to the presentation as a whole. This enables you to use tags for document-level metadata similar to how the [CustomProperty](/javascript/api/word/word.customproperty)class is used in Word. But unlike the Word `CustomProperty` class, the value of a PowerPoint tag can only be of type `string`.
 
 The following code is an example of adding a tag to a presentation. 
 
