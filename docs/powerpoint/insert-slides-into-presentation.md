@@ -1,13 +1,13 @@
 ---
-title: Insert and delete slides in a PowerPoint presentation
-description: 'Learn how to insert slides from one presentation into another and how to delete slides.'
-ms.date: 01/08/2021
+title: Insert slides in a PowerPoint presentation
+description: 'Learn how to insert slides from one presentation into another.'
+ms.date: 03/07/2021
 localization_priority: Normal
 ---
 
-# Insert and delete slides in a PowerPoint presentation
+# Insert slides in a PowerPoint presentation
 
-A PowerPoint add-in can insert slides from one presentation into the current presentation by using PowerPoint's application-specific JavaScript library. You can control whether the inserted slides keep the formatting of the source presentation or the formatting of the target presentation. You can also delete slides from the presentation.
+A PowerPoint add-in can insert slides from one presentation into the current presentation by using PowerPoint's application-specific JavaScript library. You can control whether the inserted slides keep the formatting of the source presentation or the formatting of the target presentation.
 
 The slide insertion APIs are primarily used in presentation template scenarios: There are a small number of known presentations which serve as pools of slides that can be inserted by the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as slide titles or images) with slide IDs. The APIs can also be used in scenarios where the user can insert slides from any arbitrary presentation, but in that scenario the user is effectively limited to inserting *all* the slides from the source presentation. See [Selecting which slides to insert](#selecting-which-slides-to-insert) for more information about this.
 
@@ -168,19 +168,3 @@ async function insertAfterSelectedSlide() {
 There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. For this reason, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
 
 Accordingly, the `sourceSlideIds` property is primarily used in presentation template scenarios: The add-in is designed to work with a specific set of presentations that serve as pools of slides that can be inserted. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as titles or images) with slide IDs or slide creation IDs that has been constructed from the set of possible source presentations.
-
-## Delete slides
-
-You can delete a slide by getting a reference to the [Slide](/javascript/api/powerpoint/powerpoint.slide) object that represents the slide and call the `Slide.delete` method. The following is an example in which the 4th slide is deleted.
-
-```javascript
-async function deleteSlide() {
-  await PowerPoint.run(async function(context) {
-
-    // The slide index is zero-based. 
-    const slide = context.presentation.slides.getItemAt(3);
-    slide.delete();
-    await context.sync();
-  });
-}
-```

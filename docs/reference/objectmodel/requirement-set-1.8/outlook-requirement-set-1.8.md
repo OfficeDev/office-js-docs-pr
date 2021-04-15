@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.8
 description: 'Requirement set 1.8 for Outlook add-in API.'
-ms.date: 10/14/2020
+ms.date: 03/10/2021
 localization_priority: Normal
 ---
 
@@ -31,7 +31,7 @@ Requirement set 1.8 includes all of the features of [Requirement set 1.7](../req
 - Added [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents a location. Read only.
 - Added [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the id of a location.
 - Added [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the categories master list on a mailbox.
-- Added [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the properties of an appointment or message item in a shared folder, calendar, or mailbox.
+- Added [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the properties of an appointment or message item in a shared folder.
 - Added [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md): Adds a child element to the [DesktopFormFactor](../../manifest/desktopformfactor.md) manifest element. It defines whether the add-in is available in delegate scenarios.
 - Added [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties): Adds a new property that represents the categories master list on a mailbox.
 - Added [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties): Adds a new property that represents the set of categories on an item.

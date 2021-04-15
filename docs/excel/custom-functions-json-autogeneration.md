@@ -1,5 +1,5 @@
 ---
-ms.date: 12/22/2020
+ms.date: 03/15/2021
 description: 'Use JSDoc tags to dynamically create your custom functions JSON metadata.'
 title: Autogenerate JSON metadata for custom functions
 localization_priority: Normal
@@ -41,13 +41,13 @@ The following JSDoc tags are supported in Excel custom functions.
 * [@helpurl](#helpurl) url
 * [@param](#param) _{type}_ name description
 * [@requiresAddress](#requiresAddress)
+* [@requiresParameterAddresses](#requiresParameterAddresses)
 * [@returns](#returns) _{type}_
 * [@streaming](#streaming)
 * [@volatile](#volatile)
 
 ---
 <a id="cancelable"></a>
-
 ### @cancelable
 
 Indicates that a custom function performs an action when the function is canceled.
@@ -128,7 +128,6 @@ In the following example, the phrase "A function that adds two numbers" is the d
 ```
 
 <a id="helpurl"></a>
-
 ### @helpurl
 
 Syntax: @helpurl _url_
@@ -147,7 +146,6 @@ In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
 ```
 
 <a id="param"></a>
-
 ### @param
 
 #### JavaScript
@@ -165,7 +163,7 @@ To denote a custom function parameter as optional:
 > [!NOTE]
 > The default value for optional parameters is `null`.
 
-The following example shows a ADD function that adds two or three numbers, with the third number as an optional parameter.
+The following example shows an ADD function that adds two or three numbers, with the third number as an optional parameter.
 
 ```js
 /**
@@ -218,7 +216,7 @@ function add(first: number, second: number): number {
 
 Indicates that the address of the cell where the function is being evaluated should be provided.
 
-The last function parameter must be of type `CustomFunctions.Invocation` or a derived type. When the function is called, the `address` property will contain the address.
+The last function parameter must be of type `CustomFunctions.Invocation` or a derived type to use `@requiresAddress`. When the function is called, the `address` property will contain the address.
 
 The following sample shows how to use the `invocation` parameter in combination with `@requiresAddress` to return the address of the cell that invoked your custom function. See [Invocation parameter](custom-functions-parameter-options.md#invocation-parameter) for more information.
 
@@ -237,8 +235,39 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-<a id="returns"></a>
+<a id="requiresParameterAddresses"></a>
+### @requiresParameterAddresses
 
+Indicates that the function should return the addresses of input parameters. 
+
+The last function parameter must be of type `CustomFunctions.Invocation` or a derived type to use  `@requiresParameterAddresses`. The JSDoc comment must also include an `@returns` tag specifying that the return value be a matrix, such as `@returns {string[][]}` or `@returns {number[][]}`. See [Matrix types](#matrix-type) for additional information. 
+
+When the function is called, the `parameterAddresses` property will contain the addresses of the input parameters.
+
+The following sample shows how to use the `invocation` parameter in combination with `@requiresParameterAddresses` to return the addresses of three input parameters. See [Detect the address of a parameter](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. 
+
+```js
+/**
+ * Return the addresses of three parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array.
+ * @requiresParameterAddresses
+ */
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
+    [invocation.parameterAddresses[0]],
+    [invocation.parameterAddresses[1]],
+    [invocation.parameterAddresses[2]]
+  ];
+  return addresses;
+}
+```
+
+<a id="returns"></a>
 ### @returns
 
 Syntax: @returns {_type_}
@@ -263,7 +292,6 @@ function add(first: number, second: number): number {
 ```
 
 <a id="streaming"></a>
-
 ### @streaming
 
 Used to indicate that a custom function is a streaming function. 
@@ -278,7 +306,6 @@ Exceptions thrown by a streaming function are ignored. `setResult()` may be call
 Streaming functions can't be marked as [@volatile](#volatile).
 
 <a id="volatile"></a>
-
 ### @volatile
 
 A volatile function is one whose result isn't the same from one moment to the next, even if it takes no arguments or the arguments haven't changed. Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done. For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.
@@ -310,7 +337,7 @@ A single value may be represented using one of the following types: `boolean`, `
 
 ### Matrix type
 
-Use a two-dimensional array type to have the parameter or return value be a matrix of values. For example, the type `number[][]` indicates a matrix of numbers. `string[][]` indicates a matrix of strings.
+Use a two-dimensional array type to have the parameter or return value be a matrix of values. For example, the type `number[][]` indicates a matrix of numbers and `string[][]` indicates a matrix of strings.
 
 ### Error type
 
@@ -320,7 +347,7 @@ A streaming function can indicate an error by calling `setResult()` with an Erro
 
 ### Promise
 
-A function can return a Promise, that provides the value when the promise is resolved. If the promise is rejected, then it will throw an error.
+A custom function can return a promise that provides the value when the promise is resolved. If the promise is rejected, then the custom function will throw an error.
 
 ### Other types
 

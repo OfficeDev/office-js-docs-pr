@@ -1,7 +1,7 @@
 ---
 title: ProgId element in the manifest file
 description: The ProgId element specifies the programmatic ID of the equivalent COM add-in for your web add-in's task pane.
-ms.date: 06/19/2019
+ms.date: 03/09/2021
 localization_priority: Normal
 ---
 
@@ -19,9 +19,9 @@ Specifies the programmatic identifier of the equivalent COM add-in for the task 
 
 ## Contained in
 
-[EquivalentAdd-in](equivalentaddin.md)
+[EquivalentAddin](equivalentaddin.md)
 
 ## See also
 
 - [Make your custom functions compatible with XLL user-defined functions](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [Make your Excel add-in compatible with an existing COM add-in](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Make your Office Add-in compatible with an existing COM add-in](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

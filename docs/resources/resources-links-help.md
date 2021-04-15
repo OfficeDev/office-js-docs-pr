@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins additional resources
 description: 'Useful resources on the topic of Office Add-ins'
-ms.date: 10/14/2020
+ms.date: 04/14/2021
 localization_priority: Normal
 ---
 
@@ -13,7 +13,7 @@ These resources provide additional information and support for developing Office
 |-----------------|------------|
 |**Office JavaScript API questions** | Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Please note that Stack Overflow has guidelines such as requiring a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic; new users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details.|
 |**Office JavaScript API issues**| If you encounter an issue (bug) with the Office JavaScript API, please submit an issue to the <a href="https://github.com/officedev/office-js/issues" target="_blank">OfficeDev/office-js</a> GitHub repository.|
-|**Office JavaScript API feature requests**| To submit a feature request for the Office JavaScript API, please use the <a href="https://officespdev.uservoice.com/" target="_blank">Office Developer Platform UserVoice page</a>.|
+|**Office JavaScript API feature requests**| To submit a feature request for the Office JavaScript API, please post your idea to the [Microsoft 365 Developer Platform Tech Community](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform).|
 |**Documentation issues**| If you encounter an issue (bug) with the documentation, please submit an issue to the <a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">OfficeDev/office-js-docs-pr</a> GitHub repository.|
 |**Documentation updates**| To make changes to the documentation yourself, choose the **Edit** link on an article and submit a pull request to the <a href="https://github.com/officedev/office-js-docs-pr" target="_blank">OfficeDev/office-js-docs-pr</a> GitHub repository.|
 |**Script Lab**| If you want to explore Office JavaScript APIs or try out preview APIs, you can use Script Lab in Excel, Outlook, PowerPoint, and Word. To learn more, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md). |

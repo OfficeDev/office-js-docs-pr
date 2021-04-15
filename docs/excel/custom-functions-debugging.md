@@ -1,12 +1,12 @@
 ---
-ms.date: 07/10/2020
+ms.date: 04/09/2021
 description: Learn how to debug your Excel custom functions that don't use a task pane.
 title: UI-less custom functions debugging
 localization_priority: Normal
 ---
 # UI-less custom functions debugging
 
-Debugging for custom functions that don't use a task pane or other user interface elements (UI-less custom functions) can be accomplished by multiple means, depending on what platform you're using.
+This article discusses debugging *only* for custom functions that don't use a task pane or other user interface elements (UI-less custom functions). 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -27,7 +27,9 @@ On Mac:
 
 ## Requirements
 
-Before starting to debug, you should use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create a custom functions project. For guidance about how to create a custom functions project, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
+This debugging process works **only** for UI-less custom functions, which don't use a task pane or other UI elements. A UI-less custom function can be created by following the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial, and then removing all of the task pane and UI elements that are installed by the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).
+
+Note that this debugging process is not compatible with custom functions projects using a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## Use the VS Code debugger for Excel Desktop
 
@@ -44,9 +46,9 @@ You can use VS Code to debug UI-less custom functions in Office Excel on the des
 
 ### Start the VS Code debugger
 
-4. Choose **View > Debug** or enter **Ctrl+Shift+D** to switch to debug view.
-5. From the Debug options, choose **Excel Desktop**.
-6. Select **F5** (or choose **Debug -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
+4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
+5. From the Run drop-down menu, choose **Excel Desktop (Edge Chromium)**.
+6. Select **F5** (or select **Run -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
 
 ### Start debugging
 
@@ -68,11 +70,11 @@ You can use VS Code to debug UI-less custom functions in Excel on the Microsoft 
 
 ### Start the VS Code debugger
 
-4. Choose **View > Debug** or enter **Ctrl+Shift+D** to switch to debug view.
-5. From the Debug options, choose **Office Online (Microsoft Edge)**.
+4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
+5. From the Debug options, choose **Office Online (Edge Chromium)**.
 6. Open Excel in the Microsoft Edge browser and create a new workbook.
 7. Choose **Share** in the ribbon and copy the link for the URL for this new workbook.
-8. Select **F5** (or choose **Debug > Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
+8. Select **F5** (or select **Run > Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
 9. Paste in the URL for your workbook and press Enter.
 
 ### Sideload your add-in
