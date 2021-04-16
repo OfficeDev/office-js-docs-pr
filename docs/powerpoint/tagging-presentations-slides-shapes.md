@@ -17,13 +17,13 @@ There are two main scenarios for using tags:
 - When applied to a slide or a shape, a tag enables the object to be categorized for batch processing. For example, suppose a presentation has some slides that should be included in presentations to the East region but not the West region. Similarly, there are alternative slides that should be shown only to the West. Your add-in can create a tag with the key `REGION` and the value `East` and apply it to the slides that should only be used in the East. The tag's value is set to `West` for the slides that should only be shown to the West region. Just before a presentation to the East, a button in the add-in runs code that loops through all the slides checking the value of the `REGION` tag. Slides where the region is `West` are deleted. The user then closes the add-in and starts the slide show.
 - When applied to a presentation, a tag is effectively a custom property in the presentation document (similar to a [CustomProperty](/javascript/api/word/word.customproperty) in Word).
 
-## Tagging slides and shapes
+## Tag slides and shapes
 
 A tag is a key-value pair, where the value is always of type `string` and is represented by a [Tag](/javascript/api/powerpoint/powerpoint.tag) object. Each type of parent object, such as a [Presentation](/javascript/api/powerpoint/powerpoint.presentation), [Slide](/javascript/api/powerpoint/powerpoint.slide), or [Shape](/javascript/api/powerpoint/powerpoint.shape) object, has a `tags` property of type [TagsCollection](/javascript/api/powerpoint/powerpoint.tagcollection).
 
-### Adding, updating, and deleting tags
+### Add, update, and delete tags
 
-To add a tag to an object, call the [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) method of the parent object's `tags` property. The following is an example of adding a two tags to the first slide of a presentation. About this code, note:
+To add a tag to an object, call the [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) method of the parent object's `tags` property. The following code adds two tags to the first slide of a presentation. About this code, note:
 
 - The first parameter of the `add` method is the key in the key-value pair. 
 - The second parameter is the value.
@@ -41,7 +41,7 @@ async function addMultipleSlideTags() {
 }
 ```
 
-The `add` method is also used to update a tag. The following example, changes the value of the `PLANET` tag.
+The `add` method is also used to update a tag. The following code changes the value of the `PLANET` tag.
 
 ```javascript
 async function updateTag() {
@@ -54,11 +54,11 @@ async function updateTag() {
 }
 ```
 
-To delete a tag, call the `delete` method on it's parent `TagsCollection` object and pass the key of the tag as the parameter. An example is in [Setting custom metadata on the presentation](#setting-custom-metadata-on-the-presentation).
+To delete a tag, call the `delete` method on it's parent `TagsCollection` object and pass the key of the tag as the parameter. For an example, see [Set custom metadata on the presentation](#set-custom-metadata-on-the-presentation).
 
-### Using tags to selectively process slides and shapes
+### Use tags to selectively process slides and shapes
 
-Consider the following scenario: Contoso Consulting has a presentation they show to all new customers. But some slides should only be shown to customers that have paid for "premium" status. Before showing the presentation to non-premium customers, they make a copy of it and delete the slides that only premium customers should see. An add-in enables Contoso to tag which slides are for premium customers and to delete these slides when needed. The following are the major coding steps to create this functionality.
+Consider the following scenario: Contoso Consulting has a presentation they show to all new customers. But some slides should only be shown to customers that have paid for "premium" status. Before showing the presentation to non-premium customers, they make a copy of it and delete the slides that only premium customers should see. An add-in enables Contoso to tag which slides are for premium customers and to delete these slides when needed. The following list outlines the major coding steps to create this functionality.
 
 1. Create a method that tags the currently selected slide as intended for `Premium` customers. About this code, note:
 
@@ -78,7 +78,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
     }
     ```
 
-2. Create a method to get the index of the selected slide. The following is an example. Note about this code:
+2. The following code creates a method to get the index of the selected slide. About this code, note:
 
     - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs.
     - The call to `getSelectedDataAsync` is embedded in a promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
@@ -104,7 +104,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
     }
     ```
 
-3. Create a method to delete slides that are tagged for premium customers. The following is an example. Note about this code:
+3. The following code creates a method to delete slides that are tagged for premium customers. About this code, note:
 
     - Because the `key` and `value` properties of the tags are going to be read after the `context.sync`, they must be loaded first.
 
@@ -131,7 +131,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
     }
     ```
 
-## Setting custom metadata on the presentation
+## Set custom metadata on the presentation
 
 Add-ins can also apply tags to the presentation as a whole. This enables you to use tags for document-level metadata similar to how the [CustomProperty](/javascript/api/word/word.customproperty)class is used in Word. But unlike the Word `CustomProperty` class, the value of a PowerPoint tag can only be of type `string`.
 
