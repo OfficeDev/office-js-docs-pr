@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API overview
 description: 'Learn more about the Excel JavaScript API'
-ms.date: 07/28/2020
+ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -24,7 +24,7 @@ For hands-on experience using the Excel JavaScript API to access objects in Exce
 
 ## Learn API capabilities
 
-Each major Excel API feature has an article exploring what that feature can do and the relevant object model.
+Each major Excel API feature has an article or set of articles exploring what that feature can do and the relevant object model.
 
 * [Charts](../../excel/excel-add-ins-charts.md)
 * [Comments](../../excel/excel-add-ins-comments.md)
@@ -32,9 +32,9 @@ Each major Excel API feature has an article exploring what that feature can do a
 * [Custom functions](../../excel/custom-functions-overview.md)
 * [Data validation](../../excel/excel-add-ins-data-validation.md)
 * [Events](../../excel/excel-add-ins-events.md)
-* [Multiple ranges (RangeArea)](../../excel/excel-add-ins-multiple-ranges.md)
 * [PivotTables](../../excel/excel-add-ins-pivottables.md)
-* [Ranges](../../excel/excel-add-ins-ranges.md) and [Advanced Range APIs](../../excel/excel-add-ins-ranges-advanced.md)
+* [Ranges](../../excel/excel-add-ins-ranges-get.md) and [Cells](../../excel/excel-add-ins-cells.md)
+* [RangeAreas (Multiple ranges)](../../excel/excel-add-ins-multiple-ranges.md)
 * [Shapes](../../excel/excel-add-ins-shapes.md)
 * [Tables](../../excel/excel-add-ins-tables.md)
 * [Workbooks and Application-level APIs](../../excel/excel-add-ins-workbooks.md)

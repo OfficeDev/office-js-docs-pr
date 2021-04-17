@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs.'
-ms.date: 04/02/2021
+ms.date: 04/16/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -83,7 +83,11 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[clear()](/javascript/api/excel/excel.identitycollection#clear--)|Removes all user identities from the collection.|
 ||[getCount()](/javascript/api/excel/excel.identitycollection#getcount--)|Gets the number of items in the collection.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.identitycollection#getitemat-index-)|Gets a document user identity by using its index in the collection.|
+||[items](/javascript/api/excel/excel.identitycollection#items)|Gets the loaded child items in this collection.|
 ||[remove(assignee: Identity)](/javascript/api/excel/excel.identitycollection#remove-assignee-)|Removes a user identity from the collection.|
+|[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#displayname)|Represents the user's display name.|
+||[email](/javascript/api/excel/excel.identityentity#email)|Represents the user's email address.|
+||[id](/javascript/api/excel/excel.identityentity#id)|Represents the user's unique ID.|
 |[InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)|[positionType](/javascript/api/excel/excel.insertworksheetoptions#positiontype)|The insert position, in the current workbook, of the new worksheets.|
 ||[relativeTo](/javascript/api/excel/excel.insertworksheetoptions#relativeto)|The worksheet in the current workbook that is referenced for the `WorksheetPositionType` parameter.|
 ||[sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetnamestoinsert)|The names of individual worksheets to insert.|
@@ -157,6 +161,7 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[onFormulaChanged](/javascript/api/excel/excel.worksheet#onformulachanged)|Occurs when one or more formulas are changed in this worksheet.|
 ||[tabId](/javascript/api/excel/excel.worksheet#tabid)|Returns a value representing this worksheet that can be read by Open Office XML.|
 ||[tasks](/javascript/api/excel/excel.worksheet#tasks)|Returns a collection of tasks that are present in the worksheet.|
+|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggersource)|Represents the trigger source of the event.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Inserts the specified worksheets of a workbook into the current workbook.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Occurs when any worksheet's filter is applied in the workbook.|
 ||[onFormulaChanged](/javascript/api/excel/excel.worksheetcollection#onformulachanged)|Occurs when one or more formulas are changed in any worksheet of this collection.|

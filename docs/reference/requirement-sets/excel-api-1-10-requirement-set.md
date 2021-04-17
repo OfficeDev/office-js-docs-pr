@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.10
 description: 'Details about the ExcelApi 1.10 requirement set.'
-ms.date: 11/19/2020
+ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -13,7 +13,7 @@ The ExcelApi 1.10 introduced key features, such as commenting, outlines, and sli
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
 | [Comments](../../excel/excel-add-ins-comments.md) | Add, edit, and delete comments. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
-| [Outlines](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | Group rows and columns to form collapsible outlines. | [Range](/javascript/api/excel/excel.range), [Worksheet](/javascript/api/excel/excel.worksheet) |
+| [Outlines](../../excel/excel-add-ins-ranges-group.md) | Group rows and columns to form collapsible outlines. | [Range](/javascript/api/excel/excel.range), [Worksheet](/javascript/api/excel/excel.worksheet) |
 | [Slicers](../../excel/excel-add-ins-pivottables.md#filter-with-slicers) | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/excel.slicer) |
 | [More Worksheet Events](../../excel/excel-add-ins-events.md) | Listen for click and sort events in the worksheet. | [Worksheet (Events)](/javascript/api/excel/excel.worksheet#events) |
 

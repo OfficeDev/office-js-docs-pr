@@ -633,6 +633,9 @@ items:
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
       displayName: Excel
+    - name: Cells
+      href: excel/excel-add-ins-cells.md
+      displayName: Excel
     - name: Charts
       href: excel/excel-add-ins-charts.md
       displayName: Excel
@@ -642,14 +645,8 @@ items:
     - name: Comments
       href: excel/excel-add-ins-comments.md
       displayName: Excel
-    - name: Conditional formatting of ranges
-      href: excel/excel-add-ins-conditional-formatting.md
-      displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
-      displayName: Excel
-    - name: Delay execution while cell is being edited
-      href: excel/excel-add-ins-delay-in-cell-edit.md
       displayName: Excel
     - name: Error handling
       href: excel/excel-add-ins-error-handling.md
@@ -657,21 +654,71 @@ items:
     - name: Events
       href: excel/excel-add-ins-events.md
       displayName: Excel
-    - name: Multiple ranges
-      href: excel/excel-add-ins-multiple-ranges.md
-      displayName: Excel
     - name: Performance optimization
       href: excel/performance.md
       displayName: Excel
     - name: PivotTables
       href: excel/excel-add-ins-pivottables.md
       displayName: Excel
-    - name: Ranges (fundamental)
-      href: excel/excel-add-ins-ranges.md
-      displayName: Excel
-    - name: Ranges (advanced)
-      href: excel/excel-add-ins-ranges-advanced.md
-      displayName: Excel
+    - name: Ranges and cells
+      items:
+      - name: Get a range 
+        href: excel/excel-add-ins-ranges-get.md
+        displayName: Excel
+      - name: Insert a range of cells
+        href: excel/excel-add-ins-ranges-insert.md
+        displayName: Excel
+      - name: Clear or delete a range of cells
+        href: excel/excel-add-ins-ranges-clear-delete.md
+        displayName: Excel
+      - name: Set or get the selected range 
+        href: excel/excel-add-ins-ranges-set-get.md
+        displayName: Excel
+      - name: Set or get values, text, or formulas
+        href: excel/excel-add-ins-ranges-set-get-values.md
+        displayName: Excel
+      - name: Set range format 
+        href: excel/excel-add-ins-ranges-set-format.md
+        displayName: Excel
+      - name: Conditional formatting of ranges
+        href: excel/excel-add-ins-conditional-formatting.md
+        displayName: Excel
+      - name: Read or write to an unbounded range
+        href: excel/excel-add-ins-ranges-unbounded.md
+        displayName: Excel
+      - name: Read or write to a large range
+        href: excel/excel-add-ins-ranges-large.md
+        displayName: Excel
+      - name: Find a cell using string matching
+        href: excel/excel-add-ins-ranges-string-match.md
+        displayName: Excel
+      - name: Work with dates using the Moment-MSDate plug-in
+        href: excel/excel-add-ins-ranges-dates.md
+        displayName: Excel
+      - name: Find special cells within a range
+        href: excel/excel-add-ins-ranges-special-cells.md
+        displayName: Excel
+      - name: Cut, copy, and paste
+        href: excel/excel-add-ins-ranges-cut-copy-paste.md
+        displayName: Excel
+      - name: Remove duplicates
+        href: excel/excel-add-ins-ranges-remove-duplicates.md
+        displayName: Excel
+      - name: Group data for an outline
+        href: excel/excel-add-ins-ranges-group.md
+        displayName: Excel
+      - name: Handle dynamic arrays and spilling
+        href: excel/excel-add-ins-ranges-dynamic-arrays.md
+        displayName: Excel
+      - name: Get formula precedents
+        href: excel/excel-add-ins-ranges-precedents.md
+        displayName: Excel
+      - name: Delay execution while cell is being edited
+        href: excel/excel-add-ins-delay-in-cell-edit.md
+        displayName: Excel
+      - name: Work with multiple ranges
+        href: excel/excel-add-ins-multiple-ranges.md
+        displayName: Excel
     - name: Shapes
       href: excel/excel-add-ins-shapes.md
       displayName: Excel
@@ -1113,6 +1160,9 @@ items:
     - name: Get the whole document from an add-in
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
       displayName: PowerPoint
+    - name: Use custom tags on presentations, slides, and shapes
+      href: powerpoint/tagging-presentations-slides-shapes.md
+      displayName: PowerPoint 
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
