@@ -1,7 +1,8 @@
 ---
 title: Runtimes in the manifest file 
 description: The Runtimes element specifies your add-in's runtime.
-ms.date: 04/08/2021
+ms.date: 04/16/2021
+
 localization_priority: Normal
 ---
 
@@ -10,7 +11,7 @@ localization_priority: Normal
 Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element.
 
 > [!NOTE]
-> When running in Office on Windows, your add-in uses the Internet Explorer 11 browser.
+> When running in Office on Windows, an add-in that has a `<Runtimes>` element in its manifest does not necessarily run in the same webview control as it otherwise would. For more information about how the versions of Windows and Office determine what webview control is normally used, see [Browsers used by Office Add-ins](../../concepts/browsers-used-by-office-web-add-ins.md). If the conditions described there for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser whether or not it has a `<Runtimes>` element. However, when those conditions are not met, an add-in with a `<Runtimes>` element always uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version.
 
 **Add-in type:** Task pane, Mail
 
