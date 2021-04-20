@@ -49,9 +49,9 @@ if (document.hasStorageAccess) {
 
 Third-party cookies are cookies that are loaded in an iframe, where the domain is different from the top level frame. ITP could affect complex authentication scenarios, where a popup dialog is used to enter credentials and then the cookie access is needed by an add-in iframe to complete the authentication flow. ITP could also affect silent authentication scenarios, where you have previously used a popup dialog to authenticate, but subsequent use of the add-in tries to authenticate through a hidden iframe.
 
-When developing Office Add-ins on Mac, access to third-party cookies is blocked by the MacOS Big Sur SDK. This is because WebKit ITP is enabled by default on the Safari browser, and WKWebview blocks all third-party cookies. Office on Mac version 16.44 or later is integrated with the MacOS Big Sur SDK.
+When developing Office Add-ins on Mac, access to third-party cookies is blocked by the MacOS Big Sur SDK. This is because WKWebView ITP is enabled by default on the Safari browser, and WKWebView blocks all third-party cookies. Office on Mac version 16.44 or later is integrated with the MacOS Big Sur SDK.
 
-In the Safari browser, end users can toggle the **Prevent cross-site tracking** checkbox under **Preference** > **Privacy** to turn off ITP. However, ITP cannot be turned off for the embedded WebKit2 control.
+In the Safari browser, end users can toggle the **Prevent cross-site tracking** checkbox under **Preference** > **Privacy** to turn off ITP. However, ITP cannot be turned off for the embedded WKWebView control.
 
 ## See also
 
