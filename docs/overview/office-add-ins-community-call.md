@@ -7,9 +7,30 @@ localization_priority: Normal
 
 # Microsoft Office Add-ins community call
 
-The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The next call is Wednesday, March 10, 2021 at 8:00AM PDT. You can download the calendar invite at [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall).
+The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00AM PDT. You can download the calendar invite at [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall).
 
 ## Previous calls
+
+### March 10, 2021
+
+Featured presentations on Excel JS API v1.13 updates, PowerPoint ribbon updates, UX changes for Outlook add-ins on the web and discussion on building for the Microsoft 365 ecosystem.
+
+- **Excel JS API v1.13 updates** - Excel APIs are in preview today, targeting GA release in July. The APIs are available in Script lab, and include Dependent, Workbook, Range/Table, Event, Pivot Layout and Table style.
+
+> [!VIDEO https://www.youtube.com/embed/osZIbaUbBN8]
+
+- **PowerPoint ribbon updates** - Available on PowerPoint for web the week of March 15th, and on Windows 10 and Mac in May. New features shown: Allowing native controls, setting tab location (to any location you want), and setting focus for a tab.
+
+> [!VIDEO https://www.youtube.com/embed/gpB9teqJTZE]
+
+- **UX changes for Outlook add-ins on the web** - Whenever an admin installs an add-in, the user will now see a one-time nudge informing them that a new item has been installed and prompts the user to customize the settings as necessary. UX changes release to OWA commercial users April 2021.
+
+> [!VIDEO https://www.youtube.com/embed/IJ4mB8mwiuM]
+
+- **Discussion on building for the Microsoft 365 ecosystem** – Focused on how Microsoft can help developers be more successful with the Microsoft 365 ecosystem. Join the ongoing discussion at [M365 Customer Success Platform Panel](https://aka.ms/SuccessPanel)
+
+> [!VIDEO https://www.youtube.com/embed/a05dTyUlSYM]
+
 
 ### February 10, 2021
 
