@@ -1,6 +1,6 @@
 ---
 title: Loading the DOM and runtime environment
-description: 'Load the DOM and Office Add-ins runtime environment'
+description: 'Load the DOM and Office Add-ins runtime environment.'
 ms.date: 04/20/2021
 localization_priority: Normal
 ---
