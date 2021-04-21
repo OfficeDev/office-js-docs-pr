@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
 description: 'Learn how to specify Office applications and API requirements for your add-in to work as expected.'
-ms.date: 08/24/2020
+ms.date: 04/20/2021
 localization_priority: Normal
 ---
 
@@ -35,7 +35,7 @@ Your add-in must use the most current version of the add-in manifest schema. If 
 
 ### Specify the latest add-in manifest schema
 
-Your add-in's manifest must use version 1.1 of the add-in manifest schema. Set the `OfficeApp` element in your add-in manifest as follows.
+Your add-in's manifest must use version 1.1 of the add-in manifest schema. Set the [OfficeApp](../reference/manifest/officeapp.md) element in your add-in manifest as follows. This example shows the `TaskPaneApp` type.
 
 ```XML
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
@@ -63,7 +63,7 @@ When you specify Office applications or API requirements, there are several fact
 
 ## Set the Hosts element
 
-To make your add-in run in one Office client application, use the `Hosts` and `Host` elements in the manifest. If you don't specify the `Hosts` element, your add-in will run in all Office applications supported by Office Add-ins.
+To make your add-in run in one Office client application, use the `Hosts` and `Host` elements in the manifest. If you don't specify the `Hosts` element, your add-in will run in all Office applications supported by the specified `OfficeApp` type (that is, Mail, Task pane, or Content).
 
 For example, the following `Hosts` and `Host` declaration specifies that the add-in will work with any release of Excel, which includes Excel on the web, Windows, and iPad.
 
@@ -75,17 +75,18 @@ For example, the following `Hosts` and `Host` declaration specifies that the add
 
 The `Hosts` element can contain one or more `Host` elements. The `Host` element specifies the Office application your add-in requires. The `Name` attribute is required and can be set to one of the following values.
 
-| Name          | Office client applications                      |
-|:--------------|:----------------------------------------------|
-| Database      | Access web apps                               |
-| Document      | Word on the web, Windows, Mac, iPad           |
-| Mailbox       | Outlook on the web, Windows, Mac, Android, iOS|
-| Presentation  | PowerPoint on the web, Windows, Mac, iPad     |
-| Project       | Project on Windows                            |
-| Workbook      | Excel on the web, Windows, Mac, iPad          |
+| Name          | Office client applications                     | Available add-in types |
+|:--------------|:-----------------------------------------------|:-----------------------|
+| Database      | Access web apps                                | Task pane              |
+| Document      | Word on the web, Windows, Mac, iPad            | Task pane              |
+| MailHost      | Outlook on the web, Windows, Mac, Android, iOS | Mail                   |
+| Notebook      | OneNote on the web                             | Task pane, Content     |
+| Presentation  | PowerPoint on the web, Windows, Mac, iPad      | Task pane, Content     |
+| Project       | Project on Windows                             | Task pane              |
+| Workbook      | Excel on the web, Windows, Mac, iPad           | Task pane, Content     |
 
 > [!NOTE]
-> The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on the web and on Windows can be used to run your add-in.
+> The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `MailHost`, both Outlook on the web and on Windows can be used to run your add-in.
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
