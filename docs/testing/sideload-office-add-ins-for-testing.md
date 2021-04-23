@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
 description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 02/11/2021
+ms.date: 04/14/2021
 localization_priority: Normal
 ---
 
@@ -22,10 +22,10 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. Open [Office on the web](https://office.live.com/). Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share** in the ribbon, select **Copy Link**, and copy the URL.
 
-2. In the root directory of your yo office project files, open the **package.json** file. Within the **scripts** section of this file, create a `"document"` property. Paste the URL you copied as the value for the `"document"` property. For example, yours will look something like this:
+2. In the root directory of your yo office project files, open the **package.json** file. Within the **config** section of this file, create a `"document"` property. Paste the URL you copied as the value for the `"document"` property. For example, yours will look something like this:
 
     ```json
-      "scripts": {
+      "config": {
         "document": "<YOUR URL>",
         ...
       }
