@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: 'A list of events for Excel JavaScript objects. This includes information on using event handlers and the associated patterns.' 
-ms.date: 09/15/2020
+ms.date: 04/23/2021
 localization_priority: Normal
 ---
 
@@ -63,7 +63,7 @@ With [coauthoring](co-authoring-in-excel-add-ins.md), multiple people can work t
 
 ## Register an event handler
 
-The following code sample registers an event handler for the `onChanged` event in the worksheet named **Sample**. The code specifies that when data changes in that worksheet, the `handleDataChange` function should run.
+The following code sample registers an event handler for the `onChanged` event in the worksheet named **Sample**. The code specifies that when data changes in that worksheet, the `handleChange` function should run.
 
 ```js
 Excel.run(function (context) {
