@@ -1,5 +1,5 @@
 ---
-ms.date: 04/09/2021
+ms.date: 04/12/2021
 description: Learn how to debug your Excel custom functions that don't use a task pane.
 title: UI-less custom functions debugging
 localization_priority: Normal
