@@ -1,5 +1,5 @@
 ---
-ms.date: 04/09/2021
+ms.date: 04/12/2021
 description: Learn how to debug your Excel custom functions that don't use a task pane.
 title: UI-less custom functions debugging
 localization_priority: Normal
@@ -47,7 +47,7 @@ You can use VS Code to debug UI-less custom functions in Office Excel on the des
 ### Start the VS Code debugger
 
 4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
-5. From the Run drop-down menu, choose **Excel Desktop (Edge Chromium)**.
+5. From the Run drop-down menu, choose **Excel Desktop (Custom Functions)**.
 6. Select **F5** (or select **Run -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
 
 ### Start debugging

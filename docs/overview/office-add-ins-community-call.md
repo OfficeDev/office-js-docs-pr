@@ -18,7 +18,7 @@ Missed a previous community call? Check out the following blog resources to catc
 - [Office Add-ins community call - November 11, 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)
 - [Office Add-ins community call - October 14, 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-october-14-2020%E2%80%AF/)
 - [Office Add-ins community call - September 9, 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-september-9-2020/)
-- [Office Add-ins community call - August 12, 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%e2%80%af)
+- [Office Add-ins community call - August 12, 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%E2%80%AF/)
 - [Office Add-ins community call - July 8, 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
 - [Office Add-ins community call - June 10, 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
 
