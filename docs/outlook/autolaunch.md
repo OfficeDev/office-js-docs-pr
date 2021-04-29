@@ -12,18 +12,15 @@ Without the event-based activation feature, a user has to explicitly launch an a
 
 |Event|Description|
 |---|---|
-|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward)|
-|`OnNewAppointmentOrganizer`|On creating a new appointment|
-|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a new message|
-|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing a new appointment|
-|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a new message|
-|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing a new appointment|
-|`OnAppointmentTimeChanged`|On changing date/time while composing a new appointment|
-|`OnAppointmentRecurrenceChanged`|On changing the recurrence details while composing a new appointment|
-|`OnInfoBarDismissClicked`|On dismissing a notification message with a custom action while composing a new message or appointment item|
-
-> [!IMPORTANT]
-> This feature does **not** activate on editing an item, for example, a draft or an existing appointment.
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|
+|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|
+|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|
+|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|
+|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|
+|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|
+|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|
+|`OnAppointmentRecurrenceChanged`|On adding, changing, removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be triggered.|
+|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
