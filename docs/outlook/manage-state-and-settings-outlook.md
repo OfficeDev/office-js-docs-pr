@@ -1,7 +1,7 @@
 ---
 title: Manage state and settings for an Outlook add-in
 description: Learn how to persist add-in state and settings for an Outlook add-in.
-ms.date: 04/23/2021
+ms.date: 04/29/2021
 localization_priority: Normal
 ---
 
@@ -146,7 +146,7 @@ The following table summarizes saved custom properties behavior in emails for va
 To handle the situation on Windows:
 
 1. Check for existing properties on initializing your add-in, and keep them or clear them as needed.
-1. Create another property to check if the custom properties came from the parent item. This will help you differentiate if the property was created during compose or inherited from the parent.
+1. When setting custom properties, include an additional property to indicate whether the custom properties were added during message read or by Read mode of the add-in. This will help you differentiate if the property was created during compose or inherited from the parent.
 1. Check the type of message by using [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (currently in preview).
 
 ## See also
