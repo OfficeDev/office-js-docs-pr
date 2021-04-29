@@ -147,7 +147,7 @@ To handle the situation on Windows:
 
 1. Check for existing properties on initializing your add-in, and keep them or clear them as needed.
 1. When setting custom properties, include an additional property to indicate whether the custom properties were added during message read or by Read mode of the add-in. This will help you differentiate if the property was created during compose or inherited from the parent.
-1. Check the type of message by using [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (currently in preview).
+1. You can also use [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (currently in preview) to check if the user is forwarding an email or replying.
 
 ## See also
 
