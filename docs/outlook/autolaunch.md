@@ -19,7 +19,7 @@ Without the event-based activation feature, a user has to explicitly launch an a
 |`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|
 |`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|
 |`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|
-|`OnAppointmentRecurrenceChanged`|On adding, changing, removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be triggered.|
+|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|
 |`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
