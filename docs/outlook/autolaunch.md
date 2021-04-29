@@ -10,18 +10,20 @@ localization_priority: Normal
 
 Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality. At present, the following events are supported.
 
-- `OnNewMessageCompose`: On composing a new message (includes reply, reply all, and forward)
-- `OnNewAppointmentOrganizer`: On creating a new appointment
-- `OnMessageAttachmentsChanged`: On adding or removing attachments while composing a new message
-- `OnAppointmentAttachmentsChanged`: On adding or removing attachments while composing a new appointment
-- `OnMessageRecipientsChanged`: On adding or removing recipients while composing a new message
-- `OnAppointmentAttendeesChanged`: On adding or removing attendees while composing a new appointment
-- `OnAppointmentTimeChanged`: On changing date/time while composing a new appointment
-- `OnAppointmentRecurrenceChanged`: On changing the recurrence details while composing a new appointment
-- `OnInfoBarDismissClicked`: On dismissing a notification message with a custom action while composing a new message or appointment item
+|Event|Description|
+|---|---|
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward)|
+|`OnNewAppointmentOrganizer`|On creating a new appointment|
+|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a new message|
+|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing a new appointment|
+|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a new message|
+|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing a new appointment|
+|`OnAppointmentTimeChanged`|On changing date/time while composing a new appointment|
+|`OnAppointmentRecurrenceChanged`|On changing the recurrence details while composing a new appointment|
+|`OnInfoBarDismissClicked`|On dismissing a notification message with a custom action while composing a new message or appointment item|
 
-  > [!IMPORTANT]
-  > This feature does **not** activate on editing an item, for example, a draft or an existing appointment.
+> [!IMPORTANT]
+> This feature does **not** activate on editing an item, for example, a draft or an existing appointment.
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
