@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: 'Learn how add-in support in Outlook on Mac compares with other Outlook clients.'
-ms.date: 03/19/2021
+ms.date: 04/29/2021
 localization_priority: Normal
 ---
 
@@ -28,7 +28,7 @@ For information about new UI support, see [Add-in support in Outlook on new Mac 
 
 Outlook add-ins are now supported on the new Mac UI (preview), up to requirement set 1.7. However, the following requirement sets and features are **NOT** supported yet.
 
-- API requirement sets 1.8 and 1.9
+- API requirement set 1.9
 - On-send
 - Compose window pop-out
 - Shared folder support
