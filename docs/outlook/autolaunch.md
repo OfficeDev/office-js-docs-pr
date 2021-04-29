@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 03/30/2021
+ms.date: 04/29/2021
 localization_priority: Normal
 ---
 
@@ -12,11 +12,18 @@ Without the event-based activation feature, a user has to explicitly launch an a
 
 - `OnNewMessageCompose`: On composing a new message (includes reply, reply all, and forward)
 - `OnNewAppointmentOrganizer`: On creating a new appointment
+- `OnMessageAttachmentsChanged`: On adding or removing attachments while composing a new message
+- `OnAppointmentAttachmentsChanged`: On adding or removing attachments while composing a new appointment
+- `OnMessageRecipientsChanged`: On adding or removing recipients while composing a new message
+- `OnAppointmentAttendeesChanged`: On adding or removing attendees while composing a new appointment
+- `OnAppointmentTimeChanged`: On changing date/time while composing a new appointment
+- `OnAppointmentRecurrenceChanged`: On changing the recurrence details while composing a new appointment
+- `OnInfoBarDismissClicked`: On dismissing a notification message with a custom action while composing a new message or appointment item
 
   > [!IMPORTANT]
   > This feature does **not** activate on editing an item, for example, a draft or an existing appointment.
 
-By the end of this walkthrough, you'll have an add-in that runs whenever a new message is created.
+By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
 > [!IMPORTANT]
 > This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. See [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article for more details.
