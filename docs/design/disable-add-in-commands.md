@@ -111,7 +111,7 @@ const enableButton = async () => {
 }
 ```
 
-You can `await` the call of **requestUpdate()** if the parent function is asynchronous, but note Office controls when it updates the state of the ribbon. The **requestUpdate()** method queues a request to update. The method will resolve the Promise object as soon as it has queued the request, not when the ribbon actually updates.
+You can `await` the call of **requestUpdate()** if the parent function is asynchronous, but note that Office controls when it updates the state of the ribbon. The **requestUpdate()** method queues a request to update. The method will resolve the promise object as soon as it has queued the request, not when the ribbon actually updates.
 
 ## Change the state in response to an event
 
