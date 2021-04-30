@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 04/29/2021
+ms.date: 04/30/2021
 localization_priority: Normal
 ---
 
@@ -274,5 +274,5 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
 
 ## See also
 
-[Outlook add-in manifests](manifests.md)
-[How to debug event-based add-ins](debug-autolaunch.md)
+- [Outlook add-in manifests](manifests.md)
+- [How to debug event-based add-ins](debug-autolaunch.md)
