@@ -1,7 +1,7 @@
 ---
 title: Manage state and settings for an Outlook add-in
 description: Learn how to persist add-in state and settings for an Outlook add-in.
-ms.date: 12/22/2020
+ms.date: 04/29/2021
 localization_priority: Normal
 ---
 
@@ -13,7 +13,7 @@ localization_priority: Normal
 For Outlook add-ins, the Office JavaScript API provides [RoamingSettings](/javascript/api/outlook/office.roamingsettings) and [CustomProperties](/javascript/api/outlook/office.customproperties) objects for saving add-in state across sessions as described in the following table. In all cases, the saved settings values are associated with the [Id](../reference/manifest/id.md) of the add-in that created them.
 
 |**Object**|**Storage location**|
-|:-----|:-----|:-----|
+|:-----|:-----|
 |[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|The user's Exchange server mailbox where the add-in is installed. Because these settings are stored in the user's server mailbox, they can "roam" with the user and are available to the add-in when it is running in the context of any supported client accessing that user's mailbox.<br/><br/> Outlook add-in roaming settings are available only to the add-in that created them, and only from the mailbox where the add-in is installed.|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|The message, appointment, or meeting request item the add-in is working with. Outlook add-in item custom properties are available only to the add-in that created them, and only from the item where they are saved.|
 
@@ -71,7 +71,7 @@ Before you can use custom properties for a particular message, appointment, or m
 
 ### Custom properties example
 
-The following example shows a simplified set of functions for an Outlook add-in that uses custom properties. You can use this example as a starting point for your Outlook add-in that uses custom properties. 
+The following example shows a simplified set of functions for an Outlook add-in that uses custom properties. You can use this example as a starting point for your Outlook add-in that uses custom properties.
 
 An Outlook add-in that uses these functions retrieves any custom properties by calling the **get** method on the `_customProps` variable, as shown in the following example.
 
@@ -129,6 +129,25 @@ function saveCallback(asyncResult) {
     }
 }
 ```
+
+### Platform behavior in emails
+
+The following table summarizes saved custom properties behavior in emails for various Outlook clients.
+
+|Scenario|Windows|Web|Mac|
+|---|---|---|---|
+|New compose|null|null|null|
+|Reply, reply all|null|null|null|
+|Forward|Loads parent's properties|null|null|
+|Sent item from new compose|null|null|null|
+|Sent item from reply or reply all|null|null|null|
+|Sent item from forward|Removes parent's properties if not saved|null|null|
+
+To handle the situation on Windows:
+
+1. Check for existing properties on initializing your add-in, and keep them or clear them as needed.
+1. When setting custom properties, include an additional property to indicate whether the custom properties were added during message read or by Read mode of the add-in. This will help you differentiate if the property was created during compose or inherited from the parent.
+1. You can also use [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (currently in preview) to check if the user is forwarding an email or replying.
 
 ## See also
 
