@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 01/12/2021
+ms.date: 04/30/2021
 localization_priority: Normal
 ---
 
