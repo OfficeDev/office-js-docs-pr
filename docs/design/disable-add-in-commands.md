@@ -107,11 +107,11 @@ const enableButton = async () => {
     const parentGroup: Group = {id: "CustomGroup111", controls: [button]};
     const parentTab: Tab = {id: "OfficeAddinTab1", groups: [parentGroup]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
-Office controls when it updates the state of the ribbon. The **requestUpdate()** method queues a request to update. The method will resolve the Promise object as soon as it has queued the request, not when the ribbon actually updates.
+You can `await` the call of **requestUpdate()** if the parent function is asynchronous, but note Office controls when it updates the state of the ribbon. The **requestUpdate()** method queues a request to update. The method will resolve the Promise object as soon as it has queued the request, not when the ribbon actually updates.
 
 ## Change the state in response to an event
 
@@ -151,7 +151,7 @@ function enableChartFormat() {
                      groups: [parentGroup]
                     };
     var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -185,7 +185,7 @@ function disableChartFormat() {
                      groups: [parentGroup]
                     };
     var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 
     chartFormatButtonEnabled = false;
 }
@@ -227,7 +227,7 @@ function disableChartFormat() {
                          groups: [parentGroup]
                         };
         var ribbonUpdater = {tabs: [parentTab]};
-        await Office.ribbon.requestUpdate(ribbonUpdater);
+        Office.ribbon.requestUpdate(ribbonUpdater);
 
         chartFormatButtonEnabled = false;
     }
