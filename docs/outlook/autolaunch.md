@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 03/30/2021
+ms.date: 04/30/2021
 localization_priority: Normal
 ---
 
@@ -10,13 +10,19 @@ localization_priority: Normal
 
 Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality. At present, the following events are supported.
 
-- `OnNewMessageCompose`: On composing a new message (includes reply, reply all, and forward)
-- `OnNewAppointmentOrganizer`: On creating a new appointment
+|Event|Description|
+|---|---|
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|
+|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|
+|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|
+|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|
+|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|
+|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|
+|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|
+|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|
+|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|
 
-  > [!IMPORTANT]
-  > This feature does **not** activate on editing an item, for example, a draft or an existing appointment.
-
-By the end of this walkthrough, you'll have an add-in that runs whenever a new message is created.
+By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
 > [!IMPORTANT]
 > This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. See [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article for more details.
@@ -268,5 +274,5 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
 
 ## See also
 
-[Outlook add-in manifests](manifests.md)
-[How to debug event-based add-ins](debug-autolaunch.md)
+- [Outlook add-in manifests](manifests.md)
+- [How to debug event-based add-ins](debug-autolaunch.md)

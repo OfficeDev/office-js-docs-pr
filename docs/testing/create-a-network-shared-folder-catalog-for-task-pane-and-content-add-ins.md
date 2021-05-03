@@ -115,6 +115,9 @@ The following video walks you through the process of sideloading your add-in in 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
+    > [!NOTE]
+    > For Visual Studio projects, use the manifest built by the project in the `{projectfolder}\bin\Debug\OfficeAppManifests` folder.
+
 2. In Excel, Word, or PowerPoint, select **My Add-ins** on the **Insert** tab of the ribbon. In Project, select **My Add-ins** on the **Project** tab of the ribbon.
 
 3. Choose **SHARED FOLDER** at the top of the **Office Add-ins** dialog box.
