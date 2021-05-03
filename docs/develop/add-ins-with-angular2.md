@@ -157,9 +157,9 @@ ng serve --aot
 > [!NOTE]
 > To learn more about the Angular Ahead-of-Time (AOT) compiler, see the [official guide](https://angular.io/guide/aot-compiler).
 
-## Support Internet Explorer if you're dynamically loading office.js
+## Support Internet Explorer if you're dynamically loading Office.js
 
-According to the Windows version and the Office desktop client where your add-in is running, your add-in may be using Internet Explorer 11. (For more details, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depends on a few `window.history` APIs but these APIs don't work in the IE runtime embedded in Windows desktop clients. When these APIs don't work, your add-in may not work properly, for example, loads a blank task pane. To mitigate this, office.js nullifies those APIs. However, if you're dynamically loading office.js, AngularJS may load before office.js. In that case, you should disable the `window.history` APIs by adding the following code to your add-in's **index.html** page.
+Based on the Windows version and the Office desktop client where your add-in is running, your add-in may be using Internet Explorer 11. (For more details, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depends on a few `window.history` APIs but these APIs don't work in the IE runtime embedded in Windows desktop clients. When these APIs don't work, your add-in may not work properly, for example, loads a blank task pane. To mitigate this, Office.js nullifies those APIs. However, if you're dynamically loading Office.js, AngularJS may load before Office.js. In that case, you should disable the `window.history` APIs by adding the following code to your add-in's **index.html** page.
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>
