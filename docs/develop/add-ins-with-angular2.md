@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins with Angular
 description: 'Get guidance for using Angular to create an Office Add-in as a single page application.'
-ms.date: 09/24/2020
+ms.date: 05/03/2021
 localization_priority: Normal
 ---
 
@@ -10,13 +10,13 @@ localization_priority: Normal
 This article provides guidance for using Angular 2+ to create an Office Add-in as a single page application.
 
 > [!NOTE]
-> Do you have something to contribute based on your experience using Angular to create Office Add-ins? You can contribute to this article in [GitHub](https://github.com/OfficeDev/office-js-docs) or provide your feedback by submitting an [issue](https://github.com/OfficeDev/office-js-docs-pr/issues) in the repo. 
+> Do you have something to contribute based on your experience using Angular to create Office Add-ins? You can contribute to this article in [GitHub](https://github.com/OfficeDev/office-js-docs-pr) or provide your feedback by submitting an [issue](https://github.com/OfficeDev/office-js-docs-pr/issues) in the repo.
 
 For an Office Add-ins sample that's built using the Angular framework, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## Install the TypeScript type definitions
 
-Open an nodejs window and enter the following at the command line:
+Open a node.js window and enter the following at the command line:
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
@@ -54,9 +54,9 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
   // Other module properties suppressed
 })
 export class AppModule { }
-``` 
+```
 
-If you define your routes in a separate routing module, there is an alternative way to specify the hash location strategy. In your routing module's .ts file, pass a configuration object to the `forRoot` function that specifies the strategy. The following code is an example. 
+If you define your routes in a separate routing module, there is an alternative way to specify the hash location strategy. In your routing module's .ts file, pass a configuration object to the `forRoot` function that specifies the strategy. The following code is an example.
 
 ```js
 import { RouterModule, Routes } from '@angular/router';
@@ -71,26 +71,23 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-
 ## Consider wrapping Fabric components with Angular components
 
-We recommend using [UI Fabric](https://developer.microsoft.com/fabric#) styling in your add-in. UI Fabric for the web is available in two flavors: 
+We recommend using [UI Fabric](https://developer.microsoft.com/fabric#) styling in your add-in. UI Fabric for the web is available in two flavors:
 
 - [Fabric React](https://developer.microsoft.com/fabric#/controls/web) provides robust, up-to-date, accessible components that are highly customizable.
 
 - [Fabric Core](https://developer.microsoft.com/fabric#/styles/web) is a collection of CSS classes and Sass mixins that give you access to Fabric's colors, animations, fonts, icons and grid.
 
-Consider using Fabric components in your add-in by wrapping them in Angular components. For an example that shows you how to do this, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Note, for example, how the Angular component defined in [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) imports the Fabric file TextField.ts, where the Fabric component is defined. 
-
+Consider using Fabric components in your add-in by wrapping them in Angular components. For an example that shows you how to do this, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Note, for example, how the Angular component defined in [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) imports the Fabric file TextField.ts, where the Fabric component is defined.
 
 ## Using the Office dialog API with Angular
 
-The Office Add-in dialog API enables your add-in to open a page in a nonmodal dialog box that can exchange information with the main page, which is typically in a task pane.
+The Office Add-in dialog API enables your add-in to open a page in a non-modal dialog box that can exchange information with the main page, which is typically in a task pane.
 
-The [displayDialogAsync](/javascript/api/office/office.ui) method takes a parameter that specifies the URL of the page that should open in the dialog box. Your add-in can have a separate HTML page (different from the base page) to pass to this parameter, or you can pass the URL of a route in your Angular application. 
+The [displayDialogAsync](/javascript/api/office/office.ui) method takes a parameter that specifies the URL of the page that should open in the dialog box. Your add-in can have a separate HTML page (different from the base page) to pass to this parameter, or you can pass the URL of a route in your Angular application.
 
 It is important to remember, if you pass a route, that the dialog box creates a new window with its own execution context. Your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog box. So this technique launches a second instance of your single page application in the dialog box. Code that changes variables in the dialog box does not change the task pane version of the same variables. Similarly, the dialog box has its own session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property), which is not accessible from code in the task pane.  
-
 
 ## Trigger the UI update
 
@@ -114,14 +111,13 @@ export class MyComponent {
 
 Angular uses RxJS (Reactive Extensions for JavaScript), and RxJS introduces `Observable` and `Observer` objects to implement asynchronous processing. This section provides a brief introduction to using `Observables`; for more detailed information, see the official [RxJS](https://rxjs-dev.firebaseapp.com/) documentation.
 
-An `Observable` is like a `Promise` object in some ways - it is returned immediately from an asynchronous call, but it might not resolve until some time later. However, while a `Promise` is a single value (which can be an array object), an `Observable` is an array of objects (possibly with only a single member). This enables code to call [array methods](https://www.w3schools.com/jsref/jsref_obj_array.asp), such as `concat`, `map`, and `filter`, on `Observable` objects. 
+An `Observable` is like a `Promise` object in some ways - it is returned immediately from an asynchronous call, but it might not resolve until some time later. However, while a `Promise` is a single value (which can be an array object), an `Observable` is an array of objects (possibly with only a single member). This enables code to call [array methods](https://www.w3schools.com/jsref/jsref_obj_array.asp), such as `concat`, `map`, and `filter`, on `Observable` objects.
 
 ### Pushing instead of pulling
 
-Your code "pulls" `Promise` objects by assigning them to variables, but `Observable` objects "push" their values to objects that *subscribe* to the `Observable`. The subscribers are `Observer` objects. The benefit of the push architecture is that new members can be added to the `Observable` array over time. When a new member is added, all the `Observer` objects that subscribe to the `Observable` receive a notification. 
+Your code "pulls" `Promise` objects by assigning them to variables, but `Observable` objects "push" their values to objects that *subscribe* to the `Observable`. The subscribers are `Observer` objects. The benefit of the push architecture is that new members can be added to the `Observable` array over time. When a new member is added, all the `Observer` objects that subscribe to the `Observable` receive a notification.
 
-The `Observer` is configured to process each new object (called the "next" object) with a function. (It is also configured to respond to an error and a completion notification. See the next section for an example.) For this reason, `Observable` objects can be used in a wider range of scenarios than `Promise` objects. For example, in addition to returning an `Observable` from an AJAX call, the way you can return a `Promise`, an `Observable` can be returned from an event handler, such as the "changed" event handler for a text box. Each time a user enters text in the box, all the subscribed `Observer` objects react immediately using the latest text and/or the current state of the application as input. 
-
+The `Observer` is configured to process each new object (called the "next" object) with a function. (It is also configured to respond to an error and a completion notification. See the next section for an example.) For this reason, `Observable` objects can be used in a wider range of scenarios than `Promise` objects. For example, in addition to returning an `Observable` from an AJAX call, the way you can return a `Promise`, an `Observable` can be returned from an event handler, such as the "changed" event handler for a text box. Each time a user enters text in the box, all the subscribed `Observer` objects react immediately using the latest text and/or the current state of the application as input.
 
 ### Waiting until all asynchronous calls have completed
 
@@ -131,7 +127,7 @@ When you want to ensure that a callback only runs when every member of a set of 
 myPromise.all([x, y, z]).then(
   // TODO: Callback logic goes here
 )
-``` 
+```
 
 To do the same thing with an `Observable` object, you use the [Observable.forkJoin()](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/forkjoin.md) method.  
 
@@ -145,11 +141,11 @@ const subscription = source.subscribe(
   err => console.log('Error: ' + err),
   () => console.log('Completed')
 );
-``` 
+```
 
 ## Compile the Angular application using the Ahead-of-Time (AOT) compiler
 
-Application performance is one of the most important aspects of user experience. An Angular application can be optimized by using the Angular Ahead-of-Time (AOT) compiler to compile the app at build time. It converts all source code (HTML templates and TypeScript) into efficient JavaScript code. If you compile your app with the AOT compiler, no additional compilation will occur at runtime, which results in faster rendering and faster asynchronous requests for HTML templates. Additionally, the overall application size will be reduced, because the Angular compiler won't need to be included in the application distributable. 
+Application performance is one of the most important aspects of user experience. An Angular application can be optimized by using the Angular Ahead-of-Time (AOT) compiler to compile the app at build time. It converts all source code (HTML templates and TypeScript) into efficient JavaScript code. If you compile your app with the AOT compiler, no additional compilation will occur at runtime, which results in faster rendering and faster asynchronous requests for HTML templates. Additionally, the overall application size will be reduced, because the Angular compiler won't need to be included in the application distributable.
 
 To use the AOT compiler, add `--aot` to the `ng build` or `ng serve` command:
 
@@ -160,3 +156,11 @@ ng serve --aot
 
 > [!NOTE]
 > To learn more about the Angular Ahead-of-Time (AOT) compiler, see the [official guide](https://angular.io/guide/aot-compiler).
+
+## Support Internet Explorer if you're dynamically loading office.js
+
+According to the Windows version and the Office desktop client where your add-in is running, your add-in may be using Internet Explorer 11. (For more details, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depends on a few `window.history` APIs but these APIs don't work in the IE runtime embedded in Windows desktop clients. When these APIs don't work, your add-in may not work properly, for example, loads a blank task pane. To mitigate this, office.js nullifies those APIs. However, if you're dynamically loading office.js, AngularJS may load before office.js. In that case, you should disable the `window.history` APIs by adding the following code to your add-in's **index.html** page.
+
+```js
+<script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>
+```
