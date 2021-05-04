@@ -16,7 +16,7 @@ For an Office Add-ins sample that's built using the Angular framework, see [Word
 
 ## Install the TypeScript type definitions
 
-Open a node.js window and enter the following at the command line:
+Open a Node.js window and enter the following at the command line:
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
