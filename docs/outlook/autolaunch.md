@@ -2,32 +2,36 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 04/30/2021
+ms.date: 05/04/2021
 localization_priority: Normal
 ---
 
 # Configure your Outlook add-in for event-based activation (preview)
 
-Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality. At present, the following events are supported.
-
-|Event|Description|
-|---|---|
-|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|
-|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|
-|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|
-|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|
-|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|
-|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|
-|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|
-|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|
-|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|
+Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality.
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
 > [!IMPORTANT]
-> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. See [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article for more details.
+> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. For more details, see [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article.
 >
 > Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
+
+## Supported events
+
+At present, the following events are supported.
+
+|Event|Description|Clients|
+|---|---|---|
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|Windows, web|
+|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|Windows, web|
+|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|Windows|
+|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|Windows|
+|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|Windows|
+|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|Windows|
+|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|Windows|
+|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|Windows|
+|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|Windows|
 
 ## How to preview the event-based activation feature
 
@@ -38,7 +42,11 @@ To preview this feature:
 - For Outlook on the web:
   - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
   - Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
-- For Outlook on Windows: The minimum required build is 16.0.13729.20000. Join the [Office Insider program](https://insider.office.com) for access to Office beta builds.
+- For Outlook on Windows:
+  - The minimum required build is 16.0.14026.20000. Join the [Office Insider program](https://insider.office.com) for access to Office beta builds.
+  - Configure the registry:
+    1. Create the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`.
+    1. Add an entry named `EnableBetaAPIsInJavaScript` and set the value to `1`.
 
 ## Set up your environment
 
