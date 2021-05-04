@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: 'Learn more about the Office Common API requirement sets.'
-ms.date: 09/17/2020
+ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -167,7 +167,7 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 |**Office applications**|**Methods in set**|
 |:-----|:-----|
-| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web<br>Word on iPad|Supports output to PDF format (Office.FileType.Pdf)<br>when using the Document.getFileAsync method.|
+| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word 2013 and later on Windows<br>Word 2016 and later on Mac<br>Word on the web|Supports output to PDF format (Office.FileType.Pdf)<br>when using the Document.getFileAsync method.|
 
 ---
 
