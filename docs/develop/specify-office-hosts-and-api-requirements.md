@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
 description: 'Learn how to specify Office applications and API requirements for your add-in to work as expected.'
-ms.date: 04/20/2021
+ms.date: 05/04/2021
 localization_priority: Normal
 ---
 
@@ -79,14 +79,14 @@ The `Hosts` element can contain one or more `Host` elements. The `Host` element 
 |:--------------|:-----------------------------------------------|:-----------------------|
 | Database      | Access web apps                                | Task pane              |
 | Document      | Word on the web, Windows, Mac, iPad            | Task pane              |
-| MailHost      | Outlook on the web, Windows, Mac, Android, iOS | Mail                   |
+| Mailbox       | Outlook on the web, Windows, Mac, Android, iOS | Mail                   |
 | Notebook      | OneNote on the web                             | Task pane, Content     |
 | Presentation  | PowerPoint on the web, Windows, Mac, iPad      | Task pane, Content     |
 | Project       | Project on Windows                             | Task pane              |
 | Workbook      | Excel on the web, Windows, Mac, iPad           | Task pane, Content     |
 
 > [!NOTE]
-> The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `MailHost`, both Outlook on the web and on Windows can be used to run your add-in.
+> The `Name` attribute specifies the Office client application that can run your add-in. Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook on the web and on Windows can be used to run your add-in.
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
