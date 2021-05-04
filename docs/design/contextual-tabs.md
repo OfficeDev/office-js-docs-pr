@@ -1,11 +1,11 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 01/29/2021
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
-# Create custom contextual tabs in Office Add-ins (preview)
+# Create custom contextual tabs in Office Add-ins
 
 A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office Add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
 
@@ -15,16 +15,18 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 > - [Basic concepts for Add-in Commands](add-in-commands.md)
 
 > [!IMPORTANT]
-> Custom contextual tabs are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in.
->
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds:
 >
-> - Excel on Windows (Microsoft 365 only, not perpetual license): Version 2011 (Build 13426.20274). Your Microsoft 365 subscription may need to be on the [Current Channel (Preview)](https://insider.office.com/join/windows) formerly called "Monthly Channel (Targeted)" or "Insider Slow".
+> - Excel on Windows (Microsoft 365 only, not perpetual license): Version 2101 (Build 13801.20274) or later.
+> - Excel on the web
 
 > [!NOTE]
 > Custom contextual tabs work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
+> - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+>
+> You can block your add-in from being installed on platform and host combinations that do not support contextual tabs as described in [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md). Alternatively, you can [implement an alternate UI experience when custom contextual tabs are not supported](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
 ## Behavior of custom contextual tabs
 
@@ -504,7 +506,7 @@ In some scenarios, Office is unable to update the ribbon and will return an erro
 ```javascript
 function showDataTab() {
     try {
-        await Office.ribbon.requestUpdate({
+        Office.ribbon.requestUpdate({
             tabs: [
                 {
                     id: "CtxTab1",
