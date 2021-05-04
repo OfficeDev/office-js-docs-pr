@@ -38,7 +38,7 @@ To preview this feature:
 - For Outlook on the web:
   - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
   - Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
-- For Outlook on Windows: The minimum required build is 16.0.14026.10000. Join the [Office Insider program](https://insider.office.com) for access to Office beta builds.
+- For Outlook on Windows: The minimum required build is 16.0.14026.20000. Join the [Office Insider program](https://insider.office.com) for access to Office beta builds.
 
 ## Set up your environment
 
