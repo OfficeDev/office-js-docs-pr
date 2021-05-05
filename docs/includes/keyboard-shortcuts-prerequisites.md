@@ -1,7 +1,7 @@
 > [!IMPORTANT]
 > Keyboard shortcuts are currently only supported on Excel and only on these platforms and builds:
 >
->* Excel on Windows: Version 2012 (Build 13801.20000)
+>* Excel on Windows: Version 2102 (Build 13801.20000)
 >* Excel on Mac: 16.48
 >* Excel on the web
 

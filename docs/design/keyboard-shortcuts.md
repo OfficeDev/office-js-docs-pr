@@ -63,23 +63,23 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
             {
                 "action": "SHOWTASKPANE",
                 "key": {
-                    "default": "CTRL+ALT+UP"
+                    "default": "Ctrl+Alt+Up"
                 }
             },
             {
                 "action": "HIDETASKPANE",
                 "key": {
-                    "default": "CTRL+ALT+DOWN"
+                    "default": "Ctrl+Alt+Down"
                 }
             }
         ]
     }
     ```
 
-    For more information about the JSON objects, see [Constructing the action objects](#constructing-the-action-objects) and [Constructing the shortcut objects](#constructing-the-shortcut-objects). The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+    For more information about the JSON objects, see [Construct the action objects](#construct-the-action-objects) and [Construct the shortcut objects](#construct-the-shortcut-objects). The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
     > [!NOTE]
-    > You can use "CONTROL" in place of "CTRL" throughout this article.
+    > You can use "CONTROL" in place of "Ctrl" throughout this article.
 
     In a later step, the actions will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method.
 
@@ -126,7 +126,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     });
     ```
 
-Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up arrow key** and **Ctrl+Alt+Down arrow key**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample in the Office Add-ins PnP repo in GitHub.
+Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up** and **Ctrl+Alt+Down**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample in the Office Add-ins PnP repo in GitHub.
 
 ## Details and restrictions
 
@@ -158,17 +158,17 @@ The following is an example:
 
 The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
-### Constructing the shortcut objects
+### Construct the shortcut objects
 
 Use the following guidelines when specifying the objects in the `shortcuts` array of the shortcuts.json:
 
 - The property names `action`, `key`, and `default` are required.
 - The value of the `action` property is a string and must match one of the `id` properties in the action object.
 - The `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention, lower case letters are not used in these properties.)
-- The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and only one other key.
-- For Macs, we also support the COMMAND modifier key.
-- For Macs, ALT is mapped to the OPTION key. For Windows, COMMAND is mapped to the CTRL key.
-- When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
+- The `default` property must contain the name of at least one modifier key (Alt, Ctrl, Shift) and only one other key.
+- For Macs, we also support the Command modifier key.
+- For Macs, Alt is mapped to the Option key. For Windows, Command is mapped to the Ctrl key.
+- When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, Alt+a and Alt+A are the same shortcut, so are Ctrl+- and Ctrl+\_ because "-" and "_" are the same physical key.
 - The "+" character indicates that the keys on either side of it are pressed simultaneously.
 
 The following is an example:
@@ -178,13 +178,13 @@ The following is an example:
         {
             "action": "SHOWTASKPANE",
             "key": {
-                "default": "CTRL+ALT+UP"
+                "default": "Ctrl+Alt+Up"
             }
         },
         {
             "action": "HIDETASKPANE",
             "key": {
-                "default": "CTRL+ALT+DOWN"
+                "default": "Ctrl+Alt+Down"
             }
         }
     ]
@@ -193,7 +193,7 @@ The following is an example:
 The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office Add-ins.
+> KeyTips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office Add-ins.
 
 ## Avoid key combinations in use by other add-ins
 
@@ -212,7 +212,7 @@ For the best user experience, we recommend that you minimize conflicts with Exce
 - Use only keyboard shortcuts with the following pattern in your add-in: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
 - If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
 - When the keyboard focus is inside the add-in UI, **Ctrl+Spacebar** and **Ctrl+Shift+F10** will not work as these are essential accessibility shortcuts.
-- On a Windows/Mac, if the **Reset Office Add-ins shortcut preferences** command is not available in the search box, manually add the command to the ribbon by customizing the ribbon through the context menu.
+- On a Windows or Mac computer, if the "Reset Office Add-ins shortcut preferences" command is not available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
 
 ## Customize the keyboard shortcuts per platform
 
@@ -225,17 +225,17 @@ In the following example, the `default` key is the fallback key for any platform
         {
             "action": "SHOWTASKPANE",
             "key": {
-                "default": "CTRL+ALT+UP",
-                "mac": "COMMAND+SHIFT+UP",
-                "web": "CTRL+ALT+1",
+                "default": "Ctrl+Alt+Up",
+                "mac": "Command+Shift+Up",
+                "web": "Ctrl+Alt+1",
             }
         },
         {
             "action": "HIDETASKPANE",
             "key": {
-                "default": "CTRL+ALT+DOWN",
-                "mac": "COMMAND+SHIFT+DOWN",
-                "web": "CTRL+ALT+2"
+                "default": "Ctrl+Alt+Down",
+                "mac": "Command+Shift+Down",
+                "web": "Ctrl+Alt+2"
             }
         }
     ]
