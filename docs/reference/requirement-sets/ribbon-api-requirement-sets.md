@@ -17,7 +17,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 |  Requirement set  | Office 2013 on Windows<br>(one-time purchase) | Office 2016 or later on Windows<br>(one-time purchase)   | Office on Windows\*<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac\*<br>(connected to a Microsoft 365 subscription)  | Office on the web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1.1  | N/A | N/A | See support<br>section below | N/A | 16.38 | November, 2020 | N/A|
-| RibbonApi 1.2  | N/A | N/A | 2103 (Build 13901.10000) | N/A | pending | November, 2020 | N/A|
+| RibbonApi 1.2  | N/A | N/A | 2102 (Build 13801.20294) | N/A | coming soon | May, 2021 | N/A|
 
 > **&#42;** The Ribbon API is supported only on Excel and it requires a Microsoft 365 subscription.
 
@@ -49,12 +49,12 @@ For information about Common API requirement sets, see [Office Common API requir
 
 The Ribbon API 1.1 is the first version of the API. For details about the API, see the [Office.ribbon](/javascript/api/office/office.ribbon) reference topic.
 
-> [!NOTE]
-> The **RibbonApi 1.1** requirement set is not yet supported in the manifest, so you cannot specify it in the manifest's `<Requirements>` section.
-
 ## Ribbon API 1.2
 
 The Ribbon API 1.2 adds support for contextual tabs. For more information, see [Create custom contextual tabs in Office Add-ins](../../design/contextual-tabs.md).
+
+> [!NOTE]
+> The **RibbonApi 1.2** requirement set is not yet supported in the manifest, so you cannot specify it in the manifest's `<Requirements>` section.
 
 ## See also
 
