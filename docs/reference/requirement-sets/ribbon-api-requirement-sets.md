@@ -21,7 +21,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 > **&#42;** The Ribbon API is supported only on Excel and it requires a Microsoft 365 subscription.
 
-## Office on Windows (subscription) support
+## Support for version 1.1 on Office on Windows (subscription)
 
 The 1.1 version of the RibbonApi requirement set is supported in the Consumer Channel version 2006 (build, 13001.20498 or greater). For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available July 14th, 2020 or later. The minimum supported builds for each channel are as follows:  
 
