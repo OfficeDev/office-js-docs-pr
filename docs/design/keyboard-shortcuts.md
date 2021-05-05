@@ -5,9 +5,9 @@ ms.date: 05/05/2021
 localization_priority: Normal
 ---
 
-# Add Custom keyboard shortcuts to your Office Add-ins
+# Add custom keyboard shortcuts to your Office Add-ins
 
-Keyboard shortcuts, also known as key combinations, enable your add-in's users to work more efficiently and they improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.
+Keyboard shortcuts, also known as key combinations, enable your add-in's users to work more efficiently. Keyboard shortcuts also improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
@@ -126,11 +126,11 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     });
     ```
 
-Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up arrow key** and **Ctrl+Alt+Down arrow key**. This is the same behavior as shown in the [sample excel keyboard shortcuts add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
+Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up arrow key** and **Ctrl+Alt+Down arrow key**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample in the Office Add-ins PnP repo in GitHub.
 
 ## Details and restrictions
 
-### Constructing the action objects
+### Construct the action objects
 
 Use the following guidelines when specifying the objects in the `actions` array of the shortcuts.json:
 
@@ -195,30 +195,30 @@ The complete schema for the shortcuts JSON is at [extended-manifest.schema.json]
 > [!NOTE]
 > Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office Add-ins.
 
-## Using key combinations that are already used by Office or another add-in
+## Avoid key combinations in use by other add-ins
 
-There are many keyboard shortcuts that are already being used by Office. Ideally, you want to avoid registering keyboard shortcuts for your add-in that are already being used, but there may be some instances where it is necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
+There are many keyboard shortcuts that are already in use by Office. Avoid registering keyboard shortcuts for your add-in that are already in use, however there may be some instances where it is necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
 In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut, note that the action name that is displayed in this dialog is the `name` property in the action object in `shortcuts.json` file.
 
-![Illustration showing a conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
+![Illustration showing a conflict modal with two different actions for a single shortcut](../images/add-in-shortcut-conflict-modal.png)
 
-The user can select which action the keyboard shortcut will take, after making the selection, the preference will be saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the "Reset Office Add-ins Shortcut Preferences" command from the Tell Me search box. Invoking the command will clear all of the user's add-in shortcut preferences and the user will again be prompted with the conflict dialog box the next time they attempt to use a conflicting shortcut:
+The user can select which action the keyboard shortcut will take. After making the selection, the preference is saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the **Reset Office Add-ins shortcut preferences** command from the **Tell me** search box. Invoking the command clears all of the user's add-in shortcut preferences and the user will again be prompted with the conflict dialog box the next time they attempt to use a conflicting shortcut:
 
-![Illustration showing the reset office add-in shortcut preferences action in the tell me search box for Excel.](../images/add-in-reset-shortcuts-action.png)
+![The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action](../images/add-in-reset-shortcuts-action.png)
 
 For the best user experience, we recommend that you minimize conflicts with Excel with these good practices:
 
 - Use only keyboard shortcuts with the following pattern in your add-in: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
 - If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
 - When the keyboard focus is inside the add-in UI, **Ctrl+Spacebar** and **Ctrl+Shift+F10** will not work as these are essential accessibility shortcuts.
-- On a Windows/Mac, if the "Reset Office Add-ins Shortcut Preferences" command is not available for you through the search menu, you can manually add the command to the ribbon by customizing the ribbon through the context menu.
+- On a Windows/Mac, if the **Reset Office Add-ins shortcut preferences** command is not available in the search box, manually add the command to the ribbon by customizing the ribbon through the context menu.
 
 ## Customize the keyboard shortcuts per platform
 
-It is possible to customize shortcuts to be platform specific. The following is an example of the shortcuts object that is customizing the shortcuts for each of the following platforms: `windows`, `mac`, `web`. Note that you must still have a `default` shortcut key for each shortcut.
+It's possible to customize shortcuts to be platform-specific. The following is an example of the `shortcuts` object that customizes the shortcuts for each of the following platforms: `windows`, `mac`, `web`. Note that you must still have a `default` shortcut key for each shortcut.
 
-In the following example, the `default` key is the fallback key for any platform that is not specified, the only platform not specified is Windows, so the `default` key will only apply to Windows.
+In the following example, the `default` key is the fallback key for any platform that is not specified. The only platform not specified is Windows, so the `default` key will only apply to Windows.
 
 ```json
     "shortcuts": [
