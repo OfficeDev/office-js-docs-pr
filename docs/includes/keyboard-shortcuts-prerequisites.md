@@ -1,8 +1,8 @@
 > [!IMPORTANT]
 > Keyboard shortcuts are currently only supported on Excel and only on these platforms and builds:
 >
->* Excel on Windows: Version 2010 (Build 13426.20000)
->* Excel on Mac: 16.43.1101.0
+>* Excel on Windows: Version 2012 (Build 13801.20000)
+>* Excel on Mac: 16.48
 >* Excel on the web
 
 > [!NOTE]
