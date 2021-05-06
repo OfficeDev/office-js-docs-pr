@@ -1,13 +1,13 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: 'Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.'
-ms.date: 02/02/2021
+ms.date: 05/05/2021
 localization_priority: Normal
 ---
 
-# Add Custom keyboard shortcuts to your Office Add-ins (preview)
+# Add custom keyboard shortcuts to your Office Add-ins
 
-Keyboard shortcuts, also known as key combinations, enable your add-in's users to work more efficiently and they improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.
+Keyboard shortcuts, also known as key combinations, enable your add-in's users to work more efficiently. Keyboard shortcuts also improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
@@ -63,23 +63,23 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
             {
                 "action": "SHOWTASKPANE",
                 "key": {
-                    "default": "CTRL+SHIFT+UP"
+                    "default": "Ctrl+Alt+Up"
                 }
             },
             {
                 "action": "HIDETASKPANE",
                 "key": {
-                    "default": "CTRL+SHIFT+DOWN"
+                    "default": "Ctrl+Alt+Down"
                 }
             }
         ]
     }
     ```
 
-    For more information about the JSON objects, see [Constructing the action objects](#constructing-the-action-objects) and [Constructing the shortcut objects](#constructing-the-shortcut-objects). The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+    For more information about the JSON objects, see [Construct the action objects](#construct-the-action-objects) and [Construct the shortcut objects](#construct-the-shortcut-objects). The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
     > [!NOTE]
-    > You can use "CONTROL" in place of "CTRL" throughout this article.
+    > You can use "CONTROL" in place of "Ctrl" throughout this article.
 
     In a later step, the actions will themselves be mapped to functions that you write. In this example, you will later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method.
 
@@ -126,13 +126,13 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     });
     ```
 
-Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Shift+Up arrow key** and **Ctrl+Shift+Down arrow key**. This is the same behavior as shown in the [sample excel keyboard shortcuts add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
+Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up** and **Ctrl+Alt+Down**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample in the Office Add-ins PnP repo in GitHub.
 
 ## Details and restrictions
 
-### Constructing the action objects
+### Construct the action objects
 
-Use the following guidelines when specifying the objects in the `action` array of the shortcuts.json:
+Use the following guidelines when specifying the objects in the `actions` array of the shortcuts.json:
 
 - The property names `id` and `name` are mandatory.
 - The `id` property is used to uniquely identify the action to invoke using a keyboard shortcut.
@@ -158,17 +158,17 @@ The following is an example:
 
 The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
-### Constructing the shortcut objects
+### Construct the shortcut objects
 
 Use the following guidelines when specifying the objects in the `shortcuts` array of the shortcuts.json:
 
 - The property names `action`, `key`, and `default` are required.
 - The value of the `action` property is a string and must match one of the `id` properties in the action object.
 - The `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention, lower case letters are not used in these properties.)
-- The `default` property must contain the name of at least one modifier key (ALT, CTRL, SHIFT) and only one other key.
-- For Macs, we also support the COMMAND modifier key.
-- For Macs, ALT is mapped to the OPTION key. For Windows, COMMAND is mapped to the CTRL key.
-- When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, ALT+a and ALT+A are the same shortcut, so are CTRL+- and CTRL+\_ because "-" and "_" are the same physical key.
+- The `default` property must contain the name of at least one modifier key (Alt, Ctrl, Shift) and only one other key.
+- For Macs, we also support the Command modifier key.
+- For Macs, Alt is mapped to the Option key. For Windows, Command is mapped to the Ctrl key.
+- When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, Alt+a and Alt+A are the same shortcut, so are Ctrl+- and Ctrl+\_ because "-" and "_" are the same physical key.
 - The "+" character indicates that the keys on either side of it are pressed simultaneously.
 
 The following is an example:
@@ -178,13 +178,13 @@ The following is an example:
         {
             "action": "SHOWTASKPANE",
             "key": {
-                "default": "CTRL+SHIFT+UP"
+                "default": "Ctrl+Alt+Up"
             }
         },
         {
             "action": "HIDETASKPANE",
             "key": {
-                "default": "CTRL+SHIFT+DOWN"
+                "default": "Ctrl+Alt+Down"
             }
         }
     ]
@@ -193,24 +193,61 @@ The following is an example:
 The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Keytips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office Add-ins.
+> KeyTips, also known as sequential key shortcuts, such as the Excel shortcut to choose a fill color **Alt+H, H**, are not supported in Office Add-ins.
 
-### Using shortcuts when the focus is in the task pane
+## Avoid key combinations in use by other add-ins
 
-Currently, the keyboard shortcuts for an Office Add-in can only be invoked when the user's focus is in the worksheet. When the user's focus is inside the Office UI (such as the task pane), none of the add-in's shortcuts are ignored. As a workaround, the add-in can define keyboard handlers that can invoke certain actions when the user's focus is inside of the add-in UI.
+There are many keyboard shortcuts that are already in use by Office. Avoid registering keyboard shortcuts for your add-in that are already in use, however there may be some instances where it is necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
-## Using key combinations that are already used by Office or another add-in
+In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut, note that the action name that is displayed in this dialog is the `name` property in the action object in `shortcuts.json` file.
 
-During the preview period, there is no system for determining what happens when a user presses a key combination that is registered by an add-in and also by Office or by another add-in. Behavior is undefined.
+![Illustration showing a conflict modal with two different actions for a single shortcut](../images/add-in-shortcut-conflict-modal.png)
 
-Currently, there is no workaround when two or more add-ins have registered the same keyboard shortcut, but you can minimize conflicts with Excel with these good practices:
+The user can select which action the keyboard shortcut will take. After making the selection, the preference is saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the **Reset Office Add-ins shortcut preferences** command from the **Tell me** search box. Invoking the command clears all of the user's add-in shortcut preferences and the user will again be prompted with the conflict dialog box the next time they attempt to use a conflicting shortcut:
 
-- Use only keyboard shortcuts with the following pattern in your add-in: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
+![The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action](../images/add-in-reset-shortcuts-action.png)
+
+For the best user experience, we recommend that you minimize conflicts with Excel with these good practices:
+
+- Use only keyboard shortcuts with the following pattern: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
 - If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
+- When the keyboard focus is inside the add-in UI, **Ctrl+Spacebar** and **Ctrl+Shift+F10** will not work as these are essential accessibility shortcuts.
+- On a Windows or Mac computer, if the "Reset Office Add-ins shortcut preferences" command is not available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
+
+## Customize the keyboard shortcuts per platform
+
+It's possible to customize shortcuts to be platform-specific. The following is an example of the `shortcuts` object that customizes the shortcuts for each of the following platforms: `windows`, `mac`, `web`. Note that you must still have a `default` shortcut key for each shortcut.
+
+In the following example, the `default` key is the fallback key for any platform that is not specified. The only platform not specified is Windows, so the `default` key will only apply to Windows.
+
+```json
+    "shortcuts": [
+        {
+            "action": "SHOWTASKPANE",
+            "key": {
+                "default": "Ctrl+Alt+Up",
+                "mac": "Command+Shift+Up",
+                "web": "Ctrl+Alt+1",
+            }
+        },
+        {
+            "action": "HIDETASKPANE",
+            "key": {
+                "default": "Ctrl+Alt+Down",
+                "mac": "Command+Shift+Down",
+                "web": "Ctrl+Alt+2"
+            }
+        }
+    ]
+```
+
+## Localize the keyboard shortcuts JSON
+
+If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
 
 ## Browser shortcuts that cannot be overridden
 
-You cannot use any of the following keyboard combinations. They are used by browsers and cannot be overridden. This list is a work in progress. If you discover other combinations that cannot be overridden, please let us know by using the feedback tool at the bottom of this page.
+When using custom keyboard shortcuts on the web, some keyboard shortcuts that are used by the browser cannot be overridden by add-ins. This list is a work in progress. If you discover other combinations that cannot be overridden, please let us know by using the feedback tool at the bottom of this page.
 
 - Ctrl+N
 - Ctrl+Shift+N
@@ -219,11 +256,7 @@ You cannot use any of the following keyboard combinations. They are used by brow
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## Localize the keyboard shortcuts JSON
-
-If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
-
 ## Next Steps
 
-- See the sample add-in [excel-keyboard-shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
+- See the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample add-in.
 - Get an overview of working with extended overrides in [Work with extended overrides of the manifest](../develop/extended-overrides.md).
