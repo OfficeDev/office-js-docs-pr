@@ -11,8 +11,8 @@ To help you get started, we've created tool kits to use with either the [Sketch]
 
 ## Downloads
 
-* [Fabric Design Sketch Toolkit](https://aka.ms/fabric-sketch-toolkit)
-* [Fabric Design Adobe XD Toolkit](https://aka.ms/fabric-toolkit)
+* [Fluent UI Design Sketch Toolkit](https://aka.ms/fabric-sketch-toolkit)
+* [Fluent UI Design Adobe XD Toolkit](https://aka.ms/fabric-toolkit)
 * [Add-in Sketch Toolkit](https://aka.ms/addins_sketch_toolkit)
 * [Add-in Adobe XD Toolkit](https://aka.ms/addins_toolkit)
 * [Segoe UI and Fabric MDL2 icon font](https://static2.sharepointonline.com/files/fabric/fabric-website/files/segoeui_fabricmdl2_icon_fonts.zip)
