@@ -239,7 +239,7 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 1. In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane. Note:
 
-    - The styles that begin with `ms-` are defined by [Fabric Core in Office Add-ins](../design/fabric-core.md), a JavaScript front-end framework for building user experiences for Office. The **Home.html** file includes a reference to the Fabric stylesheet.
+    - The styles that begin with `ms-` are defined by [Fabric Core in Office Add-ins](../design/fabric-core.md), a JavaScript front-end framework for building user experiences for Office. The **Home.html** file includes a reference to the Fabric Core stylesheet.
 
     ```html
     <div id="content-header">

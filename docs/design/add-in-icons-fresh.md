@@ -1,7 +1,7 @@
 ---
 title: Fresh style icon guidelines for Office Add-ins
 description: 'Guidelines for using Fresh style icons in Office Add-ins.'
-ms.date: 03/30/2021
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
@@ -20,7 +20,7 @@ Follow these guidelines when you create your icons:
 |Do|Don't|
 |:---|:---|
 |Keep visuals simple and clear, focusing on the key elements of the communication.| Don't use artifacts that make your icon look messy.|
-|Use the Office icon language to represent behaviors or concepts.|Don’t repurpose Office UI Fabric glyphs for add-in commands in the Office app ribbon or contextual menus. Fabric icons are stylistically different and will not match.|
+|Use the Office icon language to represent behaviors or concepts.|Don’t repurpose Fabric Core glyphs for add-in commands in the Office app ribbon or contextual menus. Fabric Core icons are stylistically different and will not match.|
 |Reuse common Office visual metaphors such as paintbrush for format or magnifying glass for find.|Don't reuse visual metaphors for different commands. Using the same icon for different behaviors and concepts can cause confusion. |
 |Redraw your icons to make them small or larger. Take the time to redraw cutouts, corners, and rounded edges to maximize line clarity. |Don't resize your icons by shrinking or enlarging in size. This can lead to poor visual quality and unclear actions. Complex icons created at a larger size may lose clarity if resized to be smaller without redraw. |
 |Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  |Avoid relying on your logo or brand to communicate what an add-in command does. Brand marks aren't always recognizable at smaller icon sizes and when modifiers are applied. Brand marks often conflict with Office app ribbon icon styles, and can compete for user attention in a saturated environment. |
@@ -84,7 +84,7 @@ All modifiers should have a 1 px transparent cutout between each element, includ
 ## Icon colors
 
 > [!NOTE]
-> These color guidelines are for ribbon icons used in [Add-in commands](add-in-commands.md). These icons are not rendered with Microsoft UI Fabric and the color palette is different from the palette described at [Microsoft UI Fabric | Colors | Shared](https://fluentfabric.azurewebsites.net/#/color/shared).
+> These color guidelines are for ribbon icons used in [Add-in commands](add-in-commands.md). These icons are not rendered with Fluent UI and the color palette is different from the palette described at [Microsoft UI Fabric | Colors | Shared](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color:
 

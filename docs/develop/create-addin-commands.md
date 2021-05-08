@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands in your manifest for Excel, PowerPoint, and Word
 description: 'Use VersionOverrides in your manifest to define add-in commands for Excel, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.'
-ms.date: 05/27/2020
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ Use **[VersionOverrides](../reference/manifest/versionoverrides.md)** in your ma
 - Add buttons or a drop-down list of buttons to the ribbon.
 - Add individual menu items — each containing optional submenus — to specific context (shortcut) menus.
 - Perform actions when your add-in command is chosen. You can:
-  - Show one or more task pane add-ins for users to interact with. Inside your task pane add-in, you can display HTML that uses Office UI Fabric to create a custom UI.
+  - Show one or more task pane add-ins for users to interact with. Inside your task pane add-in, you can display HTML that uses Fluent UI to create a custom UI.
 
      *or*
 

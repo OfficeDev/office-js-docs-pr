@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 02/03/2021
+ms.date: 05/12/2021
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Priority
@@ -785,7 +785,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+            <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
