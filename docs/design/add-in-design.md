@@ -18,10 +18,10 @@ Office applications follow a general set of interaction guidelines. The applicat
 
 Follow the Office design principles to create positive add-in experiences:
 
-- **Design explicitly for Office.** The functionality, look and feel of an add-in must harmoniously complement the Office experience. Add-ins should feel native. They should fit seamlessly into Word on an iPad or PowerPoint on the web. A well-designed add-in will be an appropriate blend of your experience, the platform, and the Office application. Apply document and UI theming where appropriate. Consider using [Fluent UI for the web](https://developer.microsoft.com/en-us/fluentui#/get-started/web) as your design language and tool set. The Fluent UI for the web has two flavors:
+- **Design explicitly for Office.** The functionality, as well as the look and feel, of an add-in must harmoniously complement the Office experience. Add-ins should feel native. They should fit seamlessly into Word on an iPad or PowerPoint on the web. A well-designed add-in will be an appropriate blend of your experience, the platform, and the Office application. Apply document and UI theming where appropriate. Consider using [Fluent UI for the web](https://developer.microsoft.com/en-us/fluentui#/get-started/web) as your design language and tool set. The Fluent UI for the web has two flavors:
 
-  - **For non-React UIs** use [Fabric Core](https://developer.microsoft.com/en-us/fluentui#/get-started/web#fabric-core); an open-source collection of CSS classes and Sass mixins that give you access to colors, animations, fonts, icons, and grids. (It is called "Fabric Core" instead of "Fluent Core" for historical reasons.) See also the open source repo [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core). You can also make use of a set of 31 non-React components from [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js), including buttons, dialogs, pickers, and more.
-  - **For React UIs** use [Fluent UI React](https://developer.microsoft.com/en-us/fluentui#/get-started/web#fluent-ui-react); a React front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS. See also the open source repo [Fluent UI Web](https://github.com/microsoft/fluentui).
+  - **For non-React UIs:** Use **Fabric Core**, an open-source collection of CSS classes and SASS mixins that give you access to colors, animations, fonts, icons, and grids. (It is called "Fabric Core" instead of "Fluent Core" for historical reasons.) To get started, see [Fabric Core in Office Add-ins](fabric-core.md).
+  - **For React UIs:** use **Fluent UI React**, a React front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS. To get started, see [Use Fluent UI React in Office Add-ins](using-office-ui-fabric-react.md).
 
 - **Favor content over chrome.** Allow customers’ page, slide, or spreadsheet to remain the focus of the experience. An add-in is an auxiliary interface. No accessory chrome should interfere with the add-in’s content and functionality. Brand your experience wisely. We know it is important to provide users with a unique, recognizable experience but avoid distraction. Strive to keep the focus on content and task completion, not brand attention.
 
@@ -32,4 +32,3 @@ Follow the Office design principles to create positive add-in experiences:
 ## See also
 
 - [Add-in development best practices](../concepts/add-in-development-best-practices.md)
-

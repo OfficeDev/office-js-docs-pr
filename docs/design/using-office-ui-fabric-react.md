@@ -1,18 +1,18 @@
 ---
-title: Use Office UI Fabric React in Office Add-ins
-description: 'Learn how to use Office UI Fabric React in Office Add-ins.'
-ms.date: 02/09/2021
+title: Fluent UI React in Office Add-ins
+description: 'Learn how to use Fluent UI React in Office Add-ins.'
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
-# Use Office UI Fabric React in Office Add-ins
+# Use Fluent UI React in Office Add-ins
 
-Office UI Fabric is a JavaScript front-end framework for building user experiences for Office. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in.
-
-This article describes how to create an add-in that's built with React and uses Fabric React components.
+Fluent UI React is a JavaScript front-end framework for building user experiences for Office based on the React framework. It is designed to build experiences that fit seamlessly into a broad range of Microsoft products. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS.
 
 > [!NOTE]
-> [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) is included with Fabric React, which means your add-in will also have access to Fabric Core after you've completed the steps in this article.
+> This article describes the use of Fluent UI React in the context of Office Add-ins. But it is also used in a wide range of Microsoft 365 apps and extensions. For a fuller understanding see [Fluent UI React](https://developer.microsoft.com/en-us/fluentui#/get-started/web#fluent-ui-react) and the open source repo [Fluent UI Web](https://github.com/microsoft/fluentui).
+
+This article describes how to create an add-in that's built with React and uses Fluent UI React components.
 
 ## Create an add-in project
 
@@ -71,13 +71,13 @@ After you complete the wizard, the generator creates the project and installs su
 
         To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fabric React.
+3. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fluent UI React.
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 
-## Create a React component that uses Fabric React
+## Create a React component that uses Fluent UI React
 
-At this point, you've created a very basic task pane add-in that's built using React. Next, complete the following steps to create a new React component (`ButtonPrimaryExample`) within the add-in project. The component uses the `Label` and `PrimaryButton` components from Fabric React.
+At this point, you've created a very basic task pane add-in that's built using React. Next, complete the following steps to create a new React component (`ButtonPrimaryExample`) within the add-in project. The component uses the `Label` and `PrimaryButton` components from Fluent UI React.
 
 1. Open the project folder created by the Yeoman generator, and go to **src\taskpane\components**.
 2. In that folder, create a new file named **Button.tsx**.
@@ -97,7 +97,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     // In the click event, write text to the document.
     await Word.run(async (context) => {
       let body = context.document.body;
-      body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
+      body.insertParagraph('Hello Fluent UI React!', Word.InsertLocation.end);
       await context.sync();
     });
   }
@@ -121,10 +121,10 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 This code does the following:
 
 - References the React library using `import * as React from 'react';`.
-- References the Fabric components (`PrimaryButton`, `IButtonProps`, `Label`) that are used to create `ButtonPrimaryExample`.
+- References the Fluent UI React components (`PrimaryButton`, `IButtonProps`, `Label`) that are used to create `ButtonPrimaryExample`.
 - Declares the new `ButtonPrimaryExample` component using `export class ButtonPrimaryExample extends React.Component`.
 - Declares the `insertText` function that will handle the button's `onClick` event.
-- Defines the UI of the React component in the `render` function. The HTML markup uses the `Label` and `PrimaryButton` components from Fabric React and specifies that when the `onClick` event fires, the `insertText` function will run.
+- Defines the UI of the React component in the `render` function. The HTML markup uses the `Label` and `PrimaryButton` components from Fluent UI React and specifies that when the `onClick` event fires, the `insertText` function will run.
 
 ## Add the React component to your add-in
 
@@ -167,11 +167,10 @@ In Word, the add-in task pane automatically updates when you save changes to **A
 
 ![Screenshot showing the Word application with the "Insert text..." button and immediately preceding text highlighted](../images/word-task-pane-with-react-component.png)
 
-Congratulations, you've successfully created a task pane add-in using React and Office UI Fabric React!
+Congratulations, you've successfully created a task pane add-in using React and Fluent UI React!
 
 ## See also
 
-- [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
-- [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [Word Add-in GettingStartedFabricReact](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
+- [Fabric Core in Office Add-ins](fabric-core.md)
 - [UX design patterns for Office Add-ins](ux-design-pattern-templates.md)
-- [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
