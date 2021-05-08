@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Fabric Core an open-source collection of CSS classes and SASS mixins that is *intended for use in non-React* Office Add-ins. Fabric Core contains basic elements of the Fluent UI design language such as icons, colors, typefaces, and grids. Fabric Core is framework independent, so it can be used with any single-page application or any server-side web UI framework. (It is called "Fabric Core" instead of "Fluent Core" for historical reasons.)
 
-If your add-in's UI is not React-based, you can also make use of a set of non-React components. See [Use Fabric UI components](#use-fabric-ui-components).
+If your add-in's UI is not React-based, you can also make use of a set of non-React components. See [Use Office UI Fabric JS components](#use-office-ui-fabric-js-components).
 
 > [!NOTE]
 > This article describes the use of Fabric Core in the context of Office Add-ins. But it is also used in a wide range of Microsoft 365 apps and extensions. For a fuller understanding see [Fabric Core](https://developer.microsoft.com/en-us/fluentui#/get-started/web#fabric-core) and the open source repo [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core).
@@ -38,7 +38,7 @@ To get started using Fabric Core:
 
 See [Samples](#samples) below.
 
-## Use Fabric UI components
+## Use Office UI Fabric JS components
 
 Add-ins with non-React UIs can also use any of the 31 components from [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js), including buttons, dialogs, pickers, and more. See the readme of the repo for instructions.
 
