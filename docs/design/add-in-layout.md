@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Each HTML container embedded in Office will have a layout. These layouts are the main screens of your add-in. In them you will create experiences that enable customers to initiate actions, modify settings, view, scroll, or navigate content. Design your add-in with a consistent layouts across screens to guarantee continuity of experience. If you have an existing website that your customers are familiar with using, consider reusing layouts from your existing web pages. Adapt them to fit harmoniously within Office HTML containers.
 
-For guidelines on layout, see [Task pane](task-pane-add-ins.md), [Content](content-add-ins.md), and [Dialog box](dialog-boxes.md). For more information about how to assemble Fluent UI React, or Office UI Fabric JS, components into common layouts and user experience flows, see [UX design patterns templates](ux-design-pattern-templates.md).
+For guidelines on layout, see [Task pane](task-pane-add-ins.md), [Content](content-add-ins.md), and [Dialog box](dialog-boxes.md). For more information about how to assemble [Fluent UI React](using-office-ui-fabric-react.md), or [Office UI Fabric JS](fabric-core.md), components into common layouts and user experience flows, see [UX design patterns templates](ux-design-pattern-templates.md).
 
 Apply the following general guidelines for layouts:
 
