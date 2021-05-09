@@ -18,7 +18,7 @@ You can also specify whether the command is enabled or disabled when the Office 
 
 ## Office application and platform support only
 
-The APIs described in this article are only available in Excel, and only in Office on Windows, Office on Mac, and Office on the web.
+The APIs described in this article are only available in Excel on all platforms and in PowerPoint on the web.
 
 ### Test for platform support with requirement sets
 
