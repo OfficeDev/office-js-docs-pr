@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Design tool kits
 
-To help you get started, we've created tool kits to use with either the [Sketch](https://www.sketch.com/) application for Mac or the [Adobe XD](https://www.adobe.com/products/xd/features.html) application for Windows or Mac. You can find all of our available patterns here with brief descriptions and layout recommendations.
+To help you get started, we've created tool kits for use with either the [Sketch](https://www.sketch.com/) application for Mac or the [Adobe XD](https://www.adobe.com/products/xd/features.html) application for Windows or Mac. The following downloads include all of our available patterns, along with brief descriptions and layout recommendations.
 
 ## Downloads
 

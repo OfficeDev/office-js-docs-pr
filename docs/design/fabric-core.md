@@ -7,12 +7,12 @@ localization_priority: Normal
 
 # Fabric Core in Office Add-ins
 
-Fabric Core an open-source collection of CSS classes and SASS mixins that is *intended for use in non-React* Office Add-ins. Fabric Core contains basic elements of the Fluent UI design language such as icons, colors, typefaces, and grids. Fabric Core is framework independent, so it can be used with any single-page application or any server-side web UI framework. (It is called "Fabric Core" instead of "Fluent Core" for historical reasons.)
+Fabric Core is an open-source collection of CSS classes and SASS mixins that's *intended for use in non-React* Office Add-ins. Fabric Core contains basic elements of the Fluent UI design language such as icons, colors, typefaces, and grids. Fabric Core is framework independent, so it can be used with any single-page application or any server-side web UI framework. (It's called "Fabric Core" instead of "Fluent Core" for historical reasons.)
 
 If your add-in's UI is not React-based, you can also make use of a set of non-React components. See [Use Office UI Fabric JS components](#use-office-ui-fabric-js-components).
 
 > [!NOTE]
-> This article describes the use of Fabric Core in the context of Office Add-ins. But it is also used in a wide range of Microsoft 365 apps and extensions. For a fuller understanding see [Fabric Core](https://developer.microsoft.com/en-us/fluentui#/get-started/web#fabric-core) and the open source repo [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core).
+> This article describes the use of Fabric Core in the context of Office Add-ins. But it's also used in a wide range of Microsoft 365 apps and extensions. For more information, see [Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core) and the open source repo [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core).
 
 ## Use Fabric Core: icons, fonts, colors
 
@@ -32,17 +32,17 @@ To get started using Fabric Core:
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
     ```
 
-    For more detailed instructions, see [Fluent UI Icons](https://developer.microsoft.com/fluentui#/styles/web/icons). To find more icons that are available in Fabric Core, use the search feature on the that page. When you find an icon to use in your add-in, be sure to prefix the icon name with `ms-Icon--`.
+    For more detailed instructions, see [Fluent UI Icons](https://developer.microsoft.com/fluentui#/styles/web/icons). To find more icons that are available in Fabric Core, use the search feature on that page. When you find an icon to use in your add-in, be sure to prefix the icon name with `ms-Icon--`.
 
     For information about font sizes and colors that are available in Fabric Core, see [Typography](https://developer.microsoft.com/fluentui#/styles/web/typography) and the **Colors** table of contents at [Colors](https://developer.microsoft.com/fluentui#/styles/web/colors).
 
-See [Samples](#samples) below.
+Examples are included in the [Samples](#samples) later in this article.
 
 ## Use Office UI Fabric JS components
 
 Add-ins with non-React UIs can also use any of the 31 components from [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js), including buttons, dialogs, pickers, and more. See the readme of the repo for instructions.
 
-See [Samples](#samples) below.
+Examples are included in the [Samples](#samples) later in this article.
 
 ## Samples
 

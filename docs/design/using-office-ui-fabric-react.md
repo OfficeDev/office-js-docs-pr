@@ -7,10 +7,10 @@ localization_priority: Normal
 
 # Use Fluent UI React in Office Add-ins
 
-Fluent UI React is a JavaScript front-end framework for building user experiences for Office based on the React framework. It is designed to build experiences that fit seamlessly into a broad range of Microsoft products. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS.
+Fluent UI React is the official open-source JavaScript front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products, including Office. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS.
 
 > [!NOTE]
-> This article describes the use of Fluent UI React in the context of Office Add-ins. But it is also used in a wide range of Microsoft 365 apps and extensions. For a fuller understanding see [Fluent UI React](https://developer.microsoft.com/en-us/fluentui#/get-started/web#fluent-ui-react) and the open source repo [Fluent UI Web](https://github.com/microsoft/fluentui).
+> This article describes the use of Fluent UI React in the context of Office Add-ins. But it is also used in a wide range of Microsoft 365 apps and extensions. For more information, see [Fluent UI React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) and the open source repo [Fluent UI Web](https://github.com/microsoft/fluentui).
 
 This article describes how to create an add-in that's built with React and uses Fluent UI React components.
 
@@ -71,7 +71,7 @@ After you complete the wizard, the generator creates the project and installs su
 
         To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fluent UI React.
+3. To open the add-in task pane, on the **Home** tab, choose the **Show Taskpane** button. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fluent UI React.
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 

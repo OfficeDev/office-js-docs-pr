@@ -311,7 +311,7 @@ Let's start by creating the UI for the dialog itself. Within the **./src** folde
   <!-- Office JavaScript API -->
   <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-  !-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
+<!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
   <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
   <!-- Template styles -->
@@ -972,7 +972,7 @@ In the project that you've created, the task pane HTML is specified in the file 
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    !-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
+   <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
     <!-- Template styles -->

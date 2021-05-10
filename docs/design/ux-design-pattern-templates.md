@@ -13,7 +13,7 @@ Our UX patterns are composed of components. Components are controls that help yo
 
 [Fluent UI React components](using-office-ui-fabric-react.md) look and behave like a part of Office, as do the framework-neutral components of [Office UI Fabric JS](fabric-core.md). Take advantage of either set of components to integrate with Office. Alternatively, if your add-in has its own preexisting component language, you don't need to discard it. Look for opportunities to retain it while integrating with Office. Consider ways to swap out stylistic elements, remove conflicts, or adopt styles and behaviors that remove user confusion.
 
-The provided patterns are best practice solutions based on common customer scenarios and user experience research. They are meant to provide both a quick entry point to designing and developing add-ins as well as guidance to achieve balance between Microsoft and brand elements. Providing a clean, modern user experience that balances design elements from Microsoft's Fluent UI design language and the partner's unique brand identity may help increase user retention and adoption of your add-in.
+The provided patterns are best practice solutions based on common customer scenarios and user experience research. They are meant to provide both a quick entry point to designing and developing add-ins as well as guidance to achieve balance between Microsoft brand elements and your own. Providing a clean, modern user experience that balances design elements from Microsoft's Fluent UI design language and the partner's unique brand identity may help increase user retention and adoption of your add-in.
 
 Use the UX pattern templates to:
 
