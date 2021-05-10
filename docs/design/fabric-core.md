@@ -40,7 +40,7 @@ Examples are included in the [Samples](#samples) later in this article.
 
 ## Use Office UI Fabric JS components
 
-Add-ins with non-React UIs can also use any of the 31 components from [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js), including buttons, dialogs, pickers, and more. See the readme of the repo for instructions.
+Add-ins with non-React UIs can also use any of the many components from [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js), including buttons, dialogs, pickers, and more. See the readme of the repo for instructions.
 
 Examples are included in the [Samples](#samples) later in this article.
 
