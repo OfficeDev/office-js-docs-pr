@@ -1,7 +1,7 @@
 ---
 title: Using motion in Office Add-ins
 description: 'Get best practices for using transitions, motion, or animation in Office Add-ins.'
-ms.date: 07/19/2019
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
@@ -24,11 +24,11 @@ Standard elements used in an add-in can incorporate motion to help focus the use
 |Identify key elements in the add-in that should have motion. Commonly animated elements in an add-in are panels, overlays, modals, tool tips, menus, and teaching call outs.| Don't overwhelm the user by animating every element. Avoid applying multiple motions that attempt to lead or focus the user on many elements at once. |
 |Use simple, subtle motion that behaves in expected ways. Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI. | Don't create wait time for a motion. Motion in add-ins should not hinder task completion.|
 
-![GIF that shows a panel opening with minimal moving elements against a GIF that shows a panel opening with many moving elements](../images/add-in-motion-purpose.gif)
+![GIF that shows a panel opening with minimal moving elements beside a GIF that shows a panel opening with many moving elements](../images/add-in-motion-purpose.gif)
 
 ## Use expected motions
 
-We recommend using [Office UI Fabric](https://developer.microsoft.com/fabric) to create a visual connection with the Office platform, and we also encourage the use of [Fabric Animations](https://developer.microsoft.com/fabric#/styles/web/motion) to create motions that align with the Fabric motion language.
+We recommend using [Fluent UI](https://developer.microsoft.com/fluentui#/) to create a visual connection with the Office platform, and we also encourage the use of [Fluent UI Animations](https://developer.microsoft.com/fluentui#/styles/web/motion) to create motions that align with the Fabric motion language.
 
 Use it to fit seamlessly in Office. It will help you create experiences that are more felt than observed. The animation CSS classes provide directionality, enter/exit, and duration specifics that reinforce Office mental models and provide opportunities for customers to learn how to interact with your add-in.
 
@@ -36,11 +36,11 @@ Use it to fit seamlessly in Office. It will help you create experiences that are
 
 |Do|Don't|
 |:-----|:-----|
-|Use motion that aligns with behaviors in Fabric.| Don't create motions that interfere or conflict with common motion patterns in Office.
+|Use motion that aligns with behaviors in Fluent UI.| Don't create motions that interfere or conflict with common motion patterns in Office.
 |Ensure that there is a consistent application of motion across like elements.| Don't use different motions to animate the same component or object.|
 |Create consistency with use of direction in animation. For example, a panel that opens from the right should close to the right.|Don't animate an element using multiple directions.
 
-![GIF that shows a modal opening in an expected manner against a GIF that shows a modal opening in an unexpected manner](../images/add-in-motion-expected.gif)
+![GIF that shows a modal opening in an expected manner beside a GIF that shows a modal opening in an unexpected manner](../images/add-in-motion-expected.gif)
 
 ## Avoid out of character motion for an element
 
@@ -50,12 +50,12 @@ Consider the size of the HTML canvas (task pane, dialog box, or content add-in) 
 
 |Do|Don't|
 |:-----|:-----|
-| Use [recommended motion durations](https://developer.microsoft.com/fabric#/styles/web/motion). | Don't use exaggerated animations. Avoid creating experiences that embellish and distract your customers.
+| Use [recommended motion durations](https://developer.microsoft.com/fluentui#/styles/web/motion). | Don't use exaggerated animations. Avoid creating experiences that embellish and distract your customers.
 | Follow [recommended easing curves](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Don't move elements in a jerky or disjointed manner. Avoid anticipations, bounces, rubberband, or other effects that emulate natural world physics.|
 
-![GIF that shows tiles loading using a gentle fade in against a GIF that shows tiles loading with bounce](../images/add-in-motion-character.gif)
+![GIF that shows tiles loading using a gentle fade-in beside a GIF that shows tiles loading with bounce](../images/add-in-motion-character.gif)
 
 ## See also
 
-* [Fabric animation guidelines](https://developer.microsoft.com/fabric#/styles/web/motion)
+* [Fluent UI animation guidelines](https://developer.microsoft.com/fluentui#/styles/web/motion)
 * [Motion for Universal Windows Platform apps](/windows/uwp/design/motion)

@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: 'Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.'
-ms.date: 07/07/2020
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
@@ -51,6 +51,6 @@ For a sample that implements a content add-in, see [Excel Content Add-in Humongo
 ## See also
 
 - [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md)
-- [Office UI Fabric in Office Add-ins](../design/office-ui-fabric.md)
+- [Fabric Core in Office Add-ins](fabric-core.md)
 - [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)
 - [Requesting permissions for API use in add-ins](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
