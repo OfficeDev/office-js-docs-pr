@@ -18,7 +18,7 @@ Requirement set 1.10 includes all of the features of [Requirement set 1.9](../re
 
 ### Change log
 
-- Added [LaunchEvent extension point](../../manifest/extensionpoint.md#launchevent): Adds a child element to the [VersionOverrides](../../manifest/versionoverrides.md) manifest element. It configures event-based activation functionality.
+- Added [LaunchEvent extension point](../../manifest/extensionpoint.md#launchevent): Adds a new supported type of ExtensionPoint. It configures event-based activation functionality.
 - Added [LaunchEvents manifest element](../../manifest/launchevents.md): Adds a manifest element to support configuring event-based activation functionality.
 - Modified [Runtimes manifest element](../../manifest/runtimes.md): Adds Outlook support. It references the HTML and JavaScript files needed for event-based activation functionality.
 - Added [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setsignatureasync-data--options--callback-): Adds a new function to the `Body` object. It adds or replaces the signature in the item body in Compose mode.

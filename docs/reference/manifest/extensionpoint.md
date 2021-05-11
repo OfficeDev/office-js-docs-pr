@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 02/12/2021
+ms.date: 05/11/2021
 localization_priority: Normal
 ---
 
@@ -88,7 +88,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 - [Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface)
-- [LaunchEvent](#launchevent-preview)
+- [LaunchEvent](#launchevent)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
@@ -302,10 +302,7 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
 </ExtensionPoint>
 ```
 
-### LaunchEvent (preview)
-
-> [!NOTE]
-> This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription.
+### LaunchEvent
 
 This extension point enables an add-in to activate based on supported events in the desktop form factor. Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`. To learn more about this scenario, see the [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md) article.
 
