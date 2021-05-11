@@ -1,7 +1,7 @@
 ---
 title: Task panes in Office Add-ins
 description: 'Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.'
-ms.date: 07/07/2020
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
@@ -69,5 +69,5 @@ For a sample that implements a task pane, see [Excel Add-in JS WoodGrove Expense
 
 ## See also
 
-- [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
+- [Fabric Core in Office Add-ins](fabric-core.md)
 - [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)

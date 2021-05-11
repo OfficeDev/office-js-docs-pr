@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
 description: 'Apply the best practices when developing to create Office Add-ins.'
-ms.date: 10/14/2020
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
@@ -53,7 +53,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 ## Apply UX design principles
 
-- Ensure that the look and feel and functionality of your add-in complements the Office experience. Use [Office UI Fabric](https://developer.microsoft.com/fabric).
+- Ensure that the look and feel and functionality of your add-in complements the Office experience. See [Design the UI of Office Add-ins](../design/add-in-design.md).
 
 - Favor content over chrome. Avoid superfluous UI elements that don't add value to the user experience.
 
@@ -87,7 +87,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 - Test your add-in on a real device by using [sideloading](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 > [!NOTE]
-> If you're using [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) for your design elements, many of these elements are taken care of.
+> If you're using [Fluent UI React](../design/using-office-ui-fabric-react.md) for your design elements, many of these elements are built into the design system.
 
 
 ## Optimize and monitor add-in performance

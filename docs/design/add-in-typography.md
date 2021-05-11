@@ -1,16 +1,16 @@
 ---
 title: Typography guidelines for Office Add-ins
 description: 'Learn what typefaces and font sizes to use in Office Add-ins.'
-ms.date: 09/03/2020
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
 # Typography
 
-Segoe is the standard typeface for Office. Use it in your add-in to align with Office task panes, dialog boxes, and content objects. Office UI Fabric gives you access to Segoe. It provides a full type ramp of Segoe with many variations - across font weight and size - in convenient CSS classes. Not all Office UI Fabric sizes and weights will look great in an Office Add-in. To fit harmoniously or avoid conflicts, consider using a subset of the Fabric type ramp. The following table lists Fabric's base classes that we recommend for use in Office Add-ins.
+Segoe is the standard typeface for Office. Use it in your add-in to align with Office task panes, dialog boxes, and content objects. [Fabric Core](fabric-core.md) gives you access to Segoe. It provides a full type ramp of Segoe with many variations - across font weight and size - in convenient CSS classes. Not all Fabric Core sizes and weights will look great in an Office Add-in. To fit harmoniously or avoid conflicts, consider using a subset of the Fabric Core type ramp. The following table lists Fabric Core's base classes that we recommend for use in Office Add-ins.
 
 > [!NOTE]
-> Text color is not included in these base classes. Use Fabric's "neutral primary" for most text on white backgrounds.
+> Text color is not included in these base classes. Use Fabric Core's "neutral primary" for most text on white backgrounds.
 >
 > To learn more about available typography, see [Web Typography](https://developer.microsoft.com/fluentui#/styles/web/typography).
 

@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: 'In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.'
-ms.date: 02/09/2021
+ms.date: 05/12/2021
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 localization_priority: Priority
@@ -239,7 +239,7 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 1. In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane. Note:
 
-    - The styles that begin with `ms-` are defined by [Office UI Fabric](../design/office-ui-fabric.md), a JavaScript front-end framework for building user experiences for Office. The **Home.html** file includes a reference to the Fabric stylesheet.
+    - The styles that begin with `ms-` are defined by [Fabric Core in Office Add-ins](../design/fabric-core.md), a JavaScript front-end framework for building user experiences for Office. The **Home.html** file includes a reference to the Fabric Core stylesheet.
 
     ```html
     <div id="content-header">

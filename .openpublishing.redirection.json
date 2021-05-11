@@ -327,8 +327,13 @@
         "redirect_document_id": false 
       },
       {
+         "source_path": "docs/design/office-ui-fabric.md",
+         "redirect_url": "/office/dev/add-ins/design/fabric-core",
+         "redirect_document_id": false
+      },
+      {
          "source_path": "docs/design/ui-elements/using-office-ui-fabric.md",
-         "redirect_url": "/office/dev/add-ins/design/office-ui-fabric",
+         "redirect_url": "/office/dev/add-ins/design/fabric-core",
          "redirect_document_id": true
       },
       {

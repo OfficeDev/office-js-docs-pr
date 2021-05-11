@@ -148,6 +148,10 @@ items:
       items:
       - name: Overview
         href: design/add-in-design.md
+      - name: Fluent UI React in Office Add-ins
+        href: design/using-office-ui-fabric-react.md
+      - name: Fabric Core in Office Add-ins
+        href: design/fabric-core.md
       - name: Guidelines
         items:
         - name: Accessibility
@@ -190,6 +194,8 @@ items:
             href: design/first-run-experience-patterns.md
           - name: Navigation
             href: design/navigation-patterns.md
+      - name: Design tool kits
+        href: design/design-toolkits.md
       - name: Interface elements
         items:
         - name: Overview
@@ -232,14 +238,6 @@ items:
         href: develop/show-hide-add-in.md  
       - name: Localization
         href: develop/localization.md
-      - name: Resources
-        items: 
-        - name: Design toolkits
-          href: design/design-toolkits.md
-        - name: Get started using Fabric React
-          href: design/using-office-ui-fabric-react.md
-        - name: Office UI Fabric
-          href: design/office-ui-fabric.md
     - name: Frameworks and IDEs
       items:
       - name: Develop add-ins with Angular
