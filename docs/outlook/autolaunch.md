@@ -129,8 +129,17 @@ To enable event-based activation of your add-in, you must configure the [Runtime
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
+              <!-- Events supported on the web and on Windows. -->
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              <!-- Events supported only on Windows. -->
+              <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChanged" />
+              <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChanged" />
+              <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChanged" />
+              <LaunchEvent Type="OnAppointmentAttendeesChanged" FunctionName="onAppointmentAttendeesChanged" />
+              <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChanged" />
+              <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChanged" />
+              <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClicked" />
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -246,14 +255,14 @@ In this scenario, you'll add handling for composing new items.
     > If you see the error "We can't open this add-in from localhost," you'll need to enable a loopback exemption.
     >
     > 1. Close Outlook.
-    > 2. Open the **Task Manager** and ensure that the **msoadfs.exe** process is not running.
-    > 3. Run the following command.
+    > 1. Open the **Task Manager** and ensure that the **msoadfs.exe** process is not running.
+    > 1. Run the following command.
     >
     >     ```command&nbsp;line
     >     call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
     >     ```
     >
-    > 4. Restart Outlook.
+    > 1. Restart Outlook.
 
 ## Debug
 
@@ -261,7 +270,7 @@ As you implement your own functionality, you may need to debug your code. For gu
 
 ## Event-based activation behavior and limitations
 
-Add-ins that activate based on events are expected to be short-running, lightweight, and as non-invasive as possible. To signal that your add-in has completed processing the launch event, we recommend you have your add-in call the `event.completed` method. If that call is not made, the add-in will time out within approximately 300 seconds, the maximum length of time allowed for running event-based add-ins. The add-in also ends when the user closes the compose window.
+Add-in launch-event handlers are expected to be short-running, lightweight, and as noninvasive as possible. After activation, your add-in will time out within approximately 300 seconds, the maximum length of time allowed for running event-based add-ins. To signal that your add-in has completed processing a launch event, we recommend you have the associated handler call the `event.completed` method. (Note that code included after the `event.completed` statement is not guaranteed to run.) Each time an event that your add-in handles is triggered, the add-in is reactivated and runs the associated event handler, and the timeout window is reset. The add-in ends after it times out or the user closes the compose window.
 
 If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running. Any additional add-ins are pushed to a queue then run as previously active add-ins are completed or deactivated.
 
@@ -269,6 +278,8 @@ The user can switch or navigate away from the current mail item where the add-in
 
 Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs:
 
+- Under `OfficeRuntime.auth`:
+  - `getAccessToken` (Windows only)
 - Under `Office.context.auth`:
   - `getAccessToken`
   - `getAccessTokenAsync`

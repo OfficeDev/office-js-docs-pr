@@ -32,7 +32,7 @@ Configures your add-in to activate based on supported events. Child of the [`<La
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Type**  |  Yes  | Specifies a supported event type. Available types are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`. |
+|  **Type**  |  Yes  | Specifies a supported event type. For the set of supported types, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#supported-events). |
 |  **FunctionName**  |  Yes  | Specifies the name of the JavaScript function to handle the event specified in the `Type` attribute. |
 
 ## See also
