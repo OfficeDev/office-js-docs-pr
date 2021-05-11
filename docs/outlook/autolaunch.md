@@ -6,7 +6,7 @@ ms.date: 05/11/2021
 localization_priority: Normal
 ---
 
-# Configure your Outlook add-in for event-based activation (preview)
+# Configure your Outlook add-in for event-based activation
 
 Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality.
 
