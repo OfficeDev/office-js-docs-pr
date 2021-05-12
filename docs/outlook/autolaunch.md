@@ -249,7 +249,7 @@ In this scenario, you'll add handling for composing new items.
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
-    > If you see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
+    > If you're running your add-in from localhost and see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
     >
     > 1. Close Outlook.
     > 1. Open the **Task Manager** and ensure that the **msoadfs.exe** process is not running.
