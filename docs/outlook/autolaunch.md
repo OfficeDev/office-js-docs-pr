@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 05/11/2021
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
@@ -252,7 +252,7 @@ In this scenario, you'll add handling for composing new items.
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
-    > If you see the error "We can't open this add-in from localhost," you'll need to enable a loopback exemption.
+    > If you're running your add-in from localhost and see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
     >
     > 1. Close Outlook.
     > 1. Open the **Task Manager** and ensure that the **msoadfs.exe** process is not running.
@@ -270,9 +270,9 @@ As you implement your own functionality, you may need to debug your code. For gu
 
 ## Event-based activation behavior and limitations
 
-Add-in launch-event handlers are expected to be short-running, lightweight, and as noninvasive as possible. After activation, your add-in will time out within approximately 300 seconds, the maximum length of time allowed for running event-based add-ins. To signal that your add-in has completed processing a launch event, we recommend you have the associated handler call the `event.completed` method. (Note that code included after the `event.completed` statement is not guaranteed to run.) Each time an event that your add-in handles is triggered, the add-in is reactivated and runs the associated event handler, and the timeout window is reset. The add-in ends after it times out or the user closes the compose window.
+Add-in launch-event handlers are expected to be short-running, lightweight, and as noninvasive as possible. After activation, your add-in will time out within approximately 300 seconds, the maximum length of time allowed for running event-based add-ins. To signal that your add-in has completed processing a launch event, we recommend you have the associated handler call the `event.completed` method. (Note that code included after the `event.completed` statement is not guaranteed to run.) Each time an event that your add-in handles is triggered, the add-in is reactivated and runs the associated event handler, and the timeout window is reset. The add-in ends after it times out, or the user closes the compose window or sends the item.
 
-If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running. Any additional add-ins are pushed to a queue then run as previously active add-ins are completed or deactivated.
+If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running.
 
 The user can switch or navigate away from the current mail item where the add-in started running. The add-in that was launched will finish its operation in the background.
 
