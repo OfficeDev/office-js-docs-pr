@@ -48,7 +48,7 @@ To preview this feature:
     1. Create the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`.
     1. Add an entry named `EnableBetaAPIsInJavaScript` and set the value to `1`. The following image shows what the registry should look like.
 
-        ![Screenshot of the registry editor with an enable-beta-A-P-I-in-JavaScript registry key value](../images/outlook-beta-registry-key.png)
+        ![Screenshot of the registry editor with an EnableBetaAPIsInJavaScript registry key value](../images/outlook-beta-registry-key.png)
 
 ## Set up your environment
 
