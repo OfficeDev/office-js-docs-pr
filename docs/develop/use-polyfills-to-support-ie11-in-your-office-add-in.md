@@ -6,7 +6,7 @@ localization_priority: Priority
 ---
 # Use polyfills to support Internet Explorer 11 (IE11) in your Office Add-in
 
-There are still a large number of customers who use the Internet Explorer 11 (IE11) browser, and to reach them, you'll want your Office Add-in to successfully run on it. However, IE11 does not implement many JavaScript features that are available on modern browsers like Microsoft Edge and Google Chrome. This blog shows how to use Polyfills in your Office Add-in to work around missing IE11 functionality.
+There are still a large number of customers who use the Internet Explorer 11 (IE11) browser, and to reach them, you'll want your Office Add-in to successfully run on it. However, IE11 does not implement many JavaScript features that are available on modern browsers like Microsoft Edge and Google Chrome. This article shows how to use Polyfills in your Office Add-in to work around missing IE11 functionality.
 
 ## How a polyfill works
 
