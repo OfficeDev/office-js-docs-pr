@@ -246,7 +246,7 @@ In this scenario, you'll add handling for composing new items.
     > If you're running your add-in from localhost and see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
     >
     > 1. Close Outlook.
-    > 1. Open the **Task Manager** and ensure that the **msoadfs.exe** process is not running.
+    > 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
     > 1. Run the following command.
     >
     >    ```command&nbsp;line
