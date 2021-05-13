@@ -1270,6 +1270,8 @@ items:
     displayName: Excel, Custom Functions
   - name: Authentication
     href: develop/authentication-pnp.md
+  - name: Use polyfills to support IE11
+    href: develop/use-polyfills-to-support-ie11-in-your-office-add-in.md
   - name: Handle high DPI and DPI scaling in your Office solution
     href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
   - name: Office Add-ins community call
