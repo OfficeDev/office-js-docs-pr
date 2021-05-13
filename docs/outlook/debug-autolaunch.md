@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in (preview)
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 02/17/2021
+ms.date: 05/13/2021
 localization_priority: Normal
 ---
 
@@ -132,4 +132,5 @@ To prevent the **Debug Event-based handler** dialog from popping up and stop deb
 
 ## See also
 
-[Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows)
