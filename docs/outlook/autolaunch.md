@@ -232,7 +232,7 @@ In this scenario, you'll add handling for composing new items.
     ```
 
     > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to manually sideload the add-in in Outlook.
+    > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
 
 1. In Outlook on the web, create a new message.
 
