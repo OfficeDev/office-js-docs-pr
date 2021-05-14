@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in (preview)
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 05/13/2021
+ms.date: 05/14/2021
 localization_priority: Normal
 ---
 
@@ -20,7 +20,7 @@ In this article, we discuss the key stages to enable debugging.
 - [Attach Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-You have several options for creating your add-in project. Depending on the option you're using, the steps may vary. Where this is the case, if you used the Yeoman generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **yo office** steps, otherwise follow the **Other** steps.
+You have several options for creating your add-in project. Depending on the option you're using, the steps may vary. Where this is the case, if you used the Yeoman generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **yo office** steps, otherwise follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
 
 ## Preview debugging for the event-based activation feature
 
