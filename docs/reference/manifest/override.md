@@ -9,9 +9,9 @@ localization_priority: Normal
 
 Provides a way to override the value of a manifest setting depending on a specified condition. There are three kinds of conditions:
 
-- **LocaleTokenOverride**: An Office locale that is different from the default `LocaleToken`.
-- **RequirementTokenOverride**: A pattern of requirement set support that is different from the default `RequirementToken` pattern.
-- **RuntimeOverride** (currently in preview): The source is different from the default `Runtime`.
+- An Office locale that is different from the default `LocaleToken`, called **LocaleTokenOverride**.
+- A pattern of requirement set support that is different from the default `RequirementToken` pattern, called **RequirementTokenOverride**.
+- The source is different from the default `Runtime`, called **RuntimeOverride** (currently in preview).
 
 An `<Override>` element that is inside of a `<Runtime>` element must be of type **RuntimeOverride**.
 
