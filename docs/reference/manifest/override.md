@@ -222,7 +222,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 |Attribute|Type|Required|Description|
 |:-----|:-----|:-----|:-----|
 |**type**|string|Yes|Specifies the language for this override. At present, `"javascript"` is the only supported option.|
-|**resid**|string|Yes|Specifies the URL location of the JavaScript file that should override the URL location of the default HTML defined in the parent `Runtime` element's `resid`. The `resid` can be no more than 32 characters and must match an `id` attribute of a `Url` element in the `Resources` element.|
+|**resid**|string|Yes|Specifies the URL location of the JavaScript file that should override the URL location of the default HTML defined in the parent [Runtime](runtime.md) element's `resid`. The `resid` can be no more than 32 characters and must match an `id` attribute of a `Url` element in the `Resources` element.|
 
 ### Examples
 
