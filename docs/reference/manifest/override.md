@@ -9,13 +9,17 @@ localization_priority: Normal
 
 Provides a way to override the value of a manifest setting depending on a specified condition. There are three kinds of conditions:
 
-- An Office locale that is different from the default.
-- A pattern of requirement set support that is different from the default pattern.
-- The runtime source is different from the default (currently in preview).
+- **LocaleTokenOverride**: An Office locale that is different from the default `LocaleToken`.
+- **RequirementTokenOverride**: A pattern of requirement set support that is different from the default `RequirementToken` pattern.
+- **RuntimeOverride** (currently in preview): The source is different from the default `Runtime`.
 
-There are three types of `<Override>` elements, one is for locale overrides, called **LocaleTokenOverride**, another for requirement set overrides, called **RequirementTokenOverride**, and a third for runtime overrides, called **RuntimeOverride**. But there is no `type` parameter for the first two types of `<Override>` element. The difference is determined by the parent element and the parent element's type. An `<Override>` element that is inside of a `<Token>` element whose `xsi:type` is `RequirementToken`, must be of type **RequirementTokenOverride**. An `<Override>` element that is inside of a `<Runtime>` element must be of type **RuntimeOverride**. An `<Override>` element inside any other parent element, or inside an `<Override>` element of type `LocaleToken`, must be of type **LocaleTokenOverride**. Each type is described in separate sections later in this article. For more information about the use of this element when it is a child of a `<Token>` element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
+An `<Override>` element that is inside of a `<Runtime>` element must be of type **RuntimeOverride**.
 
-## Override element of type LocaleTokenOverride
+There is no `type` parameter for the other types of `<Override>` element. The difference is determined by the parent element and the parent element's type. An `<Override>` element that is inside of a `<Token>` element whose `xsi:type` is `RequirementToken`, must be of type **RequirementTokenOverride**. An `<Override>` element inside any other parent element, or inside an `<Override>` element of type `LocaleToken`, must be of type **LocaleTokenOverride**. For more information about the use of this element when it is a child of a `<Token>` element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
+
+Each type is described in separate sections later in this article.
+
+## Override element for `LocaleToken`
 
 An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **LocaleTokenOverride**, then the `Locale` attribute is the condition, and the `Value` attribute is the consequent. For example, the following is read "If the Office locale setting is fr-fr, then the display name is 'Lecteur vidéo'."
 
@@ -88,7 +92,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 - [Localization for Office Add-ins](../../develop/localization.md)
 - [Keyboard shortcuts](../../design/keyboard-shortcuts.md)
 
-## Override element of type RequirementTokenOverride
+## Override element for `RequirementToken`
 
 An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **RequirementTokenOverride**, then the child `<Requirements>` element expresses the condition, and the `Value` attribute is the consequent. For example, the first `<Override>` in the following is read "If the current platform supports FeatureOne version 1.7, then use string 'oldAddinVersion' in place of the `${token.requirements}` token in the URL of the grandparent `<ExtendedOverrides>` (instead of the default string 'upgrade')."
 
@@ -186,7 +190,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 - [Set the Requirements element in the manifest](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
 - [Keyboard shortcuts](../../design/keyboard-shortcuts.md)
 
-## Override element of type RuntimeOverride (preview)
+## Override element for `Runtime` (preview)
 
 > [!IMPORTANT]
 > This feature is only supported for [preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. For more details, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
