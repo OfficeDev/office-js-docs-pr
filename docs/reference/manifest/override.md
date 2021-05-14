@@ -1,18 +1,19 @@
 ---
 title: Override element in the manifest file
 description: The Override element enables you to specify the value of a setting depending on a specified condition.
-ms.date: 11/06/2020
+ms.date: 05/14/2021
 localization_priority: Normal
 ---
 
 # Override element
 
-Provides a way to override the value of a manifest setting depending on a specified condition. There are two kinds of conditions:
+Provides a way to override the value of a manifest setting depending on a specified condition. There are three kinds of conditions:
 
 - An Office locale that is different from the default.
 - A pattern of requirement set support that is different from the default pattern.
+- The runtime source is different from the default (currently in preview).
 
-There are two types of `<Override>` elements, one is for locale overrides, called **LocaleTokenOverride**, and the other for requirement set overrides, called **RequirementTokenOverride**. But there is no `type` parameter for the `<Override>` element. The difference is determined by the parent element and the parent element's type. An `<Override>` element that is inside of a `<Token>` element whose `xsi:type` is `RequirementToken`, must be of type **RequirementTokenOverride**. An `<Override>` element inside any other parent element, or inside an `<Override>` element of type `LocaleToken`, must be of type **LocaleTokenOverride**. Each type is described in separate sections below. For more information about the use of this element when it is a child of a `<Token>` element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
+There are three types of `<Override>` elements, one is for locale overrides, called **LocaleTokenOverride**, another for requirement set overrides, called **RequirementTokenOverride**, and a third for runtime overrides, called **RuntimeOverride**. But there is no `type` parameter for the first two types of `<Override>` element. The difference is determined by the parent element and the parent element's type. An `<Override>` element that is inside of a `<Token>` element whose `xsi:type` is `RequirementToken`, must be of type **RequirementTokenOverride**. An `<Override>` element that is inside of a `<Runtime>` element must be of type **RuntimeOverride**. An `<Override>` element inside any other parent element, or inside an `<Override>` element of type `LocaleToken`, must be of type **LocaleTokenOverride**. Each type is described in separate sections later in this article. For more information about the use of this element when it is a child of a `<Token>` element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
 
 ## Override element of type LocaleTokenOverride
 
@@ -179,8 +180,61 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 </ExtendedOverrides>
 ```
 
-### See also
+## See also
 
 - [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
 - [Set the Requirements element in the manifest](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
 - [Keyboard shortcuts](../../design/keyboard-shortcuts.md)
+
+## Override element of type RuntimeOverride (preview)
+
+> [!IMPORTANT]
+> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. For more details, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
+>
+> Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
+
+An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **RuntimeOverride**, then the `type` attribute is the condition, and the `resid` attribute is the consequent. For example, the following is read "If the type is 'javascript', then the `resid` is 'JSRuntime.Url'." Outlook Desktop requires this element for [LaunchEvent extension point](../../reference/manifest/extensionpoint.md#launchevent-preview) handlers.
+
+```xml
+<Runtime resid="WebViewRuntime.Url">
+  <Override type="javascript" resid="JSRuntime.Url"/>
+</Runtime>
+```
+
+**Add-in type:** Mail
+
+### Syntax
+
+```XML
+<Override type="javascript" resid="JSRuntime.Url"/>
+```
+
+### Contained in
+
+- [Runtime](runtime.md)
+
+### Attributes
+
+|Attribute|Type|Required|Description|
+|:-----|:-----|:-----|:-----|
+|**type**|string|Yes|Specifies the language for this override. At present, `"javascript"` is the only supported option.|
+|**resid**|string|Yes|Specifies the URL location of the JavaScript file that should override the URL location of the default HTML defined in the parent `Runtime` element's `resid`. The `resid` can be no more than 32 characters and must match an `id` attribute of a `Url` element in the `Resources` element.|
+
+### Examples
+
+```xml
+<!-- Event-based activation happens in a lightweight runtime.-->
+<Runtimes>
+  <!-- HTML file including reference to or inline JavaScript event handlers.
+  This is used by Outlook on the web. -->
+  <Runtime resid="WebViewRuntime.Url">
+    <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+    <Override type="javascript" resid="JSRuntime.Url"/>
+  </Runtime>
+</Runtimes>
+```
+
+### See also
+
+- [Runtime](runtime.md)
+- [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md)
