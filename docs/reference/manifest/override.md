@@ -180,7 +180,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 </ExtendedOverrides>
 ```
 
-## See also
+### See also
 
 - [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md)
 - [Set the Requirements element in the manifest](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
