@@ -15,7 +15,7 @@ Provides a way to override the value of a manifest setting depending on a specif
 
 An `<Override>` element that is inside of a `<Runtime>` element must be of type **RuntimeOverride**.
 
-There is no `type` parameter for the other types of `<Override>` element. The difference is determined by the parent element and the parent element's type. An `<Override>` element that is inside of a `<Token>` element whose `xsi:type` is `RequirementToken`, must be of type **RequirementTokenOverride**. An `<Override>` element inside any other parent element, or inside an `<Override>` element of type `LocaleToken`, must be of type **LocaleTokenOverride**. For more information about the use of this element when it is a child of a `<Token>` element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
+There is no `overrideType` attribute for the `<Override>` element. The difference is determined by the parent element and the parent element's type. An `<Override>` element that is inside of a `<Token>` element whose `xsi:type` is `RequirementToken`, must be of type **RequirementTokenOverride**. An `<Override>` element inside any other parent element, or inside an `<Override>` element of type `LocaleToken`, must be of type **LocaleTokenOverride**. For more information about the use of this element when it is a child of a `<Token>` element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
 
 Each type is described in separate sections later in this article.
 
