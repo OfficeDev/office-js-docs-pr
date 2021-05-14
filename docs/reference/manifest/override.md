@@ -189,7 +189,7 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 ## Override element of type RuntimeOverride (preview)
 
 > [!IMPORTANT]
-> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. For more details, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
+> This feature is only supported for [preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. For more details, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
 >
 > Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
 
