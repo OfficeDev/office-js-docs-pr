@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.9
 description: 'Requirement set 1.9 for Outlook add-in API.'
-ms.date: 05/11/2021
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 
 ## What's new in 1.9?
 
-Requirement set 1.9 includes all of the features of [Requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). It added the following features.
+Requirement set 1.9 includes all of the features of [requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). It added the following features.
 
 - Added new APIs for append-on-send, custom properties, and display form features.
 - Added support for `Dialog.messageChild`.

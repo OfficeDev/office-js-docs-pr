@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.3
 description: 'Features and APIs that were introduced for Outlook Add-ins and the Office JavaScript APIs as part of Mailbox API 1.3.'
-ms.date: 12/17/2019
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 
 ## What's new in 1.3?
 
-Requirement set 1.3 includes all of the features of [Requirement set 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). It added the following features.
+Requirement set 1.3 includes all of the features of [requirement set 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). It added the following features.
 
 - Added support for [add-in commands](../../../outlook/add-in-commands-for-outlook.md).
 - Added ability to save or close an item being composed.

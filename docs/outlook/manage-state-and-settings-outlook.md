@@ -1,7 +1,7 @@
 ---
 title: Manage state and settings for an Outlook add-in
 description: Learn how to persist add-in state and settings for an Outlook add-in.
-ms.date: 05/11/2021
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
@@ -147,7 +147,7 @@ To handle the situation on Windows:
 
 1. Check for existing properties on initializing your add-in, and keep them or clear them as needed.
 1. When setting custom properties, include an additional property to indicate whether the custom properties were added during message read or by Read mode of the add-in. This will help you differentiate if the property was created during compose or inherited from the parent.
-1. You can also use [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (available from requirement set 1.10) to check if the user is forwarding an email or replying.
+1. To check if the user is forwarding an email or replying, you can use [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (available from requirement set 1.10).
 
 ## See also
 

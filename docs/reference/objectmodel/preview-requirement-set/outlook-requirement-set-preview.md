@@ -1,11 +1,11 @@
 ---
-title: Outlook add-in API Preview requirement set
+title: Outlook add-in API preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 05/11/2021
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
-# Outlook add-in API Preview requirement set
+# Outlook add-in API preview requirement set
 
 The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.
 
@@ -19,7 +19,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 >
 > For other features, you may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request preview access" is noted on those features.
 
-The Preview requirement set includes all of the features of [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md).
+The preview requirement set includes all of the features of [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md).
 
 ## Features in preview
 

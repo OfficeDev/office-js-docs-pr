@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.7
-description: 'Overview of the Outlook add-in API (Requirement set 1.7)'
-ms.date: 05/11/2021
+description: 'Overview of the Outlook add-in API (requirement set 1.7)'
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 
 ## What's new in 1.7?
 
-Requirement set 1.7 includes all of the features of [Requirement set 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md). It added the following features.
+Requirement set 1.7 includes all of the features of [requirement set 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md). It added the following features.
 
 - Added new APIs regarding the recurrence pattern on appointments and messages that are meeting requests.
 - Modified the item.from property to also be available in Compose mode.

@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: 'Learn more about the Outlook JavaScript API requirement sets.'
-ms.date: 05/11/2021
+ms.date: 05/17/2021
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -129,4 +129,4 @@ New Outlook JavaScript APIs are first introduced in "preview" and later become p
 > [!NOTE]
 > Preview APIs are subject to change and are not intended for use in a production environment.
 
-For more details about the preview APIs, see [Outlook API Preview requirement set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md).
+For more details about the preview APIs, see [Outlook API preview requirement set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md).

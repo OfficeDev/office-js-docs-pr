@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.10
 description: 'Requirement set 1.10 for Outlook add-in API.'
-ms.date: 05/11/2021
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 
 ## What's new in 1.10?
 
-Requirement set 1.10 includes all of the features of [Requirement set 1.9](../requirement-set-1.9/outlook-requirement-set-1.9.md). It added the following features.
+Requirement set 1.10 includes all of the features of [requirement set 1.9](../requirement-set-1.9/outlook-requirement-set-1.9.md). It added the following features.
 
 - Added new APIs for [event-based activation](../../../outlook/autolaunch.md) and mail signature features.
 - Added ability to include a custom action on a notification message.
