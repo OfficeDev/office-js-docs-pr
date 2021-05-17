@@ -55,7 +55,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook.
 
 ## Events
 
-You can subscribe to and unsubscribe from the following events using [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#addhandlerasync-eventtype--handler--options--callback-) and [removeHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#removehandlerasync-eventtype--options--callback-) respectively.
+Subscribe to and unsubscribe from the following events using [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#addhandlerasync-eventtype--handler--options--callback-) and [removeHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#removehandlerasync-eventtype--options--callback-) respectively.
 
 > [!IMPORTANT]
 > Events are available only with task pane.
