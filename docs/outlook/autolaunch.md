@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation (preview)
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 05/14/2021
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
@@ -265,6 +265,17 @@ As you make changes to launch-event handling in your add-in, you should be aware
 While implementing your own functionality, you may need to debug your code. For guidance on how to debug event-based add-in activation, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
 Runtime logging is also available for this feature on Windows. For more information, see [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows).
+
+## Deploy to users
+
+You can deploy event-based add-ins by uploading the manifest through the Microsoft 365 admin center. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**. On the **Integrated apps** page, choose the **Upload custom apps** action.
+
+![Screenshot of the Integrated apps page on the Microsoft 365 admin center, including the Upload custom apps action](../images/outlook-deploy-event-based-add-ins.png)
+
+The option to deploy event-based add-ins to AppSource or update existing AppSource add-ins to include the event-based activation feature should be available soon.
+
+> [!IMPORTANT]
+> Event-based add-ins are restricted to admin-managed deployments only. For now, users can't get event-based add-ins from AppSource.
 
 ## Event-based activation behavior and limitations
 
