@@ -38,9 +38,9 @@ landingContent:
       - linkListType: reference
         links:
           - text: Ask questions
-            url: https://stackoverflow.com/questions/tagged/office-js
+            url: /answers/topics/office-addins-dev.html
           - text: Request features
-            url: /answers/products/m365
+            url: https://docs.microsoft.com/en-us/answers/topics/office-addins-dev.html
           - text: Report issues
             url: https://github.com/officedev/office-js/issues
           - text: Office Add-ins additional resources
