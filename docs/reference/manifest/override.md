@@ -1,7 +1,7 @@
 ---
 title: Override element in the manifest file
 description: The Override element enables you to specify the value of a setting depending on a specified condition.
-ms.date: 05/14/2021
+ms.date: 05/19/2021
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ Provides a way to override the value of a manifest setting depending on a specif
 
 - An Office locale that is different from the default `LocaleToken`, called **LocaleTokenOverride**.
 - A pattern of requirement set support that is different from the default `RequirementToken` pattern, called **RequirementTokenOverride**.
-- The source is different from the default `Runtime`, called **RuntimeOverride** (currently in preview).
+- The source is different from the default `Runtime`, called **RuntimeOverride**.
 
 An `<Override>` element that is inside of a `<Runtime>` element must be of type **RuntimeOverride**.
 
@@ -190,14 +190,12 @@ An `<Override>` element expresses a conditional and can be read as an "If ... th
 - [Set the Requirements element in the manifest](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
 - [Keyboard shortcuts](../../design/keyboard-shortcuts.md)
 
-## Override element for `Runtime` (preview)
+## Override element for `Runtime`
 
 > [!IMPORTANT]
-> This feature is only supported for [preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. For more details, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
->
-> Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
+> Support for this element was introduced in [Mailbox requirement set 1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) with the [event-based activation feature](../../outlook/autolaunch.md). See [clients and platforms](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
-An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **RuntimeOverride**, then the `type` attribute is the condition, and the `resid` attribute is the consequent. For example, the following is read "If the type is 'javascript', then the `resid` is 'JSRuntime.Url'." Outlook Desktop requires this element for [LaunchEvent extension point](../../reference/manifest/extensionpoint.md#launchevent-preview) handlers.
+An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement. If the `<Override>` element is of type **RuntimeOverride**, then the `type` attribute is the condition, and the `resid` attribute is the consequent. For example, the following is read "If the type is 'javascript', then the `resid` is 'JSRuntime.Url'." Outlook Desktop requires this element for [LaunchEvent extension point](../../reference/manifest/extensionpoint.md#launchevent) handlers.
 
 ```xml
 <Runtime resid="WebViewRuntime.Url">
