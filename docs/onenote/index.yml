@@ -24,7 +24,7 @@ landingContent:
           - text: What are OneNote add-ins?
             url: onenote-add-ins-programming-overview.md
           - text: OneNote JavaScript API Overview
-            url: ../reference/overview/onenote-add-ins-javascript-reference         
+            url: ../reference/overview/onenote-add-ins-javascript-reference.md         
           - text: Microsoft Graph OneNote REST API Overview
             url: /graph/integrate-with-onenote
       - linkListType: quickstart
