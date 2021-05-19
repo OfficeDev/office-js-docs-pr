@@ -1,7 +1,7 @@
 ---
 title: Runtimes in the manifest file 
 description: The Runtimes element specifies your add-in's runtime.
-ms.date: 04/16/2021
+ms.date: 05/14/2021
 
 localization_priority: Normal
 ---
@@ -33,7 +33,7 @@ Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element.
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-| [Runtime](runtime.md) | Yes |  The runtime for your add-in. |
+| [Runtime](runtime.md) | Yes |  The runtime for your add-in. **Important**: At present, you can only define one `<Runtime>` element. |
 
 ## See also
 
