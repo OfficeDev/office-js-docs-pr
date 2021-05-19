@@ -40,7 +40,7 @@ landingContent:
           - text: Ask questions
             url: /answers/topics/office-addins-dev.html
           - text: Request features
-            url: https://docs.microsoft.com/en-us/answers/topics/office-addins-dev.html
+            url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
           - text: Report issues
             url: https://github.com/officedev/office-js/issues
           - text: Office Add-ins additional resources
