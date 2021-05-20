@@ -1,7 +1,7 @@
 ---
 title: Runtime in the manifest file
 description: The Runtime element configures your add-in to use a shared JavaScript runtime for its various components, for example, ribbon, task pane, custom functions.
-ms.date: 05/14/2021
+ms.date: 05/19/2021
 localization_priority: Normal
 ---
 
@@ -29,7 +29,7 @@ Configures your add-in to use a shared JavaScript runtime so that various compon
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-| [Override](override.md) (preview) | No | **Outlook**: Specifies the URL location of the JavaScript file that Outlook Desktop requires for [LaunchEvent extension point](../../reference/manifest/extensionpoint.md#launchevent-preview) handlers. **Important**: At present, you can only define one `<Override>` element and it must be of type `javascript`.|
+| [Override](override.md) | No | **Outlook**: Specifies the URL location of the JavaScript file that Outlook Desktop requires for [LaunchEvent extension point](../../reference/manifest/extensionpoint.md#launchevent) handlers. **Important**: At present, you can only define one `<Override>` element and it must be of type `javascript`.|
 
 ## Attributes
 

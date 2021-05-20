@@ -18,7 +18,7 @@ Office.context provides shared interfaces that are used by add-ins in all of the
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
-##### Properties
+## Properties
 
 | Property | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|:---:|
@@ -226,7 +226,7 @@ Using Office theme colors lets you coordinate the color scheme of your add-in wi
 
 *   [OfficeTheme](/javascript/api/office/office.officetheme)
 
-##### Properties:
+##### Properties
 
 |Name| Type| Description|
 |---|---|---|

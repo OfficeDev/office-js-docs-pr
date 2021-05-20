@@ -1,18 +1,15 @@
 ---
-title: LaunchEvent in the manifest file (preview)
+title: LaunchEvent in the manifest file
 description: The LaunchEvent element configures your add-in to activate based on supported events.
-ms.date: 05/11/2021
+ms.date: 05/12/2021
 localization_priority: Normal
 ---
 
-# LaunchEvent element (preview)
+# LaunchEvent element
 
 Configures your add-in to activate based on supported events. Child of the [`<LaunchEvents>`](launchevents.md) element. For more information, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
 
 **Add-in type:** Mail
-
-> [!IMPORTANT]
-> Event-based activation is currently [in preview](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) and only available in Outlook on the web and on Windows. For more information, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## Syntax
 
@@ -35,7 +32,7 @@ Configures your add-in to activate based on supported events. Child of the [`<La
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Type**  |  Yes  | Specifies a supported event type. For the set of supported types, see [How to preview the event-based activation feature](../../outlook/autolaunch.md#supported-events). |
+|  **Type**  |  Yes  | Specifies a supported event type. For the set of supported types, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md#supported-events). |
 |  **FunctionName**  |  Yes  | Specifies the name of the JavaScript function to handle the event specified in the `Type` attribute. |
 
 ## See also
