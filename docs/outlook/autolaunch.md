@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 05/19/2021
+ms.date: 05/20/2021
 localization_priority: Normal
 ---
 
@@ -225,6 +225,9 @@ In this scenario, you'll add handling for composing new items.
     ```
 
 1. Save your changes.
+
+> [!IMPORTANT]
+> At present, imports are not supported in the JavaScript file that implements the handling for event-based activation.
 
 ## Try it out
 
