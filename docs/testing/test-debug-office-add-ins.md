@@ -1,13 +1,20 @@
 ---
 title: Test and debug Office Add-ins
 description: 'Learn how to test and debug your Office Add-in'
-ms.date: 06/17/2020
+ms.date: 05/19/2021
 localization_priority: Priority
 ---
 
 # Test and debug Office Add-ins
 
-This section contains guidance about testing, debugging, and troubleshooting issues with Office Add-ins.
+This article contains guidance about testing, debugging, and troubleshooting issues with Office Add-ins.
+
+## Test cross-platform and for multiple versions of Office
+
+Office Add-ins run across major platforms, so you need to test an add-in in all the platforms where your users might be running Office. This usually includes Office on the web, Office on Windows (both subscription and one-time purchase), Office on Mac, Office on iOS, and (for Outlook add-ins) Office on Android; although there may be some situations in which you can be sure that none of your users will be working on some platforms. For example, if you are making an add-in for a company that requires its users to work with Windows computers and subscription Office, then you don't need to test for Office on Mac or one-time purchase Windows. Note, also, that on Windows computers, the version of Windows and Office will determine which browser control is used by add-ins. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+
+> [!IMPORTANT]
+> Add-ins marketed through AppSource go through a validation process that includes testing on all platforms. In addition, the add-in is tested for Office on the web with all recent major browsers, including Microsoft Edge (Chromium-based WebView2), Chrome, and Safari. Accordingly, you should test on these platforms and browsers before you submit to AppSource. For more information about validation, see [Commercial marketplace certification policies](/legal/marketplace/certification-policies), especially [section 1120.3](/legal/marketplace/certification-policies#11203-functionality), and the [Office Add-in application and availability page](../overview/office-add-in-availability.md)). AppSource does not use Internet Explorer or Microsoft Edge (WebView1) to test add-ins in Office on the web. But if a significant number of your users will use these two browsers to open Office on the web, then you should test with them too. For more information, see [Support Internet Explorer 11](../develop/support-ie-11.md) and [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues).
 
 ## Sideload an Office Add-in for testing
 

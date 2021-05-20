@@ -1,7 +1,7 @@
 ---
-ms.date: 05/19/2021
-description: 'Test your Office Add-in on Internet Explorer 11.'
 title: Internet Explorer 11 testing
+description: 'Test your Office Add-in on Internet Explorer 11.'
+ms.date: 05/19/2021
 localization_priority: Normal
 ---
 
@@ -15,7 +15,7 @@ If you plan to market your add-in in AppSource or you plan to support certain ol
 > - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
 > - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
 >
-> For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md)
+> For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
 >
 > Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
@@ -33,7 +33,7 @@ These instructions assume you have set up a Yo Office generator project before. 
 1. Create a Yo Office generator project. It doesn't matter what kind of project you select, this tooling will work with all project types.
 
     > [!NOTE]
-      > If you have an existing project and want to add this tooling without creating a new project, skip this step and move to the next step. 
+    > If you have an existing project and want to add this tooling without creating a new project, skip this step and move to the next step. 
 
 1. In the root folder of your project, run the following in the command line. (This example assumes that your project's manifest file is in the root. If it isn't, specify the relative path to the manifest file.) You should see a message in the command line that the web view type is now set to IE.
 
