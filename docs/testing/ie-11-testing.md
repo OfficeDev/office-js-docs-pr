@@ -1,11 +1,11 @@
 ---
 ms.date: 05/19/2021
-description: 'Test your Office Add-in using Internet Explorer 11.'
+description: 'Test your Office Add-in on Internet Explorer 11.'
 title: Internet Explorer 11 testing
 localization_priority: Normal
 ---
 
-# Test your Office Add-in on using Internet Explorer 11
+# Test your Office Add-in on Internet Explorer 11
 
 If you plan to market your add-in in AppSource or you plan to support certain older versions of Windows and Office, you must test the add-in using the embeddable web view control that is based on Internet Explorer 11 (called "Trident"). You can use a command line to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
@@ -32,14 +32,14 @@ These instructions assume you have set up a Yo Office generator project before. 
 
 1. Create a Yo Office generator project. It doesn't matter what kind of project you select, this tooling will work with all project types.
 
-  > [!NOTE]
-  > If you have an existing project and want to add this tooling without creating a new project, skip this step and move to the next step. 
+    > [!NOTE]
+      > If you have an existing project and want to add this tooling without creating a new project, skip this step and move to the next step. 
 
-1. In the root folder of your project, run the following in the command line. (This example assumes that your project's manifest file is in the root. If it isn't, specify the full relative path to the manifest file.) You should see a message in the command line that the web view type is now set to IE.
+1. In the root folder of your project, run the following in the command line. (This example assumes that your project's manifest file is in the root. If it isn't, specify the relative path to the manifest file.) You should see a message in the command line that the web view type is now set to IE.
 
-  ```command&nbsp;line
-  npx office-addin-dev-settings webview manifest.xml ie
-  ```
+    ```command&nbsp;line
+    npx office-addin-dev-settings webview manifest.xml ie
+    ```
 
 > [!TIP]
 > It isn't necessary to use this command, but it should help debug the majority of issues related to the Internet Explorer 11 runtime. For complete robustness, you should test using computers with various combinations of Windows 7, 8, and 10 and various versions of Office. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
