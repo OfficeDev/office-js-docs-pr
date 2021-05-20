@@ -1,21 +1,19 @@
 ---
-title: Configure your Outlook add-in for event-based activation (preview)
+title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 05/18/2021
+ms.date: 05/19/2021
 localization_priority: Normal
 ---
 
-# Configure your Outlook add-in for event-based activation (preview)
+# Configure your Outlook add-in for event-based activation
 
 Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality.
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
-> [!IMPORTANT]
-> This feature is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. For more details, see [How to preview the event-based activation feature](#how-to-preview-the-event-based-activation-feature) in this article.
->
-> Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
+> [!NOTE]
+> Support for this feature was introduced in [requirement set 1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md). See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Supported events
 
@@ -25,17 +23,22 @@ At present, the following events are supported.
 |---|---|---|
 |`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|Windows, web|
 |`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|Windows, web|
-|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|Windows|
-|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|Windows|
-|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|Windows|
-|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|Windows|
-|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|Windows|
-|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|Windows|
-|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|Windows|
+|`OnMessageAttachmentsChanged`\*|On adding or removing attachments while composing a message.|Windows|
+|`OnAppointmentAttachmentsChanged`\*|On adding or removing attachments while composing an appointment.|Windows|
+|`OnMessageRecipientsChanged`\*|On adding or removing recipients while composing a message.|Windows|
+|`OnAppointmentAttendeesChanged`\*|On adding or removing attendees while composing an appointment.|Windows|
+|`OnAppointmentTimeChanged`\*|On changing date/time while composing an appointment.|Windows|
+|`OnAppointmentRecurrenceChanged`\*|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|Windows|
+|`OnInfoBarDismissClicked`\*|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|Windows|
 
-## How to preview the event-based activation feature
+> [!IMPORTANT]
+> \* This event is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on Windows with a Microsoft 365 subscription. For more details, see [How to preview](#how-to-preview) in this article.
+>
+> Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
 
-We invite you to try out the event-based activation feature! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
+## How to preview
+
+We invite you to try out the new events! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
 
 To preview this feature:
 
@@ -56,7 +59,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable event-based activation of your add-in, you must configure the [Runtimes](../reference/manifest/runtimes.md) element and [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) extension point in the `VersionOverridesV1_1` node of the manifest. For now, `DesktopFormFactor` is the only supported form factor.
+To enable event-based activation of your add-in, you must configure the [Runtimes](../reference/manifest/runtimes.md) element and [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest. For now, `DesktopFormFactor` is the only supported form factor.
 
 1. In your code editor, open the quick start project.
 

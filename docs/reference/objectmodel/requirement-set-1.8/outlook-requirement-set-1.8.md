@@ -1,20 +1,20 @@
 ---
 title: Outlook add-in API requirement set 1.8
 description: 'Requirement set 1.8 for Outlook add-in API.'
-ms.date: 03/10/2021
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
 # Outlook add-in API requirement set 1.8
 
-The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties and events that you can use in an Outlook add-in.
+The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.
 
 > [!NOTE]
 > This documentation is for a [requirement set](../../requirement-sets/outlook-api-requirement-sets.md) other than the latest requirement set.
 
 ## What's new in 1.8?
 
-Requirement set 1.8 includes all of the features of [Requirement set 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md). It added the following features.
+Requirement set 1.8 includes all of the features of [requirement set 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md). It added the following features.
 
 - Added new APIs for attachments, categories, delegate access, enhanced location, internet headers, and block on send features.
 - Added optional `options` parameter to Event.completed.

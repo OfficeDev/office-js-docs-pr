@@ -66,10 +66,14 @@
         "source_path": "docs/reference/outlook-api-reference-1-8.md",	
         "redirect_url": "/javascript/api/outlook?view=outlook-js-1.8"	
       },	
-      {	
+      {
         "source_path": "docs/reference/outlook-api-reference-1-9.md",	
         "redirect_url": "/javascript/api/outlook?view=outlook-js-1.9"	
-      },	
+      },
+      {
+        "source_path": "docs/reference/outlook-api-reference-1-10.md",	
+        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.10"	
+      },
       {	
         "source_path": "docs/reference/powerpoint-api-reference.md",	
         "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"	

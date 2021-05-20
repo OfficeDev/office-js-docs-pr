@@ -1,7 +1,7 @@
 ---
 title: Office namespace - requirement set 1.4
 description: 'Office namespace members available for Outlook add-ins using Mailbox API requirement set 1.4.'
-ms.date: 03/18/2020
+ms.date: 05/17/2021
 localization_priority: Normal
 ---
 
@@ -16,13 +16,13 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)| Compose or Read|
 
-##### Properties
+## Properties
 
 | Property | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|:---:|
 | [context](office.context.md) | Compose<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-1.4&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-##### Enumerations
+## Enumerations
 
 | Enumeration | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|:---:|
@@ -30,7 +30,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 | [CoercionType](#coerciontype-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [SourceProperty](#sourceproperty-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-### Namespaces
+## Namespaces
 
 [MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.4&preserve-view=true): Includes a number of Outlook-specific enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
 
@@ -44,7 +44,7 @@ Specifies the result of an asynchronous call.
 
 *   String
 
-##### Properties:
+##### Properties
 
 |Name| Type| Description|
 |---|---|---|
@@ -71,7 +71,7 @@ Specifies how to coerce data returned or set by the invoked method.
 
 *   String
 
-##### Properties:
+##### Properties
 
 |Name| Type| Description|
 |---|---|---|
@@ -98,7 +98,7 @@ Specifies the source of the data returned by the invoked method.
 
 *   String
 
-##### Properties:
+##### Properties
 
 |Name| Type| Description|
 |---|---|---|
