@@ -139,7 +139,7 @@ Setting `visibility` to "1" is a good choice when the add-in and the template or
 > [!NOTE]
 > If you want to distribute your add-in with the document, so that users are prompted to install it, you must set the visibility property to 1. You can only do this via Open XML.
 
-An easy way to write the XML is to first run your add-in and [tag the document on the client side](#tag-the-document-on-the-client-side) to write the value, and then save the document and inspect the XML that is generated.
+An easy way to write the XML is to first run your add-in and [tag the document on the client side](#tag-the-document-on-the-client-side) to write the value, and then save the document and inspect the XML that is generated.Office will detect and provide the appropriate attribute values. You can also use the [Open XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) to generate C# code to programmatically add the markup based on the XML you generate.
 
 ## Test and verify opening task panes
 
