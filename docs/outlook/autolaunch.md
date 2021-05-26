@@ -313,3 +313,4 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
 
 - [Outlook add-in manifests](manifests.md)
 - [How to debug event-based add-ins](debug-autolaunch.md)
+- [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
