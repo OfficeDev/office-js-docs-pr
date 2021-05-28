@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: 'Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 04/05/2021
+ms.date: 05/27/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -80,12 +80,13 @@ The previous example shows a new workbook being created from an existing workboo
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-The following example inserts another workbook into the current workbook. The new worksheets are inserted after the active worksheet. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property. This means that all the worksheets from the existing workbook are inserted into the current workbook.
-
 > [!IMPORTANT]
 > The `insertWorksheetsFromBase64` method is supported for Excel on Windows, Mac, and the web. It's not supported for iOS. Additionally, in Excel on the web this method doesn't support source worksheets with PivotTable, Chart, Comment, or Slicer elements. If those objects are present, the `insertWorksheetsFromBase64` method returns the `UnsupportedFeature` error in Excel on the web. 
 
+The following code sample shows how to insert another workbook into the current workbook. The code sample first processes a workbook file with a [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) object and extracts a base64-encoded string, and then it inserts this base64-encoded string into the current workbook. The new worksheets are inserted after the active worksheet. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property. This means that all the worksheets from the existing workbook are inserted into the current workbook.
+
 ```js
+// Retrieve the external workbook and set up a `FileReader` object. 
 var myFile = document.getElementById("file");
 var reader = new FileReader();
 
@@ -93,24 +94,25 @@ reader.onload = (event) => {
     Excel.run((context) => {
         // Remove the metadata before the base64-encoded string.
         const startIndex = reader.result.toString().indexOf("base64,");
-        const workbookContents = reader.result.toString().substr(startIndex + 7);
+        const externalWorkbook = reader.result.toString().substr(startIndex + 7);
             
-        // Retrieve the workbook.
+        // Retrieve the current workbook.
         const workbook = context.workbook;
             
         // Set up the insert options. 
         var options = { 
             sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
             positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
-            relativeTo: "Sheet1" }; // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+            relativeTo: "Sheet1" // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+        }; 
             
-         // Insert the workbook. 
-         workbook.insertWorksheetsFromBase64(workbookContents, options);
+         // Insert the new worksheets into the current workbook.
+         workbook.insertWorksheetsFromBase64(externalWorkbook, options);
          return context.sync();
     });
 };
 
-// Read in the file as a data URL so we can parse the base64-encoded string.
+// Read the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
