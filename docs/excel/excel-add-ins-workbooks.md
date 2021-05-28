@@ -55,7 +55,7 @@ var reader = new FileReader();
 
 reader.onload = (function (event) {
     Excel.run(function (context) {
-        // strip off the metadata before the base64-encoded string
+        // Remove the metadata before the base64-encoded string.
         var startIndex = reader.result.toString().indexOf("base64,");
         var workbookContents = reader.result.toString().substr(startIndex + 7);
 
@@ -64,7 +64,7 @@ reader.onload = (function (event) {
     }).catch(errorHandlerFunction);
 });
 
-// read in the file as a data URL so we can parse the base64-encoded string
+// Read the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -83,10 +83,10 @@ insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOp
 > [!IMPORTANT]
 > The `insertWorksheetsFromBase64` method is supported for Excel on Windows, Mac, and the web. It's not supported for iOS. Additionally, in Excel on the web this method doesn't support source worksheets with PivotTable, Chart, Comment, or Slicer elements. If those objects are present, the `insertWorksheetsFromBase64` method returns the `UnsupportedFeature` error in Excel on the web. 
 
-The following code sample shows how to insert another workbook into the current workbook. The code sample first processes a workbook file with a [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) object and extracts a base64-encoded string, and then it inserts this base64-encoded string into the current workbook. The new worksheets are inserted after the active worksheet. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property. This means that all the worksheets from the existing workbook are inserted into the current workbook.
+The following code sample builds on the preceding code sample and shows how to insert another workbook into the current workbook. The following code sample first processes a workbook file with a [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) object and extracts a base64-encoded string, and then it inserts this base64-encoded string into the current workbook. The new worksheets are inserted after the *Sheet1* worksheet. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` property. This means that all the worksheets from the target workbook are inserted into the current workbook.
 
 ```js
-// Retrieve the external workbook and set up a `FileReader` object. 
+// Retrieve the external workbook file and set up a `FileReader` object. 
 var myFile = document.getElementById("file");
 var reader = new FileReader();
 
