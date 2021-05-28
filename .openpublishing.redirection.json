@@ -437,7 +437,21 @@
         "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
       }
       ,
-
+      {
+        "source_path": "docs/excel/excel-add-ins-ranges-precedents.md",
+        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-ranges-precedents-dependents"
+      }
+      ,
+      {
+        "source_path": "docs/excel/excel-add-ins-ranges.md",
+        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts#ranges"
+      }
+      ,
+      {
+        "source_path": "docs/excel/excel-add-ins-ranges-advanced.md",
+        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts#ranges"
+      }
+      ,
       {
         "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics.md",
         "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-preview"
