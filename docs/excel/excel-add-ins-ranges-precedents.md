@@ -49,7 +49,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Get formula dependents
+## Get formula dependents (preview)
+
+> [!NOTE]
+> The `Range.getDirectDependents` method is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
 
 With [Range.getDirectDependents](/javascript/api/excel/excel.range?view=excel-js-preview#getDirectDependents__), your add-in can locate a formula's direct dependent cells. Like `Range.getDirectPrecedents`, `Range.getDirectDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
