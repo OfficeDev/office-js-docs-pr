@@ -70,8 +70,8 @@ The following code sample gets the direct dependents for the active range and th
 ```js
 Excel.run(function (context) {
     // Direct dependents are cells that contain formulas that refer to other cells.
-    let range = context.workbook.getActiveCell();
-    let directDependents = range.getDirectDependents();
+    var range = context.workbook.getActiveCell();
+    var directDependents = range.getDirectDependents();
     range.load("address");
     directDependents.areas.load("address");
     
@@ -80,7 +80,7 @@ Excel.run(function (context) {
             console.log(`Direct dependent cells of ${range.address}:`);
     
             // Use the direct dependents API to loop through direct dependents of the active cell.
-            for (let i = 0; i < directDependents.areas.items.length; i++) {
+            for (var i = 0; i < directDependents.areas.items.length; i++) {
               // Highlight and print the address of each dependent cell.
               directDependents.areas.items[i].format.fill.color = "Yellow";
               console.log(`  ${directDependents.areas.items[i].address}`);
