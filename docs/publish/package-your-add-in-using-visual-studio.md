@@ -21,7 +21,7 @@ Complete the following steps to deploy your web project using Visual Studio 2019
 2. In the **Pick a publish target** window, choose one of the options to publish to your preferred target. Each publish target requires you to include more information to get started, such as an Azure Virtual Machine or folder location. Once you have specified a publish location and filled in all of the information required, select **Publish**
 
     > [!NOTE]
-    > Picking a publish target specifies the server you are deploying to, the credentials needed to log on to the server, the databases to deploy, and other deployment options.
+    > Picking a publish target specifies the server you are deploying to, the credentials needed to sign in to the server, the databases to deploy, and other deployment options.
 
 3. For more information about deployment steps for each publish target option, see [First look at deployment in Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true).
 
