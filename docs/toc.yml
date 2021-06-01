@@ -58,6 +58,9 @@ items:
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Support Internet Explorer 11
+      href: develop/support-ie-11.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
     items:
     - name: Overview

@@ -78,7 +78,7 @@ As an alternative, your add-in's dialog box browser instance can directly call t
 
 Often, an auth-related library has a method that both obtains a token interactively and also creates an "auth-context" object which the method returns. The token is a property of the object (possibly private and inaccessible directly from your code). That object has the methods that get data from the resource. These methods include the token in the HTTP Requests that they make to the resource provider (such as Google, Microsoft Graph, Facebook, etc.).
 
-These auth-context objects, and the methods that create them, are not usable in Office Add-ins. Since the login occurs in the Office dialog box's browser instance, the object would have to be created there. But the data calls to the resource are in the task pane browser instance and there is no way to get the object from one instance to another. For example, you cannot pass the object with `messageParent` because `messageParent` can only pass strings or boolean values. A JavaScript object with methods cannot be reliably stringified.
+These auth-context objects, and the methods that create them, are not usable in Office Add-ins. Since the login occurs in the Office dialog box's browser instance, the object would have to be created there. But the data calls to the resource are in the task pane browser instance and there is no way to get the object from one instance to another. For example, you cannot pass the object with `messageParent` because `messageParent` can only pass string values. A JavaScript object with methods cannot be reliably stringified.
 
 ### How you can use libraries with the Office dialog API
 

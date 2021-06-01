@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 03/24/2021
+ms.date: 05/19/2021
 localization_priority: Normal
 ---
 
@@ -38,14 +38,13 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>4</sup> The embeddable WebView2 control must be installed in addition to the installation of Microsoft Edge so that Office can embed it. To install it, see [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
-
-
-
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you have two options:
 >
 > - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
 > - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
+>
+> For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
 >
 > Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 

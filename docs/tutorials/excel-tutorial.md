@@ -828,7 +828,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-7. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter can be a boolean or a string, which includes anything that can be serialized as a string, such as XML or JSON.
+7. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter must be a string, which includes anything that can be serialized as a string, such as XML or JSON, or any type that can be cast to a string.
 
     ```js
     function sendStringToParentPage() {
