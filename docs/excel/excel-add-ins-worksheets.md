@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
-ms.date: 03/24/2020
+ms.date: 06/02/2021
 localization_priority: Normal
 ---
 
@@ -309,6 +309,40 @@ function onWorksheetChanged(eventArgs) {
         console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
             + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
         return context.sync();
+    });
+}
+```
+
+## Detect formula changes (preview)
+
+> [!NOTE]
+> The `Worksheet.onFormulaChanged` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+```js
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    let sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the formula changed event handler for this worksheet.
+    sheet.onFormulaChanged.add(formulaChangeHandler);
+
+    return context.sync();
+});
+
+function formulaChangeHandler() {
+    Excel.run(function (context) {
+        // Retrieve details about the formula change event.
+        var cellAddress = event.formulaDetails[0].cellAddress;
+        var previousFormula = event.formulaDetails[0].previousFormula;
+        var source = event.source;
+    
+        // Print out the change event details.
+        console.log(
+          `The formula in cell ${cellAddress} changed. 
+          The previous formula was: ${previousFormula}. 
+          The source of the change was: ${source}.`
+        );         
     });
 }
 ```
