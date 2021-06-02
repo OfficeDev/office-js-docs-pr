@@ -165,7 +165,8 @@ Use the following guidelines when specifying the objects in the `shortcuts` arra
 - The property names `action`, `key`, and `default` are required.
 - The value of the `action` property is a string and must match one of the `id` properties in the action object.
 - The `default` property can be any combination of the characters A - Z, a -z, 0 - 9, and the punctuation marks "-", "_", and "+". (By convention, lower case letters are not used in these properties.)
-- The `default` property must contain the name of at least one modifier key (Alt, Ctrl, Shift) and only one other key.
+- The `default` property must contain the name of at least one modifier key (Alt, Ctrl, Shift) and only one other key. 
+- Shift cannot be used as the only modifier key. If using Shift, you must also use at least one other modifier key (Alt, Ctrl).
 - For Macs, we also support the Command modifier key.
 - For Macs, Alt is mapped to the Option key. For Windows, Command is mapped to the Ctrl key.
 - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, Alt+a and Alt+A are the same shortcut, so are Ctrl+- and Ctrl+\_ because "-" and "_" are the same physical key.
