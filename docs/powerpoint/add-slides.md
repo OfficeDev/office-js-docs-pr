@@ -1,20 +1,19 @@
 ---
 title: Add and delete slides in PowerPoint
 description: 'Learn how to add and delete slides and specify the master and layout of new slides.'
-ms.date: 03/07/2021
+ms.date: 06/02/2021
 localization_priority: Normal
 ---
 
-# Add and delete slides in PowerPoint (preview)
+# Add and delete slides in PowerPoint
 
 A PowerPoint add-in can add slides to the presentation and optionally specify which slide master, and which layout of the master, is used for the new slide. The add-in can also delete slides.
 
-> [!IMPORTANT]
-> The APIs for adding slides are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in. The API for *deleting* slides has been released.
-
 The APIs for adding slides are primarily used in scenarios where the IDs of the slide masters and layouts in the presentation are known at coding time or can be found in a data source at runtime. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as the names or images of slide masters and layouts) with the IDs of the slide masters and layouts. The APIs can also be used in scenarios where the user can insert slides that use the default slide master and the master's default layout, and in scenarios where the user can select an existing slide and create a new one with the same slide master and layout (but not the same content). See [Selecting which slide master and layout to use](#selecting-which-slide-master-and-layout-to-use) for more information about this.
 
-## Add a slide with SlideCollection.add
+## Add a slide with SlideCollection.add (preview)
+
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) method. The following is a simple example in which a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation. The following is an example:
 
