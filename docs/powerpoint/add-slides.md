@@ -10,7 +10,7 @@ localization_priority: Normal
 A PowerPoint add-in can add slides to the presentation and optionally specify which slide master, and which layout of the master, is used for the new slide. The add-in can also delete slides.
 
 > [!IMPORTANT]
-> The APIs for adding slides are in [preview](../../reference/requirement-sets/powerpoint-preview-apis.md). The API for *deleting* slides has been released.
+> The APIs for adding slides are in [preview](../reference/requirement-sets/powerpoint-preview-apis.md) and not available for production add-ins. The API for *deleting* slides has been released.
 
 The APIs for adding slides are primarily used in scenarios where the IDs of the slide masters and layouts in the presentation are known at coding time or can be found in a data source at runtime. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as the names or images of slide masters and layouts) with the IDs of the slide masters and layouts. The APIs can also be used in scenarios where the user can insert slides that use the default slide master and the master's default layout, and in scenarios where the user can select an existing slide and create a new one with the same slide master and layout (but not the same content). See [Selecting which slide master and layout to use](#selecting-which-slide-master-and-layout-to-use) for more information about this.
 
