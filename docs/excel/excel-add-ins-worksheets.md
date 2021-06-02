@@ -319,6 +319,15 @@ function onWorksheetChanged(eventArgs) {
 > The `Worksheet.onFormulaChanged` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
+Your add-in can track changes to formulas in a worksheet. This may be useful when worksheets are connected to an external database, and formula changes in the worksheet need to trigger corresponding updates in the external database.
+
+To detect changes to formulas, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onFormulaChanged` event of a worksheet.  Event handlers for the `onFormulaChanged` event receive a `WorksheetFormulaChangedEventArgs` object when the event fires.
+
+> [!IMPORTANT]
+> The `onFormulaChanged` event detects when a formula itself changes, not the data value resulting from the formula's calculation.
+
+The following sample shows how to register the `onFormulaChanged` event handler and then use the `WorksheetFormulaChangedEventArgs` object to retrieve the `formulaDetails` array of the changed formula.
+
 ```js
 Excel.run(function (context) {
     // Retrieve the worksheet named "Sample".
@@ -330,7 +339,7 @@ Excel.run(function (context) {
     return context.sync();
 });
 
-function formulaChangeHandler() {
+function formulaChangeHandler(event) {
     Excel.run(function (context) {
         // Retrieve details about the formula change event.
         var cellAddress = event.formulaDetails[0].cellAddress;
