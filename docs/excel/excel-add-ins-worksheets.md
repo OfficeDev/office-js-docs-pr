@@ -321,12 +321,12 @@ function onWorksheetChanged(eventArgs) {
 
 Your add-in can track changes to formulas in a worksheet. This may be useful when a worksheet is connected to an external database and formula changes in the worksheet need to trigger corresponding updates in the external database.
 
-To detect changes to formulas, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onFormulaChanged` event of a worksheet.  Event handlers for the `onFormulaChanged` event receive a `WorksheetFormulaChangedEventArgs` object when the event fires.
+To detect changes to formulas, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) event of a worksheet.  Event handlers for the `onFormulaChanged` event receive a [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) object when the event fires.
 
 > [!IMPORTANT]
 > The `onFormulaChanged` event detects when a formula itself changes, not the data value resulting from the formula's calculation.
 
-The following code sample shows how to register the `onFormulaChanged` event handler and then use the `WorksheetFormulaChangedEventArgs` object to retrieve the `formulaDetails` array of the changed formula.
+The following code sample shows how to register the `onFormulaChanged` event handler, use the `WorksheetFormulaChangedEventArgs` object to retrieve the `formulaDetails` array of the changed formula, and then print out details about the changed formula with the [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) properties.
 
 > [!NOTE]
 > This code sample only works when a single formula is changed.
