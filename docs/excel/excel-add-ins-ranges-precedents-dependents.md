@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.' 
-ms.date: 06/02/2021
+ms.date: 06/03/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -18,7 +18,9 @@ This article provides code samples that retrieve direct precedents and direct de
 
 Locate a formula's direct precedent cells with [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--). `Range.getDirectPrecedents` returns a `WorkbookRangeAreas` object. This object contains the addresses of all the direct precedents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula precedent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-In the Excel UI, the **Trace Precedents** button draws an arrow from precedent cells to the selected formula. Unlike the Excel UI button, the `getDirectPrecedents` method does not draw arrows.
+The following screenshot shows the result of selecting the **Trace Precedents** button in the Excel UI. This button draws an arrow from precedent cells to the selected cell. Unlike the Excel UI button, the `getDirectPrecedents` method does not draw arrows.
+
+![Arrow tracing precedent cells in the Excel UI](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
 > The `getDirectPrecedents` method can't retrieve precedent cells across workbooks.
@@ -55,7 +57,9 @@ Excel.run(function (context) {
 
 Locate a formula's direct dependent cells with [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__). Like `Range.getDirectPrecedents`, `Range.getDirectDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the direct dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-In the Excel UI, the **Trace Dependents** button draws an arrow from dependent cells to the selected formula. Unlike the Excel UI button, the `getDirectDependents` method does not draw arrows.
+The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from dependent cells to the selected cell. Unlike the Excel UI button, the `getDirectDependents` method does not draw arrows.
+
+![Arrow tracing dependent cells in the Excel UI](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
 > The `getDirectDependents` method can't retrieve dependent cells across workbooks.
