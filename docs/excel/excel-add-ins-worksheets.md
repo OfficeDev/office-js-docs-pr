@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
-ms.date: 06/02/2021
+ms.date: 06/03/2021
 localization_priority: Normal
 ---
 
@@ -326,12 +326,15 @@ To detect changes to formulas, [register an event handler](excel-add-ins-events.
 > [!IMPORTANT]
 > The `onFormulaChanged` event detects when a formula itself changes, not the data value resulting from the formula's calculation.
 
-The following sample shows how to register the `onFormulaChanged` event handler and then use the `WorksheetFormulaChangedEventArgs` object to retrieve the `formulaDetails` array of the changed formula.
+The following code sample shows how to register the `onFormulaChanged` event handler and then use the `WorksheetFormulaChangedEventArgs` object to retrieve the `formulaDetails` array of the changed formula.
+
+> [!NOTE]
+> This code sample only works when a single formula is changed.
 
 ```js
 Excel.run(function (context) {
     // Retrieve the worksheet named "Sample".
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    var sheet = context.workbook.worksheets.getItem("Sample");
 
     // Register the formula changed event handler for this worksheet.
     sheet.onFormulaChanged.add(formulaChangeHandler);
@@ -342,6 +345,7 @@ Excel.run(function (context) {
 function formulaChangeHandler(event) {
     Excel.run(function (context) {
         // Retrieve details about the formula change event.
+        // Note: This method assumes only a single formula is changed at a time. 
         var cellAddress = event.formulaDetails[0].cellAddress;
         var previousFormula = event.formulaDetails[0].previousFormula;
         var source = event.source;
