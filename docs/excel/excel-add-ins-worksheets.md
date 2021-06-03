@@ -326,7 +326,7 @@ To detect changes to formulas, [register an event handler](excel-add-ins-events.
 > [!IMPORTANT]
 > The `onFormulaChanged` event detects when a formula itself changes, not the data value resulting from the formula's calculation.
 
-The following code sample shows how to register the `onFormulaChanged` event handler, use the `WorksheetFormulaChangedEventArgs` object to retrieve the `formulaDetails` array of the changed formula, and then print out details about the changed formula with the [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) properties.
+The following code sample shows how to register the `onFormulaChanged` event handler, use the `WorksheetFormulaChangedEventArgs` object to retrieve the [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails) array of the changed formula, and then print out details about the changed formula with the [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) properties.
 
 > [!NOTE]
 > This code sample only works when a single formula is changed.
