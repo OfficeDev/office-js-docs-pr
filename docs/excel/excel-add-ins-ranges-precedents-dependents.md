@@ -42,7 +42,6 @@ Excel.run(function (context) {
               console.log(`  ${directPrecedents.areas.items[i].address}`);
             }
         })
-        .then(context.sync);
 }).catch(errorHandlerFunction);
 ```
 
@@ -80,7 +79,6 @@ Excel.run(function (context) {
               console.log(`  ${directDependents.areas.items[i].address}`);
             }
         })
-        .then(context.sync);
 }).catch(errorHandlerFunction);
 ```
 
