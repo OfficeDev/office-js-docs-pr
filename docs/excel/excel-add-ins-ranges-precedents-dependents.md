@@ -1,18 +1,18 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.' 
-ms.date: 05/28/2021
+ms.date: 06/02/2021
 ms.prod: excel
 localization_priority: Normal
 ---
 
 # Get formula precedents and dependents using the Excel JavaScript API
 
-This article provides code samples that retrieve formula precedents and formula dependents using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
-
 Excel formulas often refer to other cells. These cross-cell references are known as "precedents" and "dependents". A precedent is a cell that provides data to a formula. A dependent is a cell that contains a formula that refers to other cells. To learn more about Excel features related to relationships between cells, see [Display the relationships between formulas and cells](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507).
 
-## Get formula precedents
+This article provides code samples that retrieve formula precedents and formula dependents using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+
+## Get the direct precedents of a formula
 
 Locate a formula's direct precedent cells with [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--). `Range.getDirectPrecedents` returns a `WorkbookRangeAreas` object. This object contains the addresses of all the direct precedents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula precedent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
@@ -22,9 +22,6 @@ In the Excel UI, the **Trace Precedents** button draws an arrow from precedent c
 > The `getDirectPrecedents` method can't retrieve precedent cells across workbooks.
 
 The following code sample gets the direct precedents for the active range and then changes the background color of those precedent cells to yellow.
-
-> [!NOTE]
-> The active range must contain a formula that references other cells in the same workbook for the highlighting to work properly.
 
 ```js
 Excel.run(function (context) {
@@ -49,7 +46,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Get formula dependents (preview)
+## Get the direct dependents of a formula (preview)
 
 > [!NOTE]
 > The `Range.getDirectDependents` method is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
@@ -63,9 +60,6 @@ In the Excel UI, the **Trace Dependents** button draws an arrow from dependent c
 > The `getDirectDependents` method can't retrieve dependent cells across workbooks.
 
 The following code sample gets the direct dependents for the active range and then changes the background color of those dependent cells to yellow.
-
-> [!NOTE]
-> The active range must contain a formula that references other cells in the same workbook for the highlighting to work properly.
 
 ```js
 Excel.run(function (context) {
