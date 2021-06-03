@@ -41,7 +41,7 @@ Excel.run(function (context) {
               directPrecedents.areas.items[i].format.fill.color = "Yellow";
               console.log(`  ${directPrecedents.areas.items[i].address}`);
             }
-        })
+        });
 }).catch(errorHandlerFunction);
 ```
 
@@ -78,7 +78,7 @@ Excel.run(function (context) {
               directDependents.areas.items[i].format.fill.color = "Yellow";
               console.log(`  ${directDependents.areas.items[i].address}`);
             }
-        })
+        });
 }).catch(errorHandlerFunction);
 ```
 
