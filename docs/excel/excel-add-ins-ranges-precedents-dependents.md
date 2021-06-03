@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 Locate a formula's direct dependent cells with [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__). Like `Range.getDirectPrecedents`, `Range.getDirectDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the direct dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from dependent cells to the selected cell. The selected cell, **D3**, has cell **E3** as a dependent. Cell **E3**, contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDirectDependents` method does not draw arrows.
+The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from dependent cells to the selected cell. The selected cell, **D3**, has cell **E3** as a dependent. **E3** contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDirectDependents` method does not draw arrows.
 
 ![Arrow tracing dependent cells in the Excel UI](../images/excel-ranges-trace-dependents.png)
 
