@@ -160,7 +160,7 @@ Your add-in can use REST but not EWS, and the add-in's permission must be set to
 
 ### Message Compose mode
 
-In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getsharedpropertiesasync-options--callback-) is not supported in Outlook on the web or Windows unless the following conditions are met.
+In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) is not supported in Outlook on the web or Windows unless the following conditions are met.
 
 1. The owner shares at least one mailbox folder with the delegate.
 1. The delegate drafts a message in the shared folder.
