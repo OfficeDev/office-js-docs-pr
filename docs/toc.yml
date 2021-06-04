@@ -711,8 +711,8 @@ items:
       - name: Handle dynamic arrays and spilling
         href: excel/excel-add-ins-ranges-dynamic-arrays.md
         displayName: Excel
-      - name: Get formula precedents
-        href: excel/excel-add-ins-ranges-precedents.md
+      - name: Formula precedents and dependents
+        href: excel/excel-add-ins-ranges-precedents-dependents.md
         displayName: Excel
       - name: Delay execution while cell is being edited
         href: excel/excel-add-ins-delay-in-cell-edit.md
