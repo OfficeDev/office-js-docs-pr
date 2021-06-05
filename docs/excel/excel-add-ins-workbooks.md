@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: 'Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 06/01/2021
+ms.date: 06/04/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -336,6 +336,32 @@ The Excel API also lets add-ins turn off calculations until `RequestContext.sync
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## Detect workbook activation (preview)
+
+> [!NOTE]
+> The `Worksheet.onActivated` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+
+```js
+Excel.run(function (context) {
+    // Retrieve the workbook.
+    const workbook = context.workbook;
+
+    // Register the workbook activated event handler.
+    workbook.onActivated.add(workbookActivated);
+
+    return context.sync();
+});
+
+function workbookActivated(event) {
+  Excel.run(function (context) {
+    // Callback function for when the workbook is activated.
+    console.log("The workbook was activated.");
+  });
+}
 ```
 
 ## Save the workbook
