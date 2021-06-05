@@ -341,9 +341,17 @@ context.application.suspendApiCalculationUntilNextSync();
 ## Detect workbook activation (preview)
 
 > [!NOTE]
-> The `Worksheet.onActivated` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> The `Workbook.onActivated` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
+Your add-in can detect when a workbook is activated. After a workbook is opened, it will become "inactive" if the user switches focus to another workbook, to another application, or (in Excel on the web) to another tab of the web browser. The workbook is "activated" when the user switches focus back to this workbook.
+
+To detect when a workbook is activated, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onActivated](/javascript/api/excel/excel.workbook#onActivated) event of a workbook. Event handlers for the `onActivated` event receive a [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) object when the event fires.
+
+> [!IMPORTANT]
+> The `onActivated` event doesn't detect when a workbook is opened. This event only detects when a user switches focus back to an already open workbook.
+
+The following code sample shows how to register the `onActivated` event handler.
 
 ```js
 Excel.run(function (context) {
