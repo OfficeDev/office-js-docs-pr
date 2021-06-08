@@ -77,7 +77,7 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 ### Event-based activation
 
-This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. See [Supported events](../../../outlook/autolaunch.md#supported-events) to learn more.
+This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, see [Supported events](../../../outlook/autolaunch.md#supported-events).
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
