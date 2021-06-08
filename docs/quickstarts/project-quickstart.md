@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: Learn how to build a simple Project task pane add-in by using the Office JS API.
-ms.date: 10/14/2020
+ms.date: 06/07/2021
 ms.prod: project
 localization_priority: Priority
 ---
@@ -99,7 +99,7 @@ Office.context.document.getSelectedTaskAsync(
     Run the following command in the root directory of your project. When you run this command, the local web server will start.
 
     ```command&nbsp;line
-    npm run dev server
+    npm run dev-server
     ```
 
 3. In Project, create a simple project plan.
