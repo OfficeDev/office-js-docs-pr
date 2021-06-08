@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: 'Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 06/04/2021
+ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -344,7 +344,7 @@ context.application.suspendApiCalculationUntilNextSync();
 > The `Workbook.onActivated` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
-Your add-in can detect when a workbook is activated. After a workbook is opened, it will become "inactive" if the user switches focus to another workbook, to another application, or (in Excel on the web) to another tab of the web browser. A workbook is "activated" when the user switches focus back to this workbook. After detecting workbook activation, your add-in can trigger callback functions, such as refreshing workbook data.
+Your add-in can detect when a workbook is activated. A workbook becomes *inactive* when the user switches focus to another workbook, to another application, or (in Excel on the web) to another tab of the web browser. A workbook is *activated* when the user returns focus to the workbook. The workbook activation can trigger callback functions in your add-in, such as refreshing workbook data.
 
 To detect when a workbook is activated, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onActivated](/javascript/api/excel/excel.workbook#onActivated) event of a workbook. Event handlers for the `onActivated` event receive a [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) object when the event fires.
 
@@ -365,10 +365,16 @@ Excel.run(function (context) {
 });
 
 function workbookActivated(event) {
-  Excel.run(function (context) {
-    // Callback function for when the workbook is activated.
-    console.log("The workbook was activated.");
-  });
+    Excel.run(function (context) {
+        // Retrieve the workbook and load the name.
+        var workbook = context.workbook;
+        workbook.load("name");
+        
+        return context.sync().then(function () {
+            // Callback function for when the workbook is activated.
+            console.log(`The workbook ${workbook.name} was activated.`);
+        });
+    });
 }
 ```
 
