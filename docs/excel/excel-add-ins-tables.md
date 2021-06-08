@@ -165,7 +165,7 @@ Excel.run(function (context) {
 > [!NOTE]
 > The `Table.resize` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
 
-Your add-in can resize a table without adding data to the table. To resize a table, use the [resize](/javascript/api/excel/excel.table#resize_newRange_) method. The following code sample shows how to resize a table and set the new range of the table to **A1:D20**.
+Your add-in can resize a table without adding data to the table or changing cell values. To resize a table, use the [Table.resize](/javascript/api/excel/excel.table#resize_newRange_) method. The following code sample shows how to resize a table and set the new range of the table to **A1:D20**.
 
 ```js
 Excel.run(function (context) {
