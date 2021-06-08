@@ -99,7 +99,10 @@ The following examples show two actions that use a different **TaskpaneId**. To 
 
 ## Title
 
-Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action. This child element is not supported in Outlook Add-ins.
+Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action.
+
+> [!NOTE]
+> This child element is not supported in Outlook add-ins.
 
 The following example shows an action that uses the **Title** element. Note that you don't assign the **Title** to a string directly. Instead, you assign it a resource ID (resid), that is defined in the **Resources** section of the manifest and can be no more than 32 characters.
 
