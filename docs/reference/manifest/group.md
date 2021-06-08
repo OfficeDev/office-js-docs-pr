@@ -35,7 +35,7 @@ Required. The label of the group. The **resid** attribute can be no more than 32
 
 ### Icon
 
-Required. If a tab contains a lot of groups and the program window is resized, the specified image may display instead.
+Required. If a tab contains a lot of groups and the program window is resized, the specified image may display instead. This child element is not supported in Outlook Add-ins.
 
 ### Control
 
@@ -58,7 +58,7 @@ Optional, but if not present there must be at least one **OfficeControl**. For d
 
 ### OfficeControl
 
-Optional, but if not present there must be at least one **Control**. Include one or more built-in Office controls in the group with `<OfficeControl>` elements. The `id` attribute specifies the ID of the built-in Office control. To find the ID of a control, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.
+Optional, but if not present there must be at least one **Control**. Include one or more built-in Office controls in the group with `<OfficeControl>` elements. The `id` attribute specifies the ID of the built-in Office control. To find the ID of a control, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.  This child element is not supported in Outlook Add-ins.
 
 ```xml
 <Group id="contosoCustomTab.grp1">
@@ -78,7 +78,7 @@ Optional, but if not present there must be at least one **Control**. Include one
 
 ### OverriddenByRibbonApi
 
-Optional (boolean). Specifies whether the **Group** will be hidden on application and platform combinations that support an API that installs a custom contextual tab on the ribbon at runtime. The default value, if not present, is `false`. If used, **OverriddenByRibbonApi** must be the *first* child of **Group**. For more information, see [OverriddenByRibbonApi](overriddenbyribbonapi.md).
+Optional (boolean). Specifies whether the **Group** will be hidden on application and platform combinations that support an API that installs a custom contextual tab on the ribbon at runtime. The default value, if not present, is `false`. If used, **OverriddenByRibbonApi** must be the *first* child of **Group**. For more information, see [OverriddenByRibbonApi](overriddenbyribbonapi.md).  This child element is not supported in Outlook Add-ins.
 
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
