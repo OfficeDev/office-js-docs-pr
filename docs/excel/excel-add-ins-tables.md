@@ -160,19 +160,12 @@ Excel.run(function (context) {
 
 ![Table with new calculated column in Excel](../images/excel-tables-add-calculated-column.png)
 
-## Resize a table (preview) (online-only)
+## Resize a table (online-only)
 
 > [!NOTE]
-> The `Table.resize` method is currently available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)].
-> 
-
-> [!NOTE]
-> The `Table.resize` method is also currently available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
+> The `Table.resize` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
 
 Your add-in can resize a table without adding data to the table. To resize a table, use the [resize](/javascript/api/excel/excel.table#resize_newRange_) method. The following code sample shows how to resize a table and set the new range of the table to **A1:D20**.
-
-> [!IMPORTANT]
-> The new range of the table must overlap with the original range, and the headers (or the top of the table) must be in the same row.
 
 ```js
 Excel.run(function (context) {
@@ -186,6 +179,9 @@ Excel.run(function (context) {
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
+
+> [!IMPORTANT]
+> The new range of the table must overlap with the original range, and the headers (or the top of the table) must be in the same row.
 
 **Table after resize** 
 
