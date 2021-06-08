@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 05/26/2021
+ms.date: 06/08/2021
 localization_priority: Normal
 ---
 
@@ -19,28 +19,26 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 At present, the following events are supported on the web and on Windows.
 
-|Event|Description|
-|---|---|
-|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|
-|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|
-|`OnMessageAttachmentsChanged`\*|On adding or removing attachments while composing a message.|
-|`OnAppointmentAttachmentsChanged`\*|On adding or removing attachments while composing an appointment.|
-|`OnMessageRecipientsChanged`\*|On adding or removing recipients while composing a message.|
-|`OnAppointmentAttendeesChanged`\*|On adding or removing attendees while composing an appointment.|
-|`OnAppointmentTimeChanged`\*|On changing date/time while composing an appointment.|
-|`OnAppointmentRecurrenceChanged`\*|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|
-|`OnInfoBarDismissClicked`\*|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|
+|Event|Description|Minimum<br>requirement set|
+|---|---|---|
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|1.10|
+|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|1.10|
+|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|Preview|
+|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|Preview|
+|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|Preview|
+|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|Preview|
+|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|Preview|
+|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|Preview|
+|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|Preview|
 
 > [!IMPORTANT]
-> \* This event is only supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription. For more details, see [How to preview](#how-to-preview) in this article.
->
-> Because preview features are subject to change without notice, they shouldn't be used in production add-ins.
+> Events still in preview are only available with a Microsoft 365 subscription in Outlook on the web and on Windows. For more details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
 
-## How to preview
+### How to preview
 
-We invite you to try out the new events! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
+We invite you to try out the events now in preview! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
 
-To preview this feature:
+To preview these events:
 
 - For Outlook on the web:
   - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
