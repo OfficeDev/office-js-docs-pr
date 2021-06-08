@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with tables using the Excel JavaScript API.'
-ms.date: 01/11/2021
+ms.date: 06/07/2021
 localization_priority: Normal
 ---
 
@@ -159,6 +159,33 @@ Excel.run(function (context) {
 **Table with new calculated column**
 
 ![Table with new calculated column in Excel](../images/excel-tables-add-calculated-column.png)
+
+## Resize a table (online-only)
+
+> [!NOTE]
+> The `Table.resize` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
+
+Your add-in can resize a table without adding data to the table or changing cell values. To resize a table, use the [Table.resize](/javascript/api/excel/excel.table#resize_newRange_) method. The following code sample shows how to resize a table. This code sample uses the **ExpensesTable** from the [Create a table](#create-a-table) section earlier in this article and sets the new range of the table to **A1:D20**.
+
+```js
+Excel.run(function (context) {
+    // Retrieve the worksheet and a table on that worksheet.
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var expensesTable = sheet.tables.getItem("ExpensesTable");
+
+    // Resize the table.
+    expensesTable.resize("A1:D20");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+> [!IMPORTANT]
+> The new range of the table must overlap with the original range, and the headers (or the top of the table) must be in the same row.
+
+**Table after resize** 
+
+![Table with multiple empty rows in Excel](../images/excel-tables-resize.png)
 
 ## Update column name
 
