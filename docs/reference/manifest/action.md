@@ -1,7 +1,7 @@
 ---
 title: Action element in the manifest file
 description: This element specifies the action to perform when the user selects a button or menu control.
-ms.date: 02/12/2021
+ms.date: 06/08/2021
 localization_priority: Normal
 ---
 
@@ -21,8 +21,8 @@ Specifies the action to perform when the user selects a  [Button](control.md#but
 |:-----|:-----|
 |  [FunctionName](#functionname) |    Specifies the name of the function to execute. |
 |  [SourceLocation](#sourcelocation) |    Specifies the source file location for this action. |
-|  [TaskpaneId](#taskpaneid) | Specifies the ID of the task pane container.|
-|  [Title](#title) | Specifies the custom title for the task pane.|
+|  [TaskpaneId](#taskpaneid) | Specifies the ID of the task pane container. Not supported in Outlook add-ins.|
+|  [Title](#title) | Specifies the custom title for the task pane. Not supported in Outlook add-ins.|
 |  [SupportsPinning](#supportspinning) | Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.|
 
 ## xsi:type
@@ -100,6 +100,9 @@ The following examples show two actions that use a different **TaskpaneId**. To 
 ## Title
 
 Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action.
+
+> [!NOTE]
+> This child element is not supported in Outlook add-ins.
 
 The following example shows an action that uses the **Title** element. Note that you don't assign the **Title** to a string directly. Instead, you assign it a resource ID (resid), that is defined in the **Resources** section of the manifest and can be no more than 32 characters.
 
