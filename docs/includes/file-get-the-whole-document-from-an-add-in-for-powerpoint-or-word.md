@@ -6,11 +6,11 @@ This article assumes that you are using a text editor to create the task pane ad
 
 - On a shared network folder or on a web server, you need the following files:
 
-    - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and application-specific .js files) and Cascading Style Sheet (CSS) files.
+  - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and application-specific .js files) and Cascading Style Sheet (CSS) files.
 
-    - A JavaScript file (GetDoc_App.js) to contain the programming logic of the add-in.
+  - A JavaScript file (GetDoc_App.js) to contain the programming logic of the add-in.
 
-    - A CSS file (Program.css) to contain the styles and formatting for the add-in.
+  - A CSS file (Program.css) to contain the styles and formatting for the add-in.
 
 - An XML manifest file (GetDoc_App.xml) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
 
@@ -18,7 +18,7 @@ You can also create an add-in for PowerPoint by using [Visual Studio](../quickst
 
 ### Core concepts to know for creating a task pane add-in
 
-Before you begin creating this add-in for PowerPoint or Word, you should be familiar with building Office Add-ins and working with HTTP requests. This article does not discuss how to decode Base64-encoded text from an HTTP request on a web server. 
+Before you begin creating this add-in for PowerPoint or Word, you should be familiar with building Office Add-ins and working with HTTP requests. This article does not discuss how to decode Base64-encoded text from an HTTP request on a web server.
 
 ## Create the manifest for the add-in
 
@@ -89,7 +89,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 2. Save the file as GetDoc_App.html using UTF-8 encoding to a network location or to a web server.
 
     > [!NOTE]
-    > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file. 
+    > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file.
 
     We'll use some CSS to give the add-in a simple, yet modern and professional appearance. Use the following CSS to define the style of the add-in.
 
@@ -144,7 +144,7 @@ Office.initialize = function (reason) {
 // Create a function for writing to the status div.
 function updateStatus(message) {
     var statusInfo = $('#status');
-    statusInfo.innerHTML += message + "<br/>";
+    statusInfo[0].innerHTML += message + "<br/>";
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: Group element in the manifest file
 description: Defines a group of UI controls in a tab. 
-ms.date: 01/29/2021
+ms.date: 06/08/2021
 localization_priority: Normal
 ---
 
@@ -24,10 +24,10 @@ Required. Unique identifier for the group. It is a string with a maximum of 125 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [Label](#label)      | Yes |  The label for the CustomTab or a group.  |
-|  [Icon](icon.md)      | Yes |  The image for a group.  |
+|  [Icon](icon.md)      | Yes |  The image for a group. Not supported in Outlook add-ins. |
 |  [Control](#control)    | No |  Represents a Control object. Can be zero or more.  |
-|  [OfficeControl](#officecontrol)  | No | Represents one of the built-in Office controls. Can be zero or more. |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the group should appear on application and platform combinations that support custom contextual tabs.  |
+|  [OfficeControl](#officecontrol)  | No | Represents one of the built-in Office controls. Can be zero or more. Not supported in Outlook add-ins.|
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the group should appear on application and platform combinations that support custom contextual tabs. Not supported in Outlook add-ins. |
 
 ### Label
 
@@ -36,6 +36,9 @@ Required. The label of the group. The **resid** attribute can be no more than 32
 ### Icon
 
 Required. If a tab contains a lot of groups and the program window is resized, the specified image may display instead.
+
+> [!NOTE]
+> This child element is not supported in Outlook add-ins.
 
 ### Control
 
@@ -60,6 +63,9 @@ Optional, but if not present there must be at least one **OfficeControl**. For d
 
 Optional, but if not present there must be at least one **Control**. Include one or more built-in Office controls in the group with `<OfficeControl>` elements. The `id` attribute specifies the ID of the built-in Office control. To find the ID of a control, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.
 
+> [!NOTE]
+> This child element is not supported in Outlook add-ins.
+
 ```xml
 <Group id="contosoCustomTab.grp1">
     <Label resid="CustomTabGroupLabel"/>
@@ -79,6 +85,9 @@ Optional, but if not present there must be at least one **Control**. Include one
 ### OverriddenByRibbonApi
 
 Optional (boolean). Specifies whether the **Group** will be hidden on application and platform combinations that support an API that installs a custom contextual tab on the ribbon at runtime. The default value, if not present, is `false`. If used, **OverriddenByRibbonApi** must be the *first* child of **Group**. For more information, see [OverriddenByRibbonApi](overriddenbyribbonapi.md).
+
+> [!NOTE]
+> This child element is not supported in Outlook add-ins.
 
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
