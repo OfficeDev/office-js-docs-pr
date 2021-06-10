@@ -182,7 +182,7 @@ You can subscribe to and unsubscribe from the following events using `addHandler
 > [!IMPORTANT]
 > Events are only available with task pane implementation.
 
-| Event | Description | Minimum<br>requirement set |
+| [Event](/javascript/api/office/office.eventtype) | Description | Minimum<br>requirement set |
 |---|---|:---:|
 |`AppointmentTimeChanged`| The date or time of the selected appointment or series has changed. | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 |`AttachmentsChanged`| An attachment has been added to or removed from the item. | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |

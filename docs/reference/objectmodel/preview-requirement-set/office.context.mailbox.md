@@ -60,7 +60,7 @@ You can subscribe to and unsubscribe from the following events using [addHandler
 > [!IMPORTANT]
 > Events are only available with task pane implementation.
 
-| Event | Description | Minimum<br>requirement set |
+| [Event](/javascript/api/office/office.eventtype) | Description | Minimum<br>requirement set |
 |---|---|:---:|
 |`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 |`OfficeThemeChanged`| The Office theme on the mailbox has changed. | [Preview](../preview-requirement-set/outlook-requirement-set-preview.md) |
