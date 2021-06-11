@@ -1,7 +1,7 @@
 ---
 title: Enable delegate access scenarios in an Outlook add-in
 description: 'Briefly describes delegate access and discusses how to configure add-in support.'
-ms.date: 02/09/2021
+ms.date: 06/11/2021
 localization_priority: Normal
 ---
 
@@ -10,9 +10,26 @@ localization_priority: Normal
 A mailbox owner can use the delegate access feature to [allow someone else to manage their mail and calendar](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). This article specifies which delegate permissions the Office JavaScript API supports and describes how to enable delegate access scenarios in your Outlook add-in.
 
 > [!IMPORTANT]
-> Delegate access is not currently available in Outlook on Android and iOS. Also, this feature is not currently available with [group shared mailboxes](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes) in Outlook on the web. This functionality may be made available in the future.
->
 > Support for this feature was introduced in requirement set 1.8. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+
+## Supported setups
+
+The following sections describe supported configurations for shared folders and shared mailboxes. Other configurations aren't supported because the delegate access APIs may not work as expected.
+
+### Shared folders
+
+After the mailbox owner has provided access to a delegate, the delegate can then [access and manage that person's mailbox](https://support.microsoft.com/office/manage-another-person-s-mail-and-calendar-items-afb79d6b-2967-43b9-a944-a6b953190af5). The delegate must follow the instructions outlined in the "Add another person's mailbox to your profile" section of that article.
+
+### Shared mailboxes (preview)
+
+Exchange server admins can create and manage shared mailboxes (for example, on [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [Exchange Server 2019](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes?view=exchserver-2019&preserve-view-true)) for sets of users to access.
+
+An Exchange Server feature known as "automapping" is on by default which means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook app after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-d94a8e9e-21f1-4240-808b-de9c9c088afd).
+
+> [!WARNING]
+> Do **NOT** sign into the shared mailbox. The delegate access feature APIs won't work in that case.
+
+To learn more about where add-ins do and do not activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
 
 ## Supported permissions for delegate access
 
@@ -152,15 +169,11 @@ if (item.getSharedPropertiesAsync) {
 
 ## Limitations
 
-Depending on your add-in's scenarios, there are a couple of limitations for you to consider when handling delegate situations.
-
-### REST and EWS
-
-Your add-in can use REST but not EWS, and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox.
+Depending on your add-in's scenarios, there are a few limitations for you to consider when handling delegate situations.
 
 ### Message Compose mode
 
-In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) is not supported in Outlook on the web or Windows unless the following conditions are met.
+In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) is not supported in Outlook on the web or on Windows unless the following conditions are met.
 
 1. The owner shares at least one mailbox folder with the delegate.
 1. The delegate drafts a message in the shared folder.
@@ -171,6 +184,14 @@ In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/offi
     - The delegate saves a draft message then moves it from their own **Drafts** folder to the shared folder. The delegate opens the draft from the shared folder then continues composing.
 
 After the message has been sent, it's usually found in the delegate's **Sent Items** folder.
+
+### Shared mailbox
+
+If you log into a shared mailbox, then this feature doesn't work. The shared folder or shared mailbox should be added according to recommendations outlined in the [Shared folders](#shared-folders) and [Shared mailboxes](#shared-mailboxes-preview) sections earlier in this article.
+
+### REST and EWS
+
+Your add-in can use REST but not EWS, and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox.
 
 ## See also
 

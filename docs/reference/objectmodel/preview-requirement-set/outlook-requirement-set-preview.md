@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 06/08/2021
+ms.date: 06/11/2021
 localization_priority: Normal
 ---
 
@@ -75,9 +75,21 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 ---
 
+### Delegate access
+
+This feature was released in [requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). However, support for shared mailboxes is now available in preview. To learn more, refer to [Enable delegate access scenarios](../../../outlook/delegate-access.md).
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+
+<br>
+
+---
+
+---
+
 ### Event-based activation
 
-This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, see [Supported events](../../../outlook/autolaunch.md#supported-events).
+This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, refer to [Supported events](../../../outlook/autolaunch.md#supported-events).
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
