@@ -1,6 +1,6 @@
 ---
 title: Set and get the selected range using the Excel JavaScript API
-description: 'Learn how to use the Excel JavaScript API to set and get selected ranges using the Excel JavaScript API.'
+description: 'Learn how to use the Excel JavaScript API to set and get the selected range using the Excel JavaScript API.'
 ms.date: 06/10/2021
 ms.prod: excel
 localization_priority: Normal
@@ -49,7 +49,7 @@ Excel.run(function (context) {
 
 ## Select the edge of a used range
 
-An add-in can select the edges of the used range in the current worksheet, based on the currently selected range. A used range is any cell or series of contiguous cells that have been edited in the worksheet. In the following screenshot, the used range is the table with values in each cell, **C5:F12**. The empty cells outside this table are outside the used range.
+An add-in can select the edge of the used range, based on the currently selected range. A used range is any cell or series of contiguous cells that have been edited in the worksheet. In the following screenshot, the used range is the table with values in each cell, **C5:F12**. The empty cells outside this table are outside the used range.
 
 ![A table with data from C5:F12 in Excel](../images/excel-ranges-used-range.png)
 
@@ -83,7 +83,15 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+#### Before selecting the cell at the edge of the used range
+
+The following screenshot shows a table with data in the range **C5:F12**. Inside this table, the range **D8:E9** is selected.
+ 
 ![A table with data from C5:F12 in Excel. The range D8:E9 is selected.](../images/excel-ranges-used-range-d8-e9.png)
+
+#### After selecting the cell at the edge of the used range
+
+The following screenshot shows a table with data in the range **C5:F12**. Inside this table, the range **D5** is selected.
 
 ![A table with data from C5:F12 in Excel. The range D5 is selected.](../images/excel-ranges-used-range-d5.png)
 
@@ -117,9 +125,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+#### Before selecting all the cells from the current range to the edge of the used range
+
+The following screenshot shows a table with data in the range **C5:F12**. Inside this table, the range **D8:E9** is selected.
+
 ![A table with data from C5:F12 in Excel. The range D8:E9 is selected.](../images/excel-ranges-used-range-d8-e9.png)
 
-![A table with data from C5:F12 in Excel. The range D8:E9 is selected.](../images/excel-ranges-used-range-d8-e12.png)
+#### After selecting all the cells from the current range to the edge of the used range
+
+The following screenshot shows a table with data in the range **C5:F12**. Inside this table, the range **D8:E12** is selected.
+
+![A table with data from C5:F12 in Excel. The range D8:E12 is selected.](../images/excel-ranges-used-range-d8-e12.png)
 
 ## See also
 
