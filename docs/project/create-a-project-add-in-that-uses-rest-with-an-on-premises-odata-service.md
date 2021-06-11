@@ -20,7 +20,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 - Project Professional 2013 is required to connect with Project Web App. The development computer must have Project Professional 2013 installed to enable **F5** debugging with Visual Studio.
 
     > [!NOTE]
-    > Project Standard 2013 can also host task pane add-ins, but cannot log on to Project Web App.
+    > Project Standard 2013 can also host task pane add-ins, but cannot sign in to Project Web App.
 
 - Visual Studio 2015 with Office Developer Tools for Visual Studio includes templates for creating Office and SharePoint Add-ins. Ensure that you have installed the most recent version of Office Developer Tools; see the  _Tools_ section of the [Office Add-ins and SharePoint downloads](https://developer.microsoft.com/office/docs).
 
