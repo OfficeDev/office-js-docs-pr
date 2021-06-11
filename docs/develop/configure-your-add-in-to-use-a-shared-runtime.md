@@ -26,6 +26,9 @@ Do one of the following:
 
 The generator will create the project and install supporting Node components.
 
+> [!NOTE]
+> You can also use the steps in this article to update an existing Visual Studio project to use the shared runtime. However, you may need to update the XML schemas for the manifest. For more information, see [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+
 ## Configure the manifest
 
 Follow these steps for a new or existing project to configure it to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
@@ -35,11 +38,15 @@ Follow these steps for a new or existing project to configure it to use a shared
 1. If you generated an Excel add-in, update the requirements section to use the [shared runtime](../reference/requirement-sets/shared-runtime-requirement-sets.md) instead of the custom function runtime. The XML should appear as follows.
 
     ```xml
+    <Hosts>
+      <Host Name="Workbook"/>
+    </Hosts>
     <Requirements>
-    <Sets DefaultMinVersion="1.1">
-      <Set Name="SharedRuntime" MinVersion="1.1"/>
-    </Sets>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
     </Requirements>
+    <DefaultSettings>
     ```
 
 1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
@@ -48,7 +55,6 @@ Follow these steps for a new or existing project to configure it to use a shared
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       ...
        <Runtimes>
          <Runtime resid="Taskpane.Url" lifetime="long" />
        </Runtimes>
