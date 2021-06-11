@@ -22,7 +22,7 @@ After the mailbox owner has provided access to a delegate, the delegate can then
 
 ### Shared mailboxes (preview)
 
-Exchange server admins can create and manage shared mailboxes (for example, on [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [Exchange Server 2019](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes?view=exchserver-2019&preserve-view-true)) for sets of users to access.
+Exchange server admins can create and manage shared mailboxes (for example, on [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [Exchange Server 2019](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes?view=exchserver-2019&preserve-view=true)) for sets of users to access.
 
 An Exchange Server feature known as "automapping" is on by default which means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook app after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
