@@ -81,22 +81,22 @@ See [Troubleshoot Excel add-ins](../excel/excel-add-ins-troubleshooting.md) for 
 
 ## Manifest schema validation errors in Visual Studio projects
 
-If you are using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example when adding the `<Runtimes>` element to implement the shared JavaScript runtime, you may see the following validation error:
+If you are using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the `<Runtimes>` element to implement the shared JavaScript runtime, you may see the following validation error.
 
 **The element 'Host' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' has invalid child element 'Runtimes' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
-If this occurs you can update the XSD files that Visual Studio uses to the latest versions. The latest schema versions are at [[MS-OWEMXML]: Appendix A: Full XML Schema](https://docs.microsoft.com/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+If this occurs, you can update the XSD files that Visual Studio uses to the latest versions. The latest schema versions are at [[MS-OWEMXML]: Appendix A: Full XML Schema](https://docs.microsoft.com/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 
 ### Locate the XSD files
 
 1. Open your project in Visual Studio.
-1. In **Solution Explorer** open the manifest.xml file. The manifest is typically in the first project under your solution.
-1. Choose **View > Properties Window** (F4).
-1. In the **Properties Window**, choose the ellipsis (...) to open the **XML Schemas** editor. Here you can find the exact folder location of all schema files in use by your project.
+1. In **Solution Explorer**, open the manifest.xml file. The manifest is typically in the first project under your solution.
+1. Choose **View** > **Properties Window** (F4).
+1. In the **Properties Window**, choose the ellipsis (...) to open the **XML Schemas** editor. Here you can find the exact folder location of all schema files your project uses.
 
 ### Update the XSD files
 
-1. Open the XSD file you want to update in a text editor. The schema name from the validation error will corelate to the XSD file name. For example, open **TaskPaneAppVersionOverridesV1_0.xsd**.
+1. Open the XSD file you want to update in a text editor. The schema name from the validation error will correlate to the XSD file name. For example, open **TaskPaneAppVersionOverridesV1_0.xsd**.
 1. Locate the updated schema at [[MS-OWEMXML]: Appendix A: Full XML Schema](https://docs.microsoft.com/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8). For example, TaskPaneAppVersionOverridesV1_0 is at [taskpaneappversionoverrides Schema](https://docs.microsoft.com/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40).
 1. Copy the text into your text editor.
 1. Save the updated XSD file.
