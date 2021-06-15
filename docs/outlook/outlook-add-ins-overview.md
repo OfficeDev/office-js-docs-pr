@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. 
-ms.date: 06/11/2021
+ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
@@ -54,10 +54,10 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 
 - A .msg or .eml file opened from the file system.
 
-- In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox, in another user's mailbox, in an archive mailbox, or in a public folder.
+- In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an archive mailbox, or in a public folder.
 
   > [!IMPORTANT]
-  > Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in requirement set 1.8. To learn more, refer to [Enable delegate access scenarios](delegate-access.md).
+  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in requirement set 1.8. Shared mailbox support is now in preview. To learn more, refer to [Enable shared folders and shared mailbox scenarios](delegate-access.md).
 
 - Using a custom form.
 
