@@ -7,10 +7,10 @@ localization_priority: Normal
 
 # Enable shared folders and shared mailbox scenarios in an Outlook add-in
 
-This article describes how to enable shared folders (also known as delegate access) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports. Shared mailbox support is now in preview.
+This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in preview) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
 > [!IMPORTANT]
-> Support for this feature was introduced in requirement set 1.8. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Supported setups
 
