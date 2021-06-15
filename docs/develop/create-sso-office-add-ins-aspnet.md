@@ -276,7 +276,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         // No one is signed into Office. If the add-in cannot be effectively used when no one
         // is logged into Office, then the first call of getAccessToken should pass the
         // `allowSignInPrompt: true` option.
-        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again."]);
+        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
         break;
     case 13002:
         // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
@@ -605,7 +605,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Press F5.
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** in the **SSO ASP.NET** group to open the task pane add-in.
-1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account, or a Microsoft account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to log in. After you log in, the file and folder names appear.
+1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account, or a Microsoft account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to sign in. After you sign in, the file and folder names appear.
 
 ## Updating the add-in when you go to staging and production
 
