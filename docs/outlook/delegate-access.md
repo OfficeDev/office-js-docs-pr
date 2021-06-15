@@ -187,7 +187,7 @@ After the message has been sent, it's usually found in the delegate's **Sent Ite
 
 ### REST and EWS
 
-Your add-in can use REST but not EWS, and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox.
+Your add-in can use REST and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox. EWS is not supported.
 
 ## See also
 
