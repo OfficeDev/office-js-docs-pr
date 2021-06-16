@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Authenticate a user with an identity token for Exchange
 
-Exchange user identity tokens provide a way for your add-in to uniquely identify an add-in user. By establishing the user's identity, you can implement a single sign-on (SSO) authentication scheme for your back-end service that enables customers who are using Outlook add-ins to connect to your service without logging in. See [Exchange user identity token](authentication.md#exchange-user-identity-token) for more about when to use this token type. In this article, we'll take a look at a simplistic method of using the Exchange identity token to authenticate a user to your back-end.
+Exchange user identity tokens provide a way for your add-in to uniquely identify an add-in user. By establishing the user's identity, you can implement a single sign-on (SSO) authentication scheme for your back-end service that enables customers who are using Outlook add-ins to connect to your service without signing in. See [Exchange user identity token](authentication.md#exchange-user-identity-token) for more about when to use this token type. In this article, we'll take a look at a simplistic method of using the Exchange identity token to authenticate a user to your back-end.
 
 > [!IMPORTANT]
 > This is just a simple example of an SSO implementation. As always, when you're dealing with identity and authentication, you have to make sure that your code meets the security requirements of your organization.
