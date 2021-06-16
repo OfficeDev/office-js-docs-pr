@@ -48,7 +48,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     * In the **Redirect URI** section, ensure that **Web** is selected in the drop down and then set the URI to` https://localhost:44355/AzureADAuth/Authorize`.
     * Choose **Register**.
 
-1. On the **Office-Add-in-ASPNET-SSO** page, copy and save the values for the **Application (client) ID**. You'll need it in later procedures.
+1. On the **Office-Add-in-ASPNET-SSO** page, copy and save the value for the **Application (client) ID**. You'll need it in later procedures.
 
     > [!NOTE]
     > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
@@ -605,7 +605,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 ### Testing the fallback path
 
-To test the fallback authorization path, force the SSO path to fail with the following steps:
+To test the fallback authorization path, force the SSO path to fail with the following steps.
 
 1. Add the following code to the very top of the `getDataWithToken` method in the HomeES6.js file.
 
