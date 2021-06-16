@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: 'Discusses how to configure add-in support for shared folders and shared mailboxes.'
-ms.date: 06/15/2021
+ms.date: 06/16/2021
 localization_priority: Normal
 ---
 
@@ -167,27 +167,31 @@ if (item.getSharedPropertiesAsync) {
 }
 ```
 
-## Limitations in shared folder scenarios
+## Limitations
 
-Depending on your add-in's scenarios, there are a few limitations for you to consider when handling delegate situations.
+Depending on your add-in's scenarios, there are a few limitations for you to consider when handling shared folder or shared mailbox situations.
 
 ### Message Compose mode
 
 In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) is not supported in Outlook on the web or on Windows unless the following conditions are met.
 
-1. The owner shares at least one mailbox folder with the delegate.
-1. The delegate drafts a message in the shared folder.
+  a. **Delegate access/Shared folders**
 
-    Examples:
+    1. The mailbox owner starts a message. This can be a new message, a reply, or a forward.
+    1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
+    1. The delegate opens the draft from the shared folder then continues composing.
 
-    - The delegate replies to or forwards an email in the shared folder.
-    - The delegate saves a draft message then moves it from their own **Drafts** folder to the shared folder. The delegate opens the draft from the shared folder then continues composing.
+  b. **Shared mailbox**
 
-After the message has been sent, it's usually found in the delegate's **Sent Items** folder.
+    1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
+    1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
+    1. Another shared mailbox user opens the draft from the shared mailbox then continues composing.
+
+The message is now in a shared context and add-ins that support these shared scenarios can get the item's shared properties. After the message has been sent, it's usually found in the sender's **Sent Items** folder.
 
 ### REST and EWS
 
-Your add-in can use REST and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox. EWS is not supported.
+Your add-in can use REST and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox or to the shared mailbox as applicable. EWS is not supported.
 
 ## See also
 
