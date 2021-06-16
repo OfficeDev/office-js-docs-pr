@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 04/20/2021
+ms.date: 06/16/2021
 localization_priority: Normal
 ---
 
@@ -23,7 +23,6 @@ The following table shows supported client-server combinations for the on-send f
 | Client | Exchange Online | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) |
 |---|:---:|:---:|:---:|
 |Windows:<br>version 1910 (build 12130.20272) or later|Yes|Yes|Yes|
-|Mac:<br>build 16.30 to 16.46|Yes|No|No|
 |Mac:<br>build 16.47 or later|Yes|Yes|Yes|
 |Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|
 |Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
