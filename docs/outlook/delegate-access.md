@@ -175,17 +175,17 @@ Depending on your add-in's scenarios, there are a few limitations for you to con
 
 In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) is not supported in Outlook on the web or on Windows unless the following conditions are met.
 
-  a. **Delegate access/Shared folders**
+a. **Delegate access/Shared folders**
 
-    1. The mailbox owner starts a message. This can be a new message, a reply, or a forward.
-    1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
-    1. The delegate opens the draft from the shared folder then continues composing.
+1. The mailbox owner starts a message. This can be a new message, a reply, or a forward.
+1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
+1. The delegate opens the draft from the shared folder then continues composing.
 
-  b. **Shared mailbox**
+b. **Shared mailbox**
 
-    1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
-    1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
-    1. Another shared mailbox user opens the draft from the shared mailbox then continues composing.
+1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
+1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
+1. Another shared mailbox user opens the draft from the shared mailbox then continues composing.
 
 The message is now in a shared context and add-ins that support these shared scenarios can get the item's shared properties. After the message has been sent, it's usually found in the sender's **Sent Items** folder.
 
