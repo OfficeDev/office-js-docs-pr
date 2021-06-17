@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 06/08/2021
+ms.date: 06/15/2021
 localization_priority: Normal
 ---
 
@@ -77,7 +77,7 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 ### Event-based activation
 
-This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, see [Supported events](../../../outlook/autolaunch.md#supported-events).
+This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, refer to [Supported events](../../../outlook/autolaunch.md#supported-events).
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
@@ -132,6 +132,18 @@ Added a new object that represents the session data of an item.
 #### [Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
 Added a new property to manage the session data of an item in Compose mode.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
+
+<br>
+
+---
+
+---
+
+### Shared mailboxes
+
+Feature support for shared folders (that is, delegate access) was released in [requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). However, support for shared mailboxes is now available in preview. To learn more, refer to [Enable shared folders and shared mailbox scenarios](../../../outlook/delegate-access.md).
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
