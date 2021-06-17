@@ -1,7 +1,7 @@
 ---
 title: DesktopFormFactor element in the manifest file
 description: Specifies the settings for an add-in for the desktop form factor.
-ms.date: 10/31/2019
+ms.date: 06/15/2021
 localization_priority: Normal
 ---
 
@@ -18,7 +18,7 @@ Each DesktopFormFactor definition contains the **FunctionFile** element and one 
 | [ExtensionPoint](extensionpoint.md)   | Yes      | Defines where an add-in exposes functionality. |
 | [FunctionFile](functionfile.md)       | Yes      | A URL to a file that contains JavaScript functions.|
 | [GetStarted](getstarted.md)           | No       | Defines the callout that appears when installing the add-in in Word, Excel, or PowerPoint. |
-| [SupportsSharedFolders](supportssharedfolders.md) | No | Defines whether the Outlook add-in is available in delegate scenarios. Set to *false* by default. |
+| [SupportsSharedFolders](supportssharedfolders.md) | No | Defines whether the Outlook add-in is available in shared mailbox (now in preview) and shared folders (that is, delegate access) scenarios. Set to *false* by default. |
 
 ## DesktopFormFactor example
 

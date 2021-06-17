@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. 
-ms.date: 10/14/2020
+ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
@@ -46,17 +46,18 @@ Outlook add-ins activate when the user is composing or reading a message or appo
   >
   > - Add-ins activate on digitally signed messages in Outlook associated with a Microsoft 365 subscription. On Windows, this support was introduced with build 8711.1000.
   >
-  > - Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM. For more information about this feature in preview, see [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+  > - Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM. For more information about this feature in preview, refer to [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - A delivery report or notification that has the message class IPM.Report.*, including delivery and Non-Delivery Report (NDR) reports, and read, non-read, and delay notifications.
-
-- A draft (does not have a sender assigned to it), or in the Outlook Drafts folder.
 
 - A .msg or .eml file which is an attachment to another message.
 
 - A .msg or .eml file opened from the file system.
 
-- In a shared mailbox, in another user's mailbox, in an archive mailbox, or in a public folder.
+- In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an archive mailbox, or in a public folder.
+
+  > [!IMPORTANT]
+  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). Shared mailbox support is now in preview. To learn more, refer to [Enable shared folders and shared mailbox scenarios](delegate-access.md).
 
 - Using a custom form.
 
@@ -66,16 +67,15 @@ In general, Outlook can activate add-ins in read form for items in the Sent Item
 
 Outlook add-ins are supported in Outlook 2013 or later on Windows, Outlook 2016 or later on Mac, Outlook on the web for Exchange 2013 on-premises and later versions, Outlook on iOS, Outlook on Android, and Outlook on the web and Outlook.com. Not all of the newest features are supported in all [clients](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) at the same time. Please refer to articles and API references for those features to see which applications they may or may not be supported in.
 
-
 ## Get started building Outlook add-ins
 
-To get started building Outlook add-ins, try the following.
+To get started building Outlook add-ins, try the following:
 
 - [Quick start](../quickstarts/outlook-quickstart.md) - Build a simple task pane.
 - [Tutorial](../tutorials/outlook-tutorial.md) - Learn how to create an add-in that inserts GitHub gists into a new message.
 
-
 ## See also
+
 - [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
