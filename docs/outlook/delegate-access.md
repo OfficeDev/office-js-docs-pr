@@ -1,28 +1,30 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
-description: 'Discusses how to configure add-in support for shared folders and shared mailboxes.'
-ms.date: 06/16/2021
+description: 'Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.'
+ms.date: 06/17/2021
 localization_priority: Normal
 ---
 
 # Enable shared folders and shared mailbox scenarios in an Outlook add-in
 
-This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in preview) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
+This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
 > [!IMPORTANT]
 > Support for this feature was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Supported setups
 
-The following sections describe supported configurations for shared mailboxes (now in preview) and shared folders. The feature APIs may not work as expected in other configurations.
+The following sections describe supported configurations for shared mailboxes (now in preview) and shared folders. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
 
 To learn more about where add-ins do and do not activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
 
-### Shared folders
+### [Windows](#tab/windows)
 
-After the mailbox owner has provided access to a delegate, the delegate can then [access and manage that person's mailbox](https://support.microsoft.com/office/manage-another-person-s-mail-and-calendar-items-afb79d6b-2967-43b9-a944-a6b953190af5). The delegate must follow the instructions outlined in the "Add another person's mailbox to your profile" section of that article.
+#### Shared folders
 
-### Shared mailboxes (preview)
+The mailbox owner must first [provide access to a delegate](https://support.microsoft.com/office/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). The delegate must then follow the instructions outlined in the "Add another person's mailbox to your profile" section of the article [Manage another person's mail and calendar items](https://support.microsoft.com/office/manage-another-person-s-mail-and-calendar-items-afb79d6b-2967-43b9-a944-a6b953190af5).
+
+#### Shared mailboxes (preview)
 
 Exchange server admins can create and manage shared mailboxes on [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) for sets of users to access.
 
@@ -30,6 +32,23 @@ An Exchange Server feature known as "automapping" is on by default which means t
 
 > [!WARNING]
 > Do **NOT** sign into the shared mailbox with a password. The feature APIs won't work in that case.
+
+### [Web browser - modern Outlook](#tab/modern)
+
+#### Shared folders
+
+The mailbox owner must first [provide access to a delegate](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) by updating the mailbox folder permissions. The delegate must then follow the instructions outlined in the "Add another person’s mailbox to your folder list in Outlook Web App" section of the article [Access another person's mailbox](https://support.microsoft.com/office/access-another-person-s-mailbox-a909ad30-e413-40b5-a487-0ea70b763081).
+
+#### Shared mailboxes (preview)
+
+Exchange server admins can create and manage shared mailboxes on [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) for sets of users to access.
+
+After receiving access, a shared mailbox user must follow the steps outlined in the "Add the shared mailbox so it displays under your primary mailbox" section of the article [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-on-the-web-98b5a90d-4e38-415d-a030-f09a4cd28207).
+
+> [!WARNING]
+> Do **NOT** use other options like "Open another mailbox". The feature APIs may not work properly then.
+
+---
 
 ## Supported permissions
 
