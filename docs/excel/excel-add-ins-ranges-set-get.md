@@ -58,7 +58,7 @@ An add-in can select the edge of the used range, based on the currently selected
 > [!NOTE]
 > The `Range.getRangeEdge` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
 
-The following code sample shows how use the [Range.getRangeEdge](https://docs.microsoft.com/en-us/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) method to select the cell at the furthest edge of the current used range, in the direction up. This action matches the result of using the Ctrl+Arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) method to select the cell at the furthest edge of the current used range, in the direction up. This action matches the result of using the Ctrl+Arrow key keyboard shortcut while a range is selected.
 
 ```js
 Excel.run(function (context) {
@@ -103,7 +103,7 @@ The following screenshot shows the same table as the preceding screenshot, with 
 > [!NOTE]
 > The `Range.getExtendedRange` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
 
-The following code sample shows how use the [Range.getExtendedRange](https://docs.microsoft.com/en-us/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the [Range.getExtendedRange](javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Arrow key keyboard shortcut while a range is selected.
 
 ```js
 Excel.run(function (context) {
