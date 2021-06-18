@@ -139,7 +139,7 @@ The following screenshot shows a used range and a selected range within the used
 
 #### After selecting all the cells from the current range to the edge of the used range
 
-The following screenshot shows the same table as the preceding screenshot, with data in the range **C5:F12**. Inside this table, the range **D8:E12** is selected. This selection is *after* state, after running the `Range.getExtendedRange` method to select all the cells from the current range to the edge of the used range in the up direction.
+The following screenshot shows the same table as the preceding screenshot, with data in the range **C5:F12**. Inside this table, the range **D8:E12** is selected. This selection is *after* state, after running the `Range.getExtendedRange` method to select all the cells from the current range to the edge of the used range in the down direction.
 
 ![A table with data from C5:F12 in Excel. The range D8:E12 is selected.](../images/excel-ranges-used-range-d8-e12.png)
 
