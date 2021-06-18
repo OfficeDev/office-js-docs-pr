@@ -33,6 +33,10 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Provide teaching UI to guide users and make your UI personal.
 
+  :::image type="complex" source="../images/contoso-part-catalog-do-dont.png" alt-text="Screenshot comparing a content add-in with data to a content add-in without data":::
+    Screenshot showing a "Do" vs. "Don't" comparison. The "Do" example shows an add-in that includes a button users can click to get started. The "Don't" example shows an add-in with no introductory steps or buttons.
+  :::image-end:::
+
   ![Screenshot showing a "Do" vs. "Don't" comparison. The "Do" example shows an add-in that includes a button users can click to get started. The "Don't" example shows an add-in with no introductory steps or buttons.](../images/contoso-part-catalog-do-dont.png)
 
 - If your content add-in binds to data in the user's document, include sample data or a template to show users the data format to use.
