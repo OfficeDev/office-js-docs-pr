@@ -1,7 +1,7 @@
 ---
 title: Set and get the selected range using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to set and get the selected range using the Excel JavaScript API.'
-ms.date: 06/16/2021
+ms.date: 06/17/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -83,10 +83,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+> [!NOTE]
+> If the selected range is outside a used range, the `Range.getRangeEdge` method will select the cell at the furthest edge of the worksheet in the chosen direction.
+
 **Before selecting the cell at the edge of the used range**
 
 The following screenshot shows a used range and a selected range within the used range. The used range is a table with data at **C5:F12**. Inside this table, the range **D8:E9** is selected. This selection is the *before* state, prior to running the `Range.getRangeEdge` method.
- 
+
 ![A table with data from C5:F12 in Excel. The range D8:E9 is selected.](../images/excel-ranges-used-range-d8-e9.png)
 
 **After selecting the cell at the edge of the used range**
@@ -125,15 +128,18 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+> [!NOTE]
+> If the selected range is outside a used range, the `Range.getExtendedRange` method will select all the cells from the current range to the furthest edge of the worksheet in the chosen direction.
+
 **Before selecting all the cells from the current range to the edge of the used range**
 
-The following screenshot shows a table with data in the range **C5:F12**. Inside this table, the range **D8:E9** is selected.
+The following screenshot shows a used range and a selected range within the used range. The used range is a table with data at **C5:F12**. Inside this table, the range **D8:E9** is selected. This selection is the *before* state, prior to running the `Range.getExtendedRange` method.
 
 ![A table with data from C5:F12 in Excel. The range D8:E9 is selected.](../images/excel-ranges-used-range-d8-e9.png)
 
 **After selecting all the cells from the current range to the edge of the used range**
 
-The following screenshot shows a table with data in the range **C5:F12**. Inside this table, the range **D8:E12** is selected.
+The following screenshot shows the same table as the preceding screenshot, with data in the range **C5:F12**. Inside this table, the range **D8:E12** is selected. This selection is *after* state, after running the `Range.getExtendedRange` method to select all the cells from the current range to the edge of the used range in the up direction.
 
 ![A table with data from C5:F12 in Excel. The range D8:E12 is selected.](../images/excel-ranges-used-range-d8-e12.png)
 
