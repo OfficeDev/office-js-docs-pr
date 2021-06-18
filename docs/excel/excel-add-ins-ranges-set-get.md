@@ -103,7 +103,7 @@ The following screenshot shows the same table as the preceding screenshot, with 
 > [!NOTE]
 > The `Range.getExtendedRange` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
 
-The following code sample shows how use the [Range.getExtendedRange](javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Arrow key keyboard shortcut while a range is selected.
 
 ```js
 Excel.run(function (context) {
