@@ -29,7 +29,7 @@ Excel.run(function (context) {
 
 ### Selected range B2:E6
 
-![Selected range in Excel](../images/excel-ranges-set-selection.png)
+![Selected range in Excel.](../images/excel-ranges-set-selection.png)
 
 ## Get the selected range
 
@@ -51,7 +51,7 @@ Excel.run(function (context) {
 
 An add-in can select the edge of the used range, based on the currently selected range. A used range is any cell or series of contiguous cells that have been edited in the worksheet. In the following screenshot, the used range is the table with values in each cell, **C5:F12**. The empty cells outside this table are outside the used range.
 
-![A table with data from C5:F12 in Excel](../images/excel-ranges-used-range.png)
+![A table with data from C5:F12 in Excel.](../images/excel-ranges-used-range.png)
 
 ### Select the cell at the edge of the current used range (online-only)
 
