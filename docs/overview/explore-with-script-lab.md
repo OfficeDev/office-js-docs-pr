@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: 'Use Script Lab to explore the Office JS API and to prototype functionality.'
-ms.date: 06/18/2020
+ms.date: 06/18/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -65,7 +65,7 @@ Script Lab for Outlook is available on the following clients.
 For more details on Script Lab for Outlook, see the related [blog post](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/).
 
 > [!IMPORTANT]
-> Sometime in 2021, Script Lab will stop working on the combinations of platform and Office version that use Internet Explorer to host add-ins. This includes one-time purchase Office versions through Office 2019, and some older versions of Microsoft 365 (subscription) Office. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) You'll need other platform and version combinations to explore and test the Office JavaScript Library APIs with Script Lab. But the behavior of these APIs isn't different in Internet Explorer, so this isn't really a weakness of Script Lab. Note that Office add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) must support the platform and version combinations that use Internet Explorer to host add-ins.
+> Sometime in 2021, Script Lab will stop working on the combinations of platform and Office version that use Internet Explorer to host add-ins. This includes one-time purchase Office versions through Office 2019, and some older versions of Microsoft 365 (subscription) Office. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) You'll need other platform and version combinations to explore and test the Office JavaScript Library APIs with Script Lab. But the behavior of these APIs isn't different in Internet Explorer, so this isn't really a weakness of Script Lab. Note that Office Add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) must support the platform and version combinations that use Internet Explorer to host add-ins.
 
 ## Next steps
 
@@ -85,4 +85,3 @@ When you're ready to create your first Office Add-in, try out the quick start fo
 - [Join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program)
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
-
