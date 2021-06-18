@@ -8,7 +8,7 @@ localization_priority: Normal
 # Test your Office Add-in on Internet Explorer 11
 
 > [!IMPORTANT]
-> **Internet Explorer Still Used in Office Add-ins**
+> **Internet Explorer still used in Office Add-ins**
 >
 > Microsoft is ending support for Internet Explorer, but this doesn't significantly affect Office Add-ins. Some combinations of platforms and Office versions, including all one-time-purchase versions through Office 2019, will continue to use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Moreover, support for these combinations, and hence for Internet Explorer, is still required for add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Two things *are* changing:
 >
