@@ -17,7 +17,7 @@ Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins
 
 Sounds good so far? Take a look at this one-minute video to see Script Lab in action.
 
-[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video').](https://aka.ms/scriptlabvideo)
 
 ## Key features
 
@@ -27,7 +27,7 @@ Script Lab offers a number of features to help you explore the Office JavaScript
 
 Get started quickly with a collection of built-in sample snippets that show how to complete tasks with the API. You can run the samples to instantly see the result in the task pane or document, examine the samples to learn how the API works, and even use samples to prototype your own add-in.
 
-![Samples](../images/script-lab-samples.jpg)
+![Samples.](../images/script-lab-samples.jpg)
 
 ### Code and style
 
@@ -40,13 +40,13 @@ In addition to JavaScript or TypeScript code that calls the Office JS API, each 
 
 By default, snippets that you open in Script Lab will be saved to your browser cache. To save a snippet permanently, you can export it to a [GitHub gist](https://gist.github.com). Create a secret gist to save a snippet exclusively for your own use, or create a public gist if you plan to share it with others.
 
-![Sharing options](../images/script-lab-share.jpg)
+![Sharing options.](../images/script-lab-share.jpg)
 
 ### Import snippets
 
 You can import a snippet into Script Lab either by specifying the URL to the public [GitHub gist](https://gist.github.com) where the snippet YAML is stored or by pasting in the complete YAML for the snippet. This feature may be useful in scenarios where someone else has shared their snippet with you by either publishing it to a GitHub gist or providing their snippet's YAML.
 
-![Import snippet option](../images/script-lab-import-snippet.jpg)
+![Import snippet option.](../images/script-lab-import-snippet.jpg)
 
 ## Supported clients
 

@@ -57,22 +57,22 @@ If your organization meets all requirements, complete the following steps to pub
     - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
     - **I have a URL for the manifest file.** For this option, type the manifest's URL in the field provided.
 
-    ![New Add-In dialog in Microsoft 365 admin center](../images/new-add-in.png)
+    ![New Add-In dialog in Microsoft 365 admin center.](../images/new-add-in.png)
 
 8. If you selected the option to add an add-in from the Office Store, select the add-in. You can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from Office Store. Adding paid add-ins isn't currently supported.
 
     > [!NOTE]
     > With the Office Store option, updates and enhancements to the add-in are automatically available to users without your intervention.
 
-    ![Select an add-In dialog in Microsoft 365 admin center](../images/select-an-add-in.png)
+    ![Select an add-In dialog in Microsoft 365 admin center.](../images/select-an-add-in.png)
 
 9. Choose **Continue** after reviewing the add-in details, Privacy Policy, and License Terms.
 
-    ![Selected add-in page in Microsoft 365 admin center](../images/selected-add-in-admin-center.png)
+    ![Selected add-in page in Microsoft 365 admin center.](../images/selected-add-in-admin-center.png)
 
 10. On the **Assign Users** page, choose **Everyone**, **Specific Users/Groups**, or **Only me**. Use the search box to find the users and groups to whom you want to deploy the add-in. For Outlook add-ins, you can also choose the deployment method **Fixed**, **Available**, or **Optional**.
 
-    ![Manage who has access and deployment method in Microsoft 365 admin center](../images/manage-users-deployment-admin-center.png)
+    ![Manage who has access and deployment method in Microsoft 365 admin center.](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
     > Add-ins that utilize [single sign-on (SSO)](../develop/sso-in-office-add-ins.md) will prompt the admin to consent to the scopes listed in the add-in manifest.  If the same backing service is used across multiple add-ins (the same Azure App ID is used with SSO in different add-ins), the scopes for each add-in will be prompted for consent with each deployment. This page will also display the list of permissions that the add-in requires.
@@ -82,7 +82,7 @@ If your organization meets all requirements, complete the following steps to pub
     > [!NOTE]
     > When an administrator chooses **Deploy**, consent is given for all users.
 
-    ![list of apps in Microsoft 365 admin center](../images/citations.png)
+    ![list of apps in Microsoft 365 admin center.](../images/citations.png)
 
 > [!TIP]
 > When you deploy a new add-in to users and/or groups in your organization, consider sending them an email that describes when and how to use the add-in, and includes links to relevant Help content, FAQs, or other support resources.
@@ -118,7 +118,7 @@ After an Office Add-in has been published via Centralized Deployment, any change
   > [!NOTE]
   > An admin doesn't need to remove a LOB add-in to make an update. In the Add-ins section, the admin can simply choose the LOB add-in and invoke this functionality by pressing the **Update add-in** button present in the bottom right corner.
   >
-  > ![Screenshot shows the Update add-in dialog in Microsoft 365 admin center](../images/update-add-in-admin-center.png)
+  > ![Screenshot shows the Update add-in dialog in Microsoft 365 admin center.](../images/update-add-in-admin-center.png)
 
 - **Office Store add-in**: If an admin selected an add-in from the Office Store when implementing Centralized Deployment via the Microsoft 365 admin center, and the add-in updates in the Office Store, the add-in will update later via Centralized Deployment. It can take up to 24 hours for the Store add-in updates to flow for all end users. After this duration, the next time the relevant Office applications restart for these users, the add-in will update. Users can also trigger a Manual Refresh to get the latest Store add-in version by selecting **Insert Tab** > **Add-ins** > **Admin Managed Tab** > **Hit Refresh**.
 
@@ -128,7 +128,7 @@ After an add-in has been published via Centralized Deployment, end users may sta
 
 If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. In the following example, the command **Search Citation** appears in the ribbon for the **Citations** add-in.
 
-![Screenshot shows a section of the Office app ribbon with the Search Citation command highlighted in the Citations add-in](../images/search-citation.png)
+![Screenshot shows a section of the Office app ribbon with the Search Citation command highlighted in the Citations add-in.](../images/search-citation.png)
 
 If the add-in does not support add-in commands, users can add it to their Office application by doing the following:
 

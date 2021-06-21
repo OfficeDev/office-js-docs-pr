@@ -38,9 +38,9 @@ the default is a custom tab. On the default tab, each add-in can have one ribbon
 
 As the ribbon gets more crowded, add-in commands will be displayed in the overflow menu. The add-in commands for an add-in are usually grouped together.
 
-![Add-in command buttons on ribbon](../images/commands-normal.png)
+![Add-in command buttons on ribbon.](../images/commands-normal.png)
 
-![Add-in command buttons on ribbon and in overflow menu](../images/commands-collapsed.png)
+![Add-in command buttons on ribbon and in overflow menu.](../images/commands-collapsed.png)
 
 When an add-in command is added to an add-in, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
 
@@ -48,9 +48,9 @@ When an add-in command is added to an add-in, the add-in name is removed from th
 
 In Outlook on the web, the add-in name is displayed in an overflow menu. If the add-in has multiple add-in commands, you can expand the add-in menu to see the group of buttons labeled with the add-in name.
 
-![Overflow menu where add-in command buttons will be found](../images/commands-overflow-menu-web.png)
+![Overflow menu where add-in command buttons will be found.](../images/commands-overflow-menu-web.png)
 
-![Overflow menu displaying add-in command buttons](../images/commands-overflow-menu-expand-web.png)
+![Overflow menu displaying add-in command buttons.](../images/commands-overflow-menu-expand-web.png)
 
 ## What UX shapes exist for add-in commands?
 

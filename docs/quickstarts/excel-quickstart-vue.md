@@ -56,7 +56,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     - **What do you want to name your add-in?** `My Office Add-in`
     - **Which Office client application would you like to support?** `Excel`
 
-    ![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to manifest only](../images/yo-office-manifest-only-vue.png)
+    ![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to manifest only.](../images/yo-office-manifest-only-vue.png)
 
 After you complete the wizard, it creates a `My Office Add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
 
@@ -199,13 +199,13 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-   ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted](../images/excel-quickstart-addin-2a.png)
+   ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-   ![Screenshot of Excel, with the add-in task pane open](../images/excel-quickstart-addin-2c.png)
+   ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 

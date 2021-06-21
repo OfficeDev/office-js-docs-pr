@@ -20,11 +20,11 @@ For an overview of the feature, see the video [Add-in Commands in the Office app
 
 *Figure 1. Add-in with commands running in Excel Desktop*
 
-![Screenshot showing add-in commands highlighted in the Excel ribbon](../images/add-in-commands-1.png)
+![Screenshot showing add-in commands highlighted in the Excel ribbon.](../images/add-in-commands-1.png)
 
 *Figure 2. Add-in with commands running in Excel on the web*
 
-![Screenshot showing add-in commands in Excel on the web](../images/add-in-commands-2.png)
+![Screenshot showing add-in commands in Excel on the web.](../images/add-in-commands-2.png)
 
 ## Command capabilities
 

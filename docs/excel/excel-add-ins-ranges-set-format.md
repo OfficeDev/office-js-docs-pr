@@ -30,11 +30,11 @@ Excel.run(function (context) {
 
 ### Data in range before font color and fill color are set
 
-![Data in Excel before format is set](../images/excel-ranges-format-before.png)
+![Data in Excel before format is set.](../images/excel-ranges-format-before.png)
 
 ### Data in range after font color and fill color are set
 
-![Data in Excel after format is set](../images/excel-ranges-format-font-and-fill.png)
+![Data in Excel after format is set.](../images/excel-ranges-format-font-and-fill.png)
 
 ## Set number format
 
@@ -59,11 +59,11 @@ Excel.run(function (context) {
 
 ### Data in range before number format is set
 
-![Data in Excel before number format is set](../images/excel-ranges-format-font-and-fill.png)
+![Data in Excel before number format is set.](../images/excel-ranges-format-font-and-fill.png)
 
 ### Data in range after number format is set
 
-![Data in Excel after number format is set](../images/excel-ranges-format-numbers.png)
+![Data in Excel after number format is set.](../images/excel-ranges-format-numbers.png)
 
 ## See also
 

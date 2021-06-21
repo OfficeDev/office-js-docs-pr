@@ -722,19 +722,19 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
 
    *Figure 1. Adding a network file share for add-in manifests*
 
-   ![Adding a network file share for app manifests](../images/pj15-create-simple-agave-manage-catalogs.png)
+   ![Adding a network file share for app manifests.](../images/pj15-create-simple-agave-manage-catalogs.png)
 
 6. After you add new add-ins, or change the source code, restart Project. On the **PROJECT** ribbon, choose the **Office Add-ins** drop-down menu, and then choose **See All**. In the **Insert Add-in** dialog box, choose **SHARED FOLDER** (see Figure 2), select **Project OM Test**, and then choose **Insert**. The Project OM Test add-in starts in a task pane.
 
    *Figure 2. Starting the Project OM Test add-in that is on a file share*
 
-   ![Inserting an app](../images/pj15-create-simple-agave-start-agave-app.png)
+   ![Inserting an app.](../images/pj15-create-simple-agave-start-agave-app.png)
 
 7. In Project, create and save a simple project that has at least two tasks. For example, create tasks named T1, T2, and a milestone named M1, and then set the task durations and predecessors to be similar to those in Figure 3. Choose the **PROJECT** tab on the ribbon, select the entire row for task T2, and then choose the **getSelectedDataAsync** button in the task pane. Figure 3 shows the data that is selected in the text box of the **Project OM Test** add-in.
 
    *Figure 3. Using the Project OM Test add-in*
 
-   ![Using the Project OM Test app](../images/pj15-create-simple-agave-project-om-test.png)
+   ![Using the Project OM Test app.](../images/pj15-create-simple-agave-project-om-test.png)
 
 8. Select the cell in the **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The `getSelectedDataAsync` function sets the text box value to show `2 days`. 
 
@@ -1084,7 +1084,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 *Figure 4. Functions in the SurfaceErrors.js file can show a "toast" notification*
 
-![Using the SurfaceError routines to show an error](../images/pj15-create-simple-agave-surface-error.png)
+![Using the SurfaceError routines to show an error.](../images/pj15-create-simple-agave-surface-error.png)
 
 
 ## See also

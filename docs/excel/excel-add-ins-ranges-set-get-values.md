@@ -34,11 +34,11 @@ Excel.run(function (context) {
 
 #### Data before cell value is updated
 
-![Data in Excel before cell value is updated](../images/excel-ranges-set-start.png)
+![Data in Excel before cell value is updated.](../images/excel-ranges-set-start.png)
 
 #### Data after cell value is updated
 
-![Data in Excel after cell value is updated](../images/excel-ranges-set-cell-value.png)
+![Data in Excel after cell value is updated.](../images/excel-ranges-set-cell-value.png)
 
 ### Set values for a range of cells
 
@@ -62,11 +62,11 @@ Excel.run(function (context) {
 
 #### Data before cell values are updated
 
-![Data in Excel before cell values are updated](../images/excel-ranges-set-start.png)
+![Data in Excel before cell values are updated.](../images/excel-ranges-set-start.png)
 
 #### Data after cell values are updated
 
-![Data in Excel after cell values are updated](../images/excel-ranges-set-cell-values.png)
+![Data in Excel after cell values are updated.](../images/excel-ranges-set-cell-values.png)
 
 ### Set formula for a single cell
 
@@ -86,11 +86,11 @@ Excel.run(function (context) {
 
 #### Data before cell formula is set
 
-![Data in Excel before cell formula is set](../images/excel-ranges-start-set-formula.png)
+![Data in Excel before cell formula is set.](../images/excel-ranges-start-set-formula.png)
 
 #### Data after cell formula is set
 
-![Data in Excel after cell formula is set](../images/excel-ranges-set-formula.png)
+![Data in Excel after cell formula is set.](../images/excel-ranges-set-formula.png)
 
 ### Set formulas for a range of cells
 
@@ -117,11 +117,11 @@ Excel.run(function (context) {
 
 #### Data before cell formulas are set
 
-![Data in Excel before cell formulas are set](../images/excel-ranges-start-set-formula.png)
+![Data in Excel before cell formulas are set.](../images/excel-ranges-start-set-formula.png)
 
 #### Data after cell formulas are set
 
-![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
+![Data in Excel after cell formulas are set.](../images/excel-ranges-set-formulas.png)
 
 ## Get values, text, or formulas
 
@@ -146,7 +146,7 @@ Excel.run(function (context) {
 
 #### Data in range (values in column E are a result of formulas)
 
-![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
+![Data in Excel after cell formulas are set.](../images/excel-ranges-set-formulas.png)
 
 #### range.values (as logged to the console by the code sample above)
 
@@ -204,7 +204,7 @@ Excel.run(function (context) {
 
 #### Data in range (values in column E are a result of formulas)
 
-![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
+![Data in Excel after cell formulas are set.](../images/excel-ranges-set-formulas.png)
 
 #### range.text (as logged to the console by the code sample above)
 
@@ -262,7 +262,7 @@ Excel.run(function (context) {
 
 #### Data in range (values in column E are a result of formulas)
 
-![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
+![Data in Excel after cell formulas are set.](../images/excel-ranges-set-formulas.png)
 
 #### range.formulas (as logged to the console by the code sample above)
 

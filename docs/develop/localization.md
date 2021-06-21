@@ -346,7 +346,7 @@ The following figure shows the heading (h1) element and the paragraph (p) elemen
 
 *Figure 1. The add-in UI*
 
-![App user interface with sections highlighted](../images/office15-app-how-to-localize-fig03.png)
+![App user interface with sections highlighted.](../images/office15-app-how-to-localize-fig03.png)
 
 ### Add the resource file that contains the localized strings
 
@@ -481,7 +481,7 @@ To change the language used for display or editing in your add-in:
 
     *Figure 2. Language options in the Word Options dialog box*
 
-    ![Word Options dialog](../images/office15-app-how-to-localize-fig04.png)
+    ![Word Options dialog.](../images/office15-app-how-to-localize-fig04.png)
 
 2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
 
@@ -496,7 +496,7 @@ Once running, the strings in the add-in UI change to match the language used by 
 
 *Figure 3. Add-in UI with localized text*
 
-![App with localized UI text](../images/office15-app-how-to-localize-fig05.png)
+![App with localized UI text.](../images/office15-app-how-to-localize-fig05.png)
 
 ## See also
 

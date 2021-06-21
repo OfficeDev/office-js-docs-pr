@@ -29,11 +29,11 @@ Excel.run(function (context) {
 
 ### Data before range is cleared
 
-![Data in Excel before range is cleared](../images/excel-ranges-start.png)
+![Data in Excel before range is cleared.](../images/excel-ranges-start.png)
 
 ### Data after range is cleared
 
-![Data in Excel after range is cleared](../images/excel-ranges-after-clear.png)
+![Data in Excel after range is cleared.](../images/excel-ranges-after-clear.png)
 
 ## Delete a range of cells
 
@@ -52,11 +52,11 @@ Excel.run(function (context) {
 
 ### Data before range is deleted
 
-![Data in Excel before range is deleted](../images/excel-ranges-start.png)
+![Data in Excel before range is deleted.](../images/excel-ranges-start.png)
 
 ### Data after range is deleted
 
-![Data in Excel after range is deleted](../images/excel-ranges-after-delete.png)
+![Data in Excel after range is deleted.](../images/excel-ranges-after-delete.png)
 
 
 ## See also

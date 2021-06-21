@@ -38,8 +38,8 @@ You can determine which UI version you're on, as follows:
 
 **Current UI**
 
-![Current UI on Mac](../images/outlook-on-mac-classic.png)
+![Current UI on Mac.](../images/outlook-on-mac-classic.png)
 
 **New UI (preview)**
 
-![New UI in preview on Mac](../images/outlook-on-mac-new.png)
+![New UI in preview on Mac.](../images/outlook-on-mac-new.png)

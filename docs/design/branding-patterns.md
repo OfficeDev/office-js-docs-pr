@@ -25,10 +25,10 @@ Apply the following patterns and components as applicable to allow users to embr
 
 The brand bar is a space in the footer to include your brand name and logo. It also serves as a link to your brand's website and an optional access location.
 
-![Brand bar displayed in an add-in task pane of an Office desktop application](../images/add-in-brand-bar.png)
+![Brand bar displayed in an add-in task pane of an Office desktop application.](../images/add-in-brand-bar.png)
 
 ## Splash Screen
 
 Use this screen to display your branding while the add-in is loading or transitioning between UI states.
 
-![Brand splash screen displayed in an add-in task pane of an Office desktop application](../images/add-in-splash-screen.png)
+![Brand splash screen displayed in an add-in task pane of an Office desktop application.](../images/add-in-splash-screen.png)

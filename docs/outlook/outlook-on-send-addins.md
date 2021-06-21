@@ -51,7 +51,7 @@ The following screenshot shows an information bar that notifies the sender to ad
 
 <br/>
 
-![Screenshot showing an error message prompting the user to enter a missing subject line](../images/block-on-send-subject-cc-inforbar.png)
+![Screenshot showing an error message prompting the user to enter a missing subject line.](../images/block-on-send-subject-cc-inforbar.png)
 
 <br/>
 
@@ -61,7 +61,7 @@ The following screenshot shows an information bar that notifies the sender that 
 
 <br/>
 
-![Screenshot showing an error message telling the user that blocked words were found](../images/block-on-send-body.png)
+![Screenshot showing an error message telling the user that blocked words were found.](../images/block-on-send-body.png)
 
 ## Limitations
 

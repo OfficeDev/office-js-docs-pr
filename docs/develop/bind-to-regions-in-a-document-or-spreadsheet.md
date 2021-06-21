@@ -96,7 +96,7 @@ Figure 1 shows the built-in range selection prompt in Excel.
 
 *Figure 1. Excel Select Data UI*
 
-![Screenshot showing the Select Data dialog](../images/agave-api-overview-excel-selection-ui.png)
+![Screenshot showing the Select Data dialog.](../images/agave-api-overview-excel-selection-ui.png)
 
 ## Add a binding to a named item
 

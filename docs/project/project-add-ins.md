@@ -167,13 +167,13 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
 
     *Figure 1. Using the Trust Center to add catalogs of add-in manifests*
 
-    ![Using the Trust Center to add app manifests](../images/pj15-agave-overview-trust-centers.png)
+    ![Using the Trust Center to add app manifests.](../images/pj15-agave-overview-trust-centers.png)
 
 7. On the **Project** ribbon, choose the **Office Add-ins** drop-down menu, and then choose **See All**. In the **Insert Add-in** dialog box, choose **SHARED FOLDER** (see Figure 2).
 
     *Figure 2. Starting an add-in that is on a file share*
 
-    ![Starting an Office app that is on a file share](../images/pj15-agave-overview-start-agave-apps.png)
+    ![Starting an Office app that is on a file share.](../images/pj15-agave-overview-start-agave-apps.png)
 
 8. Select the Bing Search add-in, and then choose **Insert**.
 
@@ -181,7 +181,7 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
 
     *Figure 3. Using the Bing Search add-in*
 
-    ![Using the Bing Search app](../images/pj15-agave-overview-bing-search.png)
+    ![Using the Bing Search app.](../images/pj15-agave-overview-bing-search.png)
 
 ## Distributing Project add-ins
 

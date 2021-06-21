@@ -37,13 +37,13 @@ The following video walks you through the process of sideloading your add-in in 
 
 3. Within the **Properties** dialog window, open the **Sharing** tab and then choose the **Share** button.
 
-    ![folder Properties dialog with the Sharing tab and Share button highlighted](../images/sideload-windows-properties-dialog.png)
+    ![folder Properties dialog with the Sharing tab and Share button highlighted.](../images/sideload-windows-properties-dialog.png)
 
 4. Within the **Network access** dialog window, add yourself and any other users and/or groups with whom you want to share your add-in. You will need at least **Read/Write** permission to the folder. After you have finished choosing people to share with, choose the **Share** button.
 
 5. When you see confirmation that **Your folder is shared**, make note of the full network path that's displayed immediately following the folder name. (You will need to enter this value as the **Catalog Url** when you [specify the shared folder as a trusted catalog](#specify-the-shared-folder-as-a-trusted-catalog), as described in the next section of this article.) Choose the **Done** button to close the **Network access** dialog window.
 
-   ![Network access dialog with the share path highlighted](../images/sideload-windows-network-access-dialog.png)
+   ![Network access dialog with the share path highlighted.](../images/sideload-windows-network-access-dialog.png)
 
 6. Choose the **Close** button to close the **Properties** dialog window.
 
@@ -61,13 +61,13 @@ The following video walks you through the process of sideloading your add-in in 
 
 5. In the **Catalog Url** box, enter the full network path to the folder that you [shared](#share-a-folder) previously. If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot.
 
-    ![folder Properties dialog with the Sharing tab and network path highlighted](../images/sideload-windows-properties-dialog-2.png)
+    ![folder Properties dialog with the Sharing tab and network path highlighted.](../images/sideload-windows-properties-dialog-2.png)
 
 6. After you've entered the full network path of the folder into the **Catalog Url** box, choose the **Add catalog** button.
 
 7. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window. 
 
-    ![Trust Center dialog with catalog selected](../images/sideload-windows-trust-center-dialog.png)
+    ![Trust Center dialog with catalog selected.](../images/sideload-windows-trust-center-dialog.png)
 
 8. Choose the **OK** button to close the **Options** dialog window.
 
@@ -91,7 +91,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 4. Replace the `Url` value with the full network path to the folder that you [shared](#share-a-folder) previously. (Note that any `\` characters in the URL must be doubled.) If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot.
 
-    ![folder Properties dialog with the Sharing tab and network path highlighted](../images/sideload-windows-properties-dialog-2.png)
+    ![folder Properties dialog with the Sharing tab and network path highlighted.](../images/sideload-windows-properties-dialog-2.png)
 
 5. The file should now look like the following. Save it.
 

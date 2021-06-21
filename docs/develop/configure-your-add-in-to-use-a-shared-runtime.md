@@ -213,7 +213,7 @@ Configuring a shared runtime enables the following scenarios.
 
 For Office on Windows, the shared runtime requires a Microsoft Internet Explorer 11 browser instance, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
 
-![Diagram of a custom function, task pane, and ribbon buttons all running in a shared IE browser runtime in Excel](../images/custom-functions-in-browser-runtime.png)
+![Diagram of a custom function, task pane, and ribbon buttons all running in a shared IE browser runtime in Excel.](../images/custom-functions-in-browser-runtime.png)
 
 ### Debugging
 
