@@ -94,7 +94,7 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![16 px icon with 0px padding](../images/monolineicon7.png)|![20 px icon with 1px padding](../images/monolineicon8.png)|![24 px icon with 1px padding](../images/monolineicon9.png)|![32 px icon with 2px padding](../images/monolineicon10.png)|![40 px icon with 2px padding](../images/monolineicon11.png)|![48 px icon with 3px padding](../images/monolineicon12.png)|![64 px icon with 4px padding](../images/monolineicon13.png)|![80 px icon with 5px padding](../images/monolineicon14.png)|![96 px icon with 6px padding.](../images/monolineicon15.png)|
+|![16 px icon with 0px padding.](../images/monolineicon7.png)|![20 px icon with 1px padding.](../images/monolineicon8.png)|![24 px icon with 1px padding.](../images/monolineicon9.png)|![32 px icon with 2px padding.](../images/monolineicon10.png)|![40 px icon with 2px padding.](../images/monolineicon11.png)|![48 px icon with 3px padding.](../images/monolineicon12.png)|![64 px icon with 4px padding.](../images/monolineicon13.png)|![80 px icon with 5px padding.](../images/monolineicon14.png)|![96 px icon with 6px padding.](../images/monolineicon15.png)|
 
 #### Line weights
 
@@ -103,7 +103,7 @@ Monoline is a style dominated by line and outlined shapes. Depending on what siz
 |Icon Size:|16px|20px|24px|32px|40px|48px|64px|80px|96px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |**Line Weight:**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
-|**Example icon:**|![16 px icon](../images/monolineicon16.png)|![20 px icon](../images/monolineicon17.png)|![24 px icon](../images/monolineicon18.png)|![32 px icon](../images/monolineicon19.png)|![40 px icon](../images/monolineicon20.png)|![48 px icon](../images/monolineicon21.png)|![64 px icon](../images/monolineicon22.png)|![80 px icon](../images/monolineicon23.png)|![96 px icon.](../images/monolineicon24.png)|
+|**Example icon:**|![16 px icon.](../images/monolineicon16.png)|![20 px icon.](../images/monolineicon17.png)|![24 px icon.](../images/monolineicon18.png)|![32 px icon.](../images/monolineicon19.png)|![40 px icon.](../images/monolineicon20.png)|![48 px icon.](../images/monolineicon21.png)|![64 px icon.](../images/monolineicon22.png)|![80 px icon.](../images/monolineicon23.png)|![96 px icon.](../images/monolineicon24.png)|
 
 #### Cutouts
 
