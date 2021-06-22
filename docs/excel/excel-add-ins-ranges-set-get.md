@@ -1,7 +1,7 @@
 ---
 title: Set and get the selected range using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to set and get the selected range using the Excel JavaScript API.'
-ms.date: 06/17/2021
+ms.date: 06/22/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -47,18 +47,20 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Select the edge of a used range
+## Select the edge of a used range (online-only)
 
-An add-in can select the edge of the used range, based on the currently selected range. A used range is any cell or series of contiguous cells that have been edited in the worksheet. In the following screenshot, the used range is the table with values in each cell, **C5:F12**. The empty cells outside this table are outside the used range.
+> [!NOTE]
+> The `Range.getRangeEdge` and `Range.getExtendedRange` methods are currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
+
+The [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) and [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) methods let your add-in replicate the behavior of the keyboard selection shortcuts, selecting the edge of the used used range based on the currently selected range. See [Get used range](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-ranges-get#get-used-range) to learn more about used ranges.
+
+In the following screenshot, the used range is the table with values in each cell, **C5:F12**. The empty cells outside this table are outside the used range.
 
 ![A table with data from C5:F12 in Excel.](../images/excel-ranges-used-range.png)
 
-### Select the cell at the edge of the current used range (online-only)
+### Select the cell at the edge of the current used range
 
-> [!NOTE]
-> The `Range.getRangeEdge` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
-
-The following code sample shows how use the [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) method to select the cell at the furthest edge of the current used range, in the direction up. This action matches the result of using the Ctrl+Arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the `Range.getRangeEdge` method to select the cell at the furthest edge of the current used range, in the direction up. This action matches the result of using the Ctrl+Arrow key keyboard shortcut while a range is selected.
 
 ```js
 Excel.run(function (context) {
@@ -83,9 +85,6 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-> [!NOTE]
-> If the selected range is outside a used range, the `Range.getRangeEdge` method will select the cell at the furthest edge of the worksheet in the chosen direction.
-
 #### Before selecting the cell at the edge of the used range
 
 The following screenshot shows a used range and a selected range within the used range. The used range is a table with data at **C5:F12**. Inside this table, the range **D8:E9** is selected. This selection is the *before* state, prior to running the `Range.getRangeEdge` method.
@@ -98,12 +97,9 @@ The following screenshot shows the same table as the preceding screenshot, with 
 
 ![A table with data from C5:F12 in Excel. The range D5 is selected.](../images/excel-ranges-used-range-d5.png)
 
-### Select all cells from current range to furthest edge of used range (online-only)
+### Select all cells from current range to furthest edge of used range
 
-> [!NOTE]
-> The `Range.getExtendedRange` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
-
-The following code sample shows how use the [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the `Range.getExtendedRange` method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Arrow key keyboard shortcut while a range is selected.
 
 ```js
 Excel.run(function (context) {
@@ -127,9 +123,6 @@ Excel.run(function (context) {
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
-
-> [!NOTE]
-> If the selected range is outside a used range, the `Range.getExtendedRange` method will select all the cells from the current range to the furthest edge of the worksheet in the chosen direction.
 
 #### Before selecting all the cells from the current range to the edge of the used range
 
