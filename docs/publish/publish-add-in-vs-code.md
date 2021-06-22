@@ -43,7 +43,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 10. To deploy, select the Files explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website**. When prompted, select the storage account you created previously.
 
-![Deploying to a static website](../images/deploy-to-static-website.png)
+![Deploying to a static website.](../images/deploy-to-static-website.png)
 
 11. When deployment is complete, a **Browse to website** message appears which you can select to open the primary endpoint of the deployed app code.
 

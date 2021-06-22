@@ -24,7 +24,7 @@ In this article, you'll walk through the process of building a OneNote task pane
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `OneNote`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-onenote.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-onenote.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -109,7 +109,7 @@ try {
 
 7. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
 
-    ![Screenshot showing the add-in built from this walkthrough: Show Taskpane ribbon button and task pane in OneNote](../images/onenote-first-add-in-4.png)
+    ![Screenshot showing the add-in built from this walkthrough: Show Taskpane ribbon button and task pane in OneNote.](../images/onenote-first-add-in-4.png)
 
 ## Next steps
 

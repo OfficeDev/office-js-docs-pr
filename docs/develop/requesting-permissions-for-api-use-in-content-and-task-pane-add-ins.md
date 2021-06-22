@@ -16,7 +16,7 @@ A five-level JavaScript API access-permissions model provides the basis for priv
 
 *Figure 1. The five-level permission model for content and task pane add-ins*
 
-![Levels of permissions for task pane apps](../images/office15-app-sdk-task-pane-app-permission.png)
+![Levels of permissions for task pane apps.](../images/office15-app-sdk-task-pane-app-permission.png)
 
 These permissions specify the subset of the API that the add-in runtime will allow your content or task pane add-in to use when a user inserts, and then activates (trusts) your add-in. To declare the permission level your content or task pane add-in requires, specify one of the permission text values in the [Permissions](../reference/manifest/permissions.md) element of your add-in's manifest. The following example requests the **WriteDocument** permission, which will allow only methods that can write to (but not read) the document.
 

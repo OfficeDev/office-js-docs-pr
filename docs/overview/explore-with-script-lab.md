@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: 'Use Script Lab to explore the Office JS API and to prototype functionality.'
-ms.date: 10/14/2020
+ms.date: 06/18/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -17,7 +17,7 @@ Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins
 
 Sounds good so far? Take a look at this one-minute video to see Script Lab in action.
 
-[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video.')](https://aka.ms/scriptlabvideo)
 
 ## Key features
 
@@ -27,7 +27,7 @@ Script Lab offers a number of features to help you explore the Office JavaScript
 
 Get started quickly with a collection of built-in sample snippets that show how to complete tasks with the API. You can run the samples to instantly see the result in the task pane or document, examine the samples to learn how the API works, and even use samples to prototype your own add-in.
 
-![Samples](../images/script-lab-samples.jpg)
+![Samples.](../images/script-lab-samples.jpg)
 
 ### Code and style
 
@@ -40,29 +40,32 @@ In addition to JavaScript or TypeScript code that calls the Office JS API, each 
 
 By default, snippets that you open in Script Lab will be saved to your browser cache. To save a snippet permanently, you can export it to a [GitHub gist](https://gist.github.com). Create a secret gist to save a snippet exclusively for your own use, or create a public gist if you plan to share it with others.
 
-![Sharing options](../images/script-lab-share.jpg)
+![Sharing options.](../images/script-lab-share.jpg)
 
 ### Import snippets
 
 You can import a snippet into Script Lab either by specifying the URL to the public [GitHub gist](https://gist.github.com) where the snippet YAML is stored or by pasting in the complete YAML for the snippet. This feature may be useful in scenarios where someone else has shared their snippet with you by either publishing it to a GitHub gist or providing their snippet's YAML.
 
-![Import snippet option](../images/script-lab-import-snippet.jpg)
+![Import snippet option.](../images/script-lab-import-snippet.jpg)
 
 ## Supported clients
 
 Script Lab is supported for Excel, Word, and PowerPoint on the following clients.
 
-- Office 2013 or later on Windows
+- Microsoft 365 Office subscription
 - Office 2016 or later on Mac
 - Office on the web
 
 Script Lab for Outlook is available on the following clients.
 
-- Outlook 2013 or later on Windows
+- Microsoft 365 Office subscription
 - Outlook 2016 or later on Mac
 - Outlook on the web when using Chrome, Microsoft Edge, or Safari browsers
 
 For more details on Script Lab for Outlook, see the related [blog post](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/).
+
+> [!IMPORTANT]
+> Sometime in 2021, Script Lab will stop working on the combinations of platform and Office version that use Internet Explorer to host add-ins. This includes one-time purchase Office versions through Office 2019, and some older versions of Microsoft 365 (subscription) Office. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) You'll need other platform and version combinations to explore and test the Office JavaScript Library APIs with Script Lab. But the behavior of these APIs isn't different in Internet Explorer, so this isn't really a weakness of Script Lab. Note that Office Add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) must support the platform and version combinations that use Internet Explorer to host add-ins.
 
 ## Next steps
 
@@ -82,4 +85,3 @@ When you're ready to create your first Office Add-in, try out the quick start fo
 - [Join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program)
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
-

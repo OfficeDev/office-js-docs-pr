@@ -61,7 +61,7 @@ To declare compatibility between your Outlook web add-in and COM/VSTO add-in, id
     1. Set **Value name** to the `Id` found in the web add-in's manifest. **Important**: Do *not* add curly braces `{}` around the entry.
     1. Set **Value** to the `ProgId` of the equivalent COM/VSTO add-in.
     1. Select **OK** to put the update into effect.
-    ![Screenshot showing the dialog "Outlook web add-ins to deactivate"](../images/outlook-deactivate-gpo-dialog.png)
+    ![Screenshot showing the dialog "Outlook web add-ins to deactivate".](../images/outlook-deactivate-gpo-dialog.png)
 
 ## Equivalent behavior for users
 

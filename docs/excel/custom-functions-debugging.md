@@ -82,7 +82,7 @@ You can use VS Code to debug UI-less custom functions in Excel on the Microsoft 
 1. Select the **Insert** tab on the ribbon and in the **Add-ins** section, choose **Office Add-ins**.
 2. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
     
-    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
+    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
 
 3. **Browse** to the add-in manifest file and then select **Upload**.
     
@@ -111,7 +111,7 @@ You can use the browser developer tools to debug UI-less custom functions in Exc
 3. Open the **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
 4. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
     
-    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
+    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
 
 5. **Browse** to the add-in manifest file, and then select **Upload**.
     

@@ -53,7 +53,7 @@ If you use runtime checks, reference the most current version of the Office Java
 
 When you specify Office applications or API requirements, there are several factors to consider. The following diagram shows how to decide which technique to use in your add-in.
 
-![Choose the best option for your add-in when specifying Office applications or API requirements](../images/options-for-office-hosts.png)
+![Choose the best option for your add-in when specifying Office applications or API requirements.](../images/options-for-office-hosts.png)
 
 - If your add-in runs in one Office application, set the `Hosts` element in the manifest. For more information, see [Set the Hosts element](#set-the-hosts-element).
 

@@ -19,7 +19,7 @@ The following figure shows an example of a Word add-in that runs in a task pane.
 
 *Figure 1. Add-in running in a task pane in Word*
 
-![Add-in running in a task pane in Word](../images/word-add-in-show-host-client.png)
+![Add-in running in a task pane in Word.](../images/word-add-in-show-host-client.png)
 
 The Word add-in (1) can send requests to the Word document (2) and can use JavaScript to access the paragraph object and update, delete, or move the paragraph. For example, the following code shows how to append a new sentence to that paragraph.
 

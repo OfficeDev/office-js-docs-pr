@@ -34,7 +34,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-word.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -80,11 +80,11 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot showing the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2b.png)
+    ![Screenshot showing the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-2b.png)
 
 4. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
 
-    ![Screenshot of the Word application with the task pane add-in loaded](../images/word-quickstart-addin-1c.png)
+    ![Screenshot of the Word application with the task pane add-in loaded.](../images/word-quickstart-addin-1c.png)
 
 ### Next steps
 
@@ -296,11 +296,11 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the one-time purchase version of Office, instead of the Microsoft 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)
 
-    ![Screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-0.png)
+    ![Screenshot of the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
 
 3. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
-    ![Screenshot of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1b.png)
+    ![Screenshot of the Word application with the boilerplate add-in loaded.](../images/word-quickstart-addin-1b.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

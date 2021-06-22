@@ -11,7 +11,7 @@ Outlook activates some types of add-ins if the message or appointment that the u
 
 The following figure shows Outlook add-ins activated in the add-in bar for the message in the Reading Pane.
 
-![App bar showing activated read mail apps](../images/read-form-app-bar.png)
+![App bar showing activated read mail apps.](../images/read-form-app-bar.png)
 
 
 ## Specify activation rules in a manifest

@@ -23,7 +23,7 @@ The add-in manifest contains markup that specifies how the add-in is registered 
 
 The following diagram shows how the process of signing in and getting access to Microsoft Graph works.
 
-![Diagram showing the SSO process](../images/sso-access-to-microsoft-graph.png)
+![Diagram showing the SSO process.](../images/sso-access-to-microsoft-graph.png)
 
 1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office client application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
 2. If the user is not signed in, the Office client application opens a pop-up window for the user to sign in.

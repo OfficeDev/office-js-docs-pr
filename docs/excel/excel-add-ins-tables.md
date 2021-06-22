@@ -47,7 +47,7 @@ Excel.run(function (context) {
 
 **New table**
 
-![New table in Excel](../images/excel-tables-create.png)
+![New table in Excel.](../images/excel-tables-create.png)
 
 ## Add rows to a table
 
@@ -85,7 +85,7 @@ Excel.run(function (context) {
 
 **Table with new rows**
 
-![Table with new rows in Excel](../images/excel-tables-add-rows.png)
+![Table with new rows in Excel.](../images/excel-tables-add-rows.png)
 
 ## Add a column to a table
 
@@ -125,7 +125,7 @@ Excel.run(function (context) {
 
 **Table with new column**
 
-![Table with new column in Excel](../images/excel-tables-add-column.png)
+![Table with new column in Excel.](../images/excel-tables-add-column.png)
 
 ### Add a column that contains formulas
 
@@ -158,7 +158,7 @@ Excel.run(function (context) {
 
 **Table with new calculated column**
 
-![Table with new calculated column in Excel](../images/excel-tables-add-calculated-column.png)
+![Table with new calculated column in Excel.](../images/excel-tables-add-calculated-column.png)
 
 ## Resize a table (online-only)
 
@@ -185,7 +185,7 @@ Excel.run(function (context) {
 
 **Table after resize** 
 
-![Table with multiple empty rows in Excel](../images/excel-tables-resize.png)
+![Table with multiple empty rows in Excel.](../images/excel-tables-resize.png)
 
 ## Update column name
 
@@ -214,7 +214,7 @@ Excel.run(function (context) {
 
 **Table with new column name**
 
-![Table with new column name in Excel](../images/excel-tables-update-column-name.png)
+![Table with new column name in Excel.](../images/excel-tables-update-column-name.png)
 
 ## Get data from a table
 
@@ -260,7 +260,7 @@ Excel.run(function (context) {
 
 **Table and data output**
 
-![Table data in Excel](../images/excel-tables-get-data.png)
+![Table data in Excel.](../images/excel-tables-get-data.png)
 
 ## Detect data changes
 
@@ -308,7 +308,7 @@ Excel.run(function (context) {
 
 **Table data sorted by Amount (descending)**
 
-![Sorted table data in Excel](../images/excel-tables-sort.png)
+![Sorted table data in Excel.](../images/excel-tables-sort.png)
 
 When data is sorted in a worksheet, an event notification fires. To learn more about sort-related events and how your add-in can register event handlers to respond to such events, see [Handle sorting events](excel-add-ins-worksheets.md#handle-sorting-events).
 
@@ -342,7 +342,7 @@ Excel.run(function (context) {
 
 **Table data with filters applied for Category and Amount**
 
-![Table data filtered in Excel](../images/excel-tables-filters-apply.png)
+![Table data filtered in Excel.](../images/excel-tables-filters-apply.png)
 
 ## Clear table filters
 
@@ -361,7 +361,7 @@ Excel.run(function (context) {
 
 **Table data with no filters applied**
 
-![Table data non-filtered in Excel](../images/excel-tables-filters-clear.png)
+![Table data non-filtered in Excel.](../images/excel-tables-filters-clear.png)
 
 ## Get the visible range from a filtered table
 
@@ -428,7 +428,7 @@ Excel.run(function (context) {
 
 **Table after formatting is applied**
 
-![Table after formatting is applied in Excel](../images/excel-tables-formatting-after.png)
+![Table after formatting is applied in Excel.](../images/excel-tables-formatting-after.png)
 
 ## Convert a range to a table
 
@@ -468,11 +468,11 @@ Excel.run(function (context) {
 
 **Data in the range (before the range is converted to a table)**
 
-![Data in range in Excel](../images/excel-ranges.png)
+![Data in range in Excel.](../images/excel-ranges.png)
 
 **Data in the table (after the range is converted to a table)**
 
-![Data in table in Excel](../images/excel-tables-from-range.png)
+![Data in table in Excel.](../images/excel-tables-from-range.png)
 
 ## Import JSON data into a table
 
@@ -519,7 +519,7 @@ Excel.run(function (context) {
 
 **New table**
 
-![New table from imported JSON data in Excel](../images/excel-tables-create-from-json.png)
+![New table from imported JSON data in Excel.](../images/excel-tables-create-from-json.png)
 
 ## See also
 

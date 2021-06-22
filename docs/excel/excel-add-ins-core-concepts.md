@@ -28,7 +28,7 @@ While you'll likely use the Excel JavaScript API to develop the majority of func
 
 The following image illustrates when you might use the Excel JavaScript API or the Common APIs.
 
-![Image of the differences between the Excel JS API and Common APIs](../images/excel-js-api-common-api.png)
+![Differences between the Excel JS API and Common APIs.](../images/excel-js-api-common-api.png)
 
 ## Excel-specific object model
 

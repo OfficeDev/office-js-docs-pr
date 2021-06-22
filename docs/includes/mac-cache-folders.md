@@ -5,7 +5,7 @@ You can clear the cache by using the personality menu of any task pane add-in.
     > [!NOTE]
     > You must run macOS version 10.13.6 or later to see the personality menu.
 
-    ![Screenshot of clear web cache option on personality menu](../images/mac-clear-cache-menu.png)
+    ![Screenshot of clear web cache option on personality menu.](../images/mac-clear-cache-menu.png)
 
 You can also clear the cache manually by deleting the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder.
 

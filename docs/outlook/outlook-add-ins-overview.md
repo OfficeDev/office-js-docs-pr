@@ -28,13 +28,13 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
     **An add-in with command buttons on the ribbon**
 
-    ![Add-in Command UI-less shape](../images/uiless-command-shape.png)
+    ![Add-in Command UI-less shape.](../images/uiless-command-shape.png)
 
 - Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     **A contextual add-in for a highlighted entity (an address)**
 
-    ![Shows a contextual app in a card](../images/outlook-detected-entity-card.png)
+    ![Shows a contextual app in a card.](../images/outlook-detected-entity-card.png)
 
 ## Mailbox items available to add-ins
 

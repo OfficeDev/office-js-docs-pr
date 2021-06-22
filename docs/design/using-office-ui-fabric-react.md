@@ -31,7 +31,7 @@ You'll use the Yeoman generator for Office Add-ins to create an add-in project t
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yo-office-word-react.png)
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word-react.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -73,7 +73,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. To open the add-in task pane, on the **Home** tab, choose the **Show Taskpane** button. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fluent UI React.
 
-    ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
+    ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane.](../images/word-task-pane-yo-default.png)
 
 ## Create a React component that uses Fluent UI React
 
@@ -165,7 +165,7 @@ Add the `ButtonPrimaryExample` component to your add-in by opening **src\compone
 
 In Word, the add-in task pane automatically updates when you save changes to **App.tsx**. The default text and button at the bottom of the task pane now shows the UI that's defined by the `ButtonPrimaryExample` component. Choose the **Insert text...** button to insert text into the document.
 
-![Screenshot showing the Word application with the "Insert text..." button and immediately preceding text highlighted](../images/word-task-pane-with-react-component.png)
+![Screenshot showing the Word application with the "Insert text..." button and immediately preceding text highlighted.](../images/word-task-pane-with-react-component.png)
 
 Congratulations, you've successfully created a task pane add-in using React and Fluent UI React!
 

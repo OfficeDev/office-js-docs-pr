@@ -59,7 +59,7 @@ A user launches a contextual add-in through text, either a known entity or a dev
 
 **Example of text with highlighted entity (an address)**
 
-![Shows the highlighted entity within an email](../images/outlook-detected-entity-highlight.png)
+![Shows the highlighted entity within an email.](../images/outlook-detected-entity-highlight.png)
     
 When there are multiple entities or contextual add-ins in a message, there are a few user interaction rules:
 
@@ -73,7 +73,7 @@ An activated contextual add-in appears in a card, which is a separate window nea
 
 **Example of an add-in displayed in a card**
 
-![Shows a contextual app in a card](../images/outlook-detected-entity-card.png)
+![Shows a contextual app in a card.](../images/outlook-detected-entity-card.png)
 
 To close the card and the add-in, a user clicks anywhere outside of the card.
 

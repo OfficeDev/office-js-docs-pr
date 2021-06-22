@@ -49,7 +49,7 @@ To preview these events:
     1. Create the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`.
     1. Add an entry named `EnableBetaAPIsInJavaScript` and set the value to `1`. The following image shows what the registry should look like.
 
-        ![Screenshot of the registry editor with an EnableBetaAPIsInJavaScript registry key value](../images/outlook-beta-registry-key.png)
+        ![Screenshot of the registry editor with an EnableBetaAPIsInJavaScript registry key value.](../images/outlook-beta-registry-key.png)
 
 ## Set up your environment
 
@@ -238,11 +238,11 @@ In this scenario, you'll add handling for composing new items.
 
 1. In Outlook on the web, create a new message.
 
-    ![Screenshot of a message window in Outlook on the web with the subject set on compose](../images/outlook-web-autolaunch-1.png)
+    ![Screenshot of a message window in Outlook on the web with the subject set on compose.](../images/outlook-web-autolaunch-1.png)
 
 1. In Outlook on Windows, create a new message.
 
-    ![Screenshot of a message window in Outlook on Windows with the subject set on compose](../images/outlook-win-autolaunch.png)
+    ![Screenshot of a message window in Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
     > If you're running your add-in from localhost and see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
@@ -272,7 +272,7 @@ Runtime logging is also available for this feature on Windows. For more informat
 
 You can deploy event-based add-ins by uploading the manifest through the Microsoft 365 admin center. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**. On the **Integrated apps** page, choose the **Upload custom apps** action.
 
-![Screenshot of the Integrated apps page on the Microsoft 365 admin center, including the Upload custom apps action](../images/outlook-deploy-event-based-add-ins.png)
+![Screenshot of the Integrated apps page on the Microsoft 365 admin center, including the Upload custom apps action.](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource and inclient stores: The ability to deploy event-based add-ins or update existing add-ins to include the event-based activation feature should be available soon.
 
