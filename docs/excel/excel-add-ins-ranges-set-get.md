@@ -79,7 +79,7 @@ Excel.run(function (context) {
     );
     rangeEdge.select();
 
-    await context.sync();
+    return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
@@ -124,7 +124,7 @@ Excel.run(function (context) {
     );
     extendedRange.select();
 
-    await context.sync();
+    return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
