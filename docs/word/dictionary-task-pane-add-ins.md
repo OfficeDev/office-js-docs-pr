@@ -19,7 +19,7 @@ Figure 1 shows the selection and display experience for a Bing-branded dictionar
 
 *Figure 1. Dictionary add-in displaying definitions for the selected word*
 
-![A dictionary app displaying a definition.](../images/dictionary-agave-01.jpg)
+![Dictionary app displaying a definition.](../images/dictionary-agave-01.jpg)
 
 It is up to you to determine if clicking the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.
 Figure 2 shows the **Define** context menu command that enables users to quickly launch installed dictionaries. Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.
@@ -617,4 +617,3 @@ function errorHandler(jqXHR, textStatus, errorThrown) {
 }
 
 ```
-

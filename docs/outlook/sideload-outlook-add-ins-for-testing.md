@@ -32,11 +32,11 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 - If your mailbox toolbar looks like the following image, see [Sideload an add-in in the new Outlook on the web](#new-outlook-on-the-web).
 
-    ![partial screenshot of the new Outlook on the web toolbar.](../images/outlook-on-the-web-new-toolbar.png)
+    ![Partial screenshot of the new Outlook on the web toolbar.](../images/outlook-on-the-web-new-toolbar.png)
 
 - If your mailbox toolbar looks like the following image, see [Sideload an add-in in classic Outlook on the web](#classic-outlook-on-the-web).
 
-    ![partial screenshot of the classic Outlook on the web toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
+    ![Partial screenshot of the classic Outlook on the web toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > If your organization has included its logo in the mailbox toolbar, you might see something slightly different than shown in the preceding images.
@@ -53,7 +53,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. In the **Add-Ins for Outlook** dialog box, select **My add-ins**.
 
-    ![Add-Ins for Outlook dialog box in the new Outlook on the web with My add-ins selected.](../images/outlook-on-the-web-new-my-add-ins.png)
+    ![Add-ins for Outlook dialog box in the new Outlook on the web with My add-ins selected.](../images/outlook-on-the-web-new-my-add-ins.png)
 
 1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from file**.
 

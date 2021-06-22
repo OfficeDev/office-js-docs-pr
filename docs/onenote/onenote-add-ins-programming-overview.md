@@ -23,7 +23,7 @@ Add-ins consist of two basic components:
 
 ### Office Add-in = Manifest + Webpage
 
-![An Office Add-in consists of a manifest and webpage.](../images/onenote-add-in.png)
+![Office Add-in consists of a manifest and webpage.](../images/onenote-add-in.png)
 
 ## Using the JavaScript API
 

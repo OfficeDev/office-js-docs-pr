@@ -62,7 +62,7 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 
 The following is an example of icon layout with a modifier.
 
-![Diagram of icon with modifier in lower right](../images/monolineicon1.png)  ![Diagram of same icon with added grid background and callouts for the base, modifier, padding, and cutout.](../images/monolineicon2.png)
+![Diagram of icon with modifier in lower right.](../images/monolineicon1.png)  ![Diagram of same icon with added grid background and callouts for the base, modifier, padding, and cutout.](../images/monolineicon2.png)
 
 #### Elements
 

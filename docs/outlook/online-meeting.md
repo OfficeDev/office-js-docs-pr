@@ -214,7 +214,7 @@ As a meeting organizer, you should see screens similar to the following three im
 
 As a meeting attendee, you should see a screen similar to the following image when you view the meeting.
 
-[![screenshot of join meeting screen on Android](../images/outlook-android-join-online-meeting-view-1.png).](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![Screenshot of join meeting screen on Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
 > If you don't see the **Join** link, it may be that the online-meeting template for your service is not registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.

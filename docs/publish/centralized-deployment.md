@@ -82,7 +82,7 @@ If your organization meets all requirements, complete the following steps to pub
     > [!NOTE]
     > When an administrator chooses **Deploy**, consent is given for all users.
 
-    ![list of apps in Microsoft 365 admin center.](../images/citations.png)
+    ![List of apps in Microsoft 365 admin center.](../images/citations.png)
 
 > [!TIP]
 > When you deploy a new add-in to users and/or groups in your organization, consider sending them an email that describes when and how to use the add-in, and includes links to relevant Help content, FAQs, or other support resources.

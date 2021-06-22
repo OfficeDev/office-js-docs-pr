@@ -271,15 +271,15 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Within the message, locate the ellipsis for the overflow menu containing the add-in's button.
 
-    ![A screenshot of a message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
+    ![Screenshot of a message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
 
 1. Within the overflow menu, locate the add-in's button.
 
-    ![A screenshot of a message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
+    ![Screenshot of a message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
 
 1. Click the button to open the add-in's task pane.
 
-    ![A screenshot of the add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
+    ![Screenshot of the add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.

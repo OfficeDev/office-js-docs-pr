@@ -37,7 +37,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 3. Within the **Properties** dialog window, open the **Sharing** tab and then choose the **Share** button.
 
-    ![folder Properties dialog with the Sharing tab and Share button highlighted.](../images/sideload-windows-properties-dialog.png)
+    ![Folder Properties dialog with the Sharing tab and Share button highlighted.](../images/sideload-windows-properties-dialog.png)
 
 4. Within the **Network access** dialog window, add yourself and any other users and/or groups with whom you want to share your add-in. You will need at least **Read/Write** permission to the folder. After you have finished choosing people to share with, choose the **Share** button.
 
@@ -61,7 +61,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 5. In the **Catalog Url** box, enter the full network path to the folder that you [shared](#share-a-folder) previously. If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot.
 
-    ![folder Properties dialog with the Sharing tab and network path highlighted.](../images/sideload-windows-properties-dialog-2.png)
+    ![Folder Properties dialog with the Sharing tab and network path highlighted.](../images/sideload-windows-properties-dialog-2.png)
 
 6. After you've entered the full network path of the folder into the **Catalog Url** box, choose the **Add catalog** button.
 
@@ -91,7 +91,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 4. Replace the `Url` value with the full network path to the folder that you [shared](#share-a-folder) previously. (Note that any `\` characters in the URL must be doubled.) If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot.
 
-    ![folder Properties dialog with the Sharing tab and network path highlighted.](../images/sideload-windows-properties-dialog-2.png)
+    ![Folder Properties dialog with the Sharing tab and network path highlighted.](../images/sideload-windows-properties-dialog-2.png)
 
 5. The file should now look like the following. Save it.
 

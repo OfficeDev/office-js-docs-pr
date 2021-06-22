@@ -11,7 +11,7 @@ The Microsoft Office Add-in Debugger Extension for Visual Studio Code allows you
 
 This debugging mode is dynamic, allowing you to set breakpoints while code is running. You can see changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you can see the results of multiple changes to your code. The following image shows this extension in action.
 
-![Office Addin Debugger Extension debugging a section of Excel Add-ins.](../images/vs-debugger-extension-for-office-addins.jpg)
+![Office Add-in Debugger Extension debugging a section of Excel add-ins.](../images/vs-debugger-extension-for-office-addins.jpg)
 
 ## Prerequisites
 
@@ -70,9 +70,9 @@ Once Visual Studio Code is open, navigate manually to the project folder.
 
 10. From the Debug options, choose **Attach to Office Add-ins**. Select **F5** or choose **Debug -> Start Debugging** from the menu to begin debugging.
 
-11. Set a breakpoint in your project's task pane file. You can set breakpoints in VS Code by hovering next to a line of code and selecting the red circle which appears.
+11. Set a breakpoint in your project's task pane file. You can set breakpoints in Visual Studio Code by hovering next to a line of code and selecting the red circle which appears.
 
-![A red circle appears on a line of code in VS Code.](../images/set-breakpoint.jpg)
+![Red circle appears on a line of code in Visual Studio Code.](../images/set-breakpoint.jpg)
 
 12. Run your add-in. You will see that breakpoints have been hit and you can inspect local variables.
 

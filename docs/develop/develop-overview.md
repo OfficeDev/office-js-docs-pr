@@ -82,7 +82,7 @@ Script Lab is an add-in that enables you to explore the Office JavaScript API an
 
 The following one-minute video shows Script Lab in action.
 
-[![Short video that shows Script Lab running in Excel, Word, and PowerPoint](../images/screenshot-wide-youtube.png 'Script Lab preview video').](https://aka.ms/scriptlabvideo)
+[![Short video that shows Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video.')](https://aka.ms/scriptlabvideo)
 
 For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
