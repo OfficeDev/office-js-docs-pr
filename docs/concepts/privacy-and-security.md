@@ -37,13 +37,13 @@ On Windows desktops, Protected Mode in Internet Explorer must be enabled for the
 
 *Figure 1. Office Add-ins runtime environment in Windows-based desktop and tablet clients*
 
-![Diagram showing rich-client infrastructure](../images/dk2-agave-overview-02.png)
+![Diagram showing rich-client infrastructure.](../images/dk2-agave-overview-02.png)
 
 As shown in the following figure, on a Mac OS X desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection.
 
 *Figure 2. Office Add-ins runtime environment in Mac OS X clients*
 
-![Diagram showing apps for Office runtime environment on Mac OS X](../images/dk2-agave-overview-mac-02.png)
+![Diagram showing apps for Office runtime environment on Mac OS X.](../images/dk2-agave-overview-mac-02.png)
 
 The Office Add-ins runtime manages interprocess communication, the translation of JavaScript API calls and events into native ones, as well as UI remoting support to enable the add-in to be rendered inside the document, in a task pane, or adjacent to an email message, meeting request, or appointment.
 
@@ -53,7 +53,7 @@ In supported web clients, Office Add-ins are hosted in an **iframe** that runs u
 
 *Figure 3. Infrastructure that supports Office Add-ins in Office web clients*
 
-![Diagram showing web-client infrastructure](../images/dk2-agave-overview-03.png)
+![Diagram showing web-client infrastructure.](../images/dk2-agave-overview-03.png)
 
 ## Add-in integrity in AppSource
 

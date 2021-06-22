@@ -371,7 +371,7 @@ The `onColumnSorted` and `onRowSorted` events provide their callbacks with [Work
 
 The following images show the ranges returned by the `address` property for sort events. First, here is the sample data before sorting:
 
-![Table data in Excel before being sorted](../images/excel-sort-event-before.png)
+![Table data in Excel before being sorted.](../images/excel-sort-event-before.png)
 
 If a top-to-bottom sort is performed on "**Q1**" (the values in "**B**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`:
 

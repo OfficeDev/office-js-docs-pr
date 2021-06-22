@@ -40,7 +40,7 @@ The following figure shows the four levels of permissions and describes the capa
 
 **Relating the four-tier permission model to the end user, developer, and administrator**
 
-![4-tier permissions model for mail apps schema v1.1](../images/add-in-permission-tiers.png)
+![4-tier permissions model for mail apps schema v1.1.](../images/add-in-permission-tiers.png)
 
 ## AppSource: Add-in integrity
 

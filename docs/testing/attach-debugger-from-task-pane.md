@@ -15,11 +15,11 @@ To launch the **Attach Debugger** tool, choose the top right corner of the task 
 > - Currently the only supported debugger tool is [Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](/previous-versions/mt752379(v=vs.140)) or later. If you don't have Visual Studio installed, selecting the **Attach Debugger** option doesn't result in any action.
 > - You can only debug client-side JavaScript with the **Attach Debugger** tool. To debug server-side code, such as with a Node.js server, you have many options. For information on how to debug with Visual Studio Code, see [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). If you are not using Visual Studio Code, search for "debug Node.js" or "debug {name-of-server}".
 
-![Screenshot of Attach Debugger menu](../images/attach-debugger.png)
+![Screenshot of Attach Debugger menu.](../images/attach-debugger.png)
 
 Select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debugger** dialog box, as shown in the following image. 
 
-![Screenshot of Visual Studio JIT Debugger dialog](../images/visual-studio-debugger.png)
+![Screenshot of Visual Studio JIT Debugger dialog.](../images/visual-studio-debugger.png)
 
 In Visual Studio, you will see the code files in **Solution Explorer**.   You can set breakpoints to the line of code you want to debug in Visual Studio.
 

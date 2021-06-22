@@ -97,7 +97,7 @@ Figure 1 shows a summary of the steps to verify whether Outlook has a valid vers
 
 **Figure 1. Flow chart of the steps to verify whether Outlook properly cached the manifest**
 
-![Flow chart to check manifest](../images/troubleshoot-manifest-flow.png)
+![Flow chart to check manifest.](../images/troubleshoot-manifest-flow.png)
 
 The following procedure describes the details.
 

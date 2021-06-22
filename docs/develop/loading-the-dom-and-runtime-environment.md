@@ -14,7 +14,7 @@ An add-in must ensure that both the DOM and the Office Add-ins runtime environme
 
 The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, or Word.
 
-![Flow of events when starting a content or task pane add-in](../images/office15-app-sdk-loading-dom-agave-runtime.png)
+![Flow of events when starting a content or task pane add-in.](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
 The following events occur when a content or task pane add-in starts:
 
@@ -37,7 +37,7 @@ The following events occur when a content or task pane add-in starts:
 
 The following figure shows the flow of events involved in starting an Outlook add-in running on the desktop, tablet, or smartphone.
 
-![Flow of events when starting Outlook add-in](../images/outlook15-loading-dom-agave-runtime.png)
+![Flow of events when starting Outlook add-in.](../images/outlook15-loading-dom-agave-runtime.png)
 
 The following events occur when an Outlook add-in starts:
 

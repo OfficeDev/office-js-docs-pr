@@ -29,7 +29,7 @@ Excel.run(function (context) {
 
 ### Selected range B2:E6
 
-![Selected range in Excel](../images/excel-ranges-set-selection.png)
+![Selected range in Excel.](../images/excel-ranges-set-selection.png)
 
 ## Get the selected range
 

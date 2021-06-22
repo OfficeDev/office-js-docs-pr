@@ -106,7 +106,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface](../images/yeoman-prompts-2.png)
+    ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yeoman-prompts-2.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -165,7 +165,7 @@ Before going any further, let's test the basic add-in that the generator created
 
 1. In Outlook, open an existing message and select the **Show Taskpane** button. If everything's been set up correctly, the task pane will open and render the add-in's welcome page.
 
-    ![Screenshot of the "Show Taskpane" button and Git the gist task pane added by the sample](../images/button-and-pane.png)
+    ![Screenshot of the "Show Taskpane" button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
 
 ## Define buttons
 
@@ -285,11 +285,11 @@ After you've reinstalled the add-in, you can verify that it installed successful
 
 - If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.
 
-    ![Screenshot of the ribbon overflow menu in Outlook on Windows with the add-in's buttons highlighted](../images/add-in-buttons-in-windows.png)
+    ![Screenshot of the ribbon overflow menu in Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
 
 - If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window. Select that button to see the options **Insert gist** and **Insert default gist**.
 
-    ![Screenshot of the message compose form in Outlook on the web with the add-in button and pop-up menu highlighted](../images/add-in-buttons-in-owa.png)
+    ![Screenshot of the message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.](../images/add-in-buttons-in-owa.png)
 
 ## Implement a first-run experience
 
@@ -940,11 +940,11 @@ Save all of your changes and run `npm start` from the command prompt, if the ser
 
 1. In the compose message window, select the **Insert default gist** button. You should see a dialog where you can configure the add-in, starting with the prompt to set your GitHub username.
 
-    ![Screenshot of the dialog prompt to configure the add-in](../images/addin-prompt-configure.png)
+    ![Screenshot of the dialog prompt to configure the add-in.](../images/addin-prompt-configure.png)
 
 1. In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of public gists. Select a gist to be the default, and select **Done**.
 
-    ![Screenshot of the add-in's settings dialog](../images/addin-settings.png)
+    ![Screenshot of the add-in's settings dialog.](../images/addin-settings.png)
 
 1. Select the **Insert default gist** button again. This time, you should see the contents of the gist inserted into the body of the email.
 
@@ -1303,7 +1303,7 @@ Save all of your changes and run `npm start` from the command prompt, if the ser
 
 1. In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.
 
-![Screenshot of the add-in task pane and the selected gist content displayed in the message body](../images/addin-taskpane.png)
+![Screenshot of the add-in task pane and the selected gist content displayed in the message body.](../images/addin-taskpane.png)
 
 ## Next steps
 

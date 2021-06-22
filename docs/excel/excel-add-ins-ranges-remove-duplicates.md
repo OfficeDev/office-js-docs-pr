@@ -40,11 +40,11 @@ Excel.run(function (context) {
 
 ### Data before duplicate entries are removed
 
-![Data in Excel before range's remove duplicates method has been run](../images/excel-ranges-remove-duplicates-before.png)
+![Data in Excel before range's remove duplicates method has been run.](../images/excel-ranges-remove-duplicates-before.png)
 
 ### Data after duplicate entries are removed
 
-![Data in Excel after range's remove duplicates method has been run](../images/excel-ranges-remove-duplicates-after.png)
+![Data in Excel after range's remove duplicates method has been run.](../images/excel-ranges-remove-duplicates-after.png)
 
 ## See also
 

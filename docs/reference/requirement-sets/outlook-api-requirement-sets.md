@@ -116,11 +116,11 @@ Add-ins are supported in Outlook on the following platforms.
 >
 > **modern**
 >
-> ![partial screenshot of the modern Outlook toolbar](../../images/outlook-on-the-web-new-toolbar.png)
+> ![Partial screenshot of the modern Outlook toolbar.](../../images/outlook-on-the-web-new-toolbar.png)
 >
 > **classic**
 >
-> ![partial screenshot of the classic Outlook toolbar](../../images/outlook-on-the-web-classic-toolbar.png)
+> ![Partial screenshot of the classic Outlook toolbar.](../../images/outlook-on-the-web-classic-toolbar.png)
 
 ## Using preview APIs
 
