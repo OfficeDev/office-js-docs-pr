@@ -23,7 +23,7 @@ Office Add-ins can do almost anything a webpage can do inside a browser. Use the
 
 COM or VSTO add-ins are earlier Office integration solutions that run only in Office on Windows. Unlike COM add-ins, Office Add-ins don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the application (for example, Excel), reads the add-in manifest and hooks up the add-in’s custom ribbon buttons and menu commands in the UI. When needed, it loads the add-in's JavaScript and HTML code, which executes in the context of a browser in a sandbox.
 
-![Image of reasons to use Office Add-ins.](../images/why.png)
+![Reasons to use Office Add-ins.](../images/why.png)
 
 Office Add-ins provide the following advantages over add-ins built using VBA, COM, or VSTO:
 

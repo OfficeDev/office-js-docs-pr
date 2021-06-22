@@ -44,7 +44,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-![A range with a two-level, two-dimension outline.](../images/excel-outline.png)
+![Range with a two-level, two-dimension outline.](../images/excel-outline.png)
 
 ## Remove grouping from rows or columns of a range
 

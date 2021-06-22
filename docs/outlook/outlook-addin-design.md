@@ -53,9 +53,9 @@ To help you create a well-designed add-in, we have [templates](../design/ux-desi
 
 A typical add-in is made up of the following components.
 
-![A diagram of basic UX patterns for a task pane on iOS.](../images/outlook-mobile-design-overview.png)
+![Diagram of basic UX patterns for a task pane on iOS.](../images/outlook-mobile-design-overview.png)
 
-![A diagram of basic UX patterns for a task pane on Android.](../images/outlook-mobile-design-overview-android.jpg)
+![Diagram of basic UX patterns for a task pane on Android.](../images/outlook-mobile-design-overview-android.jpg)
 
 ### Loading
 
@@ -74,13 +74,13 @@ When a user taps on your add-in, the UX should display as quickly as possible. I
 
 Make your sign in (and sign up) flow straightforward and simple to use.
 
-**An example sign in and sign up page on iOS**
+**An example page to sign in and sign up on iOS**
 
-![Examples of sign in and sign up pages on iOS.](../images/outlook-mobile-design-signin.png)
+![Examples of pages to sign in and sign up on iOS.](../images/outlook-mobile-design-signin.png)
 
 **An example sign in page on Android**
 
-![Examples of sign in page on Android.](../images/outlook-mobile-design-signin-android.png)
+![Examples of page to sign in on Android.](../images/outlook-mobile-design-signin-android.png)
 
 ### Brand bar
 
