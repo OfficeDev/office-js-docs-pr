@@ -52,7 +52,7 @@ Excel.run(function (context) {
 > [!NOTE]
 > The `Range.getRangeEdge` and `Range.getExtendedRange` methods are currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
 
-The [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) and [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) methods let your add-in replicate the behavior of the keyboard selection shortcuts, selecting the edge of the used used range based on the currently selected range. See [Get used range](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-ranges-get#get-used-range) to learn more about used ranges.
+The [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) and [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) methods let your add-in replicate the behavior of the keyboard selection shortcuts, selecting the edge of the used used range based on the currently selected range. See [Get used range](excel-add-ins-ranges-get.md#get-used-range) to learn more about used ranges.
 
 In the following screenshot, the used range is the table with values in each cell, **C5:F12**. The empty cells outside this table are outside the used range.
 
