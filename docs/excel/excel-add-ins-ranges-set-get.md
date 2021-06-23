@@ -99,7 +99,7 @@ The following screenshot shows the same table as the preceding screenshot, with 
 
 ### Select all cells from current range to furthest edge of used range
 
-The following code sample shows how use the `Range.getExtendedRange` method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the `Range.getExtendedRange` method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Down arrow key keyboard shortcut while a range is selected.
 
 ```js
 Excel.run(function (context) {
@@ -113,7 +113,7 @@ Excel.run(function (context) {
     var activeCell = context.workbook.getActiveCell();
 
     // Get all the cells from the currently selected range to the bottom-most edge of the used range.
-    // This method acts like the Ctrl+Shift+Arrow key keyboard shortcut while a range is selected.
+    // This method acts like the Ctrl+Shift+Down arrow key keyboard shortcut while a range is selected.
     var extendedRange = range.getExtendedRange(
       direction,
       activeCell
