@@ -52,7 +52,7 @@ Excel.run(function (context) {
 > [!NOTE]
 > The `Range.getRangeEdge` and `Range.getExtendedRange` methods are currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
 
-The [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) and [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) methods let your add-in replicate the behavior of the keyboard selection shortcuts, selecting the edge of the used used range based on the currently selected range. See [Get used range](excel-add-ins-ranges-get.md#get-used-range) to learn more about used ranges.
+The [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) and [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) methods let your add-in replicate the behavior of the keyboard selection shortcuts, selecting the edge of the used range based on the currently selected range. To learn more about used ranges, see [Get used range](excel-add-ins-ranges-get.md#get-used-range).
 
 In the following screenshot, the used range is the table with values in each cell, **C5:F12**. The empty cells outside this table are outside the used range.
 
@@ -60,7 +60,7 @@ In the following screenshot, the used range is the table with values in each cel
 
 ### Select the cell at the edge of the current used range
 
-The following code sample shows how use the `Range.getRangeEdge` method to select the cell at the furthest edge of the current used range, in the direction up. This action matches the result of using the Ctrl+Arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the `Range.getRangeEdge` method to select the cell at the furthest edge of the current used range, in the direction up. This action matches the result of using the Ctrl+Up arrow key keyboard shortcut while a range is selected.
 
 ```js
 Excel.run(function (context) {
@@ -74,7 +74,7 @@ Excel.run(function (context) {
     var activeCell = context.workbook.getActiveCell();
 
     // Get the top-most cell of the current used range.
-    // This method acts like the Ctrl+Arrow key keyboard shortcut while a range is selected.
+    // This method acts like the Ctrl+Up arrow key keyboard shortcut while a range is selected.
     var rangeEdge = range.getRangeEdge(
       direction,
       activeCell
