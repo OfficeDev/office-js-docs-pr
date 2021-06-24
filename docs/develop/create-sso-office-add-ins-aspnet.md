@@ -27,7 +27,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Set up the starter project
 
-Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso).
+Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 > [!NOTE]
 > There are two versions of the sample:
@@ -172,7 +172,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     var retryGetAccessToken = 0;
 
     async function getGraphData() {
-        await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
+        await getDataWithToken();
     }
     ```
 

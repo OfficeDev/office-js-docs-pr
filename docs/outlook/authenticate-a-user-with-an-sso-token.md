@@ -45,6 +45,6 @@ In most scenarios, there would be little point to obtaining the access token, if
 
 ## See also
 
-- For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO).
+- For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [SSO API reference](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI requirement set](../reference/requirement-sets/identity-api-requirement-sets.md)
