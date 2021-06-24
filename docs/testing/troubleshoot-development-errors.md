@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: 'Learn how to troubleshoot development errors in Office Add-ins.'
-ms.date: 06/11/2021
+ms.date: 06/24/2021
 localization_priority: Normal
 ---
 

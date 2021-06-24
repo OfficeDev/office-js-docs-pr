@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: 'Require users to authenticate login in Web applications and Office Add-ins.'
-ms.date: 07/30/2020
+ms.date: 06/24/2021
 localization_priority: Priority
 ---
 
