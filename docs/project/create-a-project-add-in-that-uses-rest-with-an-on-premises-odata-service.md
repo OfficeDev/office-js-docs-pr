@@ -74,19 +74,19 @@ Office Developer Tools for Visual Studio includes a template for task pane add-i
 
     *Figure 1. Creating an Office Add-in*
 
-    ![Creating an Office Add-in](../images/pj15-hello-project-o-data-creating-app.png)
+    ![Creating an Office Add-in.](../images/pj15-hello-project-o-data-creating-app.png)
 
 5. In the **Choose the add-in type** dialog box, select **Task pane** and choose **Next** (see the next screenshot).
 
     *Figure 2. Choosing the type of add-in to create*
 
-    ![Choosing the type of add-in to create](../images/pj15-hello-project-o-data-choose-project.png)
+    ![Choosing the type of add-in to create.](../images/pj15-hello-project-o-data-choose-project.png)
 
 6. In the **Choose the host applications** dialog box, clear all check boxes except the **Project** check box (see the next screenshot) and choose **Finish**.
 
     *Figure 3. Choosing the host application*
 
-    ![Choosing Project as the only host application](../images/create-office-add-in.png)
+    ![Choosing Project as the only host application.](../images/create-office-add-in.png)
 
     Visual Studio creates the **HelloProjectOdata** project and the **HelloProjectODataWeb** project.
 
@@ -94,7 +94,7 @@ The **AddIn** folder (see the next screenshot) contains the App.css file for cus
 
 *Figure 4. Viewing the default web project files in Solution Explorer*
 
-![Viewing the web project files in the Solution Expl](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
+![Viewing the web project files in the Solution Expl.](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
 
 The manifest for the **HelloProjectOData** project is the HelloProjectOData.xml file. You can optionally modify the manifest to add a description of the add-in, a reference to an icon, information for additional languages, and other settings. Procedure 3 simply modifies the add-in display name and description, and adds an icon.
 
@@ -118,7 +118,7 @@ The following steps show how to add an icon file to the Visual Studio solution:
 
     Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder:
 
-    ![Icon for the HelloProjectOData app](../images/pj15-hello-project-data-new-icon.jpg)
+    ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
 3. In the HelloProjectOData.xml manifest, add an **IconUrl** element below the **Description** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. The HelloProjectOData.xml manifest file now contains the following (your **Id** value will be different):
 
@@ -564,7 +564,7 @@ Basic tests should include the following:
 
     *Figure 5. Starting the HelloProjectOData add-in*
 
-    ![Testing the HelloProjectOData app](../images/pj15-hello-project-data-test-the-app.png)
+    ![Testing the HelloProjectOData app.](../images/pj15-hello-project-data-test-the-app.png)
 
 4. In the **Hello ProjectData** task pane, select **Get ProjectData Endpoint**. The **projectDataEndPoint** line should show the URL of the **ProjectData** service, and the **Compare All Projects** button should be enabled (see Figure 6).
 
@@ -572,7 +572,7 @@ Basic tests should include the following:
 
     *Figure 6. Viewing results of the REST query*
 
-    ![Viewing results of the REST query](../images/pj15-hello-project-data-rest-results.png)
+    ![Viewing results of the REST query.](../images/pj15-hello-project-data-rest-results.png)
 
 6. Examine output in the text box. It should show the document path, REST query, status information, and JSON results from the calls to **ajax** and **parseODataResult**. The output helps to understand, create, and debug code in the `parseODataResult` method such as `projCost += Number(res.d.results[i].ProjectCost);`.
 
@@ -628,7 +628,7 @@ Basic tests should include the following:
 
    *Figure 7. Using the add-in without a Project web app connection*
 
-   ![Using the app without a Project Web App connection](../images/pj15-hello-project-data-no-connection.png)
+   ![Using the app without a Project Web App connection.](../images/pj15-hello-project-data-no-connection.png)
 
 8. Stop debugging, and then press **F5** again. Log on to Project Web App, and then create a project that contains cost and work data. You can save the project, but don't publish it.
 
@@ -636,7 +636,7 @@ Basic tests should include the following:
 
    *Figure 8. Comparing an unpublished project with other projects*
 
-   ![Comparing an unpublished project with others](../images/pj15-hello-project-data-not-published.png)
+   ![Comparing an unpublished project with others.](../images/pj15-hello-project-data-not-published.png)
 
 Even if your add-in is working correctly in the previous tests, there are other tests that should be run. For example:
 

@@ -50,7 +50,7 @@ The following screenshot shows an information bar that notifies the sender to ad
 
 <br/>
 
-![Screenshot showing an error message prompting the user to enter a missing subject line](../images/block-on-send-subject-cc-inforbar.png)
+![Screenshot showing an error message prompting the user to enter a missing subject line.](../images/block-on-send-subject-cc-inforbar.png)
 
 <br/>
 
@@ -60,7 +60,7 @@ The following screenshot shows an information bar that notifies the sender that 
 
 <br/>
 
-![Screenshot showing an error message telling the user that blocked words were found](../images/block-on-send-body.png)
+![Screenshot showing an error message telling the user that blocked words were found.](../images/block-on-send-body.png)
 
 ## Limitations
 
@@ -76,16 +76,9 @@ Also, it's not recommended that you call `item.close()` in the on-send event han
 
 ### Mailbox type/mode limitations
 
-On-send functionality is only supported for user mailboxes in Outlook on the web, Windows, and Mac. The functionality is not currently supported for the following mailbox types and modes.
+On-send functionality is only supported for user mailboxes in Outlook on the web, Windows, and Mac. In addition to situations where add-ins don't activate as noted in the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page, the functionality is not currently supported for offline mode.
 
-- Shared mailboxes\*
-- Group mailboxes
-- Offline mode
-
-Outlook won't allow sending if the on-send feature is enabled for these mailbox scenarios. However, if a user responds to an email in a group mailbox, the on-send add-in won't run and the message will be sent.
-
-> [!IMPORTANT]
-> \* On-send functionality should work on shared mailboxes or folders if the add-in also [implements support for delegate access scenarios](delegate-access.md).
+Outlook won't allow sending if the on-send feature is enabled for unsupported mailbox scenarios. However, in cases where Outlook add-ins don't activate, the on-send add-in won't run and the message will be sent.
 
 ## Multiple on-send add-ins
 
@@ -359,16 +352,7 @@ Add-ins will run during the send event, which will then either allow or block th
 
 #### Web browser (modern Outlook), Windows, Mac
 
-To enforce on-send, administrators should ensure the policy has been enabled on both mailboxes. To learn how to support delegate access in an add-in, see [Enable delegate access scenarios in an Outlook add-in](delegate-access.md).
-
-### Group 1 is a modern group mailbox and user mailbox 1 is a member of Group 1
-
-<br/>
-
-|Scenario|Mailbox 1 on-send policy|On-send add-ins enabled?|Mailbox 1 action|Result|Supported?|
-|:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1|Enabled|Yes|Mailbox 1 composes new message or meeting to Group 1.|On-send add-ins run during send.|Yes|
-|2|Enabled|Yes|Mailbox 1 composes a new message or meeting to Group 1 within Group 1's group window in Outlook on the web.|On-send add-ins do not run during send.|Not currently supported. As a workaround, use scenario 1.|
+To enforce on-send, administrators should ensure the policy has been enabled on both mailboxes. To learn how to support delegate access in an add-in, see [Enable shared folders and shared mailbox scenarios](delegate-access.md).
 
 ### User mailbox with on-send add-in feature/policy enabled, add-ins that support on-send are installed and enabled and offline mode is enabled
 

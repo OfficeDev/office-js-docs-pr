@@ -29,11 +29,11 @@ Excel.run(function (context) {
 
 ### Data before range is inserted
 
-![Data in Excel before range is inserted](../images/excel-ranges-start.png)
+![Data in Excel before range is inserted.](../images/excel-ranges-start.png)
 
 ### Data after range is inserted
 
-![Data in Excel after range is inserted](../images/excel-ranges-after-insert.png)
+![Data in Excel after range is inserted.](../images/excel-ranges-after-insert.png)
 
 ## See also
 

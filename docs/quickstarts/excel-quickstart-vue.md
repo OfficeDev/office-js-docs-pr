@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using Vue
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Vue.
-ms.date: 11/09/2020
+ms.date: 06/16/2021
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -29,7 +29,7 @@ Use the Vue CLI to generate a new Vue app. From the terminal, run the following 
 vue create my-add-in
 ```
 
-Then select the `default` preset. If you are prompted to use either Yarn or NPM as a package you can choose either one.
+Then select the `Default` preset for "Vue 3" (you may choose to use "Vue 2" if you'd prefer).
 
 ## Generate the manifest file
 
@@ -56,7 +56,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     - **What do you want to name your add-in?** `My Office Add-in`
     - **Which Office client application would you like to support?** `Excel`
 
-    ![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to manifest only](../images/yo-office-manifest-only-vue.png)
+    ![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to manifest only.](../images/yo-office-manifest-only-vue.png)
 
 After you complete the wizard, it creates a `My Office Add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
 
@@ -102,16 +102,12 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
 2. Open `src/main.js` and replace the contents with the following code:
 
    ```js
-   import Vue from 'vue';
-   import App from './App.vue';
+   import { createApp } from 'vue'
+   import App from './App.vue'
 
-   Vue.config.productionTip = false;
-
-   window.Office.initialize = () => {
-     new Vue({
-       render: h => h(App)
-     }).$mount('#app');
-   };
+   window.Office.onReady(() => {
+       createApp(App).mount('#app');
+   });
    ```
 
 3. Open `src/App.vue` and replace the file contents with the following code:
@@ -203,13 +199,13 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-   ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted](../images/excel-quickstart-addin-2a.png)
+   ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-   ![Screenshot of Excel, with the add-in task pane open](../images/excel-quickstart-addin-2c.png)
+   ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 

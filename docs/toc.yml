@@ -1033,8 +1033,9 @@ items:
       href: outlook/autolaunch.md
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
-    - name: Delegate access
+    - name: Shared folders and shared mailboxes
       href: outlook/delegate-access.md
+      displayName: delegate access
     - name: Manifests
       items:
       - name: Outlook add-in manifests

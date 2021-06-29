@@ -385,7 +385,7 @@ The **Permissions** element contains the required permissions for the add-in. In
 
 **Four-tier permissions model for mail add-ins**
 
-![4-tier permissions model for mail apps schema v1.1](../images/add-in-permission-tiers.png)
+![4-tier permissions model for mail apps schema v1.1.](../images/add-in-permission-tiers.png)
 
 ```XML
 <OfficeApp>

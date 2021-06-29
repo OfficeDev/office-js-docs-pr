@@ -581,20 +581,20 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 3. In the Office client application, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
 
-    ![Screenshot showing highlighted add-in button in Excel ribbon](../images/excel-quickstart-addin-3b.png)
+    ![Screenshot showing highlighted add-in button in Excel ribbon.](../images/excel-quickstart-addin-3b.png)
 
 4. At the bottom of the task pane, choose the **Read my OneDrive for Business** button to initiate the SSO process.
 
 5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
 
-    ![Screenshot showing permissions requested dialog with Accept button highlighted](../images/sso-permissions-request.png)
+    ![Screenshot showing permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
 6. The add-in reads data from the signed-in user's OneDrive for Business and writes the names of the top 10 files and folders to the document. The following image shows an example of file and folder names written to an Excel worksheet.
 
-    ![Screenshot showing OneDrive for Business information in Excel worksheet](../images/sso-onedrive-info-excel.png)
+    ![Screenshot showing OneDrive for Business information in Excel worksheet.](../images/sso-onedrive-info-excel.png)
 
 ### Outlook
 
@@ -615,20 +615,20 @@ Complete the following steps to try out an Outlook add-in.
 
 4. In the message compose window, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot showing highlighted add-in ribbon button in Outlook compose message window](../images/outlook-sso-ribbon-button.png)
+    ![Screenshot showing highlighted add-in ribbon button in Outlook compose message window.](../images/outlook-sso-ribbon-button.png)
 
 5. At the bottom of the task pane, choose the **Read my OneDrive for Business** button to initiate the SSO process.
 
 6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
 
-    ![Screenshot of permissions requested dialog with Accept button highlighted](../images/sso-permissions-request.png)
+    ![Screenshot of permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
 7. The add-in reads data from the signed-in user's OneDrive for Business and writes the names of the top 10 files and folders to the body of the email message.
 
-    ![Screenshot showing OneDrive for Business information in Outlook compose message window](../images/sso-onedrive-info-outlook.png)
+    ![Screenshot showing OneDrive for Business information in Outlook compose message window.](../images/sso-onedrive-info-outlook.png)
 
 ## Next steps
 

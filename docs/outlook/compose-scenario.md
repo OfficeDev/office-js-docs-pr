@@ -30,7 +30,7 @@ In each of these compose scenarios, any add-in command buttons defined by the ad
 
 The following figure shows the add-in selection pane consisting of two compose add-ins that do not implement add-in commands, activated when the user is composing an inline reply in Outlook.
 
-![Templates mail app activated for composed item](../images/templates-app-selection.png)
+![Templates mail app activated for composed item.](../images/templates-app-selection.png)
 
 ## Types of add-ins available in compose mode
 

@@ -31,7 +31,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `starcount`
 
-    ![Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects](../images/starcountPrompt.png)
+    ![Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.](../images/starcountPrompt.png)
 
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -72,7 +72,7 @@ To use your custom functions add-in, open a new workbook in Excel on a browser. 
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
 
-   ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted](../images/excel-cf-online-register-add-in-1.png)
+   ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
    
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 

@@ -67,11 +67,11 @@ Excel.run(function (context) {
 
 ### Data before range is copied and pasted
 
-![Data in Excel before range's copy method has been run](../images/excel-range-copyfrom-skipblanks-before.png)
+![Data in Excel before range's copy method has been run.](../images/excel-range-copyfrom-skipblanks-before.png)
 
 ### Data after range is copied and pasted
 
-![Data in Excel after range's copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
+![Data in Excel after range's copy method has been run.](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ## Cut and paste (move) cells
 

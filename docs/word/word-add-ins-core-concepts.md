@@ -25,7 +25,7 @@ While you'll likely use the Word JavaScript API to develop the majority of funct
 * [Context](/javascript/api/office/office.context): The `Context` object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of document configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether a specified requirement set is supported by the Excel application where the add-in is running.
 * [Document](/javascript/api/office/office.document): The `Document` object provides the `getFileAsync()` method, which you can use to download the Word file where the add-in is running.
 
-![Image of the differences between the Word JS API and Common APIs](../images/word-js-api-common-api.png)
+![Differences between the Word JS API and Common APIs.](../images/word-js-api-common-api.png)
 
 ## Word-specific object model
 

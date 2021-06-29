@@ -62,7 +62,7 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 
 The following is an example of icon layout with a modifier.
 
-![Diagram of icon with modifier in lower right](../images/monolineicon1.png)  ![Diagram of same icon with added grid background and callouts for the base, modifier, padding, and cutout](../images/monolineicon2.png)
+![Diagram of icon with modifier in lower right.](../images/monolineicon1.png)  ![Diagram of same icon with added grid background and callouts for the base, modifier, padding, and cutout.](../images/monolineicon2.png)
 
 #### Elements
 
@@ -70,7 +70,7 @@ The following is an example of icon layout with a modifier.
 
 - **Modifier** Any element that overlays the base; that is, a modifier that typically represents an action or a status. It modifies the base element by acting as an addition, alteration, or a descriptor.
 
-![Diagram of grid with base and modifier areas called out](../images/monolineicon3.png)
+![Diagram of grid with base and modifier areas called out.](../images/monolineicon3.png)
 
 ### Construction
 
@@ -78,15 +78,15 @@ The following is an example of icon layout with a modifier.
 
 Base elements are placed in the center of the icon within the padding. If it can't be placed perfectly centered, then the base should err to the top right. In the following example, the icon is perfectly centered.
 
-![Diagram showing perfectly centered icon](../images/monolineicon4.png)
+![Diagram showing perfectly centered icon.](../images/monolineicon4.png)
 
 In the following example, the icon is erring to the left.
 
-![Diagram showing icon that errs to the left by 1 px](../images/monolineicon5.png)
+![Diagram showing icon that errs to the left by 1 px.](../images/monolineicon5.png)
 
 Modifiers are almost always placed in the bottom right corner of the icon canvas. In some rare cases, modifiers are placed in a different corner. For example, if the base element would be unrecognizable with the modifier in the bottom right corner, then consider placing it in the upper left corner.
 
-![Diagram showing four icons with the modifier in the lower right, and one icon with the modifier in the upper left](../images/monolineicon6.png)
+![Diagram showing four icons with the modifier in the lower right, and one icon with the modifier in the upper left.](../images/monolineicon6.png)
 
 #### Padding
 
@@ -94,7 +94,7 @@ Each size icon has a specified amount of padding around the icon. The base eleme
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![16 px icon with 0px padding](../images/monolineicon7.png)|![20 px icon with 1px padding](../images/monolineicon8.png)|![24 px icon with 1px padding](../images/monolineicon9.png)|![32 px icon with 2px padding](../images/monolineicon10.png)|![40 px icon with 2px padding](../images/monolineicon11.png)|![48 px icon with 3px padding](../images/monolineicon12.png)|![64 px icon with 4px padding](../images/monolineicon13.png)|![80 px icon with 5px padding](../images/monolineicon14.png)|![96 px icon with 6px padding](../images/monolineicon15.png)|
+|![16 px icon with 0px padding.](../images/monolineicon7.png)|![20 px icon with 1px padding.](../images/monolineicon8.png)|![24 px icon with 1px padding.](../images/monolineicon9.png)|![32 px icon with 2px padding.](../images/monolineicon10.png)|![40 px icon with 2px padding.](../images/monolineicon11.png)|![48 px icon with 3px padding.](../images/monolineicon12.png)|![64 px icon with 4px padding.](../images/monolineicon13.png)|![80 px icon with 5px padding.](../images/monolineicon14.png)|![96 px icon with 6px padding.](../images/monolineicon15.png)|
 
 #### Line weights
 
@@ -103,7 +103,7 @@ Monoline is a style dominated by line and outlined shapes. Depending on what siz
 |Icon Size:|16px|20px|24px|32px|40px|48px|64px|80px|96px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |**Line Weight:**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
-|**Example icon:**|![16 px icon](../images/monolineicon16.png)|![20 px icon](../images/monolineicon17.png)|![24 px icon](../images/monolineicon18.png)|![32 px icon](../images/monolineicon19.png)|![40 px icon](../images/monolineicon20.png)|![48 px icon](../images/monolineicon21.png)|![64 px icon](../images/monolineicon22.png)|![80 px icon](../images/monolineicon23.png)|![96 px icon](../images/monolineicon24.png)|
+|**Example icon:**|![16 px icon.](../images/monolineicon16.png)|![20 px icon.](../images/monolineicon17.png)|![24 px icon.](../images/monolineicon18.png)|![32 px icon.](../images/monolineicon19.png)|![40 px icon.](../images/monolineicon20.png)|![48 px icon.](../images/monolineicon21.png)|![64 px icon.](../images/monolineicon22.png)|![80 px icon.](../images/monolineicon23.png)|![96 px icon.](../images/monolineicon24.png)|
 
 #### Cutouts
 
@@ -111,7 +111,7 @@ When an icon element is placed on top of another element, a cutout (of the botto
 
 The size of the gap should be the same width as the line weight used on that size. If making a 16 px icon, the gap width would be 1px and if it is a 48 px icon then the gap should be 2px. The following example shows a 32 px icon with a gap of 1px between the modifier and the underlying base.
 
-![32 px icon with a gap of 1px between the modifier and the underlying base](../images/monolineicon25.png)
+![32 px icon with a gap of 1px between the modifier and the underlying base.](../images/monolineicon25.png)
 
 In some cases, the gap can be increase by a 1/2 px if the modifier has a diagonal or curved edge and the standard gap doesn't provide enough separation. This will likely only affect the icons with 1px line weight: 16 px, 20 px, 24 px, and 32 px.
 
@@ -119,11 +119,11 @@ In some cases, the gap can be increase by a 1/2 px if the modifier has a diagona
 
 Most icons in the Monoline icon set require background fills. However, there are cases where the object would not naturally have a fill, so no fill should be applied. The following icons have a white fill.
 
-![Compilation of five icons with white fill](../images/monolineicon26.png)
+![Compilation of five icons with white fill.](../images/monolineicon26.png)
 
 The following icons have no fill. (The gear icon is included to show that the center hole is not filled.)
 
-![Compilation of five icons with no fill](../images/monolineicon27.png)
+![Compilation of five icons with no fill.](../images/monolineicon27.png)
 
 ##### Best practices for fills
 
@@ -147,9 +147,9 @@ The color palette has been designed for simplicity and accessibility. It contain
 
 #### Palette
 
-![The four shades of gray in monoline: dark gray for standalone or outline, medium gray for outline or content, very light gray for background fill, and light gray for fill](../images/monoline-grayshades.png)
+![The four shades of gray in monoline: dark gray for standalone or outline, medium gray for outline or content, very light gray for background fill, and light gray for fill.](../images/monoline-grayshades.png)
 
-![The color palette in monoline includes a shade of blue, green, yellow, red, and purple for standalone, outline, and fill](../images/monoline-colors.png)
+![The color palette in monoline includes a shade of blue, green, yellow, red, and purple for standalone, outline, and fill.](../images/monoline-colors.png)
 
 #### How to use color
 
@@ -161,7 +161,7 @@ In the Monoline color palette, all colors have Standalone, Outline, and Fill var
 
 The following are examples of using color.
 
-![Compilation of three icons with color in a border or fill or both](../images/monolineicon28.png)
+![Compilation of three icons with color in a border or fill or both.](../images/monolineicon28.png)
 
 The most common situation will be to have an element use Dark Gray Standalone with Background Fill.
 
@@ -174,19 +174,19 @@ When using a colored Fill, it should always be with its corresponding Outline co
 
 Color should be used to convey the meaning of the icon rather than for embellishment. It should **highlight the action** to the user. When a modifier is added to a base element that has color, the base element is typically turned into Dark Gray and Background Fill so that the modifier can be the element of color, such as the case below with the "X" modifier being added to the picture base in the leftmost icon of the following set.
 
-![Compilation of five icons that use color](../images/monolineicon29.png)
+![Compilation of five icons that use color.](../images/monolineicon29.png)
 
 You should limit your icons to **one** additional color, other than the Outline and Fill mentioned above. However, more colors can be used if it is vital for its metaphor, with a limit of two additional colors other than gray. In rare cases, there are exceptions when more colors are needed. The following are good examples of icons that use just one color.
 
-  ![Compilation of five icons that each use one color](../images/monolineicon30.png)
+  ![Compilation of five icons that each use one color.](../images/monolineicon30.png)
 
 But the following icons use too many colors.
 
-  ![Compilation of five icons that each use multiple colors](../images/monolineicon31.png)
+  ![Compilation of five icons that each use multiple colors.](../images/monolineicon31.png)
 
 Use **Medium Gray** for interior "content", such as grid lines in an icon of a spreadsheet. Additional interior colors are used when the content needs to show the behavior of the control.
 
-![Compilation of five icons with medium gray interior elements](../images/monolineicon32.png)
+![Compilation of five icons with medium gray interior elements.](../images/monolineicon32.png)
 
 #### Text lines
 

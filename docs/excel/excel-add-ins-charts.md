@@ -32,7 +32,7 @@ Excel.run(function (context) {
 
 **New line chart**
 
-![New line chart in Excel](../images/excel-charts-create-line.png)
+![New line chart in Excel.](../images/excel-charts-create-line.png)
 
 
 ## Add a data series to a chart
@@ -54,11 +54,11 @@ Excel.run(function (context) {
 
 **Chart before the 2016 data series is added**
 
-![Chart in Excel before 2016 data series added](../images/excel-charts-data-series-before.png)
+![Chart in Excel before 2016 data series added.](../images/excel-charts-data-series-before.png)
 
 **Chart after the 2016 data series is added**
 
-![Chart in Excel after 2016 data series added](../images/excel-charts-data-series-after.png)
+![Chart in Excel after 2016 data series added.](../images/excel-charts-data-series-after.png)
 
 ## Set chart title
 
@@ -77,7 +77,7 @@ Excel.run(function (context) {
 
 **Chart after title is set**
 
-![Chart with title in Excel](../images/excel-charts-title-set.png)
+![Chart with title in Excel.](../images/excel-charts-title-set.png)
 
 ## Set properties of an axis in a chart
 
@@ -100,7 +100,7 @@ Excel.run(function (context) {
 
 **Chart after title of category axis is set**
 
-![Chart with axis title in Excel](../images/excel-charts-axis-title-set.png)
+![Chart with axis title in Excel.](../images/excel-charts-axis-title-set.png)
 
 ### Set axis display unit
 
@@ -119,7 +119,7 @@ Excel.run(function (context) {
 
 **Chart after display unit of value axis is set**
 
-![Chart with axis display unit in Excel](../images/excel-charts-axis-display-unit-set.png)
+![Chart with axis display unit in Excel.](../images/excel-charts-axis-display-unit-set.png)
 
 ## Set visibility of gridlines in a chart
 
@@ -138,7 +138,7 @@ Excel.run(function (context) {
 
 **Chart with gridlines hidden**
 
-![Chart with gridlines hidden in Excel](../images/excel-charts-gridlines-removed.png)
+![Chart with gridlines hidden in Excel.](../images/excel-charts-gridlines-removed.png)
 
 ## Chart trendlines
 
@@ -160,7 +160,7 @@ Excel.run(function (context) {
 
 **Chart with moving average trendline**
 
-![Chart with moving average trendline in Excel](../images/excel-charts-create-trendline.png)
+![Chart with moving average trendline in Excel.](../images/excel-charts-create-trendline.png)
 
 ### Update a trendline
 
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 
 **Chart with linear trendline**
 
-![Chart with linear trendline in Excel](../images/excel-charts-trendline-linear.png)
+![Chart with linear trendline in Excel.](../images/excel-charts-trendline-linear.png)
 
 ## Export a chart as an image
 

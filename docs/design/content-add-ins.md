@@ -11,7 +11,7 @@ Content add-ins are surfaces that can be embedded directly into Excel or PowerPo
 
 *Figure 1. Typical layout for content add-ins*
 
-![Typical layout for content add-ins in an Office application](../images/overview-with-app-content.png)
+![Typical layout for content add-ins in an Office application.](../images/overview-with-app-content.png)
 
 ## Best practices
 
@@ -30,13 +30,13 @@ For Windows, the personality menu measures 12x32 pixels, as shown.
 
 *Figure 2. Personality menu on Windows*
 
-![12x32-pixel personality menu on Windows desktop](../images/personality-menu-win.png)
+![12x32-pixel personality menu on Windows desktop.](../images/personality-menu-win.png)
 
 For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the occupied space to 34x32 pixels, as shown.
 
 *Figure 3. Personality menu on Mac*
 
-![34x32-pixel personality menu on Mac desktop](../images/personality-menu-mac.png)
+![34x32-pixel personality menu on Mac desktop.](../images/personality-menu-mac.png)
 
 ## Implementation
 

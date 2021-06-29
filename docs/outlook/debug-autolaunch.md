@@ -47,7 +47,7 @@ To preview this capability for Outlook on Windows, the minimum required build is
 1. Start Outlook desktop (or restart Outlook if it's already open).
 1. Compose a new message or appointment. You should see the following dialog. Do *not* interact with the dialog yet.
 
-    ![Screenshot of Debug Event-based handler dialog](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![Screenshot of Debug Event-based handler dialog.](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## Configure Visual Studio Code
 
@@ -80,11 +80,11 @@ To preview this capability for Outlook on Windows, the minimum required build is
 1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
 1. On the Activity Bar, select the **Debug** item (Ctrl+Shift+D).
 
-    ![Screenshot of Debug icon on the Activity Bar](../images/vs-code-debug.png)
+    ![Screenshot of Debug icon on the Activity Bar.](../images/vs-code-debug.png)
 
 1. Select the **create a launch.json file** link.
 
-    ![Screenshot of link to create a launch.json file in Visual Studio Code](../images/vs-code-create-launch.json.png)
+    ![Screenshot of link to create a launch.json file in Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
 1. In the **Select Environment** dropdown, select **Edge: Launch** to create a launch.json file.
 1. Add the following excerpt to your list of configurations. Save your changes.
@@ -116,7 +116,7 @@ To preview this capability for Outlook on Windows, the minimum required build is
 1. Place breakpoints in bundle.js where you want the debugger to stop.
 1. In the **DEBUG** dropdown, select the name **Direct Debugging**, then select **Run**.
 
-    ![Screenshot of selecting Direct Debugging from configuration options in the Visual Studio Code Debug dropdown](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![Screenshot of selecting Direct Debugging from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## Debug
 

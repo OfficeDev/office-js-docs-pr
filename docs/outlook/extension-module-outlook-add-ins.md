@@ -28,7 +28,7 @@ When more than one add-in is loaded, it shows the word **Add-ins**. Clicking eit
 
 When you click on an extension, Outlook replaces the built-in module with your custom module so that your users can interact with the add-in. You can use all of the features of the Outlook JavaScript API in your add-in, and can create command buttons in the Outlook ribbon that will interact with the add-in content. The following screenshot shows an add-in that is integrated in the Outlook navigation bar and has ribbon commands that will update the content of the add-in.
 
-![Shows the user interface of a module extension](../images/outlook-module-extension.png)
+![Shows the user interface of a module extension.](../images/outlook-module-extension.png)
 
 ## Example
 

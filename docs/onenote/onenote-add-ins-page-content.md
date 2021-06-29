@@ -9,7 +9,7 @@ localization_priority: Normal
 
 In the OneNote add-ins JavaScript API, page content is represented by the following object model.
 
-  ![OneNote page object model diagram](../images/one-note-om-page.png)
+  ![OneNote page object model diagram.](../images/one-note-om-page.png)
 
 - A Page object contains a collection of PageContent objects.
 - A PageContent object contains a content type of Outline, Image, or Other.

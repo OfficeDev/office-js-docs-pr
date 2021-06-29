@@ -124,7 +124,7 @@ If your add-in isn't visible within the document that's displayed in the Office 
 
 1. In Excel, PowerPoint, or Word, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
 
-    ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted.](../images/excel-cf-register-add-in-1b.png)
 
 2. In the list of available add-ins, find the **Developer Add-ins** section and select the your add-in to register it.
 

@@ -53,8 +53,8 @@ The video placemat shows users a video before they start using your add-in.
 
 *Figure 5. First run video placemat - The screen contains a still image from the video with a play button and clear call-to-action button*
 
-![Illustration showing a video placemat in the first run experience of an Office desktop application task pane](../images/add-in-FRE-video.png)
+![Illustration showing a video placemat in the first run experience of an Office desktop application task pane.](../images/add-in-FRE-video.png)
 
 *Figure 6. Video player - Users presented with a video within a dialog window*
 
-![Illustration showing a video in a dialog window with an Office desktop application and add-in task pane in the background](../images/add-in-FRE-video-dialog.png)
+![Illustration showing a video in a dialog window with an Office desktop application and add-in task pane in the background.](../images/add-in-FRE-video-dialog.png)

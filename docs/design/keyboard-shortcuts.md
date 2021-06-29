@@ -202,11 +202,11 @@ There are many keyboard shortcuts that are already in use by Office. Avoid regis
 
 In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut, note that the action name that is displayed in this dialog is the `name` property in the action object in `shortcuts.json` file.
 
-![Illustration showing a conflict modal with two different actions for a single shortcut](../images/add-in-shortcut-conflict-modal.png)
+![Illustration showing a conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
 
 The user can select which action the keyboard shortcut will take. After making the selection, the preference is saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the **Reset Office Add-ins shortcut preferences** command from the **Tell me** search box. Invoking the command clears all of the user's add-in shortcut preferences and the user will again be prompted with the conflict dialog box the next time they attempt to use a conflicting shortcut:
 
-![The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action](../images/add-in-reset-shortcuts-action.png)
+![The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action.](../images/add-in-reset-shortcuts-action.png)
 
 For the best user experience, we recommend that you minimize conflicts with Excel with these good practices:
 
