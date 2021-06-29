@@ -18,7 +18,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 > The initial Office 2016 release installed via MSI only contains the ExcelApi 1.1, WordApi 1.1, and Common API requirement sets. For more information about the update history of the various Office versions, check out the [See also](#see-also) section.
 
 > [!NOTE]
-> Office Add-ins may not be supported on all services that are members of the [Office Cloud Storage Partner Program](https://developer.microsoft.com/en-us/office/cloud-storage-partner-program), which enables integrating Office on the web to work with Office documents as part of their service offering. For more information, please contact the member service.
+> Office Add-ins may not be supported on all services that are members of the [Office Cloud Storage Partner Program](https://developer.microsoft.com/office/cloud-storage-partner-program), which enables integrating Office on the web to work with Office documents as part of their service offering. For more information, please contact the member service.
 
 ## Excel
 
