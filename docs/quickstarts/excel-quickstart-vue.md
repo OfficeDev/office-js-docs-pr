@@ -6,7 +6,7 @@ ms.prod: excel
 localization_priority: Priority
 ---
 
-# Build an Excel task pane add-in using Vue
+# Use Vue to build an Excel task pane add-in
 
 In this article, you'll walk through the process of building an Excel task pane add-in using Vue and the Excel JavaScript API.
 
@@ -23,25 +23,25 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ## Generate a new Vue app
 
-To generate a new Vue app, use the Vue CLI. From the terminal, run the following command:
+To generate a new Vue app, use the Vue CLI.
 
 ```command&nbsp;line
 vue create my-add-in
 ```
 
-Then, select the `Default` preset for "Vue 3" (you may choose to use "Vue 2" if you'd prefer).
+Then, select the `Default` preset for "Vue 3" (if you prefer, choose "Vue 2").
 
 ## Generate the manifest file
 
 Each add-in requires a manifest file to define its settings and capabilities.
 
-1. Navigate to your app folder. From the terminal, run the following command:
+1. Navigate to your app folder.
 
     ```command&nbsp;line
     cd my-add-in
     ```
 
-2. Use the Yeoman generator to generate the manifest file for your add-in. From the terminal, run the following command:
+2. Use the Yeoman generator to generate the manifest file for your add-in.
 
     ```command&nbsp;line
     yo office
@@ -58,7 +58,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
     ![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to manifest only.](../images/yo-office-manifest-only-vue.png)
 
-After completion, the wizard creates a `My Office Add-in` folder containing a `manifest.xml` file. You'll use the manifest to sideload and test your add-in at the end of the quick start.
+After completion, the wizard creates a `My Office Add-in` folder containing a `manifest.xml` file. You'll use the manifest to sideload and test your add-in.
 
 > [!TIP]
 > You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created. The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.
@@ -85,7 +85,7 @@ After completion, the wizard creates a `My Office Add-in` folder containing a `m
     }
     ```
 
-2. Install the add-in's certificates. From the terminal, run the following command:
+2. Install the add-in's certificates.
 
    ```command&nbsp;line
    npx office-addin-dev-certs install
@@ -181,7 +181,7 @@ After completion, the wizard creates a `My Office Add-in` folder containing a `m
 
 ## Start the dev server
 
-1. Start the dev server. From the terminal, run the following command:
+1. Start the dev server.
 
    ```command&nbsp;line
    npm run serve
@@ -197,13 +197,13 @@ After completion, the wizard creates a `My Office Add-in` folder containing a `m
    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. To open the add-in task pane in Excel, on the **Home** tab, choose the **Show Taskpane** button.
+2. Open the add-in task pane in Excel. On the **Home** tab, choose the **Show Taskpane** button.
 
    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 
-4. To set the color of the selected range to green, in the task pane, choose the **Set color** button.
+4. Set the color of the selected range to green. In the task pane, choose the **Set color** button.
 
    ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
 
