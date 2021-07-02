@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: 'Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.'
-ms.date: 06/17/2021
+ms.date: 07/02/2021
 localization_priority: Normal
 ---
 
@@ -211,6 +211,10 @@ The message is now in a shared context and add-ins that support these shared sce
 ### REST and EWS
 
 Your add-in can use REST and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox or to the shared mailbox as applicable. EWS is not supported.
+
+### User or shared mailbox hidden from an address list
+
+If an admin hid a user or shared mailbox address from an address list like the global address list (GAL), affected mail items opened in the mailbox report `Office.context.mailbox.item` as null. For example, if the current mailbox user adds a mail recipient that's hidden from the address list the user can access, `Office.context.mailbox.item` representing that mail item is null.
 
 ## See also
 
