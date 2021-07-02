@@ -214,7 +214,7 @@ Your add-in can use REST and the add-in's permission must be set to `ReadWriteMa
 
 ### User or shared mailbox hidden from an address list
 
-If an admin hid a user or shared mailbox address from an address list like the global address list (GAL), affected mail items opened in the mailbox report `Office.context.mailbox.item` as null. For example, if the user opens a mail item in a mailbox that's hidden from the GAL, `Office.context.mailbox.item` representing that mail item is null.
+If an admin hid a user or shared mailbox address from an address list like the global address list (GAL), affected mail items opened in the mailbox report `Office.context.mailbox.item` as null. For example, if the user opens a mail item in a shared mailbox that's hidden from the GAL, `Office.context.mailbox.item` representing that mail item is null.
 
 ## See also
 
