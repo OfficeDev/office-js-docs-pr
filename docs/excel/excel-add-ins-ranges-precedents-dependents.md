@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.' 
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -49,11 +49,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Get the direct dependents of a formula (preview)
-
-> [!NOTE]
-> The `Range.getDirectDependents` method is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## Get the direct dependents of a formula
 
 Locate a formula's direct dependent cells with [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__). Like `Range.getDirectPrecedents`, `Range.getDirectDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the direct dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 

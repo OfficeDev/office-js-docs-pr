@@ -69,11 +69,7 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### Insert a copy of an existing workbook into the current one (preview)
-
-> [!NOTE]
-> The `Workbook.insertWorksheetsFromBase64` method is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+### Insert a copy of an existing workbook into the current one
 
 The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A [Workbook](/javascript/api/excel/excel.workbook) has the `insertWorksheetsFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as a base64-encoded string, just like the `Excel.createWorkbook` call. 
 
@@ -338,11 +334,7 @@ The Excel API also lets add-ins turn off calculations until `RequestContext.sync
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## Detect workbook activation (preview)
-
-> [!NOTE]
-> The `Workbook.onActivated` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## Detect workbook activation
 
 Your add-in can detect when a workbook is activated. A workbook becomes *inactive* when the user switches focus to another workbook, to another application, or (in Excel on the web) to another tab of the web browser. A workbook is *activated* when the user returns focus to the workbook. The workbook activation can trigger callback functions in your add-in, such as refreshing workbook data.
 

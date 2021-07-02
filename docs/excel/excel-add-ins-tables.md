@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with tables using the Excel JavaScript API.'
-ms.date: 06/07/2021
+ms.date: 07/02/2021
 localization_priority: Normal
 ---
 
@@ -160,10 +160,7 @@ Excel.run(function (context) {
 
 ![Table with new calculated column in Excel.](../images/excel-tables-add-calculated-column.png)
 
-## Resize a table (online-only)
-
-> [!NOTE]
-> The `Table.resize` method is currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
+## Resize a table
 
 Your add-in can resize a table without adding data to the table or changing cell values. To resize a table, use the [Table.resize](/javascript/api/excel/excel.table#resize_newRange_) method. The following code sample shows how to resize a table. This code sample uses the **ExpensesTable** from the [Create a table](#create-a-table) section earlier in this article and sets the new range of the table to **A1:D20**.
 
