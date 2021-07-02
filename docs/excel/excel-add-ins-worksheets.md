@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 localization_priority: Normal
 ---
 
@@ -313,11 +313,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## Detect formula changes (preview)
-
-> [!NOTE]
-> The `Worksheet.onFormulaChanged` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## Detect formula changes
 
 Your add-in can track changes to formulas in a worksheet. This is useful when a worksheet is connected to an external database. When the formula changes in the worksheet, the event in this scenario triggers corresponding updates in the external database.
 
