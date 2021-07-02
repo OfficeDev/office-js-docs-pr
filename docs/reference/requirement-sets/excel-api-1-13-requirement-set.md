@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # What's new in Excel JavaScript API 1.13
 
-The ExcelApi 1.13 added a method to insert worksheets into a workbook from a base-64 encoded string and an event to detect workbook activation. It also increased support for formulas in ranges by adding APIs to track changes to formulas and locate a formula's direct dependent cells and expanded PivotTable support by adding PivotLayout APIs for alt text, style, and empty cell management.
+The ExcelApi 1.13 added a method to insert worksheets into a workbook from a base-64 encoded string and an event to detect workbook activation. It also increased support for formulas in ranges by adding APIs to track changes to formulas and locate a formula's direct dependent cells, and it expanded PivotTable support by adding PivotLayout APIs for alt text, style, and empty cell management.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
