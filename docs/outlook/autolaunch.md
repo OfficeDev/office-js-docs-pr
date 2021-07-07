@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 06/08/2021
+ms.date: 07/07/2021
 localization_priority: Normal
 ---
 
@@ -289,7 +289,7 @@ The user can switch or navigate away from the current mail item where the add-in
 
 Imports are not supported in the JavaScript file where you implement the handling for event-based activation in the Windows client.
 
-Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs:
+Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs.
 
 - Under `OfficeRuntime.auth`:
   - `getAccessToken` (Windows only)
@@ -306,6 +306,16 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
 - Under `Office.context.ui`:
   - `displayDialogAsync`
   - `messageParent`
+
+### Requesting external data
+
+You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+
+Be aware that you must use additional security measures when making XmlHttpRequests, requiring [Same Origin Policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
+
+A simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
+
+Full CORS support is coming soon.
 
 ## See also
 
