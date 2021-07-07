@@ -91,6 +91,13 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
    npx office-addin-dev-certs install
    ```
 
+## Explore the project
+
+The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
+
+- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
+- The **./src/App.vue** file contains the HTML markup for the task pane, the CSS that's applied to the content in the task pane, and the Office JavaScript API code that facilitates interaction between the task pane and Excel.
+
 ## Update the app
 
 1. Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag.
