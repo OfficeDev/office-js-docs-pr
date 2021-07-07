@@ -203,7 +203,7 @@ After completion, the wizard creates a `My Office Add-in` folder containing a `m
 
 3. Select any range of cells in the worksheet.
 
-4. Set the color of the selected range to green. In the task pane, choose the **Set color** button.
+4. Set the color of the selected range to green. In your add-in's task pane, choose the **Set color** button.
 
    ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
 
