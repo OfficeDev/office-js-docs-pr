@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using Vue
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Vue.
-ms.date: 06/16/2021
+ms.date: 07/07/2021
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -41,7 +41,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     cd my-add-in
     ```
 
-2. Use the Yeoman generator to generate the manifest file for your add-in by running the following command:
+2. Use the Yeoman generator to generate the manifest file for your add-in by running the following command.
 
     ```command&nbsp;line
     yo office
@@ -67,7 +67,7 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. To enable HTTPS for your app, create a `vue.config.js` file in the root folder of the Vue project with the following contents:
+1. To enable HTTPS for your app, create a `vue.config.js` file in the root folder of the Vue project with the following contents.
 
     ```js
     var fs = require("fs");
@@ -93,13 +93,19 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
 
 ## Update the app
 
-1. Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag:
+1. Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag.
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-2. Open `src/main.js` and replace the contents with the following code:
+1. Open `manifest.xml` and find the `<bt:Urls>` tags inside the `<Resources>` tag. Change the `DefaultValue` attribute of the `<bt:Url>` tag with the ID `Taskpane.Url`. The new `DefaultValue` is `"https://localhost:3000/index.html"`. The entire updated tag should match the following line.
+
+  ```html
+  <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
+  ```
+
+1. Open `src/main.js` and replace the contents with the following code.
 
    ```js
    import { createApp } from 'vue'
@@ -110,7 +116,7 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
    });
    ```
 
-3. Open `src/App.vue` and replace the file contents with the following code:
+1. Open `src/App.vue` and replace the file contents with the following code.
 
    ```html
    <template>
