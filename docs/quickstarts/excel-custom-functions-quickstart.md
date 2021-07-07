@@ -41,7 +41,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     cd starcount
     ```
 
-3. Build the project. 
+3. Build the project.
 
     ```command&nbsp;line
     npm run build
@@ -99,11 +99,10 @@ The `ADD` custom function computes the sum of the two numbers that you specify a
 Congratulations, you've successfully created a custom function in an Excel add-in! Next, build a more complex add-in with streaming data capability. The following link takes you through the next steps in the Excel add-in with custom functions tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
-)
+> [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
 
 ## See also
 
-* [Custom functions overview](../excel/custom-functions-overview.md)
-* [Custom functions metadata](../excel/custom-functions-json.md)
-* [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)
+- [Custom functions overview](../excel/custom-functions-overview.md)
+- [Custom functions metadata](../excel/custom-functions-json.md)
+- [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)
