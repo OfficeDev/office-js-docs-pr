@@ -1,5 +1,5 @@
 ---
-title: USe Angular to build an Excel task pane add-in
+title: Use Angular to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Angular.
 ms.date: 07/06/2021
 ms.prod: excel

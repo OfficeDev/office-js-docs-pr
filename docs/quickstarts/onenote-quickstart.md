@@ -100,6 +100,7 @@ try {
     - If you're signed in with your work or education account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**.
 
     The following image shows the **MY ADD-INS** tab for consumer notebooks.
+
     ![Screenshot of the Office Add-ins dialog showing the MY ADD-INS tab.](../images/onenote-office-add-ins-dialog.png)
 
 5. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
