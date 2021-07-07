@@ -1280,25 +1280,20 @@ items:
   items:
   - name: Overview
     href: overview/patterns-and-practices-overview.md
-  - name: Open in Excel
-    href: excel/pnp-open-in-excel.md
-    displayName: Excel
-  - name: Batching custom function remote calls
-    href: excel/custom-functions-batching.md
-    displayName: Excel, Custom Functions
-  - name: Authentication
-    href: develop/authentication-pnp.md
-  - name: Handle high DPI and DPI scaling in your Office solution
-    href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
-  - name: Office Add-ins community call
-    href: overview/office-add-ins-community-call.md
-
-- name: VSTO and COM transition resources
-  items: 
-    - name: VSTO add-in developers' guide
-      href: overview/learning-path-transition.md
-    - name: Share code from VSTO Add-in to Office Add-in
-      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: Make your Office Add-in compatible with an existing COM add-in
-      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-      displayName: manifest
+  - name: Excel
+    items:
+    - name: Custom functions
+      items:
+      - name: Batch function network calls
+        href: excel/pnp-open-in-excel.md
+      - name: Use web workers
+        href: excel/pnp-open-in-excel.md
+      - name: Integrate with Azure functions
+        href: excel/pnp-open-in-excel.md
+    - name: Create custom contextual tabs
+      href: design/contextual-tabs.md
+  - name: Outlook
+    items:
+    - name: Set signature with event-based activation
+      href: excel/pnp-open-in-excel.md
+  
