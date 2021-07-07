@@ -15,7 +15,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Install the [Vue CLI](https://cli.vuejs.org/) globally. From the terminal, run the following command:
+- Install the [Vue CLI](https://cli.vuejs.org/) globally. From the terminal, run the following command.
 
   ```command&nbsp;line
   npm install -g @vue/cli
@@ -67,7 +67,7 @@ After completion, the wizard creates a `My Office Add-in` folder containing a `m
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. Enable HTTPS for your app. In the root folder of the Vue project, create a `vue.config.js` file with the following contents:
+1. Enable HTTPS for your app. In the root folder of the Vue project, create a `vue.config.js` file with the following contents.
 
     ```js
     var fs = require("fs");
