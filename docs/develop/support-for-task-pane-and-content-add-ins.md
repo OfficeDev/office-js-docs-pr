@@ -17,7 +17,7 @@ You can use the [Office JavaScript API](../reference/javascript-api-for-office.m
 
    A content or task pane add-in can access the `Document` object only after the DOM and runtime environment has been loaded, typically in the event handler for the [Office.initialize](/javascript/api/office) event. For information about the flow of events when an add-in is initialized, and how to check that the DOM and runtime and loaded successfully, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
 
-3. **Objects for working with specific features.** To work with specific features of the API, use the following objects and methods:
+3. **Objects for working with specific features.** To work with specific features of the API, use the following objects and methods.
 
     - The methods of the [Bindings](/javascript/api/office/office.bindings) object to create or get bindings, and the methods and properties of the [Binding](/javascript/api/office/office.binding) object to work with data.
 

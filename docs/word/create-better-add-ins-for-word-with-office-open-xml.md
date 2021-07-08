@@ -358,7 +358,7 @@ To turn off RSID attributes in Word for documents you create going forward, do t
 2. In the Word Options dialog box, choose **Trust Center** and then choose **Trust Center Settings**.
 3. In the Trust Center dialog box, choose **Privacy Options** and then disable the setting **Store random numbers to improve Combine accuracy**.
 
-To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML:
+To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML.
 
 
 1. With your insertion point in the main body of the document, press **Ctrl+Home** to go to the top of the document.
@@ -551,7 +551,7 @@ function addAndBindControl() {
 }
 ```
 
-The code shown here takes the following steps:
+The code shown here takes the following steps.
 
 
 - Attempts to bind to the named content control, using [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-).
@@ -673,7 +673,7 @@ However, if you take a look at the styles.xml part, you'll see that only a small
 
     However, it's a best practice to include a complete style definition (even if it's the default for built-in styles). If a style is already in use in the destination document, your content will take on the resident definition for the style, regardless of what you include in styles.xml. If the style isn't yet in use in the destination document, your content will use the style definition you provide in the markup.
 
-So, for example, the only content we needed to retain from the styles.xml part for the sample text shown in Figure 2, which is formatted using Heading 1 style, is the following.
+So, for example, the only content we needed to retain from the styles.xml part for the sample text shown in Figure 2, which is formatted using Heading 1 style, is the following:
 
 
 > [!NOTE]
@@ -789,7 +789,7 @@ Be aware that the markup for a SmartArt diagram in document.xml contains relatio
 ### Working with charts
 
 
-Similar to SmartArt diagrams, charts contain several additional parts. However, the setup for charts is a bit different from SmartArt, in that a chart has its own relationship file. Following is a description of required and removable document parts for a chart:
+Similar to SmartArt diagrams, charts contain several additional parts. However, the setup for charts is a bit different from SmartArt, in that a chart has its own relationship file. Following is a description of required and removable document parts for a chart.
 
 
 > [!NOTE]
@@ -812,7 +812,7 @@ See the edited markup for the example chart shown in Figure 11 in the [Word-Add-
 ## Editing the Office Open XML for use in your task pane add-in
 
 
-You've already seen how to identify and edit the content in your markup. If the task still seems difficult when you take a look at the massive Office Open XML package generated for your document, following is a quick summary of recommended steps to help you edit that package down quickly:
+You've already seen how to identify and edit the content in your markup. If the task still seems difficult when you take a look at the massive Office Open XML package generated for your document, following is a quick summary of recommended steps to help you edit that package down quickly.
 
 
 > [!NOTE]

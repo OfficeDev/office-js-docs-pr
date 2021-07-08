@@ -24,7 +24,7 @@ When defined in the basic manifest (under [OfficeApp](officeapp.md)), the host t
 
 ### Name
 
-Specifies the Host type targeted by this add-in. The value must be one of the following.
+Specifies the Host type targeted by this add-in. The value must be one of the following:
 
 - `Document` (Word)
 - `Database` (Access)

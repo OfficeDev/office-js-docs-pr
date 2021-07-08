@@ -2,9 +2,9 @@ You can create an Office Add-in to provide one-click sending or publishing of a 
 
 ## Prerequisites for creating an add-in for PowerPoint or Word
 
-This article assumes that you are using a text editor to create the task pane add-in for PowerPoint or Word. To create the task pane add-in, you must create the following files:
+This article assumes that you are using a text editor to create the task pane add-in for PowerPoint or Word. To create the task pane add-in, you must create the following files.
 
-- On a shared network folder or on a web server, you need the following files:
+- On a shared network folder or on a web server, you need the following files.
 
   - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and application-specific .js files) and Cascading Style Sheet (CSS) files.
 

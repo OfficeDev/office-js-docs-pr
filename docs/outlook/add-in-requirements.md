@@ -11,15 +11,15 @@ For Outlook add-ins to load and function properly, there are a number of require
 
 ## Client requirements
 
-- The client must be one of the supported applications for Outlook add-ins. The following clients support add-ins:
+- The client must be one of the supported applications for Outlook add-ins. The following clients support add-ins.
 
-   - Outlook 2013 or later on Windows
-   - Outlook 2016 or later on Mac
-   - Outlook on iOS
-   - Outlook on Android
-   - Outlook on the web for Exchange 2016 or later
-   - Outlook on the web for Exchange 2013
-   - Outlook.com
+  - Outlook 2013 or later on Windows
+  - Outlook 2016 or later on Mac
+  - Outlook on iOS
+  - Outlook on Android
+  - Outlook on the web for Exchange 2016 or later
+  - Outlook on the web for Exchange 2013
+  - Outlook.com
 
 - The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
 

@@ -30,7 +30,7 @@ The autoopen feature is currently <!-- in **developer preview** and it is only -
 
 ## Best practices
 
-Apply the following best practices when you use the autoopen feature:
+Apply the following best practices when you use the autoopen feature.
 
 - Use the autoopen feature when it will help make your add-in users more efficient, such as:
   - When the document needs the add-in in order to function properly. For example, a spreadsheet that includes stock values that are periodically refreshed by an add-in. The add-in should open automatically when the spreadsheet is opened to keep the values up to date.

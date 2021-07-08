@@ -16,7 +16,7 @@ The following figure shows the flow of events involved in starting a content or 
 
 ![Flow of events when starting a content or task pane add-in.](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
-The following events occur when a content or task pane add-in starts:
+The following events occur when a content or task pane add-in starts.
 
 1. The user opens a document that already contains an add-in or inserts an add-in in the document.
 
@@ -39,7 +39,7 @@ The following figure shows the flow of events involved in starting an Outlook ad
 
 ![Flow of events when starting Outlook add-in.](../images/outlook15-loading-dom-agave-runtime.png)
 
-The following events occur when an Outlook add-in starts:
+The following events occur when an Outlook add-in starts.
 
 1. When Outlook starts, Outlook reads the XML manifests for Outlook add-ins that have been installed for the user's email account.
 

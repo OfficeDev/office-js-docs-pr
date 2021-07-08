@@ -155,7 +155,7 @@ Because Office Add-ins are webpages that run in a web browser control, they must
 
 One way to overcome this limitation is to use JSON/P -- provide a proxy for the web service by including a **script** tag with a **src** attribute that points to some script hosted on another domain. You can programmatically create the **script** tags, dynamically creating the URL to which to point the **src** attribute, and passing parameters to the URL via URI query parameters. Web service providers create and host JavaScript code at specific URLs, and return different scripts depending on the URI query parameters. These scripts then execute where they are inserted and work as expected.
 
-The following is an example of JSON/P in the Outlook add-in example. 
+The following is an example of JSON/P in the Outlook add-in example.
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.

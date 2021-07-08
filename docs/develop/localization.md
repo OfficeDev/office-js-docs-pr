@@ -302,7 +302,7 @@ To localize the add-in display name and description:
 
 1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose **WorldReadyAddIn.xml**.
 
-2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code:
+2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code.
 
     > [!NOTE]
     > You can replace the Spanish language localized strings used in this example for the [DisplayName] and [Description] elements with the localized strings for any other language.

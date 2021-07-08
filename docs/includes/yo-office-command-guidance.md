@@ -1,4 +1,4 @@
-Run the following command to create an add-in project using the Yeoman generator: 
+Run the following command to create an add-in project using the Yeoman generator.
 
 ```command&nbsp;line
 yo office
@@ -7,4 +7,4 @@ yo office
 > [!NOTE]
 > When you run the `yo office` command, you may receive prompts about the data collection policies of Yeoman and the Office Add-in CLI tools. Use the information that's provided to respond to the prompts as you see fit.
 
-When prompted, provide the following information to create your add-in project:
+When prompted, provide the following information to create your add-in project.

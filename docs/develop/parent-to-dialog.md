@@ -19,13 +19,13 @@ The recommended way to pass data and messages from a parent page to a child dial
 
 ## Use local storage
 
-To use local storage, call the `setItem` method of the `window.localStorage` object in the host page before the `displayDialogAsync` call, as in the following example:
+To use local storage, call the `setItem` method of the `window.localStorage` object in the host page before the `displayDialogAsync` call, as in the following example.
 
 ```js
 localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 ```
 
-Code in the dialog box reads the item when it's needed, as in the following example:
+Code in the dialog box reads the item when it's needed, as in the following example.
 
 ```js
 var clientID = localStorage.getItem("clientID");
@@ -35,7 +35,7 @@ var clientID = localStorage.getItem("clientID");
 
 ## Use query parameters
 
-The following example shows how to pass data with a query parameter:
+The following example shows how to pass data with a query parameter.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
