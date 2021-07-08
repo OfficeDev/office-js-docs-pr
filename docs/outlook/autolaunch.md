@@ -312,4 +312,6 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
 - [Outlook add-in manifests](manifests.md)
 - [How to debug event-based add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
-- PnP sample: [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+- PnP samples:
+  - [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+  - [Use Outlook event-based activation to tag external recipients](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)
