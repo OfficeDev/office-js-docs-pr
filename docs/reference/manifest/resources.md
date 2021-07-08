@@ -31,7 +31,7 @@ Each icon must have three **Images** elements, one for each of the three mandato
 - 32x32
 - 80x80
 
-The following additional sizes are also supported, but not required:
+The following additional sizes are also supported, but not required.
 
 - 20x20
 - 24x24

@@ -16,7 +16,7 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 - An Outline object contains a collection of Paragraph objects.
 - A Paragraph object contains a content type of RichText, Image, Table, or Other.
 
-To create an empty OneNote page, use one of the following methods:
+To create an empty OneNote page, use one of the following methods.
 
 - [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
@@ -31,7 +31,7 @@ The content and structure of a OneNote page are represented by HTML. Only a subs
 
 ## Supported HTML
 
-The OneNote add-in JavaScript API supports the following HTML for creating and updating page content:
+The OneNote add-in JavaScript API supports the following HTML for creating and updating page content.
 
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`

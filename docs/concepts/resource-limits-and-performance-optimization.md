@@ -13,7 +13,7 @@ You can also optimize the performance of your add-ins on desktop and mobile devi
 
 ## Resource usage limits for add-ins
 
-Run-time resource usage limits apply to all types of Office Add-ins. These limits help ensure performance for your users and mitigate denial-of-service attacks. Be sure to test your Office Add-in on your target Office application by using a range of possible data, and measure its performance against the following run-time usage limits:
+Run-time resource usage limits apply to all types of Office Add-ins. These limits help ensure performance for your users and mitigate denial-of-service attacks. Be sure to test your Office Add-in on your target Office application by using a range of possible data, and measure its performance against the following run-time usage limits.
 
 - **CPU core usage** - A single CPU core usage threshold of 90%, observed three times in default 5-second intervals.
 
@@ -38,7 +38,7 @@ If any Outlook add-in exceeds the preceding thresholds for CPU core or memory us
 > [!NOTE]
 > Even though only the Outlook rich clients and not Outlook on the web or mobile devices monitor resource usage, if a rich client disables an Outlook add-in, that add-in is also disabled for use in Outlook on the web and mobile devices.
 
-In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation:
+In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation.
 
 - **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
@@ -50,7 +50,7 @@ In addition to the CPU core, memory, and reliability rules, Outlook add-ins shou
 
 ### Excel add-ins
 
-If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook:
+If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook.
 
 - Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
 - A range is limited to five million cells for get operations.
@@ -96,7 +96,7 @@ For more information, see [Deploying Telemetry Dashboard](/previous-versions/off
 
 ## Design and implementation techniques
 
-While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the Office application can remain responsive:
+While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the Office application can remain responsive.
 
 - In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation. You can do this through the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data. Another option is to use [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) to handle your Promises.
 

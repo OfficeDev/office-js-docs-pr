@@ -6,7 +6,7 @@ var item = Office.context.mailbox.item;
 
 ```
 
-Additionally, Outlook add-ins can use the following objects:
+Additionally, Outlook add-ins can use the following objects.
 
 -  **Office** object: for initialization.
 

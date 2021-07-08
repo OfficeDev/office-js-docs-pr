@@ -34,7 +34,7 @@ Required. The URL to a page where the user can learn more about your add-in. The
 
 ## See also
 
-The following code samples use the **GetStarted** element:
+The following code samples use the **GetStarted** element.
 
 * [Excel Web Add-in for Manipulating Table and Chart Formatting](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)
 * [Word Add-in JavaScript SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)

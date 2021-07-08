@@ -16,7 +16,7 @@ There are many versions of Office on several platforms, and they don't all suppo
 
 ## How to check your Office version
 
-To identify the Office version that you're using, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office will appear in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000):
+To identify the Office version that you're using, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office will appear in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000).
 
 ![Checking your Office version.](../images/office-version.png)
 
@@ -28,7 +28,7 @@ Some Office applications have their own API requirement sets. For example, the f
 
 In addition, other functionality such as add-in commands (ribbon extensibility) and the ability to launch dialog boxes (Dialog API) were added to the Common API. Add-in commands and Dialog API requirement sets are examples of API sets that the various Office applications share in common.
 
-An add-in can only use APIs in requirement sets that are supported by the version of Office application where the add-in is running. To know exactly which requirement sets are available for a specific Office application version, refer to the following application-specific requirement set articles:
+An add-in can only use APIs in requirement sets that are supported by the version of Office application where the add-in is running. To know exactly which requirement sets are available for a specific Office application version, refer to the following application-specific requirement set articles.
 
 - [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
@@ -36,7 +36,7 @@ An add-in can only use APIs in requirement sets that are supported by the versio
 - [PowerPoint JavaScript API requirement sets](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Understanding Outlook API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md) (Mailbox)
 
-Some requirement sets contain APIs that can be used by any Office application. For information about these requirement sets, refer to the following articles:
+Some requirement sets contain APIs that can be used by any Office application. For information about these requirement sets, refer to the following articles.
 
 - [Office common requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Add-in commands requirement sets](../reference/requirement-sets/add-in-commands-requirement-sets.md)

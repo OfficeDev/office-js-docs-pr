@@ -79,14 +79,14 @@ The following image shows what the registry should look like. To turn the featur
 
     `<bundle id>` identifies which the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log will be written.
 
-    Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding application:
+    Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding application.
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-The following example enables runtime logging for Word and then opens the log file:
+The following example enables runtime logging for Word and then opens the log file.
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -102,7 +102,7 @@ To turn off runtime logging, use the `defaults delete` command:
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-The following example will turn off runtime logging for Word:
+The following example will turn off runtime logging for Word.
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile

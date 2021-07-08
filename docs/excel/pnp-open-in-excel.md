@@ -21,12 +21,12 @@ First, let’s learn how to create an Excel document from a web page, and embed 
 
 1. Extract the sample code from  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip into a folder on your computer.
 2. To build and run the sample, follow the steps in the **To use the project** section of the readme.
-3. When you run the sample it will display a web page similar to the following screen shot. Use the web page to create a new Excel document that contains Script Lab when it opens.
+3. When you run the sample it will display a web page similar to the following screenshot. Use the web page to create a new Excel document that contains Script Lab when it opens.
 :::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Screen shot of the web page that the embed script lab sample displays for selecting an Excel file and embedding the script lab add-in into it.":::
 
 ### How the sample works
 
-The sample code uses the OOXML SDK to embed the Script Lab add-in to the Excel document that you choose. The following Information is taken from the [**About the code** section](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) in the readme file.
+The sample code uses the OOXML SDK to embed the Script Lab add-in to the Excel document that you choose. The following information is taken from the [**About the code** section](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) in the readme file.
 
 The file **Home.aspx.cs**:
 
@@ -73,14 +73,18 @@ A best practice is to use the Fluent UI to help your users transition between Mi
 
 1. Open the sample in Visual Studio.
 1. Open the **Home.aspx** page.
-1. Find following code that is the download button on the form:
+1. Find following code that is the download button on the form.
+
     ```html
     <asp:Button ID="btnDownload" runat="server" Text="Download" OnClick="btnDownload_Click" /> 
     ```
+
 1. Replace the button code with the following image tag.
+
     ```html
     <asp:Image  src="https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/excel_48x1.svg" width="48" height="48" ID="btnDownload" runat="server" OnClick="btnDownload_Click" AlternateText="Open in Microsoft Excel" role="button" ImageUrl=""/>  
     ```
+
 1. Press **F5** (or **Debug > Start Debugging**). You'll see the icon appear when the home page loads.
 
 For more information, see [Office Brand Icons](https://developer.microsoft.com/fluentui#/styles/web/office-brand-icons) on the Fluent UI developer portal.  
@@ -106,12 +110,15 @@ We recommend uploading new documents to OneDrive if your customer uses OneDrive.
 ### Upload a file to OneDrive
 
 1. Open the **graph-tutorial.sln** solution in Visual Studio 2019, and open the **PrivateSettings.config** file.
-1. Add a new scope **Files.ReadWrite** to the **ida:AppScopes** key so that it looks like the following code:
+1. Add a new scope **Files.ReadWrite** to the **ida:AppScopes** key so that it looks like the following code.
+
     ```xml
     <add key="ida:AppScopes" value="User.Read Calendars.Read Files.ReadWrite " />
     ```
+
 1. Open the **Index.cshtml** file.
 1. Insert the following ActionLink code to create a button to upload a file to OneDrive.
+
     ```razor
     @if (Request.IsAuthenticated)
     {
@@ -120,8 +127,10 @@ We recommend uploading new documents to OneDrive if your customer uses OneDrive.
         @Html.ActionLink("Click here to create a new file on OneDrive", "CreateOneDriveFile", "Home", new { area = "" }, new { @class = "btn btn-primary btn-large" })
     }
     ```
+
 1. Open the **HomeController.cs** file.
 1. Insert the following code to handle the request from the action link.
+
     ```csharp
     public void CreateOneDriveFile()
         {
@@ -131,8 +140,10 @@ We recommend uploading new documents to OneDrive if your customer uses OneDrive.
             }
         }
     ```
+
 1. Open the **GraphHelper.cs** file.
 1. Insert the following code to call the Microsoft Graph API to create a new file on OneDrive.
+
     ```csharp
     public static async Task UploadFile(string fileName, System.IO.MemoryStream stream)
         {
@@ -147,6 +158,7 @@ We recommend uploading new documents to OneDrive if your customer uses OneDrive.
             return;
         }
     ```
+
 1. Press **F5** (or **Debug > Start Debugging**). The web application will start.
 1. Choose **Click here to sign in**, and sign in.
 1. Choose **Click here to create a new file on OneDrive**.

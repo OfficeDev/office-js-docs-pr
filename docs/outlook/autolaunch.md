@@ -289,7 +289,7 @@ The user can switch or navigate away from the current mail item where the add-in
 
 Imports are not supported in the JavaScript file where you implement the handling for event-based activation in the Windows client.
 
-Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs:
+Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs.
 
 - Under `OfficeRuntime.auth`:
   - `getAccessToken` (Windows only)

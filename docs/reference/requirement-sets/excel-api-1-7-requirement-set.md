@@ -12,15 +12,15 @@ The Excel JavaScript API requirement set 1.7 features include APIs for charts, e
 
 ## Customize charts
 
-With the new chart APIs, you can create additional chart types, add a data series to a chart, set the chart title, add an axis title, add display unit, add a trendline with moving average, change a trendline to linear, and more. The following are some examples:
+With the new chart APIs, you can create additional chart types, add a data series to a chart, set the chart title, add an axis title, add display unit, add a trendline with moving average, change a trendline to linear, and more. The following are some examples.
 
-* Chart axis - get, set, format and remove axis unit, label and title in a chart.
-* Chart series - add, set, and delete a series in a chart.  Change series markers, plot orders and sizing.
-* Chart trendlines - add, get, and format trendlines in a chart.
-* Chart legend - format the legend font in a chart.
-* Chart point - set chart point color.
-* Chart title substring -  get and set title substring for a chart.
-* Chart type - option to create more chart types.
+- Chart axis - get, set, format and remove axis unit, label and title in a chart.
+- Chart series - add, set, and delete a series in a chart.  Change series markers, plot orders and sizing.
+- Chart trendlines - add, get, and format trendlines in a chart.
+- Chart legend - format the legend font in a chart.
+- Chart point - set chart point color.
+- Chart title substring -  get and set title substring for a chart.
+- Chart type - option to create more chart types.
 
 ## Events
 
@@ -30,15 +30,15 @@ Excel events APIs provide a variety of event handlers that allow your add-in to 
 
 Using the new APIs, you can customize the appearance of worksheets in multiple ways:
 
-* Freeze panes to keep specific rows or columns visible when you scroll in the worksheet. For example, if the first row in your worksheet contains headers, you might freeze that row so that the column headers will remain visible as you scroll down the worksheet.
-* Modify the worksheet tab color.
-* Add worksheet headings.
+- Freeze panes to keep specific rows or columns visible when you scroll in the worksheet. For example, if the first row in your worksheet contains headers, you might freeze that row so that the column headers will remain visible as you scroll down the worksheet.
+- Modify the worksheet tab color.
+- Add worksheet headings.
 
 You can customize the appearance of ranges in multiple ways:
 
-* Set the cell style for a range to ensure sure that all cells in the range have consistent formatting. A cell style is a defined set of formatting characteristics, such as fonts and font sizes, number formats, cell borders, and cell shading. Use any of Excel's built-in cell styles or create your own custom cell style.
-* Set the text orientation for a range.
-* Add or modify a hyperlink on a range that links to another location in the workbook or to an external location.
+- Set the cell style for a range to ensure sure that all cells in the range have consistent formatting. A cell style is a defined set of formatting characteristics, such as fonts and font sizes, number formats, cell borders, and cell shading. Use any of Excel's built-in cell styles or create your own custom cell style.
+- Set the text orientation for a range.
+- Add or modify a hyperlink on a range that links to another location in the workbook or to an external location.
 
 ## Manage document properties
 
@@ -54,9 +54,9 @@ Using the various range APIs, you can do things such as get the surrounding regi
 
 In addition:
 
-* Workbook and worksheet protection options - use these APIs to protect data in a worksheet and the workbook structure.
-* Update a named item - use this API to update a named item.
-* Get active cell  - use this API to get the active cell of a workbook.
+- Workbook and worksheet protection options - use these APIs to protect data in a worksheet and the workbook structure.
+- Update a named item - use this API to update a named item.
+- Get active cell  - use this API to get the active cell of a workbook.
 
 ## API list
 
