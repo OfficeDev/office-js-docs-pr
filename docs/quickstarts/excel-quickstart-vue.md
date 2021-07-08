@@ -58,7 +58,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
     ![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to manifest only.](../images/yo-office-manifest-only-vue.png)
 
-After completion, the wizard creates a `My Office Add-in` folder containing a `manifest.xml` file. You'll use the manifest to sideload and test your add-in.
+After completion, the wizard creates a **My Office Add-in** folder containing a **manifest.xml** file. You'll use the manifest to sideload and test your add-in.
 
 > [!TIP]
 > You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created. The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.
@@ -67,7 +67,7 @@ After completion, the wizard creates a `My Office Add-in` folder containing a `m
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. Enable HTTPS for your app. In the root folder of the Vue project, create a `vue.config.js` file with the following contents.
+1. Enable HTTPS for your app. In the root folder of the Vue project, create a **vue.config.js** file with the following contents.
 
     ```js
     var fs = require("fs");
@@ -100,19 +100,19 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Update the app
 
-1. Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag.
+1. Open the **public/index.html** file and add the following `<script>` tag immediately before the `</head>` tag.
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-1. Open `manifest.xml` and find the `<bt:Urls>` tags inside the `<Resources>` tag. Change the `DefaultValue` attribute of the `<bt:Url>` tag with the ID `Taskpane.Url`. The new `DefaultValue` is `"https://localhost:3000/index.html"`. The entire updated tag should match the following line.
+1. Open **manifest.xml** and find the `<bt:Urls>` tags inside the `<Resources>` tag. Locate the `<bt:Url>` tag with the ID `Taskpane.Url` and update its `DefaultValue` attribute. The new `DefaultValue` is `https://localhost:3000/index.html`. The entire updated tag should match the following line.
 
   ```html
   <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
   ```
 
-1. Open `src/main.js` and replace the contents with the following code.
+1. Open **src/main.js** and replace the contents with the following code.
 
    ```js
    import { createApp } from 'vue'
@@ -123,7 +123,7 @@ The add-in project that you've created with the Yeoman generator contains sample
    });
    ```
 
-1. Open `src/App.vue` and replace the file contents with the following code.
+1. Open **src/App.vue** and replace the file contents with the following code.
 
    ```html
    <template>
