@@ -91,7 +91,7 @@ To use your custom functions add-in, open a new workbook in Excel on the web. In
 
 The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
 
-Next you'll try out the `ADD` custom function by completing the following steps:
+Next you'll try out the `ADD` custom function by completing the following steps.
 
 1. In Excel, go to any cell and enter `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
@@ -105,7 +105,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. In the **starcount** project, find the file **./src/functions/functions.js** and open it in your code editor. 
 
-2. In **function.js**, add the following code: 
+2. In **function.js**, add the following code. 
 
 ```JS
 /**
