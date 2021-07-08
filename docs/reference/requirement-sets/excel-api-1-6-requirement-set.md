@@ -10,20 +10,20 @@ localization_priority: Normal
 
 ## Conditional formatting
 
-Introduces conditional formating of a range. Allows the following types of conditional formatting:
+Introduces conditional formatting of a range. Allows the following types of conditional formatting.
 
-* Color scale
-* Data bar
-* Icon set
-* Custom
+- Color scale
+- Data bar
+- Icon set
+- Custom
 
 In addition:
 
-* Returns the range the conditional format is applied to.
-* Removal of conditional formatting.
-* Provides priority and `stopifTrue` capability.
-* Get collection of all conditional formatting on a given range.
-* Clears all conditional formats active on the current specified range.
+- Returns the range the conditional format is applied to.
+- Removal of conditional formatting.
+- Provides priority and `stopifTrue` capability.
+- Get collection of all conditional formatting on a given range.
+- Clears all conditional formats active on the current specified range.
 
 ## API list
 

@@ -55,7 +55,7 @@ Three errors and events in the dialog box will raise a `DialogEventReceived` eve
 |12003|The dialog box was directed to a URL with the HTTP protocol. HTTPS is required.|
 |12006|The dialog box was closed, usually because the user chose the **Close** button **X**.|
 
-Your code can assign a handler for the `DialogEventReceived` event in the call to `displayDialogAsync`. The following is a simple example:
+Your code can assign a handler for the `DialogEventReceived` event in the call to `displayDialogAsync`. The following is a simple example.
 
 ```js
 var dialog;
@@ -67,7 +67,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 );
 ```
 
-For an example of a handler for the `DialogEventReceived` event that creates custom error messages for each error code, see the following example:
+For an example of a handler for the `DialogEventReceived` event that creates custom error messages for each error code, see the following example.
 
 ```js
 function processDialogEvent(arg) {

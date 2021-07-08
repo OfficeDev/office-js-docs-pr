@@ -148,7 +148,7 @@ To do this in Visual Studio, follow these steps.
 
 4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-5. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the OfficeThemes.css file:
+5. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the OfficeThemes.css file.
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

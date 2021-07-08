@@ -22,7 +22,7 @@ Specifies the activation rules that should be evaluated for this contextual mail
 |:-----|:-----|:-----|
 | **xsi:type** | Yes | The type of rule being defined. |
 
-The type of rule can be one of the following.
+The type of rule can be one of the following:
 
 - [ItemIs](#itemis-rule)
 - [ItemHasAttachment](#itemhasattachment-rule)

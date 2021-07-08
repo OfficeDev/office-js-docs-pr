@@ -11,7 +11,7 @@ localization_priority: Normal
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
-> Looking for the *application-specific* API requirement sets? See the following API requirement sets:
+> Looking for the *application-specific* API requirement sets? See the following API requirement sets.
 >
 > - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
 > - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)

@@ -18,7 +18,7 @@ In a read form, you can access the property directly from the parent object, suc
 item.cc
 ```
 
-But in a compose form, because both the user and your add-in can be inserting or changing a recipient at the same time, you must use the asynchronous method `getAsync` to get these properties, as in the following example:
+But in a compose form, because both the user and your add-in can be inserting or changing a recipient at the same time, you must use the asynchronous method `getAsync` to get these properties, as in the following example.
 
 
 ```js
@@ -147,7 +147,7 @@ function write(message){
 
 This section shows a code sample that sets the recipients of the appointment or message that is being composed by the user. Setting recipients overwrites any existing recipients. Similar to the previous example that gets recipients in a compose form, this example assumes that the add-in is activated in compose forms for appointments and messages. This example first verifies if the composed item is an appointment or message, so to apply the asynchronous method, `Recipients.setAsync`, on the appropriate properties that represent recipients of the appointment or message.
 
-When calling `setAsync`, provide an array as input argument for the  _recipients_ parameter, in one of the following formats:
+When calling `setAsync`, provide an array as input argument for the  _recipients_ parameter, in one of the following formats.
 
 
 - An array of strings that are SMTP addresses.

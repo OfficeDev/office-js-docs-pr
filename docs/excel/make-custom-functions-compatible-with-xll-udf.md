@@ -10,7 +10,7 @@ localization_priority: Normal
 If you have existing Excel XLLs, you can build equivalent custom functions in an Excel add-in to extend your solution features to other platforms such as online or on a Mac. However, Excel add-ins don't have all of the functionality available in XLLs. Depending on the functionality your solution uses, the XLL may provide a better experience than the Excel add-in custom functions in Excel on Windows.
 
 > [!NOTE]
-> COM add-in and XLL UDF compatibility is supported by the following platforms, when connected to a Microsoft 365 subscription:
+> COM add-in and XLL UDF compatibility is supported by the following platforms, when connected to a Microsoft 365 subscription.
 >
 > - Excel on the web
 > - Excel on Windows (version 1904 or later)

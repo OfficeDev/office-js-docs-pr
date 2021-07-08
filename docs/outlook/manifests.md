@@ -245,7 +245,7 @@ This article will cover the requirements for a v1.1 manifest. Even if your add-i
 
 ## Root element
 
-The root element for the Outlook add-in manifest is **OfficeApp**. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element:
+The root element for the Outlook add-in manifest is **OfficeApp**. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element.
 
 
 ```XML
@@ -277,7 +277,7 @@ For a discussion on this element, see [Create add-in commands in your manifest f
 
 ## Localization
 
-Some aspects of the add-in need to be localized for different locales, such as the name, description and the URL that's loaded. These elements can easily be localized by specifying the default value and then locale overrides in the **Resources** element within the **VersionOverrides** element. The following shows how to override an image, a URL, and a string:
+Some aspects of the add-in need to be localized for different locales, such as the name, description and the URL that's loaded. These elements can easily be localized by specifying the default value and then locale overrides in the **Resources** element within the **VersionOverrides** element. The following shows how to override an image, a URL, and a string.
 
 
 ```XML
@@ -309,7 +309,7 @@ The schema reference contains full information on which elements can be localize
 
 ## Hosts
 
-Outlook add-ins specify the **Hosts** element like the following.
+Outlook add-ins specify the **Hosts** element like the following:
 
 ```XML
 <OfficeApp>
@@ -355,7 +355,7 @@ For more details, please refer to the [Schema reference for Office Add-ins manif
 
 The domain of the add-in start page that you specify in the **SourceLocation** element is the default domain for the add-in. Without using the **AppDomains** and **AppDomain** elements, if your add-in attempts to navigate to another domain, the browser will open a new window outside of the add-in pane. In order to allow the add-in to navigate to another domain within the add-in pane, add an **AppDomains** element and include each additional domain in its own **AppDomain** sub-element in the add-in manifest.
 
-The following example specifies a domain  `https://www.contoso2.com` as a second domain that the add-in can navigate to within the add-in pane:
+The following example specifies a domain  `https://www.contoso2.com` as a second domain that the add-in can navigate to within the add-in pane.
 
 ```XML
 <OfficeApp>

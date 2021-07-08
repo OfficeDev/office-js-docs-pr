@@ -12,7 +12,7 @@ Many identity authorities, also called Secure Token Services (STS), prevent thei
 > [!NOTE]
 > This article assumes that you are familiar with [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 
-The dialog box that is opened with this API has the following characteristics:
+The dialog box that is opened with this API has the following characteristics.
 
 - It is [nonmodal](https://en.wikipedia.org/wiki/Dialog_box).
 - It is a completely separate browser instance from the task pane, meaning:
