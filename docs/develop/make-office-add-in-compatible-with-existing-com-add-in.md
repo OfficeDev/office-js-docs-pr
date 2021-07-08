@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: 'Enable compatibility between your Office Add-in and equivalent COM add-in.'
-ms.date: 03/09/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -12,12 +12,9 @@ If you have an existing COM add-in, you can build equivalent functionality in yo
 You can configure your Office Add-in so that when the equivalent COM add-in is already installed on a user's computer, Office on Windows runs the COM add-in instead of the Office Add-in. The COM add-in is called "equivalent" because Office will seamlessly transition between the COM add-in and the Office Add-in according to which one is installed a user's computer.
 
 > [!NOTE]
-> This feature is supported by the following platforms, when connected to a Microsoft 365 subscription.
+> This feature is supported by the following platform and hosts, when connected to a Microsoft 365 subscription. COM add-ins cannot be installed on any other platform, so on those platforms the manifest element that is discussed later in this article, `EquivalentAddins`, is ignored.
 >
-> - Excel, Word, and PowerPoint on the web
 > - Excel, Word, and PowerPoint on Windows (version 1904 or later)
-> - Excel, Word, and PowerPoint on Mac (version 13.329 or later)
-> - Outlook on Windows (version 2102 or later)
 
 ## Specify an equivalent COM add-in
 
