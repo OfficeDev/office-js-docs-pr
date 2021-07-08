@@ -39,7 +39,7 @@ An  `ItemHasRegularExpressionMatch` rule is useful in controlling activation of 
 
 ### Best practices for using regular expressions in rules
 
-Pay special attention to the following when you use regular expressions:
+Pay special attention to the following when you use regular expressions.
 
 - If you specify an `ItemHasRegularExpressionMatch` rule on the body of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to attempt to obtain the entire body of an item does not always return the expected results.
 - The plain text body returned on one browser can be different in subtle ways on another. If you use an `ItemHasRegularExpressionMatch` rule with `BodyAsPlaintext` as the `PropertyName` attribute, test your regular expression on all the browsers that your add-in supports.
@@ -119,7 +119,7 @@ The following `ItemHasKnownEntity` rule activates the add-in whenever there is a
 
 ## Using regular expression results in code
 
-You can obtain matches to a regular expression by using the following methods on the current item:
+You can obtain matches to a regular expression by using the following methods on the current item.
 
 - [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) returns matches in the current item for all regular expressions specified in `ItemHasRegularExpressionMatch` and `ItemHasKnownEntity` rules of the add-in.
 

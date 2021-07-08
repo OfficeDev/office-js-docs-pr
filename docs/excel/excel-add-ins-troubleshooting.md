@@ -13,7 +13,7 @@ This article discusses troubleshooting issues that are unique to Excel. Please u
 
 Add-ins for Excel are intended to operate on a single workbook at a time. Errors can arise when a workbook that is separate from the one running the add-in gains focus. This only happens when particular methods are in the process of being called when the focus changes.
 
-The following APIs are affected by this workbook switch:
+The following APIs are affected by this workbook switch.
 
 |Excel JavaScript API | Error thrown |
 |--|--|

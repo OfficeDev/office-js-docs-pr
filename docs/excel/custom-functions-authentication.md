@@ -83,7 +83,7 @@ function receiveTokenFromCustomFunction() {
 
 Office Add-ins are web-based and you can use any web authentication technique. There is no particular pattern or method you must follow to implement your own authentication with UI-less custom functions. You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](../develop/auth-external-add-ins.md).  
 
-Avoid using the following locations to store data when developing custom functions:  
+Avoid using the following locations to store data when developing custom functions: .
 
 - `localStorage`: UI-less custom functions do not have access to the global `window` object and therefore have no access to data stored in `localStorage`.
 - `Office.context.document.settings`:  This location is not secure and information can be extracted by anyone using the add-in.

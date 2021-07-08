@@ -47,15 +47,15 @@ The add-in project that you've created with the Yeoman generator contains sample
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
 
-4. Select any range of cells in the worksheet.
+1. Select any range of cells in the worksheet.
 
-5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
+1. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
     ![Screenshot of Excel, with the add-in task pane open, and the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
 

@@ -95,7 +95,7 @@ Word.run(async (context) => {
 });
 ```
 
-In this scenario, to avoid having a `context.sync` in a loop, you should use a pattern we call the **split loop** pattern. Let's see a concrete example of the pattern before we get to a formal description of it. Here's how the split loop pattern can be applied to the preceding code snippet. Note the following about this code:
+In this scenario, to avoid having a `context.sync` in a loop, you should use a pattern we call the **split loop** pattern. Let's see a concrete example of the pattern before we get to a formal description of it. Here's how the split loop pattern can be applied to the preceding code snippet. Note the following about this code.
 
 - There are now two loops and the `context.sync` comes between them, so there's no `context.sync` inside either loop.
 - The first loop iterates through the items in the collection object and loads the `text` property just as the original loop did, but the first loop cannot log the paragraph text because it no longer contains a `context.sync` to populate the `text` property of the `paragraph` proxy object. Instead, it adds the `paragraph` object to an array.
@@ -121,11 +121,11 @@ Word.run(async (context) => {
 });
 ```
 
-The preceding example suggests the following procedure for turning a loop that contains a `context.sync` into the split loop pattern: 
+The preceding example suggests the following procedure for turning a loop that contains a `context.sync` into the split loop pattern.
 
 1. Replace the loop with two loops.
-2. Create a first loop to iterate over the collection and add each item to an array while also loading any property of the item that your code needs to read. 
-3. Following the first loop, call `context.sync` to populate the proxy objects with any loaded properties. 
+2. Create a first loop to iterate over the collection and add each item to an array while also loading any property of the item that your code needs to read.
+3. Following the first loop, call `context.sync` to populate the proxy objects with any loaded properties.
 4. Follow the `context.sync` with a second loop to iterate over the array created in the first loop and read the loaded properties.
 
 ## Processing objects in the document with the correlated objects pattern

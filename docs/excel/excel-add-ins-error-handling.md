@@ -32,7 +32,7 @@ Excel.run(function (context) {
 
 ## API errors
 
-When an Excel JavaScript API request fails to run successfully, the API returns an error object that contains the following properties:
+When an Excel JavaScript API request fails to run successfully, the API returns an error object that contains the following properties.
 
 - **code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list. For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation. Error codes are not localized.
 

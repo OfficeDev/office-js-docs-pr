@@ -14,7 +14,7 @@ This guide helps you set up tools so you can create Office Add-ins by following 
 - A Microsoft 365 account which includes the subscription version of Office
 - A code editor of your choice
 
-This guide assumes that you know how to use a command line tool. 
+This guide assumes that you know how to use a command line tool.
 
 ## Install Node.js
 
@@ -26,13 +26,13 @@ Install Node.js by [downloading the latest recommended version from their websit
 
 npm is an open source software registry from which to download the packages used in developing Office Add-ins.
 
-To install npm, run the following in the command line:
+To install npm, run the following in the command line.
 
 ```command&nbsp;line
     npm install npm -g
 ```
 
-To check if you already have npm installed and see the installed version, run the following in the command line:
+To check if you already have npm installed and see the installed version, run the following in the command line.
 
 ```command&nbsp;line
 npm -v

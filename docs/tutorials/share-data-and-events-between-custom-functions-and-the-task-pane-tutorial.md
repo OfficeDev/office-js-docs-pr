@@ -16,7 +16,7 @@ This tutorial assumes you're familiar with using the Yo Office generator to crea
 
 ## Create the add-in project
 
-Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts with the following answers:
+Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts with the following answers.
 
 ```command line
 yo office

@@ -41,7 +41,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     cd my-add-in
     ```
 
-2. Use the Yeoman generator to generate the manifest file for your add-in.
+1. Use the Yeoman generator to generate the manifest file for your add-in.
 
     ```command&nbsp;line
     yo office
@@ -50,7 +50,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     > [!NOTE]
     > When you run the `yo office` command, you may receive prompts about the data collection policies of Yeoman and the Office Add-in CLI tools. Use the information that's provided to respond to the prompts as appropriate. If you choose **Exit** in response to the second prompt, you'll need to run the `yo office` command again when you're ready to create your add-in project.
 
-    When prompted, provide the following information to create your add-in project:
+    When prompted, provide the following information to create your add-in project.
 
     - **Choose a project type:** `Office Add-in project containing the manifest only`
     - **What do you want to name your add-in?** `My Office Add-in`
@@ -85,7 +85,7 @@ After completion, the wizard creates a **My Office Add-in** folder containing a 
     }
     ```
 
-2. Install the add-in's certificates.
+1. Install the add-in's certificates.
 
    ```command&nbsp;line
    npx office-addin-dev-certs install
@@ -200,7 +200,7 @@ The add-in project that you've created with the Yeoman generator contains sample
    npm run serve
    ```
 
-2. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If the page on `https://localhost:3000` is blank and without any certificate errors, it means that it's working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
+1. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If the page on `https://localhost:3000` is blank and without any certificate errors, it means that it's working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
 
 ## Try it out
 
@@ -210,13 +210,13 @@ The add-in project that you've created with the Yeoman generator contains sample
    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. Open the add-in task pane in Excel. On the **Home** tab, choose the **Show Taskpane** button.
+1. Open the add-in task pane in Excel. On the **Home** tab, choose the **Show Taskpane** button.
 
    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
-3. Select any range of cells in the worksheet.
+1. Select any range of cells in the worksheet.
 
-4. Set the color of the selected range to green. In your add-in's task pane, choose the **Set color** button.
+1. Set the color of the selected range to green. In your add-in's task pane, choose the **Set color** button.
 
    ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
 

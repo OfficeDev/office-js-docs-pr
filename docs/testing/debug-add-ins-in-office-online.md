@@ -47,7 +47,7 @@ To debug your add-in by using Office on the web:
 
 ## Potential issues
 
-The following are some issues that you might encounter as you debug:
+The following are some issues that you might encounter as you debug.
 
 - Some JavaScript errors that you see might originate from Office on the web.
 

@@ -20,7 +20,7 @@ The first step is for your add-in to obtain the Exchange user identity token fro
 
 The back-end MUST validate the token before accepting it. This is an important step to ensure that the token was issued by the user's Exchange server. For information on validating Exchange user identity tokens, see [Validate an Exchange identity token](validate-an-identity-token.md).
 
-Once validated and decoded, the payload of the token looks something like the following.
+Once validated and decoded, the payload of the token looks something like the following:
 
 ```json
 { 
