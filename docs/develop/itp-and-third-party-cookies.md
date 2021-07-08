@@ -16,7 +16,7 @@ If your Office Add-in and website must rely on third-party cookies, use the foll
     > [!NOTE]
     > If you're using cookies for purposes other than authentication, then consider using `localStorage` for your scenario.
 
-The following code sample shows how to use the Storage Access API:
+The following code sample shows how to use the Storage Access API.
 
 ```javascript
 function displayLoginButton() {

@@ -14,7 +14,7 @@ This article explains how to play a video in an Office Add-in dialog box.
 
 To play a video in a dialog box with the Office dialog API, follow these steps:
 
-1. Create a page containing an iframe and no other content. The page must be in the same domain as the host page. For a reminder of what a host page is, see [Open a dialog box from a host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page). In the `src` attribute of the iframe, point to the URL of an online video. The protocol of the video's URL must be HTTPS. In this article, we'll call this page "video.dialogbox.html". The following is an example of the markup:
+1. Create a page containing an iframe and no other content. The page must be in the same domain as the host page. For a reminder of what a host page is, see [Open a dialog box from a host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page). In the `src` attribute of the iframe, point to the URL of an online video. The protocol of the video's URL must be HTTPS. In this article, we'll call this page "video.dialogbox.html". The following is an example of the markup.
 
     ```HTML
     <iframe class="ms-firstrun-video__player"  width="640" height="360"

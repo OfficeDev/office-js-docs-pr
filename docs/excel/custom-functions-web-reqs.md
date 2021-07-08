@@ -99,7 +99,7 @@ To declare a streaming function, you can use either:
 - The `@streaming` tag.
 - The `CustomFunctions.StreamingInvocation` invocation parameter.
 
-The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
+The following code sample is a custom function that adds a number to the result every second. Note the following about this code.
 
 - Excel displays each new value automatically using the `setResult` method.
 - The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu.
@@ -128,7 +128,7 @@ function increment(incrementBy, invocation) {
 
 ## Canceling a function
 
-Excel cancels the execution of a function in the following situations:
+Excel cancels the execution of a function in the following situations.
 
 - When the user edits or deletes a cell that references the function.
 - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.

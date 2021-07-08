@@ -28,13 +28,13 @@ Centralized Deployment is the recommended way for a Microsoft 365 admin to deplo
 
 ## Recommended approach for deploying Office Add-ins
 
-Consider deploying Office Add-ins in a phased approach to help ensure that the deployment goes smoothly. We recommend the following plan:
+Consider deploying Office Add-ins in a phased approach to help ensure that the deployment goes smoothly. We recommend the following plan.
 
 1. Deploy the add-in to a small set of business stakeholders and members of the IT department. If the deployment is successful, move on to step 2.
 
-2. Deploy the add-in to a larger set of individuals within the business who will be using the add-in. If the deployment is successful, move on to step 3.
+1. Deploy the add-in to a larger set of individuals within the business who will be using the add-in. If the deployment is successful, move on to step 3.
 
-3. Deploy the add-in to the full set of individuals who will be using the add-in.
+1. Deploy the add-in to the full set of individuals who will be using the add-in.
 
 Depending on the size of the target audience, you may want to add steps to or remove steps from this procedure.
 
@@ -42,7 +42,7 @@ Depending on the size of the target audience, you may want to add steps to or re
 
 Before you begin, confirm that your organization meets all requirements for using Centralized Deployment, as described in [Determine if Centralized Deployment of add-ins works for your Microsoft 365 organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
-If your organization meets all requirements, complete the following steps to publish an Office Add-in via Centralized Deployment:
+If your organization meets all requirements, complete the following steps to publish an Office Add-in via Centralized Deployment.
 
 1. Sign in to Microsoft 365 with your work or education account.
 1. Select the app launcher icon in the upper-left and choose **Admin**.
@@ -51,7 +51,7 @@ If your organization meets all requirements, complete the following steps to pub
 1. If you see a message on the top of the page announcing the new Microsoft 365 admin center, choose the message to go to the Admin Center Preview (see [About the Microsoft 365 admin center](/microsoft-365/admin/admin-overview/about-the-admin-center)).
 1. Choose **Deploy Add-In** at the top of the page.
 1. Choose **Next** after reviewing the requirements.
-1. Choose one of the following options on the **Centralized Deployment** page:
+1. Choose one of the following options on the **Centralized Deployment** page.
 
     - **I want to add an Add-In from the Office Store.**
     - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
@@ -59,25 +59,25 @@ If your organization meets all requirements, complete the following steps to pub
 
     ![New Add-In dialog in Microsoft 365 admin center.](../images/new-add-in.png)
 
-8. If you selected the option to add an add-in from the Office Store, select the add-in. You can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from Office Store. Adding paid add-ins isn't currently supported.
+1. If you selected the option to add an add-in from the Office Store, select the add-in. You can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from Office Store. Adding paid add-ins isn't currently supported.
 
     > [!NOTE]
     > With the Office Store option, updates and enhancements to the add-in are automatically available to users without your intervention.
 
     ![Select an add-In dialog in Microsoft 365 admin center.](../images/select-an-add-in.png)
 
-9. Choose **Continue** after reviewing the add-in details, Privacy Policy, and License Terms.
+1. Choose **Continue** after reviewing the add-in details, Privacy Policy, and License Terms.
 
     ![Selected add-in page in Microsoft 365 admin center.](../images/selected-add-in-admin-center.png)
 
-10. On the **Assign Users** page, choose **Everyone**, **Specific Users/Groups**, or **Only me**. Use the search box to find the users and groups to whom you want to deploy the add-in. For Outlook add-ins, you can also choose the deployment method **Fixed**, **Available**, or **Optional**.
+1. On the **Assign Users** page, choose **Everyone**, **Specific Users/Groups**, or **Only me**. Use the search box to find the users and groups to whom you want to deploy the add-in. For Outlook add-ins, you can also choose the deployment method **Fixed**, **Available**, or **Optional**.
 
     ![Manage who has access and deployment method in Microsoft 365 admin center.](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
     > Add-ins that utilize [single sign-on (SSO)](../develop/sso-in-office-add-ins.md) will prompt the admin to consent to the scopes listed in the add-in manifest.  If the same backing service is used across multiple add-ins (the same Azure App ID is used with SSO in different add-ins), the scopes for each add-in will be prompted for consent with each deployment. This page will also display the list of permissions that the add-in requires.
 
-11. When finished, choose **Deploy**. This process may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other Office apps.
+1. When finished, choose **Deploy**. This process may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other Office apps.
 
     > [!NOTE]
     > When an administrator chooses **Deploy**, consent is given for all users.
@@ -89,7 +89,7 @@ If your organization meets all requirements, complete the following steps to pub
 
 ## Considerations when granting access to an add-in
 
-Admins can assign an add-in to everyone in the organization or to specific users and/or groups within the organization. The following list describes the implications of each option:
+Admins can assign an add-in to everyone in the organization or to specific users and/or groups within the organization. The following list describes the implications of each option.
 
 - **Everyone**: As the name implies, this option assigns the add-in to every user in the tenant. Use this option sparingly and only for add-ins that are truly universal to your organization.
 
@@ -133,16 +133,16 @@ If the add-in supports add-in commands, the commands will appear on the Office a
 If the add-in does not support add-in commands, users can add it to their Office application by doing the following:
 
 1. In Word 2016 or later, Excel 2016 or later, or PowerPoint 2016 or later, choose **Insert** > **My Add-ins**.
-2. Choose the **Admin Managed** tab in the add-in window.
-3. Choose the add-in, and then choose **Add**.
+1. Choose the **Admin Managed** tab in the add-in window.
+1. Choose the add-in, and then choose **Add**.
 
     ![Screenshot shows the Admin Managed tab of the Office Add-ins page of an Office application. The Citations add-in is shown on the tab.](../images/office-add-ins-admin-managed.png)
 
 However, for Outlook 2016 or later, users can do the following:
 
 1. In Outlook, choose **Home** > **Store**.
-2. Choose the **Admin-managed** item under the add-in tab.
-3. Choose the add-in, and then choose **Add**.
+1. Choose the **Admin-managed** item under the add-in tab.
+1. Choose the add-in, and then choose **Add**.
 
     ![Screenshot shows the Admin-managed area of the Store page of the Outlook application.](../images/outlook-add-ins-admin-managed.png)
 

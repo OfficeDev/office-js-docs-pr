@@ -1,5 +1,6 @@
 > [!IMPORTANT]
 > Note that Excel custom functions are available on the following platforms.
+>
 > - Office on Windows
 > - Office on Mac
 > - Office on the web

@@ -31,15 +31,15 @@ Within a UI-less custom function, you can store and access data by using the `Of
 
 Because `storage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
 
-The following methods are available on the `storage` object:
+The following methods are available on the `storage` object.
 
- - `getItem`
- - `getItems`
- - `setItem`
- - `setItems`
- - `removeItem`
- - `removeItems`
- - `getKeys`
+- `getItem`
+- `getItems`
+- `setItem`
+- `setItems`
+- `removeItem`
+- `removeItems`
+- `getKeys`
 
 > [!NOTE]
 > There's no method for clearing all information (such as `clear`). Instead, you should instead use `removeItems` to remove multiple entries at a time.

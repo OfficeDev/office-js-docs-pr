@@ -11,11 +11,11 @@ localization_priority: Normal
 
 A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers. 
 
-You can run usability tests in different ways. For many add-in developers, remote, unmoderated usability studies are the most time and cost effective. Several popular testing services make this easy; the following are some examples: 
+You can run usability tests in different ways. For many add-in developers, remote, unmoderated usability studies are the most time and cost effective. Several popular testing services make this easy; the following are some examples.
 
- - [UserTesting.com](https://www.UserTesting.com)
- - [Optimalworkshop.com](https://www.Optimalworkshop.com)
- - [Userzoom.com](https://www.Userzoom.com)
+- [UserTesting.com](https://www.UserTesting.com)
+- [Optimalworkshop.com](https://www.Optimalworkshop.com)
+- [Userzoom.com](https://www.Userzoom.com)
 
 These testing services help you to streamline test plan creation and remove the need to seek out participants or moderate the tests. 
 
@@ -32,28 +32,28 @@ For more information, see [Selecting an Online Tool for Unmoderated Remote User 
  
 Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they will perform. Make your research questions as specific as you can. You can also seek to answer broader questions.
  
-The following are some examples of research questions:
+The following are some examples of research questions.
   
 **Specific**
 
- - Do users notice the "free trial" link on the landing page?
- - When users insert content from the add-in to their document, do they understand where in the document it is inserted?
+- Do users notice the "free trial" link on the landing page?
+- When users insert content from the add-in to their document, do they understand where in the document it is inserted?
 
 **Broad**
 
- - What are the biggest pain points for the user in our add-in?
- - Do users understand the meaning of the icons in our command bar, before they click on them?
- - Can users easily find the settings menu?
+- What are the biggest pain points for the user in our add-in?
+- Do users understand the meaning of the icons in our command bar, before they click on them?
+- Can users easily find the settings menu?
 
-It’s important to get data on the entire user journey – from discovering your add-in, to installing and using it. Consider research questions that address the following aspects of the add-in user experience:
+It’s important to get data on the entire user journey – from discovering your add-in, to installing and using it. Consider research questions that address the following aspects of the add-in user experience.
 
- - Finding your add-in in AppSource
- - Choosing to install your add-in
- - First run experience
- - Ribbon commands
- - Add-in UI
- - How the add-in interacts with the document space of the Office application
- - How much control the user has over any content insertion flows
+- Finding your add-in in AppSource
+- Choosing to install your add-in
+- First run experience
+- Ribbon commands
+- Add-in UI
+- How the add-in interacts with the document space of the Office application
+- How much control the user has over any content insertion flows
 
 For more information, see [Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/en-us/articles/115003378572-Writing-effective-questions).
 
@@ -105,7 +105,7 @@ You can either test your live add-in, or you can test a prototype. Keep in mind 
 
 On average, it takes about 5 minutes to walk users through how to install an add-in. The following is an example of clear, concise installation steps. Adjust the steps based on the specifics of your test.
 
-**Please install the (insert your add-in name here) add-in for PowerPoint, using the following instructions:**
+**Please install the (insert your add-in name here) add-in for PowerPoint, using the following instructions.**
 
 1. Open Microsoft PowerPoint.
 1. Select **Blank Presentation.**

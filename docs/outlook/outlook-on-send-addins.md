@@ -514,7 +514,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 }
 ```
 
-The following are the parameters for the `addAsync` method:
+The following are the parameters for the `addAsync` method.
 
 - `NoSend` &ndash; A string that is a developer-specified key to reference a notification message. You can use it to modify this message later. The key can't be longer than 32 characters.
 - `type` &ndash; One of the properties of the  JSON object parameter. Represents the type of a message; the types correspond to the values of the [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) enumeration. Possible values are progress indicator, information message, or error message. In this example, `type` is an error message.  

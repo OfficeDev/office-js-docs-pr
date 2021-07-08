@@ -68,7 +68,7 @@ These helper methods take care of any need to handle date or time differently fo
 
 ### Scenario A: Displaying item creation or modified time
 
-If you are displaying the item creation time (`Item.dateTimeCreated`) or modification time (`Item.dateTimeModified`in the user interface, first use `convertToLocalClientTime` to convert the `Date` object provided by these properties to obtain a dictionary representation in the appropriate local time. Then display the parts of the dictionary date. The following is an example of this scenario:
+If you are displaying the item creation time (`Item.dateTimeCreated`) or modification time (`Item.dateTimeModified`in the user interface, first use `convertToLocalClientTime` to convert the `Date` object provided by these properties to obtain a dictionary representation in the appropriate local time. Then display the parts of the dictionary date. The following is an example of this scenario.
 
 
 ```js

@@ -49,7 +49,7 @@ The JavaScript library for Project add-ins includes extensions of the **Office**
 
 To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an XML manifest file for configuration. Project can use a manifest file that includes a **type** attribute that is specified as **TaskPaneExtension**. The manifest file can be used by multiple Office 2013 client applications, or you can create a manifest file that is specific for Project 2013. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
 
-When you install the Project 2013 SDK download, the  `\Samples\Apps\` subdirectory includes the following sample add-ins:
+When you install the Project 2013 SDK download, the  `\Samples\Apps\` subdirectory includes the following sample add-ins.
 
 - **Bing Search:** The BingSearch.xml manifest file points to the Bing search page for mobile devices. Because the Bing web app already exists on the Internet, the Bing Search add-in does not use other source code files or the add-in object model for Project.
 
@@ -93,7 +93,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     </OfficeApp>
     ```
 
-- Following are the required elements in the add-in manifest:
+- Following are the required elements in the add-in manifest.
   - In the **OfficeApp** element, the `xsi:type="TaskPaneApp"` attribute specifies that the add-in is a task pane type.
   - The **Id** element is a UUID and must be unique.
   - The **Version** element is the version of the add-in. The **ProviderName** element is the name of the company or developer who provides the add-in. The **DefaultLocale** element specifies the default locale for the strings in the manifest.
