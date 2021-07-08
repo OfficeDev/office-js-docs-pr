@@ -173,7 +173,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 The `getStarCount` function returns the number of stars a repository has at a specific moment in time. Custom functions also return data that is continuously changing. These functions are called streaming functions. They must include an `invocation` parameter which refers to the cell that called the function. The `invocation` parameter is used to update the contents of the cell at any time.  
 
-In the following code sample, notice that there are two functions, `currentTime` and `clock`. The `currentTime` function is a static function that does not use streaming. It returns the date as a string. The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel. It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle function cancellation. 
+In the following code sample, notice that there are two functions, `currentTime` and `clock`. The `currentTime` function is a static function that doesn't use streaming. It returns the date as a string. The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel. It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle function cancellation. 
 
 The **starcount** project already contains the following two functions in the **./src/functions/functions.js** file.
 
