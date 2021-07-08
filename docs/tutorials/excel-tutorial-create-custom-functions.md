@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: 'In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.'
-ms.date: 11/09/2020
+ms.date: 07/07/2021
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 localization_priority: Priority
@@ -171,11 +171,11 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 ## Create a streaming asynchronous custom function
 
-The `getStarCount` function returns the number of stars a repository has at a specific moment in time. Custom functions can also return data that is continuously changing. These functions are called streaming functions. They must include an `invocation` parameter which refers to the cell where the function was called from. The `invocation` parameter is used to update the contents of the cell at any time.  
+The `getStarCount` function returns the number of stars a repository has at a specific moment in time. Custom functions also return data that is continuously changing. These functions are called streaming functions. They must include an `invocation` parameter which refers to the cell that called the function. The `invocation` parameter is used to update the contents of the cell at any time.  
 
-In the following code sample, you'll notice that there are two functions, `currentTime` and `clock`. The `currentTime` function is a static function that does not use streaming. It returns the date as a string. The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel. It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle what occurs when the function is canceled.
+In the following code sample, notice that there are two functions, `currentTime` and `clock`. The `currentTime` function is a static function that does not use streaming. It returns the date as a string. The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel. It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle function cancellation. 
 
-1. In the **starcount** project, add the following code to **./src/functions/functions.js** and save the file.
+The **starcount** project already contains the following two functions in the **./src/functions/functions.js** file.
 
 ```JS
 /**
@@ -203,40 +203,7 @@ function clock(invocation) {
 }
 ```
 
-2. Run the following command to rebuild the project.
-
-    ```command&nbsp;line
-    npm run build
-    ```
-
-3. Complete the following steps (for Excel on the web, Windows, or Mac) to re-register the add-in in Excel. You must complete these steps before the new function will be available. 
-
-# [Excel on Windows or Mac](#tab/excel-windows)
-
-1. Close Excel and then reopen Excel.
-
-2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.](../images/select-insert.png)
-
-3. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
-    ![Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.](../images/list-starcount.png)
-
-# [Excel on the web](#tab/excel-online)
-
-1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
-    ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
-
-2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
-
-3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
-
-4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
-
---- 
-
-<ol start="4">
-<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.CLOCK()</strong> and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</li>
-</ol>
+To try out the functions, type the text **=CONTOSO.CLOCK()** in cell **C1** and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.
 
 ## Next steps
 
