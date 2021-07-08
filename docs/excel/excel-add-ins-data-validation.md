@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Add data validation to Excel ranges
 
-The Excel JavaScript Library provides APIs to enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook. To understand the concepts and the terminology of data validation, please see the following articles about how users add data validation through the Excel UI:
+The Excel JavaScript Library provides APIs to enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook. To understand the concepts and the terminology of data validation, please see the following articles about how users add data validation through the Excel UI.
 
 - [Apply data validation to cells](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
 - [More on data validation](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
@@ -38,7 +38,7 @@ The first three `DataValidationRule` properties (i.e., validation rule types) ta
 - `decimal` &#8212; Requires a decimal number in addition to any other validation specified by the `BasicDataValidation` object.
 - `textLength` &#8212; Applies the validation details in the `BasicDataValidation` object to the *length* of the cell's value.
 
-Here is an example of creating a validation rule. Note the following about this code:
+Here is an example of creating a validation rule. Note the following about this code.
 
 - The `operator` is the binary operator "GreaterThan". Whenever you use a binary operator, the value that the user tries to enter in the cell is the left-hand operand and the value specified in `formula1` is the right-hand operand. So this rule says that only whole numbers that are greater than 0 are valid. 
 - The `formula1` is a hard-coded number. If you don't know at coding time what the value should be, you can also use an Excel formula (as a string) for the value. For example, "=A3" and "=SUM(A4,B5)" could also be values of `formula1`.
@@ -61,7 +61,7 @@ Excel.run(function (context) {
 
 See [BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation) for a list of the other binary operators. 
 
-There are also two ternary operators: "Between" and "NotBetween". To use these, you must specify the optional `formula2` property. The `formula1` and `formula2` values are the bounding operands. The value that the user tries to enter in the cell is the third (evaluated) operand. The following is an example of using the "Between" operator:
+There are also two ternary operators: "Between" and "NotBetween". To use these, you must specify the optional `formula2` property. The `formula1` and `formula2` values are the bounding operands. The value that the user tries to enter in the cell is the third (evaluated) operand. The following is an example of using the "Between" operator.
 
 ```js
 Excel.run(function (context) {
@@ -106,7 +106,7 @@ Excel.run(function (context) {
 
 ### List validation rule type
 
-Use the `list` property in the `DataValidationRule` object to specify that the only valid values are those from a finite list. The following is an example. Note the following about this code:
+Use the `list` property in the `DataValidationRule` object to specify that the only valid values are those from a finite list. The following is an example. Note the following about this code.
 
 - It assumes that there is a worksheet named "Names" and that the values in the range "A1:A3" are names.
 - The `source` property specifies the list of valid values. The string argument refers to a range containing the names. You can also assign a comma-delimited list; for example: "Sue, Ricky, Liz". 
@@ -131,7 +131,7 @@ Excel.run(function (context) {
 
 ### Custom validation rule type
 
-Use the `custom` property in the `DataValidationRule` object to specify a custom validation formula. The following is an example. Note the following about this code:
+Use the `custom` property in the `DataValidationRule` object to specify a custom validation formula. The following is an example. Note the following about this code.
 
 - It assumes there is a two-column table with columns **Athlete Name** and **Comments** in the A and B columns of the worksheet.
 - To reduce verbosity in the **Comments** column, it makes data that includes the athlete's name invalid.
@@ -155,7 +155,7 @@ Excel.run(function (context) {
 
 ## Create validation error alerts
 
-You can a create custom error alert that appears when a user tries to enter invalid data in a cell. The following is a simple example. Note the following about this code:
+You can a create custom error alert that appears when a user tries to enter invalid data in a cell. The following is a simple example. Note the following about this code.
 
 - The `style` property determines whether the user gets an informational alert, a warning, or a "stop" alert. Only `Stop` actually prevents the user from adding invalid data. The pop-up for `Warning` and `Information` has options that allow the user enter the invalid data anyway.
 - The `showAlert` property defaults to `true`. This means that Excel will pop-up a generic alert (of type `Stop`) unless you create a custom alert which either sets `showAlert` to `false` or sets a custom message, title, and style. This code sets a custom message and title.
@@ -182,7 +182,7 @@ For more information, see [DataValidationErrorAlert](/javascript/api/excel/excel
 
 ## Create validation prompts
 
-You can create an instructional prompt that appears when a user hovers over, or selects, a cell to which data validation has been applied. The following is an example:
+You can create an instructional prompt that appears when a user hovers over, or selects, a cell to which data validation has been applied. The following is an example.
 
 ```js
 Excel.run(function (context) {

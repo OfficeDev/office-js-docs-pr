@@ -135,16 +135,16 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
 1. From the command line run `npm run watch` to watch for and rebuild when code changes occur.
 2. Open a second command line window (the first one will be blocked while running the watch.)
 
-3. If you want to start your add-in in the desktop version of Excel, run the following command
-    
+3. If you want to start your add-in in the desktop version of Excel, run the following command.
+
     `npm run start:desktop`
-    
-    Or if you prefer to start your add-in in Excel on the web run the following command
-    
+
+    Or if you prefer to start your add-in in Excel on the web, run the following command.
+
     `npm run start:web`
-    
+
     For Excel on the web you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
-    
+
 4. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
 5. In developer tools, open your source code script file (**functions.js** or **functions.ts**). Your custom functions code may be located near the end of the file.
 6. In the custom function source code, apply a breakpoint by selecting a line of code.

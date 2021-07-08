@@ -15,7 +15,7 @@ With [coauthoring](https://support.office.com/article/Collaborate-on-Excel-workb
 
 ## Coauthoring overview
 
-When you change a workbook's content, Excel automatically synchronizes those changes across all coauthors. Coauthors can change the content of a workbook, but so can code running within an Excel add-in. For example, when the following JavaScript code runs in an Office Add-in, the value of a range is set to Contoso:
+When you change a workbook's content, Excel automatically synchronizes those changes across all coauthors. Coauthors can change the content of a workbook, but so can code running within an Excel add-in. For example, when the following JavaScript code runs in an Office Add-in, the value of a range is set to Contoso.
 
 ```js
 range.values = [['Contoso']];
@@ -29,7 +29,7 @@ Coauthoring only synchronizes the content within the shared workbook. Values cop
 
 Excel add-ins can read workbook content (from hidden worksheets and a setting object), and then store it in data structures such as variables. After the original values are copied into any of these data structures, coauthors can update the original workbook content. This means that the copied values in the data structures are now out of sync with the workbook content. When you build your add-ins, be sure to account for this separation of workbook content and values stored in data structures.
 
-For example, you might build a content add-in that displays custom visualizations. The state of your custom visualizations might be saved in a hidden worksheet. When coauthors use the same workbook, the following scenario can occur:
+For example, you might build a content add-in that displays custom visualizations. The state of your custom visualizations might be saved in a hidden worksheet. When coauthors use the same workbook, the following scenario can occur.
 
 - User A opens the document and the custom visualizations are shown in the workbook. The custom visualizations read data from a hidden worksheet (for example, the color of the visualizations is set to blue).
 - User B opens the same document, and starts modifying the custom visualizations. User B sets the color of the custom visualizations to orange. Orange is saved to the hidden worksheet.
@@ -46,7 +46,7 @@ For example, in data validation scenarios, it is common to display UI in respons
 
 ## Avoiding table row coauthoring conflicts
 
-It is a known issue that calls to the [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) API can cause coauthoring conflicts. We do not recommend using that API if you anticipate your add-in will be run while other users are editing the add-in's workbook (specifically, if they are editing the table or any range under the table). The following guidance should help you avoid issues with the `TableRowCollection.add` method (and avoid triggering the yellow bar Excel shows that asks users to refresh):
+It is a known issue that calls to the [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) API can cause coauthoring conflicts. We do not recommend using that API if you anticipate your add-in will be run while other users are editing the add-in's workbook (specifically, if they are editing the table or any range under the table). The following guidance should help you avoid issues with the `TableRowCollection.add` method (and avoid triggering the yellow bar Excel shows that asks users to refresh).
 
 1. Use [`Range.values`](/javascript/api/excel/excel.range#values) instead of [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-). Setting the `Range` values directly below the table automatically expands the table. Otherwise, adding table rows through the `Table` APIs results in merge conflicts for coauth users.
 1. There should be no [data validation rules](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) applied to cells below the table, unless the data validation is applied to the entire column.

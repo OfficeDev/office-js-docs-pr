@@ -164,7 +164,7 @@ Please be aware that some of the properties under an object may have the same na
 If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object or the collection's objects will be loaded. Loading unneeded data will slow down your add-in. You should always explicitly specify which properties to load.
 
 > [!IMPORTANT]
-> The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations:
+> The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations.
 >
 > * `Excel.Range.numberFormatCategories`
 

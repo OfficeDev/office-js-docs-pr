@@ -13,7 +13,7 @@ The code in this article is based on a sample developed by Saurabh Sanghvi and A
 
 ## Prerequisites for creating a task pane add-in that reads Project Server reporting data
 
-The following are the prerequisites for creating a Project task pane add-in that reads the **ProjectData** service of a Project Web App instance in an on-premises installation of Project Server 2013:
+The following are the prerequisites for creating a Project task pane add-in that reads the **ProjectData** service of a Project Web App instance in an on-premises installation of Project Server 2013.
 
 - Ensure that you have installed the most recent service packs and Windows updates on your local development computer. The operating system can be Windows 7, Windows 8, Windows Server 2008, or Windows Server 2012.
 
@@ -32,7 +32,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 1. To enable your browser to directly show the XML data from a REST query, turn off the feed reading view. For information about how to do this in Internet Explorer, see Procedure 1, step 4 in [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
-2. Query the **ProjectData** service by using your browser with the following URL: **http://ServerName /ProjectServerName /_api/ProjectData**. For example, if the Project Web App instance is  `http://MyServer/pwa`, the browser shows the following results:
+2. Query the **ProjectData** service by using your browser with the following URL: **http://ServerName /ProjectServerName /_api/ProjectData**. For example, if the Project Web App instance is  `http://MyServer/pwa`, the browser shows the following results.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +66,7 @@ Office Developer Tools for Visual Studio includes a template for task pane add-i
 
 1. Run Visual Studio 2015 as an administrator, and then select **New Project** on the Start page.
 
-2. In the **New Project** dialog box, expand the **Templates**, **Visual C#**, and **Office/SharePoint** nodes, and then select ** Office Add-ins**. Select **.NET Framework 4.5.2** in the target framework drop-down list at the top of the center pane, and then select **Office Add-in** (see the next screenshot).
+2. In the **New Project** dialog box, expand the **Templates**, **Visual C#**, and **Office/SharePoint** nodes, and then select **Office Add-ins**. Select **.NET Framework 4.5.2** in the target framework drop-down list at the top of the center pane, and then select **Office Add-in** (see the next screenshot).
 
 3. To place both of the Visual Studio projects in the same directory, select **Create directory for solution**, and then browse to the location you want.
 
@@ -110,13 +110,13 @@ For more information about the manifest, see [Office Add-ins XML manifest](../de
 
 4. Add an icon to show in the **Office Add-ins** drop-down list on the **PROJECT** tab of the ribbon. You can add an icon file in the Visual Studio solution or use a URL for an icon. 
 
-The following steps show how to add an icon file to the Visual Studio solution:
+The following steps show how to add an icon file to the Visual Studio solution.
 
 1. In **Solution Explorer**, go to the folder named Images.
 
 2. To be displayed in the **Office Add-ins** drop-down list, the icon must be 32 x 32 pixels. For example, install the Project 2013 SDK, and then choose the **Images** folder and add the following file from the SDK: `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
 
-    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder:
+    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
@@ -175,7 +175,7 @@ The task pane shows the add-in display name at the top, which is the value of th
 
     The **HelloProjectOData** add-in also uses the SurfaceErrors.js file, which displays errors in a pop-up message. You can copy the code from the _Robust Programming_ section of [Create your first task pane add-in for Project 2013 by using a text editor](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), and then add a SurfaceErrors.js file in the **Scripts\Office** folder of the **HelloProjectODataWeb** project.
 
-    Following is the updated HTML code for the **head** element, with the additional line for the SurfaceErrors.js file:
+    Following is the updated HTML code for the **head** element, with the additional line for the SurfaceErrors.js file.
 
     ```HTML
     <!DOCTYPE html>
@@ -187,7 +187,7 @@ The task pane shows the add-in display name at the top, which is the value of th
 
     <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-    <!-- Add your CSS styles to the following file -->
+    <!-- Add your CSS styles to the following file. -->
     <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
     <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -201,7 +201,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
     <script src="../Scripts/Office/1.0/Office.js"></script>
 
-    <!-- Add your JavaScript to the following files -->
+    <!-- Add your JavaScript to the following files. -->
     <script src="../Scripts/HelloProjectOData.js"></script>
     <script src="../Scripts/SurfaceErrors.js"></script>
     </head>
@@ -538,7 +538,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 
 ## Testing the HelloProjectOData add-in
 
-To test and debug the **HelloProjectOData** add-in with Visual Studio 2015, Project Professional 2013 must be installed on the development computer. To enable different test scenarios, ensure that you can choose whether Project opens for files on the local computer or connects with Project Web App. For example, do the following steps:
+To test and debug the **HelloProjectOData** add-in with Visual Studio 2015, Project Professional 2013 must be installed on the development computer. To enable different test scenarios, ensure that you can choose whether Project opens for files on the local computer or connects with Project Web App. For example, do the following steps.
 
 1. On the **FILE** tab on the ribbon, choose the **Info** tab in the Backstage view, and then choose **Manage Accounts**.
 
@@ -576,7 +576,7 @@ Basic tests should include the following:
 
 6. Examine output in the text box. It should show the document path, REST query, status information, and JSON results from the calls to **ajax** and **parseODataResult**. The output helps to understand, create, and debug code in the `parseODataResult` method such as `projCost += Number(res.d.results[i].ProjectCost);`.
 
-    Following is an example of the output with line breaks and spaces added to the text for clarity, for three projects in a Project Web App instance:
+    Following is an example of the output with line breaks and spaces added to the text for clarity, for three projects in a Project Web App instance.
 
     ```json
     Document path: <>\WinProj test1
@@ -665,7 +665,7 @@ The following code is in the `Pages\HelloProjectOData.html` file of the **HelloP
 
         <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-        <!-- Add your CSS styles to the following file -->
+        <!-- Add your CSS styles to the following file. -->
         <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
         <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -679,7 +679,7 @@ The following code is in the `Pages\HelloProjectOData.html` file of the **HelloP
         <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
         <script src="../Scripts/Office/1.0/Office.js"></script>
 
-        <!-- Add your JavaScript to the following files -->
+        <!-- Add your JavaScript to the following files. -->
         <script src="../Scripts/HelloProjectOData.js"></script>
         <script src="../Scripts/SurfaceErrors.js"></script>
     </head>
@@ -1094,7 +1094,7 @@ The add-in should contain additional error checks, plus logic to catch and expla
 
 For other queries of the **ProjectData** service, there are limits to the length of the query string, which affects the number of steps that a query can take from a parent collection to an object in a child collection. For example, a two-step query of **Projects** to **Tasks** to task item works, but a three-step query such as **Projects** to **Tasks** to **Assignments** to assignment item may exceed the default maximum URL length. For more information, see [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
-If you modify the **HelloProjectOData** add-in for production use, do the following steps:
+If you modify the **HelloProjectOData** add-in for production use, do the following steps.
 
 - In the HelloProjectOData.html file, for better performance, change the office.js reference from the local project to the CDN reference:
 

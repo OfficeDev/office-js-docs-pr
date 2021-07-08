@@ -95,7 +95,7 @@ To debug an Add-in Command, you must run it in Office on the web. For details, s
 
 ## Best practices
 
-Apply the following best practices when you develop add-in commands:
+Apply the following best practices when you develop add-in commands.
 
 - Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.
 - Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.

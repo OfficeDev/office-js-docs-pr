@@ -22,7 +22,7 @@ The Outlook items that support add-ins include email messages, meeting requests,
 
 ## Extension points
 
-Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done:
+Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done.
 
 - Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 

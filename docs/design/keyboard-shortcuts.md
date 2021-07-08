@@ -86,7 +86,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
 ## Create a mapping of actions to their functions
 
 1. In your project, open the JavaScript file loaded by your HTML page in the `<FunctionFile>` element.
-1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code:
+1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
 
     - The first parameter is one of the actions from the JSON file.
     - The second parameter is the function that runs when a user presses the key combination that is mapped to the action in the JSON file.
@@ -112,7 +112,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     });
     ```
 
-1. Add a second call of `Office.actions.associate` function to map the `HIDETASKPANE` action to a function that calls [Office.addin.hide](/javascript/api/office/office.addin#hide--). The following is an example:
+1. Add a second call of `Office.actions.associate` function to map the `HIDETASKPANE` action to a function that calls [Office.addin.hide](/javascript/api/office/office.addin#hide--). The following is an example.
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -132,14 +132,14 @@ Following the previous steps lets your add-in toggle the visibility of the task 
 
 ### Construct the action objects
 
-Use the following guidelines when specifying the objects in the `actions` array of the shortcuts.json:
+Use the following guidelines when specifying the objects in the `actions` array of the shortcuts.json.
 
 - The property names `id` and `name` are mandatory.
 - The `id` property is used to uniquely identify the action to invoke using a keyboard shortcut.
 - The `name` property must be a user friendly string describing the action. It must be a combination of the characters A - Z, a - z, 0 - 9, and the punctuation marks "-", "_", and "+".
 - The `type` property is optional. Currently only `ExecuteFunction` type is supported.
 
-The following is an example:
+The following is an example.
 
 ```json
     "actions": [
@@ -160,7 +160,7 @@ The complete schema for the shortcuts JSON is at [extended-manifest.schema.json]
 
 ### Construct the shortcut objects
 
-Use the following guidelines when specifying the objects in the `shortcuts` array of the shortcuts.json:
+Use the following guidelines when specifying the objects in the `shortcuts` array of the shortcuts.json.
 
 - The property names `action`, `key`, and `default` are required.
 - The value of the `action` property is a string and must match one of the `id` properties in the action object.
@@ -172,7 +172,7 @@ Use the following guidelines when specifying the objects in the `shortcuts` arra
 - When two characters are linked to the same physical key in a standard keyboard, then they are synonyms in the `default` property; for example, Alt+a and Alt+A are the same shortcut, so are Ctrl+- and Ctrl+\_ because "-" and "_" are the same physical key.
 - The "+" character indicates that the keys on either side of it are pressed simultaneously.
 
-The following is an example:
+The following is an example.
 
 ```json
     "shortcuts": [

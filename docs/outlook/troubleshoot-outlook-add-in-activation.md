@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
-description: If your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
+description: Possible reasons your add-in doesn't activate as you expect.
 ms.date: 09/02/2020
 localization_priority: Normal
 ---
@@ -13,7 +13,7 @@ Outlook contextual add-in activation is based on the activation rules in the add
 
 First, ensure that the user's email account you're testing with is on a version of Exchange Server that is at least Exchange 2013. If you are using specific features that are released after Exchange 2013, make sure the user's account is on the appropriate version of Exchange.
 
-You can verify the version of Exchange 2013 by using one of the following approaches:
+You can verify the version of Exchange 2013 by using one of the following approaches.
 
 - Check with your Exchange Server administrator.
 
@@ -21,7 +21,7 @@ You can verify the version of Exchange 2013 by using one of the following approa
 
 - Alternatively, you can use the [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) property to verify the version. On Outlook on the web and mobile devices, this property returns the version of the Exchange Server.
 
-- If you can test the add-in on Outlook, you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor:
+- If you can test the add-in on Outlook, you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor.
 
     1. First, verify that macros are enabled for Outlook. Choose **File**, **Options**, **Trust Center**, **Trust Center Settings**, **Macro Settings**. Ensure that **Notifications for all macros** is selected in the Trust Center. You should have also selected **Enable Macros** during Outlook startup.
 
@@ -53,7 +53,7 @@ Any one of the Outlook rich clients can disable an add-in for performance reason
 > [!NOTE]
 > Only Outlook rich clients monitor resource usage, but disabling an add-in in an Outlook rich client also disables the add-in in Outlook on the web and mobile devices.
 
-Use one of the following approaches to verify whether an add-in is disabled:
+Use one of the following approaches to verify whether an add-in is disabled.
 
 - In Outlook on the web, sign in directly to the email account, choose the Settings icon, and then choose **Manage add-ins** to go to the Exchange Admin Center, where you can verify whether the add-in is enabled.
 
@@ -76,7 +76,7 @@ If your add-in is a compose add-in and is supposed to be activated when the user
 
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
 
-This scenario applies to only Outlook on Windows. Normally, when you install an Outlook add-in for a mailbox, the Exchange Server copies the add-in manifest from the location you indicate to the mailbox on that Exchange Server. Every time Outlook starts, it reads all the manifests installed for that mailbox into a temporary cache at the following location:
+This scenario applies to only Outlook on Windows. Normally, when you install an Outlook add-in for a mailbox, the Exchange Server copies the add-in manifest from the location you indicate to the mailbox on that Exchange Server. Every time Outlook starts, it reads all the manifests installed for that mailbox into a temporary cache at the following location.
 
 ```text
 %LocalAppData%\Microsoft\Office\16.0\WEF
@@ -105,20 +105,20 @@ The following procedure describes the details.
 
 1. Restart Outlook and test whether Outlook now activates the add-in.
 
-1. If Outlook doesn't activate the add-in, check whether Outlook has a properly cached copy of the manifest for the add-in. Look under the following path:
+1. If Outlook doesn't activate the add-in, check whether Outlook has a properly cached copy of the manifest for the add-in. Look under the following path.
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
-    You can find the manifest in the following subfolder:
+    You can find the manifest in the following subfolder.
 
     ```text
     \<insert your guid>\<insert base 64 hash>\Manifests\<ManifestID>_<ManifestVersion>
     ```
 
     > [!NOTE]
-    > The following is an example of a path to a manifest installed for a mailbox for the user John:
+    > The following is an example of a path to a manifest installed for a mailbox for the user John.
     >
     > ```text
     > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
@@ -134,7 +134,7 @@ The following procedure describes the details.
 
     1. Look for a reasonably recent event for which the Event ID equals 63, which represents Outlook downloading a manifest from an Exchange Server.
 
-    1. If Outlook successfully read a manifest, the logged event should have the following description:
+    1. If Outlook successfully read a manifest, the logged event should have the following description.
 
         ```text
         The Exchange web service request GetAppManifests succeeded.
@@ -142,7 +142,7 @@ The following procedure describes the details.
 
         Then skip the rest of this section and consider the other possible reasons following this section.
 
-1. If you don't see a successful event, close Outlook, and delete all the manifests in the following path:
+1. If you don't see a successful event, close Outlook, and delete all the manifests in the following path.
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
@@ -184,7 +184,7 @@ Test your regular expression thoroughly. If it returns different results, rewrit
 
 ## If you use an ItemIs, ItemHasAttachment, or ItemHasRegularExpressionMatch rule, have you verified the related item property?
 
-If you use an **ItemHasRegularExpressionMatch** activation rule, verify whether the value of the **PropertyName** attribute is what you expect for the selected item. The following are some tips to debug the corresponding properties:
+If you use an **ItemHasRegularExpressionMatch** activation rule, verify whether the value of the **PropertyName** attribute is what you expect for the selected item. The following are some tips to debug the corresponding properties.
 
 - If the selected item is a message and you specify **BodyAsHTML** in the **PropertyName** attribute, open the message, and then choose **View Source** to verify the message body in the HTML representation of that item.
 
@@ -232,7 +232,7 @@ After verifying the property value, you can then use a regular expression evalua
 
 ## Does Outlook apply all the regular expressions to the portion of the item body as you expect?
 
-This section applies to all activation rules that use regular expressions -- particularly those that are applied to the item body, which may be large in size and take longer to evaluate for matches. You should be aware that even if the item property that an activation rule depends on has the value you expect, Outlook may not be able to evaluate all the regular expressions on the entire value of the item property. To provide reasonable performance and to control excessive resource usage by a read add-in, Outlook observes the following limits on processing regular expressions in activation rules at run time:
+This section applies to all activation rules that use regular expressions -- particularly those that are applied to the item body, which may be large in size and take longer to evaluate for matches. You should be aware that even if the item property that an activation rule depends on has the value you expect, Outlook may not be able to evaluate all the regular expressions on the entire value of the item property. To provide reasonable performance and to control excessive resource usage by a read add-in, Outlook observes the following limits on processing regular expressions in activation rules at run time.
 
 - The size of the item body evaluated -- There are limits to the portion of an item body on which Outlook evaluates a regular expression. These limits depend on the Outlook client, form factor, and format of the item body. See the details in Table 2 in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 

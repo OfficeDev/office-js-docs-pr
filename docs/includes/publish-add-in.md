@@ -2,9 +2,9 @@ An Office Add-in consists of a web application and a manifest file. The web appl
 
 While you're developing your add-in, you can run the add-in on your local web server (`localhost`), but when you're ready to publish it for other users to access, you'll need to deploy the web application to a web server or web hosting service (for example, Microsoft Azure) and update the manifest to specify the URL of the deployed application. 
 
-When your add-in is working as desired and you're ready to publish it for other users to access, complete the following steps:
+When your add-in is working as desired and you're ready to publish it for other users to access, complete the following steps.
 
-1. From the command line, in the root directory of your add-in project, run the following command to prepare all files for production deployment: 
+1. From the command line, in the root directory of your add-in project, run the following command to prepare all files for production deployment.
 
     ```command&nbsp;line
     npm run build

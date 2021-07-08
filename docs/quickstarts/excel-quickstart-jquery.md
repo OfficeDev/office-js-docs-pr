@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API.
-ms.date: 1/19/2021
+ms.date: 07/06/2021
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -171,7 +171,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 ### Update the manifest
 
-1. In **Solution Explorer**, go to the **ExcelWebAddIn1** add-in project and open the **ExcelWebAddIn1Manifest** directory. This directory contains your manifest file, **ExcelWebAddIn1.xml**. The XML manifest file defines the add-in's settings and capabilities. See the preceding section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) for more information about the two projects created by your Visual Studio solution. 
+1. In **Solution Explorer**, go to the **ExcelWebAddIn1** add-in project and open the **ExcelWebAddIn1Manifest** directory. This directory contains your manifest file, **ExcelWebAddIn1.xml**. The XML manifest file defines the add-in's settings and capabilities. See the preceding section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) for more information about the two projects created by your Visual Studio solution.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
@@ -215,8 +215,8 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
-* [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
-* [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
+- [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)

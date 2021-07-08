@@ -26,7 +26,7 @@ The **Context** object also provides access to the [contentLanguage](/javascript
 
 **Applies to:** Content and task pane add-in types
 
-To interact with document data in Excel, PowerPoint, and Word, the API provides the [Document](/javascript/api/office/office.document) object. You can use `Document` object members to access data from the following ways:
+To interact with document data in Excel, PowerPoint, and Word, the API provides the [Document](/javascript/api/office/office.document) object. You can use `Document` object members to access data from the following ways.
 
 - Read and write to active selections in the form of text, contiguous cells (matrices), or tables.
 
@@ -99,7 +99,7 @@ For code examples that demonstrate how to perform tasks with selections, see [Re
 ## Working with bindings using the Bindings and Binding objects
 
 
-Binding-based data access enables content and task pane add-ins to consistently access a particular region of a document or spreadsheet through an identifier associated with a binding. The add-in first needs to establish the binding by calling one of the methods that associates a portion of the document with a unique identifier: [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), or [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-). After the binding is established, the add-in can use the provided identifier to access the data contained in the associated region of the document or spreadsheet. Creating bindings provides the following value to your add-in:
+Binding-based data access enables content and task pane add-ins to consistently access a particular region of a document or spreadsheet through an identifier associated with a binding. The add-in first needs to establish the binding by calling one of the methods that associates a portion of the document with a unique identifier: [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), or [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-). After the binding is established, the add-in can use the provided identifier to access the data contained in the associated region of the document or spreadsheet. Creating bindings provides the following value to your add-in.
 
 
 - Permits access to common data structures across supported Office applications, such as: tables, ranges, or text (a contiguous run of characters).
@@ -157,7 +157,7 @@ var item = Office.context.mailbox.item;
 
 ```
 
-Additionally, Outlook add-ins can use the following objects:
+Additionally, Outlook add-ins can use the following objects.
 
 - `Office` object: for initialization.
 

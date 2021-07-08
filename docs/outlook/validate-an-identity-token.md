@@ -27,18 +27,18 @@ After you have the three decoded components, you can proceed with validating the
 
 ## Validate token contents
 
-To validate the token contents, you should check the following.
+To validate the token contents, you should check the following:
 
 - Check the header and verify that the:
-    - `typ` claim is set to `JWT`.
-    - `alg` claim is set to `RS256`.
-    - `x5t` claim is present.
+  - `typ` claim is set to `JWT`.
+  - `alg` claim is set to `RS256`.
+  - `x5t` claim is present.
 
 - Check the payload and verify that the:
-    - `amurl` claim inside the `appctx` is set to the location of an authorized token signing key manifest file. For example, the expected `amurl` value for Microsoft 365 is https://outlook.office365.com:443/autodiscover/metadata/json/1. See the next section [Verify the domain](#verify-the-domain) for additional information.
-    - Current time is between the times specified in the `nbf` and `exp` claims. The `nbf` claim specifies the earliest time that the token is considered valid, and the `exp` claim specifies the expiration time for the token. It is recommended to allow for some variation in clock settings between servers.
-    - `aud` claim is the expected URL for your add-in.
-    - `version` claim inside the `appctx` claim is set to `ExIdTok.V1`.
+  - `amurl` claim inside the `appctx` is set to the location of an authorized token signing key manifest file. For example, the expected `amurl` value for Microsoft 365 is https://outlook.office365.com:443/autodiscover/metadata/json/1. See the next section [Verify the domain](#verify-the-domain) for additional information.
+  - Current time is between the times specified in the `nbf` and `exp` claims. The `nbf` claim specifies the earliest time that the token is considered valid, and the `exp` claim specifies the expiration time for the token. It is recommended to allow for some variation in clock settings between servers.
+  - `aud` claim is the expected URL for your add-in.
+  - `version` claim inside the `appctx` claim is set to `ExIdTok.V1`.
 
 ### Verify the domain
 

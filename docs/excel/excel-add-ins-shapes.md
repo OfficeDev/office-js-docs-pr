@@ -16,7 +16,7 @@ The following image shows shapes which form a thermometer.
 
 Shapes are created through and stored in a worksheet's shape collection (`Worksheet.shapes`). `ShapeCollection` has several `.add*` methods for this purpose. All shapes have names and IDs generated for them when they are added to the collection. These are the `name` and `id` properties, respectively. `name` can be set by your add-in for easy retrieval with the `ShapeCollection.getItem(name)` method.
 
-The following types of shapes are added using the associated method:
+The following types of shapes are added using the associated method.
 
 | Shape | Add Method | Signature |
 |-------|------------|-----------|

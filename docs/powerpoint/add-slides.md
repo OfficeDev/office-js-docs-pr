@@ -18,7 +18,7 @@ The APIs for adding slides are primarily used in scenarios where the IDs of the 
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
-Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) method. The following is a simple example in which a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation. The following is an example:
+Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) method. The following is a simple example in which a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation. The following is an example.
 
 ```javascript
 async function addSlide() {
@@ -32,7 +32,7 @@ async function addSlide() {
 
 ### Selecting which slide master and layout to use
 
-Use the [AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) parameter to control which slide master is used for the new slide and which layout within the master is used. The following is an example. Note the following about this code:
+Use the [AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) parameter to control which slide master is used for the new slide and which layout within the master is used. The following is an example. Note the following about this code.
 
 - You can include either or both the properties of the `AddSlideOptions` object.
 - If both properties are used, then the specified layout must belong to the specified master or an error is thrown.
@@ -88,7 +88,7 @@ If your add-in can be used in scenarios where the new slide should use the same 
     }
     ```
 
-2. Call your new function inside the [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) of the main function that adds the slide. The following is an example:
+2. Call your new function inside the [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) of the main function that adds the slide. The following is an example.
 
     ```javascript
     async function addSlideWithMatchingLayout() {
@@ -115,7 +115,7 @@ If your add-in can be used in scenarios where the new slide should use the same 
 
 ## Delete slides
 
-Delete a slide by getting a reference to the [Slide](/javascript/api/powerpoint/powerpoint.slide) object that represents the slide and call the `Slide.delete` method. The following is an example in which the 4th slide is deleted:
+Delete a slide by getting a reference to the [Slide](/javascript/api/powerpoint/powerpoint.slide) object that represents the slide and call the `Slide.delete` method. The following is an example in which the 4th slide is deleted.
 
 ```javascript
 async function deleteSlide() {

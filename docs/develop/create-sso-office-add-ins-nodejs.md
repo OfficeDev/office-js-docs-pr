@@ -124,7 +124,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the `\Begin` folder in the cloned project in your code editor.
 
-1. Open the `.ENV` file and use the values that you copied earlier. Set the **CLIENT_ID** to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following: 
+1. Open the `.ENV` file and use the values that you copied earlier. Set the **CLIENT_ID** to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following:
 
     ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
@@ -134,7 +134,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the `\public\javascripts\fallbackAuthDialog.js` file. In the `msalConfig` declaration, replace the placeholder $application_GUID here$ with the Application ID that you copied when you registered your add-in. The value should be in quotation marks.
 
-1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup:
+1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup.
 
     ```xml
     <WebApplicationInfo>
@@ -161,7 +161,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 	> [!NOTE]
     > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will run in Internet Explorer 11. 
 
-1. Add the following code below the Office.onReady method:
+1. Add the following code below the Office.onReady method.
 
     ```javascript
     async function getGraphData() {
@@ -230,7 +230,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Replace `TODO 5` with the following
+1. Replace `TODO 5` with the following:
 
     - Errors from the call of `getAccessToken` will have a `code` property with an error number, typically in the 13xxx range. You'll create the `handleClientSideErrors` method in a later step.
     - The `showMessage` method displays text on the task pane.
@@ -326,7 +326,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     }
     ```
 
-1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it, but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply recursively call `getGraphData`. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So replace `TODO 8` with the following. 
+1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it, but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply recursively call `getGraphData`. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So replace `TODO 8` with the following:
 
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
@@ -358,7 +358,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     }
     ```
 
-1. Replace `TODO 9` with the following. 
+1. Replace `TODO 9` with the following:
 
     ```javascript
     else {
