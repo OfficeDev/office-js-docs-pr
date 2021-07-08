@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 07/07/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -321,4 +321,6 @@ Full CORS support is coming soon.
 
 - [Outlook add-in manifests](manifests.md)
 - [How to debug event-based add-ins](debug-autolaunch.md)
-- PnP sample: [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+- PnP samples:
+  - [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+  - [Use Outlook event-based activation to tag external recipients](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

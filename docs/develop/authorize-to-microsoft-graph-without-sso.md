@@ -15,7 +15,7 @@ After your code obtains the access token to Microsoft Graph, either it passes th
 
 ## Recommended libraries and samples
 
-We recommend that you use the following libraries when accessing Microsoft Graph without using SSO:
+We recommend that you use the following libraries when accessing Microsoft Graph without using SSO.
 
 - For add-ins using a server-side with a .NET-based framework such as .NET Core or ASP.NET, use [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation).
 - For add-ins using a NodeJS-based server-side, use [Passport Azure AD](https://github.com/AzureAD/passport-azure-ad).
@@ -23,7 +23,7 @@ We recommend that you use the following libraries when accessing Microsoft Graph
 
 For more information about recommended libraries for working with Microsoft Identity Platform (formerly AAD v.2.0), see [Microsoft identity platform authentication libraries](/azure/active-directory/develop/reference-v2-libraries).
 
-The following samples get Microsoft Graph data from an Office Add-in:
+The following samples get Microsoft Graph data from an Office Add-in.
 
 - [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)

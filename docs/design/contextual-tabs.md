@@ -30,7 +30,7 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 
 ## Behavior of custom contextual tabs
 
-The user experience for custom contextual tabs follows the pattern of built-in Office contextual tabs. The following are the basic principles for the placement custom contextual tabs:
+The user experience for custom contextual tabs follows the pattern of built-in Office contextual tabs. The following are the basic principles for the placement custom contextual tabs.
 
 - When a custom contextual tab is visible, it appears on the right end of the ribbon.
 - If one or more built-in contextual tabs and one or more custom contextual tabs from add-ins are visible at the same time, the custom contextual tabs are always to the right of all of the built-in contextual tabs.
@@ -40,7 +40,7 @@ The user experience for custom contextual tabs follows the pattern of built-in O
 
 ## Major steps for including a contextual tab in an add-in
 
-The following are the major steps for including a custom contextual tab in an add-in:
+The following are the major steps for including a custom contextual tab in an add-in.
 
 1. Configure the add-in to use a shared runtime.
 1. Define the tab and the groups and controls that appear on it.
@@ -187,7 +187,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
     }
     ```
  
-The following is the complete example of the JSON blob:
+The following is the complete example of the JSON blob.
 
 ```json
 `{
@@ -375,7 +375,7 @@ function myContextChanges() {
 
 ## Localizing the JSON blob
 
-The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example:
+The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example.
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -419,7 +419,7 @@ function GetContextualTabsJsonSupportedLocale () {
 }
 ```
 
-Then your code calls the function to get the localized blob that is passed to `requestCreateControls`, as in the following example:
+Then your code calls the function to get the localized blob that is passed to `requestCreateControls`, as in the following example.
 
 ```javascript
 var contextualTabJSON = GetContextualTabsJsonSupportedLocale();

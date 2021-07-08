@@ -1,12 +1,12 @@
 ---
-title: Build an Excel task pane add-in using Vue
+title: Use Vue to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Vue.
-ms.date: 06/16/2021
+ms.date: 07/07/2021
 ms.prod: excel
 localization_priority: Priority
 ---
 
-# Build an Excel task pane add-in using Vue
+# Use Vue to build an Excel task pane add-in
 
 In this article, you'll walk through the process of building an Excel task pane add-in using Vue and the Excel JavaScript API.
 
@@ -15,7 +15,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Install the [Vue CLI](https://cli.vuejs.org/) globally.
+- Install the [Vue CLI](https://cli.vuejs.org/) globally. From the terminal, run the following command.
 
   ```command&nbsp;line
   npm install -g @vue/cli
@@ -23,13 +23,13 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ## Generate a new Vue app
 
-Use the Vue CLI to generate a new Vue app. From the terminal, run the following command.
+To generate a new Vue app, use the Vue CLI.
 
 ```command&nbsp;line
 vue create my-add-in
 ```
 
-Then select the `Default` preset for "Vue 3" (you may choose to use "Vue 2" if you'd prefer).
+Then, select the `Default` preset for "Vue 3" (if you prefer, choose "Vue 2").
 
 ## Generate the manifest file
 
@@ -41,16 +41,16 @@ Each add-in requires a manifest file to define its settings and capabilities.
     cd my-add-in
     ```
 
-2. Use the Yeoman generator to generate the manifest file for your add-in by running the following command:
+1. Use the Yeoman generator to generate the manifest file for your add-in.
 
     ```command&nbsp;line
     yo office
     ```
 
     > [!NOTE]
-    > When you run the `yo office` command, you may receive prompts about the data collection policies of Yeoman and the Office Add-in CLI tools. Use the information that's provided to respond to the prompts as you see fit. If you choose **Exit** in response to the second prompt, you'll need to run the `yo office` command again when you're ready to create your add-in project.
+    > When you run the `yo office` command, you may receive prompts about the data collection policies of Yeoman and the Office Add-in CLI tools. Use the information that's provided to respond to the prompts as appropriate. If you choose **Exit** in response to the second prompt, you'll need to run the `yo office` command again when you're ready to create your add-in project.
 
-    When prompted, provide the following information to create your add-in project:
+    When prompted, provide the following information to create your add-in project.
 
     - **Choose a project type:** `Office Add-in project containing the manifest only`
     - **What do you want to name your add-in?** `My Office Add-in`
@@ -58,7 +58,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
     ![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to manifest only.](../images/yo-office-manifest-only-vue.png)
 
-After you complete the wizard, it creates a `My Office Add-in` folder, which contains a `manifest.xml` file. You will use the manifest to sideload and test your add-in at the end of the quick start.
+After completion, the wizard creates a **My Office Add-in** folder containing a **manifest.xml** file. You'll use the manifest to sideload and test your add-in.
 
 > [!TIP]
 > You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created. The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.
@@ -67,7 +67,7 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. To enable HTTPS for your app, create a `vue.config.js` file in the root folder of the Vue project with the following contents:
+1. Enable HTTPS for your app. In the root folder of the Vue project, create a **vue.config.js** file with the following contents.
 
     ```js
     var fs = require("fs");
@@ -85,21 +85,34 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
     }
     ```
 
-2. From the terminal, run the following command to install the add-in's certificates.
+1. Install the add-in's certificates.
 
    ```command&nbsp;line
    npx office-addin-dev-certs install
    ```
 
+## Explore the project
+
+The add-in project that you've created with the Yeoman generator contains sample code for a basic task pane add-in. If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
+
+- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in. To learn more about the **manifest.xml** file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+- The **./src/App.vue** file contains the HTML markup for the task pane, the CSS that's applied to the content in the task pane, and the Office JavaScript API code that facilitates interaction between the task pane and Excel.
+
 ## Update the app
 
-1. Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag:
+1. Open the **./public/index.html** file and add the following `<script>` tag immediately before the `</head>` tag.
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-2. Open `src/main.js` and replace the contents with the following code:
+1. Open **manifest.xml** and find the `<bt:Urls>` tags inside the `<Resources>` tag. Locate the `<bt:Url>` tag with the ID `Taskpane.Url` and update its `DefaultValue` attribute. The new `DefaultValue` is `https://localhost:3000/index.html`. The entire updated tag should match the following line.
+
+   ```html
+   <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
+   ```
+
+1. Open **./src/main.js** and replace the contents with the following code.
 
    ```js
    import { createApp } from 'vue'
@@ -110,7 +123,7 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
    });
    ```
 
-3. Open `src/App.vue` and replace the file contents with the following code:
+1. Open **./src/App.vue** and replace the file contents with the following code.
 
    ```html
    <template>
@@ -181,29 +194,29 @@ After you complete the wizard, it creates a `My Office Add-in` folder, which con
 
 ## Start the dev server
 
-1. From the terminal, run the following command to start the dev server.
+1. Start the dev server.
 
    ```command&nbsp;line
    npm run serve
    ```
 
-2. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
+1. In a web browser, navigate to `https://localhost:3000` (notice the `https`). If the page on `https://localhost:3000` is blank and without any certificate errors, it means that it's working. The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.
 
 ## Try it out
 
-1. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
+1. Run your add-in and sideload the add-in within Excel. Follow the instructions for the platform you'll be using:
 
    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. Open the add-in task pane in Excel. On the **Home** tab, choose the **Show Taskpane** button.
 
    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
-3. Select any range of cells in the worksheet.
+1. Select any range of cells in the worksheet.
 
-4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
+1. Set the color of the selected range to green. In your add-in's task pane, choose the **Set color** button.
 
    ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
 
@@ -216,8 +229,8 @@ Congratulations, you've successfully created an Excel task pane add-in using Vue
 
 ## See also
 
-* [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Develop Office Add-ins](../develop/develop-overview.md)
-* [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
-* [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
+- [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)

@@ -15,8 +15,8 @@ With custom functions, developers can now add new functions to Excel by defining
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (version 1904 or later, connected to a Microsoft 365 subscription) or Excel on the web
-* Excel custom functions are supported in Office on Mac (connected to a Microsoft 365 subscription) and an update to this tutorial is forthcoming.
+- Excel on Windows (version 1904 or later, connected to a Microsoft 365 subscription) or Excel on the web
+- Excel custom functions are supported in Office on Mac (connected to a Microsoft 365 subscription) and an update to this tutorial is forthcoming.
 
 >[!NOTE]
 >Excel custom functions are not supported in Office 2019 (one-time purchase).
@@ -35,13 +35,13 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     The Yeoman generator will create the project files and install supporting Node components.
 
-2. The Yeoman generator will give you some instructions in your command line about what to do with the project, but ignore them and continue to follow our instructions. Navigate to the root folder of the project.
+1. The Yeoman generator will give you some instructions in your command line about what to do with the project, but ignore them and continue to follow our instructions. Navigate to the root folder of the project.
 
     ```command&nbsp;line
     cd starcount
     ```
 
-3. Build the project. 
+1. Build the project.
 
     ```command&nbsp;line
     npm run build
@@ -50,7 +50,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run build`, accept the prompt to install the certificate that the Yeoman generator provides.
 
-4. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on the web or Windows. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
+1. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on the web or Windows. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
 
 # [Excel on Windows](#tab/excel-windows)
 
@@ -73,12 +73,12 @@ To use your custom functions add-in, open a new workbook in Excel on a browser. 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
 
    ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
-   
-2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 
-3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
+1. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 
-4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
+
+1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 ---
 
@@ -86,11 +86,11 @@ To use your custom functions add-in, open a new workbook in Excel on a browser. 
 
 The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
-In your Excel workbook, try out the `ADD` custom function by completing the following steps:
+In your Excel workbook, try out the `ADD` custom function by completing the following steps.
 
 1. Select a cell and type `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-2. Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
+1. Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
 
 The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.
 
@@ -99,11 +99,10 @@ The `ADD` custom function computes the sum of the two numbers that you specify a
 Congratulations, you've successfully created a custom function in an Excel add-in! Next, build a more complex add-in with streaming data capability. The following link takes you through the next steps in the Excel add-in with custom functions tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
-)
+> [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
 
 ## See also
 
-* [Custom functions overview](../excel/custom-functions-overview.md)
-* [Custom functions metadata](../excel/custom-functions-json.md)
-* [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)
+- [Custom functions overview](../excel/custom-functions-overview.md)
+- [Custom functions metadata](../excel/custom-functions-json.md)
+- [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)

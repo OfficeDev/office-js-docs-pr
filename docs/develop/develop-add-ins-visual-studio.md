@@ -40,7 +40,7 @@ Methods for testing, debugging, and troubleshooting Office Add-ins vary by platf
 
 An Office Add-in consists of a web application and a manifest file. The web application defines the add-in's user interface and functionality, while the manifest specifies the location of the web application and defines settings and capabilities of the add-in.
 
-While you're developing your add-in in Visual Studio, your add-in runs on your local web server (`localhost`). When your add-in is working as desired and you're ready to publish it for other users to access, you'll need to complete the following steps:
+While you're developing your add-in in Visual Studio, your add-in runs on your local web server (`localhost`). When your add-in is working as desired and you're ready to publish it for other users to access, you'll need to complete the following steps.
 
 1. Deploy the web application to a web server or web hosting service (for example, Microsoft Azure).
 2. Update the manifest to specify the URL of the deployed application. 

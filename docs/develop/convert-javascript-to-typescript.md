@@ -60,12 +60,12 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
     ```TypeScript
     Office.initialize = function (reason) {
-        // add the following line
+        // Add the following line.
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```
 
-7. In **Home.ts**, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
+7. In **Home.ts**, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file.
 
     ```TypeScript
     function displaySelectedCells() {

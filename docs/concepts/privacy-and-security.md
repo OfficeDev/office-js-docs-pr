@@ -155,7 +155,7 @@ Because Office Add-ins are webpages that run in a web browser control, they must
 
 One way to overcome this limitation is to use JSON/P -- provide a proxy for the web service by including a **script** tag with a **src** attribute that points to some script hosted on another domain. You can programmatically create the **script** tags, dynamically creating the URL to which to point the **src** attribute, and passing parameters to the URL via URI query parameters. Web service providers create and host JavaScript code at specific URLs, and return different scripts depending on the URI query parameters. These scripts then execute where they are inserted and work as expected.
 
-The following is an example of JSON/P in the Outlook add-in example. 
+The following is an example of JSON/P in the Outlook add-in example.
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
@@ -189,7 +189,7 @@ An ill-intentioned user could attack the origin of an add-in by entering malicio
 
 - If you are using jQuery, use the [.text()](https://api.jquery.com/text/) method instead of the [.html()](https://api.jquery.com/html/) method.
 
-- Use the [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) method to remove any dynamic HTML elements and attributes in users' input before passing it to **innerHTML**.
+- Use the [toStaticHTML](https://developer.mozilla.org/docs/Web/HTML/Reference) method to remove any dynamic HTML elements and attributes in users' input before passing it to **innerHTML**.
 
 - Use the [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) or [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) function to encode text that is intended to be a URL that comes from or contains user input.
 

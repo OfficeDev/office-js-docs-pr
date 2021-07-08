@@ -369,11 +369,11 @@ The following images show the ranges returned by the `address` property for sort
 
 ![Table data in Excel before being sorted.](../images/excel-sort-event-before.png)
 
-If a top-to-bottom sort is performed on "**Q1**" (the values in "**B**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`:
+If a top-to-bottom sort is performed on "**Q1**" (the values in "**B**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`.
 
 ![Table data in Excel after a top-to-bottom sort. The rows that have moved are highlighted.](../images/excel-sort-event-after-row.png)
 
-If a left-to-right sort is performed on "**Quinces**" (the values in "**4**") on the original data, the following highlighted columns are returned by `WorksheetColumnsSortedEventArgs.address`:
+If a left-to-right sort is performed on "**Quinces**" (the values in "**4**") on the original data, the following highlighted columns are returned by `WorksheetColumnsSortedEventArgs.address`.
 
 ![Table data in Excel after a left-to-right sort. The columns that have moved are highlighted.](../images/excel-sort-event-after-column.png)
 
@@ -430,7 +430,7 @@ Excel.run(function (context) {
 
 ## Filter data
 
-An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters across a range within the worksheet. This is created with `Worksheet.autoFilter.apply`, which has the following parameters:
+An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters across a range within the worksheet. This is created with `Worksheet.autoFilter.apply`, which has the following parameters.
 
 - `range`: The range to which the filter is applied, specified as either a `Range` object or a string.
 - `columnIndex`: The zero-based column index against which the filter criteria is evaluated.
