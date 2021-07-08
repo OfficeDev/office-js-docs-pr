@@ -100,7 +100,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Update the app
 
-1. Open the **public/index.html** file and add the following `<script>` tag immediately before the `</head>` tag.
+1. Open the **./public/index.html** file and add the following `<script>` tag immediately before the `</head>` tag.
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -112,7 +112,7 @@ The add-in project that you've created with the Yeoman generator contains sample
    <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
    ```
 
-1. Open **src/main.js** and replace the contents with the following code.
+1. Open **./src/main.js** and replace the contents with the following code.
 
    ```js
    import { createApp } from 'vue'
@@ -123,7 +123,7 @@ The add-in project that you've created with the Yeoman generator contains sample
    });
    ```
 
-1. Open **src/App.vue** and replace the file contents with the following code.
+1. Open **./src/App.vue** and replace the file contents with the following code.
 
    ```html
    <template>
