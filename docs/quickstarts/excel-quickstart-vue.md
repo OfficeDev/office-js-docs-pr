@@ -108,9 +108,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Open **manifest.xml** and find the `<bt:Urls>` tags inside the `<Resources>` tag. Locate the `<bt:Url>` tag with the ID `Taskpane.Url` and update its `DefaultValue` attribute. The new `DefaultValue` is `https://localhost:3000/index.html`. The entire updated tag should match the following line.
 
-  ```html
-  <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
-  ```
+   ```html
+   <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
+   ```
 
 1. Open **src/main.js** and replace the contents with the following code.
 
