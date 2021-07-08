@@ -177,31 +177,31 @@ In the following code sample, notice that there are two functions, `currentTime`
 
 The **starcount** project already contains the following two functions in the **./src/functions/functions.js** file.
 
-    ```JS
-    /**
-     * Returns the current time
-     * @returns {string} String with the current time formatted for the current locale.
-     */
-    function currentTime() {
-      return new Date().toLocaleTimeString();
-    }
+```JS
+/**
+ * Returns the current time
+ * @returns {string} String with the current time formatted for the current locale.
+ */
+function currentTime() {
+  return new Date().toLocaleTimeString();
+}
     
-     /**
-     * Displays the current time once a second
-     * @customfunction
-     * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
-     */
-    function clock(invocation) {
-      const timer = setInterval(() => {
-        const time = currentTime();
-        invocation.setResult(time);
-      }, 1000);
+/**
+ * Displays the current time once a second
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
     
-      invocation.onCanceled = () => {
-        clearInterval(timer);
-      };
-    }
-    ```
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+```
 
 To try out the functions, type the text **=CONTOSO.CLOCK()** in cell **C1** and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.
 
