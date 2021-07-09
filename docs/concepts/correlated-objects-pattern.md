@@ -204,7 +204,7 @@ Note the code uses the split loop pattern.
 - There is a `context.sync` after each major loop, but no `context.sync` inside any loop.
 - The second major loop iterates through an array that is created in the first loop.
 
-But the array created in the first loop does *not* contain only an Office object as the first loop did in the section [Reading values from the document with the split loop pattern](#reading-values-from-the-document-with-the-split-loop-pattern). This is because some of the information needed to process the Word Range objects is not in the Range objects themselves but instead comes from the `jobMapping` array.
+But the array created in the first loop does *not* contain only an Office object as the first loop did in the section [Reading values from the document with the split loop pattern](#read-values-from-the-document-with-the-split-loop-pattern). This is because some of the information needed to process the Word Range objects is not in the Range objects themselves but instead comes from the `jobMapping` array.
 
 So, the objects in the array created in the first loop are custom objects that have two properties. The first is an array of Word Ranges that match a specific job title (that is, a placeholder string) and the second is a string that provides the name of the person assigned to the job. This makes the final loop easy to write and easy to read because all of the information needed to process a given range is contained in the same custom object that contains the range. The name that should replace _**correlatedObject**.rangesMatchingJob.items[j]_ is the other property of the same object: _**correlatedObject**.personAssignedToJob_.
 
