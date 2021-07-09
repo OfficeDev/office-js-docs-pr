@@ -373,7 +373,7 @@ function myContextChanges() {
 }
 ```
 
-## Opening task panes from contextual tabs
+## Open a task pane from contextual tabs
 
 You can have buttons on a custom contextual tab that open task panes. To do this, create an action in the JSON with type `ShowTaskpane` and then define a button whose `actionId` property is set to the `id` of the action. The following is an example. *Note that in this simple example the task pane will automatically open the URL of the shared runtime.* For more information, see [Configure the add-in to use a shared runtime](#configure-the-add-in-to-use-a-shared-runtime) earlier in this article.
 
@@ -408,7 +408,7 @@ You can have buttons on a custom contextual tab that open task panes. To do this
 }`
 ```
 
-You can open, in a task pane, a page that is at a different URL from the URL of the shared runtime. You do this by specifying a `sourceLocation` property in the definition of the action. In the following example, a second task pane can be opened from a different button.
+In a task pane, to open a page that is at a different URL from the URL of the shared runtime, specify a `sourceLocation` property in the definition of the action. In the following example, a second task pane is opened from a different button.
 
 > [!IMPORTANT]
 >
@@ -458,7 +458,7 @@ You can open, in a task pane, a page that is at a different URL from the URL of 
 }`
 ```
 
-## Localizing the JSON blob
+## Localize the JSON blob
 
 The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example.
 
