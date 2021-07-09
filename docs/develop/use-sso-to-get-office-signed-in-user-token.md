@@ -44,7 +44,7 @@ Be sure you have [Set up your development environment](../overview/set-up-your-d
    ```
 
 The project is created in a new folder named **sso-display-user-info**.
-
+---
 ## Configure the manifest
 
 1. In **Solution Explorer** open **sso-display-user-info > sso-display-user-infoManifest > sso-display-user-info.xml**
@@ -94,7 +94,7 @@ You can call the `getAccessToken` API to get the ID token from Office. First let
 1. Enter the following command
     
     `npm install jwt-decode`
-
+---
 ## Add UI to the task pane
 
 We need to modify the task pane so that it can display the user information we'll get from the ID token.
@@ -139,7 +139,7 @@ We need to modify the task pane so that it can display the user information we'l
         </main>
     </body>
     ```
-
+---
 ## Call the getAccessToken API
 
 The final step is to get the ID token by calling `getAccessToken`.
@@ -203,13 +203,11 @@ The final step is to get the ID token by calling `getAccessToken`.
     ``` 
     
 1. Save the file.
+---
 
 run it!
 
 
 ## Next steps
 
-<!-- Add a context sentence for the following links -->
 
-- [Write concepts](contribute-how-to-write-concept.md)
-- [Links](links-how-to.md)
