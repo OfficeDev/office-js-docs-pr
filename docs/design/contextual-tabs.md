@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Create custom contextual tabs in Office Add-ins
 
-A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office Add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
+A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You include custom contextual tabs in your Office Add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
 
 > [!NOTE]
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
@@ -53,7 +53,7 @@ Adding custom contextual tabs requires your add-in to use the shared runtime. Fo
 
 ## Define the groups and controls that appear on the tab
 
-Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method can be run only once in a session of your add-in. If it is called again, an error is thrown.
+Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method may be run only once in a session of your add-in. If it is called again, an error is thrown.
 
 > [!NOTE]
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
@@ -251,7 +251,7 @@ The following is the complete example of the JSON blob.
 The contextual tab is registered with Office by calling the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) method. This is typically done in either the function that is assigned to `Office.initialize` or with the `Office.onReady` method. For more about these methods and initializing the add-in, see [Initialize your Office Add-in](../develop/initialize-add-in.md). You can, however, call the method anytime after initialization.
 
 > [!IMPORTANT]
-> The `requestCreateControls` method can be called only once in a given session of an add-in. An error is thrown if it is called again.
+> The `requestCreateControls` method may be called only once in a given session of an add-in. An error is thrown if it is called again.
 
 The following is an example. Note that the JSON string must be converted to a JavaScript object with the `JSON.parse` method before it can be passed to a JavaScript function.
 
@@ -318,7 +318,7 @@ const showDataTab = async () => {
 
 ### Toggle tab visibility and the enabled status of a button at the same time
 
-The `requestUpdate` method is also used to toggle the enabled or disabled status of a custom button on either a custom contextual tab or a custom core tab. For details about this, see [Enable and Disable Add-in Commands](disable-add-in-commands.md). There may be scenarios in which you want to change both the visibility of a tab and the enabled status of a button at the same time. You can do this with a single call of `requestUpdate`. The following is an example in which a button on a core tab is enabled at the same time as a contextual tab is made visible.
+The `requestUpdate` method is also used to toggle the enabled or disabled status of a custom button on either a custom contextual tab or a custom core tab. For details about this, see [Enable and Disable Add-in Commands](disable-add-in-commands.md). There may be scenarios in which you want to change both the visibility of a tab and the enabled status of a button at the same time. You do this with a single call of `requestUpdate`. The following is an example in which a button on a core tab is enabled at the same time as a contextual tab is made visible.
 
 ```javascript
 function myContextChanges() {
@@ -375,7 +375,7 @@ function myContextChanges() {
 
 ## Open a task pane from contextual tabs
 
-You can have buttons on a custom contextual tab that open task panes. To do this, create an action in the JSON with type `ShowTaskpane` and then define a button whose `actionId` property is set to the `id` of the action. The following is an example. *Note that in this simple example the task pane will automatically open the URL of the shared runtime.* For more information, see [Configure the add-in to use a shared runtime](#configure-the-add-in-to-use-a-shared-runtime) earlier in this article.
+To have buttons on a custom contextual tab that open task panes, create an action in the JSON with type `ShowTaskpane` and then define a button whose `actionId` property is set to the `id` of the action. The following is an example. *Note that in this simple example the task pane will automatically open the URL of the shared runtime.* For more information, see [Configure the add-in to use a shared runtime](#configure-the-add-in-to-use-a-shared-runtime) earlier in this article.
 
 ```json
 `{
