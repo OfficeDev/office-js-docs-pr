@@ -1,7 +1,7 @@
 ---
-ms.date: 07/08/2021
-description: 'Learn how to debug your Excel custom functions that don't use a task pane.'
 title: UI-less custom functions debugging
+description: 'Learn how to debug your Excel custom functions that don't use a task pane.'
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
