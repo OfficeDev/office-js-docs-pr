@@ -1,8 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: 'Learn the basics of creating a dialog box in an Office Add-in.'
-ms.date: 01/28/2021
-
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -43,6 +42,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+>
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
 > - The dialog box's domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](../reference/manifest/functionfile.md) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
 
@@ -93,6 +93,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
+>
 > - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
 > - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box.
 > - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
@@ -118,6 +119,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
+>
 > - Office passes an [AsyncResult](/javascript/api/office/office.asyncresult) object to the callback. It represents the result of the attempt to open the dialog box. It does not represent the outcome of any events in the dialog box. For more on this distinction, see [Handle errors and events](dialog-handle-errors-events.md).
 > - The `value` property of the `asyncResult` is set to a [Dialog](/javascript/api/office/office.dialog) object, which exists in the host page, not in the dialog box's execution context.
 > - The `processMessage` is the function that handles the event. You can give it any name you want.
@@ -133,6 +135,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
+>
 > - Office passes the `arg` object to the handler. Its `message` property is the string sent by the call of `messageParent` in the dialog box. In this example, it is a stringified representation of a user's profile from a service such as Microsoft account or Google, so it is deserialized back to an object with `JSON.parse`.
 > - The `showUserName` implementation is not shown. It might display a personalized welcome message on the task pane.
 
@@ -146,6 +149,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
+>
 > - The `dialog` object must be the same one that is returned by the call of `displayDialogAsync`.
 > - The call of `dialog.close` tells Office to immediately close the dialog box.
 
@@ -183,6 +187,7 @@ if (loginSuccess) {
 ```
 
 > [!NOTE]
+>
 > - The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
 > - The the implementation of the `getProfile` and `getError` functions are not not shown. They each get data from a query parameter or from the body of the HTTP response.
 > - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
@@ -298,7 +303,7 @@ Because you can make multiple `messageChild` calls from the host page, but you h
 > [!IMPORTANT]
 > The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) cannot be specified in the `<Requirements>` section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) method. Support for manifest requirements is under development.
 
-## Closing the dialog box
+## Close the dialog box
 
 You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example.
 
@@ -333,7 +338,7 @@ See [Use the Office dialog box to show a video](dialog-video.md).
 
 See [Authenticate with the Office dialog API](auth-with-office-dialog-api.md).
 
-### Using the Office dialog API with single-page applications and client-side routing
+### Use the Office dialog API with single-page applications and client-side routing
 
 SPAs and client-side routing need to be handled with care when you are using the Office dialog API. Please see [Best practices for using the Office dialog API in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-api-in-an-spa).
 

@@ -1,7 +1,7 @@
 ---
-ms.date: 11/06/2020
-description: 'Learn requirements for names  of Excel custom functions and avoid common naming pitfalls.'
 title: Naming guidelines for custom functions in Excel
+description: 'Learn requirements for names  of Excel custom functions and avoid common naming pitfalls.'
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 # Custom functions naming guidelines
@@ -15,7 +15,7 @@ A custom function is identified by an `id` and `name` property in the JSON metad
 
 A function `name` can differ from the function `id`, such as for localization purposes. In general, a function's `name` should stay the same as the `id` if there is no reason for them to differ.
 
-A function's `name` and `id` share some common requirements:
+A function's `name` and `id` share some common requirements.
 
 - A function's `id` may only use characters A through Z, numbers zero through nine, underscores, and periods.
 
@@ -54,6 +54,7 @@ You can localize your function names for different languages using separate JSON
 For full information on localizing, see [Localize custom functions](custom-functions-localize.md)
 
 ## Next steps
+
 Learn about [error handling best practices](custom-functions-errors.md).
 
 ## See also

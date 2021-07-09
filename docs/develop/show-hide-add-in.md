@@ -1,7 +1,7 @@
 ---
 title: Show or hide the task pane of your Office Add-in
 description: 'Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.'
-ms.date: 12/28/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -72,7 +72,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 });
 ```
 
-The function returns another function that *deregisters* the handler. Here is a simple, but not robust, example:
+The function returns another function that *deregisters* the handler. Here is a simple, but not robust, example.
 
 ```javascript
 var removeVisibilityModeHandler =

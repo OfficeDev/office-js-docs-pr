@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 06/15/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -30,7 +30,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso).
 
 > [!NOTE]
-> There are two versions of the sample:
+> There are two versions of the sample.
 >
 > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
 > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Complete" and skip the sections **Code the client side** and **Code the server side**.
@@ -85,7 +85,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
     * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-    For each ID, take these steps:
+    For each ID, take these steps.
 
     a. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
 
@@ -116,7 +116,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 1. Back in **Solution Explorer**, select (don't right-click) the **Office-Add-in-ASPNET-SSO-WebAPI** project. The **Properties** pane opens. Ensure that **SSL Enabled** is **True**. Verify that the **SSL URL** is `http://localhost:44355/`.
 
-1. In "Web.config", use the values that you copied in earlier. Set both the **ida:ClientID** and the **ida:Audience** to your **Application (client) ID**, and set **ida:Password** to your client secret. Also, set **ida:Domain** to `http://localhost:44355` (no forward slash "/" at the end). 
+1. In "Web.config", use the values that you copied in earlier. Set both the **ida:ClientID** and the **ida:Audience** to your **Application (client) ID**, and set **ida:Password** to your client secret. Also, set **ida:Domain** to `http://localhost:44355` (no forward slash "/" at the end).
 
     > [!NOTE]
     > The **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
@@ -145,7 +145,7 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/offi
 
 ### Setup for single-tenant
 
-If you chose "Accounts in this organizational directory only" for **SUPPORTED ACCOUNT TYPES** when you registered the add-in, you need to take these additional setup steps:
+If you chose "Accounts in this organizational directory only" for **SUPPORTED ACCOUNT TYPES** when you registered the add-in, you need to take these additional setup steps.
 
 1. Go back to the Azure Portal and open the **Overview** blade of the add-in's registration. Copy the **Directory (tenant) ID**.
 
@@ -155,7 +155,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 ## Code the client side
 
-1. Open the HomeES6.js file in the **Scripts** folder. It already has some code in it:
+1. Open the HomeES6.js file in the **Scripts** folder. It already has some code in it.
 
     * A polyfill that assigns the Office.Promise object to the global window object so that the add-in can run when Office is using Internet Explorer for the UI. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
     * An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
@@ -163,7 +163,8 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     * A `logErrors` method that will log to console errors that are not intended for the end user.
     * Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or has errored.
 
-1. Below the assignment to `Office.initialize`, add the code below. Note the following about this code.
+1. Below the assignment to `Office.initialize`, add the code below. About this code, note:
+
 
     * The error-handling in the add-in will sometimes automatically attempt a second time to get an access token, using a different set of options. The counter variable `retryGetAccessToken` is used to ensure that the user isn't cycled repeatedly through failed attempts to get a token.
     * The `getGraphData` function is defined with the ES6 `async` keyword. Using ES6 syntax makes the SSO API in Office Add-ins much easier to to use. This is the only file in the solution that will use syntax that is not supported by Internet Explorer. We put 'ES6' in the filename as a reminder. The solution uses the tsc transpiler to transpile this file to ES5, so that the add-in can run when Office is using Internet Explorer for the UI. (See the tsconfig.json file in the root of the project.)
@@ -418,7 +419,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     }
     ```
 
-1. Replace the `TODO 1` with the following. Note about this code:
+1. Replace the `TODO 1` with the following. About this code, note:
 
     * The code instructs OWIN to ensure that the audience specified in the bootstrap token that comes from the Office application must match the value specified in the web.config.
     * Microsoft accounts have an issuer GUID that is different from any organizational tenant GUID, so to support both kinds of accounts, we do not validate the issuer.
@@ -434,7 +435,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     };
     ```
 
-1. Replace `TODO 2` with the following. Note about this code:
+1. Replace `TODO 2` with the following. About this code, note:
 
     * The method `UseOAuthBearerAuthentication` is called instead of the more common `UseWindowsAzureActiveDirectoryBearerAuthentication` because the latter is not compatible with the Azure AD V2 endpoint.
     * The URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the bootstrap token received from the Office application. The Authority segment of the URL comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
@@ -521,7 +522,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     string[] graphScopes = { "https://graph.microsoft.com/Files.Read.All" };
     ```
 
-1. Replace `TODO 3` with the following code. Note about this code:
+1. Replace `TODO 3` with the following code. About this code, note:
 
     * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the on-behalf-of flow with the Azure AD V2 endpoint.
     * Any exceptions that are not of type `MsalServiceException` are intentionally not caught, so they will propagate to the client as `500 Server Error` messages.

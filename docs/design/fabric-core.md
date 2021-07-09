@@ -1,7 +1,7 @@
 ---
 title: Fabric Core in Office Add-ins 
 description: 'Get an overview of how to use Fabric Core, and Fabric UI components in Office Add-ins.'
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -15,8 +15,6 @@ If your add-in's UI is not React-based, you can also make use of a set of non-Re
 > This article describes the use of Fabric Core in the context of Office Add-ins. But it's also used in a wide range of Microsoft 365 apps and extensions. For more information, see [Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core) and the open source repo [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core).
 
 ## Use Fabric Core: icons, fonts, colors
-
-To get started using Fabric Core:
 
 1. Add the CDN reference to the HTML on your page.  
 

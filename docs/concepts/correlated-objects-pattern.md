@@ -1,7 +1,7 @@
 ---
 title: Avoid using the context.sync method in loops
 description: 'Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.'
-ms.date: 07/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -38,7 +38,7 @@ For some programming scenarios in Office Add-ins that use one of the application
 In the simplest case, you are only writing to members of a collection object, not reading their properties. For example, the following code highlights in yellow every instance of "the" in a Word document.
 
 > [!NOTE]
-> It is generally a good practice to put have a final `context.sync` just before the closing "}" character of the application `run` method (such as `Excel.run`, `Word.run`, etc.). This is because the `run` method makes a hidden call of `context.sync` as the last thing it does if, and only if, there are queued commands that have not yet been synchronized. The fact that this call is hidden can be confusing, so we generally recommend that you add the explicit `context.sync`. However, given that this article is about minimizing calls of `context.sync`, it is actually more confusing to add an entirely unnecessary final `context.sync`. So, in this article, we leave it out when there are no unsynchronized commands at the end of the `run`.
+> It's generally a good practice to put have a final `context.sync` just before the closing "}" character of the application `run` method (such as `Excel.run`, `Word.run`, etc.). This is because the `run` method makes a hidden call of `context.sync` as the last thing it does if, and only if, there are queued commands that have not yet been synchronized. The fact that this call is hidden can be confusing, so we generally recommend that you add the explicit `context.sync`. However, given that this article is about minimizing calls of `context.sync`, it is actually more confusing to add an entirely unnecessary final `context.sync`. So, in this article, we leave it out when there are no unsynchronized commands at the end of the `run`.
 
 ```javascript
 Word.run(async function (context) {
@@ -71,13 +71,13 @@ Word.run(async function (context) {
 The preceding code took 1 full second to complete in a document with 200 instances of "the" in Word on Windows. But when the `await context.sync();` line inside the loop is commented out and the same line just after the loop is uncommented, the operation took only a 1/10th of a second. In Word on the web (with Edge as the browser), it took 3 full seconds with the synchronization inside the loop and only 6/10ths of a second with the synchronization after the loop, about five times faster. In a document with 2000 instances of "the", it took (in Word on the web) 80 seconds with the synchronization inside the loop and only 4 seconds with the synchronization after the loop, about 20 times faster.
 
 > [!NOTE]
-> It's worth asking whether the synchronize-inside-the-loop version would execute faster if the synchronizations ran concurrently, which could be done by simply removing the `await` keyword from the front of the `context.sync()`. This would cause the runtime to initiate the synchronization and then immediately start the next iteration of the loop without waiting for the synchronization to complete. However, this is not as good a solution as moving the `context.sync` out of the loop entirely for these reasons:
+> It's worth asking whether the synchronize-inside-the-loop version would execute faster if the synchronizations ran concurrently, which could be done by simply removing the `await` keyword from the front of the `context.sync()`. This would cause the runtime to initiate the synchronization and then immediately start the next iteration of the loop without waiting for the synchronization to complete. However, this is not as good a solution as moving the `context.sync` out of the loop entirely for these reasons.
 >
 > - Just as the commands in a synchronization batch job are queued, the batch jobs themselves are queued in Office, but Office supports no more than 50 batch jobs in the queue. Any more triggers errors. So, if there are more than 50 iterations in a loop, there is a chance that the queue size is exceeded. The greater the number of iterations, the greater the chance of this happening. 
 > - "Concurrently" does not mean simultaneously. It would still take longer to execute multiple synchronization operations than to execute one.
 > - Concurrent operations are not guaranteed to complete in the same order in which they started. In the preceding example, it doesn't matter what order the  word "the" gets highlighted, but there are scenarios where it's important that the items in the collection be processed in order.
 
-## Reading values from the document with the split loop pattern
+## Read values from the document with the split loop pattern
 
 Avoiding `context.sync`s inside a loop becomes more challenging when the code must *read* a property of the collection items as it processes each one. Suppose your code needs to iterate all the content controls in a Word document and log the text of the first paragraph associated with each control. Your programming instincts might lead you to loop over the controls, load the `text` property of each (first) paragraph, call `context.sync` to populate the proxy paragraph object with the text from the document, and then log it. The following is an example.
 
@@ -128,9 +128,9 @@ The preceding example suggests the following procedure for turning a loop that c
 3. Following the first loop, call `context.sync` to populate the proxy objects with any loaded properties.
 4. Follow the `context.sync` with a second loop to iterate over the array created in the first loop and read the loaded properties.
 
-## Processing objects in the document with the correlated objects pattern
+## Process objects in the document with the correlated objects pattern
 
-Let's consider a more complex scenario where processing the items in the collection requires data that isn't in the items themselves. The scenario envisions a Word add-in that operates on documents created from a template with some boilerplate text. Scattered in the text are one or more instances of the following placeholder strings: "{Coordinator}", "{Deputy}", and "{Manager}". The add-in replaces each placeholder with some person's name. The UI of the add-in is not important to this article. For example, it could have a task pane with three text boxes, each labeled with one of the placeholders. The user enters a name in each text box and then presses a **Replace** button. The handler for the button creates an array that maps the names to the placeholders, and then replaces each placeholder with the assigned name. 
+Let's consider a more complex scenario where processing the items in the collection requires data that isn't in the items themselves. The scenario envisions a Word add-in that operates on documents created from a template with some boilerplate text. Scattered in the text are one or more instances of the following placeholder strings: "{Coordinator}", "{Deputy}", and "{Manager}". The add-in replaces each placeholder with some person's name. The UI of the add-in is not important to this article. For example, it could have a task pane with three text boxes, each labeled with one of the placeholders. The user enters a name in each text box and then presses a **Replace** button. The handler for the button creates an array that maps the names to the placeholders, and then replaces each placeholder with the assigned name.
 
 You don't need to actually produce an add-in with this UI to experiment with the code. You can use the [Script Lab tool](../overview/explore-with-script-lab.md) to prototype the important code. Use the following assignment statement to create the mapping array.
 
@@ -198,13 +198,13 @@ Word.run(async (context) => {
 });
 ```
 
-Note the code uses the split loop pattern:
+Note the code uses the split loop pattern.
 
 - The outer loop from the preceding example has been split into two. (The second loop has an inner loop, which is expected because the code is iterating over a set of jobs (or placeholders) and within that set it is iterating over the matching ranges.)
 - There is a `context.sync` after each major loop, but no `context.sync` inside any loop.
 - The second major loop iterates through an array that is created in the first loop.
 
-But the array created in the first loop does *not* contain only an Office object as the first loop did in the section [Reading values from the document with the split loop pattern](#reading-values-from-the-document-with-the-split-loop-pattern). This is because some of the information needed to process the Word Range objects is not in the Range objects themselves but instead comes from the `jobMapping` array.
+But the array created in the first loop does *not* contain only an Office object as the first loop did in the section [Reading values from the document with the split loop pattern](#read-values-from-the-document-with-the-split-loop-pattern). This is because some of the information needed to process the Word Range objects is not in the Range objects themselves but instead comes from the `jobMapping` array.
 
 So, the objects in the array created in the first loop are custom objects that have two properties. The first is an array of Word Ranges that match a specific job title (that is, a placeholder string) and the second is a string that provides the name of the person assigned to the job. This makes the final loop easy to write and easy to read because all of the information needed to process a given range is contained in the same custom object that contains the range. The name that should replace _**correlatedObject**.rangesMatchingJob.items[j]_ is the other property of the same object: _**correlatedObject**.personAssignedToJob_.
 

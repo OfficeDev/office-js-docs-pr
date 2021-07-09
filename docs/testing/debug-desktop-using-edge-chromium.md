@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)
 description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) by using the Debugger for Microsoft Edge extension in VS Code.'
-ms.date: 01/29/2021
+ms.date: 07/08/2021
 localization_priority: Priority
 ---
 # Debug add-ins on Windows using Edge Chromium WebView2
@@ -19,8 +19,9 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 
 1. Create a project using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this.
 
-    > [!TIP]
-    > If you aren't using a Yeoman generator based add-in, you need to adjust a registry key. While in the root folder of your project, run the following in the command line: `office-add-in-debugging start <your manifest path>`.
+> [!TIP]
+> If you aren't using a Yeoman generator based add-in, you need to adjust a registry key. While in the root folder of your project, run the following in the command line.
+ `office-add-in-debugging start <your manifest path>`
 
 1. Open your project in VS Code. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "Debugger for Microsoft Edge" extension and install it.
 
@@ -44,13 +45,13 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 
 1. In the host application, such as Excel, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear, reading:
 
-    > WebView Stop On Load.
-    > To debug the webview, attach VS Code to the webview instance using the Microsoft Debugger for Edge extension, and click OK to continue. To prevent this dialog from appearing in the future, click Cancel."
+   > WebView Stop On Load.
+   > To debug the webview, attach VS Code to the webview instance using the Microsoft Debugger for Edge extension, and click OK to continue. To prevent this dialog from appearing in the future, click Cancel.
 
-    Select **OK**.
+   Select **OK**.
 
-    > [!NOTE]
-    > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
+   > [!NOTE]
+   > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
 
 1. You're now able to set breakpoints in your project's code and debug.
 

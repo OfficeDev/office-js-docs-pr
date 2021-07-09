@@ -1,7 +1,7 @@
 ---
 title: First-run experience patterns for Office Add-ins
 description: 'Learn the best practices for designing first-run experiences in Office Add-ins.'
-ms.date: 06/26/2018
+ms.date: 07/08/2018
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ A First-run Experience (FRE) is a user's introduction to your add-in. An FRE is 
 
 ## Best practices
 
-Follow these best practices when crafting your first-run experience:
+Follow these best practices when crafting your first-run experience.
 
 |Do|Don't|
 |:------|:------|

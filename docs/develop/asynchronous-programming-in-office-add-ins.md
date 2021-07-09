@@ -1,7 +1,7 @@
 ---
 title: Asynchronous programming in Office Add-ins
 description: 'Learn how the Office JavaScript library uses asynchronous programming in Office Add-ins.'
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -21,7 +21,7 @@ The following diagram shows the flow of execution for a call to an "Async" metho
 
 Support for this asynchronous design in both rich and web clients is part of the "write once-run cross-platform" design goals of the Office Add-ins development model. For example, you can create a content or task pane add-in with a single code base that will run in both Excel 2013 and Excel on the web.
 
-## Writing the callback function for an "Async" method
+## Write the callback function for an "Async" method
 
 The callback function you pass as the _callback_ argument to an "Async" method must declare a single parameter that the add-in runtime will use to provide access to an [AsyncResult](/javascript/api/office/office.asyncresult) object when the callback function executes. You can write:
 
@@ -31,7 +31,7 @@ The callback function you pass as the _callback_ argument to an "Async" method m
 
 An anonymous function is useful if you are only going to use its code once - because it has no name, you can't reference it in another part of your code. A named function is useful if you want to reuse the callback function for more than one "Async" method.
 
-### Writing an anonymous callback function
+### Write an anonymous callback function
 
 The following anonymous callback function declares a single parameter named `result` that retrieves data from the [AsyncResult.value](/javascript/api/office/office.asyncresult#value) property when the callback returns.
 
@@ -64,7 +64,7 @@ You can also use the parameter of your callback function to access other propert
 
 For more information about using the `getSelectedDataAsync` method, see [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
 
-### Writing a named callback function
+### Write a named callback function
 
 Alternatively, you can write a named function and pass its name to the _callback_ parameter of an "Async" method. For example, the previous example can be rewritten to pass a function named `writeDataCallback` as the _callback_ parameter like this.
 
@@ -96,7 +96,7 @@ For a description of what's returned to the `AsyncResult.value` property for an 
 
 ## Asynchronous programming patterns
 
-The Office JavaScript API supports two kinds of asynchronous programming patterns:
+The Office JavaScript API supports two kinds of asynchronous programming patterns.
 
 - Using nested callbacks
 - Using the promises pattern
@@ -137,7 +137,7 @@ This basic nested callback pattern can be used for all asynchronous methods in t
 
 The following sections show how to use either anonymous or named functions for nested callbacks in asynchronous methods.
 
-#### Using anonymous functions for nested callbacks
+#### Use anonymous functions for nested callbacks
 
 In the following example, two anonymous functions are declared inline and passed into the `getByIdAsync` and `getDataAsync` methods as nested callbacks. Because the functions are simple and inline, the intent of the implementation is immediately clear.
 
@@ -158,7 +158,7 @@ function write(message){
 }
 ```
 
-#### Using named functions for nested callbacks
+#### Use named functions for nested callbacks
 
 In complex implementations, it may be helpful to use named functions to make your code easier to read, maintain, and reuse. In the following example, the two anonymous functions from the example in the previous section have been rewritten as functions named `deleteAllData` and `showResult`. These named functions are then passed into the `getByIdAsync` and `deleteAllDataValuesAsync` methods as callbacks by name.
 
@@ -189,7 +189,7 @@ Instead of passing a callback function and waiting for the function to return be
 
 The Office JavaScript API provides the [Office.select](/javascript/api/office#office-select-expression--callback-) method to support the promises pattern for working with existing binding objects. The promise object returned to the `Office.select` method supports only the four methods that you can access directly from the [Binding](/javascript/api/office/office.binding) object: [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-), [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-), [addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-), and [removeHandlerAsync](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-).
 
-The promises pattern for working with bindings takes this form:
+The promises pattern for working with bindings takes this form.
 
 **Office.select(**_selectorExpression_, _onError_**).**_BindingObjectAsyncMethod_
 
@@ -227,9 +227,9 @@ function addBindingDataChangedEventHandler() {
 > [!IMPORTANT]
 > The `Binding` object promise returned by the `Office.select` method provides access to only the four methods of the `Binding` object. If you need to access any of the other members of the `Binding` object, instead you must use the `Document.bindings` property and `Bindings.getByIdAsync` or `Bindings.getAllAsync` methods to retrieve the `Binding` object. For example, if you need to access any of the `Binding` object's properties (the `document`, `id`, or `type` properties), or need to access the properties of the [MatrixBinding](/javascript/api/office/office.matrixbinding) or [TableBinding](/javascript/api/office/office.tablebinding) objects, you must use the `getByIdAsync` or `getAllAsync` methods to retrieve a `Binding` object.
 
-## Passing optional parameters to asynchronous methods
+## Pass optional parameters to asynchronous methods
 
-The common syntax for all "Async" methods follows this pattern:
+The common syntax for all "Async" methods follows this pattern.
 
  _AsyncMethod_ `(` _RequiredParameters_ `, [` _OptionalParameters_ `],` _CallbackFunction_ `);`
 
@@ -237,9 +237,9 @@ All asynchronous methods support optional parameters, which are passed in as a J
 
 You can create the JSON object that contains optional parameters inline, or by creating an `options` object and passing that in as the _options_ parameter.
 
-### Passing optional parameters inline
+### Pass optional parameters inline
 
-For example, the syntax for calling the [Document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method with optional parameters inline looks like this:
+For example, the syntax for calling the [Document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method with optional parameters inline looks like this.
 
 ```js
  Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext: 'asyncContext'},callback);
@@ -268,7 +268,7 @@ function write(message){
 > [!NOTE]
 > You can specify optional parameters in any order in the JSON object as long as their names are specified correctly.
 
-### Passing optional parameters in an options object
+### Pass optional parameters in an options object
 
 Alternatively, you can create an object named `options` that specifies the optional parameters separately from the method call, and then pass the `options` object as the _options_ argument.
 
