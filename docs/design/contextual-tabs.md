@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -371,6 +371,91 @@ function myContextChanges() {
         ]
     });
 }
+```
+
+## Opening task panes from contextual tabs
+
+You can have buttons on a custom contextual tab that open task panes. To do this, create an action in the JSON with type `ShowTaskpane` and then define a button whose `actionId` property is set to the `id` of the action. The following is an example. *Note that in this simple example the task pane will automatically open the URL of the shared runtime.* For more information, see [Configure the add-in to use a shared runtime](#configure-the-add-in-to-use-a-shared-runtime) earlier in this article.
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane"
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+You can open, in a task pane, a page that is at a different URL from the URL of the shared runtime. You do this by specifying a `sourceLocation` property in the definition of the action. In the following example, a second task pane can be opened from a different button.
+
+> [!IMPORTANT]
+>
+> - When a `sourceLocation` is specified for the action, then the task pane does *not* use the shared runtime.
+> - No more than one task pane can use the shared runtime, so no more than one action of type `ShowTaskpane` can omit the `sourceLocation` property.
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane"
+    },
+    {
+      "id": "openTablesTaskpane",
+      "type": "ShowTaskpane",
+      "sourceLocation": "https://MyDomain.com/myPage.html"
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            },
+            {
+                "type": "Button",
+                "id": "CtxBt113",
+                "actionId": "openTablesTaskpane",
+                "enabled": false,
+                "label": "Open Tables Taskpane",
+                // some control properties omitted
+            }          ]
+        }
+      ]
+    }
+  ]
+}`
 ```
 
 ## Localizing the JSON blob
