@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.13
 description: 'Details about the ExcelApi 1.13 requirement set.'
-ms.date: 07/02/2021
+ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -12,10 +12,10 @@ The ExcelApi 1.13 added a method to insert worksheets into a workbook from a Bas
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Formula changed events | Track changes to formulas, including the source and type of event that caused a change. | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
-| Formula dependents | Locate the direct dependent cells of a formula. | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
-| Insert worksheets | Insert worksheets from another workbook into the current workbook as a Base64-encoded string. | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
-| PivotTable PivotLayout | An expansion of the PivotLayout class, including new support for alt text and empty cell management. | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
+| [Formula changed events](../../excel/excel-add-ins-worksheets.md#detect-formula-changes) | Track changes to formulas, including the source and type of event that caused a change. | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
+| [Formula dependents](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-direct-dependents-of-a-formula) | Locate the direct dependent cells of a formula. | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
+| [Insert worksheets](../../excel//excel-add-ins-workbooks.md#create-a-workbook) | Insert worksheets from another workbook into the current workbook as a Base64-encoded string. | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
+| [PivotTable PivotLayout](../../excel/excel-add-ins-pivottables.md#other-pivotlayout-functions) | An expansion of the PivotLayout class, including new support for alt text and empty cell management. | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
 
 ## API list
 
