@@ -163,9 +163,9 @@ Complete the following steps for your add-in, to change the Microsoft Graph URL,
 
 ### Changes required for an Excel add-in (JavaScript)
 
-If your add-in is an Excel add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is an Excel add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
 
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+1. Find the `writeDataToOfficeDocument` function and replace it with the following function.
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -180,7 +180,7 @@ If your add-in is an Excel add-in that was created with JavaScript, make the fol
     }
     ```
 
-2. Find the `filterUserProfileInfo` function and replace it with the following function:
+2. Find the `filterUserProfileInfo` function and replace it with the following function.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -193,7 +193,7 @@ If your add-in is an Excel add-in that was created with JavaScript, make the fol
     }
     ```
 
-3. Find the `writeDataToExcel` function and replace it with the following function:
+3. Find the `writeDataToExcel` function and replace it with the following function.
 
     ```javascript
     function writeDataToExcel(result) {
@@ -230,7 +230,7 @@ After you've made these changes, skip ahead to the [Try it out](#try-it-out) sec
 
 ### Changes required for an Excel add-in (TypeScript)
 
-If your add-in is an Excel add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
+If your add-in is an Excel add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function.
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -266,9 +266,9 @@ After you've made these changes, skip ahead to the [Try it out](#try-it-out) sec
 
 ### Changes required for an Outlook add-in (JavaScript)
 
-If your add-in is an Outlook add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is an Outlook add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
 
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+1. Find the `writeDataToOfficeDocument` function and replace it with the following function.
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -283,7 +283,7 @@ If your add-in is an Outlook add-in that was created with JavaScript, make the f
     }
     ```
 
-2. Find the `filterUserProfileInfo` function and replace it with the following function:
+2. Find the `filterUserProfileInfo` function and replace it with the following function.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -296,7 +296,7 @@ If your add-in is an Outlook add-in that was created with JavaScript, make the f
     }
     ```
 
-3. Find the `writeDataToOutlook` function and replace it with the following function:
+3. Find the `writeDataToOutlook` function and replace it with the following function.
 
     ```javascript
     function writeDataToOutlook(result) {
@@ -328,7 +328,7 @@ After you've made these changes, skip ahead to the [Try it out](#try-it-out) sec
 
 ### Changes required for an Outlook add-in (TypeScript)
 
-If your add-in is an Outlook add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
+If your add-in is an Outlook add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function.
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -359,9 +359,9 @@ After you've made these changes, skip ahead to the [Try it out](#try-it-out) sec
 
 ### Changes required for a PowerPoint add-in (JavaScript)
 
-If your add-in is a PowerPoint add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is a PowerPoint add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
 
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+1. Find the `writeDataToOfficeDocument` function and replace it with the following function.
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -376,7 +376,7 @@ If your add-in is a PowerPoint add-in that was created with JavaScript, make the
     }
     ```
 
-2. Find the `filterUserProfileInfo` function and replace it with the following function:
+2. Find the `filterUserProfileInfo` function and replace it with the following function.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -389,7 +389,7 @@ If your add-in is a PowerPoint add-in that was created with JavaScript, make the
     }
     ```
 
-3. Find the `writeDataToPowerPoint` function and replace it with the following function:
+3. Find the `writeDataToPowerPoint` function and replace it with the following function.
 
     ```javascript
     function writeDataToPowerPoint(result) {
@@ -427,7 +427,7 @@ After you've made these changes, skip ahead to the [Try it out](#try-it-out) sec
 
 ### Changes required for a PowerPoint add-in (TypeScript)
 
-If your add-in is a PowerPoint add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
+If your add-in is a PowerPoint add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function.
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -462,9 +462,9 @@ After you've made these changes, skip ahead to the [Try it out](#try-it-out) sec
 
 ### Changes required for a Word add-in (JavaScript)
 
-If your add-in is a Word add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:
+If your add-in is a Word add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
 
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function:
+1. Find the `writeDataToOfficeDocument` function and replace it with the following function.
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -479,7 +479,7 @@ If your add-in is a Word add-in that was created with JavaScript, make the follo
     }
     ```
 
-2. Find the `filterUserProfileInfo` function and replace it with the following function:
+2. Find the `filterUserProfileInfo` function and replace it with the following function.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -492,7 +492,7 @@ If your add-in is a Word add-in that was created with JavaScript, make the follo
     }
     ```
 
-3. Find the `writeDataToWord` function and replace it with the following function:
+3. Find the `writeDataToWord` function and replace it with the following function.
 
     ```javascript
     function writeDataToWord(result) {
@@ -528,7 +528,7 @@ After you've made these changes, skip ahead to the [Try it out](#try-it-out) sec
 
 ### Changes required for a Word add-in (TypeScript)
 
-If your add-in is a Word add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:
+If your add-in is a Word add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function.
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {

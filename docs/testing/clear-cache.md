@@ -19,7 +19,7 @@ To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the co
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
 ```
 
-If the following folder exists, delete its contents too:
+If the following folder exists, delete its contents too.
 
 ```
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\

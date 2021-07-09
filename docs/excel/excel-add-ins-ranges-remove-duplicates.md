@@ -16,7 +16,7 @@ The [Range.removeDuplicates](/javascript/api/excel/excel.range#removeduplicates-
 
 `removeDuplicates` takes in a `number[]` representing the column indices which are checked for duplicates. This array is zero-based and relative to the range, not the worksheet. The method also takes in a boolean parameter that specifies whether the first row is a header. When **true**, the top row is ignored when considering duplicates. The `removeDuplicates` method returns a `RemoveDuplicatesResult` object that specifies the number of rows removed and the number of unique rows remaining.
 
-When using a range's `removeDuplicates` method, keep the following in mind:
+When using a range's `removeDuplicates` method, keep the following in mind.
 
 - `removeDuplicates` considers cell values, not function results. If two different functions evaluate to the same result, the cell values are not considered duplicates.
 - Empty cells are not ignored by `removeDuplicates`. The value of an empty cell is treated like any other value. This means empty rows contained within in the range will be included in the `RemoveDuplicatesResult`.

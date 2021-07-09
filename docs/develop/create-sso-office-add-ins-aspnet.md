@@ -165,6 +165,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Below the assignment to `Office.initialize`, add the code below. About this code, note:
 
+
     * The error-handling in the add-in will sometimes automatically attempt a second time to get an access token, using a different set of options. The counter variable `retryGetAccessToken` is used to ensure that the user isn't cycled repeatedly through failed attempts to get a token.
     * The `getGraphData` function is defined with the ES6 `async` keyword. Using ES6 syntax makes the SSO API in Office Add-ins much easier to to use. This is the only file in the solution that will use syntax that is not supported by Internet Explorer. We put 'ES6' in the filename as a reminder. The solution uses the tsc transpiler to transpile this file to ES5, so that the add-in can run when Office is using Internet Explorer for the UI. (See the tsconfig.json file in the root of the project.)
 

@@ -4,7 +4,7 @@ While you're developing your add-in, you can run the add-in on your local web se
 
 When your add-in is working as desired and you're ready to publish it for other users to access, complete the following steps.
 
-1. To prepare all files for production deployment, from the command line, in the root directory of your add-in project, run the following command.
+1. From the command line, in the root directory of your add-in project, run the following command to prepare all files for production deployment.
 
     ```command&nbsp;line
     npm run build

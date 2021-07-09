@@ -79,7 +79,7 @@ An Outlook add-in that uses these functions retrieves any custom properties by c
 var property = _customProps.get("propertyName");
 ```
 
-This example includes the following functions:
+This example includes the following functions.
 
 |**Function name**|**Description**|
 |:-----|:-----|

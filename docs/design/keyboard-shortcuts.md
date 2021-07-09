@@ -132,6 +132,7 @@ Following the previous steps lets your add-in toggle the visibility of the task 
 ### Construct the action objects
 
 Use the following guidelines when specifying the objects in the `actions` array of the shortcuts.json.
+
 - The property names `id` and `name` are mandatory.
 - The `id` property is used to uniquely identify the action to invoke using a keyboard shortcut.
 - The `name` property must be a user friendly string describing the action. It must be a combination of the characters A - Z, a - z, 0 - 9, and the punctuation marks "-", "_", and "+".

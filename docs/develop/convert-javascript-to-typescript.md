@@ -60,7 +60,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
     ```TypeScript
     Office.initialize = function (reason) {
-        // add the following line
+        // Add the following line.
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```

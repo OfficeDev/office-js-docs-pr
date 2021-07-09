@@ -73,7 +73,7 @@ A manifest can implement multiple versions of the `VersionOverrides` element whi
 
 In order to implement multiple versions, the `VersionOverrides` element for the newer version must be a child of the `VersionOverrides` element for the older version. The child `VersionOverrides` element doesn't inherit any values from the parent.
 
-To implement both the VersionOverrides v1.0 and v1.1 schema, the manifest would look similar to the following example:
+To implement both the VersionOverrides v1.0 and v1.1 schema, the manifest would look similar to the following example.
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

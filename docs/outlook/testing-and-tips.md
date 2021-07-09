@@ -39,7 +39,7 @@ The Exchange administrator can run the following PowerShell cmdlet to assign a s
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
 ```
 
-If necessary, the administrator can run the following cmdlet to assign multiple users the similar necessary permissions:
+If necessary, the administrator can run the following cmdlet to assign multiple users the similar necessary permissions.
 
 ```powershell
 $users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}
@@ -59,7 +59,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 The fully qualified URL is the location of the add-in manifest file that you prepared for your add-in.
 
-Use the following additional PowerShell cmdlets to manage the add-ins for a mailbox:
+Use the following additional PowerShell cmdlets to manage the add-ins for a mailbox.
 
 - `Get-App` - Lists the add-ins that are enabled for a mailbox.
 - `Set-App` - Enables or disables a add-in on a mailbox.

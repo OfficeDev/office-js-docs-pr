@@ -14,7 +14,7 @@ You may want to validate your add-in's manifest file to ensure that it's correct
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
-If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file. Run the following command in the root directory of your project:
+If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file. Run the following command in the root directory of your project.
 
 ```command&nbsp;line
 npm run validate
@@ -31,20 +31,20 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
 
 1. Install [Node.js](https://nodejs.org/download/).
 
-2. Open a command prompt and install the validator with the following command.
+1. Open a command prompt and install the validator with the following command.
 
     ```command&nbsp;line
     npm install -g office-addin-manifest
     ```
 
-3. Run the following command *in the root directory of your project*.
+1. Run the following command *in the root directory of your project*.
 
     ```command&nbsp;line
     npm run validate
     ```
 
     > [!NOTE]
-    > If this command is not available or not working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file):
+    > If this command is not available or not working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file).
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
@@ -58,8 +58,8 @@ You can validate the manifest file against the [XML Schema Definition (XSD)](/op
 
 1. Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.
 
-2. Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
-    
+1. Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
+
     ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```

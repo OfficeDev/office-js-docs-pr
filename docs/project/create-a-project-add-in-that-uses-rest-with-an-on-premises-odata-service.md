@@ -110,13 +110,13 @@ For more information about the manifest, see [Office Add-ins XML manifest](../de
 
 4. Add an icon to show in the **Office Add-ins** drop-down list on the **PROJECT** tab of the ribbon. You can add an icon file in the Visual Studio solution or use a URL for an icon. 
 
-The following steps show how to add an icon file to the Visual Studio solution:
+The following steps show how to add an icon file to the Visual Studio solution.
 
 1. In **Solution Explorer**, go to the folder named Images.
 
 2. To be displayed in the **Office Add-ins** drop-down list, the icon must be 32 x 32 pixels. For example, install the Project 2013 SDK, and then choose the **Images** folder and add the following file from the SDK: `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
 
-    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder:
+    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
@@ -187,7 +187,7 @@ The task pane shows the add-in display name at the top, which is the value of th
 
     <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-    <!-- Add your CSS styles to the following file -->
+    <!-- Add your CSS styles to the following file. -->
     <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
     <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -201,7 +201,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
     <script src="../Scripts/Office/1.0/Office.js"></script>
 
-    <!-- Add your JavaScript to the following files -->
+    <!-- Add your JavaScript to the following files. -->
     <script src="../Scripts/HelloProjectOData.js"></script>
     <script src="../Scripts/SurfaceErrors.js"></script>
     </head>
@@ -665,7 +665,7 @@ The following code is in the `Pages\HelloProjectOData.html` file of the **HelloP
 
         <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-        <!-- Add your CSS styles to the following file -->
+        <!-- Add your CSS styles to the following file. -->
         <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
         <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -679,7 +679,7 @@ The following code is in the `Pages\HelloProjectOData.html` file of the **HelloP
         <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
         <script src="../Scripts/Office/1.0/Office.js"></script>
 
-        <!-- Add your JavaScript to the following files -->
+        <!-- Add your JavaScript to the following files. -->
         <script src="../Scripts/HelloProjectOData.js"></script>
         <script src="../Scripts/SurfaceErrors.js"></script>
     </head>

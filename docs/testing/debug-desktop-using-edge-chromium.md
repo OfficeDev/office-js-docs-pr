@@ -23,40 +23,40 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 > If you aren't using a Yeoman generator based add-in, you need to adjust a registry key. While in the root folder of your project, run the following in the command line.
  `office-add-in-debugging start <your manifest path>`
 
-2. Open your project in VS Code. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "Debugger for Microsoft Edge" extension and install it.
+1. Open your project in VS Code. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "Debugger for Microsoft Edge" extension and install it.
 
-3. In the **.vscode** folder of your project, open the **launch.json** file. Add the following code to the configurations section:
+1. In the **.vscode** folder of your project, open the **launch.json** file. Add the following code to the configurations section.
 
-```JSON
-  {
-      "name": "Debug Office Add-in (Edge Chromium)",
-      "type": "edge",
-      "request": "attach",
-      "useWebView": "advanced",
-      "port": 9229,
-      "timeout": 600000,
-      "webRoot": "${workspaceRoot}",
-    },
-```
+      ```JSON
+        {
+          "name": "Debug Office Add-in (Edge Chromium)",
+          "type": "edge",
+          "request": "attach",
+          "useWebView": "advanced",
+          "port": 9229,
+          "timeout": 600000,
+          "webRoot": "${workspaceRoot}",
+        },
+      ```
 
-4. Next, choose  **View > Debug** or enter **CTRL + SHIFT + D** to switch to debug view.
+1. Next, choose  **View > Debug** or enter **CTRL + SHIFT + D** to switch to debug view.
 
-5. From the Debug options, choose the Edge Chromium option for your host application, such as **Excel Desktop (Edge Chromium)**. Select **F5** or choose **Debug > Start Debugging** from the menu to begin debugging.
+1. From the Debug options, choose the Edge Chromium option for your host application, such as **Excel Desktop (Edge Chromium)**. Select **F5** or choose **Debug > Start Debugging** from the menu to begin debugging.
 
-6. In the host application, such as Excel, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear, reading:
+1. In the host application, such as Excel, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear, reading:
 
 > WebView Stop On Load.
 > To debug the webview, attach VS Code to the webview instance using the Microsoft Debugger for Edge extension, and click OK to continue. To prevent this dialog from appearing in the future, click Cancel.
 
-Select **OK**.
+   Select **OK**.
 
-> [!NOTE]
-> If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
+    > [!NOTE]
+    > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
 
-7. You're now able to set breakpoints in your project's code and debug.
+1. You're now able to set breakpoints in your project's code and debug.
 
 ## See also
 
-* [Test and debug Office Add-ins](test-debug-office-add-ins.md)
-* [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
-* [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
+- [Test and debug Office Add-ins](test-debug-office-add-ins.md)
+- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
+- [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)

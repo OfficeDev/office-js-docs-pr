@@ -55,7 +55,7 @@ It’s important to get data on the entire user journey – from discovering you
 - How the add-in interacts with the document space of the Office application
 - How much control the user has over any content insertion flows
 
-For more information, see [Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/en-us/articles/115003378572-Writing-effective-questions).
+For more information, see [Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/articles/115003378572-Writing-effective-questions).
 
 ## 3. Identify participants to target
 
@@ -85,7 +85,7 @@ If you are planning to test a live build of your add-in, the following questions
  a. Yes [*Must select*]  
  b. No [*Reject*]  
 
-For more information, see [Screener Questions Best Practices](https://help.usertesting.com/hc/en-us/articles/115003370731-Screener-question-best-practices).
+For more information, see [Screener Questions Best Practices](https://help.usertesting.com/hc/articles/115003370731-Screener-question-best-practices).
 
 ## 5. Create tasks and questions for participants
 
@@ -97,7 +97,7 @@ The main challenge in unmoderated testing is making sure your participants under
 
 Don't assume that your user will be on the screen they’re supposed to be on at any given point during the test. Consider telling them what screen they need to be on to start the next task.
 
-For more information, see [Writing Great Tasks](https://help.usertesting.com/hc/en-us/articles/115003371651-Writing-great-tasks).
+For more information, see [Writing Great Tasks](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks).
 
 ## 6. Create a prototype to match the tasks and questions
 
@@ -105,7 +105,7 @@ You can either test your live add-in, or you can test a prototype. Keep in mind 
 
 On average, it takes about 5 minutes to walk users through how to install an add-in. The following is an example of clear, concise installation steps. Adjust the steps based on the specifics of your test.
 
-**Please install the (insert your add-in name here) add-in for PowerPoint, using the following instructions:**
+**Please install the (insert your add-in name here) add-in for PowerPoint, using the following instructions.**
 
 1. Open Microsoft PowerPoint.
 1. Select **Blank Presentation.**

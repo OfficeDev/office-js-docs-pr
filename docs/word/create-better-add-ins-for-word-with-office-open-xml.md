@@ -312,7 +312,7 @@ To turn off RSID attributes in Word for documents you create going forward, do t
 2. In the Word Options dialog box, choose **Trust Center** and then choose **Trust Center Settings**.
 3. In the Trust Center dialog box, choose **Privacy Options** and then disable the setting **Store random numbers to improve Combine accuracy**.
 
-To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML:
+To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML.
 
 1. With your insertion point in the main body of the document, press **Ctrl+Home** to go to the top of the document.
 2. On the keyboard, press **Spacebar**, **Delete**, **Spacebar**. Then, save the document.
@@ -674,7 +674,7 @@ Be aware that the markup for a SmartArt diagram in document.xml contains relatio
 
 ### Work with charts
 
-Similar to SmartArt diagrams, charts contain several additional parts. However, the setup for charts is a bit different from SmartArt, in that a chart has its own relationship file. Following is a description of required and removable document parts for a chart:
+Similar to SmartArt diagrams, charts contain several additional parts. However, the setup for charts is a bit different from SmartArt, in that a chart has its own relationship file. Following is a description of required and removable document parts for a chart.
 
 > [!NOTE]
 > As with SmartArt diagrams, if your content includes more than one chart, they will be numbered consecutively, replacing the 1 in the file names listed here.
@@ -693,7 +693,7 @@ See the edited markup for the example chart shown in Figure 11 in the [Word-Add-
 
 ## Edit the Office Open XML for use in your task pane add-in
 
-You've already seen how to identify and edit the content in your markup. If the task still seems difficult when you take a look at the massive Office Open XML package generated for your document, following is a quick summary of recommended steps to help you edit that package down quickly:
+You've already seen how to identify and edit the content in your markup. If the task still seems difficult when you take a look at the massive Office Open XML package generated for your document, following is a quick summary of recommended steps to help you edit that package down quickly.
 
 > [!NOTE]
 > Remember that you can use all .rels parts in the package as a map to quickly check for document parts that you can remove.

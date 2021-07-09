@@ -49,7 +49,7 @@ The following figure describes how Exchange Server and Outlook support well-know
 
 To extract entities in your JavaScript code or to have your add-in activated based on the existence of certain well-known entities, make sure you have requested the appropriate permissions in the add-in manifest.
 
-Specifying the default restricted permission allows your add-in to extract the `Address`, `MeetingSuggestion`, or `TaskSuggestion` entity. To extract any of the other entities, specify read item, read/write item, or read/write mailbox permission. To do that in the manifest, use the [Permissions](../reference/manifest/permissions.md) element and specify the appropriate permission&mdash;**Restricted**, **ReadItem**, **ReadWriteItem**, or **ReadWriteMailbox**&mdash;as in the following example:
+Specifying the default restricted permission allows your add-in to extract the `Address`, `MeetingSuggestion`, or `TaskSuggestion` entity. To extract any of the other entities, specify read item, read/write item, or read/write mailbox permission. To do that in the manifest, use the [Permissions](../reference/manifest/permissions.md) element and specify the appropriate permission&mdash;**Restricted**, **ReadItem**, **ReadWriteItem**, or **ReadWriteMailbox**&mdash;as in the following example.
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -127,7 +127,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 ## Tips for using well-known entities
 
-There are a few facts and limits you should be aware of if you use well-known entities in your add-in. The following applies as long as your add-in is activated when the user is reading an item which contains matches of well-known entities, regardless of whether you use an `ItemHasKnownEntity` rule:
+There are a few facts and limits you should be aware of if you use well-known entities in your add-in. The following applies as long as your add-in is activated when the user is reading an item which contains matches of well-known entities, regardless of whether you use an `ItemHasKnownEntity` rule.
 
 
 - You can extract strings that are well-known entities only if the strings are in English.
@@ -142,7 +142,7 @@ There are a few facts and limits you should be aware of if you use well-known en
     
 - You cannot extract entities from items in the Sent Items folder.
     
-In addition, the following applies if you use an [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule, and may affect the scenarios where you'd otherwise expect your add-in to be activated:
+In addition, the following applies if you use an [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rule, and may affect the scenarios where you'd otherwise expect your add-in to be activated.
 
 - When using the `ItemHasKnownEntity` rule, expect Outlook to match entity strings in only English regardless of the default locale specified in the manifest.
     

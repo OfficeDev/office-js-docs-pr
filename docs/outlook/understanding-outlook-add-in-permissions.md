@@ -31,30 +31,30 @@ The **Restricted** permission is the most basic level of permission. Specify **R
 
 - Access the members in the following list that pertain to the information of the user or item. Attempting to access members in this list will return **null** and result in an error message which states that Outlook requires the mail add-in to have elevated permission.
 
-    - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.organizer](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [mailbox.getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [mailbox.userProfile](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
-    - [Body](/javascript/api/outlook/office.body) and all its child members
-    - [Location](/javascript/api/outlook/office.location) and all its child members
-    - [Recipients](/javascript/api/outlook/office.recipients) and all its child members
-    - [Subject](/javascript/api/outlook/office.subject) and all its child members
-    - [Time](/javascript/api/outlook/office.time) and all its child members
+  - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.organizer](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+  - [mailbox.getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+  - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+  - [mailbox.userProfile](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
+  - [Body](/javascript/api/outlook/office.body) and all its child members
+  - [Location](/javascript/api/outlook/office.location) and all its child members
+  - [Recipients](/javascript/api/outlook/office.recipients) and all its child members
+  - [Subject](/javascript/api/outlook/office.subject) and all its child members
+  - [Time](/javascript/api/outlook/office.time) and all its child members
 
 ## ReadItem permission
 
@@ -70,7 +70,7 @@ The **ReadItem** permission is the next level of permission in the permissions m
 
 - [Get all existing well-known entities](match-strings-in-an-item-as-well-known-entities.md), not just a subset, from the item's subject or body.
 
-- Use all the [well-known entities](activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rules, or [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rules. The following example follows schema v1.1. It shows a rule that activates the add-in if one or more of the well-known entities are found in the subject or body of the selected message:
+- Use all the [well-known entities](activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) rules, or [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rules. The following example follows schema v1.1. It shows a rule that activates the add-in if one or more of the well-known entities are found in the subject or body of the selected message.
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -94,31 +94,31 @@ The **ReadItem** permission is the next level of permission in the permissions m
 ### Can't do
 
 - Use the token provided by **mailbox.getCallbackTokenAsync** to:
-    - Update or delete the current item using the Outlook REST API or access any other items in the user's mailbox.
-    - Get the current calendar event item using the Outlook REST API.
+  - Update or delete the current item using the Outlook REST API or access any other items in the user's mailbox.
+  - Get the current calendar event item using the Outlook REST API.
 
-- Use any of the following APIs:
-    - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.bcc.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.bcc.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
-    - [item.body.prependAsync](/javascript/api/outlook/office.Body#prependasync-data--options--callback-)
-    - [item.body.setAsync](/javascript/api/outlook/office.Body#setasync-data--options--callback-)
-    - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.Body#setselecteddataasync-data--options--callback-)
-    - [item.cc.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.cc.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
-    - [item.end.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)
-    - [item.location.setAsync](/javascript/api/outlook/office.Location#setasync-location--options--callback-)
-    - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
-    - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
-    - [item.start.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)
-    - [item.subject.setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)
-    - [item.to.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.to.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+- Use any of the following APIs.
+  - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+  - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.bcc.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.bcc.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+  - [item.body.prependAsync](/javascript/api/outlook/office.Body#prependasync-data--options--callback-)
+  - [item.body.setAsync](/javascript/api/outlook/office.Body#setasync-data--options--callback-)
+  - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.Body#setselecteddataasync-data--options--callback-)
+  - [item.cc.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.cc.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+  - [item.end.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)
+  - [item.location.setAsync](/javascript/api/outlook/office.Location#setasync-location--options--callback-)
+  - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+  - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+  - [item.start.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)
+  - [item.subject.setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)
+  - [item.to.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.to.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
 
 ## ReadWriteItem permission
 
@@ -135,8 +135,8 @@ Specify **ReadWriteItem** in the **Permissions** element in the manifest to requ
 ### Can't do
 
 - Use the token provided by **mailbox.getCallbackTokenAsync** to:
-    - Update or delete the current item using the Outlook REST API or access any other items in the user's mailbox.
-    - Get the current calendar event item using the Outlook REST API.
+  - Update or delete the current item using the Outlook REST API or access any other items in the user's mailbox.
+  - Get the current calendar event item using the Outlook REST API.
 
 - Use **mailbox.makeEWSRequestAsync**.
 
@@ -150,7 +150,7 @@ In addition to what the **ReadWriteItem** permission supports, the token provide
 - Create, read, and write to any folder or item in that mailbox.
 - Send an item from that mailbox
 
-Through **mailbox.makeEWSRequestAsync**, you can access the following EWS operations:
+Through **mailbox.makeEWSRequestAsync**, you can access the following EWS operations.
 
 - [CopyItem](/exchange/client-developer/web-service-reference/copyitem-operation)
 - [CreateFolder](/exchange/client-developer/web-service-reference/createfolder-operation)

@@ -25,9 +25,9 @@ The following table lists common error messages that users might encounter and s
 ## When installing an add-in, you see "Error loading add-in" in the status bar
 
 1. Close Office.
-2. Verify that the manifest is valid
-3. Restart the add-in
-4. Install the add-in again.
+1. Verify that the manifest is valid
+1. Restart the add-in
+1. Install the add-in again.
 
 You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.
 
@@ -37,15 +37,19 @@ If an Outlook add-in running on Windows and [using Internet Explorer](../concept
 
 - Go to Tools > **Internet Options** > **Advanced**.
 - Under **Browsing**, uncheck **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)**.
+
 We recommend that you uncheck these settings only to troubleshoot the issue. If you leave them unchecked, you will get prompts when you browse. After the issue is resolved, check **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)** again.
 
 ## Add-in doesn't activate in Office 2013
 
-If the add-in doesn't activate when the user performs the following:
+If the add-in doesn't activate when the user performs the following steps.
 
-1. Sign in with their Microsoft account in Office 2013.
-2. Enable two-step verification for their Microsoft account.
-3. Verify their identity when prompted when they try to insert an add-in.
+1. Signs in with their Microsoft account in Office 2013.
+
+1. Enables two-step verification for their Microsoft account.
+
+1. Verifies their identity when prompted when they try to insert an add-in.
+
 Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/kb/2986156/).
 
 ## Add-in dialog box cannot be displayed
@@ -68,9 +72,9 @@ To resolve the issue, end users or administrators can add the domain of the add-
 To add a URL to your list of trusted sites:
 
 1. In **Control Panel**, go to **Internet options** > **Security**.
-2. Select the **Trusted sites** zone, and choose **Sites**.
-3. Enter the URL that appears in the error message, and choose **Add**.
-4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
+1. Select the **Trusted sites** zone, and choose **Sites**.
+1. Enter the URL that appears in the error message, and choose **Add**.
+1. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
 
 This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 

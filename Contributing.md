@@ -142,7 +142,7 @@ One of the site administrators will process your pull request. Your pull request
 
 After a branch is successfully merged (that is, your pull request is accepted), don't continue working in that local branch. This can lead to merge conflicts if you submit another pull request. To do another update, create a new local branch from the successfully merged upstream branch, and then delete your initial local branch.
 
-For example, if your local branch X was successfully merged into the OfficeDev/microsoft-graph-docs master branch and you want to make additional updates to the content that was merged. Create a new local branch, X2, from the OfficeDev/microsoft-graph-docs master branch. To do this, open GitBash and execute the following commands:
+For example, if your local branch X was successfully merged into the OfficeDev/microsoft-graph-docs master branch and you want to make additional updates to the content that was merged. Create a new local branch, X2, from the OfficeDev/microsoft-graph-docs master branch. To do this, open GitBash and execute the following commands.
 
     cd microsoft-graph-docs
     git pull upstream master:X2
