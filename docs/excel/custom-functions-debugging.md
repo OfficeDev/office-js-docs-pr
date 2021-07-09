@@ -4,6 +4,7 @@ description: 'Learn how to debug your Excel custom functions that don't use a ta
 ms.date: 07/08/2021
 localization_priority: Normal
 ---
+
 # UI-less custom functions debugging
 
 This article discusses debugging *only* for custom functions that don't use a task pane or other user interface elements (UI-less custom functions).
