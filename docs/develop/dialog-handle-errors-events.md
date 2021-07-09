@@ -1,11 +1,11 @@
 ---
 title: Handling errors and events in the Office dialog box 
-description: 'Describes how to trap and handle errors when opening and using the Office dialog box'
-ms.date: 01/29/2020
+description: 'Learn how to trap and handle errors when opening and using the Office dialog box.'
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
-# Handling errors and events in the Office dialog box
+# Handle errors and events in the Office dialog box
 
 This article describes how to trap and handle errors when opening the dialog box and errors that happen inside the dialog box.
 
@@ -14,7 +14,7 @@ This article describes how to trap and handle errors when opening the dialog box
 > 
 > See also [Best practices and rules for the Office dialog API](dialog-best-practices.md).
 
-Your code should handle two categories of events:
+Your code should handle two categories of events.
 
 - Errors returned by the call of `displayDialogAsync` because the dialog box cannot be created.
 - Errors, and other events, in the dialog box.
@@ -55,7 +55,7 @@ Three errors and events in the dialog box will raise a `DialogEventReceived` eve
 |12003|The dialog box was directed to a URL with the HTTP protocol. HTTPS is required.|
 |12006|The dialog box was closed, usually because the user chose the **Close** button **X**.|
 
-Your code can assign a handler for the `DialogEventReceived` event in the call to `displayDialogAsync`. The following is a simple example:
+Your code can assign a handler for the `DialogEventReceived` event in the call to `displayDialogAsync`. The following is a simple example.
 
 ```js
 var dialog;
@@ -67,7 +67,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 );
 ```
 
-For an example of a handler for the `DialogEventReceived` event that creates custom error messages for each error code, see the following example:
+For an example of a handler for the `DialogEventReceived` event that creates custom error messages for each error code, see the following example.
 
 ```js
 function processDialogEvent(arg) {
@@ -86,5 +86,7 @@ function processDialogEvent(arg) {
     }
 }
 ```
+
+## See also
 
 For a sample add-in that handles errors in this way, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).

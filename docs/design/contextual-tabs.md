@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -15,7 +15,7 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 > - [Basic concepts for Add-in Commands](add-in-commands.md)
 
 > [!IMPORTANT]
-> Custom contextual tabs are currently only supported on Excel and only on these platforms and builds:
+> Custom contextual tabs are currently only supported on Excel and only on these platforms and builds.
 >
 > - Excel on Windows (Microsoft 365 subscription only): Version 2102 (Build 13801.20294) or later.
 > - Excel on the web
@@ -30,7 +30,7 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 
 ## Behavior of custom contextual tabs
 
-The user experience for custom contextual tabs follows the pattern of built-in Office contextual tabs. The following are the basic principles for the placement custom contextual tabs:
+The user experience for custom contextual tabs follows the pattern of built-in Office contextual tabs. The following are the basic principles for the placement custom contextual tabs.
 
 - When a custom contextual tab is visible, it appears on the right end of the ribbon.
 - If one or more built-in contextual tabs and one or more custom contextual tabs from add-ins are visible at the same time, the custom contextual tabs are always to the right of all of the built-in contextual tabs.
@@ -40,7 +40,7 @@ The user experience for custom contextual tabs follows the pattern of built-in O
 
 ## Major steps for including a contextual tab in an add-in
 
-The following are the major steps for including a custom contextual tab in an add-in:
+The following are the major steps for including a custom contextual tab in an add-in.
 
 1. Configure the add-in to use a shared runtime.
 1. Define the tab and the groups and controls that appear on it.
@@ -59,7 +59,6 @@ Unlike custom core tabs, which are defined with XML in the manifest, custom cont
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
 
 We'll construct an example of a contextual tabs JSON blob step-by-step. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). If you are working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
-
 
 1. Begin by creating a JSON string with two array properties named `actions` and `tabs`. The `actions` array is a specification of all the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs, *up to a maximum of 20*.
 
@@ -156,12 +155,12 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 
     - All the properties, except `enabled`, are required.
     - `type` specifies the type of control. The values can be "Button", "Menu", or "MobileButton".
-    - `id` can be up to 125 characters. 
+    - `id` can be up to 125 characters.
     - `actionId` must be the ID of an action defined in the `actions` array. (See step 1 of this section.)
     - `label` is a user-friendly string to serve as the label of the button.
     - `superTip` represents a rich form of tool tip. Both the `title` and `description` properties are required.
     - `icon` specifies the icons for the button. The previous remarks about the group icon apply here too.
-    - `enabled` (optional) specifies whether the button is enabled when the contextual tab appears starts up. The default if not present is `true`. 
+    - `enabled` (optional) specifies whether the button is enabled when the contextual tab appears starts up. The default if not present is `true`.
 
     ```json
     {
@@ -186,8 +185,8 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
         ]
     }
     ```
- 
-The following is the complete example of the JSON blob:
+
+The following is the complete example of the JSON blob.
 
 ```json
 `{
@@ -375,7 +374,7 @@ function myContextChanges() {
 
 ## Localizing the JSON blob
 
-The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example:
+The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example.
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -419,7 +418,7 @@ function GetContextualTabsJsonSupportedLocale () {
 }
 ```
 
-Then your code calls the function to get the localized blob that is passed to `requestCreateControls`, as in the following example:
+Then your code calls the function to get the localized blob that is passed to `requestCreateControls`, as in the following example.
 
 ```javascript
 var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
@@ -433,7 +432,7 @@ Some combinations of platform, Office application, and Office build don't suppor
 
 #### Use noncontextual tabs or controls
 
-There is a manifest element, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs. 
+There is a manifest element, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs.
 
 The simplest strategy for using this element is that you define in the manifest one or more custom core tabs (that is, *noncontextual* custom tabs) that duplicate the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the [CustomTab](../reference/manifest/customtab.md). The effect of doing so is the following:
 

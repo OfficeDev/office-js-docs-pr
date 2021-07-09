@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 02/09/2021
+ms.date: 07/08/2021
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 localization_priority: Priority
@@ -169,7 +169,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-paragraph` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `insert-paragraph` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="apply-style">Apply Style</button><br/><br/>
@@ -177,13 +177,13 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-paragraph` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-paragraph` button, and add the following code after that line.
 
     ```js
     document.getElementById("apply-style").onclick = applyStyle;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function applyStyle() {
@@ -213,7 +213,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `apply-style` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `apply-style` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
@@ -221,13 +221,13 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `apply-style` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `apply-style` button, and add the following code after that line.
 
     ```js
     document.getElementById("apply-custom-style").onclick = applyCustomStyle;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function applyCustomStyle() {
@@ -259,7 +259,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `apply-custom-style` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `apply-custom-style` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
@@ -267,13 +267,13 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `apply-custom-style` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `apply-custom-style` button, and add the following code after that line.
 
     ```js
     document.getElementById("change-font").onclick = changeFont;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function changeFont() {
@@ -331,7 +331,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `change-font` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `change-font` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
@@ -339,13 +339,13 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `change-font` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `change-font` button, and add the following code after that line.
 
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function insertTextIntoRange() {
@@ -396,7 +396,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 ### Add code to fetch document properties into the task pane's script objects
 
-In all previous functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value. It is necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`. Only then can `originalRange.text` be called without causing an exception to be thrown. This fetching process has three steps:
+In all previous functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value. It is necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`. Only then can `originalRange.text` be called without causing an exception to be thrown. This fetching process has three steps.
 
    1. Queue a command to load (that is; fetch) the properties that your code needs to read.
 
@@ -463,7 +463,7 @@ function insertTextIntoRange() {
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-text-into-range` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `insert-text-into-range` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
@@ -471,13 +471,13 @@ function insertTextIntoRange() {
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-text-into-range` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-text-into-range` button, and add the following code after that line.
 
     ```js
     document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function insertTextBeforeRange() {
@@ -533,7 +533,7 @@ function insertTextIntoRange() {
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
     ```
 
-9. Replace `TODO4` with the following code:
+9. Replace `TODO4` with the following code.
 
     ```js
     .then(context.sync);
@@ -543,7 +543,7 @@ function insertTextIntoRange() {
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-text-outside-range` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `insert-text-outside-range` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
@@ -551,13 +551,13 @@ function insertTextIntoRange() {
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-text-outside-range` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-text-outside-range` button, and add the following code after that line.
 
     ```js
     document.getElementById("replace-text").onclick = replaceText;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function replaceText() {
@@ -629,7 +629,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `replace-text` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `replace-text` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
@@ -643,13 +643,13 @@ Complete the following steps to define the image that you'll insert into the doc
     import { base64Image } from "../../base64Image";
     ```
 
-5. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `replace-text` button, and add the following code after that line:
+5. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `replace-text` button, and add the following code after that line.
 
     ```js
     document.getElementById("insert-image").onclick = insertImage;
     ```
 
-6. Add the following function to the end of the file:
+6. Add the following function to the end of the file.
 
     ```js
     function insertImage() {
@@ -678,7 +678,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-image` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `insert-image` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
@@ -686,13 +686,13 @@ Complete the following steps to define the image that you'll insert into the doc
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-image` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-image` button, and add the following code after that line.
 
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function insertHTML() {
@@ -713,7 +713,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 6. Within the `insertHTML()` function, replace `TODO1` with the following code. Note:
 
-   - The first line adds a blank paragraph to the end of the document. 
+   - The first line adds a blank paragraph to the end of the document.
 
    - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
 
@@ -726,7 +726,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-html` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `insert-html` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
@@ -734,13 +734,13 @@ Complete the following steps to define the image that you'll insert into the doc
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-html` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-html` button, and add the following code after that line.
 
     ```js
     document.getElementById("insert-table").onclick = insertTable;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function insertTable() {
@@ -818,7 +818,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `insert-table` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `insert-table` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
@@ -826,13 +826,13 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-table` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-table` button, and add the following code after that line.
 
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function createContentControl() {
@@ -876,7 +876,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `create-content-control` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `create-content-control` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
@@ -884,13 +884,13 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-content-control` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-content-control` button, and add the following code after that line.
 
     ```js
     document.getElementById("replace-content-in-control").onclick = replaceContentInControl;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function replaceContentInControl() {
@@ -937,7 +937,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 ## Next steps
 
-In this tutorial, you've created a Word task pane add-in that inserts and replaces text, images, and other content in a Word document. To learn more about building Word add-ins, continue to the following article:
+In this tutorial, you've created a Word task pane add-in that inserts and replaces text, images, and other content in a Word document. To learn more about building Word add-ins, continue to the following article.
 
 > [!div class="nextstepaction"]
 > [Word add-ins overview](../word/word-add-ins-programming-overview.md)

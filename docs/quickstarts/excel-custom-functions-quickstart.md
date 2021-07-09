@@ -1,5 +1,5 @@
 ---
-ms.date: 11/09/2020
+ms.date: 07/08/2021
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -41,7 +41,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     cd starcount
     ```
 
-3. Build the project. 
+3. Build the project.
 
     ```command&nbsp;line
     npm run build
@@ -86,7 +86,7 @@ To use your custom functions add-in, open a new workbook in Excel on a browser. 
 
 The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
-In your Excel workbook, try out the `ADD` custom function by completing the following steps:
+In your Excel workbook, try out the `ADD` custom function by completing the following steps.
 
 1. Select a cell and type `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 

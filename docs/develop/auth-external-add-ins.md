@@ -1,7 +1,7 @@
 ---
 title: Authorize external services in your Office Add-in
 description: 'Getting authorization to non-Microsoft data sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub using OAuth 2.0, the Authorization Code and Implicit flows.'
-ms.date: 08/07/2019
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -16,7 +16,7 @@ The industry standard framework for enabling web application access to an online
 
 A fundamental idea of OAuth is that an application can be a [security principal](/windows/security/identity-protection/access-control/security-principals) unto itself, just like a user or a group, with its own identity and set of permissions. In the most typical scenarios, when the user takes an action in the Office Add-in that requires the online service, the add-in sends the service a request for a specific set of permissions to the user's account. The service then prompts the user to grant the add-in those permissions. After the permissions are granted, the service sends the add-in a small encoded *access token*. The add-in can use the service by including the token in all its requests to the service's APIs. But the add-in can act only within the permissions that the user granted it. The token also expires after a specified time.
 
-Several OAuth patterns, called *flows* or *grant types*, are designed for different scenarios. The following two patterns are the most commonly implemented:
+Several OAuth patterns, called *flows* or *grant types*, are designed for different scenarios. The following two patterns are the most commonly implemented.
 
 - **Implicit flow**: Communication between the add-in and the online service is implemented with client-side JavaScript. This flow is commonly used in single-page applications (SPAs).
 - **Authorization Code flow**: Communication is *server-to-server* between your add-in's web application and the online service. So, it is implemented with server-side code.
@@ -28,13 +28,13 @@ You should be familiar with the pros and cons of the Implicit flow and the Autho
 > [!NOTE]
 > You also have the option of using a middleman service to perform authorization and pass the access token to your add-in. For details about this scenario, see the **Middleman services** section later in this article.
 
-## Using the Implicit flow in Office Add-ins
+## Use the Implicit flow in Office Add-ins
 
 The best way to find out if an online service supports the Implicit flow is to consult the service's documentation.
 
 For information about libraries that support the Implicit flow, see the **Libraries** section later in this article.
 
-## Using the Authorization Code flow in Office Add-ins
+## Use the Authorization Code flow in Office Add-ins
 
 Many libraries are available for implementing the Authorization Code flow in various languages and frameworks. For more information about some of these libraries, see the **Libraries** section later in this article.
 
@@ -50,9 +50,9 @@ Libraries are available for many languages and platforms, for both the Implicit 
 
 ## Middleman services
 
-Your add-in can use a middleman service such as [OAuth.io](https://oauth.io) or [Auth0](https://auth0.com) to perform authorization. A middleman service may either provide access tokens for popular online services or simplify the process of enabling social login for your add-in, or both. With very little code, your add-in can use either client-side script or server-side code to connect to the middleman service and it will send your add-in any required tokens for the online service. All of the authorization implementation code is in the middleman service. 
+Your add-in can use a middleman service such as [OAuth.io](https://oauth.io) or [Auth0](https://auth0.com) to perform authorization. A middleman service may either provide access tokens for popular online services or simplify the process of enabling social login for your add-in, or both. With very little code, your add-in can use either client-side script or server-side code to connect to the middleman service and it will send your add-in any required tokens for the online service. All of the authorization implementation code is in the middleman service.
 
-We recommend that the UI for authentication/authorization in your add-in use our Dialog APIs to open a login page. See [Use the Dialog APIs in an authentication flow](dialog-api-in-office-add-ins.md#use-the-dialog-apis-in-an-authentication-flow) for more information. When you open an Office dialog in this way, the dialog has a completely new and separate instance of the browser and JavaScript engine from the instance in the parent page (e.g., the add-in's task pane or FunctionFile). A token, and any other information that can be converted to a string, is passed back to the parent using an API called `messageParent`. The parent page can then use the token to make authorized calls to the resource. Because of this architecture, you must be careful how you use the APIs provided by a middleman service. Often the service will provide an API set in which your code creates some kind of context object which both gets a token and uses that token in making subsequent calls to the resource. Often the service has a single API method that makes the initial call *and* creates the context object. An object like this cannot be completely stringified, so it cannot be passed from the Office dialog to the parent page. Typically, the middleman service provides a second API set, at a lower level of abstraction, such as a REST API. This second set will have an API that gets a token from the service, and other APIs that pass the token to service when using it to get authorized access to the resource. You need to work with an API at this lower level of abstraction so that you can get the token in the Office dialog and then use `messageParent` to pass it to the parent page. 
+We recommend that the UI for authentication/authorization in your add-in use our Dialog APIs to open a login page. See [Use the Dialog APIs in an authentication flow](dialog-api-in-office-add-ins.md#use-the-dialog-apis-in-an-authentication-flow) for more information. When you open an Office dialog in this way, the dialog has a completely new and separate instance of the browser and JavaScript engine from the instance in the parent page (e.g., the add-in's task pane or FunctionFile). A token, and any other information that can be converted to a string, is passed back to the parent using an API called `messageParent`. The parent page can then use the token to make authorized calls to the resource. Because of this architecture, you must be careful how you use the APIs provided by a middleman service. Often the service will provide an API set in which your code creates some kind of context object which both gets a token and uses that token in making subsequent calls to the resource. Often the service has a single API method that makes the initial call *and* creates the context object. An object like this cannot be completely stringified, so it cannot be passed from the Office dialog to the parent page. Typically, the middleman service provides a second API set, at a lower level of abstraction, such as a REST API. This second set will have an API that gets a token from the service, and other APIs that pass the token to service when using it to get authorized access to the resource. You need to work with an API at this lower level of abstraction so that you can get the token in the Office dialog and then use `messageParent` to pass it to the parent page.
 
 ## What is CORS?
 

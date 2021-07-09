@@ -73,7 +73,7 @@ Pull requests are typically reviewed within 10 business days.
 
         git clone https://github.com/<your user name>/<repo name>.git
 
-    Next, create a reference to the root repository by entering these commands:
+    Next, create a reference to the root repository by entering these commands.
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git
@@ -111,7 +111,7 @@ You navigate to the repository on your computer by using File Explorer. The repo
 
 To edit files, open them in an editor of your choice and modify them. To create a new file, use the editor of your choice and save the new file in the appropriate location in your local copy of the repository. While working, save your work frequently.
 
-The files in `C:\Users\<yourusername>\<repo name>` are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change. To commit a change to the local repository, type the following commands in GitBash:
+The files in `C:\Users\<yourusername>\<repo name>` are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change. To commit a change to the local repository, type the following commands in GitBash.
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"

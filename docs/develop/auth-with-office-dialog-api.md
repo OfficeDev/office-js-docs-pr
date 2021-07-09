@@ -1,7 +1,7 @@
 ---
 title: Authenticate and authorize with the Office dialog API
 description: 'Learn how to use the Office dialog API to enable users to sign-on to Google, Facebook, Microsoft 365, and other services protected by Microsoft Identity Platform.'
-ms.date: 09/24/2020
+ms.date: 07/08/2021
 localization_priority: Priority
 ---
 
@@ -12,7 +12,7 @@ Many identity authorities, also called Secure Token Services (STS), prevent thei
 > [!NOTE]
 > This article assumes that you are familiar with [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 
-The dialog box that is opened with this API has the following characteristics:
+The dialog box that is opened with this API has the following characteristics.
 
 - It is [nonmodal](https://en.wikipedia.org/wiki/Dialog_box).
 - It is a completely separate browser instance from the task pane, meaning:
@@ -92,7 +92,7 @@ For more information about authentication and authorization libraries, see [Micr
 - [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): Just like the one above, but the Office application is Outlook.
 - [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): A NodeJS based add-in (Excel, Word, or PowerPoint) that uses the msal.js library and the Implicit Flow to sign in and get an access token for Microsoft Graph data.
 
+## See also
 
-For more information, see:
 - [Authorize external services in your Office Add-in](auth-external-add-ins.md)
 - [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md)

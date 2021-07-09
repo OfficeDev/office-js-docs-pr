@@ -106,7 +106,7 @@ We recommend uploading new documents to OneDrive if your customer uses OneDrive.
 ### Upload a file to OneDrive
 
 1. Open the **graph-tutorial.sln** solution in Visual Studio 2019, and open the **PrivateSettings.config** file.
-1. Add a new scope **Files.ReadWrite** to the **ida:AppScopes** key so that it looks like the following code:
+1. Add a new scope **Files.ReadWrite** to the **ida:AppScopes** key so that it looks like the following .
     ```xml
     <add key="ida:AppScopes" value="User.Read Calendars.Read Files.ReadWrite " />
     ```

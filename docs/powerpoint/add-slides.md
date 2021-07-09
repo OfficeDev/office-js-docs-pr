@@ -1,7 +1,7 @@
 ---
 title: Add and delete slides in PowerPoint
 description: 'Learn how to add and delete slides and specify the master and layout of new slides.'
-ms.date: 06/02/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -30,9 +30,9 @@ async function addSlide() {
 }
 ```
 
-### Selecting which slide master and layout to use
+### Select which slide master and layout to use
 
-Use the [AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) parameter to control which slide master is used for the new slide and which layout within the master is used. The following is an example. Note the following about this code:
+Use the [AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) parameter to control which slide master is used for the new slide and which layout within the master is used. The following is an example. About this code, note:
 
 - You can include either or both the properties of the `AddSlideOptions` object.
 - If both properties are used, then the specified layout must belong to the specified master or an error is thrown.
@@ -62,7 +62,7 @@ Accordingly, the `AddSlideOptions` parameter is primarily used in scenarios in w
 
 If your add-in can be used in scenarios where the new slide should use the same combination of slide master and layout that is used by an *existing* slide, then your add-in can (1) prompt the user to select a slide and (2) read the IDs of the slide master and layout. The following steps show how to read the IDs and add a slide with a matching master and layout.
 
-1. Create a method to get the index of the selected slide. The following is an example. Note about this code:
+1. Create a method to get the index of the selected slide. The following is an example. About this code, note:
 
     - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs.
     - The call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).

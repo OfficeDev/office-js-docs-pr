@@ -1,7 +1,7 @@
 ---
 title: Loading the DOM and runtime environment
 description: 'Load the DOM and Office Add-ins runtime environment.'
-ms.date: 04/20/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -16,7 +16,7 @@ The following figure shows the flow of events involved in starting a content or 
 
 ![Flow of events when starting a content or task pane add-in.](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
-The following events occur when a content or task pane add-in starts:
+The following events occur when a content or task pane add-in starts.
 
 1. The user opens a document that already contains an add-in or inserts an add-in in the document.
 
@@ -32,14 +32,13 @@ The following events occur when a content or task pane add-in starts:
 
 6. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
 
-
 ## Startup of an Outlook add-in
 
 The following figure shows the flow of events involved in starting an Outlook add-in running on the desktop, tablet, or smartphone.
 
 ![Flow of events when starting Outlook add-in.](../images/outlook15-loading-dom-agave-runtime.png)
 
-The following events occur when an Outlook add-in starts:
+The following events occur when an Outlook add-in starts.
 
 1. When Outlook starts, Outlook reads the XML manifests for Outlook add-ins that have been installed for the user's email account.
 

@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
-description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 05/12/2021
+description: 'Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
+ms.date: 07/08/2021
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Priority
@@ -211,7 +211,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `create-table` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `create-table` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
@@ -219,13 +219,13 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line.
 
     ```js
     document.getElementById("filter-table").onclick = filterTable;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function filterTable() {
@@ -262,7 +262,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `filter-table` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `filter-table` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
@@ -270,13 +270,13 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line.
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function sortTable() {
@@ -338,7 +338,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `sort-table` button, and add the following markup after that line: 
+2. Locate the `<button>` element for the `sort-table` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
@@ -346,13 +346,13 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line.
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function createChart() {
@@ -433,7 +433,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `create-chart` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `create-chart` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
@@ -441,13 +441,13 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 3. Open the file **./src/taskpane/taskpane.js**.
 
-4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line:
+4. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line.
 
     ```js
     document.getElementById("freeze-header").onclick = freezeHeader;
     ```
 
-5. Add the following function to the end of the file:
+5. Add the following function to the end of the file.
 
     ```js
     function freezeHeader() {
@@ -619,7 +619,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     }
     ```
 
-3. Add the following line to the end of the file:
+3. Add the following line to the end of the file.
 
     ```js
     g.toggleProtection = toggleProtection;
@@ -642,7 +642,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 
 ### Add code to fetch document properties into the task pane's script objects
 
-In each function that you've created in this tutorial until now, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method, which sends the queued commands to the document to be executed. However, the code you added in the last step calls the `sheet.protection.protected property`. This is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script. The proxy object doesn't know the actual protection state of the document, so its `protection.protected` property can't have a real value. To avoid an exception error, you must first fetch the protection status from the document and use it set the value of `sheet.protection.protected`. This fetching process has three steps:
+In each function that you've created in this tutorial until now, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method, which sends the queued commands to the document to be executed. However, the code you added in the last step calls the `sheet.protection.protected property`. This is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script. The proxy object doesn't know the actual protection state of the document, so its `protection.protected` property can't have a real value. To avoid an exception error, you must first fetch the protection status from the document and use it set the value of `sheet.protection.protected`. This fetching process has three steps.
 
    1. Queue a command to load (that is; fetch) the properties that your code needs to read.
 
@@ -727,7 +727,7 @@ These steps must be completed whenever your code needs to *read* information fro
     - For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
       > [!NOTE]
-      > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:
+      > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder.
       >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)
       >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
@@ -802,7 +802,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 4. In the **./src/dialogs** folder, create new file named **popup.js**.
 
-5. Add the following code to **popup.js**. Note the following about this code:
+5. Add the following code to **popup.js**. Note the following:
 
    - *Every page that calls APIs in the Office.js library must first ensure that the library is fully initialized.* The best way to do that is to call the `Office.onReady()` method. If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`. The call of `Office.onReady()` must run before any calls to Office.js; hence the assignment is in a script file that is loaded by the page, as it is in this case.
 
@@ -850,7 +850,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     popup: "./src/dialogs/popup.js"
     ```
 
-    After you've done this, the new `entry` object will look like this:
+    After you've done this, the new `entry` object will look like this.
 
     ```js
     entry: {
@@ -871,7 +871,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     })
     ```
 
-    After you've done this, the new `plugins` array will look like this:
+    After you've done this, the new `plugins` array will look like this.
 
     ```js
     plugins: [
@@ -912,7 +912,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
-2. Locate the `<button>` element for the `freeze-header` button, and add the following markup after that line:
+2. Locate the `<button>` element for the `freeze-header` button, and add the following markup after that line.
 
     ```html
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>

@@ -1,22 +1,23 @@
 ---
 title: Office versions and requirement sets
 description: 'Supported Office.js platforms using JavaScript API.'
-ms.date: 02/09/2021
+ms.date: 07/08/2021
 localization_priority: Priority
 ---
 
 # Office versions and requirement sets
 
-There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). You may not always have control over the version of Office your users have installed.  To handle this situation, we provide a system called requirement sets to help you determine whether an Office application supports the capabilities you need in your Office Add-in. 
+There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). You may not always have control over the version of Office your users have installed.  To handle this situation, we provide a system called requirement sets to help you determine whether an Office application supports the capabilities you need in your Office Add-in.
 
 > [!NOTE]
+>
 > - Office runs across multiple platforms, including Windows, in a browser, Mac, and iPad.
 > - Examples of Office applications are Office Products: Excel, Word, PowerPoint, Outlook, OneNote, and so forth.  
 > - A requirement set is a named group of API members e.g., `ExcelApi 1.5`, `WordApi 1.3`, and so on.  
 
 ## How to check your Office version
 
-To identify the Office version that you're using, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office will appear in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000):
+To identify the Office version that you're using, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office will appear in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000).
 
 ![Checking your Office version.](../images/office-version.png)
 
@@ -28,7 +29,7 @@ Some Office applications have their own API requirement sets. For example, the f
 
 In addition, other functionality such as add-in commands (ribbon extensibility) and the ability to launch dialog boxes (Dialog API) were added to the Common API. Add-in commands and Dialog API requirement sets are examples of API sets that the various Office applications share in common.
 
-An add-in can only use APIs in requirement sets that are supported by the version of Office application where the add-in is running. To know exactly which requirement sets are available for a specific Office application version, refer to the following application-specific requirement set articles:
+An add-in can only use APIs in requirement sets that are supported by the version of Office application where the add-in is running. To know exactly which requirement sets are available for a specific Office application version, refer to the following application-specific requirement set articles.
 
 - [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
@@ -36,7 +37,7 @@ An add-in can only use APIs in requirement sets that are supported by the versio
 - [PowerPoint JavaScript API requirement sets](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Understanding Outlook API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md) (Mailbox)
 
-Some requirement sets contain APIs that can be used by any Office application. For information about these requirement sets, refer to the following articles:
+Some requirement sets contain APIs that can be used by any Office application. For information about these requirement sets, refer to the following articles.
 
 - [Office common requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Add-in commands requirement sets](../reference/requirement-sets/add-in-commands-requirement-sets.md)
@@ -44,7 +45,6 @@ Some requirement sets contain APIs that can be used by any Office application. F
 - [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md)
 
 The version number of a requirement set, such as the "1.1" in `ExcelApi 1.1`, is relative to the Office application. The version number of a given requirement set (e.g., `ExcelApi 1.1`) does not correspond to the version number of Office.js or to requirement sets for other Office applications (e.g., Word, Outlook, etc.).  Requirement sets for the different Office applications are released at different rates. For example, `ExcelApi 1.5` was released before the `WordApi 1.3` requirement set.
-
 
 The Office JavaScript API library (Office.js) includes all requirement sets that are currently available. While there is such a thing as requirement sets `ExcelApi 1.3` and `WordApi 1.3`, there is no `Office.js 1.3` requirement set. The latest release of Office.js is maintained as a single Office endpoint delivered via the content delivery network (CDN). For more details around the Office.js CDN, including how versioning and backward compatibility is handled, see [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md).
 

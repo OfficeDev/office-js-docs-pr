@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins
 description: 'An introduction to developing Office Add-ins.'
-ms.date: 10/14/2020
+ms.date: 07/08/2021
 localization_priority: Priority
 ---
 
@@ -12,7 +12,7 @@ localization_priority: Priority
 
 All Office Add-ins are built upon the Office Add-ins platform. For any add-in you build, you'll need to understand important concepts like application and platform availability, Office JavaScript API programming patterns, how to specify an add-in's settings and capabilities in the manifest file, how to design the UI and user experience, and more. Core development concepts like these are covered here in the **Development lifecycle** > **Develop** section of the documentation. Review the information here before exploring the application-specific documentation that corresponds to the add-in you're building (for example, [Excel](../excel/index.yml)).
 
-## Creating an Office Add-in
+## Create an Office Add-in
 
 You can create an Office Add-in by using the Yeoman generator for Office Add-ins or Visual Studio.
 
@@ -36,9 +36,9 @@ Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and
 
 [!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
 
-## Understanding the two parts of an Office Add-in
+## Understand the two parts of an Office Add-in
 
-An Office Add-in consists of two parts:
+An Office Add-in consists of two parts.
 
 - The add-in manifest (an XML file) that defines the settings and capabilities of the add-in.
 
@@ -46,7 +46,7 @@ An Office Add-in consists of two parts:
 
 The web application uses the Office JavaScript API to interact with content in the Office document where the add-in is running. Your add-in can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
 
-### Defining an add-in's settings and capabilities
+### Define an add-in's settings and capabilities
 
 An Office Add-in's manifest (an XML file) defines the settings and capabilities of the add-in. You'll configure the manifest to specify things such as:
 
@@ -60,11 +60,11 @@ An Office Add-in's manifest (an XML file) defines the settings and capabilities 
 
 For detailed information about the manifest, see [Office Add-ins XML manifest](add-in-manifests.md).
 
-### Interacting with content in an Office document
+### Interact with content in an Office document
 
 An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running.
 
-#### Accessing the Office JavaScript API library
+#### Access the Office JavaScript API library
 
 [!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
@@ -76,7 +76,7 @@ An Office Add-in can use the Office JavaScript APIs to interact with content in 
 
 [!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
-#### Exploring APIs with Script Lab
+#### Explore APIs with Script Lab
 
 Script Lab is an add-in that enables you to explore the Office JavaScript API and run code snippets while you're working in an Office program such as Excel or Word. It's available for free via [AppSource](https://appsource.microsoft.com/product/office/WA104380862) and is a useful tool to include in your development toolkit as you prototype and verify the functionality you want in your add-in. In Script Lab, you can access a library of built-in samples to quickly try out APIs or even use a sample as the starting point for your own code.
 
@@ -86,7 +86,7 @@ The following one-minute video shows Script Lab in action.
 
 For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
-## Extending the Office UI
+## Extend the Office UI
 
 An Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
 

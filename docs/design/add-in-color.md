@@ -1,11 +1,11 @@
 ---
 title: Color guidelines for Office Add-ins
 description: 'Learn how to use colors in the UI of an Office Add-in.'
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
-# Color
+# Color guidelines for Office Add-ins
 
 Color is often used to emphasize brand and reinforce visual hierarchy. It helps identify an interface as well as guide customers through an experience. Inside Office, color is used for the same goals but it is applied purposefully and minimally. At no point does it overwhelm customer content. Even when each Office app is branded with its own dominant color, it is used sparingly.
 
@@ -19,7 +19,7 @@ Office applications allow customers to personalize their interfaces by applying 
 > - For mail and task pane add-ins, use the [Context.officeTheme](/javascript/api/office/office.context) property to match the theme of the Office applications. This API is currently available in Office 2016 or later.
 > - For PowerPoint content add-ins, see [Use Office themes in your PowerPoint add-ins](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
-Apply the following general guidelines for color:
+Apply the following general guidelines for color.
 
 - Use color sparingly to communicate hierarchy and reinforce brand.
 - Overuse of a single accent color applied to both interactive and non-interactive elements can lead to confusion. For example, avoid using the same color for selected and unselected items in a navigation menu.

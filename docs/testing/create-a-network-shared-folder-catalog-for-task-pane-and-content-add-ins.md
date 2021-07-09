@@ -77,7 +77,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 1. In a text editor, create a file named TrustNetworkShareCatalog.reg.
 
-2. Add the following content to the file:
+2. Add the following content to the file.
 
     ```text
     Windows Registry Editor Version 5.00

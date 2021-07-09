@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
-ms.date: 01/29/2021
+ms.date: 07/08/2021
 localization_priority: Priority
 ---
 
@@ -89,13 +89,13 @@ Add-in commands are currently supported on the following platforms, except for l
 > [!NOTE]
 > For information about support in Outlook, see [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md).
 
-## Debugging
+## Debug
 
 To debug an Add-in Command, you must run it in Office on the web. For details, see [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md).
 
 ## Best practices
 
-Apply the following best practices when you develop add-in commands:
+Apply the following best practices when you develop add-in commands.
 
 - Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.
 - Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.

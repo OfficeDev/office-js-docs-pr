@@ -1,8 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: 'Learn the basics of creating a dialog box in an Office Add-in.'
-ms.date: 01/28/2021
-
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -36,13 +35,14 @@ The Office JavaScript APIs include a [Dialog](/javascript/api/office/office.dial
 
 To open a dialog box, your code, typically a page in a task pane, calls the [displayDialogAsync](/javascript/api/office/office.ui) method and passes to it the URL of the resource that you want to open. The page on which this method is called is known as the "host page". For example, if you call this method in script on index.html in a task pane, then index.html is the host page of the dialog box that the method opens.
 
-The resource that is opened in the dialog box is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog box. The following code is a simple example:
+The resource that is opened in the dialog box is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog box. The following code is a simple example.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+>
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
 > - The dialog box's domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](../reference/manifest/functionfile.md) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
 
@@ -51,7 +51,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 After the first page (or other resource) is loaded, a user can use links or other UI to navigate to any website (or other resource) that uses HTTPS. You can also design the first page to immediately redirect to another site.
 
-By default, the dialog box will occupy 80% of the height and width of the device screen, but you can set different percentages by passing a configuration object to the method, as shown in the following example:
+By default, the dialog box will occupy 80% of the height and width of the device screen, but you can set different percentages by passing a configuration object to the method, as shown in the following example.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20});
@@ -66,7 +66,7 @@ Set both values to 100% to get what is effectively a full screen experience. (Th
 
 ### Take advantage of a performance option in Office on the web
 
-The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office on the web, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example:
+The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office on the web, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
@@ -84,7 +84,7 @@ The dialog box cannot communicate with the host page in the task pane unless:
 - The current page in the dialog box is in the same domain as the host page.
 - The Office JavaScript API library is loaded in the page. (Like any page that uses the Office JavaScript API library, script for the page must assign a method to the `Office.initialize` property, although it can be an empty method. For details, see [Initialize your Office Add-in](initialize-add-in.md).)
 
-Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui#messageparent-message-) function to send a string message to the host page. The string can be a word, sentence, XML blob, stringified JSON, or anything else that can be serialized to a string or cast to a string. The following is an example:
+Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui#messageparent-message-) function to send a string message to the host page. The string can be a word, sentence, XML blob, stringified JSON, or anything else that can be serialized to a string or cast to a string. The following is an example.
 
 ```js
 if (loginSuccess) {
@@ -93,6 +93,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
+>
 > - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
 > - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box.
 > - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
@@ -105,7 +106,7 @@ if (loginSuccess) {
 }
 ```
 
-The host page must be configured to receive the message. You do this by adding a callback parameter to the original call of `displayDialogAsync`. The callback assigns a handler to the `DialogMessageReceived` event. The following is an example:
+The host page must be configured to receive the message. You do this by adding a callback parameter to the original call of `displayDialogAsync`. The callback assigns a handler to the `DialogMessageReceived` event. The following is an example.
 
 ```js
 var dialog;
@@ -118,12 +119,13 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
+>
 > - Office passes an [AsyncResult](/javascript/api/office/office.asyncresult) object to the callback. It represents the result of the attempt to open the dialog box. It does not represent the outcome of any events in the dialog box. For more on this distinction, see [Handle errors and events](dialog-handle-errors-events.md).
 > - The `value` property of the `asyncResult` is set to a [Dialog](/javascript/api/office/office.dialog) object, which exists in the host page, not in the dialog box's execution context.
 > - The `processMessage` is the function that handles the event. You can give it any name you want.
 > - The `dialog` variable is declared at a wider scope than the callback because it is also referenced in `processMessage`.
 
-The following is a simple example of a handler for the `DialogMessageReceived` event:
+The following is a simple example of a handler for the `DialogMessageReceived` event.
 
 ```js
 function processMessage(arg) {
@@ -133,6 +135,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
+>
 > - Office passes the `arg` object to the handler. Its `message` property is the string sent by the call of `messageParent` in the dialog box. In this example, it is a stringified representation of a user's profile from a service such as Microsoft account or Google, so it is deserialized back to an object with `JSON.parse`.
 > - The `showUserName` implementation is not shown. It might display a personalized welcome message on the task pane.
 
@@ -146,12 +149,13 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
+>
 > - The `dialog` object must be the same one that is returned by the call of `displayDialogAsync`.
 > - The call of `dialog.close` tells Office to immediately close the dialog box.
 
 For a sample add-in that uses these techniques, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-If the add-in needs to open a different page of the task pane after receiving the message, you can use the `window.location.replace` method (or `window.location.href`) as the last line of the handler. The following is an example:
+If the add-in needs to open a different page of the task pane after receiving the message, you can use the `window.location.replace` method (or `window.location.href`) as the last line of the handler. The following is an example.
 
 ```js
 function processMessage(arg) {
@@ -166,7 +170,7 @@ For an example of an add-in that does this, see the [Insert Excel charts using M
 
 ### Conditional messaging
 
-Because you can send multiple `messageParent` calls from the dialog box, but you have only one handler in the host page for the `DialogMessageReceived` event, the handler must use conditional logic to distinguish different messages. For example, if the dialog box prompts a user to sign in to an identity provider such as Microsoft account or Google, it sends the user's profile as a message. If authentication fails, the dialog box sends error information to the host page, as in the following example:
+Because you can send multiple `messageParent` calls from the dialog box, but you have only one handler in the host page for the `DialogMessageReceived` event, the handler must use conditional logic to distinguish different messages. For example, if the dialog box prompts a user to sign in to an identity provider such as Microsoft account or Google, it sends the user's profile as a message. If authentication fails, the dialog box sends error information to the host page, as in the following example.
 
 ```js
 if (loginSuccess) {
@@ -183,6 +187,7 @@ if (loginSuccess) {
 ```
 
 > [!NOTE]
+>
 > - The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
 > - The the implementation of the `getProfile` and `getError` functions are not not shown. They each get data from a query parameter or from the body of the HTTP response.
 > - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
@@ -213,7 +218,7 @@ Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.
 ### Use `messageChild()` from the host page
 
 When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned. It should be assigned to a variable that has greater scope than the [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-)
-method because the object will be referenced by other methods. The following is an example:
+method because the object will be referenced by other methods. The following is an example.
 
 ```javascript
 var dialog;
@@ -298,9 +303,9 @@ Because you can make multiple `messageChild` calls from the host page, but you h
 > [!IMPORTANT]
 > The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) cannot be specified in the `<Requirements>` section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) method. Support for manifest requirements is under development.
 
-## Closing the dialog box
+## Close the dialog box
 
-You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example:
+You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example.
 
 ```js
 function closeButtonClick() {
@@ -333,7 +338,7 @@ See [Use the Office dialog box to show a video](dialog-video.md).
 
 See [Authenticate with the Office dialog API](auth-with-office-dialog-api.md).
 
-### Using the Office dialog API with single-page applications and client-side routing
+### Use the Office dialog API with single-page applications and client-side routing
 
 SPAs and client-side routing need to be handled with care when you are using the Office dialog API. Please see [Best practices for using the Office dialog API in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-api-in-an-spa).
 

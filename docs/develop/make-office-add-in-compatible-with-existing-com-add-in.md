@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: 'Enable compatibility between your Office Add-in and equivalent COM add-in.'
-ms.date: 03/09/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -65,7 +65,7 @@ To declare compatibility between your Outlook web add-in and COM/VSTO add-in, id
 
 ## Equivalent behavior for users
 
-When an [equivalent COM add-in is specified](#specify-an-equivalent-com-add-in), Office on Windows will not display your Office Add-in's user interface (UI) if the equivalent COM add-in is installed. Office only hides the ribbon buttons of the Office Add-in and does not prevent installation. Therefore your Office Add-in will still appear in the following locations within the UI:
+When an [equivalent COM add-in is specified](#specify-an-equivalent-com-add-in), Office on Windows will not display your Office Add-in's user interface (UI) if the equivalent COM add-in is installed. Office only hides the ribbon buttons of the Office Add-in and does not prevent installation. Therefore your Office Add-in will still appear in the following locations within the UI.
 
 - Under **My add-ins**
 - As an entry in the ribbon manager (Excel, Word, and PowerPoint only)

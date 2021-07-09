@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: 'Require users to authenticate login in Web applications and Office Add-ins.'
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
 ---
 
@@ -36,7 +36,7 @@ To authenticate the user using SSO, your code in a task pane or function file ca
 
 After your code has extracted the desired claim from the token, it uses that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
 
-Before you begin implementing user authentication with SSO, be sure that you are thoroughly familiar with the article [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md). Note also these samples:
+Before you begin implementing user authentication with SSO, be sure that you are thoroughly familiar with the article [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md). Note also the following samples.
 
 - [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especially the file [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
 - [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
@@ -49,17 +49,17 @@ To use SSO to access Microsoft Graph, your add-in in a task pane or function fil
 
 After your code obtains the token, it uses it in the **On Behalf Of** flow to obtain a second token: an access token to Microsoft Graph.
 
-Before you begin implementing Office SSO, be sure that you are thoroughly familiar with these two articles:
+Before you begin implementing Office SSO, be sure that you are thoroughly familiar with these two articles.
 
 - [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md)
 - [Authorize to Microsoft Graph with SSO](authorize-to-microsoft-graph.md)
 
-You should also read at least one of the walkthrough articles listed here. Even if you don't carry out the steps, these contain valuable information about how you implement Office SSO and the **On Behalf Of** flow. 
+You should also read at least one of the walkthrough articles listed here. Even if you don't carry out the steps, these contain valuable information about how you implement Office SSO and the **On Behalf Of** flow.
 
 - [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
 - [Create an Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
 
-Note also these samples:
+Note also the following samples.
 
 - [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 - [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
