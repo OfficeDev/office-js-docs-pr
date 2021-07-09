@@ -45,13 +45,13 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 
 1. In the host application, such as Excel, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear, reading:
 
-> WebView Stop On Load.
-> To debug the webview, attach VS Code to the webview instance using the Microsoft Debugger for Edge extension, and click OK to continue. To prevent this dialog from appearing in the future, click Cancel.
+   > WebView Stop On Load.
+   > To debug the webview, attach VS Code to the webview instance using the Microsoft Debugger for Edge extension, and click OK to continue. To prevent this dialog from appearing in the future, click Cancel.
 
    Select **OK**.
 
-    > [!NOTE]
-    > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
+   > [!NOTE]
+   > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
 
 1. You're now able to set breakpoints in your project's code and debug.
 
