@@ -12,7 +12,7 @@ If you have an existing COM add-in, you can build equivalent functionality in yo
 You can configure your Office Add-in so that when the equivalent COM add-in is already installed on a user's computer, Office on Windows runs the COM add-in instead of the Office Add-in. The COM add-in is called "equivalent" because Office will seamlessly transition between the COM add-in and the Office Add-in according to which one is installed a user's computer.
 
 > [!NOTE]
-> This feature is supported by the following platform and hosts, when connected to a Microsoft 365 subscription. COM add-ins cannot be installed on any other platform, so on those platforms the manifest element that is discussed later in this article, `EquivalentAddins`, is ignored.
+> This feature is supported by the following platform and applications, when connected to a Microsoft 365 subscription. COM add-ins cannot be installed on any other platform, so on those platforms the manifest element that is discussed later in this article, `EquivalentAddins`, is ignored.
 >
 > - Excel, Word, and PowerPoint on Windows (version 1904 or later)
 
