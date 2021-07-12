@@ -29,7 +29,7 @@ Users and admins can't explicitly search for an add-in by its name in AppSource 
 
 ## Specify a flight code
 
-You can specify the flight code you want for your add-in by sharing that information in the **Note for certification** when you're publishing your add-in.
+You can specify the flight code you want for your add-in by sharing that information in the **Notes for certification** when you're publishing your add-in. _**Important**:_ Flight codes are case-sensitive.
 
 ![Screenshot showing example request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification.png)
 
@@ -62,11 +62,11 @@ For end-users who installed the add-in on their own, the event-based activation 
 
 ## Admin consent for installing event-based add-ins
 
-Whenever an event-based add-in is deployed from the **Integrated Apps** section of the admin center, the admin gets details about the add-in's event-based activation capabilities in the deployment wizard. The details appear in the **App Capability** section. The admin should see all the events where the add-in can automatically activate.
+Whenever an event-based add-in is deployed from the **Integrated Apps** section of the admin center, the admin gets details about the add-in's event-based activation capabilities in the deployment wizard. The details appear in the **App Permissions and Capabilities** section. The admin should see all the events where the add-in can automatically activate.
 
 ![Screenshot of "Accept permissions requests" screen when deploying a new app.](../images/outlook-deploy-accept-permissions-requests.png)
 
-Similarly, when an existing add-in is updated to event-based functionality, the admin sees an "Update Pending" status on the add-in. The updated add-in is deployed only if the admin consents to the changes noted in the **App Capability** section, including the set of events where the add-in can automatically activate.
+Similarly, when an existing add-in is updated to event-based functionality, the admin sees an "Update Pending" status on the add-in. The updated add-in is deployed only if the admin consents to the changes noted in the **App Permissions and Capabilities** section, including the set of events where the add-in can automatically activate.
 
 Each time you add any new `LaunchEvent Type` to your add-in, admins will see the update flow in the admin portal and need to provide consent for additional events.
 
