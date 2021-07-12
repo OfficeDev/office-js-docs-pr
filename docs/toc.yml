@@ -1294,6 +1294,6 @@ items:
       href: design/contextual-tabs.md
   - name: Outlook
     items:
-    - name: Set signature with event-based activation
-      href: excel/pnp-open-in-excel.md
+    - name: Set the signature with event-based activation
+      href: outlook/set-signature-with-event-based-activation.md
   
