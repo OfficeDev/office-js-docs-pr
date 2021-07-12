@@ -9,10 +9,9 @@ localization_priority: Normal
 
 A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office Add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
 
-> [!NOTE]
-> This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
->
-> - [Basic concepts for Add-in Commands](add-in-commands.md)
+This article explains custom contextual tabs using code from the PnP sample: [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
+
+:::image type="content" source="../images/pnp-add-contextual-tabs-to-your-add-in.png" alt-text="Screen shot showing that when Excel table has focus, a custom contextual tab named Table Data is shown on the ribbon":::
 
 > [!IMPORTANT]
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds:
@@ -46,10 +45,6 @@ The following are the major steps for including a custom contextual tab in an ad
 1. Define the tab and the groups and controls that appear on it.
 1. Register the contextual tab with Office.
 1. Specify the circumstances when the tab will be visible.
-
-## Configure the add-in to use a shared runtime
-
-Adding custom contextual tabs requires your add-in to use the shared runtime. For more information, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## Define the groups and controls that appear on the tab
 
@@ -521,3 +516,10 @@ function showDataTab() {
     }
 }
 ```
+
+## Next steps
+
+- PnP sample: [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
+- Community demo – PnP: Contextual tabs sample
+
+> [!VIDEO https://www.youtube.com/embed/9tLfm4boQIo]
