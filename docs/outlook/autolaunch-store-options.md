@@ -2,7 +2,7 @@
 title: AppSource listing options for your event-based Outlook add-in
 description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 07/08/2021
+ms.date: 07/12/2021
 localization_priority: Normal
 ---
 
@@ -56,6 +56,8 @@ You can update your existing add-in to include event-based activation then resub
 
 After the updated add-in has been approved, organization admins who have already deployed the add-in will receive an update message in the admin portal. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users.
 
+![Screenshot of app update notification on "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
+
 For end-users who installed the add-in on their own, the event-based activation feature won't work even after the add-in has been updated.
 
 ## Admin consent for installing event-based add-ins
@@ -67,6 +69,8 @@ Whenever an event-based add-in is deployed from the **Integrated Apps** section 
 Similarly, when an existing add-in is updated to event-based functionality, the admin sees an "Update Pending" status on the add-in. The updated add-in is deployed only if the admin consents to the changes noted in the **App Capability** section, including the set of events where the add-in can automatically activate.
 
 Each time you add any new `LaunchEvent Type` to your add-in, admins will see the update flow in the admin portal and need to provide consent for additional events.
+
+![Screenshot of "Updates" flow when deploying an updated app.](../images/outlook-deploy-update-flow.png)
 
 ## See also
 
