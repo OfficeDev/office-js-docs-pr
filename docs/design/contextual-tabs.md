@@ -9,9 +9,10 @@ localization_priority: Normal
 
 A contextual tab is a hidden tab control in the Office ribbon that is displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You can include custom contextual tabs in your Office Add-in and specify when they are visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs do not respond to focus changes.)
 
-This article explains custom contextual tabs using code from the PnP sample: [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
-
-:::image type="content" source="../images/pnp-add-contextual-tabs-to-your-add-in.png" alt-text="Screen shot showing that when Excel table has focus, a custom contextual tab named Table Data is shown on the ribbon":::
+> [!NOTE]
+> This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
+>
+> - [Basic concepts for Add-in Commands](add-in-commands.md)
 
 > [!IMPORTANT]
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds:
@@ -517,7 +518,7 @@ function showDataTab() {
 }
 ```
 
-## Next steps
+## PnP resources
 
 - PnP sample: [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
 - Community demo – PnP: Contextual tabs sample

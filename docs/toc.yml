@@ -1304,12 +1304,12 @@ items:
     items:
     - name: Outlook Add-in with SSO
       href: /samples/officedev/pnp-officeaddins/single-sign-on-sso-sample-outlook-add-in/?branch=master
-  - name: VSTO and COM transition resources
-    items: 
-    - name: VSTO add-in developers' guide
-      href: overview/learning-path-transition.md
-    - name: Share code from VSTO Add-in to Office Add-in
-      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: Make your Office Add-in compatible with an existing COM add-in
-      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-      displayName: manifest
+- name: VSTO and COM transition resources
+  items: 
+  - name: VSTO add-in developers' guide
+    href: overview/learning-path-transition.md
+  - name: Share code from VSTO Add-in to Office Add-in
+    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+  - name: Make your Office Add-in compatible with an existing COM add-in
+    href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+    displayName: manifest
