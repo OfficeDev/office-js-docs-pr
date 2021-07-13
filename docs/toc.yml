@@ -1291,7 +1291,7 @@ items:
       - name: Integrate with Azure functions
         href: /samples/officedev/pnp-officeaddins/integrate-an-azure-function-with-your-excel-custom-function/
     - name: Create custom contextual tabs
-      href: /samples/officedev/pnp-officeaddins/create-custom-contextual-tabs-on-the-ribbon/?branch=master
+      href: /samples/officedev/pnp-officeaddins/create-custom-contextual-tabs-on-the-ribbon/
   - name: Outlook
     items:
     - name: Set the signature with event-based activation
