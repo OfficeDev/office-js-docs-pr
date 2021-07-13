@@ -211,7 +211,7 @@ items:
             href: develop/create-addin-commands.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
-          - name: Create custom contextual tabs
+          - name: "PnP sample: Custom contextual tabs"
             href: /samples/officedev/pnp-officeaddins/create-custom-contextual-tabs-on-the-ribbon/?branch=master
           - name: Enable and Disable Add-in Commands
             href: design/disable-add-in-commands.md
