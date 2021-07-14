@@ -2,7 +2,7 @@
 title: Create an Outlook mobile add-in for an online-meeting provider
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 07/09/2021
 localization_priority: Normal
 ---
 
@@ -202,7 +202,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
 
 ## Testing and validation
 
-Follow the usual guidance to [test and validate your add-in](testing-and-tips.md). After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device. (Android is the only supported client for now.) Then, on a new meeting screen, verify that the Microsoft Teams or Skype toggle is replaced with your own.
+Follow the usual guidance to [test and validate your add-in](testing-and-tips.md). After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, restart Outlook on your Android or iOS mobile device. Then, on a new meeting screen, verify that the Microsoft Teams or Skype toggle is replaced with your own.
 
 ### Create meeting UI
 
@@ -256,6 +256,7 @@ Several restrictions apply.
 - Only admin-installed add-ins will appear on the meeting compose screen, replacing the default Teams or Skype option. User-installed add-ins won't activate.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 - Only one UI-less command is supported in Appointment Organizer (compose) mode.
+- The add-in should update the meeting details in the appointment form within the one-minute timeout period. However, any time spent in a dialog box the add-in opened for authentication, etc. is excluded from the timeout period.
 
 ## See also
 
