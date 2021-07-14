@@ -1,7 +1,7 @@
 ---
 title: Office client application and platform availability for Office Add-ins
 description: 'Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.'
-ms.date: 05/11/2021
+ms.date: 06/30/2021
 localization_priority: Priority
 ---
 
@@ -15,7 +15,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 |:---:|:---:|:---:|:---:|:---:|:---:|
 
 > [!NOTE]
-> The initial Office 2016 release installed via MSI only contains the ExcelApi 1.1, WordApi 1.1, and Common API requirement sets. For more information about the update history of the various Office versions, check out the [See also](#see-also) section.
+> The initial Office 2016 release installed via MSI only contains the ExcelApi 1.1, WordApi 1.1, and Common API requirement sets. For more information about the update history of the various Office versions, check out the [See also](#see-also) section. Office Add-ins may not be supported on all services that are members of the [Office Cloud Storage Partner Program](https://developer.microsoft.com/office/cloud-storage-partner-program), which enables integrating Office on the web to work with Office documents as part of their service offering. For more information, please contact the member service.
 
 ## Excel
 
