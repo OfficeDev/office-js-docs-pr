@@ -361,9 +361,9 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>Office on the web</td>
     <td>- CustomFunctions</td>
     <td>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.1</a><br>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.2</a><br>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.3</a>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.1</a><br>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.2</a><br>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.3</a>
     </td>
     <td></td>
   </tr>
@@ -371,9 +371,9 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>Office on Windows<br>(connected to a Microsoft 365 subscription)</td>
     <td>- CustomFunctions</td>
     <td>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.1</a><br>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.2</a><br>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.3</a>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.1</a><br>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.2</a><br>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.3</a>
     </td>
     <td></td>
   </tr>
@@ -381,9 +381,9 @@ To work as expected, your Office Add-in might depend on a specific Office applic
     <td>Office on Mac<br>(connected to a Microsoft 365 subscription)</td>
     <td>- CustomFunctions</td>
     <td>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.1</a><br>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.2</a><br>
-      - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.3</a>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.1</a><br>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.2</a><br>
+      - <a href="../excel/custom-functions-requirement-sets.md">CustomFunctionsRuntime 1.3</a>
     </td>
     <td></td>
   </tr>
