@@ -20,7 +20,7 @@ At present, add-ins must be deployed by an organization's admins for end-users t
 
 An end-user or admin can acquire add-ins through AppSource or the inclient store. If your add-in's primary scenario or workflow requires event-based activation, you may want to restrict your add-ins available to admin deployment. To enable that restriction, we can provide flight code URLs. Thanks to the flight codes, only end-users with these special URLs can access the listing. The following is an example URL.
 
-`https://appsource.microsoft.com/product/office/WA000000000?flightCodes=Contoso`
+`https://appsource.microsoft.com/product/office/WA000000000?flightCodes=EventBasedTest1`
 
 Users and admins can't explicitly search for an add-in by its name in AppSource or the inclient store when a flight code is enabled for it. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
 
@@ -31,7 +31,7 @@ Users and admins can't explicitly search for an add-in by its name in AppSource 
 
 You can specify the flight code you want for your add-in by sharing that information in the **Notes for certification** when you're publishing your add-in. _**Important**:_ Flight codes are case-sensitive.
 
-![Screenshot showing example request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification.png)
+![Screenshot showing example request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification-1.png)
 
 ## Deploy add-in with flight code
 
