@@ -1033,7 +1033,15 @@ items:
     - name: Append on send
       href: outlook/append-on-send.md
     - name: Event-based activation
-      href: outlook/autolaunch.md
+      items:
+      - name: Walkthrough
+        href: outlook/autolaunch.md
+        displayName: event-based activation
+      - name: Debug event-based activation
+        href: outlook/debug-autolaunch.md
+      - name: AppSource options
+        href: outlook/autolaunch-store-options.md
+        displayName: event-based activation
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
     - name: Shared folders and shared mailboxes
