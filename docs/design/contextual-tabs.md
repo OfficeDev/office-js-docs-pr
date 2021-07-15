@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 07/08/2021
+ms.date: 07/15/2021
 localization_priority: Normal
 ---
 
@@ -382,7 +382,9 @@ To open your task pane from a button on a custom contextual tab, create an actio
   "actions": [
     {
       "id": "openChartsTaskpane",
-      "type": "ShowTaskpane"
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
     }
   ],
   "tabs": [
@@ -420,11 +422,15 @@ To open any task pane that is not the default task pane, specify a `sourceLocati
   "actions": [
     {
       "id": "openChartsTaskpane",
-      "type": "ShowTaskpane"
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
     },
     {
       "id": "openTablesTaskpane",
       "type": "ShowTaskpane",
+      "title": "Work with Tables",
+      "supportPinning": false
       "sourceLocation": "https://MyDomain.com/myPage.html"
     }
   ],
@@ -450,7 +456,8 @@ To open any task pane that is not the default task pane, specify a `sourceLocati
                 "enabled": false,
                 "label": "Open Tables Taskpane",
                 // some control properties omitted
-            }          ]
+            }
+          ]
         }
       ]
     }
