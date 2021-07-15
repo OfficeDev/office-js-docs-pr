@@ -375,7 +375,7 @@ function myContextChanges() {
 
 ## Open a task pane from contextual tabs
 
-To have buttons on a custom contextual tab that open task panes, create an action in the JSON with type `ShowTaskpane` and then define a button whose `actionId` property is set to the `id` of the action. The following is an example. *Note that in this simple example the task pane will automatically open the URL of the shared runtime.* For more information, see [Configure the add-in to use a shared runtime](#configure-the-add-in-to-use-a-shared-runtime) earlier in this article.
+To open your task pane from a button on a custom contextual tab, create an action in the JSON with a `type` of `ShowTaskpane`. Then define a button with the `actionId` property set to the `id` of the action. This opens the default task pane specified by the `<Runtime>` element in your manifest.
 
 ```json
 `{
@@ -408,11 +408,11 @@ To have buttons on a custom contextual tab that open task panes, create an actio
 }`
 ```
 
-In a task pane, to open a page that is at a different URL from the URL of the shared runtime, specify a `sourceLocation` property in the definition of the action. In the following example, a second task pane is opened from a different button.
+To open any task pane that is not the default task pane, specify a `sourceLocation` property in the definition of the action. In the following example, a second task pane is opened from a different button.
 
 > [!IMPORTANT]
 >
-> - When a `sourceLocation` is specified for the action, then the task pane does *not* use the shared runtime.
+> - When a `sourceLocation` is specified for the action, then the task pane does *not* use the shared runtime. It runs in a new JavaScript runtime.
 > - No more than one task pane can use the shared runtime, so no more than one action of type `ShowTaskpane` can omit the `sourceLocation` property.
 
 ```json
@@ -458,7 +458,7 @@ In a task pane, to open a page that is at a different URL from the URL of the sh
 }`
 ```
 
-## Localize the JSON blob
+## Localize the JSON text
 
 The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage) property. The following is an example.
 
