@@ -1,7 +1,7 @@
 ---
 title: Authenticate and authorize with the Office dialog API
 description: 'Learn how to use the Office dialog API to enable users to sign-on to Google, Facebook, Microsoft 365, and other services protected by Microsoft Identity Platform.'
-ms.date: 09/24/2020
+ms.date: 07/19/2021
 localization_priority: Priority
 ---
 
@@ -12,7 +12,7 @@ Many identity authorities, also called Secure Token Services (STS), prevent thei
 > [!NOTE]
 > This article assumes that you are familiar with [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 
-The dialog box that is opened with this API has the following characteristics.
+The dialog box that is opened with this API has the following characteristics:
 
 - It is [nonmodal](https://en.wikipedia.org/wiki/Dialog_box).
 - It is a completely separate browser instance from the task pane, meaning:
@@ -20,9 +20,9 @@ The dialog box that is opened with this API has the following characteristics.
   - There is no shared execution environment with the task pane.
   - It does not share the same session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property) as the task pane.
 - The first page opened in the dialog box must be hosted in the same domain as the task pane, including protocol, subdomains, and port, if any.
-- The dialog box can send information back to the task pane by using the [messageParent](/javascript/api/office/office.ui#messageparent-message-) method, but this method can be called only from a page that is hosted in the same domain as the task pane, including protocol, subdomains, and port.
+- The dialog box can send information back to the task pane by using the [messageParent](/javascript/api/office/office.ui#messageparent-message-) method. (We recommend that this method be called only from a page that is hosted in the same domain as the task pane, including protocol, subdomains, and port. Otherwise, there are complications in how you call the method and process the message. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).)
 
-When the dialog box is not an iframe (which is the default), it can open the login page of an identity provider. As you'll see below, the characteristics of the Office dialog box have implications for how you use authentication or authorization libraries such as MSAL and Passport.
+When the dialog box is not an iframe (which isn't by default), it can open the login page of an identity provider. As you'll see below, the characteristics of the Office dialog box have implications for how you use authentication or authorization libraries such as MSAL and Passport.
 
 > [!NOTE]
 > There is a way to configure the dialog box to open in a floating iframe: you simply pass the `displayInIframe: true` option in the call to `displayDialogAsync`. Do *not* do this when you are using the Office dialog API for login.
@@ -31,10 +31,10 @@ When the dialog box is not an iframe (which is the default), it can open the log
 
 The following is a simple and typical authentication flow. Details are after the diagram.
 
-![Diagram showing the relationship between the task pane and dialog box browser processes.](../images/taskpane-dialog-processes.gif)
+![Diagram showing the relationship between the task pane and dialog box browser processes](../images/taskpane-dialog-processes.gif)
 
 1. The first page that opens in the dialog box is a page (or other resource) that is hosted in the add-in's domain; that is, the same domain as the task pane window. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." The code in this page constructs the URL of the identity provider's sign-in page with information that is either passed to the dialog box as described in [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) or is hardcoded into a configuration file of the add-in, such as a web.config file.
-2. The dialog box window then redirects to the sign-in page. The URL includes a query parameter that tells the identity provider to redirect the dialog box window to a specific page after the user signs in. In this article, we'll call this page **redirectPage.html**. *This must be a page in the same domain as the host window*, so that the results of the sign-in attempt can be passed to the task pane with a call of `messageParent`.
+2. The dialog box window then redirects to the sign-in page. The URL includes a query parameter that tells the identity provider to redirect the dialog box window to a specific page after the user signs in. In this article, we'll call this page **redirectPage.html**. *We recommend that this be a page in the same domain as the host window*. On this page, the results of the sign-in attempt can be passed to the task pane with a call of `messageParent`.
 3. The identity provider's service processes the incoming GET request from the dialog box window. If the user is already signed in, it immediately redirects the window to **redirectPage.html** and includes user data as a query parameter. If the user is not already signed in, the provider's sign-in page appears in the window, and the user signs in. For most providers, if the user cannot sign in successfully, the provider shows an error page in the dialog box window and does not redirect to **redirectPage.html**. The user must close the window by selecting the **X** in the corner. If the user successfully signs in, the dialog box window is redirected to **redirectPage.html** and user data is included as a query parameter.
 4. When the **redirectPage.html** page opens, it calls `messageParent` to report the success or failure to the task pane page and optionally also report user data or error data. Other possible messages include passing an access token or telling the task pane that the token is in storage.
 5. The `DialogMessageReceived` event fires in the task pane page and its handler closes the dialog box window and may further process of the message.

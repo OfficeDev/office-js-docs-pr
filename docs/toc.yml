@@ -342,6 +342,8 @@ items:
         href: reference/requirement-sets/add-in-commands-requirement-sets.md
       - name: Dialog API requirement sets
         href: reference/requirement-sets/dialog-api-requirement-sets.md
+      - name: Dialog Origin requirement sets
+        href: reference/requirement-sets/dialog-origin-requirement-sets.md        
       - name: Identity API requirement sets
         href: reference/requirement-sets/identity-api-requirement-sets.md
       - name: Image Coercion requirement sets

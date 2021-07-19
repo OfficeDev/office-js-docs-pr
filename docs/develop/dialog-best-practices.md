@@ -1,7 +1,7 @@
 ---
 title: Best practices and rules for the Office dialog API
 description: 'Provides rules and best practices for the Office dialog API, such as best practices for a single-page application (SPA)'
-ms.date: 02/09/2021
+ms.date: 07/19/2021
 localization_priority: Normal
 ---
 
@@ -22,7 +22,7 @@ This article provides rules, gotchas, and best practices for the Office dialog A
 - Only two Office APIs can be called in the dialog box:
   - The [messageParent](/javascript/api/office/office.ui#messageparent-message-) function.
   - `Office.context.requirements.isSetSupported` (For more information, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
-- The [messageParent](/javascript/api/office/office.ui#messageparent-message-) function can only be called from a page in the exact same domain as the add-in itself.
+- The [messageParent](/javascript/api/office/office.ui#messageparent-message-) function should usually be called from a page in the exact same domain as the add-in itself, but this is not mandatory. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
 ## Best practices
 
@@ -36,9 +36,9 @@ For best practices in dialog box design, see [Dialog boxes in Office Add-ins](..
 
 ### Handling pop-up blockers with Office on the web
 
-Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. Office on the web has a feature that enables your add-in's dialog boxes to be an exception to the browser's pop-up blocker. When your code calls the `displayDialogAsync` method, then Office on the web will open a prompt similar to the following:
+Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. Office on the web has a feature that enables your add-in's dialog boxes to be an exception to the browser's pop-up blocker. When your code calls the `displayDialogAsync` method, then Office on the web will open a prompt similar to the following.
 
-![Screenshot showing the prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers.](../images/dialog-prompt-before-open.png)
+![Screenshot showing the prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers](../images/dialog-prompt-before-open.png)
 
 If the user chooses **Allow**, the Office dialog box opens. If the user chooses **Ignore**, the prompt closes and the Office dialog box does not open. Instead, the `displayDialogAsync` method returns error 12009. Your code should catch this error and either provide an alternate experience that does not require a dialog, or display a message to the user advising that the add-in requires them to allow the dialog. (For more about 12009, see [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 

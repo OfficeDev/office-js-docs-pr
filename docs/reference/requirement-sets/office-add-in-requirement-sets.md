@@ -75,6 +75,14 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ---
 
+### DialogOrigin
+
+|**Office applications**|**Methods in set**|
+|:-----|:-----|
+| See [Dialog Origin requirement sets](dialog-origin-requirement-sets.md). | Cross-domain support for:<br>UI.messageParent<br>UI.Dialog.messageChild |
+
+---
+
 ### DocumentEvents
 
 |**Office applications**|**Methods in set**|
