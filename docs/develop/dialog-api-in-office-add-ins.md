@@ -125,7 +125,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > - The `processMessage` is the function that handles the event. You can give it any name you want.
 > - The `dialog` variable is declared at a wider scope than the callback because it is also referenced in `processMessage`.
 
-The following is a simple example of a handler for the `DialogMessageReceived` event:
+The following is a simple example of a handler for the `DialogMessageReceived` event.
 
 ```js
 function processMessage(arg) {
