@@ -14,6 +14,8 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 >
 > - [Basic concepts for Add-in Commands](add-in-commands.md)
 
+[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
+
 > [!IMPORTANT]
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds:
 >
