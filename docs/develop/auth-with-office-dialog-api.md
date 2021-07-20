@@ -22,7 +22,7 @@ The dialog box that is opened with this API has the following characteristics:
 - The first page opened in the dialog box must be hosted in the same domain as the task pane, including protocol, subdomains, and port, if any.
 - The dialog box can send information back to the task pane by using the [messageParent](/javascript/api/office/office.ui#messageparent-message-) method. (We recommend that this method be called only from a page that is hosted in the same domain as the task pane, including protocol, subdomains, and port. Otherwise, there are complications in how you call the method and process the message. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).)
 
-When the dialog box is not an iframe (which isn't by default), it can open the login page of an identity provider. As you'll see below, the characteristics of the Office dialog box have implications for how you use authentication or authorization libraries such as MSAL and Passport.
+When the dialog box is not an iframe (which it isn't by default), it can open the login page of an identity provider. As you'll see below, the characteristics of the Office dialog box have implications for how you use authentication or authorization libraries such as MSAL and Passport.
 
 > [!NOTE]
 > There is a way to configure the dialog box to open in a floating iframe: you simply pass the `displayInIframe: true` option in the call to `displayDialogAsync`. Do *not* do this when you are using the Office dialog API for login.
@@ -31,7 +31,7 @@ When the dialog box is not an iframe (which isn't by default), it can open the l
 
 The following is a simple and typical authentication flow. Details are after the diagram.
 
-![Diagram showing the relationship between the task pane and dialog box browser processes](../images/taskpane-dialog-processes.gif)
+![Diagram showing the relationship between the task pane and dialog box browser processes.](../images/taskpane-dialog-processes.gif)
 
 1. The first page that opens in the dialog box is a page (or other resource) that is hosted in the add-in's domain; that is, the same domain as the task pane window. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." The code in this page constructs the URL of the identity provider's sign-in page with information that is either passed to the dialog box as described in [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) or is hardcoded into a configuration file of the add-in, such as a web.config file.
 2. The dialog box window then redirects to the sign-in page. The URL includes a query parameter that tells the identity provider to redirect the dialog box window to a specific page after the user signs in. In this article, we'll call this page **redirectPage.html**. *We recommend that this be a page in the same domain as the host window*. On this page, the results of the sign-in attempt can be passed to the task pane with a call of `messageParent`.
