@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: 'Learn the basics of creating a dialog box in an Office Add-in.'
-ms.date: 01/28/2021
+ms.date: 07/19/2021
 
 localization_priority: Normal
 ---
@@ -43,6 +43,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+> 
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
 > - The dialog box's domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](../reference/manifest/functionfile.md) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
 
@@ -79,10 +80,10 @@ The default value is `false`, which is the same as omitting the property entirel
 
 ## Send information from the dialog box to the host page
 
-The dialog box cannot communicate with the host page in the task pane unless:
-
-- The current page in the dialog box is in the same domain as the host page.
-- The Office JavaScript API library is loaded in the page. (Like any page that uses the Office JavaScript API library, script for the page must assign a method to the `Office.initialize` property, although it can be an empty method. For details, see [Initialize your Office Add-in](initialize-add-in.md).)
+> [!NOTE]
+>
+> - For clarity, in this section we call the message target the host *page*, but strictly speaking the messages are going to the *JavaScript runtime* in the task pane (or the runtime that is hosting a [function file](../reference/manifest/functionfile.md)). The distinction is only significant in the case of cross-domain messaging. For more information, see [Cross-domain messaging to the host runtime](#cross-domain-messaging-to-the-host-runtime).
+> - The dialog box cannot communicate with the host page in the task pane unless the Office JavaScript API library is loaded in the page. (Like any page that uses the Office JavaScript API library, script for the page must assign a method to the `Office.initialize` property or call `Office.onReady`. For details, see [Initialize your Office Add-in](initialize-add-in.md).)
 
 Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui#messageparent-message-) function to send a string message to the host page. The string can be a word, sentence, XML blob, stringified JSON, or anything else that can be serialized to a string or cast to a string. The following is an example.
 
@@ -93,7 +94,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
-> - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
+>
 > - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box.
 > - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
 
@@ -118,6 +119,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
+>
 > - Office passes an [AsyncResult](/javascript/api/office/office.asyncresult) object to the callback. It represents the result of the attempt to open the dialog box. It does not represent the outcome of any events in the dialog box. For more on this distinction, see [Handle errors and events](dialog-handle-errors-events.md).
 > - The `value` property of the `asyncResult` is set to a [Dialog](/javascript/api/office/office.dialog) object, which exists in the host page, not in the dialog box's execution context.
 > - The `processMessage` is the function that handles the event. You can give it any name you want.
@@ -133,6 +135,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
+>
 > - Office passes the `arg` object to the handler. Its `message` property is the string sent by the call of `messageParent` in the dialog box. In this example, it is a stringified representation of a user's profile from a service such as Microsoft account or Google, so it is deserialized back to an object with `JSON.parse`.
 > - The `showUserName` implementation is not shown. It might display a personalized welcome message on the task pane.
 
@@ -146,6 +149,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
+>
 > - The `dialog` object must be the same one that is returned by the call of `displayDialogAsync`.
 > - The call of `dialog.close` tells Office to immediately close the dialog box.
 
@@ -183,6 +187,7 @@ if (loginSuccess) {
 ```
 
 > [!NOTE]
+>
 > - The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
 > - The the implementation of the `getProfile` and `getError` functions are not not shown. They each get data from a query parameter or from the body of the HTTP response.
 > - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
@@ -205,6 +210,39 @@ function processMessage(arg) {
 
 > [!NOTE]
 > The `showNotification` implementation is not shown in the sample code provided by this article. For an example of how you might implement this function within your add-in, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
+
+### Cross-domain messaging to the host runtime
+
+The dialog may be navigated away from the add-in's domain or the parent JavaScript runtime (either in a task pane or a UI-less runtime that hosts a function file) may be navigated away from the add-in's domain after the dialog is opened. If either of these things has happened, then a call of `messageParent` will fail unless your code specifies the domain of the parent runtime. You do this by adding a [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) parameter to the call of `messageParent`. This object has a `targetOrigin` property that specifies the domain to which the message should be sent. If the parameter is not used, Office assumes that the target is the same domain that the dialog is currently hosting.
+
+> [!NOTE]
+> Using `messageParent` to send a cross-domain message requires the [Dialog Origin 1.1 requirement set](../reference/requirement-sets/dialog-origin-requirement-sets.md).
+
+The following is an example of using `messageParent` to send a cross-domain message.
+
+```js
+Office.context.ui.messageParent("Some message", { targetOrigin: "https://target.domain.com" });
+```
+
+> [!NOTE]
+> The `DialogMessageOptions` parameter was released approximately July 19th, 2021. For about 30 days after that date, in Office on the web, the first time that `messageParent` is called without the `DialogMessageOptions` parameter and the parent is a different domain from the dialog, the user will be prompted to approve sending data to the target domain. If the user approves, the user's answer is cached for 24 hours. The user is not prompted again during this period when `messageParent` is called with the same target domain.
+
+If the message doesn't include sensitive data, you can set the `targetOrigin` to "\*" which allows it to be sent to any domain. The following is an example.
+
+```js
+Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
+```
+
+> [!TIP]
+> The `DialogMessageOptions` parameter was added to the `messageParent` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. In the meantime, *on Office for Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domain(s) with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. The simplest way to do this is to create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
+>
+> ```
+> Windows Registry Editor Version 5.00
+> 
+> [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains]
+> "My trusted domain"="https://www.MyTrustedDomain.com"
+> "Another trusted domain"="https://another.trusted.domain.com"
+> ```
 
 ## Pass information to the dialog box
 
@@ -249,8 +287,7 @@ function sheetPropertiesChanged() {
 
 ### Handle DialogParentMessageReceived in the dialog box
 
-In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) method. This is typically done in the [Office.onReady or Office.initialize
-methods](initialize-add-in.md), as shown in the following. (A more robust example is below.)
+In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) method. This is typically done in the [Office.onReady or Office.initialize methods](initialize-add-in.md), as shown in the following. (A more robust example is below.)
 
 ```javascript
 Office.onReady()
@@ -264,8 +301,8 @@ Office.onReady()
 Then, define the `onMessageFromParent` handler. The following code continues the example from the preceding section. Note that Office passes an argument to the handler and that the `message` property of the argument object contains the string from the host page. In this example, the message is reconverted to an object and jQuery is used to set the top heading of the dialog to match the new worksheet name.
 
 ```javascript
-function onMessageFromParent(event) {
-    var messageFromParent = JSON.parse(event.message);
+function onMessageFromParent(arg) {
+    var messageFromParent = JSON.parse(arg.message);
     $('h1').text(messageFromParent.name);
 }
 ```
@@ -293,10 +330,47 @@ function onRegisterMessageComplete(asyncResult) {
 Because you can make multiple `messageChild` calls from the host page, but you have only one handler in the dialog box for the `DialogParentMessageReceived` event, the handler must use conditional logic to distinguish different messages. You can do this in a way that is precisely parallel to how you would structure conditional messaging when the dialog box is sending a message to the host page as described in [Conditional messaging](#conditional-messaging).
 
 > [!NOTE]
-> In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md),  may not be supported. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
+> In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md), may not be supported. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
 
 > [!IMPORTANT]
 > The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) cannot be specified in the `<Requirements>` section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) method. Support for manifest requirements is under development.
+
+### Cross-domain messaging to the dialog runtime
+
+The dialog may be navigated away from the add-in's domain or the parent JavaScript runtime (either in a task pane or a UI-less runtime that hosts a function file) may be navigated away from the add-in's domain after the dialog is opened. If either of these things has happened, then a call of `messageChild` will fail unless your code specifies the domain of the dialog runtime. You do this by adding a [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) parameter to the call of `messageChild`. This object has a `targetOrigin` property that specifies the domain to which the message should be sent. If the parameter is not used, Office assumes that the target is the same domain that the parent runtime is currently hosting. 
+
+> [!NOTE]
+> Using `messageChild` to send a cross-domain message requires the [Dialog Origin 1.1 requirement set](../reference/requirement-sets/dialog-origin-requirement-sets.md).
+
+The following is an example of using `messageChild` to send a cross-domain message.
+
+```js
+dialog.messageChild(messageToDialog, { targetOrigin: "https://target.domain.com" });
+```
+
+If the message doesn't include sensitive data, you can set the `targetOrigin` to "\*" which allows it to be *sent* to any domain. The following is an example.
+
+```js
+dialog.messageChild(messageToDialog, { targetOrigin: "*" });
+```
+
+The JavaScript runtime that is hosting the dialog cannot access the `<AppDomains>` section of the manifest to ensure that the domain *from which the message comes* is trusted, so an alternative has been provided. The object that is passed to the `DialogParentMessageReceived` handler contains the domain that is currently hosted in the dialog as its `origin` property. Your code should use the handler to verify that the message is coming from a trusted domain. The following is an example.
+
+```javascript
+function onMessageFromParent(arg) {
+    if (arg.origin === "https://some.trusted.domain.com") {
+        // process message
+    } else {
+        dialog.close();
+        showNotification("Messages from " + arg.origin + " are not accepted.");
+    }
+}
+```
+
+For example, your code could use the [Office.onReady or Office.initialize methods](initialize-add-in.md) to store an array of trusted domains in a global variable. The `arg.origin` property could then be checked against that list in the handler.
+
+> [!TIP]
+> The `DialogMessageOptions` parameter was added to the `messageChild` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. In the meantime, *on Office for Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domain(s) with a registry setting. See the **Tip** under [Cross-domain messaging to the host runtime](#cross-domain-messaging-to-the-host-runtime) for details.
 
 ## Closing the dialog box
 
