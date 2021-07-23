@@ -1277,64 +1277,18 @@ items:
     - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
-- name: Samples with patterns and practices
+- name: Patterns and practices
   items:
   - name: Overview
     href: overview/patterns-and-practices-overview.md
-  - name: Excel
+  - name: Guidance
     items:
     - name: Open in Excel
       href: excel/pnp-open-in-excel.md
-    - name: Custom functions
-      items:
-      - name: Batch function network calls
-        href: /samples/officedev/pnp-officeaddins/custom-function-batching-pattern/?branch=master
-      - name: Use web workers
-        href: /samples/officedev/pnp-officeaddins/custom-function-sample-using-web-worker/?branch=master
-      - name: Integrate with Azure functions
-        href: /samples/officedev/pnp-officeaddins/integrate-an-azure-function-with-your-excel-custom-function/?branch=master
-    - name: Create custom contextual tabs
-      href: /samples/officedev/pnp-officeaddins/create-custom-contextual-tabs-on-the-ribbon/?branch=master
-    - name: Use keyboard shortcuts
-      href: /samples/officedev/pnp-officeaddins/use-keyboard-shortcuts-for-office-add-in-actions/?branch=master
-    - name: Manage ribbon and task pane UI
-      href: /samples/officedev/pnp-officeaddins/manage-ribbon-and-task-pane-ui-and-run-code-on-doc-open/?branch=master
-    - name: Insert an external Excel file
-      href: /samples/officedev/pnp-officeaddins/insert-an-external-excel-file-and-populate-it-with-json-data/
-  - name: Outlook
-    items:
-    - name: Set the signature with event-based activation
-      href: /samples/officedev/pnp-officeaddins/use-outlook-event-based-activation-to-set-the-signature-preview/?branch=master
-    - name: Tag external recipients with event-based activation
-      href: /samples/officedev/pnp-officeaddins/use-outlook-event-based-activation-to-tag-external-recipients-preview/?branch=master
-  - name: Authentication and authorization
-    items:
-    - name: Outlook add-in auth to MS Graph with ASP.NET
-      href: /samples/officedev/pnp-officeaddins/get-excel-workbooks-using-microsoft-graph-and-msal-in-an-outlook-add-in/?branch=master
-    - name: Office Add-in auth to MS Graph with ASP.NET
-      href: /samples/officedev/pnp-officeaddins/get-onedrive-data-using-microsoft-graph-and-msalnet-in-an-office-add-in/?branch=master
-    - name: Office Add-in auth to MS Graph with React
-      href: /samples/officedev/pnp-officeaddins/
-  - name: Single Sign-on (SSO)
-    items:
-    - name: Outlook Add-in with SSO
-      href: /samples/officedev/pnp-officeaddins/single-sign-on-sso-sample-outlook-add-in/?branch=master
-    - name: Implement SSO in an Office Add-in using Node.JS
-      href: /samples/officedev/pnp-officeaddins/single-sign-on-sso-sample-outlook-add-in/?branch=master
-    - name: Implement SSO in an Office Add-in using ASP.NET
-      href: /samples/officedev/pnp-officeaddins/single-sign-on-sso-sample-outlook-add-in/?branch=master
-  - name: Handle high DPI and DPI scaling in your Office solution
-    href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution  
+  - name: Samples
+    href: develop/pnp-samples.md
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
-  - name: Share global data with shared runtime
-    href: /samples/officedev/pnp-officeaddins/share-global-data-with-a-shared-runtime/?branch=master
-  - name: Share code from VSTO to Office web Add-ins
-    href: /samples/officedev/pnp-officeaddins/vsto-shared-library-excel/?branch=master
-  - name: Dynamic DPI
-    href: /samples/officedev/pnp-officeaddins/dynamic-dpi-code-samples/?branch=master
-  - name: Storage techniques for when Office Add-in is offline
-    href: /samples/officedev/pnp-officeaddins/use-storage-techniques-to-access-data-from-an-office-add-in-when-offline/?branch=master
 - name: VSTO and COM transition resources
   items: 
   - name: VSTO add-in developers' guide
