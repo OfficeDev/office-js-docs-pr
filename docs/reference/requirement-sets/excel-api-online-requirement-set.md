@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API online-only requirement set
 description: 'Details about the ExcelApiOnline requirement set.'
-ms.date: 07/01/2021
+ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -45,6 +45,7 @@ The following table lists the Excel JavaScript APIs currently included in the `E
 
 | Class | Fields | Description |
 |:---|:---|:---|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria(columnIndex: number)](/javascript/api/excel/excel.autofilter#clearcolumncriteria-columnindex-)|Clears the column filter criteria of the AutoFilter.|
 |[NamedSheetView](/javascript/api/excel/excel.namedsheetview)|[activate()](/javascript/api/excel/excel.namedsheetview#activate--)|Activates this sheet view.|
 ||[delete()](/javascript/api/excel/excel.namedsheetview#delete--)|Removes the sheet view from the worksheet.|
 ||[duplicate(name?: string)](/javascript/api/excel/excel.namedsheetview#duplicate-name-)|Creates a copy of this sheet view.|
