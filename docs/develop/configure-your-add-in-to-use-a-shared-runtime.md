@@ -211,7 +211,7 @@ Configuring a shared runtime enables the following scenarios.
   - Custom functions will have full CORS support.
   - Custom functions can call Office.js APIs to read spreadsheet document data.
 
-For Office on Windows, the shared runtime uses Microsoft Edge with WebView2 (Chromium-based), if the conditions for using it are met as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Otherwise, it uses Internet Explorer 11. Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
+For Office on Windows, the shared runtime uses Microsoft Edge with WebView2 (Chromium-based) if the conditions for using it are met as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Otherwise, it uses Internet Explorer 11. Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
 
 ![Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser runtime in Excel.](../images/custom-functions-in-browser-runtime.png)
 
