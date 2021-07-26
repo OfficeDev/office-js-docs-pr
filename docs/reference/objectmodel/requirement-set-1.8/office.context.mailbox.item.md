@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.8
 description: 'Outlook Mailbox API requirement set 1.8 version of the Item object model.'
-ms.date: 05/17/2021
+ms.date: 07/16/2021
 localization_priority: Normal
 ---
 
@@ -18,6 +18,9 @@ localization_priority: Normal
 |[Minimum mailbox requirement set version](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[Minimum permission level](../../../outlook/understanding-outlook-add-in-permissions.md)|Restricted|
 |[Applicable Outlook mode](../../../outlook/outlook-add-ins-overview.md#extension-points)|Appointment Organizer, Appointment Attendee,<br>Message Compose, or Message Read|
+
+> [!IMPORTANT]
+> Android and iOS: There are limitations on when add-ins activate and which APIs are available. To learn more, refer to [Add mobile support to an Outlook add-in](../../../outlook/add-mobile-support.md#compose-mode-and-appointments).
 
 ## Properties
 
