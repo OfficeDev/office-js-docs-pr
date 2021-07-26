@@ -85,7 +85,7 @@ The default value is `false`, which is the same as omitting the property entirel
 > - For clarity, in this section we call the message target the host *page*, but strictly speaking the messages are going to the *JavaScript runtime* in the task pane (or the runtime that is hosting a [function file](../reference/manifest/functionfile.md)). The distinction is only significant in the case of cross-domain messaging. For more information, see [Cross-domain messaging to the host runtime](#cross-domain-messaging-to-the-host-runtime).
 > - The dialog box cannot communicate with the host page in the task pane unless the Office JavaScript API library is loaded in the page. (Like any page that uses the Office JavaScript API library, script for the page must assign a method to the `Office.initialize` property or call `Office.onReady`. For details, see [Initialize your Office Add-in](initialize-add-in.md).)
 
-Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui#messageparent-message-) function to send a string message to the host page. The string can be a word, sentence, XML blob, stringified JSON, or anything else that can be serialized to a string or cast to a string. The following is an example.
+Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) function to send a string message to the host page. The string can be a word, sentence, XML blob, stringified JSON, or anything else that can be serialized to a string or cast to a string. The following is an example.
 
 ```js
 if (loginSuccess) {
@@ -246,11 +246,11 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 
 ## Pass information to the dialog box
 
-Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using [Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-).
+Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using [Dialog.messageChild](/javascript/api/office/office.dialog#messageChild_message__messageOptions_).
 
 ### Use `messageChild()` from the host page
 
-When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned. It should be assigned to a variable that has greater scope than the [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-)
+When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned. It should be assigned to a variable that has greater scope than the [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__callback_)
 method because the object will be referenced by other methods. The following is an example.
 
 ```javascript
@@ -270,7 +270,7 @@ function processMessage(arg) {
 }
 ```
 
-This `Dialog` object has a [messageChild](/javascript/api/office/office.dialog#messagechild-message-) method that sends any string, including stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
+This `Dialog` object has a [messageChild](/javascript/api/office/office.dialog#messageChild_message__messageOptions_) method that sends any string, including stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
 
 Consider a scenario in which the UI of the dialog is related to the currently active worksheet and that worksheet's position relative to the other worksheets. In the following example, `sheetPropertiesChanged` sends Excel worksheet properties to the dialog box. In this case, the current worksheet is named "My Sheet" and it's the second sheet in the workbook. The data is encapsulated in an object and stringified so that it can be passed to `messageChild`.
 
@@ -287,7 +287,7 @@ function sheetPropertiesChanged() {
 
 ### Handle DialogParentMessageReceived in the dialog box
 
-In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) method. This is typically done in the [Office.onReady or Office.initialize methods](initialize-add-in.md), as shown in the following. (A more robust example is below.)
+In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) method. This is typically done in the [Office.onReady or Office.initialize methods](initialize-add-in.md), as shown in the following. (A more robust example is below.)
 
 ```javascript
 Office.onReady()
