@@ -359,19 +359,19 @@ function removeEventHandlerFromBinding() {
 [MatrixBinding]:		 /javascript/api/office/office.matrixbinding
 [TableBinding]: 		 /javascript/api/office/office.tablebinding
 [TextBinding]: 			 /javascript/api/office/office.textbinding
-[getDataAsync]: 		 /javascript/api/office/Office.Binding#getdataasync-options--callback-
-[setDataAsync]: 		 /javascript/api/office/Office.Binding#setdataasync-data--options--callback-
+[getDataAsync]: 		 /javascript/api/office/office.binding#getDataAsync_options__callback_
+[setDataAsync]: 		 /javascript/api/office/office.binding#setDataAsync_data__options__callback_
 [SelectionChanged]: 	 /javascript/api/office/office.bindingselectionchangedeventargs
-[addHandlerAsync]: 		 /javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]: 	 /javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
+[addHandlerAsync]: 		 /javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_
+[removeHandlerAsync]: 	 /javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_
 
 [Bindings]:				 /javascript/api/office/office.bindings
-[getByIdAsync]: 		 /javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
-[getAllAsync]: 			 /javascript/api/office/office.bindings#getallasync-options--callback-
-[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
-[addFromSelectionAsync]: /javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
-[addFromPromptAsync]: 	 /javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
-[releaseByIdAsync]: 	 /javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
+[getByIdAsync]: 		 /javascript/api/office/office.bindings#getByIdAsync_id__options__callback_
+[getAllAsync]: 			 /javascript/api/office/office.bindings#getAllAsync_options__callback_
+[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_
+[addFromSelectionAsync]: /javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_
+[addFromPromptAsync]: 	 /javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_
+[releaseByIdAsync]: 	 /javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_
 
 [AsyncResult]: 			/javascript/api/office/office.asyncresult
 [Office.BindingType]: 	/javascript/api/office/office.bindingtype

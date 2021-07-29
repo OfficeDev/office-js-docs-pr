@@ -21,7 +21,7 @@ function onCurrentQuarter() {
 }
 ```
 
-The previous code assumes a scenario where there is an Excel worksheet named **CurrentQuarterSales**. The add-in will make the task pane visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onactivated) event which has been registered for the worksheet.
+The previous code assumes a scenario where there is an Excel worksheet named **CurrentQuarterSales**. The add-in will make the task pane visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onActivated) event which has been registered for the worksheet.
 
 You can also hide the task pane by calling the `Office.addin.hide()` function.
 
@@ -31,7 +31,7 @@ function onCurrentQuarterDeactivated() {
 }
 ```
 
-The previous code is a handler that is registered for the [Office.Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#ondeactivated) event.
+The previous code is a handler that is registered for the [Office.Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onDeactivated) event.
 
 ## Additional details on showing the task pane
 
@@ -60,7 +60,7 @@ Consider the following scenario: The task pane has a registered handler for the 
 
 When your code changes the visibility of the task pane with `showAsTaskpane()` or `hide()`, Office triggers the `VisibilityModeChanged` event. It can be useful to handle this event. For example, suppose the task pane displays a list of all the sheets in a workbook. If a new worksheet is added while the task pane is hidden, making the task pane visible would not, in itself, add the new worksheet name to the list. But your code can respond to the `VisibilityModeChanged` event to reload the [Worksheet.name](/javascript/api/excel/excel.worksheet#name) property of all the worksheets in the [Workbook.worksheets](/javascript/api/excel/excel.workbook#worksheets) collection as shown in the example code below.
 
-To register a handler for the event, you do not use an "add handler" method as you would in most Office JavaScript contexts. Instead, there is a special function to which you pass your handler: [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#onvisibilitymodechanged-listener-). The following is an example. Note that the `args.visibilityMode` property is type [VisibilityMode](/javascript/api/office/office.visibilitymode).
+To register a handler for the event, you do not use an "add handler" method as you would in most Office JavaScript contexts. Instead, there is a special function to which you pass your handler: [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#onVisibilityModeChanged_listener_). The following is an example. Note that the `args.visibilityMode` property is type [VisibilityMode](/javascript/api/office/office.visibilitymode).
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {
