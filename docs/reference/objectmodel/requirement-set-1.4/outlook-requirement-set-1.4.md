@@ -18,9 +18,9 @@ Requirement set 1.4 includes all of the features of [requirement set 1.3](../req
 
 ### Change log
 
-- Added [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-): Displays a dialog box in an Office application.
-- Added [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-): Delivers a message from the dialog box to its parent/opener page.
-- Added [Dialog](/javascript/api/office/office.dialog) object: The object that is returned when the [`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) method is called.
+- Added [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_): Displays a dialog box in an Office application.
+- Added [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_): Delivers a message from the dialog box to its parent/opener page.
+- Added [Dialog](/javascript/api/office/office.dialog) object: The object that is returned when the [`displayDialogAsync`](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) method is called.
 
 ## See also
 

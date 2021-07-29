@@ -75,7 +75,7 @@ By default users can use the "pinch zoom" gesture to zoom in on task panes. If t
 
 ### Close task panes
 
-In Outlook Mobile, task panes take up the entire screen and by default require the user to close them to return to the message. Consider using the [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--) method to close the task pane when your scenario is complete.
+In Outlook Mobile, task panes take up the entire screen and by default require the user to close them to return to the message. Consider using the [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closeContainer__) method to close the task pane when your scenario is complete.
 
 ### Compose mode and appointments
 

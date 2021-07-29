@@ -98,7 +98,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     ```
 
 1. To continue the example, use `'SHOWTASKPANE'` as the first parameter.
-1. For the body of the function, use the [Office.addin.showTaskpane](/javascript/api/office/office.addin#showastaskpane--) method to open the add-in's task pane. When you are done, the code should look like the following:
+1. For the body of the function, use the [Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__) method to open the add-in's task pane. When you are done, the code should look like the following:
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -112,7 +112,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     });
     ```
 
-1. Add a second call of `Office.actions.associate` function to map the `HIDETASKPANE` action to a function that calls [Office.addin.hide](/javascript/api/office/office.addin#hide--). The following is an example.
+1. Add a second call of `Office.actions.associate` function to map the `HIDETASKPANE` action to a function that calls [Office.addin.hide](/javascript/api/office/office.addin#hide__). The following is an example.
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
