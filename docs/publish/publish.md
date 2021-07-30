@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 07/27/2021
+ms.date: 07/30/2021
 localization_priority: Priority
 ---
 
@@ -51,7 +51,9 @@ For information about how end users acquire, insert, and run add-ins, see [Start
 
 The Microsoft 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups in their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Integrated Apps to deploy internal add-ins as well as add-ins provided by ISVs. Integrated Apps also shows admins add-ins and other apps bundled together by same ISV, giving them exposure to the entire experience across the Microsoft 365 platform.
 
-For more information, see [Test and deploy Microsoft 365 Apps by partners in the Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
+When you link your Office Add-ins, Teams apps, SPFx apps, and [other apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#what-apps-can-i-deploy-from-integrated-apps) together, you create a single software as a service (SaaS) offering for your customers. For general information about these process, see [How to plan a SaaS offer for the commercial marketplace](/azure/marketplace/plan-saas-offer). For specifics on how to create Integrated Apps, see [Configure Microsoft 365 App integration](/azure/marketplace/create-new-saas-offer#configure-microsoft-365-app-integration).
+
+For more information on the Integrated Apps deployment process, see [Test and deploy Microsoft 365 Apps by partners in the Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 > [!IMPORTANT]
 > Customers in sovereign or government clouds don't have access to Integrated Apps. They will use Centralized Deployment instead. Centralized Deployment is a similar deploy method, but doesn't expose connected add-ins and apps to the admin. For more information, see [Determine if Centralized Deployment of add-ins works for your organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
@@ -83,5 +85,6 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Create effective AppSource listings](/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
+- [What is the Microsoft commercial marketplace?](/azure/marketplace/overview)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
