@@ -13,9 +13,9 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.)|
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows after you have published the add-in to a server other than localhost. (Not for production add-ins or for testing on iPad, Mac, or the web.)|
+|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|To distribute your add-in publicly to users.|
 |[Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|In a cloud deployment, to distribute your add-in to users in your organization by using the Microsoft 365 admin center. This is done through [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
-|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
@@ -26,20 +26,20 @@ The deployment options that are available depend on the Office application that 
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 
-| Extension point | Sideloading | Network share | Microsoft 365 admin center | AppSource   | SharePoint catalog\* |
-|:----------------|:-----------:|:-------------:|:-----------------------:|:----------:|:--------------------:|
-| Content         | X           | X             | X                       | X          | X                    |
-| Task pane       | X           | X             | X                       | X          | X                    |
-| Command         | X           | X             | X                       | X          |                      |
+| Extension point | Sideloading | Network share | AppSource | Microsoft 365 admin center | SharePoint catalog\* |
+|:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
+| Content         | X           | X             | X         | X                          | X                    |
+| Task pane       | X           | X             | X         | X                          | X                    |
+| Command         | X           | X             | X         | X                          |                      |
 
 &#42; SharePoint catalogs do not support Office on Mac.
 
 ### Deployment options for Outlook add-ins
 
-| Extension point | Sideloading | Exchange server | AppSource    |
-|:----------------|:-----------:|:---------------:|:------------:|
-| Mail app        | X           | X               | X            |
-| Command         | X           | X               | X            |
+| Extension point | Sideloading | AppSource | Exchange server |
+|:----------------|:-----------:|:---------:|:---------------:|
+| Mail app        | X           | X         | X               |
+| Command         | X           | X         | X               |
 
 ## Production deployment methods
 
