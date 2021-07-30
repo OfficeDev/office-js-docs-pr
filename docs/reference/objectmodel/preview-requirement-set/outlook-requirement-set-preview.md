@@ -103,7 +103,7 @@ Added a new function that returns initialization data passed when the add-in is 
 
 ### Office theme
 
-#### [Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
+#### [Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
 
 Added ability to get Office theme.
 

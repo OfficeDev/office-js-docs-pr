@@ -25,7 +25,7 @@ For more information about Office versions and build numbers, see:
 
 ## PowerPoint JavaScript API 1.1
 
-PowerPoint JavaScript API 1.1 contains a [single API to create a new presentation](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-). For details about the API, see [Create a presentation](../../powerpoint/powerpoint-add-ins.md#create-a-presentation).
+PowerPoint JavaScript API 1.1 contains a [single API to create a new presentation](/javascript/api/powerpoint#PowerPoint_createPresentation_base64File_). For details about the API, see [Create a presentation](../../powerpoint/powerpoint-add-ins.md#create-a-presentation).
 
 ## PowerPoint JavaScript API 1.2
 
