@@ -57,7 +57,7 @@ If you're building an Excel add-in, be aware of the following size limitations w
 
 If you expect user input to exceed these limits, be sure to check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Be sure to call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
 
-These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
+These limitations are typically exceeded by large ranges. For additional information about optimizing payload size in Excel, see [Payload size limit best practices](../excel/performance.md#payload-size-limit-best-practices).
 
 ### Task pane and content add-ins
 

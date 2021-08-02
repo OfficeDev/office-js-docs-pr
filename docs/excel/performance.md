@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize Excel add-in performance using the JavaScript API.'
-ms.date: 07/29/2020
+ms.date: 08/02/2021
 localization_priority: Normal
 ---
 
@@ -104,8 +104,124 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__) method.
 
+## Payload size limit best practices
+
+The Excel JavaScript API has size limitations for API calls. Excel on the web has a payload size limit for requests and responses of 5MB. And, a range is limited to five million cells for get operations. Large ranges typically exceed these limitations.
+
+### Payload size
+
+The payload size of a request is a combination of the following three components.
+
+1. The number of API calls.
+2. The number of objects, such as a `Range` object.
+3. The length of value to be set.
+
+If an API returns the `RequestPayloadSizeLimitExceeded` error, use the best practice strategies documented in this article to optimize your script and avoid the error.
+
+### Strategy 1: Move unchanged values out of loops
+
+In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for ...` loop, because it doesn't change within the `context.sync()` of that loop.
+
+```js
+// DO NOT DO THIS. This code sample shows a poor performance strategy. 
+async function run() {
+  await Excel.run(async (context) => {
+    var ranges = [];
+    
+    for (let i = 0; i < 7500; i ++) {
+          var rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
+        }    
+        await context.sync();
+    });
+}
+```
+
+The following code sample shows a loop with improved performance.
+
+```js
+async function run() {
+  await Excel.run(async (context) => {
+    var ranges = [];
+    var worksheet = context.workbook.worksheets.getActiveWorksheet(); 
+
+    for (let i = 0; i < 7500; i ++) {
+          var rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
+        }    
+        await context.sync();
+    });
+}
+```
+
+### Strategy 2: Create fewer range objects
+
+#### Create fewer range objects: Option A
+
+For better performance and minimize the payload size, create fewer range objects. To create fewer range objects, split the range array into multiple arrays, and then process them with multiple loops. Note: this can decrease each request payload request size, but it will negatively impact performance.
+
+If try to read too many ranges value in one `context.sync()` as below, the request payload size will exceed the 5MB limitation easily.
+
+```js
+// DO NOT DO THIS. This code sample exceeds the 5MB payload size limit. 
+async function run() {
+  await Excel.run(async (context) => {
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+
+    for (let row = 1; row < 10000; row ++) {
+        var range = sheet.getRangeByIndexes(i, 1, 1, 1);
+        range.values = [["1"]];
+    }
+
+    await context.sync(); 
+  });
+}
+```
+
+Instead, split the ranges to multiple calls.
+
+```js
+async function run() {
+  await Excel.run(async (context) => {
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+
+    for (let row = 1; row < 5000; row ++) {
+        var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+        range.values = [["1"]];
+    }
+
+    await context.sync(); 
+        for (let row = 5001; row < 10000; row ++) {
+            var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+            range.values = [["1"]];
+        }
+        await context.sync(); 
+    });
+}
+```
+
+#### Create fewer range objects: Option B
+
+Read all the data in one range and set it in one API call. This will benefit both performance and payload size. Instead of calling `range.values` for each cell in the loop, set the values in an array first, and then call `range.values` in one call.
+
+```js
+async function run() {
+    await Excel.run(async (context) => {
+        const worksheet = context.workbook.worksheets.getActiveWorksheet();    
+        const array = new Array(10000);
+    
+        for(var i=0;i<10000;i++) {
+            array[i] = [1];
+        }
+    
+        var range = worksheet.getRange("A1:A10000");
+        range.values = array;
+        await context.sync();
+    });
+}
+```
+
 ## See also
 
 * [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+* [Error handling with the Excel JavaScript API](excel-add-ins-error-handling.md)
 * [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
 * [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
