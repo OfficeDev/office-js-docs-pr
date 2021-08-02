@@ -13,8 +13,8 @@ The code samples listed in this article are written to help you learn how to use
 
 |Name     |Description  |
 |---------|-------------|
-| [Outlook recipient changed event (preview)](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/use-outlook-event-based-activation-to-tag-external-recipients-preview/?branch=master)    |  This sample uses event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the appendOnSendAsync API to add a disclaimer.       |
-|[Outlook set signature](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/use-outlook-event-based-activation-to-set-the-signature-preview/?branch=master)     | This sample uses event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the setSignatureAsync API.        |
+| [Outlook recipient changed event (preview)](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/use-outlook-event-based-activation-to-tag-external-recipients-preview/)    |  This sample uses event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the appendOnSendAsync API to add a disclaimer.       |
+|[Outlook set signature](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/use-outlook-event-based-activation-to-set-the-signature-preview/)     | This sample uses event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the setSignatureAsync API.        |
 
 ## Excel samples
 
@@ -40,7 +40,7 @@ The code samples listed in this article are written to help you learn how to use
 |[Single Sign-on (SSO) Sample Outlook Add-in](https://docs.microsoft.com/en-us/samples/officedev/pnp-officeaddins/single-sign-on-sso-sample-outlook-add-in/) |The sample implements an Outlook add-in that uses Office's SSO feature to give the add-in access to Microsoft Graph data. Specifically, it enables the user to save all attachments to their OneDrive. It also shows how to add custom buttons to the Outlook ribbon. |
 |[Get OneDrive data using Microsoft Graph and MSAL.NET in an Office Add-in](https://docs.microsoft.com/en-us/samples/officedev/pnp-officeaddins/get-onedrive-data-using-microsoft-graph-and-msalnet-in-an-office-add-in/) |Learn how to build a Microsoft Office Add-in that connects to Microsoft Graph, finds the first three workbooks stored in OneDrive for Business, fetches their filenames, and inserts the names into an Office document using Office.js. |
 
-## Scenario-based samples
+## Additional samples
 
 |Name     |Description  |
 |---------|-------------|
