@@ -17,11 +17,11 @@ The following table lists the location APIs and the modes (i.e., Compose or Read
 | API | Applicable appointment modes |
 |---|---|
 | [item.location](/javascript/api/outlook/office.appointmentread#location) | Attendee/Read |
-| [item.location.getAsync](/javascript/api/outlook/office.location#getasync-options--callback-) | Organizer/Compose |
-| [item.location.setAsync](/javascript/api/outlook/office.location#setasync-location--options--callback-) | Organizer/Compose |
-| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#getasync-options--callback-) | Organizer/Compose,<br>Attendee/Read |
-| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#addasync-locationidentifiers--options--callback-) | Organizer/Compose |
-| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#removeasync-locationidentifiers--options--callback-) | Organizer/Compose |
+| [item.location.getAsync](/javascript/api/outlook/office.location#getAsync_options__callback_) | Organizer/Compose |
+| [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_) | Organizer/Compose |
+| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) | Organizer/Compose,<br>Attendee/Read |
+| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) | Organizer/Compose |
+| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) | Organizer/Compose |
 
 To use the methods that are available only to compose add-ins, configure the add-in manifest to activate the add-in in Organizer/Compose mode. See [Create Outlook add-ins for compose forms](compose-scenario.md) for more details.
 
@@ -31,7 +31,7 @@ You can use the `enhancedLocation` API to get and set an appointment's location.
 
 ### Add location
 
-The following example shows how to add a location by calling [addAsync](/javascript/api/outlook/office.enhancedlocation#addasync-locationidentifiers--options--callback-) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedlocation).
+The following example shows how to add a location by calling [addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedLocation).
 
 ```js
 var item;
@@ -55,7 +55,7 @@ Office.initialize = function () {
 
 ### Get location
 
-The following example shows how to get the location by calling [getAsync](/javascript/api/outlook/office.enhancedlocation#getasync-options--callback-) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentread#enhancedlocation).
+The following example shows how to get the location by calling [getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentread#enhancedLocation).
 
 ```js
 var item;
@@ -83,7 +83,7 @@ function callbackFunction(asyncResult) {
 
 ### Remove location
 
-The following example shows how to remove the location by calling [removeAsync](/javascript/api/outlook/office.enhancedlocation#removeasync-locationidentifiers--options--callback-) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedlocation).
+The following example shows how to remove the location by calling [removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedLocation).
 
 ```js
 var item;

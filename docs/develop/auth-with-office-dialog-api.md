@@ -20,7 +20,8 @@ The dialog box that is opened with this API has the following characteristics.
   - There is no shared execution environment with the task pane.
   - It does not share the same session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property) as the task pane.
 - The first page opened in the dialog box must be hosted in the same domain as the task pane, including protocol, subdomains, and port, if any.
-- The dialog box can send information back to the task pane by using the [messageParent](/javascript/api/office/office.ui#messageparent-message-) method. We recommend that this method be called only from a page that is hosted in the same domain as the task pane, including protocol, subdomains, and port. Otherwise, there are complications in how you call the method and process the message. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
+- The dialog box can send information back to the task pane by using the [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) method. We recommend that this method be called only from a page that is hosted in the same domain as the task pane, including protocol, subdomains, and port. Otherwise, there are complications in how you call the method and process the message. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
+
 
 By default the dialog box opens in an entirely new web view control, not an iframe. This ensures that it can open the login page of an identity provider. As you'll see later in this article, the characteristics of the Office dialog box have implications for how you use authentication or authorization libraries such as MSAL and Passport.
 
