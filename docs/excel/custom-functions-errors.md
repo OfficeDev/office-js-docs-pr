@@ -1,7 +1,7 @@
 ---
-ms.date: 09/23/2020
-description: 'Handle and return errors like #NULL! from your custom function.'
 title: Handle and return errors from your custom function
+description: 'Handle and return errors like #NULL! from your custom function.'
+ms.date: 08/02/2021
 localization_priority: Normal
 ---
 
@@ -26,6 +26,24 @@ function getCity(zipCode: string): string {
   let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "Please provide a valid U.S. zip code.");
   throw error;
 }
+```
+
+## Output an error
+
+In addition to simply returning an error, a custom function can also output an array that includes an error. For example, a custom function could output the array `[11,22,#VALUE!,44]`. 
+
+```js 
+Code sample
+```
+
+## Errors as custom function inputs
+
+A custom function can evaluate even if the input range contains an error. For example, a custom function can take the range **C2:C7** as an input, even if **C6:C7** contains an error. 
+
+To process inputs that contain errors, a custom function must have the propery `allowErrorForDataTypeAny` set to `true`. 
+
+```js
+Code sample
 ```
 
 ## The CustomFunctions.Error object
