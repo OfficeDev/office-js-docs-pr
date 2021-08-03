@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize Excel add-in performance using the JavaScript API.'
-ms.date: 08/02/2021
+ms.date: 08/03/2021
 localization_priority: Normal
 ---
 
@@ -106,7 +106,7 @@ Excel.run(async (ctx) => {
 
 ## Payload size limit best practices
 
-The Excel JavaScript API has size limitations for API calls. Excel on the web has a payload size limit for requests and responses of 5MB. And, a range is limited to five million cells for get operations. Large ranges typically exceed these limitations.
+The Excel JavaScript API has size limitations for API calls. Excel on the web has a payload size limit for requests and responses of 5MB, and an API will return a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges typically exceed both of these limitations.
 
 ### Payload size
 
@@ -120,45 +120,48 @@ If an API returns the `RequestPayloadSizeLimitExceeded` error, use the best prac
 
 ### Strategy 1: Move unchanged values out of loops
 
-In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for ...` loop, because it doesn't change within the `context.sync()` of that loop.
+In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for` loop, because it doesn't change within that loop.
 
 ```js
-// DO NOT DO THIS. This code sample shows a poor performance strategy. 
+// DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
 async function run() {
   await Excel.run(async (context) => {
     var ranges = [];
     
-    for (let i = 0; i < 7500; i ++) {
-          var rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
-        }    
-        await context.sync();
-    });
+    for (let i = 0; i < 7500; i++) {
+      var rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
+    }    
+    await context.sync();
+  });
 }
 ```
 
-The following code sample shows a loop with improved performance.
+The following code sample shows similar logic, but with improved performance. The value `context.workbook.worksheets.getActiveWorksheet()` is retrieved before the `for` loop.
 
 ```js
+// This code sample shows a good performance strategy.
 async function run() {
   await Excel.run(async (context) => {
     var ranges = [];
     var worksheet = context.workbook.worksheets.getActiveWorksheet(); 
 
-    for (let i = 0; i < 7500; i ++) {
-          var rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
-        }    
-        await context.sync();
-    });
+    for (let i = 0; i < 7500; i++) {
+      var rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
+    }    
+    await context.sync();
+  });
 }
 ```
 
 ### Strategy 2: Create fewer range objects
 
+To improve performance and minimize payload size, create fewer range objects.
+
 #### Create fewer range objects: Option A
 
-For better performance and minimize the payload size, create fewer range objects. To create fewer range objects, split the range array into multiple arrays, and then process them with multiple loops. Note: this can decrease each request payload request size, but it will negatively impact performance.
+One way to create fewer range objects is to split each range array into multiple arrays, and then process each new array with multiple loops. *Note: This can reduce the size of each payload request, but using multiple loops will negatively impact performance.*
 
-If try to read too many ranges value in one `context.sync()` as below, the request payload size will exceed the 5MB limitation easily.
+Reading too many ranges value in one `context.sync()`, the request payload size will exceed the 5MB limitation.
 
 ```js
 // DO NOT DO THIS. This code sample exceeds the 5MB payload size limit. 
@@ -166,7 +169,7 @@ async function run() {
   await Excel.run(async (context) => {
     var worksheet = context.workbook.worksheets.getActiveWorksheet();
 
-    for (let row = 1; row < 10000; row ++) {
+    for (let row = 1; row < 10000; row++) {
         var range = sheet.getRangeByIndexes(i, 1, 1, 1);
         range.values = [["1"]];
     }
@@ -179,22 +182,24 @@ async function run() {
 Instead, split the ranges to multiple calls.
 
 ```js
+// This code sample shows a strategy for reducing payload request size.
+// However, using multiple loops can negatively impact performance. 
 async function run() {
   await Excel.run(async (context) => {
     var worksheet = context.workbook.worksheets.getActiveWorksheet();
 
-    for (let row = 1; row < 5000; row ++) {
+    for (let row = 1; row < 5000; row++) {
+      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    await context.sync(); 
+    
+    for (let row = 5001; row < 10000; row++) {
         var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
         range.values = [["1"]];
     }
-
     await context.sync(); 
-        for (let row = 5001; row < 10000; row ++) {
-            var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
-            range.values = [["1"]];
-        }
-        await context.sync(); 
-    });
+  });
 }
 ```
 
@@ -204,18 +209,18 @@ Read all the data in one range and set it in one API call. This will benefit bot
 
 ```js
 async function run() {
-    await Excel.run(async (context) => {
-        const worksheet = context.workbook.worksheets.getActiveWorksheet();    
-        const array = new Array(10000);
-    
-        for(var i=0;i<10000;i++) {
-            array[i] = [1];
-        }
-    
-        var range = worksheet.getRange("A1:A10000");
-        range.values = array;
-        await context.sync();
-    });
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();    
+    const array = new Array(10000);
+
+    for(var i=0; i<10000; i++) {
+      array[i] = [1];
+    }
+
+    var range = worksheet.getRange("A1:A10000");
+    range.values = array;
+    await context.sync();
+  });
 }
 ```
 
