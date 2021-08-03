@@ -30,17 +30,17 @@ function getCity(zipCode: string): string {
 
 ## Output an error
 
-In addition to simply returning an error, a custom function can also output an array that includes an error. For example, a custom function could output the array `[11,22,#VALUE!,44]`. 
+In addition to returning an error, a custom function can also output an array that includes an error. For example, a custom function could output the array `[11,22,#VALUE!,44]`.
 
-```js 
+```js
 Code sample
 ```
 
 ## Errors as custom function inputs
 
-A custom function can evaluate even if the input range contains an error. For example, a custom function can take the range **C2:C7** as an input, even if **C6:C7** contains an error. 
+A custom function can evaluate even if the input range contains an error. For example, a custom function can take the range **A2:A7** as an input, even if **A6:A7** contains an error.
 
-To process inputs that contain errors, a custom function must have the propery `allowErrorForDataTypeAny` set to `true`. 
+To process inputs that contain errors, a custom function must have the property `allowErrorForDataTypeAny` set to `true`. See [Manually create JSON metadata for custom functions](custom-functions-json.md#metadata-reference) for more information.
 
 ```js
 Code sample
@@ -76,9 +76,9 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "T
 throw error;
 ```
 
-## Use try-catch blocks
+## Use `try...catch` blocks
 
-In general, use `try`-`catch` blocks in your custom function to catch any potential errors that occur. If you do not handle exceptions in your code, they will be returned to Excel. By default, Excel returns `#VALUE!` for unhandled errors or exceptions.
+In general, use [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) blocks in your custom function to catch any potential errors that occur. If you do not handle exceptions in your code, they will be returned to Excel. By default, Excel returns `#VALUE!` for unhandled errors or exceptions.
 
 In the following code sample, the custom function makes a fetch call to a REST service. It's possible that the call will fail, for example, if the REST service returns an error or the network goes down. If this happens, the custom function will return `#N/A` to indicate that the web call failed.
 
