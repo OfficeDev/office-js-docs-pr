@@ -533,7 +533,7 @@ For example, consider the following:
 
 You can see edited examples of the markup for all of these content types in the previously-referenced code sample [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML). You can insert all of these content types using the same JavaScript code shown earlier (and provided in the referenced code samples) for inserting content at the active selection and writing content to a specified location using bindings.
 
-Before you explore the samples, take a look at few tips for working with each of these content types.
+Before you explore the samples, take a look at a few tips for working with each of these content types.
 
 > [!IMPORTANT]
 > Remember, if you are retaining any additional parts referenced in document.xml, you will need to retain document.xml.rels and the relationship definitions for the applicable parts you're keeping, such as styles.xml or an image file.
