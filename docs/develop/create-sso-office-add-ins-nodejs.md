@@ -360,7 +360,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     }
     ```
 
-1. Replace `TODO 9` with the following.
+1. Replace `TODO 9` with the following:
 
     ```javascript
     else {
