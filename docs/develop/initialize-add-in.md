@@ -1,7 +1,7 @@
 ---
 title: Initialize your Office Add-in
 description: 'Learn how to initialize your Office Add-in.'
-ms.date: 02/27/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -19,7 +19,7 @@ Office Add-ins often have start-up logic to do things such as:
 
 - Use the Office Dialog API to prompt the user for default add-in settings values.
 
-However, an Office Add-in cannot successfully call any Office JavaScript APIs until the library has been loaded. This article describes the two ways your code can ensure that the library has been loaded:
+However, an Office Add-in cannot successfully call any Office JavaScript APIs until the library has been loaded. This article describes the two ways your code can ensure that the library has been loaded.
 
 - Initialize with `Office.onReady()`.
 - Initialize with `Office.initialize`.
@@ -35,7 +35,7 @@ For more details about the sequence of events when an add-in is initialized, see
 
 `Office.onReady()` is an asynchronous method that returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) object while it checks to see if the Office.js library is loaded. When the library is loaded, it resolves the Promise as an object that specifies the Office client application with an `Office.HostType` enum value (`Excel`, `Word`, etc.) and the platform with an `Office.PlatformType` enum value (`PC`, `Mac`, `OfficeOnline`, etc.). The Promise resolves immediately if the library is already loaded when `Office.onReady()` is called.
 
-One way to call `Office.onReady()` is to pass it a callback method. Here's an example:
+One way to call `Office.onReady()` is to pass it a callback method. Here's an example.
 
 ```js
 Office.onReady(function(info) {
@@ -61,7 +61,7 @@ Office.onReady()
     });
 ```
 
-Here is the same example using the `async` and `await` keywords in TypeScript:
+Here is the same example using the `async` and `await` keywords in TypeScript.
 
 ```typescript
 (async () => {

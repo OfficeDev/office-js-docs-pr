@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins with Angular
 description: 'Use Angular to create an Office Add-in as a single page application.'
-ms.date: 05/03/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -71,7 +71,7 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## Using the Office dialog API with Angular
+## Use the Office dialog API with Angular
 
 The Office Add-in dialog API enables your add-in to open a page in a nonmodal dialog box that can exchange information with the main page, which is typically in a task pane.
 
@@ -97,19 +97,19 @@ export class MyComponent {
 }
 ```
 
-## Using Observable
+## Use Observable
 
 Angular uses RxJS (Reactive Extensions for JavaScript), and RxJS introduces `Observable` and `Observer` objects to implement asynchronous processing. This section provides a brief introduction to using `Observables`; for more detailed information, see the official [RxJS](https://rxjs-dev.firebaseapp.com/) documentation.
 
 An `Observable` is like a `Promise` object in some ways - it is returned immediately from an asynchronous call, but it might not resolve until some time later. However, while a `Promise` is a single value (which can be an array object), an `Observable` is an array of objects (possibly with only a single member). This enables code to call [array methods](https://www.w3schools.com/jsref/jsref_obj_array.asp), such as `concat`, `map`, and `filter`, on `Observable` objects.
 
-### Pushing instead of pulling
+### Push instead of pull
 
 Your code "pulls" `Promise` objects by assigning them to variables, but `Observable` objects "push" their values to objects that *subscribe* to the `Observable`. The subscribers are `Observer` objects. The benefit of the push architecture is that new members can be added to the `Observable` array over time. When a new member is added, all the `Observer` objects that subscribe to the `Observable` receive a notification.
 
 The `Observer` is configured to process each new object (called the "next" object) with a function. (It is also configured to respond to an error and a completion notification. See the next section for an example.) For this reason, `Observable` objects can be used in a wider range of scenarios than `Promise` objects. For example, in addition to returning an `Observable` from an AJAX call, the way you can return a `Promise`, an `Observable` can be returned from an event handler, such as the "changed" event handler for a text box. Each time a user enters text in the box, all the subscribed `Observer` objects react immediately using the latest text and/or the current state of the application as input.
 
-### Waiting until all asynchronous calls have completed
+### Wait until all asynchronous calls have completed
 
 When you want to ensure that a callback only runs when every member of a set of `Promise` objects has resolved, use the `Promise.all()` method.
 

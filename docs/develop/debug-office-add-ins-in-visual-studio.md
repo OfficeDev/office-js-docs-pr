@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins in Visual Studio
 description: 'Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows'
-ms.date: 12/31/2019
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -26,7 +26,7 @@ Before you start debugging, review the properties of each project to confirm tha
 
 ### Add-in project properties
 
-Open the **Properties** window for the add-in project to review project properties:
+Open the **Properties** window for the add-in project to review project properties.
 
 1. In **Solution Explorer**, choose the add-in project (*not* the web application project).
 
@@ -52,7 +52,7 @@ The following table describes the properties of the add-in project.
 
 ### Web application project properties
 
-Open the **Properties** window for the web application project to review project properties:
+Open the **Properties** window for the web application project to review project properties.
 
 1. In **Solution Explorer**, choose the web application project.
 

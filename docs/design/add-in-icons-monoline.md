@@ -22,13 +22,13 @@ The following guidelines are for 3rd party developers who want to create icons f
 - Inspired by Windows icon style.
 - Accessible to all users.
 
-#### Conveying meaning
+#### Convey meaning
 
 - Use descriptive elements such as a page to represent a document or an envelope to represent mail.
 - Use the same element to represent the same concept, i.e., mail is always represented by an envelope, not a stamp.
 - Use a core metaphor during concept development.
 
-#### Reduction of Elements
+#### Reduction of elements
 
 - Reduce the icon to its core meaning, using only elements that are essential to the metaphor.
 - Limit the number of elements in an icon to two, regardless of icon size.
@@ -127,7 +127,7 @@ The following icons have no fill. (The gear icon is included to show that the ce
 
 ##### Best practices for fills
 
-###### Dos:
+###### Dos
 
 - Fill any element that has a defined boundary, and would naturally have a fill.
 - Use a separate shape to create the background fill.
@@ -135,7 +135,7 @@ The following icons have no fill. (The gear icon is included to show that the ce
 - Maintain the pixel separation between overlapping elements.
 - Fill between multiple objects.
 
-###### Don'ts:
+###### Don'ts
 
 - Don't fill objects that would not naturally be filled; for example, a paperclip.
 - Don't fill brackets.
@@ -165,7 +165,7 @@ The following are examples of using color.
 
 The most common situation will be to have an element use Dark Gray Standalone with Background Fill.
 
-When using a colored Fill, it should always be with its corresponding Outline color. For example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule:
+When using a colored Fill, it should always be with its corresponding Outline color. For example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule.
 
 - Background Fill can be used with any color Standalone.
 - Light Gray Fill can be used with two different Outline colors: Dark Gray or Medium Gray.

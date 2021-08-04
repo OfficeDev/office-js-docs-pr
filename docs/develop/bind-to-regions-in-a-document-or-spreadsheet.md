@@ -1,7 +1,7 @@
 ---
 title: Bind to regions in a document or spreadsheet
 description: 'Learn how to use binding to ensure consistent access a specific region or element of a document or spreadsheet through an identifier.'
-ms.date: 06/20/2019
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -20,7 +20,7 @@ The [Bindings] object exposes a [getAllAsync] method that gives access to the se
 
 ## Binding types
 
-There are [three different types of bindings][Office.BindingType] that you specify with the _bindingType_ parameter when you create a binding with the [addFromSelectionAsync], [addFromPromptAsync] or [addFromNamedItemAsync] methods:
+There are [three different types of bindings][Office.BindingType] that you specify with the _bindingType_ parameter when you create a binding with the [addFromSelectionAsync], [addFromPromptAsync] or [addFromNamedItemAsync] methods.
 
 1. **[Text Binding][TextBinding]** - Binds to a region of the document that can be represented as text.
 
@@ -240,7 +240,6 @@ function write(message){
 }
 ```
 
-
 > [!NOTE]
 > If the `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise cannot return a Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the [Binding] object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the [Binding] object.
 
@@ -282,7 +281,7 @@ function write(message){
 }
 ```
 
-`myBinding` is a variable that contains an existing text binding in the document. Alternatively, you could use the [Office.select] to access the binding by its ID, and start your call to the [getDataAsync] method, like this: 
+`myBinding` is a variable that contains an existing text binding in the document. Alternatively, you could use the [Office.select] to access the binding by its ID, and start your call to the [getDataAsync] method, like this:
 
 ```js
 Office.select("bindings#myBindingID").getDataAsync

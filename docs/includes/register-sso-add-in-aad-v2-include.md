@@ -1,5 +1,4 @@
 
-
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
 1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
@@ -52,19 +51,19 @@
     * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-    For each ID, take these steps:
+    For each ID, take these steps.
 
       a. Select **Add a client application** button then, in the panel that opens, set the **Client ID** to the respective GUID and check the box for `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$/access_as_user`.
 
       b. Select **Add application**.
 
-1. Select **Authentication** under **Manage**. Then choose **Add a platform**. 
+1. Under **Manage** select **Authentication**, then choose **Add a platform**.
 
-1. In the **Configure platforms** pane, select **Web** and then set the **Redirect URI** value to `https://$FQDN-WITHOUT-PROTOCOL$`.
+1. In the **Configure platforms** pane, select **Web**, and then set the **Redirect URI** value to `https://$FQDN-WITHOUT-PROTOCOL$`.
 
 1. Choose **Configure**.
 
-1. Select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
+1. Under **Manage**, select **API permissions**, and select **Add a permission**. On the panel that opens, choose **Microsoft Graph**, and then choose **Delegated permissions**.
 
 1. Use the **Select permissions** search box to search for the permissions your add-in needs. The following are examples.
 

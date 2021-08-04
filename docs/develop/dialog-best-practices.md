@@ -30,11 +30,11 @@ This article provides rules, gotchas, and best practices for the Office dialog A
 
 Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example of a tabbed task pane, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
 
-### Designing a dialog box UI
+### Design a dialog box UI
 
 For best practices in dialog box design, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md).
 
-### Handling pop-up blockers with Office on the web
+### Handle pop-up blockers with Office on the web
 
 Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. If this happens, then Office on the web will open a prompt similar to the following.
 
@@ -48,7 +48,7 @@ If, for any reason, you want to turn off this feature, then your code must opt o
 
 Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. It is appended after your custom query parameters, if any. It isn't appended to any subsequent URLs that the dialog box navigates to. Microsoft may change the content of this value, or remove it entirely, so your code should not read it. The same value is added to the dialog box's session storage (that is, the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property). Again, *your code should neither read nor write to this value*.
 
-### Opening another dialog immediately after closing one
+### Open another dialog immediately after closing one
 
 You can't have more than one dialog open from a given host page, so your code should call [Dialog.close](/javascript/api/office/office.dialog#close__) on an open dialog before it calls `displayDialogAsync` to open another dialog. The `close` method is asynchronous. For this reason, if you call `displayDialogAsync` immediately after a call of `close`, the first dialog may not have completely closed when Office attempts to open the second. If that happens, Office will return a [12007](dialog-handle-errors-events.md#12007) error: "The operation failed because this add-in already has an active dialog."
 

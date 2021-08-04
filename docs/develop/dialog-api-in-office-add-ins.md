@@ -2,7 +2,6 @@
 title: Use the Office dialog API in your Office Add-ins
 description: 'Learn the basics of creating a dialog box in an Office Add-in.'
 ms.date: 07/22/2021
-
 localization_priority: Normal
 ---
 
@@ -43,7 +42,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
-> 
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
 > - The dialog box's domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](../reference/manifest/functionfile.md) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
 
@@ -94,7 +92,6 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
->
 > - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box.
 > - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
 
@@ -380,7 +377,7 @@ For example, your code could use the [Office.onReady or Office.initialize method
 > "Another trusted domain"="https://fabrikam.com"
 > ```
 
-## Closing the dialog box
+## Close the dialog box
 
 You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example.
 
@@ -415,7 +412,7 @@ See [Use the Office dialog box to show a video](dialog-video.md).
 
 See [Authenticate with the Office dialog API](auth-with-office-dialog-api.md).
 
-### Using the Office dialog API with single-page applications and client-side routing
+### Use the Office dialog API with single-page applications and client-side routing
 
 SPAs and client-side routing need to be handled with care when you are using the Office dialog API. Please see [Best practices for using the Office dialog API in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-api-in-an-spa).
 
