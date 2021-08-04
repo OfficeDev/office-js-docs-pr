@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: 'Get an overview of the Office Add-in manifest and its uses.'
-ms.date: 03/18/2020
+ms.date: 07/08/2020
 localization_priority: Priority
 ---
 
@@ -33,7 +33,6 @@ The following table specifies the elements that are required for the three types
 
 > [!NOTE]
 > There is also a mandatory order in which elements must appear within their parent element. For more information see [How to find the proper order of manifest elements](manifest-element-ordering.md).
-
 
 ### Required elements by Office Add-in type
 
@@ -115,7 +114,7 @@ When running in Office on the web, your task pane can be navigated to any URL. H
 To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](../reference/manifest/appdomains.md) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
 > [!NOTE]
-> There are two exceptions to this behavior:
+> There are two exceptions to this behavior.
 >
 > - It applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
 > - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
@@ -491,7 +490,7 @@ For information about validating a manifest against the [XML Schema Definition (
 ## See also
 
 * [How to find the proper order of manifest elements](manifest-element-ordering.md)
-* [Create add-in commands in your manifest][add-in commands]
+* [Create add-in commands in your manifest][create-addin-commands.md]
 * [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 * [Localization for Office Add-ins](localization.md)
 * [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
@@ -499,5 +498,3 @@ For information about validating a manifest against the [XML Schema Definition (
 * [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md)
-
-[add-in commands]: create-addin-commands.md

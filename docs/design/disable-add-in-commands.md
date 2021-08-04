@@ -33,7 +33,7 @@ The enable/disable APIs belong to the [RibbonApi 1.1](../reference/requirement-s
 
 ## Shared runtime required
 
-The APIs and manifest markup described in this article require that the add-in's manifest specify that it should use a shared runtime. To do this take the following steps.
+The APIs and manifest markup described in this article require that the add-in's manifest specify that it should use a shared runtime. To do this, take the following steps.
 
 1. In the [Runtimes](../reference/manifest/runtimes.md) element in the manifest, add the following child element: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (If there isn't already a `<Runtimes>` element in the manifest, create it as the first child under the `<Host>` element in the `VersionOverrides` section.)
 2. In the [Resources.Urls](../reference/manifest/resources.md) section of the manifest, add the following child element: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, where `{MyDomain}` is the domain of the add-in and `{path-to-start-page}` is the path for the start page of the add-in; for example: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
@@ -165,7 +165,7 @@ The **requestUpdate** method is also used to toggle the visibility of a custom c
 
 ## Best practice: Test for control status errors
 
-In some circumstances, the ribbon does not repaint after `requestUpdate` is called, so the control's clickable status does not change. For this reason it is a best practice for the add-in to keep track of the status of its controls. The add-in should conform to these rules:
+In some circumstances, the ribbon does not repaint after `requestUpdate` is called, so the control's clickable status does not change. For this reason it is a best practice for the add-in to keep track of the status of its controls. The add-in should conform to the following rules.
 
 1. Whenever `requestUpdate` is called, the code should record the intended state of the custom buttons and menu items.
 2. When a custom control is clicked, the first code in the handler, should check to see if the button should have been clickable. If shouldn't have been, the code should report or log an error and try again to set the buttons to the intended state.

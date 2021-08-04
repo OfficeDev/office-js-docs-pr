@@ -1,11 +1,11 @@
 ---
 title: Color guidelines for Office Add-ins
 description: 'Learn how to use colors in the UI of an Office Add-in.'
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
-# Color
+# Color guidelines for Office Add-ins
 
 Color is often used to emphasize brand and reinforce visual hierarchy. It helps identify an interface as well as guide customers through an experience. Inside Office, color is used for the same goals but it is applied purposefully and minimally. At no point does it overwhelm customer content. Even when each Office app is branded with its own dominant color, it is used sparingly.
 

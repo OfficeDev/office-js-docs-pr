@@ -1,5 +1,5 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: 'Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel'
 title: Receive and handle data with custom functions
 localization_priority: Normal
@@ -46,8 +46,8 @@ function webRequest() {
 }
 ```
 
->[!NOTE]
->Using `Fetch` avoids nested callbacks and may be preferable to XHR in some cases.
+> [!NOTE]
+> Using `Fetch` avoids nested callbacks and may be preferable to XHR in some cases.
 
 ### XHR example
 
@@ -126,7 +126,7 @@ function increment(incrementBy, invocation) {
 }
 ```
 
-## Canceling a function
+## Cancel a function
 
 Excel cancels the execution of a function in the following situations.
 
@@ -138,7 +138,7 @@ You can also consider setting a default streaming value to handle cases when a r
 
 Note that there are also a category of functions called cancelable functions, which are _not_ related to streaming functions. Only asynchronous custom functions which return one value are cancelable. Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. Declare a cancelable function using the tag `@cancelable`.
 
-### Using an invocation parameter
+### Use an invocation parameter
 
 The `invocation` parameter is the last parameter of any custom function by default. The `invocation` parameter gives context about the cell (such as its address and contents) and allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
 

@@ -89,7 +89,7 @@ Add-in commands are currently supported on the following platforms, except for l
 > [!NOTE]
 > For information about support in Outlook, see [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md).
 
-## Debugging
+## Debug
 
 To debug an Add-in Command, you must run it in Office on the web. For details, see [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md).
 
