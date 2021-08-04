@@ -147,7 +147,7 @@ Let's take a look at the minimal Office Open XML markup required for the formatt
 
 ### Simplified Office Open XML markup
 
-You've edited the Office Open XML example shown here, as described in the preceding section, to leave just required document parts and only required elements within each of those parts. You'll walk through how to edit the markup yourself (and explain a bit more about the pieces that remain here) in the next section of the topic.
+You've edited the Office Open XML example shown here, as described in the preceding section, to leave just required document parts and only required elements within each of those parts. You'll walk through how to edit the markup yourself (and we'll explain a bit more about the pieces that remain here) in the next section of the topic.
 
 ```XML
 <pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
