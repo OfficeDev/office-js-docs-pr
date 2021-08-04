@@ -152,7 +152,7 @@ Use the `ResourceUrl` attribute of the [ExtendedOverrides](../reference/manifest
 </OfficeApp>
 ```
 
-The extended overrides file then uses tokens instead of strings. The tokens name strings in the resource file. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note about this markup.
+The extended overrides file then uses tokens instead of strings. The tokens name strings in the resource file. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note about this markup:
 
 - The example isn't quite valid. (We add a required additional property to it below.)
 - The tokens must have the format **${resource.*name-of-resource*}**.
