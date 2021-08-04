@@ -581,7 +581,7 @@ However, if you take a look at the styles.xml part, you'll see that only a small
 
     However, it's a best practice to include a complete style definition (even if it's the default for built-in styles). If a style is already in use in the destination document, your content will take on the resident definition for the style, regardless of what you include in styles.xml. If the style isn't yet in use in the destination document, your content will use the style definition you provide in the markup.
 
-So, for example, the only content you needed to retain from the styles.xml part for the sample text shown in Figure 2, which is formatted using Heading 1 style, is the following.
+So, for example, the only content you needed to retain from the styles.xml part for the sample text shown in Figure 2, which is formatted using Heading 1 style, is the following:
 
 > [!NOTE]
 > A complete Word definition for the Heading 1 style has been retained in this example.
