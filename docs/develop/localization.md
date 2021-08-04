@@ -499,6 +499,6 @@ Once running, the strings in the add-in UI change to match the language used by 
 [DesktopSettings]:       ../reference/manifest/desktopsettings.md
 [TabletSettings]:        ../reference/manifest/tabletsettings.md
 [PhoneSettings]:         ../reference/manifest/phonesettings.md
-[displayLanguage]:       /javascript/api/office/office.context#displaylanguage
-[contentLanguage]:       /javascript/api/office/office.context#contentlanguage
+[displayLanguage]:       /javascript/api/office/office.context#displayLanguage
+[contentLanguage]:       /javascript/api/office/office.context#contentLanguage
 [RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

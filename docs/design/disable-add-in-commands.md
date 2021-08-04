@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 07/08/2021
+ms.date: 07/15/2021
 localization_priority: Normal
 ---
 
@@ -15,6 +15,8 @@ You can also specify whether the command is enabled or disabled when the Office 
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
 >
 > - [Basic concepts for Add-in Commands](add-in-commands.md)
+
+[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 ## Office application and platform support only
 
@@ -72,7 +74,7 @@ By default, any Add-in Command is enabled when the Office application launches. 
 The essential steps to changing the enabled status of an Add-in Command are:
 
 1. Create a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the command, and its parent group and tab, by their IDs as declared in the manifest; and (2) specifies the enabled or disabled state of the command.
-2. Pass the **RibbonUpdaterData** object to the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) method.
+2. Pass the **RibbonUpdaterData** object to the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_) method.
 
 The following is a simple example. Note that "MyButton", "OfficeAddinTab1", and "CustomGroup111" are copied from the manifest.
 

@@ -121,7 +121,7 @@ The performance tips in [Using the application-specific API model](../develop/ap
 The `untrack()` method releases the object from memory. This method is implemented on many application-specific API proxy objects. Calling `untrack()` after your add-in is done with the object should yield a noticeable performance benefit when using large numbers of proxy objects.
 
 > [!NOTE]
-> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context.
+> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_). Any proxy object can be untracked by removing it from the tracked objects list in the context.
 
 The following Excel code sample fills a selected range with data, one cell at a time. After the value is added to the cell, the range representing that cell is untracked. Run this code with a selected range of 10,000 to 20,000 cells, first with the `cell.untrack()` line, and then without it. You should notice the code runs faster with the `cell.untrack()` line than without it. You may also notice a quicker response time afterwards, since the cleanup step takes less time.
 
