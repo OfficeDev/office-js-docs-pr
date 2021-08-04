@@ -136,7 +136,10 @@ The following example shows the contents of a JSON metadata file for an add-in t
 
 ### allowErrorForDataTypeAny
 
-The `allowErrorForDataTypeAny` property is a boolean. Setting the value to true allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to true. The default `allowErrorForDataTypeAny` value is false.
+The `allowErrorForDataTypeAny` property is a boolean data type. Setting the value to true allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to true. The default `allowErrorForDataTypeAny` value is false.
+
+> [!NOTE]
+> Unlike the other JSON metadata properties, `allowErrorForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for additional information.
 
 ### functions
 
