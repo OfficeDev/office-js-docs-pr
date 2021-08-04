@@ -1,5 +1,5 @@
 ---
-ms.date: 07/08/2021
+ms.date: 08/04/2021
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -39,6 +39,12 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     ```command&nbsp;line
     cd starcount
+    ```
+
+1. Install the dependencies.
+
+     ```command&nbsp;line
+    npm install
     ```
 
 1. Build the project.

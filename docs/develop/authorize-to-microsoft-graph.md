@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph with SSO
 description: 'Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.'
-ms.date: 02/09/2021
+ms.date: 07/27/2021
 localization_priority: Normal
 ---
 
@@ -62,7 +62,7 @@ For examples of detailed walkthroughs and scenarios, see:
 
 ## Distributing SSO-enabled add-ins in Microsoft AppSource
 
-When a Microsoft 365 admin acquires an add-in from [AppSource](https://appsource.microsoft.com), the admin can redistribute it by [centralized deployment](../publish/centralized-deployment.md) and grant admin consent to the add-in to access Microsoft Graph scopes. It's also possible, however, for the end user to acquire the add-in directly from AppSource, in which case the user must grant consent to the add-in. This can create a potential performance problem for which we've provided a solution.
+When a Microsoft 365 admin acquires an add-in from [AppSource](https://appsource.microsoft.com), the admin can redistribute it through [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) and grant admin consent to the add-in to access Microsoft Graph scopes. It's also possible, however, for the end user to acquire the add-in directly from AppSource, in which case the user must grant consent to the add-in. This can create a potential performance problem for which we've provided a solution.
 
 If your code passes the `allowConsentPrompt` option in the call of `getAccessToken`, like `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );`, then Office can prompt the user for consent if Azure AD reports to Office that consent has not yet been granted to the add-in. However, for security reasons, Office can only prompt the user to consent to the Azure AD `profile` scope. *Office cannot prompt for consent to any Microsoft Graph scopes*, not even `User.Read`. This means that if the user grants consent on the prompt, Office will return a bootstrap token. But the attempt to exchange the bootstrap token for an access token to Microsoft Graph will fail with error AADSTS65001, which means consent (to Microsoft Graph scopes) has not been granted.
 

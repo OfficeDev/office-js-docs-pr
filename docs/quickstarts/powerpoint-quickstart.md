@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
 ---
@@ -61,6 +61,12 @@ After you complete the wizard, the generator creates the project and installs su
     > ```command&nbsp;line
     > npm run dev-server
     > ```
+
+    - Install the dependencies for you add-in in the root directory of your project.
+
+        ```command&nbsp;line
+        npm install
+        ```
 
     - To test your add-in in PowerPoint, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens PowerPoint with your add-in loaded.
 
