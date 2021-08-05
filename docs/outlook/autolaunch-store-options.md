@@ -2,13 +2,13 @@
 title: AppSource listing options for your event-based Outlook add-in
 description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 07/14/2021
+ms.date: 08/05/2021
 localization_priority: Normal
 ---
 
 # AppSource listing options for your event-based Outlook add-in
 
-At present, add-ins must be deployed by an organization's admins for end-users to access the event-based feature functionality. We're restricting event-based activation if the end-user acquired the add-in directly from AppSource. For example, if the Contoso add-in includes the `LaunchEvent` extension point with at least one defined `LaunchEvent Type` under the `LaunchEvents` node (see the following excerpt from an example add-in manifest), the automatic invocation of the add-in only happens if the add-in was installed for the end-user by their organization's admin. Otherwise, the automatic invocation of the add-in is blocked.
+At present, add-ins must be deployed by an organization's admins for end-users to access the event-based feature functionality. We're restricting event-based activation if the end-user acquired the add-in directly from AppSource. For example, if the Contoso add-in includes the `LaunchEvent` extension point with at least one defined `LaunchEvent Type` under the `LaunchEvents` node, the automatic invocation of the add-in only happens if the add-in was installed for the end-user by their organization's admin. Otherwise, the automatic invocation of the add-in is blocked. See the following excerpt from an example add-in manifest.
 
 ```xml
 ...
@@ -18,18 +18,18 @@ At present, add-ins must be deployed by an organization's admins for end-users t
     ...
 ```
 
-An end-user or admin can acquire add-ins through AppSource or the inclient store. If your add-in's primary scenario or workflow requires event-based activation, you may want to restrict your add-ins available to admin deployment. To enable that restriction, we can provide flight code URLs. Thanks to the flight codes, only end-users with these special URLs can access the listing. The following is an example URL.
+An end-user or admin can acquire add-ins through AppSource or the in-app Office Store. If your add-in's primary scenario or workflow requires event-based activation, you may want to restrict your add-ins available to admin deployment. To enable that restriction, we can provide flight code URLs. Thanks to the flight codes, only end-users with these special URLs can access the listing. The following is an example URL.
 
 `https://appsource.microsoft.com/product/office/WA200002862?flightCodes=EventBasedTest1`
 
-Users and admins can't explicitly search for an add-in by its name in AppSource or the inclient store when a flight code is enabled for it. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
+Users and admins can't explicitly search for an add-in by its name in AppSource or the in-app Office Store when a flight code is enabled for it. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
 
 > [!NOTE]
 > While end-users can install the add-in using a flight code, the add-in won't include event-based activation.
 
 ## Specify a flight code
 
-You can specify the flight code you want for your add-in by sharing that information in the **Notes for certification** when you're publishing your add-in. _**Important**:_ Flight codes are case-sensitive.
+To specify the flight code you want for your add-in, share that information in the **Notes for certification** when you're publishing your add-in. _**Important**:_ Flight codes are case-sensitive.
 
 ![Screenshot showing example request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification-1.png)
 
@@ -39,7 +39,7 @@ After the flight codes are set, you'll receive the URL from the app certificatio
 
 To deploy the add-in, the admin can use the following steps.
 
-- Sign in to admin.microsoft.com or AppSource.com with your Microsoft 365 admin account. If the add-in has Single sign-on (SSO) enabled, global admin credentials are needed.
+- Sign in to admin.microsoft.com or AppSource.com with your Microsoft 365 admin account. If the add-in has single sign-on (SSO) enabled, global admin credentials are needed.
 - Open the flight code URL into a web browser.
 - On the add-in listing page, select **Get it now**. You should be redirected to the integrated app portal.
 
@@ -54,7 +54,7 @@ If your add-in doesn't use event-based activation for critical scenarios (that i
 
 You can update your existing add-in to include event-based activation then resubmit it for validation and decide if you want a restricted or unrestricted AppSource listing.
 
-After the updated add-in has been approved, organization admins who have already deployed the add-in will receive an update message in the admin portal. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users.
+After the updated add-in is approved, organization admins who have previously deployed the add-in will receive an update message in the admin portal on the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users.
 
 ![Screenshot of app update notification on "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
 
@@ -62,7 +62,7 @@ For end-users who installed the add-in on their own, the event-based activation 
 
 ## Admin consent for installing event-based add-ins
 
-Whenever an event-based add-in is deployed from the **Integrated Apps** section of the admin center, the admin gets details about the add-in's event-based activation capabilities in the deployment wizard. The details appear in the **App Permissions and Capabilities** section. The admin should see all the events where the add-in can automatically activate.
+Whenever an event-based add-in is deployed from the **Integrated Apps** screen, the admin gets details about the add-in's event-based activation capabilities in the deployment wizard. The details appear in the **App Permissions and Capabilities** section. The admin should see all the events where the add-in can automatically activate.
 
 ![Screenshot of "Accept permissions requests" screen when deploying a new app.](../images/outlook-deploy-accept-permissions-requests.png)
 
