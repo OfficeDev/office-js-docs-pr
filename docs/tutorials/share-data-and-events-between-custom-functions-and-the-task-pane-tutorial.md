@@ -183,13 +183,14 @@ Now that custom functions run in the same context as your task pane code, they c
    ```js
    <script>
    function storeSharedValue() {
-   let sharedValue = document.getElementById('storeBox').value;
-   window.sharedState = sharedValue;
+     let sharedValue = document.getElementById('storeBox').value;
+     window.sharedState = sharedValue;
    }
 
    function getSharedValue() {
-   document.getElementById('getBox').value = window.sharedState;
-   }</script>
+     document.getElementById('getBox').value = window.sharedState;
+   }
+   </script>
    ```
 
 5. Save the file.
