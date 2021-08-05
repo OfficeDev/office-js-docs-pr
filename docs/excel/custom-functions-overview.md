@@ -1,7 +1,7 @@
 ---
 description: 'Create an Excel custom function for your Office Add-in.'
 title: Create custom functions in Excel
-ms.date: 07/08/2021
+ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -68,7 +68,7 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 
 - Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
 - Uses `<ExtensionPoint>` and `<Resources>` elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
-- Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane. Note that using a shared runtime means your add-in will use Internet Explorer 11, not Microsoft Edge.
+- Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane.
 
 If you are using the Yo Office generator to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
@@ -78,7 +78,7 @@ To see a full working manifest from a sample add-in, see [this Github repository
 
 ## Coauthoring
 
-Excel on the web and on Windows connected to a Microsoft 365 subscription allow you to coauthor in Excel. If your workbook uses a custom function, your coauthoring colleague is prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function shares results through coauthoring.
+Excel on the web and on Windows connected to a Microsoft 365 subscription allow end users to coauthor in Excel. If an end user's workbook uses a custom function add-in, that end user's coauthoring colleague is also prompted to load the custom function add-in. Once both users have loaded the add-in, the custom function shares results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
