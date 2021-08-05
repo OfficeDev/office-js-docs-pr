@@ -78,7 +78,7 @@ To see a full working manifest from a sample add-in, see [this Github repository
 
 ## Coauthoring
 
-Excel on the web and on Windows connected to a Microsoft 365 subscription allow end users to coauthor in Excel. If an end user's workbook uses a custom function add-in, that end user's coauthoring colleague is also prompted to load the custom function add-in. Once both users have loaded the add-in, the custom function shares results through coauthoring.
+Excel on the web and on Windows connected to a Microsoft 365 subscription allow end users to coauthor in Excel. If an end user's workbook uses a custom function, that end user's coauthoring colleague is prompted to load the same custom functions add-in. Once both users have loaded the add-in, the custom function shares results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
