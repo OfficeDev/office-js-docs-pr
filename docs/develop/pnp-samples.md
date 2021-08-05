@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: 'Office Add-in code samples'
-ms.date: 07/23/2021
+ms.date: 08/02/2021
 localization_priority: Normal
 ---
 
@@ -15,11 +15,7 @@ The code samples listed in this article are written to help you learn how to use
 |---------|-------------|
 | [Use Outlook event-based activation to tag external recipients (preview)](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/outlook-add-in-tag-external-recipients/)    |  This sample uses event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the appendOnSendAsync API to add a disclaimer.       |
 |[Use Outlook event-based activation to set the signature](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/outlook-add-in-set-signature/)     | This sample uses event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the setSignatureAsync API.        |
-
-## Excel samples
-
-|Name     |Description  |
-|---------|-------------|
+| **Excel samples** | |
 |[Integrate an Azure function with your Excel custom function](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/integrate-an-azure-function-with-your-excel-custom-function/) |Learn how to integrate Azure functions with custom functions to move to the cloud or integrate additional services. |
 |[Custom function sample using web worker](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/custom-function-sample-using-web-worker/) |This sample shows how to use web workers in custom functions to prevent blocking the UI of your Office Add-in. |
 |Custom function batching pattern](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/custom-function-batching-pattern/) |Batch multiple calls into a single call to reduce the number of network calls to a remote service. |
