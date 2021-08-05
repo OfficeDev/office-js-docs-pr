@@ -54,7 +54,7 @@ If your add-in doesn't use event-based activation for critical scenarios (that i
 
 You can update your existing add-in to include event-based activation then resubmit it for validation and decide if you want a restricted or unrestricted AppSource listing.
 
-After the updated add-in is approved, organization admins who have previously deployed the add-in will receive an update message in the admin portal on the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users.
+After the updated add-in is approved, organization admins who have previously deployed the add-in will receive an update message in the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users.
 
 ![Screenshot of app update notification on "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
 
