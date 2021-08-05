@@ -178,7 +178,7 @@ Now that custom functions run in the same context as your task pane code, they c
    </div>
    ```
 
-4. Before the closing `</body>` element add the following script. This code will handle the button click events when the user wants to store or get global data.
+4. Before the closing `</body>` element, add the following script. This code will handle the button click events when the user wants to store or get global data.
 
    ```js
    <script>
