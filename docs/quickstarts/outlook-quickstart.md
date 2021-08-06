@@ -55,12 +55,6 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
     cd "My Office Add-in"
     ```
 
-1. Install the dependencies for your project.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 ### Explore the project
 
 The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.

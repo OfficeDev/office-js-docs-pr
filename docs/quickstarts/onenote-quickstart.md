@@ -73,12 +73,6 @@ try {
     cd "My Office Add-in"
     ```
 
-1. Install the dependencies for your project.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 1. Start the local web server and sideload your add-in.
 
     > [!NOTE]

@@ -41,12 +41,6 @@ To start, you'll use the Yeoman generator to create the custom functions project
     cd starcount
     ```
 
-1. Install the dependencies.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 1. Build the project.
 
     ```command&nbsp;line

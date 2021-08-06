@@ -11,12 +11,6 @@ Complete the following steps to start the local web server and sideload your add
 > npm run dev-server
 > ```
 
-- Install the dependencies for you add-in in the root directory of your project.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 - To test your add-in in Excel, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.
 
     ```command&nbsp;line
