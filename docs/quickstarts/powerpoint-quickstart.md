@@ -62,12 +62,6 @@ After you complete the wizard, the generator creates the project and installs su
     > npm run dev-server
     > ```
 
-    - Install the dependencies for you add-in in the root directory of your project.
-
-        ```command&nbsp;line
-        npm install
-        ```
-
     - To test your add-in in PowerPoint, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens PowerPoint with your add-in loaded.
 
         ```command&nbsp;line

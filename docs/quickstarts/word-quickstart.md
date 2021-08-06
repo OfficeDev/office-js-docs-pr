@@ -52,12 +52,6 @@ After you complete the wizard, the generator creates the project and installs su
     cd "My Office Add-in"
     ```
 
-1. Install the dependencies for your project.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 1. Complete the following steps to start the local web server and sideload your add-in.
 
     > [!NOTE]

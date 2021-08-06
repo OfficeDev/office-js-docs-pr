@@ -91,12 +91,6 @@ Office.context.document.getSelectedTaskAsync(
     cd "My Office Add-in"
     ```
 
-1. Install the dependencies for your project.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 1. Start the local web server.
 
     > [!NOTE]

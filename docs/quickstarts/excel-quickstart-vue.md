@@ -194,12 +194,6 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Start the dev server
 
-1. Install the dependencies.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 1. Start the dev server.
 
    ```command&nbsp;line
