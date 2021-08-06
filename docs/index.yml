@@ -35,9 +35,9 @@ highlightedContent:
       title: "Microsoft Learn: Extend Office clients with Office Add-ins"
       url: /learn/paths/m365-office-add-in-associate
     # Card 5
-    - itemType: whats-new
-      title: Microsoft 365 Developer Blog
-      url: https://developer.microsoft.com/office/blogs/technology/office-add-ins
+    - itemType: sample
+      title: "Samples for Office Add-ins"
+      url: develop/pnp-samples.md
     # Card 6
     - itemType: how-to-guide
       title: Office Add-ins Beginner's guide
@@ -47,9 +47,9 @@ highlightedContent:
       title: Office JavaScript API reference documentation
       url: /javascript/api/overview
     # Card 8
-    - itemType: sample
-      title: "GitHub: Patterns and Practices for Office Add-ins"
-      url: https://github.com/OfficeDev/PnP-OfficeAddins
+    - itemType: whats-new
+      title: Microsoft 365 Developer Blog
+      url: https://developer.microsoft.com/office/blogs/technology/office-add-ins
 
 
 # conceptualContent section (optional)
