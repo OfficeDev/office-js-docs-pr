@@ -1,7 +1,7 @@
 ---
 title: Handle and return errors from your custom function
 description: 'Handle and return errors like #NULL! from your custom function.'
-ms.date: 08/04/2021
+ms.date: 08/06/2021
 localization_priority: Normal
 ---
 
@@ -36,7 +36,7 @@ The [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunct
 |ErrorCode enum value  |Excel cell value  |Description  |
 |---------------|---------|---------|
 |`divisionByZero` | `#DIV/0`  | The function is attempting to divide by zero. |
-|`invalidName`    | `#NAME?`  | There is a typo in the function name. Note that this error is supported as a custom function input error, but not as a custom function output error. | 
+|`invalidName`    | `#NAME?`  | There is a typo in the function name. Note that this error is supported as a custom function input error, but not as a custom function output error. |
 |`invalidNumber`  | `#NUM!`   | There is a problem with a number in the formula. |
 |`invalidReference` | `#REF!` | The function refers to an invalid cell. Note that this error is supported as a custom function input error, but not as a custom function output error.|
 |`invalidValue`   | `#VALUE!` | A value in the formula is of the wrong type. |
@@ -60,10 +60,32 @@ throw error;
 
 ### Output an array with an error
 
-In addition to returning an error, a custom function can output an array that includes an error. For example, a custom function could output the array `[11,22,#VALUE!,44]`.
+In addition to returning a single error, a custom function can output an array that includes an error. For example, a custom function could output the array `[1],[#NUM!],[3]`. The following code sample shows how to input three parameters into a custom function, replace one of the input parameters with a `#NUM!` error, and then return a 2-dimensional array with the results of processing each input parameter.
 
 ```js
-Code sample
+/**
+* Returns the #NUM! error as part of a 2-dimensional array.
+* @customfunction
+* @param {number} first First parameter.
+* @param {number} second Second parameter.
+* @param {number} third Third parameter.
+* @returns {number[][]} Three results, as a 2-dimensional array.
+*/
+function returnInvalidNumberError(first, second, third) {
+  // Use the `CustomFunctions.Error` object to retrieve an invalid number error.
+  var error = new CustomFunctions.Error(
+    CustomFunctions.ErrorCode.invalidNumber, // Corresponds to the #NUM! error in the Excel UI.
+  );
+
+  // Enter logic that processes the first, second, and third input parameters.
+  // Imagine that the second calculation results in an invalid number error. 
+  var firstResult = first;
+  var secondResult =  error;
+  var thirdResult = third;
+
+  // Return the results of the first and third parameter calculations and a #NUM! error in place of the second result. 
+  return [[firstResult], [secondResult], [thirdResult]];
+}
 ```
 
 ### Errors as custom function inputs
