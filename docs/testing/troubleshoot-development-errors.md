@@ -16,6 +16,10 @@ Here's a list of common issues you may encounter while developing an Office Add-
 
 See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug your add-in with runtime logging](runtime-logging.md) to debug add-in manifest issues.
 
+## Changes to add-in commands including ribbon buttons and menu items do not take effect
+
+Clearing the cache helps ensure the latest version of your add-in's manifest is being used. To clear the Office cache, follow the instructions in [Clear the Office cache](clear-cache.md). If you're using Office on the web, clear your browser's cache through the browser's UI.
+
 ## Changes to static files, such as JavaScript, HTML, and CSS do not take effect
 
 The browser may be caching these files. To prevent this, turn off client-side caching when developing. The details will depend on what kind of server you are using. In most cases, it involves adding certain headers to the HTTP Responses. We suggest the following set.
