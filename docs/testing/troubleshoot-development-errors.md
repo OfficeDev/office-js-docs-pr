@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Troubleshoot development errors with Office Add-ins
 
-Here is a list of common issues you may encounter while developing an Office Add-in. For further help with your specific scenario, please post your questions to [Microsoft Q&A](https://docs.microsoft.com/answers/topics/office-js-dev.html) using the office-js-dev tag.
+Here's a list of common issues you may encounter while developing an Office Add-in.
 
 > [!TIP]
 > Clearing the Office cache often fixes issues related to stale code. This guarantees the latest manifest is uploaded, using the current file names, menu text, and other command elements. To learn more, see [Clear the Office cache](clear-cache.md).
@@ -103,3 +103,4 @@ You can repeat the previous process for any additional schemas that are out-of-d
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
+- [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)
