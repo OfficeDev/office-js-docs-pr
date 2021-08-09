@@ -20,6 +20,7 @@ The code samples listed in this article are written to help you learn how to use
 
 | Name                | Description         |
 |:--------------------|:--------------------|
+| [Open in Excel](/excel/pnp-open-in-excel) | Extend your SaaS web application so that your customers can open their data from a web page directly to Microsoft Excel. |
 | [Integrate an Azure function with your Excel custom function](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/integrate-an-azure-function-with-your-excel-custom-function/) | Learn how to integrate Azure functions with custom functions to move to the cloud or integrate additional services. |
 | [Custom function sample using web worker](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/custom-function-sample-using-web-worker/) | This sample shows how to use web workers in custom functions to prevent blocking the UI of your Office Add-in. |
 | [Custom function batching pattern](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/custom-function-batching-pattern/) | Batch multiple calls into a single call to reduce the number of network calls to a remote service. |
