@@ -1,31 +1,20 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: 'Learn how to troubleshoot development errors in Office Add-ins.'
-ms.date: 06/11/2021
+ms.date: 08/09/2021
 localization_priority: Normal
 ---
 
 # Troubleshoot development errors with Office Add-ins
 
+Here is a list of common issues you may encounter while developing an Office Add-in. For further help with your specific scenario, please post your questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) with the "office-js" tag.
+
+> [!TIP]
+> Clearing the Office cache often fixes issues related to stale code. This guarantees the latest manifest is uploaded, bringing the most recent file names, menu text, and other command elements. To learn more, see [Clear the Office cache](clear-cache.md).
+
 ## Add-in doesn't load in task pane or other issues with the add-in manifest
 
 See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug your add-in with runtime logging](runtime-logging.md) to debug add-in manifest issues.
-
-## Changes to add-in commands including ribbon buttons and menu items do not take effect
-
-If changes you've made in the manifest, such as file names of ribbon button icons or text of menu items, do not seem to take effect, try clearing the Office cache on your computer. 
-
-#### For Windows:
-
-Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`, and delete the contents of the folder `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\`, if it exists.
-
-#### For Mac:
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### For iOS:
-
-Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
 ## Changes to static files, such as JavaScript, HTML, and CSS do not take effect
 
