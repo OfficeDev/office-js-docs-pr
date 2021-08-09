@@ -13,7 +13,7 @@ The code samples listed in this article are written to help you learn how to use
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-| [Use Outlook event-based activation to tag external recipients (preview)](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/outlook-add-in-tag-external-recipients/) | This sample uses event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the appendOnSendAsync API to add a disclaimer. |
+| [Use Outlook event-based activation to tag external recipients (preview)](/samples/officedev/pnp-officeaddins/outlook-add-in-tag-external-recipients.md) | This sample uses event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the appendOnSendAsync API to add a disclaimer. |
 | [Use Outlook event-based activation to set the signature](https://docs.microsoft.com/samples/officedev/pnp-officeaddins/outlook-add-in-set-signature/) | This sample uses event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the setSignatureAsync API. |
 
 ## Excel
