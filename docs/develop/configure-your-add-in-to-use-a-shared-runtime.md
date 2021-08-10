@@ -65,9 +65,6 @@ Follow these steps for a new or existing project to configure it to use a shared
      </Host>
    ```
 
-> [!NOTE]
-> The `<Runtimes>` section
-
 1. If you generated an Excel add-in with custom functions, find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
    ```xml
