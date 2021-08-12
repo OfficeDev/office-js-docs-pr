@@ -51,8 +51,8 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
 
-> [!IMPORTANT]
-> The `<Runtimes>` section must be entered after the `<Host>` element in the exact order as shown in the following XML.
+    > [!IMPORTANT]
+    > The `<Runtimes>` section must be entered after the `<Host>` element in the exact order as shown in the following XML.
 
    ```xml
    <VersionOverrides ...>
@@ -62,7 +62,7 @@ Follow these steps for a new or existing project to configure it to use a shared
          <Runtime resid="Taskpane.Url" lifetime="long" />
        </Runtimes>
        ...
-     </Host>
+       </Host>
    ```
 
 1. If you generated an Excel add-in with custom functions, find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
