@@ -58,9 +58,9 @@ Follow these steps for a new or existing project to configure it to use a shared
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       <Runtimes>
-         <Runtime resid="Taskpane.Url" lifetime="long" />
-       </Runtimes>
+         <Runtimes>
+           <Runtime resid="Taskpane.Url" lifetime="long" />
+         </Runtimes>
        ...
        </Host>
    ```
