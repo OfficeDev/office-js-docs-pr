@@ -1,7 +1,7 @@
 ---
 title: Handle and return errors from your custom function
 description: 'Handle and return errors like #NULL! from your custom function.'
-ms.date: 08/06/2021
+ms.date: 08/12/2021
 localization_priority: Normal
 ---
 
@@ -57,9 +57,9 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "T
 throw error;
 ```
 
-### Output an array with an error
+### Handle errors when working with dynamic arrays
 
-In addition to returning a single error, a custom function can output an array that includes an error. For example, a custom function could output the array `[1],[#NUM!],[3]`. The following code sample shows how to input three parameters into a custom function, replace one of the input parameters with a `#NUM!` error, and then return a 2-dimensional array with the results of processing each input parameter.
+In addition to returning a single error, a custom function can output a dynamic array that includes an error. For example, a custom function could output the array `[1],[#NUM!],[3]`. The following code sample shows how to input three parameters into a custom function, replace one of the input parameters with a `#NUM!` error, and then return a 2-dimensional array with the results of processing each input parameter.
 
 ```js
 /**
