@@ -27,7 +27,7 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 
 1. Next, choose  **View > Run** or enter **CTRL + SHIFT + D** to switch to debug view.
 
-1. From the RUN AND DEBUG options, choose the Edge Chromium option for your host application, such as **Excel Desktop (Edge Chromium)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
+1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Excel Desktop (Edge Chromium)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
 1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear, reading:
 
