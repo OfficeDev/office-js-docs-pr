@@ -20,7 +20,7 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 1. Create a project using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this.
 
 > [!TIP]
-> If you aren't using a Yeoman generator based add-in, you need to adjust a registry key. While in the root folder of your project, run the following in the command line.
+> If you aren't using a Yeoman generator based add-in, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
  `office-add-in-debugging start <your manifest path>`
 
 1. Open your project in VS Code. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "Debugger for Microsoft Edge" extension and install it.
