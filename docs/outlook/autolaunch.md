@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 08/05/2021
+ms.date: 08/13/2021
 localization_priority: Normal
 ---
 
@@ -17,19 +17,19 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 ## Supported events
 
-At present, the following events are supported on the web and on Windows.
+At present, the following events are supported on the web and on Windows. Also, when an event is raised, the handler receives an `event` object which may include details specific to the type of event. In the following table, the **Event-specific JSON** column includes a link to the related object where applicable.
 
-|Event|Description|Minimum<br>requirement set|
-|---|---|---|
-|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|1.10|
-|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|1.10|
-|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|Preview|
-|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|Preview|
-|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|Preview|
-|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|Preview|
-|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|Preview|
-|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|Preview|
-|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|Preview|
+|Event|Description|Event-specific JSON|Minimum requirement set|
+|---|---|---|---|
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|
+|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|
+|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-preview)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-preview)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-preview)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-preview)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-preview)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-preview)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-preview)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
 
 > [!IMPORTANT]
 > Events still in preview are only available with a Microsoft 365 subscription in Outlook on the web and on Windows. For more details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
@@ -277,7 +277,7 @@ You can deploy event-based add-ins by uploading the manifest through the Microso
 AppSource and in-app Office Store: The ability to deploy event-based add-ins or update existing add-ins to include the event-based activation feature should be available soon.
 
 > [!IMPORTANT]
-> Event-based add-ins are restricted to admin-managed deployments only. For now, users can't get event-based add-ins from AppSource or in-app Office Store.
+> Event-based add-ins are restricted to admin-managed deployments only. For now, users can't get event-based add-ins from AppSource or in-app Office Store. To learn more, refer to [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
 
 ## Event-based activation behavior and limitations
 
