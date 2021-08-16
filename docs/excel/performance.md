@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize Excel add-in performance using the JavaScript API.'
-ms.date: 08/03/2021
+ms.date: 08/16/2021
 localization_priority: Normal
 ---
 
@@ -112,15 +112,15 @@ The Excel JavaScript API has size limitations for API calls. Excel on the web ha
 
 The payload size of a request is a combination of the following three components.
 
-1. The number of API calls.
-2. The number of objects, such as a `Range` object.
-3. The length of value to be set.
+* The number of API calls.
+* The number of objects, such as `Range` objects.
+* The length of value to set or get.
 
 If an API returns the `RequestPayloadSizeLimitExceeded` error, use the best practice strategies documented in this article to optimize your script and avoid the error.
 
 ### Strategy 1: Move unchanged values out of loops
 
-In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for` loop, because it doesn't change within that loop.
+Limiting the number of processes that occur within loops will improve performance. In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for` loop, because it doesn't change within that loop.
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
@@ -136,7 +136,7 @@ async function run() {
 }
 ```
 
-The following code sample shows similar logic, but with improved performance. The value `context.workbook.worksheets.getActiveWorksheet()` is retrieved before the `for` loop.
+The following code sample shows logic similar to the preceding code sample, but with an improved performance strategy. The value `context.workbook.worksheets.getActiveWorksheet()` is retrieved before the `for` loop, because this value doesn't need to be retrieved each time the `for` loop runs. Only values that change within the context of a loop should be retrieved within that loop.
 
 ```js
 // This code sample shows a good performance strategy.
@@ -155,23 +155,23 @@ async function run() {
 
 ### Strategy 2: Create fewer range objects
 
-To improve performance and minimize payload size, create fewer range objects.
+Creating fewer range objects will improve performance and minimize payload size. Two approaches for creating fewer range objects are described in the following sections.
 
-#### Create fewer range objects: Option A
+#### Split each range array into multiple arrays
 
 One way to create fewer range objects is to split each range array into multiple arrays, and then process each new array with multiple loops. *Note: This can reduce the size of each payload request, but using multiple loops will negatively impact performance.*
 
-Reading too many ranges value in one `context.sync()`, the request payload size will exceed the 5MB limitation.
+Reading too many ranges value in one `context.sync()` call will cause the request payload size to exceed the 5MB limitation.
 
 ```js
-// DO NOT DO THIS. This code sample exceeds the 5MB payload size limit. 
+// DO NOT USE THIS CODE SAMPLE. This code sample exceeds the 5MB payload size limit. 
 async function run() {
   await Excel.run(async (context) => {
     var worksheet = context.workbook.worksheets.getActiveWorksheet();
 
     for (let row = 1; row < 10000; row++) {
-        var range = sheet.getRangeByIndexes(i, 1, 1, 1);
-        range.values = [["1"]];
+      var range = sheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
     }
 
     await context.sync(); 
@@ -179,7 +179,7 @@ async function run() {
 }
 ```
 
-Instead, split the ranges to multiple calls.
+Instead, process the ranges with multiple `context.sync()` calls.
 
 ```js
 // This code sample shows a strategy for reducing payload request size.
@@ -195,17 +195,17 @@ async function run() {
     await context.sync(); 
     
     for (let row = 5001; row < 10000; row++) {
-        var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
-        range.values = [["1"]];
+      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
     }
     await context.sync(); 
   });
 }
 ```
 
-#### Create fewer range objects: Option B
+#### Set range values in an array
 
-Read all the data in one range and set it in one API call. This will benefit both performance and payload size. Instead of calling `range.values` for each cell in the loop, set the values in an array first, and then call `range.values` in one call.
+Read all the data in one range and then set the values in one API call. This will benefit both performance and payload size. Instead of calling `range.values` for each cell in a loop, set the values in an array first, and then call `range.values` in one call.
 
 ```js
 async function run() {
@@ -213,7 +213,7 @@ async function run() {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();    
     const array = new Array(10000);
 
-    for(var i=0; i<10000; i++) {
+    for (var i = 0; i <1 0000; i++) {
       array[i] = [1];
     }
 
