@@ -1,7 +1,7 @@
 ---
 title: CustomTab element in the manifest file
 description: On the ribbon, you specify which tab and group for their add-in commands.
-ms.date: 02/09/2021
+ms.date: 08/13/2021
 localization_priority: Normal
 ---
 
@@ -23,8 +23,8 @@ The **id** attribute must be unique within the manifest.
 |  [Group](group.md)      | No |  Defines a Group of commands.  |
 |  [OfficeGroup](#officegroup)      | No |  Represents a built-in Office control group. **Important**: Not available in Outlook. |
 |  [Label](#label-tab)      | Yes |  The label for the CustomTab or a Group.  |
-|  [InsertAfter](#insertafter)      | No |  Specifies that the custom tab should be immediately after a specified built-in Office tab. **Important**: Not available in Outlook. |
-|  [InsertBefore](#insertbefore)      | No |  Specifies that the custom tab should be immediately before a specified built-in Office tab. **Important**: Not available in Outlook. |
+|  [InsertAfter](#insertafter)      | No |  Specifies that the custom tab should be immediately after a specified built-in Office tab. **Important**: Only available in PowerPoint. |
+|  [InsertBefore](#insertbefore)      | No |  Specifies that the custom tab should be immediately before a specified built-in Office tab. **Important**: Only available in PowerPoint. |
 |  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the custom tab should appear on application and platform combinations that support custom contextual tabs. **Important**: Not available in Outlook. |
 
 ### Group
@@ -47,14 +47,14 @@ Required. The label of the custom tab. The **resid** attribute can be no more th
 Optional. Specifies that the custom tab should be immediately after a specified built-in Office tab. The value of the element is the ID of the built-in tab, such as "TabHome" or "TabReview". (See [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups).) If present, must be after the **Label** element. You cannot have both **InsertAfter** and **InsertBefore**.
 
 > [!IMPORTANT]
-> The `InsertAfter` element is not available in Outlook.
+> The `InsertAfter` element is only available in PowerPoint.
 
 ### InsertBefore
 
 Optional. Specifies that the custom tab should be immediately before a specified built-in Office tab. The value of the element is the ID of the built-in tab, such as "TabHome" or "TabReview". (See [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups).)  If present, must be after the **Label** element. You cannot have both **InsertAfter** and **InsertBefore**.
 
 > [!IMPORTANT]
-> The `InsertBefore` element is not available in Outlook.
+> The `InsertBefore` element is only available in PowerPoint.
 
 ### OverriddenByRibbonApi
 
