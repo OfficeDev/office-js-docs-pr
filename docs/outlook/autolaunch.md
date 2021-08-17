@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 08/13/2021
+ms.date: 08/17/2021
 localization_priority: Normal
 ---
 
@@ -19,6 +19,9 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 At present, the following events are supported on the web and on Windows. Also, when an event is raised, the handler receives an `event` object which may include details specific to the type of event. In the following table, the **Event-specific JSON** column includes a link to the related object where applicable.
 
+> [!IMPORTANT]
+> Events still in preview are only available with a Microsoft 365 subscription in Outlook on the web and on Windows. For more details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
+
 |Event|Description|Event-specific JSON|Minimum requirement set|
 |---|---|---|---|
 |`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|
@@ -30,9 +33,6 @@ At present, the following events are supported on the web and on Windows. Also, 
 |`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-preview&preserve-view=true)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
 |`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-preview&preserve-view=true)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
 |`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-preview&preserve-view=true)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
-
-> [!IMPORTANT]
-> Events still in preview are only available with a Microsoft 365 subscription in Outlook on the web and on Windows. For more details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
 
 ### How to preview
 
