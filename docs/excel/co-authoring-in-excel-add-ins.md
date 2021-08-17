@@ -1,7 +1,7 @@
 ---
 title: Coauthoring in Excel add-ins
 description: 'Learn to coauthor an Excel workbook stored in OneDrive, OneDrive for Business, or SharePoint Online.'
-ms.date: 07/23/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -44,7 +44,7 @@ As described earlier, in some scenarios, triggering events for all coauthors pro
 
 For example, in data validation scenarios, it is common to display UI in response to events. The [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event described in the previous section runs when either a local user or coauthor (remote) changes the workbook content within the binding. If the event handler of the `BindingDataChanged` event displays UI, users will see UI that is unrelated to changes they were working on in the workbook, leading to a poor user experience. Avoid displaying UI when using events in your add-in.
 
-## Avoiding table row coauthoring conflicts
+## Avoid table row coauthoring conflicts
 
 It is a known issue that calls to the [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) API can cause coauthoring conflicts. We do not recommend using that API if you anticipate your add-in will be run while other users are editing the add-in's workbook (specifically, if they are editing the table or any range under the table). The following guidance should help you avoid issues with the `TableRowCollection.add` method (and avoid triggering the yellow bar Excel shows that asks users to refresh).
 

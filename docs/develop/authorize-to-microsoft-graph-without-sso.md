@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph without SSO
 description: 'Learn to authorize to Microsoft Graph without SSO'
-ms.date: 01/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 

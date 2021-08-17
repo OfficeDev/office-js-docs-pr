@@ -1,7 +1,7 @@
 ---
 title: Clear the Office cache
 description: 'Learn how to clear the Office cache on your computer.'
-ms.date: 05/22/2020
+ms.date: 08/02/2021
 localization_priority: Priority
 ---
 
@@ -10,6 +10,9 @@ localization_priority: Priority
 You can remove an add-in that you've previously sideloaded on Windows, Mac, or iOS by clearing the Office cache on your computer.
 
 Additionally, if you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you should clear the Office cache and then re-sideload the add-in using updated manifest. Doing so will allow Office to render the add-in as it's described by the updated manifest.
+
+> [!NOTE]
+> To remove a sideloaded add-in from Excel, OneNote, PowerPoint, or Word on the web, see [Sideload Office Add-ins in Office on the web for testing: Remove a sideloaded add-in](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ## Clear the Office cache on Windows
 

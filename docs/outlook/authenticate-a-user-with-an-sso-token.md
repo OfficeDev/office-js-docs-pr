@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
-description: Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 08/20/2020
+description: 'Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.'
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Single sign-on (SSO) provides a seamless way for your add-in to authenticate users (and optionally to obtain access tokens to call the [Microsoft Graph API](/graph/overview)).
 
-Using this method, your add-in can obtain an access token scoped to your server back-end API. The add-in uses this as a bearer token in the `Authorization` header to authenticate a call back to your API. Optionally, you can also have your server-side code:
+Using this method, your add-in can obtain an access token scoped to your server back-end API. The add-in uses this as a bearer token in the `Authorization` header to authenticate a call back to your API. Optionally, you can also have your server-side code.
 
 - Complete the On-Behalf-Of flow to obtain an access token scoped to the Microsoft Graph API
 - Use the identity information in the token to establish the user's identity and authenticate to your own back-end services

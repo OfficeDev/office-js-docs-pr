@@ -40,7 +40,7 @@ The first three `DataValidationRule` properties (i.e., validation rule types) ta
 
 Here is an example of creating a validation rule. Note the following about this code.
 
-- The `operator` is the binary operator "GreaterThan". Whenever you use a binary operator, the value that the user tries to enter in the cell is the left-hand operand and the value specified in `formula1` is the right-hand operand. So this rule says that only whole numbers that are greater than 0 are valid. 
+- The `operator` is the binary operator "GreaterThan". Whenever you use a binary operator, the value that the user tries to enter in the cell is the left-hand operand and the value specified in `formula1` is the right-hand operand. So this rule says that only whole numbers that are greater than 0 are valid.
 - The `formula1` is a hard-coded number. If you don't know at coding time what the value should be, you can also use an Excel formula (as a string) for the value. For example, "=A3" and "=SUM(A4,B5)" could also be values of `formula1`.
 
 ```js
@@ -109,7 +109,7 @@ Excel.run(function (context) {
 Use the `list` property in the `DataValidationRule` object to specify that the only valid values are those from a finite list. The following is an example. Note the following about this code.
 
 - It assumes that there is a worksheet named "Names" and that the values in the range "A1:A3" are names.
-- The `source` property specifies the list of valid values. The string argument refers to a range containing the names. You can also assign a comma-delimited list; for example: "Sue, Ricky, Liz". 
+- The `source` property specifies the list of valid values. The string argument refers to a range containing the names. You can also assign a comma-delimited list; for example: "Sue, Ricky, Liz".
 - The `inCellDropDown` property specifies whether a drop-down control will appear in the cell when the user selects it. If set to `true`, then the drop-down appears with the list of values from the `source`.
 
 ```js

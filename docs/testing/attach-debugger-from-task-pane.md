@@ -1,7 +1,7 @@
 ---
 title: Attach a debugger from the task pane
 description: 'Learn how to attach a debugger from the task pane'
-ms.date: 06/17/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -12,19 +12,19 @@ In Office 2016 on Windows, Build 77xx.xxxx or later, you can attach the debugger
 To launch the **Attach Debugger** tool, choose the top right corner of the task pane to activate the **Personality** menu (as shown in the red circle in the following image).
 
 > [!NOTE]
-> - Currently the only supported debugger tool is [Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](/previous-versions/mt752379(v=vs.140)) or later. If you don't have Visual Studio installed, selecting the **Attach Debugger** option doesn't result in any action.
+> - Currently, the only supported debugger tool is [Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](/previous-versions/mt752379(v=vs.140)) or later. If you don't have Visual Studio installed, selecting the **Attach Debugger** option doesn't result in any action.
 > - You can only debug client-side JavaScript with the **Attach Debugger** tool. To debug server-side code, such as with a Node.js server, you have many options. For information on how to debug with Visual Studio Code, see [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). If you are not using Visual Studio Code, search for "debug Node.js" or "debug {name-of-server}".
 
 ![Screenshot of Attach Debugger menu.](../images/attach-debugger.png)
 
-Select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debugger** dialog box, as shown in the following image. 
+Select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debugger** dialog box, as shown in the following image.
 
 ![Screenshot of Visual Studio JIT Debugger dialog.](../images/visual-studio-debugger.png)
 
 In Visual Studio, you will see the code files in **Solution Explorer**.   You can set breakpoints to the line of code you want to debug in Visual Studio.
 
 > [!NOTE]
-> If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps:
+> If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps.
 >
 > 1. In Visual Studio, choose **DEBUG** > **Attach to Process**.
 > 2. In **Available processes**, choose *either* all of the available `Iexplore.exe` processes *or* all of the available `MicrosoftEdge*.exe` processes, depending on [whether your add-in is using Internet Explorer or Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), and then choose the **Attach** button.

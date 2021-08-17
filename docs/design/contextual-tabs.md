@@ -17,7 +17,7 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 [!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
-> Custom contextual tabs are currently only supported on Excel and only on these platforms and builds:
+> Custom contextual tabs are currently only supported on Excel and only on these platforms and builds.
 >
 > - Excel on Windows (Microsoft 365 subscription only): Version 2102 (Build 13801.20294) or later.
 > - Excel on the web
@@ -61,7 +61,6 @@ Unlike custom core tabs, which are defined with XML in the manifest, custom cont
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
 
 We'll construct an example of a contextual tabs JSON blob step-by-step. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). If you are working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
-
 
 1. Begin by creating a JSON string with two array properties named `actions` and `tabs`. The `actions` array is a specification of all the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs, *up to a maximum of 20*.
 
@@ -158,12 +157,12 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 
     - All the properties, except `enabled`, are required.
     - `type` specifies the type of control. The values can be "Button", "Menu", or "MobileButton".
-    - `id` can be up to 125 characters. 
+    - `id` can be up to 125 characters.
     - `actionId` must be the ID of an action defined in the `actions` array. (See step 1 of this section.)
     - `label` is a user-friendly string to serve as the label of the button.
     - `superTip` represents a rich form of tool tip. Both the `title` and `description` properties are required.
     - `icon` specifies the icons for the button. The previous remarks about the group icon apply here too.
-    - `enabled` (optional) specifies whether the button is enabled when the contextual tab appears starts up. The default if not present is `true`. 
+    - `enabled` (optional) specifies whether the button is enabled when the contextual tab appears starts up. The default if not present is `true`.
 
     ```json
     {
@@ -188,7 +187,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
         ]
     }
     ```
- 
+
 The following is the complete example of the JSON blob.
 
 ```json
@@ -527,7 +526,7 @@ Some combinations of platform, Office application, and Office build don't suppor
 
 #### Use noncontextual tabs or controls
 
-There is a manifest element, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs. 
+There is a manifest element, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs.
 
 The simplest strategy for using this element is that you define in the manifest one or more custom core tabs (that is, *noncontextual* custom tabs) that duplicate the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the [CustomTab](../reference/manifest/customtab.md). The effect of doing so is the following:
 

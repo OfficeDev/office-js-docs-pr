@@ -22,11 +22,11 @@ In this tutorial, you will:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Excel on Windows (version 1904 or later, connected to a Microsoft 365 subscription) or on the web
+* Excel on Windows (version 1904 or later, connected to a Microsoft 365 subscription) or Excel on the web
 
 ## Create a custom functions project
 
- To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
+ To start, create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you've already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -91,7 +91,7 @@ To use your custom functions add-in, open a new workbook in Excel on the web. In
 
 The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
 
-Next you'll try out the `ADD` custom function by completing the following steps.
+Next, try out the `ADD` custom function by completing the following steps.
 
 1. In Excel, go to any cell and enter `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
@@ -151,7 +151,6 @@ Integrating data from the Web is a great way to extend Excel through custom func
 1. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
     ![Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.](../images/list-starcount.png)
 
-
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
@@ -163,11 +162,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
----
+5. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
-<ol start="5">
-<li> Try out the new function. In cell <strong>B1</strong>, type the text <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong> and press enter. You should see that the result in cell <strong>B1</strong> is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
-</ol>
+---
 
 ## Create a streaming asynchronous custom function
 

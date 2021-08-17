@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: 'Learn how to configure an Office Add-in to open automatically when a document opens.'
-ms.date: 05/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -11,7 +11,6 @@ localization_priority: Normal
 You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office app ribbon. When users click your command button, an action occurs, such as opening a task pane.
 
 Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the AddInCommands 1.1 requirement set, to automatically open a task pane when your scenario requires it.
-
 
 ## How is the autoopen feature different from inserting a task pane?
 
@@ -26,7 +25,6 @@ The autoopen feature is currently <!-- in **developer preview** and it is only -
 |**Products**|**Platforms**|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Supported platforms for all products:<ul><li>Office on Windows Desktop. Build 16.0.8121.1000+</li><li>Office on Mac. Build 15.34.17051500+</li><li>Office on the web</li></ul>|
-
 
 ## Best practices
 
@@ -44,9 +42,7 @@ Apply the following best practices when you use the autoopen feature.
 
 - Don't use this feature to pin multiple task panes. You can only set one pane of your add-in to open automatically with a document.  
 
-## Implementation
-
-To implement the autoopen feature:
+## Implement the autoopen feature
 
 - Specify the task pane to be opened automatically.
 - Tag the document to automatically open the task pane.
@@ -71,7 +67,6 @@ The following example shows the TaskPaneId value set to Office.AutoShowTaskpaneW
 
 You can tag the document to trigger the autoopen feature in one of two ways. Pick the alternative that works best for your scenario.  
 
-
 #### Tag the document on the client side
 
 Use the Office.js [settings.set](/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to **true**, as shown in the following example.
@@ -87,7 +82,7 @@ Use this method if you need to tag the document as part of your add-in interacti
 
 You can use Open XML to create or modify a document and add the appropriate Open Office XML markup to trigger the autoopen feature. For a sample that shows you how to do this, see [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin).
 
-Add two Open XML parts to the document:
+Add two Open XML parts to the document.
 
 - A `webextension` part
 - A `taskpane` part

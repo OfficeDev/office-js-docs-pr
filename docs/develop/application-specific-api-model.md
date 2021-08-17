@@ -1,11 +1,11 @@
 ---
 title: Using the application-specific API model
 description: 'Learn about the promise-based API model for Excel, OneNote, and Word add-ins.'
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
-# Using the application-specific API model
+# Application-specific API model
 
 This article describes how to use the API model for building add-ins in Excel, Word, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs.
 
@@ -220,7 +220,7 @@ Excel.run(function (ctx) {
 
 ### Some properties cannot be set directly
 
-Some properties cannot be set, despite being writable. These properties are part of a parent property that must be set as a single object. This is because that parent property relies on the subproperties having specific, logical relationships. These parent properties must be set using object literal notation to set the entire object, instead of setting that object's individual subproperties. One example of this is found in [PageLayout](/javascript/api/excel/excel.pagelayout). The `zoom` property must be set with a single [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) object, as shown here:
+Some properties cannot be set, despite being writable. These properties are part of a parent property that must be set as a single object. This is because that parent property relies on the subproperties having specific, logical relationships. These parent properties must be set using object literal notation to set the entire object, instead of setting that object's individual subproperties. One example of this is found in [PageLayout](/javascript/api/excel/excel.pagelayout). The `zoom` property must be set with a single [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) object, as shown here.
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -229,7 +229,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 In the previous example, you would ***not*** be able to directly assign `zoom` a value: `sheet.pageLayout.zoom.scale = 200;`. That statement throws an error because `zoom` is not loaded. Even if `zoom` were to be loaded, the set of scale will not take effect. All context operations happen on `zoom`, refreshing the proxy object in the add-in and overwriting locally set values.
 
-This behavior differs from [navigational properties](application-specific-api-model.md#scalar-and-navigation-properties) like [Range.format](/javascript/api/excel/excel.range#format). Properties of `format` can be set using object navigation, as shown here:
+This behavior differs from [navigational properties](application-specific-api-model.md#scalar-and-navigation-properties) like [Range.format](/javascript/api/excel/excel.range#format). Properties of `format` can be set using object navigation, as shown here.
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
@@ -240,8 +240,6 @@ You can identify a property that cannot have its subproperties directly set by c
 
 - Read-only property: Subproperties can be set through navigation.
 - Writable property: Subproperties cannot be set through navigation (must be set as part of the initial parent object assignment).
-
-
 
 ## &#42;OrNullObject methods and properties
 
