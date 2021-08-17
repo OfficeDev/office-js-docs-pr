@@ -165,7 +165,7 @@ Create fewer range objects to improve performance and minimize payload size. Two
 One way to create fewer range objects is to split each range array into multiple arrays, and then process each new array with a loop and a new `context.sync()` call.
 
 > [!IMPORTANT]
-> Using multiple loops can reduce the size of each payload request to avoid exceeding the 5MB limit, but using multiple loops and multiple `context.sync()` calls negatively impacts performance. Only use this strategy you've first determined that you're exceeding the payload size limit.
+> Only use this strategy you've first determined that you're exceeding the payload request size limit. Using multiple loops can reduce the size of each payload request to avoid exceeding the 5MB limit, but using multiple loops and multiple `context.sync()` calls also negatively impacts performance.
 
 The following code sample attempts to process a large array of ranges in a single loop and then a single `context.sync()` call. Processing too many range values in one `context.sync()` call causes the payload request size to exceed the 5MB limit.
 
