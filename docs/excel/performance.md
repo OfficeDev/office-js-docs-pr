@@ -106,7 +106,7 @@ Excel.run(async (ctx) => {
 
 ## Payload size limit best practices
 
-The Excel JavaScript API has size limitations for API calls. Excel on the web has a payload size limit for requests and responses of 5MB, and an API will return a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges typically exceed both of these limitations.
+The Excel JavaScript API has size limitations for API calls. Excel on the web has a payload size limit for requests and responses of 5MB, and an API returns a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges typically exceed both of these limitations.
 
 ### Payload size
 
@@ -114,7 +114,7 @@ The payload size of a request is a combination of the following three components
 
 * The number of API calls.
 * The number of objects, such as `Range` objects.
-* The length of value to set or get.
+* The length of the value to set or get.
 
 If an API returns the `RequestPayloadSizeLimitExceeded` error, use the best practice strategies documented in this article to optimize your script and avoid the error.
 
@@ -128,6 +128,7 @@ async function run() {
   await Excel.run(async (context) => {
     var ranges = [];
     
+    // This sample retrieves the worksheet every time the loop runs, which is bad for performance.
     for (let i = 0; i < 7500; i++) {
       var rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
     }    
@@ -143,8 +144,10 @@ The following code sample shows logic similar to the preceding code sample, but 
 async function run() {
   await Excel.run(async (context) => {
     var ranges = [];
+    // Retrieve the worksheet outside the loop.
     var worksheet = context.workbook.worksheets.getActiveWorksheet(); 
 
+    // Only process the necessary values inside the loop.
     for (let i = 0; i < 7500; i++) {
       var rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
     }    
@@ -168,7 +171,8 @@ The following code sample attempts to process a large array of ranges in a singl
 async function run() {
   await Excel.run(async (context) => {
     var worksheet = context.workbook.worksheets.getActiveWorksheet();
-
+    
+    // This sample attempts to process too many ranges at once. 
     for (let row = 1; row < 10000; row++) {
       var range = sheet.getRangeByIndexes(i, 1, 1, 1);
       range.values = [["1"]];
@@ -190,10 +194,12 @@ async function run() {
   await Excel.run(async (context) => {
     var worksheet = context.workbook.worksheets.getActiveWorksheet();
 
+    // Split the ranges into two loops, rows 1-5000 and then 5001-10000.
     for (let row = 1; row < 5000; row++) {
       var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
       range.values = [["1"]];
     }
+    // Sync after each loop. 
     await context.sync(); 
     
     for (let row = 5001; row < 10000; row++) {
@@ -216,12 +222,15 @@ The following code sample shows how to create an array, set the values of that a
 async function run() {
   await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();    
+    // Create an array.
     const array = new Array(10000);
 
+    // Set the values of the array inside the loop.
     for (var i = 0; i < 10000; i++) {
       array[i] = [1];
     }
 
+    // Pass the array values to a range outside the loop. 
     var range = worksheet.getRange("A1:A10000");
     range.values = array;
     await context.sync();
