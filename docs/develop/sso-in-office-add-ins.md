@@ -1,12 +1,11 @@
 ---
 title: Enable single sign-on for Office Add-ins
 description: 'Learn how to enable single sign-on for Office Add-ins using common Microsoft personal, work, or education accounts.'
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
 ---
 
 # Enable single sign-on for Office Add-ins
-
 
 Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
 
@@ -17,8 +16,6 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 If you are working with an **Outlook** add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. You can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For samples that use Azure Active Directory as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
-
-
 
 ## How SSO works at runtime
 
@@ -58,7 +55,7 @@ For more details about this process, see [Register an Office Add-in that uses SS
 
 ### Configure the add-in
 
-Add new markup to the add-in manifest:
+Add new markup to the add-in manifest.
 
 - **WebApplicationInfo** - The parent of the following elements.
 - **Id** - The client ID of the add-in This is an application ID that you obtain as part of registering the add-in. See [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
@@ -98,7 +95,6 @@ Here's a simple example of a call to `getAccessToken`.
 
 > [!NOTE]
 > This example handles only one kind of error explicitly. For examples of more elaborate error handling, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
-
 
 ```js
 async function getGraphData() {

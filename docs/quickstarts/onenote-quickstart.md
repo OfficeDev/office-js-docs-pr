@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
-ms.date: 07/06/2021
+ms.date: 08/04/2021
 ms.prod: onenote
 localization_priority: Priority
 ---
@@ -73,7 +73,7 @@ try {
     cd "My Office Add-in"
     ```
 
-2. Start the local web server and sideload your add-in.
+1. Start the local web server and sideload your add-in.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
@@ -91,9 +91,9 @@ try {
     npm run start:web
     ```
 
-3. In [OneNote on the web](https://www.onenote.com/notebooks), open a notebook and create a new page.
+1. In [OneNote on the web](https://www.onenote.com/notebooks), open a notebook and create a new page.
 
-4. Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.
+1. Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.
 
     - If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.
 
@@ -103,11 +103,11 @@ try {
 
     ![Screenshot of the Office Add-ins dialog showing the MY ADD-INS tab.](../images/onenote-office-add-ins-dialog.png)
 
-5. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
+1. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
 
-6. From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
+1. From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
 
-7. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
+1. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
 
     ![Screenshot showing the add-in built from this walkthrough: Show Taskpane ribbon button and task pane in OneNote.](../images/onenote-first-add-in-4.png)
 

@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 06/02/2020
+ms.date: 07/30/2021
 localization_priority: Priority
 ---
 
@@ -13,9 +13,9 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.)|
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows after you have published the add-in to a server other than localhost. (Not for production add-ins or for testing on iPad, Mac, or the web.)|
-|[Centralized Deployment](centralized-deployment.md)|In a cloud deployment, to distribute your add-in to users in your organization by using the Microsoft 365 admin center.|
-|[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|To distribute your add-in publicly to users.|
+|[Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|In a cloud deployment, to distribute your add-in to users in your organization by using the Microsoft 365 admin center. This is done through [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
+|[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
@@ -26,20 +26,20 @@ The deployment options that are available depend on the Office application that 
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 
-| Extension point | Sideloading | Network share | Microsoft 365 admin center |AppSource   | SharePoint catalog\* |
-|:----------------|:-----------:|:-------------:|:-----------------------:|:----------:|:--------------------:|
-| Content         | X           | X             | X                       | X          | X                    |
-| Task pane       | X           | X             | X                       | X          | X                    |
-| Command         | X           | X             | X                       | X          |                      |
+| Extension point | Sideloading | Network share | AppSource | Microsoft 365 admin center | SharePoint catalog\* |
+|:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
+| Content         | X           | X             | X         | X                          | X                    |
+| Task pane       | X           | X             | X         | X                          | X                    |
+| Command         | X           | X             | X         | X                          |                      |
 
 &#42; SharePoint catalogs do not support Office on Mac.
 
 ### Deployment options for Outlook add-ins
 
-| Extension point | Sideloading | Exchange server | AppSource    |
-|:----------------|:-----------:|:---------------:|:------------:|
-| Mail app        | X           | X               | X            |
-| Command         | X           | X               | X            |
+| Extension point | Sideloading | AppSource | Exchange server |
+|:----------------|:-----------:|:---------:|:---------------:|
+| Mail app        | X           | X         | X               |
+| Command         | X           | X         | X               |
 
 ## Production deployment methods
 
@@ -47,11 +47,16 @@ The following sections provide additional information about the deployment metho
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862).
 
-### Centralized Deployment via the Microsoft 365 admin center
+### Integrated Apps via the Microsoft 365 admin center
 
-The Microsoft 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups in their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.
+The Microsoft 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups in their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Integrated Apps to deploy internal add-ins as well as add-ins provided by ISVs. Integrated Apps also shows admins add-ins and other apps bundled together by same ISV, giving them exposure to the entire experience across the Microsoft 365 platform.
 
-For more information, see [Publish Office Add-ins using Centralized Deployment via the Microsoft 365 admin center](centralized-deployment.md).
+When you link your Office Add-ins, Teams apps, SPFx apps, and [other apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#what-apps-can-i-deploy-from-integrated-apps) together, you create a single software as a service (SaaS) offering for your customers. For general information about this process, see [How to plan a SaaS offer for the commercial marketplace](/azure/marketplace/plan-saas-offer). For specifics on how to create Integrated Apps, see [Configure Microsoft 365 App integration](/azure/marketplace/create-new-saas-offer#configure-microsoft-365-app-integration).
+
+For more information on the Integrated Apps deployment process, see [Test and deploy Microsoft 365 Apps by partners in the Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
+
+> [!IMPORTANT]
+> Customers in sovereign or government clouds don't have access to Integrated Apps. They will use Centralized Deployment instead. Centralized Deployment is a similar deploy method, but doesn't expose connected add-ins and apps to the admin. For more information, see [Determine if Centralized Deployment of add-ins works for your organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 ### SharePoint app catalog deployment
 
@@ -80,5 +85,6 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Create effective AppSource listings](/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
+- [What is the Microsoft commercial marketplace?](/azure/marketplace/overview)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center

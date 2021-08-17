@@ -1,7 +1,7 @@
 ---
-ms.date: 01/08/2020
 description: 'Create an Excel custom function for your Office Add-in.'
 title: Create custom functions in Excel
+ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
@@ -14,7 +14,7 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 The following animated image shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
-<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+![Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.](../images/SphereVolumeNew.gif)
 
 The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 
@@ -30,11 +30,11 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you will need to set up a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you will need to set up a shared JavaScript runtime. To learn more, see [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## How a custom function is defined in code
 
-If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, it creates files which control your functions and task pane. We'll concentrate on the files that are important to custom functions:
+If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, it creates files which control your functions and task pane. We'll concentrate on the files that are important to custom functions.
 
 | File | File format | Description |
 |------|-------------|-------------|
@@ -64,11 +64,11 @@ function add(first, second){
 
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) does several things:
+The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) does several things.
 
 - Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
 - Uses `<ExtensionPoint>` and `<Resources>` elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
-- Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane. Note that using a shared runtime means your add-in will use Internet Explorer 11, not Microsoft Edge.
+- Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane.
 
 If you are using the Yo Office generator to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
@@ -78,7 +78,7 @@ To see a full working manifest from a sample add-in, see [this Github repository
 
 ## Coauthoring
 
-Excel on the web and on Windows connected to a Microsoft 365 subscription allow you to coauthor in Excel. If your workbook uses a custom function, your coauthoring colleague is prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function shares results through coauthoring.
+Excel on the web and on Windows connected to a Microsoft 365 subscription allow end users to coauthor in Excel. If an end user's workbook uses a custom function, that end user's coauthoring colleague is prompted to load the corresponding custom functions add-in. Once both users have loaded the add-in, the custom function shares results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
@@ -88,7 +88,8 @@ Want to try out custom functions? Check out the simple [custom functions quick s
 
 Another easy way to try out custom functions is to use [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), an add-in that allows you to experiment with custom functions right in Excel. You can try out creating your own custom function or play with the provided samples.
 
-## See also 
+## See also
+
 * [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Custom functions requirement sets](custom-functions-requirement-sets.md)
 * [Custom functions naming guidelines](custom-functions-naming.md)

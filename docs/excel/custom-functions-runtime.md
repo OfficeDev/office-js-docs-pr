@@ -1,5 +1,5 @@
 ---
-ms.date: 09/25/2020
+ms.date: 07/08/2021
 description: Understand Excel custom functions that don't use a task pane and their specific JavaScript runtime.
 title: Runtime for UI-less Excel custom functions
 localization_priority: Normal
@@ -15,7 +15,7 @@ Custom functions that don't use a task pane (UI-less custom functions) use a Jav
 
 This JavaScript runtime provides access to APIs in the `OfficeRuntime` namespace that can be used by UI-less custom functions and the task pane to store data.
 
-## Requesting external data
+## Request external data
 
 Within a UI-less custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
@@ -23,7 +23,7 @@ Be aware that UI-less functions must use additional security measures when makin
 
 A simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
-## Storing and accessing data
+## Store and access data
 
 Within a UI-less custom function, you can store and access data by using the `OfficeRuntime.storage` object. `Storage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which cannot be used by UI-less custom functions. `Storage` offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
@@ -64,6 +64,7 @@ function StoreValue(key, value) {
 If your add-in only uses UI-less custom functions, note that you can't access the Document Object Model (DOM) with UI-less custom functions or use libraries like jQuery that rely on the DOM.
 
 ## Next steps
+
 Learn how to [debug UI-less custom functions](custom-functions-debugging.md).
 
 ## See also

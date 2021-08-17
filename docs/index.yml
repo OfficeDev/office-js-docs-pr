@@ -107,9 +107,9 @@ conceptualContent:
         - url: publish/publish.md
           itemType: deploy
           text: Explore deployment options 
-        - url: publish/centralized-deployment.md
+        - url: /microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps
           itemType: deploy
-          text: Learn about Centralized Deployment
+          text: Test and deploy Microsoft 365 Apps by partners in the Integrated apps portal
     # Card 5
     - title: Publish
       links:
