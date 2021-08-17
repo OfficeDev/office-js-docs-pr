@@ -120,7 +120,7 @@ If an API returns the `RequestPayloadSizeLimitExceeded` error, use the best prac
 
 ### Strategy 1: Move unchanged values out of loops
 
-Limiting the number of processes that occur within loops improves performance. In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for` loop, because it doesn't change within that loop.
+Limit the number of processes that occur within loops to improve performance. In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for` loop, because it doesn't change within that loop.
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
@@ -155,13 +155,13 @@ async function run() {
 
 ### Strategy 2: Create fewer range objects
 
-Creating fewer range objects improves performance and minimizes payload size. Two approaches for creating fewer range objects are described in the following sections.
+Create fewer range objects to improve performance and minimize payload size. Two approaches for creating fewer range objects are described in the following article sections and code samples.
 
 #### Split each range array into multiple arrays
 
-One way to create fewer range objects is to split each range array into multiple arrays, and then process each new array with multiple loops. *Note: This can reduce the size of each payload request, but using multiple loops will negatively impact performance.*
+One way to create fewer range objects is to split each range array into multiple arrays, and then process each new array with a loop and a new `context.sync()` call.
 
-Reading too many ranges value in one `context.sync()` call causes the request payload size to exceed the 5MB limitation.
+The following code sample attempts to process a large array of ranges in a single loop and then a single `context.sync()` call. Processing too many range values in one `context.sync()` call causes the payload request size to exceed the 5MB limit.
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This code sample exceeds the 5MB payload size limit. 
@@ -173,13 +173,15 @@ async function run() {
       var range = sheet.getRangeByIndexes(i, 1, 1, 1);
       range.values = [["1"]];
     }
-
     await context.sync(); 
   });
 }
 ```
 
-Instead, process the ranges with multiple `context.sync()` calls.
+The following code sample shows logic similar to the preceding code sample, but with a strategy that will avoid exceeding the 5MB payload request size limit. In the following code sample, the ranges are processed in two separate loops, and each loop is followed by a `context.sync()` call.
+
+> [!IMPORTANT]
+> Using multiple loops can reduce the size of each payload request to avoid exceeding the 5MB limit, but using multiple loops may also negatively impact performance.
 
 ```js
 // This code sample shows a strategy for reducing payload request size.
@@ -205,15 +207,18 @@ async function run() {
 
 #### Set range values in an array
 
-Read all the data in one range and then set the values in one API call. This benefits both performance and payload size. Instead of calling `range.values` for each cell in a loop, set the values in an array first, and then call `range.values` in one call.
+Another way to create fewer range objects is to create an array, use a loop to set all the data in that array, and then pass the array values to a range. This benefits both performance and payload size. Instead of calling `range.values` for each range in a loop, `range.values` is a called once outside the loop.
+
+The following code sample shows how to create an array, set the values of that array in a `for` loop, and then pass the array values to a range outside the loop.
 
 ```js
+// This code sample shows a good performance strategy.
 async function run() {
   await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();    
     const array = new Array(10000);
 
-    for (var i = 0; i <1 0000; i++) {
+    for (var i = 0; i < 10000; i++) {
       array[i] = [1];
     }
 
