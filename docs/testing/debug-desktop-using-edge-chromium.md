@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)
 description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) by using the Debugger for Microsoft Edge extension in VS Code.'
-ms.date: 08/12/2021
+ms.date: 08/18/2021
 localization_priority: Priority
 ---
 # Debug add-ins on Windows using Edge Chromium WebView2
@@ -41,7 +41,7 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 1. You're now able to set breakpoints in your project's code and debug.
 
    > [!NOTE]
-   > Breakpoints in calls of [Office.initialize]() or [Office.onReady]() are ignored. For details about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
+   > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
 > The best way to stop a debugging session is to select **Shift+F5** or choose **Run > Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there will be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
