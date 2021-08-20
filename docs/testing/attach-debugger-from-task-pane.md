@@ -1,27 +1,37 @@
 ---
 title: Attach a debugger from the task pane
-description: 'Learn how to attach a debugger from the task pane'
-ms.date: 07/08/2021
+description: Learn how to attach a debugger from the task pane.
+ms.date: 08/20/2021
 localization_priority: Normal
 ---
 
 # Attach a debugger from the task pane
 
-In Office 2016 on Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you. You can attach a debugger regardless of whether you are using Yeoman Generator, Visual Studio Code, Node.js, Angular, or another tool.
+In Office 2016 on Windows (build 77xx.xxxx or later), you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct browser process for you. You can attach a debugger regardless of whether you are using Yeoman Generator, Visual Studio Code, Node.js, Angular, or another tool.
 
 To launch the **Attach Debugger** tool, choose the top right corner of the task pane to activate the **Personality** menu (as shown in the red circle in the following image).
 
 > [!NOTE]
-> - Currently, the only supported debugger tool is [Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](/previous-versions/mt752379(v=vs.140)) or later. If you don't have Visual Studio installed, selecting the **Attach Debugger** option doesn't result in any action.
+>
+> - Office with a Microsoft 365 subscription: The only supported debugger tool is [Microsoft Edge Developer Tools (DevTools)](/microsoft-edge/devtools-guide-chromium/).
+> - Non-subscription Office 2016 or later: The only supported debugger tool is [Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](/previous-versions/mt752379(v=vs.140)) or later. If you don't have Visual Studio installed, selecting the **Attach Debugger** option doesn't result in any action.
 > - You can only debug client-side JavaScript with the **Attach Debugger** tool. To debug server-side code, such as with a Node.js server, you have many options. For information on how to debug with Visual Studio Code, see [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). If you are not using Visual Studio Code, search for "debug Node.js" or "debug {name-of-server}".
 
 ![Screenshot of Attach Debugger menu.](../images/attach-debugger.png)
 
-Select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debugger** dialog box, as shown in the following image.
+## Edge DevTools with Microsoft 365 subscription Office
+
+In the Personality menu, select **Attach Debugger**. This launches the **Microsoft Edge DevTools** window, as shown in the following image.
+
+![Screenshot of Microsoft Edge DevTools debugger window.](../images/devtools-debugger.png)
+
+## Visual Studio with non-subscription Office 2016 or later
+
+In the Personality menu, select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debugger** dialog box, as shown in the following image.
 
 ![Screenshot of Visual Studio JIT Debugger dialog.](../images/visual-studio-debugger.png)
 
-In Visual Studio, you will see the code files in **Solution Explorer**.   You can set breakpoints to the line of code you want to debug in Visual Studio.
+In Visual Studio, you will see the code files in **Solution Explorer**. You can set breakpoints to the line of code you want to debug in Visual Studio.
 
 > [!NOTE]
 > If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps.
