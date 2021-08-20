@@ -62,7 +62,7 @@ These instructions assume you have experience using the command line, understand
     }
     ```
 
-1. In the section of JSON you just copied, find the `"url"` property. In this URL, you will need to replace the uppercase HOST text with the application that is hosting your Office Add-in. For example, if your Office Add-in is for Excel, your URL value would be `"https://localhost:3000/taskpane.html?_host_Info=<strong>Excel</strong>$Win32$16.01$en-US$\$\$\$0"`.
+1. In the section of JSON you just copied, find the `"url"` property. In this URL, you need to replace the uppercase **HOST** text with the application that is hosting your Office Add-in. For example, if your Office Add-in is for Excel, your URL value would be `"https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$\$\$\$0"`.
 
 1. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in the Office application, open the task pane.
 
