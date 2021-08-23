@@ -1,5 +1,5 @@
 ---
-ms.date: 07/08/2021
+ms.date: 08/23/2021
 description: 'Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel'
 title: Receive and handle data with custom functions
 localization_priority: Normal
@@ -7,7 +7,7 @@ localization_priority: Normal
 
 # Receive and handle data with custom functions
 
-One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets). You can request external data through an API like [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+One of the ways that custom functions enhance Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)). You can request external data through an API like [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -136,17 +136,19 @@ Excel cancels the execution of a function in the following situations.
 
 You can also consider setting a default streaming value to handle cases when a request is made but you are offline.
 
-Note that there are also a category of functions called cancelable functions, which are _not_ related to streaming functions. Only asynchronous custom functions which return one value are cancelable. Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. Declare a cancelable function using the tag `@cancelable`.
+Note that there are also a category of functions called cancelable functions, which are _not_ related to streaming functions. Only asynchronous custom functions which return one value are cancelable. Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. Declare a cancelable function using the JSDoc tag [`@cancelable`](custom-functions-json-autogeneration.md#cancelable).
 
 ### Use an invocation parameter
 
-The `invocation` parameter is the last parameter of any custom function by default. The `invocation` parameter gives context about the cell (such as its address and contents) and allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
+The `invocation` parameter is the last parameter of any custom function by default. The `invocation` parameter gives context about the cell, such as its address and contents, and allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
 
-If you're using TypeScript, the invocation handler needs to be of type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) or [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
+The invocation handler needs to be of type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) or [`CustomFunctions.CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to make web requests.
+
+See [Invocation parameter](custom-functions-parameter-options.md#invocation-parameter) to learn about other potential uses of the `invocation` argument and how it corresponds with the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object.
 
 ## Receiving data via WebSockets
 
-Within a custom function, you can use WebSockets to exchange data over a persistent connection with a server. Using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
+Within a custom function, you can use [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API) to exchange data over a persistent connection with a server. Using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
 
 ### WebSockets example
 
