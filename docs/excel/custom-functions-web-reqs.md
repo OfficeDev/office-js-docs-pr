@@ -17,8 +17,8 @@ One of the ways that custom functions enhance Excel's power is by receiving data
 
 If a custom function retrieves data from an external source such as the web, it must:
 
-1. Return a JavaScript Promise to Excel.
-2. Resolve the Promise with the final value using the callback function.
+1. Return a JavaScript promise to Excel.
+2. Resolve the promise with the final value using the callback function.
 
 ### Fetch example
 
@@ -51,7 +51,7 @@ function webRequest() {
 
 ### XHR example
 
-In the following code sample, the `getStarCount` function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript Promise. When data is obtained from the web call, the Promise is resolved which returns the data to the cell.
+In the following code sample, the `getStarCount` function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript promise. When data is obtained from the web call, the promise is resolved which returns the data to the cell.
 
 ```TS
 /**
@@ -96,7 +96,7 @@ Streaming custom functions enable you to output data to cells that updates repea
 
 To declare a streaming function, you can use either:
 
-- The `@streaming` tag.
+- The `@streaming` JSDoc tag.
 - The `CustomFunctions.StreamingInvocation` invocation parameter.
 
 The following code sample is a custom function that adds a number to the result every second. Note the following about this code.
@@ -142,7 +142,7 @@ Note that there are also a category of functions called cancelable functions, wh
 
 The `invocation` parameter is the last parameter of any custom function by default. The `invocation` parameter gives context about the cell, such as its address and contents, and allows you to use `setResult` and `onCanceled` methods. These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).
 
-The invocation handler needs to be of type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) or [`CustomFunctions.CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to make web requests.
+The invocation handler needs to be of type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) or [`CustomFunctions.CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to process web requests.
 
 See [Invocation parameter](custom-functions-parameter-options.md#invocation-parameter) to learn about other potential uses of the `invocation` argument and how it corresponds with the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object.
 
