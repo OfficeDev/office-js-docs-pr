@@ -112,9 +112,9 @@ The Excel JavaScript API has size limitations for API calls. Excel on the web ha
 
 The payload size of a request is a combination of the following three components.
 
-* The number of API calls.
-* The number of objects, such as `Range` objects.
-* The length of the value to set or get.
+* The number of API calls
+* The number of objects, such as `Range` objects
+* The length of the value to set or get
 
 If an API returns the `RequestPayloadSizeLimitExceeded` error, use the best practice strategies documented in this article to optimize your script and avoid the error.
 
@@ -165,7 +165,7 @@ Create fewer range objects to improve performance and minimize payload size. Two
 One way to create fewer range objects is to split each range array into multiple arrays, and then process each new array with a loop and a new `context.sync()` call.
 
 > [!IMPORTANT]
-> Only use this strategy you've first determined that you're exceeding the payload request size limit. Using multiple loops can reduce the size of each payload request to avoid exceeding the 5MB limit, but using multiple loops and multiple `context.sync()` calls also negatively impacts performance.
+> Only use this strategy if you've first determined that you're exceeding the payload request size limit. Using multiple loops can reduce the size of each payload request to avoid exceeding the 5MB limit, but using multiple loops and multiple `context.sync()` calls also negatively impacts performance.
 
 The following code sample attempts to process a large array of ranges in a single loop and then a single `context.sync()` call. Processing too many range values in one `context.sync()` call causes the payload request size to exceed the 5MB limit.
 
@@ -186,7 +186,7 @@ async function run() {
 }
 ```
 
-The following code sample shows logic similar to the preceding code sample, but with a strategy that will avoid exceeding the 5MB payload request size limit. In the following code sample, the ranges are processed in two separate loops, and each loop is followed by a `context.sync()` call.
+The following code sample shows logic similar to the preceding code sample, but with a strategy that avoids exceeding the 5MB payload request size limit. In the following code sample, the ranges are processed in two separate loops, and each loop is followed by a `context.sync()` call.
 
 ```js
 // This code sample shows a strategy for reducing payload request size.
