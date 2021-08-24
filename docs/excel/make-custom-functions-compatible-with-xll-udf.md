@@ -13,7 +13,7 @@ localization_priority: Normal
 If you have existing Excel XLL add-ins, you can build equivalent custom function add-ins using the Excel JavaScript API to extend your solution features to other platforms, such as Excel on the web or on a Mac. However, Excel JavaScript API add-ins don't have all of the functionality available in XLL add-ins. Depending on the functionality your solution uses, the XLL add-in may provide a better experience than the Excel JavaScript API add-in in Excel on Windows.
 
 > [!IMPORTANT]
-> COM add-in and XLL user-defined function (UDF) compatibility is supported by Excel on Windows (version 1904 or later).
+> COM add-in and XLL user-defined function (UDF) compatibility is supported by Excel on Windows (version 1904 or later). COM add-in and XLL user-defined function (UDF) compatibility is not supported for Excel on the web or on Mac.
 
 ## Specify equivalent XLL in the manifest
 
