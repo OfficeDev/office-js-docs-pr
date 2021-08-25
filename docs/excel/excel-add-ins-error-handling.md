@@ -69,6 +69,7 @@ The following table is a list of errors that the API may return.
 |`InvalidSelection`|The current selection is invalid for this operation.|
 |`ItemAlreadyExists`|The resource being created already exists.|
 |`ItemNotFound` |The requested resource doesn't exist.|
+|`MemoryLimitReached`|The memory limit has been reached. Your action could not be completed.|
 |`MergedRangeConflict`|Cannot complete operation: A table cannot overlap with a PivotTable report, query results, a table, merged cells, or an XML mapping.|
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
 |`NotImplemented`|The requested feature isn't implemented.|
