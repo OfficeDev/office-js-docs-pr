@@ -81,7 +81,7 @@ The following table is a list of errors that the API may return.
 |`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.  <br><br>This error only occurs in Excel on the web.|
 |`ServiceNotAvailable`|The service is unavailable.|
 |`Unauthenticated` |Required authentication information is either missing or invalid.|
-|`UnsupportedFeature`|API call is not permitted because it has unsupported features.|
+|`UnsupportedFeature`|The API call is not permitted because it has unsupported features.|
 |`UnsupportedOperation`|The operation being attempted is not supported.|
 |`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|
 
