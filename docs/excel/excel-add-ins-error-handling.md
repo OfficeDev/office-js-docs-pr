@@ -56,21 +56,21 @@ The following table is a list of errors that the API may return.
 |`BadPassword`|The password you supplied is incorrect.|
 |`Conflict`|Request could not be processed because of a conflict.|
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.|
-|`FilteredRangeConflict`|A table cannot be inserted over a filtered range. <br>Deleting a filtered range is not supported.|
+|`FilteredRangeConflict`|- A table cannot be inserted over a filtered range. <br>- Deleting a filtered range is not supported.|
 |`GeneralException`|There was an internal error while processing the request.|
 |`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
 |`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|
 |`InvalidBinding` |This object binding is no longer valid due to previous updates.|
 |`InvalidOperation`|The operation attempted is invalid on the object.|
-|`InvalidOperationInCellEditMode`|Excel is in cell Edit mode. Exit Edit mode by using the Enter or Tab keys, or by selecting another cell, and then try again.|
+|`InvalidOperationInCellEditMode`|The operation isn't available while Excel is in Edit cell mode. Exit Edit mode by using the **Enter** or **Tab** keys, or by selecting another cell, and then try again.|
 |`InvalidReference`|This reference is not valid for the current operation.|
 |`InvalidRequest`  |Cannot process the request.|
 |`InvalidSelection`|The current selection is invalid for this operation.|
 |`ItemAlreadyExists`|The resource being created already exists.|
 |`ItemNotFound` |The requested resource doesn't exist.|
 |`MemoryLimitReached`|The memory limit has been reached. Your action could not be completed.|
-|`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with a PivotTable report, query results, a table, merged cells, or an XML Map.|
+|`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
 |`NotImplemented`|The requested feature isn't implemented.|
 |`PivotTableRangeConflict`|A table cannot be inserted adjacent to a PivotTable. <br>Cannot insert or delete a cell in a PivotTable. <br>Cannot change a cell in a PivotTable.|
