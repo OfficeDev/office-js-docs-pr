@@ -73,7 +73,7 @@ The following table is a list of errors that the API may return.
 |`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
 |`NotImplemented`|The requested feature isn't implemented.|
-|`PivotTableRangeConflict`|A table cannot be inserted adjacent to a PivotTable. <br>Cannot insert or delete a cell in a PivotTable. <br>Cannot change a cell in a PivotTable.|
+|`PivotTableRangeConflict`|- A table cannot be inserted adjacent to a PivotTable. <br>- Cannot insert or delete a cell in a PivotTable. <br>- Cannot change a cell in a PivotTable.|
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|
 |`RefreshWorkbookLinksBlocked`|The API call is not supported because the user hasn't granted permission to refresh external workbook links.|
 |`RequestAborted`|The request was aborted during run time.|
