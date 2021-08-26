@@ -1,7 +1,7 @@
 ---
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 08/25/2021
+ms.date: 08/26/2021
 localization_priority: Normal
 ---
 
@@ -56,7 +56,7 @@ The following table is a list of errors that the API may return.
 |`BadPassword`|The password you supplied is incorrect.|
 |`Conflict`|Request could not be processed because of a conflict.|
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.|
-|`FilteredRangeConflict`|A table cannot be inserted over a filtered range. Deleting a filtered range is not supported.|
+|`FilteredRangeConflict`|A table cannot be inserted over a filtered range. <br>Deleting a filtered range is not supported.|
 |`GeneralException`|There was an internal error while processing the request.|
 |`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
@@ -70,12 +70,12 @@ The following table is a list of errors that the API may return.
 |`ItemAlreadyExists`|The resource being created already exists.|
 |`ItemNotFound` |The requested resource doesn't exist.|
 |`MemoryLimitReached`|The memory limit has been reached. Your action could not be completed.|
-|`MergedRangeConflict`|Cannot complete operation: A table cannot overlap with a PivotTable report, query results, a table, merged cells, or an XML mapping.|
+|`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with a PivotTable report, query results, a table, merged cells, or an XML Map.|
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
 |`NotImplemented`|The requested feature isn't implemented.|
-|`PivotTableRangeConflict`|A table cannot be inserted adjacent to a PivotTable. Cannot insert or delete a cell in a PivotTable. Cannot change a cell in a PivotTable.|
+|`PivotTableRangeConflict`|A table cannot be inserted adjacent to a PivotTable. <br>Cannot insert or delete a cell in a PivotTable. <br>Cannot change a cell in a PivotTable.|
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|
-|`RefreshWorkbookLinksBlocked`|API call is not supported because the user has not granted permission to refresh external workbook links.|
+|`RefreshWorkbookLinksBlocked`|The API call is not supported because the user hasn't granted permission to refresh external workbook links.|
 |`RequestAborted`|The request was aborted during run time.|
 |`RequestPayloadSizeLimitExceeded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information. <br><br>This error only occurs in Excel on the web.|
 |`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.  <br><br>This error only occurs in Excel on the web.|
