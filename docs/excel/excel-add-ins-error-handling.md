@@ -75,7 +75,7 @@ The following table is a list of errors that the API may return.
 |`NotImplemented`|The requested feature isn't implemented.|
 |`PivotTableRangeConflict`|The operation failed because it conflicts with a PivotTable range.|
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|
-|`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn’t granted permission to refresh external workbook links.|
+|`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.|
 |`RequestAborted`|The request was aborted during run time.|
 |`RequestPayloadSizeLimitExceeded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information. <br><br>This error only occurs in Excel on the web.|
 |`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.  <br><br>This error only occurs in Excel on the web.|
