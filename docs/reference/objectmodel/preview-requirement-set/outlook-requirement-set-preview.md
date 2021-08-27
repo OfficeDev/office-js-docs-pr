@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 06/15/2021
+ms.date: 08/27/2021
 localization_priority: Normal
 ---
 
@@ -66,6 +66,26 @@ Added a new property that represents the sensitivity of an appointment.
 #### [Office.MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
 
 Added a new enum `AppointmentSensitivityType` that represents the sensitivity options available on an appointment.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+
+<br>
+
+---
+
+---
+
+### Delay delivery time
+
+#### [Office.context.mailbox.item.delayDeliveryTime](office.context.mailbox.item.md#methods)
+
+Added a new property that returns an object that allows you to manage the delivery date and time of a message in Compose mode.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+
+#### [Office.DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime)
+
+Added a new object that allows you to manage the delivery date and time of a message in Compose mode.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
