@@ -77,7 +77,7 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 ### Delay delivery time
 
-#### [Office.context.mailbox.item.delayDeliveryTime](office.context.mailbox.item.md#methods)
+#### [Office.context.mailbox.item.delayDeliveryTime](office.context.mailbox.item.md#properties)
 
 Added a new property that returns an object that allows you to manage the delivery date and time of a message in Compose mode.
 
