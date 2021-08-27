@@ -56,7 +56,7 @@ The following table is a list of errors that the API may return.
 |`BadPassword`|The password you supplied is incorrect.|
 |`Conflict`|Request could not be processed because of a conflict.|
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.|
-|`FilteredRangeConflict`|The operation failed because it conflicts with a filtered range.|
+|`FilteredRangeConflict`|The attempted operation causes a conflict with a filtered range.|
 |`GeneralException`|There was an internal error while processing the request.|
 |`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
@@ -81,7 +81,7 @@ The following table is a list of errors that the API may return.
 |`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.  <br><br>This error only occurs in Excel on the web.|
 |`ServiceNotAvailable`|The service is unavailable.|
 |`Unauthenticated` |Required authentication information is either missing or invalid.|
-|`UnsupportedFeature`|The operation failed because the source contains one or more unsupported features.|
+|`UnsupportedFeature`|The operation failed because the source worksheet contains one or more unsupported features.|
 |`UnsupportedOperation`|The operation being attempted is not supported.|
 |`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|
 
