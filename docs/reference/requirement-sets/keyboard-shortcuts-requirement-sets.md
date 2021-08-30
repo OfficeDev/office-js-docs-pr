@@ -1,5 +1,5 @@
 ---
-title: Identity API requirement sets
+title: Keyboard Shortcuts requirement sets
 description: 'Keyboard shortcuts requirement set information for Office Add-ins.'
 ms.date: 09/01/2021
 ms.prod: non-product-specific
